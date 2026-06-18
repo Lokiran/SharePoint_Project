@@ -3,6 +3,8 @@ import styles from './InventoryManagement.module.scss';
 import type { IInventoryManagementProps } from '../models/IInventoryManagementProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { InventoryList } from './InventoryList';
+import { MyAssignedAssetsView } from './MyAssignedAssetsView';
+import { MyRequestsView } from './MyRequestsView';
 import { RequestList } from './RequestList';
 import { IInventoryItem } from '../models/IInventoryItem';
 import { IRequest } from '../models/IRequest';
@@ -78,6 +80,7 @@ export interface IInventoryManagementState {
   activeUserDisplayName: string;
   activeUserEmail: string;
   isIncidentFormOpen: boolean;
+  selectedAssetForIncident: IInventoryItem | undefined;
   syncInProgress?: boolean;
   syncMessage?: string;
   syncMessageType?: MessageBarType;
@@ -395,7 +398,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       isReturnFormOpen: false,
       activeUserDisplayName: activeName,
       activeUserEmail: activeEmail,
-      isIncidentFormOpen: false
+      isIncidentFormOpen: false,
+      selectedAssetForIncident: undefined
     };
   }
 
@@ -1264,10 +1268,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
                     View assets currently assigned to you.
                   </p>
-                  <InventoryList 
+                  <MyAssignedAssetsView 
                     items={myAssets} 
-                    isAdmin={false} 
                     onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
+                    onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
                   />
                 </div>
               </PivotItem>
@@ -1280,14 +1284,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
                     Track your submitted requests and approval status.
                   </p>
-                  <RequestList items={myRequests} showResponseColumns={true} />
-                  <div style={{ marginTop: '20px' }}>
-                    <h4 style={{ marginBottom: '8px' }}>Approved Asset Details (from Requests)</h4>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '12px' }}>
-                      These are your approved asset requests, even if assignment is still pending.
-                    </p>
-                    <RequestList items={myApprovedRequests} showResponseColumns={true} />
-                  </div>
+                  <MyRequestsView requests={myRequests} />
                 </div>
               </PivotItem>
 
@@ -1919,10 +1916,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           <IncidentRequestModule
             {...this.props}
             isOpen={this.state.isIncidentFormOpen}
-            onClose={() => this.setState({ isIncidentFormOpen: false })}
+            onClose={() => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined })}
             userDisplayName={activeUserDisplayName}
             userEmail={activeUserEmail}
             setIsLoading={(loading) => this.setState({ loading })}
+            preselectedAsset={this.state.selectedAssetForIncident}
           />
         )}
 

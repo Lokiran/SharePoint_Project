@@ -17,6 +17,7 @@ import {
 import styles from './IncidentRequestModule.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
+import { IInventoryItem } from '../../models/IInventoryItem';
 
 interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   employeeId?: string;
@@ -24,6 +25,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   setIsLoading: (loading: boolean) => void;
   isOpen: boolean;
   onClose: () => void;
+  preselectedAsset?: IInventoryItem;
 }
 
 interface IIncidentForm {
@@ -94,15 +96,17 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
     return () => clearTimeout(timer);
   }, [formData.employeeName]);
 
-  // Sync with props when employee context changes
+  // Sync with props when employee context changes or when a preselected asset is passed
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
       employeeName: props.userDisplayName || '',
       employeeId: props.employeeId || '',
       employeeEmail: props.userEmail || '',
+      assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : (props.isOpen ? '' : prev.assetName),
+      serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : (props.isOpen ? '' : prev.serialNo),
     }));
-  }, [props.userDisplayName, props.employeeId, props.userEmail]);
+  }, [props.userDisplayName, props.employeeId, props.userEmail, props.preselectedAsset, props.isOpen]);
 
   const loadAssignedAssetsForName = async (name: string) => {
     if (!name.trim()) {
