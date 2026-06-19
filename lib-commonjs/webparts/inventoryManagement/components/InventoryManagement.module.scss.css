@@ -1,0 +1,292 @@
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
+*/
+:local .inventoryManagement {
+  --primary-blue: #2563eb;
+  --primary-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  --surface-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --card-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  overflow: hidden;
+  color: var(--text-main);
+  background-color: transparent;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+}
+:local .inventoryManagement.dark {
+  --surface-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+:local .inventoryManagement .mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+:local .inventoryManagement .heroSection {
+  background: var(--primary-gradient);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  :local .inventoryManagement .heroSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+:local .inventoryManagement .heroSection::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+:local .inventoryManagement .heroSection .heroText {
+  z-index: 1;
+  flex: 1;
+  min-width: 250px;
+}
+:local .inventoryManagement .heroSection .heroText h2 {
+  font-size: 2.2rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+:local .inventoryManagement .heroSection .heroText p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+:local .inventoryManagement .heroSection .heroText .smallText {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 12px;
+  display: block;
+}
+@media (max-width: 768px) {
+  :local .inventoryManagement .heroSection .heroText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+:local .inventoryManagement .heroSection .welcomeDiagramContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  :local .inventoryManagement .heroSection .welcomeDiagramContainer {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+:local .inventoryManagement .actionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+:local .inventoryManagement .actionButtonContainer {
+  background: var(--surface-bg);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+:local .inventoryManagement .actionButtonContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+:local .inventoryManagement .actionButtonContainer :global(.ms-Button--primary) {
+  width: 100%;
+  border-radius: 8px;
+  height: 48px;
+  background: var(--primary-gradient);
+  border: none;
+}
+:local .inventoryManagement .actionButtonContainer :global(.ms-Button--primary):hover {
+  filter: brightness(1.1);
+}
+:local .inventoryManagement .card {
+  background: var(--surface-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+:local .inventoryManagement .card .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+:local .inventoryManagement .card .cardHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main);
+}
+:local .inventoryManagement :global(.ms-DetailsList) {
+  background: transparent !important;
+}
+:local .inventoryManagement :global(.ms-DetailsHeader) {
+  padding-top: 0;
+  background: transparent;
+}
+:local .inventoryManagement :global(.ms-DetailsRow) {
+  border-radius: 8px;
+  margin-bottom: 4px;
+  border: none !important;
+}
+:local .inventoryManagement :global(.ms-DetailsRow):hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin-bottom: 24px !important;
+  border-bottom: none !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) {
+  margin: 0 !important;
+  height: 46px !important;
+  background-color: var(--surface-bg) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link):hover {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  color: var(--text-main) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected {
+  background: var(--primary-gradient) !important;
+  border-color: transparent !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+  color: #ffffff !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected::before {
+  display: none !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) {
+  color: #ffffff !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) span, :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) i {
+  color: #ffffff !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) span, :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) i {
+  transition: color 0.2s ease !important;
+}
+:local .inventoryManagement .paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+@media (max-width: 600px) {
+  :local .inventoryManagement .paginationContainer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+}
+:local .inventoryManagement .paginationContainer .paginationInfo {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+:local .inventoryManagement .paginationContainer .paginationInfo strong {
+  color: var(--text-main);
+}
+:local .inventoryManagement .paginationContainer .paginationControls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+:local .inventoryManagement .paginationContainer .paginationControls .paginationButton {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--surface-bg);
+  color: var(--text-main);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  transition: all 0.2s ease;
+}
+:local .inventoryManagement .paginationContainer .paginationControls .paginationButton:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+:local .inventoryManagement .paginationContainer .paginationControls .paginationButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+:local .inventoryManagement .paginationContainer .paginationControls .paginationButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+:local .inventoryManagement .paginationContainer .paginationControls .paginationButton.active {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+:local .inventoryManagement .assetCardHover:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+:local .inventoryManagement.teams {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,13 @@
+.myAssignedAssets .searchSection {
+  margin-bottom: 20px;
+}
+.myAssignedAssets .assetGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .myAssignedAssets .assetGrid {
+    grid-template-columns: 1fr;
+  }
+}
