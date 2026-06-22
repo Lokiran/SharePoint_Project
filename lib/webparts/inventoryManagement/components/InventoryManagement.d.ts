@@ -44,6 +44,10 @@ export interface IInventoryManagementState {
     syncMessage?: string;
     syncMessageType?: MessageBarType;
     diagnosticInfo?: string;
+    selectedAdminRequest?: IRequest;
+    isAdminPanelOpen?: boolean;
+    adminSelectedAssetId?: string;
+    adminComment?: string;
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _isRequestOwnedByCurrentUser;
@@ -75,6 +79,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _renderRequestAnalysis;
     private _renderAssetAnalysis;
     private _renderNotificationDetailsPanel;
+    private _onAdminAssetChange;
+    private _handleAdminAssignAndApprove;
+    private _handleAdminReject;
+    private _renderAdminAssignmentPanel;
     render(): React.ReactElement<IInventoryManagementProps>;
 }
 //# sourceMappingURL=InventoryManagement.d.ts.map

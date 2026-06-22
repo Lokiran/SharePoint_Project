@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   Dropdown,
   IDropdownOption,
-  PrimaryButton,
   DetailsList,
   DetailsListLayoutMode,
   SelectionMode,
@@ -21,13 +20,12 @@ export interface IAssetTrackingProps {
   currentUserRole: UserRole;
   currentUserName?: string;
   currentUserEmail?: string;
-  onAssignAssets: (employeeName: string, employeeEmail: string, assetIds: string[]) => Promise<void>;
-  isActionInProgress: boolean;
+  onAssignAssets?: (employeeName: string, employeeEmail: string, assetIds: string[]) => Promise<void>;
+  isActionInProgress?: boolean;
 }
 
 export const AssetTracking: React.FC<IAssetTrackingProps> = (props) => {
   const [selectedEmployeeId, setSelectedEmployeeId] = React.useState<string | undefined>();
-  const [selectedAssetIds, setSelectedAssetIds] = React.useState<string[]>([]);
 
   const stackTokens: IStackTokens = { childrenGap: 20 };
 
@@ -56,12 +54,6 @@ export const AssetTracking: React.FC<IAssetTrackingProps> = (props) => {
     text: `${emp.name} (${emp.department})`
   }));
 
-  const availableAssets = props.items.filter(item => item.status === 'In Stock' || item.status === 'Yes');
-  const assetOptions: IDropdownOption[] = availableAssets.map(asset => ({
-    key: asset.id,
-    text: `${asset.assetName || asset.title} (${asset.serialNumber || 'N/A'}) - ${asset.assetType || 'Unknown'}`
-  }));
-
   const selectedEmployee = patchedEmployees.find(e => e.id === selectedEmployeeId);
   const normalize = (val: string | undefined) => (val || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const employeeAssignedAssets = props.items.filter(i => {
@@ -74,29 +66,12 @@ export const AssetTracking: React.FC<IAssetTrackingProps> = (props) => {
     return isAssigned || isNoted || isStatus;
   });
 
-  const handleAssign = async () => {
-    if (selectedEmployee && selectedAssetIds.length > 0) {
-      await props.onAssignAssets(selectedEmployee.name, selectedEmployee.email, selectedAssetIds);
-      setSelectedAssetIds([]);
-    }
-  };
-
-  const handleAssetSelect = (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption) => {
-    if (option) {
-      setSelectedAssetIds(
-        option.selected
-          ? [...selectedAssetIds, option.key as string]
-          : selectedAssetIds.filter(key => key !== option.key)
-      );
-    }
-  };
-
   return (
     <div style={{ marginTop: '20px' }}>
       <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' }}>
         <h4 style={{ marginTop: 0, marginBottom: '15px', color: '#111827' }}>Select Employee</h4>
         <Dropdown
-          placeholder="Select an employee to view or assign assets"
+          placeholder="Select an employee to view assets"
           options={employeeOptions}
           selectedKey={selectedEmployeeId}
           onChange={(_, option) => setSelectedEmployeeId(option?.key as string)}
@@ -140,32 +115,6 @@ export const AssetTracking: React.FC<IAssetTrackingProps> = (props) => {
             ) : (
               <p style={{ color: '#6b7280', fontSize: '0.9rem' }}>This employee has no assets currently assigned.</p>
             )}
-          </div>
-
-          {/* Assign New Assets Section */}
-          <div style={{ backgroundColor: '#f0f6ff', padding: '20px', borderRadius: '8px', border: '1px solid #cbe0f5' }}>
-            <h4 style={{ marginTop: 0, marginBottom: '15px', color: '#0078d4' }}>Assign New Assets</h4>
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '15px' }}>
-              <Dropdown
-                label="Select Assets from Inventory (Multiple allowed)"
-                multiSelect
-                options={assetOptions}
-                selectedKeys={selectedAssetIds}
-                onChange={handleAssetSelect}
-                placeholder={availableAssets.length > 0 ? "Select assets to assign..." : "No assets available in stock"}
-                disabled={availableAssets.length === 0 || props.isActionInProgress}
-                styles={{ dropdown: { width: 500 } }}
-              />
-              <PrimaryButton
-                text={props.isActionInProgress ? "Assigning..." : "Assign Selected Assets"}
-                onClick={handleAssign}
-                disabled={selectedAssetIds.length === 0 || props.isActionInProgress}
-                iconProps={{ iconName: props.isActionInProgress ? 'Sync' : 'Add' }}
-              />
-            </div>
-            <p style={{ marginTop: '10px', fontSize: '0.85rem', color: '#323130' }}>
-              Selected assets will be updated in the Inventory database as 'Assigned' to {selectedEmployee.name}.
-            </p>
           </div>
         </Stack>
       )}

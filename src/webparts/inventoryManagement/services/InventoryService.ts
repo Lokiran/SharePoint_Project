@@ -1193,7 +1193,8 @@ export class InventoryService {
   public static async updateAssetStatus(
     requestId: number,
     assetStatus: 'Approved' | 'Pending',
-    approverName: string = 'Unknown'
+    approverName: string = 'Unknown',
+    comment?: string
   ): Promise<void> {
     try {
       await this._ensureRequestWorkflowFields();
@@ -1210,9 +1211,21 @@ export class InventoryService {
       const requestKey = this._extractRequestKey(item);
       const assetStatusKey = findKey("assetstatus") || InventoryService.ASSET_STATUS_INTERNAL_NAME;
 
-      await list.items.getById(requestId).update({
+      const updatePayload: any = {
         [assetStatusKey]: assetStatus
-      });
+      };
+
+      if (comment) {
+        const managerCommentKey = findKey("managercomment") || findKey("comment") || findKey("response") || InventoryService.REQUEST_COMMENT_INTERNAL_NAME;
+        if (managerCommentKey) {
+          const existingComment = item[managerCommentKey] || "";
+          updatePayload[managerCommentKey] = existingComment 
+            ? `${existingComment} | [Admin]: ${comment}`
+            : `[Admin]: ${comment}`;
+        }
+      }
+
+      await list.items.getById(requestId).update(updatePayload);
 
       await this.addAuditLog({
         title: `Asset status ${assetStatus} for Request ${requestKey || `#${requestId}`}`,
@@ -1529,7 +1542,8 @@ export class InventoryService {
     employeeName: string,
     employeeEmail: string,
     adminName: string,
-    employeeId?: string
+    employeeId?: string,
+    comment?: string
   ): Promise<void> {
     const sp = getSP();
     const list = await InventoryService.getInventoryList();
@@ -1658,7 +1672,7 @@ export class InventoryService {
       // 4. Update the matching request status to allocated (assetStatus = 'Approved')
       if (matchingRequest) {
         try {
-          await InventoryService.updateAssetStatus(parseInt(matchingRequest.id, 10), 'Approved', adminName);
+          await InventoryService.updateAssetStatus(parseInt(matchingRequest.id, 10), 'Approved', adminName, comment);
         } catch (err) {
           console.warn(`Failed to update assetStatus to Approved for Request ${matchingRequest.id}`, err);
         }

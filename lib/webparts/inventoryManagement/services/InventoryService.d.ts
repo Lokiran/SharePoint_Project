@@ -36,11 +36,11 @@ export declare class InventoryService {
     static getRequests(): Promise<IRequest[]>;
     static updateRequestStatus(requestId: number, status: 'Approved' | 'Declined', approverName?: string, rejectionReason?: string): Promise<void>;
     static addAuditLog(log: Omit<IEventLog, 'id' | 'timestamp'>): Promise<void>;
-    static updateAssetStatus(requestId: number, assetStatus: 'Approved' | 'Pending', approverName?: string): Promise<void>;
+    static updateAssetStatus(requestId: number, assetStatus: 'Approved' | 'Pending', approverName?: string, comment?: string): Promise<void>;
     private static _resolveMappingPayload;
     private static _writeToMappingList;
     private static _filterPayloadBySchema;
-    static assignAssetsToEmployee(assetIds: string[], employeeName: string, employeeEmail: string, adminName: string, employeeId?: string): Promise<void>;
+    static assignAssetsToEmployee(assetIds: string[], employeeName: string, employeeEmail: string, adminName: string, employeeId?: string, comment?: string): Promise<void>;
     static syncExistingAssignmentsToMappingList(adminName: string): Promise<{
         checkedCount: number;
         syncedCount: number;

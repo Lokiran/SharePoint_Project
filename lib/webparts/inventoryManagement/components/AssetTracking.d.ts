@@ -8,8 +8,8 @@ export interface IAssetTrackingProps {
     currentUserRole: UserRole;
     currentUserName?: string;
     currentUserEmail?: string;
-    onAssignAssets: (employeeName: string, employeeEmail: string, assetIds: string[]) => Promise<void>;
-    isActionInProgress: boolean;
+    onAssignAssets?: (employeeName: string, employeeEmail: string, assetIds: string[]) => Promise<void>;
+    isActionInProgress?: boolean;
 }
 export declare const AssetTracking: React.FC<IAssetTrackingProps>;
 //# sourceMappingURL=AssetTracking.d.ts.map

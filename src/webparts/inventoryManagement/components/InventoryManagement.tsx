@@ -16,7 +16,7 @@ import { EventStream } from './EventStream';
 import { IReturnRequest } from '../models/IReturnRequest';
 import { ReturnAssetForm } from './ReturnAssetForm';
 import { ReturnRequestList } from './ReturnRequestList';
-import { PrimaryButton, Pivot, PivotItem, TextField, DetailsList, DetailsListLayoutMode, SelectionMode, IColumn, DetailsRow, Panel, PanelType, MessageBar, MessageBarType, ProgressIndicator, Icon, Stack } from '@fluentui/react';
+import { PrimaryButton, DefaultButton, Pivot, PivotItem, TextField, Dropdown, IDropdownOption, DetailsList, DetailsListLayoutMode, SelectionMode, IColumn, DetailsRow, Panel, PanelType, MessageBar, MessageBarType, ProgressIndicator, Icon, Stack } from '@fluentui/react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -85,6 +85,10 @@ export interface IInventoryManagementState {
   syncMessage?: string;
   syncMessageType?: MessageBarType;
   diagnosticInfo?: string;
+  selectedAdminRequest?: IRequest;
+  isAdminPanelOpen?: boolean;
+  adminSelectedAssetId?: string;
+  adminComment?: string;
 }
 
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
@@ -399,7 +403,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       activeUserDisplayName: activeName,
       activeUserEmail: activeEmail,
       isIncidentFormOpen: false,
-      selectedAssetForIncident: undefined
+      selectedAssetForIncident: undefined,
+      selectedAdminRequest: undefined,
+      isAdminPanelOpen: false,
+      adminSelectedAssetId: undefined,
+      adminComment: ''
     };
   }
 
@@ -445,11 +453,19 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const addUsers = (users: any[], jobTitle: 'Admin' | 'Inventory Manager' | 'Inventory Employee', department: string) => {
         users.forEach(u => {
           const email = (u.Email || u.LoginName || '').toLowerCase().trim();
+          const name = (u.Title || '').trim();
+          const nameLower = name.toLowerCase();
+
+          // Skip system/group users
+          if (nameLower === 'msft owners' || nameLower === 'system account' || !name) {
+            return;
+          }
+
           if (email && !seenEmails.has(email)) {
             seenEmails.add(email);
             loadedEmployees.push({
               id: u.Id ? u.Id.toString() : u.Email || Math.random().toString(),
-              name: u.Title || 'Unknown User',
+              name: name,
               email: u.Email || '',
               department: department,
               jobTitle: jobTitle
@@ -1123,6 +1139,321 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     );
   };
 
+  private _onAdminAssetChange = (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption): void => {
+    if (option) {
+      this.setState({ adminSelectedAssetId: option.key as string });
+    }
+  };
+
+  private _handleAdminAssignAndApprove = async (): Promise<void> => {
+    const request = this.state.selectedAdminRequest;
+    if (!request) return;
+
+    try {
+      this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
+      
+      const { adminSelectedAssetId, adminComment } = this.state;
+      const approverName = this.state.activeUserDisplayName;
+
+      if (adminSelectedAssetId) {
+        // Find the requester's details
+        const employee = this.state.employees.find(e => e.name.toLowerCase() === request.requesterName.toLowerCase());
+        const employeeEmail = employee ? employee.email : "";
+        const employeeId = employee ? employee.id : "";
+
+        // Assign the asset to the employee and approve the request
+        await InventoryService.assignAssetsToEmployee(
+          [adminSelectedAssetId],
+          request.requesterName,
+          employeeEmail,
+          approverName,
+          employeeId,
+          adminComment
+        );
+      } else {
+        // No asset selected, just approve the asset request status
+        await InventoryService.updateAssetStatus(
+          parseInt(request.id, 10),
+          'Approved',
+          approverName,
+          adminComment
+        );
+      }
+
+      // Close panel and refresh data
+      this.setState({
+        isAdminPanelOpen: false,
+        selectedAdminRequest: undefined,
+        adminSelectedAssetId: undefined,
+        adminComment: ''
+      });
+      
+      await this._loadInventory();
+      await this._loadRequests();
+      await this._loadAuditLogs();
+
+    } catch (error: any) {
+      this.setState({
+        errorMessage: `Failed to approve & assign request #${request.requestKey || request.id}. ${error.message || JSON.stringify(error)}`
+      });
+    } finally {
+      this.setState({ requestActionInProgressId: undefined });
+    }
+  };
+
+  private _handleAdminReject = async (): Promise<void> => {
+    const request = this.state.selectedAdminRequest;
+    if (!request) return;
+
+    try {
+      this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
+      
+      const { adminComment } = this.state;
+      const approverName = this.state.activeUserDisplayName;
+
+      // Rejecting from the Admin side will set the main status of the request to 'Declined'
+      await InventoryService.updateRequestStatus(
+        parseInt(request.id, 10),
+        'Declined',
+        approverName,
+        adminComment || 'Rejected by Admin during assignment'
+      );
+
+      // Close panel and refresh data
+      this.setState({
+        isAdminPanelOpen: false,
+        selectedAdminRequest: undefined,
+        adminSelectedAssetId: undefined,
+        adminComment: ''
+      });
+      
+      await this._loadInventory();
+      await this._loadRequests();
+      await this._loadAuditLogs();
+
+    } catch (error: any) {
+      this.setState({
+        errorMessage: `Failed to reject request #${request.requestKey || request.id}. ${error.message || JSON.stringify(error)}`
+      });
+    } finally {
+      this.setState({ requestActionInProgressId: undefined });
+    }
+  };
+
+  private _renderAdminAssignmentPanel = (): React.ReactNode => {
+    const request = this.state.selectedAdminRequest;
+    if (!request || !this.state.isAdminPanelOpen) return null;
+
+    const requestedAssetTitle = request.assetTitle || "";
+    const matchingAssets = this.state.items.filter(item => 
+      (item.assetType || '').toLowerCase() === requestedAssetTitle.toLowerCase() && 
+      (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock')
+    );
+
+    const matchingAssetOptions: IDropdownOption[] = matchingAssets.map(asset => ({
+      key: asset.id,
+      text: `${asset.assetName || asset.title} (SN: ${asset.serialNumber || 'N/A'})`
+    }));
+
+    const dropdownPlaceholder = matchingAssets.length > 0 
+      ? "Select asset to assign..." 
+      : "No assets of this type in stock";
+
+    const isBusy = this.state.requestActionInProgressId === request.id;
+
+    return (
+      <Panel
+        isOpen={this.state.isAdminPanelOpen}
+        onDismiss={() => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined })}
+        type={PanelType.medium}
+        headerText={`Request #${request.requestKey || request.id}`}
+        closeButtonAriaLabel="Close"
+      >
+        <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' }}>
+          
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' }}>
+            Asset request details
+          </p>
+
+          {/* Request Information Card */}
+          <div style={{
+            backgroundColor: 'var(--surface-bg)',
+            border: '1px solid rgba(128, 128, 128, 0.15)',
+            borderRadius: '8px',
+            padding: '20px',
+            boxShadow: 'var(--card-shadow)'
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' }}>
+              <h4 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)' }}>Request Information</h4>
+              <span style={{
+                backgroundColor: '#fef3c7',
+                color: '#d97706',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                padding: '3px 8px',
+                borderRadius: '4px'
+              }}>
+                Pending Admin
+              </span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' }}>
+              <div>
+                <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '2px' }}>Category</span>
+                <strong style={{ color: 'var(--text-main)' }}>{request.assetTitle}</strong>
+              </div>
+              <div>
+                <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '2px' }}>Quantity</span>
+                <strong style={{ color: 'var(--text-main)' }}>{request.quantity}</strong>
+              </div>
+              <div>
+                <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '2px' }}>Urgency</span>
+                <strong style={{ color: 'var(--text-main)' }}>{request.priority || 'Medium'}</strong>
+              </div>
+              <div>
+                <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '2px' }}>Submitted</span>
+                <strong style={{ color: 'var(--text-main)' }}>{request.requestDate}</strong>
+              </div>
+            </div>
+            {request.reason && (
+              <div style={{ marginTop: '16px' }}>
+                <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '4px', fontSize: '0.85rem' }}>Justification</span>
+                <div style={{
+                  backgroundColor: this.props.isDarkTheme ? 'rgba(255, 255, 255, 0.03)' : '#f8fafc',
+                  border: '1px solid rgba(128, 128, 128, 0.1)',
+                  borderRadius: '6px',
+                  padding: '12px',
+                  fontSize: '0.85rem',
+                  color: 'var(--text-main)',
+                  lineHeight: 1.5
+                }}>
+                  {request.reason}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Approval Trail Card */}
+          <div style={{
+            backgroundColor: 'var(--surface-bg)',
+            border: '1px solid rgba(128, 128, 128, 0.15)',
+            borderRadius: '8px',
+            padding: '20px',
+            boxShadow: 'var(--card-shadow)'
+          }}>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' }}>
+              Approval Trail
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem' }}>
+              {/* Step 1: Submitted */}
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#10b981', border: '2px solid var(--surface-bg)', boxShadow: '0 0 0 2px #10b981' }} />
+                  <div style={{ width: '2px', flexGrow: 1, backgroundColor: '#10b981', minHeight: '20px', marginTop: '4px' }} />
+                </div>
+                <div>
+                  <strong style={{ color: 'var(--text-main)', display: 'block' }}>Submitted</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>{request.requestDate}</span>
+                </div>
+              </div>
+
+              {/* Step 2: Manager Review */}
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#10b981', border: '2px solid var(--surface-bg)', boxShadow: '0 0 0 2px #10b981' }} />
+                  <div style={{ width: '2px', flexGrow: 1, backgroundColor: 'rgba(128, 128, 128, 0.25)', minHeight: '20px', marginTop: '4px' }} />
+                </div>
+                <div>
+                  <strong style={{ color: 'var(--text-main)', display: 'block' }}>Manager Review</strong>
+                  <span style={{ color: 'var(--text-muted)', fontStyle: 'italic', display: 'block', marginTop: '2px', fontSize: '0.8rem' }}>
+                    &ldquo;{request.managerResponse || 'Approved - valid business need'}&rdquo;
+                  </span>
+                </div>
+              </div>
+
+              {/* Step 3: Admin Assignment */}
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#3b82f6', border: '2px solid var(--surface-bg)', boxShadow: '0 0 0 2px #3b82f6' }} />
+                </div>
+                <div>
+                  <strong style={{ color: 'var(--text-main)', display: 'block' }}>Admin Assignment</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>Awaiting Asset Allocation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Admin Assignment Card */}
+          <div style={{
+            backgroundColor: this.props.isDarkTheme ? 'rgba(59, 130, 246, 0.05)' : 'rgba(37, 99, 235, 0.03)',
+            border: '1px solid rgba(37, 99, 235, 0.15)',
+            borderRadius: '8px',
+            padding: '20px',
+            boxShadow: 'var(--card-shadow)'
+          }}>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)' }}>
+              Admin Assignment
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              
+              {/* Dropdown */}
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' }}>
+                  Assign Asset (optional)
+                </label>
+                <Dropdown
+                  placeholder={dropdownPlaceholder}
+                  options={matchingAssetOptions}
+                  selectedKey={this.state.adminSelectedAssetId}
+                  onChange={this._onAdminAssetChange}
+                  disabled={matchingAssets.length === 0 || isBusy}
+                  styles={{ dropdown: { width: '100%' } }}
+                />
+              </div>
+
+              {/* Comment Textfield */}
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' }}>
+                  Comment
+                </label>
+                <TextField
+                  multiline
+                  rows={4}
+                  placeholder="Add a comment explaining your decision..."
+                  value={this.state.adminComment}
+                  onChange={(_, value) => this.setState({ adminComment: value || '' })}
+                  disabled={isBusy}
+                />
+              </div>
+
+              {/* Actions */}
+              <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+                <PrimaryButton
+                  text={isBusy ? "Processing..." : "Assign & Approve"}
+                  onClick={this._handleAdminAssignAndApprove}
+                  disabled={isBusy}
+                  iconProps={{ iconName: 'CompletedSolid' }}
+                />
+                <DefaultButton
+                  text="Reject"
+                  onClick={this._handleAdminReject}
+                  disabled={isBusy}
+                  iconProps={{ iconName: 'Cancel' }}
+                  styles={{
+                    root: { color: '#dc2626', borderColor: '#dc2626' },
+                    rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
+                  }}
+                />
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </Panel>
+    );
+  };
+
   public render(): React.ReactElement<IInventoryManagementProps> {
     const {
       description,
@@ -1450,7 +1781,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                       canApproveAsset={true}
                       hideStatusColumn={true}
                       showResponseColumns={false}
-                      onApproveAsset={this._onApproveAsset}
+                      onSelectRequestForAssignment={(request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })}
                       actionInProgressId={requestActionInProgressId}
                     />
                   </div>
@@ -1580,27 +1911,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         }}
                       />
                     </div>
-                  </div>
-                </PivotItem>
-              )}
-              {isAdmin && (
-                <PivotItem headerText="Asset Tracking" itemIcon="EntitlementPolicy" itemKey="AssetTracking">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Asset Tracking & Direct Assignment</h3>
+
+                    <div style={{ marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' }}>
+                      <div className={styles.cardHeader}>
+                        <h3>Employee Asset Tracking</h3>
+                      </div>
+                      <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                        Admin and Manager area. Select an employee to view all assets currently assigned to them.
+                      </p>
+                      <AssetTracking
+                        items={items}
+                        employees={this.state.employees}
+                        currentUserRole={effectiveRole}
+                        currentUserName={activeUserDisplayName}
+                        currentUserEmail={activeUserEmail}
+                      />
                     </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Admin and Manager area. Select an employee to view their assigned assets or directly assign new assets from the inventory.
-                    </p>
-                    <AssetTracking
-                      items={items}
-                      employees={this.state.employees}
-                      currentUserRole={effectiveRole}
-                      currentUserName={activeUserDisplayName}
-                      currentUserEmail={activeUserEmail}
-                      onAssignAssets={this._onAssignAssets}
-                      isActionInProgress={!!this.state.isTrackingActionInProgress}
-                    />
+
                   </div>
                 </PivotItem>
               )}
@@ -1925,6 +2252,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         )}
 
         {this._renderNotificationDetailsPanel()}
+        {this._renderAdminAssignmentPanel()}
         <ReturnAssetForm
           isOpen={this.state.isReturnFormOpen}
           onDismiss={() => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined })}

@@ -11,6 +11,7 @@ export interface IRequestListProps {
     onApproveRequest?: (request: IRequest) => Promise<void>;
     onRejectRequest?: (request: IRequest, reason: string) => Promise<void>;
     onApproveAsset?: (request: IRequest) => Promise<void>;
+    onSelectRequestForAssignment?: (request: IRequest) => void;
     actionInProgressId?: string;
 }
 export declare const RequestList: React.FC<IRequestListProps>;

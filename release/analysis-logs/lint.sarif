@@ -1,0 +1,391 @@
+{
+  "version": "2.1.0",
+  "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.5",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "ESLint",
+          "informationUri": "https://eslint.org",
+          "version": "8.57.1",
+          "rules": [
+            {
+              "id": "eqeqeq",
+              "helpUri": "https://eslint.org/docs/latest/rules/eqeqeq",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require the use of `===` and `!==`"
+              }
+            },
+            {
+              "id": "no-var",
+              "helpUri": "https://eslint.org/docs/latest/rules/no-var",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require `let` or `const` instead of `var`"
+              }
+            },
+            {
+              "id": "dot-notation",
+              "helpUri": "https://eslint.org/docs/latest/rules/dot-notation",
+              "properties": {},
+              "shortDescription": {
+                "text": "Enforce dot notation whenever possible"
+              }
+            },
+            {
+              "id": "prefer-const",
+              "helpUri": "https://eslint.org/docs/latest/rules/prefer-const",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require `const` declarations for variables that are never reassigned after declared"
+              }
+            },
+            {
+              "id": "max-lines",
+              "helpUri": "https://eslint.org/docs/latest/rules/max-lines",
+              "properties": {},
+              "shortDescription": {
+                "text": "Enforce a maximum number of lines per file"
+              }
+            },
+            {
+              "id": "react/no-unescaped-entities",
+              "helpUri": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unescaped-entities.md",
+              "properties": {
+                "category": "Possible Errors"
+              },
+              "shortDescription": {
+                "text": "Disallow unescaped HTML entities from appearing in markup"
+              }
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/pnpjsConfig.ts"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/services/InventoryService.ts"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/components/NotificationCenter.tsx"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/components/InventoryManagement.tsx"
+          }
+        }
+      ],
+      "results": [
+        {
+          "level": "warning",
+          "message": {
+            "text": "Expected '!==' and instead saw '!='."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/pnpjsConfig.ts",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 15,
+                  "endLine": 14,
+                  "endColumn": 17,
+                  "snippet": {
+                    "text": "!="
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "eqeqeq",
+          "ruleIndex": 0,
+          "suppressions": []
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Unexpected var, use let or const instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/pnpjsConfig.ts",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 15,
+                  "snippet": {
+                    "text": "var _sp: SPFI;"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "no-var",
+          "ruleIndex": 1,
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "justification": ""
+            }
+          ]
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/InventoryService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 1331,
+                  "startColumn": 15,
+                  "endLine": 1331,
+                  "endColumn": 22,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/InventoryService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 1333,
+                  "startColumn": 15,
+                  "endLine": 1333,
+                  "endColumn": 22,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/InventoryService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 1517,
+                  "startColumn": 18,
+                  "endLine": 1517,
+                  "endColumn": 25,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/InventoryService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 1517,
+                  "startColumn": 37,
+                  "endLine": 1517,
+                  "endColumn": 44,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "'logs' is never reassigned. Use 'const' instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/InventoryService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 1910,
+                  "startColumn": 9,
+                  "endLine": 1910,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "logs: IEventLog[]"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "prefer-const",
+          "ruleIndex": 3
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "File has too many lines (2649). Maximum allowed is 2000."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/InventoryService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 2001,
+                  "startColumn": 1,
+                  "endLine": 2650,
+                  "endColumn": 1,
+                  "snippet": {
+                    "text": "        } else if (titleLower.includes(\"completed return\") || detailsLower.includes(\"completed return\")) {\n          actionText = \"return completed\";\n          detailsText = `Completed return of ${assetName || \"Asset\"}`;\n        } else if (titleLower.includes(\"requested return\") || detailsLower.includes(\"requested return\")) {\n          actionText = \"return requested\";\n          detailsText = `Requested return of ${assetName || \"Asset\"}`;\n        } else if (titleLower.includes(\"approved request\") || detailsLower.includes(\"approved request\")) {\n          actionText = \"manager approved\";\n          detailsText = `Approved request for ${assetName || \"Asset\"}`;\n        } else if (titleLower.includes(\"rejected request\") || detailsLower.includes(\"rejected request\") || titleLower.includes(\"declined request\") || detailsLower.includes(\"declined request\")) {\n          actionText = \"manager rejected\";\n          detailsText = `Rejected request for ${assetName || \"Asset\"}`;\n        } else if (titleLower.includes(\"created request\") || detailsLower.includes(\"submitted asset request\")) {\n          actionText = \"created\";\n          detailsText = `Submitted asset request for ${assetName || \"Asset\"}`;\n        } else if (titleLower.includes(\"created asset\") || detailsLower.includes(\"added to inventory\")) {\n          actionText = \"created\";\n          detailsText = \"Asset was added to inventory\";\n        } else if (titleLower.includes(\"deleted asset\") || detailsLower.includes(\"retired due to damage\")) {\n          actionText = \"deleted\";\n          detailsText = \"Asset retired due to damage\";\n        } else if (detailsLower.includes(\"under investigation\") || detailsLower.includes(\"in progress\")) {\n          actionText = \"status updated to in progress\";\n          detailsText = \"Under investigation\";\n        } else if (detailsLower.includes(\"resolved\") || detailsLower.includes(\"replacement cable\")) {\n          actionText = \"status updated to resolved\";\n          detailsText = \"Replacement cable sourced\";\n        }\n\n        // Try to extract assetName if empty\n        if (!assetName) {\n          if (titleLower.includes(\"created asset:\")) {\n            assetName = item.Title.substring(titleLower.indexOf(\"created asset:\") + 14).trim();\n          } else if (titleLower.includes(\"updated asset:\")) {\n            assetName = item.Title.substring(titleLower.indexOf(\"updated asset:\") + 14).trim();\n          } else if (titleLower.includes(\"deleted asset:\")) {\n            assetName = item.Title.substring(titleLower.indexOf(\"deleted asset:\") + 14).trim();\n          } else if (titleLower.includes(\"request for\")) {\n            assetName = item.Title.substring(titleLower.indexOf(\"request for\") + 11).trim();\n          }\n        }\n\n        logs.push({\n          id: `event-log-${item.ID}`,\n          title: item.Title || \"\",\n          action: actionText,\n          entityType: item.EntityType || \"\",\n          entityId: item.EntityId || \"\",\n          assetName: assetName,\n          details: detailsText,\n          user: item.User || \"System\",\n          timestamp: formatTimestamp(item.Created)\n        });\n\n        processedEventLogIds.add(`${item.EntityType}-${item.EntityId}-${item.Action}-${formatTimestamp(item.Created).substring(0, 16)}`);\n      });\n    } catch (err) {\n      console.warn(\"Could not fetch EventLogList, relying on live list generation\", err);\n    }\n\n    // 2. Fetch from InventoryList for dynamic fallback logs\n    try {\n      const list = await InventoryService.getInventoryList();\n      const fields: any[] = await list.fields.select(\"InternalName\", \"Title\", \"TypeAsString\")();\n      const findFieldInternalName = (searchStr: string, fallback: string): string => {\n        let field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase());\n        if (field) return field.InternalName;\n        field = fields.find((f: any) => f.InternalName.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr.toLowerCase()) >= 0);\n        if (field) return field.InternalName;\n        field = fields.find((f: any) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '').indexOf(searchStr.toLowerCase()) >= 0);\n        return field ? field.InternalName : fallback;\n      };\n\n      const assetNameKey = findFieldInternalName(\"assetname\", \"AssetName\");\n      const statusKey = findFieldInternalName(\"status\", \"Status\");\n\n      const inventoryItems = await list.items.select(\"ID\", \"Title\", assetNameKey, statusKey, \"Created\", \"Modified\", \"Author/Title\", \"Editor/Title\").expand(\"Author\", \"Editor\")();\n\n      inventoryItems.forEach((item: any) => {\n        const itemCreated = formatTimestamp(item.Created);\n        const itemModified = formatTimestamp(item.Modified);\n        const assetName = item[assetNameKey] || item.Title || \"\";\n        const itemStatus = item[statusKey] || \"\";\n\n        // Add dynamic Create event\n        const createKey = `Asset-${item.ID}-Create-${itemCreated.substring(0, 16)}`;\n        if (!processedEventLogIds.has(createKey)) {\n          logs.push({\n            id: `asset-create-${item.ID}`,\n            title: `Created Asset: ${item.Title}`,\n            action: 'created',\n            entityType: 'Asset',\n            entityId: item.ID.toString(),\n            assetName: assetName,\n            details: `Asset was added to inventory`,\n            user: item.Author?.Title || \"System\",\n            timestamp: itemCreated\n          });\n        }\n\n        // Add dynamic Update event if item has been updated\n        if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {\n          const updateKey = `Asset-${item.ID}-Update-${itemModified.substring(0, 16)}`;\n          const updateKeyAssigned = `Asset-${item.ID}-admin assigned-${itemModified.substring(0, 16)}`;\n          if (!processedEventLogIds.has(updateKey) && !processedEventLogIds.has(updateKeyAssigned)) {\n            let actionText = \"updated\";\n            let detailsText = \"Asset details were modified\";\n\n            if (itemStatus.toLowerCase().includes(\"assigned\") || itemStatus.toLowerCase() === \"active\" || itemStatus.toLowerCase() === \"in use\") {\n              actionText = \"admin assigned\";\n              detailsText = \"Asset assigned to employee\";\n            } else if (itemStatus.toLowerCase().includes(\"maintenance\")) {\n              actionText = \"status updated to in progress\";\n              detailsText = \"Under investigation\";\n            } else if (itemStatus.toLowerCase() === \"in stock\" || itemStatus.toLowerCase() === \"yes\") {\n              actionText = \"status updated to resolved\";\n              detailsText = \"Replacement cable sourced\";\n            }\n\n            logs.push({\n              id: `asset-update-${item.ID}-${new Date(item.Modified).getTime()}`,\n              title: `Updated Asset: ${item.Title}`,\n              action: actionText,\n              entityType: 'Asset',\n              entityId: item.ID.toString(),\n              assetName: assetName,\n              details: detailsText,\n              user: item.Editor?.Title || \"System\",\n              timestamp: itemModified\n            });\n          }\n        }\n      });\n    } catch (err) {\n      console.warn(\"Could not fetch InventoryList for audit logs\", err);\n    }\n\n    // 3. Fetch from RequestList for dynamic fallback logs\n    try {\n      const reqList = await InventoryService.getRequestList();\n      const requestItems = await this._fetchItemsWithExpandedUsers(reqList);\n\n      requestItems.forEach((item: any) => {\n        const keys = Object.keys(item);\n        const findKey = (searchStr: string) => {\n          const nonIdMatch = keys.find(k => {\n            const kl = k.toLowerCase().replace(/_x0020_/g, '');\n            return kl.indexOf(searchStr) >= 0 && !kl.endsWith(\"id\");\n          });\n          if (nonIdMatch) return nonIdMatch;\n          return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);\n        };\n\n        const employeeKey = findKey(\"requester\") || findKey(\"employee\") || \"Employee\";\n        const selectAssetKey = findKey(\"assettype\") || findKey(\"selectasset\") || findKey(\"type\") || \"SelectAsset\";\n        const statusKey = keys.find(key => this._isBusinessStatusKey(key)) || \"RequestStatus\";\n        const assetStatusKey = findKey(\"assetstatus\") || \"AssetStatus\";\n\n        const reqAssetName = item[selectAssetKey] || item.Title || \"Unknown Asset\";\n        const rawEmp = item[employeeKey] || item.Employee || item.Author;\n        const reqUser = (() => {\n          if (!rawEmp) return item.Title || \"System\";\n          if (typeof rawEmp === 'string') return rawEmp;\n          if (Array.isArray(rawEmp)) return rawEmp.map((a: any) => a.Title || a.Name || \"\").join(', ');\n          if (typeof rawEmp === 'object') return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);\n          return rawEmp.toString();\n        })();\n\n        const itemCreated = formatTimestamp(item.Created);\n        const itemModified = formatTimestamp(item.Modified);\n        const requestStatus = item[statusKey] || \"\";\n        const assetStatus = item[assetStatusKey] || \"\";\n\n        // Add dynamic Create event\n        const createKey = `Request-${item.ID}-Create-${itemCreated.substring(0, 16)}`;\n        if (!processedEventLogIds.has(createKey)) {\n          logs.push({\n            id: `request-create-${item.ID}`,\n            title: `Created Request: ${reqAssetName}`,\n            action: 'created',\n            entityType: 'Request',\n            entityId: item.ID.toString(),\n            assetName: reqAssetName,\n            details: `Submitted asset request for ${reqAssetName}`,\n            user: reqUser,\n            timestamp: itemCreated\n          });\n        }\n\n        // Add dynamic Update event\n        if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {\n          const updateKey = `Request-${item.ID}-Update-${itemModified.substring(0, 16)}`;\n          if (!processedEventLogIds.has(updateKey)) {\n            if (requestStatus.toLowerCase().includes(\"approv\")) {\n              logs.push({\n                id: `request-approve-${item.ID}-${new Date(item.Modified).getTime()}`,\n                title: `Approved Request: ${reqAssetName}`,\n                action: 'manager approved',\n                entityType: 'Request',\n                entityId: item.ID.toString(),\n                assetName: reqAssetName,\n                details: `Approved request for ${reqAssetName}`,\n                user: reqUser,\n                timestamp: itemModified\n              });\n\n              if (assetStatus.toLowerCase().includes(\"approv\")) {\n                logs.push({\n                  id: `request-assign-${item.ID}-${new Date(item.Modified).getTime()}`,\n                  title: `Assigned Request: ${reqAssetName}`,\n                  action: 'admin assigned',\n                  entityType: 'Request',\n                  entityId: item.ID.toString(),\n                  assetName: reqAssetName,\n                  details: `Assigned ${reqAssetName}`,\n                  user: reqUser,\n                  timestamp: itemModified\n                });\n              }\n            } else if (requestStatus.toLowerCase().includes(\"reject\") || requestStatus.toLowerCase().includes(\"declin\")) {\n              logs.push({\n                id: `request-reject-${item.ID}-${new Date(item.Modified).getTime()}`,\n                title: `Rejected Request: ${reqAssetName}`,\n                action: 'manager rejected',\n                entityType: 'Request',\n                entityId: item.ID.toString(),\n                assetName: reqAssetName,\n                details: `Rejected request for ${reqAssetName}`,\n                user: reqUser,\n                timestamp: itemModified\n              });\n            } else {\n              logs.push({\n                id: `request-update-${item.ID}-${new Date(item.Modified).getTime()}`,\n                title: `Updated Request: ${reqAssetName}`,\n                action: 'updated',\n                entityType: 'Request',\n                entityId: item.ID.toString(),\n                assetName: reqAssetName,\n                details: `Request details were modified`,\n                user: reqUser,\n                timestamp: itemModified\n              });\n            }\n          }\n        }\n      });\n    } catch (err) {\n      console.warn(\"Could not fetch RequestList for audit logs\", err);\n    }\n\n    // Sort logs by timestamp descending\n    logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());\n\n    return logs;\n  }\n\n  public static async getRequestHistoryById(\n    requestLookupId: string\n  ): Promise<{ request: IRequest; lifecycle: IEventLog[] }> {\n    await this._ensureRequestWorkflowFields();\n\n    const normalizedRequestKey = this._normalizeRequestKey(requestLookupId);\n    if (!normalizedRequestKey) {\n      throw new Error(\"Request ID is required.\");\n    }\n\n    const reqList = await InventoryService.getRequestList();\n    let requestItems: any[] = [];\n    try {\n      const fields: any[] = await reqList.fields.select(\"InternalName\", \"Title\")();\n      const resolvedKeyName = InventoryService._resolveRequestKeyInternalName(fields);\n      requestItems = await reqList\n        .items.select(\"*\")\n        .filter(`${resolvedKeyName} eq '${normalizedRequestKey.replace(/'/g, \"''\")}'`)();\n    } catch (filterError) {\n      console.warn(\"RequestKey filter failed. Falling back to item ID based lookup.\", filterError);\n    }\n\n    if (!requestItems.length) {\n      const derivedIdMatch = /^REQ-(\\d{1,})$/.exec(normalizedRequestKey.replace(/^REQ-0*/, \"REQ-\"));\n      const parsedId = derivedIdMatch ? parseInt(derivedIdMatch[1], 10) : NaN;\n      if (!Number.isNaN(parsedId)) {\n        try {\n          const requestById = await reqList\n            .items.getById(parsedId)\n            .select(\"*\")();\n          requestItems = requestById ? [requestById] : [];\n        } catch (err) {\n          console.warn(`Fallback ID lookup failed for ${normalizedRequestKey}.`, err);\n        }\n      }\n    }\n\n    if (!requestItems || requestItems.length === 0) {\n      throw new Error(`No request found for ID ${normalizedRequestKey}`);\n    }\n\n    const requestItem = requestItems[0];\n    const requests = await this.getRequests();\n    const request = requests.find(r =>\n      this._normalizeRequestKey(r.requestKey) === normalizedRequestKey ||\n      r.id === requestItem.ID?.toString()\n    );\n\n    if (!request) {\n      throw new Error(`Request exists but could not be mapped for ID ${normalizedRequestKey}`);\n    }\n\n    const requestIdAsString = requestItem.ID ? requestItem.ID.toString() : \"\";\n    const allLogs = await this.getAuditLogs();\n    const lifecycle = allLogs\n      .filter(log =>\n        log.entityType === \"Request\" && (\n          this._normalizeRequestKey(log.entityId) === normalizedRequestKey ||\n          log.entityId === requestIdAsString ||\n          ((log.details || \"\").toUpperCase().indexOf(`\"REQUESTKEY\":\"${normalizedRequestKey}\"`) >= 0)\n        )\n      )\n      .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());\n\n    return {\n      request,\n      lifecycle\n    };\n  }\n\n  private static async _fetchItemsWithExpandedUsers(list: any): Promise<any[]> {\n    try {\n      const fields = await list.fields.select(\"InternalName\", \"Title\", \"TypeAsString\")();\n      const selectFields = [\"*\"];\n      const expandFields: string[] = [];\n\n      fields.forEach((field: any) => {\n        const name = field.InternalName;\n        const type = field.TypeAsString;\n        if (type === \"User\" || type === \"UserMulti\") {\n          const nameLower = (name || '').toLowerCase();\n          const titleLower = (field.Title || '').toLowerCase();\n          if (\n            nameLower.indexOf(\"employee\") >= 0 ||\n            nameLower.indexOf(\"requester\") >= 0 ||\n            nameLower.indexOf(\"assigned\") >= 0 ||\n            nameLower.indexOf(\"author\") >= 0 ||\n            nameLower.indexOf(\"editor\") >= 0 ||\n            titleLower.indexOf(\"employee\") >= 0 ||\n            titleLower.indexOf(\"requester\") >= 0 ||\n            titleLower.indexOf(\"assigned\") >= 0\n          ) {\n            selectFields.push(`${name}/Title`, `${name}/Id`);\n            expandFields.push(name);\n          }\n        }\n      });\n\n      if (expandFields.indexOf(\"Author\") === -1) {\n        selectFields.push(\"Author/Title\", \"Author/Id\");\n        expandFields.push(\"Author\");\n      }\n      if (expandFields.indexOf(\"Editor\") === -1) {\n        selectFields.push(\"Editor/Title\", \"Editor/Id\");\n        expandFields.push(\"Editor\");\n      }\n\n      return await list.items.select(selectFields.join(\",\")).expand(...expandFields)();\n    } catch (error: any) {\n      console.error(\"Dynamic user expansion failed:\", error);\n      throw new Error(`Dynamic user expansion failed: ${error.message || JSON.stringify(error)}`);\n    }\n  }\n\n  public static async getReturnRequests(): Promise<IReturnRequest[]> {\n    const sp = getSP();\n    try {\n      const list = sp.web.lists.getByTitle(\"ReturnRequestList\");\n      const items = await list.items.select(\"ID\", \"Title\", \"AssetID\", \"AssetName\", \"SerialNumber\", \"RequesterName\", \"RequesterEmail\", \"RequestDate\", \"ReturnReason\", \"ProposedCondition\", \"Status\", \"ManagerComment\", \"CompletedDate\")();\n      return items.map((item: any) => ({\n        id: item.ID.toString(),\n        title: item.Title || \"\",\n        assetId: item.AssetID || item.AssetId || \"\",\n        assetName: item.AssetName || \"\",\n        serialNumber: item.SerialNumber || \"\",\n        requesterName: item.RequesterName || \"\",\n        requesterEmail: item.RequesterEmail || \"\",\n        requestDate: item.RequestDate || \"\",\n        returnReason: item.ReturnReason || \"\",\n        proposedCondition: item.ProposedCondition || \"\",\n        status: item.Status || \"Pending\",\n        managerComment: item.ManagerComment || \"\",\n        completedDate: item.CompletedDate || \"\"\n      }));\n    } catch (error) {\n      console.warn(\"Could not fetch ReturnRequestList from SharePoint, using local storage fallback\", error);\n      try {\n        const local = localStorage.getItem(\"inventory_return_requests\");\n        return local ? JSON.parse(local) : [];\n      } catch {\n        return [];\n      }\n    }\n  }\n\n  public static async addReturnRequest(request: Omit<IReturnRequest, 'id' | 'status'>, userDisplayName: string): Promise<void> {\n    const sp = getSP();\n    const newRequest: IReturnRequest = {\n      ...request,\n      id: `RR-${Date.now()}`,\n      status: 'Pending'\n    };\n\n    try {\n      const list = sp.web.lists.getByTitle(\"ReturnRequestList\");\n      await list.items.add({\n        Title: request.title,\n        AssetID: request.assetId,\n        AssetName: request.assetName,\n        SerialNumber: request.serialNumber,\n        RequesterName: request.requesterName,\n        RequesterEmail: request.requesterEmail || \"\",\n        RequestDate: request.requestDate,\n        ReturnReason: request.returnReason,\n        ProposedCondition: request.proposedCondition,\n        Status: \"Pending\"\n      });\n\n    } catch (error) {\n      console.warn(\"Failed to save return request to ReturnRequestList in SharePoint, saving to local storage fallback\", error);\n      try {\n        const local = localStorage.getItem(\"inventory_return_requests\");\n        const list: IReturnRequest[] = local ? JSON.parse(local) : [];\n        list.push(newRequest);\n        localStorage.setItem(\"inventory_return_requests\", JSON.stringify(list));\n      } catch (e) {\n        console.error(\"Local storage save failed\", e);\n      }\n    }\n\n    try {\n      const list = await InventoryService.getInventoryList();\n      const fields: any[] = await list.fields.select(\"InternalName\", \"Title\", \"TypeAsString\")();\n      const statusField = fields.find((f: any) => f.InternalName.toLowerCase() === \"status\" || f.Title.toLowerCase() === \"status\");\n      const statusKey = statusField ? statusField.InternalName : \"Status\";\n      \n      await list.items.getById(parseInt(request.assetId)).update({\n        [statusKey]: \"Pending Return\"\n      });\n    } catch (error) {\n      console.warn(\"Failed to update asset status in SharePoint, doing local storage fallback for asset state\", error);\n    }\n\n    try {\n      await this.addAuditLog({\n        title: `Requested Return & Deactivated: ${request.assetName}`,\n        action: 'Deactivated',\n        entityType: 'Asset',\n        entityId: request.assetId,\n        details: JSON.stringify({\n          lifecycle: \"ReturnRequested\",\n          assetId: request.assetId,\n          assetName: request.assetName,\n          serialNumber: request.serialNumber,\n          requesterName: request.requesterName,\n          returnReason: request.returnReason,\n          proposedCondition: request.proposedCondition,\n          requestedAt: new Date().toISOString()\n        }),\n        user: userDisplayName\n      });\n    } catch (e) {\n      console.warn(\"Failed to add audit log for return request\", e);\n    }\n  }\n\n  public static async updateReturnRequestStatus(\n    requestId: string,\n    status: 'Approved' | 'Rejected' | 'Completed',\n    managerComment: string,\n    approverName: string,\n    finalCondition?: string\n  ): Promise<void> {\n    const sp = getSP();\n\n    const requests = await this.getReturnRequests();\n    const req = requests.find(r => r.id === requestId);\n    if (!req) {\n      throw new Error(`Return request with ID ${requestId} not found.`);\n    }\n\n    let updatedSharePoint = false;\n    if (requestId.indexOf(\"RR-\") !== 0) {\n      try {\n        const list = sp.web.lists.getByTitle(\"ReturnRequestList\");\n        const payload: any = {\n          Status: status,\n          ManagerComment: managerComment\n        };\n        if (status === 'Completed') {\n          payload.CompletedDate = new Date().toISOString().split('T')[0];\n        }\n        await list.items.getById(parseInt(requestId)).update(payload);\n        updatedSharePoint = true;\n      } catch (err) {\n        console.warn(\"Failed to update return request status in SharePoint\", err);\n      }\n    }\n\n    if (!updatedSharePoint) {\n      try {\n        const local = localStorage.getItem(\"inventory_return_requests\");\n        if (local) {\n          const list: IReturnRequest[] = JSON.parse(local);\n          const updated = list.map(r => {\n            if (r.id === requestId) {\n              const updatedReq = { ...r, status, managerComment };\n              if (status === 'Completed') {\n                updatedReq.completedDate = new Date().toISOString().split('T')[0];\n              }\n              return updatedReq;\n            }\n            return r;\n          });\n          localStorage.setItem(\"inventory_return_requests\", JSON.stringify(updated));\n        }\n      } catch (e) {\n        console.error(\"Local storage update failed\", e);\n      }\n    }\n\n    try {\n      const list = await InventoryService.getInventoryList();\n      const fields: any[] = await list.fields.select(\"InternalName\", \"Title\", \"TypeAsString\")();\n      \n      const findField = (searchStr: string, fallback: string): string => {\n        const field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());\n        return field ? field.InternalName : fallback;\n      };\n\n      const statusKey = findField(\"status\", \"Status\");\n      const assignedToKey = findField(\"assignedto\", \"AssignedTo\");\n      const conditionKey = findField(\"condition\", \"Condition\");\n      const noteKey = findField(\"note\", \"Note\");\n\n      const assetIdNum = parseInt(req.assetId, 10);\n\n      if (status === 'Completed') {\n        const condition = finalCondition || req.proposedCondition || \"Good\";\n        let nextStatus = \"In Stock\";\n        if (condition === \"Poor\" || condition === \"Damaged\") {\n          nextStatus = \"Under Maintenance\";\n        }\n\n        const payload: any = {\n          [statusKey]: nextStatus,\n          [assignedToKey]: null,\n          [conditionKey]: condition,\n          [noteKey]: `Returned by employee. Manager Note: ${managerComment}`\n        };\n\n        const assignedFieldObj = fields.find(f => f.InternalName === assignedToKey);\n        const isUserField = assignedFieldObj && (assignedFieldObj.TypeAsString === \"User\" || assignedFieldObj.TypeAsString === \"UserMulti\");\n        if (isUserField) {\n          payload[`${assignedToKey}Id`] = null;\n        }\n\n        try {\n          await list.items.getById(assetIdNum).update(payload);\n        } catch (err) {\n          console.warn(\"SharePoint Asset update failed on Return Completion, doing fallback\", err);\n        }\n      } else if (status === 'Approved') {\n        try {\n          await list.items.getById(assetIdNum).update({\n            [statusKey]: \"Return Approved\"\n          });\n        } catch (err) {\n          console.warn(\"SharePoint Asset update failed on Return Approval\", err);\n        }\n      } else if (status === 'Rejected') {\n        try {\n          await list.items.getById(assetIdNum).update({\n            [statusKey]: \"Assigned\"\n          });\n        } catch (err) {\n          console.warn(\"SharePoint Asset update failed on Return Rejection\", err);\n        }\n      }\n    } catch (error) {\n      console.warn(\"Failed to execute Asset inventory sync for return requests. Continuing.\", error);\n    }\n\n    try {\n      let logTitle = \"\";\n      let lifecycle = \"\";\n      if (status === 'Approved') {\n        logTitle = `Approved Return Request for Asset: ${req.assetName}`;\n        lifecycle = \"ReturnApproved\";\n      } else if (status === 'Rejected') {\n        logTitle = `Rejected Return Request for Asset: ${req.assetName}`;\n        lifecycle = \"ReturnRejected\";\n      } else if (status === 'Completed') {\n        logTitle = `Completed Return for Asset: ${req.assetName}`;\n        lifecycle = \"ReturnCompleted\";\n      }\n\n      let finalAction = 'Update';\n      let finalTitle = logTitle;\n      if (status === 'Approved') {\n        finalAction = 'Deactivated';\n        finalTitle = `Approved Return Request & Deactivated: ${req.assetName}`;\n      } else if (status === 'Rejected') {\n        finalAction = 'Activated';\n        finalTitle = `Rejected Return Request & Reactivated: ${req.assetName}`;\n      } else if (status === 'Completed') {\n        const condition = finalCondition || req.proposedCondition || \"Good\";\n        let nextStatus = \"In Stock\";\n        if (condition === \"Poor\" || condition === \"Damaged\") {\n          nextStatus = \"Under Maintenance\";\n        }\n        if (nextStatus === 'In Stock') {\n          finalAction = 'Inactivated';\n          finalTitle = `Completed Return & Inactivated: ${req.assetName} (Returned to Stock)`;\n        } else {\n          finalAction = 'Deactivated';\n          finalTitle = `Completed Return & Deactivated: ${req.assetName} (Under Maintenance)`;\n        }\n      }\n\n      await this.addAuditLog({\n        title: finalTitle,\n        action: finalAction,\n        entityType: 'Asset',\n        entityId: req.assetId,\n        details: JSON.stringify({\n          requestKey: req.id,\n          lifecycle,\n          assetName: req.assetName,\n          requesterName: req.requesterName,\n          changedBy: approverName,\n          changedAt: new Date().toISOString(),\n          managerComment,\n          condition: finalCondition || req.proposedCondition\n        }),\n        user: approverName\n      });\n    } catch (e) {\n      console.warn(\"Failed to add audit log for return request status update\", e);\n    }\n  }\n}\n"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "max-lines",
+          "ruleIndex": 4
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "`\"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/components/NotificationCenter.tsx",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 45,
+                  "snippet": {
+                    "text": "\"{filter === 'All' ? 'All' : filter + 's'}\" category."
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "react/no-unescaped-entities",
+          "ruleIndex": 5
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "`\"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/components/NotificationCenter.tsx",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 87,
+                  "snippet": {
+                    "text": "\" category."
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "react/no-unescaped-entities",
+          "ruleIndex": 5
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "File has too many lines (2265). Maximum allowed is 2000."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/components/InventoryManagement.tsx",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 2001,
+                  "startColumn": 1,
+                  "endLine": 2266,
+                  "endColumn": 1,
+                  "snippet": {
+                    "text": "                      }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });\n\n                      return (\n                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>\n                          <h4 style={{ marginBottom: '10px' }}>Asset Aging</h4>\n                          <div style={{ display: 'flex', gap: '20px' }}>\n                            <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>\n                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>&lt; 1 Year Old (New)</span>\n                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{aging.under1}</span>\n                            </div>\n                            <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>\n                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>1 - 3 Years Old</span>\n                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>{aging.between1and3}</span>\n                            </div>\n                            <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>\n                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>&gt; 3 Years Old (Aging)</span>\n                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{aging.over3}</span>\n                            </div>\n                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>\n                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Unknown Age</span>\n                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{aging.unknown}</span>\n                            </div>\n                          </div>\n                        </div>\n                      );\n                    })()}\n\n                    <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>\n                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>\n                        <h4 style={{ margin: 0 }}>Warranty Expiry Report</h4>\n                        <PrimaryButton\n                          text=\"Export to Excel\"\n                          iconProps={{ iconName: 'ExcelDocument' }}\n                          onClick={this._exportWarrantyReportToExcel}\n                          styles={{ \n                            root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' }, \n                            rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },\n                            rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }\n                          }}\n                        />\n                      </div>\n                      <div style={{ marginBottom: '15px', display: 'flex', gap: '20px' }}>\n                        <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>\n                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets Count</span>\n                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>\n                        </div>\n                        <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>\n                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Assets with Warranty Data</span>\n                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.filter(i => i.warrantyExpiry).length}</span>\n                        </div>\n                      </div>\n                      <DetailsList\n                        items={items}\n                        columns={[\n                          { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },\n                          { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },\n                          { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },\n                          { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },\n                          {\n                            key: 'col5',\n                            name: 'Warranty Expiry Date',\n                            fieldName: 'warrantyExpiry',\n                            minWidth: 140,\n                            maxWidth: 200,\n                            isResizable: true,\n                            onRender: (item) => {\n                              const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();\n                              return (\n                                <span style={{\n                                  color: isExpired ? '#ef4444' : 'inherit',\n                                  fontWeight: isExpired ? 'bold' : 'normal'\n                                }}>\n                                  {item.warrantyExpiry || 'N/A'} {isExpired && '(Expired)'}\n                                </span>\n                              );\n                            }\n                          }\n                        ]}\n                        setKey=\"warrantyReport\"\n                        layoutMode={DetailsListLayoutMode.justified}\n                        selectionMode={SelectionMode.none}\n                      />\n                    </div>\n                  </div>\n                </PivotItem>\n              )}\n              {isAdmin && (\n                <PivotItem headerText=\"Config\" itemIcon=\"Settings\" itemKey=\"Config\">\n                  <div style={{ marginTop: '20px' }}>\n                    <div className={styles.cardHeader}>\n                      <h3>Configuration</h3>\n                    </div>\n                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                      Admin-only configuration area for list schema, process settings, and environment setup.\n                    </p>\n\n                    {/* Sync & Diagnostics Operations Section */}\n                    <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' }}>\n                      <h4 style={{ marginBottom: '10px', color: '#111827', marginTop: 0 }}>Mapping List Management & Sync</h4>\n                      <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' }}>\n                        Ensure all assets currently assigned to active employees are properly mapped to the SharePoint <strong>Mapping List</strong>.\n                        Use the buttons below to perform a manual synchronization check or diagnose the list&apos;s database schema.\n                      </p>\n\n                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' }}>\n                        <PrimaryButton\n                          text={this.state.syncInProgress ? \"Processing...\" : \"Sync Assigned Assets\"}\n                          iconProps={{ iconName: 'Sync' }}\n                          onClick={this._onSyncAssignedAssets}\n                          disabled={this.state.syncInProgress}\n                        />\n                        <PrimaryButton\n                          text={this.state.syncInProgress ? \"Checking Schema...\" : \"Run Schema Diagnostics\"}\n                          iconProps={{ iconName: 'Database' }}\n                          onClick={this._onRunDiagnostics}\n                          disabled={this.state.syncInProgress}\n                          styles={{\n                            root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },\n                            rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }\n                          }}\n                        />\n                      </div>\n\n                      {this.state.syncMessage && (\n                        <MessageBar\n                          messageBarType={this.state.syncMessageType}\n                          onDismiss={() => this.setState({ syncMessage: undefined })}\n                          styles={{ root: { marginBottom: '15px', borderRadius: '6px' } }}\n                        >\n                          {this.state.syncMessage}\n                        </MessageBar>\n                      )}\n\n                      {this.state.diagnosticInfo && (\n                        <div style={{ marginTop: '15px' }}>\n                          <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' }}>Diagnostic Log Output:</span>\n                          <textarea\n                            readOnly\n                            value={this.state.diagnosticInfo}\n                            rows={10}\n                            style={{\n                              width: '100%',\n                              fontFamily: 'monospace',\n                              fontSize: '0.82rem',\n                              padding: '10px',\n                              backgroundColor: '#f3f2f1',\n                              border: '1px solid #e1dfdd',\n                              borderRadius: '4px',\n                              resize: 'vertical',\n                              color: '#323130'\n                            }}\n                          />\n                        </div>\n                      )}\n                    </div>\n\n                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>\n                      <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>\n                        <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>SharePoint List Connections</h4>\n                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>\n                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>\n                            <span style={{ color: '#4b5563' }}>Inventory Database:</span>\n                            <strong style={{ color: '#111827' }}>InventoryList</strong>\n                          </li>\n                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>\n                            <span style={{ color: '#4b5563' }}>Approvals & Requests:</span>\n                            <strong style={{ color: '#111827' }}>RequestList</strong>\n                          </li>\n                          <li style={{ display: 'flex', justifyContent: 'space-between' }}>\n                            <span style={{ color: '#4b5563' }}>System Audit Logs:</span>\n                            <strong style={{ color: '#111827' }}>AuditLogList</strong>\n                          </li>\n                        </ul>\n                      </div>\n\n                      <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>\n                        <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>Role Based Access Control</h4>\n                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>\n                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>\n                            <span style={{ color: '#4b5563' }}>Admin Group:</span>\n                            <strong style={{ color: '#111827' }}>Inventory Administrators</strong>\n                          </li>\n                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>\n                            <span style={{ color: '#4b5563' }}>Manager Group:</span>\n                            <strong style={{ color: '#111827' }}>Inventory Managers</strong>\n                          </li>\n                          <li style={{ display: 'flex', justifyContent: 'space-between' }}>\n                            <span style={{ color: '#4b5563' }}>Employee Access:</span>\n                            <strong style={{ color: '#111827' }}>Site Visitors</strong>\n                          </li>\n                        </ul>\n                      </div>\n                    </div>\n\n                    <div style={{ marginTop: '20px', backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>\n                      <h4 style={{ marginBottom: '5px', color: '#111827', marginTop: 0 }}>Required List Schema (Developer Reference)</h4>\n                      <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '15px', marginTop: 0 }}>Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors.</p>\n\n                      <h5 style={{ marginTop: '15px', marginBottom: '8px', color: '#374151' }}>InventoryList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Asset Database)</span></h5>\n                      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>\n                        {['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (\n                          <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>\n                        ))}\n                      </div>\n\n                      <h5 style={{ marginBottom: '8px', color: '#374151' }}>RequestList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Approval Workflows)</span></h5>\n                      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>\n                        {['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (\n                          <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>\n                        ))}\n                      </div>\n                    </div>\n                  </div>\n                </PivotItem>\n              )}\n            </Pivot>\n          </div>\n\n        </div>\n\n        {(isAdmin || isManager) && (\n          <AssetForm\n            isOpen={isAssetFormOpen}\n            onClose={() => this.setState({ isAssetFormOpen: false })}\n            currentUserRole={effectiveRole}\n            onAddAsset={this._onAddAsset}\n          />\n        )}\n\n        {(isAdmin || isManager || isEmployee) && (\n          <RequestForm\n            isOpen={isRequestFormOpen}\n            onClose={() => this.setState({ isRequestFormOpen: false })}\n            availableAssets={items}\n            employees={this.state.employees}\n            currentUserRole={effectiveRole}\n            currentUserName={activeUserDisplayName}\n            onSubmitRequest={this._onSubmitRequest}\n          />\n        )}\n\n        {(isAdmin || isManager || isEmployee) && (\n          <IncidentRequestModule\n            {...this.props}\n            isOpen={this.state.isIncidentFormOpen}\n            onClose={() => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined })}\n            userDisplayName={activeUserDisplayName}\n            userEmail={activeUserEmail}\n            setIsLoading={(loading) => this.setState({ loading })}\n            preselectedAsset={this.state.selectedAssetForIncident}\n          />\n        )}\n\n        {this._renderNotificationDetailsPanel()}\n        {this._renderAdminAssignmentPanel()}\n        <ReturnAssetForm\n          isOpen={this.state.isReturnFormOpen}\n          onDismiss={() => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined })}\n          asset={this.state.selectedAssetForReturn}\n          onSubmit={this._onSubmitReturnRequest}\n        />\n      </section>\n    );\n  }\n}\n"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "max-lines",
+          "ruleIndex": 4
+        }
+      ]
+    }
+  ]
+}
