@@ -143,7 +143,8 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
     <Panel
       isOpen={props.isOpen}
       onDismiss={props.onClose}
-      type={PanelType.medium}
+      type={PanelType.custom}
+      customWidth="450px"
       headerText="Request an Asset"
       closeButtonAriaLabel="Close"
     >

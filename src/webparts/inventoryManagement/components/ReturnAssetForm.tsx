@@ -72,7 +72,8 @@ export const ReturnAssetForm: React.FC<IReturnAssetFormProps> = (props) => {
     <Panel
       isOpen={isOpen}
       onDismiss={onDismiss}
-      type={PanelType.medium}
+      type={PanelType.custom}
+      customWidth="450px"
       headerText="Request Asset Return"
       closeButtonAriaLabel="Close"
       onRenderFooterContent={onRenderFooterContent}

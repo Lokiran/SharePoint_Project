@@ -47,7 +47,7 @@ const ReturnAssetForm = (props) => {
     const onRenderFooterContent = () => (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 10 } },
         React.createElement(Button_1.PrimaryButton, { text: "Submit Request", onClick: handleSubmit, disabled: submitting }),
         React.createElement(Button_1.DefaultButton, { text: "Cancel", onClick: onDismiss, disabled: submitting })));
-    return (React.createElement(Panel_1.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: Panel_1.PanelType.medium, headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
+    return (React.createElement(Panel_1.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: Panel_1.PanelType.custom, customWidth: "450px", headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
         React.createElement("div", { style: { marginTop: '20px' } },
             error && (React.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '10px 15px', borderRadius: '4px', marginBottom: '15px', fontSize: '0.88rem' } },
                 React.createElement("strong", null, "Error:"),

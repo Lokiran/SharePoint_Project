@@ -22,6 +22,10 @@
       --surface-bg: #1e293b;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
+
+      .sidebarNavItem:hover {
+        background-color: rgba(255, 255, 255, 0.06) !important;
+      }
     }
 
     .mainContent {
@@ -120,10 +124,10 @@
 
     .actionButtonContainer {
       background: var(--surface-bg);
-      padding: 8px;
-      border-radius: var(--radius-md);
+      padding: 6px;
+      border-radius: 8px;
       box-shadow: var(--card-shadow);
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       
       &:hover {
         transform: translateY(-2px);
@@ -132,16 +136,67 @@
 
       :global(.ms-Button--primary) {
         width: 100%;
-        border-radius: 8px;
-        height: 48px;
+        border-radius: 6px;
+        height: 40px;
         background: var(--primary-gradient);
         border: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
         
         &:hover {
-          filter: brightness(1.1);
+          filter: brightness(1.15);
+          transform: scale(1.01);
         }
       }
     }
+
+    // Sidebar navigation styles
+    .sidebarNavItem {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.08) !important;
+        color: var(--text-main) !important;
+      }
+    }
+
+    .appLayoutContainer {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 20px;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    .sidebarContainer {
+      width: 250px;
+      background-color: var(--surface-bg);
+      border: 1px solid rgba(128, 128, 128, 0.15);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+    .contentContainer {
+      flex-grow: 1;
+      min-width: 0;
+      margin-top: 0;
+    }
+
 
     // Card Styling
     .card {

@@ -7,11 +7,15 @@ export interface IExportStyles {
 
   'active': string;
 
+  'appLayoutContainer': string;
+
   'assetCardHover': string;
 
   'card': string;
 
   'cardHeader': string;
+
+  'contentContainer': string;
 
   'dark': string;
 
@@ -32,6 +36,10 @@ export interface IExportStyles {
   'paginationControls': string;
 
   'paginationInfo': string;
+
+  'sidebarContainer': string;
+
+  'sidebarNavItem': string;
 
   'smallText': string;
 

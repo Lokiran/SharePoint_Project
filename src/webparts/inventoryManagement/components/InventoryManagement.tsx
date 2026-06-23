@@ -1504,6 +1504,38 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     const visibleManagerRequests = filterRequests(managerQueueRequests);
     const notifications = this._getNotifications();
 
+    const navItems = [
+      { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4' },
+      { key: 'MyAssets', text: 'My Assets', icon: 'Broom' },
+      { key: 'MyRequests', text: 'My Requests', icon: 'Send' },
+      { 
+        key: 'Notifications', 
+        text: 'Notifications', 
+        icon: 'Ringer', 
+        badge: notifications.filter(n => !n.isRead).length || undefined,
+        badgeColor: '#3b82f6'
+      },
+      { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
+      ...(isAdmin ? [
+        { key: 'Inventory', text: 'Inventory', icon: 'List' }
+      ] : []),
+      ...(isManager ? [
+        { key: 'Approvals', text: 'Approvals', icon: 'DoubleChevronRight12' }
+      ] : []),
+      ...(isAdmin ? [
+        { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send' }
+      ] : []),
+      ...(isAdmin || isManager ? [
+        { key: 'AssetReturns', text: 'Asset Returns', icon: 'ReturnToSession' }
+      ] : []),
+      ...(isAdmin ? [
+        { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed' },
+        { key: 'Users', text: 'Users', icon: 'People' },
+        { key: 'Reports', text: 'Reports', icon: 'ReportDocument' },
+        { key: 'Config', text: 'Config', icon: 'Settings' }
+      ] : [])
+    ];
+
     return (
       <section className={`${styles.inventoryManagement} ${hasTeamsContext ? styles.teams : ''} ${isDarkTheme ? styles.dark : ''}`}>
         <div className={styles.mainContent}>
@@ -1576,134 +1608,162 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             </div>
           )}
 
-          <div className={styles.card}>
-            <Pivot
-              aria-label="Inventory Management Views"
-              selectedKey={this.state.selectedTabKey}
-              onLinkClick={(item) => item && this.setState({ selectedTabKey: item.props.itemKey })}
-            >
-              <PivotItem headerText="Dashboard" itemIcon="BarChart4" itemKey="Dashboard">
-                <Dashboard
-                  items={isAdmin || isManager ? items : myAssets}
-                  requests={isAdmin || isManager ? this.state.requests : myRequests}
-                  isAdmin={isAdmin}
-                  isInventoryManager={isManager}
-                />
-              </PivotItem>
-              {/* Universal Tabs for Everyone */}
-              <PivotItem headerText="My Assets" itemIcon="Broom" itemKey="MyAssets">
-                <div style={{ marginTop: '20px' }}>
-                  <div className={styles.cardHeader}>
-                    <h3>My Assigned Assets</h3>
-                  </div>
-                  <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                    View assets currently assigned to you.
-                  </p>
-                  <MyAssignedAssetsView 
-                    items={myAssets} 
-                    onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
-                    onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
-                  />
-                </div>
-              </PivotItem>
-
-              <PivotItem headerText="My Requests" itemIcon="Send" itemKey="MyRequests">
-                <div style={{ marginTop: '20px' }}>
-                  <div className={styles.cardHeader}>
-                    <h3>My Asset Requests</h3>
-                  </div>
-                  <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                    Track your submitted requests and approval status.
-                  </p>
-                  <MyRequestsView requests={myRequests} />
-                </div>
-              </PivotItem>
-
-              <PivotItem
-                headerText={notifications.filter(n => !n.isRead).length > 0 ? `Notifications (${notifications.filter(n => !n.isRead).length})` : "Notifications"}
-                itemIcon="Ringer"
-                itemKey="Notifications"
-              >
-                <NotificationCenter
-                  notifications={notifications}
-                  onMarkAsRead={this._markNotificationAsRead}
-                  onMarkAllAsRead={this._markAllNotificationsAsRead}
-                  onClearNotification={this._clearNotification}
-                  onClearAllNotifications={this._clearAllNotifications}
-                  onNotificationAction={this._handleNotificationAction}
-                />
-              </PivotItem>
-
-              <PivotItem headerText="Incident History" itemIcon="History" itemKey="IncidentHistory">
-                <div style={{ marginTop: '20px' }}>
-                  <IncidentHistory
-                    {...this.props}
-                    userDisplayName={activeUserDisplayName}
-                    userEmail={activeUserEmail}
-                    userRole={effectiveRole}
-                    setIsLoading={(loading) => this.setState({ loading })}
-                  />
-                </div>
-              </PivotItem>
-
-              {/* Admin-only Inventory */}
-              {isAdmin && (
-                <PivotItem headerText="Inventory" itemIcon="List" itemKey="Inventory">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Current Inventory Overview</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Track and manage your organizational assets efficiently within the SharePoint Framework.
-                    </p>
-                    {this.state.loading ? (
-                      <p>Loading inventory...</p>
-                    ) : (
-                      <InventoryList items={items} isAdmin={true} enablePagination={true} />
+          <div className={styles.appLayoutContainer}>
+            {/* Left Sidebar Navigation */}
+            <div className={styles.sidebarContainer}>
+              <div style={{ padding: '8px 12px 16px 12px', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', marginBottom: '8px' }}>
+                <h4 style={{ margin: 0, fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)' }}>Navigation</h4>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Role: {effectiveRole}</span>
+              </div>
+              {navItems.map(nav => {
+                const isActive = this.state.selectedTabKey === nav.key;
+                return (
+                  <div
+                    key={nav.key}
+                    onClick={() => this.setState({ selectedTabKey: nav.key })}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '10px 14px',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                      fontSize: '0.85rem',
+                      fontWeight: isActive ? 600 : 500,
+                      backgroundColor: isActive 
+                        ? (isDarkTheme ? 'rgba(59, 130, 246, 0.15)' : 'rgba(37, 99, 235, 0.08)')
+                        : 'transparent',
+                      color: isActive 
+                        ? (isDarkTheme ? '#60a5fa' : '#2563eb')
+                        : 'var(--text-muted)',
+                      transition: 'all 0.15s ease'
+                    }}
+                    className={styles.sidebarNavItem}
+                  >
+                    <Icon iconName={nav.icon} style={{ fontSize: '15px' }} />
+                    <span style={{ flexGrow: 1 }}>{nav.text}</span>
+                    {nav.badge !== undefined && nav.badge > 0 && (
+                      <span style={{
+                        fontSize: '0.7rem',
+                        fontWeight: 600,
+                        backgroundColor: nav.badgeColor || '#ef4444',
+                        color: '#ffffff',
+                        padding: '2px 6px',
+                        borderRadius: '9999px'
+                      }}>
+                        {nav.badge}
+                      </span>
                     )}
                   </div>
-                </PivotItem>
-              )}
+                );
+              })}
+            </div>
 
-              {/* Manager Approvals Queue */}
-              {isManager && (
-                <PivotItem headerText="Approvals" itemIcon="DoubleChevronRight12" itemKey="Approvals">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Request Approvals & Assignment Queue</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Track and manage all asset requests efficiently.
-                    </p>
-                    <TextField
-                      label="Search by Request ID"
-                      placeholder="e.g. REQ-000123"
-                      value={requestSearchId}
-                      onChange={(_, value) => this.setState({ requestSearchId: value || '' })}
-                      styles={{ root: { marginBottom: '12px', maxWidth: 320 } }}
-                    />
-                    <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                      <h4 style={{ marginBottom: '10px' }}>Request Approval Distribution</h4>
-                      <div style={{ height: '250px', position: 'relative' }}>
-                        <Pie
-                          data={{
-                            labels: Object.keys(
-                              managerQueueRequests.reduce((acc, req) => {
-                                const status = req.status || 'Pending';
-                                acc[status] = (acc[status] || 0) + 1;
-                                return acc;
-                              }, {} as Record<string, number>)
-                            ).length ? Object.keys(
-                              managerQueueRequests.reduce((acc, req) => {
-                                const status = req.status || 'Pending';
-                                acc[status] = (acc[status] || 0) + 1;
-                                return acc;
-                              }, {} as Record<string, number>)
-                            ) : ['No data'],
-                            datasets: [
-                              {
-                                label: 'Requests by Status',
-                                data: Object.keys(
+            {/* Right Main Content Area */}
+            <div className={`${styles.card} ${styles.contentContainer}`}>
+              {(() => {
+                switch (this.state.selectedTabKey) {
+                  case 'Dashboard':
+                    return (
+                      <Dashboard
+                        items={isAdmin || isManager ? items : myAssets}
+                        requests={isAdmin || isManager ? this.state.requests : myRequests}
+                        isAdmin={isAdmin}
+                        isInventoryManager={isManager}
+                      />
+                    );
+                  case 'MyAssets':
+                    return (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>My Assigned Assets</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          View assets currently assigned to you.
+                        </p>
+                        <MyAssignedAssetsView 
+                          items={myAssets} 
+                          onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
+                          onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
+                        />
+                      </div>
+                    );
+                  case 'MyRequests':
+                    return (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>My Asset Requests</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Track your submitted requests and approval status.
+                        </p>
+                        <MyRequestsView requests={myRequests} />
+                      </div>
+                    );
+                  case 'Notifications':
+                    return (
+                      <NotificationCenter
+                        notifications={notifications}
+                        onMarkAsRead={this._markNotificationAsRead}
+                        onMarkAllAsRead={this._markAllNotificationsAsRead}
+                        onClearNotification={this._clearNotification}
+                        onClearAllNotifications={this._clearAllNotifications}
+                        onNotificationAction={this._handleNotificationAction}
+                      />
+                    );
+                  case 'IncidentHistory':
+                    return (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Incident History</h3>
+                        </div>
+                        <IncidentHistory
+                          {...this.props}
+                          userDisplayName={activeUserDisplayName}
+                          userEmail={activeUserEmail}
+                          userRole={effectiveRole}
+                          setIsLoading={(loading) => this.setState({ loading })}
+                        />
+                      </div>
+                    );
+                  case 'Inventory':
+                    return isAdmin ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Current Inventory Overview</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Track and manage your organizational assets efficiently within the SharePoint Framework.
+                        </p>
+                        {this.state.loading ? (
+                          <p>Loading inventory...</p>
+                        ) : (
+                          <InventoryList items={items} isAdmin={true} enablePagination={true} />
+                        )}
+                      </div>
+                    ) : null;
+                  case 'Approvals':
+                    return isManager ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Request Approvals & Assignment Queue</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Track and manage all asset requests efficiently.
+                        </p>
+                        <TextField
+                          label="Search by Request ID"
+                          placeholder="e.g. REQ-000123"
+                          value={requestSearchId}
+                          onChange={(_, value) => this.setState({ requestSearchId: value || '' })}
+                          styles={{ root: { marginBottom: '12px', maxWidth: 320 } }}
+                        />
+                        <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                          <h4 style={{ marginBottom: '10px' }}>Request Approval Distribution</h4>
+                          <div style={{ height: '250px', position: 'relative' }}>
+                            <Pie
+                              data={{
+                                labels: Object.keys(
                                   managerQueueRequests.reduce((acc, req) => {
                                     const status = req.status || 'Pending';
                                     acc[status] = (acc[status] || 0) + 1;
@@ -1715,505 +1775,516 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                                     acc[status] = (acc[status] || 0) + 1;
                                     return acc;
                                   }, {} as Record<string, number>)
-                                ).map(k =>
-                                  (managerQueueRequests.reduce((acc, req) => {
-                                    const status = req.status || 'Pending';
-                                    acc[status] = (acc[status] || 0) + 1;
-                                    return acc;
-                                  }, {} as Record<string, number>))[k]
-                                ) : [1],
-                                backgroundColor: [
-                                  'rgba(255, 206, 86, 0.6)',
-                                  'rgba(75, 192, 192, 0.6)',
-                                  'rgba(255, 99, 132, 0.6)',
-                                  'rgba(153, 102, 255, 0.6)',
-                                  'rgba(54, 162, 235, 0.6)',
+                                ) : ['No data'],
+                                datasets: [
+                                  {
+                                    label: 'Requests by Status',
+                                    data: Object.keys(
+                                      managerQueueRequests.reduce((acc, req) => {
+                                        const status = req.status || 'Pending';
+                                        acc[status] = (acc[status] || 0) + 1;
+                                        return acc;
+                                      }, {} as Record<string, number>)
+                                    ).length ? Object.keys(
+                                      managerQueueRequests.reduce((acc, req) => {
+                                        const status = req.status || 'Pending';
+                                        acc[status] = (acc[status] || 0) + 1;
+                                        return acc;
+                                      }, {} as Record<string, number>)
+                                    ).map(k =>
+                                      (managerQueueRequests.reduce((acc, req) => {
+                                        const status = req.status || 'Pending';
+                                        acc[status] = (acc[status] || 0) + 1;
+                                        return acc;
+                                      }, {} as Record<string, number>))[k]
+                                    ) : [1],
+                                    backgroundColor: [
+                                      'rgba(255, 206, 86, 0.6)',
+                                      'rgba(75, 192, 192, 0.6)',
+                                      'rgba(255, 99, 132, 0.6)',
+                                      'rgba(153, 102, 255, 0.6)',
+                                      'rgba(54, 162, 235, 0.6)',
+                                    ],
+                                    borderColor: [
+                                      'rgba(255, 206, 86, 1)',
+                                      'rgba(75, 192, 192, 1)',
+                                      'rgba(255, 99, 132, 1)',
+                                      'rgba(153, 102, 255, 1)',
+                                      'rgba(54, 162, 235, 1)',
+                                    ],
+                                    borderWidth: 1,
+                                  },
                                 ],
-                                borderColor: [
-                                  'rgba(255, 206, 86, 1)',
-                                  'rgba(75, 192, 192, 1)',
-                                  'rgba(255, 99, 132, 1)',
-                                  'rgba(153, 102, 255, 1)',
-                                  'rgba(54, 162, 235, 1)',
-                                ],
-                                borderWidth: 1,
-                              },
-                            ],
-                          }}
-                          options={{ maintainAspectRatio: false }}
-                        />
-                      </div>
-                    </div>
-                    <RequestList
-                      items={visibleManagerRequests}
-                      canApproveReject={true}
-                      canApproveAsset={false}
-                      hideStatusColumn={false}
-                      showResponseColumns={false}
-                      onApproveRequest={this._onApproveRequest}
-                      onRejectRequest={this._onRejectRequest}
-                      actionInProgressId={requestActionInProgressId}
-                    />
-                  </div>
-                </PivotItem>
-              )}
-
-              {/* Admin Asset Assignment Queue */}
-              {isAdmin && (
-                <PivotItem headerText="Asset Assignment Queue" itemIcon="Send" itemKey="AssetAssignmentQueue">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Approved Requests for Asset Assignment</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Only approved requests are shown here so assets can be assigned.
-                    </p>
-                    <TextField
-                      label="Search by Request ID"
-                      placeholder="e.g. REQ-000123"
-                      value={requestSearchId}
-                      onChange={(_, value) => this.setState({ requestSearchId: value || '' })}
-                      styles={{ root: { marginBottom: '12px', maxWidth: 320 } }}
-                    />
-                    <RequestList
-                      items={visibleAdminRequests}
-                      canApproveReject={false}
-                      canApproveAsset={true}
-                      hideStatusColumn={true}
-                      showResponseColumns={false}
-                      onSelectRequestForAssignment={(request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })}
-                      actionInProgressId={requestActionInProgressId}
-                    />
-                  </div>
-                </PivotItem>
-              )}
-              {(isAdmin || isManager) && (
-                <PivotItem headerText="Asset Returns" itemIcon="ReturnToSession" itemKey="AssetReturns">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Asset Returns Registry</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Review and complete employee asset return requests, and verify physical hardware check-ins.
-                    </p>
-                    <ReturnRequestList
-                      items={this.state.returnRequests}
-                      isAdmin={isAdmin}
-                      isManager={isManager}
-                      onUpdateStatus={this._onUpdateReturnRequestStatus}
-                      loading={this.state.returnRequestsLoading}
-                    />
-                  </div>
-                </PivotItem>
-              )}
-              {isAdmin && (
-                <PivotItem headerText="Event Stream" itemIcon="ActivityFeed" itemKey="EventStream">
-                  <EventStream
-                    logs={auditLogs}
-                    loading={auditLogsLoading}
-                    errorMessage={undefined}
-                    currentUserRole={effectiveRole}
-                    currentUserName={activeUserDisplayName}
-                  />
-                </PivotItem>
-              )}
-              {isAdmin && (
-                <PivotItem headerText="Users" itemIcon="People" itemKey="Users">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>User Administration</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Admin-only area. Manage SharePoint groups and user onboarding from your site permissions.
-                    </p>
-                    <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' }}>
-                      <h4 style={{ marginTop: 0, marginBottom: '10px', color: '#0078d4' }}>SharePoint Group Management</h4>
-                      <p style={{ margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' }}>
-                        To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups.
-                      </p>
-                      <PrimaryButton
-                        text="Manage Site Permissions"
-                        iconProps={{ iconName: 'Permissions' }}
-                        onClick={() => {
-                          const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
-                          window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
-                        }}
-                      />
-                    </div>
-
-                    <h4 style={{ marginBottom: '15px' }}>Employee Directory & Asset Ownership</h4>
-                    <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                      <DetailsList
-                        items={this.state.employees.map(emp => {
-                          const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
-                          const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
-                          const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
-                          return {
-                            ...emp,
-                            assignedAssets: assignedItems.length,
-                            assignedItems: assignedItems,
-                            assetTypes: assetTypes || 'None'
-                          };
-                        })}
-                        columns={[
-                          { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
-                          { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
-                          { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
-                          { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
-                          {
-                            key: 'col5',
-                            name: 'Assigned Assets',
-                            fieldName: 'assignedAssets',
-                            minWidth: 100,
-                            maxWidth: 120,
-                            isResizable: true,
-                            onRender: (item) => (
-                              <span style={{
-                                backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
-                                color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
-                                padding: '4px 10px',
-                                borderRadius: '9999px',
-                                fontWeight: 'bold'
-                              }}>
-                                {item.assignedAssets}
-                              </span>
-                            )
-                          },
-                          { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                        ]}
-                        setKey="usersList"
-                        layoutMode={DetailsListLayoutMode.justified}
-                        selectionMode={SelectionMode.none}
-                        onRenderRow={(rowProps) => {
-                          if (!rowProps) return null;
-                          const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
-
-                          return (
-                            <div>
-                              <div
-                                onClick={() => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email })}
-                                style={{ cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } as any}
-                              >
-                                <DetailsRow {...rowProps} />
-                              </div>
-                              {isExpanded && (
-                                <div style={{ padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
-                                  <h4 style={{ marginTop: 0, marginBottom: '15px', color: '#111827' }}>Assets assigned to {rowProps.item.name}</h4>
-                                  {rowProps.item.assignedItems.length > 0 ? (
-                                    <InventoryList items={rowProps.item.assignedItems} isAdmin={false} />
-                                  ) : (
-                                    <p style={{ color: '#6b7280', fontSize: '0.9rem', margin: 0 }}>This user currently has no assets assigned to them.</p>
-                                  )}
-                                </div>
-                              )}
-                            </div>
-                          );
-                        }}
-                      />
-                    </div>
-
-                    <div style={{ marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' }}>
-                      <div className={styles.cardHeader}>
-                        <h3>Employee Asset Tracking</h3>
-                      </div>
-                      <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                        Admin and Manager area. Select an employee to view all assets currently assigned to them.
-                      </p>
-                      <AssetTracking
-                        items={items}
-                        employees={this.state.employees}
-                        currentUserRole={effectiveRole}
-                        currentUserName={activeUserDisplayName}
-                        currentUserEmail={activeUserEmail}
-                      />
-                    </div>
-
-                  </div>
-                </PivotItem>
-              )}
-              {isAdmin && (
-                <PivotItem headerText="Reports" itemIcon="ReportDocument" itemKey="Reports">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Reporting & Insights</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Use dashboard and event history to derive utilization, approval trends, and asset aging reports.
-                    </p>
-
-                    <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                      <h4 style={{ marginBottom: '10px' }}>Asset Utilization</h4>
-                      <div style={{ display: 'flex', gap: '20px' }}>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
-                        </div>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#dbeafe', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#1e40af', marginBottom: '4px' }}>In Use / Assigned</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a' }}>{items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length}</span>
-                        </div>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>Utilization Rate</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>
-                            {items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0}%
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                      <h4 style={{ marginBottom: '10px' }}>Approval Trends</h4>
-                      <div style={{ display: 'flex', gap: '20px' }}>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Requests</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{this.state.requests.length}</span>
-                        </div>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>Approved</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length}</span>
-                        </div>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>Declined</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length}</span>
-                        </div>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>Approval Rate</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>
-                            {this.state.requests.length > 0 ? Math.round((this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length / this.state.requests.length) * 100) : 0}%
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {(() => {
-                      const now = new Date();
-                      const aging = items.reduce((acc, item) => {
-                        if (!item.purchaseDate) {
-                          acc.unknown++;
-                          return acc;
-                        }
-                        const pd = new Date(item.purchaseDate);
-                        const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                        if (diffYears < 1) acc.under1++;
-                        else if (diffYears <= 3) acc.between1and3++;
-                        else acc.over3++;
-                        return acc;
-                      }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-
-                      return (
-                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                          <h4 style={{ marginBottom: '10px' }}>Asset Aging</h4>
-                          <div style={{ display: 'flex', gap: '20px' }}>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>&lt; 1 Year Old (New)</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{aging.under1}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>1 - 3 Years Old</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>{aging.between1and3}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>&gt; 3 Years Old (Aging)</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{aging.over3}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Unknown Age</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{aging.unknown}</span>
-                            </div>
+                              }}
+                              options={{ maintainAspectRatio: false }}
+                            />
                           </div>
                         </div>
-                      );
-                    })()}
-
-                    <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                        <h4 style={{ margin: 0 }}>Warranty Expiry Report</h4>
-                        <PrimaryButton
-                          text="Export to Excel"
-                          iconProps={{ iconName: 'ExcelDocument' }}
-                          onClick={this._exportWarrantyReportToExcel}
-                          styles={{ 
-                            root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' }, 
-                            rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },
-                            rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }
-                          }}
+                        <RequestList
+                          items={visibleManagerRequests}
+                          canApproveReject={true}
+                          canApproveAsset={false}
+                          hideStatusColumn={false}
+                          showResponseColumns={false}
+                          onApproveRequest={this._onApproveRequest}
+                          onRejectRequest={this._onRejectRequest}
+                          actionInProgressId={requestActionInProgressId}
                         />
                       </div>
-                      <div style={{ marginBottom: '15px', display: 'flex', gap: '20px' }}>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets Count</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
+                    ) : null;
+                  case 'AssetAssignmentQueue':
+                    return isAdmin ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Approved Requests for Asset Assignment</h3>
                         </div>
-                        <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Assets with Warranty Data</span>
-                          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.filter(i => i.warrantyExpiry).length}</span>
-                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Only approved requests are shown here so assets can be assigned.
+                        </p>
+                        <TextField
+                          label="Search by Request ID"
+                          placeholder="e.g. REQ-000123"
+                          value={requestSearchId}
+                          onChange={(_, value) => this.setState({ requestSearchId: value || '' })}
+                          styles={{ root: { marginBottom: '12px', maxWidth: 320 } }}
+                        />
+                        <RequestList
+                          items={visibleAdminRequests}
+                          canApproveReject={false}
+                          canApproveAsset={true}
+                          hideStatusColumn={true}
+                          showResponseColumns={false}
+                          onSelectRequestForAssignment={(request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })}
+                          actionInProgressId={requestActionInProgressId}
+                        />
                       </div>
-                      <DetailsList
-                        items={items}
-                        columns={[
-                          { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
-                          { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                          { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
-                          { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-                          {
-                            key: 'col5',
-                            name: 'Warranty Expiry Date',
-                            fieldName: 'warrantyExpiry',
-                            minWidth: 140,
-                            maxWidth: 200,
-                            isResizable: true,
-                            onRender: (item) => {
-                              const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
-                              return (
-                                <span style={{
-                                  color: isExpired ? '#ef4444' : 'inherit',
-                                  fontWeight: isExpired ? 'bold' : 'normal'
-                                }}>
-                                  {item.warrantyExpiry || 'N/A'} {isExpired && '(Expired)'}
-                                </span>
-                              );
-                            }
-                          }
-                        ]}
-                        setKey="warrantyReport"
-                        layoutMode={DetailsListLayoutMode.justified}
-                        selectionMode={SelectionMode.none}
+                    ) : null;
+                  case 'AssetReturns':
+                    return isAdmin || isManager ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Asset Returns Registry</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Review and complete employee asset return requests, and verify physical hardware check-ins.
+                        </p>
+                        <ReturnRequestList
+                          items={this.state.returnRequests}
+                          isAdmin={isAdmin}
+                          isManager={isManager}
+                          onUpdateStatus={this._onUpdateReturnRequestStatus}
+                          loading={this.state.returnRequestsLoading}
+                        />
+                      </div>
+                    ) : null;
+                  case 'EventStream':
+                    return isAdmin ? (
+                      <EventStream
+                        logs={auditLogs}
+                        loading={auditLogsLoading}
+                        errorMessage={undefined}
+                        currentUserRole={effectiveRole}
+                        currentUserName={activeUserDisplayName}
                       />
-                    </div>
-                  </div>
-                </PivotItem>
-              )}
-              {isAdmin && (
-                <PivotItem headerText="Config" itemIcon="Settings" itemKey="Config">
-                  <div style={{ marginTop: '20px' }}>
-                    <div className={styles.cardHeader}>
-                      <h3>Configuration</h3>
-                    </div>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                      Admin-only configuration area for list schema, process settings, and environment setup.
-                    </p>
-
-                    {/* Sync & Diagnostics Operations Section */}
-                    <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' }}>
-                      <h4 style={{ marginBottom: '10px', color: '#111827', marginTop: 0 }}>Mapping List Management & Sync</h4>
-                      <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' }}>
-                        Ensure all assets currently assigned to active employees are properly mapped to the SharePoint <strong>Mapping List</strong>.
-                        Use the buttons below to perform a manual synchronization check or diagnose the list&apos;s database schema.
-                      </p>
-
-                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' }}>
-                        <PrimaryButton
-                          text={this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets"}
-                          iconProps={{ iconName: 'Sync' }}
-                          onClick={this._onSyncAssignedAssets}
-                          disabled={this.state.syncInProgress}
-                        />
-                        <PrimaryButton
-                          text={this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics"}
-                          iconProps={{ iconName: 'Database' }}
-                          onClick={this._onRunDiagnostics}
-                          disabled={this.state.syncInProgress}
-                          styles={{
-                            root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
-                            rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
-                          }}
-                        />
-                      </div>
-
-                      {this.state.syncMessage && (
-                        <MessageBar
-                          messageBarType={this.state.syncMessageType}
-                          onDismiss={() => this.setState({ syncMessage: undefined })}
-                          styles={{ root: { marginBottom: '15px', borderRadius: '6px' } }}
-                        >
-                          {this.state.syncMessage}
-                        </MessageBar>
-                      )}
-
-                      {this.state.diagnosticInfo && (
-                        <div style={{ marginTop: '15px' }}>
-                          <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' }}>Diagnostic Log Output:</span>
-                          <textarea
-                            readOnly
-                            value={this.state.diagnosticInfo}
-                            rows={10}
-                            style={{
-                              width: '100%',
-                              fontFamily: 'monospace',
-                              fontSize: '0.82rem',
-                              padding: '10px',
-                              backgroundColor: '#f3f2f1',
-                              border: '1px solid #e1dfdd',
-                              borderRadius: '4px',
-                              resize: 'vertical',
-                              color: '#323130'
+                    ) : null;
+                  case 'Users':
+                    return isAdmin ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>User Administration</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Admin-only area. Manage SharePoint groups and user onboarding from your site permissions.
+                        </p>
+                        <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' }}>
+                          <h4 style={{ marginTop: 0, marginBottom: '10px', color: '#0078d4' }}>SharePoint Group Management</h4>
+                          <p style={{ margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' }}>
+                            To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups.
+                          </p>
+                          <PrimaryButton
+                            text="Manage Site Permissions"
+                            iconProps={{ iconName: 'Permissions' }}
+                            onClick={() => {
+                              const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
+                              window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                             }}
                           />
                         </div>
-                      )}
-                    </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                      <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                        <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>SharePoint List Connections</h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
-                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                            <span style={{ color: '#4b5563' }}>Inventory Database:</span>
-                            <strong style={{ color: '#111827' }}>InventoryList</strong>
-                          </li>
-                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                            <span style={{ color: '#4b5563' }}>Approvals & Requests:</span>
-                            <strong style={{ color: '#111827' }}>RequestList</strong>
-                          </li>
-                          <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <span style={{ color: '#4b5563' }}>System Audit Logs:</span>
-                            <strong style={{ color: '#111827' }}>AuditLogList</strong>
-                          </li>
-                        </ul>
+                        <h4 style={{ marginBottom: '15px' }}>Employee Directory & Asset Ownership</h4>
+                        <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                          <DetailsList
+                            items={this.state.employees.map(emp => {
+                              const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
+                              const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
+                              const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
+                              return {
+                                ...emp,
+                                assignedAssets: assignedItems.length,
+                                assignedItems: assignedItems,
+                                assetTypes: assetTypes || 'None'
+                              };
+                            })}
+                            columns={[
+                              { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
+                              { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
+                              { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
+                              { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
+                              {
+                                key: 'col5',
+                                name: 'Assigned Assets',
+                                fieldName: 'assignedAssets',
+                                minWidth: 100,
+                                maxWidth: 120,
+                                isResizable: true,
+                                onRender: (item) => (
+                                  <span style={{
+                                    backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
+                                    color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
+                                    padding: '4px 10px',
+                                    borderRadius: '9999px',
+                                    fontWeight: 'bold'
+                                  }}>
+                                    {item.assignedAssets}
+                                  </span>
+                                )
+                              },
+                              { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
+                            ]}
+                            setKey="usersList"
+                            layoutMode={DetailsListLayoutMode.justified}
+                            selectionMode={SelectionMode.none}
+                            onRenderRow={(rowProps) => {
+                              if (!rowProps) return null;
+                              const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
+
+                              return (
+                                <div>
+                                  <div
+                                    onClick={() => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email })}
+                                    style={{ cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } as any}
+                                  >
+                                    <DetailsRow {...rowProps} />
+                                  </div>
+                                  {isExpanded && (
+                                    <div style={{ padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
+                                      <h4 style={{ marginTop: 0, marginBottom: '15px', color: '#111827' }}>Assets assigned to {rowProps.item.name}</h4>
+                                      {rowProps.item.assignedItems.length > 0 ? (
+                                        <InventoryList items={rowProps.item.assignedItems} isAdmin={false} />
+                                      ) : (
+                                        <p style={{ color: '#6b7280', fontSize: '0.9rem', margin: 0 }}>This user currently has no assets assigned to them.</p>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            }}
+                          />
+                        </div>
+
+                        <div style={{ marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' }}>
+                          <div className={styles.cardHeader}>
+                            <h3>Employee Asset Tracking</h3>
+                          </div>
+                          <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                            Admin and Manager area. Select an employee to view all assets currently assigned to them.
+                          </p>
+                          <AssetTracking
+                            items={items}
+                            employees={this.state.employees}
+                            currentUserRole={effectiveRole}
+                            currentUserName={activeUserDisplayName}
+                            currentUserEmail={activeUserEmail}
+                          />
+                        </div>
+
                       </div>
+                    ) : null;
+                  case 'Reports':
+                    return isAdmin ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Reporting & Insights</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Use dashboard and event history to derive utilization, approval trends, and asset aging reports.
+                        </p>
 
-                      <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                        <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>Role Based Access Control</h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
-                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                            <span style={{ color: '#4b5563' }}>Admin Group:</span>
-                            <strong style={{ color: '#111827' }}>Inventory Administrators</strong>
-                          </li>
-                          <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                            <span style={{ color: '#4b5563' }}>Manager Group:</span>
-                            <strong style={{ color: '#111827' }}>Inventory Managers</strong>
-                          </li>
-                          <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <span style={{ color: '#4b5563' }}>Employee Access:</span>
-                            <strong style={{ color: '#111827' }}>Site Visitors</strong>
-                          </li>
-                        </ul>
+                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                          <h4 style={{ marginBottom: '10px' }}>Asset Utilization</h4>
+                          <div style={{ display: 'flex', gap: '20px' }}>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
+                            </div>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#dbeafe', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#1e40af', marginBottom: '4px' }}>In Use / Assigned</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a' }}>{items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length}</span>
+                            </div>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>Utilization Rate</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>
+                                {items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0}%
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                          <h4 style={{ marginBottom: '10px' }}>Approval Trends</h4>
+                          <div style={{ display: 'flex', gap: '20px' }}>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Requests</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{this.state.requests.length}</span>
+                            </div>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>Approved</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length}</span>
+                            </div>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>Declined</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length}</span>
+                            </div>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>Approval Rate</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>
+                                {this.state.requests.length > 0 ? Math.round((this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length / this.state.requests.length) * 100) : 0}%
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {(() => {
+                          const now = new Date();
+                          const aging = items.reduce((acc, item) => {
+                            if (!item.purchaseDate) {
+                              acc.unknown++;
+                              return acc;
+                            }
+                            const pd = new Date(item.purchaseDate);
+                            const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
+                            if (diffYears < 1) acc.under1++;
+                            else if (diffYears <= 3) acc.between1and3++;
+                            else acc.over3++;
+                            return acc;
+                          }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
+
+                          return (
+                            <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                              <h4 style={{ marginBottom: '10px' }}>Asset Aging</h4>
+                              <div style={{ display: 'flex', gap: '20px' }}>
+                                <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
+                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>&lt; 1 Year Old (New)</span>
+                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{aging.under1}</span>
+                                </div>
+                                <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>
+                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>1 - 3 Years Old</span>
+                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>{aging.between1and3}</span>
+                                </div>
+                                <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>
+                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>&gt; 3 Years Old (Aging)</span>
+                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{aging.over3}</span>
+                                </div>
+                                <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
+                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Unknown Age</span>
+                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{aging.unknown}</span>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })()}
+
+                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                            <h4 style={{ margin: 0 }}>Warranty Expiry Report</h4>
+                            <PrimaryButton
+                              text="Export to Excel"
+                              iconProps={{ iconName: 'ExcelDocument' }}
+                              onClick={this._exportWarrantyReportToExcel}
+                              styles={{ 
+                                root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' }, 
+                                rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },
+                                rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }
+                              }}
+                            />
+                          </div>
+                          <div style={{ marginBottom: '15px', display: 'flex', gap: '20px' }}>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets Count</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
+                            </div>
+                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Assets with Warranty Data</span>
+                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.filter(i => i.warrantyExpiry).length}</span>
+                            </div>
+                          </div>
+                          <DetailsList
+                            items={items}
+                            columns={[
+                              { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
+                              { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
+                              { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
+                              { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
+                              {
+                                key: 'col5',
+                                name: 'Warranty Expiry Date',
+                                fieldName: 'warrantyExpiry',
+                                minWidth: 140,
+                                maxWidth: 200,
+                                isResizable: true,
+                                onRender: (item) => {
+                                  const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
+                                  return (
+                                    <span style={{
+                                      color: isExpired ? '#ef4444' : 'inherit',
+                                      fontWeight: isExpired ? 'bold' : 'normal'
+                                    }}>
+                                      {item.warrantyExpiry || 'N/A'} {isExpired && '(Expired)'}
+                                    </span>
+                                  );
+                                }
+                              }
+                            ]}
+                            setKey="warrantyReport"
+                            layoutMode={DetailsListLayoutMode.justified}
+                            selectionMode={SelectionMode.none}
+                          />
+                        </div>
                       </div>
-                    </div>
+                    ) : null;
+                  case 'Config':
+                    return isAdmin ? (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Configuration</h3>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                          Admin-only configuration area for list schema, process settings, and environment setup.
+                        </p>
 
-                    <div style={{ marginTop: '20px', backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                      <h4 style={{ marginBottom: '5px', color: '#111827', marginTop: 0 }}>Required List Schema (Developer Reference)</h4>
-                      <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '15px', marginTop: 0 }}>Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors.</p>
+                        {/* Sync & Diagnostics Operations Section */}
+                        <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' }}>
+                          <h4 style={{ marginBottom: '10px', color: '#111827', marginTop: 0 }}>Mapping List Management & Sync</h4>
+                          <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' }}>
+                            Ensure all assets currently assigned to active employees are properly mapped to the SharePoint <strong>Mapping List</strong>.
+                            Use the buttons below to perform a manual synchronization check or diagnose the list&apos;s database schema.
+                          </p>
 
-                      <h5 style={{ marginTop: '15px', marginBottom: '8px', color: '#374151' }}>InventoryList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Asset Database)</span></h5>
-                      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
-                        {['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (
-                          <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                        ))}
+                          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' }}>
+                            <PrimaryButton
+                              text={this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets"}
+                              iconProps={{ iconName: 'Sync' }}
+                              onClick={this._onSyncAssignedAssets}
+                              disabled={this.state.syncInProgress}
+                            />
+                            <PrimaryButton
+                              text={this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics"}
+                              iconProps={{ iconName: 'Database' }}
+                              onClick={this._onRunDiagnostics}
+                              disabled={this.state.syncInProgress}
+                              styles={{
+                                root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
+                                rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
+                              }}
+                            />
+                          </div>
+
+                          {this.state.syncMessage && (
+                            <MessageBar
+                              messageBarType={this.state.syncMessageType}
+                              onDismiss={() => this.setState({ syncMessage: undefined })}
+                              styles={{ root: { marginBottom: '15px', borderRadius: '6px' } }}
+                            >
+                              {this.state.syncMessage}
+                            </MessageBar>
+                          )}
+
+                          {this.state.diagnosticInfo && (
+                            <div style={{ marginTop: '15px' }}>
+                              <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' }}>Diagnostic Log Output:</span>
+                              <textarea
+                                readOnly
+                                value={this.state.diagnosticInfo}
+                                rows={10}
+                                style={{
+                                  width: '100%',
+                                  fontFamily: 'monospace',
+                                  fontSize: '0.82rem',
+                                  padding: '10px',
+                                  backgroundColor: '#f3f2f1',
+                                  border: '1px solid #e1dfdd',
+                                  borderRadius: '4px',
+                                  resize: 'vertical',
+                                  color: '#323130'
+                                }}
+                              />
+                            </div>
+                          )}
+                        </div>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+                            <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>SharePoint List Connections</h4>
+                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
+                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
+                                <span style={{ color: '#4b5563' }}>Inventory Database:</span>
+                                <strong style={{ color: '#111827' }}>InventoryList</strong>
+                              </li>
+                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
+                                <span style={{ color: '#4b5563' }}>Approvals & Requests:</span>
+                                <strong style={{ color: '#111827' }}>RequestList</strong>
+                              </li>
+                              <li style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <span style={{ color: '#4b5563' }}>System Audit Logs:</span>
+                                <strong style={{ color: '#111827' }}>AuditLogList</strong>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+                            <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>Role Based Access Control</h4>
+                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
+                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
+                                <span style={{ color: '#4b5563' }}>Admin Group:</span>
+                                <strong style={{ color: '#111827' }}>Inventory Administrators</strong>
+                              </li>
+                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
+                                <span style={{ color: '#4b5563' }}>Manager Group:</span>
+                                <strong style={{ color: '#111827' }}>Inventory Managers</strong>
+                              </li>
+                              <li style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <span style={{ color: '#4b5563' }}>Employee Access:</span>
+                                <strong style={{ color: '#111827' }}>Site Visitors</strong>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div style={{ marginTop: '20px', backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+                          <h4 style={{ marginBottom: '5px', color: '#111827', marginTop: 0 }}>Required List Schema (Developer Reference)</h4>
+                          <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '15px', marginTop: 0 }}>Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors.</p>
+
+                          <h5 style={{ marginTop: '15px', marginBottom: '8px', color: '#374151' }}>InventoryList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Asset Database)</span></h5>
+                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
+                            {['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (
+                              <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
+                            ))}
+                          </div>
+
+                          <h5 style={{ marginBottom: '8px', color: '#374151' }}>RequestList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Approval Workflows)</span></h5>
+                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                            {['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (
+                              <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-
-                      <h5 style={{ marginBottom: '8px', color: '#374151' }}>RequestList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Approval Workflows)</span></h5>
-                      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                        {['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (
-                          <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </PivotItem>
-              )}
-            </Pivot>
+                    ) : null;
+                  default:
+                    return null;
+                }
+              })()}
+            </div>
           </div>
 
         </div>

@@ -97,7 +97,7 @@ const RequestForm = (props) => {
             props.onClose();
         }
     };
-    return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.medium, headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
+    return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.custom, customWidth: "450px", headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
         React.createElement(react_1.Stack, { tokens: stackTokens },
             isEmployee && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You can only request assets for yourself. Contact your manager to request assets for others.")),
             React.createElement(react_1.Dropdown, { label: isEmployee ? "Requester (You)" : "Requester (Employee)", selectedKey: selectedRequesterId, options: employeeOptions, onChange: (_, opt) => {

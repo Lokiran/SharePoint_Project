@@ -223,7 +223,8 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
     <Panel
       isOpen={props.isOpen}
       onDismiss={props.onClose}
-      type={PanelType.medium}
+      type={PanelType.custom}
+      customWidth="450px"
       headerText="Raise Incident"
       closeButtonAriaLabel="Close"
     >
