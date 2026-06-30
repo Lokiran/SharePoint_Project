@@ -233,7 +233,7 @@ class InventoryManagement extends React.Component {
                                 type,
                                 timestamp: formatTime(ret.completedDate || ret.requestDate),
                                 isRead: readIds.has(id),
-                                actionLink: 'My Assets',
+                                actionLink: 'MyRequests',
                                 category: 'Assignment'
                             });
                         }
@@ -484,7 +484,7 @@ class InventoryManagement extends React.Component {
             try {
                 const requesterEmployee = this.state.employees.find(e => e.name.toLowerCase() === requestData.requesterName.toLowerCase());
                 const requesterRole = requesterEmployee ? requesterEmployee.jobTitle : 'Inventory Employee';
-                const initialStatus = requesterRole === 'Inventory Manager' ? 'Approved' : 'Pending';
+                const initialStatus = (requesterRole === 'Inventory Manager' || requesterRole === 'Admin') ? 'Approved' : 'Pending';
                 const tempId = `temp-${Date.now()}`;
                 const localRequest = {
                     id: tempId,
@@ -1205,8 +1205,7 @@ class InventoryManagement extends React.Component {
         const notifications = this._getNotifications();
         const navItems = [
             { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4' },
-            { key: 'MyAssets', text: 'My Assets', icon: 'Broom' },
-            { key: 'MyRequests', text: 'My Requests', icon: 'Send' },
+            { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
             {
                 key: 'Notifications',
                 text: 'Notifications',
@@ -1225,7 +1224,13 @@ class InventoryManagement extends React.Component {
                 { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send' }
             ] : []),
             ...(isAdmin || isManager ? [
-                { key: 'AssetReturns', text: 'Asset Returns', icon: 'ReturnToSession' }
+                {
+                    key: 'AssetReturns',
+                    text: 'Asset Returns',
+                    icon: 'ReturnToSession',
+                    badge: this.state.returnRequests.filter(r => r.status === 'Pending').length || undefined,
+                    badgeColor: '#ea580c'
+                }
             ] : []),
             ...(isAdmin ? [
                 { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed' },
@@ -1308,18 +1313,18 @@ class InventoryManagement extends React.Component {
                         switch (this.state.selectedTabKey) {
                             case 'Dashboard':
                                 return (React.createElement(Dashboard_1.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager }));
-                            case 'MyAssets':
+                            case 'MyWorkspace':
                                 return (React.createElement("div", null,
                                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "My Assigned Assets")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "View assets currently assigned to you."),
-                                    React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) })));
-                            case 'MyRequests':
-                                return (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "My Asset Requests")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track your submitted requests and approval status."),
-                                    React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests })));
+                                        React.createElement("h3", null, "My Workspace")),
+                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
+                                    React.createElement(react_1.Pivot, { "aria-label": "My Workspace Tabs" },
+                                        React.createElement(react_1.PivotItem, { headerText: "Assets" },
+                                            React.createElement("div", { style: { marginTop: '20px' } },
+                                                React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
+                                        React.createElement(react_1.PivotItem, { headerText: "Requests" },
+                                            React.createElement("div", { style: { marginTop: '20px' } },
+                                                React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                             case 'Notifications':
                                 return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
                             case 'IncidentHistory':

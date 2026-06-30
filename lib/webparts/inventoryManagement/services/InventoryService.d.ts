@@ -6,6 +6,7 @@ export declare class InventoryService {
     private static readonly LIST_NAME;
     private static readonly EVENT_LOG_LIST;
     private static readonly REQUEST_LIST_NAME;
+    private static readonly RETURN_REQUEST_LIST_NAME;
     private static readonly REQUEST_STATUS_INTERNAL_NAME;
     private static readonly REQUEST_COMMENT_INTERNAL_NAME;
     private static readonly REQUEST_KEY_INTERNAL_NAME;
@@ -14,6 +15,7 @@ export declare class InventoryService {
     private static _requestWorkflowFieldsEnsured;
     private static _resolvedListName;
     private static _resolvedRequestListName;
+    private static _resolvedReturnListName;
     private static _resolvedMappingListName;
     private static _mappingListFieldsEnsured;
     static getInventoryList(): Promise<any>;
@@ -52,6 +54,9 @@ export declare class InventoryService {
         lifecycle: IEventLog[];
     }>;
     private static _fetchItemsWithExpandedUsers;
+    static getReturnRequestList(): Promise<any>;
+    private static _findReturnField;
+    private static _getLocalReturnRequests;
     static getReturnRequests(): Promise<IReturnRequest[]>;
     static addReturnRequest(request: Omit<IReturnRequest, 'id' | 'status'>, userDisplayName: string): Promise<void>;
     static updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed', managerComment: string, approverName: string, finalCondition?: string): Promise<void>;

@@ -2293,12 +2293,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 29425);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 20472);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../data/mockData */ 27962);
@@ -2541,7 +2543,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 type,
                                 timestamp: formatTime(ret.completedDate || ret.requestDate),
                                 isRead: readIds.has(id),
-                                actionLink: 'My Assets',
+                                actionLink: 'MyRequests',
                                 category: 'Assignment'
                             });
                         }
@@ -2792,7 +2794,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             try {
                 const requesterEmployee = this.state.employees.find(e => e.name.toLowerCase() === requestData.requesterName.toLowerCase());
                 const requesterRole = requesterEmployee ? requesterEmployee.jobTitle : 'Inventory Employee';
-                const initialStatus = requesterRole === 'Inventory Manager' ? 'Approved' : 'Pending';
+                const initialStatus = (requesterRole === 'Inventory Manager' || requesterRole === 'Admin') ? 'Approved' : 'Pending';
                 const tempId = `temp-${Date.now()}`;
                 const localRequest = {
                     id: tempId,
@@ -3513,8 +3515,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         const notifications = this._getNotifications();
         const navItems = [
             { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4' },
-            { key: 'MyAssets', text: 'My Assets', icon: 'Broom' },
-            { key: 'MyRequests', text: 'My Requests', icon: 'Send' },
+            { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
             {
                 key: 'Notifications',
                 text: 'Notifications',
@@ -3533,7 +3534,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send' }
             ] : []),
             ...(isAdmin || isManager ? [
-                { key: 'AssetReturns', text: 'Asset Returns', icon: 'ReturnToSession' }
+                {
+                    key: 'AssetReturns',
+                    text: 'Asset Returns',
+                    icon: 'ReturnToSession',
+                    badge: this.state.returnRequests.filter(r => r.status === 'Pending').length || undefined,
+                    badgeColor: '#ea580c'
+                }
             ] : []),
             ...(isAdmin ? [
                 { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed' },
@@ -3616,18 +3623,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         switch (this.state.selectedTabKey) {
                             case 'Dashboard':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_18__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager }));
-                            case 'MyAssets':
+                            case 'MyWorkspace':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Assigned Assets")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "View assets currently assigned to you."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) })));
-                            case 'MyRequests':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Asset Requests")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track your submitted requests and approval status."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests })));
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                             case 'Notifications':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_20__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
                             case 'IncidentHistory':
@@ -3650,7 +3657,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_35__.Pie, { data: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
                                                     labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                         const status = req.status || 'Pending';
                                                         acc[status] = (acc[status] || 0) + 1;
@@ -3724,7 +3731,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             } })),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.DetailsList, { items: this.state.employees.map(emp => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
                                                 const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                 const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                 const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -3755,13 +3762,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                         } }, item.assignedAssets))
                                                 },
                                                 { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_38__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                 if (!rowProps)
                                                     return null;
                                                 const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsRow, { ...rowProps })),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
                                                     isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                             "Assets assigned to ",
@@ -3857,7 +3864,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Assets with Warranty Data"),
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.filter(i => i.warrantyExpiry).length))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.DetailsList, { items: items, columns: [
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: items, columns: [
                                                 { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
                                                 { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
                                                 { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
@@ -3880,7 +3887,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                             isExpired && '(Expired)'));
                                                     }
                                                 }
-                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_38__.SelectionMode.none })))) : null;
+                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none })))) : null;
                             case 'Config':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -4475,28 +4482,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 21314);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
 
 
 
 
 const MyRequestsView = (props) => {
-    const { requests } = props;
-    // Search and Filter States
+    const { requests, returnRequests = [] } = props;
+    // Search and Filter States (Asset Requests)
     const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     const [selectedStatus, setSelectedStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All');
     const [selectedPriority, setSelectedPriority] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All');
+    // Search and Filter States (Return Requests)
+    const [returnSearchQuery, setReturnSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [returnSelectedStatus, setReturnSelectedStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All');
     // Detail Panel State
     const [selectedRequest, setSelectedRequest] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [isPanelOpen, setIsPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    // Return Request Detail Panel State
+    const [selectedReturnRequest, setSelectedReturnRequest] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [isReturnPanelOpen, setIsReturnPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     // Dynamic metrics derived from all requests
     const metrics = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
         let pendingCount = 0;
@@ -4518,229 +4533,339 @@ const MyRequestsView = (props) => {
             declined: declinedCount
         };
     }, [requests]);
-    // Filtering Logic
+    // Return Request metrics
+    const returnMetrics = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+        let pendingCount = 0;
+        let approvedCount = 0;
+        let rejectedCount = 0;
+        let completedCount = 0;
+        returnRequests.forEach(r => {
+            const status = r.status || 'Pending';
+            if (status === 'Pending')
+                pendingCount++;
+            else if (status === 'Approved')
+                approvedCount++;
+            else if (status === 'Rejected')
+                rejectedCount++;
+            else if (status === 'Completed')
+                completedCount++;
+        });
+        return {
+            total: returnRequests.length,
+            pending: pendingCount,
+            approved: approvedCount,
+            rejected: rejectedCount,
+            completed: completedCount
+        };
+    }, [returnRequests]);
+    // Filtering Logic (Asset Requests)
     const filteredRequests = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
         return requests.filter(r => {
-            // 1. Search filter
             const normQuery = searchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
                 (r.requestKey || '').toLowerCase().includes(normQuery) ||
                 (r.assetTitle || '').toLowerCase().includes(normQuery) ||
                 (r.reason || '').toLowerCase().includes(normQuery) ||
                 (r.id || '').toLowerCase().includes(normQuery);
-            // 2. Status filter
             const matchesStatus = selectedStatus === 'All' || (r.status || 'Pending') === selectedStatus;
-            // 3. Priority filter
             const matchesPriority = selectedPriority === 'All' || (r.priority || 'Medium') === selectedPriority;
             return matchesSearch && matchesStatus && matchesPriority;
         });
     }, [requests, searchQuery, selectedStatus, selectedPriority]);
+    // Filtering Logic (Return Requests)
+    const filteredReturnRequests = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+        return returnRequests.filter(r => {
+            const normQuery = returnSearchQuery.toLowerCase().trim();
+            const matchesSearch = !normQuery ||
+                (r.assetName || '').toLowerCase().includes(normQuery) ||
+                (r.serialNumber || '').toLowerCase().includes(normQuery) ||
+                (r.returnReason || '').toLowerCase().includes(normQuery) ||
+                (r.id || '').toLowerCase().includes(normQuery);
+            const matchesStatus = returnSelectedStatus === 'All' || r.status === returnSelectedStatus;
+            return matchesSearch && matchesStatus;
+        });
+    }, [returnRequests, returnSearchQuery, returnSelectedStatus]);
+    // Return status badge styles
+    const getReturnStatusStyle = (status) => {
+        switch (status) {
+            case 'Pending': return { bg: '#fff8e6', color: '#b06000' };
+            case 'Approved': return { bg: '#e8f0fe', color: '#1558d6' };
+            case 'Rejected': return { bg: '#fce8e6', color: '#c5221f' };
+            case 'Completed': return { bg: '#e6f4ea', color: '#137333' };
+            default: return { bg: '#f1f3f4', color: '#5f6368' };
+        }
+    };
+    const getReturnStatusIcon = (status) => {
+        switch (status) {
+            case 'Pending': return 'Clock';
+            case 'Approved': return 'CompletedSolid';
+            case 'Rejected': return 'ErrorBadge';
+            case 'Completed': return 'CheckMark';
+            default: return 'Info';
+        }
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '24px',
-                padding: '0 4px 16px 4px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Total Requests"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, metrics.total)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Pending Approval"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.pending > 0 ? '#d97706' : 'var(--text-muted)' } }, metrics.pending)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Approved"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, metrics.approved)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Declined"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.declined))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
-                alignItems: 'flex-end',
-                padding: '0 0 10px 0'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.TextField, { placeholder: "Search by Request ID, asset type, reason...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { options: [
-                        { key: 'All', text: 'All Statuses' },
-                        { key: 'Pending', text: 'Pending' },
-                        { key: 'Approved', text: 'Approved' },
-                        { key: 'Declined', text: 'Declined' }
-                    ], selectedKey: selectedStatus, onChange: (e, option) => setSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { options: [
-                        { key: 'All', text: 'All Priorities' },
-                        { key: 'Low', text: 'Low' },
-                        { key: 'Medium', text: 'Medium' },
-                        { key: 'High', text: 'High' }
-                    ], selectedKey: selectedPriority, onChange: (e, option) => setSelectedPriority(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
-                        setSearchQuery('');
-                        setSelectedStatus('All');
-                        setSelectedPriority('All');
-                    }, style: { height: '30px', border: 'none', background: 'transparent' } }))),
-        filteredRequests.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-                gap: '16px',
-                marginTop: '10px'
-            } }, filteredRequests.map(item => {
-            const status = item.status || 'Pending';
-            const priority = item.priority || 'Medium';
-            // Status Badge Colors
-            let statusBg = '#fef7e0'; // Pending
-            let statusText = '#b06000';
-            if (status === 'Approved') {
-                statusBg = '#e6f4ea';
-                statusText = '#137333';
-            }
-            else if (status === 'Declined') {
-                statusBg = '#fce8e6';
-                statusText = '#c5221f';
-            }
-            // Priority Colors
-            let priorityColor = '#5f6368';
-            let priorityBg = '#f1f3f4';
-            if (priority === 'High') {
-                priorityColor = '#c5221f';
-                priorityBg = '#fce8e6';
-            }
-            else if (priority === 'Low') {
-                priorityColor = '#1a73e8';
-                priorityBg = '#e8f0fe';
-            }
-            // Admin Allocation Status Text
-            let adminAllocationText = '';
-            let adminAllocationColor = 'var(--text-muted)';
-            const managerStatusLower = status.toLowerCase();
-            if (managerStatusLower === 'pending') {
-                adminAllocationText = 'Waiting on Manager';
-                adminAllocationColor = '#b06000';
-            }
-            else if (managerStatusLower === 'declined') {
-                adminAllocationText = 'N/A (Rejected)';
-                adminAllocationColor = '#c5221f';
-            }
-            else {
-                const isAllocated = (item.assetStatus || '').toLowerCase().includes('approv');
-                if (isAllocated) {
-                    adminAllocationText = 'Asset Allocated ✓';
-                    adminAllocationColor = '#137333';
-                }
-                else {
-                    adminAllocationText = 'Pending Admin Allocation';
-                    adminAllocationColor = '#b06000';
-                }
-            }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.id, style: {
-                    backgroundColor: 'var(--surface-bg)',
-                    borderRadius: '6px',
-                    border: '1px solid rgba(0, 0, 0, 0.08)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    transition: 'all 0.2s ease',
-                    overflow: 'hidden'
-                }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].assetCardHover },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        padding: '14px 14px 6px 14px',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        justifyContent: 'space-between'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.requestKey || `REQ-${item.id.substring(0, 6)}`),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } },
-                            "Requested: ",
-                            item.requestDate)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                            backgroundColor: statusBg,
-                            color: statusText,
-                            padding: '2px 8px',
-                            borderRadius: '4px',
-                            fontSize: '0.68rem',
-                            fontWeight: 600
-                        } }, status)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.82rem', color: 'var(--text-main)' } },
-                        "Asset: ",
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.assetTitle),
-                        " (Qty: ",
-                        item.quantity,
-                        ")"),
-                    item.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: {
-                            margin: '0 0 2px 0',
-                            fontSize: '0.78rem',
-                            color: 'var(--text-muted)',
-                            lineHeight: '1.4',
-                            display: '-webkit-box',
-                            WebkitLineClamp: 2,
-                            WebkitBoxOrient: 'vertical',
-                            overflow: 'hidden',
-                            height: '32px'
-                        } },
-                        "Reason: ",
-                        item.reason)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Pivot, { "aria-label": "My Requests" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Asset Requests", itemIcon: "Send", itemCount: metrics.total },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                             display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            fontSize: '0.75rem',
-                            borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                            paddingTop: '6px',
-                            marginTop: 'auto'
+                            flexWrap: 'wrap',
+                            gap: '24px',
+                            padding: '0 4px 16px 4px',
+                            borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
                         } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: adminAllocationColor, fontWeight: 500 } }, adminAllocationText),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                backgroundColor: priorityBg,
-                                color: priorityColor,
-                                padding: '2px 6px',
-                                borderRadius: '3px',
-                                fontSize: '0.68rem',
-                                fontWeight: 500
-                            } }, priority))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        padding: '8px 14px 10px 14px',
-                        display: 'flex',
-                        gap: '6px',
-                        borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                        alignItems: 'center'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "View Details", onClick: () => {
-                            setSelectedRequest(item);
-                            setIsPanelOpen(true);
-                        }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
-        }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                textAlign: 'center',
-                padding: '30px 10px',
-                backgroundColor: 'var(--surface-bg)',
-                borderRadius: '6px',
-                border: '1px solid rgba(0, 0, 0, 0.08)'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Asset Requests Found"),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))),
-        selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Panel, { isOpen: isPanelOpen, onDismiss: () => {
-                setIsPanelOpen(false);
-                setSelectedRequest(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PanelType.medium, headerText: `Request Details: ${selectedRequest.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Total Requests"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, metrics.total)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Pending Approval"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.pending > 0 ? '#d97706' : 'var(--text-muted)' } }, metrics.pending)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Approved"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, metrics.approved)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Declined"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.declined))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.TextField, { placeholder: "Search by Request ID, asset type, reason...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { options: [
+                                    { key: 'All', text: 'All Statuses' },
+                                    { key: 'Pending', text: 'Pending' },
+                                    { key: 'Approved', text: 'Approved' },
+                                    { key: 'Declined', text: 'Declined' }
+                                ], selectedKey: selectedStatus, onChange: (e, option) => setSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { options: [
+                                    { key: 'All', text: 'All Priorities' },
+                                    { key: 'Low', text: 'Low' },
+                                    { key: 'Medium', text: 'Medium' },
+                                    { key: 'High', text: 'High' }
+                                ], selectedKey: selectedPriority, onChange: (e, option) => setSelectedPriority(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                                    setSearchQuery('');
+                                    setSelectedStatus('All');
+                                    setSelectedPriority('All');
+                                }, style: { height: '30px', border: 'none', background: 'transparent' } }))),
+                    filteredRequests.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                            gap: '16px',
+                            marginTop: '10px'
+                        } }, filteredRequests.map(item => {
+                        const status = item.status || 'Pending';
+                        const priority = item.priority || 'Medium';
+                        let statusBg = '#fef7e0';
+                        let statusText = '#b06000';
+                        if (status === 'Approved') {
+                            statusBg = '#e6f4ea';
+                            statusText = '#137333';
+                        }
+                        else if (status === 'Declined') {
+                            statusBg = '#fce8e6';
+                            statusText = '#c5221f';
+                        }
+                        let priorityColor = '#5f6368';
+                        let priorityBg = '#f1f3f4';
+                        if (priority === 'High') {
+                            priorityColor = '#c5221f';
+                            priorityBg = '#fce8e6';
+                        }
+                        else if (priority === 'Low') {
+                            priorityColor = '#1a73e8';
+                            priorityBg = '#e8f0fe';
+                        }
+                        let adminAllocationText = '';
+                        let adminAllocationColor = 'var(--text-muted)';
+                        const managerStatusLower = status.toLowerCase();
+                        if (managerStatusLower === 'pending') {
+                            adminAllocationText = 'Waiting on Manager';
+                            adminAllocationColor = '#b06000';
+                        }
+                        else if (managerStatusLower === 'declined') {
+                            adminAllocationText = 'N/A (Rejected)';
+                            adminAllocationColor = '#c5221f';
+                        }
+                        else {
+                            const isAllocated = (item.assetStatus || '').toLowerCase().includes('approv');
+                            if (isAllocated) {
+                                adminAllocationText = 'Asset Allocated ✓';
+                                adminAllocationColor = '#137333';
+                            }
+                            else {
+                                adminAllocationText = 'Pending Admin Allocation';
+                                adminAllocationColor = '#b06000';
+                            }
+                        }
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.id, style: {
+                                backgroundColor: 'var(--surface-bg)',
+                                borderRadius: '6px',
+                                border: '1px solid rgba(0, 0, 0, 0.08)',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                transition: 'all 0.2s ease',
+                                overflow: 'hidden'
+                            }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].assetCardHover },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '14px 14px 6px 14px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.requestKey || `REQ-${item.id.substring(0, 6)}`),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } },
+                                        "Requested: ",
+                                        item.requestDate)),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: statusBg, color: statusText, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600 } }, status)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.82rem', color: 'var(--text-main)' } },
+                                    "Asset: ",
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.assetTitle),
+                                    " (Qty: ",
+                                    item.quantity,
+                                    ")"),
+                                item.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } },
+                                    "Reason: ",
+                                    item.reason)),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px', marginTop: 'auto' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: adminAllocationColor, fontWeight: 500 } }, adminAllocationText),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: priorityBg, color: priorityColor, padding: '2px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 500 } }, priority))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "View Details", onClick: () => { setSelectedRequest(item); setIsPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
+                    }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Asset Requests Found"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Return Requests", itemIcon: "ReturnToSession", itemCount: returnMetrics.total },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '24px',
+                            padding: '0 4px 16px 4px',
+                            borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
+                        } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Total"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, returnMetrics.total)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Pending"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.pending > 0 ? '#d97706' : 'var(--text-muted)' } }, returnMetrics.pending)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Approved"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#1558d6' } }, returnMetrics.approved)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Completed"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, returnMetrics.completed)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Rejected"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.rejected > 0 ? '#dc2626' : 'var(--text-muted)' } }, returnMetrics.rejected))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.TextField, { placeholder: "Search by asset name, serial number, reason...", value: returnSearchQuery, onChange: (e, val) => setReturnSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '150px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { options: [
+                                    { key: 'All', text: 'All Statuses' },
+                                    { key: 'Pending', text: 'Pending' },
+                                    { key: 'Approved', text: 'Approved' },
+                                    { key: 'Rejected', text: 'Rejected' },
+                                    { key: 'Completed', text: 'Completed' }
+                                ], selectedKey: returnSelectedStatus, onChange: (e, option) => setReturnSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                                    setReturnSearchQuery('');
+                                    setReturnSelectedStatus('All');
+                                }, style: { height: '30px', border: 'none', background: 'transparent' } }))),
+                    filteredReturnRequests.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                            gap: '16px',
+                            marginTop: '10px'
+                        } }, filteredReturnRequests.map(item => {
+                        const { bg: statusBg, color: statusColor } = getReturnStatusStyle(item.status);
+                        const statusIcon = getReturnStatusIcon(item.status);
+                        // Condition badge
+                        let condBg = '#e6f4ea';
+                        let condColor = '#137333';
+                        const cond = (item.proposedCondition || '').toLowerCase();
+                        if (cond === 'fair') {
+                            condBg = '#fff8e6';
+                            condColor = '#b06000';
+                        }
+                        else if (cond === 'poor') {
+                            condBg = '#ffe8d6';
+                            condColor = '#a63e00';
+                        }
+                        else if (cond === 'damaged') {
+                            condBg = '#fce8e6';
+                            condColor = '#c5221f';
+                        }
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.id, style: {
+                                backgroundColor: 'var(--surface-bg)',
+                                borderRadius: '6px',
+                                border: `1px solid ${item.status === 'Rejected' ? 'rgba(197, 34, 31, 0.15)' : item.status === 'Completed' ? 'rgba(19, 115, 51, 0.15)' : 'rgba(0, 0, 0, 0.08)'}`,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                transition: 'all 0.2s ease',
+                                overflow: 'hidden'
+                            }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].assetCardHover },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '14px 14px 6px 14px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'flex-start' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReturnToSession", style: { fontSize: '14px', color: 'var(--text-muted)', marginTop: '2px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.assetName),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } },
+                                            "S/N: ",
+                                            item.serialNumber || 'N/A',
+                                            " \u2022 Submitted: ",
+                                            item.requestDate))),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: statusBg, color: statusColor, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: statusIcon, style: { fontSize: '10px' } }),
+                                    item.status)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
+                                item.returnReason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } },
+                                    "Reason: ",
+                                    item.returnReason)),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                        "Condition: ",
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: condBg, color: condColor, padding: '1px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 600 } }, item.proposedCondition || 'N/A')),
+                                    item.completedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#16a34a', fontSize: '0.7rem' } },
+                                        "\u2713 ",
+                                        item.completedDate))),
+                                item.managerComment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                        backgroundColor: item.status === 'Rejected' ? '#fef2f2' : item.status === 'Completed' ? '#f0fdf4' : '#f8fafc',
+                                        borderRadius: '4px',
+                                        padding: '6px 8px',
+                                        borderLeft: `3px solid ${item.status === 'Rejected' ? '#dc2626' : item.status === 'Completed' ? '#16a34a' : '#94a3b8'}`,
+                                        fontSize: '0.75rem',
+                                        color: 'var(--text-muted)'
+                                    } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', marginBottom: '2px', color: 'var(--text-main)' } }, "Manager Notes:"),
+                                    item.managerComment)),
+                                item.status === 'Pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#b06000' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Clock", style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Awaiting manager review"))),
+                                item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#1558d6' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Info", style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Please physically hand over the asset to the IT team")))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "View Details", onClick: () => { setSelectedReturnRequest(item); setIsReturnPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
+                    }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReturnToSession", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Return Requests Found"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, returnRequests.length === 0
+                            ? 'You have not submitted any return requests yet. Use the "Return" button on an asset in My Assets.'
+                            : 'Try adjusting your search query or filters.')))))),
+        selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: isPanelOpen, onDismiss: () => { setIsPanelOpen(false); setSelectedRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: `Request Details: ${selectedRequest.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '12px',
-                        backgroundColor: '#f1f5f9',
-                        padding: '15px',
-                        borderRadius: '8px',
-                        fontSize: '0.88rem'
-                    } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Request ID:"),
                         " ",
@@ -4774,10 +4899,7 @@ const MyRequestsView = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
                                 backgroundColor: selectedRequest.status === 'Approved' ? '#e6f4ea' : selectedRequest.status === 'Declined' ? '#fce8e6' : '#fef7e0',
                                 color: selectedRequest.status === 'Approved' ? '#137333' : selectedRequest.status === 'Declined' ? '#c5221f' : '#b06000',
-                                padding: '2px 8px',
-                                borderRadius: '4px',
-                                fontSize: '0.8rem',
-                                fontWeight: 600
+                                padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600
                             } }, selectedRequest.status || 'Pending'),
                         selectedRequest.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: '#475569' } },
                             "- \u201C",
@@ -4786,11 +4908,72 @@ const MyRequestsView = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Admin Allocation Status"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } }, selectedRequest.status === 'Approved' ? ((selectedRequest.assetStatus || '').toLowerCase().includes('approv') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#137333', fontWeight: 600 } }, "Asset Allocated & Dispatched \u2713")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b06000', fontWeight: 600 } }, "Pending physical asset allocation by system administrator"))) : selectedRequest.status === 'Declined' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#c5221f' } }, "Not applicable (Request was rejected by manager)")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', fontStyle: 'italic' } }, "Pending manager approval first")))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "Close", onClick: () => {
-                            setIsPanelOpen(false);
-                            setSelectedRequest(null);
-                        } })))))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Close", onClick: () => { setIsPanelOpen(false); setSelectedRequest(null); } }))))),
+        selectedReturnRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: isReturnPanelOpen, onDismiss: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: `Return Request: ${selectedReturnRequest.assetName}`, closeButtonAriaLabel: "Close" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
+                (() => {
+                    const { bg, color } = getReturnStatusStyle(selectedReturnRequest.status);
+                    const icon = getReturnStatusIcon(selectedReturnRequest.status);
+                    const statusMessages = {
+                        'Pending': 'Your return request has been submitted and is awaiting manager review.',
+                        'Approved': 'Your return has been approved. Please hand over the asset to the IT/Asset team.',
+                        'Rejected': 'Your return request was rejected. Please check the manager notes below.',
+                        'Completed': 'The asset has been successfully checked in. This return is complete.'
+                    };
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: bg, padding: '12px 15px', borderRadius: '8px', display: 'flex', gap: '10px', alignItems: 'flex-start' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: icon, style: { fontSize: '20px', color, marginTop: '2px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color, display: 'block', marginBottom: '2px' } }, selectedReturnRequest.status),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color } }, statusMessages[selectedReturnRequest.status] || ''))));
+                })(),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Asset Name:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedReturnRequest.assetName)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Serial Number:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedReturnRequest.serialNumber || 'N/A')),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Submitted On:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedReturnRequest.requestDate)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Proposed Condition:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedReturnRequest.proposedCondition || 'N/A')),
+                    selectedReturnRequest.completedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Completed On:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#16a34a' } }, selectedReturnRequest.completedDate)))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Reason for Return"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155', lineHeight: '1.5' } }, selectedReturnRequest.returnReason || 'No reason provided.')),
+                selectedReturnRequest.managerComment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                        backgroundColor: selectedReturnRequest.status === 'Rejected' ? '#fef2f2' : '#f0fdf4',
+                        padding: '12px 15px', borderRadius: '8px',
+                        border: `1px solid ${selectedReturnRequest.status === 'Rejected' ? '#fecaca' : '#bbf7d0'}`
+                    } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Manager / Admin Notes"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155', lineHeight: '1.5' } }, selectedReturnRequest.managerComment))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', fontWeight: 600 } }, "Return Workflow Progress"),
+                    [
+                        { label: 'Return Submitted', done: true },
+                        { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' },
+                        { label: 'Physical Asset Handover', done: selectedReturnRequest.status === 'Completed' },
+                        { label: 'Asset Checked In & Verified', done: selectedReturnRequest.status === 'Completed' }
+                    ].map((step, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: idx, style: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: idx < 3 ? '8px' : 0, fontSize: '0.85rem' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                width: '20px', height: '20px', borderRadius: '50%', flexShrink: 0,
+                                backgroundColor: step.done ? '#16a34a' : '#e2e8f0',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center'
+                            } }, step.done && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CheckMark", style: { fontSize: '10px', color: '#ffffff' } })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: step.done ? '#166534' : '#94a3b8', fontWeight: step.done ? 600 : 400 } }, step.label))))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '10px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Close", onClick: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); } })))))));
 };
 
 
@@ -8548,84 +8731,222 @@ class InventoryService {
             throw new Error(`Dynamic user expansion failed: ${error.message || JSON.stringify(error)}`);
         }
     }
-    static async getReturnRequests() {
+    static async getReturnRequestList() {
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        try {
-            const list = sp.web.lists.getByTitle("ReturnRequestList");
-            const items = await list.items.select("ID", "Title", "AssetID", "AssetName", "SerialNumber", "RequesterName", "RequesterEmail", "RequestDate", "ReturnReason", "ProposedCondition", "Status", "ManagerComment", "CompletedDate")();
-            return items.map((item) => ({
-                id: item.ID.toString(),
-                title: item.Title || "",
-                assetId: item.AssetID || item.AssetId || "",
-                assetName: item.AssetName || "",
-                serialNumber: item.SerialNumber || "",
-                requesterName: item.RequesterName || "",
-                requesterEmail: item.RequesterEmail || "",
-                requestDate: item.RequestDate || "",
-                returnReason: item.ReturnReason || "",
-                proposedCondition: item.ProposedCondition || "",
-                status: item.Status || "Pending",
-                managerComment: item.ManagerComment || "",
-                completedDate: item.CompletedDate || ""
-            }));
+        if (InventoryService._resolvedReturnListName) {
+            return sp.web.lists.getByTitle(InventoryService._resolvedReturnListName);
         }
-        catch (error) {
-            console.warn("Could not fetch ReturnRequestList from SharePoint, using local storage fallback", error);
+        // Try all known name variants in order of preference
+        const namesToTry = [
+            "Return Requests List",
+            "ReturnRequestList",
+            "Return Request List",
+            "ReturnRequests",
+            "Return Requests"
+        ];
+        for (const name of namesToTry) {
             try {
-                const local = localStorage.getItem("inventory_return_requests");
-                return local ? JSON.parse(local) : [];
+                const list = sp.web.lists.getByTitle(name);
+                await list.select("Title")(); // Verify it exists
+                InventoryService._resolvedReturnListName = name;
+                console.log(`Resolved Return Requests list name to: "${name}"`);
+                return list;
             }
             catch {
-                return [];
+                // try next
             }
+        }
+        // None found — log available lists and throw
+        try {
+            const allLists = await sp.web.lists.select("Title")();
+            const listNames = allLists.map((l) => '"' + l.Title + '"').join(', ');
+            throw new Error(`Could not find a Return Requests list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}. Available lists: [ ${listNames} ]`);
+        }
+        catch {
+            throw new Error(`Could not find a Return Requests list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}`);
+        }
+    }
+    static _findReturnField(fields, ...candidates) {
+        for (const cand of candidates) {
+            const norm = cand.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const field = fields.find((f) => {
+                const internal = (f.InternalName || '').toLowerCase().replace(/_x0020_/g, '').replace(/[^a-z0-9]/g, '');
+                const title = (f.Title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                return internal === norm || title === norm;
+            });
+            if (field)
+                return field.InternalName;
+        }
+        return undefined;
+    }
+    static _getLocalReturnRequests() {
+        const list = [];
+        // 1. Try unified key first
+        try {
+            const unified = localStorage.getItem("inventory_return_requests");
+            if (unified) {
+                list.push(...JSON.parse(unified));
+            }
+        }
+        catch (e) {
+            console.warn("Failed to parse unified return requests from localStorage", e);
+        }
+        // 2. Scan all keys in localStorage for individual RR- keys (to handle Bug 2 where individual keys were used)
+        try {
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith("RR-")) {
+                    const itemStr = localStorage.getItem(key);
+                    if (itemStr) {
+                        try {
+                            const item = JSON.parse(itemStr);
+                            if (item && item.id && !list.some(r => r.id === item.id)) {
+                                list.push(item);
+                            }
+                        }
+                        catch (e) {
+                            console.warn(`Failed to parse return request under key ${key}:`, e);
+                        }
+                    }
+                }
+            }
+        }
+        catch (e) {
+            console.warn("Failed to scan localStorage for RR- keys", e);
+        }
+        return list;
+    }
+    static async getReturnRequests() {
+        try {
+            const list = await InventoryService.getReturnRequestList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            // Resolve column internal names dynamically
+            const f = ((...c) => InventoryService._findReturnField(fields, ...c));
+            const titleKey = f('Title') || 'Title';
+            const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
+            const assetIdKey = f('AssetID', 'Asset ID', 'AssetId') || 'AssetID';
+            const assetNameKey = f('AssetName', 'Asset Name') || 'AssetName';
+            const assetTypeKey = f('AssetType', 'Asset Type') || 'AssetType';
+            const serialKey = f('SerialNumber', 'Serial Number') || 'SerialNumber';
+            const requesterKey = f('RequesterName', 'Requester Name', 'Requester', 'Employee', 'EmployeeName') || 'RequesterName';
+            const requesterEmailKey = f('RequesterEmail', 'Requester Email') || 'RequesterEmail';
+            const requestDateKey = f('RequestDate', 'Request Date', 'ReturnRequestDate', 'Return Request Date') || 'RequestDate';
+            const returnReasonKey = f('ReturnReason', 'Return Reason', 'Reason') || 'ReturnReason';
+            const conditionKey = f('ProposedCondition', 'Proposed Condition', 'ReturnedAssetCondition', 'Returned Asset Condition', 'Condition') || 'ProposedCondition';
+            const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
+            const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
+            const completedDateKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+            const items = await list.items.select('*', 'ID').orderBy('ID', false)();
+            const spMapped = items.map((item) => {
+                const idVal = returnRequestIdKey ? item[returnRequestIdKey] : null;
+                return {
+                    id: idVal ? idVal.toString() : item.ID.toString(),
+                    title: item[titleKey] || "",
+                    assetId: item[assetIdKey] || item.AssetID || item.AssetId || "",
+                    assetName: item[assetNameKey] || item.AssetName || item.Asset_x0020_Name || "",
+                    serialNumber: item[serialKey] || item.SerialNumber || item.Serial_x0020_Number || "",
+                    requesterName: item[requesterKey] || item.RequesterName || item.Author?.Title || "",
+                    requesterEmail: item[requesterEmailKey] || item.RequesterEmail || "",
+                    requestDate: item[requestDateKey] || item.Created?.split('T')[0] || "",
+                    returnReason: item[returnReasonKey] || item.ReturnReason || item.Return_x0020_Reason || "",
+                    proposedCondition: item[conditionKey] || item.ProposedCondition || "",
+                    status: (item[statusKey] || 'Pending'),
+                    managerComment: item[commentKey] || item.ManagerComment || "",
+                    completedDate: item[completedDateKey] || item.CompletedDate || ""
+                };
+            });
+            // Get local items and merge them
+            const localRequests = this._getLocalReturnRequests();
+            const syncedAssetIds = new Set(spMapped.map((r) => r.assetId.toString()));
+            const unsyncedLocal = localRequests.filter(localReq => {
+                return !syncedAssetIds.has(localReq.assetId.toString());
+            });
+            return [...spMapped, ...unsyncedLocal];
+        }
+        catch (error) {
+            console.warn("Could not fetch return requests from SharePoint, returning local storage fallback:", error);
+            return this._getLocalReturnRequests();
         }
     }
     static async addReturnRequest(request, userDisplayName) {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        const autoDate = new Date().toISOString().split('T')[0];
         const newRequest = {
             ...request,
+            requestDate: autoDate,
             id: `RR-${Date.now()}`,
             status: 'Pending'
         };
+        let savedToSharePoint = false;
         try {
-            const list = sp.web.lists.getByTitle("ReturnRequestList");
-            await list.items.add({
+            const list = await InventoryService.getReturnRequestList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const f = ((...c) => InventoryService._findReturnField(fields, ...c));
+            const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
+            const assetIdKey = f('AssetID', 'Asset ID', 'AssetId') || 'AssetID';
+            const assetNameKey = f('AssetName', 'Asset Name') || 'AssetName';
+            const assetTypeKey = f('AssetType', 'Asset Type') || 'AssetType';
+            const serialKey = f('SerialNumber', 'Serial Number') || 'SerialNumber';
+            const requesterKey = f('RequesterName', 'Requester Name', 'Requester', 'Employee') || 'RequesterName';
+            const requesterEmailKey = f('RequesterEmail', 'Requester Email') || 'RequesterEmail';
+            const requestDateKey = f('RequestDate', 'Request Date', 'ReturnRequestDate', 'Return Request Date') || 'RequestDate';
+            const returnReasonKey = f('ReturnReason', 'Return Reason', 'Reason') || 'ReturnReason';
+            const conditionKey = f('ProposedCondition', 'Proposed Condition', 'ReturnedAssetCondition', 'Returned Asset Condition', 'Condition') || 'ProposedCondition';
+            const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
+            const payload = {
                 Title: request.title,
-                AssetID: request.assetId,
-                AssetName: request.assetName,
-                SerialNumber: request.serialNumber,
-                RequesterName: request.requesterName,
-                RequesterEmail: request.requesterEmail || "",
-                RequestDate: request.requestDate,
-                ReturnReason: request.returnReason,
-                ProposedCondition: request.proposedCondition,
-                Status: "Pending"
-            });
+                [assetIdKey]: request.assetId,
+                [assetNameKey]: request.assetName,
+                [serialKey]: request.serialNumber || '',
+                [requesterKey]: request.requesterName,
+                [requesterEmailKey]: request.requesterEmail || '',
+                [requestDateKey]: newRequest.requestDate,
+                [returnReasonKey]: request.returnReason,
+                [conditionKey]: request.proposedCondition,
+                [statusKey]: 'Pending'
+            };
+            if (returnRequestIdKey) {
+                payload[returnRequestIdKey] = newRequest.id;
+            }
+            // Also try to write AssetType if the field exists in the list
+            if (assetTypeKey && f('AssetType', 'Asset Type')) {
+                // We don't have assetType directly on IReturnRequest; skip silently
+            }
+            await list.items.add(payload);
+            savedToSharePoint = true;
+            console.log("Successfully saved return request to SharePoint.");
         }
         catch (error) {
-            console.warn("Failed to save return request to ReturnRequestList in SharePoint, saving to local storage fallback", error);
+            console.warn("Failed to save return request to SharePoint, using localStorage fallback:", error);
+        }
+        if (!savedToSharePoint) {
+            // localStorage fallback — data persists per browser session only
             try {
-                const local = localStorage.getItem("inventory_return_requests");
-                const list = local ? JSON.parse(local) : [];
-                list.push(newRequest);
-                localStorage.setItem("inventory_return_requests", JSON.stringify(list));
+                // 1. Write to unified list
+                const existing = localStorage.getItem("inventory_return_requests");
+                const localList = existing ? JSON.parse(existing) : [];
+                localList.unshift(newRequest);
+                localStorage.setItem("inventory_return_requests", JSON.stringify(localList));
+                // 2. Also write to individual key for Bug 2 compatibility
+                localStorage.setItem(newRequest.id, JSON.stringify(newRequest));
             }
             catch (e) {
-                console.error("Local storage save failed", e);
+                console.error("localStorage save failed:", e);
             }
         }
+        // Update asset status to "Pending Return" in inventory
         try {
-            const list = await InventoryService.getInventoryList();
-            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const statusField = fields.find((f) => f.InternalName.toLowerCase() === "status" || f.Title.toLowerCase() === "status");
+            const invList = await InventoryService.getInventoryList();
+            const invFields = await invList.fields.select("InternalName", "Title", "TypeAsString")();
+            const statusField = invFields.find((f) => f.InternalName.toLowerCase() === "status" || f.Title.toLowerCase() === "status");
             const statusKey = statusField ? statusField.InternalName : "Status";
-            await list.items.getById(parseInt(request.assetId)).update({
+            await invList.items.getById(parseInt(request.assetId)).update({
                 [statusKey]: "Pending Return"
             });
         }
         catch (error) {
-            console.warn("Failed to update asset status in SharePoint, doing local storage fallback for asset state", error);
+            console.warn("Failed to update asset status to 'Pending Return' in SharePoint:", error);
         }
+        // Audit log
         try {
             await this.addAuditLog({
                 title: `Requested Return & Deactivated: ${request.assetName}`,
@@ -8646,40 +8967,56 @@ class InventoryService {
             });
         }
         catch (e) {
-            console.warn("Failed to add audit log for return request", e);
+            console.warn("Failed to add audit log for return request:", e);
         }
     }
     static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         const requests = await this.getReturnRequests();
         const req = requests.find(r => r.id === requestId);
         if (!req) {
             throw new Error(`Return request with ID ${requestId} not found.`);
         }
         let updatedSharePoint = false;
-        if (requestId.indexOf("RR-") !== 0) {
-            try {
-                const list = sp.web.lists.getByTitle("ReturnRequestList");
-                const payload = {
-                    Status: status,
-                    ManagerComment: managerComment
-                };
-                if (status === 'Completed') {
-                    payload.CompletedDate = new Date().toISOString().split('T')[0];
-                }
-                await list.items.getById(parseInt(requestId)).update(payload);
+        // Try SharePoint update
+        try {
+            const list = await InventoryService.getReturnRequestList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const f = ((...c) => InventoryService._findReturnField(fields, ...c));
+            const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
+            const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
+            const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
+            const completedKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+            const payload = {
+                [statusKey]: status,
+                [commentKey]: managerComment
+            };
+            if (status === 'Completed') {
+                payload[completedKey] = new Date().toISOString().split('T')[0];
+            }
+            const numericId = parseInt(requestId, 10);
+            if (!isNaN(numericId) && !requestId.startsWith('RR-')) {
+                await list.items.getById(numericId).update(payload);
                 updatedSharePoint = true;
             }
-            catch (err) {
-                console.warn("Failed to update return request status in SharePoint", err);
+            else if (returnRequestIdKey) {
+                const spItems = await list.items.filter(`${returnRequestIdKey} eq '${requestId.replace(/'/g, "''")}'`).select('ID')();
+                if (spItems && spItems.length > 0) {
+                    const spId = spItems[0].ID;
+                    await list.items.getById(spId).update(payload);
+                    updatedSharePoint = true;
+                }
             }
         }
+        catch (err) {
+            console.warn("Failed to update return request in SharePoint:", err);
+        }
         if (!updatedSharePoint) {
+            // Update localStorage fallback copy
             try {
                 const local = localStorage.getItem("inventory_return_requests");
                 if (local) {
-                    const list = JSON.parse(local);
-                    const updated = list.map(r => {
+                    const localList = JSON.parse(local);
+                    const updated = localList.map(r => {
                         if (r.id === requestId) {
                             const updatedReq = { ...r, status, managerComment };
                             if (status === 'Completed') {
@@ -8691,9 +9028,20 @@ class InventoryService {
                     });
                     localStorage.setItem("inventory_return_requests", JSON.stringify(updated));
                 }
+                // Also update individual key for Bug 2 compatibility
+                const itemStr = localStorage.getItem(requestId);
+                if (itemStr) {
+                    const item = JSON.parse(itemStr);
+                    item.status = status;
+                    item.managerComment = managerComment;
+                    if (status === 'Completed') {
+                        item.completedDate = new Date().toISOString().split('T')[0];
+                    }
+                    localStorage.setItem(requestId, JSON.stringify(item));
+                }
             }
             catch (e) {
-                console.error("Local storage update failed", e);
+                console.error("localStorage update failed:", e);
             }
         }
         try {
@@ -8822,6 +9170,7 @@ class InventoryService {
 InventoryService.LIST_NAME = "InventoryList";
 InventoryService.EVENT_LOG_LIST = "EventLogList";
 InventoryService.REQUEST_LIST_NAME = "RequestList";
+InventoryService.RETURN_REQUEST_LIST_NAME = "Return Requests List";
 InventoryService.REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
 InventoryService.REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
 InventoryService.REQUEST_KEY_INTERNAL_NAME = "RequestKey";
@@ -8830,6 +9179,7 @@ InventoryService.MAPPING_LIST_NAME = "Mapping List";
 InventoryService._requestWorkflowFieldsEnsured = false;
 InventoryService._resolvedListName = null;
 InventoryService._resolvedRequestListName = null;
+InventoryService._resolvedReturnListName = null;
 InventoryService._resolvedMappingListName = null;
 InventoryService._mappingListFieldsEnsured = false;
 
@@ -86798,7 +87148,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("291d1da1738c443e15b4")
+/******/ 		__webpack_require__.h = () => ("fa69a23fe9bcd4716d35")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

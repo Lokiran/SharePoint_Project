@@ -9,6 +9,7 @@ export class InventoryService {
   private static readonly LIST_NAME = "InventoryList";
   private static readonly EVENT_LOG_LIST = "EventLogList";
   private static readonly REQUEST_LIST_NAME = "RequestList";
+  private static readonly RETURN_REQUEST_LIST_NAME = "Return Requests List";
   private static readonly REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
   private static readonly REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
   private static readonly REQUEST_KEY_INTERNAL_NAME = "RequestKey";
@@ -18,6 +19,7 @@ export class InventoryService {
   private static _requestWorkflowFieldsEnsured = false;
   private static _resolvedListName: string | null = null;
   private static _resolvedRequestListName: string | null = null;
+  private static _resolvedReturnListName: string | null = null;
   private static _resolvedMappingListName: string | null = null;
   private static _mappingListFieldsEnsured = false;
 
@@ -2369,85 +2371,237 @@ export class InventoryService {
     }
   }
 
-  public static async getReturnRequests(): Promise<IReturnRequest[]> {
+  public static async getReturnRequestList(): Promise<any> {
     const sp = getSP();
-    try {
-      const list = sp.web.lists.getByTitle("ReturnRequestList");
-      const items = await list.items.select("ID", "Title", "AssetID", "AssetName", "SerialNumber", "RequesterName", "RequesterEmail", "RequestDate", "ReturnReason", "ProposedCondition", "Status", "ManagerComment", "CompletedDate")();
-      return items.map((item: any) => ({
-        id: item.ID.toString(),
-        title: item.Title || "",
-        assetId: item.AssetID || item.AssetId || "",
-        assetName: item.AssetName || "",
-        serialNumber: item.SerialNumber || "",
-        requesterName: item.RequesterName || "",
-        requesterEmail: item.RequesterEmail || "",
-        requestDate: item.RequestDate || "",
-        returnReason: item.ReturnReason || "",
-        proposedCondition: item.ProposedCondition || "",
-        status: item.Status || "Pending",
-        managerComment: item.ManagerComment || "",
-        completedDate: item.CompletedDate || ""
-      }));
-    } catch (error) {
-      console.warn("Could not fetch ReturnRequestList from SharePoint, using local storage fallback", error);
+    if (InventoryService._resolvedReturnListName) {
+      return sp.web.lists.getByTitle(InventoryService._resolvedReturnListName);
+    }
+
+    // Try all known name variants in order of preference
+    const namesToTry = [
+      "Return Requests List",
+      "ReturnRequestList",
+      "Return Request List",
+      "ReturnRequests",
+      "Return Requests"
+    ];
+
+    for (const name of namesToTry) {
       try {
-        const local = localStorage.getItem("inventory_return_requests");
-        return local ? JSON.parse(local) : [];
+        const list = sp.web.lists.getByTitle(name);
+        await list.select("Title")(); // Verify it exists
+        InventoryService._resolvedReturnListName = name;
+        console.log(`Resolved Return Requests list name to: "${name}"`);
+        return list;
       } catch {
-        return [];
+        // try next
       }
+    }
+
+    // None found — log available lists and throw
+    try {
+      const allLists = await sp.web.lists.select("Title")();
+      const listNames = allLists.map((l: any) => '"' + l.Title + '"').join(', ');
+      throw new Error(`Could not find a Return Requests list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}. Available lists: [ ${listNames} ]`);
+    } catch {
+      throw new Error(`Could not find a Return Requests list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}`);
+    }
+  }
+
+  private static _findReturnField(fields: any[], ...candidates: string[]): string | undefined {
+    for (const cand of candidates) {
+      const norm = cand.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const field = fields.find((f: any) => {
+        const internal = (f.InternalName || '').toLowerCase().replace(/_x0020_/g, '').replace(/[^a-z0-9]/g, '');
+        const title = (f.Title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        return internal === norm || title === norm;
+      });
+      if (field) return field.InternalName;
+    }
+    return undefined;
+  }
+
+  private static _getLocalReturnRequests(): IReturnRequest[] {
+    const list: IReturnRequest[] = [];
+    
+    // 1. Try unified key first
+    try {
+      const unified = localStorage.getItem("inventory_return_requests");
+      if (unified) {
+        list.push(...JSON.parse(unified));
+      }
+    } catch (e) {
+      console.warn("Failed to parse unified return requests from localStorage", e);
+    }
+    
+    // 2. Scan all keys in localStorage for individual RR- keys (to handle Bug 2 where individual keys were used)
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith("RR-")) {
+          const itemStr = localStorage.getItem(key);
+          if (itemStr) {
+            try {
+              const item = JSON.parse(itemStr);
+              if (item && item.id && !list.some(r => r.id === item.id)) {
+                list.push(item);
+              }
+            } catch (e) {
+              console.warn(`Failed to parse return request under key ${key}:`, e);
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.warn("Failed to scan localStorage for RR- keys", e);
+    }
+    
+    return list;
+  }
+
+  public static async getReturnRequests(): Promise<IReturnRequest[]> {
+    try {
+      const list = await InventoryService.getReturnRequestList();
+      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+
+      // Resolve column internal names dynamically
+      const f = ((...c: string[]) => InventoryService._findReturnField(fields, ...c));
+      const titleKey           = f('Title')                               || 'Title';
+      const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
+      const assetIdKey       = f('AssetID', 'Asset ID', 'AssetId')      || 'AssetID';
+      const assetNameKey     = f('AssetName', 'Asset Name')             || 'AssetName';
+      const assetTypeKey     = f('AssetType', 'Asset Type')             || 'AssetType';
+      const serialKey        = f('SerialNumber', 'Serial Number')       || 'SerialNumber';
+      const requesterKey     = f('RequesterName', 'Requester Name', 'Requester', 'Employee', 'EmployeeName') || 'RequesterName';
+      const requesterEmailKey = f('RequesterEmail', 'Requester Email')  || 'RequesterEmail';
+      const requestDateKey   = f('RequestDate', 'Request Date', 'ReturnRequestDate', 'Return Request Date') || 'RequestDate';
+      const returnReasonKey  = f('ReturnReason', 'Return Reason', 'Reason') || 'ReturnReason';
+      const conditionKey     = f('ProposedCondition', 'Proposed Condition', 'ReturnedAssetCondition', 'Returned Asset Condition', 'Condition') || 'ProposedCondition';
+      const statusKey        = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
+      const commentKey       = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
+      const completedDateKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+
+      const items = await list.items.select('*', 'ID').orderBy('ID', false)();
+
+      const spMapped = items.map((item: any) => {
+        const idVal = returnRequestIdKey ? item[returnRequestIdKey] : null;
+        return {
+          id: idVal ? idVal.toString() : item.ID.toString(),
+          title: item[titleKey] || "",
+          assetId: item[assetIdKey] || item.AssetID || item.AssetId || "",
+          assetName: item[assetNameKey] || item.AssetName || item.Asset_x0020_Name || "",
+          serialNumber: item[serialKey] || item.SerialNumber || item.Serial_x0020_Number || "",
+          requesterName: item[requesterKey] || item.RequesterName || item.Author?.Title || "",
+          requesterEmail: item[requesterEmailKey] || item.RequesterEmail || "",
+          requestDate: item[requestDateKey] || item.Created?.split('T')[0] || "",
+          returnReason: item[returnReasonKey] || item.ReturnReason || item.Return_x0020_Reason || "",
+          proposedCondition: item[conditionKey] || item.ProposedCondition || "",
+          status: (item[statusKey] || 'Pending') as IReturnRequest['status'],
+          managerComment: item[commentKey] || item.ManagerComment || "",
+          completedDate: item[completedDateKey] || item.CompletedDate || ""
+        };
+      });
+
+      // Get local items and merge them
+      const localRequests = this._getLocalReturnRequests();
+      const syncedAssetIds = new Set(spMapped.map((r: any) => r.assetId.toString()));
+      const unsyncedLocal = localRequests.filter(localReq => {
+        return !syncedAssetIds.has(localReq.assetId.toString());
+      });
+
+      return [...spMapped, ...unsyncedLocal];
+    } catch (error) {
+      console.warn("Could not fetch return requests from SharePoint, returning local storage fallback:", error);
+      return this._getLocalReturnRequests();
     }
   }
 
   public static async addReturnRequest(request: Omit<IReturnRequest, 'id' | 'status'>, userDisplayName: string): Promise<void> {
-    const sp = getSP();
+    const autoDate = new Date().toISOString().split('T')[0];
     const newRequest: IReturnRequest = {
       ...request,
+      requestDate: autoDate,
       id: `RR-${Date.now()}`,
       status: 'Pending'
     };
 
+    let savedToSharePoint = false;
     try {
-      const list = sp.web.lists.getByTitle("ReturnRequestList");
-      await list.items.add({
-        Title: request.title,
-        AssetID: request.assetId,
-        AssetName: request.assetName,
-        SerialNumber: request.serialNumber,
-        RequesterName: request.requesterName,
-        RequesterEmail: request.requesterEmail || "",
-        RequestDate: request.requestDate,
-        ReturnReason: request.returnReason,
-        ProposedCondition: request.proposedCondition,
-        Status: "Pending"
-      });
+      const list = await InventoryService.getReturnRequestList();
+      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
 
+      const f = ((...c: string[]) => InventoryService._findReturnField(fields, ...c));
+      const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
+      const assetIdKey       = f('AssetID', 'Asset ID', 'AssetId')       || 'AssetID';
+      const assetNameKey     = f('AssetName', 'Asset Name')              || 'AssetName';
+      const assetTypeKey     = f('AssetType', 'Asset Type')              || 'AssetType';
+      const serialKey        = f('SerialNumber', 'Serial Number')        || 'SerialNumber';
+      const requesterKey     = f('RequesterName', 'Requester Name', 'Requester', 'Employee') || 'RequesterName';
+      const requesterEmailKey = f('RequesterEmail', 'Requester Email')   || 'RequesterEmail';
+      const requestDateKey   = f('RequestDate', 'Request Date', 'ReturnRequestDate', 'Return Request Date') || 'RequestDate';
+      const returnReasonKey  = f('ReturnReason', 'Return Reason', 'Reason') || 'ReturnReason';
+      const conditionKey     = f('ProposedCondition', 'Proposed Condition', 'ReturnedAssetCondition', 'Returned Asset Condition', 'Condition') || 'ProposedCondition';
+      const statusKey        = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
+
+      const payload: any = {
+        Title: request.title,
+        [assetIdKey]:        request.assetId,
+        [assetNameKey]:      request.assetName,
+        [serialKey]:         request.serialNumber || '',
+        [requesterKey]:      request.requesterName,
+        [requesterEmailKey]: request.requesterEmail || '',
+        [requestDateKey]:    newRequest.requestDate,
+        [returnReasonKey]:   request.returnReason,
+        [conditionKey]:      request.proposedCondition,
+        [statusKey]:         'Pending'
+      };
+
+      if (returnRequestIdKey) {
+        payload[returnRequestIdKey] = newRequest.id;
+      }
+
+      // Also try to write AssetType if the field exists in the list
+      if (assetTypeKey && f('AssetType', 'Asset Type')) {
+        // We don't have assetType directly on IReturnRequest; skip silently
+      }
+
+      await list.items.add(payload);
+      savedToSharePoint = true;
+      console.log("Successfully saved return request to SharePoint.");
     } catch (error) {
-      console.warn("Failed to save return request to ReturnRequestList in SharePoint, saving to local storage fallback", error);
+      console.warn("Failed to save return request to SharePoint, using localStorage fallback:", error);
+    }
+
+    if (!savedToSharePoint) {
+      // localStorage fallback — data persists per browser session only
       try {
-        const local = localStorage.getItem("inventory_return_requests");
-        const list: IReturnRequest[] = local ? JSON.parse(local) : [];
-        list.push(newRequest);
-        localStorage.setItem("inventory_return_requests", JSON.stringify(list));
+        // 1. Write to unified list
+        const existing = localStorage.getItem("inventory_return_requests");
+        const localList: IReturnRequest[] = existing ? JSON.parse(existing) : [];
+        localList.unshift(newRequest);
+        localStorage.setItem("inventory_return_requests", JSON.stringify(localList));
+
+        // 2. Also write to individual key for Bug 2 compatibility
+        localStorage.setItem(newRequest.id, JSON.stringify(newRequest));
       } catch (e) {
-        console.error("Local storage save failed", e);
+        console.error("localStorage save failed:", e);
       }
     }
 
+    // Update asset status to "Pending Return" in inventory
     try {
-      const list = await InventoryService.getInventoryList();
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
-      const statusField = fields.find((f: any) => f.InternalName.toLowerCase() === "status" || f.Title.toLowerCase() === "status");
+      const invList = await InventoryService.getInventoryList();
+      const invFields: any[] = await invList.fields.select("InternalName", "Title", "TypeAsString")();
+      const statusField = invFields.find((f: any) => f.InternalName.toLowerCase() === "status" || f.Title.toLowerCase() === "status");
       const statusKey = statusField ? statusField.InternalName : "Status";
-      
-      await list.items.getById(parseInt(request.assetId)).update({
+      await invList.items.getById(parseInt(request.assetId)).update({
         [statusKey]: "Pending Return"
       });
     } catch (error) {
-      console.warn("Failed to update asset status in SharePoint, doing local storage fallback for asset state", error);
+      console.warn("Failed to update asset status to 'Pending Return' in SharePoint:", error);
     }
 
+    // Audit log
     try {
       await this.addAuditLog({
         title: `Requested Return & Deactivated: ${request.assetName}`,
@@ -2467,7 +2621,7 @@ export class InventoryService {
         user: userDisplayName
       });
     } catch (e) {
-      console.warn("Failed to add audit log for return request", e);
+      console.warn("Failed to add audit log for return request:", e);
     }
   }
 
@@ -2478,8 +2632,6 @@ export class InventoryService {
     approverName: string,
     finalCondition?: string
   ): Promise<void> {
-    const sp = getSP();
-
     const requests = await this.getReturnRequests();
     const req = requests.find(r => r.id === requestId);
     if (!req) {
@@ -2487,29 +2639,48 @@ export class InventoryService {
     }
 
     let updatedSharePoint = false;
-    if (requestId.indexOf("RR-") !== 0) {
-      try {
-        const list = sp.web.lists.getByTitle("ReturnRequestList");
-        const payload: any = {
-          Status: status,
-          ManagerComment: managerComment
-        };
-        if (status === 'Completed') {
-          payload.CompletedDate = new Date().toISOString().split('T')[0];
-        }
-        await list.items.getById(parseInt(requestId)).update(payload);
-        updatedSharePoint = true;
-      } catch (err) {
-        console.warn("Failed to update return request status in SharePoint", err);
+
+    // Try SharePoint update
+    try {
+      const list = await InventoryService.getReturnRequestList();
+      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const f = ((...c: string[]) => InventoryService._findReturnField(fields, ...c));
+      const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
+      const statusKey  = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
+      const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes')    || 'ManagerComment';
+      const completedKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+
+      const payload: any = {
+        [statusKey]:  status,
+        [commentKey]: managerComment
+      };
+      if (status === 'Completed') {
+        payload[completedKey] = new Date().toISOString().split('T')[0];
       }
+
+      const numericId = parseInt(requestId, 10);
+      if (!isNaN(numericId) && !requestId.startsWith('RR-')) {
+        await list.items.getById(numericId).update(payload);
+        updatedSharePoint = true;
+      } else if (returnRequestIdKey) {
+        const spItems = await list.items.filter(`${returnRequestIdKey} eq '${requestId.replace(/'/g, "''")}'`).select('ID')();
+        if (spItems && spItems.length > 0) {
+          const spId = spItems[0].ID;
+          await list.items.getById(spId).update(payload);
+          updatedSharePoint = true;
+        }
+      }
+    } catch (err) {
+      console.warn("Failed to update return request in SharePoint:", err);
     }
 
     if (!updatedSharePoint) {
+      // Update localStorage fallback copy
       try {
         const local = localStorage.getItem("inventory_return_requests");
         if (local) {
-          const list: IReturnRequest[] = JSON.parse(local);
-          const updated = list.map(r => {
+          const localList: IReturnRequest[] = JSON.parse(local);
+          const updated = localList.map(r => {
             if (r.id === requestId) {
               const updatedReq = { ...r, status, managerComment };
               if (status === 'Completed') {
@@ -2521,8 +2692,20 @@ export class InventoryService {
           });
           localStorage.setItem("inventory_return_requests", JSON.stringify(updated));
         }
+
+        // Also update individual key for Bug 2 compatibility
+        const itemStr = localStorage.getItem(requestId);
+        if (itemStr) {
+          const item = JSON.parse(itemStr);
+          item.status = status;
+          item.managerComment = managerComment;
+          if (status === 'Completed') {
+            item.completedDate = new Date().toISOString().split('T')[0];
+          }
+          localStorage.setItem(requestId, JSON.stringify(item));
+        }
       } catch (e) {
-        console.error("Local storage update failed", e);
+        console.error("localStorage update failed:", e);
       }
     }
 

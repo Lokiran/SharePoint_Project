@@ -311,7 +311,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
               type,
               timestamp: formatTime(ret.completedDate || ret.requestDate),
               isRead: readIds.has(id),
-              actionLink: 'My Assets',
+              actionLink: 'MyRequests',
               category: 'Assignment'
             });
           }
@@ -652,7 +652,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     try {
       const requesterEmployee = this.state.employees.find(e => e.name.toLowerCase() === requestData.requesterName.toLowerCase());
       const requesterRole = requesterEmployee ? requesterEmployee.jobTitle : 'Inventory Employee';
-      const initialStatus = requesterRole === 'Inventory Manager' ? 'Approved' : 'Pending';
+      const initialStatus = (requesterRole === 'Inventory Manager' || requesterRole === 'Admin') ? 'Approved' : 'Pending';
 
       const tempId = `temp-${Date.now()}`;
       const localRequest: IRequest = {
@@ -1506,8 +1506,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
     const navItems = [
       { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4' },
-      { key: 'MyAssets', text: 'My Assets', icon: 'Broom' },
-      { key: 'MyRequests', text: 'My Requests', icon: 'Send' },
+      { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
       { 
         key: 'Notifications', 
         text: 'Notifications', 
@@ -1526,7 +1525,13 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send' }
       ] : []),
       ...(isAdmin || isManager ? [
-        { key: 'AssetReturns', text: 'Asset Returns', icon: 'ReturnToSession' }
+        {
+          key: 'AssetReturns',
+          text: 'Asset Returns',
+          icon: 'ReturnToSession',
+          badge: this.state.returnRequests.filter(r => r.status === 'Pending').length || undefined,
+          badgeColor: '#ea580c'
+        }
       ] : []),
       ...(isAdmin ? [
         { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed' },
@@ -1672,32 +1677,36 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         isInventoryManager={isManager}
                       />
                     );
-                  case 'MyAssets':
+                  case 'MyWorkspace':
                     return (
                       <div>
                         <div className={styles.cardHeader}>
-                          <h3>My Assigned Assets</h3>
+                          <h3>My Workspace</h3>
                         </div>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                          View assets currently assigned to you.
+                          Manage your assigned assets and track your requests.
                         </p>
-                        <MyAssignedAssetsView 
-                          items={myAssets} 
-                          onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
-                          onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
-                        />
-                      </div>
-                    );
-                  case 'MyRequests':
-                    return (
-                      <div>
-                        <div className={styles.cardHeader}>
-                          <h3>My Asset Requests</h3>
-                        </div>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                          Track your submitted requests and approval status.
-                        </p>
-                        <MyRequestsView requests={myRequests} />
+                        <Pivot aria-label="My Workspace Tabs">
+                          <PivotItem headerText="Assets">
+                            <div style={{ marginTop: '20px' }}>
+                              <MyAssignedAssetsView 
+                                items={myAssets} 
+                                onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
+                                onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
+                              />
+                            </div>
+                          </PivotItem>
+                          <PivotItem headerText="Requests">
+                            <div style={{ marginTop: '20px' }}>
+                              <MyRequestsView
+                                requests={myRequests}
+                                returnRequests={this.state.returnRequests.filter(r =>
+                                  this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')
+                                )}
+                              />
+                            </div>
+                          </PivotItem>
+                        </Pivot>
                       </div>
                     );
                   case 'Notifications':
