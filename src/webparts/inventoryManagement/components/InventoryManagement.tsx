@@ -42,12 +42,14 @@ import "@pnp/sp/site-groups/web";
 import { EMPLOYEES } from '../data/mockData';
 import { IEmployee } from '../models/IEmployee';
 import { InventoryService } from '../services/InventoryService';
+import { EmailService } from '../services/EmailService';
 import { Dashboard } from './Dashboard';
 import { AssetTracking } from './AssetTracking';
 import { INotification } from '../models/INotification';
 import { NotificationCenter } from './NotificationCenter';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
 import { IncidentHistory } from './IncidentHistory/IncidentHistory';
+import { ReplacementHistory } from './ReplacementHistory/ReplacementHistory';
 import { AssetLifecycleDiagram } from './AssetLifecycleDiagram';
 
 export interface IInventoryManagementState {
@@ -81,6 +83,7 @@ export interface IInventoryManagementState {
   activeUserEmail: string;
   isIncidentFormOpen: boolean;
   selectedAssetForIncident: IInventoryItem | undefined;
+  preselectedIncidentType?: string;
   syncInProgress?: boolean;
   syncMessage?: string;
   syncMessageType?: MessageBarType;
@@ -89,6 +92,12 @@ export interface IInventoryManagementState {
   isAdminPanelOpen?: boolean;
   adminSelectedAssetId?: string;
   adminComment?: string;
+  lastMockEmail?: { to: string[]; subject: string; body: string };
+  editMockEmailTo: string;
+  editMockEmailSubject: string;
+  isSendingMockEmail: boolean;
+  mockEmailSendError?: string;
+  mockEmailSendSuccess: boolean;
 }
 
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
@@ -404,10 +413,17 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       activeUserEmail: activeEmail,
       isIncidentFormOpen: false,
       selectedAssetForIncident: undefined,
+      preselectedIncidentType: undefined,
       selectedAdminRequest: undefined,
       isAdminPanelOpen: false,
       adminSelectedAssetId: undefined,
-      adminComment: ''
+      adminComment: '',
+      lastMockEmail: undefined,
+      editMockEmailTo: '',
+      editMockEmailSubject: '',
+      isSendingMockEmail: false,
+      mockEmailSendError: undefined,
+      mockEmailSendSuccess: false
     };
   }
 
@@ -424,7 +440,62 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     } catch (e) {
       console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
     }
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('spfx_mock_email_sent', this._handleMockEmailSent as any);
+      window.addEventListener('spfx_email_send_failed', this._handleEmailSendFailed as any);
+    }
   }
+
+  public componentWillUnmount(): void {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('spfx_mock_email_sent', this._handleMockEmailSent as any);
+      window.removeEventListener('spfx_email_send_failed', this._handleEmailSendFailed as any);
+    }
+  }
+
+  private _handleMockEmailSent = (ev: CustomEvent<{ to: string[]; subject: string; body: string }>): void => {
+    this.setState({ 
+      lastMockEmail: ev.detail,
+      editMockEmailTo: ev.detail.to.join(', '),
+      editMockEmailSubject: ev.detail.subject,
+      isSendingMockEmail: false,
+      mockEmailSendError: undefined,
+      mockEmailSendSuccess: false
+    });
+  };
+
+  private _handleEmailSendFailed = (ev: CustomEvent<{ to: string[]; subject: string; errorMessage: string }>): void => {
+    this.setState({
+      syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
+      syncMessageType: MessageBarType.warning
+    });
+  };
+
+  private _onSendMockEmail = async (): Promise<void> => {
+    const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
+    if (!lastMockEmail) return;
+
+    this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
+    
+    try {
+      const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
+      await EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
+      this.setState({ 
+        isSendingMockEmail: false, 
+        mockEmailSendSuccess: true
+      });
+      setTimeout(() => {
+        this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
+      }, 2000);
+    } catch (e: any) {
+      console.error("Failed to send email from panel:", e);
+      this.setState({ 
+        isSendingMockEmail: false, 
+        mockEmailSendError: e.message || JSON.stringify(e) 
+      });
+    }
+  };
 
   private _resolveUserRole = async (): Promise<void> => {
     try {
@@ -1516,6 +1587,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         badgeColor: '#3b82f6'
       },
       { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
+      { key: 'ReplacementHistory', text: 'Replacement History', icon: 'Sync' },
       ...(isAdmin ? [
         { key: 'Inventory', text: 'Inventory', icon: 'List' }
       ] : []),
@@ -1685,6 +1757,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                           items={myAssets} 
                           onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
                           onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
+                          onAssetReplacement={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })}
                         />
                       </div>
                     );
@@ -1718,6 +1791,21 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                           <h3>Incident History</h3>
                         </div>
                         <IncidentHistory
+                          {...this.props}
+                          userDisplayName={activeUserDisplayName}
+                          userEmail={activeUserEmail}
+                          userRole={effectiveRole}
+                          setIsLoading={(loading) => this.setState({ loading })}
+                        />
+                      </div>
+                    );
+                  case 'ReplacementHistory':
+                    return (
+                      <div>
+                        <div className={styles.cardHeader}>
+                          <h3>Replacement History</h3>
+                        </div>
+                        <ReplacementHistory
                           {...this.props}
                           userDisplayName={activeUserDisplayName}
                           userEmail={activeUserEmail}
@@ -2314,11 +2402,12 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           <IncidentRequestModule
             {...this.props}
             isOpen={this.state.isIncidentFormOpen}
-            onClose={() => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined })}
+            onClose={() => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined })}
             userDisplayName={activeUserDisplayName}
             userEmail={activeUserEmail}
             setIsLoading={(loading) => this.setState({ loading })}
             preselectedAsset={this.state.selectedAssetForIncident}
+            preselectedIncidentType={this.state.preselectedIncidentType}
           />
         )}
 
@@ -2330,6 +2419,79 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           asset={this.state.selectedAssetForReturn}
           onSubmit={this._onSubmitReturnRequest}
         />
+
+        <Panel
+          isOpen={this.state.lastMockEmail !== undefined}
+          onDismiss={() => this.setState({ lastMockEmail: undefined })}
+          type={PanelType.medium}
+          headerText="📬 Outgoing Email Notification (Developer Preview)"
+          closeButtonAriaLabel="Close"
+          onRenderFooterContent={() => (
+            <Stack horizontal tokens={{ childrenGap: 10 }} style={{ padding: '10px 0' }}>
+              <PrimaryButton 
+                text={this.state.isSendingMockEmail ? "Sending..." : "Send Email"} 
+                onClick={this._onSendMockEmail} 
+                disabled={this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo}
+                iconProps={{ iconName: 'Send' }}
+              />
+              <DefaultButton 
+                text="Close" 
+                onClick={() => this.setState({ lastMockEmail: undefined })} 
+                disabled={this.state.isSendingMockEmail}
+              />
+            </Stack>
+          )}
+          isFooterAtBottom={true}
+        >
+          {this.state.lastMockEmail && (
+            <Stack tokens={{ childrenGap: 15 }} style={{ padding: '10px 0' }}>
+              <MessageBar messageBarType={MessageBarType.info}>
+                You can review, modify the recipient(s) or subject, and send this email to test delivery.
+              </MessageBar>
+              
+              <TextField
+                label="Recipients (comma separated)"
+                value={this.state.editMockEmailTo}
+                onChange={(_, val) => this.setState({ editMockEmailTo: val || '' })}
+                required
+                disabled={this.state.isSendingMockEmail}
+                iconProps={{ iconName: 'Mail' }}
+              />
+              
+              <TextField
+                label="Subject"
+                value={this.state.editMockEmailSubject}
+                onChange={(_, val) => this.setState({ editMockEmailSubject: val || '' })}
+                required
+                disabled={this.state.isSendingMockEmail}
+              />
+
+              {this.state.mockEmailSendSuccess && (
+                <MessageBar messageBarType={MessageBarType.success}>
+                  Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!
+                </MessageBar>
+              )}
+
+              {this.state.mockEmailSendError && (
+                <MessageBar messageBarType={MessageBarType.error}>
+                  Failed to send email: {this.state.mockEmailSendError}
+                </MessageBar>
+              )}
+
+              {this.state.isSendingMockEmail && (
+                <ProgressIndicator label="Dispatched email transaction in progress..." />
+              )}
+
+              <div style={{ marginTop: '10px' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Email Content Preview:</span>
+                <div 
+                  style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }}
+                  dangerouslySetInnerHTML={{ __html: this.state.lastMockEmail.body }}
+                />
+              </div>
+            </Stack>
+          )}
+        </Panel>
       </section>
     );
   }

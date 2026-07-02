@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Stack,
   Text,
@@ -26,6 +26,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   isOpen: boolean;
   onClose: () => void;
   preselectedAsset?: IInventoryItem;
+  preselectedIncidentType?: string;
 }
 
 interface IIncidentForm {
@@ -96,17 +97,38 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
     return () => clearTimeout(timer);
   }, [formData.employeeName]);
 
-  // Sync with props when employee context changes or when a preselected asset is passed
+  const prevIsOpenRef = useRef(props.isOpen);
+
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
       employeeName: props.userDisplayName || '',
       employeeId: props.employeeId || '',
       employeeEmail: props.userEmail || '',
-      assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : (props.isOpen ? '' : prev.assetName),
-      serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : (props.isOpen ? '' : prev.serialNo),
     }));
-  }, [props.userDisplayName, props.employeeId, props.userEmail, props.preselectedAsset, props.isOpen]);
+  }, [props.userDisplayName, props.employeeId, props.userEmail]);
+
+  useEffect(() => {
+    if (props.isOpen && !prevIsOpenRef.current) {
+      // Panel just opened! Reset fields.
+      setFormData((prev) => ({
+        ...prev,
+        assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : '',
+        serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : '',
+        incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : '',
+        description: '',
+      }));
+    } else if (props.preselectedAsset || props.preselectedIncidentType) {
+      // Sync preselected asset or incident type if props update while open
+      setFormData((prev) => ({
+        ...prev,
+        assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : prev.assetName,
+        serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : prev.serialNo,
+        incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : prev.incidentType,
+      }));
+    }
+    prevIsOpenRef.current = props.isOpen;
+  }, [props.isOpen, props.preselectedAsset, props.preselectedIncidentType]);
 
   const loadAssignedAssetsForName = async (name: string) => {
     if (!name.trim()) {

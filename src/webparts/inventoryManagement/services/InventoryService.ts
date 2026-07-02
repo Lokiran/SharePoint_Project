@@ -4,6 +4,7 @@ import { IEventLog } from "../models/IEventLog";
 import { IReturnRequest } from "../models/IReturnRequest";
 import { getSP } from "../pnpjsConfig";
 import { EMPLOYEES } from "../data/mockData";
+import { EmailService } from "./EmailService";
 
 export class InventoryService {
   private static readonly LIST_NAME = "InventoryList";
@@ -960,6 +961,28 @@ export class InventoryService {
         }),
         user: userDisplayName
       });
+      // Trigger Email Notification to Manager
+      try {
+        let liveManagerEmail = "";
+        try {
+          const resolvedEmail = await EmailService.resolveLiveManagerEmail(request.requesterName);
+          if (resolvedEmail) {
+            liveManagerEmail = resolvedEmail;
+          }
+        } catch (resolveErr) {
+          console.warn("Failed to resolve live manager email:", resolveErr);
+        }
+
+        await EmailService.sendApprovalRequestToManager({
+          requestKey,
+          employeeName: request.requesterName,
+          assetName: request.assetTitle,
+          requestDate: request.requestDate || new Date().toLocaleDateString(),
+          adminName: userDisplayName
+        }, liveManagerEmail || undefined);
+      } catch (mailErr) {
+        console.warn("Failed to send approval request email:", mailErr);
+      }
     } catch (postError) {
       console.warn("Failed in post-request creation steps:", postError);
     }
@@ -1168,6 +1191,28 @@ export class InventoryService {
         }),
         user: approverName
       });
+
+      // Trigger Email Notification to Admin on Approval
+      if (status === 'Approved') {
+        try {
+          const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+          const employeeKey = findKey("employee") || findKey("requester") || "Employee";
+          const requesterKey = findKey("requester") || "Requester";
+          
+          const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Title || "Employee";
+          const employeeName = typeof rawEmp === 'string' ? rawEmp : (rawEmp && rawEmp.Title ? rawEmp.Title : "Employee");
+
+          await EmailService.sendApprovalConfirmationToAdmin({
+            requestKey: requestKey || this._buildRequestKeyFromItemId(requestId),
+            employeeName,
+            assetName: item[selectAssetKey] || item.Title || "Asset",
+            approvedBy: approverName,
+            approvalDate: new Date().toLocaleDateString()
+          });
+        } catch (mailErr) {
+          console.warn("Failed to send approval confirmation email to Admins:", mailErr);
+        }
+      }
     } catch (error: any) {
       console.error(`Failed to update RequestList item ${requestId} status`, error);
       throw new Error(`Unable to update request status. ${error.message || 'Verify RequestList status column and choices.'}`);
@@ -1709,6 +1754,20 @@ export class InventoryService {
         }),
         user: adminName
       });
+
+      // Trigger Email Notification to Employee on Assignment
+      try {
+        await EmailService.sendAssignmentNotificationToEmployee({
+          employeeName,
+          employeeEmail,
+          assetName,
+          assetId: serialNumber || assetId,
+          assignedBy: adminName,
+          assignedDate: finalAssignedDate
+        });
+      } catch (mailErr) {
+        console.warn("Failed to send assignment notification email to Employee:", mailErr);
+      }
     });
 
     await Promise.all(updatePromises);
