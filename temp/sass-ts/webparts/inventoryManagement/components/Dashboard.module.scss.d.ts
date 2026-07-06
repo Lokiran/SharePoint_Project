@@ -7,9 +7,15 @@ export interface IExportStyles {
 
   'badgeApproved': string;
 
+  'badgeAssigned': string;
+
   'badgeDeclined': string;
 
+  'badgeMaintenance': string;
+
   'badgePending': string;
+
+  'badgeReturned': string;
 
   'cardBlue': string;
 
@@ -27,21 +33,57 @@ export interface IExportStyles {
 
   'chartHeader': string;
 
+  'chartIcon': string;
+
   'chartSubtitle': string;
+
+  'chartTitleBlock': string;
 
   'chartsGrid': string;
 
   'dashboard': string;
 
+  'dashboardHeader': string;
+
   'dashboardIntro': string;
+
+  'emptyStateHint': string;
+
+  'fadeInUp': string;
+
+  'headerDate': string;
+
+  'headerLeft': string;
+
+  'headerRight': string;
+
+  'headerSubtitle': string;
+
+  'headerTitle': string;
 
   'iconContainer': string;
 
   'noDataMessage': string;
 
+  'pulse': string;
+
+  'quickActionBtn': string;
+
+  'quickActions': string;
+
   'sectionHeader': string;
 
   'sectionSubtitle': string;
+
+  'shimmer': string;
+
+  'skeleton': string;
+
+  'skeletonCard': string;
+
+  'skeletonChart': string;
+
+  'skeletonLine': string;
 
   'splitLayout': string;
 
@@ -58,6 +100,10 @@ export interface IExportStyles {
   'summaryValue': string;
 
   'tableWrapper': string;
+
+  'trendDown': string;
+
+  'trendUp': string;
 
 }
 

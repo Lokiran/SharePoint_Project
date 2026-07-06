@@ -181,6 +181,11 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
                   />
                 </>
               )}
+              {/* 
+                REDUNDANT / REVIEW-ONLY: Under the single-stage return approval workflow, 
+                the asset return is completed and custody is cleared immediately upon approval.
+                This secondary check-in step is retained for review only and is no longer functionally required.
+              */}
               {item.status === 'Approved' && (
                 <PrimaryButton
                   text="Verify & Complete"
@@ -233,6 +238,10 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
         modalProps={{ isBlocking: true }}
       >
         <Stack tokens={{ childrenGap: 15 }} style={{ marginTop: '15px' }}>
+          {/* 
+            REDUNDANT / REVIEW-ONLY: This condition selection is part of the secondary 
+            check-in step, which is now redundant. Retained for review only.
+          */}
           {actionType === 'Complete' && (
             <Dropdown
               label="Final Verified Condition"

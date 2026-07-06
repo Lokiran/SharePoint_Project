@@ -2,19 +2,19 @@
   Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
 */
 :local .inventoryManagement {
-  --primary-blue: #2563eb;
-  --primary-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  --primary-blue: #0078d4;
+  --primary-gradient: linear-gradient(135deg, #1a4fa0 0%, #2b7cd4 50%, #4a9be8 100%);
   --surface-bg: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --card-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --text-main: #242424;
+  --text-muted: #616161;
+  --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
   --radius-lg: 16px;
   --radius-md: 12px;
   overflow: hidden;
   color: var(--text-main);
   background-color: transparent;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   padding: 20px;
 }
 :local .inventoryManagement.dark {
@@ -25,45 +25,65 @@
 :local .inventoryManagement.dark .sidebarNavItem:hover {
   background-color: rgba(255, 255, 255, 0.06) !important;
 }
+:local .inventoryManagement.dark .sidebarContainer {
+  background-color: #1e293b;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+:local .inventoryManagement.dark .navGroupLabel {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
 :local .inventoryManagement .mainContent {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 :local .inventoryManagement .heroSection {
   background: var(--primary-gradient);
-  padding: 40px;
+  padding: 32px 36px;
   border-radius: var(--radius-lg);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   :local .inventoryManagement .heroSection {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 30px 20px;
+    padding: 28px 20px;
   }
 }
 :local .inventoryManagement .heroSection::after {
   content: "";
   position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
+  top: -60%;
+  right: -8%;
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+:local .inventoryManagement .heroSection::before {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: -5%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
   filter: blur(40px);
+  pointer-events: none;
 }
 :local .inventoryManagement .heroSection .heroText {
   z-index: 1;
@@ -71,21 +91,24 @@
   min-width: 250px;
 }
 :local .inventoryManagement .heroSection .heroText h2 {
-  font-size: 2.2rem;
-  margin: 0 0 8px 0;
+  font-size: 1.8rem;
+  margin: 0 0 6px 0;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 :local .inventoryManagement .heroSection .heroText p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 0.95rem;
+  opacity: 0.92;
   margin: 0;
+  line-height: 1.5;
 }
 :local .inventoryManagement .heroSection .heroText .smallText {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-top: 12px;
+  font-size: 0.78rem;
+  opacity: 0.65;
+  margin-top: 10px;
   display: block;
+  line-height: 1.4;
 }
 @media (max-width: 768px) {
   :local .inventoryManagement .heroSection .heroText {
@@ -99,57 +122,50 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  margin-left: 20px;
+  margin-left: 16px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
   :local .inventoryManagement .heroSection .welcomeDiagramContainer {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }
 :local .inventoryManagement .actionGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
 }
 :local .inventoryManagement .actionButtonContainer {
   background: var(--surface-bg);
-  padding: 6px;
+  padding: 4px;
   border-radius: 8px;
-  box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 :local .inventoryManagement .actionButtonContainer:hover {
   transform: translateY(-2px);
-  box-shadow: var(--card-shadow-hover);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
 }
 :local .inventoryManagement .actionButtonContainer :global(.ms-Button--primary) {
   width: 100%;
   border-radius: 6px;
-  height: 40px;
+  height: 38px;
   background: var(--primary-gradient);
   border: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
 }
 :local .inventoryManagement .actionButtonContainer :global(.ms-Button--primary):hover {
-  filter: brightness(1.15);
+  filter: brightness(1.12);
   transform: scale(1.01);
-}
-:local .inventoryManagement .sidebarNavItem {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-:local .inventoryManagement .sidebarNavItem:hover {
-  background-color: rgba(128, 128, 128, 0.08) !important;
-  color: var(--text-main) !important;
 }
 :local .inventoryManagement .appLayoutContainer {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 @media (max-width: 768px) {
   :local .inventoryManagement .appLayoutContainer {
@@ -160,20 +176,186 @@
 :local .inventoryManagement .sidebarContainer {
   width: 250px;
   background-color: var(--surface-bg);
-  border: 1px solid rgba(128, 128, 128, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: var(--radius-md);
-  padding: 16px 12px;
-  box-shadow: var(--card-shadow);
+  padding: 12px 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 2px;
   flex-shrink: 0;
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media (max-width: 768px) {
   :local .inventoryManagement .sidebarContainer {
     width: 100%;
     box-sizing: border-box;
   }
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed {
+  width: 56px;
+  padding: 12px 6px;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader {
+  padding: 4px 0 8px 0;
+  text-align: center;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader h4, :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span {
+  display: none;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navGroupLabel {
+  display: none;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem {
+  justify-content: center;
+  padding: 10px 0;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navItemText,
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navBadge {
+  display: none;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem i {
+  margin: 0;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle {
+  justify-content: center;
+}
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle .collapseText {
+  display: none;
+}
+@media (max-width: 768px) {
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed {
+    width: 100%;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader h4,
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span,
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navGroupLabel {
+    display: block;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem {
+    justify-content: flex-start;
+    padding: 10px 14px;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navItemText,
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navBadge {
+    display: inline-flex;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle .collapseText {
+    display: inline;
+  }
+}
+:local .inventoryManagement .navHeader {
+  padding: 8px 14px 14px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  margin-bottom: 6px;
+}
+:local .inventoryManagement .navHeader h4 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.01em;
+}
+:local .inventoryManagement .navHeader span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+:local .inventoryManagement .navGroupLabel {
+  padding: 14px 14px 5px 14px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #8a8886;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+:local .inventoryManagement .navDivider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.07);
+  margin: 4px 10px;
+}
+:local .inventoryManagement .sidebarNavItem {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid transparent;
+  user-select: none;
+}
+:local .inventoryManagement .sidebarNavItem i {
+  font-size: 15px;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+:local .inventoryManagement .sidebarNavItem .navItemText {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:local .inventoryManagement .sidebarNavItem .navBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 100px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1.35;
+  flex-shrink: 0;
+}
+:local .inventoryManagement .sidebarNavItem:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--text-main);
+}
+:local .inventoryManagement .sidebarNavItem:focus-visible {
+  outline: 2px solid #0078d4;
+  outline-offset: -2px;
+}
+:local .inventoryManagement .sidebarNavItem.navItemActive {
+  background-color: rgba(0, 120, 212, 0.08);
+  color: #0078d4;
+  font-weight: 600;
+}
+:local .inventoryManagement .sidebarNavItem.navItemActive::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background-color: #0078d4;
+  border-radius: 0 2px 2px 0;
+}
+:local .inventoryManagement .collapseToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: #8a8886;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+:local .inventoryManagement .collapseToggle:hover {
+  color: #616161;
+}
+:local .inventoryManagement .collapseToggle i {
+  font-size: 12px;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+:local .inventoryManagement .collapseToggle .collapseText {
+  flex-grow: 1;
 }
 :local .inventoryManagement .contentContainer {
   flex-grow: 1;
@@ -184,8 +366,8 @@
   background: var(--surface-bg);
   border-radius: var(--radius-lg);
   padding: 24px;
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.07);
 }
 :local .inventoryManagement .card .cardHeader {
   display: flex;
@@ -194,10 +376,11 @@
   margin-bottom: 20px;
 }
 :local .inventoryManagement .card .cardHeader h3 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   margin: 0;
   color: var(--text-main);
+  letter-spacing: -0.01em;
 }
 :local .inventoryManagement :global(.ms-DetailsList) {
   background: transparent !important;
@@ -207,8 +390,8 @@
   background: transparent;
 }
 :local .inventoryManagement :global(.ms-DetailsRow) {
-  border-radius: 8px;
-  margin-bottom: 4px;
+  border-radius: 6px;
+  margin-bottom: 2px;
   border: none !important;
 }
 :local .inventoryManagement :global(.ms-DetailsRow):hover {
@@ -217,16 +400,16 @@
 :local .inventoryManagement :global(.ms-Pivot) {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 12px !important;
+  gap: 10px !important;
   width: 100% !important;
-  margin-bottom: 24px !important;
+  margin-bottom: 20px !important;
   border-bottom: none !important;
 }
 :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) {
   margin: 0 !important;
-  height: 46px !important;
+  height: 42px !important;
   background-color: var(--surface-bg) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
   border-radius: 8px !important;
   display: flex !important;
   align-items: center !important;
@@ -234,19 +417,19 @@
   gap: 6px !important;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   font-weight: 500 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
 }
 :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link):hover {
   background-color: rgba(0, 0, 0, 0.03) !important;
   color: var(--text-main) !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
   transform: translateY(-1px) !important;
 }
 :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected {
   background: var(--primary-gradient) !important;
   border-color: transparent !important;
   font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+  box-shadow: 0 3px 10px rgba(0, 120, 212, 0.2) !important;
   color: #ffffff !important;
 }
 :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected::before {
@@ -274,7 +457,7 @@
   align-items: center;
   margin-top: 24px;
   padding-top: 16px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 @media (max-width: 600px) {
   :local .inventoryManagement .paginationContainer {
@@ -284,7 +467,7 @@
   }
 }
 :local .inventoryManagement .paginationContainer .paginationInfo {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 :local .inventoryManagement .paginationContainer .paginationInfo strong {
@@ -292,7 +475,7 @@
 }
 :local .inventoryManagement .paginationContainer .paginationControls {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   align-items: center;
 }
 :local .inventoryManagement .paginationContainer .paginationControls .paginationButton {
@@ -300,7 +483,7 @@
   height: 32px;
   padding: 0 8px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   background-color: var(--surface-bg);
   color: var(--text-main);
   font-weight: 500;
@@ -308,33 +491,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
-  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 :local .inventoryManagement .paginationContainer .paginationControls .paginationButton:hover:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.12);
   transform: translateY(-1px);
 }
 :local .inventoryManagement .paginationContainer .paginationControls .paginationButton:active:not(:disabled) {
   transform: translateY(0);
 }
 :local .inventoryManagement .paginationContainer .paginationControls .paginationButton:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
-  background-color: rgba(0, 0, 0, 0.02);
 }
 :local .inventoryManagement .paginationContainer .paginationControls .paginationButton.active {
   background: var(--primary-gradient);
   color: #ffffff;
   border-color: transparent;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 120, 212, 0.2);
 }
 :local .inventoryManagement .assetCardHover:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
-  border-color: rgba(37, 99, 235, 0.2) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 120, 212, 0.15) !important;
 }
 :local .inventoryManagement.teams {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;

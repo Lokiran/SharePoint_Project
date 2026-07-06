@@ -3,6 +3,7 @@ export interface IReturnRequest {
   title: string;
   assetId: string;
   assetName: string;
+  assetType?: string;
   serialNumber: string;
   requesterName: string;
   requesterEmail?: string;

@@ -1,1 +1,0 @@
-{"version":3,"file":"IHelloWorldProps.js","sourceRoot":"","sources":["../../../../src/webparts/helloWorld/components/IHelloWorldProps.ts"],"names":[],"mappings":"","sourcesContent":["export interface IHelloWorldProps {\n  description: string;\n  isDarkTheme: boolean;\n  environmentMessage: string;\n  hasTeamsContext: boolean;\n  userDisplayName: string;\n}\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"AuditLogService.d.ts","sourceRoot":"","sources":["../../../../src/webparts/inventoryManagement/services/AuditLogService.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,SAAS,EAAE,MAAM,qBAAqB,CAAC;AAGhD,qBAAa,eAAe;WACN,WAAW,CAAC,GAAG,EAAE,IAAI,CAAC,SAAS,EAAE,IAAI,GAAG,WAAW,CAAC,GAAG,OAAO,CAAC,IAAI,CAAC;WAgBpE,YAAY,IAAI,OAAO,CAAC,SAAS,EAAE,CAAC;CAwWzD"}

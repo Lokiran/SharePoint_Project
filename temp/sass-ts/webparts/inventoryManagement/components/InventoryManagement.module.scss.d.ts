@@ -15,6 +15,10 @@ export interface IExportStyles {
 
   'cardHeader': string;
 
+  'collapseText': string;
+
+  'collapseToggle': string;
+
   'contentContainer': string;
 
   'dark': string;
@@ -29,6 +33,18 @@ export interface IExportStyles {
 
   'mainContent': string;
 
+  'navBadge': string;
+
+  'navDivider': string;
+
+  'navGroupLabel': string;
+
+  'navHeader': string;
+
+  'navItemActive': string;
+
+  'navItemText': string;
+
   'paginationButton': string;
 
   'paginationContainer': string;
@@ -36,6 +52,8 @@ export interface IExportStyles {
   'paginationControls': string;
 
   'paginationInfo': string;
+
+  'sidebarCollapsed': string;
 
   'sidebarContainer': string;
 

@@ -33,10 +33,12 @@ export interface IDashboardProps {
   isAdmin?: boolean;
   /** When true, dashboard copy and the primary pie chart follow the Approvals queue (requests), not inventory asset status. */
   isInventoryManager?: boolean;
+  /** Optional callback to navigate to a different tab from quick action buttons. */
+  onNavigate?: (tabKey: string) => void;
 }
 
 export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
-  const { items, requests, isAdmin, isInventoryManager } = props;
+  const { items, requests, isAdmin, isInventoryManager, onNavigate } = props;
   const isManagerView = !!isInventoryManager && !isAdmin;
 
   // --- Utility: Format Date nicely ---
@@ -49,6 +51,17 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     } catch {
       return dateStr;
     }
+  };
+
+  // --- Utility: Get current date string ---
+  const getCurrentDate = (): string => {
+    const now = new Date();
+    return now.toLocaleDateString(undefined, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   };
 
   // --- Utility: Semantic Fluent UI Colors for charts ---
@@ -135,12 +148,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
       {
         label: 'Number of Assets',
         data: assetTypeDataValues.length ? assetTypeDataValues : [0],
-        backgroundColor: 'rgba(0, 120, 212, 0.75)',
+        backgroundColor: 'rgba(0, 120, 212, 0.7)',
         borderColor: 'rgba(0, 120, 212, 1)',
         borderWidth: 1.5,
         hoverBackgroundColor: 'rgba(0, 90, 158, 0.85)',
         hoverBorderColor: 'rgba(0, 90, 158, 1)',
-        borderRadius: 4,
+        borderRadius: 6,
       },
     ],
   };
@@ -189,25 +202,25 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
       labels: {
         boxWidth: 10,
         boxHeight: 10,
-        padding: 16,
+        padding: 14,
         usePointStyle: true,
         font: {
           family: "'Segoe UI', -apple-system, sans-serif",
           size: 11,
           weight: 'normal' as const,
         },
-        color: '#323130',
+        color: '#616161',
       },
     },
     tooltip: {
       backgroundColor: '#ffffff',
-      titleColor: '#323130',
-      bodyColor: '#323130',
-      borderColor: 'rgba(0,0,0,0.08)',
+      titleColor: '#242424',
+      bodyColor: '#242424',
+      borderColor: 'rgba(0,0,0,0.1)',
       borderWidth: 1,
       padding: 10,
       boxPadding: 6,
-      cornerRadius: 6,
+      cornerRadius: 8,
       usePointStyle: true,
       titleFont: {
         family: "'Segoe UI', -apple-system, sans-serif",
@@ -253,7 +266,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             family: "'Segoe UI', -apple-system, sans-serif",
             size: 11,
           },
-          color: '#605e5c',
+          color: '#8a8886',
         },
       },
       y: {
@@ -266,7 +279,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             family: "'Segoe UI', -apple-system, sans-serif",
             size: 11,
           },
-          color: '#605e5c',
+          color: '#8a8886',
         },
       },
     },
@@ -313,9 +326,119 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   // --- Filter for employee's recent requests (Employee Action Center) ---
   const recentEmployeeRequests = requests.slice(0, 5);
 
+  // --- Role label for header ---
+  const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
+  const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
+
+  // --- Quick action handler ---
+  const navigateTo = (key: string): void => {
+    if (onNavigate) {
+      onNavigate(key);
+    }
+  };
+
   return (
     <div className={styles.dashboard}>
-      {/* SharePoint Status Banners (MessageBars) */}
+      {/* ===== DASHBOARD HEADER ===== */}
+      <div className={styles.dashboardHeader}>
+        <div className={styles.headerLeft}>
+          <h2 className={styles.headerTitle}>{dashboardTitle}</h2>
+          <p className={styles.headerSubtitle}>
+            <Icon iconName="ContactInfo" style={{ fontSize: 13, color: '#0078d4' }} />
+            {roleLabel} Overview
+            <span style={{ color: '#c8c6c4' }}>•</span>
+            Real-time analytics
+          </p>
+          <div className={styles.headerDate}>
+            <Icon iconName="Calendar" />
+            <span>{getCurrentDate()}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== QUICK ACTION BUTTONS ===== */}
+      {onNavigate && (
+        <div className={styles.quickActions}>
+          {isAdmin && (
+            <>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('Inventory')}
+                aria-label="View Inventory"
+              >
+                <Icon iconName="List" />
+                <span>View Inventory</span>
+              </button>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('AssetAssignmentQueue')}
+                aria-label="Assignment Queue"
+              >
+                <Icon iconName="Send" />
+                <span>Assignment Queue</span>
+              </button>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('Reports')}
+                aria-label="View Reports"
+              >
+                <Icon iconName="ReportDocument" />
+                <span>Reports</span>
+              </button>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('EventStream')}
+                aria-label="Event Stream"
+              >
+                <Icon iconName="ActivityFeed" />
+                <span>Event Stream</span>
+              </button>
+            </>
+          )}
+          {isManagerView && (
+            <>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('Approvals')}
+                aria-label="Review Approvals"
+              >
+                <Icon iconName="DoubleChevronRight12" />
+                <span>Review Approvals</span>
+              </button>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('AssetReturns')}
+                aria-label="Asset Returns"
+              >
+                <Icon iconName="ReturnToSession" />
+                <span>Asset Returns</span>
+              </button>
+            </>
+          )}
+          {!isAdmin && !isManagerView && (
+            <>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('MyWorkspace')}
+                aria-label="My Workspace"
+              >
+                <Icon iconName="Briefcase" />
+                <span>My Workspace</span>
+              </button>
+              <button
+                className={styles.quickActionBtn}
+                onClick={() => navigateTo('Notifications')}
+                aria-label="View Notifications"
+              >
+                <Icon iconName="Ringer" />
+                <span>Notifications</span>
+              </button>
+            </>
+          )}
+        </div>
+      )}
+
+      {/* ===== STATUS BANNERS ===== */}
       {isManagerView && (
         <div className={styles.dashboardIntro}>
           <MessageBar messageBarType={MessageBarType.info}>
@@ -338,10 +461,14 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         </div>
       )}
 
-      {/* Modern KPI Summary Grid */}
-      <div className={styles.summaryGrid}>
+      {/* ===== KPI SUMMARY CARDS ===== */}
+      <div className={styles.summaryGrid} role="region" aria-label="Key performance indicators">
         {/* Card 1: Total Assets */}
-        <div className={`${styles.summaryCard} ${styles.cardBlue}`}>
+        <div
+          className={`${styles.summaryCard} ${styles.cardBlue}`}
+          role="status"
+          aria-label={`${isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'}: ${totalAssets}`}
+        >
           <div className={styles.iconContainer}>
             <Icon iconName="Package" />
           </div>
@@ -361,7 +488,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         </div>
 
         {/* Card 2: Available Assets */}
-        <div className={`${styles.summaryCard} ${styles.cardGreen}`}>
+        <div
+          className={`${styles.summaryCard} ${styles.cardGreen}`}
+          role="status"
+          aria-label={`Available Assets: ${availableAssets}`}
+        >
           <div className={styles.iconContainer}>
             <Icon iconName="Accept" />
           </div>
@@ -375,7 +506,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         </div>
 
         {/* Card 3: Requests in queue / Total Requests */}
-        <div className={`${styles.summaryCard} ${styles.cardPurple}`}>
+        <div
+          className={`${styles.summaryCard} ${styles.cardPurple}`}
+          role="status"
+          aria-label={`${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}`}
+        >
           <div className={styles.iconContainer}>
             <Icon iconName="Send" />
           </div>
@@ -393,7 +528,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         </div>
 
         {/* Card 4: Awaiting Approval / Pending Requests */}
-        <div className={`${styles.summaryCard} ${styles.cardGold}`}>
+        <div
+          className={`${styles.summaryCard} ${styles.cardGold}`}
+          role="status"
+          aria-label={`${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}`}
+        >
           <div className={styles.iconContainer}>
             <Icon iconName="Clock" />
           </div>
@@ -413,13 +552,18 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         </div>
       </div>
 
-      {/* Modern Dashboard Charts Grid */}
+      {/* ===== CHART CARDS ===== */}
       <div className={styles.chartsGrid}>
         {/* Chart 1: Primary Status (Pie) */}
         <div className={styles.chartCard}>
           <div className={styles.chartHeader}>
-            <h3>{primaryPieTitle}</h3>
-            <span className={styles.chartSubtitle}>{primaryPieSubtitle}</span>
+            <div className={styles.chartIcon}>
+              <Icon iconName="DonutChart" />
+            </div>
+            <div className={styles.chartTitleBlock}>
+              <h3>{primaryPieTitle}</h3>
+              <span className={styles.chartSubtitle}>{primaryPieSubtitle}</span>
+            </div>
           </div>
           <div className={styles.chartContainer}>
             <Pie data={assetStatusData} options={pieOptions} />
@@ -429,8 +573,13 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         {/* Chart 2: Types (Bar) */}
         <div className={styles.chartCard}>
           <div className={styles.chartHeader}>
-            <h3>Assets by Type</h3>
-            <span className={styles.chartSubtitle}>Categorized distribution of equipment</span>
+            <div className={styles.chartIcon}>
+              <Icon iconName="BarChart4" />
+            </div>
+            <div className={styles.chartTitleBlock}>
+              <h3>Assets by Type</h3>
+              <span className={styles.chartSubtitle}>Categorized distribution of equipment</span>
+            </div>
           </div>
           <div className={styles.chartContainer}>
             <Bar data={assetTypeData} options={assetTypeOptions} />
@@ -440,14 +589,19 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         {/* Chart 3: Doughnut (Request Status) */}
         <div className={styles.chartCard}>
           <div className={styles.chartHeader}>
-            <h3>
-              {isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'}
-            </h3>
-            <span className={styles.chartSubtitle}>
-              {isManagerView
-                ? 'Status of asset handouts for manager-approved requests'
-                : 'Current status across all request pipelines'}
-            </span>
+            <div className={styles.chartIcon}>
+              <Icon iconName="PieDouble" />
+            </div>
+            <div className={styles.chartTitleBlock}>
+              <h3>
+                {isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'}
+              </h3>
+              <span className={styles.chartSubtitle}>
+                {isManagerView
+                  ? 'Status of asset handouts for manager-approved requests'
+                  : 'Current status across all request pipelines'}
+              </span>
+            </div>
           </div>
           <div className={styles.chartContainer}>
             <Doughnut data={requestStatusData} options={doughnutOptions} />
@@ -455,13 +609,13 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         </div>
       </div>
 
-      {/* --- Action Center Section --- */}
+      {/* ===== ACTION CENTER — ADMIN ===== */}
       {isAdmin && (
         <div className={styles.actionCenter}>
           <div className={styles.sectionHeader}>
             <div>
               <h3>
-                <Icon iconName="ReviewRequestMirrored" style={{ marginRight: '8px' }} />
+                <Icon iconName="ReviewRequestMirrored" />
                 Asset Assignment Action Center
               </h3>
               <span className={styles.sectionSubtitle}>
@@ -499,20 +653,22 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               </table>
             ) : (
               <div className={styles.noDataMessage}>
-                <Icon iconName="CompletedStateMirrored" />
+                <Icon iconName="CompletedSolid" />
                 <span>All assignments caught up! No pending physical handouts.</span>
+                <span className={styles.emptyStateHint}>Check the Assignment Queue for historical data</span>
               </div>
             )}
           </div>
         </div>
       )}
 
+      {/* ===== ACTION CENTER — MANAGER ===== */}
       {isManagerView && (
         <div className={styles.actionCenter}>
           <div className={styles.sectionHeader}>
             <div>
               <h3>
-                <Icon iconName="ReviewRequest" style={{ marginRight: '8px' }} />
+                <Icon iconName="ReviewRequest" />
                 Pending Manager Decisions
               </h3>
               <span className={styles.sectionSubtitle}>
@@ -556,12 +712,14 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <div className={styles.noDataMessage}>
                 <Icon iconName="CheckMark" />
                 <span>Zero pending requests! Your approvals queue is clear.</span>
+                <span className={styles.emptyStateHint}>New requests will appear here automatically</span>
               </div>
             )}
           </div>
         </div>
       )}
 
+      {/* ===== ACTION CENTER — EMPLOYEE ===== */}
       {!isAdmin && !isInventoryManager && (
         <div className={styles.splitLayout}>
           {/* Active Requests Tracker */}
@@ -569,7 +727,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             <div className={styles.sectionHeader}>
               <div>
                 <h3>
-                  <Icon iconName="Send" style={{ marginRight: '8px' }} />
+                  <Icon iconName="Send" />
                   Active Requests Status
                 </h3>
                 <span className={styles.sectionSubtitle}>
@@ -629,6 +787,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                 <div className={styles.noDataMessage}>
                   <Icon iconName="Info" />
                   <span>No active requests placed recently.</span>
+                  <span className={styles.emptyStateHint}>Use &quot;Request Asset&quot; to submit a new request</span>
                 </div>
               )}
             </div>
@@ -639,7 +798,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             <div className={styles.sectionHeader}>
               <div>
                 <h3>
-                  <Icon iconName="AppIconDefault" style={{ marginRight: '8px' }} />
+                  <Icon iconName="Devices3" />
                   My Assigned Equipment
                 </h3>
                 <span className={styles.sectionSubtitle}>
@@ -673,6 +832,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                 <div className={styles.noDataMessage}>
                   <Icon iconName="Devices3" />
                   <span>No equipment currently assigned to you.</span>
+                  <span className={styles.emptyStateHint}>Assigned devices will appear here after handoff</span>
                 </div>
               )}
             </div>

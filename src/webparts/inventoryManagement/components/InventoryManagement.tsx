@@ -89,6 +89,7 @@ export interface IInventoryManagementState {
   isAdminPanelOpen?: boolean;
   adminSelectedAssetId?: string;
   adminComment?: string;
+  sidebarCollapsed: boolean;
 }
 
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
@@ -407,7 +408,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       selectedAdminRequest: undefined,
       isAdminPanelOpen: false,
       adminSelectedAssetId: undefined,
-      adminComment: ''
+      adminComment: '',
+      sidebarCollapsed: false
     };
   }
 
@@ -585,6 +587,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         title: `Return Request for ${selectedAssetForReturn.assetName || selectedAssetForReturn.title}`,
         assetId: selectedAssetForReturn.id,
         assetName: selectedAssetForReturn.assetName || selectedAssetForReturn.title,
+        assetType: selectedAssetForReturn.assetType,
         serialNumber: selectedAssetForReturn.serialNumber,
         requesterName: this.state.activeUserDisplayName,
         requesterEmail: this.state.activeUserEmail,
@@ -1504,25 +1507,25 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     const visibleManagerRequests = filterRequests(managerQueueRequests);
     const notifications = this._getNotifications();
 
-    const navItems = [
-      { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4' },
+    const navItems: Array<{ key: string; text: string; icon: string; badge?: number; badgeColor?: string; group?: string }> = [
+      { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4', group: 'MAIN' },
       { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
       { 
         key: 'Notifications', 
         text: 'Notifications', 
         icon: 'Ringer', 
         badge: notifications.filter(n => !n.isRead).length || undefined,
-        badgeColor: '#3b82f6'
+        badgeColor: '#0078d4'
       },
       { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
-      ...(isAdmin ? [
-        { key: 'Inventory', text: 'Inventory', icon: 'List' }
+      ...(isAdmin || isManager ? [
+        { key: 'Inventory', text: 'Inventory', icon: 'List', group: 'MANAGEMENT' }
       ] : []),
       ...(isManager ? [
-        { key: 'Approvals', text: 'Approvals', icon: 'DoubleChevronRight12' }
+        { key: 'Approvals', text: 'Approvals', icon: 'DoubleChevronRight12', group: 'MANAGEMENT' }
       ] : []),
       ...(isAdmin ? [
-        { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send' }
+        { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send', ...(isManager ? {} : { group: undefined }) }
       ] : []),
       ...(isAdmin || isManager ? [
         {
@@ -1534,7 +1537,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         }
       ] : []),
       ...(isAdmin ? [
-        { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed' },
+        { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed', group: 'SYSTEM' },
         { key: 'Users', text: 'Users', icon: 'People' },
         { key: 'Reports', text: 'Reports', icon: 'ReportDocument' },
         { key: 'Config', text: 'Config', icon: 'Settings' }
@@ -1581,87 +1584,74 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             </div>
           )}
 
-          {!roleLoading && (
-            <div className={styles.actionGrid}>
-              {(isAdmin || isManager) && (
-                <div className={styles.actionButtonContainer}>
-                  <PrimaryButton
-                    text={isAdmin ? "Add New Asset" : "Assign / Manage Assets"}
-                    onClick={() => this.setState({ isAssetFormOpen: true })}
-                    iconProps={{ iconName: 'Add' }}
-                  />
-                </div>
-              )}
-              {(isAdmin || isManager || isEmployee) && (
-                <div className={styles.actionButtonContainer}>
-                  <PrimaryButton
-                    text="Request Asset"
-                    onClick={() => this.setState({ isRequestFormOpen: true })}
-                    iconProps={{ iconName: 'Send' }}
-                  />
-                </div>
-              )}
-              {(isAdmin || isManager || isEmployee) && (
-                <div className={styles.actionButtonContainer}>
-                  <PrimaryButton
-                    text="Raise Incident"
-                    onClick={() => this.setState({ isIncidentFormOpen: true })}
-                    iconProps={{ iconName: 'AlertSolid' }}
-                  />
-                </div>
-              )}
-            </div>
-          )}
+
 
           <div className={styles.appLayoutContainer}>
             {/* Left Sidebar Navigation */}
-            <div className={styles.sidebarContainer}>
-              <div style={{ padding: '8px 12px 16px 12px', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', marginBottom: '8px' }}>
-                <h4 style={{ margin: 0, fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)' }}>Navigation</h4>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Role: {effectiveRole}</span>
+            <div
+              className={`${styles.sidebarContainer} ${this.state.sidebarCollapsed ? styles.sidebarCollapsed : ''}`}
+              role="navigation"
+              aria-label="Main navigation"
+            >
+              <div className={styles.navHeader}>
+                <h4>Navigation</h4>
+                <span>Role: {effectiveRole}</span>
               </div>
-              {navItems.map(nav => {
+              {navItems.map((nav, index) => {
                 const isActive = this.state.selectedTabKey === nav.key;
+                const showGroupLabel = nav.group && (index === 0 || navItems[index - 1]?.group !== nav.group);
+
                 return (
-                  <div
-                    key={nav.key}
-                    onClick={() => this.setState({ selectedTabKey: nav.key })}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      padding: '10px 14px',
-                      borderRadius: '6px',
-                      cursor: 'pointer',
-                      fontSize: '0.85rem',
-                      fontWeight: isActive ? 600 : 500,
-                      backgroundColor: isActive 
-                        ? (isDarkTheme ? 'rgba(59, 130, 246, 0.15)' : 'rgba(37, 99, 235, 0.08)')
-                        : 'transparent',
-                      color: isActive 
-                        ? (isDarkTheme ? '#60a5fa' : '#2563eb')
-                        : 'var(--text-muted)',
-                      transition: 'all 0.15s ease'
-                    }}
-                    className={styles.sidebarNavItem}
-                  >
-                    <Icon iconName={nav.icon} style={{ fontSize: '15px' }} />
-                    <span style={{ flexGrow: 1 }}>{nav.text}</span>
-                    {nav.badge !== undefined && nav.badge > 0 && (
-                      <span style={{
-                        fontSize: '0.7rem',
-                        fontWeight: 600,
-                        backgroundColor: nav.badgeColor || '#ef4444',
-                        color: '#ffffff',
-                        padding: '2px 6px',
-                        borderRadius: '9999px'
-                      }}>
-                        {nav.badge}
-                      </span>
+                  <React.Fragment key={nav.key}>
+                    {showGroupLabel && (
+                      <div className={styles.navGroupLabel}>{nav.group}</div>
                     )}
-                  </div>
+                    <div
+                      onClick={() => this.setState({ selectedTabKey: nav.key })}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          this.setState({ selectedTabKey: nav.key });
+                        }
+                      }}
+                      tabIndex={0}
+                      role="button"
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-label={nav.text}
+                      className={`${styles.sidebarNavItem} ${isActive ? styles.navItemActive : ''}`}
+                    >
+                      <Icon iconName={nav.icon} />
+                      <span className={styles.navItemText}>{nav.text}</span>
+                      {nav.badge !== undefined && nav.badge > 0 && (
+                        <span
+                          className={styles.navBadge}
+                          style={{ backgroundColor: nav.badgeColor || '#e74c3c' }}
+                        >
+                          {nav.badge}
+                        </span>
+                      )}
+                    </div>
+                  </React.Fragment>
                 );
               })}
+              <div
+                className={styles.collapseToggle}
+                onClick={() => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }))}
+                role="button"
+                tabIndex={0}
+                aria-label={this.state.sidebarCollapsed ? 'Expand navigation' : 'Collapse navigation'}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
+                  }
+                }}
+              >
+                <Icon iconName={this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft'} />
+                <span className={styles.collapseText}>
+                  {this.state.sidebarCollapsed ? 'Expand' : 'Collapse'}
+                </span>
+              </div>
             </div>
 
             {/* Right Main Content Area */}
@@ -1675,6 +1665,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         requests={isAdmin || isManager ? this.state.requests : myRequests}
                         isAdmin={isAdmin}
                         isInventoryManager={isManager}
+                        onNavigate={(key) => this.setState({ selectedTabKey: key })}
                       />
                     );
                   case 'MyWorkspace':
@@ -1689,6 +1680,13 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         <Pivot aria-label="My Workspace Tabs">
                           <PivotItem headerText="Assets">
                             <div style={{ marginTop: '20px' }}>
+                              <div style={{ marginBottom: '15px' }}>
+                                <PrimaryButton
+                                  text="Request Asset"
+                                  onClick={() => this.setState({ isRequestFormOpen: true })}
+                                  iconProps={{ iconName: 'Send' }}
+                                />
+                              </div>
                               <MyAssignedAssetsView 
                                 items={myAssets} 
                                 onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
@@ -1736,7 +1734,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                       </div>
                     );
                   case 'Inventory':
-                    return isAdmin ? (
+                    return (isAdmin || isManager) ? (
                       <div>
                         <div className={styles.cardHeader}>
                           <h3>Current Inventory Overview</h3>
@@ -1747,7 +1745,16 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         {this.state.loading ? (
                           <p>Loading inventory...</p>
                         ) : (
-                          <InventoryList items={items} isAdmin={true} enablePagination={true} />
+                          <div>
+                            <div style={{ marginBottom: '15px' }}>
+                              <PrimaryButton
+                                text={isAdmin ? "Add New Asset" : "Assign / Manage Assets"}
+                                onClick={() => this.setState({ isAssetFormOpen: true })}
+                                iconProps={{ iconName: 'Add' }}
+                              />
+                            </div>
+                            <InventoryList items={items} isAdmin={isAdmin} enablePagination={true} />
+                          </div>
                         )}
                       </div>
                     ) : null;

@@ -16,39 +16,62 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".dashboard_34e583c6{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,sans-serif;padding:8px 0}.dashboard_34e583c6 .dashboardIntro_34e583c6{margin-bottom:24px}.dashboard_34e583c6 .summaryGrid_34e583c6{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:28px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6{align-items:center;background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px;position:relative;transition:transform .25s cubic-bezier(.1,.9,.2,1),box-shadow .25s cubic-bezier(.1,.9,.2,1)}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:before{background-color:transparent;bottom:0;content:\"\";left:0;position:absolute;top:0;transition:background-color .2s ease;width:4px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:hover{box-shadow:0 6.4px 14.4px 0 rgba(0,0,0,.12),0 1.2px 3.6px 0 rgba(0,0,0,.06);transform:translateY(-4px)}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:hover:before{opacity:.9}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardBlue_34e583c6:before{background-color:#0078d4}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardBlue_34e583c6 .iconContainer_34e583c6{background-color:rgba(0,120,212,.08);color:#0078d4}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGreen_34e583c6:before{background-color:#107c10}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGreen_34e583c6 .iconContainer_34e583c6{background-color:rgba(16,124,16,.08);color:#107c10}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardPurple_34e583c6:before{background-color:#8764b8}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardPurple_34e583c6 .iconContainer_34e583c6{background-color:rgba(135,100,184,.08);color:#8764b8}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGold_34e583c6:before{background-color:#ffb900}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGold_34e583c6 .iconContainer_34e583c6{background-color:rgba(255,185,0,.12);color:#b37d00}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .iconContainer_34e583c6{align-items:center;border-radius:10px;display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .2s ease;width:48px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:hover .iconContainer_34e583c6{transform:scale(1.08)}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6{display:flex;flex-direction:column;flex-grow:1;justify-content:center}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6 .summaryValue_34e583c6{color:var(--text-main,#323130);font-size:2rem;font-weight:700;line-height:1.1;margin-bottom:2px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6 .summaryLabel_34e583c6{color:var(--text-muted,#605e5c);font-size:.9rem;font-weight:600;margin-bottom:2px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6 .summarySubtitle_34e583c6{color:var(--text-muted,#797775);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_34e583c6 .chartsGrid_34e583c6{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6{align-items:flex-start;background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;padding:24px;transition:box-shadow .2s ease}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6:hover{box-shadow:0 3.2px 7.2px 0 rgba(0,0,0,.1),0 .6px 1.8px 0 rgba(0,0,0,.05)}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartHeader_34e583c6{border-bottom:1px solid var(--border-color,rgba(0,0,0,.08));margin-bottom:20px;padding-bottom:12px;width:100%}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartHeader_34e583c6 h3{color:var(--text-main,#323130);font-size:1.1rem;font-weight:600;margin:0}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartHeader_34e583c6 .chartSubtitle_34e583c6{color:var(--text-muted,#797775);font-size:.8rem;margin:4px 0 0}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartContainer_34e583c6{align-items:center;display:flex;height:280px;justify-content:center;position:relative;width:100%}.dashboard_34e583c6 .actionCenter_34e583c6{background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);margin-bottom:24px;padding:24px;transition:box-shadow .2s ease}.dashboard_34e583c6 .actionCenter_34e583c6:hover{box-shadow:0 3.2px 7.2px 0 rgba(0,0,0,.1),0 .6px 1.8px 0 rgba(0,0,0,.05)}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6{align-items:center;border-bottom:1px solid var(--border-color,rgba(0,0,0,.08));display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:12px}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6 h3{align-items:center;color:var(--text-main,#323130);display:flex;font-size:1.1rem;font-weight:600;gap:8px;margin:0}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6 h3 i{color:#0078d4}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6 .sectionSubtitle_34e583c6{color:var(--text-muted,#797775);font-size:.8rem;margin:4px 0 0}.dashboard_34e583c6 .actionCenter_34e583c6 .tableWrapper_34e583c6{overflow-x:auto;width:100%}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6{border-collapse:collapse;text-align:left;width:100%}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 th{background-color:rgba(0,0,0,.01);border-bottom:1.5px solid var(--border-color,rgba(0,0,0,.08));color:var(--text-muted,#605e5c);font-size:.8rem;font-weight:600;letter-spacing:.03em;padding:10px 12px;text-transform:uppercase}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 td{border-bottom:1px solid var(--border-color,rgba(0,0,0,.04));color:var(--text-main,#323130);font-size:.85rem;padding:12px;vertical-align:middle}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 tr:last-child td{border-bottom:none}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 tr:hover td{background-color:rgba(0,120,212,.015)}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6{align-items:center;border-radius:12px;display:inline-flex;font-size:.75rem;font-weight:600;justify-content:center;padding:4px 10px;text-transform:capitalize}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6.badgePending_34e583c6{background-color:#fff4ce;color:#7a5200}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6.badgeApproved_34e583c6{background-color:#dff6dd;color:#107c10}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6.badgeDeclined_34e583c6{background-color:#fde7e9;color:#a80000}.dashboard_34e583c6 .actionCenter_34e583c6 .noDataMessage_34e583c6{align-items:center;color:var(--text-muted,#797775);display:flex;flex-direction:column;font-size:.9rem;gap:12px;justify-content:center;padding:40px;text-align:center}.dashboard_34e583c6 .actionCenter_34e583c6 .noDataMessage_34e583c6 i{color:var(--text-muted,#a19f9d);font-size:28px}.dashboard_34e583c6 .splitLayout_34e583c6{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(45%,1fr));margin-bottom:24px}.dashboard_34e583c6 .splitLayout_34e583c6 .actionCenter_34e583c6{margin-bottom:0}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("@keyframes fadeInUp_56f100fc{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_56f100fc{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_56f100fc{0%,to{opacity:1}50%{opacity:.6}}.dashboard_56f100fc{animation:fadeInUp_56f100fc .4s cubic-bezier(0,0,.2,1);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_56f100fc .dashboardHeader_56f100fc{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc{flex:1;min-width:200px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerTitle_56f100fc{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerSubtitle_56f100fc{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerDate_56f100fc{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerDate_56f100fc i{color:#8a8886;font-size:12px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerRight_56f100fc{align-items:center;display:flex;gap:8px}.dashboard_56f100fc .quickActions_56f100fc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc{align-items:center;background-color:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:500;gap:7px;padding:8px 16px;transition:all .15s cubic-bezier(.4,0,.2,1);white-space:nowrap}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc i{color:#0078d4;font-size:14px}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:hover{background-color:rgba(0,120,212,.08);border-color:#0078d4;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);color:#005a9e;transform:translateY(-1px)}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:active{transform:translateY(0)}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_56f100fc .dashboardIntro_56f100fc{animation:fadeInUp_56f100fc .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_56f100fc .summaryGrid_56f100fc{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@media (max-width:1100px){.dashboard_56f100fc .summaryGrid_56f100fc{grid-template-columns:repeat(2,1fr)}}@media (max-width:600px){.dashboard_56f100fc .summaryGrid_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc{align-items:center;animation:fadeInUp_56f100fc .4s cubic-bezier(0,0,.2,1) both;background-color:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:before{background-color:transparent;border-radius:0 2px 2px 0;bottom:0;content:\"\";left:0;position:absolute;top:0;transition:opacity .15s cubic-bezier(.4,0,.2,1);width:4px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);transform:translateY(-3px)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover .iconContainer_56f100fc{transform:scale(1.06)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:first-child{animation-delay:0s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(2){animation-delay:.06s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(3){animation-delay:.12s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(4){animation-delay:.18s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardBlue_56f100fc:before{background-color:#0078d4}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardBlue_56f100fc .iconContainer_56f100fc{background-color:rgba(0,120,212,.08);color:#0078d4}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGreen_56f100fc:before{background-color:#107c10}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGreen_56f100fc .iconContainer_56f100fc{background-color:rgba(16,124,16,.08);color:#107c10}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardPurple_56f100fc:before{background-color:#8764b8}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardPurple_56f100fc .iconContainer_56f100fc{background-color:rgba(135,100,184,.08);color:#8764b8}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGold_56f100fc:before{background-color:#ffb900}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGold_56f100fc .iconContainer_56f100fc{background-color:rgba(255,185,0,.12);color:#b37d00}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .iconContainer_56f100fc{align-items:center;border-radius:12px;display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summaryValue_56f100fc{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summaryLabel_56f100fc{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendUp_56f100fc{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendUp_56f100fc i{font-size:10px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendDown_56f100fc{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendDown_56f100fc i{font-size:10px}.dashboard_56f100fc .chartsGrid_56f100fc{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@media (max-width:720px){.dashboard_56f100fc .chartsGrid_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc{align-items:flex-start;animation:fadeInUp_56f100fc .45s cubic-bezier(0,0,.2,1) both;background-color:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;padding:24px;transition:box-shadow .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:first-child{animation-delay:.1s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:nth-child(2){animation-delay:.16s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:nth-child(3){animation-delay:.22s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartIcon_56f100fc{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc{flex:1;min-width:0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc .chartSubtitle_56f100fc{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartContainer_56f100fc{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_56f100fc .actionCenter_56f100fc{animation:fadeInUp_56f100fc .45s cubic-bezier(0,0,.2,1) both;background-color:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);margin-bottom:20px;padding:24px;transition:box-shadow .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .actionCenter_56f100fc:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc h3 i{color:#0078d4;font-size:16px}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc .sectionSubtitle_56f100fc{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_56f100fc .actionCenter_56f100fc .tableWrapper_56f100fc{border-radius:8px;overflow-x:auto;width:100%}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th:first-child{border-radius:8px 0 0 0}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th:last-child{border-radius:0 8px 0 0}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:last-child td{border-bottom:none}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc{align-items:center;border-radius:100px;display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:opacity .15s cubic-bezier(.4,0,.2,1);white-space:nowrap}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgePending_56f100fc{background-color:#fff4ce;border:1px solid rgba(255,185,0,.2);color:#7a5200}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeApproved_56f100fc{background-color:#dff6dd;border:1px solid rgba(16,124,16,.15);color:#0e700e}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeDeclined_56f100fc{background-color:#fde7e9;border:1px solid rgba(216,59,1,.15);color:#a80000}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeAssigned_56f100fc{background-color:#e8f0fe;border:1px solid rgba(0,120,212,.15);color:#1a56db}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeReturned_56f100fc{background-color:#e6f7f5;border:1px solid rgba(0,130,114,.15);color:#006d62}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeMaintenance_56f100fc{background-color:#fff0e0;border:1px solid rgba(216,59,1,.12);color:#9a3412}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc span{line-height:1.5;max-width:320px}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc .emptyStateHint_56f100fc{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_56f100fc .splitLayout_56f100fc{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@media (max-width:900px){.dashboard_56f100fc .splitLayout_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .splitLayout_56f100fc .actionCenter_56f100fc{margin-bottom:0}.dashboard_56f100fc .skeletonCard_56f100fc,.dashboard_56f100fc .skeletonChart_56f100fc,.dashboard_56f100fc .skeletonLine_56f100fc,.dashboard_56f100fc .skeleton_56f100fc{animation:shimmer_56f100fc 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_56f100fc .skeletonCard_56f100fc{border-radius:14px;height:100px}.dashboard_56f100fc .skeletonChart_56f100fc{border-radius:14px;height:260px}.dashboard_56f100fc .skeletonLine_56f100fc{height:14px;margin-bottom:10px}.dashboard_56f100fc .skeletonLine_56f100fc:last-child{width:60%}@media (prefers-reduced-motion:reduce){.dashboard_56f100fc{animation:none!important}.dashboard_56f100fc .actionCenter_56f100fc,.dashboard_56f100fc .chartCard_56f100fc,.dashboard_56f100fc .summaryCard_56f100fc{animation:none!important;transition:none!important}.dashboard_56f100fc .skeletonCard_56f100fc,.dashboard_56f100fc .skeletonChart_56f100fc,.dashboard_56f100fc .skeletonLine_56f100fc,.dashboard_56f100fc .skeleton_56f100fc{animation:none!important}}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  dashboard: "dashboard_34e583c6",
-  dashboardIntro: "dashboardIntro_34e583c6",
-  summaryGrid: "summaryGrid_34e583c6",
-  summaryCard: "summaryCard_34e583c6",
-  cardBlue: "cardBlue_34e583c6",
-  iconContainer: "iconContainer_34e583c6",
-  cardGreen: "cardGreen_34e583c6",
-  cardPurple: "cardPurple_34e583c6",
-  cardGold: "cardGold_34e583c6",
-  cardInfo: "cardInfo_34e583c6",
-  summaryValue: "summaryValue_34e583c6",
-  summaryLabel: "summaryLabel_34e583c6",
-  summarySubtitle: "summarySubtitle_34e583c6",
-  chartsGrid: "chartsGrid_34e583c6",
-  chartCard: "chartCard_34e583c6",
-  chartHeader: "chartHeader_34e583c6",
-  chartSubtitle: "chartSubtitle_34e583c6",
-  chartContainer: "chartContainer_34e583c6",
-  actionCenter: "actionCenter_34e583c6",
-  sectionHeader: "sectionHeader_34e583c6",
-  sectionSubtitle: "sectionSubtitle_34e583c6",
-  tableWrapper: "tableWrapper_34e583c6",
-  actionTable: "actionTable_34e583c6",
-  statusBadge: "statusBadge_34e583c6",
-  badgePending: "badgePending_34e583c6",
-  badgeApproved: "badgeApproved_34e583c6",
-  badgeDeclined: "badgeDeclined_34e583c6",
-  noDataMessage: "noDataMessage_34e583c6",
-  splitLayout: "splitLayout_34e583c6"
+  dashboard: "dashboard_56f100fc",
+  fadeInUp: "fadeInUp_56f100fc",
+  dashboardHeader: "dashboardHeader_56f100fc",
+  headerLeft: "headerLeft_56f100fc",
+  headerTitle: "headerTitle_56f100fc",
+  headerSubtitle: "headerSubtitle_56f100fc",
+  headerDate: "headerDate_56f100fc",
+  headerRight: "headerRight_56f100fc",
+  quickActions: "quickActions_56f100fc",
+  quickActionBtn: "quickActionBtn_56f100fc",
+  dashboardIntro: "dashboardIntro_56f100fc",
+  summaryGrid: "summaryGrid_56f100fc",
+  summaryCard: "summaryCard_56f100fc",
+  iconContainer: "iconContainer_56f100fc",
+  cardBlue: "cardBlue_56f100fc",
+  cardGreen: "cardGreen_56f100fc",
+  cardPurple: "cardPurple_56f100fc",
+  cardGold: "cardGold_56f100fc",
+  cardInfo: "cardInfo_56f100fc",
+  summaryValue: "summaryValue_56f100fc",
+  summaryLabel: "summaryLabel_56f100fc",
+  summarySubtitle: "summarySubtitle_56f100fc",
+  trendUp: "trendUp_56f100fc",
+  trendDown: "trendDown_56f100fc",
+  chartsGrid: "chartsGrid_56f100fc",
+  chartCard: "chartCard_56f100fc",
+  chartHeader: "chartHeader_56f100fc",
+  chartIcon: "chartIcon_56f100fc",
+  chartTitleBlock: "chartTitleBlock_56f100fc",
+  chartSubtitle: "chartSubtitle_56f100fc",
+  chartContainer: "chartContainer_56f100fc",
+  actionCenter: "actionCenter_56f100fc",
+  sectionHeader: "sectionHeader_56f100fc",
+  sectionSubtitle: "sectionSubtitle_56f100fc",
+  tableWrapper: "tableWrapper_56f100fc",
+  actionTable: "actionTable_56f100fc",
+  statusBadge: "statusBadge_56f100fc",
+  badgePending: "badgePending_56f100fc",
+  badgeApproved: "badgeApproved_56f100fc",
+  badgeDeclined: "badgeDeclined_56f100fc",
+  badgeAssigned: "badgeAssigned_56f100fc",
+  badgeReturned: "badgeReturned_56f100fc",
+  badgeMaintenance: "badgeMaintenance_56f100fc",
+  noDataMessage: "noDataMessage_56f100fc",
+  emptyStateHint: "emptyStateHint_56f100fc",
+  splitLayout: "splitLayout_56f100fc",
+  skeleton: "skeleton_56f100fc",
+  skeletonLine: "skeletonLine_56f100fc",
+  skeletonChart: "skeletonChart_56f100fc",
+  skeletonCard: "skeletonCard_56f100fc",
+  shimmer: "shimmer_56f100fc",
+  pulse: "pulse_56f100fc"
 });
 
 
@@ -97,33 +120,42 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_2733f1a0{--primary-blue:#2563eb;--primary-gradient:linear-gradient(135deg,#1e40af,#3b82f6);--surface-bg:#fff;--text-main:#0f172a;--text-muted:#64748b;--card-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--card-shadow-hover:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_2733f1a0.dark_2733f1a0{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_2733f1a0.dark_2733f1a0 .sidebarNavItem_2733f1a0:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_2733f1a0 .mainContent_2733f1a0{display:flex;flex-direction:column;gap:24px;margin:0 auto;max-width:1200px}.inventoryManagement_2733f1a0 .heroSection_2733f1a0{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:var(--card-shadow);color:#fff;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;overflow:hidden;padding:40px;position:relative}@media (max-width:768px){.inventoryManagement_2733f1a0 .heroSection_2733f1a0{align-items:center;flex-direction:column;padding:30px 20px;text-align:center}}.inventoryManagement_2733f1a0 .heroSection_2733f1a0:after{background:hsla(0,0%,100%,.1);border-radius:50%;content:\"\";filter:blur(40px);height:300px;position:absolute;right:-10%;top:-50%;width:300px}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0{flex:1;min-width:250px;z-index:1}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0 h2{font-size:2.2rem;font-weight:700;letter-spacing:-.025em;margin:0 0 8px}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0 p{font-size:1.1rem;margin:0;opacity:.9}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0 .smallText_2733f1a0{display:block;font-size:.85rem;margin-top:12px;opacity:.7}@media (max-width:768px){.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .welcomeDiagramContainer_2733f1a0{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:20px;z-index:1}@media (max-width:768px){.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .welcomeDiagramContainer_2733f1a0{margin-left:0;margin-top:10px}}.inventoryManagement_2733f1a0 .actionGrid_2733f1a0{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0{background:var(--surface-bg);border-radius:8px;box-shadow:var(--card-shadow);padding:6px;transition:all .3s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0:hover{box-shadow:var(--card-shadow-hover);transform:translateY(-2px)}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0 .ms-Button--primary{background:var(--primary-gradient);border:none;border-radius:6px;font-size:.9rem;font-weight:600;height:40px;transition:all .2s ease;width:100%}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0 .ms-Button--primary:hover{filter:brightness(1.15);transform:scale(1.01)}.inventoryManagement_2733f1a0 .sidebarNavItem_2733f1a0{transition:all .2s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2733f1a0 .sidebarNavItem_2733f1a0:hover{background-color:hsla(0,0%,50%,.08)!important;color:var(--text-main)!important}.inventoryManagement_2733f1a0 .appLayoutContainer_2733f1a0{align-items:flex-start;display:flex;gap:20px;margin-top:20px}@media (max-width:768px){.inventoryManagement_2733f1a0 .appLayoutContainer_2733f1a0{align-items:stretch;flex-direction:column}}.inventoryManagement_2733f1a0 .sidebarContainer_2733f1a0{background-color:var(--surface-bg);border:1px solid hsla(0,0%,50%,.15);border-radius:var(--radius-md);box-shadow:var(--card-shadow);display:flex;flex-direction:column;flex-shrink:0;gap:6px;padding:16px 12px;width:250px}@media (max-width:768px){.inventoryManagement_2733f1a0 .sidebarContainer_2733f1a0{box-sizing:border-box;width:100%}}.inventoryManagement_2733f1a0 .contentContainer_2733f1a0{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_2733f1a0 .card_2733f1a0{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-radius:var(--radius-lg);box-shadow:var(--card-shadow);padding:24px}.inventoryManagement_2733f1a0 .card_2733f1a0 .cardHeader_2733f1a0{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_2733f1a0 .card_2733f1a0 .cardHeader_2733f1a0 h3{color:var(--text-main);font-size:1.25rem;font-weight:600;margin:0}.inventoryManagement_2733f1a0 .ms-DetailsList{background:transparent!important}.inventoryManagement_2733f1a0 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_2733f1a0 .ms-DetailsRow{border:none!important;border-radius:8px;margin-bottom:4px}.inventoryManagement_2733f1a0 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_2733f1a0 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:24px!important;width:100%!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link{align-items:center!important;background-color:var(--surface-bg)!important;border:1px solid rgba(0,0,0,.08)!important;border-radius:8px!important;box-shadow:0 1px 3px rgba(0,0,0,.02)!important;display:flex!important;font-weight:500!important;gap:6px!important;height:46px!important;justify-content:center!important;margin:0!important;transition:all .2s cubic-bezier(.4,0,.2,1)!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link:hover{background-color:rgba(0,0,0,.03)!important;border-color:rgba(0,0,0,.15)!important;color:var(--text-main)!important;transform:translateY(-1px)!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0{background:var(--primary-gradient)!important;border-color:transparent!important;box-shadow:0 4px 12px rgba(37,99,235,.2)!important;color:#fff!important;font-weight:600!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0:before{display:none!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0 .ms-Pivot-link-content,.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0 .ms-Pivot-link-content i,.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0{align-items:center;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationInfo_2733f1a0{color:var(--text-muted);font-size:.85rem}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationInfo_2733f1a0 strong{color:var(--text-main)}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0{align-items:center;display:flex;gap:6px}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0{align-items:center;background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.08);border-radius:6px;color:var(--text-main);cursor:pointer;display:flex;font-size:.82rem;font-weight:500;height:32px;justify-content:center;min-width:32px;padding:0 8px;transition:all .2s ease}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0:hover:not(:disabled){background-color:rgba(0,0,0,.04);border-color:rgba(0,0,0,.15);transform:translateY(-1px)}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0:active:not(:disabled){transform:translateY(0)}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0:disabled{background-color:rgba(0,0,0,.02);cursor:not-allowed;opacity:.4}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0.active_2733f1a0{background:var(--primary-gradient);border-color:transparent;box-shadow:0 2px 8px rgba(37,99,235,.2);color:#fff;font-weight:600}.inventoryManagement_2733f1a0 .assetCardHover_2733f1a0:hover{border-color:rgba(37,99,235,.2)!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)!important;transform:translateY(-4px)!important}.inventoryManagement_2733f1a0.teams_2733f1a0{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_2a18e483{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_2a18e483.dark_2a18e483{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_2a18e483.dark_2a18e483 .sidebarNavItem_2a18e483:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_2a18e483.dark_2a18e483 .sidebarContainer_2a18e483{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_2a18e483.dark_2a18e483 .navGroupLabel_2a18e483{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_2a18e483 .mainContent_2a18e483{display:flex;flex-direction:column;gap:20px;margin:0 auto;max-width:1240px}.inventoryManagement_2a18e483 .heroSection_2a18e483{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_2a18e483 .heroSection_2a18e483:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_2a18e483 .heroSection_2a18e483:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483{flex:1;min-width:250px;z-index:1}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 .smallText_2a18e483{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_2a18e483 .heroSection_2a18e483 .welcomeDiagramContainer_2a18e483{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483 .welcomeDiagramContainer_2a18e483{margin-left:0;margin-top:8px}}.inventoryManagement_2a18e483 .actionGrid_2a18e483{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483{background:var(--surface-bg);border-radius:8px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);padding:4px;transition:all .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary{background:var(--primary-gradient);border:none;border-radius:6px;font-size:.85rem;font-weight:600;height:38px;transition:all .2s ease;width:100%}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary:hover{filter:brightness(1.12);transform:scale(1.01)}.inventoryManagement_2a18e483 .appLayoutContainer_2a18e483{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@media (max-width:768px){.inventoryManagement_2a18e483 .appLayoutContainer_2a18e483{align-items:stretch;flex-direction:column}}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483{background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;flex-shrink:0;gap:2px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1);width:250px}@media (max-width:768px){.inventoryManagement_2a18e483 .sidebarContainer_2a18e483{box-sizing:border-box;width:100%}}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483{padding:12px 6px;width:56px}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483{padding:4px 0 8px;text-align:center}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navGroupLabel_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 h4,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 span{display:none}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483{justify-content:center;padding:10px 0}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{display:none}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 i{margin:0}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483{justify-content:center}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{display:none}@media (max-width:768px){.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483{width:100%}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navGroupLabel_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 h4,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 span{display:block}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483{justify-content:flex-start;padding:10px 14px}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{display:inline-flex}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{display:inline}}.inventoryManagement_2a18e483 .navHeader_2a18e483{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_2a18e483 .navHeader_2a18e483 h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_2a18e483 .navHeader_2a18e483 span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_2a18e483 .navGroupLabel_2a18e483{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_2a18e483 .navDivider_2a18e483{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s cubic-bezier(.4,0,.2,1);-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483{border-radius:100px;color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:hover{background-color:rgba(0,0,0,.04);color:var(--text-main)}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483.navItemActive_2a18e483{background-color:rgba(0,120,212,.08);color:#0078d4;font-weight:600}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483.navItemActive_2a18e483:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:6px;content:\"\";left:0;position:absolute;top:6px;width:3px}.inventoryManagement_2a18e483 .collapseToggle_2a18e483{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .collapseToggle_2a18e483:hover{color:#616161}.inventoryManagement_2a18e483 .collapseToggle_2a18e483 i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{flex-grow:1}.inventoryManagement_2a18e483 .contentContainer_2a18e483{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_2a18e483 .card_2a18e483{background:var(--surface-bg);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-lg);box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);padding:24px}.inventoryManagement_2a18e483 .card_2a18e483 .cardHeader_2a18e483{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_2a18e483 .card_2a18e483 .cardHeader_2a18e483 h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_2a18e483 .ms-DetailsList{background:transparent!important}.inventoryManagement_2a18e483 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_2a18e483 .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_2a18e483 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_2a18e483 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:10px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link{align-items:center!important;background-color:var(--surface-bg)!important;border:1px solid rgba(0,0,0,.07)!important;border-radius:8px!important;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04)!important;display:flex!important;font-weight:500!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transition:all .2s cubic-bezier(.4,0,.2,1)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link:hover{background-color:rgba(0,0,0,.03)!important;border-color:rgba(0,0,0,.12)!important;color:var(--text-main)!important;transform:translateY(-1px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483{background:var(--primary-gradient)!important;border-color:transparent!important;box-shadow:0 3px 10px rgba(0,120,212,.2)!important;color:#fff!important;font-weight:600!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483:before{display:none!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content i,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_2a18e483 .paginationContainer_2a18e483{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_2a18e483 .paginationContainer_2a18e483{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationInfo_2a18e483{color:var(--text-muted);font-size:.82rem}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationInfo_2a18e483 strong{color:var(--text-main)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483{align-items:center;display:flex;gap:4px}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483{align-items:center;background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.07);border-radius:6px;color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:500;height:32px;justify-content:center;min-width:32px;padding:0 8px;transition:all .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:hover:not(:disabled){background-color:rgba(0,0,0,.04);border-color:rgba(0,0,0,.12);transform:translateY(-1px)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:active:not(:disabled){transform:translateY(0)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:disabled{cursor:not-allowed;opacity:.35}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483.active_2a18e483{background:var(--primary-gradient);border-color:transparent;box-shadow:0 2px 6px rgba(0,120,212,.2);color:#fff;font-weight:600}.inventoryManagement_2a18e483 .assetCardHover_2a18e483:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_2a18e483.teams_2a18e483{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  inventoryManagement: "inventoryManagement_2733f1a0",
-  dark: "dark_2733f1a0",
-  sidebarNavItem: "sidebarNavItem_2733f1a0",
-  mainContent: "mainContent_2733f1a0",
-  heroSection: "heroSection_2733f1a0",
-  heroText: "heroText_2733f1a0",
-  smallText: "smallText_2733f1a0",
-  welcomeDiagramContainer: "welcomeDiagramContainer_2733f1a0",
-  actionGrid: "actionGrid_2733f1a0",
-  actionButtonContainer: "actionButtonContainer_2733f1a0",
-  appLayoutContainer: "appLayoutContainer_2733f1a0",
-  sidebarContainer: "sidebarContainer_2733f1a0",
-  contentContainer: "contentContainer_2733f1a0",
-  card: "card_2733f1a0",
-  cardHeader: "cardHeader_2733f1a0",
-  "is-selected": "is-selected_2733f1a0",
-  paginationContainer: "paginationContainer_2733f1a0",
-  paginationInfo: "paginationInfo_2733f1a0",
-  paginationControls: "paginationControls_2733f1a0",
-  paginationButton: "paginationButton_2733f1a0",
-  active: "active_2733f1a0",
-  assetCardHover: "assetCardHover_2733f1a0",
-  teams: "teams_2733f1a0"
+  inventoryManagement: "inventoryManagement_2a18e483",
+  dark: "dark_2a18e483",
+  sidebarNavItem: "sidebarNavItem_2a18e483",
+  sidebarContainer: "sidebarContainer_2a18e483",
+  navGroupLabel: "navGroupLabel_2a18e483",
+  mainContent: "mainContent_2a18e483",
+  heroSection: "heroSection_2a18e483",
+  heroText: "heroText_2a18e483",
+  smallText: "smallText_2a18e483",
+  welcomeDiagramContainer: "welcomeDiagramContainer_2a18e483",
+  actionGrid: "actionGrid_2a18e483",
+  actionButtonContainer: "actionButtonContainer_2a18e483",
+  appLayoutContainer: "appLayoutContainer_2a18e483",
+  sidebarCollapsed: "sidebarCollapsed_2a18e483",
+  navHeader: "navHeader_2a18e483",
+  navItemText: "navItemText_2a18e483",
+  navBadge: "navBadge_2a18e483",
+  collapseToggle: "collapseToggle_2a18e483",
+  collapseText: "collapseText_2a18e483",
+  navDivider: "navDivider_2a18e483",
+  navItemActive: "navItemActive_2a18e483",
+  contentContainer: "contentContainer_2a18e483",
+  card: "card_2a18e483",
+  cardHeader: "cardHeader_2a18e483",
+  "is-selected": "is-selected_2a18e483",
+  paginationContainer: "paginationContainer_2a18e483",
+  paginationInfo: "paginationInfo_2a18e483",
+  paginationControls: "paginationControls_2a18e483",
+  paginationButton: "paginationButton_2a18e483",
+  active: "active_2a18e483",
+  assetCardHover: "assetCardHover_2a18e483",
+  teams: "teams_2a18e483"
 });
 
 
@@ -648,9 +680,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.module.scss */ 38674);
-/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
-/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
-/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! chart.js */ 55277);
 /* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 
@@ -661,7 +693,7 @@ __webpack_require__.r(__webpack_exports__);
 
 chart_js__WEBPACK_IMPORTED_MODULE_2__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_2__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_2__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_2__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_2__.Title, chart_js__WEBPACK_IMPORTED_MODULE_2__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_2__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_2__.ArcElement);
 const Dashboard = (props) => {
-    const { items, requests, isAdmin, isInventoryManager } = props;
+    const { items, requests, isAdmin, isInventoryManager, onNavigate } = props;
     const isManagerView = !!isInventoryManager && !isAdmin;
     // --- Utility: Format Date nicely ---
     const formatDate = (dateStr) => {
@@ -676,6 +708,16 @@ const Dashboard = (props) => {
         catch {
             return dateStr;
         }
+    };
+    // --- Utility: Get current date string ---
+    const getCurrentDate = () => {
+        const now = new Date();
+        return now.toLocaleDateString(undefined, {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
     };
     // --- Utility: Semantic Fluent UI Colors for charts ---
     const getFluentColor = (status, alpha = 1) => {
@@ -752,12 +794,12 @@ const Dashboard = (props) => {
             {
                 label: 'Number of Assets',
                 data: assetTypeDataValues.length ? assetTypeDataValues : [0],
-                backgroundColor: 'rgba(0, 120, 212, 0.75)',
+                backgroundColor: 'rgba(0, 120, 212, 0.7)',
                 borderColor: 'rgba(0, 120, 212, 1)',
                 borderWidth: 1.5,
                 hoverBackgroundColor: 'rgba(0, 90, 158, 0.85)',
                 hoverBorderColor: 'rgba(0, 90, 158, 1)',
-                borderRadius: 4,
+                borderRadius: 6,
             },
         ],
     };
@@ -802,25 +844,25 @@ const Dashboard = (props) => {
             labels: {
                 boxWidth: 10,
                 boxHeight: 10,
-                padding: 16,
+                padding: 14,
                 usePointStyle: true,
                 font: {
                     family: "'Segoe UI', -apple-system, sans-serif",
                     size: 11,
                     weight: 'normal',
                 },
-                color: '#323130',
+                color: '#616161',
             },
         },
         tooltip: {
             backgroundColor: '#ffffff',
-            titleColor: '#323130',
-            bodyColor: '#323130',
-            borderColor: 'rgba(0,0,0,0.08)',
+            titleColor: '#242424',
+            bodyColor: '#242424',
+            borderColor: 'rgba(0,0,0,0.1)',
             borderWidth: 1,
             padding: 10,
             boxPadding: 6,
-            cornerRadius: 6,
+            cornerRadius: 8,
             usePointStyle: true,
             titleFont: {
                 family: "'Segoe UI', -apple-system, sans-serif",
@@ -863,7 +905,7 @@ const Dashboard = (props) => {
                         family: "'Segoe UI', -apple-system, sans-serif",
                         size: 11,
                     },
-                    color: '#605e5c',
+                    color: '#8a8886',
                 },
             },
             y: {
@@ -876,7 +918,7 @@ const Dashboard = (props) => {
                         family: "'Segoe UI', -apple-system, sans-serif",
                         size: 11,
                     },
-                    color: '#605e5c',
+                    color: '#8a8886',
                 },
             },
         },
@@ -909,25 +951,74 @@ const Dashboard = (props) => {
     const recentApprovals = pendingApprovals.slice(0, 5);
     // --- Filter for employee's recent requests (Employee Action Center) ---
     const recentEmployeeRequests = requests.slice(0, 5);
+    // --- Role label for header ---
+    const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
+    const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
+    // --- Quick action handler ---
+    const navigateTo = (key) => {
+        if (onNavigate) {
+            onNavigate(key);
+        }
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboard },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerLeft },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerTitle }, dashboardTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerSubtitle },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ContactInfo", style: { fontSize: 13, color: '#0078d4' } }),
+                    roleLabel,
+                    " Overview",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#c8c6c4' } }, "\u2022"),
+                    "Real-time analytics"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerDate },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Calendar" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, getCurrentDate())))),
+        onNavigate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActions },
+            isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Inventory'), "aria-label": "View Inventory" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "List" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "View Inventory")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('AssetAssignmentQueue'), "aria-label": "Assignment Queue" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Send" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Assignment Queue")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Reports'), "aria-label": "View Reports" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ReportDocument" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Reports")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('EventStream'), "aria-label": "Event Stream" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ActivityFeed" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Event Stream")))),
+            isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Approvals'), "aria-label": "Review Approvals" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "DoubleChevronRight12" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Review Approvals")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('AssetReturns'), "aria-label": "Asset Returns" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ReturnToSession" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Asset Returns")))),
+            !isAdmin && !isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('MyWorkspace'), "aria-label": "My Workspace" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Briefcase" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "My Workspace")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Notifications'), "aria-label": "View Notifications" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Ringer" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Notifications")))))),
         isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.info },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.info },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Manager Dashboard"),
                 " \u2014 Visual metrics and approval queues are aggregated from request lists. Full data resides in the ",
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Approvals"),
                 " registry."))),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.success },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.success },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Administrator Dashboard"),
                 " \u2014 Analytics are derived directly from the physical inventory items. Assignment metrics display admin-approved items."))),
         !isAdmin && !isInventoryManager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.info },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.info },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Personal Asset Hub"),
                 " \u2014 Real-time telemetry tracking your assigned devices and ongoing request status."))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryGrid },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue}` },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryGrid, role: "region", "aria-label": "Key performance indicators" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue}`, role: "status", "aria-label": `${isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'}: ${totalAssets}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Package" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Package" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalAssets),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'),
@@ -936,9 +1027,9 @@ const Dashboard = (props) => {
                         : !isInventoryManager
                             ? `${totalAssets} assigned hardware item${totalAssets === 1 ? '' : 's'}`
                             : `${totalAssets} items in catalog`))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Accept" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Accept" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, availableAssets),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, "Available Assets"),
@@ -947,18 +1038,18 @@ const Dashboard = (props) => {
                         " in stock (",
                         stockPercentage,
                         "% of total)"))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple}`, role: "status", "aria-label": `${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Send" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Send" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalRequests),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Requests in Queue' : 'Total Requests'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
                         ? `${totalRequests} queue requests`
                         : `Approval success: ${approvalSuccessRate}%`))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Clock" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Clock" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, isManagerView ? awaitingManagerDecision : pendingRequests),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Awaiting Approval' : 'Pending Requests'),
@@ -968,29 +1059,38 @@ const Dashboard = (props) => {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, primaryPieTitle),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, primaryPieSubtitle)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "DonutChart" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, primaryPieTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, primaryPieSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Pie, { data: assetStatusData, options: pieOptions }))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Assets by Type"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, "Categorized distribution of equipment")),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "BarChart4" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Assets by Type"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, "Categorized distribution of equipment"))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Bar, { data: assetTypeData, options: assetTypeOptions }))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, isManagerView
-                        ? 'Status of asset handouts for manager-approved requests'
-                        : 'Current status across all request pipelines')),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "PieDouble" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, isManagerView
+                            ? 'Status of asset handouts for manager-approved requests'
+                            : 'Current status across all request pipelines'))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Doughnut, { data: requestStatusData, options: doughnutOptions })))),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ReviewRequestMirrored", style: { marginRight: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ReviewRequestMirrored" }),
                         "Asset Assignment Action Center"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, "Recent manager-approved requests awaiting physical hardware handout by administrators"))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentAssignments.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1009,13 +1109,14 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, "Awaiting Handoff")))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "CompletedStateMirrored" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "All assignments caught up! No pending physical handouts.")))))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "CompletedSolid" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "All assignments caught up! No pending physical handouts."),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, "Check the Assignment Queue for historical data")))))),
         isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ReviewRequest", style: { marginRight: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ReviewRequest" }),
                         "Pending Manager Decisions"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, "Recent employee requests awaiting your approval or decline"))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentApprovals.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1036,14 +1137,15 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { maxWidth: '240px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' } }, req.reason || 'No justification specified'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, "Awaiting Approval")))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "CheckMark" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Zero pending requests! Your approvals queue is clear.")))))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "CheckMark" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Zero pending requests! Your approvals queue is clear."),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, "New requests will appear here automatically")))))),
         !isAdmin && !isInventoryManager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].splitLayout },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Send", style: { marginRight: '8px' } }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Send" }),
                             "Active Requests Status"),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, "Recent hardware requests in the verification pipeline"))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentEmployeeRequests.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1081,13 +1183,14 @@ const Dashboard = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Info" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "No active requests placed recently."))))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Info" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "No active requests placed recently."),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, "Use \"Request Asset\" to submit a new request"))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "AppIconDefault", style: { marginRight: '8px' } }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Devices3" }),
                             "My Assigned Equipment"),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, "Hardware currently registered and assigned to you"))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, items.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1104,8 +1207,9 @@ const Dashboard = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, item.serialNumber || 'N/A')),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(item.assignedDate || '')))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Devices3" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "No equipment currently assigned to you.")))))))));
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Devices3" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "No equipment currently assigned to you."),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, "Assigned devices will appear here after handoff")))))))));
 };
 
 
@@ -2736,6 +2840,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     title: `Return Request for ${selectedAssetForReturn.assetName || selectedAssetForReturn.title}`,
                     assetId: selectedAssetForReturn.id,
                     assetName: selectedAssetForReturn.assetName || selectedAssetForReturn.title,
+                    assetType: selectedAssetForReturn.assetType,
                     serialNumber: selectedAssetForReturn.serialNumber,
                     requesterName: this.state.activeUserDisplayName,
                     requesterEmail: this.state.activeUserEmail,
@@ -3476,7 +3581,8 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             selectedAdminRequest: undefined,
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
-            adminComment: ''
+            adminComment: '',
+            sidebarCollapsed: false
         };
     }
     async componentDidMount() {
@@ -3514,24 +3620,24 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         const visibleManagerRequests = filterRequests(managerQueueRequests);
         const notifications = this._getNotifications();
         const navItems = [
-            { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4' },
+            { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4', group: 'MAIN' },
             { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
             {
                 key: 'Notifications',
                 text: 'Notifications',
                 icon: 'Ringer',
                 badge: notifications.filter(n => !n.isRead).length || undefined,
-                badgeColor: '#3b82f6'
+                badgeColor: '#0078d4'
             },
             { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
-            ...(isAdmin ? [
-                { key: 'Inventory', text: 'Inventory', icon: 'List' }
+            ...(isAdmin || isManager ? [
+                { key: 'Inventory', text: 'Inventory', icon: 'List', group: 'MANAGEMENT' }
             ] : []),
             ...(isManager ? [
-                { key: 'Approvals', text: 'Approvals', icon: 'DoubleChevronRight12' }
+                { key: 'Approvals', text: 'Approvals', icon: 'DoubleChevronRight12', group: 'MANAGEMENT' }
             ] : []),
             ...(isAdmin ? [
-                { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send' }
+                { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send', ...(isManager ? {} : { group: undefined }) }
             ] : []),
             ...(isAdmin || isManager ? [
                 {
@@ -3543,7 +3649,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 }
             ] : []),
             ...(isAdmin ? [
-                { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed' },
+                { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed', group: 'SYSTEM' },
                 { key: 'Users', text: 'Users', icon: 'People' },
                 { key: 'Reports', text: 'Reports', icon: 'ReportDocument' },
                 { key: 'Config', text: 'Config', icon: 'Settings' }
@@ -3575,54 +3681,40 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     " ",
                     this.state.errorMessage,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": "Dismiss error" }, "\u00D7"))),
-                !roleLoading && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionGrid },
-                    (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionButtonContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } }))),
-                    (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionButtonContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } }))),
-                    (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionButtonContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Raise Incident", onClick: () => this.setState({ isIncidentFormOpen: true }), iconProps: { iconName: 'AlertSolid' } }))))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].appLayoutContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 12px 16px 12px', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', marginBottom: '8px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)' } }, "Navigation"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.75rem', color: 'var(--text-muted)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": "Main navigation" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navHeader },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Navigation"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                 "Role: ",
                                 effectiveRole)),
-                        navItems.map(nav => {
+                        navItems.map((nav, index) => {
                             const isActive = this.state.selectedTabKey === nav.key;
-                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: nav.key, onClick: () => this.setState({ selectedTabKey: nav.key }), style: {
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '12px',
-                                    padding: '10px 14px',
-                                    borderRadius: '6px',
-                                    cursor: 'pointer',
-                                    fontSize: '0.85rem',
-                                    fontWeight: isActive ? 600 : 500,
-                                    backgroundColor: isActive
-                                        ? (isDarkTheme ? 'rgba(59, 130, 246, 0.15)' : 'rgba(37, 99, 235, 0.08)')
-                                        : 'transparent',
-                                    color: isActive
-                                        ? (isDarkTheme ? '#60a5fa' : '#2563eb')
-                                        : 'var(--text-muted)',
-                                    transition: 'all 0.15s ease'
-                                }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon, style: { fontSize: '15px' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { flexGrow: 1 } }, nav.text),
-                                nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                        fontSize: '0.7rem',
-                                        fontWeight: 600,
-                                        backgroundColor: nav.badgeColor || '#ef4444',
-                                        color: '#ffffff',
-                                        padding: '2px 6px',
-                                        borderRadius: '9999px'
-                                    } }, nav.badge))));
-                        })),
+                            const showGroupLabel = nav.group && (index === 0 || navItems[index - 1]?.group !== nav.group);
+                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, { key: nav.key },
+                                showGroupLabel && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navGroupLabel }, nav.group)),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ selectedTabKey: nav.key }), onKeyDown: (e) => {
+                                        if (e.key === 'Enter' || e.key === ' ') {
+                                            e.preventDefault();
+                                            this.setState({ selectedTabKey: nav.key });
+                                        }
+                                    }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
+                                    nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
+                        }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? 'Expand navigation' : 'Collapse navigation', onKeyDown: (e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
+                                }
+                            } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` }, (() => {
                         switch (this.state.selectedTabKey) {
                             case 'Dashboard':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_18__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager }));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_18__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager, onNavigate: (key) => this.setState({ selectedTabKey: key }) }));
                             case 'MyWorkspace':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3631,6 +3723,8 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
@@ -3643,11 +3737,14 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Incident History")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_22__.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                             case 'Inventory':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Current Inventory Overview")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage your organizational assets efficiently within the SharePoint Framework."),
-                                    this.state.loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading inventory...")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: items, isAdmin: true, enablePagination: true })))) : null;
+                                    this.state.loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading inventory...")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
                             case 'Approvals':
                                 return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -6014,6 +6111,1119 @@ const getSP = (context) => {
 
 /***/ }),
 
+/***/ 95576:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/AssetAssignmentService.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetAssignmentService: () => (/* binding */ AssetAssignmentService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/mockData */ 27962);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+/* harmony import */ var _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InventoryItemService */ 32974);
+/* harmony import */ var _RequestService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RequestService */ 50764);
+
+
+
+
+
+
+class AssetAssignmentService {
+    static async getMappingList() {
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        if (AssetAssignmentService._resolvedMappingListName) {
+            return sp.web.lists.getByTitle(AssetAssignmentService._resolvedMappingListName);
+        }
+        try {
+            const list = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME);
+            await list.select("Title")(); // Verify list exists
+            // eslint-disable-next-line require-atomic-updates
+            AssetAssignmentService._resolvedMappingListName = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME;
+            return list;
+        }
+        catch (e) {
+            try {
+                const fallbackName = "MappingList";
+                const list = sp.web.lists.getByTitle(fallbackName);
+                await list.select("Title")(); // Verify fallback exists
+                console.log("Resolved mapping list name dynamically to fallback: " + fallbackName);
+                // eslint-disable-next-line require-atomic-updates
+                AssetAssignmentService._resolvedMappingListName = fallbackName;
+                return list;
+            }
+            catch (e2) {
+                // Attempt to auto-create "Mapping List" dynamically
+                try {
+                    console.log("Attempting to auto-create 'Mapping List' list...");
+                    await sp.web.lists.add(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME, "List for tracking asset assignments", 100);
+                    // eslint-disable-next-line require-atomic-updates
+                    AssetAssignmentService._resolvedMappingListName = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME;
+                    console.log("Successfully created 'Mapping List' in SharePoint.");
+                    return sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME);
+                }
+                catch (createError) {
+                    try {
+                        const allLists = await sp.web.lists.select("Title")();
+                        const listNames = allLists.map(l => '"' + l.Title + '"').join(', ');
+                        throw new Error("List '" + _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME + "' does not exist and could not be auto-created on this SharePoint site. Available lists are: [ " + listNames + " ].");
+                    }
+                    catch (listsError) {
+                        throw new Error("List '" + _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.MAPPING_LIST_NAME + "' does not exist and could not be auto-created.");
+                    }
+                }
+            }
+        }
+    }
+    static async _ensureMappingListFields() {
+        if (AssetAssignmentService._mappingListFieldsEnsured) {
+            return;
+        }
+        AssetAssignmentService._mappingListFieldsEnsured = true;
+        try {
+            const list = await AssetAssignmentService.getMappingList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const hasField = (name) => fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                const title = (field.Title || '').toString().toLowerCase();
+                const search = name.toLowerCase();
+                return internalName === search || title === search;
+            });
+            // 0. AssignmentID (Text)
+            if (!hasField("AssignmentID")) {
+                try {
+                    await list.fields.addText("AssignmentID", { Title: "Assignment ID" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create AssignmentID field. Continuing.", err);
+                }
+            }
+            // 1. Employe (Text)
+            if (!hasField("Employe")) {
+                try {
+                    await list.fields.addText("Employe");
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Employe field. Continuing.", err);
+                }
+            }
+            // 2. EmployeeID / Employee ID (Text)
+            const hasEmpId = fields.some(field => {
+                const val = (field.InternalName || '').toString().toLowerCase();
+                const t = (field.Title || '').toString().toLowerCase();
+                return val === 'employeeid' || val === 'employee_x0020_id' || val === 'employee id' || t === 'employee id' || t === 'employeeid' || val === 'employeid' || t === 'employeid' || t === 'employe id';
+            });
+            if (!hasEmpId) {
+                try {
+                    await list.fields.addText("EmployeeID", { Title: "Employe ID" });
+                }
+                catch (err) {
+                    try {
+                        await list.fields.addText("EmployeID", { Title: "Employe ID" });
+                    }
+                    catch (err2) {
+                        try {
+                            await list.fields.addText("EmployeeID");
+                        }
+                        catch (err3) {
+                            console.warn("Could not auto-create EmployeeID field. Continuing.", err3);
+                        }
+                    }
+                }
+            }
+            // 3. AssetName / Asset Name (Text)
+            const hasAssetName = fields.some(field => {
+                const val = (field.InternalName || '').toString().toLowerCase();
+                const t = (field.Title || '').toString().toLowerCase();
+                return val === 'assetname' || val === 'asset_x0020_name' || val === 'asset name' || t === 'asset name' || t === 'assetname';
+            });
+            if (!hasAssetName) {
+                try {
+                    await list.fields.addText("AssetName", { Title: "Asset Name" });
+                }
+                catch (err) {
+                    try {
+                        await list.fields.addText("AssetName");
+                    }
+                    catch (err2) {
+                        console.warn("Could not auto-create AssetName field. Continuing.", err2);
+                    }
+                }
+            }
+            // 4. SerialNumber / Serial Number (Text)
+            const hasSerialNumber = fields.some(field => {
+                const val = (field.InternalName || '').toString().toLowerCase();
+                const t = (field.Title || '').toString().toLowerCase();
+                return val === 'serialnumber' || val === 'serial_x0020_number' || val === 'serial number' || t === 'serial number' || t === 'serialnumber';
+            });
+            if (!hasSerialNumber) {
+                try {
+                    await list.fields.addText("SerialNumber", { Title: "Serial Number" });
+                }
+                catch (err) {
+                    try {
+                        await list.fields.addText("SerialNumber");
+                    }
+                    catch (err2) {
+                        console.warn("Could not auto-create SerialNumber field. Continuing.", err2);
+                    }
+                }
+            }
+            // 5. Priority (Choice)
+            if (!hasField("Priority")) {
+                try {
+                    await list.fields.addChoice("Priority", {
+                        Choices: ["High", "Medium", "Low"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Priority field. Continuing.", err);
+                }
+            }
+            // 6. RequestedDate / Requested Date (Text)
+            const hasRequestedDate = fields.some(field => {
+                const val = (field.InternalName || '').toString().toLowerCase();
+                const t = (field.Title || '').toString().toLowerCase();
+                return val === 'requesteddate' || val === 'requested_x0020_date' || val === 'requested date' || t === 'requested date' || t === 'requesteddate';
+            });
+            if (!hasRequestedDate) {
+                try {
+                    await list.fields.addText("RequestedDate", { Title: "Requested Date" });
+                }
+                catch (err) {
+                    try {
+                        await list.fields.addText("RequestedDate");
+                    }
+                    catch (err2) {
+                        console.warn("Could not auto-create RequestedDate field. Continuing.", err2);
+                    }
+                }
+            }
+            // 7. ReasonforRequest / Reason for Request (Multiline Text)
+            const hasReasonforRequest = fields.some(field => {
+                const val = (field.InternalName || '').toString().toLowerCase();
+                const t = (field.Title || '').toString().toLowerCase();
+                return val === 'reasonforrequest' || val === 'reason_x0020_for_x0020_request' || val === 'reason for request' || t === 'reason for request' || t === 'reasonforrequest';
+            });
+            if (!hasReasonforRequest) {
+                try {
+                    await list.fields.addMultilineText("ReasonforRequest", { Title: "Reason for Request" });
+                }
+                catch (err) {
+                    try {
+                        await list.fields.addMultilineText("ReasonforRequest");
+                    }
+                    catch (err2) {
+                        console.warn("Could not auto-create ReasonforRequest field. Continuing.", err2);
+                    }
+                }
+            }
+            // 8. AssignedDate / Assigned Date (Text)
+            const hasAssignedDate = fields.some(field => {
+                const val = (field.InternalName || '').toString().toLowerCase();
+                const t = (field.Title || '').toString().toLowerCase();
+                return val === 'assigneddate' || val === 'assigned_x0020_date' || val === 'assigned date' || t === 'assigned date' || t === 'assigneddate';
+            });
+            if (!hasAssignedDate) {
+                try {
+                    await list.fields.addText("AssignedDate", { Title: "Assigned Date" });
+                }
+                catch (err) {
+                    try {
+                        await list.fields.addText("AssignedDate");
+                    }
+                    catch (err2) {
+                        console.warn("Could not auto-create AssignedDate field. Continuing.", err2);
+                    }
+                }
+            }
+        }
+        catch (error) {
+            console.warn("Could not ensure Mapping List fields. Continuing.", error);
+        }
+    }
+    static _resolveMappingPayload(mappingFields, employeeName, employeeId, assetName, serialNumber, priority, requestedDate, reason, assignedDate, assignedToId, isEmployePerson) {
+        const findField = (searchStr, fallback) => {
+            let field = mappingFields.find((f) => f.Title.toLowerCase() === searchStr.toLowerCase());
+            if (field)
+                return field.InternalName;
+            field = mappingFields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
+            if (field)
+                return field.InternalName;
+            const normalizedSearch = searchStr.toLowerCase().replace(/[^a-z0-9]/g, '');
+            field = mappingFields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSearch);
+            if (field)
+                return field.InternalName;
+            field = mappingFields.find((f) => f.InternalName.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSearch);
+            if (field)
+                return field.InternalName;
+            return fallback;
+        };
+        const titleField = mappingFields.find((f) => f.InternalName === "Title");
+        const titleFieldTitle = titleField ? (titleField.Title || "").toLowerCase().trim() : "";
+        const isTitleEmploye = titleFieldTitle === "employe" || titleFieldTitle === "employee";
+        let employeeNameFieldName = "Title";
+        if (isTitleEmploye) {
+            employeeNameFieldName = "Title";
+        }
+        else {
+            const f = mappingFields.find((x) => {
+                const title = (x.Title || "").toLowerCase().trim();
+                const internal = (x.InternalName || "").toLowerCase().trim();
+                return title === "employe" || title === "employee" || internal === "employe" || internal === "employee";
+            });
+            if (f)
+                employeeNameFieldName = f.InternalName;
+        }
+        const employeeIdFieldName = (() => {
+            const searchFields = mappingFields.filter((f) => f.InternalName !== employeeNameFieldName);
+            const findFieldInList = (list, search) => {
+                let f = list.find((x) => (x.Title || "").toLowerCase().trim() === search.toLowerCase());
+                if (f)
+                    return f.InternalName;
+                f = list.find((x) => x.InternalName.toLowerCase().trim() === search.toLowerCase());
+                if (f)
+                    return f.InternalName;
+                const norm = search.toLowerCase().replace(/[^a-z0-9]/g, '');
+                f = list.find((x) => (x.Title || "").toLowerCase().replace(/[^a-z0-9]/g, '') === norm);
+                if (f)
+                    return f.InternalName;
+                return null;
+            };
+            return (findFieldInList(searchFields, "employe id") ||
+                findFieldInList(searchFields, "employee id") ||
+                findFieldInList(searchFields, "employeeid") ||
+                findFieldInList(searchFields, "employeid") ||
+                findFieldInList(searchFields, "employe") ||
+                "EmployeeID");
+        })();
+        const assetNameFieldName = findField("asset name", "AssetName");
+        const serialNumberFieldName = findField("serial number", "SerialNumber");
+        const priorityFieldName = findField("priority", "Priority");
+        const requestedDateFieldName = findField("requested date", "RequestedDate");
+        const reasonFieldName = findField("reason for request", "ReasonforRequest");
+        const assignedDateFieldName = findField("assigned date", "AssignedDate");
+        const payload = {};
+        // Map Employee Name to the Employee column (either Title or a custom field)
+        if (employeeNameFieldName === "Title") {
+            payload["Title"] = employeeName;
+        }
+        else {
+            payload["Title"] = `Assignment of ${assetName}`;
+            const empFieldObj = mappingFields.find((f) => f.InternalName === employeeNameFieldName);
+            const isEmpFieldPerson = empFieldObj && (empFieldObj.TypeAsString === "User" || empFieldObj.TypeAsString === "UserMulti");
+            if (isEmpFieldPerson && assignedToId !== null) {
+                payload[`${employeeNameFieldName}Id`] = assignedToId;
+            }
+            else {
+                payload[employeeNameFieldName] = employeeName;
+            }
+        }
+        // Map Employee ID to the Employee ID column
+        const empIdFieldObj = mappingFields.find((f) => f.InternalName === employeeIdFieldName);
+        const isEmpIdFieldPerson = empIdFieldObj && (empIdFieldObj.TypeAsString === "User" || empIdFieldObj.TypeAsString === "UserMulti");
+        if (isEmpIdFieldPerson && assignedToId !== null) {
+            payload[`${employeeIdFieldName}Id`] = assignedToId;
+        }
+        else {
+            payload[employeeIdFieldName] = employeeId;
+        }
+        // Map other columns
+        payload[assetNameFieldName] = assetName;
+        payload[serialNumberFieldName] = serialNumber;
+        payload[priorityFieldName] = priority;
+        payload[requestedDateFieldName] = requestedDate;
+        payload[reasonFieldName] = reason;
+        payload[assignedDateFieldName] = assignedDate;
+        return payload;
+    }
+    static async _writeToMappingList(employeeName, employeeId, employeeEmail, assetName, serialNumber, priority, requestedDate, reason, assignedDate, assignmentId) {
+        const mappingList = await AssetAssignmentService.getMappingList();
+        const schema = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.getListFieldsMetadata(mappingList);
+        const finalAssignmentId = assignmentId || `ASG-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+        const resolvedMapping = {};
+        let employeeNameField = schema.find(f => f.internalName.toLowerCase() === "employe" ||
+            f.internalName.toLowerCase() === "employee" ||
+            f.displayName.toLowerCase() === "employe" ||
+            f.displayName.toLowerCase() === "employee" ||
+            f.displayName.toLowerCase() === "employee name");
+        if (!employeeNameField) {
+            employeeNameField = schema.find(f => f.internalName === "Title");
+        }
+        if (employeeNameField) {
+            resolvedMapping["EmployeeName"] = employeeNameField.internalName;
+        }
+        const getField = (aliases) => {
+            const mappedValues = new Set();
+            for (const k of Object.keys(resolvedMapping)) {
+                mappedValues.add(resolvedMapping[k]);
+            }
+            const match = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService._resolveFieldInternalName(schema, aliases, mappedValues);
+            return match;
+        };
+        const empIdCol = getField(["employeeid", "employee id", "employeid", "employe id"]);
+        if (empIdCol)
+            resolvedMapping["EmployeeID"] = empIdCol;
+        const assetNameCol = getField(["assetname", "asset name"]);
+        if (assetNameCol)
+            resolvedMapping["AssetName"] = assetNameCol;
+        const serialCol = getField(["serialnumber", "serial number"]);
+        if (serialCol)
+            resolvedMapping["SerialNumber"] = serialCol;
+        const assignedDateCol = getField(["assigneddate", "assigned date"]);
+        if (assignedDateCol)
+            resolvedMapping["AssignedDate"] = assignedDateCol;
+        const assignmentIdCol = getField(["assignmentid", "assignment id"]);
+        if (assignmentIdCol)
+            resolvedMapping["AssignmentID"] = assignmentIdCol;
+        const logicalPayload = {
+            EmployeeName: employeeName,
+            EmployeeID: employeeId,
+            AssetName: assetName,
+            SerialNumber: serialNumber,
+            AssignedDate: assignedDate,
+            AssignmentID: finalAssignmentId
+        };
+        const requiredKeys = ["EmployeeName", "EmployeeID", "AssetName", "SerialNumber", "AssignedDate"];
+        let finalPayload;
+        try {
+            finalPayload = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService._coerceAndValidatePayload(logicalPayload, schema, resolvedMapping, requiredKeys);
+            console.log(`[Mapping List Write] Dynamic Mapping resolved:`, JSON.stringify(resolvedMapping, null, 2));
+            console.log(`[Mapping List Write] Final Payload before submission:`, JSON.stringify(finalPayload, null, 2));
+            await mappingList.items.add(finalPayload);
+            console.log(`Successfully added mapping record for ${employeeName}`);
+        }
+        catch (err) {
+            const translatedErr = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.translateSharePointError(err, finalPayload || logicalPayload, resolvedMapping);
+            console.error(translatedErr.message);
+            throw translatedErr;
+        }
+    }
+    static async assignAssetsToEmployee(assetIds, employeeName, employeeEmail, adminName, employeeId, comment) {
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__.InventoryItemService.getInventoryList();
+        let assignedToId = null;
+        // Ensure 'Note' column exists to guarantee we have a place to save the Assignee
+        try {
+            const fields = await list.fields();
+            if (!fields.some((f) => f.InternalName === 'Note')) {
+                await list.fields.addMultilineText('Note', { NumberOfLines: 6, RichText: false });
+                console.log("Automatically created 'Note' column in SharePoint list.");
+            }
+        }
+        catch (e) {
+            console.warn("Failed to check or create Note column", e);
+        }
+        // Try to resolve the user in SharePoint by email
+        try {
+            const user = await sp.web.ensureUser(employeeEmail);
+            assignedToId = user.data ? user.data.Id : user.Id;
+        }
+        catch (e) {
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to string assignment if column allows.`, e);
+        }
+        const updatePromises = assetIds.map(async (assetId) => {
+            // 1. Get asset details first
+            let assetItem = null;
+            try {
+                assetItem = await list.items.getById(parseInt(assetId))();
+            }
+            catch (e) {
+                console.warn(`Could not fetch details for asset ${assetId}`, e);
+            }
+            const assetName = assetItem ? (assetItem.AssetName || assetItem.Asset_x0020_Name || assetItem.Asset || assetItem.Title || "") : "";
+            const assetType = assetItem ? (assetItem.AssetType || assetItem.Asset_x0020_Type || assetItem.Type || "") : "";
+            const serialNumber = assetItem ? (assetItem.SerialNumber || assetItem.Serial_x0020_Number || "") : "";
+            // 2. Perform the update to InventoryList
+            const payloadsToTry = [];
+            const baseStatus = { Status: 'Assigned' };
+            if (assignedToId !== null) {
+                payloadsToTry.push({ ...baseStatus, AssignedToId: { results: [assignedToId] }, Note: `Assigned to: ${employeeName}` });
+                payloadsToTry.push({ ...baseStatus, Assigned_x0020_ToId: { results: [assignedToId] }, Note: `Assigned to: ${employeeName}` });
+                payloadsToTry.push({ ...baseStatus, AssignedToId: assignedToId, Note: `Assigned to: ${employeeName}` });
+                payloadsToTry.push({ ...baseStatus, Assigned_x0020_ToId: assignedToId, Note: `Assigned to: ${employeeName}` });
+                payloadsToTry.push({ ...baseStatus, AssignedToId: assignedToId });
+                payloadsToTry.push({ ...baseStatus, Assigned_x0020_ToId: assignedToId });
+            }
+            else {
+                payloadsToTry.push({ ...baseStatus, AssignedTo: employeeName, Note: `Assigned to: ${employeeName}` });
+                payloadsToTry.push({ ...baseStatus, Assigned_x0020_To: employeeName, Note: `Assigned to: ${employeeName}` });
+                payloadsToTry.push({ ...baseStatus, AssignedTo: employeeName });
+                payloadsToTry.push({ ...baseStatus, Assigned_x0020_To: employeeName });
+            }
+            payloadsToTry.push({ ...baseStatus, Note: `Assigned to: ${employeeName}` });
+            payloadsToTry.push({ ...baseStatus, Notes: `Assigned to: ${employeeName}` });
+            payloadsToTry.push({ Status: `Assigned to: ${employeeName}`, AssetStatus: `Assigned to: ${employeeName}` }); // Fallback to Status column
+            payloadsToTry.push({ ...baseStatus });
+            let success = false;
+            let lastErr;
+            for (const payload of payloadsToTry) {
+                try {
+                    await list.items.getById(parseInt(assetId)).update(payload);
+                    success = true;
+                    break; // Stop trying if one succeeds
+                }
+                catch (err) {
+                    lastErr = err;
+                }
+            }
+            if (!success) {
+                console.error(`All fallback updates failed for asset ${assetId}`, lastErr);
+                throw new Error(lastErr.message || "Failed to update asset status");
+            }
+            // 3. Find matching request in RequestList
+            let priority = "Medium";
+            let requestedDate = "";
+            let reason = "Direct Assignment";
+            let matchingRequest = null;
+            try {
+                const requests = await _RequestService__WEBPACK_IMPORTED_MODULE_5__.RequestService.getRequests();
+                matchingRequest = requests.find(r => {
+                    const isEmployeeMatch = (employeeId && r.employeeId && r.employeeId.toLowerCase() === employeeId.toLowerCase()) ||
+                        (employeeName && r.requesterName && r.requesterName.toLowerCase() === employeeName.toLowerCase());
+                    const isAssetMatch = assetType && r.assetTitle && r.assetTitle.toLowerCase() === assetType.toLowerCase();
+                    return isEmployeeMatch && isAssetMatch && r.status === 'Approved' && r.assetStatus === 'Pending';
+                });
+                if (matchingRequest) {
+                    priority = matchingRequest.priority || "Medium";
+                    requestedDate = matchingRequest.requestDate || "";
+                    reason = matchingRequest.reason || "Direct Assignment";
+                }
+            }
+            catch (err) {
+                console.warn("Failed to find matching approved request in RequestList", err);
+            }
+            // Format dates properly
+            const formatDate = (dateStr) => {
+                if (!dateStr) {
+                    const d = new Date();
+                    const day = ("0" + d.getDate()).slice(-2);
+                    const month = ("0" + (d.getMonth() + 1)).slice(-2);
+                    return `${day}/${month}/${d.getFullYear()}`;
+                }
+                if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
+                    return dateStr;
+                }
+                const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
+                if (match) {
+                    return `${match[3]}/${match[2]}/${match[1]}`;
+                }
+                return dateStr;
+            };
+            const finalRequestedDate = formatDate(requestedDate);
+            const finalAssignedDate = formatDate(new Date().toISOString());
+            // 4. Update the matching request status to allocated (assetStatus = 'Approved')
+            if (matchingRequest) {
+                try {
+                    await _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__.InventoryItemService.updateAssetStatus(parseInt(matchingRequest.id, 10), 'Approved', adminName, comment);
+                }
+                catch (err) {
+                    console.warn(`Failed to update assetStatus to Approved for Request ${matchingRequest.id}`, err);
+                }
+            }
+            // 5. Update Mapping List
+            try {
+                await AssetAssignmentService._ensureMappingListFields();
+                await AssetAssignmentService._writeToMappingList(employeeName, employeeId || "", employeeEmail, assetName, serialNumber, priority, finalRequestedDate, reason, finalAssignedDate);
+            }
+            catch (err) {
+                console.warn("Failed to execute Mapping List update logic. Continuing.", err);
+            }
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_3__.AuditLogService.addAuditLog({
+                title: `Asset activated and assigned to ${employeeName}`,
+                action: 'Activated',
+                entityType: 'Asset',
+                entityId: assetId,
+                details: JSON.stringify({
+                    lifecycle: "DirectAssignment",
+                    assignedTo: employeeName,
+                    changedBy: adminName,
+                    changedAt: new Date().toISOString()
+                }),
+                user: adminName
+            });
+        });
+        await Promise.all(updatePromises);
+    }
+    static async syncExistingAssignmentsToMappingList(adminName) {
+        let checkedCount = 0;
+        let syncedCount = 0;
+        try {
+            console.log("Starting Mapping List sync...");
+            const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__.InventoryItemService.getInventoryList();
+            const items = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__.InventoryItemService.getItems();
+            // Filter for assigned items matching the 5 active employees
+            const assignedItems = items.filter(item => {
+                return _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.some(emp => {
+                    const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const activeUser = normalize(emp.name);
+                    if (!activeUser)
+                        return false;
+                    const assignedNorm = normalize(item.assignedTo);
+                    const isAssigned = assignedNorm && (assignedNorm === activeUser || assignedNorm.includes(activeUser) || activeUser.includes(assignedNorm));
+                    const isNoted = (item.note || '').toLowerCase().includes('assigned to:') && normalize(item.note).includes(activeUser);
+                    const isStatus = (item.status || '').toLowerCase().includes('assigned to:') && normalize(item.status).includes(activeUser);
+                    return !!(isAssigned || isNoted || isStatus);
+                });
+            });
+            checkedCount = assignedItems.length;
+            if (assignedItems.length === 0) {
+                console.log("No assigned assets found for the 5 active employees.");
+                return { checkedCount, syncedCount };
+            }
+            await AssetAssignmentService._ensureMappingListFields();
+            const mappingList = await AssetAssignmentService.getMappingList();
+            const mappingItems = await mappingList.items();
+            const requests = await _RequestService__WEBPACK_IMPORTED_MODULE_5__.RequestService.getRequests();
+            // Resolve the Mapping List field names
+            const mappingFields = await mappingList.fields.select("InternalName", "Title", "TypeAsString")();
+            const findMappingField = (searchStr, fallback) => {
+                let field = mappingFields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
+                if (field)
+                    return field.InternalName;
+                field = mappingFields.find((f) => f.Title.toLowerCase() === searchStr.toLowerCase());
+                if (field)
+                    return field.InternalName;
+                const normalizedSearch = searchStr.toLowerCase().replace(/[^a-z0-9]/g, '');
+                field = mappingFields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSearch);
+                if (field)
+                    return field.InternalName;
+                field = mappingFields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '').indexOf(normalizedSearch) >= 0);
+                if (field)
+                    return field.InternalName;
+                return fallback;
+            };
+            const serialNumberFieldName = findMappingField("serialnumber", "SerialNumber");
+            for (const asset of assignedItems) {
+                // Check if this asset is already in the Mapping List
+                const alreadyMapped = mappingItems.some((m) => {
+                    const mSerial = m[serialNumberFieldName] || m.SerialNumber || m.Serial_x0020_Number || "";
+                    return mSerial.toString().toLowerCase() === asset.serialNumber.toString().toLowerCase();
+                });
+                if (alreadyMapped) {
+                    console.log(`Asset ${asset.assetName || asset.title} (${asset.serialNumber}) is already in Mapping List.`);
+                    continue;
+                }
+                const employee = _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.find(emp => {
+                    const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const activeUser = normalize(emp.name);
+                    if (!activeUser)
+                        return false;
+                    const assignedNorm = normalize(asset.assignedTo);
+                    const isAssigned = assignedNorm && (assignedNorm === activeUser || assignedNorm.includes(activeUser) || activeUser.includes(assignedNorm));
+                    const isNoted = (asset.note || '').toLowerCase().includes('assigned to:') && normalize(asset.note).includes(activeUser);
+                    const isStatus = (asset.status || '').toLowerCase().includes('assigned to:') && normalize(asset.status).includes(activeUser);
+                    return !!(isAssigned || isNoted || isStatus);
+                });
+                const employeeName = employee ? employee.name : (asset.assignedTo || "Unknown");
+                const employeeId = employee ? employee.id : "";
+                const employeeEmail = employee ? employee.email : "";
+                const assetAssignedTo = employeeName;
+                console.log(`Syncing missing assigned asset to Mapping List: ${asset.assetName || asset.title} (${asset.serialNumber}) for ${assetAssignedTo}`);
+                // Find matching request
+                let priority = "Medium";
+                let requestedDate = "";
+                let reason = "Direct Assignment";
+                let matchingRequest = null;
+                const assetType = asset.assetType || "";
+                matchingRequest = requests.find(r => {
+                    const isEmployeeMatch = (employeeId && r.employeeId && r.employeeId.toLowerCase() === employeeId.toLowerCase()) ||
+                        (employeeName && r.requesterName && r.requesterName.toLowerCase() === employeeName.toLowerCase());
+                    const isAssetMatch = assetType && r.assetTitle && r.assetTitle.toLowerCase() === assetType.toLowerCase();
+                    return isEmployeeMatch && isAssetMatch && r.status === 'Approved';
+                });
+                if (matchingRequest) {
+                    priority = matchingRequest.priority || "Medium";
+                    requestedDate = matchingRequest.requestDate || "";
+                    reason = matchingRequest.reason || "Direct Assignment";
+                }
+                // Format dates properly
+                const formatDate = (dateStr) => {
+                    if (!dateStr) {
+                        const d = new Date();
+                        const day = ("0" + d.getDate()).slice(-2);
+                        const month = ("0" + (d.getMonth() + 1)).slice(-2);
+                        return `${day}/${month}/${d.getFullYear()}`;
+                    }
+                    if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
+                        return dateStr;
+                    }
+                    const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
+                    if (match) {
+                        return `${match[3]}/${match[2]}/${match[1]}`;
+                    }
+                    return dateStr;
+                };
+                const finalRequestedDate = formatDate(requestedDate);
+                const finalAssignedDate = formatDate(asset.assignedDate || new Date().toISOString());
+                // Update the matching request status to allocated (assetStatus = 'Approved')
+                if (matchingRequest && matchingRequest.assetStatus === 'Pending') {
+                    try {
+                        await _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__.InventoryItemService.updateAssetStatus(parseInt(matchingRequest.id, 10), 'Approved', adminName);
+                    }
+                    catch (err) {
+                        console.warn(`Failed to update assetStatus to Approved for Request ${matchingRequest.id}`, err);
+                    }
+                }
+                // Add to Mapping List
+                const assetName = asset.assetName || asset.title || "";
+                const serialNumber = asset.serialNumber || "";
+                try {
+                    await AssetAssignmentService._writeToMappingList(employeeName, employeeId, employeeEmail, assetName, serialNumber, priority, finalRequestedDate, reason, finalAssignedDate);
+                    syncedCount++;
+                }
+                catch (err) {
+                    console.warn(`Failed to write synced record for ${employeeName} to Mapping List.`, err);
+                }
+            }
+        }
+        catch (e) {
+            console.error("Failed to sync existing assignments to Mapping List:", e);
+            throw e;
+        }
+        return { checkedCount, syncedCount };
+    }
+    static async diagnoseMappingListFields() {
+        try {
+            const mappingList = await AssetAssignmentService.getMappingList();
+            const fields = await mappingList.fields.select("InternalName", "Title", "TypeAsString")();
+            const items = await mappingList.items.select("ID")();
+            let output = `Mapping List Diagnostics:\n`;
+            output += `- List URL Title: "${mappingList.Title || "Mapping List"}"\n`;
+            output += `- Record Count: ${items.length}\n`;
+            output += `- Available Fields in List:\n`;
+            fields.forEach((f) => {
+                output += `  * InternalName: "${f.InternalName}", Title: "${f.Title}", Type: "${f.TypeAsString}"\n`;
+            });
+            return output;
+        }
+        catch (e) {
+            return `Failed to diagnose Mapping List schema. Error: ${e.message || JSON.stringify(e)}`;
+        }
+    }
+}
+AssetAssignmentService._resolvedMappingListName = null;
+AssetAssignmentService._mappingListFieldsEnsured = false;
+
+
+/***/ }),
+
+/***/ 43584:
+/*!**********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/AuditLogService.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AuditLogService: () => (/* binding */ AuditLogService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+
+
+class AuditLogService {
+    static async addAuditLog(log) {
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        try {
+            await sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST).items.add({
+                Title: log.title,
+                Action: log.action,
+                EntityType: log.entityType,
+                EntityId: log.entityId,
+                Details: log.details,
+                User: log.user
+            });
+        }
+        catch (error) {
+            console.error("Error adding audit log to SharePoint:", error);
+        }
+    }
+    static async getAuditLogs() {
+        const logs = [];
+        const processedEventLogIds = new Set();
+        const formatTimestamp = (isoString) => {
+            if (!isoString)
+                return new Date().toISOString().replace('T', ' ').substring(0, 19);
+            try {
+                const formatted = isoString.replace('T', ' ');
+                if (formatted.indexOf('.') > 0) {
+                    return formatted.substring(0, formatted.indexOf('.'));
+                }
+                if (formatted.indexOf('Z') > 0) {
+                    return formatted.substring(0, formatted.indexOf('Z'));
+                }
+                return formatted.substring(0, 19);
+            }
+            catch {
+                return isoString.replace('T', ' ').substring(0, 19);
+            }
+        };
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        // 1. Fetch from EventLogList (the audit logging list)
+        try {
+            const eventLogList = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST);
+            const eventItems = await eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created")();
+            eventItems.forEach((item) => {
+                let assetName = "";
+                let detailsText = item.Details || "";
+                let actionText = item.Action || "";
+                // Parse JSON details if possible
+                if (detailsText.trim().startsWith("{") && detailsText.trim().endsWith("}")) {
+                    try {
+                        const parsed = JSON.parse(detailsText);
+                        assetName = parsed.assetName || parsed.assetTitle || parsed.Title || "";
+                        if (parsed.lifecycle) {
+                            if (parsed.lifecycle === "DirectAssignment") {
+                                detailsText = `Asset assigned to employee`;
+                                actionText = "admin assigned";
+                            }
+                            else if (parsed.lifecycle === "Approved") {
+                                detailsText = `Approved request for ${assetName || "Asset"}`;
+                                actionText = "manager approved";
+                            }
+                            else if (parsed.lifecycle === "Rejected" || parsed.lifecycle === "Declined") {
+                                detailsText = `Rejected request for ${assetName || "Asset"}`;
+                                actionText = "manager rejected";
+                            }
+                            else if (parsed.lifecycle === "Submitted") {
+                                detailsText = `Submitted asset request for ${assetName || "Asset"}`;
+                                actionText = "created";
+                            }
+                            else if (parsed.lifecycle === "ReturnRequested") {
+                                detailsText = `Requested return of ${assetName || "Asset"}`;
+                                actionText = "return requested";
+                            }
+                            else if (parsed.lifecycle === "ReturnApproved") {
+                                detailsText = `Approved return request for ${assetName || "Asset"}`;
+                                actionText = "return approved";
+                            }
+                            else if (parsed.lifecycle === "ReturnRejected") {
+                                detailsText = `Rejected return request for ${assetName || "Asset"}`;
+                                actionText = "return rejected";
+                            }
+                            else if (parsed.lifecycle === "ReturnCompleted") {
+                                detailsText = `Completed return of ${assetName || "Asset"}`;
+                                actionText = "return completed";
+                            }
+                        }
+                        else if (parsed.assetStatus === "Approved" || parsed.lifecycle === "AssetStatusUpdated") {
+                            detailsText = `Assigned ${assetName || "Asset"}`;
+                            actionText = "admin assigned";
+                        }
+                    }
+                    catch (e) {
+                        // Keep detailsText as string
+                    }
+                }
+                const titleLower = (item.Title || "").toLowerCase();
+                const actionLower = (item.Action || "").toLowerCase();
+                const detailsLower = (detailsText || "").toLowerCase();
+                // High fidelity text mapping
+                if (actionLower === "create") {
+                    actionText = "created";
+                }
+                else if (actionLower === "delete") {
+                    actionText = "deleted";
+                }
+                if (titleLower.includes("directly assigned") || detailsLower.includes("assigned to employee") || detailsLower.includes("assigned to:")) {
+                    actionText = "admin assigned";
+                    detailsText = "Asset assigned to employee";
+                }
+                else if (titleLower.includes("approved return request") || detailsLower.includes("approved return request")) {
+                    actionText = "return approved";
+                    detailsText = `Approved return request for ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("rejected return request") || detailsLower.includes("rejected return request")) {
+                    actionText = "return rejected";
+                    detailsText = `Rejected return request for ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("completed return") || detailsLower.includes("completed return")) {
+                    actionText = "return completed";
+                    detailsText = `Completed return of ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("requested return") || detailsLower.includes("requested return")) {
+                    actionText = "return requested";
+                    detailsText = `Requested return of ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("approved request") || detailsLower.includes("approved request")) {
+                    actionText = "manager approved";
+                    detailsText = `Approved request for ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("rejected request") || detailsLower.includes("rejected request") || titleLower.includes("declined request") || detailsLower.includes("declined request")) {
+                    actionText = "manager rejected";
+                    detailsText = `Rejected request for ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("created request") || detailsLower.includes("submitted asset request")) {
+                    actionText = "created";
+                    detailsText = `Submitted asset request for ${assetName || "Asset"}`;
+                }
+                else if (titleLower.includes("created asset") || detailsLower.includes("added to inventory")) {
+                    actionText = "created";
+                    detailsText = "Asset was added to inventory";
+                }
+                else if (titleLower.includes("deleted asset") || detailsLower.includes("retired due to damage")) {
+                    actionText = "deleted";
+                    detailsText = "Asset retired due to damage";
+                }
+                else if (detailsLower.includes("under investigation") || detailsLower.includes("in progress")) {
+                    actionText = "status updated to in progress";
+                    detailsText = "Under investigation";
+                }
+                else if (detailsLower.includes("resolved") || detailsLower.includes("replacement cable")) {
+                    actionText = "status updated to resolved";
+                    detailsText = "Replacement cable sourced";
+                }
+                // Try to extract assetName if empty
+                if (!assetName) {
+                    if (titleLower.includes("created asset:")) {
+                        assetName = item.Title.substring(titleLower.indexOf("created asset:") + 14).trim();
+                    }
+                    else if (titleLower.includes("updated asset:")) {
+                        assetName = item.Title.substring(titleLower.indexOf("updated asset:") + 14).trim();
+                    }
+                    else if (titleLower.includes("deleted asset:")) {
+                        assetName = item.Title.substring(titleLower.indexOf("deleted asset:") + 14).trim();
+                    }
+                    else if (titleLower.includes("request for")) {
+                        assetName = item.Title.substring(titleLower.indexOf("request for") + 11).trim();
+                    }
+                }
+                logs.push({
+                    id: `event-log-${item.ID}`,
+                    title: item.Title || "",
+                    action: actionText,
+                    entityType: item.EntityType || "",
+                    entityId: item.EntityId || "",
+                    assetName: assetName,
+                    details: detailsText,
+                    user: item.User || "System",
+                    timestamp: formatTimestamp(item.Created)
+                });
+                processedEventLogIds.add(`${item.EntityType}-${item.EntityId}-${item.Action}-${formatTimestamp(item.Created).substring(0, 16)}`);
+            });
+        }
+        catch (err) {
+            console.warn("Could not fetch EventLogList, relying on live list generation", err);
+        }
+        // 2. Fetch from InventoryList for dynamic fallback logs
+        try {
+            let list;
+            try {
+                list = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.LIST_NAME);
+                await list.select("Title")();
+            }
+            catch {
+                list = sp.web.lists.getByTitle("Inventory List");
+            }
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const findFieldInternalName = (searchStr, fallback) => {
+                let field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
+                if (field)
+                    return field.InternalName;
+                field = fields.find((f) => f.InternalName.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr.toLowerCase()) >= 0);
+                if (field)
+                    return field.InternalName;
+                field = fields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '').indexOf(searchStr.toLowerCase()) >= 0);
+                return field ? field.InternalName : fallback;
+            };
+            const assetNameKey = findFieldInternalName("assetname", "AssetName");
+            const statusKey = findFieldInternalName("status", "Status");
+            const inventoryItems = await list.items.select("ID", "Title", assetNameKey, statusKey, "Created", "Modified", "Author/Title", "Editor/Title").expand("Author", "Editor")();
+            inventoryItems.forEach((item) => {
+                const itemCreated = formatTimestamp(item.Created);
+                const itemModified = formatTimestamp(item.Modified);
+                const assetName = item[assetNameKey] || item.Title || "";
+                const itemStatus = item[statusKey] || "";
+                // Add dynamic Create event
+                const createKey = `Asset-${item.ID}-Create-${itemCreated.substring(0, 16)}`;
+                if (!processedEventLogIds.has(createKey)) {
+                    logs.push({
+                        id: `asset-create-${item.ID}`,
+                        title: `Created Asset: ${item.Title}`,
+                        action: 'created',
+                        entityType: 'Asset',
+                        entityId: item.ID.toString(),
+                        assetName: assetName,
+                        details: `Asset was added to inventory`,
+                        user: item.Author?.Title || "System",
+                        timestamp: itemCreated
+                    });
+                }
+                // Add dynamic Update event if item has been updated
+                if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {
+                    const updateKey = `Asset-${item.ID}-Update-${itemModified.substring(0, 16)}`;
+                    const updateKeyAssigned = `Asset-${item.ID}-admin assigned-${itemModified.substring(0, 16)}`;
+                    if (!processedEventLogIds.has(updateKey) && !processedEventLogIds.has(updateKeyAssigned)) {
+                        let actionText = "updated";
+                        let detailsText = "Asset details were modified";
+                        if (itemStatus.toLowerCase().includes("assigned") || itemStatus.toLowerCase() === "active" || itemStatus.toLowerCase() === "in use") {
+                            actionText = "admin assigned";
+                            detailsText = "Asset assigned to employee";
+                        }
+                        else if (itemStatus.toLowerCase().includes("maintenance")) {
+                            actionText = "status updated to in progress";
+                            detailsText = "Under investigation";
+                        }
+                        else if (itemStatus.toLowerCase() === "in stock" || itemStatus.toLowerCase() === "yes") {
+                            actionText = "status updated to resolved";
+                            detailsText = "Replacement cable sourced";
+                        }
+                        logs.push({
+                            id: `asset-update-${item.ID}-${new Date(item.Modified).getTime()}`,
+                            title: `Updated Asset: ${item.Title}`,
+                            action: actionText,
+                            entityType: 'Asset',
+                            entityId: item.ID.toString(),
+                            assetName: assetName,
+                            details: detailsText,
+                            user: item.Editor?.Title || "System",
+                            timestamp: itemModified
+                        });
+                    }
+                }
+            });
+        }
+        catch (err) {
+            console.warn("Could not fetch InventoryList for audit logs", err);
+        }
+        // 3. Fetch from RequestList for dynamic fallback logs
+        try {
+            let reqList;
+            try {
+                reqList = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME);
+                await reqList.select("Title")();
+            }
+            catch {
+                reqList = sp.web.lists.getByTitle("Request List");
+            }
+            const requestItems = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._fetchItemsWithExpandedUsers(reqList);
+            requestItems.forEach((item) => {
+                const keys = Object.keys(item);
+                const findKey = (searchStr) => {
+                    const nonIdMatch = keys.find(k => {
+                        const kl = k.toLowerCase().replace(/_x0020_/g, '');
+                        return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
+                    });
+                    if (nonIdMatch)
+                        return nonIdMatch;
+                    return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
+                };
+                const employeeKey = findKey("requester") || findKey("employee") || "Employee";
+                const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                const statusKey = keys.find(key => _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._isBusinessStatusKey(key)) || "RequestStatus";
+                const assetStatusKey = findKey("assetstatus") || "AssetStatus";
+                const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
+                const rawEmp = item[employeeKey] || item.Employee || item.Author;
+                const reqUser = (() => {
+                    if (!rawEmp)
+                        return item.Title || "System";
+                    if (typeof rawEmp === 'string')
+                        return rawEmp;
+                    if (Array.isArray(rawEmp))
+                        return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
+                    if (typeof rawEmp === 'object')
+                        return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
+                    return rawEmp.toString();
+                })();
+                const itemCreated = formatTimestamp(item.Created);
+                const itemModified = formatTimestamp(item.Modified);
+                const requestStatus = item[statusKey] || "";
+                const assetStatus = item[assetStatusKey] || "";
+                // Add dynamic Create event
+                const createKey = `Request-${item.ID}-Create-${itemCreated.substring(0, 16)}`;
+                if (!processedEventLogIds.has(createKey)) {
+                    logs.push({
+                        id: `request-create-${item.ID}`,
+                        title: `Created Request: ${reqAssetName}`,
+                        action: 'created',
+                        entityType: 'Request',
+                        entityId: item.ID.toString(),
+                        assetName: reqAssetName,
+                        details: `Submitted asset request for ${reqAssetName}`,
+                        user: reqUser,
+                        timestamp: itemCreated
+                    });
+                }
+                // Add dynamic Update event
+                if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {
+                    const updateKey = `Request-${item.ID}-Update-${itemModified.substring(0, 16)}`;
+                    if (!processedEventLogIds.has(updateKey)) {
+                        if (requestStatus.toLowerCase().includes("approv")) {
+                            logs.push({
+                                id: `request-approve-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                title: `Approved Request: ${reqAssetName}`,
+                                action: 'manager approved',
+                                entityType: 'Request',
+                                entityId: item.ID.toString(),
+                                assetName: reqAssetName,
+                                details: `Approved request for ${reqAssetName}`,
+                                user: reqUser,
+                                timestamp: itemModified
+                            });
+                            if (assetStatus.toLowerCase().includes("approv")) {
+                                logs.push({
+                                    id: `request-assign-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                    title: `Assigned Request: ${reqAssetName}`,
+                                    action: 'admin assigned',
+                                    entityType: 'Request',
+                                    entityId: item.ID.toString(),
+                                    assetName: reqAssetName,
+                                    details: `Assigned ${reqAssetName}`,
+                                    user: reqUser,
+                                    timestamp: itemModified
+                                });
+                            }
+                        }
+                        else if (requestStatus.toLowerCase().includes("reject") || requestStatus.toLowerCase().includes("declin")) {
+                            logs.push({
+                                id: `request-reject-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                title: `Rejected Request: ${reqAssetName}`,
+                                action: 'manager rejected',
+                                entityType: 'Request',
+                                entityId: item.ID.toString(),
+                                assetName: reqAssetName,
+                                details: `Rejected request for ${reqAssetName}`,
+                                user: reqUser,
+                                timestamp: itemModified
+                            });
+                        }
+                        else {
+                            logs.push({
+                                id: `request-update-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                title: `Updated Request: ${reqAssetName}`,
+                                action: 'updated',
+                                entityType: 'Request',
+                                entityId: item.ID.toString(),
+                                assetName: reqAssetName,
+                                details: `Request details were modified`,
+                                user: reqUser,
+                                timestamp: itemModified
+                            });
+                        }
+                    }
+                }
+            });
+        }
+        catch (err) {
+            console.warn("Could not fetch RequestList for audit logs", err);
+        }
+        // Sort logs by timestamp descending
+        logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        return logs;
+    }
+}
+
+
+/***/ }),
+
 /***/ 76911:
 /*!**********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/IncidentService.js ***!
@@ -6547,463 +7757,63 @@ class IncidentService {
 
 /***/ }),
 
-/***/ 29619:
-/*!***********************************************************************!*\
-  !*** ./lib/webparts/inventoryManagement/services/InventoryService.js ***!
-  \***********************************************************************/
+/***/ 32974:
+/*!***************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/InventoryItemService.js ***!
+  \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   InventoryService: () => (/* binding */ InventoryService)
+/* harmony export */   InventoryItemService: () => (/* binding */ InventoryItemService)
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
-/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/mockData */ 27962);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuditLogService */ 43584);
 
 
-class InventoryService {
+
+class InventoryItemService {
     static async getInventoryList() {
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        if (InventoryService._resolvedListName) {
-            return sp.web.lists.getByTitle(InventoryService._resolvedListName);
+        if (InventoryItemService._resolvedListName) {
+            return sp.web.lists.getByTitle(InventoryItemService._resolvedListName);
         }
         try {
-            const list = sp.web.lists.getByTitle(InventoryService.LIST_NAME);
-            InventoryService._resolvedListName = InventoryService.LIST_NAME; // Assign before await to satisfy require-atomic-updates
+            const list = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.LIST_NAME);
             await list.select("Title")(); // Verify list exists
+            // eslint-disable-next-line require-atomic-updates
+            InventoryItemService._resolvedListName = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.LIST_NAME;
             return list;
         }
         catch (e) {
-            InventoryService._resolvedListName = null;
             try {
                 const fallbackName = "Inventory List";
                 const list = sp.web.lists.getByTitle(fallbackName);
-                InventoryService._resolvedListName = fallbackName; // Assign before await to satisfy require-atomic-updates
                 await list.select("Title")(); // Verify fallback exists
                 console.log("Resolved list name dynamically to fallback: " + fallbackName);
+                // eslint-disable-next-line require-atomic-updates
+                InventoryItemService._resolvedListName = fallbackName;
                 return list;
             }
             catch (e2) {
-                InventoryService._resolvedListName = null;
                 try {
                     const allLists = await sp.web.lists.select("Title")();
                     const listNames = allLists.map(l => '"' + l.Title + '"').join(', ');
-                    throw new Error("List '" + InventoryService.LIST_NAME + "' or 'Inventory List' does not exist on this SharePoint site. Available lists on this site are: [ " + listNames + " ]. Please ensure your list title matches exactly.");
+                    throw new Error("List '" + _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.LIST_NAME + "' or 'Inventory List' does not exist on this SharePoint site. Available lists on this site are: [ " + listNames + " ]. Please ensure your list title matches exactly.");
                 }
                 catch (listsError) {
-                    throw new Error("List '" + InventoryService.LIST_NAME + "' or 'Inventory List' does not exist on this SharePoint site.");
+                    throw new Error("List '" + _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.LIST_NAME + "' or 'Inventory List' does not exist on this SharePoint site.");
                 }
             }
-        }
-    }
-    static async getRequestList() {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        if (InventoryService._resolvedRequestListName) {
-            return sp.web.lists.getByTitle(InventoryService._resolvedRequestListName);
-        }
-        try {
-            const list = sp.web.lists.getByTitle(InventoryService.REQUEST_LIST_NAME);
-            InventoryService._resolvedRequestListName = InventoryService.REQUEST_LIST_NAME; // Assign before await to satisfy require-atomic-updates
-            await list.select("Title")(); // Verify list exists
-            return list;
-        }
-        catch (e) {
-            InventoryService._resolvedRequestListName = null;
-            try {
-                const fallbackName = "Request List";
-                const list = sp.web.lists.getByTitle(fallbackName);
-                InventoryService._resolvedRequestListName = fallbackName; // Assign before await to satisfy require-atomic-updates
-                await list.select("Title")(); // Verify fallback exists
-                console.log("Resolved requests list name dynamically to fallback: " + fallbackName);
-                return list;
-            }
-            catch (e2) {
-                InventoryService._resolvedRequestListName = null;
-                try {
-                    const allLists = await sp.web.lists.select("Title")();
-                    const listNames = allLists.map(l => '"' + l.Title + '"').join(', ');
-                    throw new Error("List '" + InventoryService.REQUEST_LIST_NAME + "' or 'Request List' does not exist on this SharePoint site. Available lists are: [ " + listNames + " ].");
-                }
-                catch (listsError) {
-                    throw new Error("List '" + InventoryService.REQUEST_LIST_NAME + "' or 'Request List' does not exist.");
-                }
-            }
-        }
-    }
-    static async getMappingList() {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        if (InventoryService._resolvedMappingListName) {
-            return sp.web.lists.getByTitle(InventoryService._resolvedMappingListName);
-        }
-        try {
-            const list = sp.web.lists.getByTitle(InventoryService.MAPPING_LIST_NAME);
-            InventoryService._resolvedMappingListName = InventoryService.MAPPING_LIST_NAME;
-            await list.select("Title")(); // Verify list exists
-            return list;
-        }
-        catch (e) {
-            InventoryService._resolvedMappingListName = null;
-            try {
-                const fallbackName = "MappingList";
-                const list = sp.web.lists.getByTitle(fallbackName);
-                InventoryService._resolvedMappingListName = fallbackName;
-                await list.select("Title")(); // Verify fallback exists
-                console.log("Resolved mapping list name dynamically to fallback: " + fallbackName);
-                return list;
-            }
-            catch (e2) {
-                InventoryService._resolvedMappingListName = null;
-                // Attempt to auto-create "Mapping List" dynamically
-                try {
-                    console.log("Attempting to auto-create 'Mapping List' list...");
-                    await sp.web.lists.add(InventoryService.MAPPING_LIST_NAME, "List for tracking asset assignments", 100);
-                    InventoryService._resolvedMappingListName = InventoryService.MAPPING_LIST_NAME;
-                    console.log("Successfully created 'Mapping List' in SharePoint.");
-                    return sp.web.lists.getByTitle(InventoryService.MAPPING_LIST_NAME);
-                }
-                catch (createError) {
-                    InventoryService._resolvedMappingListName = null;
-                    try {
-                        const allLists = await sp.web.lists.select("Title")();
-                        const listNames = allLists.map(l => '"' + l.Title + '"').join(', ');
-                        throw new Error("List '" + InventoryService.MAPPING_LIST_NAME + "' does not exist and could not be auto-created on this SharePoint site. Available lists are: [ " + listNames + " ].");
-                    }
-                    catch (listsError) {
-                        throw new Error("List '" + InventoryService.MAPPING_LIST_NAME + "' does not exist and could not be auto-created.");
-                    }
-                }
-            }
-        }
-    }
-    static async _ensureMappingListFields() {
-        if (this._mappingListFieldsEnsured) {
-            return;
-        }
-        try {
-            const list = await InventoryService.getMappingList();
-            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const hasField = (name) => fields.some(field => {
-                const internalName = (field.InternalName || '').toString().toLowerCase();
-                const title = (field.Title || '').toString().toLowerCase();
-                const search = name.toLowerCase();
-                return internalName === search || title === search;
-            });
-            // 1. Employe (Text)
-            if (!hasField("Employe")) {
-                try {
-                    await list.fields.addText("Employe");
-                }
-                catch (err) {
-                    console.warn("Could not auto-create Employe field. Continuing.", err);
-                }
-            }
-            // 2. EmployeeID / Employee ID (Text)
-            const hasEmpId = fields.some(field => {
-                const val = (field.InternalName || '').toString().toLowerCase();
-                const t = (field.Title || '').toString().toLowerCase();
-                return val === 'employeeid' || val === 'employee_x0020_id' || val === 'employee id' || t === 'employee id' || t === 'employeeid' || val === 'employeid' || t === 'employeid' || t === 'employe id';
-            });
-            if (!hasEmpId) {
-                try {
-                    await list.fields.addText("EmployeeID", { Title: "Employe ID" });
-                }
-                catch (err) {
-                    try {
-                        await list.fields.addText("EmployeID", { Title: "Employe ID" });
-                    }
-                    catch (err2) {
-                        try {
-                            await list.fields.addText("EmployeeID");
-                        }
-                        catch (err3) {
-                            console.warn("Could not auto-create EmployeeID field. Continuing.", err3);
-                        }
-                    }
-                }
-            }
-            // 3. AssetName / Asset Name (Text)
-            const hasAssetName = fields.some(field => {
-                const val = (field.InternalName || '').toString().toLowerCase();
-                const t = (field.Title || '').toString().toLowerCase();
-                return val === 'assetname' || val === 'asset_x0020_name' || val === 'asset name' || t === 'asset name' || t === 'assetname';
-            });
-            if (!hasAssetName) {
-                try {
-                    await list.fields.addText("AssetName", { Title: "Asset Name" });
-                }
-                catch (err) {
-                    try {
-                        await list.fields.addText("AssetName");
-                    }
-                    catch (err2) {
-                        console.warn("Could not auto-create AssetName field. Continuing.", err2);
-                    }
-                }
-            }
-            // 4. SerialNumber / Serial Number (Text)
-            const hasSerialNumber = fields.some(field => {
-                const val = (field.InternalName || '').toString().toLowerCase();
-                const t = (field.Title || '').toString().toLowerCase();
-                return val === 'serialnumber' || val === 'serial_x0020_number' || val === 'serial number' || t === 'serial number' || t === 'serialnumber';
-            });
-            if (!hasSerialNumber) {
-                try {
-                    await list.fields.addText("SerialNumber", { Title: "Serial Number" });
-                }
-                catch (err) {
-                    try {
-                        await list.fields.addText("SerialNumber");
-                    }
-                    catch (err2) {
-                        console.warn("Could not auto-create SerialNumber field. Continuing.", err2);
-                    }
-                }
-            }
-            // 5. Priority (Choice)
-            if (!hasField("Priority")) {
-                try {
-                    await list.fields.addChoice("Priority", {
-                        Choices: ["High", "Medium", "Low"],
-                        FillInChoice: false
-                    });
-                }
-                catch (err) {
-                    console.warn("Could not auto-create Priority field. Continuing.", err);
-                }
-            }
-            // 6. RequestedDate / Requested Date (Text)
-            const hasRequestedDate = fields.some(field => {
-                const val = (field.InternalName || '').toString().toLowerCase();
-                const t = (field.Title || '').toString().toLowerCase();
-                return val === 'requesteddate' || val === 'requested_x0020_date' || val === 'requested date' || t === 'requested date' || t === 'requesteddate';
-            });
-            if (!hasRequestedDate) {
-                try {
-                    await list.fields.addText("RequestedDate", { Title: "Requested Date" });
-                }
-                catch (err) {
-                    try {
-                        await list.fields.addText("RequestedDate");
-                    }
-                    catch (err2) {
-                        console.warn("Could not auto-create RequestedDate field. Continuing.", err2);
-                    }
-                }
-            }
-            // 7. ReasonforRequest / Reason for Request (Multiline Text)
-            const hasReasonforRequest = fields.some(field => {
-                const val = (field.InternalName || '').toString().toLowerCase();
-                const t = (field.Title || '').toString().toLowerCase();
-                return val === 'reasonforrequest' || val === 'reason_x0020_for_x0020_request' || val === 'reason for request' || t === 'reason for request' || t === 'reasonforrequest';
-            });
-            if (!hasReasonforRequest) {
-                try {
-                    await list.fields.addMultilineText("ReasonforRequest", { Title: "Reason for Request" });
-                }
-                catch (err) {
-                    try {
-                        await list.fields.addMultilineText("ReasonforRequest");
-                    }
-                    catch (err2) {
-                        console.warn("Could not auto-create ReasonforRequest field. Continuing.", err2);
-                    }
-                }
-            }
-            // 8. AssignedDate / Assigned Date (Text)
-            const hasAssignedDate = fields.some(field => {
-                const val = (field.InternalName || '').toString().toLowerCase();
-                const t = (field.Title || '').toString().toLowerCase();
-                return val === 'assigneddate' || val === 'assigned_x0020_date' || val === 'assigned date' || t === 'assigned date' || t === 'assigneddate';
-            });
-            if (!hasAssignedDate) {
-                try {
-                    await list.fields.addText("AssignedDate", { Title: "Assigned Date" });
-                }
-                catch (err) {
-                    try {
-                        await list.fields.addText("AssignedDate");
-                    }
-                    catch (err2) {
-                        console.warn("Could not auto-create AssignedDate field. Continuing.", err2);
-                    }
-                }
-            }
-        }
-        catch (error) {
-            console.warn("Could not ensure Mapping List fields. Continuing.", error);
-        }
-        finally {
-            this._mappingListFieldsEnsured = true;
-        }
-    }
-    static _normalizeRequestKey(input) {
-        return (input || "").trim().toUpperCase();
-    }
-    static _buildRequestKeyFromItemId(itemId) {
-        const raw = itemId.toString();
-        const padded = ("000000" + raw).slice(-6);
-        return `REQ-${padded}`;
-    }
-    static _resolveRequestKeyInternalName(fields) {
-        const candidates = ["requestid", "requestkey", "request_x0020_id", "request_x0020_key", "request id"];
-        for (const cand of candidates) {
-            const field = fields.find((f) => {
-                const internal = (f.InternalName || "").toLowerCase();
-                const title = (f.Title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-                const candNorm = cand.replace(/[^a-z0-9]/g, "");
-                return internal === cand || internal.replace(/_x0020_/g, "") === candNorm || title === candNorm;
-            });
-            if (field) {
-                return field.InternalName;
-            }
-        }
-        return InventoryService.REQUEST_KEY_INTERNAL_NAME;
-    }
-    static async _updateMissingRequestKeys(list, resolvedKeyName, items) {
-        for (const item of items) {
-            try {
-                const itemId = parseInt(item.ID.toString(), 10);
-                if (!Number.isNaN(itemId)) {
-                    const requestKey = this._buildRequestKeyFromItemId(itemId);
-                    await list.items.getById(itemId).update({
-                        [resolvedKeyName]: requestKey
-                    });
-                    console.log(`Successfully populated Request ID in SharePoint for item ${itemId}: ${requestKey}`);
-                }
-            }
-            catch (err) {
-                console.warn(`Failed to update missing Request ID for item ${item.ID}:`, err);
-            }
-        }
-    }
-    static _extractRequestKey(item) {
-        if (!item) {
-            return "";
-        }
-        const candidates = ["requestkey", "requestid", "request_x0020_id", "request_x0020_key"];
-        for (const key of Object.keys(item)) {
-            const normalizedKey = key.toLowerCase().replace(/_x0020_/g, "");
-            if (candidates.indexOf(normalizedKey) >= 0 && item[key]) {
-                return this._normalizeRequestKey(item[key].toString());
-            }
-        }
-        if (item.ID) {
-            return this._buildRequestKeyFromItemId(parseInt(item.ID.toString(), 10));
-        }
-        return "";
-    }
-    static _isBusinessStatusKey(key) {
-        const lower = (key || '').toLowerCase();
-        const normalized = lower.replace(/_x0020_/g, '');
-        const isSystemKey = lower.indexOf('__') === 0 || lower.indexOf('odata') >= 0;
-        const isModeration = normalized.indexOf('moderationstatus') >= 0 || lower.indexOf('moderation') >= 0;
-        const looksLikeStatus = normalized === 'status' || normalized === 'requeststatus' || normalized.indexOf('requeststatus') >= 0;
-        return !isSystemKey && !isModeration && looksLikeStatus;
-    }
-    static async _ensureRequestWorkflowFields() {
-        if (this._requestWorkflowFieldsEnsured) {
-            return;
-        }
-        try {
-            const list = await InventoryService.getRequestList();
-            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const hasRequestStatus = fields.some(field => {
-                const internalName = (field.InternalName || '').toString().toLowerCase();
-                return internalName === InventoryService.REQUEST_STATUS_INTERNAL_NAME.toLowerCase();
-            });
-            const hasManagerComment = fields.some(field => {
-                const internalName = (field.InternalName || '').toString().toLowerCase();
-                return internalName === InventoryService.REQUEST_COMMENT_INTERNAL_NAME.toLowerCase();
-            });
-            if (!hasRequestStatus) {
-                try {
-                    await list.fields.addChoice(InventoryService.REQUEST_STATUS_INTERNAL_NAME, {
-                        Choices: ["Pending", "Approved", "Rejected"],
-                        FillInChoice: false
-                    });
-                }
-                catch (err) {
-                    console.warn("Could not auto-create RequestStatus field. Continuing.", err);
-                }
-            }
-            if (!hasManagerComment) {
-                try {
-                    await list.fields.addMultilineText(InventoryService.REQUEST_COMMENT_INTERNAL_NAME);
-                }
-                catch (err) {
-                    console.warn("Could not auto-create ManagerComment field. Continuing.", err);
-                }
-            }
-            const hasRequestKey = fields.some(field => {
-                const name = (field.InternalName || '').toString().toLowerCase();
-                const title = (field.Title || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-                return name === 'requestkey' || name === 'requestid' || name === 'request_x0020_id' || title === 'requestid' || title === 'requestkey';
-            });
-            if (!hasRequestKey) {
-                try {
-                    await list.fields.addText(InventoryService.REQUEST_KEY_INTERNAL_NAME);
-                }
-                catch (err) {
-                    console.warn("Could not auto-create RequestKey field. Continuing.", err);
-                }
-            }
-            const hasAssetStatus = fields.some(field => {
-                const internalName = (field.InternalName || '').toString().toLowerCase();
-                return internalName === InventoryService.ASSET_STATUS_INTERNAL_NAME.toLowerCase();
-            });
-            if (!hasAssetStatus) {
-                try {
-                    await list.fields.addChoice(InventoryService.ASSET_STATUS_INTERNAL_NAME, {
-                        Choices: ["Pending", "Approved"],
-                        FillInChoice: false
-                    });
-                }
-                catch (err) {
-                    console.warn("Could not auto-create AssetStatus field. Continuing.", err);
-                }
-            }
-            const hasEmployeeIdField = fields.some(field => {
-                const internalName = (field.InternalName || '').toString().toLowerCase();
-                return internalName === 'employeeid' || internalName === 'employee_x0020_id';
-            });
-            if (!hasEmployeeIdField) {
-                try {
-                    await list.fields.addText('EmployeeID');
-                }
-                catch (err) {
-                    console.warn("Could not auto-create EmployeeID field. Continuing.", err);
-                }
-            }
-            const hasPriorityField = fields.some(field => {
-                const internalName = (field.InternalName || '').toString().toLowerCase();
-                return internalName === 'priority';
-            });
-            if (!hasPriorityField) {
-                try {
-                    await list.fields.addChoice('Priority', {
-                        Choices: ["High", "Medium", "Low"],
-                        FillInChoice: false
-                    });
-                }
-                catch (err) {
-                    console.warn("Could not auto-create Priority field. Continuing.", err);
-                }
-            }
-        }
-        catch (error) {
-            // Non-admin users may not have schema permissions. Don't block request flows.
-            console.warn("Could not ensure RequestList workflow fields. Continuing with fallback behavior.", error);
-        }
-        finally {
-            this._requestWorkflowFieldsEnsured = true;
         }
     }
     static async getItems() {
         try {
-            const list = await InventoryService.getInventoryList();
+            const list = await InventoryItemService.getInventoryList();
             const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const items = await this._fetchItemsWithExpandedUsers(list);
+            const items = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._fetchItemsWithExpandedUsers(list);
             const findFieldInternalName = (searchStr, fallback) => {
                 let field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
                 if (field)
@@ -7083,7 +7893,7 @@ class InventoryService {
         }
     }
     static async addItem(item, userDisplayName = "Unknown") {
-        const list = await InventoryService.getInventoryList();
+        const list = await InventoryItemService.getInventoryList();
         const payloads = [
             // 1. Standard modern field names with Specifications column (Priority)
             {
@@ -7188,7 +7998,7 @@ class InventoryService {
                 : (addedItem && addedItem.Id)
                     ? addedItem.Id.toString()
                     : 'Unknown';
-            await this.addAuditLog({
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
                 title: `Created Asset: ${item.assetName || item.title} (Inactivated)`,
                 action: 'Inactivated',
                 entityType: 'Asset',
@@ -7207,9 +8017,494 @@ class InventoryService {
             console.warn("Failed to write audit log for newly created asset:", auditError);
         }
     }
+    static async deleteItem(id, itemTitle = "Unknown", userDisplayName = "Unknown") {
+        try {
+            const list = await InventoryItemService.getInventoryList();
+            await list.items.getById(id).delete();
+            // Log the event
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
+                title: `Deleted Asset: ${itemTitle}`,
+                action: 'Delete',
+                entityType: 'Asset',
+                entityId: id.toString(),
+                details: `Deleted asset with ID ${id}`,
+                user: userDisplayName
+            });
+        }
+        catch (error) {
+            console.error("Error deleting item from SharePoint:", error);
+            throw error;
+        }
+    }
+    static async updateAssetStatus(requestId, assetStatus, approverName = 'Unknown', comment) {
+        try {
+            // Inline the getRequestList behavior to respect strict safety import rules:
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            let list;
+            try {
+                list = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME);
+                await list.select("Title")();
+            }
+            catch {
+                list = sp.web.lists.getByTitle("Request List");
+            }
+            // Check fields and auto-create if needed
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const hasRequestStatus = fields.some(field => (field.InternalName || '').toString().toLowerCase() === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME.toLowerCase());
+            const hasManagerComment = fields.some(field => (field.InternalName || '').toString().toLowerCase() === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME.toLowerCase());
+            const hasRequestKey = fields.some(field => {
+                const name = (field.InternalName || '').toString().toLowerCase();
+                const title = (field.Title || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                return name === 'requestkey' || name === 'requestid' || name === 'request_x0020_id' || title === 'requestid' || title === 'requestkey';
+            });
+            const hasAssetStatus = fields.some(field => (field.InternalName || '').toString().toLowerCase() === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME.toLowerCase());
+            const hasEmployeeIdField = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === 'employeeid' || internalName === 'employee_x0020_id';
+            });
+            const hasPriorityField = fields.some(field => (field.InternalName || '').toString().toLowerCase() === 'priority');
+            if (!hasRequestStatus) {
+                try {
+                    await list.fields.addChoice(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME, {
+                        Choices: ["Pending", "Approved", "Rejected"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestStatus field. Continuing.", err);
+                }
+            }
+            if (!hasManagerComment) {
+                try {
+                    await list.fields.addMultilineText(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME);
+                }
+                catch (err) {
+                    console.warn("Could not auto-create ManagerComment field. Continuing.", err);
+                }
+            }
+            if (!hasRequestKey) {
+                try {
+                    await list.fields.addText(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_KEY_INTERNAL_NAME);
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestKey field. Continuing.", err);
+                }
+            }
+            if (!hasAssetStatus) {
+                try {
+                    await list.fields.addChoice(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME, {
+                        Choices: ["Pending", "Approved"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create AssetStatus field. Continuing.", err);
+                }
+            }
+            if (!hasEmployeeIdField) {
+                try {
+                    await list.fields.addText('EmployeeID');
+                }
+                catch (err) {
+                    console.warn("Could not auto-create EmployeeID field. Continuing.", err);
+                }
+            }
+            if (!hasPriorityField) {
+                try {
+                    await list.fields.addChoice('Priority', {
+                        Choices: ["High", "Medium", "Low"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Priority field. Continuing.", err);
+                }
+            }
+            if (Number.isNaN(requestId)) {
+                throw new Error('Invalid request ID');
+            }
+            const item = await list.items.getById(requestId).select("*")();
+            const keys = Object.keys(item || {});
+            const findKey = (searchStr) => keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').includes(searchStr));
+            // Helper inline for extracting request key
+            const extractRequestKey = (itm) => {
+                if (!itm)
+                    return "";
+                const candidates = ["requestkey", "requestid", "request_x0020_id", "request_x0020_key"];
+                for (const key of Object.keys(itm)) {
+                    const normalizedKey = key.toLowerCase().replace(/_x0020_/g, "");
+                    if (candidates.indexOf(normalizedKey) >= 0 && itm[key]) {
+                        return (itm[key].toString() || "").trim().toUpperCase();
+                    }
+                }
+                if (itm.ID) {
+                    const raw = itm.ID.toString();
+                    const padded = ("000000" + raw).slice(-6);
+                    return `REQ-${padded}`;
+                }
+                return "";
+            };
+            const requestKey = extractRequestKey(item);
+            const assetStatusKey = findKey("assetstatus") || _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME;
+            const updatePayload = {
+                [assetStatusKey]: assetStatus
+            };
+            if (comment) {
+                const managerCommentKey = findKey("managercomment") || findKey("comment") || findKey("response") || _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME;
+                if (managerCommentKey) {
+                    const existingComment = item[managerCommentKey] || "";
+                    updatePayload[managerCommentKey] = existingComment
+                        ? `${existingComment} | [Admin]: ${comment}`
+                        : `[Admin]: ${comment}`;
+                }
+            }
+            await list.items.getById(requestId).update(updatePayload);
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
+                title: `Asset status ${assetStatus} for Request ${requestKey || `#${requestId}`}`,
+                action: 'Update',
+                entityType: 'Request',
+                entityId: requestKey || requestId.toString(),
+                details: JSON.stringify({
+                    requestKey: requestKey || (("000000" + requestId.toString()).slice(-6)),
+                    lifecycle: "AssetStatusUpdated",
+                    assetStatus,
+                    changedBy: approverName,
+                    changedAt: new Date().toISOString()
+                }),
+                user: approverName
+            });
+        }
+        catch (error) {
+            console.error(`Failed to update asset status for RequestList item ${requestId}`, error);
+            throw new Error(`Unable to update asset status. ${error.message || 'Verify AssetStatus column and permissions.'}`);
+        }
+    }
+}
+InventoryItemService._resolvedListName = null;
+
+
+/***/ }),
+
+/***/ 29619:
+/*!***********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/InventoryService.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetAssignmentService: () => (/* reexport safe */ _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__.AssetAssignmentService),
+/* harmony export */   AuditLogService: () => (/* reexport safe */ _AuditLogService__WEBPACK_IMPORTED_MODULE_4__.AuditLogService),
+/* harmony export */   InventoryItemService: () => (/* reexport safe */ _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__.InventoryItemService),
+/* harmony export */   InventoryService: () => (/* binding */ InventoryService),
+/* harmony export */   RequestService: () => (/* reexport safe */ _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService),
+/* harmony export */   ReturnRequestService: () => (/* reexport safe */ _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService),
+/* harmony export */   SharePointBaseService: () => (/* reexport safe */ _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_5__.SharePointBaseService)
+/* harmony export */ });
+/* harmony import */ var _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InventoryItemService */ 32974);
+/* harmony import */ var _RequestService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RequestService */ 50764);
+/* harmony import */ var _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AssetAssignmentService */ 95576);
+/* harmony import */ var _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ReturnRequestService */ 86382);
+/* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+
+
+
+
+
+
+
+
+
+
+
+
+class InventoryService {
+    // InventoryItemService Methods
+    static async getInventoryList() {
+        return _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__.InventoryItemService.getInventoryList();
+    }
+    static async getItems() {
+        return _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__.InventoryItemService.getItems();
+    }
+    static async addItem(item, userDisplayName) {
+        return _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__.InventoryItemService.addItem(item, userDisplayName);
+    }
+    static async deleteItem(id, itemTitle, userDisplayName) {
+        return _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__.InventoryItemService.deleteItem(id, itemTitle, userDisplayName);
+    }
+    static async updateAssetStatus(requestId, assetStatus, approverName, comment) {
+        return _InventoryItemService__WEBPACK_IMPORTED_MODULE_0__.InventoryItemService.updateAssetStatus(requestId, assetStatus, approverName, comment);
+    }
+    // RequestService Methods
+    static async getRequestList() {
+        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.getRequestList();
+    }
+    static async addRequest(request, userDisplayName) {
+        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.addRequest(request, userDisplayName);
+    }
+    static async getRequests() {
+        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.getRequests();
+    }
+    static async updateRequestStatus(requestId, status, approverName, rejectionReason) {
+        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.updateRequestStatus(requestId, status, approverName, rejectionReason);
+    }
+    static async getRequestHistoryById(requestLookupId) {
+        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.getRequestHistoryById(requestLookupId);
+    }
+    // AssetAssignmentService Methods
+    static async getMappingList() {
+        return _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__.AssetAssignmentService.getMappingList();
+    }
+    static async assignAssetsToEmployee(assetIds, employeeName, employeeEmail, adminName, employeeId, comment) {
+        return _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__.AssetAssignmentService.assignAssetsToEmployee(assetIds, employeeName, employeeEmail, adminName, employeeId, comment);
+    }
+    static async syncExistingAssignmentsToMappingList(adminName) {
+        return _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__.AssetAssignmentService.syncExistingAssignmentsToMappingList(adminName);
+    }
+    static async diagnoseMappingListFields() {
+        return _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__.AssetAssignmentService.diagnoseMappingListFields();
+    }
+    // ReturnRequestService Methods
+    static async getReturnRequestList() {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.getReturnRequestList();
+    }
+    static async getReturnRequests() {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.getReturnRequests();
+    }
+    static async addReturnRequest(request, userDisplayName) {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.addReturnRequest(request, userDisplayName);
+    }
+    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
+    }
+    // AuditLogService Methods
+    static async addAuditLog(log) {
+        return _AuditLogService__WEBPACK_IMPORTED_MODULE_4__.AuditLogService.addAuditLog(log);
+    }
+    static async getAuditLogs() {
+        return _AuditLogService__WEBPACK_IMPORTED_MODULE_4__.AuditLogService.getAuditLogs();
+    }
+    // SharePointBaseService Methods
+    static async getListFieldsMetadata(list) {
+        return _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_5__.SharePointBaseService.getListFieldsMetadata(list);
+    }
+    static translateSharePointError(error, payload, mapping) {
+        return _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_5__.SharePointBaseService.translateSharePointError(error, payload, mapping);
+    }
+}
+
+
+/***/ }),
+
+/***/ 50764:
+/*!*********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/RequestService.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   RequestService: () => (/* binding */ RequestService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+
+
+
+class RequestService {
+    static _normalizeRequestKey(input) {
+        return (input || "").trim().toUpperCase();
+    }
+    static _buildRequestKeyFromItemId(itemId) {
+        const raw = itemId.toString();
+        const padded = ("000000" + raw).slice(-6);
+        return `REQ-${padded}`;
+    }
+    static _resolveRequestKeyInternalName(fields) {
+        const candidates = ["requestid", "requestkey", "request_x0020_id", "request_x0020_key", "request id"];
+        for (const cand of candidates) {
+            const field = fields.find((f) => {
+                const internal = (f.InternalName || "").toLowerCase();
+                const title = (f.Title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+                const candNorm = cand.replace(/[^a-z0-9]/g, "");
+                return internal === cand || internal.replace(/_x0020_/g, "") === candNorm || title === candNorm;
+            });
+            if (field) {
+                return field.InternalName;
+            }
+        }
+        return _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_KEY_INTERNAL_NAME;
+    }
+    static _extractRequestKey(item) {
+        if (!item) {
+            return "";
+        }
+        const candidates = ["requestkey", "requestid", "request_x0020_id", "request_x0020_key"];
+        for (const key of Object.keys(item)) {
+            const normalizedKey = key.toLowerCase().replace(/_x0020_/g, "");
+            if (candidates.indexOf(normalizedKey) >= 0 && item[key]) {
+                return RequestService._normalizeRequestKey(item[key].toString());
+            }
+        }
+        if (item.ID) {
+            return RequestService._buildRequestKeyFromItemId(parseInt(item.ID.toString(), 10));
+        }
+        return "";
+    }
+    static async getRequestList() {
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        if (RequestService._resolvedRequestListName) {
+            return sp.web.lists.getByTitle(RequestService._resolvedRequestListName);
+        }
+        try {
+            const list = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME);
+            await list.select("Title")(); // Verify list exists
+            // eslint-disable-next-line require-atomic-updates
+            RequestService._resolvedRequestListName = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME;
+            return list;
+        }
+        catch (e) {
+            try {
+                const fallbackName = "Request List";
+                const list = sp.web.lists.getByTitle(fallbackName);
+                await list.select("Title")(); // Verify fallback exists
+                console.log("Resolved requests list name dynamically to fallback: " + fallbackName);
+                // eslint-disable-next-line require-atomic-updates
+                RequestService._resolvedRequestListName = fallbackName;
+                return list;
+            }
+            catch (e2) {
+                try {
+                    const allLists = await sp.web.lists.select("Title")();
+                    const listNames = allLists.map(l => '"' + l.Title + '"').join(', ');
+                    throw new Error("List '" + _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME + "' or 'Request List' does not exist on this SharePoint site. Available lists are: [ " + listNames + " ].");
+                }
+                catch (listsError) {
+                    throw new Error("List '" + _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME + "' or 'Request List' does not exist.");
+                }
+            }
+        }
+    }
+    static async _updateMissingRequestKeys(list, resolvedKeyName, items) {
+        for (const item of items) {
+            try {
+                const itemId = parseInt(item.ID.toString(), 10);
+                if (!Number.isNaN(itemId)) {
+                    const requestKey = RequestService._buildRequestKeyFromItemId(itemId);
+                    await list.items.getById(itemId).update({
+                        [resolvedKeyName]: requestKey
+                    });
+                    console.log(`Successfully populated Request ID in SharePoint for item ${itemId}: ${requestKey}`);
+                }
+            }
+            catch (err) {
+                console.warn(`Failed to update missing Request ID for item ${item.ID}:`, err);
+            }
+        }
+    }
+    static async _ensureRequestWorkflowFields() {
+        if (RequestService._requestWorkflowFieldsEnsured) {
+            return;
+        }
+        RequestService._requestWorkflowFieldsEnsured = true;
+        try {
+            const list = await RequestService.getRequestList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const hasRequestStatus = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME.toLowerCase();
+            });
+            const hasManagerComment = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME.toLowerCase();
+            });
+            if (!hasRequestStatus) {
+                try {
+                    await list.fields.addChoice(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME, {
+                        Choices: ["Pending", "Approved", "Rejected"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestStatus field. Continuing.", err);
+                }
+            }
+            if (!hasManagerComment) {
+                try {
+                    await list.fields.addMultilineText(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME);
+                }
+                catch (err) {
+                    console.warn("Could not auto-create ManagerComment field. Continuing.", err);
+                }
+            }
+            const hasRequestKey = fields.some(field => {
+                const name = (field.InternalName || '').toString().toLowerCase();
+                const title = (field.Title || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                return name === 'requestkey' || name === 'requestid' || name === 'request_x0020_id' || title === 'requestid' || title === 'requestkey';
+            });
+            if (!hasRequestKey) {
+                try {
+                    await list.fields.addText(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_KEY_INTERNAL_NAME);
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestKey field. Continuing.", err);
+                }
+            }
+            const hasAssetStatus = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME.toLowerCase();
+            });
+            if (!hasAssetStatus) {
+                try {
+                    await list.fields.addChoice(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME, {
+                        Choices: ["Pending", "Approved"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create AssetStatus field. Continuing.", err);
+                }
+            }
+            const hasEmployeeIdField = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === 'employeeid' || internalName === 'employee_x0020_id';
+            });
+            if (!hasEmployeeIdField) {
+                try {
+                    await list.fields.addText('EmployeeID');
+                }
+                catch (err) {
+                    console.warn("Could not auto-create EmployeeID field. Continuing.", err);
+                }
+            }
+            const hasPriorityField = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === 'priority';
+            });
+            if (!hasPriorityField) {
+                try {
+                    await list.fields.addChoice('Priority', {
+                        Choices: ["High", "Medium", "Low"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Priority field. Continuing.", err);
+                }
+            }
+        }
+        catch (error) {
+            // Non-admin users may not have schema permissions. Don't block request flows.
+            console.warn("Could not ensure RequestList workflow fields. Continuing with fallback behavior.", error);
+        }
+    }
     static async addRequest(request, userDisplayName = "Unknown") {
-        const list = await InventoryService.getRequestList();
-        await this._ensureRequestWorkflowFields();
+        const list = await RequestService.getRequestList();
+        await RequestService._ensureRequestWorkflowFields();
         const initialStatus = request.status || "Pending";
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         let requesterId = null;
@@ -7276,7 +8571,7 @@ class InventoryService {
                 dynamicPayload[statusField.InternalName] = initialStatus;
             }
             else {
-                dynamicPayload[InventoryService.REQUEST_STATUS_INTERNAL_NAME] = initialStatus;
+                dynamicPayload[_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME] = initialStatus;
             }
             if (employeeIdField) {
                 dynamicPayload[employeeIdField.InternalName] = request.employeeId || "";
@@ -7456,16 +8751,16 @@ class InventoryService {
                     : NaN;
             const requestKey = Number.isNaN(requestItemId)
                 ? `REQ-${Date.now().toString(36).toUpperCase()}`
-                : this._buildRequestKeyFromItemId(requestItemId);
+                : RequestService._buildRequestKeyFromItemId(requestItemId);
             if (!Number.isNaN(requestItemId)) {
                 try {
-                    const requestListInstance = await InventoryService.getRequestList();
+                    const requestListInstance = await RequestService.getRequestList();
                     const fields = await requestListInstance.fields.select("InternalName", "Title")();
-                    const resolvedKeyName = InventoryService._resolveRequestKeyInternalName(fields);
+                    const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
                     await requestListInstance.items.getById(requestItemId)
                         .update({
                         [resolvedKeyName]: requestKey,
-                        [InventoryService.ASSET_STATUS_INTERNAL_NAME]: "Pending"
+                        [_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME]: "Pending"
                     });
                 }
                 catch (err) {
@@ -7473,7 +8768,7 @@ class InventoryService {
                 }
             }
             // Log the event
-            await this.addAuditLog({
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
                 title: `Created Request ${requestKey} for Asset: ${request.assetTitle}`,
                 action: 'Create',
                 entityType: 'Request',
@@ -7494,31 +8789,12 @@ class InventoryService {
             console.warn("Failed in post-request creation steps:", postError);
         }
     }
-    static async deleteItem(id, itemTitle = "Unknown", userDisplayName = "Unknown") {
-        try {
-            const list = await InventoryService.getInventoryList();
-            await list.items.getById(id).delete();
-            // Log the event
-            await this.addAuditLog({
-                title: `Deleted Asset: ${itemTitle}`,
-                action: 'Delete',
-                entityType: 'Asset',
-                entityId: id.toString(),
-                details: `Deleted asset with ID ${id}`,
-                user: userDisplayName
-            });
-        }
-        catch (error) {
-            console.error("Error deleting item from SharePoint:", error);
-            throw error;
-        }
-    }
     static async getRequests() {
         try {
-            await this._ensureRequestWorkflowFields();
-            const list = await InventoryService.getRequestList();
+            await RequestService._ensureRequestWorkflowFields();
+            const list = await RequestService.getRequestList();
             const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const items = await this._fetchItemsWithExpandedUsers(list);
+            const items = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._fetchItemsWithExpandedUsers(list);
             const findFieldInternalName = (searchStr, fallback) => {
                 let field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
                 if (field)
@@ -7540,17 +8816,17 @@ class InventoryService {
             const employeeIdKey = findFieldInternalName("employeeid", "EmployeeID");
             const priorityKey = findFieldInternalName("priority", "Priority");
             const requestDateKey = findFieldInternalName("requestdate", "RequestDate");
-            const resolvedKeyName = this._resolveRequestKeyInternalName(fields);
+            const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
             const mapped = items.map((item) => {
                 const rawStatus = item[statusKey] || item.Status || 'Pending';
                 const normalizedStatus = (rawStatus || '').toString().toLowerCase();
                 const status = (normalizedStatus.includes('approv')) ? 'Approved' :
                     (normalizedStatus.includes('declin') || normalizedStatus.includes('reject')) ? 'Declined' :
                         'Pending';
-                const requestKey = item[resolvedKeyName] || this._extractRequestKey(item);
+                const requestKey = item[resolvedKeyName] || RequestService._extractRequestKey(item);
                 return {
                     id: item.ID ? item.ID.toString() : Math.random().toString(36).substr(2, 9),
-                    requestKey: requestKey || (item.ID ? this._buildRequestKeyFromItemId(parseInt(item.ID.toString(), 10)) : ""),
+                    requestKey: requestKey || (item.ID ? RequestService._buildRequestKeyFromItemId(parseInt(item.ID.toString(), 10)) : ""),
                     requesterName: (() => {
                         const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Author;
                         if (!rawEmp)
@@ -7578,7 +8854,7 @@ class InventoryService {
             });
             const itemsToUpdate = items.filter((item) => !item[resolvedKeyName] && item.ID);
             if (itemsToUpdate.length > 0) {
-                this._updateMissingRequestKeys(list, resolvedKeyName, itemsToUpdate).catch(err => {
+                RequestService._updateMissingRequestKeys(list, resolvedKeyName, itemsToUpdate).catch(err => {
                     console.warn("Background update of missing RequestKeys failed:", err);
                 });
             }
@@ -7591,11 +8867,11 @@ class InventoryService {
     }
     static async updateRequestStatus(requestId, status, approverName = 'Unknown', rejectionReason) {
         try {
-            await this._ensureRequestWorkflowFields();
+            await RequestService._ensureRequestWorkflowFields();
             if (Number.isNaN(requestId)) {
                 throw new Error('Invalid request ID');
             }
-            const list = await InventoryService.getRequestList();
+            const list = await RequestService.getRequestList();
             const item = await list.items.getById(requestId).select("*")();
             const keys = Object.keys(item || {});
             const findKey = (searchStr) => {
@@ -7617,15 +8893,15 @@ class InventoryService {
                 const isBusinessStatusField = normalizedInternal === 'status' || title.trim() === 'status';
                 return isBusinessStatusField && !isModerationField;
             });
-            const statusKeyFromItem = keys.find(key => this._isBusinessStatusKey(key));
-            const statusKey = statusKeyFromItem || statusField?.InternalName || InventoryService.REQUEST_STATUS_INTERNAL_NAME;
+            const statusKeyFromItem = keys.find(key => _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._isBusinessStatusKey(key));
+            const statusKey = statusKeyFromItem || statusField?.InternalName || _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME;
             if (!statusKey) {
                 throw new Error('Could not find request status column. Please create a Choice column like RequestStatus/Status in RequestList.');
             }
-            if (!this._isBusinessStatusKey(statusKey)) {
+            if (!_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._isBusinessStatusKey(statusKey)) {
                 throw new Error('Detected non-business status field. Please ensure RequestList has a dedicated request status column.');
             }
-            const reasonKey = findKey("managercomment") || InventoryService.REQUEST_COMMENT_INTERNAL_NAME || findKey("rejectionreason") || findKey("comments") || findKey("reason");
+            const reasonKey = findKey("managercomment") || _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME || findKey("rejectionreason") || findKey("comments") || findKey("reason");
             const rawChoices = statusField?.Choices;
             const choices = Array.isArray(rawChoices)
                 ? rawChoices
@@ -7648,7 +8924,7 @@ class InventoryService {
             const statusValue = status === 'Declined'
                 ? pickChoice(['rejected', 'declined'], 'Rejected')
                 : pickChoice(['approved'], 'Approved');
-            const requestKey = this._extractRequestKey(item);
+            const requestKey = RequestService._extractRequestKey(item);
             const basePayload = {};
             basePayload[statusKey] = statusValue;
             if (reasonKey) {
@@ -7657,13 +8933,13 @@ class InventoryService {
                     : `Approved by ${approverName}`;
             }
             await list.items.getById(requestId).update(basePayload);
-            await this.addAuditLog({
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
                 title: `${statusValue} Request ${requestKey || `#${requestId}`}`,
                 action: 'Update',
                 entityType: 'Request',
                 entityId: requestKey || requestId.toString(),
                 details: JSON.stringify({
-                    requestKey: requestKey || this._buildRequestKeyFromItemId(requestId),
+                    requestKey: requestKey || RequestService._buildRequestKeyFromItemId(requestId),
                     lifecycle: statusValue,
                     changedBy: approverName,
                     changedAt: new Date().toISOString(),
@@ -7683,971 +8959,17 @@ class InventoryService {
             throw new Error(`Unable to update request status. ${error.message || 'Verify RequestList status column and choices.'}`);
         }
     }
-    static async addAuditLog(log) {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        try {
-            await sp.web.lists.getByTitle(InventoryService.EVENT_LOG_LIST).items.add({
-                Title: log.title,
-                Action: log.action,
-                EntityType: log.entityType,
-                EntityId: log.entityId,
-                Details: log.details,
-                User: log.user
-            });
-        }
-        catch (error) {
-            console.error("Error adding audit log to SharePoint:", error);
-        }
-    }
-    static async updateAssetStatus(requestId, assetStatus, approverName = 'Unknown', comment) {
-        try {
-            await this._ensureRequestWorkflowFields();
-            if (Number.isNaN(requestId)) {
-                throw new Error('Invalid request ID');
-            }
-            const list = await InventoryService.getRequestList();
-            const item = await list.items.getById(requestId).select("*")();
-            const keys = Object.keys(item || {});
-            const findKey = (searchStr) => keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').includes(searchStr));
-            const requestKey = this._extractRequestKey(item);
-            const assetStatusKey = findKey("assetstatus") || InventoryService.ASSET_STATUS_INTERNAL_NAME;
-            const updatePayload = {
-                [assetStatusKey]: assetStatus
-            };
-            if (comment) {
-                const managerCommentKey = findKey("managercomment") || findKey("comment") || findKey("response") || InventoryService.REQUEST_COMMENT_INTERNAL_NAME;
-                if (managerCommentKey) {
-                    const existingComment = item[managerCommentKey] || "";
-                    updatePayload[managerCommentKey] = existingComment
-                        ? `${existingComment} | [Admin]: ${comment}`
-                        : `[Admin]: ${comment}`;
-                }
-            }
-            await list.items.getById(requestId).update(updatePayload);
-            await this.addAuditLog({
-                title: `Asset status ${assetStatus} for Request ${requestKey || `#${requestId}`}`,
-                action: 'Update',
-                entityType: 'Request',
-                entityId: requestKey || requestId.toString(),
-                details: JSON.stringify({
-                    requestKey: requestKey || this._buildRequestKeyFromItemId(requestId),
-                    lifecycle: "AssetStatusUpdated",
-                    assetStatus,
-                    changedBy: approverName,
-                    changedAt: new Date().toISOString()
-                }),
-                user: approverName
-            });
-        }
-        catch (error) {
-            console.error(`Failed to update asset status for RequestList item ${requestId}`, error);
-            throw new Error(`Unable to update asset status. ${error.message || 'Verify AssetStatus column and permissions.'}`);
-        }
-    }
-    static _resolveMappingPayload(mappingFields, employeeName, employeeId, assetName, serialNumber, priority, requestedDate, reason, assignedDate, assignedToId, isEmployePerson) {
-        const findField = (searchStr, fallback) => {
-            let field = mappingFields.find((f) => f.Title.toLowerCase() === searchStr.toLowerCase());
-            if (field)
-                return field.InternalName;
-            field = mappingFields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
-            if (field)
-                return field.InternalName;
-            const normalizedSearch = searchStr.toLowerCase().replace(/[^a-z0-9]/g, '');
-            field = mappingFields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSearch);
-            if (field)
-                return field.InternalName;
-            field = mappingFields.find((f) => f.InternalName.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSearch);
-            if (field)
-                return field.InternalName;
-            return fallback;
-        };
-        const titleField = mappingFields.find((f) => f.InternalName === "Title");
-        const titleFieldTitle = titleField ? (titleField.Title || "").toLowerCase().trim() : "";
-        const isTitleEmploye = titleFieldTitle === "employe" || titleFieldTitle === "employee";
-        let employeeNameFieldName = "Title";
-        if (isTitleEmploye) {
-            employeeNameFieldName = "Title";
-        }
-        else {
-            const f = mappingFields.find((x) => {
-                const title = (x.Title || "").toLowerCase().trim();
-                const internal = (x.InternalName || "").toLowerCase().trim();
-                return title === "employe" || title === "employee" || internal === "employe" || internal === "employee";
-            });
-            if (f)
-                employeeNameFieldName = f.InternalName;
-        }
-        const employeeIdFieldName = (() => {
-            const searchFields = mappingFields.filter((f) => f.InternalName !== employeeNameFieldName);
-            const findFieldInList = (list, search) => {
-                let f = list.find((x) => (x.Title || "").toLowerCase().trim() === search.toLowerCase());
-                if (f)
-                    return f.InternalName;
-                f = list.find((x) => x.InternalName.toLowerCase().trim() === search.toLowerCase());
-                if (f)
-                    return f.InternalName;
-                const norm = search.toLowerCase().replace(/[^a-z0-9]/g, '');
-                f = list.find((x) => (x.Title || "").toLowerCase().replace(/[^a-z0-9]/g, '') === norm);
-                if (f)
-                    return f.InternalName;
-                return null;
-            };
-            return (findFieldInList(searchFields, "employe id") ||
-                findFieldInList(searchFields, "employee id") ||
-                findFieldInList(searchFields, "employeeid") ||
-                findFieldInList(searchFields, "employeid") ||
-                findFieldInList(searchFields, "employe") ||
-                "EmployeeID");
-        })();
-        const assetNameFieldName = findField("asset name", "AssetName");
-        const serialNumberFieldName = findField("serial number", "SerialNumber");
-        const priorityFieldName = findField("priority", "Priority");
-        const requestedDateFieldName = findField("requested date", "RequestedDate");
-        const reasonFieldName = findField("reason for request", "ReasonforRequest");
-        const assignedDateFieldName = findField("assigned date", "AssignedDate");
-        const payload = {};
-        // Map Employee Name to the Employee column (either Title or a custom field)
-        if (employeeNameFieldName === "Title") {
-            payload["Title"] = employeeName;
-        }
-        else {
-            payload["Title"] = `Assignment of ${assetName}`;
-            const empFieldObj = mappingFields.find((f) => f.InternalName === employeeNameFieldName);
-            const isEmpFieldPerson = empFieldObj && (empFieldObj.TypeAsString === "User" || empFieldObj.TypeAsString === "UserMulti");
-            if (isEmpFieldPerson && assignedToId !== null) {
-                payload[`${employeeNameFieldName}Id`] = assignedToId;
-            }
-            else {
-                payload[employeeNameFieldName] = employeeName;
-            }
-        }
-        // Map Employee ID to the Employee ID column
-        const empIdFieldObj = mappingFields.find((f) => f.InternalName === employeeIdFieldName);
-        const isEmpIdFieldPerson = empIdFieldObj && (empIdFieldObj.TypeAsString === "User" || empIdFieldObj.TypeAsString === "UserMulti");
-        if (isEmpIdFieldPerson && assignedToId !== null) {
-            payload[`${employeeIdFieldName}Id`] = assignedToId;
-        }
-        else {
-            payload[employeeIdFieldName] = employeeId;
-        }
-        // Map other columns
-        payload[assetNameFieldName] = assetName;
-        payload[serialNumberFieldName] = serialNumber;
-        payload[priorityFieldName] = priority;
-        payload[requestedDateFieldName] = requestedDate;
-        payload[reasonFieldName] = reason;
-        payload[assignedDateFieldName] = assignedDate;
-        return payload;
-    }
-    static async _writeToMappingList(employeeName, employeeId, employeeEmail, assetName, serialNumber, priority, requestedDate, reason, assignedDate) {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        const mappingList = await InventoryService.getMappingList();
-        const mappingFields = await mappingList.fields.select("InternalName", "Title", "TypeAsString")();
-        // Resolve user ID
-        let assignedToId = null;
-        if (employeeEmail) {
-            try {
-                const user = await sp.web.ensureUser(employeeEmail);
-                assignedToId = user.data ? user.data.Id : user.Id;
-            }
-            catch (e) {
-                console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write.`, e);
-            }
-        }
-        const titleField = mappingFields.find((f) => f.InternalName === "Title");
-        const titleFieldTitle = titleField ? (titleField.Title || "").toLowerCase().trim() : "";
-        const isTitleEmploye = titleFieldTitle === "employe" || titleFieldTitle === "employee";
-        const employeFieldName = isTitleEmploye ? "Title" : (() => {
-            let f = mappingFields.find((x) => x.InternalName.toLowerCase() === "employe");
-            if (f)
-                return f.InternalName;
-            f = mappingFields.find((x) => (x.Title || "").toLowerCase() === "employe");
-            return f ? f.InternalName : "Employe";
-        })();
-        const employeFieldObj = mappingFields.find((f) => f.InternalName === employeFieldName);
-        const isEmployePerson = employeFieldObj && (employeFieldObj.TypeAsString === "User" || employeFieldObj.TypeAsString === "UserMulti");
-        // Dynamic field resolving
-        const dynamicMappingPayload = InventoryService._resolveMappingPayload(mappingFields, employeeName, employeeId, assetName, serialNumber, priority, requestedDate, reason, assignedDate, assignedToId, isEmployePerson);
-        const mappingPayloadsToTry = [];
-        mappingPayloadsToTry.push(dynamicMappingPayload);
-        // Fallbacks
-        // Fallback 1: Title = employeeName, Employe = employeeId
-        mappingPayloadsToTry.push({
-            Title: employeeName,
-            Employe: employeeId,
-            AssetName: assetName,
-            SerialNumber: serialNumber,
-            Priority: priority,
-            RequestedDate: requestedDate,
-            ReasonforRequest: reason,
-            AssignedDate: assignedDate
-        });
-        // Fallback 2: Title = employeeName, EmployeeID = employeeId
-        mappingPayloadsToTry.push({
-            Title: employeeName,
-            EmployeeID: employeeId,
-            AssetName: assetName,
-            SerialNumber: serialNumber,
-            Priority: priority,
-            RequestedDate: requestedDate,
-            ReasonforRequest: reason,
-            AssignedDate: assignedDate
-        });
-        // Fallback 3: Title = employeeName, EmployeId = assignedToId, EmployeeID = employeeId
-        if (assignedToId !== null) {
-            mappingPayloadsToTry.push({
-                Title: employeeName,
-                EmployeId: assignedToId,
-                EmployeeID: employeeId,
-                AssetName: assetName,
-                SerialNumber: serialNumber,
-                Priority: priority,
-                RequestedDate: requestedDate,
-                ReasonforRequest: reason,
-                AssignedDate: assignedDate
-            });
-        }
-        // Fallback 4: Title = Assignment of Asset, Employe = employeeName, EmployeeID = employeeId
-        mappingPayloadsToTry.push({
-            Title: `Assignment of ${assetName}`,
-            Employe: employeeName,
-            EmployeeID: employeeId,
-            AssetName: assetName,
-            SerialNumber: serialNumber,
-            Priority: priority,
-            RequestedDate: requestedDate,
-            ReasonforRequest: reason,
-            AssignedDate: assignedDate
-        });
-        // Fallback 5: Title = Assignment of Asset, EmployeId = assignedToId, EmployeeID = employeeId
-        if (assignedToId !== null) {
-            mappingPayloadsToTry.push({
-                Title: `Assignment of ${assetName}`,
-                EmployeId: assignedToId,
-                EmployeeID: employeeId,
-                AssetName: assetName,
-                SerialNumber: serialNumber,
-                Priority: priority,
-                RequestedDate: requestedDate,
-                ReasonforRequest: reason,
-                AssignedDate: assignedDate
-            });
-        }
-        let mappingSuccess = false;
-        let mappingLastErr;
-        for (const p of mappingPayloadsToTry) {
-            try {
-                const filteredPayload = InventoryService._filterPayloadBySchema(p, mappingFields);
-                console.log(`Attempting to write mapping payload for ${employeeName}:`, JSON.stringify(filteredPayload));
-                await mappingList.items.add(filteredPayload);
-                mappingSuccess = true;
-                console.log(`Successfully added mapping record for ${employeeName}`);
-                break;
-            }
-            catch (err) {
-                mappingLastErr = err;
-            }
-        }
-        if (!mappingSuccess) {
-            console.warn(`Failed to write mapping record for ${employeeName} to Mapping List.`, mappingLastErr);
-        }
-    }
-    static _filterPayloadBySchema(payload, fields) {
-        const cleanPayload = {};
-        const lowerFields = fields.map((f) => (f.InternalName || "").toLowerCase());
-        // Always copy Title
-        cleanPayload["Title"] = payload["Title"] || "";
-        for (const key of Object.keys(payload)) {
-            if (key === "Title")
-                continue;
-            const keyLower = key.toLowerCase();
-            // Handle User ID fields (e.g., EmployeeId, EmployeId)
-            if (keyLower.endsWith("id")) {
-                const baseKey = key.substring(0, key.length - 2);
-                const baseKeyLower = baseKey.toLowerCase();
-                if (lowerFields.indexOf(baseKeyLower) >= 0 || lowerFields.indexOf(keyLower) >= 0) {
-                    cleanPayload[key] = payload[key];
-                    continue;
-                }
-            }
-            if (lowerFields.indexOf(keyLower) >= 0) {
-                cleanPayload[key] = payload[key];
-            }
-        }
-        return cleanPayload;
-    }
-    static async assignAssetsToEmployee(assetIds, employeeName, employeeEmail, adminName, employeeId, comment) {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        const list = await InventoryService.getInventoryList();
-        let assignedToId = null;
-        // Ensure 'Note' column exists to guarantee we have a place to save the Assignee
-        try {
-            const fields = await list.fields();
-            if (!fields.some((f) => f.InternalName === 'Note')) {
-                await list.fields.addMultilineText('Note', { NumberOfLines: 6, RichText: false });
-                console.log("Automatically created 'Note' column in SharePoint list.");
-            }
-        }
-        catch (e) {
-            console.warn("Failed to check or create Note column", e);
-        }
-        // Try to resolve the user in SharePoint by email
-        try {
-            const user = await sp.web.ensureUser(employeeEmail);
-            assignedToId = user.data ? user.data.Id : user.Id;
-        }
-        catch (e) {
-            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to string assignment if column allows.`, e);
-        }
-        const updatePromises = assetIds.map(async (assetId) => {
-            // 1. Get asset details first
-            let assetItem = null;
-            try {
-                assetItem = await list.items.getById(parseInt(assetId))();
-            }
-            catch (e) {
-                console.warn(`Could not fetch details for asset ${assetId}`, e);
-            }
-            const assetName = assetItem ? (assetItem.AssetName || assetItem.Asset_x0020_Name || assetItem.Asset || assetItem.Title || "") : "";
-            const assetType = assetItem ? (assetItem.AssetType || assetItem.Asset_x0020_Type || assetItem.Type || "") : "";
-            const serialNumber = assetItem ? (assetItem.SerialNumber || assetItem.Serial_x0020_Number || "") : "";
-            // 2. Perform the update to InventoryList
-            const payloadsToTry = [];
-            const baseStatus = { Status: 'Assigned' };
-            if (assignedToId !== null) {
-                payloadsToTry.push({ ...baseStatus, AssignedToId: { results: [assignedToId] }, Note: `Assigned to: ${employeeName}` });
-                payloadsToTry.push({ ...baseStatus, Assigned_x0020_ToId: { results: [assignedToId] }, Note: `Assigned to: ${employeeName}` });
-                payloadsToTry.push({ ...baseStatus, AssignedToId: assignedToId, Note: `Assigned to: ${employeeName}` });
-                payloadsToTry.push({ ...baseStatus, Assigned_x0020_ToId: assignedToId, Note: `Assigned to: ${employeeName}` });
-                payloadsToTry.push({ ...baseStatus, AssignedToId: assignedToId });
-                payloadsToTry.push({ ...baseStatus, Assigned_x0020_ToId: assignedToId });
-            }
-            else {
-                payloadsToTry.push({ ...baseStatus, AssignedTo: employeeName, Note: `Assigned to: ${employeeName}` });
-                payloadsToTry.push({ ...baseStatus, Assigned_x0020_To: employeeName, Note: `Assigned to: ${employeeName}` });
-                payloadsToTry.push({ ...baseStatus, AssignedTo: employeeName });
-                payloadsToTry.push({ ...baseStatus, Assigned_x0020_To: employeeName });
-            }
-            payloadsToTry.push({ ...baseStatus, Note: `Assigned to: ${employeeName}` });
-            payloadsToTry.push({ ...baseStatus, Notes: `Assigned to: ${employeeName}` });
-            payloadsToTry.push({ Status: `Assigned to: ${employeeName}`, AssetStatus: `Assigned to: ${employeeName}` }); // Fallback to Status column
-            payloadsToTry.push({ ...baseStatus });
-            let success = false;
-            let lastErr;
-            for (const payload of payloadsToTry) {
-                try {
-                    await list.items.getById(parseInt(assetId)).update(payload);
-                    success = true;
-                    break; // Stop trying if one succeeds
-                }
-                catch (err) {
-                    lastErr = err;
-                }
-            }
-            if (!success) {
-                console.error(`All fallback updates failed for asset ${assetId}`, lastErr);
-                throw new Error(lastErr.message || "Failed to update asset status");
-            }
-            // 3. Find matching request in RequestList
-            let priority = "Medium";
-            let requestedDate = "";
-            let reason = "Direct Assignment";
-            let matchingRequest = null;
-            try {
-                const requests = await InventoryService.getRequests();
-                matchingRequest = requests.find(r => {
-                    const isEmployeeMatch = (employeeId && r.employeeId && r.employeeId.toLowerCase() === employeeId.toLowerCase()) ||
-                        (employeeName && r.requesterName && r.requesterName.toLowerCase() === employeeName.toLowerCase());
-                    const isAssetMatch = assetType && r.assetTitle && r.assetTitle.toLowerCase() === assetType.toLowerCase();
-                    return isEmployeeMatch && isAssetMatch && r.status === 'Approved' && r.assetStatus === 'Pending';
-                });
-                if (matchingRequest) {
-                    priority = matchingRequest.priority || "Medium";
-                    requestedDate = matchingRequest.requestDate || "";
-                    reason = matchingRequest.reason || "Direct Assignment";
-                }
-            }
-            catch (err) {
-                console.warn("Failed to find matching approved request in RequestList", err);
-            }
-            // Format dates properly
-            const formatDate = (dateStr) => {
-                if (!dateStr) {
-                    const d = new Date();
-                    const day = ("0" + d.getDate()).slice(-2);
-                    const month = ("0" + (d.getMonth() + 1)).slice(-2);
-                    return `${day}/${month}/${d.getFullYear()}`;
-                }
-                if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
-                    return dateStr;
-                }
-                const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
-                if (match) {
-                    return `${match[3]}/${match[2]}/${match[1]}`;
-                }
-                return dateStr;
-            };
-            const finalRequestedDate = formatDate(requestedDate);
-            const finalAssignedDate = formatDate(new Date().toISOString());
-            // 4. Update the matching request status to allocated (assetStatus = 'Approved')
-            if (matchingRequest) {
-                try {
-                    await InventoryService.updateAssetStatus(parseInt(matchingRequest.id, 10), 'Approved', adminName, comment);
-                }
-                catch (err) {
-                    console.warn(`Failed to update assetStatus to Approved for Request ${matchingRequest.id}`, err);
-                }
-            }
-            // 5. Update Mapping List
-            try {
-                await InventoryService._ensureMappingListFields();
-                await InventoryService._writeToMappingList(employeeName, employeeId || "", employeeEmail, assetName, serialNumber, priority, finalRequestedDate, reason, finalAssignedDate);
-            }
-            catch (err) {
-                console.warn("Failed to execute Mapping List update logic. Continuing.", err);
-            }
-            await this.addAuditLog({
-                title: `Asset activated and assigned to ${employeeName}`,
-                action: 'Activated',
-                entityType: 'Asset',
-                entityId: assetId,
-                details: JSON.stringify({
-                    lifecycle: "DirectAssignment",
-                    assignedTo: employeeName,
-                    changedBy: adminName,
-                    changedAt: new Date().toISOString()
-                }),
-                user: adminName
-            });
-        });
-        await Promise.all(updatePromises);
-    }
-    static async syncExistingAssignmentsToMappingList(adminName) {
-        let checkedCount = 0;
-        let syncedCount = 0;
-        try {
-            console.log("Starting Mapping List sync...");
-            const list = await InventoryService.getInventoryList();
-            const items = await InventoryService.getItems();
-            // Filter for assigned items matching the 5 active employees
-            const assignedItems = items.filter(item => {
-                return _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.some(emp => {
-                    const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                    const activeUser = normalize(emp.name);
-                    if (!activeUser)
-                        return false;
-                    const assignedNorm = normalize(item.assignedTo);
-                    const isAssigned = assignedNorm && (assignedNorm === activeUser || assignedNorm.includes(activeUser) || activeUser.includes(assignedNorm));
-                    const isNoted = (item.note || '').toLowerCase().includes('assigned to:') && normalize(item.note).includes(activeUser);
-                    const isStatus = (item.status || '').toLowerCase().includes('assigned to:') && normalize(item.status).includes(activeUser);
-                    return !!(isAssigned || isNoted || isStatus);
-                });
-            });
-            checkedCount = assignedItems.length;
-            if (assignedItems.length === 0) {
-                console.log("No assigned assets found for the 5 active employees.");
-                return { checkedCount, syncedCount };
-            }
-            await InventoryService._ensureMappingListFields();
-            const mappingList = await InventoryService.getMappingList();
-            const mappingItems = await mappingList.items();
-            const requests = await InventoryService.getRequests();
-            // Resolve the Mapping List field names
-            const mappingFields = await mappingList.fields.select("InternalName", "Title", "TypeAsString")();
-            const findMappingField = (searchStr, fallback) => {
-                let field = mappingFields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
-                if (field)
-                    return field.InternalName;
-                field = mappingFields.find((f) => f.Title.toLowerCase() === searchStr.toLowerCase());
-                if (field)
-                    return field.InternalName;
-                const normalizedSearch = searchStr.toLowerCase().replace(/[^a-z0-9]/g, '');
-                field = mappingFields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedSearch);
-                if (field)
-                    return field.InternalName;
-                field = mappingFields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '').indexOf(normalizedSearch) >= 0);
-                if (field)
-                    return field.InternalName;
-                return fallback;
-            };
-            const serialNumberFieldName = findMappingField("serialnumber", "SerialNumber");
-            for (const asset of assignedItems) {
-                // Check if this asset is already in the Mapping List
-                const alreadyMapped = mappingItems.some((m) => {
-                    const mSerial = m[serialNumberFieldName] || m.SerialNumber || m.Serial_x0020_Number || "";
-                    return mSerial.toString().toLowerCase() === asset.serialNumber.toString().toLowerCase();
-                });
-                if (alreadyMapped) {
-                    console.log(`Asset ${asset.assetName || asset.title} (${asset.serialNumber}) is already in Mapping List.`);
-                    continue;
-                }
-                const employee = _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.find(emp => {
-                    const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                    const activeUser = normalize(emp.name);
-                    if (!activeUser)
-                        return false;
-                    const assignedNorm = normalize(asset.assignedTo);
-                    const isAssigned = assignedNorm && (assignedNorm === activeUser || assignedNorm.includes(activeUser) || activeUser.includes(assignedNorm));
-                    const isNoted = (asset.note || '').toLowerCase().includes('assigned to:') && normalize(asset.note).includes(activeUser);
-                    const isStatus = (asset.status || '').toLowerCase().includes('assigned to:') && normalize(asset.status).includes(activeUser);
-                    return !!(isAssigned || isNoted || isStatus);
-                });
-                const employeeName = employee ? employee.name : (asset.assignedTo || "Unknown");
-                const employeeId = employee ? employee.id : "";
-                const employeeEmail = employee ? employee.email : "";
-                const assetAssignedTo = employeeName;
-                console.log(`Syncing missing assigned asset to Mapping List: ${asset.assetName || asset.title} (${asset.serialNumber}) for ${assetAssignedTo}`);
-                // Find matching request
-                let priority = "Medium";
-                let requestedDate = "";
-                let reason = "Direct Assignment";
-                let matchingRequest = null;
-                const assetType = asset.assetType || "";
-                matchingRequest = requests.find(r => {
-                    const isEmployeeMatch = (employeeId && r.employeeId && r.employeeId.toLowerCase() === employeeId.toLowerCase()) ||
-                        (employeeName && r.requesterName && r.requesterName.toLowerCase() === employeeName.toLowerCase());
-                    const isAssetMatch = assetType && r.assetTitle && r.assetTitle.toLowerCase() === assetType.toLowerCase();
-                    return isEmployeeMatch && isAssetMatch && r.status === 'Approved';
-                });
-                if (matchingRequest) {
-                    priority = matchingRequest.priority || "Medium";
-                    requestedDate = matchingRequest.requestDate || "";
-                    reason = matchingRequest.reason || "Direct Assignment";
-                }
-                // Format dates properly
-                const formatDate = (dateStr) => {
-                    if (!dateStr) {
-                        const d = new Date();
-                        const day = ("0" + d.getDate()).slice(-2);
-                        const month = ("0" + (d.getMonth() + 1)).slice(-2);
-                        return `${day}/${month}/${d.getFullYear()}`;
-                    }
-                    if (/^\d{2}\/\d{2}\/\d{4}$/.test(dateStr)) {
-                        return dateStr;
-                    }
-                    const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
-                    if (match) {
-                        return `${match[3]}/${match[2]}/${match[1]}`;
-                    }
-                    return dateStr;
-                };
-                const finalRequestedDate = formatDate(requestedDate);
-                const finalAssignedDate = formatDate(asset.assignedDate || new Date().toISOString());
-                // Update the matching request status to allocated (assetStatus = 'Approved')
-                if (matchingRequest && matchingRequest.assetStatus === 'Pending') {
-                    try {
-                        await InventoryService.updateAssetStatus(parseInt(matchingRequest.id, 10), 'Approved', adminName);
-                    }
-                    catch (err) {
-                        console.warn(`Failed to update assetStatus to Approved for Request ${matchingRequest.id}`, err);
-                    }
-                }
-                // Add to Mapping List
-                const assetName = asset.assetName || asset.title || "";
-                const serialNumber = asset.serialNumber || "";
-                try {
-                    await InventoryService._writeToMappingList(employeeName, employeeId, employeeEmail, assetName, serialNumber, priority, finalRequestedDate, reason, finalAssignedDate);
-                    syncedCount++;
-                }
-                catch (err) {
-                    console.warn(`Failed to write synced record for ${employeeName} to Mapping List.`, err);
-                }
-            }
-        }
-        catch (e) {
-            console.error("Failed to sync existing assignments to Mapping List:", e);
-            throw e;
-        }
-        return { checkedCount, syncedCount };
-    }
-    static async diagnoseMappingListFields() {
-        try {
-            const mappingList = await InventoryService.getMappingList();
-            const fields = await mappingList.fields.select("InternalName", "Title", "TypeAsString")();
-            const items = await mappingList.items.select("ID")();
-            let output = `Mapping List Diagnostics:\n`;
-            output += `- List URL Title: "${mappingList.Title || "Mapping List"}"\n`;
-            output += `- Record Count: ${items.length}\n`;
-            output += `- Available Fields in List:\n`;
-            fields.forEach((f) => {
-                output += `  * InternalName: "${f.InternalName}", Title: "${f.Title}", Type: "${f.TypeAsString}"\n`;
-            });
-            return output;
-        }
-        catch (e) {
-            return `Failed to diagnose Mapping List schema. Error: ${e.message || JSON.stringify(e)}`;
-        }
-    }
-    static async getAuditLogs() {
-        let logs = [];
-        const processedEventLogIds = new Set();
-        const formatTimestamp = (isoString) => {
-            if (!isoString)
-                return new Date().toISOString().replace('T', ' ').substring(0, 19);
-            try {
-                const formatted = isoString.replace('T', ' ');
-                if (formatted.indexOf('.') > 0) {
-                    return formatted.substring(0, formatted.indexOf('.'));
-                }
-                if (formatted.indexOf('Z') > 0) {
-                    return formatted.substring(0, formatted.indexOf('Z'));
-                }
-                return formatted.substring(0, 19);
-            }
-            catch {
-                return isoString.replace('T', ' ').substring(0, 19);
-            }
-        };
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        // 1. Fetch from EventLogList (the audit logging list)
-        try {
-            const eventLogList = sp.web.lists.getByTitle(InventoryService.EVENT_LOG_LIST);
-            const eventItems = await eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created")();
-            eventItems.forEach((item) => {
-                let assetName = "";
-                let detailsText = item.Details || "";
-                let actionText = item.Action || "";
-                // Parse JSON details if possible
-                if (detailsText.trim().startsWith("{") && detailsText.trim().endsWith("}")) {
-                    try {
-                        const parsed = JSON.parse(detailsText);
-                        assetName = parsed.assetName || parsed.assetTitle || parsed.Title || "";
-                        if (parsed.lifecycle) {
-                            if (parsed.lifecycle === "DirectAssignment") {
-                                detailsText = `Asset assigned to employee`;
-                                actionText = "admin assigned";
-                            }
-                            else if (parsed.lifecycle === "Approved") {
-                                detailsText = `Approved request for ${assetName || "Asset"}`;
-                                actionText = "manager approved";
-                            }
-                            else if (parsed.lifecycle === "Rejected" || parsed.lifecycle === "Declined") {
-                                detailsText = `Rejected request for ${assetName || "Asset"}`;
-                                actionText = "manager rejected";
-                            }
-                            else if (parsed.lifecycle === "Submitted") {
-                                detailsText = `Submitted asset request for ${assetName || "Asset"}`;
-                                actionText = "created";
-                            }
-                            else if (parsed.lifecycle === "ReturnRequested") {
-                                detailsText = `Requested return of ${assetName || "Asset"}`;
-                                actionText = "return requested";
-                            }
-                            else if (parsed.lifecycle === "ReturnApproved") {
-                                detailsText = `Approved return request for ${assetName || "Asset"}`;
-                                actionText = "return approved";
-                            }
-                            else if (parsed.lifecycle === "ReturnRejected") {
-                                detailsText = `Rejected return request for ${assetName || "Asset"}`;
-                                actionText = "return rejected";
-                            }
-                            else if (parsed.lifecycle === "ReturnCompleted") {
-                                detailsText = `Completed return of ${assetName || "Asset"}`;
-                                actionText = "return completed";
-                            }
-                        }
-                        else if (parsed.assetStatus === "Approved" || parsed.lifecycle === "AssetStatusUpdated") {
-                            detailsText = `Assigned ${assetName || "Asset"}`;
-                            actionText = "admin assigned";
-                        }
-                    }
-                    catch (e) {
-                        // Keep detailsText as string
-                    }
-                }
-                const titleLower = (item.Title || "").toLowerCase();
-                const actionLower = (item.Action || "").toLowerCase();
-                const detailsLower = (detailsText || "").toLowerCase();
-                // High fidelity text mapping
-                if (actionLower === "create") {
-                    actionText = "created";
-                }
-                else if (actionLower === "delete") {
-                    actionText = "deleted";
-                }
-                if (titleLower.includes("directly assigned") || detailsLower.includes("assigned to employee") || detailsLower.includes("assigned to:")) {
-                    actionText = "admin assigned";
-                    detailsText = "Asset assigned to employee";
-                }
-                else if (titleLower.includes("approved return request") || detailsLower.includes("approved return request")) {
-                    actionText = "return approved";
-                    detailsText = `Approved return request for ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("rejected return request") || detailsLower.includes("rejected return request")) {
-                    actionText = "return rejected";
-                    detailsText = `Rejected return request for ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("completed return") || detailsLower.includes("completed return")) {
-                    actionText = "return completed";
-                    detailsText = `Completed return of ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("requested return") || detailsLower.includes("requested return")) {
-                    actionText = "return requested";
-                    detailsText = `Requested return of ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("approved request") || detailsLower.includes("approved request")) {
-                    actionText = "manager approved";
-                    detailsText = `Approved request for ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("rejected request") || detailsLower.includes("rejected request") || titleLower.includes("declined request") || detailsLower.includes("declined request")) {
-                    actionText = "manager rejected";
-                    detailsText = `Rejected request for ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("created request") || detailsLower.includes("submitted asset request")) {
-                    actionText = "created";
-                    detailsText = `Submitted asset request for ${assetName || "Asset"}`;
-                }
-                else if (titleLower.includes("created asset") || detailsLower.includes("added to inventory")) {
-                    actionText = "created";
-                    detailsText = "Asset was added to inventory";
-                }
-                else if (titleLower.includes("deleted asset") || detailsLower.includes("retired due to damage")) {
-                    actionText = "deleted";
-                    detailsText = "Asset retired due to damage";
-                }
-                else if (detailsLower.includes("under investigation") || detailsLower.includes("in progress")) {
-                    actionText = "status updated to in progress";
-                    detailsText = "Under investigation";
-                }
-                else if (detailsLower.includes("resolved") || detailsLower.includes("replacement cable")) {
-                    actionText = "status updated to resolved";
-                    detailsText = "Replacement cable sourced";
-                }
-                // Try to extract assetName if empty
-                if (!assetName) {
-                    if (titleLower.includes("created asset:")) {
-                        assetName = item.Title.substring(titleLower.indexOf("created asset:") + 14).trim();
-                    }
-                    else if (titleLower.includes("updated asset:")) {
-                        assetName = item.Title.substring(titleLower.indexOf("updated asset:") + 14).trim();
-                    }
-                    else if (titleLower.includes("deleted asset:")) {
-                        assetName = item.Title.substring(titleLower.indexOf("deleted asset:") + 14).trim();
-                    }
-                    else if (titleLower.includes("request for")) {
-                        assetName = item.Title.substring(titleLower.indexOf("request for") + 11).trim();
-                    }
-                }
-                logs.push({
-                    id: `event-log-${item.ID}`,
-                    title: item.Title || "",
-                    action: actionText,
-                    entityType: item.EntityType || "",
-                    entityId: item.EntityId || "",
-                    assetName: assetName,
-                    details: detailsText,
-                    user: item.User || "System",
-                    timestamp: formatTimestamp(item.Created)
-                });
-                processedEventLogIds.add(`${item.EntityType}-${item.EntityId}-${item.Action}-${formatTimestamp(item.Created).substring(0, 16)}`);
-            });
-        }
-        catch (err) {
-            console.warn("Could not fetch EventLogList, relying on live list generation", err);
-        }
-        // 2. Fetch from InventoryList for dynamic fallback logs
-        try {
-            const list = await InventoryService.getInventoryList();
-            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const findFieldInternalName = (searchStr, fallback) => {
-                let field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
-                if (field)
-                    return field.InternalName;
-                field = fields.find((f) => f.InternalName.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr.toLowerCase()) >= 0);
-                if (field)
-                    return field.InternalName;
-                field = fields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '').indexOf(searchStr.toLowerCase()) >= 0);
-                return field ? field.InternalName : fallback;
-            };
-            const assetNameKey = findFieldInternalName("assetname", "AssetName");
-            const statusKey = findFieldInternalName("status", "Status");
-            const inventoryItems = await list.items.select("ID", "Title", assetNameKey, statusKey, "Created", "Modified", "Author/Title", "Editor/Title").expand("Author", "Editor")();
-            inventoryItems.forEach((item) => {
-                const itemCreated = formatTimestamp(item.Created);
-                const itemModified = formatTimestamp(item.Modified);
-                const assetName = item[assetNameKey] || item.Title || "";
-                const itemStatus = item[statusKey] || "";
-                // Add dynamic Create event
-                const createKey = `Asset-${item.ID}-Create-${itemCreated.substring(0, 16)}`;
-                if (!processedEventLogIds.has(createKey)) {
-                    logs.push({
-                        id: `asset-create-${item.ID}`,
-                        title: `Created Asset: ${item.Title}`,
-                        action: 'created',
-                        entityType: 'Asset',
-                        entityId: item.ID.toString(),
-                        assetName: assetName,
-                        details: `Asset was added to inventory`,
-                        user: item.Author?.Title || "System",
-                        timestamp: itemCreated
-                    });
-                }
-                // Add dynamic Update event if item has been updated
-                if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {
-                    const updateKey = `Asset-${item.ID}-Update-${itemModified.substring(0, 16)}`;
-                    const updateKeyAssigned = `Asset-${item.ID}-admin assigned-${itemModified.substring(0, 16)}`;
-                    if (!processedEventLogIds.has(updateKey) && !processedEventLogIds.has(updateKeyAssigned)) {
-                        let actionText = "updated";
-                        let detailsText = "Asset details were modified";
-                        if (itemStatus.toLowerCase().includes("assigned") || itemStatus.toLowerCase() === "active" || itemStatus.toLowerCase() === "in use") {
-                            actionText = "admin assigned";
-                            detailsText = "Asset assigned to employee";
-                        }
-                        else if (itemStatus.toLowerCase().includes("maintenance")) {
-                            actionText = "status updated to in progress";
-                            detailsText = "Under investigation";
-                        }
-                        else if (itemStatus.toLowerCase() === "in stock" || itemStatus.toLowerCase() === "yes") {
-                            actionText = "status updated to resolved";
-                            detailsText = "Replacement cable sourced";
-                        }
-                        logs.push({
-                            id: `asset-update-${item.ID}-${new Date(item.Modified).getTime()}`,
-                            title: `Updated Asset: ${item.Title}`,
-                            action: actionText,
-                            entityType: 'Asset',
-                            entityId: item.ID.toString(),
-                            assetName: assetName,
-                            details: detailsText,
-                            user: item.Editor?.Title || "System",
-                            timestamp: itemModified
-                        });
-                    }
-                }
-            });
-        }
-        catch (err) {
-            console.warn("Could not fetch InventoryList for audit logs", err);
-        }
-        // 3. Fetch from RequestList for dynamic fallback logs
-        try {
-            const reqList = await InventoryService.getRequestList();
-            const requestItems = await this._fetchItemsWithExpandedUsers(reqList);
-            requestItems.forEach((item) => {
-                const keys = Object.keys(item);
-                const findKey = (searchStr) => {
-                    const nonIdMatch = keys.find(k => {
-                        const kl = k.toLowerCase().replace(/_x0020_/g, '');
-                        return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
-                    });
-                    if (nonIdMatch)
-                        return nonIdMatch;
-                    return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
-                };
-                const employeeKey = findKey("requester") || findKey("employee") || "Employee";
-                const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
-                const statusKey = keys.find(key => this._isBusinessStatusKey(key)) || "RequestStatus";
-                const assetStatusKey = findKey("assetstatus") || "AssetStatus";
-                const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
-                const rawEmp = item[employeeKey] || item.Employee || item.Author;
-                const reqUser = (() => {
-                    if (!rawEmp)
-                        return item.Title || "System";
-                    if (typeof rawEmp === 'string')
-                        return rawEmp;
-                    if (Array.isArray(rawEmp))
-                        return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
-                    if (typeof rawEmp === 'object')
-                        return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
-                    return rawEmp.toString();
-                })();
-                const itemCreated = formatTimestamp(item.Created);
-                const itemModified = formatTimestamp(item.Modified);
-                const requestStatus = item[statusKey] || "";
-                const assetStatus = item[assetStatusKey] || "";
-                // Add dynamic Create event
-                const createKey = `Request-${item.ID}-Create-${itemCreated.substring(0, 16)}`;
-                if (!processedEventLogIds.has(createKey)) {
-                    logs.push({
-                        id: `request-create-${item.ID}`,
-                        title: `Created Request: ${reqAssetName}`,
-                        action: 'created',
-                        entityType: 'Request',
-                        entityId: item.ID.toString(),
-                        assetName: reqAssetName,
-                        details: `Submitted asset request for ${reqAssetName}`,
-                        user: reqUser,
-                        timestamp: itemCreated
-                    });
-                }
-                // Add dynamic Update event
-                if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {
-                    const updateKey = `Request-${item.ID}-Update-${itemModified.substring(0, 16)}`;
-                    if (!processedEventLogIds.has(updateKey)) {
-                        if (requestStatus.toLowerCase().includes("approv")) {
-                            logs.push({
-                                id: `request-approve-${item.ID}-${new Date(item.Modified).getTime()}`,
-                                title: `Approved Request: ${reqAssetName}`,
-                                action: 'manager approved',
-                                entityType: 'Request',
-                                entityId: item.ID.toString(),
-                                assetName: reqAssetName,
-                                details: `Approved request for ${reqAssetName}`,
-                                user: reqUser,
-                                timestamp: itemModified
-                            });
-                            if (assetStatus.toLowerCase().includes("approv")) {
-                                logs.push({
-                                    id: `request-assign-${item.ID}-${new Date(item.Modified).getTime()}`,
-                                    title: `Assigned Request: ${reqAssetName}`,
-                                    action: 'admin assigned',
-                                    entityType: 'Request',
-                                    entityId: item.ID.toString(),
-                                    assetName: reqAssetName,
-                                    details: `Assigned ${reqAssetName}`,
-                                    user: reqUser,
-                                    timestamp: itemModified
-                                });
-                            }
-                        }
-                        else if (requestStatus.toLowerCase().includes("reject") || requestStatus.toLowerCase().includes("declin")) {
-                            logs.push({
-                                id: `request-reject-${item.ID}-${new Date(item.Modified).getTime()}`,
-                                title: `Rejected Request: ${reqAssetName}`,
-                                action: 'manager rejected',
-                                entityType: 'Request',
-                                entityId: item.ID.toString(),
-                                assetName: reqAssetName,
-                                details: `Rejected request for ${reqAssetName}`,
-                                user: reqUser,
-                                timestamp: itemModified
-                            });
-                        }
-                        else {
-                            logs.push({
-                                id: `request-update-${item.ID}-${new Date(item.Modified).getTime()}`,
-                                title: `Updated Request: ${reqAssetName}`,
-                                action: 'updated',
-                                entityType: 'Request',
-                                entityId: item.ID.toString(),
-                                assetName: reqAssetName,
-                                details: `Request details were modified`,
-                                user: reqUser,
-                                timestamp: itemModified
-                            });
-                        }
-                    }
-                }
-            });
-        }
-        catch (err) {
-            console.warn("Could not fetch RequestList for audit logs", err);
-        }
-        // Sort logs by timestamp descending
-        logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-        return logs;
-    }
     static async getRequestHistoryById(requestLookupId) {
-        await this._ensureRequestWorkflowFields();
-        const normalizedRequestKey = this._normalizeRequestKey(requestLookupId);
+        await RequestService._ensureRequestWorkflowFields();
+        const normalizedRequestKey = RequestService._normalizeRequestKey(requestLookupId);
         if (!normalizedRequestKey) {
             throw new Error("Request ID is required.");
         }
-        const reqList = await InventoryService.getRequestList();
+        const reqList = await RequestService.getRequestList();
         let requestItems = [];
         try {
             const fields = await reqList.fields.select("InternalName", "Title")();
-            const resolvedKeyName = InventoryService._resolveRequestKeyInternalName(fields);
+            const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
             requestItems = await reqList
                 .items.select("*")
                 .filter(`${resolvedKeyName} eq '${normalizedRequestKey.replace(/'/g, "''")}'`)();
@@ -8674,16 +8996,16 @@ class InventoryService {
             throw new Error(`No request found for ID ${normalizedRequestKey}`);
         }
         const requestItem = requestItems[0];
-        const requests = await this.getRequests();
-        const request = requests.find(r => this._normalizeRequestKey(r.requestKey) === normalizedRequestKey ||
+        const requests = await RequestService.getRequests();
+        const request = requests.find(r => RequestService._normalizeRequestKey(r.requestKey) === normalizedRequestKey ||
             r.id === requestItem.ID?.toString());
         if (!request) {
             throw new Error(`Request exists but could not be mapped for ID ${normalizedRequestKey}`);
         }
         const requestIdAsString = requestItem.ID ? requestItem.ID.toString() : "";
-        const allLogs = await this.getAuditLogs();
+        const allLogs = await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.getAuditLogs();
         const lifecycle = allLogs
-            .filter(log => log.entityType === "Request" && (this._normalizeRequestKey(log.entityId) === normalizedRequestKey ||
+            .filter(log => log.entityType === "Request" && (RequestService._normalizeRequestKey(log.entityId) === normalizedRequestKey ||
             log.entityId === requestIdAsString ||
             ((log.details || "").toUpperCase().indexOf(`"REQUESTKEY":"${normalizedRequestKey}"`) >= 0)))
             .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
@@ -8692,52 +9014,43 @@ class InventoryService {
             lifecycle
         };
     }
-    static async _fetchItemsWithExpandedUsers(list) {
-        try {
-            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const selectFields = ["*"];
-            const expandFields = [];
-            fields.forEach((field) => {
-                const name = field.InternalName;
-                const type = field.TypeAsString;
-                if (type === "User" || type === "UserMulti") {
-                    const nameLower = (name || '').toLowerCase();
-                    const titleLower = (field.Title || '').toLowerCase();
-                    if (nameLower.indexOf("employee") >= 0 ||
-                        nameLower.indexOf("requester") >= 0 ||
-                        nameLower.indexOf("assigned") >= 0 ||
-                        nameLower.indexOf("author") >= 0 ||
-                        nameLower.indexOf("editor") >= 0 ||
-                        titleLower.indexOf("employee") >= 0 ||
-                        titleLower.indexOf("requester") >= 0 ||
-                        titleLower.indexOf("assigned") >= 0) {
-                        selectFields.push(`${name}/Title`, `${name}/Id`);
-                        expandFields.push(name);
-                    }
-                }
-            });
-            if (expandFields.indexOf("Author") === -1) {
-                selectFields.push("Author/Title", "Author/Id");
-                expandFields.push("Author");
-            }
-            if (expandFields.indexOf("Editor") === -1) {
-                selectFields.push("Editor/Title", "Editor/Id");
-                expandFields.push("Editor");
-            }
-            return await list.items.select(selectFields.join(",")).expand(...expandFields)();
-        }
-        catch (error) {
-            console.error("Dynamic user expansion failed:", error);
-            throw new Error(`Dynamic user expansion failed: ${error.message || JSON.stringify(error)}`);
-        }
-    }
+}
+RequestService._resolvedRequestListName = null;
+RequestService._requestWorkflowFieldsEnsured = false;
+
+
+/***/ }),
+
+/***/ 86382:
+/*!***************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/ReturnRequestService.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReturnRequestService: () => (/* binding */ ReturnRequestService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+/* harmony import */ var _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InventoryItemService */ 32974);
+/* harmony import */ var _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AssetAssignmentService */ 95576);
+
+
+
+
+
+class ReturnRequestService {
     static async getReturnRequestList() {
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        if (InventoryService._resolvedReturnListName) {
-            return sp.web.lists.getByTitle(InventoryService._resolvedReturnListName);
+        if (ReturnRequestService._resolvedReturnListName) {
+            return sp.web.lists.getByTitle(ReturnRequestService._resolvedReturnListName);
         }
         // Try all known name variants in order of preference
         const namesToTry = [
+            "Asset Return Request List",
             "Return Requests List",
             "ReturnRequestList",
             "Return Request List",
@@ -8748,11 +9061,11 @@ class InventoryService {
             try {
                 const list = sp.web.lists.getByTitle(name);
                 await list.select("Title")(); // Verify it exists
-                InventoryService._resolvedReturnListName = name;
-                console.log(`Resolved Return Requests list name to: "${name}"`);
+                ReturnRequestService._resolvedReturnListName = name;
+                console.log(`Resolved Asset Return Request list name to: "${name}"`);
                 return list;
             }
-            catch {
+            catch (TirKeyError) {
                 // try next
             }
         }
@@ -8760,10 +9073,10 @@ class InventoryService {
         try {
             const allLists = await sp.web.lists.select("Title")();
             const listNames = allLists.map((l) => '"' + l.Title + '"').join(', ');
-            throw new Error(`Could not find a Return Requests list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}. Available lists: [ ${listNames} ]`);
+            throw new Error(`Could not find an Asset Return Request list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}. Available lists: [ ${listNames} ]`);
         }
-        catch {
-            throw new Error(`Could not find a Return Requests list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}`);
+        catch (eLists) {
+            throw new Error(`Could not find an Asset Return Request list. Tried: ${namesToTry.map(n => '"' + n + '"').join(', ')}`);
         }
     }
     static _findReturnField(fields, ...candidates) {
@@ -8818,10 +9131,10 @@ class InventoryService {
     }
     static async getReturnRequests() {
         try {
-            const list = await InventoryService.getReturnRequestList();
+            const list = await ReturnRequestService.getReturnRequestList();
             const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
             // Resolve column internal names dynamically
-            const f = ((...c) => InventoryService._findReturnField(fields, ...c));
+            const f = ((...c) => ReturnRequestService._findReturnField(fields, ...c));
             const titleKey = f('Title') || 'Title';
             const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
             const assetIdKey = f('AssetID', 'Asset ID', 'AssetId') || 'AssetID';
@@ -8844,6 +9157,7 @@ class InventoryService {
                     title: item[titleKey] || "",
                     assetId: item[assetIdKey] || item.AssetID || item.AssetId || "",
                     assetName: item[assetNameKey] || item.AssetName || item.Asset_x0020_Name || "",
+                    assetType: item[assetTypeKey] || item.AssetType || item.Asset_x0020_Type || item.Type || "",
                     serialNumber: item[serialKey] || item.SerialNumber || item.Serial_x0020_Number || "",
                     requesterName: item[requesterKey] || item.RequesterName || item.Author?.Title || "",
                     requesterEmail: item[requesterEmailKey] || item.RequesterEmail || "",
@@ -8856,7 +9170,7 @@ class InventoryService {
                 };
             });
             // Get local items and merge them
-            const localRequests = this._getLocalReturnRequests();
+            const localRequests = ReturnRequestService._getLocalReturnRequests();
             const syncedAssetIds = new Set(spMapped.map((r) => r.assetId.toString()));
             const unsyncedLocal = localRequests.filter(localReq => {
                 return !syncedAssetIds.has(localReq.assetId.toString());
@@ -8865,10 +9179,12 @@ class InventoryService {
         }
         catch (error) {
             console.warn("Could not fetch return requests from SharePoint, returning local storage fallback:", error);
-            return this._getLocalReturnRequests();
+            return ReturnRequestService._getLocalReturnRequests();
         }
     }
     static async addReturnRequest(request, userDisplayName) {
+        const listTitle = ReturnRequestService._resolvedReturnListName || "Asset Return Request List";
+        console.log(`[Return Request Workflow] Accessing Return Requests List: "${listTitle}"`);
         const autoDate = new Date().toISOString().split('T')[0];
         const newRequest = {
             ...request,
@@ -8876,79 +9192,97 @@ class InventoryService {
             id: `RR-${Date.now()}`,
             status: 'Pending'
         };
-        let savedToSharePoint = false;
+        let list;
+        let schema;
         try {
-            const list = await InventoryService.getReturnRequestList();
-            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const f = ((...c) => InventoryService._findReturnField(fields, ...c));
-            const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
-            const assetIdKey = f('AssetID', 'Asset ID', 'AssetId') || 'AssetID';
-            const assetNameKey = f('AssetName', 'Asset Name') || 'AssetName';
-            const assetTypeKey = f('AssetType', 'Asset Type') || 'AssetType';
-            const serialKey = f('SerialNumber', 'Serial Number') || 'SerialNumber';
-            const requesterKey = f('RequesterName', 'Requester Name', 'Requester', 'Employee') || 'RequesterName';
-            const requesterEmailKey = f('RequesterEmail', 'Requester Email') || 'RequesterEmail';
-            const requestDateKey = f('RequestDate', 'Request Date', 'ReturnRequestDate', 'Return Request Date') || 'RequestDate';
-            const returnReasonKey = f('ReturnReason', 'Return Reason', 'Reason') || 'ReturnReason';
-            const conditionKey = f('ProposedCondition', 'Proposed Condition', 'ReturnedAssetCondition', 'Returned Asset Condition', 'Condition') || 'ProposedCondition';
-            const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
-            const payload = {
-                Title: request.title,
-                [assetIdKey]: request.assetId,
-                [assetNameKey]: request.assetName,
-                [serialKey]: request.serialNumber || '',
-                [requesterKey]: request.requesterName,
-                [requesterEmailKey]: request.requesterEmail || '',
-                [requestDateKey]: newRequest.requestDate,
-                [returnReasonKey]: request.returnReason,
-                [conditionKey]: request.proposedCondition,
-                [statusKey]: 'Pending'
-            };
-            if (returnRequestIdKey) {
-                payload[returnRequestIdKey] = newRequest.id;
-            }
-            // Also try to write AssetType if the field exists in the list
-            if (assetTypeKey && f('AssetType', 'Asset Type')) {
-                // We don't have assetType directly on IReturnRequest; skip silently
-            }
-            await list.items.add(payload);
-            savedToSharePoint = true;
-            console.log("Successfully saved return request to SharePoint.");
+            list = await ReturnRequestService.getReturnRequestList();
+            schema = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(list);
         }
-        catch (error) {
-            console.warn("Failed to save return request to SharePoint, using localStorage fallback:", error);
+        catch (err) {
+            console.error(`[Return Request Workflow] Failed to access list metadata for "${listTitle}". Error:`, err);
+            throw new Error(`Failed to access Return Request list metadata: ${err.message || JSON.stringify(err)}`);
         }
-        if (!savedToSharePoint) {
-            // localStorage fallback — data persists per browser session only
-            try {
-                // 1. Write to unified list
-                const existing = localStorage.getItem("inventory_return_requests");
-                const localList = existing ? JSON.parse(existing) : [];
-                localList.unshift(newRequest);
-                localStorage.setItem("inventory_return_requests", JSON.stringify(localList));
-                // 2. Also write to individual key for Bug 2 compatibility
-                localStorage.setItem(newRequest.id, JSON.stringify(newRequest));
+        const resolvedMapping = {};
+        const excludeFields = new Set();
+        const getField = (logicalKey, aliases) => {
+            const match = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(schema, aliases, excludeFields);
+            if (match) {
+                resolvedMapping[logicalKey] = match;
+                excludeFields.add(match);
             }
-            catch (e) {
-                console.error("localStorage save failed:", e);
-            }
-        }
-        // Update asset status to "Pending Return" in inventory
+        };
+        getField("ReturnRequestID", ["returnrequestid", "return request id", "returnrequestkey", "return request key"]);
+        getField("AssetID", ["assetid", "asset id"]);
+        getField("AssetName", ["assetname", "asset name"]);
+        getField("AssetType", ["assettype", "asset type"]);
+        getField("SerialNumber", ["serialnumber", "serial number"]);
+        getField("RequesterName", ["requestername", "requester name", "requester", "employee"]);
+        getField("RequesterEmail", ["requesteremail", "requester email"]);
+        getField("ReturnRequestDate", ["requestdate", "request date", "returnrequestdate", "return request date"]);
+        getField("ReturnReason", ["returnreason", "return reason", "reason"]);
+        getField("ReturnedAssetCondition", ["proposedcondition", "proposed condition", "returnedassetcondition", "returned asset condition", "condition"]);
+        getField("Status", ["status", "returnstatus", "return status", "requeststatus", "return request status"]);
+        console.log(`[Return Request Workflow] Resolved field mappings:`, JSON.stringify(resolvedMapping, null, 2));
+        const logicalPayload = {
+            ReturnRequestID: newRequest.id,
+            AssetID: request.assetId,
+            AssetName: request.assetName,
+            AssetType: request.assetType || "",
+            SerialNumber: request.serialNumber || "",
+            RequesterName: request.requesterName,
+            RequesterEmail: request.requesterEmail || "",
+            ReturnRequestDate: newRequest.requestDate,
+            ReturnReason: request.returnReason,
+            ReturnedAssetCondition: request.proposedCondition,
+            Status: "Pending"
+        };
+        const requiredKeys = ["AssetID", "AssetName", "RequesterName", "Status"];
+        let finalPayload;
         try {
-            const invList = await InventoryService.getInventoryList();
-            const invFields = await invList.fields.select("InternalName", "Title", "TypeAsString")();
-            const statusField = invFields.find((f) => f.InternalName.toLowerCase() === "status" || f.Title.toLowerCase() === "status");
-            const statusKey = statusField ? statusField.InternalName : "Status";
-            await invList.items.getById(parseInt(request.assetId)).update({
+            finalPayload = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._coerceAndValidatePayload(logicalPayload, schema, resolvedMapping, requiredKeys);
+            if (!finalPayload["Title"]) {
+                finalPayload["Title"] = request.title || `Return Request for ${request.assetName}`;
+            }
+        }
+        catch (validationErr) {
+            console.error(`[Return Request Workflow] Payload validation/coercion failed:`, validationErr);
+            throw new Error(`Failed to validate/coerce Return Request payload: ${validationErr.message}`);
+        }
+        console.log(`[Return Request Workflow] Final payload before submission:`, JSON.stringify(finalPayload, null, 2));
+        // Operation 1: Creating Return Request
+        try {
+            await list.items.add(finalPayload);
+            console.log(`[Return Request Workflow] Success: Created Return Request item in SharePoint with ID ${newRequest.id}`);
+        }
+        catch (err) {
+            const translatedErr = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.translateSharePointError(err, finalPayload, resolvedMapping);
+            console.error(`[Return Request Workflow] Operation Failed: Creating Return Request. Error details:`, translatedErr.message);
+            throw new Error(`Creating Return Request failed: ${translatedErr.message}`);
+        }
+        // Operation 2: Updating Inventory Status
+        const invListTitle = "InventoryList";
+        console.log(`[Return Request Workflow] Accessing list: "${invListTitle}" to update status of asset ${request.assetId}`);
+        try {
+            const invList = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getInventoryList();
+            const invFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(invList);
+            const statusField = invFields.find(f => f.internalName.toLowerCase() === "status" || f.displayName.toLowerCase() === "status");
+            const statusKey = statusField ? statusField.internalName : "Status";
+            const updatePayload = {
                 [statusKey]: "Pending Return"
-            });
+            };
+            console.log(`[Return Request Workflow] Updating Inventory Asset ${request.assetId} with payload:`, JSON.stringify(updatePayload));
+            await invList.items.getById(parseInt(request.assetId, 10)).update(updatePayload);
+            console.log(`[Return Request Workflow] Success: Updated Inventory Asset status to 'Pending Return' in SharePoint.`);
         }
         catch (error) {
-            console.warn("Failed to update asset status to 'Pending Return' in SharePoint:", error);
+            console.error(`[Return Request Workflow] Operation Failed: Updating Inventory Status. Error details:`, error);
+            throw new Error(`Updating Inventory Status failed: ${error.message || JSON.stringify(error)}`);
         }
-        // Audit log
+        // Operation 3: Writing Audit Log
+        const auditListTitle = "EventLogList";
+        console.log(`[Return Request Workflow] Writing to audit log list: "${auditListTitle}"`);
         try {
-            await this.addAuditLog({
+            const auditPayload = {
                 title: `Requested Return & Deactivated: ${request.assetName}`,
                 action: 'Deactivated',
                 entityType: 'Asset',
@@ -8964,24 +9298,40 @@ class InventoryService {
                     requestedAt: new Date().toISOString()
                 }),
                 user: userDisplayName
-            });
+            };
+            console.log(`[Return Request Workflow] Submitting Audit Log with payload:`, JSON.stringify(auditPayload));
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog(auditPayload);
+            console.log(`[Return Request Workflow] Success: Created Audit Log record in SharePoint.`);
         }
         catch (e) {
-            console.warn("Failed to add audit log for return request:", e);
+            console.error(`[Return Request Workflow] Operation Failed: Writing Audit Log. Error details:`, e);
+            throw new Error(`Writing Audit Log failed: ${e.message || JSON.stringify(e)}`);
         }
     }
     static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
-        const requests = await this.getReturnRequests();
+        console.log("========================");
+        console.log("RETURN WORKFLOW START");
+        console.log("========================");
+        console.log("Request ID:", requestId);
+        console.log("Status:", status);
+        const requests = await ReturnRequestService.getReturnRequests();
         const req = requests.find(r => r.id === requestId);
         if (!req) {
+            console.error("Error: Return request not found.");
+            console.log("========================");
+            console.log("RETURN WORKFLOW END");
+            console.log("========================");
             throw new Error(`Return request with ID ${requestId} not found.`);
         }
+        console.log("Asset ID:", req.assetId);
+        console.log("Serial Number:", req.serialNumber);
         let updatedSharePoint = false;
         // Try SharePoint update
         try {
-            const list = await InventoryService.getReturnRequestList();
+            const list = await ReturnRequestService.getReturnRequestList();
+            console.log("Resolved Return Request List Name:", list.Title || "Asset Return Request List");
             const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
-            const f = ((...c) => InventoryService._findReturnField(fields, ...c));
+            const f = ((...c) => ReturnRequestService._findReturnField(fields, ...c));
             const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
             const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
             const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
@@ -8994,21 +9344,26 @@ class InventoryService {
                 payload[completedKey] = new Date().toISOString().split('T')[0];
             }
             const numericId = parseInt(requestId, 10);
+            let restResponse = null;
             if (!isNaN(numericId) && !requestId.startsWith('RR-')) {
-                await list.items.getById(numericId).update(payload);
+                restResponse = await list.items.getById(numericId).update(payload);
+                console.log("Result of list.items.update() (Request List ID update):", JSON.stringify(restResponse));
                 updatedSharePoint = true;
             }
             else if (returnRequestIdKey) {
                 const spItems = await list.items.filter(`${returnRequestIdKey} eq '${requestId.replace(/'/g, "''")}'`).select('ID')();
                 if (spItems && spItems.length > 0) {
                     const spId = spItems[0].ID;
-                    await list.items.getById(spId).update(payload);
+                    restResponse = await list.items.getById(spId).update(payload);
+                    console.log("Result of list.items.update() (Request List filter update):", JSON.stringify(restResponse));
                     updatedSharePoint = true;
                 }
             }
         }
         catch (err) {
-            console.warn("Failed to update return request in SharePoint:", err);
+            console.error("Exception caught in Return Request update:", err.message, err.stack);
+            if (err.data)
+                console.error("Error details:", JSON.stringify(err.data));
         }
         if (!updatedSharePoint) {
             // Update localStorage fallback copy
@@ -9041,11 +9396,12 @@ class InventoryService {
                 }
             }
             catch (e) {
-                console.error("localStorage update failed:", e);
+                console.error("localStorage update failed:", e.message, e.stack);
             }
         }
         try {
-            const list = await InventoryService.getInventoryList();
+            const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getInventoryList();
+            console.log("Resolved Inventory List Name:", list.Title || "InventoryList");
             const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
             const findField = (searchStr, fallback) => {
                 const field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());
@@ -9055,9 +9411,13 @@ class InventoryService {
             const assignedToKey = findField("assignedto", "AssignedTo");
             const conditionKey = findField("condition", "Condition");
             const noteKey = findField("note", "Note");
+            console.log("Resolved Status Field:", statusKey);
+            console.log("Resolved AssignedTo Field:", assignedToKey);
+            console.log("Resolved Condition Field:", conditionKey);
             const assetIdNum = parseInt(req.assetId, 10);
-            if (status === 'Completed') {
-                const condition = finalCondition || req.proposedCondition || "Good";
+            console.log("Inventory Item ID:", assetIdNum);
+            if (status === 'Completed' || status === 'Approved') {
+                const condition = finalCondition || req.proposedCondition || "Activated";
                 let nextStatus = "In Stock";
                 if (condition === "Poor" || condition === "Damaged") {
                     nextStatus = "Under Maintenance";
@@ -9073,36 +9433,54 @@ class InventoryService {
                 if (isUserField) {
                     payload[`${assignedToKey}Id`] = null;
                 }
+                console.log("Inventory Update Payload:", JSON.stringify(payload));
+                let assetUpdateResult = null;
                 try {
-                    await list.items.getById(assetIdNum).update(payload);
+                    assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
+                    console.log("Result of list.items.update() (Inventory update):", JSON.stringify(assetUpdateResult));
                 }
                 catch (err) {
-                    console.warn("SharePoint Asset update failed on Return Completion, doing fallback", err);
+                    console.error(`Exception in SharePoint Asset update on Return ${status}:`, err.message, err.stack);
+                    if (err.data)
+                        console.error("Error details:", JSON.stringify(err.data));
                 }
-            }
-            else if (status === 'Approved') {
                 try {
-                    await list.items.getById(assetIdNum).update({
-                        [statusKey]: "Return Approved"
-                    });
+                    const mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
+                    console.log("Resolved Mapping List Name:", mappingList.Title || "Mapping List");
+                    const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
+                    const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+                    if (serialCol && req.serialNumber) {
+                        const mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                        console.log("Mapping Records Found:", JSON.stringify(mappedItems));
+                        if (mappedItems && mappedItems.length > 0) {
+                            const deletedIds = [];
+                            for (const mItem of mappedItems) {
+                                const deleteResult = await mappingList.items.getById(mItem.ID).delete();
+                                console.log(`Result of mapping deletion for ID ${mItem.ID}:`, JSON.stringify(deleteResult));
+                                deletedIds.push(mItem.ID);
+                            }
+                            console.log("Deleted Mapping IDs:", JSON.stringify(deletedIds));
+                        }
+                    }
                 }
                 catch (err) {
-                    console.warn("SharePoint Asset update failed on Return Approval", err);
+                    console.error(`Exception in Mapping List Cleanup on return ${status.toLowerCase()}:`, err.message, err.stack);
                 }
             }
             else if (status === 'Rejected') {
                 try {
-                    await list.items.getById(assetIdNum).update({
-                        [statusKey]: "Assigned"
-                    });
+                    const rejectPayload = { [statusKey]: "Assigned" };
+                    console.log("Inventory Reject Update Payload:", JSON.stringify(rejectPayload));
+                    const rejectResult = await list.items.getById(assetIdNum).update(rejectPayload);
+                    console.log("Result of list.items.update() (Inventory Reject update):", JSON.stringify(rejectResult));
                 }
                 catch (err) {
-                    console.warn("SharePoint Asset update failed on Return Rejection", err);
+                    console.error("Exception in SharePoint Asset update on Return Rejection:", err.message, err.stack);
                 }
             }
         }
         catch (error) {
-            console.warn("Failed to execute Asset inventory sync for return requests. Continuing.", error);
+            console.error("Exception in Asset inventory sync block:", error.message, error.stack);
         }
         try {
             let logTitle = "";
@@ -9144,7 +9522,8 @@ class InventoryService {
                     finalTitle = `Completed Return & Deactivated: ${req.assetName} (Under Maintenance)`;
                 }
             }
-            await this.addAuditLog({
+            console.log("Submitting Audit Log payload...");
+            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
                 title: finalTitle,
                 action: finalAction,
                 entityType: 'Asset',
@@ -9161,27 +9540,330 @@ class InventoryService {
                 }),
                 user: approverName
             });
+            console.log("Audit Log created successfully.");
         }
         catch (e) {
-            console.warn("Failed to add audit log for return request status update", e);
+            console.error("Exception in writing Audit Log:", e.message, e.stack);
         }
+        console.log("========================");
+        console.log("RETURN WORKFLOW END");
+        console.log("========================");
     }
 }
-InventoryService.LIST_NAME = "InventoryList";
-InventoryService.EVENT_LOG_LIST = "EventLogList";
-InventoryService.REQUEST_LIST_NAME = "RequestList";
-InventoryService.RETURN_REQUEST_LIST_NAME = "Return Requests List";
-InventoryService.REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
-InventoryService.REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
-InventoryService.REQUEST_KEY_INTERNAL_NAME = "RequestKey";
-InventoryService.ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
-InventoryService.MAPPING_LIST_NAME = "Mapping List";
-InventoryService._requestWorkflowFieldsEnsured = false;
-InventoryService._resolvedListName = null;
-InventoryService._resolvedRequestListName = null;
-InventoryService._resolvedReturnListName = null;
-InventoryService._resolvedMappingListName = null;
-InventoryService._mappingListFieldsEnsured = false;
+ReturnRequestService._resolvedReturnListName = null;
+
+
+/***/ }),
+
+/***/ 93535:
+/*!*********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/base/SharePointBaseService.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SharePointBaseService: () => (/* binding */ SharePointBaseService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pnpjsConfig */ 17694);
+
+class SharePointBaseService {
+    static async getListFieldsMetadata(list) {
+        const fields = await list.fields.select("Title", "InternalName", "TypeAsString", "Required", "Choices")();
+        return fields.map((f) => ({
+            displayName: f.Title || "",
+            internalName: f.InternalName || "",
+            fieldType: f.TypeAsString || "",
+            required: !!f.Required,
+            choices: f.Choices || undefined
+        }));
+    }
+    static formatToSharePointDate(dateStr) {
+        if (!dateStr)
+            return null;
+        if (dateStr instanceof Date) {
+            return dateStr.toISOString();
+        }
+        const dateStrStr = String(dateStr).trim();
+        if (!dateStrStr)
+            return null;
+        if (/^\d{4}-\d{2}-\d{2}/.test(dateStrStr)) {
+            try {
+                return new Date(dateStrStr).toISOString();
+            }
+            catch {
+                // fallback
+            }
+        }
+        const dmYMatch = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(dateStrStr);
+        if (dmYMatch) {
+            const day = parseInt(dmYMatch[1], 10);
+            const month = parseInt(dmYMatch[2], 10) - 1;
+            const year = parseInt(dmYMatch[3], 10);
+            try {
+                return new Date(Date.UTC(year, month, day)).toISOString();
+            }
+            catch {
+                // fallback
+            }
+        }
+        try {
+            const parsed = new Date(dateStrStr);
+            if (!isNaN(parsed.getTime())) {
+                return parsed.toISOString();
+            }
+        }
+        catch {
+            // fallback
+        }
+        return null;
+    }
+    static async _coerceAndValidatePayload(logicalPayload, schema, resolvedMapping, requiredKeys) {
+        const cleanPayload = {};
+        for (const logicalKey of Object.keys(logicalPayload)) {
+            const internalName = resolvedMapping[logicalKey];
+            const isRequired = requiredKeys.indexOf(logicalKey) >= 0;
+            const val = logicalPayload[logicalKey];
+            if (!internalName) {
+                if (isRequired) {
+                    throw new Error(`Required field "${logicalKey}" could not be mapped to any SharePoint column.`);
+                }
+                continue;
+            }
+            const isValueEmpty = val === undefined || val === null || (typeof val === "string" && val.trim() === "");
+            if (isValueEmpty) {
+                if (isRequired) {
+                    throw new Error(`Missing required value for field "${logicalKey}" (SharePoint column: "${internalName}").`);
+                }
+                continue;
+            }
+            const fieldSchema = schema.find(f => f.internalName === internalName);
+            if (!fieldSchema) {
+                cleanPayload[internalName] = val;
+                continue;
+            }
+            const fieldType = fieldSchema.fieldType;
+            let coercedVal = val;
+            if (fieldType === "DateTime") {
+                const isoDate = SharePointBaseService.formatToSharePointDate(val);
+                if (!isoDate) {
+                    throw new Error(`Invalid date format for field "${logicalKey}" (value: "${val}").`);
+                }
+                coercedVal = isoDate;
+            }
+            else if (fieldType === "Choice") {
+                if (fieldSchema.choices && fieldSchema.choices.length > 0) {
+                    const choicesLower = fieldSchema.choices.map(c => c.toLowerCase());
+                    const valStr = String(val).trim();
+                    const index = choicesLower.indexOf(valStr.toLowerCase());
+                    if (index >= 0) {
+                        coercedVal = fieldSchema.choices[index];
+                    }
+                    else {
+                        throw new Error(`Invalid choice value "${valStr}" for field "${logicalKey}". Allowed: [${fieldSchema.choices.join(", ")}].`);
+                    }
+                }
+            }
+            else if (fieldType === "User" || fieldType === "UserMulti") {
+                let userId = null;
+                if (typeof val === "number") {
+                    userId = val;
+                }
+                else if (typeof val === "string" && val.trim() !== "") {
+                    const valTrim = val.trim();
+                    const parsedId = parseInt(valTrim, 10);
+                    if (!isNaN(parsedId) && String(parsedId) === valTrim) {
+                        userId = parsedId;
+                    }
+                    else {
+                        try {
+                            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+                            const user = await sp.web.ensureUser(valTrim);
+                            userId = user.data ? user.data.Id : user.Id;
+                        }
+                        catch (err) {
+                            throw new Error(`Failed to resolve Person/User value "${valTrim}" for field "${logicalKey}".`);
+                        }
+                    }
+                }
+                if (userId !== null) {
+                    cleanPayload[`${internalName}Id`] = userId;
+                    continue;
+                }
+                else {
+                    if (isRequired) {
+                        throw new Error(`Required Person field "${logicalKey}" could not be resolved (value: "${val}").`);
+                    }
+                    continue;
+                }
+            }
+            else if (fieldType === "Lookup" || fieldType === "LookupMulti") {
+                let lookupId = null;
+                if (typeof val === "number") {
+                    lookupId = val;
+                }
+                else if (typeof val === "string") {
+                    const valTrim = val.trim();
+                    const parsedId = parseInt(valTrim, 10);
+                    if (!isNaN(parsedId) && String(parsedId) === valTrim) {
+                        lookupId = parsedId;
+                    }
+                }
+                if (lookupId !== null) {
+                    cleanPayload[`${internalName}Id`] = lookupId;
+                    continue;
+                }
+                else {
+                    if (isRequired) {
+                        throw new Error(`Required Lookup field ID for "${logicalKey}" could not be resolved (value: "${val}").`);
+                    }
+                    continue;
+                }
+            }
+            else if (fieldType === "Number") {
+                const parsed = Number(val);
+                if (isNaN(parsed)) {
+                    throw new Error(`Invalid number value "${val}" for field "${logicalKey}".`);
+                }
+                coercedVal = parsed;
+            }
+            else if (fieldType === "Boolean") {
+                coercedVal = !!val;
+            }
+            else {
+                coercedVal = String(val);
+            }
+            cleanPayload[internalName] = coercedVal;
+        }
+        for (const field of schema) {
+            if (field.required && field.internalName !== "Title" && field.internalName !== "ID" && field.internalName !== "Id") {
+                const hasDirectValue = cleanPayload[field.internalName] !== undefined && cleanPayload[field.internalName] !== null;
+                const hasIdValue = cleanPayload[`${field.internalName}Id`] !== undefined && cleanPayload[`${field.internalName}Id`] !== null;
+                if (!hasDirectValue && !hasIdValue) {
+                    throw new Error(`Missing required SharePoint field: "${field.displayName}" (InternalName: "${field.internalName}").`);
+                }
+            }
+        }
+        if (!cleanPayload["Title"]) {
+            const assetVal = logicalPayload["AssetName"] || "Asset";
+            cleanPayload["Title"] = `Assignment of ${assetVal}`;
+        }
+        return cleanPayload;
+    }
+    static translateSharePointError(error, payload, mapping) {
+        console.error("SharePoint Operation Error Details:");
+        console.error("- Error Object:", error);
+        console.error("- Final Payload:", JSON.stringify(payload, null, 2));
+        console.error("- Dynamic Mapping:", JSON.stringify(mapping, null, 2));
+        let msg = error?.message || "";
+        if (typeof error === "object" && error !== null) {
+            if (error.data && typeof error.data === "object") {
+                msg += " | " + JSON.stringify(error.data);
+            }
+        }
+        const msgLower = msg.toLowerCase();
+        if (msgLower.includes("column") || msgLower.includes("field")) {
+            return new Error(`SharePoint Rejected Payload: Unknown column or field schema mismatch. Details: ${msg}`);
+        }
+        if (msgLower.includes("required")) {
+            return new Error(`SharePoint Rejected Payload: Missing required field. Details: ${msg}`);
+        }
+        if (msgLower.includes("datetime") || msgLower.includes("date")) {
+            return new Error(`SharePoint Rejected Payload: Invalid date/time format. Details: ${msg}`);
+        }
+        if (msgLower.includes("user") || msgLower.includes("person") || msgLower.includes("principal")) {
+            return new Error(`SharePoint Rejected Payload: Invalid Person/User field value. Details: ${msg}`);
+        }
+        if (msgLower.includes("choice") || msgLower.includes("invalid value")) {
+            return new Error(`SharePoint Rejected Payload: Invalid Choice column value. Details: ${msg}`);
+        }
+        return new Error(`SharePoint Error: ${msg || "Unknown SharePoint error occurred."}`);
+    }
+    static _resolveFieldInternalName(fields, aliases, excludeFields = new Set()) {
+        for (const alias of aliases) {
+            const matched = fields.find(f => !excludeFields.has(f.internalName) &&
+                (f.internalName.toLowerCase() === alias.toLowerCase() || f.displayName.toLowerCase() === alias.toLowerCase()));
+            if (matched)
+                return matched.internalName;
+        }
+        for (const alias of aliases) {
+            const normAlias = alias.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const matched = fields.find(f => {
+                if (excludeFields.has(f.internalName))
+                    return false;
+                const normInternal = f.internalName.toLowerCase().replace(/[^a-z0-9]/g, '');
+                const normDisplay = f.displayName.toLowerCase().replace(/[^a-z0-9]/g, '');
+                return normInternal === normAlias || normDisplay === normAlias;
+            });
+            if (matched)
+                return matched.internalName;
+        }
+        for (const alias of aliases) {
+            const matched = fields.find(f => !excludeFields.has(f.internalName) &&
+                (f.internalName.toLowerCase().includes(alias.toLowerCase()) || f.displayName.toLowerCase().includes(alias.toLowerCase())));
+            if (matched)
+                return matched.internalName;
+        }
+        return null;
+    }
+    static async _fetchItemsWithExpandedUsers(list) {
+        try {
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const selectFields = ["*"];
+            const expandFields = [];
+            fields.forEach((field) => {
+                const name = field.InternalName;
+                const type = field.TypeAsString;
+                if (type === "User" || type === "UserMulti") {
+                    const nameLower = (name || '').toLowerCase();
+                    const titleLower = (field.Title || '').toLowerCase();
+                    if (nameLower.indexOf("employee") >= 0 ||
+                        nameLower.indexOf("requester") >= 0 ||
+                        nameLower.indexOf("assigned") >= 0 ||
+                        nameLower.indexOf("author") >= 0 ||
+                        nameLower.indexOf("editor") >= 0 ||
+                        titleLower.indexOf("employee") >= 0 ||
+                        titleLower.indexOf("requester") >= 0 ||
+                        titleLower.indexOf("assigned") >= 0) {
+                        selectFields.push(`${name}/Title`, `${name}/Id`);
+                        expandFields.push(name);
+                    }
+                }
+            });
+            if (expandFields.indexOf("Author") === -1) {
+                selectFields.push("Author/Title", "Author/Id");
+                expandFields.push("Author");
+            }
+            if (expandFields.indexOf("Editor") === -1) {
+                selectFields.push("Editor/Title", "Editor/Id");
+                expandFields.push("Editor");
+            }
+            return await list.items.select(selectFields.join(",")).expand(...expandFields)();
+        }
+        catch (error) {
+            console.error("Dynamic user expansion failed:", error);
+            throw new Error(`Dynamic user expansion failed: ${error.message || JSON.stringify(error)}`);
+        }
+    }
+    static _isBusinessStatusKey(key) {
+        const lower = (key || '').toLowerCase();
+        const normalized = lower.replace(/_x0020_/g, '');
+        const isSystemKey = lower.indexOf('__') === 0 || lower.indexOf('odata') >= 0;
+        const isModeration = normalized.indexOf('moderationstatus') >= 0 || lower.indexOf('moderation') >= 0;
+        const looksLikeStatus = normalized === 'status' || normalized === 'requeststatus' || normalized.indexOf('requeststatus') >= 0;
+        return !isSystemKey && !isModeration && looksLikeStatus;
+    }
+}
+SharePointBaseService.LIST_NAME = "InventoryList";
+SharePointBaseService.EVENT_LOG_LIST = "EventLogList";
+SharePointBaseService.REQUEST_LIST_NAME = "RequestList";
+SharePointBaseService.RETURN_REQUEST_LIST_NAME = "Asset Return Request List";
+SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
+SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
+SharePointBaseService.REQUEST_KEY_INTERNAL_NAME = "RequestKey";
+SharePointBaseService.ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
+SharePointBaseService.MAPPING_LIST_NAME = "Mapping List";
 
 
 /***/ }),
@@ -87148,7 +87830,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("fa69a23fe9bcd4716d35")
+/******/ 		__webpack_require__.h = () => ("063e133e5f13183583c3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

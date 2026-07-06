@@ -48,6 +48,7 @@ export interface IInventoryManagementState {
     isAdminPanelOpen?: boolean;
     adminSelectedAssetId?: string;
     adminComment?: string;
+    sidebarCollapsed: boolean;
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _isRequestOwnedByCurrentUser;
