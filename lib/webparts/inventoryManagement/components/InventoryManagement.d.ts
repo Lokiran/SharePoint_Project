@@ -49,6 +49,22 @@ export interface IInventoryManagementState {
     adminSelectedAssetId?: string;
     adminComment?: string;
     sidebarCollapsed: boolean;
+    reportsSelectedTab: string;
+    reportsAssetTypeFilter: string;
+    reportsStatusFilter: string;
+    configSelectedTab: string;
+    connectionStatuses: {
+        [listTitle: string]: 'connected' | 'error' | 'testing';
+    };
+    connectionErrorMessages: {
+        [listTitle: string]: string;
+    };
+    groupUsersList: {
+        [groupName: string]: string[];
+    };
+    loadingGroupUsers: {
+        [groupName: string]: boolean;
+    };
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _isRequestOwnedByCurrentUser;
@@ -77,6 +93,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _onSyncAssignedAssets;
     private _onRunDiagnostics;
     private _exportWarrantyReportToExcel;
+    private _exportWarrantyReportToPDF;
+    private _exportDetailedReportToExcel;
+    private _exportDetailedReportToPDF;
+    private _testListConnection;
+    private _loadGroupUsers;
     private _renderRequestAnalysis;
     private _renderAssetAnalysis;
     private _renderNotificationDetailsPanel;

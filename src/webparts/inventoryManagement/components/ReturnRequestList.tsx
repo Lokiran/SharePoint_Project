@@ -36,7 +36,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
   
   // Dialog / State for Actions
   const [activeRequest, setActiveRequest] = useState<IReturnRequest | null>(null);
-  const [actionType, setActionType] = useState<'Approve' | 'Reject' | 'Complete' | null>(null);
+  const [actionType, setActionType] = useState<'Approve' | 'Reject' | 'Complete' | 'View' | null>(null);
   const [comment, setComment] = useState<string>('');
   const [finalCondition, setFinalCondition] = useState<string>('Good');
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -54,7 +54,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
     );
   }, [items, searchQuery]);
 
-  const openDialog = (request: IReturnRequest, type: 'Approve' | 'Reject' | 'Complete'): void => {
+  const openDialog = (request: IReturnRequest, type: 'Approve' | 'Reject' | 'Complete' | 'View'): void => {
     setActiveRequest(request);
     setActionType(type);
     setComment('');
@@ -158,15 +158,25 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
         maxWidth: 260,
         isResizable: true,
         onRender: (item: IReturnRequest) => {
-          if (item.status === 'Completed') {
-            return <span style={{ color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' }}>Check-in Complete</span>;
-          }
-          if (item.status === 'Rejected') {
-            return <span style={{ color: '#ef4444', fontWeight: 600, fontSize: '0.8rem' }}>Rejected</span>;
+          const viewButton = (
+            <DefaultButton
+              text="View"
+              onClick={() => openDialog(item, 'View')}
+              styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } }}
+            />
+          );
+
+          if (item.status !== 'Pending') {
+            return (
+              <Stack horizontal tokens={{ childrenGap: 6 }} verticalAlign="center">
+                {viewButton}
+              </Stack>
+            );
           }
           
           return (
             <Stack horizontal tokens={{ childrenGap: 6 }}>
+              {viewButton}
               {item.status === 'Pending' && (
                 <>
                   <PrimaryButton
@@ -180,18 +190,6 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
                     styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } }}
                   />
                 </>
-              )}
-              {/* 
-                REDUNDANT / REVIEW-ONLY: Under the single-stage return approval workflow, 
-                the asset return is completed and custody is cleared immediately upon approval.
-                This secondary check-in step is retained for review only and is no longer functionally required.
-              */}
-              {item.status === 'Approved' && (
-                <PrimaryButton
-                  text="Verify & Complete"
-                  onClick={() => openDialog(item, 'Complete')}
-                  styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } }}
-                />
               )}
             </Stack>
           );
@@ -232,12 +230,85 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
         dialogContentProps={{
           type: DialogType.normal,
           title: actionType === 'Approve' ? 'Approve Return Request' :
-                 actionType === 'Reject' ? 'Reject Return Request' : 'Verify & Complete Return',
+                 actionType === 'Reject' ? 'Reject Return Request' :
+                 actionType === 'Complete' ? 'Verify & Complete Return' : 'Return Request Details',
           subText: activeRequest ? `Request by ${activeRequest.requesterName} for asset ${activeRequest.assetName}` : ''
         }}
         modalProps={{ isBlocking: true }}
       >
         <Stack tokens={{ childrenGap: 15 }} style={{ marginTop: '15px' }}>
+          {/* Asset Return Details Card */}
+          {activeRequest && (
+            <div style={{
+              backgroundColor: 'rgba(128, 128, 128, 0.05)',
+              border: '1px solid rgba(128, 128, 128, 0.15)',
+              borderRadius: '8px',
+              padding: '16px',
+              fontSize: '0.85rem',
+              fontFamily: 'inherit'
+            }}>
+              <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' }}>
+                Asset Return Details
+              </h4>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 16px' }}>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Request ID</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.id.replace('RR-', '#')}</strong>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Requested Date</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.requestDate}</strong>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Asset Name</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.assetName}</strong>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Serial Number</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.serialNumber || 'N/A'}</strong>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Employee</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.requesterName}</strong>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Proposed Condition</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.proposedCondition}</strong>
+                </div>
+                <div style={{ gridColumn: 'span 2' }}>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Return Reason</span>
+                  <div style={{
+                    backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                    padding: '8px 12px',
+                    borderRadius: '4px',
+                    marginTop: '4px',
+                    border: '1px solid rgba(128, 128, 128, 0.1)',
+                    fontWeight: 500,
+                    color: 'var(--text-main, #333333)'
+                  }}>
+                    {activeRequest.returnReason}
+                  </div>
+                </div>
+                {activeRequest.managerComment && (
+                  <div style={{ gridColumn: 'span 2' }}>
+                    <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Manager Notes</span>
+                    <div style={{
+                      backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                      padding: '8px 12px',
+                      borderRadius: '4px',
+                      marginTop: '4px',
+                      border: '1px solid rgba(128, 128, 128, 0.1)',
+                      fontWeight: 500,
+                      color: 'var(--text-main, #333333)'
+                    }}>
+                      {activeRequest.managerComment}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* 
             REDUNDANT / REVIEW-ONLY: This condition selection is part of the secondary 
             check-in step, which is now redundant. Retained for review only.
@@ -251,25 +322,33 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
             />
           )}
 
-          <TextField
-            label={actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes'}
-            placeholder={actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)'}
-            multiline
-            rows={3}
-            value={comment}
-            onChange={(_, val) => setComment(val || '')}
-            required={actionType === 'Reject'}
-          />
+          {actionType !== 'View' && (
+            <TextField
+              label={actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes'}
+              placeholder={actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)'}
+              multiline
+              rows={3}
+              value={comment}
+              onChange={(_, val) => setComment(val || '')}
+              required={actionType === 'Reject'}
+            />
+          )}
         </Stack>
 
         <DialogFooter>
-          <PrimaryButton 
-            text={actionType === 'Approve' ? 'Approve' :
-                  actionType === 'Reject' ? 'Reject' : 'Verify & Complete'} 
-            onClick={handleAction} 
-            disabled={submitting || (actionType === 'Reject' && !comment.trim())} 
-          />
-          <DefaultButton text="Cancel" onClick={closeDialog} disabled={submitting} />
+          {actionType !== 'View' ? (
+            <>
+              <PrimaryButton 
+                text={actionType === 'Approve' ? 'Approve' :
+                      actionType === 'Reject' ? 'Reject' : 'Verify & Complete'} 
+                onClick={handleAction} 
+                disabled={submitting || (actionType === 'Reject' && !comment.trim())} 
+              />
+              <DefaultButton text="Cancel" onClick={closeDialog} disabled={submitting} />
+            </>
+          ) : (
+            <PrimaryButton text="Close" onClick={closeDialog} />
+          )}
         </DialogFooter>
       </Dialog>
     </div>

@@ -22,16 +22,19 @@ import {
   CategoryScale,
   LinearScale,
   ArcElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Pie, Bar, Doughnut } from 'react-chartjs-2';
+import { jsPDF } from 'jspdf';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   ArcElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
@@ -90,6 +93,14 @@ export interface IInventoryManagementState {
   adminSelectedAssetId?: string;
   adminComment?: string;
   sidebarCollapsed: boolean;
+  reportsSelectedTab: string;
+  reportsAssetTypeFilter: string;
+  reportsStatusFilter: string;
+  configSelectedTab: string;
+  connectionStatuses: { [listTitle: string]: 'connected' | 'error' | 'testing' };
+  connectionErrorMessages: { [listTitle: string]: string };
+  groupUsersList: { [groupName: string]: string[] };
+  loadingGroupUsers: { [groupName: string]: boolean };
 }
 
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
@@ -409,7 +420,15 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       isAdminPanelOpen: false,
       adminSelectedAssetId: undefined,
       adminComment: '',
-      sidebarCollapsed: false
+      sidebarCollapsed: false,
+      reportsSelectedTab: 'insights',
+      reportsAssetTypeFilter: 'All',
+      reportsStatusFilter: 'All',
+      configSelectedTab: 'operations',
+      connectionStatuses: {},
+      connectionErrorMessages: {},
+      groupUsersList: {},
+      loadingGroupUsers: {}
     };
   }
 
@@ -419,6 +438,13 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     await this._loadRequests();
     await this._loadAuditLogs();
     await this._loadReturnRequests();
+
+    // Run self-healing cleanup for Return Approved assets
+    try {
+      await InventoryService.cleanupReturnApprovedAssets();
+    } catch (e) {
+      console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
+    }
 
     // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
     try {
@@ -866,6 +892,221 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  private _exportWarrantyReportToPDF = (): void => {
+    const { items } = this.state;
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text("Asset Warranty Expiry Report", 14, 20);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
+    doc.text(`Total Assets: ${items.length} | Assets with Warranty: ${items.filter(i => i.warrantyExpiry).length}`, 14, 34);
+    
+    // Table Headers
+    doc.setFont("helvetica", "bold");
+    doc.setFillColor(240, 240, 240);
+    doc.rect(14, 42, 182, 8, "F");
+    doc.text("Asset Name", 16, 47);
+    doc.text("Asset Type", 70, 47);
+    doc.text("Status", 110, 47);
+    doc.text("Purchase Date", 140, 47);
+    doc.text("Warranty Expiry", 170, 47);
+    
+    doc.setDrawColor(200, 200, 200);
+    doc.line(14, 50, 196, 50);
+    
+    // Rows
+    doc.setFont("helvetica", "normal");
+    let y = 56;
+    items.forEach((item) => {
+      if (y > 275) {
+        doc.addPage();
+        y = 20;
+        doc.setFont("helvetica", "bold");
+        doc.setFillColor(240, 240, 240);
+        doc.rect(14, y - 6, 182, 8, "F");
+        doc.text("Asset Name", 16, y - 1);
+        doc.text("Asset Type", 70, y - 1);
+        doc.text("Status", 110, y - 1);
+        doc.text("Purchase Date", 140, y - 1);
+        doc.text("Warranty Expiry", 170, y - 1);
+        doc.line(14, y + 2, 196, y + 2);
+        doc.setFont("helvetica", "normal");
+        y += 8;
+      }
+      
+      const name = (item.assetName || item.title || "").substring(0, 25);
+      const type = (item.assetType || "").substring(0, 18);
+      const status = (item.status || "").substring(0, 15);
+      const purchaseDate = item.purchaseDate || "N/A";
+      const warrantyExpiry = item.warrantyExpiry || "N/A";
+      
+      doc.text(name, 16, y);
+      doc.text(type, 70, y);
+      doc.text(status, 110, y);
+      doc.text(purchaseDate, 140, y);
+      doc.text(warrantyExpiry, 170, y);
+      
+      doc.line(14, y + 2, 196, y + 2);
+      y += 8;
+    });
+    
+    doc.save(`Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+  };
+
+  private _exportDetailedReportToExcel = (filteredItems: IInventoryItem[]): void => {
+    const headers = ["Asset Name", "Asset Type", "Status", "Condition", "Purchase Date", "Assigned To", "Specifications"];
+    const csvRows = [headers.join(",")];
+    
+    filteredItems.forEach(item => {
+      const name = (item.assetName || item.title || "").replace(/"/g, '""');
+      const type = (item.assetType || "").replace(/"/g, '""');
+      const status = (item.status || "").replace(/"/g, '""');
+      const condition = (item.condition || "").replace(/"/g, '""');
+      const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
+      const assignedTo = (item.assignedTo || "N/A").replace(/"/g, '""');
+      const specs = (item.specifications || "").replace(/"/g, '""');
+      
+      const row = [
+        `"${name}"`,
+        `"${type}"`,
+        `"${status}"`,
+        `"${condition}"`,
+        `"${purchaseDate}"`,
+        `"${assignedTo}"`,
+        `"${specs}"`
+      ];
+      csvRows.push(row.join(","));
+    });
+    
+    const csvContent = "\uFEFF" + csvRows.join("\n");
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", `Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  private _exportDetailedReportToPDF = (filteredItems: IInventoryItem[]): void => {
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text("Detailed Inventory Asset Report", 14, 20);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
+    doc.text(`Total Assets Displayed: ${filteredItems.length}`, 14, 34);
+    
+    // Table Headers
+    doc.setFont("helvetica", "bold");
+    doc.setFillColor(240, 240, 240);
+    doc.rect(14, 42, 182, 8, "F");
+    doc.text("Asset Name", 16, 47);
+    doc.text("Asset Type", 65, 47);
+    doc.text("Status", 100, 47);
+    doc.text("Condition", 130, 47);
+    doc.text("Assigned To", 160, 47);
+    
+    doc.setDrawColor(200, 200, 200);
+    doc.line(14, 50, 196, 50);
+    
+    // Rows
+    doc.setFont("helvetica", "normal");
+    let y = 56;
+    filteredItems.forEach((item) => {
+      if (y > 275) {
+        doc.addPage();
+        y = 20;
+        doc.setFont("helvetica", "bold");
+        doc.setFillColor(240, 240, 240);
+        doc.rect(14, y - 6, 182, 8, "F");
+        doc.text("Asset Name", 16, y - 1);
+        doc.text("Asset Type", 65, y - 1);
+        doc.text("Status", 100, y - 1);
+        doc.text("Condition", 130, y - 1);
+        doc.text("Assigned To", 160, y - 1);
+        doc.line(14, y + 2, 196, y + 2);
+        doc.setFont("helvetica", "normal");
+        y += 8;
+      }
+      
+      const name = (item.assetName || item.title || "").substring(0, 23);
+      const type = (item.assetType || "").substring(0, 15);
+      const status = (item.status || "").substring(0, 14);
+      const condition = (item.condition || "N/A").substring(0, 14);
+      const assignedTo = (item.assignedTo || "N/A").substring(0, 18);
+      
+      doc.text(name, 16, y);
+      doc.text(type, 65, y);
+      doc.text(status, 100, y);
+      doc.text(condition, 130, y);
+      doc.text(assignedTo, 160, y);
+      
+      doc.line(14, y + 2, 196, y + 2);
+      y += 8;
+    });
+    
+    doc.save(`Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+  };
+
+  private _testListConnection = async (listTitle: string, internalTitle: string): Promise<void> => {
+    this.setState(prevState => ({
+      connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'testing' },
+      connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: '' }
+    }));
+
+    try {
+      const sp = getSP();
+      // Try to load 1 item from list to test connection and permissions
+      await sp.web.lists.getByTitle(internalTitle).items.select("ID").top(1)();
+      
+      this.setState(prevState => ({
+        connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'connected' }
+      }));
+    } catch (e: any) {
+      console.warn(`Connection test failed for list ${listTitle}`, e);
+      this.setState(prevState => ({
+        connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'error' },
+        connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: e.message || 'Verification failed. List might be missing or inaccessible.' }
+      }));
+    }
+  };
+
+  private _loadGroupUsers = async (groupName: string): Promise<void> => {
+    this.setState(prevState => ({
+      loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: true }
+    }));
+
+    try {
+      const sp = getSP();
+      const users = await sp.web.siteGroups.getByName(groupName).users();
+      const userList = users.map((u: any) => u.Title || u.LoginName || 'Unknown User');
+      
+      this.setState(prevState => ({
+        groupUsersList: { ...prevState.groupUsersList, [groupName]: userList },
+        loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
+      }));
+    } catch (e: any) {
+      console.warn(`Failed to load members for group ${groupName}`, e);
+      this.setState(prevState => ({
+        groupUsersList: { ...prevState.groupUsersList, [groupName]: ['Error retrieving group members'] },
+        loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
+      }));
+    }
   };
 
   private _renderRequestAnalysis = (request: IRequest): React.ReactNode => {
@@ -2019,281 +2260,621 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   case 'Reports':
                     return isAdmin ? (
                       <div>
-                        <div className={styles.cardHeader}>
-                          <h3>Reporting & Insights</h3>
-                        </div>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                          Use dashboard and event history to derive utilization, approval trends, and asset aging reports.
-                        </p>
-
-                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                          <h4 style={{ marginBottom: '10px' }}>Asset Utilization</h4>
-                          <div style={{ display: 'flex', gap: '20px' }}>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#dbeafe', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#1e40af', marginBottom: '4px' }}>In Use / Assigned</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a' }}>{items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>Utilization Rate</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>
-                                {items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0}%
-                              </span>
-                            </div>
+                        <div className={styles.cardHeader} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <div>
+                            <h3>Reporting & Insights</h3>
+                            <p style={{ color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' }}>
+                              Interactive dashboards, live graphs, status analysis, and exporter module.
+                            </p>
                           </div>
                         </div>
 
-                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                          <h4 style={{ marginBottom: '10px' }}>Approval Trends</h4>
-                          <div style={{ display: 'flex', gap: '20px' }}>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Requests</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{this.state.requests.length}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>Approved</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>Declined</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>Approval Rate</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>
-                                {this.state.requests.length > 0 ? Math.round((this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length / this.state.requests.length) * 100) : 0}%
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+                        <Pivot
+                          selectedKey={this.state.reportsSelectedTab}
+                          onLinkClick={(item) => this.setState({ reportsSelectedTab: item ? item.props.itemKey || 'insights' : 'insights' })}
+                          styles={{ root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } }}
+                        >
+                          <PivotItem headerText="Visual Insights" itemKey="insights" />
+                          <PivotItem headerText="Detailed Reports" itemKey="detailed" />
+                          <PivotItem headerText="Warranty Expiry" itemKey="expiry" />
+                        </Pivot>
 
-                        {(() => {
-                          const now = new Date();
-                          const aging = items.reduce((acc, item) => {
-                            if (!item.purchaseDate) {
-                              acc.unknown++;
-                              return acc;
-                            }
-                            const pd = new Date(item.purchaseDate);
-                            const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                            if (diffYears < 1) acc.under1++;
-                            else if (diffYears <= 3) acc.between1and3++;
-                            else acc.over3++;
-                            return acc;
-                          }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-
-                          return (
-                            <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                              <h4 style={{ marginBottom: '10px' }}>Asset Aging</h4>
-                              <div style={{ display: 'flex', gap: '20px' }}>
-                                <div style={{ padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 }}>
-                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' }}>&lt; 1 Year Old (New)</span>
-                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' }}>{aging.under1}</span>
-                                </div>
-                                <div style={{ padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 }}>
-                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' }}>1 - 3 Years Old</span>
-                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' }}>{aging.between1and3}</span>
-                                </div>
-                                <div style={{ padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 }}>
-                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' }}>&gt; 3 Years Old (Aging)</span>
-                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' }}>{aging.over3}</span>
-                                </div>
-                                <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 }}>
-                                  <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Unknown Age</span>
-                                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{aging.unknown}</span>
-                                </div>
+                        {this.state.reportsSelectedTab === 'insights' && (
+                          <Stack tokens={{ childrenGap: 24 }}>
+                            {/* Stats Summary Cards Row */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' }}>TOTAL INVENTORY ASSETS</span>
+                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' }}>{items.length}</span>
+                              </div>
+                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' }}>ASSETS CURRENTLY ASSIGNED</span>
+                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' }}>{items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length}</span>
+                              </div>
+                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' }}>UTILIZATION RATE</span>
+                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' }}>
+                                  {items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0}%
+                                </span>
+                              </div>
+                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' }}>TOTAL APPROVAL REQUESTS</span>
+                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' }}>{this.state.requests.length}</span>
                               </div>
                             </div>
-                          );
-                        })()}
 
-                        <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                            <h4 style={{ margin: 0 }}>Warranty Expiry Report</h4>
-                            <PrimaryButton
-                              text="Export to Excel"
-                              iconProps={{ iconName: 'ExcelDocument' }}
-                              onClick={this._exportWarrantyReportToExcel}
-                              styles={{ 
-                                root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' }, 
-                                rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },
-                                rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }
-                              }}
+                            {/* Charts Grid */}
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                              {/* Chart 1: Status Distribution */}
+                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                <h4 style={{ margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' }}>Asset Status Distribution</h4>
+                                <div style={{ height: '220px', width: '220px', position: 'relative' }}>
+                                  <Pie
+                                    data={{
+                                      labels: ['In Stock', 'Assigned', 'Pending Return', 'Under Maintenance'],
+                                      datasets: [{
+                                        data: [
+                                          items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
+                                          items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
+                                          items.filter(i => i.status === 'Pending Return').length,
+                                          items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
+                                        ],
+                                        backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
+                                      }]
+                                    }}
+                                    options={{
+                                      responsive: true,
+                                      maintainAspectRatio: false,
+                                      plugins: { legend: { display: false } }
+                                    }}
+                                  />
+                                </div>
+                                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' }}>
+                                  <span><span style={{ color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>In Stock</span>
+                                  <span><span style={{ color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Assigned</span>
+                                  <span><span style={{ color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Pending Return</span>
+                                  <span><span style={{ color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Maintenance</span>
+                                </div>
+                              </div>
+
+                              {/* Chart 2: Category Distribution */}
+                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                                <h4 style={{ margin: '0 0 15px 0', color: '#374151' }}>Asset Type Distribution</h4>
+                                <div style={{ height: '240px' }}>
+                                  {(() => {
+                                    const typeCounts: { [type: string]: number } = {};
+                                    items.forEach(i => {
+                                      const type = i.assetType || "Other";
+                                      typeCounts[type] = (typeCounts[type] || 0) + 1;
+                                    });
+                                    const labels = Object.keys(typeCounts);
+                                    const data = Object.keys(typeCounts).map(key => typeCounts[key]);
+
+                                    return (
+                                      <Bar
+                                        data={{
+                                          labels,
+                                          datasets: [{
+                                            label: 'Assets Count',
+                                            data,
+                                            backgroundColor: '#1f77b4',
+                                            borderRadius: 4
+                                          }]
+                                        }}
+                                        options={{
+                                          responsive: true,
+                                          maintainAspectRatio: false,
+                                          plugins: { legend: { display: false } },
+                                          scales: {
+                                            y: { beginAtZero: true, ticks: { precision: 0 } }
+                                          }
+                                        }}
+                                      />
+                                    );
+                                  })()}
+                                </div>
+                              </div>
+
+                              {/* Chart 3: Asset Aging */}
+                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                <h4 style={{ margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' }}>Asset Aging Analysis</h4>
+                                <div style={{ height: '220px', width: '220px', position: 'relative' }}>
+                                  {(() => {
+                                    const now = new Date();
+                                    const aging = items.reduce((acc, item) => {
+                                      if (!item.purchaseDate) {
+                                        acc.unknown++;
+                                        return acc;
+                                      }
+                                      const pd = new Date(item.purchaseDate);
+                                      const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
+                                      if (diffYears < 1) acc.under1++;
+                                      else if (diffYears <= 3) acc.between1and3++;
+                                      else acc.over3++;
+                                      return acc;
+                                    }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
+
+                                    return (
+                                      <Doughnut
+                                        data={{
+                                          labels: ['< 1 Year (New)', '1-3 Years', '> 3 Years (Aging)', 'Unknown'],
+                                          datasets: [{
+                                            data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
+                                            backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
+                                          }]
+                                        }}
+                                        options={{
+                                          responsive: true,
+                                          maintainAspectRatio: false,
+                                          plugins: { legend: { display: false } }
+                                        }}
+                                      />
+                                    );
+                                  })()}
+                                </div>
+                                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' }}>
+                                  <span><span style={{ color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>&lt; 1 Year</span>
+                                  <span><span style={{ color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>1-3 Years</span>
+                                  <span><span style={{ color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>&gt; 3 Years</span>
+                                  <span><span style={{ color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Unknown</span>
+                                </div>
+                              </div>
+
+                              {/* Chart 4: Request Trends */}
+                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                                <h4 style={{ margin: '0 0 15px 0', color: '#374151' }}>Request Approval Trends</h4>
+                                <div style={{ height: '240px' }}>
+                                  <Bar
+                                    data={{
+                                      labels: ['Approved', 'Declined/Rejected', 'Pending'],
+                                      datasets: [{
+                                        data: [
+                                          this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
+                                          this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
+                                          this.state.requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
+                                        ],
+                                        backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
+                                      }]
+                                    }}
+                                    options={{
+                                      responsive: true,
+                                      maintainAspectRatio: false,
+                                      plugins: { legend: { display: false } },
+                                      scales: {
+                                        y: { beginAtZero: true, ticks: { precision: 0 } }
+                                      }
+                                    }}
+                                  />
+                                </div>
+                              </div>
+
+                            </div>
+                          </Stack>
+                        )}
+
+                        {this.state.reportsSelectedTab === 'detailed' && (
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
+                              <h4 style={{ margin: 0 }}>Filterable Asset Inventory</h4>
+                              <Stack horizontal tokens={{ childrenGap: 8 }}>
+                                <PrimaryButton
+                                  text="Export Excel"
+                                  iconProps={{ iconName: 'ExcelDocument' }}
+                                  onClick={() => {
+                                    const filtered = items.filter(i => {
+                                      const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                      const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                      return typeMatch && statusMatch;
+                                    });
+                                    this._exportDetailedReportToExcel(filtered);
+                                  }}
+                                  styles={{ root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } }}
+                                />
+                                <PrimaryButton
+                                  text="Export PDF"
+                                  iconProps={{ iconName: 'PDF' }}
+                                  onClick={() => {
+                                    const filtered = items.filter(i => {
+                                      const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                      const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                      return typeMatch && statusMatch;
+                                    });
+                                    this._exportDetailedReportToPDF(filtered);
+                                  }}
+                                  styles={{ root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } }}
+                                />
+                              </Stack>
+                            </div>
+
+                            {/* Filters Row */}
+                            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' }}>
+                              <div style={{ minWidth: '150px' }}>
+                                <Dropdown
+                                  label="Asset Type"
+                                  selectedKey={this.state.reportsAssetTypeFilter}
+                                  options={[
+                                    { key: 'All', text: 'All Types' },
+                                    ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
+                                  ]}
+                                  onChange={(_, opt) => this.setState({ reportsAssetTypeFilter: opt ? opt.key as string : 'All' })}
+                                />
+                              </div>
+                              <div style={{ minWidth: '150px' }}>
+                                <Dropdown
+                                  label="Asset Status"
+                                  selectedKey={this.state.reportsStatusFilter}
+                                  options={[
+                                    { key: 'All', text: 'All Statuses' },
+                                    ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
+                                  ]}
+                                  onChange={(_, opt) => this.setState({ reportsStatusFilter: opt ? opt.key as string : 'All' })}
+                                />
+                              </div>
+                            </div>
+
+                            {(() => {
+                              const filtered = items.filter(i => {
+                                const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                return typeMatch && statusMatch;
+                              });
+
+                              return (
+                                <DetailsList
+                                  items={filtered}
+                                  columns={[
+                                    { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
+                                    { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
+                                    { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
+                                    { key: 'col4', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
+                                    { key: 'col5', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || <span style={{ color: '#9ca3af', fontStyle: 'italic' }}>Unassigned</span> }
+                                  ]}
+                                  setKey="detailedReportList"
+                                  layoutMode={DetailsListLayoutMode.justified}
+                                  selectionMode={SelectionMode.none}
+                                />
+                              );
+                            })()}
+                          </div>
+                        )}
+
+                        {this.state.reportsSelectedTab === 'expiry' && (
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                              <h4 style={{ margin: 0 }}>Warranty Expiry Report</h4>
+                              <Stack horizontal tokens={{ childrenGap: 8 }}>
+                                <PrimaryButton
+                                  text="Export Excel"
+                                  iconProps={{ iconName: 'ExcelDocument' }}
+                                  onClick={this._exportWarrantyReportToExcel}
+                                  styles={{ root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } }}
+                                />
+                                <PrimaryButton
+                                  text="Export PDF"
+                                  iconProps={{ iconName: 'PDF' }}
+                                  onClick={this._exportWarrantyReportToPDF}
+                                  styles={{ root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } }}
+                                />
+                              </Stack>
+                            </div>
+                            <div style={{ marginBottom: '15px', display: 'flex', gap: '20px' }}>
+                              <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
+                                <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets Count</span>
+                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
+                              </div>
+                              <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
+                                <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Assets with Warranty Data</span>
+                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.filter(i => i.warrantyExpiry).length}</span>
+                              </div>
+                            </div>
+                            <DetailsList
+                              items={items}
+                              columns={[
+                                { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
+                                { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
+                                { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
+                                { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
+                                {
+                                  key: 'col5',
+                                  name: 'Warranty Expiry Date',
+                                  fieldName: 'warrantyExpiry',
+                                  minWidth: 140,
+                                  maxWidth: 200,
+                                  isResizable: true,
+                                  onRender: (item) => {
+                                    const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
+                                    return (
+                                      <span style={{
+                                        color: isExpired ? '#ef4444' : '#166534',
+                                        fontWeight: 600,
+                                        backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
+                                        padding: '2px 8px',
+                                        borderRadius: '9999px',
+                                        fontSize: '0.75rem',
+                                        display: 'inline-block'
+                                      }}>
+                                        {item.warrantyExpiry || 'N/A'} {isExpired ? '(Expired)' : '(Active)'}
+                                      </span>
+                                    );
+                                  }
+                                }
+                              ]}
+                              setKey="warrantyReport"
+                              layoutMode={DetailsListLayoutMode.justified}
+                              selectionMode={SelectionMode.none}
                             />
                           </div>
-                          <div style={{ marginBottom: '15px', display: 'flex', gap: '20px' }}>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets Count</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
-                            </div>
-                            <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Assets with Warranty Data</span>
-                              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.filter(i => i.warrantyExpiry).length}</span>
-                            </div>
-                          </div>
-                          <DetailsList
-                            items={items}
-                            columns={[
-                              { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
-                              { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                              { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
-                              { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-                              {
-                                key: 'col5',
-                                name: 'Warranty Expiry Date',
-                                fieldName: 'warrantyExpiry',
-                                minWidth: 140,
-                                maxWidth: 200,
-                                isResizable: true,
-                                onRender: (item) => {
-                                  const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
-                                  return (
-                                    <span style={{
-                                      color: isExpired ? '#ef4444' : 'inherit',
-                                      fontWeight: isExpired ? 'bold' : 'normal'
-                                    }}>
-                                      {item.warrantyExpiry || 'N/A'} {isExpired && '(Expired)'}
-                                    </span>
-                                  );
-                                }
-                              }
-                            ]}
-                            setKey="warrantyReport"
-                            layoutMode={DetailsListLayoutMode.justified}
-                            selectionMode={SelectionMode.none}
-                          />
-                        </div>
+                        )}
                       </div>
                     ) : null;
                   case 'Config':
                     return isAdmin ? (
                       <div>
                         <div className={styles.cardHeader}>
-                          <h3>Configuration</h3>
-                        </div>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                          Admin-only configuration area for list schema, process settings, and environment setup.
-                        </p>
-
-                        {/* Sync & Diagnostics Operations Section */}
-                        <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' }}>
-                          <h4 style={{ marginBottom: '10px', color: '#111827', marginTop: 0 }}>Mapping List Management & Sync</h4>
-                          <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' }}>
-                            Ensure all assets currently assigned to active employees are properly mapped to the SharePoint <strong>Mapping List</strong>.
-                            Use the buttons below to perform a manual synchronization check or diagnose the list&apos;s database schema.
+                          <h3>Configuration & List Management</h3>
+                          <p style={{ color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' }}>
+                            Admin-only control center for list syncing, database connection tests, role diagnostics, and list schemas.
                           </p>
+                        </div>
 
-                          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' }}>
-                            <PrimaryButton
-                              text={this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets"}
-                              iconProps={{ iconName: 'Sync' }}
-                              onClick={this._onSyncAssignedAssets}
-                              disabled={this.state.syncInProgress}
-                            />
-                            <PrimaryButton
-                              text={this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics"}
-                              iconProps={{ iconName: 'Database' }}
-                              onClick={this._onRunDiagnostics}
-                              disabled={this.state.syncInProgress}
-                              styles={{
-                                root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
-                                rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
-                              }}
-                            />
-                          </div>
+                        <Pivot
+                          selectedKey={this.state.configSelectedTab}
+                          onLinkClick={(item) => this.setState({ configSelectedTab: item ? item.props.itemKey || 'operations' : 'operations' })}
+                          styles={{ root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } }}
+                        >
+                          <PivotItem headerText="Sync Operations" itemKey="operations" />
+                          <PivotItem headerText="List Connections" itemKey="connections" />
+                          <PivotItem headerText="RBAC Site Groups" itemKey="rbac" />
+                          <PivotItem headerText="Required Schema Guides" itemKey="schema" />
+                        </Pivot>
 
-                          {this.state.syncMessage && (
-                            <MessageBar
-                              messageBarType={this.state.syncMessageType}
-                              onDismiss={() => this.setState({ syncMessage: undefined })}
-                              styles={{ root: { marginBottom: '15px', borderRadius: '6px' } }}
-                            >
-                              {this.state.syncMessage}
-                            </MessageBar>
-                          )}
+                        {this.state.configSelectedTab === 'operations' && (
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                            <h4 style={{ marginBottom: '10px', color: '#111827', marginTop: 0 }}>Mapping List Management & Sync</h4>
+                            <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' }}>
+                              Ensure all assets currently assigned to active employees are properly mapped to the SharePoint <strong>Mapping List</strong>.
+                              Use the buttons below to perform a manual synchronization check or diagnose the list&apos;s database schema.
+                            </p>
 
-                          {this.state.diagnosticInfo && (
-                            <div style={{ marginTop: '15px' }}>
-                              <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' }}>Diagnostic Log Output:</span>
-                              <textarea
-                                readOnly
-                                value={this.state.diagnosticInfo}
-                                rows={10}
-                                style={{
-                                  width: '100%',
-                                  fontFamily: 'monospace',
-                                  fontSize: '0.82rem',
-                                  padding: '10px',
-                                  backgroundColor: '#f3f2f1',
-                                  border: '1px solid #e1dfdd',
-                                  borderRadius: '4px',
-                                  resize: 'vertical',
-                                  color: '#323130'
+                            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' }}>
+                              <PrimaryButton
+                                text={this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets"}
+                                iconProps={{ iconName: 'Sync' }}
+                                onClick={this._onSyncAssignedAssets}
+                                disabled={this.state.syncInProgress}
+                              />
+                              <PrimaryButton
+                                text={this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics"}
+                                iconProps={{ iconName: 'Database' }}
+                                onClick={this._onRunDiagnostics}
+                                disabled={this.state.syncInProgress}
+                                styles={{
+                                  root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
+                                  rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
                                 }}
                               />
                             </div>
-                          )}
-                        </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+                            {this.state.syncMessage && (
+                              <MessageBar
+                                messageBarType={this.state.syncMessageType}
+                                onDismiss={() => this.setState({ syncMessage: undefined })}
+                                styles={{ root: { marginBottom: '15px', borderRadius: '6px' } }}
+                              >
+                                {this.state.syncMessage}
+                              </MessageBar>
+                            )}
+
+                            {this.state.diagnosticInfo && (
+                              <div style={{ marginTop: '15px' }}>
+                                <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' }}>Diagnostic Log Output:</span>
+                                <textarea
+                                  readOnly
+                                  value={this.state.diagnosticInfo}
+                                  rows={10}
+                                  style={{
+                                    width: '100%',
+                                    fontFamily: 'monospace',
+                                    fontSize: '0.82rem',
+                                    padding: '10px',
+                                    backgroundColor: '#f3f2f1',
+                                    border: '1px solid #e1dfdd',
+                                    borderRadius: '4px',
+                                    resize: 'vertical',
+                                    color: '#323130'
+                                  }}
+                                />
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {this.state.configSelectedTab === 'connections' && (
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
                             <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>SharePoint List Connections</h4>
-                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
-                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                                <span style={{ color: '#4b5563' }}>Inventory Database:</span>
-                                <strong style={{ color: '#111827' }}>InventoryList</strong>
-                              </li>
-                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                                <span style={{ color: '#4b5563' }}>Approvals & Requests:</span>
-                                <strong style={{ color: '#111827' }}>RequestList</strong>
-                              </li>
-                              <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span style={{ color: '#4b5563' }}>System Audit Logs:</span>
-                                <strong style={{ color: '#111827' }}>AuditLogList</strong>
-                              </li>
-                            </ul>
+                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' }}>
+                              Verify the read/write database connection status of the required SharePoint storage lists.
+                            </p>
+                            
+                            <Stack tokens={{ childrenGap: 16 }}>
+                              {[
+                                { title: 'Inventory List', internal: 'InventoryList', desc: 'Stores the master catalog of all physical assets and hardware.' },
+                                { title: 'Request List', internal: 'RequestList', desc: 'Manages employee request tickets, workflow histories, and assignment queues.' },
+                                { title: 'Asset Return Request List', internal: 'Asset Return Request List', desc: 'Handles asset return forms, check-in inspections, and manager validations.' },
+                                { title: 'Mapping List', internal: 'Mapping List', desc: 'Maintains live active assignment mapping for automated clearing checks.' },
+                                { title: 'System Audit Log', internal: 'AuditLogList', desc: 'Tracks historical change logs, lifecycle states, and admin operations.' }
+                              ].map(list => {
+                                const status = this.state.connectionStatuses[list.title];
+                                const errorMsg = this.state.connectionErrorMessages[list.title];
+                                
+                                return (
+                                  <div key={list.title} style={{ padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+                                    <div style={{ flex: '1 1 300px' }}>
+                                      <h5 style={{ margin: '0 0 4px 0', fontSize: '0.95rem', fontWeight: 600, color: '#111827' }}>
+                                        {list.title} <span style={{ fontWeight: 'normal', color: '#6b7280', fontSize: '0.8rem' }}>({list.internal})</span>
+                                      </h5>
+                                      <span style={{ fontSize: '0.82rem', color: '#4b5563' }}>{list.desc}</span>
+                                      {errorMsg && (
+                                        <div style={{ marginTop: '8px', color: '#d13438', fontSize: '0.78rem', backgroundColor: '#fde7e9', padding: '6px 10px', borderRadius: '4px' }}>
+                                          <strong>Error:</strong> {errorMsg}
+                                        </div>
+                                      )}
+                                    </div>
+                                    
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                      {status === 'testing' && (
+                                        <span style={{ fontSize: '0.8rem', color: '#0078d4', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                          <Icon iconName="ProgressLoopOuter" style={{ animation: 'spin 1.5s linear infinite' }} /> Verifying...
+                                        </span>
+                                      )}
+                                      {status === 'connected' && (
+                                        <span style={{
+                                          color: '#166534',
+                                          backgroundColor: '#dcfce7',
+                                          padding: '4px 12px',
+                                          borderRadius: '9999px',
+                                          fontSize: '0.75rem',
+                                          fontWeight: 600,
+                                          display: 'inline-flex',
+                                          alignItems: 'center',
+                                          gap: '4px'
+                                        }}>
+                                          <Icon iconName="Completed" /> Connected
+                                        </span>
+                                      )}
+                                      {status === 'error' && (
+                                        <span style={{
+                                          color: '#b91c1c',
+                                          backgroundColor: '#fee2e2',
+                                          padding: '4px 12px',
+                                          borderRadius: '9999px',
+                                          fontSize: '0.75rem',
+                                          fontWeight: 600,
+                                          display: 'inline-flex',
+                                          alignItems: 'center',
+                                          gap: '4px'
+                                        }}>
+                                          <Icon iconName="ErrorBadge" /> Failed
+                                        </span>
+                                      )}
+                                      {!status && (
+                                        <span style={{
+                                          color: '#4b5563',
+                                          backgroundColor: '#f3f4f6',
+                                          padding: '4px 12px',
+                                          borderRadius: '9999px',
+                                          fontSize: '0.75rem',
+                                          fontWeight: 500
+                                        }}>
+                                          Not Verified
+                                        </span>
+                                      )}
+                                      
+                                      <DefaultButton
+                                        text="Test Live"
+                                        iconProps={{ iconName: 'PlugConnected' }}
+                                        onClick={() => this._testListConnection(list.title, list.internal)}
+                                        disabled={status === 'testing'}
+                                      />
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </Stack>
                           </div>
+                        )}
 
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                            <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>Role Based Access Control</h4>
-                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
-                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                                <span style={{ color: '#4b5563' }}>Admin Group:</span>
-                                <strong style={{ color: '#111827' }}>Inventory Administrators</strong>
-                              </li>
-                              <li style={{ marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                                <span style={{ color: '#4b5563' }}>Manager Group:</span>
-                                <strong style={{ color: '#111827' }}>Inventory Managers</strong>
-                              </li>
-                              <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span style={{ color: '#4b5563' }}>Employee Access:</span>
-                                <strong style={{ color: '#111827' }}>Site Visitors</strong>
-                              </li>
-                            </ul>
+                        {this.state.configSelectedTab === 'rbac' && (
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                            <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>Role Based Access Control (RBAC)</h4>
+                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' }}>
+                              Inspect user groups resolved from SharePoint for permission level verification.
+                            </p>
+                            
+                            <Stack tokens={{ childrenGap: 16 }}>
+                              {[
+                                { group: 'MSFT Owners', role: 'Admin', desc: 'Full administrative rights to modify assets, approve returns, and manage database connection setups.' },
+                                { group: 'MSFT Members', role: 'Inventory Manager', desc: 'Write access to create items, process returns, assign assets, and view reports.' },
+                                { group: 'MSFT Visitors', role: 'Inventory Employee', desc: 'Read-only access to available stocks and permission to request return tickets.' }
+                              ].map(item => {
+                                const isLoading = this.state.loadingGroupUsers[item.group];
+                                const members = this.state.groupUsersList[item.group];
+                                
+                                return (
+                                  <div key={item.group} style={{ padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                                      <div>
+                                        <h5 style={{ margin: 0, fontSize: '1rem', fontWeight: 600, color: '#111827' }}>
+                                          {item.group} <span style={{ color: '#0078d4', fontSize: '0.8rem', backgroundColor: '#deecf9', padding: '2px 8px', borderRadius: '4px', marginLeft: '6px', fontWeight: 600 }}>{item.role}</span>
+                                        </h5>
+                                        <span style={{ fontSize: '0.8rem', color: '#4b5563', display: 'block', marginTop: '4px' }}>{item.desc}</span>
+                                      </div>
+                                      
+                                      <DefaultButton
+                                        text={isLoading ? "Loading..." : "View Members"}
+                                        iconProps={{ iconName: 'People' }}
+                                        onClick={() => this._loadGroupUsers(item.group)}
+                                        disabled={isLoading}
+                                      />
+                                    </div>
+                                    
+                                    {members && (
+                                      <div style={{ marginTop: '12px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid rgba(128,128,128,0.1)' }}>
+                                        <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '6px' }}>Group Members ({members.length}):</span>
+                                        {members.length === 0 ? (
+                                          <span style={{ fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' }}>No members found in this group</span>
+                                        ) : (
+                                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                                            {members.map((m, idx) => (
+                                              <span key={idx} style={{ backgroundColor: '#ffffff', border: '1px solid rgba(128,128,128,0.15)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.78rem', color: '#111827', fontWeight: 500 }}>
+                                                {m}
+                                              </span>
+                                            ))}
+                                          </div>
+                                        )}
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </Stack>
                           </div>
-                        </div>
+                        )}
 
-                        <div style={{ marginTop: '20px', backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                          <h4 style={{ marginBottom: '5px', color: '#111827', marginTop: 0 }}>Required List Schema (Developer Reference)</h4>
-                          <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '15px', marginTop: 0 }}>Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors.</p>
+                        {this.state.configSelectedTab === 'schema' && (
+                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                            <h4 style={{ marginBottom: '5px', color: '#111827', marginTop: 0 }}>Required List Schema (Developer Reference)</h4>
+                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px', marginTop: 0 }}>Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors.</p>
 
-                          <h5 style={{ marginTop: '15px', marginBottom: '8px', color: '#374151' }}>InventoryList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Asset Database)</span></h5>
-                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
-                            {['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (
-                              <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                            ))}
+                            <h5 style={{ marginTop: '15px', marginBottom: '8px', color: '#374151' }}>InventoryList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Asset Database)</span></h5>
+                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
+                              {['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (
+                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
+                              ))}
+                            </div>
+
+                            <h5 style={{ marginBottom: '8px', color: '#374151' }}>RequestList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Approval Workflows)</span></h5>
+                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
+                              {['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (
+                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
+                              ))}
+                            </div>
+
+                            <h5 style={{ marginBottom: '8px', color: '#374151' }}>Asset Return Request List <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Returns Handling)</span></h5>
+                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
+                              {['Title', 'AssetID', 'AssetName', 'SerialNumber', 'Employee', 'ReasonforReturn', 'ProposedCondition', 'RequestStatus', 'ManagerComments'].map(col => (
+                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
+                              ))}
+                            </div>
+
+                            <h5 style={{ marginBottom: '8px', color: '#374151' }}>Mapping List <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Custody Tracking)</span></h5>
+                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                              {['Title', 'SerialNumber', 'Employe', 'EmployeeID', 'AssetName', 'AssignmentID'].map(col => (
+                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
+                              ))}
+                            </div>
                           </div>
-
-                          <h5 style={{ marginBottom: '8px', color: '#374151' }}>RequestList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Approval Workflows)</span></h5>
-                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                            {['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (
-                              <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                            ))}
-                          </div>
-                        </div>
+                        )}
                       </div>
                     ) : null;
                   default:

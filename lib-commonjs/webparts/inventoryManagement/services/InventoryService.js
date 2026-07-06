@@ -78,6 +78,9 @@ class InventoryService {
     static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
         return ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
     }
+    static async cleanupReturnApprovedAssets() {
+        return ReturnRequestService_1.ReturnRequestService.cleanupReturnApprovedAssets();
+    }
     // AuditLogService Methods
     static async addAuditLog(log) {
         return AuditLogService_1.AuditLogService.addAuditLog(log);

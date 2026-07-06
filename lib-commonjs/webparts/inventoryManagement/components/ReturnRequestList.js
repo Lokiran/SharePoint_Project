@@ -136,17 +136,15 @@ const ReturnRequestList = (props) => {
                 maxWidth: 260,
                 isResizable: true,
                 onRender: (item) => {
-                    if (item.status === 'Completed') {
-                        return React.createElement("span", { style: { color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' } }, "Check-in Complete");
-                    }
-                    if (item.status === 'Rejected') {
-                        return React.createElement("span", { style: { color: '#ef4444', fontWeight: 600, fontSize: '0.8rem' } }, "Rejected");
+                    const viewButton = (React.createElement(Button_1.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
+                    if (item.status !== 'Pending') {
+                        return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
                     }
                     return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                        viewButton,
                         item.status === 'Pending' && (React.createElement(React.Fragment, null,
                             React.createElement(Button_1.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
-                            React.createElement(Button_1.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } }))),
-                        item.status === 'Approved' && (React.createElement(Button_1.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
+                            React.createElement(Button_1.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })))));
                 }
             }
         ] : [])
@@ -158,16 +156,67 @@ const ReturnRequestList = (props) => {
         React.createElement(Dialog_1.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
                 type: Dialog_1.DialogType.normal,
                 title: actionType === 'Approve' ? 'Approve Return Request' :
-                    actionType === 'Reject' ? 'Reject Return Request' : 'Verify & Complete Return',
+                    actionType === 'Reject' ? 'Reject Return Request' :
+                        actionType === 'Complete' ? 'Verify & Complete Return' : 'Return Request Details',
                 subText: activeRequest ? `Request by ${activeRequest.requesterName} for asset ${activeRequest.assetName}` : ''
             }, modalProps: { isBlocking: true } },
             React.createElement(Stack_1.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
+                activeRequest && (React.createElement("div", { style: {
+                        backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                        border: '1px solid rgba(128, 128, 128, 0.15)',
+                        borderRadius: '8px',
+                        padding: '16px',
+                        fontSize: '0.85rem',
+                        fontFamily: 'inherit'
+                    } },
+                    React.createElement("h4", { style: { margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' } }, "Asset Return Details"),
+                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 16px' } },
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.id.replace('RR-', '#'))),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Requested Date"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.requestDate)),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Name"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.assetName)),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Serial Number"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.serialNumber || 'N/A')),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.requesterName)),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Proposed Condition"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.proposedCondition)),
+                        React.createElement("div", { style: { gridColumn: 'span 2' } },
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Return Reason"),
+                            React.createElement("div", { style: {
+                                    backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                                    padding: '8px 12px',
+                                    borderRadius: '4px',
+                                    marginTop: '4px',
+                                    border: '1px solid rgba(128, 128, 128, 0.1)',
+                                    fontWeight: 500,
+                                    color: 'var(--text-main, #333333)'
+                                } }, activeRequest.returnReason)),
+                        activeRequest.managerComment && (React.createElement("div", { style: { gridColumn: 'span 2' } },
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager Notes"),
+                            React.createElement("div", { style: {
+                                    backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                                    padding: '8px 12px',
+                                    borderRadius: '4px',
+                                    marginTop: '4px',
+                                    border: '1px solid rgba(128, 128, 128, 0.1)',
+                                    fontWeight: 500,
+                                    color: 'var(--text-main, #333333)'
+                                } }, activeRequest.managerComment)))))),
                 actionType === 'Complete' && (React.createElement(Dropdown_1.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
-                React.createElement(TextField_1.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' })),
-            React.createElement(Dialog_1.DialogFooter, null,
+                actionType !== 'View' && (React.createElement(TextField_1.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' }))),
+            React.createElement(Dialog_1.DialogFooter, null, actionType !== 'View' ? (React.createElement(React.Fragment, null,
                 React.createElement(Button_1.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
                         actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || (actionType === 'Reject' && !comment.trim()) }),
-                React.createElement(Button_1.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting })))));
+                React.createElement(Button_1.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (React.createElement(Button_1.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
 };
 exports.ReturnRequestList = ReturnRequestList;
 //# sourceMappingURL=ReturnRequestList.js.map

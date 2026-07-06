@@ -7,5 +7,6 @@ export declare class ReturnRequestService {
     static getReturnRequests(): Promise<IReturnRequest[]>;
     static addReturnRequest(request: Omit<IReturnRequest, 'id' | 'status'>, userDisplayName: string): Promise<void>;
     static updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed', managerComment: string, approverName: string, finalCondition?: string): Promise<void>;
+    static cleanupReturnApprovedAssets(): Promise<void>;
 }
 //# sourceMappingURL=ReturnRequestService.d.ts.map

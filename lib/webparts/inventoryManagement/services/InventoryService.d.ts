@@ -27,6 +27,7 @@ export declare class InventoryService {
     static getReturnRequests(): Promise<any[]>;
     static addReturnRequest(request: any, userDisplayName: string): Promise<void>;
     static updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed', managerComment: string, approverName: string, finalCondition?: string): Promise<void>;
+    static cleanupReturnApprovedAssets(): Promise<void>;
     static addAuditLog(log: any): Promise<void>;
     static getAuditLogs(): Promise<any[]>;
     static getListFieldsMetadata(list: any): Promise<any[]>;

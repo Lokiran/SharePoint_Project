@@ -94,8 +94,13 @@ export class InventoryItemService {
 
         const rawStatus = item[statusKey] || item.Status || item.AssetStatus || "";
         let finalStatus = rawStatus;
+        let finalAssignedTo = assignedToVal;
         const statusLower = (rawStatus || "").toLowerCase();
-        if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
+        
+        if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock") {
+          finalStatus = "In Stock";
+          finalAssignedTo = "";
+        } else if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
           if (!assignedToVal || assignedToVal.trim() === "") {
             finalStatus = "In Stock";
           }
@@ -111,7 +116,7 @@ export class InventoryItemService {
           vendor: item[vendorKey] || item.Vendor || item.VendorName || "",
           condition: item[conditionKey] || item.Condition || item.AssetCondition || "",
           status: finalStatus,
-          assignedTo: assignedToVal,
+          assignedTo: finalAssignedTo,
           assignedDate: item.Modified || "",
           warrantyExpiry: item[warrantyExpiryKey] || item.WarrantyExpiry || item.Warranty_x0020_Expiry || "",
           specifications: item[specificationsKey] || item.Specifications || item.SpecificationsText || item.Note || item.Notes || "",

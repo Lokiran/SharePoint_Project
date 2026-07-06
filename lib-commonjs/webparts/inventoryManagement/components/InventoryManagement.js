@@ -17,7 +17,8 @@ const ReturnRequestList_1 = require("./ReturnRequestList");
 const react_1 = require("@fluentui/react");
 const chart_js_1 = require("chart.js");
 const react_chartjs_2_1 = require("react-chartjs-2");
-chart_js_1.Chart.register(chart_js_1.CategoryScale, chart_js_1.LinearScale, chart_js_1.ArcElement, chart_js_1.Title, chart_js_1.Tooltip, chart_js_1.Legend);
+const jspdf_1 = require("jspdf");
+chart_js_1.Chart.register(chart_js_1.CategoryScale, chart_js_1.LinearScale, chart_js_1.ArcElement, chart_js_1.BarElement, chart_js_1.Title, chart_js_1.Tooltip, chart_js_1.Legend);
 require("@pnp/sp/site-users/web");
 require("@pnp/sp/site-groups/web");
 const mockData_1 = require("../data/mockData");
@@ -686,6 +687,192 @@ class InventoryManagement extends React.Component {
             link.click();
             document.body.removeChild(link);
         };
+        this._exportWarrantyReportToPDF = () => {
+            const { items } = this.state;
+            const doc = new jspdf_1.jsPDF();
+            // Header
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("Asset Warranty Expiry Report", 14, 20);
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
+            doc.text(`Total Assets: ${items.length} | Assets with Warranty: ${items.filter(i => i.warrantyExpiry).length}`, 14, 34);
+            // Table Headers
+            doc.setFont("helvetica", "bold");
+            doc.setFillColor(240, 240, 240);
+            doc.rect(14, 42, 182, 8, "F");
+            doc.text("Asset Name", 16, 47);
+            doc.text("Asset Type", 70, 47);
+            doc.text("Status", 110, 47);
+            doc.text("Purchase Date", 140, 47);
+            doc.text("Warranty Expiry", 170, 47);
+            doc.setDrawColor(200, 200, 200);
+            doc.line(14, 50, 196, 50);
+            // Rows
+            doc.setFont("helvetica", "normal");
+            let y = 56;
+            items.forEach((item) => {
+                if (y > 275) {
+                    doc.addPage();
+                    y = 20;
+                    doc.setFont("helvetica", "bold");
+                    doc.setFillColor(240, 240, 240);
+                    doc.rect(14, y - 6, 182, 8, "F");
+                    doc.text("Asset Name", 16, y - 1);
+                    doc.text("Asset Type", 70, y - 1);
+                    doc.text("Status", 110, y - 1);
+                    doc.text("Purchase Date", 140, y - 1);
+                    doc.text("Warranty Expiry", 170, y - 1);
+                    doc.line(14, y + 2, 196, y + 2);
+                    doc.setFont("helvetica", "normal");
+                    y += 8;
+                }
+                const name = (item.assetName || item.title || "").substring(0, 25);
+                const type = (item.assetType || "").substring(0, 18);
+                const status = (item.status || "").substring(0, 15);
+                const purchaseDate = item.purchaseDate || "N/A";
+                const warrantyExpiry = item.warrantyExpiry || "N/A";
+                doc.text(name, 16, y);
+                doc.text(type, 70, y);
+                doc.text(status, 110, y);
+                doc.text(purchaseDate, 140, y);
+                doc.text(warrantyExpiry, 170, y);
+                doc.line(14, y + 2, 196, y + 2);
+                y += 8;
+            });
+            doc.save(`Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+        };
+        this._exportDetailedReportToExcel = (filteredItems) => {
+            const headers = ["Asset Name", "Asset Type", "Status", "Condition", "Purchase Date", "Assigned To", "Specifications"];
+            const csvRows = [headers.join(",")];
+            filteredItems.forEach(item => {
+                const name = (item.assetName || item.title || "").replace(/"/g, '""');
+                const type = (item.assetType || "").replace(/"/g, '""');
+                const status = (item.status || "").replace(/"/g, '""');
+                const condition = (item.condition || "").replace(/"/g, '""');
+                const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
+                const assignedTo = (item.assignedTo || "N/A").replace(/"/g, '""');
+                const specs = (item.specifications || "").replace(/"/g, '""');
+                const row = [
+                    `"${name}"`,
+                    `"${type}"`,
+                    `"${status}"`,
+                    `"${condition}"`,
+                    `"${purchaseDate}"`,
+                    `"${assignedTo}"`,
+                    `"${specs}"`
+                ];
+                csvRows.push(row.join(","));
+            });
+            const csvContent = "\uFEFF" + csvRows.join("\n");
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", `Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+        this._exportDetailedReportToPDF = (filteredItems) => {
+            const doc = new jspdf_1.jsPDF();
+            // Header
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("Detailed Inventory Asset Report", 14, 20);
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
+            doc.text(`Total Assets Displayed: ${filteredItems.length}`, 14, 34);
+            // Table Headers
+            doc.setFont("helvetica", "bold");
+            doc.setFillColor(240, 240, 240);
+            doc.rect(14, 42, 182, 8, "F");
+            doc.text("Asset Name", 16, 47);
+            doc.text("Asset Type", 65, 47);
+            doc.text("Status", 100, 47);
+            doc.text("Condition", 130, 47);
+            doc.text("Assigned To", 160, 47);
+            doc.setDrawColor(200, 200, 200);
+            doc.line(14, 50, 196, 50);
+            // Rows
+            doc.setFont("helvetica", "normal");
+            let y = 56;
+            filteredItems.forEach((item) => {
+                if (y > 275) {
+                    doc.addPage();
+                    y = 20;
+                    doc.setFont("helvetica", "bold");
+                    doc.setFillColor(240, 240, 240);
+                    doc.rect(14, y - 6, 182, 8, "F");
+                    doc.text("Asset Name", 16, y - 1);
+                    doc.text("Asset Type", 65, y - 1);
+                    doc.text("Status", 100, y - 1);
+                    doc.text("Condition", 130, y - 1);
+                    doc.text("Assigned To", 160, y - 1);
+                    doc.line(14, y + 2, 196, y + 2);
+                    doc.setFont("helvetica", "normal");
+                    y += 8;
+                }
+                const name = (item.assetName || item.title || "").substring(0, 23);
+                const type = (item.assetType || "").substring(0, 15);
+                const status = (item.status || "").substring(0, 14);
+                const condition = (item.condition || "N/A").substring(0, 14);
+                const assignedTo = (item.assignedTo || "N/A").substring(0, 18);
+                doc.text(name, 16, y);
+                doc.text(type, 65, y);
+                doc.text(status, 100, y);
+                doc.text(condition, 130, y);
+                doc.text(assignedTo, 160, y);
+                doc.line(14, y + 2, 196, y + 2);
+                y += 8;
+            });
+            doc.save(`Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+        };
+        this._testListConnection = async (listTitle, internalTitle) => {
+            this.setState(prevState => ({
+                connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'testing' },
+                connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: '' }
+            }));
+            try {
+                const sp = (0, pnpjsConfig_1.getSP)();
+                // Try to load 1 item from list to test connection and permissions
+                await sp.web.lists.getByTitle(internalTitle).items.select("ID").top(1)();
+                this.setState(prevState => ({
+                    connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'connected' }
+                }));
+            }
+            catch (e) {
+                console.warn(`Connection test failed for list ${listTitle}`, e);
+                this.setState(prevState => ({
+                    connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'error' },
+                    connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: e.message || 'Verification failed. List might be missing or inaccessible.' }
+                }));
+            }
+        };
+        this._loadGroupUsers = async (groupName) => {
+            this.setState(prevState => ({
+                loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: true }
+            }));
+            try {
+                const sp = (0, pnpjsConfig_1.getSP)();
+                const users = await sp.web.siteGroups.getByName(groupName).users();
+                const userList = users.map((u) => u.Title || u.LoginName || 'Unknown User');
+                this.setState(prevState => ({
+                    groupUsersList: { ...prevState.groupUsersList, [groupName]: userList },
+                    loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
+                }));
+            }
+            catch (e) {
+                console.warn(`Failed to load members for group ${groupName}`, e);
+                this.setState(prevState => ({
+                    groupUsersList: { ...prevState.groupUsersList, [groupName]: ['Error retrieving group members'] },
+                    loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
+                }));
+            }
+        };
         this._renderRequestAnalysis = (request) => {
             const reqAssetTitle = request.assetTitle || "";
             const inStockItems = this.state.items.filter(item => (item.assetType || '').toLowerCase() === reqAssetTitle.toLowerCase() &&
@@ -1168,7 +1355,15 @@ class InventoryManagement extends React.Component {
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
             adminComment: '',
-            sidebarCollapsed: false
+            sidebarCollapsed: false,
+            reportsSelectedTab: 'insights',
+            reportsAssetTypeFilter: 'All',
+            reportsStatusFilter: 'All',
+            configSelectedTab: 'operations',
+            connectionStatuses: {},
+            connectionErrorMessages: {},
+            groupUsersList: {},
+            loadingGroupUsers: {}
         };
     }
     async componentDidMount() {
@@ -1177,6 +1372,13 @@ class InventoryManagement extends React.Component {
         await this._loadRequests();
         await this._loadAuditLogs();
         await this._loadReturnRequests();
+        // Run self-healing cleanup for Return Approved assets
+        try {
+            await InventoryService_1.InventoryService.cleanupReturnApprovedAssets();
+        }
+        catch (e) {
+            console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
+        }
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
             await InventoryService_1.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
@@ -1465,81 +1667,206 @@ class InventoryManagement extends React.Component {
                                         React.createElement(AssetTracking_1.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
                             case 'Reports':
                                 return isAdmin ? (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "Reporting & Insights")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Use dashboard and event history to derive utilization, approval trends, and asset aging reports."),
-                                    React.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        React.createElement("h4", { style: { marginBottom: '10px' } }, "Asset Utilization"),
-                                        React.createElement("div", { style: { display: 'flex', gap: '20px' } },
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Assets"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.length)),
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dbeafe', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#1e40af', marginBottom: '4px' } }, "In Use / Assigned"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' } }, "Utilization Rate"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' } },
+                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader, style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+                                        React.createElement("div", null,
+                                            React.createElement("h3", null, "Reporting & Insights"),
+                                            React.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Interactive dashboards, live graphs, status analysis, and exporter module."))),
+                                    React.createElement(react_1.Pivot, { selectedKey: this.state.reportsSelectedTab, onLinkClick: (item) => this.setState({ reportsSelectedTab: item ? item.props.itemKey || 'insights' : 'insights' }), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+                                        React.createElement(react_1.PivotItem, { headerText: "Visual Insights", itemKey: "insights" }),
+                                        React.createElement(react_1.PivotItem, { headerText: "Detailed Reports", itemKey: "detailed" }),
+                                        React.createElement(react_1.PivotItem, { headerText: "Warranty Expiry", itemKey: "expiry" })),
+                                    this.state.reportsSelectedTab === 'insights' && (React.createElement(react_1.Stack, { tokens: { childrenGap: 24 } },
+                                        React.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' } },
+                                            React.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                React.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' } }, "TOTAL INVENTORY ASSETS"),
+                                                React.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' } }, items.length)),
+                                            React.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                React.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' } }, "ASSETS CURRENTLY ASSIGNED"),
+                                                React.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
+                                            React.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                React.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' } }, "UTILIZATION RATE"),
+                                                React.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' } },
                                                     items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0,
-                                                    "%")))),
-                                    React.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        React.createElement("h4", { style: { marginBottom: '10px' } }, "Approval Trends"),
-                                        React.createElement("div", { style: { display: 'flex', gap: '20px' } },
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Requests"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, this.state.requests.length)),
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' } }, "Approved"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' } }, this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length)),
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' } }, "Declined"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' } }, this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length)),
-                                            React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 } },
-                                                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' } }, "Approval Rate"),
-                                                React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' } },
-                                                    this.state.requests.length > 0 ? Math.round((this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length / this.state.requests.length) * 100) : 0,
-                                                    "%")))),
-                                    (() => {
-                                        const now = new Date();
-                                        const aging = items.reduce((acc, item) => {
-                                            if (!item.purchaseDate) {
-                                                acc.unknown++;
-                                                return acc;
-                                            }
-                                            const pd = new Date(item.purchaseDate);
-                                            const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                                            if (diffYears < 1)
-                                                acc.under1++;
-                                            else if (diffYears <= 3)
-                                                acc.between1and3++;
-                                            else
-                                                acc.over3++;
-                                            return acc;
-                                        }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-                                        return (React.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            React.createElement("h4", { style: { marginBottom: '10px' } }, "Asset Aging"),
-                                            React.createElement("div", { style: { display: 'flex', gap: '20px' } },
-                                                React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 } },
-                                                    React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' } }, "< 1 Year Old (New)"),
-                                                    React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' } }, aging.under1)),
-                                                React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 } },
-                                                    React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' } }, "1 - 3 Years Old"),
-                                                    React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' } }, aging.between1and3)),
-                                                React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 } },
-                                                    React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' } }, "> 3 Years Old (Aging)"),
-                                                    React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' } }, aging.over3)),
-                                                React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 } },
-                                                    React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Unknown Age"),
-                                                    React.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, aging.unknown)))));
-                                    })(),
-                                    React.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
+                                                    "%")),
+                                            React.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                React.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' } }, "TOTAL APPROVAL REQUESTS"),
+                                                React.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' } }, this.state.requests.length))),
+                                        React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
+                                            React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
+                                                React.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Status Distribution"),
+                                                React.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } },
+                                                    React.createElement(react_chartjs_2_1.Pie, { data: {
+                                                            labels: ['In Stock', 'Assigned', 'Pending Return', 'Under Maintenance'],
+                                                            datasets: [{
+                                                                    data: [
+                                                                        items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
+                                                                        items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
+                                                                        items.filter(i => i.status === 'Pending Return').length,
+                                                                        items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
+                                                                    ],
+                                                                    backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } }
+                                                        } })),
+                                                React.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "In Stock"),
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Assigned"),
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Pending Return"),
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Maintenance"))),
+                                            React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                React.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Asset Type Distribution"),
+                                                React.createElement("div", { style: { height: '240px' } }, (() => {
+                                                    const typeCounts = {};
+                                                    items.forEach(i => {
+                                                        const type = i.assetType || "Other";
+                                                        typeCounts[type] = (typeCounts[type] || 0) + 1;
+                                                    });
+                                                    const labels = Object.keys(typeCounts);
+                                                    const data = Object.keys(typeCounts).map(key => typeCounts[key]);
+                                                    return (React.createElement(react_chartjs_2_1.Bar, { data: {
+                                                            labels,
+                                                            datasets: [{
+                                                                    label: 'Assets Count',
+                                                                    data,
+                                                                    backgroundColor: '#1f77b4',
+                                                                    borderRadius: 4
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } },
+                                                            scales: {
+                                                                y: { beginAtZero: true, ticks: { precision: 0 } }
+                                                            }
+                                                        } }));
+                                                })())),
+                                            React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
+                                                React.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Aging Analysis"),
+                                                React.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } }, (() => {
+                                                    const now = new Date();
+                                                    const aging = items.reduce((acc, item) => {
+                                                        if (!item.purchaseDate) {
+                                                            acc.unknown++;
+                                                            return acc;
+                                                        }
+                                                        const pd = new Date(item.purchaseDate);
+                                                        const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
+                                                        if (diffYears < 1)
+                                                            acc.under1++;
+                                                        else if (diffYears <= 3)
+                                                            acc.between1and3++;
+                                                        else
+                                                            acc.over3++;
+                                                        return acc;
+                                                    }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
+                                                    return (React.createElement(react_chartjs_2_1.Doughnut, { data: {
+                                                            labels: ['< 1 Year (New)', '1-3 Years', '> 3 Years (Aging)', 'Unknown'],
+                                                            datasets: [{
+                                                                    data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
+                                                                    backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } }
+                                                        } }));
+                                                })()),
+                                                React.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "< 1 Year"),
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "1-3 Years"),
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "> 3 Years"),
+                                                    React.createElement("span", null,
+                                                        React.createElement("span", { style: { color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Unknown"))),
+                                            React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                React.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Request Approval Trends"),
+                                                React.createElement("div", { style: { height: '240px' } },
+                                                    React.createElement(react_chartjs_2_1.Bar, { data: {
+                                                            labels: ['Approved', 'Declined/Rejected', 'Pending'],
+                                                            datasets: [{
+                                                                    data: [
+                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
+                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
+                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
+                                                                    ],
+                                                                    backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } },
+                                                            scales: {
+                                                                y: { beginAtZero: true, ticks: { precision: 0 } }
+                                                            }
+                                                        } })))))),
+                                    this.state.reportsSelectedTab === 'detailed' && (React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                        React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' } },
+                                            React.createElement("h4", { style: { margin: 0 } }, "Filterable Asset Inventory"),
+                                            React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                                                React.createElement(react_1.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: () => {
+                                                        const filtered = items.filter(i => {
+                                                            const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                                            const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                                            return typeMatch && statusMatch;
+                                                        });
+                                                        this._exportDetailedReportToExcel(filtered);
+                                                    }, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
+                                                React.createElement(react_1.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: () => {
+                                                        const filtered = items.filter(i => {
+                                                            const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                                            const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                                            return typeMatch && statusMatch;
+                                                        });
+                                                        this._exportDetailedReportToPDF(filtered);
+                                                    }, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
+                                        React.createElement("div", { style: { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' } },
+                                            React.createElement("div", { style: { minWidth: '150px' } },
+                                                React.createElement(react_1.Dropdown, { label: "Asset Type", selectedKey: this.state.reportsAssetTypeFilter, options: [
+                                                        { key: 'All', text: 'All Types' },
+                                                        ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
+                                                    ], onChange: (_, opt) => this.setState({ reportsAssetTypeFilter: opt ? opt.key : 'All' }) })),
+                                            React.createElement("div", { style: { minWidth: '150px' } },
+                                                React.createElement(react_1.Dropdown, { label: "Asset Status", selectedKey: this.state.reportsStatusFilter, options: [
+                                                        { key: 'All', text: 'All Statuses' },
+                                                        ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
+                                                    ], onChange: (_, opt) => this.setState({ reportsStatusFilter: opt ? opt.key : 'All' }) }))),
+                                        (() => {
+                                            const filtered = items.filter(i => {
+                                                const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                                const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                                return typeMatch && statusMatch;
+                                            });
+                                            return (React.createElement(react_1.DetailsList, { items: filtered, columns: [
+                                                    { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
+                                                    { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
+                                                    { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
+                                                    { key: 'col4', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
+                                                    { key: 'col5', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || React.createElement("span", { style: { color: '#9ca3af', fontStyle: 'italic' } }, "Unassigned") }
+                                                ], setKey: "detailedReportList", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none }));
+                                        })())),
+                                    this.state.reportsSelectedTab === 'expiry' && (React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                                         React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' } },
                                             React.createElement("h4", { style: { margin: 0 } }, "Warranty Expiry Report"),
-                                            React.createElement(react_1.PrimaryButton, { text: "Export to Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: {
-                                                    root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' },
-                                                    rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },
-                                                    rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }
-                                                } })),
+                                            React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                                                React.createElement(react_1.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
+                                                React.createElement(react_1.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: this._exportWarrantyReportToPDF, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
                                         React.createElement("div", { style: { marginBottom: '15px', display: 'flex', gap: '20px' } },
                                             React.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
                                                 React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Assets Count"),
@@ -1562,21 +1889,31 @@ class InventoryManagement extends React.Component {
                                                     onRender: (item) => {
                                                         const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
                                                         return (React.createElement("span", { style: {
-                                                                color: isExpired ? '#ef4444' : 'inherit',
-                                                                fontWeight: isExpired ? 'bold' : 'normal'
+                                                                color: isExpired ? '#ef4444' : '#166534',
+                                                                fontWeight: 600,
+                                                                backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
+                                                                padding: '2px 8px',
+                                                                borderRadius: '9999px',
+                                                                fontSize: '0.75rem',
+                                                                display: 'inline-block'
                                                             } },
                                                             item.warrantyExpiry || 'N/A',
                                                             " ",
-                                                            isExpired && '(Expired)'));
+                                                            isExpired ? '(Expired)' : '(Active)'));
                                                     }
                                                 }
-                                            ], setKey: "warrantyReport", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none })))) : null;
+                                            ], setKey: "warrantyReport", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none }))))) : null;
                             case 'Config':
                                 return isAdmin ? (React.createElement("div", null,
                                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "Configuration")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only configuration area for list schema, process settings, and environment setup."),
-                                    React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' } },
+                                        React.createElement("h3", null, "Configuration & List Management"),
+                                        React.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Admin-only control center for list syncing, database connection tests, role diagnostics, and list schemas.")),
+                                    React.createElement(react_1.Pivot, { selectedKey: this.state.configSelectedTab, onLinkClick: (item) => this.setState({ configSelectedTab: item ? item.props.itemKey || 'operations' : 'operations' }), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+                                        React.createElement(react_1.PivotItem, { headerText: "Sync Operations", itemKey: "operations" }),
+                                        React.createElement(react_1.PivotItem, { headerText: "List Connections", itemKey: "connections" }),
+                                        React.createElement(react_1.PivotItem, { headerText: "RBAC Site Groups", itemKey: "rbac" }),
+                                        React.createElement(react_1.PivotItem, { headerText: "Required Schema Guides", itemKey: "schema" })),
+                                    this.state.configSelectedTab === 'operations' && (React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                                         React.createElement("h4", { style: { marginBottom: '10px', color: '#111827', marginTop: 0 } }, "Mapping List Management & Sync"),
                                         React.createElement("p", { style: { fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' } },
                                             "Ensure all assets currently assigned to active employees are properly mapped to the SharePoint ",
@@ -1601,35 +1938,102 @@ class InventoryManagement extends React.Component {
                                                     borderRadius: '4px',
                                                     resize: 'vertical',
                                                     color: '#323130'
-                                                } })))),
-                                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
-                                        React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
-                                            React.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "SharePoint List Connections"),
-                                            React.createElement("ul", { style: { listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' } },
-                                                React.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    React.createElement("span", { style: { color: '#4b5563' } }, "Inventory Database:"),
-                                                    React.createElement("strong", { style: { color: '#111827' } }, "InventoryList")),
-                                                React.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    React.createElement("span", { style: { color: '#4b5563' } }, "Approvals & Requests:"),
-                                                    React.createElement("strong", { style: { color: '#111827' } }, "RequestList")),
-                                                React.createElement("li", { style: { display: 'flex', justifyContent: 'space-between' } },
-                                                    React.createElement("span", { style: { color: '#4b5563' } }, "System Audit Logs:"),
-                                                    React.createElement("strong", { style: { color: '#111827' } }, "AuditLogList")))),
-                                        React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
-                                            React.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "Role Based Access Control"),
-                                            React.createElement("ul", { style: { listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' } },
-                                                React.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    React.createElement("span", { style: { color: '#4b5563' } }, "Admin Group:"),
-                                                    React.createElement("strong", { style: { color: '#111827' } }, "Inventory Administrators")),
-                                                React.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    React.createElement("span", { style: { color: '#4b5563' } }, "Manager Group:"),
-                                                    React.createElement("strong", { style: { color: '#111827' } }, "Inventory Managers")),
-                                                React.createElement("li", { style: { display: 'flex', justifyContent: 'space-between' } },
-                                                    React.createElement("span", { style: { color: '#4b5563' } }, "Employee Access:"),
-                                                    React.createElement("strong", { style: { color: '#111827' } }, "Site Visitors"))))),
-                                    React.createElement("div", { style: { marginTop: '20px', backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
+                                                } }))))),
+                                    this.state.configSelectedTab === 'connections' && (React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                        React.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "SharePoint List Connections"),
+                                        React.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Verify the read/write database connection status of the required SharePoint storage lists."),
+                                        React.createElement(react_1.Stack, { tokens: { childrenGap: 16 } }, [
+                                            { title: 'Inventory List', internal: 'InventoryList', desc: 'Stores the master catalog of all physical assets and hardware.' },
+                                            { title: 'Request List', internal: 'RequestList', desc: 'Manages employee request tickets, workflow histories, and assignment queues.' },
+                                            { title: 'Asset Return Request List', internal: 'Asset Return Request List', desc: 'Handles asset return forms, check-in inspections, and manager validations.' },
+                                            { title: 'Mapping List', internal: 'Mapping List', desc: 'Maintains live active assignment mapping for automated clearing checks.' },
+                                            { title: 'System Audit Log', internal: 'AuditLogList', desc: 'Tracks historical change logs, lifecycle states, and admin operations.' }
+                                        ].map(list => {
+                                            const status = this.state.connectionStatuses[list.title];
+                                            const errorMsg = this.state.connectionErrorMessages[list.title];
+                                            return (React.createElement("div", { key: list.title, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' } },
+                                                React.createElement("div", { style: { flex: '1 1 300px' } },
+                                                    React.createElement("h5", { style: { margin: '0 0 4px 0', fontSize: '0.95rem', fontWeight: 600, color: '#111827' } },
+                                                        list.title,
+                                                        " ",
+                                                        React.createElement("span", { style: { fontWeight: 'normal', color: '#6b7280', fontSize: '0.8rem' } },
+                                                            "(",
+                                                            list.internal,
+                                                            ")")),
+                                                    React.createElement("span", { style: { fontSize: '0.82rem', color: '#4b5563' } }, list.desc),
+                                                    errorMsg && (React.createElement("div", { style: { marginTop: '8px', color: '#d13438', fontSize: '0.78rem', backgroundColor: '#fde7e9', padding: '6px 10px', borderRadius: '4px' } },
+                                                        React.createElement("strong", null, "Error:"),
+                                                        " ",
+                                                        errorMsg))),
+                                                React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '12px' } },
+                                                    status === 'testing' && (React.createElement("span", { style: { fontSize: '0.8rem', color: '#0078d4', display: 'flex', alignItems: 'center', gap: '6px' } },
+                                                        React.createElement(react_1.Icon, { iconName: "ProgressLoopOuter", style: { animation: 'spin 1.5s linear infinite' } }),
+                                                        " Verifying...")),
+                                                    status === 'connected' && (React.createElement("span", { style: {
+                                                            color: '#166534',
+                                                            backgroundColor: '#dcfce7',
+                                                            padding: '4px 12px',
+                                                            borderRadius: '9999px',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: 600,
+                                                            display: 'inline-flex',
+                                                            alignItems: 'center',
+                                                            gap: '4px'
+                                                        } },
+                                                        React.createElement(react_1.Icon, { iconName: "Completed" }),
+                                                        " Connected")),
+                                                    status === 'error' && (React.createElement("span", { style: {
+                                                            color: '#b91c1c',
+                                                            backgroundColor: '#fee2e2',
+                                                            padding: '4px 12px',
+                                                            borderRadius: '9999px',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: 600,
+                                                            display: 'inline-flex',
+                                                            alignItems: 'center',
+                                                            gap: '4px'
+                                                        } },
+                                                        React.createElement(react_1.Icon, { iconName: "ErrorBadge" }),
+                                                        " Failed")),
+                                                    !status && (React.createElement("span", { style: {
+                                                            color: '#4b5563',
+                                                            backgroundColor: '#f3f4f6',
+                                                            padding: '4px 12px',
+                                                            borderRadius: '9999px',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: 500
+                                                        } }, "Not Verified")),
+                                                    React.createElement(react_1.DefaultButton, { text: "Test Live", iconProps: { iconName: 'PlugConnected' }, onClick: () => this._testListConnection(list.title, list.internal), disabled: status === 'testing' }))));
+                                        })))),
+                                    this.state.configSelectedTab === 'rbac' && (React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                        React.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "Role Based Access Control (RBAC)"),
+                                        React.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Inspect user groups resolved from SharePoint for permission level verification."),
+                                        React.createElement(react_1.Stack, { tokens: { childrenGap: 16 } }, [
+                                            { group: 'MSFT Owners', role: 'Admin', desc: 'Full administrative rights to modify assets, approve returns, and manage database connection setups.' },
+                                            { group: 'MSFT Members', role: 'Inventory Manager', desc: 'Write access to create items, process returns, assign assets, and view reports.' },
+                                            { group: 'MSFT Visitors', role: 'Inventory Employee', desc: 'Read-only access to available stocks and permission to request return tickets.' }
+                                        ].map(item => {
+                                            const isLoading = this.state.loadingGroupUsers[item.group];
+                                            const members = this.state.groupUsersList[item.group];
+                                            return (React.createElement("div", { key: item.group, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)' } },
+                                                React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' } },
+                                                    React.createElement("div", null,
+                                                        React.createElement("h5", { style: { margin: 0, fontSize: '1rem', fontWeight: 600, color: '#111827' } },
+                                                            item.group,
+                                                            " ",
+                                                            React.createElement("span", { style: { color: '#0078d4', fontSize: '0.8rem', backgroundColor: '#deecf9', padding: '2px 8px', borderRadius: '4px', marginLeft: '6px', fontWeight: 600 } }, item.role)),
+                                                        React.createElement("span", { style: { fontSize: '0.8rem', color: '#4b5563', display: 'block', marginTop: '4px' } }, item.desc)),
+                                                    React.createElement(react_1.DefaultButton, { text: isLoading ? "Loading..." : "View Members", iconProps: { iconName: 'People' }, onClick: () => this._loadGroupUsers(item.group), disabled: isLoading })),
+                                                members && (React.createElement("div", { style: { marginTop: '12px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid rgba(128,128,128,0.1)' } },
+                                                    React.createElement("span", { style: { fontSize: '0.78rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '6px' } },
+                                                        "Group Members (",
+                                                        members.length,
+                                                        "):"),
+                                                    members.length === 0 ? (React.createElement("span", { style: { fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' } }, "No members found in this group")) : (React.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, members.map((m, idx) => (React.createElement("span", { key: idx, style: { backgroundColor: '#ffffff', border: '1px solid rgba(128,128,128,0.15)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.78rem', color: '#111827', fontWeight: 500 } }, m)))))))));
+                                        })))),
+                                    this.state.configSelectedTab === 'schema' && (React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                                         React.createElement("h4", { style: { marginBottom: '5px', color: '#111827', marginTop: 0 } }, "Required List Schema (Developer Reference)"),
-                                        React.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '15px', marginTop: 0 } }, "Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors."),
+                                        React.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px', marginTop: 0 } }, "Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors."),
                                         React.createElement("h5", { style: { marginTop: '15px', marginBottom: '8px', color: '#374151' } },
                                             "InventoryList ",
                                             React.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Asset Database)")),
@@ -1637,7 +2041,15 @@ class InventoryManagement extends React.Component {
                                         React.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
                                             "RequestList ",
                                             React.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Approval Workflows)")),
-                                        React.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, ['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (React.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col))))))) : null;
+                                        React.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (React.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+                                        React.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                                            "Asset Return Request List ",
+                                            React.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Returns Handling)")),
+                                        React.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'AssetID', 'AssetName', 'SerialNumber', 'Employee', 'ReasonforReturn', 'ProposedCondition', 'RequestStatus', 'ManagerComments'].map(col => (React.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+                                        React.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                                            "Mapping List ",
+                                            React.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Custody Tracking)")),
+                                        React.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, ['Title', 'SerialNumber', 'Employe', 'EmployeeID', 'AssetName', 'AssignmentID'].map(col => (React.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))))))) : null;
                             default:
                                 return null;
                         }

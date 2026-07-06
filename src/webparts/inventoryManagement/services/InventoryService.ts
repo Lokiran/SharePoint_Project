@@ -75,6 +75,9 @@ export class InventoryService {
   public static async updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed', managerComment: string, approverName: string, finalCondition?: string): Promise<void> {
     return ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
   }
+  public static async cleanupReturnApprovedAssets(): Promise<void> {
+    return ReturnRequestService.cleanupReturnApprovedAssets();
+  }
 
   // AuditLogService Methods
   public static async addAuditLog(log: any): Promise<void> {

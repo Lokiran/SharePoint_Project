@@ -360,6 +360,11 @@ export class ReturnRequestService {
     } catch (err: any) {
       console.error("Exception caught in Return Request update:", err.message, err.stack);
       if (err.data) console.error("Error details:", JSON.stringify(err.data));
+      const errStr = (err.message || "").toLowerCase();
+      const isNetworkOrNotFound = errStr.includes("not found") || errStr.includes("404") || errStr.includes("fetch") || errStr.includes("network") || errStr.includes("getbytitle");
+      if (!isNetworkOrNotFound) {
+        throw new Error(`Failed to update Return Request in SharePoint: ${err.message || JSON.stringify(err)}`);
+      }
     }
 
     if (!updatedSharePoint) {
@@ -429,14 +434,14 @@ export class ReturnRequestService {
         const payload: any = {
           [statusKey]: nextStatus,
           [assignedToKey]: null,
+          [`${assignedToKey}Id`]: null,
           [conditionKey]: condition,
           [noteKey]: `Returned by employee. Manager Note: ${managerComment}`
         };
 
-        const assignedFieldObj = fields.find(f => f.InternalName === assignedToKey);
-        const isUserField = assignedFieldObj && (assignedFieldObj.TypeAsString === "User" || assignedFieldObj.TypeAsString === "UserMulti");
-        if (isUserField) {
-          payload[`${assignedToKey}Id`] = null;
+        if (assignedToKey !== "AssignedTo") {
+          payload.AssignedTo = null;
+          payload.AssignedToId = null;
         }
 
         console.log("Inventory Update Payload:", JSON.stringify(payload));
@@ -455,18 +460,31 @@ export class ReturnRequestService {
           console.log("Resolved Mapping List Name:", mappingList.Title || "Mapping List");
           const mappingFields = await SharePointBaseService.getListFieldsMetadata(mappingList);
           const serialCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+          
+          let mappedItems: any[] = [];
           if (serialCol && req.serialNumber) {
-            const mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
-            console.log("Mapping Records Found:", JSON.stringify(mappedItems));
-            if (mappedItems && mappedItems.length > 0) {
-              const deletedIds: number[] = [];
-              for (const mItem of mappedItems) {
-                const deleteResult = await mappingList.items.getById(mItem.ID).delete();
-                console.log(`Result of mapping deletion for ID ${mItem.ID}:`, JSON.stringify(deleteResult));
-                deletedIds.push(mItem.ID);
-              }
-              console.log("Deleted Mapping IDs:", JSON.stringify(deletedIds));
+            mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
+          }
+
+          if ((!mappedItems || mappedItems.length === 0) && req.assetName) {
+            console.log("[Return Request Workflow] Mapping record not found by serial number. Trying fallback search by Asset Name and Employee Name...");
+            const assetNameCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+            const employeeCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
+            if (assetNameCol && employeeCol && req.requesterName) {
+              const filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}' and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
+              mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
             }
+          }
+
+          console.log("Mapping Records Found for deletion:", JSON.stringify(mappedItems));
+          if (mappedItems && mappedItems.length > 0) {
+            const deletedIds: number[] = [];
+            for (const mItem of mappedItems) {
+              const deleteResult = await mappingList.items.getById(mItem.ID).delete();
+              console.log(`Result of mapping deletion for ID ${mItem.ID}:`, JSON.stringify(deleteResult));
+              deletedIds.push(mItem.ID);
+            }
+            console.log("Deleted Mapping IDs:", JSON.stringify(deletedIds));
           }
         } catch (err: any) {
           console.error(`Exception in Mapping List Cleanup on return ${status.toLowerCase()}:`, err.message, err.stack);
@@ -548,5 +566,94 @@ export class ReturnRequestService {
     console.log("========================");
     console.log("RETURN WORKFLOW END");
     console.log("========================");
+  }
+
+  public static async cleanupReturnApprovedAssets(): Promise<void> {
+    console.log("[Cleanup] Starting self-healing cleanup for Return Approved assets...");
+    try {
+      const list = await InventoryItemService.getInventoryList();
+      if (!list || !list.items || typeof list.items.select !== 'function') {
+        console.log("[Cleanup] list.items.select is not a function (mock or missing). Skipping cleanup.");
+        return;
+      }
+
+      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      
+      const findField = (searchStr: string, fallback: string): string => {
+        const field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());
+        return field ? field.InternalName : fallback;
+      };
+
+      const statusKey = findField("status", "Status");
+      const assignedToKey = findField("assignedto", "AssignedTo");
+      const conditionKey = findField("condition", "Condition");
+
+      const items = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title")();
+      
+      for (const item of items) {
+        const rawStatus = item[statusKey] || "";
+        const val = item[assignedToKey];
+        let hasAssignee = false;
+        if (val) {
+          if (typeof val === 'object') {
+            hasAssignee = Object.keys(val).length > 0;
+          } else {
+            hasAssignee = true;
+          }
+        }
+
+        if (rawStatus === "Return Approved" || rawStatus === "ReturnApproved" || (rawStatus === "In Stock" && hasAssignee)) {
+          console.log(`[Cleanup] Found return approved or in-stock asset with assignee: ${item.Title || "Asset"} (ID: ${item.ID})`);
+          
+          const payload: any = {
+            [statusKey]: "In Stock",
+            [assignedToKey]: null,
+            [`${assignedToKey}Id`]: null
+          };
+
+          if (assignedToKey !== "AssignedTo") {
+            payload.AssignedTo = null;
+            payload.AssignedToId = null;
+          }
+
+          await list.items.getById(item.ID).update(payload);
+          console.log(`[Cleanup] Updated asset ID ${item.ID} in SharePoint to 'In Stock' and cleared assignee.`);
+
+          const serialNumber = item.SerialNumber || "";
+          const assetTitle = item.Title || "";
+          const requesterName = (val && (val.Title || val.Name || (typeof val === 'object' ? '' : val.toString()))) || "";
+
+          try {
+            const mappingList = await AssetAssignmentService.getMappingList();
+            const mappingFields = await SharePointBaseService.getListFieldsMetadata(mappingList);
+            const serialCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+            
+            let mappedItems: any[] = [];
+            if (serialCol && serialNumber) {
+              mappedItems = await mappingList.items.filter(`${serialCol} eq '${serialNumber.replace(/'/g, "''")}'`).select("ID")();
+            }
+
+            if ((!mappedItems || mappedItems.length === 0) && assetTitle) {
+              const assetNameCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+              const employeeCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
+              if (assetNameCol && employeeCol && requesterName) {
+                const filterQuery = `${assetNameCol} eq '${assetTitle.replace(/'/g, "''")}' and ${employeeCol} eq '${requesterName.replace(/'/g, "''")}'`;
+                mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+              }
+            }
+
+            for (const mItem of mappedItems) {
+              await mappingList.items.getById(mItem.ID).delete();
+              console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for asset ${assetTitle}`);
+            }
+          } catch (err: any) {
+            console.warn(`[Cleanup] Failed to clean up mapping record for asset ${assetTitle}`, err);
+          }
+        }
+      }
+      console.log("[Cleanup] Self-healing cleanup finished.");
+    } catch (error: any) {
+      console.warn("[Cleanup] Failed to run return approved assets cleanup:", error);
+    }
   }
 }
