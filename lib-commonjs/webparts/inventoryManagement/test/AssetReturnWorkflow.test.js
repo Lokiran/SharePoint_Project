@@ -253,51 +253,48 @@ describe("Asset Return Single-Stage Approval Regression Verification", () => {
         ];
         eventLogListItems = [];
     });
-    it("should successfully execute single-stage return approval and update all list records correctly", async () => {
+    it("should successfully execute multi-stage return approval and physical handover verification", async () => {
         console.log("=== Verification Step 0: Starting simulation ===");
         expect(returnRequestsListItems[0].Status).toBe("Pending");
         expect(inventoryListItems[0].Status).toBe("Pending Return");
         expect(inventoryListItems[0].AssignedTo).toBe("Adele Vance");
         expect(inventoryListItems[0].AssignedToId).toBe(12);
         expect(mappingListItems.length).toBe(1);
-        // Act: Approve the return request
+        // Act 1: Approve the return request
         await ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus("RR-101", "Approved", "Return approved by Manager during test.", "Loka Kiran Reddy");
         console.log("=== Verification Step 1: Return Request status becomes Approved ===");
         expect(returnRequestsListItems[0].Status).toBe("Approved");
         console.log("[PASS] Verification 1: Return Request status is 'Approved'.");
-        console.log("=== Verification Step 2: Inventory Status becomes In Stock ===");
+        console.log("=== Verification Step 2: Inventory Status remains Pending Return ===");
+        expect(inventoryListItems[0].Status).toBe("Pending Return");
+        expect(inventoryListItems[0].AssignedTo).toBe("Adele Vance");
+        expect(mappingListItems.length).toBe(1);
+        console.log("[PASS] Verification 2: Custody is not cleared during approval stage.");
+        // Act 2: Verify & Complete the return request (Physical Handover)
+        await ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus("RR-101", "Completed", "Checked in & Verified during test.", "Loka Kiran Reddy", "Good");
+        console.log("=== Verification Step 3: Return Request status becomes Completed ===");
+        expect(returnRequestsListItems[0].Status).toBe("Completed");
+        console.log("[PASS] Verification 3: Return Request status is 'Completed'.");
+        console.log("=== Verification Step 4: Inventory Status becomes In Stock ===");
         expect(inventoryListItems[0].Status).toBe("In Stock");
-        console.log("[PASS] Verification 2: Inventory Status is 'In Stock'.");
-        console.log("=== Verification Step 3: Inventory Condition is updated correctly ===");
         expect(inventoryListItems[0].Condition).toBe("Good");
-        console.log("[PASS] Verification 3: Inventory Condition is 'Good'.");
-        console.log("=== Verification Step 4: AssignedTo is cleared ===");
+        console.log("[PASS] Verification 4: Inventory Status is 'In Stock' and condition is 'Good'.");
+        console.log("=== Verification Step 5: AssignedTo is cleared ===");
         expect(inventoryListItems[0].AssignedTo).toBeNull();
-        console.log("[PASS] Verification 4: AssignedTo is null.");
-        console.log("=== Verification Step 5: AssignedToId is cleared ===");
         expect(inventoryListItems[0].AssignedToId).toBeNull();
-        console.log("[PASS] Verification 5: AssignedToId is null.");
+        console.log("[PASS] Verification 5: AssignedTo and AssignedToId are null.");
         console.log("=== Verification Step 6: Asset Assignment mapping record is deleted ===");
         expect(mappingListItems.some(i => i.SerialNumber === "DELL12345")).toBe(false);
         console.log("[PASS] Verification 6: Assignment mapping record deleted.");
         console.log("=== Verification Step 7: Audit Log entry is created ===");
-        expect(eventLogListItems.length).toBe(1);
-        expect(eventLogListItems[0].Title).toContain("Approved Return Request & Deactivated: Dell Latitude 5420");
-        expect(eventLogListItems[0].Action).toBe("Deactivated");
+        expect(eventLogListItems.length).toBe(2); // Approval log + Completion log
+        expect(eventLogListItems[1].Title).toContain("Completed Return & Inactivated: Dell Latitude 5420");
         console.log("[PASS] Verification 7: Audit Log entry created successfully.");
-        console.log("=== Verification Step 8: Dashboard Pending Return count decreases ===");
-        const pendingCountAfter = returnRequestsListItems.filter(r => r.Status === "Pending").length;
-        expect(pendingCountAfter).toBe(0);
-        console.log("[PASS] Verification 8: Pending Return count decreased from 1 to 0.");
-        console.log("=== Verification Step 9: Asset appears in Available Inventory ===");
+        console.log("=== Verification Step 8: Asset appears in Available Inventory ===");
         const availableAssets = inventoryListItems.filter(i => i.Status === "In Stock");
         expect(availableAssets.length).toBe(1);
         expect(availableAssets[0].ID).toBe(201);
-        console.log("[PASS] Verification 9: Asset 201 is available in Stock.");
-        console.log("=== Verification Step 10: No orphaned mapping records remain ===");
-        const remainingMappingCount = mappingListItems.filter(m => m.SerialNumber === "DELL12345").length;
-        expect(remainingMappingCount).toBe(0);
-        console.log("[PASS] Verification 10: No mapping record remains for DELL12345.");
+        console.log("[PASS] Verification 8: Asset 201 is available in Stock.");
     });
 });
 //# sourceMappingURL=AssetReturnWorkflow.test.js.map

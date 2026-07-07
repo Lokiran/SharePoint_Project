@@ -170,6 +170,13 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
             return (
               <Stack horizontal tokens={{ childrenGap: 6 }} verticalAlign="center">
                 {viewButton}
+                {item.status === 'Approved' && (
+                  <PrimaryButton
+                    text="Verify & Complete"
+                    onClick={() => openDialog(item, 'Complete')}
+                    styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } }}
+                  />
+                )}
               </Stack>
             );
           }

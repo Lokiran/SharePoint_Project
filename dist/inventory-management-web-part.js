@@ -6421,7 +6421,9 @@ const ReturnRequestList = (props) => {
                 onRender: (item) => {
                     const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
                     if (item.status !== 'Pending') {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" },
+                            viewButton,
+                            item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
                     }
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
                         viewButton,
@@ -9891,7 +9893,7 @@ class ReturnRequestService {
             console.log("Resolved Condition Field:", conditionKey);
             const assetIdNum = parseInt(req.assetId, 10);
             console.log("Inventory Item ID:", assetIdNum);
-            if (status === 'Completed' || status === 'Approved') {
+            if (status === 'Completed') {
                 const condition = finalCondition || req.proposedCondition || "Activated";
                 let nextStatus = "In Stock";
                 if (condition === "Poor" || condition === "Damaged") {
@@ -88392,7 +88394,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5041a45494eb3f64ce9b")
+/******/ 		__webpack_require__.h = () => ("b8c8eabd3a109423cf22")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

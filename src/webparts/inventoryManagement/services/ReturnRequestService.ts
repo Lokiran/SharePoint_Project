@@ -424,7 +424,7 @@ export class ReturnRequestService {
       const assetIdNum = parseInt(req.assetId, 10);
       console.log("Inventory Item ID:", assetIdNum);
 
-      if (status === 'Completed' || status === 'Approved') {
+      if (status === 'Completed') {
         const condition = finalCondition || req.proposedCondition || "Activated";
         let nextStatus = "In Stock";
         if (condition === "Poor" || condition === "Damaged") {

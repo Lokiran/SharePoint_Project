@@ -138,7 +138,9 @@ const ReturnRequestList = (props) => {
                 onRender: (item) => {
                     const viewButton = (React.createElement(Button_1.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
                     if (item.status !== 'Pending') {
-                        return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
+                        return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" },
+                            viewButton,
+                            item.status === 'Approved' && (React.createElement(Button_1.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
                     }
                     return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
                         viewButton,
