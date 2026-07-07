@@ -6,4 +6,5 @@ import "@pnp/sp/items";
 import "@pnp/sp/batching";
 import "@pnp/sp/fields";
 export declare const getSP: (context?: WebPartContext) => SPFI;
+export declare const getContext: () => WebPartContext;
 //# sourceMappingURL=pnpjsConfig.d.ts.map

@@ -730,6 +730,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         id: tempId,
         requestKey: `REQ-${("000000" + (this.state.requests.length + 1)).slice(-6)}`,
         requesterName: requestData.requesterName,
+        requesterEmail: requestData.requesterEmail,
         employeeId: (requestData as any).employeeId || "",
         assetId: requestData.assetId || "1",
         assetTitle: requestData.assetTitle,
@@ -750,7 +751,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       await InventoryService.addRequest({
         ...requestData,
         status: initialStatus
-      } as any, this.state.activeUserDisplayName);
+      }, this.state.activeUserDisplayName);
       console.log('Successfully saved request to SharePoint');
       await this._loadRequests(); // Refresh list from SharePoint
       await this._loadAuditLogs(); // Refresh audit logs
@@ -2394,6 +2395,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             employees={this.state.employees}
             currentUserRole={effectiveRole}
             currentUserName={activeUserDisplayName}
+            currentUserEmail={this.state.activeUserEmail}
             onSubmitRequest={this._onSubmitRequest}
           />
         )}

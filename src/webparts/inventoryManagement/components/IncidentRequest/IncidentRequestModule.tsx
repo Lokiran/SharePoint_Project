@@ -184,7 +184,8 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
       console.log('Submitting incident payload:', payload);
       await service.createIncidentRequest(payload);
 
-      setMessage({ type: MessageBarType.success, text: 'Incident reported successfully!' });
+      const isRep = props.preselectedIncidentType === 'Replacement Request';
+      setMessage({ type: MessageBarType.success, text: isRep ? 'Replacement request submitted successfully!' : 'Incident reported successfully!' });
 
       setTimeout(() => {
         setFormData({
@@ -241,13 +242,15 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
   const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
 
+  const isReplacementMode = props.preselectedIncidentType === 'Replacement Request';
+
   return (
     <Panel
       isOpen={props.isOpen}
       onDismiss={props.onClose}
       type={PanelType.custom}
       customWidth="450px"
-      headerText="Raise Incident"
+      headerText={isReplacementMode ? "Request Asset Replacement" : "Raise Incident"}
       closeButtonAriaLabel="Close"
     >
       <div className={styles.incidentRequestModule}>
@@ -260,7 +263,9 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           {!isLoadingAssets && assignedAssets.length === 0 && (
             <MessageBar messageBarType={MessageBarType.info}>
-              You currently have no assets assigned. You can still raise generic incidents.
+              {isReplacementMode 
+                ? "You currently have no assets assigned to request a replacement for." 
+                : "You currently have no assets assigned. You can still raise generic incidents."}
             </MessageBar>
           )}
 
@@ -307,14 +312,16 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
             />
           )}
 
-          <Dropdown
-            label="Incident Type"
-            options={incidentTypeOptions}
-            selectedKey={formData.incidentType}
-            onChange={(ev, option) => handleInputChange('incidentType', option?.key)}
-            required
-            placeholder="Select Incident Type"
-          />
+          {!isReplacementMode && (
+            <Dropdown
+              label="Issue Type"
+              options={incidentTypeOptions}
+              selectedKey={formData.incidentType}
+              onChange={(ev, option) => handleInputChange('incidentType', option?.key)}
+              required
+              placeholder="Select Issue Type"
+            />
+          )}
 
           <Dropdown
             label="Priority"
@@ -324,10 +331,10 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
           />
 
           <TextField
-            label="Description"
+            label={isReplacementMode ? "Reason for Replacement" : "Description"}
             multiline
             rows={5}
-            placeholder="Describe the issue..."
+            placeholder={isReplacementMode ? "Describe the reason for replacement..." : "Describe the issue..."}
             value={formData.description}
             onChange={(ev, newValue) => handleInputChange('description', newValue)}
             required
@@ -355,7 +362,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: 20 }}>
             <PrimaryButton
-              text="Report Incident"
+              text={isReplacementMode ? "Request Replacement" : "Report Incident"}
               onClick={handleSubmit}
               disabled={isSubmitting}
             />

@@ -1,6 +1,7 @@
 import { getSP, getContext } from "../pnpjsConfig";
 import { Utilities } from "@pnp/sp/sputilities";
 import "@pnp/sp/profiles";
+import { EMPLOYEES } from "../data/mockData";
 
 export interface IApprovalRequestParams {
   requestKey: string;
@@ -281,7 +282,9 @@ export class EmailService {
 
       // 2. Try User Profile Service using ensureUser first
       try {
-        const user: any = await sp.web.ensureUser(employeeName);
+        const matchingEmp = EMPLOYEES.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
+        const userIdentifier = matchingEmp ? matchingEmp.email : employeeName;
+        const user: any = await sp.web.ensureUser(userIdentifier);
         const loginName = user.data ? user.data.LoginName : user.LoginName;
         
         const profile = await sp.profiles.getPropertiesFor(loginName);

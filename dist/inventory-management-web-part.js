@@ -16,39 +16,39 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".dashboard_34e583c6{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,sans-serif;padding:8px 0}.dashboard_34e583c6 .dashboardIntro_34e583c6{margin-bottom:24px}.dashboard_34e583c6 .summaryGrid_34e583c6{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:28px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6{align-items:center;background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px;position:relative;transition:transform .25s cubic-bezier(.1,.9,.2,1),box-shadow .25s cubic-bezier(.1,.9,.2,1)}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:before{background-color:transparent;bottom:0;content:\"\";left:0;position:absolute;top:0;transition:background-color .2s ease;width:4px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:hover{box-shadow:0 6.4px 14.4px 0 rgba(0,0,0,.12),0 1.2px 3.6px 0 rgba(0,0,0,.06);transform:translateY(-4px)}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:hover:before{opacity:.9}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardBlue_34e583c6:before{background-color:#0078d4}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardBlue_34e583c6 .iconContainer_34e583c6{background-color:rgba(0,120,212,.08);color:#0078d4}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGreen_34e583c6:before{background-color:#107c10}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGreen_34e583c6 .iconContainer_34e583c6{background-color:rgba(16,124,16,.08);color:#107c10}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardPurple_34e583c6:before{background-color:#8764b8}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardPurple_34e583c6 .iconContainer_34e583c6{background-color:rgba(135,100,184,.08);color:#8764b8}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGold_34e583c6:before{background-color:#ffb900}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6.cardGold_34e583c6 .iconContainer_34e583c6{background-color:rgba(255,185,0,.12);color:#b37d00}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .iconContainer_34e583c6{align-items:center;border-radius:10px;display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .2s ease;width:48px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6:hover .iconContainer_34e583c6{transform:scale(1.08)}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6{display:flex;flex-direction:column;flex-grow:1;justify-content:center}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6 .summaryValue_34e583c6{color:var(--text-main,#323130);font-size:2rem;font-weight:700;line-height:1.1;margin-bottom:2px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6 .summaryLabel_34e583c6{color:var(--text-muted,#605e5c);font-size:.9rem;font-weight:600;margin-bottom:2px}.dashboard_34e583c6 .summaryGrid_34e583c6 .summaryCard_34e583c6 .cardInfo_34e583c6 .summarySubtitle_34e583c6{color:var(--text-muted,#797775);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_34e583c6 .chartsGrid_34e583c6{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6{align-items:flex-start;background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;padding:24px;transition:box-shadow .2s ease}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6:hover{box-shadow:0 3.2px 7.2px 0 rgba(0,0,0,.1),0 .6px 1.8px 0 rgba(0,0,0,.05)}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartHeader_34e583c6{border-bottom:1px solid var(--border-color,rgba(0,0,0,.08));margin-bottom:20px;padding-bottom:12px;width:100%}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartHeader_34e583c6 h3{color:var(--text-main,#323130);font-size:1.1rem;font-weight:600;margin:0}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartHeader_34e583c6 .chartSubtitle_34e583c6{color:var(--text-muted,#797775);font-size:.8rem;margin:4px 0 0}.dashboard_34e583c6 .chartsGrid_34e583c6 .chartCard_34e583c6 .chartContainer_34e583c6{align-items:center;display:flex;height:280px;justify-content:center;position:relative;width:100%}.dashboard_34e583c6 .actionCenter_34e583c6{background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);margin-bottom:24px;padding:24px;transition:box-shadow .2s ease}.dashboard_34e583c6 .actionCenter_34e583c6:hover{box-shadow:0 3.2px 7.2px 0 rgba(0,0,0,.1),0 .6px 1.8px 0 rgba(0,0,0,.05)}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6{align-items:center;border-bottom:1px solid var(--border-color,rgba(0,0,0,.08));display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:12px}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6 h3{align-items:center;color:var(--text-main,#323130);display:flex;font-size:1.1rem;font-weight:600;gap:8px;margin:0}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6 h3 i{color:#0078d4}.dashboard_34e583c6 .actionCenter_34e583c6 .sectionHeader_34e583c6 .sectionSubtitle_34e583c6{color:var(--text-muted,#797775);font-size:.8rem;margin:4px 0 0}.dashboard_34e583c6 .actionCenter_34e583c6 .tableWrapper_34e583c6{overflow-x:auto;width:100%}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6{border-collapse:collapse;text-align:left;width:100%}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 th{background-color:rgba(0,0,0,.01);border-bottom:1.5px solid var(--border-color,rgba(0,0,0,.08));color:var(--text-muted,#605e5c);font-size:.8rem;font-weight:600;letter-spacing:.03em;padding:10px 12px;text-transform:uppercase}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 td{border-bottom:1px solid var(--border-color,rgba(0,0,0,.04));color:var(--text-main,#323130);font-size:.85rem;padding:12px;vertical-align:middle}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 tr:last-child td{border-bottom:none}.dashboard_34e583c6 .actionCenter_34e583c6 .actionTable_34e583c6 tr:hover td{background-color:rgba(0,120,212,.015)}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6{align-items:center;border-radius:12px;display:inline-flex;font-size:.75rem;font-weight:600;justify-content:center;padding:4px 10px;text-transform:capitalize}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6.badgePending_34e583c6{background-color:#fff4ce;color:#7a5200}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6.badgeApproved_34e583c6{background-color:#dff6dd;color:#107c10}.dashboard_34e583c6 .actionCenter_34e583c6 .statusBadge_34e583c6.badgeDeclined_34e583c6{background-color:#fde7e9;color:#a80000}.dashboard_34e583c6 .actionCenter_34e583c6 .noDataMessage_34e583c6{align-items:center;color:var(--text-muted,#797775);display:flex;flex-direction:column;font-size:.9rem;gap:12px;justify-content:center;padding:40px;text-align:center}.dashboard_34e583c6 .actionCenter_34e583c6 .noDataMessage_34e583c6 i{color:var(--text-muted,#a19f9d);font-size:28px}.dashboard_34e583c6 .splitLayout_34e583c6{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(45%,1fr));margin-bottom:24px}.dashboard_34e583c6 .splitLayout_34e583c6 .actionCenter_34e583c6{margin-bottom:0}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".dashboard_6d9a35d6{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,sans-serif;padding:8px 0}.dashboard_6d9a35d6 .dashboardIntro_6d9a35d6{margin-bottom:24px}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:28px}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6{align-items:center;background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px;position:relative;transition:transform .25s cubic-bezier(.1,.9,.2,1),box-shadow .25s cubic-bezier(.1,.9,.2,1)}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6:before{background-color:transparent;bottom:0;content:\"\";left:0;position:absolute;top:0;transition:background-color .2s ease;width:4px}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6:hover{box-shadow:0 6.4px 14.4px 0 rgba(0,0,0,.12),0 1.2px 3.6px 0 rgba(0,0,0,.06);transform:translateY(-4px)}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6:hover:before{opacity:.9}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardBlue_6d9a35d6:before{background-color:#0078d4}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardBlue_6d9a35d6 .iconContainer_6d9a35d6{background-color:rgba(0,120,212,.08);color:#0078d4}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardGreen_6d9a35d6:before{background-color:#107c10}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardGreen_6d9a35d6 .iconContainer_6d9a35d6{background-color:rgba(16,124,16,.08);color:#107c10}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardPurple_6d9a35d6:before{background-color:#8764b8}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardPurple_6d9a35d6 .iconContainer_6d9a35d6{background-color:rgba(135,100,184,.08);color:#8764b8}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardGold_6d9a35d6:before{background-color:#ffb900}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6.cardGold_6d9a35d6 .iconContainer_6d9a35d6{background-color:rgba(255,185,0,.12);color:#b37d00}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6 .iconContainer_6d9a35d6{align-items:center;border-radius:10px;display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .2s ease;width:48px}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6:hover .iconContainer_6d9a35d6{transform:scale(1.08)}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6 .cardInfo_6d9a35d6{display:flex;flex-direction:column;flex-grow:1;justify-content:center}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6 .cardInfo_6d9a35d6 .summaryValue_6d9a35d6{color:var(--text-main,#323130);font-size:2rem;font-weight:700;line-height:1.1;margin-bottom:2px}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6 .cardInfo_6d9a35d6 .summaryLabel_6d9a35d6{color:var(--text-muted,#605e5c);font-size:.9rem;font-weight:600;margin-bottom:2px}.dashboard_6d9a35d6 .summaryGrid_6d9a35d6 .summaryCard_6d9a35d6 .cardInfo_6d9a35d6 .summarySubtitle_6d9a35d6{color:var(--text-muted,#797775);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6 .chartCard_6d9a35d6{align-items:flex-start;background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;padding:24px;transition:box-shadow .2s ease}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6 .chartCard_6d9a35d6:hover{box-shadow:0 3.2px 7.2px 0 rgba(0,0,0,.1),0 .6px 1.8px 0 rgba(0,0,0,.05)}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6 .chartCard_6d9a35d6 .chartHeader_6d9a35d6{border-bottom:1px solid var(--border-color,rgba(0,0,0,.08));margin-bottom:20px;padding-bottom:12px;width:100%}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6 .chartCard_6d9a35d6 .chartHeader_6d9a35d6 h3{color:var(--text-main,#323130);font-size:1.1rem;font-weight:600;margin:0}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6 .chartCard_6d9a35d6 .chartHeader_6d9a35d6 .chartSubtitle_6d9a35d6{color:var(--text-muted,#797775);font-size:.8rem;margin:4px 0 0}.dashboard_6d9a35d6 .chartsGrid_6d9a35d6 .chartCard_6d9a35d6 .chartContainer_6d9a35d6{align-items:center;display:flex;height:280px;justify-content:center;position:relative;width:100%}.dashboard_6d9a35d6 .actionCenter_6d9a35d6{background-color:var(--card-bg,#fff);border:1px solid var(--border-color,rgba(0,0,0,.06));border-radius:12px;box-shadow:0 1.6px 3.6px 0 rgba(0,0,0,.08),0 .3px .9px 0 rgba(0,0,0,.04);margin-bottom:24px;padding:24px;transition:box-shadow .2s ease}.dashboard_6d9a35d6 .actionCenter_6d9a35d6:hover{box-shadow:0 3.2px 7.2px 0 rgba(0,0,0,.1),0 .6px 1.8px 0 rgba(0,0,0,.05)}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .sectionHeader_6d9a35d6{align-items:center;border-bottom:1px solid var(--border-color,rgba(0,0,0,.08));display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:12px}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .sectionHeader_6d9a35d6 h3{align-items:center;color:var(--text-main,#323130);display:flex;font-size:1.1rem;font-weight:600;gap:8px;margin:0}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .sectionHeader_6d9a35d6 h3 i{color:#0078d4}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .sectionHeader_6d9a35d6 .sectionSubtitle_6d9a35d6{color:var(--text-muted,#797775);font-size:.8rem;margin:4px 0 0}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .tableWrapper_6d9a35d6{overflow-x:auto;width:100%}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .actionTable_6d9a35d6{border-collapse:collapse;text-align:left;width:100%}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .actionTable_6d9a35d6 th{background-color:rgba(0,0,0,.01);border-bottom:1.5px solid var(--border-color,rgba(0,0,0,.08));color:var(--text-muted,#605e5c);font-size:.8rem;font-weight:600;letter-spacing:.03em;padding:10px 12px;text-transform:uppercase}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .actionTable_6d9a35d6 td{border-bottom:1px solid var(--border-color,rgba(0,0,0,.04));color:var(--text-main,#323130);font-size:.85rem;padding:12px;vertical-align:middle}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .actionTable_6d9a35d6 tr:last-child td{border-bottom:none}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .actionTable_6d9a35d6 tr:hover td{background-color:rgba(0,120,212,.015)}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .statusBadge_6d9a35d6{align-items:center;border-radius:12px;display:inline-flex;font-size:.75rem;font-weight:600;justify-content:center;padding:4px 10px;text-transform:capitalize}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .statusBadge_6d9a35d6.badgePending_6d9a35d6{background-color:#fff4ce;color:#7a5200}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .statusBadge_6d9a35d6.badgeApproved_6d9a35d6{background-color:#dff6dd;color:#107c10}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .statusBadge_6d9a35d6.badgeDeclined_6d9a35d6{background-color:#fde7e9;color:#a80000}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .noDataMessage_6d9a35d6{align-items:center;color:var(--text-muted,#797775);display:flex;flex-direction:column;font-size:.9rem;gap:12px;justify-content:center;padding:40px;text-align:center}.dashboard_6d9a35d6 .actionCenter_6d9a35d6 .noDataMessage_6d9a35d6 i{color:var(--text-muted,#a19f9d);font-size:28px}.dashboard_6d9a35d6 .splitLayout_6d9a35d6{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(45%,1fr));margin-bottom:24px}.dashboard_6d9a35d6 .splitLayout_6d9a35d6 .actionCenter_6d9a35d6{margin-bottom:0}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  dashboard: "dashboard_34e583c6",
-  dashboardIntro: "dashboardIntro_34e583c6",
-  summaryGrid: "summaryGrid_34e583c6",
-  summaryCard: "summaryCard_34e583c6",
-  cardBlue: "cardBlue_34e583c6",
-  iconContainer: "iconContainer_34e583c6",
-  cardGreen: "cardGreen_34e583c6",
-  cardPurple: "cardPurple_34e583c6",
-  cardGold: "cardGold_34e583c6",
-  cardInfo: "cardInfo_34e583c6",
-  summaryValue: "summaryValue_34e583c6",
-  summaryLabel: "summaryLabel_34e583c6",
-  summarySubtitle: "summarySubtitle_34e583c6",
-  chartsGrid: "chartsGrid_34e583c6",
-  chartCard: "chartCard_34e583c6",
-  chartHeader: "chartHeader_34e583c6",
-  chartSubtitle: "chartSubtitle_34e583c6",
-  chartContainer: "chartContainer_34e583c6",
-  actionCenter: "actionCenter_34e583c6",
-  sectionHeader: "sectionHeader_34e583c6",
-  sectionSubtitle: "sectionSubtitle_34e583c6",
-  tableWrapper: "tableWrapper_34e583c6",
-  actionTable: "actionTable_34e583c6",
-  statusBadge: "statusBadge_34e583c6",
-  badgePending: "badgePending_34e583c6",
-  badgeApproved: "badgeApproved_34e583c6",
-  badgeDeclined: "badgeDeclined_34e583c6",
-  noDataMessage: "noDataMessage_34e583c6",
-  splitLayout: "splitLayout_34e583c6"
+  dashboard: "dashboard_6d9a35d6",
+  dashboardIntro: "dashboardIntro_6d9a35d6",
+  summaryGrid: "summaryGrid_6d9a35d6",
+  summaryCard: "summaryCard_6d9a35d6",
+  cardBlue: "cardBlue_6d9a35d6",
+  iconContainer: "iconContainer_6d9a35d6",
+  cardGreen: "cardGreen_6d9a35d6",
+  cardPurple: "cardPurple_6d9a35d6",
+  cardGold: "cardGold_6d9a35d6",
+  cardInfo: "cardInfo_6d9a35d6",
+  summaryValue: "summaryValue_6d9a35d6",
+  summaryLabel: "summaryLabel_6d9a35d6",
+  summarySubtitle: "summarySubtitle_6d9a35d6",
+  chartsGrid: "chartsGrid_6d9a35d6",
+  chartCard: "chartCard_6d9a35d6",
+  chartHeader: "chartHeader_6d9a35d6",
+  chartSubtitle: "chartSubtitle_6d9a35d6",
+  chartContainer: "chartContainer_6d9a35d6",
+  actionCenter: "actionCenter_6d9a35d6",
+  sectionHeader: "sectionHeader_6d9a35d6",
+  sectionSubtitle: "sectionSubtitle_6d9a35d6",
+  tableWrapper: "tableWrapper_6d9a35d6",
+  actionTable: "actionTable_6d9a35d6",
+  statusBadge: "statusBadge_6d9a35d6",
+  badgePending: "badgePending_6d9a35d6",
+  badgeApproved: "badgeApproved_6d9a35d6",
+  badgeDeclined: "badgeDeclined_6d9a35d6",
+  noDataMessage: "noDataMessage_6d9a35d6",
+  splitLayout: "splitLayout_6d9a35d6"
 });
 
 
@@ -69,14 +69,14 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".incidentRequestModule_ea42a244 .formSection_ea42a244{border-left:3px solid #e74c3c;margin-bottom:20px;padding-left:15px}.incidentRequestModule_ea42a244 .attachmentUpload_ea42a244{border:2px dashed #0078d4;border-radius:4px;cursor:pointer;padding:20px;text-align:center;transition:background-color .3s}.incidentRequestModule_ea42a244 .attachmentUpload_ea42a244:hover{background-color:#f3f2f1}.incidentRequestModule_ea42a244 .actionButtons_ea42a244{display:flex;gap:10px;margin-top:20px}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".incidentRequestModule_af032d9c .formSection_af032d9c{border-left:3px solid #e74c3c;margin-bottom:20px;padding-left:15px}.incidentRequestModule_af032d9c .attachmentUpload_af032d9c{border:2px dashed #0078d4;border-radius:4px;cursor:pointer;padding:20px;text-align:center;transition:background-color .3s}.incidentRequestModule_af032d9c .attachmentUpload_af032d9c:hover{background-color:#f3f2f1}.incidentRequestModule_af032d9c .actionButtons_af032d9c{display:flex;gap:10px;margin-top:20px}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  incidentRequestModule: "incidentRequestModule_ea42a244",
-  formSection: "formSection_ea42a244",
-  attachmentUpload: "attachmentUpload_ea42a244",
-  actionButtons: "actionButtons_ea42a244"
+  incidentRequestModule: "incidentRequestModule_af032d9c",
+  formSection: "formSection_af032d9c",
+  attachmentUpload: "attachmentUpload_af032d9c",
+  actionButtons: "actionButtons_af032d9c"
 });
 
 
@@ -97,33 +97,60 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_2733f1a0{--primary-blue:#2563eb;--primary-gradient:linear-gradient(135deg,#1e40af,#3b82f6);--surface-bg:#fff;--text-main:#0f172a;--text-muted:#64748b;--card-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--card-shadow-hover:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_2733f1a0.dark_2733f1a0{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_2733f1a0.dark_2733f1a0 .sidebarNavItem_2733f1a0:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_2733f1a0 .mainContent_2733f1a0{display:flex;flex-direction:column;gap:24px;margin:0 auto;max-width:1200px}.inventoryManagement_2733f1a0 .heroSection_2733f1a0{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:var(--card-shadow);color:#fff;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;overflow:hidden;padding:40px;position:relative}@media (max-width:768px){.inventoryManagement_2733f1a0 .heroSection_2733f1a0{align-items:center;flex-direction:column;padding:30px 20px;text-align:center}}.inventoryManagement_2733f1a0 .heroSection_2733f1a0:after{background:hsla(0,0%,100%,.1);border-radius:50%;content:\"\";filter:blur(40px);height:300px;position:absolute;right:-10%;top:-50%;width:300px}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0{flex:1;min-width:250px;z-index:1}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0 h2{font-size:2.2rem;font-weight:700;letter-spacing:-.025em;margin:0 0 8px}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0 p{font-size:1.1rem;margin:0;opacity:.9}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0 .smallText_2733f1a0{display:block;font-size:.85rem;margin-top:12px;opacity:.7}@media (max-width:768px){.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .heroText_2733f1a0{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .welcomeDiagramContainer_2733f1a0{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:20px;z-index:1}@media (max-width:768px){.inventoryManagement_2733f1a0 .heroSection_2733f1a0 .welcomeDiagramContainer_2733f1a0{margin-left:0;margin-top:10px}}.inventoryManagement_2733f1a0 .actionGrid_2733f1a0{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0{background:var(--surface-bg);border-radius:8px;box-shadow:var(--card-shadow);padding:6px;transition:all .3s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0:hover{box-shadow:var(--card-shadow-hover);transform:translateY(-2px)}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0 .ms-Button--primary{background:var(--primary-gradient);border:none;border-radius:6px;font-size:.9rem;font-weight:600;height:40px;transition:all .2s ease;width:100%}.inventoryManagement_2733f1a0 .actionButtonContainer_2733f1a0 .ms-Button--primary:hover{filter:brightness(1.15);transform:scale(1.01)}.inventoryManagement_2733f1a0 .sidebarNavItem_2733f1a0{transition:all .2s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2733f1a0 .sidebarNavItem_2733f1a0:hover{background-color:hsla(0,0%,50%,.08)!important;color:var(--text-main)!important}.inventoryManagement_2733f1a0 .appLayoutContainer_2733f1a0{align-items:flex-start;display:flex;gap:20px;margin-top:20px}@media (max-width:768px){.inventoryManagement_2733f1a0 .appLayoutContainer_2733f1a0{align-items:stretch;flex-direction:column}}.inventoryManagement_2733f1a0 .sidebarContainer_2733f1a0{background-color:var(--surface-bg);border:1px solid hsla(0,0%,50%,.15);border-radius:var(--radius-md);box-shadow:var(--card-shadow);display:flex;flex-direction:column;flex-shrink:0;gap:6px;padding:16px 12px;width:250px}@media (max-width:768px){.inventoryManagement_2733f1a0 .sidebarContainer_2733f1a0{box-sizing:border-box;width:100%}}.inventoryManagement_2733f1a0 .contentContainer_2733f1a0{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_2733f1a0 .card_2733f1a0{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-radius:var(--radius-lg);box-shadow:var(--card-shadow);padding:24px}.inventoryManagement_2733f1a0 .card_2733f1a0 .cardHeader_2733f1a0{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_2733f1a0 .card_2733f1a0 .cardHeader_2733f1a0 h3{color:var(--text-main);font-size:1.25rem;font-weight:600;margin:0}.inventoryManagement_2733f1a0 .ms-DetailsList{background:transparent!important}.inventoryManagement_2733f1a0 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_2733f1a0 .ms-DetailsRow{border:none!important;border-radius:8px;margin-bottom:4px}.inventoryManagement_2733f1a0 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_2733f1a0 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:24px!important;width:100%!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link{align-items:center!important;background-color:var(--surface-bg)!important;border:1px solid rgba(0,0,0,.08)!important;border-radius:8px!important;box-shadow:0 1px 3px rgba(0,0,0,.02)!important;display:flex!important;font-weight:500!important;gap:6px!important;height:46px!important;justify-content:center!important;margin:0!important;transition:all .2s cubic-bezier(.4,0,.2,1)!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link:hover{background-color:rgba(0,0,0,.03)!important;border-color:rgba(0,0,0,.15)!important;color:var(--text-main)!important;transform:translateY(-1px)!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0{background:var(--primary-gradient)!important;border-color:transparent!important;box-shadow:0 4px 12px rgba(37,99,235,.2)!important;color:#fff!important;font-weight:600!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0:before{display:none!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0 .ms-Pivot-link-content,.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0 .ms-Pivot-link-content i,.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link.is-selected_2733f1a0 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_2733f1a0 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0{align-items:center;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationInfo_2733f1a0{color:var(--text-muted);font-size:.85rem}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationInfo_2733f1a0 strong{color:var(--text-main)}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0{align-items:center;display:flex;gap:6px}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0{align-items:center;background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.08);border-radius:6px;color:var(--text-main);cursor:pointer;display:flex;font-size:.82rem;font-weight:500;height:32px;justify-content:center;min-width:32px;padding:0 8px;transition:all .2s ease}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0:hover:not(:disabled){background-color:rgba(0,0,0,.04);border-color:rgba(0,0,0,.15);transform:translateY(-1px)}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0:active:not(:disabled){transform:translateY(0)}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0:disabled{background-color:rgba(0,0,0,.02);cursor:not-allowed;opacity:.4}.inventoryManagement_2733f1a0 .paginationContainer_2733f1a0 .paginationControls_2733f1a0 .paginationButton_2733f1a0.active_2733f1a0{background:var(--primary-gradient);border-color:transparent;box-shadow:0 2px 8px rgba(37,99,235,.2);color:#fff;font-weight:600}.inventoryManagement_2733f1a0 .assetCardHover_2733f1a0:hover{border-color:rgba(37,99,235,.2)!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)!important;transform:translateY(-4px)!important}.inventoryManagement_2733f1a0.teams_2733f1a0{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_1416777f{--primary-blue:#2563eb;--primary-gradient:linear-gradient(135deg,#1e40af,#3b82f6);--surface-bg:#fff;--text-main:#0f172a;--text-muted:#64748b;--card-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--card-shadow-hover:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_1416777f.dark_1416777f{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_1416777f.dark_1416777f .sidebarNavItem_1416777f:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_1416777f .mainContent_1416777f{display:flex;flex-direction:column;gap:24px;margin:0 auto;max-width:1200px}.inventoryManagement_1416777f .heroSection_1416777f{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:var(--card-shadow);color:#fff;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;overflow:hidden;padding:40px;position:relative}@media (max-width:768px){.inventoryManagement_1416777f .heroSection_1416777f{align-items:center;flex-direction:column;padding:30px 20px;text-align:center}}.inventoryManagement_1416777f .heroSection_1416777f:after{background:hsla(0,0%,100%,.1);border-radius:50%;content:\"\";filter:blur(40px);height:300px;position:absolute;right:-10%;top:-50%;width:300px}.inventoryManagement_1416777f .heroSection_1416777f .heroText_1416777f{flex:1;min-width:250px;z-index:1}.inventoryManagement_1416777f .heroSection_1416777f .heroText_1416777f h2{font-size:2.2rem;font-weight:700;letter-spacing:-.025em;margin:0 0 8px}.inventoryManagement_1416777f .heroSection_1416777f .heroText_1416777f p{font-size:1.1rem;margin:0;opacity:.9}.inventoryManagement_1416777f .heroSection_1416777f .heroText_1416777f .smallText_1416777f{display:block;font-size:.85rem;margin-top:12px;opacity:.7}@media (max-width:768px){.inventoryManagement_1416777f .heroSection_1416777f .heroText_1416777f{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_1416777f .heroSection_1416777f .welcomeDiagramContainer_1416777f{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:20px;z-index:1}@media (max-width:768px){.inventoryManagement_1416777f .heroSection_1416777f .welcomeDiagramContainer_1416777f{margin-left:0;margin-top:10px}}.inventoryManagement_1416777f .actionGrid_1416777f{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.inventoryManagement_1416777f .actionButtonContainer_1416777f{background:var(--surface-bg);border-radius:8px;box-shadow:var(--card-shadow);padding:6px;transition:all .3s cubic-bezier(.4,0,.2,1)}.inventoryManagement_1416777f .actionButtonContainer_1416777f:hover{box-shadow:var(--card-shadow-hover);transform:translateY(-2px)}.inventoryManagement_1416777f .actionButtonContainer_1416777f .ms-Button--primary{background:var(--primary-gradient);border:none;border-radius:6px;font-size:.9rem;font-weight:600;height:40px;transition:all .2s ease;width:100%}.inventoryManagement_1416777f .actionButtonContainer_1416777f .ms-Button--primary:hover{filter:brightness(1.15);transform:scale(1.01)}.inventoryManagement_1416777f .sidebarNavItem_1416777f{transition:all .2s cubic-bezier(.4,0,.2,1)}.inventoryManagement_1416777f .sidebarNavItem_1416777f:hover{background-color:hsla(0,0%,50%,.08)!important;color:var(--text-main)!important}.inventoryManagement_1416777f .appLayoutContainer_1416777f{align-items:flex-start;display:flex;gap:20px;margin-top:20px}@media (max-width:768px){.inventoryManagement_1416777f .appLayoutContainer_1416777f{align-items:stretch;flex-direction:column}}.inventoryManagement_1416777f .sidebarContainer_1416777f{background-color:var(--surface-bg);border:1px solid hsla(0,0%,50%,.15);border-radius:var(--radius-md);box-shadow:var(--card-shadow);display:flex;flex-direction:column;flex-shrink:0;gap:6px;padding:16px 12px;width:250px}@media (max-width:768px){.inventoryManagement_1416777f .sidebarContainer_1416777f{box-sizing:border-box;width:100%}}.inventoryManagement_1416777f .contentContainer_1416777f{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_1416777f .card_1416777f{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-radius:var(--radius-lg);box-shadow:var(--card-shadow);padding:24px}.inventoryManagement_1416777f .card_1416777f .cardHeader_1416777f{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_1416777f .card_1416777f .cardHeader_1416777f h3{color:var(--text-main);font-size:1.25rem;font-weight:600;margin:0}.inventoryManagement_1416777f .ms-DetailsList{background:transparent!important}.inventoryManagement_1416777f .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_1416777f .ms-DetailsRow{border:none!important;border-radius:8px;margin-bottom:4px}.inventoryManagement_1416777f .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_1416777f .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:24px!important;width:100%!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link{align-items:center!important;background-color:var(--surface-bg)!important;border:1px solid rgba(0,0,0,.08)!important;border-radius:8px!important;box-shadow:0 1px 3px rgba(0,0,0,.02)!important;display:flex!important;font-weight:500!important;gap:6px!important;height:46px!important;justify-content:center!important;margin:0!important;transition:all .2s cubic-bezier(.4,0,.2,1)!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link:hover{background-color:rgba(0,0,0,.03)!important;border-color:rgba(0,0,0,.15)!important;color:var(--text-main)!important;transform:translateY(-1px)!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link.is-selected_1416777f{background:var(--primary-gradient)!important;border-color:transparent!important;box-shadow:0 4px 12px rgba(37,99,235,.2)!important;color:#fff!important;font-weight:600!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link.is-selected_1416777f:before{display:none!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link.is-selected_1416777f .ms-Pivot-link-content,.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link.is-selected_1416777f .ms-Pivot-link-content i,.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link.is-selected_1416777f .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_1416777f .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_1416777f .paginationContainer_1416777f{align-items:center;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_1416777f .paginationContainer_1416777f{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationInfo_1416777f{color:var(--text-muted);font-size:.85rem}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationInfo_1416777f strong{color:var(--text-main)}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationControls_1416777f{align-items:center;display:flex;gap:6px}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationControls_1416777f .paginationButton_1416777f{align-items:center;background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.08);border-radius:6px;color:var(--text-main);cursor:pointer;display:flex;font-size:.82rem;font-weight:500;height:32px;justify-content:center;min-width:32px;padding:0 8px;transition:all .2s ease}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationControls_1416777f .paginationButton_1416777f:hover:not(:disabled){background-color:rgba(0,0,0,.04);border-color:rgba(0,0,0,.15);transform:translateY(-1px)}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationControls_1416777f .paginationButton_1416777f:active:not(:disabled){transform:translateY(0)}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationControls_1416777f .paginationButton_1416777f:disabled{background-color:rgba(0,0,0,.02);cursor:not-allowed;opacity:.4}.inventoryManagement_1416777f .paginationContainer_1416777f .paginationControls_1416777f .paginationButton_1416777f.active_1416777f{background:var(--primary-gradient);border-color:transparent;box-shadow:0 2px 8px rgba(37,99,235,.2);color:#fff;font-weight:600}.inventoryManagement_1416777f .assetCardHover_1416777f:hover{border-color:rgba(37,99,235,.2)!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)!important;transform:translateY(-4px)!important}.inventoryManagement_1416777f.teams_1416777f{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  inventoryManagement: "inventoryManagement_2733f1a0",
-  dark: "dark_2733f1a0",
-  sidebarNavItem: "sidebarNavItem_2733f1a0",
-  mainContent: "mainContent_2733f1a0",
-  heroSection: "heroSection_2733f1a0",
-  heroText: "heroText_2733f1a0",
-  smallText: "smallText_2733f1a0",
-  welcomeDiagramContainer: "welcomeDiagramContainer_2733f1a0",
-  actionGrid: "actionGrid_2733f1a0",
-  actionButtonContainer: "actionButtonContainer_2733f1a0",
-  appLayoutContainer: "appLayoutContainer_2733f1a0",
-  sidebarContainer: "sidebarContainer_2733f1a0",
-  contentContainer: "contentContainer_2733f1a0",
-  card: "card_2733f1a0",
-  cardHeader: "cardHeader_2733f1a0",
-  "is-selected": "is-selected_2733f1a0",
-  paginationContainer: "paginationContainer_2733f1a0",
-  paginationInfo: "paginationInfo_2733f1a0",
-  paginationControls: "paginationControls_2733f1a0",
-  paginationButton: "paginationButton_2733f1a0",
-  active: "active_2733f1a0",
-  assetCardHover: "assetCardHover_2733f1a0",
-  teams: "teams_2733f1a0"
+  inventoryManagement: "inventoryManagement_1416777f",
+  dark: "dark_1416777f",
+  sidebarNavItem: "sidebarNavItem_1416777f",
+  mainContent: "mainContent_1416777f",
+  heroSection: "heroSection_1416777f",
+  heroText: "heroText_1416777f",
+  smallText: "smallText_1416777f",
+  welcomeDiagramContainer: "welcomeDiagramContainer_1416777f",
+  actionGrid: "actionGrid_1416777f",
+  actionButtonContainer: "actionButtonContainer_1416777f",
+  appLayoutContainer: "appLayoutContainer_1416777f",
+  sidebarContainer: "sidebarContainer_1416777f",
+  contentContainer: "contentContainer_1416777f",
+  card: "card_1416777f",
+  cardHeader: "cardHeader_1416777f",
+  "is-selected": "is-selected_1416777f",
+  paginationContainer: "paginationContainer_1416777f",
+  paginationInfo: "paginationInfo_1416777f",
+  paginationControls: "paginationControls_1416777f",
+  paginationButton: "paginationButton_1416777f",
+  active: "active_1416777f",
+  assetCardHover: "assetCardHover_1416777f",
+  teams: "teams_1416777f"
+});
+
+
+/***/ }),
+
+/***/ 45217:
+/*!***********************************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/ReplacementHistory/ReplacementHistory.module.scss.css ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/@microsoft/sp-css-loader/node_modules/@microsoft/load-themed-styles/lib-es6/index.js */ 96323);
+// Imports
+
+
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".replacementHistory_60c9b69a .filterSection_60c9b69a{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px}@media (max-width:768px){.replacementHistory_60c9b69a .filterSection_60c9b69a{flex-direction:column}}.replacementHistory_60c9b69a .statusBadge_60c9b69a{border-radius:4px;display:inline-block;font-size:12px;font-weight:600;padding:6px 12px;text-align:center}", true);
+
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  replacementHistory: "replacementHistory_60c9b69a",
+  filterSection: "filterSection_60c9b69a",
+  statusBadge: "statusBadge_60c9b69a"
 });
 
 
@@ -1876,17 +1903,37 @@ const IncidentRequestModule = (props) => {
         }, 500);
         return () => clearTimeout(timer);
     }, [formData.employeeName]);
-    // Sync with props when employee context changes or when a preselected asset is passed
+    const prevIsOpenRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(props.isOpen);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         setFormData((prev) => ({
             ...prev,
             employeeName: props.userDisplayName || '',
             employeeId: props.employeeId || '',
             employeeEmail: props.userEmail || '',
-            assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : (props.isOpen ? '' : prev.assetName),
-            serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : (props.isOpen ? '' : prev.serialNo),
         }));
-    }, [props.userDisplayName, props.employeeId, props.userEmail, props.preselectedAsset, props.isOpen]);
+    }, [props.userDisplayName, props.employeeId, props.userEmail]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        if (props.isOpen && !prevIsOpenRef.current) {
+            // Panel just opened! Reset fields.
+            setFormData((prev) => ({
+                ...prev,
+                assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : '',
+                serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : '',
+                incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : '',
+                description: '',
+            }));
+        }
+        else if (props.preselectedAsset || props.preselectedIncidentType) {
+            // Sync preselected asset or incident type if props update while open
+            setFormData((prev) => ({
+                ...prev,
+                assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : prev.assetName,
+                serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : prev.serialNo,
+                incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : prev.incidentType,
+            }));
+        }
+        prevIsOpenRef.current = props.isOpen;
+    }, [props.isOpen, props.preselectedAsset, props.preselectedIncidentType]);
     const loadAssignedAssetsForName = async (name) => {
         if (!name.trim()) {
             setAssignedAssets([]);
@@ -1935,7 +1982,8 @@ const IncidentRequestModule = (props) => {
             };
             console.log('Submitting incident payload:', payload);
             await service.createIncidentRequest(payload);
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.success, text: 'Incident reported successfully!' });
+            const isRep = props.preselectedIncidentType === 'Replacement Request';
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.success, text: isRep ? 'Replacement request submitted successfully!' : 'Incident reported successfully!' });
             setTimeout(() => {
                 setFormData({
                     employeeName: props.userDisplayName || '',
@@ -1989,11 +2037,14 @@ const IncidentRequestModule = (props) => {
         text: `${a.assetName} (S/N: ${a.serialNumber || 'N/A'})`,
     }));
     const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PanelType.custom, customWidth: "450px", headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
+    const isReplacementMode = props.preselectedIncidentType === 'Replacement Request';
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PanelType.custom, customWidth: "450px", headerText: isReplacementMode ? "Request Asset Replacement" : "Raise Incident", closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _IncidentRequestModule_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].incidentRequestModule },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 15 } },
                 message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),
-                !isLoadingAssets && assignedAssets.length === 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.info }, "You currently have no assets assigned. You can still raise generic incidents.")),
+                !isLoadingAssets && assignedAssets.length === 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.info }, isReplacementMode
+                    ? "You currently have no assets assigned to request a replacement for."
+                    : "You currently have no assets assigned. You can still raise generic incidents.")),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Employee Name", value: formData.employeeName, onChange: (ev, val) => handleInputChange('employeeName', val || ''), required: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
                         const selected = assignedAssets.find(a => a.id === option?.key);
@@ -2010,14 +2061,14 @@ const IncidentRequestModule = (props) => {
                     }, disabled: isLoadingAssets }),
                 formData.assetName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Asset Name", value: formData.assetName, disabled: true })),
                 formData.serialNo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Serial NO", value: formData.serialNo, disabled: true })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Incident Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Incident Type" }),
+                !isReplacementMode && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Issue Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Issue Type" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Priority", options: priorityOptions, selectedKey: formData.priority, onChange: (ev, option) => handleInputChange('priority', option?.key) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Description", multiline: true, rows: 5, placeholder: "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: isReplacementMode ? "Reason for Replacement" : "Description", multiline: true, rows: 5, placeholder: isReplacementMode ? "Describe the reason for replacement..." : "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Raised To", options: raisedToOptions, selectedKey: formData.raisedTo, onChange: (ev, option) => handleInputChange('raisedTo', option?.key), placeholder: "Select Team" }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Raised Date", value: formData.raisedDate, readOnly: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Status", value: formData.status, readOnly: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: 20 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: isReplacementMode ? "Request Replacement" : "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: "Cancel", onClick: handleCancel }))))));
 };
 
@@ -2282,33 +2333,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EventStream__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./EventStream */ 19178);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
 /* harmony import */ var _ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReturnRequestList */ 18397);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 20472);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Dashboard */ 71422);
-/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./AssetTracking */ 20867);
-/* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
-/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentHistory/IncidentHistory */ 27885);
-/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/EmailService */ 86407);
+/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Dashboard */ 71422);
+/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./AssetTracking */ 20867);
+/* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
+/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
+/* harmony import */ var _IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./IncidentHistory/IncidentHistory */ 27885);
+/* harmony import */ var _ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./ReplacementHistory/ReplacementHistory */ 81635);
+/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
 
 
 
@@ -2326,6 +2379,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 chart_js__WEBPACK_IMPORTED_MODULE_13__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_13__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_13__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_13__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_13__.Title, chart_js__WEBPACK_IMPORTED_MODULE_13__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_13__.Legend);
+
+
 
 
 
@@ -2583,6 +2638,46 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 isNotificationDetailsOpen: true
             });
         };
+        this._handleMockEmailSent = (ev) => {
+            this.setState({
+                lastMockEmail: ev.detail,
+                editMockEmailTo: ev.detail.to.join(', '),
+                editMockEmailSubject: ev.detail.subject,
+                isSendingMockEmail: false,
+                mockEmailSendError: undefined,
+                mockEmailSendSuccess: false
+            });
+        };
+        this._handleEmailSendFailed = (ev) => {
+            this.setState({
+                syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
+                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.warning
+            });
+        };
+        this._onSendMockEmail = async () => {
+            const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
+            if (!lastMockEmail)
+                return;
+            this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
+            try {
+                const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
+                await _services_EmailService__WEBPACK_IMPORTED_MODULE_18__.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
+                this.setState({
+                    isSendingMockEmail: false,
+                    mockEmailSendSuccess: true
+                });
+                setTimeout(() => {
+                    this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
+                }, 2000);
+            }
+            catch (e) {
+                console.error("Failed to send email from panel:", e);
+                this.setState({
+                    isSendingMockEmail: false,
+                    mockEmailSendError: e.message || JSON.stringify(e)
+                });
+            }
+        };
         this._resolveUserRole = async () => {
             try {
                 const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_7__.getSP)();
@@ -2798,6 +2893,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     id: tempId,
                     requestKey: `REQ-${("000000" + (this.state.requests.length + 1)).slice(-6)}`,
                     requesterName: requestData.requesterName,
+                    requesterEmail: requestData.requesterEmail,
                     employeeId: requestData.employeeId || "",
                     assetId: requestData.assetId || "1",
                     assetTitle: requestData.assetTitle,
@@ -2920,13 +3016,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.info
                 });
                 const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -2936,7 +3032,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.error
                 });
             }
         };
@@ -2945,21 +3041,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.info
                 });
                 const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.error
                 });
             }
         };
@@ -3013,7 +3109,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 progressPercent = 1.0;
                 currentStepText = "Declined by Manager";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
@@ -3057,18 +3153,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
                         " Detailed Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Stack, { tokens: { childrenGap: 12 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Check Passed:"),
                                 " There are currently ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
                                 " unit(s) of ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Warning:"),
                                 " Only ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
@@ -3100,7 +3196,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
             const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
@@ -3122,7 +3218,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 healthRating = "Critical Needs Replacement";
                 healthIcon = "Warning";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
@@ -3163,9 +3259,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#374151' } }, asset.note)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Stack, { tokens: { childrenGap: 12 } },
                         ageInMonths !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
@@ -3176,21 +3272,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
                                 asset.warrantyExpiry,
-                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
                                 " Covered under manufacturer protection until ",
                                 asset.warrantyExpiry,
-                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                     "Health Classification: ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } }, healthRating))),
@@ -3229,7 +3325,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const id = parts[0];
                 associatedAsset = items.find(a => a.id === id);
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_32__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Received:"),
@@ -3241,7 +3337,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     associatedAsset && this._renderAssetAnalysis(associatedAsset),
                     !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3333,7 +3429,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 ? "Select asset to assign..."
                 : "No assets of this type in stock";
             const isBusy = this.state.requestActionInProgressId === request.id;
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_32__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -3420,13 +3516,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                         root: { color: '#dc2626', borderColor: '#dc2626' },
                                         rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                                     } })))))));
@@ -3471,10 +3567,17 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             activeUserEmail: activeEmail,
             isIncidentFormOpen: false,
             selectedAssetForIncident: undefined,
+            preselectedIncidentType: undefined,
             selectedAdminRequest: undefined,
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
-            adminComment: ''
+            adminComment: '',
+            lastMockEmail: undefined,
+            editMockEmailTo: '',
+            editMockEmailSubject: '',
+            isSendingMockEmail: false,
+            mockEmailSendError: undefined,
+            mockEmailSendSuccess: false
         };
     }
     async componentDidMount() {
@@ -3489,6 +3592,16 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         }
         catch (e) {
             console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
+        }
+        if (typeof window !== 'undefined') {
+            window.addEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
+            window.addEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
+        }
+    }
+    componentWillUnmount() {
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
+            window.removeEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
         }
     }
     render() {
@@ -3523,6 +3636,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 badgeColor: '#3b82f6'
             },
             { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
+            { key: 'ReplacementHistory', text: 'Replacement History', icon: 'Sync' },
             ...(isAdmin ? [
                 { key: 'Inventory', text: 'Inventory', icon: 'List' }
             ] : []),
@@ -3562,7 +3676,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             "SharePoint Groups: ",
                             (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', '))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_25__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
                     " ",
@@ -3570,11 +3684,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": "Dismiss error" }, "\u00D7"))),
                 !roleLoading && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionGrid },
                     (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionButtonContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } }))),
                     (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionButtonContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } }))),
                     (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionButtonContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Raise Incident", onClick: () => this.setState({ isIncidentFormOpen: true }), iconProps: { iconName: 'AlertSolid' } }))))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: "Raise Incident", onClick: () => this.setState({ isIncidentFormOpen: true }), iconProps: { iconName: 'AlertSolid' } }))))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].appLayoutContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 12px 16px 12px', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', marginBottom: '8px' } },
@@ -3601,7 +3715,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         : 'var(--text-muted)',
                                     transition: 'all 0.15s ease'
                                 }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon, style: { fontSize: '15px' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Icon, { iconName: nav.icon, style: { fontSize: '15px' } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { flexGrow: 1 } }, nav.text),
                                 nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
                                         fontSize: '0.7rem',
@@ -3615,13 +3729,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` }, (() => {
                         switch (this.state.selectedTabKey) {
                             case 'Dashboard':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_18__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager }));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_19__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager }));
                             case 'MyAssets':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Assigned Assets")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "View assets currently assigned to you."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) })));
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }), onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' }) })));
                             case 'MyRequests':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3629,12 +3743,17 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track your submitted requests and approval status."),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests })));
                             case 'Notifications':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_20__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_21__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
                             case 'IncidentHistory':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Incident History")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_22__.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_23__.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
+                            case 'ReplacementHistory':
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Replacement History")),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__.ReplacementHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                             case 'Inventory':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3646,11 +3765,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_35__.Pie, { data: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
                                                     labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                         const status = req.status || 'Pending';
                                                         acc[status] = (acc[status] || 0) + 1;
@@ -3700,7 +3819,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                             case 'AssetReturns':
                                 return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -3718,13 +3837,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
                                                 const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
                                                 window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                                             } })),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.DetailsList, { items: this.state.employees.map(emp => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
                                                 const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                 const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                 const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -3755,13 +3874,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                         } }, item.assignedAssets))
                                                 },
                                                 { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_38__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                 if (!rowProps)
                                                     return null;
                                                 const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsRow, { ...rowProps })),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
                                                     isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                             "Assets assigned to ",
@@ -3772,7 +3891,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Employee Asset Tracking")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_19__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_20__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
                             case 'Reports':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3845,7 +3964,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Warranty Expiry Report"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Export to Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: "Export to Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: {
                                                     root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' },
                                                     rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },
                                                     rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }
@@ -3857,7 +3976,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Assets with Warranty Data"),
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.filter(i => i.warrantyExpiry).length))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.DetailsList, { items: items, columns: [
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: items, columns: [
                                                 { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
                                                 { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
                                                 { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
@@ -3880,7 +3999,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                             isExpired && '(Expired)'));
                                                     }
                                                 }
-                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_38__.SelectionMode.none })))) : null;
+                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none })))) : null;
                             case 'Config':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3893,12 +4012,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Mapping List"),
                                             ". Use the buttons below to perform a manual synchronization check or diagnose the list's database schema."),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets", iconProps: { iconName: 'Sync' }, onClick: this._onSyncAssignedAssets, disabled: this.state.syncInProgress }),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics", iconProps: { iconName: 'Database' }, onClick: this._onRunDiagnostics, disabled: this.state.syncInProgress, styles: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets", iconProps: { iconName: 'Sync' }, onClick: this._onSyncAssignedAssets, disabled: this.state.syncInProgress }),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics", iconProps: { iconName: 'Database' }, onClick: this._onRunDiagnostics, disabled: this.state.syncInProgress, styles: {
                                                     root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
                                                     rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
                                                 } })),
-                                        this.state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: this.state.syncMessageType, onDismiss: () => this.setState({ syncMessage: undefined }), styles: { root: { marginBottom: '15px', borderRadius: '6px' } } }, this.state.syncMessage)),
+                                        this.state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: this.state.syncMessageType, onDismiss: () => this.setState({ syncMessage: undefined }), styles: { root: { marginBottom: '15px', borderRadius: '6px' } } }, this.state.syncMessage)),
                                         this.state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '15px' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' } }, "Diagnostic Log Output:"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: this.state.diagnosticInfo, rows: 10, style: {
@@ -3953,11 +4072,25 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         }
                     })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_8__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_21__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType })),
             this._renderNotificationDetailsPanel(),
             this._renderAdminAssignmentPanel(),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest })));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_32__.PanelType.medium, headerText: "\uD83D\uDCEC Outgoing Email Notification (Developer Preview)", closeButtonAriaLabel: "Close", onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PrimaryButton, { text: this.state.isSendingMockEmail ? "Sending..." : "Send Email", onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.DefaultButton, { text: "Close", onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
+                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
+                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_26__.MessageBarType.error },
+                    "Failed to send email: ",
+                    this.state.mockEmailSendError)),
+                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.ProgressIndicator, { label: "Dispatched email transaction in progress..." })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, "Email Content Preview:"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
     }
 }
 
@@ -3994,7 +4127,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const MyAssignedAssetsView = (props) => {
-    const { items, onReturnAsset, onRaiseIncident } = props;
+    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement } = props;
     // Search and Filter States
     const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     const [selectedType, setSelectedType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All');
@@ -4363,6 +4496,7 @@ const MyAssignedAssetsView = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         padding: '8px 14px 10px 14px',
                         display: 'flex',
+                        flexWrap: 'wrap',
                         gap: '6px',
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
                         alignItems: 'center'
@@ -4372,6 +4506,7 @@ const MyAssignedAssetsView = (props) => {
                             setIsPanelOpen(true);
                         }, style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
+                    onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Asset Replacement", iconProps: { iconName: 'Sync' }, onClick: () => onAssetReplacement(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } })),
                     isPendingReturn ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
                             backgroundColor: '#ffe8d6',
                             color: '#a63e00',
@@ -4448,6 +4583,11 @@ const MyAssignedAssetsView = (props) => {
                             onRaiseIncident(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'AlertSolid' } }),
+                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Asset Replacement", onClick: () => {
+                            setIsPanelOpen(false);
+                            onAssetReplacement(selectedAsset);
+                            setSelectedAsset(null);
+                        }, iconProps: { iconName: 'Sync' } })),
                     selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Request Return", onClick: () => {
                             setIsPanelOpen(false);
                             onReturnAsset(selectedAsset);
@@ -4968,6 +5108,462 @@ const NotificationCenter = (props) => {
 
 /***/ }),
 
+/***/ 81635:
+/*!**********************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/ReplacementHistory/ReplacementHistory.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReplacementHistory: () => (/* binding */ ReplacementHistory)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
+/* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
+/* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+
+
+
+
+
+
+const ReplacementHistory = (props) => {
+    const [replacements, setReplacements] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [filteredReplacements, setFilteredReplacements] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [searchText, setSearchText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [statusFilter, setStatusFilter] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [selectedReplacement, setSelectedReplacement] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const getPriorityBadgeStyle = (priority) => {
+        const p = priority || 'Medium';
+        let backgroundColor = '#f3f4f6';
+        let color = '#4b5563';
+        if (p === 'High' || p === 'Critical') {
+            backgroundColor = '#fee2e2';
+            color = '#b91c1c';
+        }
+        else if (p === 'Low') {
+            backgroundColor = '#dbeafe';
+            color = '#1e3a8a';
+        }
+        return {
+            backgroundColor,
+            color,
+            padding: '4px 10px',
+            borderRadius: '9999px',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            display: 'inline-block'
+        };
+    };
+    const getStatusBadgeStyle = (status) => {
+        const s = status || 'Open';
+        let backgroundColor = '#fee2e2';
+        let color = '#991b1b';
+        if (s === 'In Progress') {
+            backgroundColor = '#fef3c7';
+            color = '#92400e';
+        }
+        else if (s === 'Resolved') {
+            backgroundColor = '#dcfce7';
+            color = '#166534';
+        }
+        else if (s === 'Closed') {
+            backgroundColor = '#f3f4f6';
+            color = '#4b5563';
+        }
+        return {
+            backgroundColor,
+            color,
+            padding: '4px 12px',
+            borderRadius: '9999px',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            display: 'inline-block',
+            textAlign: 'center'
+        };
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        loadReplacements();
+    }, [props.userEmail]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        filterReplacements();
+    }, [searchText, statusFilter, replacements]);
+    const loadReplacements = async () => {
+        try {
+            props.setIsLoading(true);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            const isAdmin = props.userRole === 'Admin';
+            const data = await service.getEmployeeReplacementHistory(props.userEmail, isAdmin);
+            setReplacements(data);
+        }
+        catch (error) {
+            console.error('Error loading replacement history:', error);
+        }
+        finally {
+            props.setIsLoading(false);
+        }
+    };
+    const filterReplacements = () => {
+        let filtered = [...replacements];
+        if (searchText) {
+            filtered = filtered.filter((rep) => (rep.assetName || '').toLowerCase().includes(searchText.toLowerCase()) ||
+                (rep.incidentId || '').toLowerCase().includes(searchText.toLowerCase()));
+        }
+        if (statusFilter) {
+            filtered = filtered.filter((rep) => rep.status === statusFilter);
+        }
+        setFilteredReplacements(filtered);
+    };
+    const handleViewDetails = (item) => {
+        setSelectedReplacement(item);
+        setTempResolution(item.resolution || '');
+        setShowDetailPanel(true);
+    };
+    const handleStatusChange = async (rep, newStatus) => {
+        try {
+            props.setIsLoading(true);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            await service.updateIncidentStatus(rep.id, newStatus, rep.resolution);
+            const updated = {
+                ...rep,
+                status: newStatus,
+                resolvedDate: newStatus === 'Resolved' || newStatus === 'Closed' ? new Date().toISOString() : rep.resolvedDate
+            };
+            setSelectedReplacement(updated);
+            await loadReplacements();
+        }
+        catch (error) {
+            console.error('Error updating status:', error);
+        }
+        finally {
+            props.setIsLoading(false);
+        }
+    };
+    const handleSaveResolution = async (rep) => {
+        try {
+            props.setIsLoading(true);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            await service.updateIncidentStatus(rep.id, rep.status, tempResolution);
+            const updated = {
+                ...rep,
+                resolution: tempResolution
+            };
+            setSelectedReplacement(updated);
+            await loadReplacements();
+        }
+        catch (error) {
+            console.error('Error saving resolution:', error);
+        }
+        finally {
+            props.setIsLoading(false);
+        }
+    };
+    const handleDownloadReport = (rep) => {
+        try {
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.jsPDF();
+            // Top header banner
+            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
+            doc.rect(0, 0, 210, 25, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(16);
+            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
+            // Document Title
+            doc.setTextColor(51, 65, 85); // Slate 700
+            doc.setFontSize(14);
+            doc.text("ASSET REPLACEMENT REPORT", 14, 38);
+            // Metadata
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(9);
+            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
+            // Separator line
+            doc.setDrawColor(226, 232, 240); // Slate 200
+            doc.line(14, 48, 196, 48);
+            // Specifications Section Title
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(11);
+            doc.text("REPLACEMENT SPECIFICATIONS", 14, 58);
+            // Render Specifications Key-Value grid
+            let y = 68;
+            const printField = (label, value) => {
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(9);
+                doc.setTextColor(100, 116, 139); // Slate 500
+                doc.text(label, 14, y);
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9.5);
+                doc.setTextColor(15, 23, 42); // Slate 900
+                doc.text(value, 55, y);
+                y += 8;
+            };
+            printField("Replacement ID:", rep.incidentId);
+            printField("Asset Name:", rep.assetName);
+            printField("Type:", "Replacement Request");
+            printField("Priority:", rep.priority || "Medium");
+            printField("Current Status:", rep.status || "Open");
+            printField("Reported Date:", new Date(rep.reportedDate).toLocaleString());
+            if (rep.assignedTo) {
+                printField("Assigned To:", rep.assignedTo);
+            }
+            if (rep.resolvedDate) {
+                printField("Resolved Date:", new Date(rep.resolvedDate).toLocaleString());
+            }
+            // Reason Title
+            y += 4;
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(11);
+            doc.setTextColor(51, 65, 85);
+            doc.text("REPLACEMENT REASON & DETAILS", 14, y);
+            y += 6;
+            // Reason Box
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(9.5);
+            doc.setTextColor(51, 65, 85);
+            const splitDesc = doc.splitTextToSize(rep.issueDescription || "No reason provided.", 170);
+            const descHeight = splitDesc.length * 6 + 10;
+            // Draw background box
+            doc.setFillColor(248, 250, 252); // slate 50
+            doc.setDrawColor(226, 232, 240); // slate 200
+            doc.rect(14, y, 182, descHeight, 'FD');
+            // Draw left accent bar
+            doc.setFillColor(100, 116, 139); // slate 500
+            doc.rect(14, y, 3, descHeight, 'F');
+            // Draw text
+            let textY = y + 8;
+            splitDesc.forEach((line) => {
+                doc.text(line, 22, textY);
+                textY += 6;
+            });
+            y += descHeight + 10;
+            // Resolution Details (if resolved/closed)
+            if (rep.resolution) {
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(11);
+                doc.setTextColor(51, 65, 85);
+                doc.text("RESOLUTION SUMMARY", 14, y);
+                y += 6;
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9.5);
+                doc.setTextColor(22, 101, 52); // green 800
+                const splitRes = doc.splitTextToSize(rep.resolution, 170);
+                const resHeight = splitRes.length * 6 + 10;
+                // Draw green background box
+                doc.setFillColor(240, 253, 244); // green 50
+                doc.setDrawColor(220, 252, 231); // green 200
+                doc.rect(14, y, 182, resHeight, 'FD');
+                // Draw green left accent bar
+                doc.setFillColor(22, 101, 52); // green 800
+                doc.rect(14, y, 3, resHeight, 'F');
+                // Draw resolution text
+                let resTextY = y + 8;
+                splitRes.forEach((line) => {
+                    doc.text(line, 22, resTextY);
+                    resTextY += 6;
+                });
+            }
+            doc.save(`replacement-${rep.incidentId}.pdf`);
+        }
+        catch (error) {
+            console.error('Error generating PDF report:', error);
+        }
+    };
+    const columns = [
+        {
+            key: 'replacementId',
+            name: 'Replacement ID',
+            fieldName: 'incidentId',
+            minWidth: 100,
+            maxWidth: 130,
+            isResizable: true,
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.incidentId),
+        },
+        {
+            key: 'assetName',
+            name: 'Asset',
+            fieldName: 'assetName',
+            minWidth: 120,
+            maxWidth: 180,
+            isResizable: true,
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.assetName),
+        },
+        {
+            key: 'issueType',
+            name: 'Type',
+            fieldName: 'issueType',
+            minWidth: 120,
+            maxWidth: 150,
+            isResizable: true,
+            onRender: () => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "Replacement Request"),
+        },
+        {
+            key: 'priority',
+            name: 'Priority',
+            fieldName: 'priority',
+            minWidth: 80,
+            maxWidth: 100,
+            isResizable: true,
+            onRender: (item) => {
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(item.priority) }, item.priority || 'Medium'));
+            },
+        },
+        {
+            key: 'status',
+            name: 'Status',
+            fieldName: 'status',
+            minWidth: 90,
+            maxWidth: 120,
+            isResizable: true,
+            onRender: (item) => {
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getStatusBadgeStyle(item.status) }, item.status || 'Open'));
+            },
+        },
+        {
+            key: 'reportedDate',
+            name: 'Reported',
+            fieldName: 'reportedDate',
+            minWidth: 100,
+            maxWidth: 130,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.reportedDate)
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "-");
+                try {
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, new Date(item.reportedDate).toLocaleDateString());
+                }
+                catch {
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.reportedDate);
+                }
+            },
+        },
+        {
+            key: 'actions',
+            name: 'Actions',
+            minWidth: 160,
+            maxWidth: 220,
+            isResizable: true,
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
+                    } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
+                    } }))),
+        },
+    ];
+    const statusFilterOptions = [
+        { key: '', text: 'All Status' },
+        { key: 'Open', text: 'Open' },
+        { key: 'In Progress', text: 'In Progress' },
+        { key: 'Resolved', text: 'Resolved' },
+        { key: 'Closed', text: 'Closed' },
+    ];
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' }, className: _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].replacementHistory },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 15 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SearchBox, { placeholder: "Search by replacement ID, asset name...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
+                "Showing ",
+                filteredReplacements.length,
+                " of ",
+                replacements.length,
+                " replacement requests"),
+            filteredReplacements.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '250px',
+                    border: '1px dashed #e5e7eb',
+                    borderRadius: '8px',
+                    padding: '30px'
+                } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No replacement requests found.")))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: "Replacement Request Details", closeButtonAriaLabel: "Close" }, selectedReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Reported:"),
+                " ",
+                new Date(selectedReplacement.reportedDate).toLocaleString()),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedReplacement.issueDescription)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Replacement Specifications"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Replacement ID:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.incidentId)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assetName)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Type:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "Replacement Request")),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Priority:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(selectedReplacement.priority) }, selectedReplacement.priority || 'Medium')),
+                    props.userRole === 'Admin' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { selectedKey: selectedReplacement.status || 'Open', options: [
+                                { key: 'Open', text: 'Open' },
+                                { key: 'In Progress', text: 'In Progress' },
+                                { key: 'Resolved', text: 'Resolved' },
+                                { key: 'Closed', text: 'Closed' }
+                            ], onChange: (ev, option) => handleStatusChange(selectedReplacement, option?.key), styles: { root: { width: 120 } } }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Status:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getStatusBadgeStyle(selectedReplacement.status) }, selectedReplacement.status || 'Open'))),
+                    selectedReplacement.assignedTo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Assigned To:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assignedTo))))),
+            props.userRole === 'Admin' && (selectedReplacement.status === 'Resolved' || selectedReplacement.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    " Update Resolution Details"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 10 } },
+                    selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        ' ',
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this replacement was completed..." }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    " Resolution Details"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
+                    selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        ' ',
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Resolution Summary:"),
+                        " ",
+                        selectedReplacement.resolution))))))))));
+};
+
+
+/***/ }),
+
 /***/ 28333:
 /*!********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/RequestForm.js ***!
@@ -5012,7 +5608,7 @@ const RequestForm = (props) => {
     const currentUserOption = {
         id: 'current-user',
         name: props.currentUserName,
-        email: '',
+        email: props.currentUserEmail || '',
         department: 'Your Department',
         jobTitle: 'Employee'
     };
@@ -5067,6 +5663,7 @@ const RequestForm = (props) => {
         if (selectedAssetType && employee) {
             props.onSubmitRequest({
                 requesterName: employee.name,
+                requesterEmail: employee.email,
                 employeeId: employeeId,
                 assetId: matchingAsset ? matchingAsset.id : '1',
                 assetTitle: selectedAssetType,
@@ -5802,6 +6399,7 @@ const ASSET_CATEGORIES = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getContext: () => (/* binding */ getContext),
 /* harmony export */   getSP: () => (/* binding */ getSP)
 /* harmony export */ });
 /* harmony import */ var _pnp_sp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/sp */ 2011);
@@ -5818,15 +6416,371 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// eslint-disable-next-line no-var
-var _sp;
+let _sp;
+let _context;
 const getSP = (context) => {
     if (context != null) {
+        _context = context;
         // Initialize the sp object with SPFx context and logging
         _sp = (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.spfi)().using((0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPFx)(context)).using((0,_pnp_logging__WEBPACK_IMPORTED_MODULE_1__.PnPLogging)(_pnp_logging__WEBPACK_IMPORTED_MODULE_1__.LogLevel.Warning));
     }
     return _sp;
 };
+const getContext = () => {
+    return _context;
+};
+
+
+/***/ }),
+
+/***/ 86407:
+/*!*******************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/EmailService.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EmailService: () => (/* binding */ EmailService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _pnp_sp_sputilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/sputilities */ 38229);
+/* harmony import */ var _pnp_sp_profiles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/sp/profiles */ 39878);
+/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/mockData */ 27962);
+
+
+
+
+class EmailService {
+    /**
+     * Helper to get target emails for Admins
+     */
+    static async getAdminEmails(liveEmails) {
+        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS : liveEmails;
+    }
+    /**
+     * Helper to get target email for Manager
+     */
+    static async getManagerEmail(liveEmail) {
+        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_MANAGER_EMAIL : liveEmail;
+    }
+    /**
+     * Helper to get target email for Employee
+     */
+    static async getEmployeeEmail(liveEmail) {
+        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS[0] : (liveEmail || this.MOCK_ADMIN_EMAILS[0]);
+    }
+    /**
+     * Send Approval Request Email to Manager (Diego / sanikommurohitha123@gmail.com)
+     */
+    static async sendApprovalRequestToManager(params, liveManagerEmail) {
+        const toEmail = await this.getManagerEmail(liveManagerEmail || "");
+        const subject = "Approval Required - Asset Request";
+        const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #2563eb, #1d4ed8); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Approval Required</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Asset Requisition Pending Your Action</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Hello,</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">A new asset request has been created and requires your review and approval:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Employee Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.employeeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Requested Asset</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Request ID</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #2563eb; font-weight: 700; font-size: 14px;">${params.requestKey}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Request Date</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.requestDate}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Requested By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.adminName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Status</td>
+                <td style="padding: 12px 15px; color: #d97706; font-weight: 700; font-size: 14px;">Pending Approval</td>
+              </tr>
+            </table>
+
+            <p style="font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; margin-top: 30px;">
+              Please open the Asset Management Portal to Approve or Reject this request.
+            </p>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated request from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+        await this.sendMail([toEmail], subject, body);
+    }
+    /**
+     * Send Approval Confirmation Email to Admins (Kiran / Akhila)
+     */
+    static async sendApprovalConfirmationToAdmin(params, liveAdminEmails) {
+        const toEmails = await this.getAdminEmails(liveAdminEmails || []);
+        const subject = "Asset Request Approved";
+        const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Request Approved</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Requisition Ready for Asset Assignment</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Hello Admin,</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">The following asset request has been approved by the manager. Please proceed to allocate the asset to the employee in the Admin panel:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Request ID</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #2563eb; font-weight: 700; font-size: 14px;">${params.requestKey}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Employee Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.employeeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Approved By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.approvedBy}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Approval Date</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.approvalDate}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Status</td>
+                <td style="padding: 12px 15px; color: #059669; font-weight: 700; font-size: 14px;">Approved</td>
+              </tr>
+            </table>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated confirmation from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+        await this.sendMail(toEmails, subject, body);
+    }
+    /**
+     * Send Asset Assignment Notification Email to Employee (Adele / Alex)
+     */
+    static async sendAssignmentNotificationToEmployee(params, liveEmployeeEmail) {
+        const toEmail = await this.getEmployeeEmail(liveEmployeeEmail || "");
+        const subject = "Your Asset Has Been Assigned";
+        const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #0284c7, #0369a1); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Asset Assigned</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">IT Device Handover Notification</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Dear ${params.employeeName},</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">Your requested asset has been assigned to you. Here are the assignment details:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Employee Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.employeeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset ID / Serial</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.assetId || "N/A"}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Assigned By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.assignedBy}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Assignment Date</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.assignedDate}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Status</td>
+                <td style="padding: 12px 15px; color: #0284c7; font-weight: 700; font-size: 14px;">Assigned</td>
+              </tr>
+            </table>
+
+            <p style="font-size: 15px; line-height: 1.6; color: #4b5563; margin-top: 30px;">
+              Please contact the IT Helpdesk if you have any questions regarding your device or if you require deployment assistance.
+            </p>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated handover receipt from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+        await this.sendMail([toEmail], subject, body);
+    }
+    /**
+     * Try to resolve the manager's email dynamically from SharePoint User Profiles or EmployeeList
+     */
+    static async resolveLiveManagerEmail(employeeName) {
+        try {
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            // 1. Try to query the EmployeeList first
+            try {
+                const employeeList = sp.web.lists.getByTitle("EmployeeList");
+                const fields = await employeeList.fields.select("InternalName", "Title")();
+                const getFieldName = (candidates) => {
+                    const found = fields.find(f => candidates.some(c => f.Title.toLowerCase() === c.toLowerCase() || f.InternalName.toLowerCase() === c.toLowerCase()));
+                    return found ? found.InternalName : null;
+                };
+                const nameField = getFieldName(['Employee Name', 'EmployeeName', 'Name', 'Title']);
+                const managerField = getFieldName(['Manager', 'ManagerEmail', 'ReportsTo', 'ManagerName', 'Manager_x0020_Email']);
+                if (nameField && managerField) {
+                    const items = await employeeList.items.select(nameField, managerField)();
+                    const employee = items.find((item) => {
+                        const nameVal = item[nameField];
+                        return nameVal && nameVal.toString().toLowerCase().trim() === employeeName.toLowerCase().trim();
+                    });
+                    if (employee) {
+                        const managerVal = employee[managerField];
+                        if (managerVal) {
+                            if (typeof managerVal === 'string' && managerVal.indexOf("@") > 0) {
+                                return managerVal;
+                            }
+                            // If it's a Person field
+                            if (managerVal.Email) {
+                                return managerVal.Email;
+                            }
+                            if (managerVal.Title && managerVal.Title.indexOf("@") > 0) {
+                                return managerVal.Title;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (listErr) {
+                console.warn("Could not query EmployeeList for manager:", listErr);
+            }
+            // 2. Try User Profile Service using ensureUser first
+            try {
+                const matchingEmp = _data_mockData__WEBPACK_IMPORTED_MODULE_3__.EMPLOYEES.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
+                const userIdentifier = matchingEmp ? matchingEmp.email : employeeName;
+                const user = await sp.web.ensureUser(userIdentifier);
+                const loginName = user.data ? user.data.LoginName : user.LoginName;
+                const profile = await sp.profiles.getPropertiesFor(loginName);
+                const managerProp = profile.UserProfileProperties.find((p) => p.Key === "Manager");
+                if (managerProp && managerProp.Value) {
+                    const managerProfile = await sp.profiles.getPropertiesFor(managerProp.Value);
+                    const emailProp = managerProfile.UserProfileProperties.find((p) => p.Key === "WorkEmail");
+                    if (emailProp && emailProp.Value) {
+                        return emailProp.Value;
+                    }
+                }
+            }
+            catch (profileErr) {
+                console.warn("Could not query User Profile Service for manager:", profileErr);
+            }
+        }
+        catch (e) {
+            console.warn("Error resolving live manager email:", e);
+        }
+        return null;
+    }
+    /**
+     * Internal sender method using SharePoint sp.utility.sendEmail or developer console fallback.
+     */
+    static async sendMail(to, subject, htmlBody) {
+        const validEmails = to.filter(email => email && email.indexOf("@") > 0);
+        if (validEmails.length === 0) {
+            console.warn(`[EmailService] No valid recipient emails found:`, to);
+            return;
+        }
+        // Try sending email via Microsoft Graph API first (allows sending to external addresses like nexergroup.com)
+        try {
+            const context = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+            if (context && context.msGraphClientFactory) {
+                const client = await context.msGraphClientFactory.getClient("3");
+                await client.api("/me/sendMail").post({
+                    message: {
+                        subject: subject,
+                        body: {
+                            contentType: "HTML",
+                            content: htmlBody
+                        },
+                        toRecipients: validEmails.map(email => ({
+                            emailAddress: {
+                                address: email
+                            }
+                        }))
+                    }
+                });
+                console.log(`[EmailService] Outgoing mail successfully sent via Microsoft Graph to: ${validEmails.join(", ")}`);
+                return; // Success! Skip SharePoint Utility fallback
+            }
+        }
+        catch (graphError) {
+            console.warn("[EmailService] Failed to send email via Microsoft Graph. Falling back to SharePoint Utility...", graphError);
+        }
+        try {
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            const utility = (0,_pnp_sp_sputilities__WEBPACK_IMPORTED_MODULE_1__.Utilities)(sp.web);
+            await utility.sendEmail({
+                To: validEmails,
+                Subject: subject,
+                Body: htmlBody,
+                AdditionalHeaders: {
+                    "content-type": "text/html"
+                }
+            });
+            console.log(`[EmailService] Outgoing mail successfully sent via SharePoint Utility to: ${validEmails.join(", ")}`);
+        }
+        catch (error) {
+            console.warn("[EmailService] Failed to send email via SharePoint Utility. Using console logs fallback:", error);
+            if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('spfx_email_send_failed', {
+                    detail: {
+                        to: validEmails,
+                        subject,
+                        errorMessage: error instanceof Error ? error.message : JSON.stringify(error)
+                    }
+                }));
+            }
+        }
+        finally {
+            // Always write a beautiful colored log in the developer console to allow testing without live exchange configs.
+            console.log(`%c📬 [EMAIL NOTIFICATION OUTBOX]\nTo: ${validEmails.join(", ")}\nSubject: ${subject}\n\n[HTML RENDERED EMAIL BODY]:\n${htmlBody.trim()}`, "background: #1e3a8a; color: #ffffff; border-left: 5px solid #3b82f6; padding: 12px; font-family: monospace; font-size: 12px; line-height: 1.5; border-radius: 4px;");
+            // Dispatch event to allow the UI to render the email banner popup directly
+            if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('spfx_mock_email_sent', {
+                    detail: { to: validEmails, subject, body: htmlBody }
+                }));
+            }
+        }
+    }
+}
+// Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
+EmailService.USE_MOCK_TEST_EMAILS = true;
+EmailService.MOCK_ADMIN_EMAILS = [
+    "akhilareddydodla542@gmail.com",
+    "chadivelokiranreddy@gmail.com"
+];
+EmailService.MOCK_MANAGER_EMAIL = "akhilareddydodla@gmail.com";
 
 
 /***/ }),
@@ -5859,15 +6813,176 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class IncidentService {
+    async getReplacementList() {
+        try {
+            const list = this.sp.web.lists.getByTitle(this.replacementListName);
+            await list.select("Title")(); // check if list exists
+            return list;
+        }
+        catch (e) {
+            try {
+                console.log("Attempting to auto-create 'Asset Replacements' list...");
+                await this.sp.web.lists.add(this.replacementListName, "List for tracking asset replacements", 100);
+                console.log("Successfully created 'Asset Replacements' list in SharePoint.");
+                return this.sp.web.lists.getByTitle(this.replacementListName);
+            }
+            catch (createError) {
+                console.error("Failed to auto-create 'Asset Replacements' list:", createError);
+                throw createError;
+            }
+        }
+    }
+    async _ensureReplacementListFields() {
+        if (IncidentService._replacementListFieldsEnsured) {
+            return;
+        }
+        IncidentService._replacementListFieldsEnsured = true;
+        try {
+            const list = await this.getReplacementList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const hasField = (name) => fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                const title = (field.Title || '').toString().toLowerCase();
+                const search = name.toLowerCase();
+                return internalName === search || title === search;
+            });
+            if (!hasField("EmployeeID")) {
+                try {
+                    await list.fields.addText("EmployeeID", { Title: "Employee ID" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create EmployeeID field. Continuing.", err);
+                }
+            }
+            if (!hasField("EmployeeEmail")) {
+                try {
+                    await list.fields.addText("EmployeeEmail", { Title: "Employee Email" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create EmployeeEmail field. Continuing.", err);
+                }
+            }
+            if (!hasField("AssetName")) {
+                try {
+                    await list.fields.addText("AssetName", { Title: "Asset Name" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create AssetName field. Continuing.", err);
+                }
+            }
+            if (!hasField("SerialNo")) {
+                try {
+                    await list.fields.addText("SerialNo", { Title: "Serial No" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create SerialNo field. Continuing.", err);
+                }
+            }
+            if (!hasField("Priority")) {
+                try {
+                    await list.fields.addChoice("Priority", {
+                        Choices: ["High", "Medium", "Low"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Priority field. Continuing.", err);
+                }
+            }
+            if (!hasField("Description")) {
+                try {
+                    await list.fields.addMultilineText("Description", { Title: "Description" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Description field. Continuing.", err);
+                }
+            }
+            if (!hasField("Status")) {
+                try {
+                    await list.fields.addChoice("Status", {
+                        Choices: ["Open", "In Progress", "Resolved", "Closed"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Status field. Continuing.", err);
+                }
+            }
+            if (!hasField("RequestDate")) {
+                try {
+                    await list.fields.addText("RequestDate", { Title: "Request Date" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestDate field. Continuing.", err);
+                }
+            }
+        }
+        catch (error) {
+            // eslint-disable-next-line require-atomic-updates
+            IncidentService._replacementListFieldsEnsured = false;
+            console.warn("Could not ensure Asset Replacements List fields. Continuing.", error);
+        }
+    }
     constructor(spContext) {
         this.incidentListName = 'Incident List';
         this.employeeListName = 'EmployeeList';
         this.mappingListName = 'Mapping List';
+        this.replacementListName = 'Asset Replacements';
         if (!spContext) {
             throw new Error('SPFx context is required. Ensure the web part is loaded in SharePoint.');
         }
         this.sp = (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.spfi)().using((0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPFx)(spContext)).using((0,_pnp_logging__WEBPACK_IMPORTED_MODULE_5__.PnPLogging)(_pnp_logging__WEBPACK_IMPORTED_MODULE_5__.LogLevel.Warning));
         console.log('IncidentService initialized with SharePoint context');
+        this._migrateLocalReplacements();
+    }
+    _migrateLocalReplacements() {
+        try {
+            const localIncidents = this.getLocalItems('spfx_mock_incidents');
+            const replacementsToMove = localIncidents.filter(item => item.incidentType === 'Replacement Request' ||
+                item.issueType === 'Replacement Request' ||
+                item.id === '384' ||
+                item.id === '976' ||
+                item.id === '166' ||
+                item.id === '369' ||
+                item.id === '859' ||
+                item.incidentId === 'INC-384' ||
+                item.incidentId === 'INC-976' ||
+                item.incidentId === 'INC-166' ||
+                item.incidentId === 'INC-369' ||
+                item.incidentId === 'INC-859');
+            if (replacementsToMove.length > 0) {
+                console.log(`[Migration] Moving ${replacementsToMove.length} replacement items from spfx_mock_incidents to spfx_mock_replacements`);
+                // 1. Remove them from spfx_mock_incidents
+                const remainingIncidents = localIncidents.filter(item => item.incidentType !== 'Replacement Request' &&
+                    item.issueType !== 'Replacement Request' &&
+                    item.id !== '384' &&
+                    item.id !== '976' &&
+                    item.id !== '166' &&
+                    item.id !== '369' &&
+                    item.id !== '859' &&
+                    item.incidentId !== 'INC-384' &&
+                    item.incidentId !== 'INC-976' &&
+                    item.incidentId !== 'INC-166' &&
+                    item.incidentId !== 'INC-369' &&
+                    item.incidentId !== 'INC-859');
+                this.saveLocalItems('spfx_mock_incidents', remainingIncidents);
+                // 2. Add them to spfx_mock_replacements
+                const localReplacements = this.getLocalItems('spfx_mock_replacements');
+                const updatedReplacements = [...localReplacements, ...replacementsToMove.map(item => ({
+                        ...item,
+                        incidentType: 'Replacement Request',
+                        issueType: 'Replacement Request',
+                        id: item.id.startsWith('INC-') ? item.id.replace('INC-', 'REP-') : item.id,
+                        incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.id || Math.floor(Math.random() * 1000)}`
+                    }))];
+                // Filter duplicates
+                const uniqueReplacements = updatedReplacements.filter((item, index, self) => self.findIndex(t => t.id === item.id || t.incidentId === item.incidentId) === index);
+                this.saveLocalItems('spfx_mock_replacements', uniqueReplacements);
+            }
+        }
+        catch (e) {
+            console.warn("Failed to migrate local storage replacement items:", e);
+        }
     }
     async getMappedPayload(listName, data) {
         try {
@@ -5912,7 +7027,7 @@ class IncidentService {
             const statusField = getInternalName(['Status', 'Request Status', 'RequestStatus']);
             if (statusField)
                 payload[statusField] = data.status || 'Pending';
-            const incidentTypeField = getInternalName(['Incident Type', 'IncidentType']);
+            const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
             if (incidentTypeField)
                 payload[incidentTypeField] = data.incidentType || '';
             const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
@@ -5968,7 +7083,7 @@ class IncidentService {
         const dateField = getInternalName(['Raised Date', 'RaisedDate', 'Requested Date', 'RequestedDate', 'Reported Date', 'ReportedDate']);
         const reasonField = getInternalName(['Description', 'Reason for Request', 'ReasonforRequest', 'Reason', 'Issue Description', 'IssueDescription']);
         const statusField = getInternalName(['Status', 'Request Status', 'RequestStatus']);
-        const incidentTypeField = getInternalName(['Incident Type', 'IncidentType']);
+        const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
         const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
         const empNameField = getInternalName(['Employe Name', 'Employee Name', 'EmployeeName', 'EmployeName']);
         return items.map(item => ({
@@ -6023,52 +7138,211 @@ class IncidentService {
         }));
     }
     async getEmployeeIncidentHistory(userEmail, isAdmin) {
+        let incidentItems = [];
+        // 1. Load standard incidents
         try {
             console.log(`[SharePoint IncidentList Read] Fetching incident history for: ${userEmail}, isAdmin: ${isAdmin}`);
             const fields = await this.sp.web.lists.getByTitle(this.incidentListName).fields();
             const items = await this.sp.web.lists.getByTitle(this.incidentListName).items();
-            const mappedItems = await this.getMappedItems(fields, items);
-            const filtered = isAdmin ? mappedItems : this.filterByUser(mappedItems, userEmail);
-            const localIncidents = this.getLocalItems('spfx_mock_incidents');
-            const filteredLocal = isAdmin ? localIncidents : this.filterByUser(localIncidents, userEmail);
-            console.log(`[SharePoint IncidentList Read] Found ${filtered.length + filteredLocal.length} incidents`);
-            return [...filtered, ...filteredLocal];
+            const mapped = await this.getMappedItems(fields, items);
+            // Filter out replacements and specific items from standard incident history
+            incidentItems = (isAdmin ? mapped : this.filterByUser(mapped, userEmail))
+                .filter(item => item.incidentType !== 'Replacement Request' &&
+                item.issueType !== 'Replacement Request' &&
+                item.id !== '384' &&
+                item.id !== '976' &&
+                item.id !== '166' &&
+                item.id !== '369' &&
+                item.id !== '859' &&
+                item.incidentId !== 'INC-384' &&
+                item.incidentId !== 'INC-976' &&
+                item.incidentId !== 'INC-166' &&
+                item.incidentId !== 'INC-369' &&
+                item.incidentId !== 'INC-859');
         }
         catch (error) {
-            console.warn('Failed to fetch incident history from SharePoint, returning localStorage fallback:', error.message);
-            let localIncidents = this.getLocalItems('spfx_mock_incidents');
-            if (localIncidents.length === 0) {
-                localIncidents = [
-                    {
-                        id: 'INC-101',
-                        incidentId: 'INC-782',
-                        employeeName: this.getEmployeeNameFromEmail(userEmail),
-                        employeeId: userEmail,
-                        serialNo: 'XYZ890123',
-                        assetName: 'Dell Latitude Laptop',
-                        priority: 'High',
-                        reason: 'Screen flickers when connected to external monitor.',
-                        description: 'Screen flickers when connected to external monitor.',
-                        issueDescription: 'Screen flickers when connected to external monitor.',
-                        reportedDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
-                        raisedDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
-                        incidentType: 'Hardware',
-                        status: 'Resolved',
-                        raisedTo: 'Admin'
-                    }
-                ];
-                this.saveLocalItems('spfx_mock_incidents', localIncidents);
-            }
-            return isAdmin ? localIncidents : this.filterByUser(localIncidents, userEmail);
+            console.warn('Failed to fetch standard incidents from SharePoint:', error.message);
         }
+        // 2. Load local storage fallback items
+        const localIncidents = this.getLocalItems('spfx_mock_incidents');
+        const filteredLocalIncidents = (isAdmin ? localIncidents : this.filterByUser(localIncidents, userEmail))
+            .filter(item => item.incidentType !== 'Replacement Request' &&
+            item.issueType !== 'Replacement Request' &&
+            item.id !== '384' &&
+            item.id !== '976' &&
+            item.id !== '166' &&
+            item.id !== '369' &&
+            item.id !== '859' &&
+            item.incidentId !== 'INC-384' &&
+            item.incidentId !== 'INC-976' &&
+            item.incidentId !== 'INC-166' &&
+            item.incidentId !== 'INC-369' &&
+            item.incidentId !== 'INC-859');
+        // Merge and sort chronologically (newest first)
+        const combined = [
+            ...incidentItems,
+            ...filteredLocalIncidents
+        ];
+        combined.sort((a, b) => {
+            const dateA = new Date(a.reportedDate || a.raisedDate || 0).getTime();
+            const dateB = new Date(b.reportedDate || b.raisedDate || 0).getTime();
+            return dateB - dateA;
+        });
+        return combined;
+    }
+    async getEmployeeReplacementHistory(userEmail, isAdmin) {
+        let replacementItems = [];
+        let historicalSharePointReplacements = [];
+        // 1. Load replacements from Asset Replacements list
+        try {
+            console.log(`[SharePoint AssetReplacements Read] Fetching replacements history for: ${userEmail}, isAdmin: ${isAdmin}`);
+            const list = await this.getReplacementList();
+            const fields = await list.fields();
+            const items = await list.items();
+            const mapped = await this.getMappedItems(fields, items);
+            const mappedWithTypes = mapped.map(item => ({
+                ...item,
+                incidentType: 'Replacement Request',
+                issueType: 'Replacement Request',
+                incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+            }));
+            replacementItems = isAdmin ? mappedWithTypes : this.filterByUser(mappedWithTypes, userEmail);
+        }
+        catch (error) {
+            console.warn('Failed to fetch replacements from SharePoint:', error.message);
+        }
+        // 2. Load any historical replacements that were saved in the Incident List, including items 384, 976, 166, 369, 859
+        try {
+            const fields = await this.sp.web.lists.getByTitle(this.incidentListName).fields();
+            const items = await this.sp.web.lists.getByTitle(this.incidentListName).items();
+            const mapped = await this.getMappedItems(fields, items);
+            historicalSharePointReplacements = (isAdmin ? mapped : this.filterByUser(mapped, userEmail))
+                .filter(item => item.incidentType === 'Replacement Request' ||
+                item.issueType === 'Replacement Request' ||
+                item.id === '384' ||
+                item.id === '976' ||
+                item.id === '166' ||
+                item.id === '369' ||
+                item.id === '859' ||
+                item.incidentId === 'INC-384' ||
+                item.incidentId === 'INC-976' ||
+                item.incidentId === 'INC-166' ||
+                item.incidentId === 'INC-369' ||
+                item.incidentId === 'INC-859')
+                .map(item => ({
+                ...item,
+                incidentType: 'Replacement Request',
+                issueType: 'Replacement Request',
+                incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+            }));
+        }
+        catch (error) {
+            console.warn('Failed to fetch historical replacements from Incident List:', error.message);
+        }
+        // 3. Load local storage fallback items
+        const localReplacements = this.getLocalItems('spfx_mock_replacements');
+        const filteredLocalReplacements = (isAdmin ? localReplacements : this.filterByUser(localReplacements, userEmail))
+            .map(item => ({
+            ...item,
+            incidentType: 'Replacement Request',
+            issueType: 'Replacement Request',
+            incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+        }));
+        // Merge and sort chronologically (newest first)
+        const combined = [
+            ...replacementItems,
+            ...historicalSharePointReplacements,
+            ...filteredLocalReplacements
+        ];
+        combined.sort((a, b) => {
+            const dateA = new Date(a.reportedDate || a.raisedDate || 0).getTime();
+            const dateB = new Date(b.reportedDate || b.raisedDate || 0).getTime();
+            return dateB - dateA;
+        });
+        return combined;
     }
     async updateIncidentStatus(id, status, resolution) {
         try {
             console.log(`[IncidentService] Updating status of incident ${id} to: ${status}`);
-            const isLocal = id.startsWith('INC-') || isNaN(Number(id));
+            const isLocal = id.startsWith('INC-') || id.startsWith('REP-') || isNaN(Number(id));
             if (isLocal) {
-                const localIncidents = this.getLocalItems('spfx_mock_incidents');
-                const updated = localIncidents.map(inc => {
+                const isReplacement = id.startsWith('REP-');
+                const localKey = isReplacement ? 'spfx_mock_replacements' : 'spfx_mock_incidents';
+                const localItems = this.getLocalItems(localKey);
+                const updated = localItems.map(item => {
+                    if (item.id === id || item.incidentId === id) {
+                        return {
+                            ...item,
+                            status,
+                            resolution: resolution || item.resolution,
+                            resolvedDate: status === 'Resolved' || status === 'Closed' ? new Date().toISOString() : item.resolvedDate
+                        };
+                    }
+                    return item;
+                });
+                this.saveLocalItems(localKey, updated);
+                return { success: true };
+            }
+            else {
+                // Try standard list first, then replacement list
+                try {
+                    const list = this.sp.web.lists.getByTitle(this.incidentListName);
+                    const fields = await list.fields();
+                    const getFieldName = (displayNames) => {
+                        for (const name of displayNames) {
+                            const field = fields.find((f) => f.Title && f.Title.toLowerCase() === name.toLowerCase());
+                            if (field)
+                                return field.InternalName;
+                        }
+                        return null;
+                    };
+                    const statusField = getFieldName(['Status', 'Request Status', 'RequestStatus']) || 'Status';
+                    const resolutionField = getFieldName(['Resolution', 'Resolution Summary', 'ResolutionDetails', 'ResolutionDescription']);
+                    const resolvedDateField = getFieldName(['Resolved Date', 'ResolvedDate', 'Resolution Date', 'ResolutionDate']);
+                    const payload = { [statusField]: status };
+                    if (resolution && resolutionField) {
+                        payload[resolutionField] = resolution;
+                    }
+                    if ((status === 'Resolved' || status === 'Closed') && resolvedDateField) {
+                        payload[resolvedDateField] = new Date().toISOString();
+                    }
+                    const numericId = parseInt(id, 10);
+                    const result = await list.items.getById(numericId).update(payload);
+                    return result;
+                }
+                catch (standardError) {
+                    console.log("Not in standard list, trying replacement list...");
+                    const list = await this.getReplacementList();
+                    const fields = await list.fields();
+                    const getFieldName = (displayNames) => {
+                        for (const name of displayNames) {
+                            const field = fields.find((f) => f.Title && f.Title.toLowerCase() === name.toLowerCase());
+                            if (field)
+                                return field.InternalName;
+                        }
+                        return null;
+                    };
+                    const statusField = getFieldName(['Status', 'Request Status', 'RequestStatus']) || 'Status';
+                    const resolutionField = getFieldName(['Resolution', 'Resolution Summary', 'ResolutionDetails', 'ResolutionDescription']);
+                    const resolvedDateField = getFieldName(['Resolved Date', 'ResolvedDate', 'Resolution Date', 'ResolutionDate']);
+                    const payload = { [statusField]: status };
+                    if (resolution && resolutionField) {
+                        payload[resolutionField] = resolution;
+                    }
+                    if ((status === 'Resolved' || status === 'Closed') && resolvedDateField) {
+                        payload[resolvedDateField] = new Date().toISOString();
+                    }
+                    const numericId = parseInt(id, 10);
+                    const result = await list.items.getById(numericId).update(payload);
+                    return result;
+                }
+            }
+        }
+        catch (error) {
+            console.warn('[IncidentService] Failed to update SharePoint list item status, using localStorage fallback:', error.message);
+            for (const localKey of ['spfx_mock_incidents', 'spfx_mock_replacements']) {
+                const localItems = this.getLocalItems(localKey);
+                const updated = localItems.map(inc => {
                     if (inc.id === id || inc.incidentId === id) {
                         return {
                             ...inc,
@@ -6079,57 +7353,8 @@ class IncidentService {
                     }
                     return inc;
                 });
-                this.saveLocalItems('spfx_mock_incidents', updated);
-                return { success: true };
+                this.saveLocalItems(localKey, updated);
             }
-            else {
-                const list = this.sp.web.lists.getByTitle(this.incidentListName);
-                const fields = await list.fields();
-                const getFieldName = (displayNames) => {
-                    for (const name of displayNames) {
-                        const field = fields.find(f => f.Title && f.Title.toLowerCase() === name.toLowerCase());
-                        if (field)
-                            return field.InternalName;
-                    }
-                    return null;
-                };
-                const statusField = getFieldName(['Status', 'Request Status', 'RequestStatus']);
-                const resolutionField = getFieldName(['Resolution', 'Resolution Summary', 'ResolutionDetails', 'ResolutionDescription']);
-                const resolvedDateField = getFieldName(['Resolved Date', 'ResolvedDate', 'Resolution Date', 'ResolutionDate']);
-                const payload = {};
-                if (statusField) {
-                    payload[statusField] = status;
-                }
-                else {
-                    payload.Status = status;
-                }
-                if (resolution && resolutionField) {
-                    payload[resolutionField] = resolution;
-                }
-                if ((status === 'Resolved' || status === 'Closed') && resolvedDateField) {
-                    payload[resolvedDateField] = new Date().toISOString();
-                }
-                const numericId = parseInt(id, 10);
-                const result = await list.items.getById(numericId).update(payload);
-                console.log('[IncidentService] SharePoint update completed successfully:', result);
-                return result;
-            }
-        }
-        catch (error) {
-            console.warn('[IncidentService] Failed to update SharePoint list item status, using localStorage fallback:', error.message);
-            const localIncidents = this.getLocalItems('spfx_mock_incidents');
-            const updated = localIncidents.map(inc => {
-                if (inc.id === id || inc.incidentId === id) {
-                    return {
-                        ...inc,
-                        status,
-                        resolution: resolution || inc.resolution,
-                        resolvedDate: status === 'Resolved' || status === 'Closed' ? new Date().toISOString() : inc.resolvedDate
-                    };
-                }
-                return inc;
-            });
-            this.saveLocalItems('spfx_mock_incidents', updated);
             return { success: true };
         }
     }
@@ -6248,25 +7473,40 @@ class IncidentService {
         }
     }
     async createIncidentRequest(incidentData, file) {
+        const isReplacement = incidentData.incidentType === 'Replacement Request' ||
+            incidentData.issueType === 'Replacement Request' ||
+            (incidentData.incidentType && incidentData.incidentType.toLowerCase().indexOf('replace') > -1) ||
+            (incidentData.issueType && incidentData.issueType.toLowerCase().indexOf('replace') > -1);
+        const targetListName = isReplacement ? this.replacementListName : this.incidentListName;
         try {
-            const payload = await this.getMappedPayload(this.incidentListName, { ...incidentData, status: 'Open' });
-            console.log(`[SharePoint Write] TARGET LIST: "${this.incidentListName}"`);
+            if (isReplacement) {
+                await this._ensureReplacementListFields();
+            }
+            const payload = await this.getMappedPayload(targetListName, { ...incidentData, status: 'Open' });
+            console.log(`[SharePoint Write] TARGET LIST: "${targetListName}"`);
             console.log('[SharePoint Write] PAYLOAD DATA:', JSON.stringify(payload, null, 2));
-            const result = await this.sp.web.lists.getByTitle(this.incidentListName).items.add(payload);
+            const list = isReplacement ? await this.getReplacementList() : this.sp.web.lists.getByTitle(this.incidentListName);
+            const result = await list.items.add(payload);
             console.log('[SharePoint Write] RESPONSE:', result);
             return result;
         }
         catch (error) {
-            console.error('Failed to create incident request in SharePoint:', error);
-            const isListMissing = error.message && (error.message.indexOf('404') > -1 || error.message.indexOf('does not exist') > -1 || error.message.indexOf('ArgumentException') > -1);
-            if (isListMissing) {
-                console.warn('SharePoint IncidentList not found, saving to localStorage instead.');
-                const localIncidents = this.getLocalItems('spfx_mock_incidents');
-                const newIncident = {
-                    id: `INC-${Date.now()}`,
-                    incidentId: `INC-${Math.floor(100 + Math.random() * 900)}`,
+            console.error(`Failed to create request in SharePoint on ${targetListName}:`, error);
+            const isForbiddenOrMissing = error.message && (error.message.indexOf('404') > -1 ||
+                error.message.indexOf('does not exist') > -1 ||
+                error.message.indexOf('ArgumentException') > -1 ||
+                error.message.indexOf('403') > -1 ||
+                error.message.indexOf('Unauthorized') > -1);
+            if (isForbiddenOrMissing) {
+                console.warn(`SharePoint list write failed, saving to localStorage instead.`);
+                const localKey = isReplacement ? 'spfx_mock_replacements' : 'spfx_mock_incidents';
+                const localItems = this.getLocalItems(localKey);
+                const newRecord = {
+                    id: isReplacement ? `REP-${Date.now()}` : `INC-${Date.now()}`,
+                    incidentId: isReplacement ? `REP-${Math.floor(100 + Math.random() * 900)}` : `INC-${Math.floor(100 + Math.random() * 900)}`,
                     employeeName: incidentData.employeeName || 'Unknown',
                     employeeId: incidentData.employeeId || 'N/A',
+                    employeeEmail: incidentData.employeeEmail || '',
                     serialNo: incidentData.serialNo || '',
                     assetName: incidentData.assetName || incidentData.assetType || 'Device',
                     priority: incidentData.priority || 'Medium',
@@ -6276,13 +7516,13 @@ class IncidentService {
                     requestDate: new Date().toISOString(),
                     reportedDate: new Date().toISOString(),
                     raisedDate: new Date().toISOString(),
-                    incidentType: incidentData.incidentType || 'Other',
+                    incidentType: incidentData.incidentType || (isReplacement ? 'Replacement Request' : 'Other'),
                     status: 'Open',
                     raisedTo: incidentData.raisedTo || 'Admin'
                 };
-                localIncidents.push(newIncident);
-                this.saveLocalItems('spfx_mock_incidents', localIncidents);
-                return { data: newIncident };
+                localItems.push(newRecord);
+                this.saveLocalItems(localKey, localItems);
+                return { data: newRecord };
             }
             const errorDetails = this.formatError(error);
             throw new Error(`SharePoint list submission failed. ${errorDetails}`);
@@ -6360,6 +7600,7 @@ class IncidentService {
         return JSON.stringify(error);
     }
 }
+IncidentService._replacementListFieldsEnsured = false;
 
 
 /***/ }),
@@ -6377,6 +7618,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/mockData */ 27962);
+/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EmailService */ 86407);
+
 
 
 class InventoryService {
@@ -7031,8 +8274,17 @@ class InventoryService {
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         let requesterId = null;
         try {
-            const user = await sp.web.ensureUser(request.requesterName);
-            requesterId = user.data ? user.data.Id : user.Id;
+            const matchingEmp = _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.find(e => e.name.toLowerCase() === request.requesterName.toLowerCase());
+            const userIdentifier = request.requesterEmail || (matchingEmp ? matchingEmp.email : request.requesterName);
+            try {
+                const user = await sp.web.ensureUser(userIdentifier);
+                requesterId = user.data ? user.data.Id : user.Id;
+            }
+            catch (err) {
+                console.warn(`Could not resolve user identifier ${userIdentifier} in SharePoint. Falling back to current user.`, err);
+                const currentUser = await sp.web.currentUser();
+                requesterId = currentUser.Id;
+            }
         }
         catch (e) {
             console.warn("Could not resolve requester in SharePoint", e);
@@ -7068,16 +8320,27 @@ class InventoryService {
             if (requesterField) {
                 const isPerson = requesterField.TypeAsString === "User" || requesterField.TypeAsString === "UserMulti";
                 if (isPerson && requesterId !== null) {
-                    dynamicPayload[`${requesterField.InternalName}Id`] = requesterId;
+                    if (requesterField.TypeAsString === "UserMulti") {
+                        dynamicPayload[`${requesterField.InternalName}Id`] = { results: [requesterId] };
+                    }
+                    else {
+                        dynamicPayload[`${requesterField.InternalName}Id`] = requesterId;
+                    }
                 }
                 else {
                     dynamicPayload[requesterField.InternalName] = request.requesterName;
                 }
             }
             if (assetField) {
-                const isLookup = assetField.TypeAsString === "Lookup";
+                const isLookup = assetField.TypeAsString === "Lookup" || assetField.TypeAsString === "LookupMulti";
                 if (isLookup) {
-                    dynamicPayload[`${assetField.InternalName}Id`] = parseInt(request.assetId, 10) || 1;
+                    const assetId = parseInt(request.assetId, 10) || 1;
+                    if (assetField.TypeAsString === "LookupMulti") {
+                        dynamicPayload[`${assetField.InternalName}Id`] = { results: [assetId] };
+                    }
+                    else {
+                        dynamicPayload[`${assetField.InternalName}Id`] = assetId;
+                    }
                 }
                 else {
                     dynamicPayload[assetField.InternalName] = request.assetTitle;
@@ -7249,20 +8512,40 @@ class InventoryService {
         ];
         let addedRequest;
         let success = false;
-        let lastError;
-        for (const payload of payloads) {
+        const errors = [];
+        for (let i = 0; i < payloads.length; i++) {
+            const payload = payloads[i];
             try {
                 addedRequest = await list.items.add(payload);
                 success = true;
                 break; // Success, stop looping immediately!
             }
             catch (err) {
-                lastError = err;
+                const errMsg = err ? (err.message || JSON.stringify(err)) : "Unknown";
+                let detail = errMsg;
+                if (err && err.data) {
+                    try {
+                        const dataObj = typeof err.data === 'string' ? JSON.parse(err.data) : err.data;
+                        const innerError = dataObj['odata.error'] || dataObj.error;
+                        if (innerError && innerError.message) {
+                            detail = innerError.message.value || innerError.message;
+                        }
+                    }
+                    catch (e) { }
+                }
+                errors.push(`Payload #${i + 1} failed: ${detail}`);
             }
         }
         if (!success) {
-            console.error("Error adding request to SharePoint after trying all column combinations.", lastError);
-            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Please check the Developer Console (F12) for the exact column name mismatch.`);
+            let fieldsDiag = "";
+            try {
+                const listFields = await list.fields.select("InternalName", "Title", "TypeAsString", "Required")();
+                fieldsDiag = listFields.map((f) => `${f.Title} (${f.InternalName}): ${f.TypeAsString}${f.Required ? ' *Required*' : ''}`).join(" | ");
+            }
+            catch (fErr) {
+                fieldsDiag = "Could not load fields: " + (fErr.message || JSON.stringify(fErr));
+            }
+            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Errors: [ ${errors.join(" | ")} ] --- Fields in list: [ ${fieldsDiag} ]`);
         }
         // Safely perform post-save actions (key generation, updating, logging) outside the creation loop
         try {
@@ -7306,6 +8589,29 @@ class InventoryService {
                 }),
                 user: userDisplayName
             });
+            // Trigger Email Notification to Manager
+            try {
+                let liveManagerEmail = "";
+                try {
+                    const resolvedEmail = await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.resolveLiveManagerEmail(request.requesterName);
+                    if (resolvedEmail) {
+                        liveManagerEmail = resolvedEmail;
+                    }
+                }
+                catch (resolveErr) {
+                    console.warn("Failed to resolve live manager email:", resolveErr);
+                }
+                await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.sendApprovalRequestToManager({
+                    requestKey,
+                    employeeName: request.requesterName,
+                    assetName: request.assetTitle,
+                    requestDate: request.requestDate || new Date().toLocaleDateString(),
+                    adminName: userDisplayName
+                }, liveManagerEmail || undefined);
+            }
+            catch (mailErr) {
+                console.warn("Failed to send approval request email:", mailErr);
+            }
         }
         catch (postError) {
             console.warn("Failed in post-request creation steps:", postError);
@@ -7494,6 +8800,26 @@ class InventoryService {
                 }),
                 user: approverName
             });
+            // Trigger Email Notification to Admin on Approval
+            if (status === 'Approved') {
+                try {
+                    const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                    const employeeKey = findKey("employee") || findKey("requester") || "Employee";
+                    const requesterKey = findKey("requester") || "Requester";
+                    const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Title || "Employee";
+                    const employeeName = typeof rawEmp === 'string' ? rawEmp : (rawEmp && rawEmp.Title ? rawEmp.Title : "Employee");
+                    await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.sendApprovalConfirmationToAdmin({
+                        requestKey: requestKey || this._buildRequestKeyFromItemId(requestId),
+                        employeeName,
+                        assetName: item[selectAssetKey] || item.Title || "Asset",
+                        approvedBy: approverName,
+                        approvalDate: new Date().toLocaleDateString()
+                    });
+                }
+                catch (mailErr) {
+                    console.warn("Failed to send approval confirmation email to Admins:", mailErr);
+                }
+            }
         }
         catch (error) {
             console.error(`Failed to update RequestList item ${requestId} status`, error);
@@ -7668,7 +8994,14 @@ class InventoryService {
                 assignedToId = user.data ? user.data.Id : user.Id;
             }
             catch (e) {
-                console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write.`, e);
+                console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write. Falling back to current user.`, e);
+                try {
+                    const currentUser = await sp.web.currentUser();
+                    assignedToId = currentUser.Id;
+                }
+                catch (currUserErr) {
+                    console.warn("Failed to get current user as fallback in mapping write", currUserErr);
+                }
             }
         }
         const titleField = mappingFields.find((f) => f.InternalName === "Title");
@@ -7814,7 +9147,14 @@ class InventoryService {
             assignedToId = user.data ? user.data.Id : user.Id;
         }
         catch (e) {
-            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to string assignment if column allows.`, e);
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to current user.`, e);
+            try {
+                const currentUser = await sp.web.currentUser();
+                assignedToId = currentUser.Id;
+            }
+            catch (currUserErr) {
+                console.warn("Failed to get current user as fallback in assignAssetsToEmployee", currUserErr);
+            }
         }
         const updatePromises = assetIds.map(async (assetId) => {
             // 1. Get asset details first
@@ -7936,6 +9276,20 @@ class InventoryService {
                 }),
                 user: adminName
             });
+            // Trigger Email Notification to Employee on Assignment
+            try {
+                await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.sendAssignmentNotificationToEmployee({
+                    employeeName,
+                    employeeEmail,
+                    assetName,
+                    assetId: serialNumber || assetId,
+                    assignedBy: adminName,
+                    assignedDate: finalAssignedDate
+                });
+            }
+            catch (mailErr) {
+                console.warn("Failed to send assignment notification email to Employee:", mailErr);
+            }
         });
         await Promise.all(updatePromises);
     }
@@ -70009,6 +71363,413 @@ _webs_types_js__WEBPACK_IMPORTED_MODULE_1__._Web.prototype.getCatalog = async fu
 
 /***/ }),
 
+/***/ 39878:
+/*!************************************************!*\
+  !*** ./node_modules/@pnp/sp/profiles/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Profiles: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.Profiles),
+/* harmony export */   UrlZone: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.UrlZone)
+/* harmony export */ });
+/* harmony import */ var _fi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fi.js */ 17066);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 13019);
+
+
+
+Reflect.defineProperty(_fi_js__WEBPACK_IMPORTED_MODULE_0__.SPFI.prototype, "profiles", {
+    configurable: true,
+    enumerable: true,
+    get: function () {
+        return this.create(_types_js__WEBPACK_IMPORTED_MODULE_1__.Profiles);
+    },
+});
+
+
+/***/ }),
+
+/***/ 13019:
+/*!************************************************!*\
+  !*** ./node_modules/@pnp/sp/profiles/types.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Profiles: () => (/* binding */ Profiles),
+/* harmony export */   UrlZone: () => (/* binding */ UrlZone),
+/* harmony export */   _Profiles: () => (/* binding */ _Profiles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 13759);
+/* harmony import */ var _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../spqueryable.js */ 96290);
+/* harmony import */ var _pnp_queryable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/queryable */ 2464);
+/* harmony import */ var _decorators_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../decorators.js */ 43445);
+/* harmony import */ var _pnp_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/core */ 49671);
+
+
+
+
+
+class _Profiles extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__._SPInstance {
+    /**
+     * Creates a new instance of the UserProfileQuery class
+     *
+     * @param baseUrl The url or SharePointQueryable which forms the parent of this user profile query
+     */
+    constructor(baseUrl, path = "_api/sp.userprofiles.peoplemanager") {
+        super(baseUrl, path);
+        this.clientPeoplePickerQuery = (new ClientPeoplePickerQuery(baseUrl)).using((0,_pnp_core__WEBPACK_IMPORTED_MODULE_2__.AssignFrom)(this));
+        this.profileLoader = (new ProfileLoader(baseUrl)).using((0,_pnp_core__WEBPACK_IMPORTED_MODULE_2__.AssignFrom)(this));
+    }
+    /**
+     * The url of the edit profile page for the current user
+     */
+    getEditProfileLink() {
+        return Profiles(this, "EditProfileLink")();
+    }
+    /**
+     * A boolean value that indicates whether the current user's "People I'm Following" list is public
+     */
+    getIsMyPeopleListPublic() {
+        return Profiles(this, "IsMyPeopleListPublic")();
+    }
+    /**
+     * A boolean value that indicates whether the current user is being followed by the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    amIFollowedBy(loginName) {
+        const q = Profiles(this, "amifollowedby(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * A boolean value that indicates whether the current user is following the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    amIFollowing(loginName) {
+        const q = Profiles(this, "amifollowing(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets tags that the current user is following
+     *
+     * @param maxCount The maximum number of tags to retrieve (default is 20)
+     */
+    getFollowedTags(maxCount = 20) {
+        return Profiles(this, `getfollowedtags(${maxCount})`)();
+    }
+    /**
+     * Gets the people who are following the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    getFollowersFor(loginName) {
+        const q = Profiles(this, "getfollowersfor(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets the people who are following the current user
+     *
+     */
+    get myFollowers() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.SPCollection)(this, "getmyfollowers");
+    }
+    /**
+     * Gets user properties for the current user
+     *
+     */
+    get myProperties() {
+        return Profiles(this, "getmyproperties");
+    }
+    /**
+     * Gets the people who the specified user is following
+     *
+     * @param loginName The account name of the user.
+     */
+    getPeopleFollowedBy(loginName) {
+        const q = Profiles(this, "getpeoplefollowedby(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets user properties for the specified user.
+     *
+     * @param loginName The account name of the user.
+     */
+    getPropertiesFor(loginName) {
+        const q = Profiles(this, "getpropertiesfor(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets the 20 most popular hash tags over the past week, sorted so that the most popular tag appears first
+     *
+     */
+    get trendingTags() {
+        const q = Profiles(this, null);
+        q.concat(".gettrendingtags");
+        return q();
+    }
+    /**
+     * Gets the specified user profile property for the specified user
+     *
+     * @param loginName The account name of the user
+     * @param propertyName The case-sensitive name of the property to get
+     */
+    getUserProfilePropertyFor(loginName, propertyName) {
+        const q = Profiles(this, `getuserprofilepropertyfor(accountname=@v, propertyname='${propertyName}')`);
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Removes the specified user from the user's list of suggested people to follow
+     *
+     * @param loginName The account name of the user
+     */
+    hideSuggestion(loginName) {
+        const q = Profiles(this, "hidesuggestion(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(q);
+    }
+    /**
+     * A boolean values that indicates whether the first user is following the second user
+     *
+     * @param follower The account name of the user who might be following the followee
+     * @param followee The account name of the user who might be followed by the follower
+     */
+    isFollowing(follower, followee) {
+        const q = Profiles(this, null);
+        q.concat(".isfollowing(possiblefolloweraccountname=@v, possiblefolloweeaccountname=@y)");
+        q.query.set("@v", `'${follower}'`);
+        q.query.set("@y", `'${followee}'`);
+        return q();
+    }
+    /**
+     * Uploads and sets the user profile picture (Users can upload a picture to their own profile only). Not supported for batching.
+     *
+     * @param profilePicSource Blob data representing the user's picture in BMP, JPEG, or PNG format of up to 4.76MB
+     */
+    setMyProfilePic(profilePicSource) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                const buffer = e.target.result;
+                try {
+                    await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(Profiles(this, "setmyprofilepicture"), { body: buffer });
+                    resolve();
+                }
+                catch (e) {
+                    reject(e);
+                }
+            };
+            reader.readAsArrayBuffer(profilePicSource);
+        });
+    }
+    /**
+     * Sets single value User Profile property
+     *
+     * @param accountName The account name of the user
+     * @param propertyName Property name
+     * @param propertyValue Property value
+     */
+    setSingleValueProfileProperty(accountName, propertyName, propertyValue) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(Profiles(this, "SetSingleValueProfileProperty"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({
+            accountName,
+            propertyName,
+            propertyValue,
+        }));
+    }
+    /**
+     * Sets multi valued User Profile property
+     *
+     * @param accountName The account name of the user
+     * @param propertyName Property name
+     * @param propertyValues Property values
+     */
+    setMultiValuedProfileProperty(accountName, propertyName, propertyValues) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(Profiles(this, "SetMultiValuedProfileProperty"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({
+            accountName,
+            propertyName,
+            propertyValues,
+        }));
+    }
+    /**
+     * Provisions one or more users' personal sites. (My Site administrator on SharePoint Online only)
+     *
+     * @param emails The email addresses of the users to provision sites for
+     */
+    createPersonalSiteEnqueueBulk(...emails) {
+        return this.profileLoader.createPersonalSiteEnqueueBulk(emails);
+    }
+    /**
+     * Gets the user profile of the site owner
+     *
+     */
+    get ownerUserProfile() {
+        return this.profileLoader.ownerUserProfile;
+    }
+    /**
+     * Gets the user profile for the current user
+     */
+    get userProfile() {
+        return this.profileLoader.userProfile;
+    }
+    /**
+     * Enqueues creating a personal site for this user, which can be used to share documents, web pages, and other files
+     *
+     * @param interactiveRequest true if interactively (web) initiated request, or false (default) if non-interactively (client) initiated request
+     */
+    createPersonalSite(interactiveRequest = false) {
+        return this.profileLoader.createPersonalSite(interactiveRequest);
+    }
+    /**
+     * Sets the privacy settings for this profile
+     *
+     * @param share true to make all social data public; false to make all social data private
+     */
+    shareAllSocialData(share) {
+        return this.profileLoader.shareAllSocialData(share);
+    }
+    /**
+     * Resolves user or group using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform resolve
+     */
+    clientPeoplePickerResolveUser(queryParams) {
+        return this.clientPeoplePickerQuery.clientPeoplePickerResolveUser(queryParams);
+    }
+    /**
+     * Searches for users or groups using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform search
+     */
+    clientPeoplePickerSearchUser(queryParams) {
+        return this.clientPeoplePickerQuery.clientPeoplePickerSearchUser(queryParams);
+    }
+}
+const Profiles = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spInvokableFactory)(_Profiles);
+let ProfileLoader = class ProfileLoader extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__._SPQueryable {
+    /**
+     * Provisions one or more users' personal sites. (My Site administrator on SharePoint Online only) Doesn't support batching
+     *
+     * @param emails The email addresses of the users to provision sites for
+     */
+    createPersonalSiteEnqueueBulk(emails) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, "createpersonalsiteenqueuebulk"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({ "emailIDs": emails }));
+    }
+    /**
+     * Gets the user profile of the site owner.
+     *
+     */
+    get ownerUserProfile() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(this.getParent(ProfileLoaderFactory, "_api/sp.userprofiles.profileloader.getowneruserprofile"));
+    }
+    /**
+     * Gets the user profile of the current user.
+     *
+     */
+    get userProfile() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, "getuserprofile"));
+    }
+    /**
+     * Enqueues creating a personal site for this user, which can be used to share documents, web pages, and other files.
+     *
+     * @param interactiveRequest true if interactively (web) initiated request, or false (default) if non-interactively (client) initiated request
+     */
+    createPersonalSite(interactiveRequest = false) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, `getuserprofile/createpersonalsiteenque(${interactiveRequest})`));
+    }
+    /**
+     * Sets the privacy settings for this profile
+     *
+     * @param share true to make all social data public; false to make all social data private.
+     */
+    shareAllSocialData(share) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, `getuserprofile/shareallsocialdata(${share})`));
+    }
+};
+ProfileLoader = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_decorators_js__WEBPACK_IMPORTED_MODULE_4__.defaultPath)("_api/sp.userprofiles.profileloader.getprofileloader")
+], ProfileLoader);
+const ProfileLoaderFactory = (baseUrl, path) => {
+    return new ProfileLoader(baseUrl, path);
+};
+let ClientPeoplePickerQuery = class ClientPeoplePickerQuery extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__._SPQueryable {
+    /**
+     * Resolves user or group using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform resolve
+     */
+    async clientPeoplePickerResolveUser(queryParams) {
+        const q = ClientPeoplePickerFactory(this, null);
+        q.concat(".clientpeoplepickerresolveuser");
+        const res = await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(q, this.getBodyFrom(queryParams));
+        return JSON.parse(typeof res === "object" ? res.ClientPeoplePickerResolveUser : res);
+    }
+    /**
+     * Searches for users or groups using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform search
+     */
+    async clientPeoplePickerSearchUser(queryParams) {
+        const q = ClientPeoplePickerFactory(this, null);
+        q.concat(".clientpeoplepickersearchuser");
+        const res = await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(q, this.getBodyFrom(queryParams));
+        return JSON.parse(typeof res === "object" ? res.ClientPeoplePickerSearchUser : res);
+    }
+    /**
+     * Creates ClientPeoplePickerQueryParameters request body
+     *
+     * @param queryParams The query parameters to create request body
+     */
+    getBodyFrom(queryParams) {
+        return (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({ queryParams });
+    }
+};
+ClientPeoplePickerQuery = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_decorators_js__WEBPACK_IMPORTED_MODULE_4__.defaultPath)("_api/sp.ui.applicationpages.clientpeoplepickerwebserviceinterface")
+], ClientPeoplePickerQuery);
+const ClientPeoplePickerFactory = (baseUrl, path) => {
+    return new ClientPeoplePickerQuery(baseUrl, path);
+};
+/**
+ * Specifies the originating zone of a request received.
+ */
+var UrlZone;
+(function (UrlZone) {
+    /**
+     * Specifies the default zone used for requests unless another zone is specified.
+     */
+    UrlZone[UrlZone["DefaultZone"] = 0] = "DefaultZone";
+    /**
+     * Specifies an intranet zone.
+     */
+    UrlZone[UrlZone["Intranet"] = 1] = "Intranet";
+    /**
+     * Specifies an Internet zone.
+     */
+    UrlZone[UrlZone["Internet"] = 2] = "Internet";
+    /**
+     * Specifies a custom zone.
+     */
+    UrlZone[UrlZone["Custom"] = 3] = "Custom";
+    /**
+     * Specifies an extranet zone.
+     */
+    UrlZone[UrlZone["Extranet"] = 4] = "Extranet";
+})(UrlZone || (UrlZone = {}));
+
+
+/***/ }),
+
 /***/ 2737:
 /*!************************************************!*\
   !*** ./node_modules/@pnp/sp/security/funcs.js ***!
@@ -71230,6 +72991,117 @@ class ComparisonResult extends BaseQuery {
         return this.query.join(" ");
     }
 }
+
+
+/***/ }),
+
+/***/ 38229:
+/*!***************************************************!*\
+  !*** ./node_modules/@pnp/sp/sputilities/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Utilities: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.Utilities)
+/* harmony export */ });
+/* harmony import */ var _fi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fi.js */ 17066);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 88636);
+
+
+
+Reflect.defineProperty(_fi_js__WEBPACK_IMPORTED_MODULE_0__.SPFI.prototype, "utility", {
+    configurable: true,
+    enumerable: true,
+    get: function () {
+        return this.create(_types_js__WEBPACK_IMPORTED_MODULE_1__.Utilities, "");
+    },
+});
+
+
+/***/ }),
+
+/***/ 88636:
+/*!***************************************************!*\
+  !*** ./node_modules/@pnp/sp/sputilities/types.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Utilities: () => (/* binding */ Utilities),
+/* harmony export */   _Utilities: () => (/* binding */ _Utilities)
+/* harmony export */ });
+/* harmony import */ var _pnp_queryable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/queryable */ 2464);
+/* harmony import */ var _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../spqueryable.js */ 96290);
+/* harmony import */ var _utils_extract_web_url_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/extract-web-url.js */ 48939);
+/* harmony import */ var _pnp_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pnp/core */ 49671);
+
+
+
+
+class _Utilities extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__._SPQueryable {
+    constructor(base, methodName = "") {
+        super(base);
+        this._url = (0,_pnp_core__WEBPACK_IMPORTED_MODULE_3__.combine)((0,_utils_extract_web_url_js__WEBPACK_IMPORTED_MODULE_2__.extractWebUrl)(this._url), `_api/SP.Utilities.Utility.${methodName}`);
+    }
+    excute(props) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(this, (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.body)(props));
+    }
+    sendEmail(properties) {
+        if (properties.AdditionalHeaders) {
+            // we have to remap the additional headers into this format #2253
+            properties.AdditionalHeaders = Reflect.ownKeys(properties.AdditionalHeaders).map(key => ({
+                Key: key,
+                Value: Reflect.get(properties.AdditionalHeaders, key),
+                ValueType: "Edm.String",
+            }));
+        }
+        return UtilitiesCloneFactory(this, "SendEmail").excute({ properties });
+    }
+    getCurrentUserEmailAddresses() {
+        return UtilitiesCloneFactory(this, "GetCurrentUserEmailAddresses").excute({});
+    }
+    resolvePrincipal(input, scopes, sources, inputIsEmailOnly, addToUserInfoList, matchUserInfoList = false) {
+        const params = {
+            addToUserInfoList,
+            input,
+            inputIsEmailOnly,
+            matchUserInfoList,
+            scopes,
+            sources,
+        };
+        return UtilitiesCloneFactory(this, "ResolvePrincipalInCurrentContext").excute(params);
+    }
+    searchPrincipals(input, scopes, sources, groupName, maxCount) {
+        const params = {
+            groupName: groupName,
+            input: input,
+            maxCount: maxCount,
+            scopes: scopes,
+            sources: sources,
+        };
+        return UtilitiesCloneFactory(this, "SearchPrincipalsUsingContextWeb").excute(params);
+    }
+    createEmailBodyForInvitation(pageAddress) {
+        const params = {
+            pageAddress: pageAddress,
+        };
+        return UtilitiesCloneFactory(this, "CreateEmailBodyForInvitation").excute(params);
+    }
+    expandGroupsToPrincipals(inputs, maxCount = 30) {
+        const params = {
+            inputs: inputs,
+            maxCount: maxCount,
+        };
+        const clone = UtilitiesCloneFactory(this, "ExpandGroupsToPrincipals");
+        return clone.excute(params);
+    }
+}
+const Utilities = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spInvokableFactory)(_Utilities);
+const UtilitiesCloneFactory = (base, path) => Utilities(base, path);
 
 
 /***/ }),
@@ -86798,7 +88670,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("291d1da1738c443e15b4")
+/******/ 		__webpack_require__.h = () => ("104052c02ebce0801000")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

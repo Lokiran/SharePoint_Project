@@ -40,6 +40,7 @@ export interface IInventoryManagementState {
     activeUserEmail: string;
     isIncidentFormOpen: boolean;
     selectedAssetForIncident: IInventoryItem | undefined;
+    preselectedIncidentType?: string;
     syncInProgress?: boolean;
     syncMessage?: string;
     syncMessageType?: MessageBarType;
@@ -48,6 +49,16 @@ export interface IInventoryManagementState {
     isAdminPanelOpen?: boolean;
     adminSelectedAssetId?: string;
     adminComment?: string;
+    lastMockEmail?: {
+        to: string[];
+        subject: string;
+        body: string;
+    };
+    editMockEmailTo: string;
+    editMockEmailSubject: string;
+    isSendingMockEmail: boolean;
+    mockEmailSendError?: string;
+    mockEmailSendSuccess: boolean;
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _isRequestOwnedByCurrentUser;
@@ -60,6 +71,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _handleNotificationAction;
     constructor(props: IInventoryManagementProps);
     componentDidMount(): Promise<void>;
+    componentWillUnmount(): void;
+    private _handleMockEmailSent;
+    private _handleEmailSendFailed;
+    private _onSendMockEmail;
     private _resolveUserRole;
     private _loadInventory;
     private _loadRequests;

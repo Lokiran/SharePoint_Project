@@ -8,7 +8,12 @@ export declare class IncidentService {
     private readonly incidentListName;
     private readonly employeeListName;
     private readonly mappingListName;
+    private readonly replacementListName;
+    private static _replacementListFieldsEnsured;
+    getReplacementList(): Promise<any>;
+    private _ensureReplacementListFields;
     constructor(spContext: WebPartContext);
+    private _migrateLocalReplacements;
     private getMappedPayload;
     private getLocalItems;
     private saveLocalItems;
@@ -17,6 +22,7 @@ export declare class IncidentService {
     private getMappedItems;
     private getMappedAssignedAssets;
     getEmployeeIncidentHistory(userEmail: string, isAdmin?: boolean): Promise<any[]>;
+    getEmployeeReplacementHistory(userEmail: string, isAdmin?: boolean): Promise<any[]>;
     updateIncidentStatus(id: string, status: string, resolution?: string): Promise<any>;
     getEmployeeAssignedAssets(userEmail: string): Promise<any[]>;
     createIncidentRequest(incidentData: any, file?: File): Promise<any>;

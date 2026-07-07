@@ -244,7 +244,7 @@ export class IncidentService {
       const statusField = getInternalName(['Status', 'Request Status', 'RequestStatus']);
       if (statusField) payload[statusField] = data.status || 'Pending';
 
-      const incidentTypeField = getInternalName(['Incident Type', 'IncidentType']);
+      const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
       if (incidentTypeField) payload[incidentTypeField] = data.incidentType || '';
 
       const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
@@ -306,7 +306,7 @@ export class IncidentService {
     const dateField = getInternalName(['Raised Date', 'RaisedDate', 'Requested Date', 'RequestedDate', 'Reported Date', 'ReportedDate']);
     const reasonField = getInternalName(['Description', 'Reason for Request', 'ReasonforRequest', 'Reason', 'Issue Description', 'IssueDescription']);
     const statusField = getInternalName(['Status', 'Request Status', 'RequestStatus']);
-    const incidentTypeField = getInternalName(['Incident Type', 'IncidentType']);
+    const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
     const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
     const empNameField = getInternalName(['Employe Name', 'Employee Name', 'EmployeeName', 'EmployeName']);
 

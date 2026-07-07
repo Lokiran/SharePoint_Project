@@ -7,9 +7,8 @@ import "@pnp/sp/items";
 import "@pnp/sp/batching";
 import "@pnp/sp/fields";
 
-// eslint-disable-next-line no-var
-var _sp: SPFI;
-var _context: WebPartContext;
+let _sp: SPFI;
+let _context: WebPartContext;
 
 export const getSP = (context?: WebPartContext): SPFI => {
   if (context != null) {

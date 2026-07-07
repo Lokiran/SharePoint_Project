@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InventoryService = void 0;
 const pnpjsConfig_1 = require("../pnpjsConfig");
 const mockData_1 = require("../data/mockData");
+const EmailService_1 = require("./EmailService");
 class InventoryService {
     static async getInventoryList() {
         const sp = (0, pnpjsConfig_1.getSP)();
@@ -655,8 +656,17 @@ class InventoryService {
         const sp = (0, pnpjsConfig_1.getSP)();
         let requesterId = null;
         try {
-            const user = await sp.web.ensureUser(request.requesterName);
-            requesterId = user.data ? user.data.Id : user.Id;
+            const matchingEmp = mockData_1.EMPLOYEES.find(e => e.name.toLowerCase() === request.requesterName.toLowerCase());
+            const userIdentifier = request.requesterEmail || (matchingEmp ? matchingEmp.email : request.requesterName);
+            try {
+                const user = await sp.web.ensureUser(userIdentifier);
+                requesterId = user.data ? user.data.Id : user.Id;
+            }
+            catch (err) {
+                console.warn(`Could not resolve user identifier ${userIdentifier} in SharePoint. Falling back to current user.`, err);
+                const currentUser = await sp.web.currentUser();
+                requesterId = currentUser.Id;
+            }
         }
         catch (e) {
             console.warn("Could not resolve requester in SharePoint", e);
@@ -692,16 +702,27 @@ class InventoryService {
             if (requesterField) {
                 const isPerson = requesterField.TypeAsString === "User" || requesterField.TypeAsString === "UserMulti";
                 if (isPerson && requesterId !== null) {
-                    dynamicPayload[`${requesterField.InternalName}Id`] = requesterId;
+                    if (requesterField.TypeAsString === "UserMulti") {
+                        dynamicPayload[`${requesterField.InternalName}Id`] = { results: [requesterId] };
+                    }
+                    else {
+                        dynamicPayload[`${requesterField.InternalName}Id`] = requesterId;
+                    }
                 }
                 else {
                     dynamicPayload[requesterField.InternalName] = request.requesterName;
                 }
             }
             if (assetField) {
-                const isLookup = assetField.TypeAsString === "Lookup";
+                const isLookup = assetField.TypeAsString === "Lookup" || assetField.TypeAsString === "LookupMulti";
                 if (isLookup) {
-                    dynamicPayload[`${assetField.InternalName}Id`] = parseInt(request.assetId, 10) || 1;
+                    const assetId = parseInt(request.assetId, 10) || 1;
+                    if (assetField.TypeAsString === "LookupMulti") {
+                        dynamicPayload[`${assetField.InternalName}Id`] = { results: [assetId] };
+                    }
+                    else {
+                        dynamicPayload[`${assetField.InternalName}Id`] = assetId;
+                    }
                 }
                 else {
                     dynamicPayload[assetField.InternalName] = request.assetTitle;
@@ -873,20 +894,40 @@ class InventoryService {
         ];
         let addedRequest;
         let success = false;
-        let lastError;
-        for (const payload of payloads) {
+        const errors = [];
+        for (let i = 0; i < payloads.length; i++) {
+            const payload = payloads[i];
             try {
                 addedRequest = await list.items.add(payload);
                 success = true;
                 break; // Success, stop looping immediately!
             }
             catch (err) {
-                lastError = err;
+                const errMsg = err ? (err.message || JSON.stringify(err)) : "Unknown";
+                let detail = errMsg;
+                if (err && err.data) {
+                    try {
+                        const dataObj = typeof err.data === 'string' ? JSON.parse(err.data) : err.data;
+                        const innerError = dataObj['odata.error'] || dataObj.error;
+                        if (innerError && innerError.message) {
+                            detail = innerError.message.value || innerError.message;
+                        }
+                    }
+                    catch (e) { }
+                }
+                errors.push(`Payload #${i + 1} failed: ${detail}`);
             }
         }
         if (!success) {
-            console.error("Error adding request to SharePoint after trying all column combinations.", lastError);
-            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Please check the Developer Console (F12) for the exact column name mismatch.`);
+            let fieldsDiag = "";
+            try {
+                const listFields = await list.fields.select("InternalName", "Title", "TypeAsString", "Required")();
+                fieldsDiag = listFields.map((f) => `${f.Title} (${f.InternalName}): ${f.TypeAsString}${f.Required ? ' *Required*' : ''}`).join(" | ");
+            }
+            catch (fErr) {
+                fieldsDiag = "Could not load fields: " + (fErr.message || JSON.stringify(fErr));
+            }
+            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Errors: [ ${errors.join(" | ")} ] --- Fields in list: [ ${fieldsDiag} ]`);
         }
         // Safely perform post-save actions (key generation, updating, logging) outside the creation loop
         try {
@@ -930,6 +971,29 @@ class InventoryService {
                 }),
                 user: userDisplayName
             });
+            // Trigger Email Notification to Manager
+            try {
+                let liveManagerEmail = "";
+                try {
+                    const resolvedEmail = await EmailService_1.EmailService.resolveLiveManagerEmail(request.requesterName);
+                    if (resolvedEmail) {
+                        liveManagerEmail = resolvedEmail;
+                    }
+                }
+                catch (resolveErr) {
+                    console.warn("Failed to resolve live manager email:", resolveErr);
+                }
+                await EmailService_1.EmailService.sendApprovalRequestToManager({
+                    requestKey,
+                    employeeName: request.requesterName,
+                    assetName: request.assetTitle,
+                    requestDate: request.requestDate || new Date().toLocaleDateString(),
+                    adminName: userDisplayName
+                }, liveManagerEmail || undefined);
+            }
+            catch (mailErr) {
+                console.warn("Failed to send approval request email:", mailErr);
+            }
         }
         catch (postError) {
             console.warn("Failed in post-request creation steps:", postError);
@@ -1118,6 +1182,26 @@ class InventoryService {
                 }),
                 user: approverName
             });
+            // Trigger Email Notification to Admin on Approval
+            if (status === 'Approved') {
+                try {
+                    const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                    const employeeKey = findKey("employee") || findKey("requester") || "Employee";
+                    const requesterKey = findKey("requester") || "Requester";
+                    const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Title || "Employee";
+                    const employeeName = typeof rawEmp === 'string' ? rawEmp : (rawEmp && rawEmp.Title ? rawEmp.Title : "Employee");
+                    await EmailService_1.EmailService.sendApprovalConfirmationToAdmin({
+                        requestKey: requestKey || this._buildRequestKeyFromItemId(requestId),
+                        employeeName,
+                        assetName: item[selectAssetKey] || item.Title || "Asset",
+                        approvedBy: approverName,
+                        approvalDate: new Date().toLocaleDateString()
+                    });
+                }
+                catch (mailErr) {
+                    console.warn("Failed to send approval confirmation email to Admins:", mailErr);
+                }
+            }
         }
         catch (error) {
             console.error(`Failed to update RequestList item ${requestId} status`, error);
@@ -1292,7 +1376,14 @@ class InventoryService {
                 assignedToId = user.data ? user.data.Id : user.Id;
             }
             catch (e) {
-                console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write.`, e);
+                console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write. Falling back to current user.`, e);
+                try {
+                    const currentUser = await sp.web.currentUser();
+                    assignedToId = currentUser.Id;
+                }
+                catch (currUserErr) {
+                    console.warn("Failed to get current user as fallback in mapping write", currUserErr);
+                }
             }
         }
         const titleField = mappingFields.find((f) => f.InternalName === "Title");
@@ -1438,7 +1529,14 @@ class InventoryService {
             assignedToId = user.data ? user.data.Id : user.Id;
         }
         catch (e) {
-            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to string assignment if column allows.`, e);
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to current user.`, e);
+            try {
+                const currentUser = await sp.web.currentUser();
+                assignedToId = currentUser.Id;
+            }
+            catch (currUserErr) {
+                console.warn("Failed to get current user as fallback in assignAssetsToEmployee", currUserErr);
+            }
         }
         const updatePromises = assetIds.map(async (assetId) => {
             // 1. Get asset details first
@@ -1560,6 +1658,20 @@ class InventoryService {
                 }),
                 user: adminName
             });
+            // Trigger Email Notification to Employee on Assignment
+            try {
+                await EmailService_1.EmailService.sendAssignmentNotificationToEmployee({
+                    employeeName,
+                    employeeEmail,
+                    assetName,
+                    assetId: serialNumber || assetId,
+                    assignedBy: adminName,
+                    assignedDate: finalAssignedDate
+                });
+            }
+            catch (mailErr) {
+                console.warn("Failed to send assignment notification email to Employee:", mailErr);
+            }
         });
         await Promise.all(updatePromises);
     }

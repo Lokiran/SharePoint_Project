@@ -22,11 +22,13 @@ require("@pnp/sp/site-users/web");
 require("@pnp/sp/site-groups/web");
 const mockData_1 = require("../data/mockData");
 const InventoryService_1 = require("../services/InventoryService");
+const EmailService_1 = require("../services/EmailService");
 const Dashboard_1 = require("./Dashboard");
 const AssetTracking_1 = require("./AssetTracking");
 const NotificationCenter_1 = require("./NotificationCenter");
 const IncidentRequestModule_1 = require("./IncidentRequest/IncidentRequestModule");
 const IncidentHistory_1 = require("./IncidentHistory/IncidentHistory");
+const ReplacementHistory_1 = require("./ReplacementHistory/ReplacementHistory");
 const AssetLifecycleDiagram_1 = require("./AssetLifecycleDiagram");
 class InventoryManagement extends React.Component {
     constructor(props) {
@@ -275,6 +277,46 @@ class InventoryManagement extends React.Component {
                 isNotificationDetailsOpen: true
             });
         };
+        this._handleMockEmailSent = (ev) => {
+            this.setState({
+                lastMockEmail: ev.detail,
+                editMockEmailTo: ev.detail.to.join(', '),
+                editMockEmailSubject: ev.detail.subject,
+                isSendingMockEmail: false,
+                mockEmailSendError: undefined,
+                mockEmailSendSuccess: false
+            });
+        };
+        this._handleEmailSendFailed = (ev) => {
+            this.setState({
+                syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
+                syncMessageType: react_1.MessageBarType.warning
+            });
+        };
+        this._onSendMockEmail = async () => {
+            const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
+            if (!lastMockEmail)
+                return;
+            this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
+            try {
+                const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
+                await EmailService_1.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
+                this.setState({
+                    isSendingMockEmail: false,
+                    mockEmailSendSuccess: true
+                });
+                setTimeout(() => {
+                    this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
+                }, 2000);
+            }
+            catch (e) {
+                console.error("Failed to send email from panel:", e);
+                this.setState({
+                    isSendingMockEmail: false,
+                    mockEmailSendError: e.message || JSON.stringify(e)
+                });
+            }
+        };
         this._resolveUserRole = async () => {
             try {
                 const sp = (0, pnpjsConfig_1.getSP)();
@@ -490,6 +532,7 @@ class InventoryManagement extends React.Component {
                     id: tempId,
                     requestKey: `REQ-${("000000" + (this.state.requests.length + 1)).slice(-6)}`,
                     requesterName: requestData.requesterName,
+                    requesterEmail: requestData.requesterEmail,
                     employeeId: requestData.employeeId || "",
                     assetId: requestData.assetId || "1",
                     assetTitle: requestData.assetTitle,
@@ -1163,10 +1206,17 @@ class InventoryManagement extends React.Component {
             activeUserEmail: activeEmail,
             isIncidentFormOpen: false,
             selectedAssetForIncident: undefined,
+            preselectedIncidentType: undefined,
             selectedAdminRequest: undefined,
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
-            adminComment: ''
+            adminComment: '',
+            lastMockEmail: undefined,
+            editMockEmailTo: '',
+            editMockEmailSubject: '',
+            isSendingMockEmail: false,
+            mockEmailSendError: undefined,
+            mockEmailSendSuccess: false
         };
     }
     async componentDidMount() {
@@ -1181,6 +1231,16 @@ class InventoryManagement extends React.Component {
         }
         catch (e) {
             console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
+        }
+        if (typeof window !== 'undefined') {
+            window.addEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
+            window.addEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
+        }
+    }
+    componentWillUnmount() {
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
+            window.removeEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
         }
     }
     render() {
@@ -1215,6 +1275,7 @@ class InventoryManagement extends React.Component {
                 badgeColor: '#3b82f6'
             },
             { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
+            { key: 'ReplacementHistory', text: 'Replacement History', icon: 'Sync' },
             ...(isAdmin ? [
                 { key: 'Inventory', text: 'Inventory', icon: 'List' }
             ] : []),
@@ -1313,7 +1374,7 @@ class InventoryManagement extends React.Component {
                                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
                                         React.createElement("h3", null, "My Assigned Assets")),
                                     React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "View assets currently assigned to you."),
-                                    React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) })));
+                                    React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }), onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' }) })));
                             case 'MyRequests':
                                 return (React.createElement("div", null,
                                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
@@ -1327,6 +1388,11 @@ class InventoryManagement extends React.Component {
                                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
                                         React.createElement("h3", null, "Incident History")),
                                     React.createElement(IncidentHistory_1.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
+                            case 'ReplacementHistory':
+                                return (React.createElement("div", null,
+                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                        React.createElement("h3", null, "Replacement History")),
+                                    React.createElement(ReplacementHistory_1.ReplacementHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                             case 'Inventory':
                                 return isAdmin ? (React.createElement("div", null,
                                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
@@ -1645,11 +1711,25 @@ class InventoryManagement extends React.Component {
                         }
                     })()))),
             (isAdmin || isManager) && (React.createElement(AssetForm_1.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
-            (isAdmin || isManager || isEmployee) && (React.createElement(RequestForm_1.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (React.createElement(IncidentRequestModule_1.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
+            (isAdmin || isManager || isEmployee) && (React.createElement(RequestForm_1.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
+            (isAdmin || isManager || isEmployee) && (React.createElement(IncidentRequestModule_1.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType })),
             this._renderNotificationDetailsPanel(),
             this._renderAdminAssignmentPanel(),
-            React.createElement(ReturnAssetForm_1.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest })));
+            React.createElement(ReturnAssetForm_1.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
+            React.createElement(react_1.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: react_1.PanelType.medium, headerText: "\uD83D\uDCEC Outgoing Email Notification (Developer Preview)", closeButtonAriaLabel: "Close", onRenderFooterContent: () => (React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
+                    React.createElement(react_1.PrimaryButton, { text: this.state.isSendingMockEmail ? "Sending..." : "Send Email", onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
+                    React.createElement(react_1.DefaultButton, { text: "Close", onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (React.createElement(react_1.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
+                React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
+                React.createElement(react_1.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
+                React.createElement(react_1.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
+                this.state.mockEmailSendSuccess && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
+                this.state.mockEmailSendError && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error },
+                    "Failed to send email: ",
+                    this.state.mockEmailSendError)),
+                this.state.isSendingMockEmail && (React.createElement(react_1.ProgressIndicator, { label: "Dispatched email transaction in progress..." })),
+                React.createElement("div", { style: { marginTop: '10px' } },
+                    React.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, "Email Content Preview:"),
+                    React.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
     }
 }
 exports.default = InventoryManagement;

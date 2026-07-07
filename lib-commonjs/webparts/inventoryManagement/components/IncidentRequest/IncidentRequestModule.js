@@ -54,17 +54,37 @@ const IncidentRequestModule = (props) => {
         }, 500);
         return () => clearTimeout(timer);
     }, [formData.employeeName]);
-    // Sync with props when employee context changes or when a preselected asset is passed
+    const prevIsOpenRef = (0, react_1.useRef)(props.isOpen);
     (0, react_1.useEffect)(() => {
         setFormData((prev) => ({
             ...prev,
             employeeName: props.userDisplayName || '',
             employeeId: props.employeeId || '',
             employeeEmail: props.userEmail || '',
-            assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : (props.isOpen ? '' : prev.assetName),
-            serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : (props.isOpen ? '' : prev.serialNo),
         }));
-    }, [props.userDisplayName, props.employeeId, props.userEmail, props.preselectedAsset, props.isOpen]);
+    }, [props.userDisplayName, props.employeeId, props.userEmail]);
+    (0, react_1.useEffect)(() => {
+        if (props.isOpen && !prevIsOpenRef.current) {
+            // Panel just opened! Reset fields.
+            setFormData((prev) => ({
+                ...prev,
+                assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : '',
+                serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : '',
+                incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : '',
+                description: '',
+            }));
+        }
+        else if (props.preselectedAsset || props.preselectedIncidentType) {
+            // Sync preselected asset or incident type if props update while open
+            setFormData((prev) => ({
+                ...prev,
+                assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : prev.assetName,
+                serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : prev.serialNo,
+                incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : prev.incidentType,
+            }));
+        }
+        prevIsOpenRef.current = props.isOpen;
+    }, [props.isOpen, props.preselectedAsset, props.preselectedIncidentType]);
     const loadAssignedAssetsForName = async (name) => {
         if (!name.trim()) {
             setAssignedAssets([]);
@@ -113,7 +133,8 @@ const IncidentRequestModule = (props) => {
             };
             console.log('Submitting incident payload:', payload);
             await service.createIncidentRequest(payload);
-            setMessage({ type: react_2.MessageBarType.success, text: 'Incident reported successfully!' });
+            const isRep = props.preselectedIncidentType === 'Replacement Request';
+            setMessage({ type: react_2.MessageBarType.success, text: isRep ? 'Replacement request submitted successfully!' : 'Incident reported successfully!' });
             setTimeout(() => {
                 setFormData({
                     employeeName: props.userDisplayName || '',
@@ -167,11 +188,14 @@ const IncidentRequestModule = (props) => {
         text: `${a.assetName} (S/N: ${a.serialNumber || 'N/A'})`,
     }));
     const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
-    return (React.createElement(react_2.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_2.PanelType.custom, customWidth: "450px", headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
+    const isReplacementMode = props.preselectedIncidentType === 'Replacement Request';
+    return (React.createElement(react_2.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_2.PanelType.custom, customWidth: "450px", headerText: isReplacementMode ? "Request Asset Replacement" : "Raise Incident", closeButtonAriaLabel: "Close" },
         React.createElement("div", { className: IncidentRequestModule_module_scss_1.default.incidentRequestModule },
             React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
                 message && (React.createElement(react_2.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),
-                !isLoadingAssets && assignedAssets.length === 0 && (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.info }, "You currently have no assets assigned. You can still raise generic incidents.")),
+                !isLoadingAssets && assignedAssets.length === 0 && (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.info }, isReplacementMode
+                    ? "You currently have no assets assigned to request a replacement for."
+                    : "You currently have no assets assigned. You can still raise generic incidents.")),
                 React.createElement(react_2.TextField, { label: "Employee Name", value: formData.employeeName, onChange: (ev, val) => handleInputChange('employeeName', val || ''), required: true }),
                 React.createElement(react_2.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
                         const selected = assignedAssets.find(a => a.id === option?.key);
@@ -188,14 +212,14 @@ const IncidentRequestModule = (props) => {
                     }, disabled: isLoadingAssets }),
                 formData.assetName && (React.createElement(react_2.TextField, { label: "Asset Name", value: formData.assetName, disabled: true })),
                 formData.serialNo && (React.createElement(react_2.TextField, { label: "Serial NO", value: formData.serialNo, disabled: true })),
-                React.createElement(react_2.Dropdown, { label: "Incident Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Incident Type" }),
+                !isReplacementMode && (React.createElement(react_2.Dropdown, { label: "Issue Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Issue Type" })),
                 React.createElement(react_2.Dropdown, { label: "Priority", options: priorityOptions, selectedKey: formData.priority, onChange: (ev, option) => handleInputChange('priority', option?.key) }),
-                React.createElement(react_2.TextField, { label: "Description", multiline: true, rows: 5, placeholder: "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
+                React.createElement(react_2.TextField, { label: isReplacementMode ? "Reason for Replacement" : "Description", multiline: true, rows: 5, placeholder: isReplacementMode ? "Describe the reason for replacement..." : "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
                 React.createElement(react_2.Dropdown, { label: "Raised To", options: raisedToOptions, selectedKey: formData.raisedTo, onChange: (ev, option) => handleInputChange('raisedTo', option?.key), placeholder: "Select Team" }),
                 React.createElement(react_2.TextField, { label: "Raised Date", value: formData.raisedDate, readOnly: true }),
                 React.createElement(react_2.TextField, { label: "Status", value: formData.status, readOnly: true }),
                 React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: 20 } },
-                    React.createElement(react_2.PrimaryButton, { text: "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
+                    React.createElement(react_2.PrimaryButton, { text: isReplacementMode ? "Request Replacement" : "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
                     React.createElement(react_2.DefaultButton, { text: "Cancel", onClick: handleCancel }))))));
 };
 exports.IncidentRequestModule = IncidentRequestModule;
