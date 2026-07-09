@@ -18,6 +18,19 @@ $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 $shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
 $shadow-lg: 0 8px 16px 0 rgba(0, 0, 0, 0.10), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 $shadow-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+
+// 3D Visual Tokens
+$shadow-3d-box: 
+  0 1px 0 rgba(255, 255, 255, 0.55) inset,
+  0 4px 6px -1px rgba(0, 0, 0, 0.04),
+  0 10px 20px -3px rgba(0, 0, 0, 0.06),
+  0 0 0 1px rgba(0, 0, 0, 0.03);
+$shadow-3d-box-hover: 
+  0 1px 0 rgba(255, 255, 255, 0.7) inset,
+  0 12px 20px -4px rgba(0, 0, 0, 0.08),
+  0 20px 32px -4px rgba(0, 0, 0, 0.10),
+  0 0 0 1px rgba(0, 0, 0, 0.04);
+
 $radius-sm: 8px;
 $radius-md: 12px;
 $radius-lg: 16px;
@@ -190,12 +203,15 @@ $transition-normal: 0.25s $ease-standard;
       background: var(--surface-bg);
       padding: 4px;
       border-radius: $radius-sm;
-      box-shadow: $shadow-sm;
-      transition: all $transition-normal;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+      box-shadow: $shadow-3d-box;
+      transition: transform $transition-normal, box-shadow $transition-normal;
+      transform: translateY(-1px);
 
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: $shadow-hover;
+        transform: translateY(-3px);
+        box-shadow: $shadow-3d-box-hover;
       }
 
       :global(.ms-Button--primary) {
@@ -203,14 +219,33 @@ $transition-normal: 0.25s $ease-standard;
         border-radius: 6px;
         height: 38px;
         background: var(--primary-gradient);
-        border: none;
+        border: 1px solid #103f7a;
+        border-bottom: 3px solid #0f3566;
         font-size: 0.85rem;
         font-weight: 600;
-        transition: all 0.2s ease;
+        transition: transform 0.1s ease, border-bottom-width 0.1s ease, filter 0.15s ease, box-shadow 0.1s ease;
+        box-shadow: 
+          inset 0 1px 0 rgba(255, 255, 255, 0.25),
+          0 2px 4px rgba(0, 120, 212, 0.15);
+        color: #ffffff;
+        transform: translateY(-1px);
 
         &:hover {
-          filter: brightness(1.12);
-          transform: scale(1.01);
+          filter: brightness(1.08);
+          border-color: #0f3c73;
+          border-bottom: 3px solid #0b2d54;
+          transform: translateY(-2px);
+          box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.35),
+            0 4px 8px rgba(0, 120, 212, 0.25);
+        }
+
+        &:active {
+          transform: translateY(2px);
+          border-bottom-width: 1px;
+          box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.25),
+            0 1px 1px rgba(0, 120, 212, 0.1);
         }
       }
     }
@@ -237,16 +272,17 @@ $transition-normal: 0.25s $ease-standard;
 
     .sidebarContainer {
       width: 250px;
-      background-color: var(--surface-bg);
-      border: 1px solid $border-color;
+      background: linear-gradient(145deg, var(--surface-bg) 0%, rgba(0, 0, 0, 0.01) 100%);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 3px solid rgba(0, 0, 0, 0.08);
       border-radius: var(--radius-md);
       padding: 12px 10px;
-      box-shadow: $shadow-sm;
+      box-shadow: $shadow-3d-box;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
       flex-shrink: 0;
-      transition: width $transition-normal;
+      transition: width $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
 
       @media (max-width: 768px) {
         width: 100%;
@@ -350,7 +386,7 @@ $transition-normal: 0.25s $ease-standard;
       font-size: 0.84rem;
       font-weight: 500;
       color: var(--text-muted);
-      transition: all $transition-fast;
+      transition: all 0.15s ease;
       position: relative;
       border: 1px solid transparent;
       user-select: none;
@@ -379,11 +415,22 @@ $transition-normal: 0.25s $ease-standard;
         text-align: center;
         line-height: 1.35;
         flex-shrink: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
       }
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.04);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
         color: var(--text-main);
+        transform: translateY(-0.5px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+
+      &:active {
+        transform: translateY(0.5px);
+        border-bottom-width: 1px;
+        box-shadow: none;
       }
 
       &:focus-visible {
@@ -391,22 +438,28 @@ $transition-normal: 0.25s $ease-standard;
         outline-offset: -2px;
       }
 
-      // Active state
+      // Active state - raised 3D selected badge
       &.navItemActive {
-        background-color: rgba(0, 120, 212, 0.08);
+        background: linear-gradient(180deg, rgba(0, 120, 212, 0.06) 0%, rgba(0, 120, 212, 0.1) 100%) !important;
         color: $color-blue;
         font-weight: 600;
+        border: 1px solid rgba(0, 120, 212, 0.12) !important;
+        border-bottom: 2px solid rgba(0, 120, 212, 0.22) !important;
+        box-shadow: 
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          0 1px 2px rgba(0, 120, 212, 0.06) !important;
 
         // Left accent bar
         &::before {
           content: '';
           position: absolute;
           left: 0;
-          top: 6px;
-          bottom: 6px;
+          top: 8px;
+          bottom: 8px;
           width: 3px;
           background-color: $color-blue;
           border-radius: 0 2px 2px 0;
+          box-shadow: 0 0 6px rgba(0, 120, 212, 0.5);
         }
       }
     }
@@ -452,11 +505,20 @@ $transition-normal: 0.25s $ease-standard;
     // ----------------------------------------------------------
 
     .card {
-      background: var(--surface-bg);
+      background: linear-gradient(145deg, var(--surface-bg) 0%, rgba(255, 255, 255, 0.02) 100%);
       border-radius: var(--radius-lg);
       padding: 24px;
-      box-shadow: $shadow-sm;
-      border: 1px solid $border-color;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 3px solid rgba(0, 0, 0, 0.08);
+      box-shadow: $shadow-3d-box;
+      transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-3d-box-hover;
+        border-color: rgba(0, 0, 0, 0.08);
+        border-bottom-color: rgba(0, 0, 0, 0.12);
+      }
 
       .cardHeader {
         display: flex;
@@ -500,7 +562,7 @@ $transition-normal: 0.25s $ease-standard;
     :global(.ms-Pivot) {
       display: grid !important;
       grid-template-columns: repeat(4, 1fr) !important;
-      gap: 10px !important;
+      gap: 12px !important;
       width: 100% !important;
       margin-bottom: 20px !important;
       border-bottom: none !important;
@@ -508,33 +570,71 @@ $transition-normal: 0.25s $ease-standard;
       :global(.ms-Pivot-link) {
         margin: 0 !important;
         height: 42px !important;
-        background-color: var(--surface-bg) !important;
-        border: 1px solid $border-color !important;
+        background: linear-gradient(180deg, var(--surface-bg) 0%, rgba(0, 0, 0, 0.02) 100%) !important;
+        border: 1px solid rgba(0, 0, 0, 0.12) !important;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.24) !important;
         border-radius: $radius-sm !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 6px !important;
-        transition: all 0.2s $ease-standard !important;
-        font-weight: 500 !important;
-        box-shadow: $shadow-sm !important;
+        transition: transform 0.1s ease, border-bottom-width 0.1s ease, background 0.15s ease, box-shadow 0.1s ease !important;
+        font-weight: 600 !important;
+        box-shadow: 
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          0 2px 4px rgba(0, 0, 0, 0.05) !important;
+        transform: translateY(-1px) !important;
+        color: var(--text-main) !important;
 
         &:hover {
-          background-color: rgba(0, 0, 0, 0.03) !important;
-          color: var(--text-main) !important;
-          border-color: $border-strong !important;
-          transform: translateY(-1px) !important;
+          background: linear-gradient(180deg, var(--surface-bg) 0%, rgba(0, 0, 0, 0.05) 100%) !important;
+          border-color: rgba(0, 0, 0, 0.15) !important;
+          border-bottom: 3px solid rgba(0, 0, 0, 0.28) !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.75),
+            0 4px 8px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        &:active {
+          transform: translateY(2px) !important;
+          border-bottom-width: 1px !important;
+          box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.08),
+            0 1px 1px rgba(0, 0, 0, 0.04) !important;
         }
 
         &.is-selected {
           background: var(--primary-gradient) !important;
-          border-color: transparent !important;
-          font-weight: 600 !important;
-          box-shadow: 0 3px 10px rgba(0, 120, 212, 0.2) !important;
+          border: 1px solid #103f7a !important;
+          border-bottom: 3px solid #0f3566 !important;
+          font-weight: 700 !important;
+          box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.25),
+            0 3px 8px rgba(0, 120, 212, 0.3) !important;
           color: #ffffff !important;
+          transform: translateY(-1px) !important;
 
           &::before {
             display: none !important;
+          }
+
+          &:hover {
+            background: linear-gradient(180deg, #388ae6 0%, #205ab3 100%) !important;
+            border-color: #0f3c73 !important;
+            border-bottom: 3px solid #0b2d54 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 
+              inset 0 1px 0 rgba(255, 255, 255, 0.35),
+              0 5px 12px rgba(0, 120, 212, 0.4) !important;
+          }
+
+          &:active {
+            transform: translateY(2px) !important;
+            border-bottom-width: 1px !important;
+            box-shadow: 
+              inset 0 2px 4px rgba(0, 0, 0, 0.2),
+              0 1px 2px rgba(0, 120, 212, 0.1) !important;
           }
 
           :global(.ms-Pivot-link-content) {
@@ -597,38 +697,75 @@ $transition-normal: 0.25s $ease-standard;
           height: 32px;
           padding: 0 8px;
           border-radius: 6px;
-          border: 1px solid $border-color;
-          background-color: var(--surface-bg);
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+          background: linear-gradient(180deg, var(--surface-bg) 0%, rgba(0, 0, 0, 0.02) 100%);
           color: var(--text-main);
-          font-weight: 500;
+          font-weight: 600;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 0.8rem;
-          transition: all $transition-fast;
+          transition: transform 0.1s ease, border-bottom-width 0.1s ease, background 0.15s ease, box-shadow 0.1s ease;
+          box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.5),
+            0 1px 2px rgba(0, 0, 0, 0.03);
+          transform: translateY(-1px);
 
           &:hover:not(:disabled) {
-            background-color: rgba(0, 0, 0, 0.04);
-            border-color: $border-strong;
-            transform: translateY(-1px);
+            background: linear-gradient(180deg, var(--surface-bg) 0%, rgba(0, 0, 0, 0.05) 100%);
+            border-color: rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 
+              inset 0 1px 0 rgba(255, 255, 255, 0.75),
+              0 3px 6px rgba(0, 0, 0, 0.06);
           }
 
           &:active:not(:disabled) {
-            transform: translateY(0);
+            transform: translateY(2px);
+            border-bottom-width: 1px;
+            box-shadow: 
+              inset 0 2px 4px rgba(0, 0, 0, 0.06),
+              0 1px 1px rgba(0, 0, 0, 0.03);
           }
 
           &:disabled {
             opacity: 0.35;
             cursor: not-allowed;
+            transform: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: none;
           }
 
           &.active {
             background: var(--primary-gradient);
             color: #ffffff;
-            border-color: transparent;
-            font-weight: 600;
-            box-shadow: 0 2px 6px rgba(0, 120, 212, 0.2);
+            border: 1px solid #103f7a;
+            border-bottom: 3px solid #0f3566;
+            font-weight: 700;
+            box-shadow: 
+              inset 0 1px 0 rgba(255, 255, 255, 0.25),
+              0 2px 5px rgba(0, 120, 212, 0.25);
+            transform: translateY(-1px);
+
+            &:hover {
+              filter: brightness(1.08);
+              transform: translateY(-2px);
+              border-bottom-width: 3px;
+              box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, 0.35),
+                0 4px 8px rgba(0, 120, 212, 0.3);
+            }
+
+            &:active {
+              transform: translateY(2px);
+              border-bottom-width: 1px;
+              box-shadow: 
+                inset 0 2px 4px rgba(0, 0, 0, 0.25),
+                0 1px 1px rgba(0, 120, 212, 0.1);
+            }
           }
         }
       }

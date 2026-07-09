@@ -11,12 +11,6 @@ object-assign
 (c) Sindre Sorhus
 @license MIT
 */
-/*!
- * Chart.js v4.5.1
- * https://www.chartjs.org
- * (c) 2025 Chart.js Contributors
- * Released under the MIT License
- */
 /** @license
  *
  * jsPDF - PDF Document creation from JavaScript
@@ -259,6 +253,12 @@ object-assign
  * @license
  * Unicode Bidi Engine based on the work of Alex Shensis (@asthensis)
  * MIT License
+ */
+/*!
+ * Chart.js v4.5.1
+ * https://www.chartjs.org
+ * (c) 2025 Chart.js Contributors
+ * Released under the MIT License
  */
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.

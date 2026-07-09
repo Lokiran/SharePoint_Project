@@ -520,4 +520,4 @@ self["webpackHotUpdate_56f8f2dc_8391_46cb_b74c_2806d6953063_0_0_1"]("inventory-m
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=inventory-management-web-part.711ee39db520dad5adfa.hot-update.js.map
+//# sourceMappingURL=inventory-management-web-part.902f2de19e31212d3dac.hot-update.js.map

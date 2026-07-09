@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("@keyframes fadeInUp_56f100fc{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_56f100fc{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_56f100fc{0%,to{opacity:1}50%{opacity:.6}}.dashboard_56f100fc{animation:fadeInUp_56f100fc .4s cubic-bezier(0,0,.2,1);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_56f100fc .dashboardHeader_56f100fc{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc{flex:1;min-width:200px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerTitle_56f100fc{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerSubtitle_56f100fc{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerDate_56f100fc{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerDate_56f100fc i{color:#8a8886;font-size:12px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerRight_56f100fc{align-items:center;display:flex;gap:8px}.dashboard_56f100fc .quickActions_56f100fc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc{align-items:center;background-color:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:500;gap:7px;padding:8px 16px;transition:all .15s cubic-bezier(.4,0,.2,1);white-space:nowrap}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc i{color:#0078d4;font-size:14px}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:hover{background-color:rgba(0,120,212,.08);border-color:#0078d4;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);color:#005a9e;transform:translateY(-1px)}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:active{transform:translateY(0)}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_56f100fc .dashboardIntro_56f100fc{animation:fadeInUp_56f100fc .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_56f100fc .summaryGrid_56f100fc{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@media (max-width:1100px){.dashboard_56f100fc .summaryGrid_56f100fc{grid-template-columns:repeat(2,1fr)}}@media (max-width:600px){.dashboard_56f100fc .summaryGrid_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc{align-items:center;animation:fadeInUp_56f100fc .4s cubic-bezier(0,0,.2,1) both;background-color:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:before{background-color:transparent;border-radius:0 2px 2px 0;bottom:0;content:\"\";left:0;position:absolute;top:0;transition:opacity .15s cubic-bezier(.4,0,.2,1);width:4px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);transform:translateY(-3px)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover .iconContainer_56f100fc{transform:scale(1.06)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:first-child{animation-delay:0s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(2){animation-delay:.06s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(3){animation-delay:.12s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(4){animation-delay:.18s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardBlue_56f100fc:before{background-color:#0078d4}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardBlue_56f100fc .iconContainer_56f100fc{background-color:rgba(0,120,212,.08);color:#0078d4}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGreen_56f100fc:before{background-color:#107c10}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGreen_56f100fc .iconContainer_56f100fc{background-color:rgba(16,124,16,.08);color:#107c10}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardPurple_56f100fc:before{background-color:#8764b8}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardPurple_56f100fc .iconContainer_56f100fc{background-color:rgba(135,100,184,.08);color:#8764b8}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGold_56f100fc:before{background-color:#ffb900}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGold_56f100fc .iconContainer_56f100fc{background-color:rgba(255,185,0,.12);color:#b37d00}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .iconContainer_56f100fc{align-items:center;border-radius:12px;display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summaryValue_56f100fc{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summaryLabel_56f100fc{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendUp_56f100fc{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendUp_56f100fc i{font-size:10px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendDown_56f100fc{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendDown_56f100fc i{font-size:10px}.dashboard_56f100fc .chartsGrid_56f100fc{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@media (max-width:720px){.dashboard_56f100fc .chartsGrid_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc{align-items:flex-start;animation:fadeInUp_56f100fc .45s cubic-bezier(0,0,.2,1) both;background-color:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;padding:24px;transition:box-shadow .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:first-child{animation-delay:.1s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:nth-child(2){animation-delay:.16s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:nth-child(3){animation-delay:.22s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartIcon_56f100fc{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc{flex:1;min-width:0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc .chartSubtitle_56f100fc{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartContainer_56f100fc{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_56f100fc .actionCenter_56f100fc{animation:fadeInUp_56f100fc .45s cubic-bezier(0,0,.2,1) both;background-color:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);margin-bottom:20px;padding:24px;transition:box-shadow .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .actionCenter_56f100fc:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc h3 i{color:#0078d4;font-size:16px}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc .sectionSubtitle_56f100fc{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_56f100fc .actionCenter_56f100fc .tableWrapper_56f100fc{border-radius:8px;overflow-x:auto;width:100%}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th:first-child{border-radius:8px 0 0 0}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th:last-child{border-radius:0 8px 0 0}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:last-child td{border-bottom:none}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc{align-items:center;border-radius:100px;display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:opacity .15s cubic-bezier(.4,0,.2,1);white-space:nowrap}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgePending_56f100fc{background-color:#fff4ce;border:1px solid rgba(255,185,0,.2);color:#7a5200}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeApproved_56f100fc{background-color:#dff6dd;border:1px solid rgba(16,124,16,.15);color:#0e700e}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeDeclined_56f100fc{background-color:#fde7e9;border:1px solid rgba(216,59,1,.15);color:#a80000}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeAssigned_56f100fc{background-color:#e8f0fe;border:1px solid rgba(0,120,212,.15);color:#1a56db}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeReturned_56f100fc{background-color:#e6f7f5;border:1px solid rgba(0,130,114,.15);color:#006d62}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeMaintenance_56f100fc{background-color:#fff0e0;border:1px solid rgba(216,59,1,.12);color:#9a3412}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc span{line-height:1.5;max-width:320px}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc .emptyStateHint_56f100fc{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_56f100fc .splitLayout_56f100fc{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@media (max-width:900px){.dashboard_56f100fc .splitLayout_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .splitLayout_56f100fc .actionCenter_56f100fc{margin-bottom:0}.dashboard_56f100fc .skeletonCard_56f100fc,.dashboard_56f100fc .skeletonChart_56f100fc,.dashboard_56f100fc .skeletonLine_56f100fc,.dashboard_56f100fc .skeleton_56f100fc{animation:shimmer_56f100fc 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_56f100fc .skeletonCard_56f100fc{border-radius:14px;height:100px}.dashboard_56f100fc .skeletonChart_56f100fc{border-radius:14px;height:260px}.dashboard_56f100fc .skeletonLine_56f100fc{height:14px;margin-bottom:10px}.dashboard_56f100fc .skeletonLine_56f100fc:last-child{width:60%}@media (prefers-reduced-motion:reduce){.dashboard_56f100fc{animation:none!important}.dashboard_56f100fc .actionCenter_56f100fc,.dashboard_56f100fc .chartCard_56f100fc,.dashboard_56f100fc .summaryCard_56f100fc{animation:none!important;transition:none!important}.dashboard_56f100fc .skeletonCard_56f100fc,.dashboard_56f100fc .skeletonChart_56f100fc,.dashboard_56f100fc .skeletonLine_56f100fc,.dashboard_56f100fc .skeleton_56f100fc{animation:none!important}}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("@keyframes fadeInUp_56f100fc{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_56f100fc{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_56f100fc{0%,to{opacity:1}50%{opacity:.6}}.dashboard_56f100fc{animation:fadeInUp_56f100fc .4s cubic-bezier(0,0,.2,1);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_56f100fc .dashboardHeader_56f100fc{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc{flex:1;min-width:200px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerTitle_56f100fc{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerSubtitle_56f100fc{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerDate_56f100fc{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerLeft_56f100fc .headerDate_56f100fc i{color:#8a8886;font-size:12px}.dashboard_56f100fc .dashboardHeader_56f100fc .headerRight_56f100fc{align-items:center;display:flex;gap:8px}.dashboard_56f100fc .quickActions_56f100fc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc{align-items:center;background:linear-gradient(180deg,#fff,#f3f2f1);border:1px solid rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.28);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.8),0 2px 4px rgba(0,0,0,.05);color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:600;gap:7px;padding:8px 16px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background-color .15s ease,box-shadow .1s ease;white-space:nowrap}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc i{color:#0078d4;font-size:14px}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:hover{background:linear-gradient(180deg,#fff,#eaeaea);border-color:rgba(0,0,0,.18);border-bottom:3px solid rgba(0,0,0,.32);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.9),0 4px 8px rgba(0,0,0,.08);color:#005a9e;transform:translateY(-2px)}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04);transform:translateY(2px)}.dashboard_56f100fc .quickActions_56f100fc .quickActionBtn_56f100fc:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_56f100fc .dashboardIntro_56f100fc{animation:fadeInUp_56f100fc .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_56f100fc .summaryGrid_56f100fc{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@media (max-width:1100px){.dashboard_56f100fc .summaryGrid_56f100fc{grid-template-columns:repeat(2,1fr)}}@media (max-width:600px){.dashboard_56f100fc .summaryGrid_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc{align-items:center;animation:fadeInUp_56f100fc .4s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:before{background-color:transparent;border-radius:0 4px 4px 0;bottom:12px;box-shadow:0 0 8px rgba(0,0,0,.05);content:\"\";left:0;position:absolute;top:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);width:5px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-5px)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover:before{transform:scaleY(1.15)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:hover .iconContainer_56f100fc{transform:scale(1.05) translateZ(0)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:first-child{animation-delay:0s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(2){animation-delay:.06s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(3){animation-delay:.12s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc:nth-child(4){animation-delay:.18s}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardBlue_56f100fc:before{background-color:#0078d4;box-shadow:0 0 10px rgba(0,120,212,.45)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardBlue_56f100fc .iconContainer_56f100fc{background-color:rgba(0,120,212,.08);border-color:rgba(0,120,212,.15);color:#0078d4}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGreen_56f100fc:before{background-color:#107c10;box-shadow:0 0 10px rgba(16,124,16,.45)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGreen_56f100fc .iconContainer_56f100fc{background-color:rgba(16,124,16,.08);border-color:rgba(16,124,16,.15);color:#107c10}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardPurple_56f100fc:before{background-color:#8764b8;box-shadow:0 0 10px rgba(135,100,184,.45)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardPurple_56f100fc .iconContainer_56f100fc{background-color:rgba(135,100,184,.08);border-color:rgba(135,100,184,.15);color:#8764b8}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGold_56f100fc:before{background-color:#ffb900;box-shadow:0 0 10px rgba(255,185,0,.45)}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc.cardGold_56f100fc .iconContainer_56f100fc{background-color:rgba(255,185,0,.12);border-color:rgba(255,185,0,.2);color:#b37d00}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .iconContainer_56f100fc{align-items:center;border:1px solid rgba(0,0,0,.05);border-radius:12px;box-shadow:inset 1px 2px 4px rgba(0,0,0,.06),inset -1px -1px 2px hsla(0,0%,100%,.7);display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summaryValue_56f100fc{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summaryLabel_56f100fc{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendUp_56f100fc{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendUp_56f100fc i{font-size:10px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendDown_56f100fc{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_56f100fc .summaryGrid_56f100fc .summaryCard_56f100fc .cardInfo_56f100fc .summarySubtitle_56f100fc .trendDown_56f100fc i{font-size:10px}.dashboard_56f100fc .chartsGrid_56f100fc{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@media (max-width:720px){.dashboard_56f100fc .chartsGrid_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc{align-items:flex-start;animation:fadeInUp_56f100fc .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:first-child{animation-delay:.1s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:nth-child(2){animation-delay:.16s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:nth-child(3){animation-delay:.22s}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartIcon_56f100fc{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc{flex:1;min-width:0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartHeader_56f100fc .chartTitleBlock_56f100fc .chartSubtitle_56f100fc{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_56f100fc .chartsGrid_56f100fc .chartCard_56f100fc .chartContainer_56f100fc{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_56f100fc .actionCenter_56f100fc{animation:fadeInUp_56f100fc .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);margin-bottom:20px;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_56f100fc .actionCenter_56f100fc:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc h3 i{color:#0078d4;font-size:16px}.dashboard_56f100fc .actionCenter_56f100fc .sectionHeader_56f100fc .sectionSubtitle_56f100fc{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_56f100fc .actionCenter_56f100fc .tableWrapper_56f100fc{border-radius:8px;overflow-x:auto;width:100%}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th:first-child{border-radius:8px 0 0 0}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc th:last-child{border-radius:0 8px 0 0}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:last-child td{border-bottom:none}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_56f100fc .actionCenter_56f100fc .actionTable_56f100fc code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc{align-items:center;border-radius:100px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 1px 2px rgba(0,0,0,.05);display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.45),0 2px 4px rgba(0,0,0,.08);transform:translateY(-.5px)}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgePending_56f100fc{background:linear-gradient(180deg,#fff7dc,#fff4ce);border:1px solid rgba(255,185,0,.3);border-bottom:2px solid rgba(213,155,0,.4);color:#7a5200}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeApproved_56f100fc{background:linear-gradient(180deg,#e8f9e6,#dff6dd);border:1px solid rgba(16,124,16,.25);border-bottom:2px solid rgba(11,88,11,.3);color:#0e700e}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeDeclined_56f100fc{background:linear-gradient(180deg,#ffeef0,#fde7e9);border:1px solid rgba(216,59,1,.25);border-bottom:2px solid rgba(160,40,1,.3);color:#a80000}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeAssigned_56f100fc{background:linear-gradient(180deg,#f0f5ff,#e8f0fe);border:1px solid rgba(0,120,212,.25);border-bottom:2px solid rgba(0,90,158,.3);color:#1a56db}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeReturned_56f100fc{background:linear-gradient(180deg,#edfaf8,#e6f7f5);border:1px solid rgba(0,130,114,.25);border-bottom:2px solid rgba(0,90,78,.3);color:#006d62}.dashboard_56f100fc .actionCenter_56f100fc .statusBadge_56f100fc.badgeMaintenance_56f100fc{background:linear-gradient(180deg,#fff5eb,#fff0e0);border:1px solid rgba(216,59,1,.2);border-bottom:2px solid rgba(160,40,1,.25);color:#9a3412}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc span{line-height:1.5;max-width:320px}.dashboard_56f100fc .actionCenter_56f100fc .noDataMessage_56f100fc .emptyStateHint_56f100fc{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_56f100fc .splitLayout_56f100fc{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@media (max-width:900px){.dashboard_56f100fc .splitLayout_56f100fc{grid-template-columns:1fr}}.dashboard_56f100fc .splitLayout_56f100fc .actionCenter_56f100fc{margin-bottom:0}.dashboard_56f100fc .skeletonCard_56f100fc,.dashboard_56f100fc .skeletonChart_56f100fc,.dashboard_56f100fc .skeletonLine_56f100fc,.dashboard_56f100fc .skeleton_56f100fc{animation:shimmer_56f100fc 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_56f100fc .skeletonCard_56f100fc{border-radius:14px;height:100px}.dashboard_56f100fc .skeletonChart_56f100fc{border-radius:14px;height:260px}.dashboard_56f100fc .skeletonLine_56f100fc{height:14px;margin-bottom:10px}.dashboard_56f100fc .skeletonLine_56f100fc:last-child{width:60%}@media (prefers-reduced-motion:reduce){.dashboard_56f100fc{animation:none!important}.dashboard_56f100fc .actionCenter_56f100fc,.dashboard_56f100fc .chartCard_56f100fc,.dashboard_56f100fc .summaryCard_56f100fc{animation:none!important;transition:none!important}.dashboard_56f100fc .skeletonCard_56f100fc,.dashboard_56f100fc .skeletonChart_56f100fc,.dashboard_56f100fc .skeletonLine_56f100fc,.dashboard_56f100fc .skeleton_56f100fc{animation:none!important}}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -117,7 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_2a18e483{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_2a18e483.dark_2a18e483{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_2a18e483.dark_2a18e483 .sidebarNavItem_2a18e483:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_2a18e483.dark_2a18e483 .sidebarContainer_2a18e483{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_2a18e483.dark_2a18e483 .navGroupLabel_2a18e483{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_2a18e483 .mainContent_2a18e483{display:flex;flex-direction:column;gap:20px;margin:0 auto;max-width:1240px}.inventoryManagement_2a18e483 .heroSection_2a18e483{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_2a18e483 .heroSection_2a18e483:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_2a18e483 .heroSection_2a18e483:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483{flex:1;min-width:250px;z-index:1}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 .smallText_2a18e483{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_2a18e483 .heroSection_2a18e483 .welcomeDiagramContainer_2a18e483{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483 .welcomeDiagramContainer_2a18e483{margin-left:0;margin-top:8px}}.inventoryManagement_2a18e483 .actionGrid_2a18e483{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483{background:var(--surface-bg);border-radius:8px;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);padding:4px;transition:all .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483:hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary{background:var(--primary-gradient);border:none;border-radius:6px;font-size:.85rem;font-weight:600;height:38px;transition:all .2s ease;width:100%}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary:hover{filter:brightness(1.12);transform:scale(1.01)}.inventoryManagement_2a18e483 .appLayoutContainer_2a18e483{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@media (max-width:768px){.inventoryManagement_2a18e483 .appLayoutContainer_2a18e483{align-items:stretch;flex-direction:column}}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483{background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-md);box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;flex-direction:column;flex-shrink:0;gap:2px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1);width:250px}@media (max-width:768px){.inventoryManagement_2a18e483 .sidebarContainer_2a18e483{box-sizing:border-box;width:100%}}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483{padding:12px 6px;width:56px}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483{padding:4px 0 8px;text-align:center}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navGroupLabel_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 h4,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 span{display:none}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483{justify-content:center;padding:10px 0}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{display:none}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 i{margin:0}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483{justify-content:center}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{display:none}@media (max-width:768px){.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483{width:100%}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navGroupLabel_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 h4,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 span{display:block}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483{justify-content:flex-start;padding:10px 14px}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{display:inline-flex}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{display:inline}}.inventoryManagement_2a18e483 .navHeader_2a18e483{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_2a18e483 .navHeader_2a18e483 h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_2a18e483 .navHeader_2a18e483 span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_2a18e483 .navGroupLabel_2a18e483{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_2a18e483 .navDivider_2a18e483{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s cubic-bezier(.4,0,.2,1);-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483{border-radius:100px;color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:hover{background-color:rgba(0,0,0,.04);color:var(--text-main)}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483.navItemActive_2a18e483{background-color:rgba(0,120,212,.08);color:#0078d4;font-weight:600}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483.navItemActive_2a18e483:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:6px;content:\"\";left:0;position:absolute;top:6px;width:3px}.inventoryManagement_2a18e483 .collapseToggle_2a18e483{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .collapseToggle_2a18e483:hover{color:#616161}.inventoryManagement_2a18e483 .collapseToggle_2a18e483 i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{flex-grow:1}.inventoryManagement_2a18e483 .contentContainer_2a18e483{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_2a18e483 .card_2a18e483{background:var(--surface-bg);border:1px solid rgba(0,0,0,.07);border-radius:var(--radius-lg);box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);padding:24px}.inventoryManagement_2a18e483 .card_2a18e483 .cardHeader_2a18e483{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_2a18e483 .card_2a18e483 .cardHeader_2a18e483 h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_2a18e483 .ms-DetailsList{background:transparent!important}.inventoryManagement_2a18e483 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_2a18e483 .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_2a18e483 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_2a18e483 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:10px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link{align-items:center!important;background-color:var(--surface-bg)!important;border:1px solid rgba(0,0,0,.07)!important;border-radius:8px!important;box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04)!important;display:flex!important;font-weight:500!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transition:all .2s cubic-bezier(.4,0,.2,1)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link:hover{background-color:rgba(0,0,0,.03)!important;border-color:rgba(0,0,0,.12)!important;color:var(--text-main)!important;transform:translateY(-1px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483{background:var(--primary-gradient)!important;border-color:transparent!important;box-shadow:0 3px 10px rgba(0,120,212,.2)!important;color:#fff!important;font-weight:600!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483:before{display:none!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content i,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_2a18e483 .paginationContainer_2a18e483{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_2a18e483 .paginationContainer_2a18e483{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationInfo_2a18e483{color:var(--text-muted);font-size:.82rem}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationInfo_2a18e483 strong{color:var(--text-main)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483{align-items:center;display:flex;gap:4px}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483{align-items:center;background-color:var(--surface-bg);border:1px solid rgba(0,0,0,.07);border-radius:6px;color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:500;height:32px;justify-content:center;min-width:32px;padding:0 8px;transition:all .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:hover:not(:disabled){background-color:rgba(0,0,0,.04);border-color:rgba(0,0,0,.12);transform:translateY(-1px)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:active:not(:disabled){transform:translateY(0)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:disabled{cursor:not-allowed;opacity:.35}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483.active_2a18e483{background:var(--primary-gradient);border-color:transparent;box-shadow:0 2px 6px rgba(0,120,212,.2);color:#fff;font-weight:600}.inventoryManagement_2a18e483 .assetCardHover_2a18e483:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_2a18e483.teams_2a18e483{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_2a18e483{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_2a18e483.dark_2a18e483{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_2a18e483.dark_2a18e483 .sidebarNavItem_2a18e483:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_2a18e483.dark_2a18e483 .sidebarContainer_2a18e483{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_2a18e483.dark_2a18e483 .navGroupLabel_2a18e483{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_2a18e483 .mainContent_2a18e483{display:flex;flex-direction:column;gap:20px;margin:0 auto;max-width:1240px}.inventoryManagement_2a18e483 .heroSection_2a18e483{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_2a18e483 .heroSection_2a18e483:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_2a18e483 .heroSection_2a18e483:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483{flex:1;min-width:250px;z-index:1}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483 .smallText_2a18e483{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483 .heroText_2a18e483{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_2a18e483 .heroSection_2a18e483 .welcomeDiagramContainer_2a18e483{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@media (max-width:768px){.inventoryManagement_2a18e483 .heroSection_2a18e483 .welcomeDiagramContainer_2a18e483{margin-left:0;margin-top:8px}}.inventoryManagement_2a18e483 .actionGrid_2a18e483{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-bottom:2px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:4px;transform:translateY(-1px);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-3px)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 4px rgba(0,120,212,.15);color:#fff;font-size:.85rem;font-weight:600;height:38px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,filter .15s ease,box-shadow .1s ease;width:100%}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary:hover{border-color:#0f3c73;border-bottom:3px solid #0b2d54;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.25);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_2a18e483 .actionButtonContainer_2a18e483 .ms-Button--primary:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_2a18e483 .appLayoutContainer_2a18e483{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@media (max-width:768px){.inventoryManagement_2a18e483 .appLayoutContainer_2a18e483{align-items:stretch;flex-direction:column}}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483{background:linear-gradient(145deg,var(--surface-bg) 0,rgba(0,0,0,.01) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-md);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;flex-shrink:0;gap:3px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1);width:250px}@media (max-width:768px){.inventoryManagement_2a18e483 .sidebarContainer_2a18e483{box-sizing:border-box;width:100%}}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483{padding:12px 6px;width:56px}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483{padding:4px 0 8px;text-align:center}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navGroupLabel_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 h4,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 span{display:none}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483{justify-content:center;padding:10px 0}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{display:none}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 i{margin:0}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483{justify-content:center}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{display:none}@media (max-width:768px){.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483{width:100%}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navGroupLabel_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 h4,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .navHeader_2a18e483 span{display:block}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483{justify-content:flex-start;padding:10px 14px}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483,.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{display:inline-flex}.inventoryManagement_2a18e483 .sidebarContainer_2a18e483.sidebarCollapsed_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{display:inline}}.inventoryManagement_2a18e483 .navHeader_2a18e483{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_2a18e483 .navHeader_2a18e483 h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_2a18e483 .navHeader_2a18e483 span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_2a18e483 .navGroupLabel_2a18e483{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_2a18e483 .navDivider_2a18e483{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s ease;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 .navItemText_2a18e483{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483 .navBadge_2a18e483{border-radius:100px;box-shadow:0 1px 3px rgba(0,0,0,.15);color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:hover{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05));border:1px solid rgba(0,0,0,.06);border-bottom:2px solid rgba(0,0,0,.1);box-shadow:0 1px 2px rgba(0,0,0,.04);color:var(--text-main);transform:translateY(-.5px)}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:active{border-bottom-width:1px;box-shadow:none;transform:translateY(.5px)}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483.navItemActive_2a18e483{background:linear-gradient(180deg,rgba(0,120,212,.06),rgba(0,120,212,.1))!important;border:1px solid rgba(0,120,212,.12)!important;border-bottom:2px solid rgba(0,120,212,.22)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.4),0 1px 2px rgba(0,120,212,.06)!important;color:#0078d4;font-weight:600}.inventoryManagement_2a18e483 .sidebarNavItem_2a18e483.navItemActive_2a18e483:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:8px;box-shadow:0 0 6px rgba(0,120,212,.5);content:\"\";left:0;position:absolute;top:8px;width:3px}.inventoryManagement_2a18e483 .collapseToggle_2a18e483{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .collapseToggle_2a18e483:hover{color:#616161}.inventoryManagement_2a18e483 .collapseToggle_2a18e483 i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .collapseToggle_2a18e483 .collapseText_2a18e483{flex-grow:1}.inventoryManagement_2a18e483 .contentContainer_2a18e483{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_2a18e483 .card_2a18e483{background:linear-gradient(145deg,var(--surface-bg) 0,hsla(0,0%,100%,.02) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-lg);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_2a18e483 .card_2a18e483:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.inventoryManagement_2a18e483 .card_2a18e483 .cardHeader_2a18e483{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_2a18e483 .card_2a18e483 .cardHeader_2a18e483 h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_2a18e483 .ms-DetailsList{background:transparent!important}.inventoryManagement_2a18e483 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_2a18e483 .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_2a18e483 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_2a18e483 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link{align-items:center!important;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%)!important;border:1px solid rgba(0,0,0,.12)!important;border-bottom:3px solid rgba(0,0,0,.24)!important;border-radius:8px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 2px 4px rgba(0,0,0,.05)!important;color:var(--text-main)!important;display:flex!important;font-weight:600!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transform:translateY(-1px)!important;transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link:hover{background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%)!important;border-color:rgba(0,0,0,.15)!important;border-bottom:3px solid rgba(0,0,0,.28)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 4px 8px rgba(0,0,0,.08)!important;transform:translateY(-2px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04)!important;transform:translateY(2px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483{background:var(--primary-gradient)!important;border:1px solid #103f7a!important;border-bottom:3px solid #0f3566!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 3px 8px rgba(0,120,212,.3)!important;color:#fff!important;font-weight:700!important;transform:translateY(-1px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483:before{display:none!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483:hover{background:linear-gradient(180deg,#388ae6,#205ab3)!important;border-color:#0f3c73!important;border-bottom:3px solid #0b2d54!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 5px 12px rgba(0,120,212,.4)!important;transform:translateY(-2px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.2),0 1px 2px rgba(0,120,212,.1)!important;transform:translateY(2px)!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content i,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link.is-selected_2a18e483 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_2a18e483 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_2a18e483 .paginationContainer_2a18e483{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_2a18e483 .paginationContainer_2a18e483{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationInfo_2a18e483{color:var(--text-muted);font-size:.82rem}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationInfo_2a18e483 strong{color:var(--text-main)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483{align-items:center;display:flex;gap:4px}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483{align-items:center;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%);border:1px solid rgba(0,0,0,.12);border-bottom:3px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 1px 2px rgba(0,0,0,.03);color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:600;height:32px;justify-content:center;min-width:32px;padding:0 8px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:hover:not(:disabled){background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%);border-color:rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.25);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 3px 6px rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:active:not(:disabled){border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.03);transform:translateY(2px)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483:disabled{border-bottom:1px solid rgba(0,0,0,.1);box-shadow:none;cursor:not-allowed;opacity:.35;transform:none}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483.active_2a18e483{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 5px rgba(0,120,212,.25);color:#fff;font-weight:700;transform:translateY(-1px)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483.active_2a18e483:hover{border-bottom-width:3px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.3);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_2a18e483 .paginationContainer_2a18e483 .paginationControls_2a18e483 .paginationButton_2a18e483.active_2a18e483:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_2a18e483 .assetCardHover_2a18e483:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_2a18e483.teams_2a18e483{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2373,35 +2373,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EventStream__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./EventStream */ 19178);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
 /* harmony import */ var _ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReturnRequestList */ 18397);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 20472);
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
-/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
-/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
-/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../data/mockData */ 27962);
-/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Dashboard */ 71422);
-/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./AssetTracking */ 20867);
-/* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
-/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentHistory/IncidentHistory */ 27885);
-/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! chart.js */ 55277);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! jspdf */ 28339);
+/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
+/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
+/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../data/mockData */ 27962);
+/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
+/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Dashboard */ 71422);
+/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./AssetTracking */ 20867);
+/* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
+/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
+/* harmony import */ var _IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./IncidentHistory/IncidentHistory */ 27885);
+/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
 
 
 
@@ -2418,7 +2419,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-chart_js__WEBPACK_IMPORTED_MODULE_13__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_13__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_13__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_13__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_13__.Title, chart_js__WEBPACK_IMPORTED_MODULE_13__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_13__.Legend);
+
+chart_js__WEBPACK_IMPORTED_MODULE_14__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_14__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_14__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_14__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_14__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_14__.Title, chart_js__WEBPACK_IMPORTED_MODULE_14__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_14__.Legend);
 
 
 
@@ -2739,7 +2741,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 catch (e) {
                     console.warn("Could not load users from group 'MSFT Visitors':", e);
                 }
-                const finalEmployees = loadedEmployees.length > 0 ? loadedEmployees : _data_mockData__WEBPACK_IMPORTED_MODULE_16__.EMPLOYEES;
+                const finalEmployees = loadedEmployees.length > 0 ? loadedEmployees : _data_mockData__WEBPACK_IMPORTED_MODULE_17__.EMPLOYEES;
                 this.setState({
                     userRole,
                     roleGroups: groups.map((group) => group.Title || ''),
@@ -2752,7 +2754,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     userRole: 'Inventory Employee',
                     roleGroups: [],
-                    employees: _data_mockData__WEBPACK_IMPORTED_MODULE_16__.EMPLOYEES,
+                    employees: _data_mockData__WEBPACK_IMPORTED_MODULE_17__.EMPLOYEES,
                     roleLoading: false
                 });
             }
@@ -2760,7 +2762,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._loadInventory = async () => {
             try {
                 this.setState({ loading: true, errorMessage: undefined });
-                const items = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.getItems();
+                const items = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.getItems();
                 if (items && items.length > 0) {
                     this.setState({ items, loading: false });
                 }
@@ -2785,7 +2787,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         };
         this._loadRequests = async () => {
             try {
-                const requests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.getRequests();
+                const requests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.getRequests();
                 this.setState({ requests });
             }
             catch (error) {
@@ -2798,7 +2800,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._loadAuditLogs = async () => {
             try {
                 this.setState({ auditLogsLoading: true });
-                const auditLogs = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.getAuditLogs();
+                const auditLogs = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.getAuditLogs();
                 this.setState({ auditLogs, auditLogsLoading: false });
             }
             catch (error) {
@@ -2809,7 +2811,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._loadReturnRequests = async () => {
             try {
                 this.setState({ returnRequestsLoading: true });
-                const returnRequests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.getReturnRequests();
+                const returnRequests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.getReturnRequests();
                 this.setState({ returnRequests, returnRequestsLoading: false });
             }
             catch (error) {
@@ -2835,7 +2837,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     returnReason: reason,
                     proposedCondition: condition
                 };
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.addReturnRequest(reqPayload, this.state.activeUserDisplayName);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addReturnRequest(reqPayload, this.state.activeUserDisplayName);
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
@@ -2851,7 +2853,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._onUpdateReturnRequestStatus = async (requestId, status, comment, finalCondition) => {
             try {
                 this.setState({ returnRequestsLoading: true });
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition);
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
@@ -2870,7 +2872,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     ...newAssetData,
                     status: 'In Stock'
                 };
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
                 await this._loadInventory(); // Refresh list
                 await this._loadAuditLogs(); // Refresh audit logs
             }
@@ -2907,7 +2909,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState(prevState => ({
                     requests: [localRequest, ...prevState.requests]
                 }));
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.addRequest({
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addRequest({
                     ...requestData,
                     status: initialStatus
                 }, this.state.activeUserDisplayName);
@@ -2931,7 +2933,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -2954,7 +2956,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', this.state.activeUserDisplayName, reason);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', this.state.activeUserDisplayName, reason);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -2977,7 +2979,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -2996,7 +2998,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({ isTrackingActionInProgress: true, errorMessage: undefined });
                 const employee = this.state.employees.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
                 const employeeId = employee ? employee.id : "";
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.assignAssetsToEmployee(assetIds, employeeName, employeeEmail, this.state.activeUserDisplayName, employeeId);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.assignAssetsToEmployee(assetIds, employeeName, employeeEmail, this.state.activeUserDisplayName, employeeId);
                 await this._loadInventory();
                 await this._loadAuditLogs();
             }
@@ -3014,13 +3016,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
                 });
-                const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+                const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3030,7 +3032,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
                 });
             }
         };
@@ -3039,21 +3041,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
                 });
-                const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.diagnoseMappingListFields();
+                const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
                 });
             }
         };
@@ -3087,6 +3089,192 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             link.click();
             document.body.removeChild(link);
         };
+        this._exportWarrantyReportToPDF = () => {
+            const { items } = this.state;
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_13__.jsPDF();
+            // Header
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("Asset Warranty Expiry Report", 14, 20);
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
+            doc.text(`Total Assets: ${items.length} | Assets with Warranty: ${items.filter(i => i.warrantyExpiry).length}`, 14, 34);
+            // Table Headers
+            doc.setFont("helvetica", "bold");
+            doc.setFillColor(240, 240, 240);
+            doc.rect(14, 42, 182, 8, "F");
+            doc.text("Asset Name", 16, 47);
+            doc.text("Asset Type", 70, 47);
+            doc.text("Status", 110, 47);
+            doc.text("Purchase Date", 140, 47);
+            doc.text("Warranty Expiry", 170, 47);
+            doc.setDrawColor(200, 200, 200);
+            doc.line(14, 50, 196, 50);
+            // Rows
+            doc.setFont("helvetica", "normal");
+            let y = 56;
+            items.forEach((item) => {
+                if (y > 275) {
+                    doc.addPage();
+                    y = 20;
+                    doc.setFont("helvetica", "bold");
+                    doc.setFillColor(240, 240, 240);
+                    doc.rect(14, y - 6, 182, 8, "F");
+                    doc.text("Asset Name", 16, y - 1);
+                    doc.text("Asset Type", 70, y - 1);
+                    doc.text("Status", 110, y - 1);
+                    doc.text("Purchase Date", 140, y - 1);
+                    doc.text("Warranty Expiry", 170, y - 1);
+                    doc.line(14, y + 2, 196, y + 2);
+                    doc.setFont("helvetica", "normal");
+                    y += 8;
+                }
+                const name = (item.assetName || item.title || "").substring(0, 25);
+                const type = (item.assetType || "").substring(0, 18);
+                const status = (item.status || "").substring(0, 15);
+                const purchaseDate = item.purchaseDate || "N/A";
+                const warrantyExpiry = item.warrantyExpiry || "N/A";
+                doc.text(name, 16, y);
+                doc.text(type, 70, y);
+                doc.text(status, 110, y);
+                doc.text(purchaseDate, 140, y);
+                doc.text(warrantyExpiry, 170, y);
+                doc.line(14, y + 2, 196, y + 2);
+                y += 8;
+            });
+            doc.save(`Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+        };
+        this._exportDetailedReportToExcel = (filteredItems) => {
+            const headers = ["Asset Name", "Asset Type", "Status", "Condition", "Purchase Date", "Assigned To", "Specifications"];
+            const csvRows = [headers.join(",")];
+            filteredItems.forEach(item => {
+                const name = (item.assetName || item.title || "").replace(/"/g, '""');
+                const type = (item.assetType || "").replace(/"/g, '""');
+                const status = (item.status || "").replace(/"/g, '""');
+                const condition = (item.condition || "").replace(/"/g, '""');
+                const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
+                const assignedTo = (item.assignedTo || "N/A").replace(/"/g, '""');
+                const specs = (item.specifications || "").replace(/"/g, '""');
+                const row = [
+                    `"${name}"`,
+                    `"${type}"`,
+                    `"${status}"`,
+                    `"${condition}"`,
+                    `"${purchaseDate}"`,
+                    `"${assignedTo}"`,
+                    `"${specs}"`
+                ];
+                csvRows.push(row.join(","));
+            });
+            const csvContent = "\uFEFF" + csvRows.join("\n");
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", `Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+        this._exportDetailedReportToPDF = (filteredItems) => {
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_13__.jsPDF();
+            // Header
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("Detailed Inventory Asset Report", 14, 20);
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
+            doc.text(`Total Assets Displayed: ${filteredItems.length}`, 14, 34);
+            // Table Headers
+            doc.setFont("helvetica", "bold");
+            doc.setFillColor(240, 240, 240);
+            doc.rect(14, 42, 182, 8, "F");
+            doc.text("Asset Name", 16, 47);
+            doc.text("Asset Type", 65, 47);
+            doc.text("Status", 100, 47);
+            doc.text("Condition", 130, 47);
+            doc.text("Assigned To", 160, 47);
+            doc.setDrawColor(200, 200, 200);
+            doc.line(14, 50, 196, 50);
+            // Rows
+            doc.setFont("helvetica", "normal");
+            let y = 56;
+            filteredItems.forEach((item) => {
+                if (y > 275) {
+                    doc.addPage();
+                    y = 20;
+                    doc.setFont("helvetica", "bold");
+                    doc.setFillColor(240, 240, 240);
+                    doc.rect(14, y - 6, 182, 8, "F");
+                    doc.text("Asset Name", 16, y - 1);
+                    doc.text("Asset Type", 65, y - 1);
+                    doc.text("Status", 100, y - 1);
+                    doc.text("Condition", 130, y - 1);
+                    doc.text("Assigned To", 160, y - 1);
+                    doc.line(14, y + 2, 196, y + 2);
+                    doc.setFont("helvetica", "normal");
+                    y += 8;
+                }
+                const name = (item.assetName || item.title || "").substring(0, 23);
+                const type = (item.assetType || "").substring(0, 15);
+                const status = (item.status || "").substring(0, 14);
+                const condition = (item.condition || "N/A").substring(0, 14);
+                const assignedTo = (item.assignedTo || "N/A").substring(0, 18);
+                doc.text(name, 16, y);
+                doc.text(type, 65, y);
+                doc.text(status, 100, y);
+                doc.text(condition, 130, y);
+                doc.text(assignedTo, 160, y);
+                doc.line(14, y + 2, 196, y + 2);
+                y += 8;
+            });
+            doc.save(`Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+        };
+        this._testListConnection = async (listTitle, internalTitle) => {
+            this.setState(prevState => ({
+                connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'testing' },
+                connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: '' }
+            }));
+            try {
+                const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_7__.getSP)();
+                // Try to load 1 item from list to test connection and permissions
+                await sp.web.lists.getByTitle(internalTitle).items.select("ID").top(1)();
+                this.setState(prevState => ({
+                    connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'connected' }
+                }));
+            }
+            catch (e) {
+                console.warn(`Connection test failed for list ${listTitle}`, e);
+                this.setState(prevState => ({
+                    connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'error' },
+                    connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: e.message || 'Verification failed. List might be missing or inaccessible.' }
+                }));
+            }
+        };
+        this._loadGroupUsers = async (groupName) => {
+            this.setState(prevState => ({
+                loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: true }
+            }));
+            try {
+                const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_7__.getSP)();
+                const users = await sp.web.siteGroups.getByName(groupName).users();
+                const userList = users.map((u) => u.Title || u.LoginName || 'Unknown User');
+                this.setState(prevState => ({
+                    groupUsersList: { ...prevState.groupUsersList, [groupName]: userList },
+                    loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
+                }));
+            }
+            catch (e) {
+                console.warn(`Failed to load members for group ${groupName}`, e);
+                this.setState(prevState => ({
+                    groupUsersList: { ...prevState.groupUsersList, [groupName]: ['Error retrieving group members'] },
+                    loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
+                }));
+            }
+        };
         this._renderRequestAnalysis = (request) => {
             const reqAssetTitle = request.assetTitle || "";
             const inStockItems = this.state.items.filter(item => (item.assetType || '').toLowerCase() === reqAssetTitle.toLowerCase() &&
@@ -3107,7 +3295,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 progressPercent = 1.0;
                 currentStepText = "Declined by Manager";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
@@ -3151,18 +3339,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
                         " Detailed Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 12 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Check Passed:"),
                                 " There are currently ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
                                 " unit(s) of ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Warning:"),
                                 " Only ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
@@ -3194,7 +3382,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
             const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
@@ -3216,7 +3404,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 healthRating = "Critical Needs Replacement";
                 healthIcon = "Warning";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
@@ -3257,9 +3445,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#374151' } }, asset.note)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 12 } },
                         ageInMonths !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
@@ -3270,21 +3458,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
                                 asset.warrantyExpiry,
-                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
                                 " Covered under manufacturer protection until ",
                                 asset.warrantyExpiry,
-                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                     "Health Classification: ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } }, healthRating))),
@@ -3323,7 +3511,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const id = parts[0];
                 associatedAsset = items.find(a => a.id === id);
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Received:"),
@@ -3335,7 +3523,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     associatedAsset && this._renderAssetAnalysis(associatedAsset),
                     !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3356,11 +3544,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     const employeeEmail = employee ? employee.email : "";
                     const employeeId = employee ? employee.id : "";
                     // Assign the asset to the employee and approve the request
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.assignAssetsToEmployee([adminSelectedAssetId], request.requesterName, employeeEmail, approverName, employeeId, adminComment);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.assignAssetsToEmployee([adminSelectedAssetId], request.requesterName, employeeEmail, approverName, employeeId, adminComment);
                 }
                 else {
                     // No asset selected, just approve the asset request status
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', approverName, adminComment);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', approverName, adminComment);
                 }
                 // Close panel and refresh data
                 this.setState({
@@ -3391,7 +3579,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const { adminComment } = this.state;
                 const approverName = this.state.activeUserDisplayName;
                 // Rejecting from the Admin side will set the main status of the request to 'Declined'
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', approverName, adminComment || 'Rejected by Admin during assignment');
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', approverName, adminComment || 'Rejected by Admin during assignment');
                 // Close panel and refresh data
                 this.setState({
                     isAdminPanelOpen: false,
@@ -3427,7 +3615,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 ? "Select asset to assign..."
                 : "No assets of this type in stock";
             const isBusy = this.state.requestActionInProgressId === request.id;
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -3514,13 +3702,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                         root: { color: '#dc2626', borderColor: '#dc2626' },
                                         rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                                     } })))))));
@@ -3538,7 +3726,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         const activeEmail = props.userEmail;
         this.state = {
             items: [],
-            employees: _data_mockData__WEBPACK_IMPORTED_MODULE_16__.EMPLOYEES,
+            employees: _data_mockData__WEBPACK_IMPORTED_MODULE_17__.EMPLOYEES,
             requests: [],
             auditLogs: [],
             userRole: 'Inventory Employee',
@@ -3569,7 +3757,15 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
             adminComment: '',
-            sidebarCollapsed: false
+            sidebarCollapsed: false,
+            reportsSelectedTab: 'insights',
+            reportsAssetTypeFilter: 'All',
+            reportsStatusFilter: 'All',
+            configSelectedTab: 'operations',
+            connectionStatuses: {},
+            connectionErrorMessages: {},
+            groupUsersList: {},
+            loadingGroupUsers: {}
         };
     }
     async componentDidMount() {
@@ -3578,9 +3774,16 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         await this._loadRequests();
         await this._loadAuditLogs();
         await this._loadReturnRequests();
+        // Run self-healing cleanup for Return Approved assets
+        try {
+            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.cleanupReturnApprovedAssets();
+        }
+        catch (e) {
+            console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
+        }
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
-            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
         }
         catch (e) {
             console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
@@ -3662,7 +3865,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             "SharePoint Groups: ",
                             (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', '))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_24__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
                     " ",
@@ -3686,7 +3889,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
@@ -3696,33 +3899,33 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` }, (() => {
                         switch (this.state.selectedTabKey) {
                             case 'Dashboard':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_18__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager, onNavigate: (key) => this.setState({ selectedTabKey: key }) }));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_19__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager, onNavigate: (key) => this.setState({ selectedTabKey: key }) }));
                             case 'MyWorkspace':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Assets" },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Requests" },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                             case 'Notifications':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_20__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_21__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
                             case 'IncidentHistory':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Incident History")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_22__.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_23__.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                             case 'Inventory':
                                 return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3730,18 +3933,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage your organizational assets efficiently within the SharePoint Framework."),
                                     this.state.loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading inventory...")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
                             case 'Approvals':
                                 return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Pie, { data: {
                                                     labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                         const status = req.status || 'Pending';
                                                         acc[status] = (acc[status] || 0) + 1;
@@ -3791,7 +3994,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                             case 'AssetReturns':
                                 return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -3809,13 +4012,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
                                                 const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
                                                 window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                                             } })),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: this.state.employees.map(emp => {
                                                 const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                 const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                 const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -3846,13 +4049,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                         } }, item.assignedAssets))
                                                 },
                                                 { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                 if (!rowProps)
                                                     return null;
                                                 const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_42__.DetailsRow, { ...rowProps })),
                                                     isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                             "Assets assigned to ",
@@ -3863,84 +4066,209 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Employee Asset Tracking")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_19__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_20__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
                             case 'Reports':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Reporting & Insights")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Use dashboard and event history to derive utilization, approval trends, and asset aging reports."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Asset Utilization"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '20px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Assets"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dbeafe', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#1e40af', marginBottom: '4px' } }, "In Use / Assigned"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' } }, "Utilization Rate"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader, style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Reporting & Insights"),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Interactive dashboards, live graphs, status analysis, and exporter module."))),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { selectedKey: this.state.reportsSelectedTab, onLinkClick: (item) => this.setState({ reportsSelectedTab: item ? item.props.itemKey || 'insights' : 'insights' }), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Visual Insights", itemKey: "insights" }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Detailed Reports", itemKey: "detailed" }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Warranty Expiry", itemKey: "expiry" })),
+                                    this.state.reportsSelectedTab === 'insights' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 24 } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' } }, "TOTAL INVENTORY ASSETS"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' } }, items.length)),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' } }, "ASSETS CURRENTLY ASSIGNED"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' } }, "UTILIZATION RATE"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' } },
                                                     items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0,
-                                                    "%")))),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Approval Trends"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '20px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Requests"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, this.state.requests.length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' } }, "Approved"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' } }, this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' } }, "Declined"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' } }, this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' } }, "Approval Rate"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' } },
-                                                    this.state.requests.length > 0 ? Math.round((this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length / this.state.requests.length) * 100) : 0,
-                                                    "%")))),
-                                    (() => {
-                                        const now = new Date();
-                                        const aging = items.reduce((acc, item) => {
-                                            if (!item.purchaseDate) {
-                                                acc.unknown++;
-                                                return acc;
-                                            }
-                                            const pd = new Date(item.purchaseDate);
-                                            const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                                            if (diffYears < 1)
-                                                acc.under1++;
-                                            else if (diffYears <= 3)
-                                                acc.between1and3++;
-                                            else
-                                                acc.over3++;
-                                            return acc;
-                                        }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-                                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Asset Aging"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '20px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#dcfce7', borderRadius: '6px', flex: 1 } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#166534', marginBottom: '4px' } }, "< 1 Year Old (New)"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#14532d' } }, aging.under1)),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fef3c7', borderRadius: '6px', flex: 1 } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#92400e', marginBottom: '4px' } }, "1 - 3 Years Old"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#78350f' } }, aging.between1and3)),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#fee2e2', borderRadius: '6px', flex: 1 } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#991b1b', marginBottom: '4px' } }, "> 3 Years Old (Aging)"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#7f1d1d' } }, aging.over3)),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px', flex: 1 } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Unknown Age"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, aging.unknown)))));
-                                    })(),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
+                                                    "%")),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' } }, "TOTAL APPROVAL REQUESTS"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' } }, this.state.requests.length))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Status Distribution"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Pie, { data: {
+                                                            labels: ['In Stock', 'Assigned', 'Pending Return', 'Under Maintenance'],
+                                                            datasets: [{
+                                                                    data: [
+                                                                        items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
+                                                                        items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
+                                                                        items.filter(i => i.status === 'Pending Return').length,
+                                                                        items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
+                                                                    ],
+                                                                    backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } }
+                                                        } })),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "In Stock"),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Assigned"),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Pending Return"),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Maintenance"))),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Asset Type Distribution"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } }, (() => {
+                                                    const typeCounts = {};
+                                                    items.forEach(i => {
+                                                        const type = i.assetType || "Other";
+                                                        typeCounts[type] = (typeCounts[type] || 0) + 1;
+                                                    });
+                                                    const labels = Object.keys(typeCounts);
+                                                    const data = Object.keys(typeCounts).map(key => typeCounts[key]);
+                                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Bar, { data: {
+                                                            labels,
+                                                            datasets: [{
+                                                                    label: 'Assets Count',
+                                                                    data,
+                                                                    backgroundColor: '#1f77b4',
+                                                                    borderRadius: 4
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } },
+                                                            scales: {
+                                                                y: { beginAtZero: true, ticks: { precision: 0 } }
+                                                            }
+                                                        } }));
+                                                })())),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Aging Analysis"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } }, (() => {
+                                                    const now = new Date();
+                                                    const aging = items.reduce((acc, item) => {
+                                                        if (!item.purchaseDate) {
+                                                            acc.unknown++;
+                                                            return acc;
+                                                        }
+                                                        const pd = new Date(item.purchaseDate);
+                                                        const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
+                                                        if (diffYears < 1)
+                                                            acc.under1++;
+                                                        else if (diffYears <= 3)
+                                                            acc.between1and3++;
+                                                        else
+                                                            acc.over3++;
+                                                        return acc;
+                                                    }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
+                                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Doughnut, { data: {
+                                                            labels: ['< 1 Year (New)', '1-3 Years', '> 3 Years (Aging)', 'Unknown'],
+                                                            datasets: [{
+                                                                    data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
+                                                                    backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } }
+                                                        } }));
+                                                })()),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "< 1 Year"),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "1-3 Years"),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "> 3 Years"),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                                                        "Unknown"))),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Request Approval Trends"),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Bar, { data: {
+                                                            labels: ['Approved', 'Declined/Rejected', 'Pending'],
+                                                            datasets: [{
+                                                                    data: [
+                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
+                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
+                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
+                                                                    ],
+                                                                    backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
+                                                                }]
+                                                        }, options: {
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: { legend: { display: false } },
+                                                            scales: {
+                                                                y: { beginAtZero: true, ticks: { precision: 0 } }
+                                                            }
+                                                        } })))))),
+                                    this.state.reportsSelectedTab === 'detailed' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Filterable Asset Inventory"),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: () => {
+                                                        const filtered = items.filter(i => {
+                                                            const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                                            const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                                            return typeMatch && statusMatch;
+                                                        });
+                                                        this._exportDetailedReportToExcel(filtered);
+                                                    }, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: () => {
+                                                        const filtered = items.filter(i => {
+                                                            const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                                            const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                                            return typeMatch && statusMatch;
+                                                        });
+                                                        this._exportDetailedReportToPDF(filtered);
+                                                    }, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { label: "Asset Type", selectedKey: this.state.reportsAssetTypeFilter, options: [
+                                                        { key: 'All', text: 'All Types' },
+                                                        ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
+                                                    ], onChange: (_, opt) => this.setState({ reportsAssetTypeFilter: opt ? opt.key : 'All' }) })),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { label: "Asset Status", selectedKey: this.state.reportsStatusFilter, options: [
+                                                        { key: 'All', text: 'All Statuses' },
+                                                        ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
+                                                    ], onChange: (_, opt) => this.setState({ reportsStatusFilter: opt ? opt.key : 'All' }) }))),
+                                        (() => {
+                                            const filtered = items.filter(i => {
+                                                const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
+                                                const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
+                                                return typeMatch && statusMatch;
+                                            });
+                                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: filtered, columns: [
+                                                    { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
+                                                    { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
+                                                    { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
+                                                    { key: 'col4', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
+                                                    { key: 'col5', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9ca3af', fontStyle: 'italic' } }, "Unassigned") }
+                                                ], setKey: "detailedReportList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none }));
+                                        })())),
+                                    this.state.reportsSelectedTab === 'expiry' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Warranty Expiry Report"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Export to Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: {
-                                                    root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' },
-                                                    rootHovered: { backgroundColor: '#0b592e', borderColor: '#0b592e', color: '#ffffff' },
-                                                    rootPressed: { backgroundColor: '#0a522a', borderColor: '#0a522a', color: '#ffffff' }
-                                                } })),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: this._exportWarrantyReportToPDF, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px', display: 'flex', gap: '20px' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Assets Count"),
@@ -3948,7 +4276,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Assets with Warranty Data"),
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.filter(i => i.warrantyExpiry).length))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: items, columns: [
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: items, columns: [
                                                 { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
                                                 { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
                                                 { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
@@ -3963,33 +4291,43 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                     onRender: (item) => {
                                                         const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
                                                         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                                                color: isExpired ? '#ef4444' : 'inherit',
-                                                                fontWeight: isExpired ? 'bold' : 'normal'
+                                                                color: isExpired ? '#ef4444' : '#166534',
+                                                                fontWeight: 600,
+                                                                backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
+                                                                padding: '2px 8px',
+                                                                borderRadius: '9999px',
+                                                                fontSize: '0.75rem',
+                                                                display: 'inline-block'
                                                             } },
                                                             item.warrantyExpiry || 'N/A',
                                                             " ",
-                                                            isExpired && '(Expired)'));
+                                                            isExpired ? '(Expired)' : '(Active)'));
                                                     }
                                                 }
-                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none })))) : null;
+                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none }))))) : null;
                             case 'Config':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Configuration")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only configuration area for list schema, process settings, and environment setup."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Configuration & List Management"),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Admin-only control center for list syncing, database connection tests, role diagnostics, and list schemas.")),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { selectedKey: this.state.configSelectedTab, onLinkClick: (item) => this.setState({ configSelectedTab: item ? item.props.itemKey || 'operations' : 'operations' }), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Sync Operations", itemKey: "operations" }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "List Connections", itemKey: "connections" }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "RBAC Site Groups", itemKey: "rbac" }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Required Schema Guides", itemKey: "schema" })),
+                                    this.state.configSelectedTab === 'operations' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px', color: '#111827', marginTop: 0 } }, "Mapping List Management & Sync"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' } },
                                             "Ensure all assets currently assigned to active employees are properly mapped to the SharePoint ",
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Mapping List"),
                                             ". Use the buttons below to perform a manual synchronization check or diagnose the list's database schema."),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets", iconProps: { iconName: 'Sync' }, onClick: this._onSyncAssignedAssets, disabled: this.state.syncInProgress }),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics", iconProps: { iconName: 'Database' }, onClick: this._onRunDiagnostics, disabled: this.state.syncInProgress, styles: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets", iconProps: { iconName: 'Sync' }, onClick: this._onSyncAssignedAssets, disabled: this.state.syncInProgress }),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics", iconProps: { iconName: 'Database' }, onClick: this._onRunDiagnostics, disabled: this.state.syncInProgress, styles: {
                                                     root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
                                                     rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
                                                 } })),
-                                        this.state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: this.state.syncMessageType, onDismiss: () => this.setState({ syncMessage: undefined }), styles: { root: { marginBottom: '15px', borderRadius: '6px' } } }, this.state.syncMessage)),
+                                        this.state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: this.state.syncMessageType, onDismiss: () => this.setState({ syncMessage: undefined }), styles: { root: { marginBottom: '15px', borderRadius: '6px' } } }, this.state.syncMessage)),
                                         this.state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '15px' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' } }, "Diagnostic Log Output:"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: this.state.diagnosticInfo, rows: 10, style: {
@@ -4002,35 +4340,102 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                     borderRadius: '4px',
                                                     resize: 'vertical',
                                                     color: '#323130'
-                                                } })))),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "SharePoint List Connections"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { style: { listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#4b5563' } }, "Inventory Database:"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "InventoryList")),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#4b5563' } }, "Approvals & Requests:"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "RequestList")),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { style: { display: 'flex', justifyContent: 'space-between' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#4b5563' } }, "System Audit Logs:"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "AuditLogList")))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "Role Based Access Control"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { style: { listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#4b5563' } }, "Admin Group:"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "Inventory Administrators")),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { style: { marginBottom: '12px', display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#4b5563' } }, "Manager Group:"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "Inventory Managers")),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { style: { display: 'flex', justifyContent: 'space-between' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#4b5563' } }, "Employee Access:"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "Site Visitors"))))),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
+                                                } }))))),
+                                    this.state.configSelectedTab === 'connections' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "SharePoint List Connections"),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Verify the read/write database connection status of the required SharePoint storage lists."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 16 } }, [
+                                            { title: 'Inventory List', internal: 'InventoryList', desc: 'Stores the master catalog of all physical assets and hardware.' },
+                                            { title: 'Request List', internal: 'RequestList', desc: 'Manages employee request tickets, workflow histories, and assignment queues.' },
+                                            { title: 'Asset Return Request List', internal: 'Asset Return Request List', desc: 'Handles asset return forms, check-in inspections, and manager validations.' },
+                                            { title: 'Mapping List', internal: 'Mapping List', desc: 'Maintains live active assignment mapping for automated clearing checks.' },
+                                            { title: 'System Audit Log', internal: 'AuditLogList', desc: 'Tracks historical change logs, lifecycle states, and admin operations.' }
+                                        ].map(list => {
+                                            const status = this.state.connectionStatuses[list.title];
+                                            const errorMsg = this.state.connectionErrorMessages[list.title];
+                                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: list.title, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 300px' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { margin: '0 0 4px 0', fontSize: '0.95rem', fontWeight: 600, color: '#111827' } },
+                                                        list.title,
+                                                        " ",
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#6b7280', fontSize: '0.8rem' } },
+                                                            "(",
+                                                            list.internal,
+                                                            ")")),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.82rem', color: '#4b5563' } }, list.desc),
+                                                    errorMsg && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '8px', color: '#d13438', fontSize: '0.78rem', backgroundColor: '#fde7e9', padding: '6px 10px', borderRadius: '4px' } },
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
+                                                        " ",
+                                                        errorMsg))),
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '12px' } },
+                                                    status === 'testing' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#0078d4', display: 'flex', alignItems: 'center', gap: '6px' } },
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "ProgressLoopOuter", style: { animation: 'spin 1.5s linear infinite' } }),
+                                                        " Verifying...")),
+                                                    status === 'connected' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                                            color: '#166534',
+                                                            backgroundColor: '#dcfce7',
+                                                            padding: '4px 12px',
+                                                            borderRadius: '9999px',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: 600,
+                                                            display: 'inline-flex',
+                                                            alignItems: 'center',
+                                                            gap: '4px'
+                                                        } },
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "Completed" }),
+                                                        " Connected")),
+                                                    status === 'error' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                                            color: '#b91c1c',
+                                                            backgroundColor: '#fee2e2',
+                                                            padding: '4px 12px',
+                                                            borderRadius: '9999px',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: 600,
+                                                            display: 'inline-flex',
+                                                            alignItems: 'center',
+                                                            gap: '4px'
+                                                        } },
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "ErrorBadge" }),
+                                                        " Failed")),
+                                                    !status && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                                            color: '#4b5563',
+                                                            backgroundColor: '#f3f4f6',
+                                                            padding: '4px 12px',
+                                                            borderRadius: '9999px',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: 500
+                                                        } }, "Not Verified")),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: "Test Live", iconProps: { iconName: 'PlugConnected' }, onClick: () => this._testListConnection(list.title, list.internal), disabled: status === 'testing' }))));
+                                        })))),
+                                    this.state.configSelectedTab === 'rbac' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "Role Based Access Control (RBAC)"),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Inspect user groups resolved from SharePoint for permission level verification."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 16 } }, [
+                                            { group: 'MSFT Owners', role: 'Admin', desc: 'Full administrative rights to modify assets, approve returns, and manage database connection setups.' },
+                                            { group: 'MSFT Members', role: 'Inventory Manager', desc: 'Write access to create items, process returns, assign assets, and view reports.' },
+                                            { group: 'MSFT Visitors', role: 'Inventory Employee', desc: 'Read-only access to available stocks and permission to request return tickets.' }
+                                        ].map(item => {
+                                            const isLoading = this.state.loadingGroupUsers[item.group];
+                                            const members = this.state.groupUsersList[item.group];
+                                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.group, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { margin: 0, fontSize: '1rem', fontWeight: 600, color: '#111827' } },
+                                                            item.group,
+                                                            " ",
+                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#0078d4', fontSize: '0.8rem', backgroundColor: '#deecf9', padding: '2px 8px', borderRadius: '4px', marginLeft: '6px', fontWeight: 600 } }, item.role)),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#4b5563', display: 'block', marginTop: '4px' } }, item.desc)),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: isLoading ? "Loading..." : "View Members", iconProps: { iconName: 'People' }, onClick: () => this._loadGroupUsers(item.group), disabled: isLoading })),
+                                                members && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '12px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid rgba(128,128,128,0.1)' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.78rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '6px' } },
+                                                        "Group Members (",
+                                                        members.length,
+                                                        "):"),
+                                                    members.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' } }, "No members found in this group")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, members.map((m, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: idx, style: { backgroundColor: '#ffffff', border: '1px solid rgba(128,128,128,0.15)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.78rem', color: '#111827', fontWeight: 500 } }, m)))))))));
+                                        })))),
+                                    this.state.configSelectedTab === 'schema' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '5px', color: '#111827', marginTop: 0 } }, "Required List Schema (Developer Reference)"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '15px', marginTop: 0 } }, "Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px', marginTop: 0 } }, "Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors."),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginTop: '15px', marginBottom: '8px', color: '#374151' } },
                                             "InventoryList ",
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Asset Database)")),
@@ -4038,14 +4443,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
                                             "RequestList ",
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Approval Workflows)")),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, ['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col))))))) : null;
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                                            "Asset Return Request List ",
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Returns Handling)")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'AssetID', 'AssetName', 'SerialNumber', 'Employee', 'ReasonforReturn', 'ProposedCondition', 'RequestStatus', 'ManagerComments'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                                            "Mapping List ",
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Custody Tracking)")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, ['Title', 'SerialNumber', 'Employe', 'EmployeeID', 'AssetName', 'AssignmentID'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))))))) : null;
                             default:
                                 return null;
                         }
                     })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_8__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
             (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_21__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
             this._renderNotificationDetailsPanel(),
             this._renderAdminAssignmentPanel(),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest })));
@@ -5843,14 +6256,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
 /* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
 /* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
 /* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
 /* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
 /* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
 /* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
 /* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
-/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
 /* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
 
 
@@ -5986,17 +6399,17 @@ const ReturnRequestList = (props) => {
                 maxWidth: 260,
                 isResizable: true,
                 onRender: (item) => {
-                    if (item.status === 'Completed') {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' } }, "Check-in Complete");
+                    const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
+                    if (item.status !== 'Pending') {
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" },
+                            viewButton,
+                            item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
                     }
-                    if (item.status === 'Rejected') {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ef4444', fontWeight: 600, fontSize: '0.8rem' } }, "Rejected");
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_1__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                        viewButton,
                         item.status === 'Pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } }))),
-                        item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })))));
                 }
             }
         ] : [])
@@ -6008,16 +6421,67 @@ const ReturnRequestList = (props) => {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_8__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
                 type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__.DialogType.normal,
                 title: actionType === 'Approve' ? 'Approve Return Request' :
-                    actionType === 'Reject' ? 'Reject Return Request' : 'Verify & Complete Return',
+                    actionType === 'Reject' ? 'Reject Return Request' :
+                        actionType === 'Complete' ? 'Verify & Complete Return' : 'Return Request Details',
                 subText: activeRequest ? `Request by ${activeRequest.requesterName} for asset ${activeRequest.assetName}` : ''
             }, modalProps: { isBlocking: true } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_1__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
+                activeRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                        backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                        border: '1px solid rgba(128, 128, 128, 0.15)',
+                        borderRadius: '8px',
+                        padding: '16px',
+                        fontSize: '0.85rem',
+                        fontFamily: 'inherit'
+                    } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' } }, "Asset Return Details"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 16px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.id.replace('RR-', '#'))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Requested Date"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.requestDate)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Name"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.assetName)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Serial Number"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.serialNumber || 'N/A')),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.requesterName)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Proposed Condition"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.proposedCondition)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: 'span 2' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Return Reason"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                    backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                                    padding: '8px 12px',
+                                    borderRadius: '4px',
+                                    marginTop: '4px',
+                                    border: '1px solid rgba(128, 128, 128, 0.1)',
+                                    fontWeight: 500,
+                                    color: 'var(--text-main, #333333)'
+                                } }, activeRequest.returnReason)),
+                        activeRequest.managerComment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: 'span 2' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager Notes"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                    backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                                    padding: '8px 12px',
+                                    borderRadius: '4px',
+                                    marginTop: '4px',
+                                    border: '1px solid rgba(128, 128, 128, 0.1)',
+                                    fontWeight: 500,
+                                    color: 'var(--text-main, #333333)'
+                                } }, activeRequest.managerComment)))))),
                 actionType === 'Complete' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__.DialogFooter, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
+                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
                         actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || (actionType === 'Reject' && !comment.trim()) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting })))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
 };
 
 
@@ -7837,8 +8301,13 @@ class InventoryItemService {
                 })();
                 const rawStatus = item[statusKey] || item.Status || item.AssetStatus || "";
                 let finalStatus = rawStatus;
+                let finalAssignedTo = assignedToVal;
                 const statusLower = (rawStatus || "").toLowerCase();
-                if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
+                if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock") {
+                    finalStatus = "In Stock";
+                    finalAssignedTo = "";
+                }
+                else if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
                     if (!assignedToVal || assignedToVal.trim() === "") {
                         finalStatus = "In Stock";
                     }
@@ -7853,7 +8322,7 @@ class InventoryItemService {
                     vendor: item[vendorKey] || item.Vendor || item.VendorName || "",
                     condition: item[conditionKey] || item.Condition || item.AssetCondition || "",
                     status: finalStatus,
-                    assignedTo: assignedToVal,
+                    assignedTo: finalAssignedTo,
                     assignedDate: item.Modified || "",
                     warrantyExpiry: item[warrantyExpiryKey] || item.WarrantyExpiry || item.Warranty_x0020_Expiry || "",
                     specifications: item[specificationsKey] || item.Specifications || item.SpecificationsText || item.Note || item.Notes || "",
@@ -8251,6 +8720,9 @@ class InventoryService {
     }
     static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
         return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
+    }
+    static async cleanupReturnApprovedAssets() {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.cleanupReturnApprovedAssets();
     }
     // AuditLogService Methods
     static async addAuditLog(log) {
@@ -9335,6 +9807,11 @@ class ReturnRequestService {
             console.error("Exception caught in Return Request update:", err.message, err.stack);
             if (err.data)
                 console.error("Error details:", JSON.stringify(err.data));
+            const errStr = (err.message || "").toLowerCase();
+            const isNetworkOrNotFound = errStr.includes("not found") || errStr.includes("404") || errStr.includes("fetch") || errStr.includes("network") || errStr.includes("getbytitle");
+            if (!isNetworkOrNotFound) {
+                throw new Error(`Failed to update Return Request in SharePoint: ${err.message || JSON.stringify(err)}`);
+            }
         }
         if (!updatedSharePoint) {
             // Update localStorage fallback copy
@@ -9387,7 +9864,7 @@ class ReturnRequestService {
             console.log("Resolved Condition Field:", conditionKey);
             const assetIdNum = parseInt(req.assetId, 10);
             console.log("Inventory Item ID:", assetIdNum);
-            if (status === 'Completed' || status === 'Approved') {
+            if (status === 'Completed') {
                 const condition = finalCondition || req.proposedCondition || "Activated";
                 let nextStatus = "In Stock";
                 if (condition === "Poor" || condition === "Damaged") {
@@ -9396,13 +9873,13 @@ class ReturnRequestService {
                 const payload = {
                     [statusKey]: nextStatus,
                     [assignedToKey]: null,
+                    [`${assignedToKey}Id`]: null,
                     [conditionKey]: condition,
                     [noteKey]: `Returned by employee. Manager Note: ${managerComment}`
                 };
-                const assignedFieldObj = fields.find(f => f.InternalName === assignedToKey);
-                const isUserField = assignedFieldObj && (assignedFieldObj.TypeAsString === "User" || assignedFieldObj.TypeAsString === "UserMulti");
-                if (isUserField) {
-                    payload[`${assignedToKey}Id`] = null;
+                if (assignedToKey !== "AssignedTo") {
+                    payload.AssignedTo = null;
+                    payload.AssignedToId = null;
                 }
                 console.log("Inventory Update Payload:", JSON.stringify(payload));
                 let assetUpdateResult = null;
@@ -9420,18 +9897,28 @@ class ReturnRequestService {
                     console.log("Resolved Mapping List Name:", mappingList.Title || "Mapping List");
                     const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
                     const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+                    let mappedItems = [];
                     if (serialCol && req.serialNumber) {
-                        const mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
-                        console.log("Mapping Records Found:", JSON.stringify(mappedItems));
-                        if (mappedItems && mappedItems.length > 0) {
-                            const deletedIds = [];
-                            for (const mItem of mappedItems) {
-                                const deleteResult = await mappingList.items.getById(mItem.ID).delete();
-                                console.log(`Result of mapping deletion for ID ${mItem.ID}:`, JSON.stringify(deleteResult));
-                                deletedIds.push(mItem.ID);
-                            }
-                            console.log("Deleted Mapping IDs:", JSON.stringify(deletedIds));
+                        mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                    }
+                    if ((!mappedItems || mappedItems.length === 0) && req.assetName) {
+                        console.log("[Return Request Workflow] Mapping record not found by serial number. Trying fallback search by Asset Name and Employee Name...");
+                        const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+                        const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
+                        if (assetNameCol && employeeCol && req.requesterName) {
+                            const filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}' and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
+                            mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
                         }
+                    }
+                    console.log("Mapping Records Found for deletion:", JSON.stringify(mappedItems));
+                    if (mappedItems && mappedItems.length > 0) {
+                        const deletedIds = [];
+                        for (const mItem of mappedItems) {
+                            const deleteResult = await mappingList.items.getById(mItem.ID).delete();
+                            console.log(`Result of mapping deletion for ID ${mItem.ID}:`, JSON.stringify(deleteResult));
+                            deletedIds.push(mItem.ID);
+                        }
+                        console.log("Deleted Mapping IDs:", JSON.stringify(deletedIds));
                     }
                 }
                 catch (err) {
@@ -9519,6 +10006,83 @@ class ReturnRequestService {
         console.log("========================");
         console.log("RETURN WORKFLOW END");
         console.log("========================");
+    }
+    static async cleanupReturnApprovedAssets() {
+        console.log("[Cleanup] Starting self-healing cleanup for Return Approved assets...");
+        try {
+            const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getInventoryList();
+            if (!list || !list.items || typeof list.items.select !== 'function') {
+                console.log("[Cleanup] list.items.select is not a function (mock or missing). Skipping cleanup.");
+                return;
+            }
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const findField = (searchStr, fallback) => {
+                const field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());
+                return field ? field.InternalName : fallback;
+            };
+            const statusKey = findField("status", "Status");
+            const assignedToKey = findField("assignedto", "AssignedTo");
+            const conditionKey = findField("condition", "Condition");
+            const items = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title")();
+            for (const item of items) {
+                const rawStatus = item[statusKey] || "";
+                const val = item[assignedToKey];
+                let hasAssignee = false;
+                if (val) {
+                    if (typeof val === 'object') {
+                        hasAssignee = Object.keys(val).length > 0;
+                    }
+                    else {
+                        hasAssignee = true;
+                    }
+                }
+                if (rawStatus === "Return Approved" || rawStatus === "ReturnApproved" || (rawStatus === "In Stock" && hasAssignee)) {
+                    console.log(`[Cleanup] Found return approved or in-stock asset with assignee: ${item.Title || "Asset"} (ID: ${item.ID})`);
+                    const payload = {
+                        [statusKey]: "In Stock",
+                        [assignedToKey]: null,
+                        [`${assignedToKey}Id`]: null
+                    };
+                    if (assignedToKey !== "AssignedTo") {
+                        payload.AssignedTo = null;
+                        payload.AssignedToId = null;
+                    }
+                    await list.items.getById(item.ID).update(payload);
+                    console.log(`[Cleanup] Updated asset ID ${item.ID} in SharePoint to 'In Stock' and cleared assignee.`);
+                    const serialNumber = item.SerialNumber || "";
+                    const assetTitle = item.Title || "";
+                    const requesterName = (val && (val.Title || val.Name || (typeof val === 'object' ? '' : val.toString()))) || "";
+                    try {
+                        const mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
+                        const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
+                        const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+                        let mappedItems = [];
+                        if (serialCol && serialNumber) {
+                            mappedItems = await mappingList.items.filter(`${serialCol} eq '${serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                        }
+                        if ((!mappedItems || mappedItems.length === 0) && assetTitle) {
+                            const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+                            const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
+                            if (assetNameCol && employeeCol && requesterName) {
+                                const filterQuery = `${assetNameCol} eq '${assetTitle.replace(/'/g, "''")}' and ${employeeCol} eq '${requesterName.replace(/'/g, "''")}'`;
+                                mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+                            }
+                        }
+                        for (const mItem of mappedItems) {
+                            await mappingList.items.getById(mItem.ID).delete();
+                            console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for asset ${assetTitle}`);
+                        }
+                    }
+                    catch (err) {
+                        console.warn(`[Cleanup] Failed to clean up mapping record for asset ${assetTitle}`, err);
+                    }
+                }
+            }
+            console.log("[Cleanup] Self-healing cleanup finished.");
+        }
+        catch (error) {
+            console.warn("[Cleanup] Failed to run return approved assets cleanup:", error);
+        }
     }
 }
 ReturnRequestService._resolvedReturnListName = null;
@@ -83780,7 +84344,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("063e133e5f13183583c3")
+/******/ 	__webpack_require__.h = () => ("f970abffbbe336590082")
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/global */

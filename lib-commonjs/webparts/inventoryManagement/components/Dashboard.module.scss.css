@@ -90,29 +90,35 @@
   gap: 7px;
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.28);
+  background: linear-gradient(180deg, #ffffff 0%, #f3f2f1 100%);
   color: #242424;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   cursor: pointer;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.1s ease, border-bottom-width 0.1s ease, background-color 0.15s ease, box-shadow 0.1s ease;
   white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 .dashboard .quickActions .quickActionBtn i {
   font-size: 14px;
   color: #0078d4;
 }
 .dashboard .quickActions .quickActionBtn:hover {
-  background-color: rgba(0, 120, 212, 0.08);
-  border-color: #0078d4;
+  background: linear-gradient(180deg, #ffffff 0%, #eaeaea 100%);
+  border-color: rgba(0, 0, 0, 0.18);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 4px 8px rgba(0, 0, 0, 0.08);
   color: #005a9e;
-  transform: translateY(-1px);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 }
 .dashboard .quickActions .quickActionBtn:active {
-  transform: translateY(0);
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 .dashboard .quickActions .quickActionBtn:focus-visible {
   outline: 2px solid #0078d4;
@@ -139,16 +145,17 @@
   }
 }
 .dashboard .summaryGrid .summaryCard {
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
   padding: 20px 22px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 16px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 20px -3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.4s cubic-bezier(0, 0, 0.2, 1) both;
@@ -157,19 +164,25 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
+  top: 12px;
+  bottom: 12px;
+  width: 5px;
   background-color: transparent;
-  border-radius: 0 2px 2px 0;
-  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .dashboard .summaryGrid .summaryCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(-5px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 20px -4px rgba(0, 0, 0, 0.08), 0 20px 32px -4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+.dashboard .summaryGrid .summaryCard:hover::before {
+  transform: scaleY(1.15);
 }
 .dashboard .summaryGrid .summaryCard:hover .iconContainer {
-  transform: scale(1.06);
+  transform: scale(1.05) translateZ(0);
 }
 .dashboard .summaryGrid .summaryCard:nth-child(1) {
   animation-delay: 0s;
@@ -185,31 +198,39 @@
 }
 .dashboard .summaryGrid .summaryCard.cardBlue::before {
   background-color: #0078d4;
+  box-shadow: 0 0 10px rgba(0, 120, 212, 0.45);
 }
 .dashboard .summaryGrid .summaryCard.cardBlue .iconContainer {
   background-color: rgba(0, 120, 212, 0.08);
   color: #0078d4;
+  border-color: rgba(0, 120, 212, 0.15);
 }
 .dashboard .summaryGrid .summaryCard.cardGreen::before {
   background-color: #107c10;
+  box-shadow: 0 0 10px rgba(16, 124, 16, 0.45);
 }
 .dashboard .summaryGrid .summaryCard.cardGreen .iconContainer {
   background-color: rgba(16, 124, 16, 0.08);
   color: #107c10;
+  border-color: rgba(16, 124, 16, 0.15);
 }
 .dashboard .summaryGrid .summaryCard.cardPurple::before {
   background-color: #8764b8;
+  box-shadow: 0 0 10px rgba(135, 100, 184, 0.45);
 }
 .dashboard .summaryGrid .summaryCard.cardPurple .iconContainer {
   background-color: rgba(135, 100, 184, 0.08);
   color: #8764b8;
+  border-color: rgba(135, 100, 184, 0.15);
 }
 .dashboard .summaryGrid .summaryCard.cardGold::before {
   background-color: #ffb900;
+  box-shadow: 0 0 10px rgba(255, 185, 0, 0.45);
 }
 .dashboard .summaryGrid .summaryCard.cardGold .iconContainer {
   background-color: rgba(255, 185, 0, 0.12);
   color: #b37d00;
+  border-color: rgba(255, 185, 0, 0.2);
 }
 .dashboard .summaryGrid .summaryCard .iconContainer {
   width: 48px;
@@ -221,6 +242,8 @@
   font-size: 20px;
   flex-shrink: 0;
   transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.06), inset -1px -1px 2px rgba(255, 255, 255, 0.7);
 }
 .dashboard .summaryGrid .summaryCard .cardInfo {
   display: flex;
@@ -288,15 +311,16 @@
   }
 }
 .dashboard .chartsGrid .chartCard {
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 20px -3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.45s cubic-bezier(0, 0, 0.2, 1) both;
 }
 .dashboard .chartsGrid .chartCard:nth-child(1) {
@@ -309,7 +333,10 @@
   animation-delay: 0.22s;
 }
 .dashboard .chartsGrid .chartCard:hover {
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 20px -4px rgba(0, 0, 0, 0.08), 0 20px 32px -4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 .dashboard .chartsGrid .chartCard .chartHeader {
   width: 100%;
@@ -358,17 +385,21 @@
   align-items: center;
 }
 .dashboard .actionCenter {
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset, 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 20px -3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 20px;
   animation: fadeInUp 0.45s cubic-bezier(0, 0, 0.2, 1) both;
 }
 .dashboard .actionCenter:hover {
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 20px -4px rgba(0, 0, 0, 0.08), 0 20px 32px -4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 .dashboard .actionCenter .sectionHeader {
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
@@ -467,37 +498,48 @@
   font-weight: 600;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.dashboard .actionCenter .statusBadge:hover {
+  transform: translateY(-0.5px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 .dashboard .actionCenter .statusBadge.badgePending {
-  background-color: #fff4ce;
+  background: linear-gradient(180deg, #fff7dc 0%, #fff4ce 100%);
   color: #7a5200;
-  border: 1px solid rgba(255, 185, 0, 0.2);
+  border: 1px solid rgba(255, 185, 0, 0.3);
+  border-bottom: 2px solid rgba(213, 155, 0, 0.4);
 }
 .dashboard .actionCenter .statusBadge.badgeApproved {
-  background-color: #dff6dd;
+  background: linear-gradient(180deg, #e8f9e6 0%, #dff6dd 100%);
   color: #0e700e;
-  border: 1px solid rgba(16, 124, 16, 0.15);
+  border: 1px solid rgba(16, 124, 16, 0.25);
+  border-bottom: 2px solid rgba(11, 88, 11, 0.3);
 }
 .dashboard .actionCenter .statusBadge.badgeDeclined {
-  background-color: #fde7e9;
+  background: linear-gradient(180deg, #ffeef0 0%, #fde7e9 100%);
   color: #a80000;
-  border: 1px solid rgba(216, 59, 1, 0.15);
+  border: 1px solid rgba(216, 59, 1, 0.25);
+  border-bottom: 2px solid rgba(160, 40, 1, 0.3);
 }
 .dashboard .actionCenter .statusBadge.badgeAssigned {
-  background-color: #e8f0fe;
+  background: linear-gradient(180deg, #f0f5ff 0%, #e8f0fe 100%);
   color: #1a56db;
-  border: 1px solid rgba(0, 120, 212, 0.15);
+  border: 1px solid rgba(0, 120, 212, 0.25);
+  border-bottom: 2px solid rgba(0, 90, 158, 0.3);
 }
 .dashboard .actionCenter .statusBadge.badgeReturned {
-  background-color: #e6f7f5;
+  background: linear-gradient(180deg, #edfaf8 0%, #e6f7f5 100%);
   color: #006d62;
-  border: 1px solid rgba(0, 130, 114, 0.15);
+  border: 1px solid rgba(0, 130, 114, 0.25);
+  border-bottom: 2px solid rgba(0, 90, 78, 0.3);
 }
 .dashboard .actionCenter .statusBadge.badgeMaintenance {
-  background-color: #fff0e0;
+  background: linear-gradient(180deg, #fff5eb 0%, #fff0e0 100%);
   color: #9a3412;
-  border: 1px solid rgba(216, 59, 1, 0.12);
+  border: 1px solid rgba(216, 59, 1, 0.2);
+  border-bottom: 2px solid rgba(160, 40, 1, 0.25);
 }
 .dashboard .actionCenter .noDataMessage {
   padding: 48px 24px;
