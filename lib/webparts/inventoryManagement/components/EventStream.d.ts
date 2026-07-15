@@ -7,6 +7,7 @@ export interface IEventStreamProps {
     errorMessage?: string;
     currentUserRole: UserRole;
     currentUserName: string;
+    refreshTrigger?: number;
 }
 export declare const EventStream: React.FC<IEventStreamProps>;
 //# sourceMappingURL=EventStream.d.ts.map

@@ -6,6 +6,7 @@ const React = tslib_1.__importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
+const DropdownConstants_1 = require("../constants/DropdownConstants");
 const MyAssignedAssetsView = (props) => {
     const { items, onReturnAsset, onRaiseIncident } = props;
     // Search and Filter States
@@ -239,18 +240,12 @@ const MyAssignedAssetsView = (props) => {
             React.createElement("div", { style: { width: '130px' } },
                 React.createElement(react_2.Dropdown, { options: [
                         { key: 'All', text: 'All Conditions' },
-                        { key: 'Good', text: 'Good' },
-                        { key: 'Fair', text: 'Fair' },
-                        { key: 'Poor', text: 'Poor' },
-                        { key: 'Damaged', text: 'Damaged' }
+                        ...DropdownConstants_1.ASSET_CONDITION_OPTIONS
                     ], selectedKey: selectedCondition, onChange: (e, option) => setSelectedCondition(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             React.createElement("div", { style: { width: '130px' } },
                 React.createElement(react_2.Dropdown, { options: [
                         { key: 'All', text: 'All Coverage' },
-                        { key: 'Active', text: 'Active' },
-                        { key: 'Expiring Soon', text: 'Expiring Soon' },
-                        { key: 'Expired', text: 'Expired' },
-                        { key: 'Unknown', text: 'Unknown' }
+                        ...DropdownConstants_1.WARRANTY_STATUS_OPTIONS
                     ], selectedKey: selectedWarranty, onChange: (e, option) => setSelectedWarranty(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             React.createElement("div", null,
                 React.createElement(react_2.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {

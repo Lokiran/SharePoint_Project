@@ -9,12 +9,8 @@ const TextField_1 = require("@fluentui/react/lib/TextField");
 const Dropdown_1 = require("@fluentui/react/lib/Dropdown");
 const Button_1 = require("@fluentui/react/lib/Button");
 const Stack_1 = require("@fluentui/react/lib/Stack");
-const conditionOptions = [
-    { key: 'Good', text: 'Good (No visible damage, fully functional)' },
-    { key: 'Fair', text: 'Fair (Minor cosmetic wear, fully functional)' },
-    { key: 'Poor', text: 'Poor (Significant wear or partial issues)' },
-    { key: 'Damaged', text: 'Damaged (Broken, non-functional, physical damage)' }
-];
+const DropdownConstants_1 = require("../constants/DropdownConstants");
+const conditionOptions = DropdownConstants_1.RETURN_CONDITION_OPTIONS;
 const stackTokens = { childrenGap: 15 };
 const ReturnAssetForm = (props) => {
     const { isOpen, onDismiss, asset, onSubmit } = props;

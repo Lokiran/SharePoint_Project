@@ -95,7 +95,25 @@ export class ReturnRequestService {
       console.warn("Failed to scan localStorage for RR- keys", e);
     }
 
-    return list;
+    const coerceWorkflowStatus = (item: any): any => {
+      const spStatus = item.status || 'Pending';
+      let mappedStatus = 'Pending Manager Approval';
+      if (spStatus === 'Approved' || spStatus === 'Pending Admin Verification') {
+        mappedStatus = 'Pending Admin Verification';
+      } else if (spStatus === 'Rejected') {
+        mappedStatus = 'Rejected';
+      } else if (spStatus === 'Returned' || spStatus === 'Completed') {
+        mappedStatus = 'Completed';
+      } else {
+        mappedStatus = 'Pending Manager Approval';
+      }
+      return {
+        ...item,
+        status: mappedStatus
+      };
+    };
+
+    return list.map(coerceWorkflowStatus);
   }
 
   public static async getReturnRequests(): Promise<IReturnRequest[]> {
@@ -119,6 +137,10 @@ export class ReturnRequestService {
       const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
       const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
       const completedDateKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+      const managerStatusKey = f('ManagerStatus', 'Manager Status') || 'ManagerStatus';
+      const adminStatusKey = f('AdminStatus', 'Admin Status') || 'AdminStatus';
+      const adminCommentsKey = f('AdminComments', 'Admin Comments', 'AdminComment', 'Admin Comment') || 'AdminComments';
+      const verifiedDateKey = f('VerifiedDate', 'Verified Date') || 'VerifiedDate';
 
       const items = await list.items.select('*', 'ID').orderBy('ID', false)();
 
@@ -136,9 +158,24 @@ export class ReturnRequestService {
           requestDate: item[requestDateKey] || item.Created?.split('T')[0] || "",
           returnReason: item[returnReasonKey] || item.ReturnReason || item.Return_x0020_Reason || "",
           proposedCondition: item[conditionKey] || item.ProposedCondition || "",
-          status: (item[statusKey] || 'Pending') as IReturnRequest['status'],
+          status: (() => {
+            const spStatus = item[statusKey] || 'Pending';
+            if (spStatus === 'Approved' || spStatus === 'Pending Admin Verification') {
+              return 'Pending Admin Verification';
+            } else if (spStatus === 'Rejected') {
+              return 'Rejected';
+            } else if (spStatus === 'Returned' || spStatus === 'Completed') {
+              return 'Completed';
+            } else {
+              return 'Pending Manager Approval';
+            }
+          })(),
           managerComment: item[commentKey] || item.ManagerComment || "",
-          completedDate: item[completedDateKey] || item.CompletedDate || ""
+          completedDate: item[completedDateKey] || item.CompletedDate || "",
+          managerStatus: item[managerStatusKey] || item.ManagerStatus || "Pending",
+          adminStatus: item[adminStatusKey] || item.AdminStatus || "Not Started",
+          adminComments: item[adminCommentsKey] || item.AdminComments || "",
+          verifiedDate: item[verifiedDateKey] || item.VerifiedDate || ""
         };
       });
 
@@ -157,6 +194,17 @@ export class ReturnRequestService {
   }
 
   public static async addReturnRequest(request: Omit<IReturnRequest, 'id' | 'status'>, userDisplayName: string): Promise<void> {
+    // Check for existing active return request for the same asset
+    const requests = await ReturnRequestService.getReturnRequests();
+    const activeRequest = requests.find(r => 
+      r.assetId === request.assetId && 
+      r.status !== 'Completed' && 
+      r.status !== 'Rejected'
+    );
+    if (activeRequest) {
+      throw new Error("A return request for this asset is already in progress.");
+    }
+
     const listTitle = ReturnRequestService._resolvedReturnListName || "Asset Return Request List";
     console.log(`[Return Request Workflow] Accessing Return Requests List: "${listTitle}"`);
 
@@ -165,7 +213,9 @@ export class ReturnRequestService {
       ...request,
       requestDate: autoDate,
       id: `RR-${Date.now()}`,
-      status: 'Pending'
+      status: 'Pending Manager Approval',
+      managerStatus: 'Pending',
+      adminStatus: 'Not Started'
     };
 
     let list: any;
@@ -200,6 +250,8 @@ export class ReturnRequestService {
     getField("ReturnReason", ["returnreason", "return reason", "reason"]);
     getField("ReturnedAssetCondition", ["proposedcondition", "proposed condition", "returnedassetcondition", "returned asset condition", "condition"]);
     getField("Status", ["status", "returnstatus", "return status", "requeststatus", "return request status"]);
+    getField("ManagerStatus", ["managerstatus", "manager status"]);
+    getField("AdminStatus", ["adminstatus", "admin status"]);
 
     console.log(`[Return Request Workflow] Resolved field mappings:`, JSON.stringify(resolvedMapping, null, 2));
 
@@ -214,7 +266,9 @@ export class ReturnRequestService {
       ReturnRequestDate: newRequest.requestDate,
       ReturnReason: request.returnReason,
       ReturnedAssetCondition: request.proposedCondition,
-      Status: "Pending"
+      Status: "Pending", // Set Status choice to 'Pending' (valid value)
+      ManagerStatus: "Pending",
+      AdminStatus: "Not Started"
     };
 
     const requiredKeys = ["AssetID", "AssetName", "RequesterName", "Status"];
@@ -243,64 +297,18 @@ export class ReturnRequestService {
       throw new Error(`Creating Return Request failed: ${translatedErr.message}`);
     }
 
-    // Operation 2: Updating Inventory Status
-    const invListTitle = "InventoryList";
-    console.log(`[Return Request Workflow] Accessing list: "${invListTitle}" to update status of asset ${request.assetId}`);
-    try {
-      const invList = await InventoryItemService.getInventoryList();
-      const invFields = await SharePointBaseService.getListFieldsMetadata(invList);
-      const statusField = invFields.find(f => f.internalName.toLowerCase() === "status" || f.displayName.toLowerCase() === "status");
-      const statusKey = statusField ? statusField.internalName : "Status";
-
-      const updatePayload = {
-        [statusKey]: "Pending Return"
-      };
-      console.log(`[Return Request Workflow] Updating Inventory Asset ${request.assetId} with payload:`, JSON.stringify(updatePayload));
-      
-      await invList.items.getById(parseInt(request.assetId, 10)).update(updatePayload);
-      console.log(`[Return Request Workflow] Success: Updated Inventory Asset status to 'Pending Return' in SharePoint.`);
-    } catch (error: any) {
-      console.error(`[Return Request Workflow] Operation Failed: Updating Inventory Status. Error details:`, error);
-      throw new Error(`Updating Inventory Status failed: ${error.message || JSON.stringify(error)}`);
-    }
-
-    // Operation 3: Writing Audit Log
-    const auditListTitle = "EventLogList";
-    console.log(`[Return Request Workflow] Writing to audit log list: "${auditListTitle}"`);
-    try {
-      const auditPayload: Omit<IEventLog, "id" | "timestamp"> = {
-        title: `Requested Return & Deactivated: ${request.assetName}`,
-        action: 'Deactivated',
-        entityType: 'Asset',
-        entityId: request.assetId,
-        details: JSON.stringify({
-          lifecycle: "ReturnRequested",
-          assetId: request.assetId,
-          assetName: request.assetName,
-          serialNumber: request.serialNumber,
-          requesterName: request.requesterName,
-          returnReason: request.returnReason,
-          proposedCondition: request.proposedCondition,
-          requestedAt: new Date().toISOString()
-        }),
-        user: userDisplayName
-      };
-      console.log(`[Return Request Workflow] Submitting Audit Log with payload:`, JSON.stringify(auditPayload));
-      
-      await AuditLogService.addAuditLog(auditPayload);
-      console.log(`[Return Request Workflow] Success: Created Audit Log record in SharePoint.`);
-    } catch (e: any) {
-      console.error(`[Return Request Workflow] Operation Failed: Writing Audit Log. Error details:`, e);
-      throw new Error(`Writing Audit Log failed: ${e.message || JSON.stringify(e)}`);
-    }
+    // Operations 2 & 3 (Updating Inventory status & Writing Audit Log) are now deferred to manager/admin approval.
   }
 
   public static async updateReturnRequestStatus(
     requestId: string,
-    status: 'Approved' | 'Rejected' | 'Completed',
+    status: 'Approved' | 'Rejected' | 'Completed' | 'Pending Manager Approval' | 'Pending Admin Verification',
     managerComment: string,
     approverName: string,
-    finalCondition?: string
+    finalCondition?: string,
+    adminComments?: string,
+    managerStatus?: 'Pending' | 'Approved' | 'Rejected',
+    adminStatus?: 'Not Started' | 'Completed'
   ): Promise<void> {
     console.log("========================");
     console.log("RETURN WORKFLOW START");
@@ -333,12 +341,37 @@ export class ReturnRequestService {
       const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
       const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
       const completedKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+      const managerStatusKey = f('ManagerStatus', 'Manager Status') || 'ManagerStatus';
+      const adminStatusKey = f('AdminStatus', 'Admin Status') || 'AdminStatus';
+      const adminCommentsKey = f('AdminComments', 'Admin Comments', 'AdminComment', 'Admin Comment') || 'AdminComments';
+      const verifiedDateKey = f('VerifiedDate', 'Verified Date') || 'VerifiedDate';
+
+      let spStatusValue = 'Pending';
+      if (status === 'Pending Admin Verification' || status === 'Approved') {
+        spStatusValue = 'Approved';
+      } else if (status === 'Rejected') {
+        spStatusValue = 'Rejected';
+      } else if (status === 'Completed') {
+        spStatusValue = 'Returned';
+      }
 
       const payload: any = {
-        [statusKey]: status,
+        [statusKey]: spStatusValue, // Store valid SharePoint Choice value: Pending, Approved, Rejected, Returned
         [commentKey]: managerComment
       };
-      if (status === 'Completed') {
+      if (managerStatusKey && managerStatus) {
+        payload[managerStatusKey] = managerStatus;
+      }
+      if (adminStatusKey && adminStatus) {
+        payload[adminStatusKey] = adminStatus;
+      }
+      if (adminCommentsKey && adminComments) {
+        payload[adminCommentsKey] = adminComments;
+      }
+      if (verifiedDateKey && status === 'Completed') {
+        payload[verifiedDateKey] = new Date().toISOString().split('T')[0];
+      }
+      if (status === 'Approved' || status === 'Completed') {
         payload[completedKey] = new Date().toISOString().split('T')[0];
       }
 
@@ -375,7 +408,15 @@ export class ReturnRequestService {
           const localList: IReturnRequest[] = JSON.parse(local);
           const updated = localList.map(r => {
             if (r.id === requestId) {
-              const updatedReq = { ...r, status, managerComment };
+              const updatedReq = { 
+                ...r, 
+                status, 
+                managerComment,
+                managerStatus: managerStatus || r.managerStatus,
+                adminStatus: adminStatus || r.adminStatus,
+                adminComments: adminComments || r.adminComments,
+                verifiedDate: status === 'Completed' ? new Date().toISOString().split('T')[0] : r.verifiedDate
+              };
               if (status === 'Completed') {
                 updatedReq.completedDate = new Date().toISOString().split('T')[0];
               }
@@ -392,8 +433,12 @@ export class ReturnRequestService {
           const item = JSON.parse(itemStr);
           item.status = status;
           item.managerComment = managerComment;
+          if (managerStatus) item.managerStatus = managerStatus;
+          if (adminStatus) item.adminStatus = adminStatus;
+          if (adminComments) item.adminComments = adminComments;
           if (status === 'Completed') {
             item.completedDate = new Date().toISOString().split('T')[0];
+            item.verifiedDate = new Date().toISOString().split('T')[0];
           }
           localStorage.setItem(requestId, JSON.stringify(item));
         }
@@ -425,7 +470,7 @@ export class ReturnRequestService {
       console.log("Inventory Item ID:", assetIdNum);
 
       if (status === 'Completed') {
-        const condition = finalCondition || req.proposedCondition || "Activated";
+        const condition = finalCondition || req.proposedCondition || "Good";
         let nextStatus = "In Stock";
         if (condition === "Poor" || condition === "Damaged") {
           nextStatus = "Under Maintenance";
@@ -436,7 +481,7 @@ export class ReturnRequestService {
           [assignedToKey]: null,
           [`${assignedToKey}Id`]: null,
           [conditionKey]: condition,
-          [noteKey]: `Returned by employee. Manager Note: ${managerComment}`
+          [noteKey]: `Returned by employee. Verification Note: ${adminComments || managerComment}`
         };
 
         if (assignedToKey !== "AssignedTo") {
@@ -504,61 +549,58 @@ export class ReturnRequestService {
     }
 
     try {
-      let logTitle = "";
-      let lifecycle = "";
-      if (status === 'Approved') {
-        logTitle = `Approved Return Request for Asset: ${req.assetName}`;
-        lifecycle = "ReturnApproved";
-      } else if (status === 'Rejected') {
-        logTitle = `Rejected Return Request for Asset: ${req.assetName}`;
-        lifecycle = "ReturnRejected";
-      } else if (status === 'Completed') {
-        logTitle = `Completed Return for Asset: ${req.assetName}`;
-        lifecycle = "ReturnCompleted";
-      }
-
-      let finalAction = 'Update';
-      let finalTitle = logTitle;
-      if (status === 'Approved') {
-        finalAction = 'Deactivated';
-        finalTitle = `Approved Return Request & Deactivated: ${req.assetName}`;
-      } else if (status === 'Rejected') {
-        finalAction = 'Activated';
-        finalTitle = `Rejected Return Request & Reactivated: ${req.assetName}`;
-      } else if (status === 'Completed') {
-        const condition = finalCondition || req.proposedCondition || "Good";
-        let nextStatus = "In Stock";
-        if (condition === "Poor" || condition === "Damaged") {
-          nextStatus = "Under Maintenance";
+      if (status === 'Completed' || status === 'Rejected') {
+        let logTitle = "";
+        let lifecycle = "";
+        if (status === 'Completed') {
+          logTitle = `Completed Return for Asset: ${req.assetName}`;
+          lifecycle = "ReturnCompleted";
+        } else if (status === 'Rejected') {
+          logTitle = `Rejected Return Request for Asset: ${req.assetName}`;
+          lifecycle = "ReturnRejected";
         }
-        if (nextStatus === 'In Stock') {
-          finalAction = 'Inactivated';
-          finalTitle = `Completed Return & Inactivated: ${req.assetName} (Returned to Stock)`;
-        } else {
-          finalAction = 'Deactivated';
-          finalTitle = `Completed Return & Deactivated: ${req.assetName} (Under Maintenance)`;
-        }
-      }
 
-      console.log("Submitting Audit Log payload...");
-      await AuditLogService.addAuditLog({
-        title: finalTitle,
-        action: finalAction,
-        entityType: 'Asset',
-        entityId: req.assetId,
-        details: JSON.stringify({
-          requestKey: req.id,
-          lifecycle,
-          assetName: req.assetName,
-          requesterName: req.requesterName,
-          changedBy: approverName,
-          changedAt: new Date().toISOString(),
-          managerComment,
-          condition: finalCondition || req.proposedCondition
-        }),
-        user: approverName
-      });
-      console.log("Audit Log created successfully.");
+        let finalAction = 'Update';
+        let finalTitle = logTitle;
+        if (status === 'Completed') {
+          const condition = finalCondition || req.proposedCondition || "Good";
+          let nextStatus = "In Stock";
+          if (condition === "Poor" || condition === "Damaged") {
+            nextStatus = "Under Maintenance";
+          }
+          if (nextStatus === 'In Stock') {
+            finalAction = 'Inactivated';
+            finalTitle = `Completed Return & Inactivated: ${req.assetName} (Returned to Stock)`;
+          } else {
+            finalAction = 'Deactivated';
+            finalTitle = `Completed Return & Deactivated: ${req.assetName} (Under Maintenance)`;
+          }
+        } else if (status === 'Rejected') {
+          finalAction = 'Activated';
+          finalTitle = `Rejected Return Request & Reactivated: ${req.assetName}`;
+        }
+
+        console.log("Submitting Audit Log payload...");
+        await AuditLogService.addAuditLog({
+          title: finalTitle,
+          action: finalAction,
+          entityType: 'Asset',
+          entityId: req.assetId,
+          details: JSON.stringify({
+            requestKey: req.id,
+            lifecycle,
+            assetName: req.assetName,
+            requesterName: req.requesterName,
+            changedBy: approverName,
+            changedAt: new Date().toISOString(),
+            managerComment,
+            adminComments,
+            condition: finalCondition || req.proposedCondition
+          }),
+          user: approverName
+        });
+        console.log("Audit Log created successfully.");
+      }
     } catch (e: any) {
       console.error("Exception in writing Audit Log:", e.message, e.stack);
     }

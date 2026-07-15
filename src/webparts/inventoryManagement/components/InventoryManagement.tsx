@@ -47,6 +47,7 @@ import { IEmployee } from '../models/IEmployee';
 import { InventoryService } from '../services/InventoryService';
 import { Dashboard } from './Dashboard';
 import { AssetTracking } from './AssetTracking';
+import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage } from '../pages';
 import { INotification } from '../models/INotification';
 import { NotificationCenter } from './NotificationCenter';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
@@ -78,6 +79,7 @@ export interface IInventoryManagementState {
   isNotificationDetailsOpen: boolean;
   returnRequests: IReturnRequest[];
   returnRequestsLoading: boolean;
+  auditLogsRefreshTrigger: number;
   selectedAssetForReturn: IInventoryItem | undefined;
   isReturnFormOpen: boolean;
   activeUserDisplayName: string;
@@ -133,6 +135,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     const effectiveRole = this.state.previewRole || this.state.userRole;
     const isAdminOrManager = effectiveRole === 'Admin' || effectiveRole === 'Inventory Manager';
     const isAdmin = effectiveRole === 'Admin';
+    const isManager = effectiveRole === 'Inventory Manager';
 
     const notifications: INotification[] = [];
     const readIds = new Set(this.state.readNotificationIds);
@@ -281,13 +284,27 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const isMyReturn = normalize(ret.requesterName) === activeUserNorm || activeUserNorm.includes(normalize(ret.requesterName)) || normalize(ret.requesterName).includes(activeUserNorm);
 
       if (isAdminOrManager) {
-        if (ret.status === 'Pending') {
-          const id = `ret-pending-${ret.id}`;
+        if (isManager && (ret.status === 'Pending Manager Approval' || ret.status === 'Pending')) {
+          const id = `ret-pending-mgr-${ret.id}`;
           if (!clearedIds.has(id)) {
             notifications.push({
               id,
-              title: "Asset Return Pending",
+              title: "Asset Return Pending Manager Approval",
               message: `${ret.requesterName} requested to return ${ret.assetName} (Reason: ${ret.returnReason || "None"})`,
+              type: 'info',
+              timestamp: formatTime(ret.requestDate),
+              isRead: readIds.has(id),
+              actionLink: 'AssetReturns',
+              category: 'Request'
+            });
+          }
+        } else if (isAdmin && ret.status === 'Pending Admin Verification') {
+          const id = `ret-pending-adm-${ret.id}`;
+          if (!clearedIds.has(id)) {
+            notifications.push({
+              id,
+              title: "Asset Return Pending Admin Verification",
+              message: `Manager approved return of ${ret.assetName} by ${ret.requesterName}. Awaiting Admin verification.`,
               type: 'info',
               timestamp: formatTime(ret.requestDate),
               isRead: readIds.has(id),
@@ -299,18 +316,18 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       }
 
       if (isMyReturn) {
-        if (ret.status === 'Approved' || ret.status === 'Rejected' || ret.status === 'Completed') {
+        if (ret.status === 'Approved' || ret.status === 'Rejected' || ret.status === 'Completed' || ret.status === 'Pending Admin Verification') {
           const id = `ret-resolved-${ret.id}-${ret.status}`;
           if (!clearedIds.has(id)) {
-            let titleText = "Return Request Approved";
-            let type: 'info' | 'success' | 'warning' | 'error' = 'success';
-            let messageText = `Your return request for ${ret.assetName} has been approved. Please hand it over.`;
+            let titleText = "Return Request Manager Approved";
+            let type: 'info' | 'success' | 'warning' | 'error' = 'info';
+            let messageText = `Your return request for ${ret.assetName} has been approved by your manager. Awaiting Admin verification.`;
 
             if (ret.status === 'Rejected') {
               titleText = "Return Request Rejected";
               type = 'error';
               messageText = `Your return request for ${ret.assetName} was rejected. Note: ${ret.managerComment || ""}`;
-            } else if (ret.status === 'Completed') {
+            } else if (ret.status === 'Completed' || ret.status === 'Approved') {
               titleText = "Asset Return Completed";
               type = 'success';
               messageText = `Your return of ${ret.assetName} is complete and has been checked back into stock.`;
@@ -402,6 +419,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       isRequestFormOpen: false,
       loading: true,
       auditLogsLoading: true,
+      auditLogsRefreshTrigger: 0,
       errorMessage: undefined,
       selectedTabKey: 'Dashboard',
       readNotificationIds: readIds,
@@ -582,14 +600,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   };
 
   private _loadAuditLogs = async (): Promise<void> => {
-    try {
-      this.setState({ auditLogsLoading: true });
-      const auditLogs = await InventoryService.getAuditLogs();
-      this.setState({ auditLogs, auditLogsLoading: false });
-    } catch (error) {
-      console.error("Failed to load audit logs:", error);
-      this.setState({ auditLogsLoading: false });
-    }
+    this.setState(prevState => ({
+      auditLogsRefreshTrigger: (prevState.auditLogsRefreshTrigger || 0) + 1
+    }));
   };
 
   private _loadReturnRequests = async (): Promise<void> => {
@@ -621,16 +634,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         returnReason: reason,
         proposedCondition: condition
       };
-
       await InventoryService.addReturnRequest(reqPayload, this.state.activeUserDisplayName);
 
       await this._loadInventory();
       await this._loadReturnRequests();
       await this._loadAuditLogs();
-      this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined });
+      this.setState({
+        isReturnFormOpen: false,
+        selectedAssetForReturn: undefined,
+        syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
+        syncMessageType: MessageBarType.success
+      });
     } catch (error: any) {
+      const msg = error.message && error.message.includes("already in progress") 
+        ? error.message 
+        : `Failed to submit return request: ${error.message || JSON.stringify(error)}`;
       this.setState({ 
-        errorMessage: `Failed to submit return request: ${error.message || JSON.stringify(error)}`,
+        errorMessage: msg,
         returnRequestsLoading: false
       });
     }
@@ -638,13 +658,25 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
   private _onUpdateReturnRequestStatus = async (
     requestId: string,
-    status: 'Approved' | 'Rejected' | 'Completed',
+    status: 'Approved' | 'Rejected' | 'Completed' | 'Pending Manager Approval' | 'Pending Admin Verification',
     comment: string,
-    finalCondition?: string
+    finalCondition?: string,
+    adminComments?: string,
+    managerStatus?: 'Pending' | 'Approved' | 'Rejected',
+    adminStatus?: 'Not Started' | 'Completed'
   ): Promise<void> => {
     try {
       this.setState({ returnRequestsLoading: true });
-      await InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition);
+      await InventoryService.updateReturnRequestStatus(
+        requestId,
+        status,
+        comment,
+        this.state.activeUserDisplayName,
+        finalCondition,
+        adminComments,
+        managerStatus,
+        adminStatus
+      );
 
       await this._loadInventory();
       await this._loadReturnRequests();
@@ -1773,7 +1805,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           key: 'AssetReturns',
           text: 'Asset Returns',
           icon: 'ReturnToSession',
-          badge: this.state.returnRequests.filter(r => r.status === 'Pending').length || undefined,
+          badge: this.state.returnRequests.filter(r => {
+            if (isAdmin) return r.status === 'Pending Admin Verification';
+            if (isManager) return r.status === 'Pending Manager Approval';
+            return r.status === 'Pending';
+          }).length || undefined,
           badgeColor: '#ea580c'
         }
       ] : []),
@@ -1898,15 +1934,51 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             {/* Right Main Content Area */}
             <div className={`${styles.card} ${styles.contentContainer}`}>
               {(() => {
+                const dashboardState = {
+                  items: isAdmin || isManager ? items : myAssets,
+                  requests: isAdmin || isManager ? this.state.requests : myRequests,
+                  isAdmin,
+                  isInventoryManager: isManager
+                };
+
+                const dashboardActions = {
+                  onNavigate: (key: string) => this.setState({ selectedTabKey: key })
+                };
+
+                const reportsState = {
+                  reportsSelectedTab: this.state.reportsSelectedTab,
+                  reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
+                  reportsStatusFilter: this.state.reportsStatusFilter,
+                  items,
+                  requests: this.state.requests
+                };
+
+                const reportsActions = {
+                  onTabChange: (tabKey: string) => this.setState({ reportsSelectedTab: tabKey }),
+                  onAssetTypeFilterChange: (type: string) => this.setState({ reportsAssetTypeFilter: type }),
+                  onStatusFilterChange: (status: string) => this.setState({ reportsStatusFilter: status }),
+                  onExportDetailedReportToExcel: (filteredItems: any[]) => this._exportDetailedReportToExcel(filteredItems),
+                  onExportDetailedReportToPDF: (filteredItems: any[]) => this._exportDetailedReportToPDF(filteredItems),
+                  onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
+                  onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                };
+
+                const incidentHistoryState = {
+                  userDisplayName: activeUserDisplayName || '',
+                  userEmail: activeUserEmail || '',
+                  userRole: effectiveRole
+                };
+
+                const incidentHistoryActions = {
+                  setIsLoading: (loading: boolean) => this.setState({ loading })
+                };
+
                 switch (this.state.selectedTabKey) {
                   case 'Dashboard':
                     return (
-                      <Dashboard
-                        items={isAdmin || isManager ? items : myAssets}
-                        requests={isAdmin || isManager ? this.state.requests : myRequests}
-                        isAdmin={isAdmin}
-                        isInventoryManager={isManager}
-                        onNavigate={(key) => this.setState({ selectedTabKey: key })}
+                      <DashboardPage
+                        state={dashboardState}
+                        actions={dashboardActions}
                       />
                     );
                   case 'MyWorkspace':
@@ -1961,18 +2033,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                     );
                   case 'IncidentHistory':
                     return (
-                      <div>
-                        <div className={styles.cardHeader}>
-                          <h3>Incident History</h3>
-                        </div>
-                        <IncidentHistory
-                          {...this.props}
-                          userDisplayName={activeUserDisplayName}
-                          userEmail={activeUserEmail}
-                          userRole={effectiveRole}
-                          setIsLoading={(loading) => this.setState({ loading })}
-                        />
-                      </div>
+                      <IncidentHistoryPage
+                        {...this.props}
+                        state={incidentHistoryState}
+                        actions={incidentHistoryActions}
+                      />
                     );
                   case 'Inventory':
                     return (isAdmin || isManager) ? (
@@ -2142,6 +2207,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         errorMessage={undefined}
                         currentUserRole={effectiveRole}
                         currentUserName={activeUserDisplayName}
+                        refreshTrigger={this.state.auditLogsRefreshTrigger}
                       />
                     ) : null;
                   case 'Users':
@@ -2259,624 +2325,40 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                     ) : null;
                   case 'Reports':
                     return isAdmin ? (
-                      <div>
-                        <div className={styles.cardHeader} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <div>
-                            <h3>Reporting & Insights</h3>
-                            <p style={{ color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' }}>
-                              Interactive dashboards, live graphs, status analysis, and exporter module.
-                            </p>
-                          </div>
-                        </div>
-
-                        <Pivot
-                          selectedKey={this.state.reportsSelectedTab}
-                          onLinkClick={(item) => this.setState({ reportsSelectedTab: item ? item.props.itemKey || 'insights' : 'insights' })}
-                          styles={{ root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } }}
-                        >
-                          <PivotItem headerText="Visual Insights" itemKey="insights" />
-                          <PivotItem headerText="Detailed Reports" itemKey="detailed" />
-                          <PivotItem headerText="Warranty Expiry" itemKey="expiry" />
-                        </Pivot>
-
-                        {this.state.reportsSelectedTab === 'insights' && (
-                          <Stack tokens={{ childrenGap: 24 }}>
-                            {/* Stats Summary Cards Row */}
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
-                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' }}>TOTAL INVENTORY ASSETS</span>
-                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' }}>{items.length}</span>
-                              </div>
-                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' }}>ASSETS CURRENTLY ASSIGNED</span>
-                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' }}>{items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length}</span>
-                              </div>
-                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' }}>UTILIZATION RATE</span>
-                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' }}>
-                                  {items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0}%
-                                </span>
-                              </div>
-                              <div style={{ padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                                <span style={{ display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' }}>TOTAL APPROVAL REQUESTS</span>
-                                <span style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' }}>{this.state.requests.length}</span>
-                              </div>
-                            </div>
-
-                            {/* Charts Grid */}
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                              {/* Chart 1: Status Distribution */}
-                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <h4 style={{ margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' }}>Asset Status Distribution</h4>
-                                <div style={{ height: '220px', width: '220px', position: 'relative' }}>
-                                  <Pie
-                                    data={{
-                                      labels: ['In Stock', 'Assigned', 'Pending Return', 'Under Maintenance'],
-                                      datasets: [{
-                                        data: [
-                                          items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
-                                          items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
-                                          items.filter(i => i.status === 'Pending Return').length,
-                                          items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
-                                        ],
-                                        backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
-                                      }]
-                                    }}
-                                    options={{
-                                      responsive: true,
-                                      maintainAspectRatio: false,
-                                      plugins: { legend: { display: false } }
-                                    }}
-                                  />
-                                </div>
-                                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' }}>
-                                  <span><span style={{ color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>In Stock</span>
-                                  <span><span style={{ color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Assigned</span>
-                                  <span><span style={{ color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Pending Return</span>
-                                  <span><span style={{ color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Maintenance</span>
-                                </div>
-                              </div>
-
-                              {/* Chart 2: Category Distribution */}
-                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                                <h4 style={{ margin: '0 0 15px 0', color: '#374151' }}>Asset Type Distribution</h4>
-                                <div style={{ height: '240px' }}>
-                                  {(() => {
-                                    const typeCounts: { [type: string]: number } = {};
-                                    items.forEach(i => {
-                                      const type = i.assetType || "Other";
-                                      typeCounts[type] = (typeCounts[type] || 0) + 1;
-                                    });
-                                    const labels = Object.keys(typeCounts);
-                                    const data = Object.keys(typeCounts).map(key => typeCounts[key]);
-
-                                    return (
-                                      <Bar
-                                        data={{
-                                          labels,
-                                          datasets: [{
-                                            label: 'Assets Count',
-                                            data,
-                                            backgroundColor: '#1f77b4',
-                                            borderRadius: 4
-                                          }]
-                                        }}
-                                        options={{
-                                          responsive: true,
-                                          maintainAspectRatio: false,
-                                          plugins: { legend: { display: false } },
-                                          scales: {
-                                            y: { beginAtZero: true, ticks: { precision: 0 } }
-                                          }
-                                        }}
-                                      />
-                                    );
-                                  })()}
-                                </div>
-                              </div>
-
-                              {/* Chart 3: Asset Aging */}
-                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                <h4 style={{ margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' }}>Asset Aging Analysis</h4>
-                                <div style={{ height: '220px', width: '220px', position: 'relative' }}>
-                                  {(() => {
-                                    const now = new Date();
-                                    const aging = items.reduce((acc, item) => {
-                                      if (!item.purchaseDate) {
-                                        acc.unknown++;
-                                        return acc;
-                                      }
-                                      const pd = new Date(item.purchaseDate);
-                                      const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                                      if (diffYears < 1) acc.under1++;
-                                      else if (diffYears <= 3) acc.between1and3++;
-                                      else acc.over3++;
-                                      return acc;
-                                    }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-
-                                    return (
-                                      <Doughnut
-                                        data={{
-                                          labels: ['< 1 Year (New)', '1-3 Years', '> 3 Years (Aging)', 'Unknown'],
-                                          datasets: [{
-                                            data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
-                                            backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
-                                          }]
-                                        }}
-                                        options={{
-                                          responsive: true,
-                                          maintainAspectRatio: false,
-                                          plugins: { legend: { display: false } }
-                                        }}
-                                      />
-                                    );
-                                  })()}
-                                </div>
-                                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' }}>
-                                  <span><span style={{ color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>&lt; 1 Year</span>
-                                  <span><span style={{ color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>1-3 Years</span>
-                                  <span><span style={{ color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>&gt; 3 Years</span>
-                                  <span><span style={{ color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' }}>●</span>Unknown</span>
-                                </div>
-                              </div>
-
-                              {/* Chart 4: Request Trends */}
-                              <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                                <h4 style={{ margin: '0 0 15px 0', color: '#374151' }}>Request Approval Trends</h4>
-                                <div style={{ height: '240px' }}>
-                                  <Bar
-                                    data={{
-                                      labels: ['Approved', 'Declined/Rejected', 'Pending'],
-                                      datasets: [{
-                                        data: [
-                                          this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
-                                          this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
-                                          this.state.requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
-                                        ],
-                                        backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
-                                      }]
-                                    }}
-                                    options={{
-                                      responsive: true,
-                                      maintainAspectRatio: false,
-                                      plugins: { legend: { display: false } },
-                                      scales: {
-                                        y: { beginAtZero: true, ticks: { precision: 0 } }
-                                      }
-                                    }}
-                                  />
-                                </div>
-                              </div>
-
-                            </div>
-                          </Stack>
-                        )}
-
-                        {this.state.reportsSelectedTab === 'detailed' && (
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' }}>
-                              <h4 style={{ margin: 0 }}>Filterable Asset Inventory</h4>
-                              <Stack horizontal tokens={{ childrenGap: 8 }}>
-                                <PrimaryButton
-                                  text="Export Excel"
-                                  iconProps={{ iconName: 'ExcelDocument' }}
-                                  onClick={() => {
-                                    const filtered = items.filter(i => {
-                                      const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
-                                      const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
-                                      return typeMatch && statusMatch;
-                                    });
-                                    this._exportDetailedReportToExcel(filtered);
-                                  }}
-                                  styles={{ root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } }}
-                                />
-                                <PrimaryButton
-                                  text="Export PDF"
-                                  iconProps={{ iconName: 'PDF' }}
-                                  onClick={() => {
-                                    const filtered = items.filter(i => {
-                                      const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
-                                      const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
-                                      return typeMatch && statusMatch;
-                                    });
-                                    this._exportDetailedReportToPDF(filtered);
-                                  }}
-                                  styles={{ root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } }}
-                                />
-                              </Stack>
-                            </div>
-
-                            {/* Filters Row */}
-                            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' }}>
-                              <div style={{ minWidth: '150px' }}>
-                                <Dropdown
-                                  label="Asset Type"
-                                  selectedKey={this.state.reportsAssetTypeFilter}
-                                  options={[
-                                    { key: 'All', text: 'All Types' },
-                                    ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
-                                  ]}
-                                  onChange={(_, opt) => this.setState({ reportsAssetTypeFilter: opt ? opt.key as string : 'All' })}
-                                />
-                              </div>
-                              <div style={{ minWidth: '150px' }}>
-                                <Dropdown
-                                  label="Asset Status"
-                                  selectedKey={this.state.reportsStatusFilter}
-                                  options={[
-                                    { key: 'All', text: 'All Statuses' },
-                                    ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
-                                  ]}
-                                  onChange={(_, opt) => this.setState({ reportsStatusFilter: opt ? opt.key as string : 'All' })}
-                                />
-                              </div>
-                            </div>
-
-                            {(() => {
-                              const filtered = items.filter(i => {
-                                const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
-                                const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
-                                return typeMatch && statusMatch;
-                              });
-
-                              return (
-                                <DetailsList
-                                  items={filtered}
-                                  columns={[
-                                    { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
-                                    { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
-                                    { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
-                                    { key: 'col4', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-                                    { key: 'col5', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || <span style={{ color: '#9ca3af', fontStyle: 'italic' }}>Unassigned</span> }
-                                  ]}
-                                  setKey="detailedReportList"
-                                  layoutMode={DetailsListLayoutMode.justified}
-                                  selectionMode={SelectionMode.none}
-                                />
-                              );
-                            })()}
-                          </div>
-                        )}
-
-                        {this.state.reportsSelectedTab === 'expiry' && (
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                              <h4 style={{ margin: 0 }}>Warranty Expiry Report</h4>
-                              <Stack horizontal tokens={{ childrenGap: 8 }}>
-                                <PrimaryButton
-                                  text="Export Excel"
-                                  iconProps={{ iconName: 'ExcelDocument' }}
-                                  onClick={this._exportWarrantyReportToExcel}
-                                  styles={{ root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } }}
-                                />
-                                <PrimaryButton
-                                  text="Export PDF"
-                                  iconProps={{ iconName: 'PDF' }}
-                                  onClick={this._exportWarrantyReportToPDF}
-                                  styles={{ root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } }}
-                                />
-                              </Stack>
-                            </div>
-                            <div style={{ marginBottom: '15px', display: 'flex', gap: '20px' }}>
-                              <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
-                                <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Total Assets Count</span>
-                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.length}</span>
-                              </div>
-                              <div style={{ padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' }}>
-                                <span style={{ display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' }}>Assets with Warranty Data</span>
-                                <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' }}>{items.filter(i => i.warrantyExpiry).length}</span>
-                              </div>
-                            </div>
-                            <DetailsList
-                              items={items}
-                              columns={[
-                                { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
-                                { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                                { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
-                                { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-                                {
-                                  key: 'col5',
-                                  name: 'Warranty Expiry Date',
-                                  fieldName: 'warrantyExpiry',
-                                  minWidth: 140,
-                                  maxWidth: 200,
-                                  isResizable: true,
-                                  onRender: (item) => {
-                                    const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
-                                    return (
-                                      <span style={{
-                                        color: isExpired ? '#ef4444' : '#166534',
-                                        fontWeight: 600,
-                                        backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
-                                        padding: '2px 8px',
-                                        borderRadius: '9999px',
-                                        fontSize: '0.75rem',
-                                        display: 'inline-block'
-                                      }}>
-                                        {item.warrantyExpiry || 'N/A'} {isExpired ? '(Expired)' : '(Active)'}
-                                      </span>
-                                    );
-                                  }
-                                }
-                              ]}
-                              setKey="warrantyReport"
-                              layoutMode={DetailsListLayoutMode.justified}
-                              selectionMode={SelectionMode.none}
-                            />
-                          </div>
-                        )}
-                      </div>
+                      <ReportsPage
+                        state={reportsState}
+                        actions={reportsActions}
+                      />
                     ) : null;
-                  case 'Config':
+                  case 'Config': {
+                    const configState = {
+                      configSelectedTab: this.state.configSelectedTab,
+                      syncInProgress: this.state.syncInProgress,
+                      syncMessage: this.state.syncMessage,
+                      syncMessageType: this.state.syncMessageType,
+                      diagnosticInfo: this.state.diagnosticInfo,
+                      connectionStatuses: this.state.connectionStatuses,
+                      connectionErrorMessages: this.state.connectionErrorMessages,
+                      loadingGroupUsers: this.state.loadingGroupUsers,
+                      groupUsersList: this.state.groupUsersList
+                    };
+
+                    const configActions = {
+                      onSyncAssignedAssets: this._onSyncAssignedAssets,
+                      onRunDiagnostics: this._onRunDiagnostics,
+                      onTestListConnection: this._testListConnection,
+                      onLoadGroupUsers: this._loadGroupUsers,
+                      onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
+                      onTabChange: (tabKey: 'operations' | 'connections' | 'rbac' | 'schema' | string) => this.setState({ configSelectedTab: tabKey as any })
+                    };
+
                     return isAdmin ? (
-                      <div>
-                        <div className={styles.cardHeader}>
-                          <h3>Configuration & List Management</h3>
-                          <p style={{ color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' }}>
-                            Admin-only control center for list syncing, database connection tests, role diagnostics, and list schemas.
-                          </p>
-                        </div>
-
-                        <Pivot
-                          selectedKey={this.state.configSelectedTab}
-                          onLinkClick={(item) => this.setState({ configSelectedTab: item ? item.props.itemKey || 'operations' : 'operations' })}
-                          styles={{ root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } }}
-                        >
-                          <PivotItem headerText="Sync Operations" itemKey="operations" />
-                          <PivotItem headerText="List Connections" itemKey="connections" />
-                          <PivotItem headerText="RBAC Site Groups" itemKey="rbac" />
-                          <PivotItem headerText="Required Schema Guides" itemKey="schema" />
-                        </Pivot>
-
-                        {this.state.configSelectedTab === 'operations' && (
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                            <h4 style={{ marginBottom: '10px', color: '#111827', marginTop: 0 }}>Mapping List Management & Sync</h4>
-                            <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' }}>
-                              Ensure all assets currently assigned to active employees are properly mapped to the SharePoint <strong>Mapping List</strong>.
-                              Use the buttons below to perform a manual synchronization check or diagnose the list&apos;s database schema.
-                            </p>
-
-                            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' }}>
-                              <PrimaryButton
-                                text={this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets"}
-                                iconProps={{ iconName: 'Sync' }}
-                                onClick={this._onSyncAssignedAssets}
-                                disabled={this.state.syncInProgress}
-                              />
-                              <PrimaryButton
-                                text={this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics"}
-                                iconProps={{ iconName: 'Database' }}
-                                onClick={this._onRunDiagnostics}
-                                disabled={this.state.syncInProgress}
-                                styles={{
-                                  root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
-                                  rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
-                                }}
-                              />
-                            </div>
-
-                            {this.state.syncMessage && (
-                              <MessageBar
-                                messageBarType={this.state.syncMessageType}
-                                onDismiss={() => this.setState({ syncMessage: undefined })}
-                                styles={{ root: { marginBottom: '15px', borderRadius: '6px' } }}
-                              >
-                                {this.state.syncMessage}
-                              </MessageBar>
-                            )}
-
-                            {this.state.diagnosticInfo && (
-                              <div style={{ marginTop: '15px' }}>
-                                <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' }}>Diagnostic Log Output:</span>
-                                <textarea
-                                  readOnly
-                                  value={this.state.diagnosticInfo}
-                                  rows={10}
-                                  style={{
-                                    width: '100%',
-                                    fontFamily: 'monospace',
-                                    fontSize: '0.82rem',
-                                    padding: '10px',
-                                    backgroundColor: '#f3f2f1',
-                                    border: '1px solid #e1dfdd',
-                                    borderRadius: '4px',
-                                    resize: 'vertical',
-                                    color: '#323130'
-                                  }}
-                                />
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        {this.state.configSelectedTab === 'connections' && (
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                            <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>SharePoint List Connections</h4>
-                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' }}>
-                              Verify the read/write database connection status of the required SharePoint storage lists.
-                            </p>
-                            
-                            <Stack tokens={{ childrenGap: 16 }}>
-                              {[
-                                { title: 'Inventory List', internal: 'InventoryList', desc: 'Stores the master catalog of all physical assets and hardware.' },
-                                { title: 'Request List', internal: 'RequestList', desc: 'Manages employee request tickets, workflow histories, and assignment queues.' },
-                                { title: 'Asset Return Request List', internal: 'Asset Return Request List', desc: 'Handles asset return forms, check-in inspections, and manager validations.' },
-                                { title: 'Mapping List', internal: 'Mapping List', desc: 'Maintains live active assignment mapping for automated clearing checks.' },
-                                { title: 'System Audit Log', internal: 'AuditLogList', desc: 'Tracks historical change logs, lifecycle states, and admin operations.' }
-                              ].map(list => {
-                                const status = this.state.connectionStatuses[list.title];
-                                const errorMsg = this.state.connectionErrorMessages[list.title];
-                                
-                                return (
-                                  <div key={list.title} style={{ padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-                                    <div style={{ flex: '1 1 300px' }}>
-                                      <h5 style={{ margin: '0 0 4px 0', fontSize: '0.95rem', fontWeight: 600, color: '#111827' }}>
-                                        {list.title} <span style={{ fontWeight: 'normal', color: '#6b7280', fontSize: '0.8rem' }}>({list.internal})</span>
-                                      </h5>
-                                      <span style={{ fontSize: '0.82rem', color: '#4b5563' }}>{list.desc}</span>
-                                      {errorMsg && (
-                                        <div style={{ marginTop: '8px', color: '#d13438', fontSize: '0.78rem', backgroundColor: '#fde7e9', padding: '6px 10px', borderRadius: '4px' }}>
-                                          <strong>Error:</strong> {errorMsg}
-                                        </div>
-                                      )}
-                                    </div>
-                                    
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                      {status === 'testing' && (
-                                        <span style={{ fontSize: '0.8rem', color: '#0078d4', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                          <Icon iconName="ProgressLoopOuter" style={{ animation: 'spin 1.5s linear infinite' }} /> Verifying...
-                                        </span>
-                                      )}
-                                      {status === 'connected' && (
-                                        <span style={{
-                                          color: '#166534',
-                                          backgroundColor: '#dcfce7',
-                                          padding: '4px 12px',
-                                          borderRadius: '9999px',
-                                          fontSize: '0.75rem',
-                                          fontWeight: 600,
-                                          display: 'inline-flex',
-                                          alignItems: 'center',
-                                          gap: '4px'
-                                        }}>
-                                          <Icon iconName="Completed" /> Connected
-                                        </span>
-                                      )}
-                                      {status === 'error' && (
-                                        <span style={{
-                                          color: '#b91c1c',
-                                          backgroundColor: '#fee2e2',
-                                          padding: '4px 12px',
-                                          borderRadius: '9999px',
-                                          fontSize: '0.75rem',
-                                          fontWeight: 600,
-                                          display: 'inline-flex',
-                                          alignItems: 'center',
-                                          gap: '4px'
-                                        }}>
-                                          <Icon iconName="ErrorBadge" /> Failed
-                                        </span>
-                                      )}
-                                      {!status && (
-                                        <span style={{
-                                          color: '#4b5563',
-                                          backgroundColor: '#f3f4f6',
-                                          padding: '4px 12px',
-                                          borderRadius: '9999px',
-                                          fontSize: '0.75rem',
-                                          fontWeight: 500
-                                        }}>
-                                          Not Verified
-                                        </span>
-                                      )}
-                                      
-                                      <DefaultButton
-                                        text="Test Live"
-                                        iconProps={{ iconName: 'PlugConnected' }}
-                                        onClick={() => this._testListConnection(list.title, list.internal)}
-                                        disabled={status === 'testing'}
-                                      />
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </Stack>
-                          </div>
-                        )}
-
-                        {this.state.configSelectedTab === 'rbac' && (
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                            <h4 style={{ marginBottom: '15px', color: '#111827', marginTop: 0 }}>Role Based Access Control (RBAC)</h4>
-                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' }}>
-                              Inspect user groups resolved from SharePoint for permission level verification.
-                            </p>
-                            
-                            <Stack tokens={{ childrenGap: 16 }}>
-                              {[
-                                { group: 'MSFT Owners', role: 'Admin', desc: 'Full administrative rights to modify assets, approve returns, and manage database connection setups.' },
-                                { group: 'MSFT Members', role: 'Inventory Manager', desc: 'Write access to create items, process returns, assign assets, and view reports.' },
-                                { group: 'MSFT Visitors', role: 'Inventory Employee', desc: 'Read-only access to available stocks and permission to request return tickets.' }
-                              ].map(item => {
-                                const isLoading = this.state.loadingGroupUsers[item.group];
-                                const members = this.state.groupUsersList[item.group];
-                                
-                                return (
-                                  <div key={item.group} style={{ padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                                      <div>
-                                        <h5 style={{ margin: 0, fontSize: '1rem', fontWeight: 600, color: '#111827' }}>
-                                          {item.group} <span style={{ color: '#0078d4', fontSize: '0.8rem', backgroundColor: '#deecf9', padding: '2px 8px', borderRadius: '4px', marginLeft: '6px', fontWeight: 600 }}>{item.role}</span>
-                                        </h5>
-                                        <span style={{ fontSize: '0.8rem', color: '#4b5563', display: 'block', marginTop: '4px' }}>{item.desc}</span>
-                                      </div>
-                                      
-                                      <DefaultButton
-                                        text={isLoading ? "Loading..." : "View Members"}
-                                        iconProps={{ iconName: 'People' }}
-                                        onClick={() => this._loadGroupUsers(item.group)}
-                                        disabled={isLoading}
-                                      />
-                                    </div>
-                                    
-                                    {members && (
-                                      <div style={{ marginTop: '12px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid rgba(128,128,128,0.1)' }}>
-                                        <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '6px' }}>Group Members ({members.length}):</span>
-                                        {members.length === 0 ? (
-                                          <span style={{ fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' }}>No members found in this group</span>
-                                        ) : (
-                                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                                            {members.map((m, idx) => (
-                                              <span key={idx} style={{ backgroundColor: '#ffffff', border: '1px solid rgba(128,128,128,0.15)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.78rem', color: '#111827', fontWeight: 500 }}>
-                                                {m}
-                                              </span>
-                                            ))}
-                                          </div>
-                                        )}
-                                      </div>
-                                    )}
-                                  </div>
-                                );
-                              })}
-                            </Stack>
-                          </div>
-                        )}
-
-                        {this.state.configSelectedTab === 'schema' && (
-                          <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                            <h4 style={{ marginBottom: '5px', color: '#111827', marginTop: 0 }}>Required List Schema (Developer Reference)</h4>
-                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px', marginTop: 0 }}>Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors.</p>
-
-                            <h5 style={{ marginTop: '15px', marginBottom: '8px', color: '#374151' }}>InventoryList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Asset Database)</span></h5>
-                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
-                              {['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (
-                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                              ))}
-                            </div>
-
-                            <h5 style={{ marginBottom: '8px', color: '#374151' }}>RequestList <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Approval Workflows)</span></h5>
-                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
-                              {['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (
-                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                              ))}
-                            </div>
-
-                            <h5 style={{ marginBottom: '8px', color: '#374151' }}>Asset Return Request List <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Returns Handling)</span></h5>
-                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' }}>
-                              {['Title', 'AssetID', 'AssetName', 'SerialNumber', 'Employee', 'ReasonforReturn', 'ProposedCondition', 'RequestStatus', 'ManagerComments'].map(col => (
-                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                              ))}
-                            </div>
-
-                            <h5 style={{ marginBottom: '8px', color: '#374151' }}>Mapping List <span style={{ fontWeight: 'normal', color: '#9ca3af' }}>(Custody Tracking)</span></h5>
-                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                              {['Title', 'SerialNumber', 'Employe', 'EmployeeID', 'AssetName', 'AssignmentID'].map(col => (
-                                <span key={col} style={{ backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' }}>{col}</span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
+                      <ConfigPage
+                        state={configState}
+                        actions={configActions}
+                      />
                     ) : null;
+                  }
                   default:
                     return null;
                 }

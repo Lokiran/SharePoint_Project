@@ -4,6 +4,7 @@ exports.RequestForm = void 0;
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("@fluentui/react");
+const DropdownConstants_1 = require("../constants/DropdownConstants");
 const stackTokens = { childrenGap: 15 };
 const RequestForm = (props) => {
     const [selectedRequesterId, setSelectedRequesterId] = React.useState(undefined);
@@ -51,14 +52,7 @@ const RequestForm = (props) => {
     const dynamicAssetTypeOptions = uniqueAssetTypes.map(type => ({ key: type, text: type }));
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
-        : [
-            { key: 'Laptop', text: 'Laptop' },
-            { key: 'Monitor', text: 'Monitor' },
-            { key: 'Mouse', text: 'Mouse' },
-            { key: 'Keyboard', text: 'Keyboard' },
-            { key: 'Headset', text: 'Headset' },
-            { key: 'Other', text: 'Other' }
-        ];
+        : DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS;
     const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
     const onSave = () => {
         // Validate role: employees can only request for themselves
@@ -113,11 +107,7 @@ const RequestForm = (props) => {
             React.createElement(react_1.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
                 }, required: true }),
-            React.createElement(react_1.Dropdown, { label: "Priority", selectedKey: priority, options: [
-                    { key: 'High', text: 'High' },
-                    { key: 'Medium', text: 'Medium' },
-                    { key: 'Low', text: 'Low' }
-                ], onChange: (_, opt) => setPriority(opt?.key), required: true }),
+            React.createElement(react_1.Dropdown, { label: "Priority", selectedKey: priority, options: DropdownConstants_1.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
             React.createElement(react_1.TextField, { label: "Quantity", type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
             React.createElement(react_1.TextField, { label: "Reason for Request", multiline: true, rows: 3, value: reason, onChange: (_, val) => setReason(val || '') }),
             React.createElement(react_1.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },

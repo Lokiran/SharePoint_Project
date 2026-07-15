@@ -14,23 +14,7 @@ import {
 } from '@fluentui/react';
 import { IInventoryItem } from '../models/IInventoryItem';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
-
-const assetTypeOptions: IDropdownOption[] = [
-  { key: 'Laptop', text: 'Laptop' },
-  { key: 'Monitor', text: 'Monitor' },
-  { key: 'Mouse', text: 'Mouse' },
-  { key: 'Keyboard', text: 'Keyboard' },
-  { key: 'Headset', text: 'Headset' },
-  { key: 'Other', text: 'Other' }
-];
-
-const conditionOptions: IDropdownOption[] = [
-  { key: 'New', text: 'New' },
-  { key: 'Good', text: 'Good' },
-  { key: 'Fair', text: 'Fair' },
-  { key: 'Poor', text: 'Poor' },
-  { key: 'Damaged', text: 'Damaged' }
-];
+import { DEFAULT_ASSET_TYPE_OPTIONS, ASSET_CONDITION_OPTIONS } from '../constants/DropdownConstants';
 
 export interface IAssetFormProps {
   isOpen: boolean;
@@ -109,7 +93,7 @@ export const AssetForm: React.FC<IAssetFormProps> = (props) => {
         <Dropdown
           label="Asset Type"
           selectedKey={assetType}
-          options={assetTypeOptions}
+          options={DEFAULT_ASSET_TYPE_OPTIONS}
           onChange={(_, opt) => setAssetType(opt?.key as string || 'Other')}
           required
         />
@@ -135,7 +119,7 @@ export const AssetForm: React.FC<IAssetFormProps> = (props) => {
         <Dropdown
           label="Condition"
           selectedKey={condition}
-          options={conditionOptions}
+          options={ASSET_CONDITION_OPTIONS}
           onChange={(_, opt) => setCondition(opt?.key as string || 'New')}
         />
         <TextField

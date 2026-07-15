@@ -26,10 +26,11 @@ export declare class InventoryService {
     static getReturnRequestList(): Promise<any>;
     static getReturnRequests(): Promise<any[]>;
     static addReturnRequest(request: any, userDisplayName: string): Promise<void>;
-    static updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed', managerComment: string, approverName: string, finalCondition?: string): Promise<void>;
+    static updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed' | 'Pending Manager Approval' | 'Pending Admin Verification', managerComment: string, approverName: string, finalCondition?: string, adminComments?: string, managerStatus?: 'Pending' | 'Approved' | 'Rejected', adminStatus?: 'Not Started' | 'Completed'): Promise<void>;
     static cleanupReturnApprovedAssets(): Promise<void>;
     static addAuditLog(log: any): Promise<void>;
     static getAuditLogs(): Promise<any[]>;
+    static getFilteredAuditLogs(filters: any): Promise<any[]>;
     static getListFieldsMetadata(list: any): Promise<any[]>;
     static translateSharePointError(error: any, payload: any, mapping: any): Error;
 }

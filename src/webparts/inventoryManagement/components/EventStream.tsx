@@ -1,33 +1,131 @@
 import * as React from 'react';
 import { useState, useMemo, useEffect } from 'react';
-import { IEventLog } from '../models/IEventLog';
+import { IEventLog, IAuditLogFilters } from '../models/IEventLog';
 import {
   DetailsList,
   DetailsListLayoutMode,
   SelectionMode,
   IColumn
 } from '@fluentui/react/lib/DetailsList';
-import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
-import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
 import styles from './InventoryManagement.module.scss';
+import { EventFilters } from './EventFilters';
+import { InventoryService } from '../services/InventoryService';
 
 export interface IEventStreamProps {
-  logs: IEventLog[];
-  loading: boolean;
+  logs: IEventLog[]; // preserved for backwards compatibility but we load internally
+  loading: boolean; // preserved for backwards compatibility but we load internally
   errorMessage?: string;
   currentUserRole: UserRole;
   currentUserName: string;
+  refreshTrigger?: number; // Added to trigger refresh on command from parent
 }
 
 export const EventStream: React.FC<IEventStreamProps> = (props) => {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filters, setFilters] = useState<IAuditLogFilters>({
+    searchQuery: '',
+    dateRangeType: 'All',
+    action: 'All',
+    module: 'All',
+    assetType: 'All',
+    user: 'All',
+    status: 'All',
+    sortOrder: 'NewestFirst'
+  });
+
+  const [logs, setLogs] = useState<IEventLog[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pageSize = 10;
 
-  const isAdmin = props.currentUserRole === 'Admin';
-  const isManager = props.currentUserRole === 'Inventory Manager';
+  // Filter option lists
+  const [actionsList, setActionsList] = useState<string[]>([]);
+  const [assetTypesList, setAssetTypesList] = useState<string[]>([]);
+  const [usersList, setUsersList] = useState<string[]>([]);
+
   const isEmployee = props.currentUserRole === 'Inventory Employee';
+
+  // Load filter lists from the recent logs to populate dropdown options dynamically
+  useEffect(() => {
+    const loadFilterMetadata = async () => {
+      try {
+        // Fetch last 90 days of logs as a baseline for filter options
+        const initLogs = await InventoryService.getFilteredAuditLogs({
+          searchQuery: '',
+          dateRangeType: 'Last90',
+          action: 'All',
+          module: 'All',
+          assetType: 'All',
+          user: 'All',
+          status: 'All',
+          sortOrder: 'NewestFirst'
+        });
+        
+        // Extract unique options
+        const actions = Array.from(new Set(initLogs.map(l => l.action).filter(Boolean)));
+        const users = Array.from(new Set(initLogs.map(l => l.user).filter(Boolean)));
+        
+        const defaultAssetTypes = ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset', 'Dock', 'Printer'];
+        const foundAssetTypes = initLogs.map(l => l.assetName).filter(Boolean);
+        const uniqueAssetTypes = Array.from(new Set([...defaultAssetTypes, ...foundAssetTypes]));
+
+        setActionsList(actions.sort());
+        setUsersList(users.sort());
+        setAssetTypesList(uniqueAssetTypes.sort());
+      } catch (err) {
+        console.warn("Failed to load filter metadata:", err);
+      }
+    };
+    loadFilterMetadata();
+  }, []);
+
+  // Fetch logs whenever server-side filters or refresh trigger change
+  useEffect(() => {
+    const fetchLogs = async () => {
+      setLoading(true);
+      try {
+        const fetched = await InventoryService.getFilteredAuditLogs({
+          ...filters,
+          searchQuery: ''
+        });
+        setLogs(fetched);
+      } catch (err) {
+        console.error("Failed to fetch filtered audit logs:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchLogs();
+    setCurrentPage(1); // Reset page to 1 when filters change
+  }, [
+    filters.dateRangeType,
+    filters.startDate,
+    filters.endDate,
+    filters.action,
+    filters.module,
+    filters.user,
+    props.refreshTrigger
+  ]);
+
+  // Reset to page 1 when client-side filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
+
+  const handleClearFilters = () => {
+    setFilters(prev => ({
+      searchQuery: prev.searchQuery, // Preserve search text
+      dateRangeType: 'All',
+      startDate: undefined,
+      endDate: undefined,
+      action: 'All',
+      module: 'All',
+      assetType: 'All',
+      user: 'All',
+      status: 'All',
+      sortOrder: 'NewestFirst'
+    }));
+  };
 
   const columns: IColumn[] = [
     {
@@ -101,7 +199,7 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
           textColor = '#991b1b';      // Dark red
           displayText = 'deactivated';
         } else if (normalizedAction === 'update') {
-          backgroundColor = '#ffedd5'; // Light orange/yellow (fallback for generic Update)
+          backgroundColor = '#ffedd5'; // Light orange/yellow
           textColor = '#9a3412';
           displayText = 'updated';
         }
@@ -134,36 +232,78 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
     ] : [])
   ];
 
+  // 1. Apply role-based visibility filtering client-side
   const roleBasedFilteredLogs = useMemo(() => {
     if (isEmployee) {
-      return props.logs.filter(log =>
+      return logs.filter(log =>
         (log.user || '').toLowerCase().includes(props.currentUserName.toLowerCase()) ||
         (log.details || '').toLowerCase().includes(props.currentUserName.toLowerCase())
       );
     }
-    return props.logs;
-  }, [props.logs, isEmployee, props.currentUserName]);
+    return logs;
+  }, [logs, isEmployee, props.currentUserName]);
 
+  // 2. Apply client-side search, assetType, status filters, and sorting
   const filteredLogs = useMemo(() => {
-    if (!searchQuery) {
-      return roleBasedFilteredLogs;
-    }
-    const lowerQuery = searchQuery.toLowerCase();
-    return roleBasedFilteredLogs.filter(log =>
-      log.title?.toLowerCase().includes(lowerQuery) ||
-      log.assetName?.toLowerCase().includes(lowerQuery) ||
-      log.details?.toLowerCase().includes(lowerQuery) ||
-      log.user?.toLowerCase().includes(lowerQuery) ||
-      log.action?.toLowerCase().includes(lowerQuery) ||
-      log.entityType?.toLowerCase().includes(lowerQuery) ||
-      log.entityId?.toLowerCase().includes(lowerQuery)
-    );
-  }, [roleBasedFilteredLogs, searchQuery]);
+    let result = [...roleBasedFilteredLogs];
 
-  // Reset page when searchQuery or logs array changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [searchQuery, props.logs]);
+    // Search query filtering
+    if (filters.searchQuery) {
+      const lowerQuery = filters.searchQuery.toLowerCase();
+      result = result.filter(log =>
+        log.title?.toLowerCase().includes(lowerQuery) ||
+        log.assetName?.toLowerCase().includes(lowerQuery) ||
+        log.details?.toLowerCase().includes(lowerQuery) ||
+        log.user?.toLowerCase().includes(lowerQuery) ||
+        log.action?.toLowerCase().includes(lowerQuery) ||
+        log.entityType?.toLowerCase().includes(lowerQuery) ||
+        log.entityId?.toLowerCase().includes(lowerQuery)
+      );
+    }
+
+    // Asset type filtering
+    if (filters.assetType && filters.assetType !== 'All') {
+      const lowerAssetType = filters.assetType.toLowerCase();
+      result = result.filter(log =>
+        (log.assetName || '').toLowerCase().includes(lowerAssetType) ||
+        (log.title || '').toLowerCase().includes(lowerAssetType)
+      );
+    }
+
+    // Status filtering
+    if (filters.status && filters.status !== 'All') {
+      const lowerStatus = filters.status.toLowerCase();
+      result = result.filter(log =>
+        (log.details || '').toLowerCase().includes(lowerStatus) ||
+        (log.action || '').toLowerCase().includes(lowerStatus) ||
+        (log.title || '').toLowerCase().includes(lowerStatus)
+      );
+    }
+
+    // Sorting
+    if (filters.sortOrder) {
+      result.sort((a, b) => {
+        switch (filters.sortOrder) {
+          case 'NewestFirst':
+            return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+          case 'OldestFirst':
+            return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+          case 'AssetNameAZ':
+            return (a.assetName || '').localeCompare(b.assetName || '');
+          case 'AssetNameZA':
+            return (b.assetName || '').localeCompare(a.assetName || '');
+          case 'UserAZ':
+            return (a.user || '').localeCompare(b.user || '');
+          case 'UserZA':
+            return (b.user || '').localeCompare(a.user || '');
+          default:
+            return 0;
+        }
+      });
+    }
+
+    return result;
+  }, [roleBasedFilteredLogs, filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
 
   const totalItems = filteredLogs.length;
   const totalPages = Math.ceil(totalItems / pageSize);
@@ -204,28 +344,28 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
 
   return (
     <div style={{ marginTop: '20px' }}>
-      <div style={{ marginBottom: '20px' }}>
-        {props.errorMessage && (
-          <div style={{ color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' }}>
-            <strong>Notice:</strong> {props.errorMessage}
-          </div>
-        )}
+      {props.errorMessage && (
+        <div style={{ color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' }}>
+          <strong>Notice:</strong> {props.errorMessage}
+        </div>
+      )}
 
-        <SearchBox
-          placeholder="Search by asset name, title, details, user, or action..."
-          value={searchQuery}
-          onChange={(_, newValue) => setSearchQuery(newValue || '')}
-          onClear={() => setSearchQuery('')}
-          styles={{ root: { maxWidth: 400 } }}
-        />
-      </div>
+      {/* Advanced Filters Panel */}
+      <EventFilters
+        filters={filters}
+        onChange={setFilters}
+        onClear={handleClearFilters}
+        actionsList={actionsList}
+        assetTypesList={assetTypesList}
+        usersList={usersList}
+      />
 
-      {props.loading ? (
+      {loading ? (
         <p>Loading audit logs...</p>
       ) : roleBasedFilteredLogs.length === 0 ? (
         <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No audit events {isEmployee ? 'for you' : ''} recorded yet.</p>
       ) : filteredLogs.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No audit events match your search query.</p>
+        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No audit events match your active filters.</p>
       ) : (
         <>
           <DetailsList

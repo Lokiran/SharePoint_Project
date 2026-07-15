@@ -6,6 +6,7 @@ const React = tslib_1.__importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
+const DropdownConstants_1 = require("../constants/DropdownConstants");
 const MyRequestsView = (props) => {
     const { requests, returnRequests = [] } = props;
     // Search and Filter States (Asset Requests)
@@ -50,9 +51,9 @@ const MyRequestsView = (props) => {
         let completedCount = 0;
         returnRequests.forEach(r => {
             const status = r.status || 'Pending';
-            if (status === 'Pending')
+            if (status === 'Pending' || status === 'Pending Manager Approval')
                 pendingCount++;
-            else if (status === 'Approved')
+            else if (status === 'Approved' || status === 'Pending Admin Verification')
                 approvedCount++;
             else if (status === 'Rejected')
                 rejectedCount++;
@@ -90,15 +91,22 @@ const MyRequestsView = (props) => {
                 (r.serialNumber || '').toLowerCase().includes(normQuery) ||
                 (r.returnReason || '').toLowerCase().includes(normQuery) ||
                 (r.id || '').toLowerCase().includes(normQuery);
-            const matchesStatus = returnSelectedStatus === 'All' || r.status === returnSelectedStatus;
+            const matchesStatus = returnSelectedStatus === 'All' ||
+                r.status === returnSelectedStatus ||
+                (returnSelectedStatus === 'Pending' && (r.status === 'Pending Manager Approval' || r.status === 'Pending')) ||
+                (returnSelectedStatus === 'Approved' && (r.status === 'Pending Admin Verification' || r.status === 'Approved'));
             return matchesSearch && matchesStatus;
         });
     }, [returnRequests, returnSearchQuery, returnSelectedStatus]);
     // Return status badge styles
     const getReturnStatusStyle = (status) => {
         switch (status) {
-            case 'Pending': return { bg: '#fff8e6', color: '#b06000' };
-            case 'Approved': return { bg: '#e8f0fe', color: '#1558d6' };
+            case 'Pending':
+            case 'Pending Manager Approval':
+                return { bg: '#fff8e6', color: '#b06000' };
+            case 'Approved':
+            case 'Pending Admin Verification':
+                return { bg: '#e8f0fe', color: '#1558d6' };
             case 'Rejected': return { bg: '#fce8e6', color: '#c5221f' };
             case 'Completed': return { bg: '#e6f4ea', color: '#137333' };
             default: return { bg: '#f1f3f4', color: '#5f6368' };
@@ -106,8 +114,12 @@ const MyRequestsView = (props) => {
     };
     const getReturnStatusIcon = (status) => {
         switch (status) {
-            case 'Pending': return 'Clock';
-            case 'Approved': return 'CompletedSolid';
+            case 'Pending':
+            case 'Pending Manager Approval':
+                return 'Clock';
+            case 'Approved':
+            case 'Pending Admin Verification':
+                return 'CompletedSolid';
             case 'Rejected': return 'ErrorBadge';
             case 'Completed': return 'CheckMark';
             default: return 'Info';
@@ -145,16 +157,12 @@ const MyRequestsView = (props) => {
                         React.createElement("div", { style: { width: '130px' } },
                             React.createElement(react_2.Dropdown, { options: [
                                     { key: 'All', text: 'All Statuses' },
-                                    { key: 'Pending', text: 'Pending' },
-                                    { key: 'Approved', text: 'Approved' },
-                                    { key: 'Declined', text: 'Declined' }
+                                    ...DropdownConstants_1.ASSET_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: selectedStatus, onChange: (e, option) => setSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         React.createElement("div", { style: { width: '130px' } },
                             React.createElement(react_2.Dropdown, { options: [
                                     { key: 'All', text: 'All Priorities' },
-                                    { key: 'Low', text: 'Low' },
-                                    { key: 'Medium', text: 'Medium' },
-                                    { key: 'High', text: 'High' }
+                                    ...DropdownConstants_1.ASSET_REQUEST_PRIORITY_OPTIONS
                                 ], selectedKey: selectedPriority, onChange: (e, option) => setSelectedPriority(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         React.createElement("div", null,
                             React.createElement(react_2.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
@@ -281,10 +289,7 @@ const MyRequestsView = (props) => {
                         React.createElement("div", { style: { width: '150px' } },
                             React.createElement(react_2.Dropdown, { options: [
                                     { key: 'All', text: 'All Statuses' },
-                                    { key: 'Pending', text: 'Pending' },
-                                    { key: 'Approved', text: 'Approved' },
-                                    { key: 'Rejected', text: 'Rejected' },
-                                    { key: 'Completed', text: 'Completed' }
+                                    ...DropdownConstants_1.RETURN_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: returnSelectedStatus, onChange: (e, option) => setReturnSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         React.createElement("div", null,
                             React.createElement(react_2.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
@@ -426,7 +431,9 @@ const MyRequestsView = (props) => {
                     const icon = getReturnStatusIcon(selectedReturnRequest.status);
                     const statusMessages = {
                         'Pending': 'Your return request has been submitted and is awaiting manager review.',
-                        'Approved': 'Your return has been approved. Please hand over the asset to the IT/Asset team.',
+                        'Pending Manager Approval': 'Your return request has been submitted and is awaiting manager review.',
+                        'Pending Admin Verification': 'Your return has been approved by your manager and is awaiting final IT Admin verification.',
+                        'Approved': 'Your return has been approved and completed. The asset has been checked in.',
                         'Rejected': 'Your return request was rejected. Please check the manager notes below.',
                         'Completed': 'The asset has been successfully checked in. This return is complete.'
                     };
@@ -471,9 +478,8 @@ const MyRequestsView = (props) => {
                     React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', fontWeight: 600 } }, "Return Workflow Progress"),
                     [
                         { label: 'Return Submitted', done: true },
-                        { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' },
-                        { label: 'Physical Asset Handover', done: selectedReturnRequest.status === 'Completed' },
-                        { label: 'Asset Checked In & Verified', done: selectedReturnRequest.status === 'Completed' }
+                        { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' && selectedReturnRequest.status !== 'Pending Manager Approval' },
+                        { label: 'Physical Asset Handover & Admin Verification', done: selectedReturnRequest.status === 'Completed' || selectedReturnRequest.status === 'Approved' }
                     ].map((step, idx) => (React.createElement("div", { key: idx, style: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: idx < 3 ? '8px' : 0, fontSize: '0.85rem' } },
                         React.createElement("div", { style: {
                                 width: '20px', height: '20px', borderRadius: '50%', flexShrink: 0,

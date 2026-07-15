@@ -13,21 +13,25 @@ import { TextField } from '@fluentui/react/lib/TextField';
 import { Stack } from '@fluentui/react/lib/Stack';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import { IReturnRequest } from '../models/IReturnRequest';
+import { RETURN_CONDITION_OPTIONS } from '../constants/DropdownConstants';
 
 export interface IReturnRequestListProps {
   items: IReturnRequest[];
   isAdmin: boolean;
   isManager: boolean;
-  onUpdateStatus: (requestId: string, status: 'Approved' | 'Rejected' | 'Completed', comment: string, finalCondition?: string) => Promise<void>;
+  onUpdateStatus: (
+    requestId: string, 
+    status: 'Approved' | 'Rejected' | 'Completed' | 'Pending Manager Approval' | 'Pending Admin Verification', 
+    comment: string, 
+    finalCondition?: string,
+    adminComments?: string,
+    managerStatus?: 'Pending' | 'Approved' | 'Rejected',
+    adminStatus?: 'Not Started' | 'Completed'
+  ) => Promise<void>;
   loading: boolean;
 }
 
-const conditionOptions: IDropdownOption[] = [
-  { key: 'Good', text: 'Good (No damage, fully functional)' },
-  { key: 'Fair', text: 'Fair (Minor wear, fully functional)' },
-  { key: 'Poor', text: 'Poor (Significant wear, needs repair)' },
-  { key: 'Damaged', text: 'Damaged (Broken, non-functional)' }
-];
+const conditionOptions = RETURN_CONDITION_OPTIONS;
 
 export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
   const { items, isAdmin, isManager, onUpdateStatus, loading } = props;
@@ -41,18 +45,25 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
   const [finalCondition, setFinalCondition] = useState<string>('Good');
   const [submitting, setSubmitting] = useState<boolean>(false);
 
-  // Search filter
+  // Search filter and role filter
   const filteredItems = useMemo(() => {
-    if (!searchQuery) return items;
+    let roleFiltered = items;
+    if (isAdmin) {
+      roleFiltered = items.filter(item => item.status === 'Pending Admin Verification');
+    } else if (isManager) {
+      roleFiltered = items.filter(item => item.status === 'Pending Manager Approval' || item.status === 'Pending');
+    }
+
+    if (!searchQuery) return roleFiltered;
     const q = searchQuery.toLowerCase();
-    return items.filter(item => 
+    return roleFiltered.filter(item => 
       (item.assetName || '').toLowerCase().includes(q) ||
       (item.serialNumber || '').toLowerCase().includes(q) ||
       (item.requesterName || '').toLowerCase().includes(q) ||
       (item.status || '').toLowerCase().includes(q) ||
       (item.returnReason || '').toLowerCase().includes(q)
     );
-  }, [items, searchQuery]);
+  }, [items, searchQuery, isAdmin, isManager]);
 
   const openDialog = (request: IReturnRequest, type: 'Approve' | 'Reject' | 'Complete' | 'View'): void => {
     setActiveRequest(request);
@@ -71,19 +82,43 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
   const handleAction = async (): Promise<void> => {
     if (!activeRequest || !actionType) return;
     
-    if (actionType === 'Reject' && !comment.trim()) {
-      alert('Please provide a reason/comment for rejection.');
+    if ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) {
+      alert(actionType === 'Reject' ? 'Please provide a reason/comment for rejection.' : 'Please provide verification comments.');
       return;
     }
 
     try {
       setSubmitting(true);
       if (actionType === 'Approve') {
-        await onUpdateStatus(activeRequest.id, 'Approved', comment || 'Approved by Manager');
+        await onUpdateStatus(
+          activeRequest.id, 
+          'Pending Admin Verification', 
+          comment || 'Approved by Manager', 
+          undefined, 
+          undefined, 
+          'Approved', 
+          'Not Started'
+        );
       } else if (actionType === 'Reject') {
-        await onUpdateStatus(activeRequest.id, 'Rejected', comment);
+        await onUpdateStatus(
+          activeRequest.id, 
+          'Rejected', 
+          comment, 
+          undefined, 
+          undefined, 
+          'Rejected', 
+          'Not Started'
+        );
       } else if (actionType === 'Complete') {
-        await onUpdateStatus(activeRequest.id, 'Completed', comment || 'Checked in & Verified', finalCondition);
+        await onUpdateStatus(
+          activeRequest.id, 
+          'Completed', 
+          activeRequest.managerComment || '', 
+          finalCondition, 
+          comment, 
+          'Approved', 
+          'Completed'
+        );
       }
       closeDialog();
     } catch (e: any) {
@@ -96,8 +131,10 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
   const getStatusStyles = (status: string): { bg: string; fg: string } => {
     switch (status) {
       case 'Pending':
+      case 'Pending Manager Approval':
         return { bg: '#ffedd5', fg: '#9a3412' }; // Light orange
       case 'Approved':
+      case 'Pending Admin Verification':
         return { bg: '#dbeafe', fg: '#1e40af' }; // Light blue
       case 'Rejected':
         return { bg: '#fee2e2', fg: '#991b1b' }; // Light red
@@ -166,38 +203,40 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
             />
           );
 
-          if (item.status !== 'Pending') {
+          if (isManager && (item.status === 'Pending Manager Approval' || item.status === 'Pending')) {
             return (
-              <Stack horizontal tokens={{ childrenGap: 6 }} verticalAlign="center">
+              <Stack horizontal tokens={{ childrenGap: 6 }}>
                 {viewButton}
-                {item.status === 'Approved' && (
-                  <PrimaryButton
-                    text="Verify & Complete"
-                    onClick={() => openDialog(item, 'Complete')}
-                    styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } }}
-                  />
-                )}
+                <PrimaryButton
+                  text="Approve"
+                  onClick={() => openDialog(item, 'Approve')}
+                  styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } }}
+                />
+                <DefaultButton
+                  text="Reject"
+                  onClick={() => openDialog(item, 'Reject')}
+                  styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } }}
+                />
               </Stack>
             );
           }
-          
+
+          if (isAdmin && item.status === 'Pending Admin Verification') {
+            return (
+              <Stack horizontal tokens={{ childrenGap: 6 }}>
+                {viewButton}
+                <PrimaryButton
+                  text="Verify & Complete"
+                  onClick={() => openDialog(item, 'Complete')}
+                  styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } }}
+                />
+              </Stack>
+            );
+          }
+
           return (
-            <Stack horizontal tokens={{ childrenGap: 6 }}>
+            <Stack horizontal tokens={{ childrenGap: 6 }} verticalAlign="center">
               {viewButton}
-              {item.status === 'Pending' && (
-                <>
-                  <PrimaryButton
-                    text="Approve"
-                    onClick={() => openDialog(item, 'Approve')}
-                    styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } }}
-                  />
-                  <DefaultButton
-                    text="Reject"
-                    onClick={() => openDialog(item, 'Reject')}
-                    styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } }}
-                  />
-                </>
-              )}
             </Stack>
           );
         }
@@ -331,13 +370,21 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
 
           {actionType !== 'View' && (
             <TextField
-              label={actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes'}
-              placeholder={actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)'}
+              label={
+                actionType === 'Reject' ? 'Rejection Reason (Required)' : 
+                actionType === 'Complete' ? 'Verification Comments (Required)' : 
+                'Manager Comments'
+              }
+              placeholder={
+                actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 
+                actionType === 'Complete' ? 'Please enter verification details (required)...' : 
+                'Add comments for the return request...'
+              }
               multiline
               rows={3}
               value={comment}
               onChange={(_, val) => setComment(val || '')}
-              required={actionType === 'Reject'}
+              required={actionType === 'Reject' || actionType === 'Complete'}
             />
           )}
         </Stack>
@@ -349,7 +396,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
                 text={actionType === 'Approve' ? 'Approve' :
                       actionType === 'Reject' ? 'Reject' : 'Verify & Complete'} 
                 onClick={handleAction} 
-                disabled={submitting || (actionType === 'Reject' && !comment.trim())} 
+                disabled={submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim())} 
               />
               <DefaultButton text="Cancel" onClick={closeDialog} disabled={submitting} />
             </>

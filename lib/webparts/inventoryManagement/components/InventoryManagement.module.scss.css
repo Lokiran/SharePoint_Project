@@ -11,11 +11,17 @@
   --card-shadow-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
   --radius-lg: 16px;
   --radius-md: 12px;
-  overflow: hidden;
+  overflow-x: visible;
+  overflow-y: visible;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
   color: var(--text-main);
   background-color: transparent;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 :local .inventoryManagement.dark {
   --surface-bg: #1e293b;
@@ -33,11 +39,15 @@
   color: rgba(255, 255, 255, 0.35) !important;
 }
 :local .inventoryManagement .mainContent {
-  max-width: 1240px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-sizing: border-box;
 }
 :local .inventoryManagement .heroSection {
   background: var(--primary-gradient);
@@ -216,7 +226,8 @@
   padding: 4px 0 8px 0;
   text-align: center;
 }
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader h4, :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span {
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader h4,
+:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span {
   display: none;
 }
 :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navGroupLabel {
@@ -499,7 +510,8 @@
 :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) {
   color: #ffffff !important;
 }
-:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) span, :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) i {
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) span,
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link).is-selected :global(.ms-Pivot-link-content) i {
   color: #ffffff !important;
 }
 :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) {
@@ -509,7 +521,8 @@
   gap: 8px !important;
   width: 100% !important;
 }
-:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) span, :local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) i {
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) span,
+:local .inventoryManagement :global(.ms-Pivot) :global(.ms-Pivot-link) :global(.ms-Pivot-link-content) i {
   transition: color 0.2s ease !important;
 }
 :local .inventoryManagement .paginationContainer {

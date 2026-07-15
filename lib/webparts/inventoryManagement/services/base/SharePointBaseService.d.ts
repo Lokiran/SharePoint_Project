@@ -24,7 +24,7 @@ export declare class SharePointBaseService {
     }, requiredKeys: string[]): Promise<any>;
     static translateSharePointError(error: any, payload: any, mapping: any): Error;
     static _resolveFieldInternalName(fields: IFieldMetadata[], aliases: string[], excludeFields?: Set<string>): string | null;
-    static _fetchItemsWithExpandedUsers(list: any): Promise<any[]>;
+    static _fetchItemsWithExpandedUsers(list: any, filterStr?: string): Promise<any[]>;
     static _isBusinessStatusKey(key: string): boolean;
 }
 //# sourceMappingURL=SharePointBaseService.d.ts.map

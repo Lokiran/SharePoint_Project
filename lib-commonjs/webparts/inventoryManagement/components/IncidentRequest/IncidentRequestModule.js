@@ -7,25 +7,9 @@ const react_1 = require("react");
 const react_2 = require("@fluentui/react");
 const IncidentRequestModule_module_scss_1 = tslib_1.__importDefault(require("./IncidentRequestModule.module.scss"));
 const IncidentService_1 = require("../../services/IncidentService");
-const incidentTypeOptions = [
-    { key: 'Hardware Issue', text: 'Hardware Issue' },
-    { key: 'Software Issue', text: 'Software Issue' },
-    { key: 'Network Issue', text: 'Network Issue' },
-    { key: 'Asset Damage', text: 'Asset Damage' },
-    { key: 'Replacement Request', text: 'Replacement Request' },
-    { key: 'Access Issue', text: 'Access Issue' },
-    { key: 'Login Issue', text: 'Login Issue' },
-    { key: 'Performance Issue', text: 'Performance Issue' },
-    { key: 'Email Issue', text: 'Email Issue' },
-    { key: 'Printer Issue', text: 'Printer Issue' },
-    { key: 'Other', text: 'Other' }
-];
-const priorityOptions = [
-    { key: 'Low', text: 'Low' },
-    { key: 'Medium', text: 'Medium' },
-    { key: 'High', text: 'High' },
-    { key: 'Critical', text: 'Critical' },
-];
+const DropdownConstants_1 = require("../../constants/DropdownConstants");
+const incidentTypeOptions = DropdownConstants_1.INCIDENT_TYPE_OPTIONS;
+const priorityOptions = DropdownConstants_1.INCIDENT_PRIORITY_OPTIONS;
 const raisedToOptions = [
     { key: 'Admin', text: 'Admin' }
 ];

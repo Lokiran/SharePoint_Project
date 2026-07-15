@@ -27,7 +27,11 @@ let returnRequestsListItems = [
         Status: "Pending",
         ReturnReason: "Upgrade",
         ProposedCondition: "Good",
-        ManagerComment: ""
+        ManagerComment: "",
+        ManagerStatus: "Pending",
+        AdminStatus: "Not Started",
+        AdminComments: "",
+        VerifiedDate: ""
     }
 ];
 let inventoryListItems = [
@@ -68,7 +72,11 @@ const returnRequestFields = [
     { Title: "Return Reason", InternalName: "ReturnReason", TypeAsString: "Note" },
     { Title: "Proposed Condition", InternalName: "ProposedCondition", TypeAsString: "Text" },
     { Title: "Status", InternalName: "Status", TypeAsString: "Choice" },
-    { Title: "Manager Comment", InternalName: "ManagerComment", TypeAsString: "Note" }
+    { Title: "Manager Comment", InternalName: "ManagerComment", TypeAsString: "Note" },
+    { Title: "Manager Status", InternalName: "ManagerStatus", TypeAsString: "Text" },
+    { Title: "Admin Status", InternalName: "AdminStatus", TypeAsString: "Text" },
+    { Title: "Admin Comments", InternalName: "AdminComments", TypeAsString: "Text" },
+    { Title: "Verified Date", InternalName: "VerifiedDate", TypeAsString: "Text" }
 ];
 const inventoryFields = [
     { Title: "Title", InternalName: "Title", TypeAsString: "Text" },
@@ -116,7 +124,7 @@ function getMockList(title) {
                         select: () => {
                             return () => {
                                 const match = returnRequestsListItems.filter(item => {
-                                    if (filterStr.includes("RR-101"))
+                                    if (filterStr.includes("RR-101") || filterStr.includes("#101"))
                                         return item.ReturnRequestID === "RR-101";
                                     return false;
                                 });
@@ -133,7 +141,29 @@ function getMockList(title) {
                         }
                         return Promise.resolve();
                     }
-                })
+                }),
+                add: async (payload) => {
+                    const newItem = {
+                        ID: returnRequestsListItems.length + 1,
+                        Title: payload.Title || "",
+                        ReturnRequestID: payload.ReturnRequestID || `RR-${Date.now()}`,
+                        AssetID: payload.AssetID || "",
+                        AssetName: payload.AssetName || "",
+                        AssetType: payload.AssetType || "",
+                        SerialNumber: payload.SerialNumber || "",
+                        RequesterName: payload.RequesterName || "",
+                        Status: payload.Status || "Pending Manager Approval",
+                        ReturnReason: payload.ReturnReason || "",
+                        ProposedCondition: payload.ReturnedAssetCondition || "Good",
+                        ManagerComment: payload.ManagerComment || "",
+                        ManagerStatus: payload.ManagerStatus || "Pending",
+                        AdminStatus: payload.AdminStatus || "Not Started",
+                        AdminComments: payload.AdminComments || "",
+                        VerifiedDate: payload.VerifiedDate || ""
+                    };
+                    returnRequestsListItems.push(newItem);
+                    return Promise.resolve({ data: newItem });
+                }
             },
             select: () => () => Promise.resolve({ Title: title })
         };
@@ -207,7 +237,7 @@ function getMockList(title) {
     }
     throw new Error(`Mock list not found: ${title}`);
 }
-describe("Asset Return Single-Stage Approval Regression Verification", () => {
+describe("Asset Return Two-Level Approval Workflow Verification", () => {
     beforeEach(() => {
         // Reset data
         returnRequestsListItems = [
@@ -223,7 +253,11 @@ describe("Asset Return Single-Stage Approval Regression Verification", () => {
                 Status: "Pending",
                 ReturnReason: "Upgrade",
                 ProposedCondition: "Good",
-                ManagerComment: ""
+                ManagerComment: "",
+                ManagerStatus: "Pending",
+                AdminStatus: "Not Started",
+                AdminComments: "",
+                VerifiedDate: ""
             }
         ];
         inventoryListItems = [
@@ -253,28 +287,41 @@ describe("Asset Return Single-Stage Approval Regression Verification", () => {
         ];
         eventLogListItems = [];
     });
-    it("should successfully execute multi-stage return approval and physical handover verification", async () => {
+    it("should successfully execute two-level return approval workflow", async () => {
         console.log("=== Verification Step 0: Starting simulation ===");
+        // Database Status column must store standard SharePoint Choice values
         expect(returnRequestsListItems[0].Status).toBe("Pending");
+        // But when fetched via the service, it should be mapped to the logical workflow status
+        let requests = await ReturnRequestService_1.ReturnRequestService.getReturnRequests();
+        expect(requests[0].status).toBe("Pending Manager Approval");
         expect(inventoryListItems[0].Status).toBe("Pending Return");
         expect(inventoryListItems[0].AssignedTo).toBe("Adele Vance");
         expect(inventoryListItems[0].AssignedToId).toBe(12);
         expect(mappingListItems.length).toBe(1);
-        // Act 1: Approve the return request
-        await ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus("RR-101", "Approved", "Return approved by Manager during test.", "Loka Kiran Reddy");
-        console.log("=== Verification Step 1: Return Request status becomes Approved ===");
+        // Act 1: Manager approves the return request
+        await ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus("RR-101", "Pending Admin Verification", "Return approved by Manager during test.", "Loka Kiran Reddy", undefined, undefined, "Approved", "Not Started");
+        console.log("=== Verification Step 1: Return Request status in database becomes Approved ===");
         expect(returnRequestsListItems[0].Status).toBe("Approved");
-        console.log("[PASS] Verification 1: Return Request status is 'Approved'.");
-        console.log("=== Verification Step 2: Inventory Status remains Pending Return ===");
+        // Check logical mapped status from the service
+        requests = await ReturnRequestService_1.ReturnRequestService.getReturnRequests();
+        expect(requests[0].status).toBe("Pending Admin Verification");
+        expect(returnRequestsListItems[0].ManagerStatus).toBe("Approved");
+        console.log("[PASS] Verification 1: Return Request status is 'Approved' in database and 'Pending Admin Verification' in React app.");
+        console.log("=== Verification Step 2: Inventory and mapping remain unchanged ===");
         expect(inventoryListItems[0].Status).toBe("Pending Return");
-        expect(inventoryListItems[0].AssignedTo).toBe("Adele Vance");
         expect(mappingListItems.length).toBe(1);
-        console.log("[PASS] Verification 2: Custody is not cleared during approval stage.");
-        // Act 2: Verify & Complete the return request (Physical Handover)
-        await ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus("RR-101", "Completed", "Checked in & Verified during test.", "Loka Kiran Reddy", "Good");
-        console.log("=== Verification Step 3: Return Request status becomes Completed ===");
-        expect(returnRequestsListItems[0].Status).toBe("Completed");
-        console.log("[PASS] Verification 3: Return Request status is 'Completed'.");
+        expect(eventLogListItems.length).toBe(0); // No audit log yet
+        console.log("[PASS] Verification 2: Inventory, mapping, and audit logs are untouched during Manager approval.");
+        // Act 2: Admin verifies & completes the return request
+        await ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus("RR-101", "Completed", "Return approved by Manager during test.", "IT Admin User", "Good", "Verified checked in by IT admin.", "Approved", "Completed");
+        console.log("=== Verification Step 3: Return Request status in database becomes Returned ===");
+        expect(returnRequestsListItems[0].Status).toBe("Returned");
+        // Check logical mapped status from the service
+        requests = await ReturnRequestService_1.ReturnRequestService.getReturnRequests();
+        expect(requests[0].status).toBe("Completed");
+        expect(returnRequestsListItems[0].AdminStatus).toBe("Completed");
+        expect(returnRequestsListItems[0].AdminComments).toBe("Verified checked in by IT admin.");
+        console.log("[PASS] Verification 3: Return Request status is 'Returned' in database and 'Completed' in React app.");
         console.log("=== Verification Step 4: Inventory Status becomes In Stock ===");
         expect(inventoryListItems[0].Status).toBe("In Stock");
         expect(inventoryListItems[0].Condition).toBe("Good");
@@ -287,14 +334,23 @@ describe("Asset Return Single-Stage Approval Regression Verification", () => {
         expect(mappingListItems.some(i => i.SerialNumber === "DELL12345")).toBe(false);
         console.log("[PASS] Verification 6: Assignment mapping record deleted.");
         console.log("=== Verification Step 7: Audit Log entry is created ===");
-        expect(eventLogListItems.length).toBe(2); // Approval log + Completion log
-        expect(eventLogListItems[1].Title).toContain("Completed Return & Inactivated: Dell Latitude 5420");
+        expect(eventLogListItems.length).toBe(1);
+        expect(eventLogListItems[0].Title).toContain("Completed Return & Inactivated: Dell Latitude 5420");
         console.log("[PASS] Verification 7: Audit Log entry created successfully.");
-        console.log("=== Verification Step 8: Asset appears in Available Inventory ===");
-        const availableAssets = inventoryListItems.filter(i => i.Status === "In Stock");
-        expect(availableAssets.length).toBe(1);
-        expect(availableAssets[0].ID).toBe(201);
-        console.log("[PASS] Verification 8: Asset 201 is available in Stock.");
+    });
+    it("should prevent duplicate active return requests for the same asset", async () => {
+        // Act & Assert
+        await expect(ReturnRequestService_1.ReturnRequestService.addReturnRequest({
+            title: "Duplicate Request",
+            assetId: "201",
+            assetName: "Dell Latitude 5420",
+            serialNumber: "DELL12345",
+            requesterName: "Adele Vance",
+            requestDate: new Date().toISOString().split('T')[0],
+            returnReason: "Duplicate",
+            proposedCondition: "Good"
+        }, "Adele Vance")).rejects.toThrow("A return request for this asset is already in progress.");
+        console.log("[PASS] Verification: Prevented duplicate return request for asset 201.");
     });
 });
 //# sourceMappingURL=AssetReturnWorkflow.test.js.map

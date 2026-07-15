@@ -11,12 +11,8 @@ const Dropdown_1 = require("@fluentui/react/lib/Dropdown");
 const TextField_1 = require("@fluentui/react/lib/TextField");
 const Stack_1 = require("@fluentui/react/lib/Stack");
 const SearchBox_1 = require("@fluentui/react/lib/SearchBox");
-const conditionOptions = [
-    { key: 'Good', text: 'Good (No damage, fully functional)' },
-    { key: 'Fair', text: 'Fair (Minor wear, fully functional)' },
-    { key: 'Poor', text: 'Poor (Significant wear, needs repair)' },
-    { key: 'Damaged', text: 'Damaged (Broken, non-functional)' }
-];
+const DropdownConstants_1 = require("../constants/DropdownConstants");
+const conditionOptions = DropdownConstants_1.RETURN_CONDITION_OPTIONS;
 const ReturnRequestList = (props) => {
     const { items, isAdmin, isManager, onUpdateStatus, loading } = props;
     const [searchQuery, setSearchQuery] = (0, react_1.useState)('');
@@ -26,17 +22,24 @@ const ReturnRequestList = (props) => {
     const [comment, setComment] = (0, react_1.useState)('');
     const [finalCondition, setFinalCondition] = (0, react_1.useState)('Good');
     const [submitting, setSubmitting] = (0, react_1.useState)(false);
-    // Search filter
+    // Search filter and role filter
     const filteredItems = (0, react_1.useMemo)(() => {
+        let roleFiltered = items;
+        if (isAdmin) {
+            roleFiltered = items.filter(item => item.status === 'Pending Admin Verification');
+        }
+        else if (isManager) {
+            roleFiltered = items.filter(item => item.status === 'Pending Manager Approval' || item.status === 'Pending');
+        }
         if (!searchQuery)
-            return items;
+            return roleFiltered;
         const q = searchQuery.toLowerCase();
-        return items.filter(item => (item.assetName || '').toLowerCase().includes(q) ||
+        return roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(q) ||
             (item.serialNumber || '').toLowerCase().includes(q) ||
             (item.requesterName || '').toLowerCase().includes(q) ||
             (item.status || '').toLowerCase().includes(q) ||
             (item.returnReason || '').toLowerCase().includes(q));
-    }, [items, searchQuery]);
+    }, [items, searchQuery, isAdmin, isManager]);
     const openDialog = (request, type) => {
         setActiveRequest(request);
         setActionType(type);
@@ -52,20 +55,20 @@ const ReturnRequestList = (props) => {
     const handleAction = async () => {
         if (!activeRequest || !actionType)
             return;
-        if (actionType === 'Reject' && !comment.trim()) {
-            alert('Please provide a reason/comment for rejection.');
+        if ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) {
+            alert(actionType === 'Reject' ? 'Please provide a reason/comment for rejection.' : 'Please provide verification comments.');
             return;
         }
         try {
             setSubmitting(true);
             if (actionType === 'Approve') {
-                await onUpdateStatus(activeRequest.id, 'Approved', comment || 'Approved by Manager');
+                await onUpdateStatus(activeRequest.id, 'Pending Admin Verification', comment || 'Approved by Manager', undefined, undefined, 'Approved', 'Not Started');
             }
             else if (actionType === 'Reject') {
-                await onUpdateStatus(activeRequest.id, 'Rejected', comment);
+                await onUpdateStatus(activeRequest.id, 'Rejected', comment, undefined, undefined, 'Rejected', 'Not Started');
             }
             else if (actionType === 'Complete') {
-                await onUpdateStatus(activeRequest.id, 'Completed', comment || 'Checked in & Verified', finalCondition);
+                await onUpdateStatus(activeRequest.id, 'Completed', activeRequest.managerComment || '', finalCondition, comment, 'Approved', 'Completed');
             }
             closeDialog();
         }
@@ -79,8 +82,10 @@ const ReturnRequestList = (props) => {
     const getStatusStyles = (status) => {
         switch (status) {
             case 'Pending':
+            case 'Pending Manager Approval':
                 return { bg: '#ffedd5', fg: '#9a3412' }; // Light orange
             case 'Approved':
+            case 'Pending Admin Verification':
                 return { bg: '#dbeafe', fg: '#1e40af' }; // Light blue
             case 'Rejected':
                 return { bg: '#fee2e2', fg: '#991b1b' }; // Light red
@@ -137,16 +142,18 @@ const ReturnRequestList = (props) => {
                 isResizable: true,
                 onRender: (item) => {
                     const viewButton = (React.createElement(Button_1.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
-                    if (item.status !== 'Pending') {
-                        return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" },
+                    if (isManager && (item.status === 'Pending Manager Approval' || item.status === 'Pending')) {
+                        return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
                             viewButton,
-                            item.status === 'Approved' && (React.createElement(Button_1.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
-                    }
-                    return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
-                        viewButton,
-                        item.status === 'Pending' && (React.createElement(React.Fragment, null,
                             React.createElement(Button_1.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
-                            React.createElement(Button_1.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })))));
+                            React.createElement(Button_1.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })));
+                    }
+                    if (isAdmin && item.status === 'Pending Admin Verification') {
+                        return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                            viewButton,
+                            React.createElement(Button_1.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } })));
+                    }
+                    return (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
                 }
             }
         ] : [])
@@ -214,10 +221,14 @@ const ReturnRequestList = (props) => {
                                     color: 'var(--text-main, #333333)'
                                 } }, activeRequest.managerComment)))))),
                 actionType === 'Complete' && (React.createElement(Dropdown_1.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
-                actionType !== 'View' && (React.createElement(TextField_1.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' }))),
+                actionType !== 'View' && (React.createElement(TextField_1.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' :
+                        actionType === 'Complete' ? 'Verification Comments (Required)' :
+                            'Manager Comments', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' :
+                        actionType === 'Complete' ? 'Please enter verification details (required)...' :
+                            'Add comments for the return request...', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' || actionType === 'Complete' }))),
             React.createElement(Dialog_1.DialogFooter, null, actionType !== 'View' ? (React.createElement(React.Fragment, null,
                 React.createElement(Button_1.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
-                        actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || (actionType === 'Reject' && !comment.trim()) }),
+                        actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) }),
                 React.createElement(Button_1.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (React.createElement(Button_1.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
 };
 exports.ReturnRequestList = ReturnRequestList;

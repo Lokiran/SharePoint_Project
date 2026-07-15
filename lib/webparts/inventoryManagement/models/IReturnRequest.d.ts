@@ -10,8 +10,12 @@ export interface IReturnRequest {
     requestDate: string;
     returnReason: string;
     proposedCondition: string;
-    status: 'Pending' | 'Approved' | 'Rejected' | 'Completed';
+    status: 'Pending' | 'Pending Manager Approval' | 'Pending Admin Verification' | 'Approved' | 'Rejected' | 'Completed' | 'Returned';
     managerComment?: string;
     completedDate?: string;
+    managerStatus?: 'Pending' | 'Approved' | 'Rejected';
+    adminStatus?: 'Not Started' | 'Completed';
+    adminComments?: string;
+    verifiedDate?: string;
 }
 //# sourceMappingURL=IReturnRequest.d.ts.map

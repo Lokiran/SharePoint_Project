@@ -16,6 +16,7 @@ import {
   MessageBarType 
 } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
+import { ASSET_CONDITION_OPTIONS, WARRANTY_STATUS_OPTIONS } from '../constants/DropdownConstants';
 
 export interface IMyAssignedAssetsViewProps {
   items: IInventoryItem[];
@@ -322,10 +323,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
           <Dropdown
             options={[
               { key: 'All', text: 'All Conditions' },
-              { key: 'Good', text: 'Good' },
-              { key: 'Fair', text: 'Fair' },
-              { key: 'Poor', text: 'Poor' },
-              { key: 'Damaged', text: 'Damaged' }
+              ...ASSET_CONDITION_OPTIONS
             ]}
             selectedKey={selectedCondition}
             onChange={(e, option) => setSelectedCondition(option ? (option.key as string) : 'All')}
@@ -336,10 +334,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
           <Dropdown
             options={[
               { key: 'All', text: 'All Coverage' },
-              { key: 'Active', text: 'Active' },
-              { key: 'Expiring Soon', text: 'Expiring Soon' },
-              { key: 'Expired', text: 'Expired' },
-              { key: 'Unknown', text: 'Unknown' }
+              ...WARRANTY_STATUS_OPTIONS
             ]}
             selectedKey={selectedWarranty}
             onChange={(e, option) => setSelectedWarranty(option ? (option.key as string) : 'All')}

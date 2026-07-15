@@ -273,7 +273,7 @@ export class SharePointBaseService {
     return null;
   }
 
-  public static async _fetchItemsWithExpandedUsers(list: any): Promise<any[]> {
+  public static async _fetchItemsWithExpandedUsers(list: any, filterStr?: string): Promise<any[]> {
     try {
       const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
       const selectFields = ["*"];
@@ -310,7 +310,11 @@ export class SharePointBaseService {
         expandFields.push("Editor");
       }
 
-      return await list.items.select(selectFields.join(",")).expand(...expandFields)();
+      let query = list.items.select(selectFields.join(",")).expand(...expandFields);
+      if (filterStr) {
+        query = query.filter(filterStr);
+      }
+      return await query();
     } catch (error: any) {
       console.error("Dynamic user expansion failed:", error);
       throw new Error(`Dynamic user expansion failed: ${error.message || JSON.stringify(error)}`);

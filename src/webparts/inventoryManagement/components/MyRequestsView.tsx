@@ -15,6 +15,7 @@ import {
   PivotItem
 } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
+import { ASSET_REQUEST_STATUS_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS, RETURN_REQUEST_STATUS_OPTIONS } from '../constants/DropdownConstants';
 
 export interface IMyRequestsViewProps {
   requests: IRequest[];
@@ -71,8 +72,8 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
 
     returnRequests.forEach(r => {
       const status = r.status || 'Pending';
-      if (status === 'Pending') pendingCount++;
-      else if (status === 'Approved') approvedCount++;
+      if (status === 'Pending' || status === 'Pending Manager Approval') pendingCount++;
+      else if (status === 'Approved' || status === 'Pending Admin Verification') approvedCount++;
       else if (status === 'Rejected') rejectedCount++;
       else if (status === 'Completed') completedCount++;
     });
@@ -113,7 +114,10 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
         (r.returnReason || '').toLowerCase().includes(normQuery) ||
         (r.id || '').toLowerCase().includes(normQuery);
 
-      const matchesStatus = returnSelectedStatus === 'All' || r.status === returnSelectedStatus;
+      const matchesStatus = returnSelectedStatus === 'All' || 
+        r.status === returnSelectedStatus ||
+        (returnSelectedStatus === 'Pending' && (r.status === 'Pending Manager Approval' || r.status === 'Pending')) ||
+        (returnSelectedStatus === 'Approved' && (r.status === 'Pending Admin Verification' || r.status === 'Approved'));
 
       return matchesSearch && matchesStatus;
     });
@@ -122,8 +126,12 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
   // Return status badge styles
   const getReturnStatusStyle = (status: string): { bg: string; color: string } => {
     switch (status) {
-      case 'Pending':   return { bg: '#fff8e6', color: '#b06000' };
-      case 'Approved':  return { bg: '#e8f0fe', color: '#1558d6' };
+      case 'Pending':
+      case 'Pending Manager Approval':
+        return { bg: '#fff8e6', color: '#b06000' };
+      case 'Approved':
+      case 'Pending Admin Verification':
+        return { bg: '#e8f0fe', color: '#1558d6' };
       case 'Rejected':  return { bg: '#fce8e6', color: '#c5221f' };
       case 'Completed': return { bg: '#e6f4ea', color: '#137333' };
       default:          return { bg: '#f1f3f4', color: '#5f6368' };
@@ -132,8 +140,12 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
 
   const getReturnStatusIcon = (status: string): string => {
     switch (status) {
-      case 'Pending':   return 'Clock';
-      case 'Approved':  return 'CompletedSolid';
+      case 'Pending':
+      case 'Pending Manager Approval':
+        return 'Clock';
+      case 'Approved':
+      case 'Pending Admin Verification':
+        return 'CompletedSolid';
       case 'Rejected':  return 'ErrorBadge';
       case 'Completed': return 'CheckMark';
       default:          return 'Info';
@@ -199,9 +211,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 <Dropdown
                   options={[
                     { key: 'All', text: 'All Statuses' },
-                    { key: 'Pending', text: 'Pending' },
-                    { key: 'Approved', text: 'Approved' },
-                    { key: 'Declined', text: 'Declined' }
+                    ...ASSET_REQUEST_STATUS_OPTIONS
                   ]}
                   selectedKey={selectedStatus}
                   onChange={(e, option) => setSelectedStatus(option ? (option.key as string) : 'All')}
@@ -212,9 +222,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 <Dropdown
                   options={[
                     { key: 'All', text: 'All Priorities' },
-                    { key: 'Low', text: 'Low' },
-                    { key: 'Medium', text: 'Medium' },
-                    { key: 'High', text: 'High' }
+                    ...ASSET_REQUEST_PRIORITY_OPTIONS
                   ]}
                   selectedKey={selectedPriority}
                   onChange={(e, option) => setSelectedPriority(option ? (option.key as string) : 'All')}
@@ -404,10 +412,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 <Dropdown
                   options={[
                     { key: 'All', text: 'All Statuses' },
-                    { key: 'Pending', text: 'Pending' },
-                    { key: 'Approved', text: 'Approved' },
-                    { key: 'Rejected', text: 'Rejected' },
-                    { key: 'Completed', text: 'Completed' }
+                    ...RETURN_REQUEST_STATUS_OPTIONS
                   ]}
                   selectedKey={returnSelectedStatus}
                   onChange={(e, option) => setReturnSelectedStatus(option ? (option.key as string) : 'All')}
@@ -648,7 +653,9 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               const icon = getReturnStatusIcon(selectedReturnRequest.status);
               const statusMessages: Record<string, string> = {
                 'Pending': 'Your return request has been submitted and is awaiting manager review.',
-                'Approved': 'Your return has been approved. Please hand over the asset to the IT/Asset team.',
+                'Pending Manager Approval': 'Your return request has been submitted and is awaiting manager review.',
+                'Pending Admin Verification': 'Your return has been approved by your manager and is awaiting final IT Admin verification.',
+                'Approved': 'Your return has been approved and completed. The asset has been checked in.',
                 'Rejected': 'Your return request was rejected. Please check the manager notes below.',
                 'Completed': 'The asset has been successfully checked in. This return is complete.'
               };
@@ -697,9 +704,8 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', fontWeight: 600 }}>Return Workflow Progress</span>
               {[
                 { label: 'Return Submitted', done: true },
-                { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' },
-                { label: 'Physical Asset Handover', done: selectedReturnRequest.status === 'Completed' },
-                { label: 'Asset Checked In & Verified', done: selectedReturnRequest.status === 'Completed' }
+                { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' && selectedReturnRequest.status !== 'Pending Manager Approval' },
+                { label: 'Physical Asset Handover & Admin Verification', done: selectedReturnRequest.status === 'Completed' || selectedReturnRequest.status === 'Approved' }
               ].map((step, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: idx < 3 ? '8px' : 0, fontSize: '0.85rem' }}>
                   <div style={{

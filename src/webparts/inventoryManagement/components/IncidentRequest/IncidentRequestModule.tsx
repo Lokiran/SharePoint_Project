@@ -18,6 +18,7 @@ import styles from './IncidentRequestModule.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
 import { IInventoryItem } from '../../models/IInventoryItem';
+import { INCIDENT_TYPE_OPTIONS, INCIDENT_PRIORITY_OPTIONS } from '../../constants/DropdownConstants';
 
 interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   employeeId?: string;
@@ -43,26 +44,8 @@ interface IIncidentForm {
   assignedDate: string;
 }
 
-const incidentTypeOptions: IDropdownOption[] = [
-  { key: 'Hardware Issue', text: 'Hardware Issue' },
-  { key: 'Software Issue', text: 'Software Issue' },
-  { key: 'Network Issue', text: 'Network Issue' },
-  { key: 'Asset Damage', text: 'Asset Damage' },
-  { key: 'Replacement Request', text: 'Replacement Request' },
-  { key: 'Access Issue', text: 'Access Issue' },
-  { key: 'Login Issue', text: 'Login Issue' },
-  { key: 'Performance Issue', text: 'Performance Issue' },
-  { key: 'Email Issue', text: 'Email Issue' },
-  { key: 'Printer Issue', text: 'Printer Issue' },
-  { key: 'Other', text: 'Other' }
-];
-
-const priorityOptions: IDropdownOption[] = [
-  { key: 'Low', text: 'Low' },
-  { key: 'Medium', text: 'Medium' },
-  { key: 'High', text: 'High' },
-  { key: 'Critical', text: 'Critical' },
-];
+const incidentTypeOptions = INCIDENT_TYPE_OPTIONS;
+const priorityOptions = INCIDENT_PRIORITY_OPTIONS;
 
 const raisedToOptions: IDropdownOption[] = [
   { key: 'Admin', text: 'Admin' }

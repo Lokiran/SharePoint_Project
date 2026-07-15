@@ -6,6 +6,7 @@ import { Dropdown, IDropdownOption } from '@fluentui/react/lib/Dropdown';
 import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
 import { Stack, IStackTokens } from '@fluentui/react/lib/Stack';
 import { IInventoryItem } from '../models/IInventoryItem';
+import { RETURN_CONDITION_OPTIONS } from '../constants/DropdownConstants';
 
 export interface IReturnAssetFormProps {
   isOpen: boolean;
@@ -14,12 +15,7 @@ export interface IReturnAssetFormProps {
   onSubmit: (reason: string, condition: string) => Promise<void>;
 }
 
-const conditionOptions: IDropdownOption[] = [
-  { key: 'Good', text: 'Good (No visible damage, fully functional)' },
-  { key: 'Fair', text: 'Fair (Minor cosmetic wear, fully functional)' },
-  { key: 'Poor', text: 'Poor (Significant wear or partial issues)' },
-  { key: 'Damaged', text: 'Damaged (Broken, non-functional, physical damage)' }
-];
+const conditionOptions = RETURN_CONDITION_OPTIONS;
 
 const stackTokens: IStackTokens = { childrenGap: 15 };
 

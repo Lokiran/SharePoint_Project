@@ -17,7 +17,6 @@ import {
   PanelType,
 } from '@fluentui/react';
 import { jsPDF } from 'jspdf';
-import styles from './IncidentHistory.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
 
@@ -145,7 +144,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
       props.setIsLoading(true);
       const service = new IncidentService(props.spContext);
       await service.updateIncidentStatus(incident.id, newStatus, incident.resolution);
-      
+
       const updatedIncident = {
         ...incident,
         status: newStatus,
@@ -165,7 +164,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
       props.setIsLoading(true);
       const service = new IncidentService(props.spContext);
       await service.updateIncidentStatus(incident.id, incident.status, tempResolution);
-      
+
       const updatedIncident = {
         ...incident,
         resolution: tempResolution
@@ -182,35 +181,35 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
   const handleDownloadReport = (incident: IIncidentHistoryItem) => {
     try {
       const doc = new jsPDF();
-      
+
       // Top header banner
       doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
       doc.rect(0, 0, 210, 25, 'F');
-      
+
       doc.setTextColor(255, 255, 255);
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
       doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
-      
+
       // Document Title
       doc.setTextColor(51, 65, 85); // Slate 700
       doc.setFontSize(14);
       doc.text("INCIDENT REPORT", 14, 38);
-      
+
       // Metadata
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9);
       doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
-      
+
       // Separator line
       doc.setDrawColor(226, 232, 240); // Slate 200
       doc.line(14, 48, 196, 48);
-      
+
       // Specifications Section Title
       doc.setFont("helvetica", "bold");
       doc.setFontSize(11);
       doc.text("INCIDENT SPECIFICATIONS", 14, 58);
-      
+
       // Render Specifications Key-Value grid
       let y = 68;
       const printField = (label: string, value: string) => {
@@ -218,28 +217,28 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
         doc.setFontSize(9);
         doc.setTextColor(100, 116, 139); // Slate 500
         doc.text(label, 14, y);
-        
+
         doc.setFont("helvetica", "normal");
         doc.setFontSize(9.5);
         doc.setTextColor(15, 23, 42); // Slate 900
         doc.text(value, 55, y);
         y += 8;
       };
-      
+
       printField("Incident ID:", incident.incidentId);
       printField("Asset Name:", incident.assetName);
       printField("Issue Type:", incident.issueType);
       printField("Priority:", incident.priority || "Medium");
       printField("Current Status:", incident.status || "Open");
       printField("Reported Date:", new Date(incident.reportedDate).toLocaleString());
-      
+
       if (incident.assignedTo) {
         printField("Assigned To:", incident.assignedTo);
       }
       if (incident.resolvedDate) {
         printField("Resolved Date:", new Date(incident.resolvedDate).toLocaleString());
       }
-      
+
       // Issue Description Title
       y += 4;
       doc.setFont("helvetica", "bold");
@@ -247,33 +246,33 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
       doc.setTextColor(51, 65, 85);
       doc.text("ISSUE DESCRIPTION", 14, y);
       y += 6;
-      
+
       // Issue Description Box
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9.5);
       doc.setTextColor(51, 65, 85);
-      
+
       const splitDesc = doc.splitTextToSize(incident.issueDescription || "No description provided.", 170);
       const descHeight = splitDesc.length * 6 + 10;
-      
+
       // Draw background box
       doc.setFillColor(248, 250, 252); // slate 50
       doc.setDrawColor(226, 232, 240); // slate 200
       doc.rect(14, y, 182, descHeight, 'FD');
-      
+
       // Draw left accent bar
       doc.setFillColor(100, 116, 139); // slate 500
       doc.rect(14, y, 3, descHeight, 'F');
-      
+
       // Draw text
       let textY = y + 8;
       splitDesc.forEach((line: string) => {
         doc.text(line, 22, textY);
         textY += 6;
       });
-      
+
       y += descHeight + 10;
-      
+
       // Resolution Details (if resolved/closed)
       if (incident.resolution) {
         doc.setFont("helvetica", "bold");
@@ -281,23 +280,23 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
         doc.setTextColor(51, 65, 85);
         doc.text("RESOLUTION SUMMARY", 14, y);
         y += 6;
-        
+
         doc.setFont("helvetica", "normal");
         doc.setFontSize(9.5);
         doc.setTextColor(22, 101, 52); // green 800
-        
+
         const splitRes = doc.splitTextToSize(incident.resolution, 170);
         const resHeight = splitRes.length * 6 + 10;
-        
+
         // Draw green background box
         doc.setFillColor(240, 253, 244); // green 50
         doc.setDrawColor(220, 252, 231); // green 200
         doc.rect(14, y, 182, resHeight, 'FD');
-        
+
         // Draw green left accent bar
         doc.setFillColor(22, 101, 52); // green 800
         doc.rect(14, y, 3, resHeight, 'F');
-        
+
         // Draw resolution text
         let resTextY = y + 8;
         splitRes.forEach((line: string) => {
@@ -305,7 +304,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
           resTextY += 6;
         });
       }
-      
+
       doc.save(`incident-${incident.incidentId}.pdf`);
     } catch (error) {
       console.error('Error generating PDF report:', error);
@@ -502,14 +501,14 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
                 <div><span style={{ color: '#6b7280' }}>Incident ID:</span> <strong style={{ color: '#111827' }}>{selectedIncident.incidentId}</strong></div>
                 <div><span style={{ color: '#6b7280' }}>Asset Name:</span> <strong style={{ color: '#111827' }}>{selectedIncident.assetName}</strong></div>
                 <div><span style={{ color: '#6b7280' }}>Issue Type:</span> <strong style={{ color: '#111827' }}>{selectedIncident.issueType}</strong></div>
-                
+
                 <div>
                   <span style={{ color: '#6b7280', marginRight: '6px' }}>Priority:</span>
                   <span style={getPriorityBadgeStyle(selectedIncident.priority)}>
                     {selectedIncident.priority || 'Medium'}
                   </span>
                 </div>
-                
+
                 {props.userRole === 'Admin' ? (
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ color: '#6b7280' }}>Status:</span>

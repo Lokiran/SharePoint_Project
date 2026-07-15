@@ -34,6 +34,7 @@ export interface IInventoryManagementState {
     isNotificationDetailsOpen: boolean;
     returnRequests: IReturnRequest[];
     returnRequestsLoading: boolean;
+    auditLogsRefreshTrigger: number;
     selectedAssetForReturn: IInventoryItem | undefined;
     isReturnFormOpen: boolean;
     activeUserDisplayName: string;

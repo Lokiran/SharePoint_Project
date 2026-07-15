@@ -16,6 +16,7 @@ import { IInventoryItem } from '../models/IInventoryItem';
 import { IRequest } from '../models/IRequest';
 import { IEmployee } from '../models/IEmployee';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
+import { DEFAULT_ASSET_TYPE_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS } from '../constants/DropdownConstants';
 
 export interface IRequestFormProps {
   isOpen: boolean;
@@ -84,14 +85,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
 
   const assetTypeOptions: IDropdownOption[] = dynamicAssetTypeOptions.length > 0
     ? dynamicAssetTypeOptions
-    : [
-        { key: 'Laptop', text: 'Laptop' },
-        { key: 'Monitor', text: 'Monitor' },
-        { key: 'Mouse', text: 'Mouse' },
-        { key: 'Keyboard', text: 'Keyboard' },
-        { key: 'Headset', text: 'Headset' },
-        { key: 'Other', text: 'Other' }
-      ];
+    : DEFAULT_ASSET_TYPE_OPTIONS;
 
   const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
 
@@ -194,11 +188,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
         <Dropdown
           label="Priority"
           selectedKey={priority}
-          options={[
-            { key: 'High', text: 'High' },
-            { key: 'Medium', text: 'Medium' },
-            { key: 'Low', text: 'Low' }
-          ]}
+          options={ASSET_REQUEST_PRIORITY_OPTIONS}
           onChange={(_, opt) => setPriority(opt?.key as any)}
           required
         />

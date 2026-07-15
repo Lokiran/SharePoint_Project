@@ -72,8 +72,26 @@ export class InventoryService {
   public static async addReturnRequest(request: any, userDisplayName: string): Promise<void> {
     return ReturnRequestService.addReturnRequest(request, userDisplayName);
   }
-  public static async updateReturnRequestStatus(requestId: string, status: 'Approved' | 'Rejected' | 'Completed', managerComment: string, approverName: string, finalCondition?: string): Promise<void> {
-    return ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
+  public static async updateReturnRequestStatus(
+    requestId: string,
+    status: 'Approved' | 'Rejected' | 'Completed' | 'Pending Manager Approval' | 'Pending Admin Verification',
+    managerComment: string,
+    approverName: string,
+    finalCondition?: string,
+    adminComments?: string,
+    managerStatus?: 'Pending' | 'Approved' | 'Rejected',
+    adminStatus?: 'Not Started' | 'Completed'
+  ): Promise<void> {
+    return ReturnRequestService.updateReturnRequestStatus(
+      requestId,
+      status,
+      managerComment,
+      approverName,
+      finalCondition,
+      adminComments,
+      managerStatus,
+      adminStatus
+    );
   }
   public static async cleanupReturnApprovedAssets(): Promise<void> {
     return ReturnRequestService.cleanupReturnApprovedAssets();
@@ -85,6 +103,9 @@ export class InventoryService {
   }
   public static async getAuditLogs(): Promise<any[]> {
     return AuditLogService.getAuditLogs();
+  }
+  public static async getFilteredAuditLogs(filters: any): Promise<any[]> {
+    return AuditLogService.getFilteredAuditLogs(filters);
   }
 
   // SharePointBaseService Methods

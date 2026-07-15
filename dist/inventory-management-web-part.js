@@ -120,42 +120,42 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_67c3bf46{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;color:var(--text-main);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;overflow:hidden;padding:20px}.inventoryManagement_67c3bf46.dark_67c3bf46{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_67c3bf46.dark_67c3bf46 .sidebarNavItem_67c3bf46:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_67c3bf46.dark_67c3bf46 .sidebarContainer_67c3bf46{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_67c3bf46.dark_67c3bf46 .navGroupLabel_67c3bf46{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_67c3bf46 .mainContent_67c3bf46{display:flex;flex-direction:column;gap:20px;margin:0 auto;max-width:1240px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@media (max-width:768px){.inventoryManagement_67c3bf46 .heroSection_67c3bf46{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_67c3bf46 .heroSection_67c3bf46:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46{flex:1;min-width:250px;z-index:1}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46 h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46 p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46 .smallText_67c3bf46{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@media (max-width:768px){.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .welcomeDiagramContainer_67c3bf46{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@media (max-width:768px){.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .welcomeDiagramContainer_67c3bf46{margin-left:0;margin-top:8px}}.inventoryManagement_67c3bf46 .actionGrid_67c3bf46{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-bottom:2px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:4px;transform:translateY(-1px);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-3px)}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46 .ms-Button--primary{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 4px rgba(0,120,212,.15);color:#fff;font-size:.85rem;font-weight:600;height:38px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,filter .15s ease,box-shadow .1s ease;width:100%}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46 .ms-Button--primary:hover{border-color:#0f3c73;border-bottom:3px solid #0b2d54;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.25);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46 .ms-Button--primary:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_67c3bf46 .appLayoutContainer_67c3bf46{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@media (max-width:768px){.inventoryManagement_67c3bf46 .appLayoutContainer_67c3bf46{align-items:stretch;flex-direction:column}}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46{background:linear-gradient(145deg,var(--surface-bg) 0,rgba(0,0,0,.01) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-md);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;flex-shrink:0;gap:3px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1);width:250px}@media (max-width:768px){.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46{box-sizing:border-box;width:100%}}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46{padding:12px 6px;width:56px}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46{padding:4px 0 8px;text-align:center}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navGroupLabel_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 h4,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 span{display:none}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46{justify-content:center;padding:10px 0}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navBadge_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navItemText_67c3bf46{display:none}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 i{margin:0}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .collapseToggle_67c3bf46{justify-content:center}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .collapseToggle_67c3bf46 .collapseText_67c3bf46{display:none}@media (max-width:768px){.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46{width:100%}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navGroupLabel_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 h4,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 span{display:block}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46{justify-content:flex-start;padding:10px 14px}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navBadge_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navItemText_67c3bf46{display:inline-flex}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .collapseToggle_67c3bf46 .collapseText_67c3bf46{display:inline}}.inventoryManagement_67c3bf46 .navHeader_67c3bf46{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_67c3bf46 .navHeader_67c3bf46 h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_67c3bf46 .navHeader_67c3bf46 span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_67c3bf46 .navGroupLabel_67c3bf46{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_67c3bf46 .navDivider_67c3bf46{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s ease;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46 i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46 .navItemText_67c3bf46{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46 .navBadge_67c3bf46{border-radius:100px;box-shadow:0 1px 3px rgba(0,0,0,.15);color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46:hover{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05));border:1px solid rgba(0,0,0,.06);border-bottom:2px solid rgba(0,0,0,.1);box-shadow:0 1px 2px rgba(0,0,0,.04);color:var(--text-main);transform:translateY(-.5px)}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46:active{border-bottom-width:1px;box-shadow:none;transform:translateY(.5px)}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46.navItemActive_67c3bf46{background:linear-gradient(180deg,rgba(0,120,212,.06),rgba(0,120,212,.1))!important;border:1px solid rgba(0,120,212,.12)!important;border-bottom:2px solid rgba(0,120,212,.22)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.4),0 1px 2px rgba(0,120,212,.06)!important;color:#0078d4;font-weight:600}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46.navItemActive_67c3bf46:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:8px;box-shadow:0 0 6px rgba(0,120,212,.5);content:\"\";left:0;position:absolute;top:8px;width:3px}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46:hover{color:#616161}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46 i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46 .collapseText_67c3bf46{flex-grow:1}.inventoryManagement_67c3bf46 .contentContainer_67c3bf46{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_67c3bf46 .card_67c3bf46{background:linear-gradient(145deg,var(--surface-bg) 0,hsla(0,0%,100%,.02) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-lg);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .card_67c3bf46:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.inventoryManagement_67c3bf46 .card_67c3bf46 .cardHeader_67c3bf46{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_67c3bf46 .card_67c3bf46 .cardHeader_67c3bf46 h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_67c3bf46 .ms-DetailsList{background:transparent!important}.inventoryManagement_67c3bf46 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_67c3bf46 .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_67c3bf46 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_67c3bf46 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link{align-items:center!important;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%)!important;border:1px solid rgba(0,0,0,.12)!important;border-bottom:3px solid rgba(0,0,0,.24)!important;border-radius:8px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 2px 4px rgba(0,0,0,.05)!important;color:var(--text-main)!important;display:flex!important;font-weight:600!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transform:translateY(-1px)!important;transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link:hover{background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%)!important;border-color:rgba(0,0,0,.15)!important;border-bottom:3px solid rgba(0,0,0,.28)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 4px 8px rgba(0,0,0,.08)!important;transform:translateY(-2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04)!important;transform:translateY(2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46{background:var(--primary-gradient)!important;border:1px solid #103f7a!important;border-bottom:3px solid #0f3566!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 3px 8px rgba(0,120,212,.3)!important;color:#fff!important;font-weight:700!important;transform:translateY(-1px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46:before{display:none!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46:hover{background:linear-gradient(180deg,#388ae6,#205ab3)!important;border-color:#0f3c73!important;border-bottom:3px solid #0b2d54!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 5px 12px rgba(0,120,212,.4)!important;transform:translateY(-2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.2),0 1px 2px rgba(0,120,212,.1)!important;transform:translateY(2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46 .ms-Pivot-link-content,.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46 .ms-Pivot-link-content i,.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationInfo_67c3bf46{color:var(--text-muted);font-size:.82rem}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationInfo_67c3bf46 strong{color:var(--text-main)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46{align-items:center;display:flex;gap:4px}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46{align-items:center;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%);border:1px solid rgba(0,0,0,.12);border-bottom:3px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 1px 2px rgba(0,0,0,.03);color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:600;height:32px;justify-content:center;min-width:32px;padding:0 8px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46:hover:not(:disabled){background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%);border-color:rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.25);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 3px 6px rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46:active:not(:disabled){border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.03);transform:translateY(2px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46:disabled{border-bottom:1px solid rgba(0,0,0,.1);box-shadow:none;cursor:not-allowed;opacity:.35;transform:none}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46.active_67c3bf46{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 5px rgba(0,120,212,.25);color:#fff;font-weight:700;transform:translateY(-1px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46.active_67c3bf46:hover{border-bottom-width:3px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.3);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46.active_67c3bf46:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_67c3bf46 .assetCardHover_67c3bf46:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_67c3bf46.teams_67c3bf46{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_a6c9d8ee{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;box-sizing:border-box;color:var(--text-main);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;margin:0;max-width:100%;min-width:100%;overflow-x:visible;overflow-y:visible;padding:0;width:100%}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee .sidebarNavItem_a6c9d8ee:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee .sidebarContainer_a6c9d8ee{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee .navGroupLabel_a6c9d8ee{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_a6c9d8ee .mainContent_a6c9d8ee{box-sizing:border-box;display:flex;flex-direction:column;gap:20px;margin:0;max-width:none;min-width:100%;padding:0;width:100%}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@media (max-width:768px){.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee{flex:1;min-width:250px;z-index:1}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee .smallText_a6c9d8ee{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@media (max-width:768px){.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .welcomeDiagramContainer_a6c9d8ee{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@media (max-width:768px){.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .welcomeDiagramContainer_a6c9d8ee{margin-left:0;margin-top:8px}}.inventoryManagement_a6c9d8ee .actionGrid_a6c9d8ee{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-bottom:2px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:4px;transform:translateY(-1px);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-3px)}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee .ms-Button--primary{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 4px rgba(0,120,212,.15);color:#fff;font-size:.85rem;font-weight:600;height:38px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,filter .15s ease,box-shadow .1s ease;width:100%}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee .ms-Button--primary:hover{border-color:#0f3c73;border-bottom:3px solid #0b2d54;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.25);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee .ms-Button--primary:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_a6c9d8ee .appLayoutContainer_a6c9d8ee{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@media (max-width:768px){.inventoryManagement_a6c9d8ee .appLayoutContainer_a6c9d8ee{align-items:stretch;flex-direction:column}}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee{background:linear-gradient(145deg,var(--surface-bg) 0,rgba(0,0,0,.01) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-md);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;flex-shrink:0;gap:3px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1);width:250px}@media (max-width:768px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee{box-sizing:border-box;width:100%}}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee{padding:12px 6px;width:56px}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee{padding:4px 0 8px;text-align:center}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navGroupLabel_a6c9d8ee,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee h4,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee span{display:none}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee{justify-content:center;padding:10px 0}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee .navBadge_a6c9d8ee,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee .navItemText_a6c9d8ee{display:none}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee i{margin:0}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .collapseToggle_a6c9d8ee{justify-content:center}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .collapseToggle_a6c9d8ee .collapseText_a6c9d8ee{display:none}@media (max-width:768px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee{width:100%}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navGroupLabel_a6c9d8ee,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee h4,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee span{display:block}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee{justify-content:flex-start;padding:10px 14px}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee .navBadge_a6c9d8ee,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee .navItemText_a6c9d8ee{display:inline-flex}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .collapseToggle_a6c9d8ee .collapseText_a6c9d8ee{display:inline}}.inventoryManagement_a6c9d8ee .navHeader_a6c9d8ee{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_a6c9d8ee .navHeader_a6c9d8ee h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_a6c9d8ee .navHeader_a6c9d8ee span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_a6c9d8ee .navGroupLabel_a6c9d8ee{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_a6c9d8ee .navDivider_a6c9d8ee{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s ease;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee .navItemText_a6c9d8ee{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee .navBadge_a6c9d8ee{border-radius:100px;box-shadow:0 1px 3px rgba(0,0,0,.15);color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee:hover{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05));border:1px solid rgba(0,0,0,.06);border-bottom:2px solid rgba(0,0,0,.1);box-shadow:0 1px 2px rgba(0,0,0,.04);color:var(--text-main);transform:translateY(-.5px)}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee:active{border-bottom-width:1px;box-shadow:none;transform:translateY(.5px)}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee.navItemActive_a6c9d8ee{background:linear-gradient(180deg,rgba(0,120,212,.06),rgba(0,120,212,.1))!important;border:1px solid rgba(0,120,212,.12)!important;border-bottom:2px solid rgba(0,120,212,.22)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.4),0 1px 2px rgba(0,120,212,.06)!important;color:#0078d4;font-weight:600}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee.navItemActive_a6c9d8ee:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:8px;box-shadow:0 0 6px rgba(0,120,212,.5);content:\"\";left:0;position:absolute;top:8px;width:3px}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee:hover{color:#616161}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee .collapseText_a6c9d8ee{flex-grow:1}.inventoryManagement_a6c9d8ee .contentContainer_a6c9d8ee{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_a6c9d8ee .card_a6c9d8ee{background:linear-gradient(145deg,var(--surface-bg) 0,hsla(0,0%,100%,.02) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-lg);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .card_a6c9d8ee:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.inventoryManagement_a6c9d8ee .card_a6c9d8ee .cardHeader_a6c9d8ee{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_a6c9d8ee .card_a6c9d8ee .cardHeader_a6c9d8ee h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_a6c9d8ee .ms-DetailsList{background:transparent!important}.inventoryManagement_a6c9d8ee .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_a6c9d8ee .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_a6c9d8ee .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_a6c9d8ee .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link{align-items:center!important;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%)!important;border:1px solid rgba(0,0,0,.12)!important;border-bottom:3px solid rgba(0,0,0,.24)!important;border-radius:8px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 2px 4px rgba(0,0,0,.05)!important;color:var(--text-main)!important;display:flex!important;font-weight:600!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transform:translateY(-1px)!important;transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link:hover{background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%)!important;border-color:rgba(0,0,0,.15)!important;border-bottom:3px solid rgba(0,0,0,.28)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 4px 8px rgba(0,0,0,.08)!important;transform:translateY(-2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04)!important;transform:translateY(2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee{background:var(--primary-gradient)!important;border:1px solid #103f7a!important;border-bottom:3px solid #0f3566!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 3px 8px rgba(0,120,212,.3)!important;color:#fff!important;font-weight:700!important;transform:translateY(-1px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee:before{display:none!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee:hover{background:linear-gradient(180deg,#388ae6,#205ab3)!important;border-color:#0f3c73!important;border-bottom:3px solid #0b2d54!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 5px 12px rgba(0,120,212,.4)!important;transform:translateY(-2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.2),0 1px 2px rgba(0,120,212,.1)!important;transform:translateY(2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee .ms-Pivot-link-content,.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee .ms-Pivot-link-content i,.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationInfo_a6c9d8ee{color:var(--text-muted);font-size:.82rem}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationInfo_a6c9d8ee strong{color:var(--text-main)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee{align-items:center;display:flex;gap:4px}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee{align-items:center;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%);border:1px solid rgba(0,0,0,.12);border-bottom:3px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 1px 2px rgba(0,0,0,.03);color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:600;height:32px;justify-content:center;min-width:32px;padding:0 8px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee:hover:not(:disabled){background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%);border-color:rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.25);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 3px 6px rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee:active:not(:disabled){border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.03);transform:translateY(2px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee:disabled{border-bottom:1px solid rgba(0,0,0,.1);box-shadow:none;cursor:not-allowed;opacity:.35;transform:none}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee.active_a6c9d8ee{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 5px rgba(0,120,212,.25);color:#fff;font-weight:700;transform:translateY(-1px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee.active_a6c9d8ee:hover{border-bottom-width:3px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.3);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee.active_a6c9d8ee:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_a6c9d8ee .assetCardHover_a6c9d8ee:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_a6c9d8ee.teams_a6c9d8ee{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  inventoryManagement: "inventoryManagement_67c3bf46",
-  dark: "dark_67c3bf46",
-  sidebarNavItem: "sidebarNavItem_67c3bf46",
-  sidebarContainer: "sidebarContainer_67c3bf46",
-  navGroupLabel: "navGroupLabel_67c3bf46",
-  mainContent: "mainContent_67c3bf46",
-  heroSection: "heroSection_67c3bf46",
-  heroText: "heroText_67c3bf46",
-  smallText: "smallText_67c3bf46",
-  welcomeDiagramContainer: "welcomeDiagramContainer_67c3bf46",
-  actionGrid: "actionGrid_67c3bf46",
-  actionButtonContainer: "actionButtonContainer_67c3bf46",
-  appLayoutContainer: "appLayoutContainer_67c3bf46",
-  sidebarCollapsed: "sidebarCollapsed_67c3bf46",
-  navHeader: "navHeader_67c3bf46",
-  navItemText: "navItemText_67c3bf46",
-  navBadge: "navBadge_67c3bf46",
-  collapseToggle: "collapseToggle_67c3bf46",
-  collapseText: "collapseText_67c3bf46",
-  navDivider: "navDivider_67c3bf46",
-  navItemActive: "navItemActive_67c3bf46",
-  contentContainer: "contentContainer_67c3bf46",
-  card: "card_67c3bf46",
-  cardHeader: "cardHeader_67c3bf46",
-  "is-selected": "is-selected_67c3bf46",
-  paginationContainer: "paginationContainer_67c3bf46",
-  paginationInfo: "paginationInfo_67c3bf46",
-  paginationControls: "paginationControls_67c3bf46",
-  paginationButton: "paginationButton_67c3bf46",
-  active: "active_67c3bf46",
-  assetCardHover: "assetCardHover_67c3bf46",
-  teams: "teams_67c3bf46"
+  inventoryManagement: "inventoryManagement_a6c9d8ee",
+  dark: "dark_a6c9d8ee",
+  sidebarNavItem: "sidebarNavItem_a6c9d8ee",
+  sidebarContainer: "sidebarContainer_a6c9d8ee",
+  navGroupLabel: "navGroupLabel_a6c9d8ee",
+  mainContent: "mainContent_a6c9d8ee",
+  heroSection: "heroSection_a6c9d8ee",
+  heroText: "heroText_a6c9d8ee",
+  smallText: "smallText_a6c9d8ee",
+  welcomeDiagramContainer: "welcomeDiagramContainer_a6c9d8ee",
+  actionGrid: "actionGrid_a6c9d8ee",
+  actionButtonContainer: "actionButtonContainer_a6c9d8ee",
+  appLayoutContainer: "appLayoutContainer_a6c9d8ee",
+  sidebarCollapsed: "sidebarCollapsed_a6c9d8ee",
+  navHeader: "navHeader_a6c9d8ee",
+  navItemText: "navItemText_a6c9d8ee",
+  navBadge: "navBadge_a6c9d8ee",
+  collapseToggle: "collapseToggle_a6c9d8ee",
+  collapseText: "collapseText_a6c9d8ee",
+  navDivider: "navDivider_a6c9d8ee",
+  navItemActive: "navItemActive_a6c9d8ee",
+  contentContainer: "contentContainer_a6c9d8ee",
+  card: "card_a6c9d8ee",
+  cardHeader: "cardHeader_a6c9d8ee",
+  "is-selected": "is-selected_a6c9d8ee",
+  paginationContainer: "paginationContainer_a6c9d8ee",
+  paginationInfo: "paginationInfo_a6c9d8ee",
+  paginationControls: "paginationControls_a6c9d8ee",
+  paginationButton: "paginationButton_a6c9d8ee",
+  active: "active_a6c9d8ee",
+  assetCardHover: "assetCardHover_a6c9d8ee",
+  teams: "teams_a6c9d8ee"
 });
 
 
@@ -299,34 +299,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 5613);
 /* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 
 
 
-const assetTypeOptions = [
-    { key: 'Laptop', text: 'Laptop' },
-    { key: 'Monitor', text: 'Monitor' },
-    { key: 'Mouse', text: 'Mouse' },
-    { key: 'Keyboard', text: 'Keyboard' },
-    { key: 'Headset', text: 'Headset' },
-    { key: 'Other', text: 'Other' }
-];
-const conditionOptions = [
-    { key: 'New', text: 'New' },
-    { key: 'Good', text: 'Good' },
-    { key: 'Fair', text: 'Fair' },
-    { key: 'Poor', text: 'Poor' },
-    { key: 'Damaged', text: 'Damaged' }
-];
+
 const AssetForm = (props) => {
     const stackTokens = { childrenGap: 15 };
     const [title, setTitle] = react__WEBPACK_IMPORTED_MODULE_0__.useState('Company Assets');
@@ -363,21 +350,21 @@ const AssetForm = (props) => {
         setSpecifications('');
         props.onClose();
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PanelType.custom, customWidth: "450px", headerText: isAdmin ? "Add New Asset" : "Register New Asset", closeButtonAriaLabel: "Close" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: stackTokens },
-            isManager && !isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.warning }, "You are registering a new asset. After adding, you can assign it to employees in the Asset Tracking section.")),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Title (Group/Category)", value: title, onChange: (_, val) => setTitle(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Asset Name", value: assetName, onChange: (_, val) => setAssetName(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: "Asset Type", selectedKey: assetType, options: assetTypeOptions, onChange: (_, opt) => setAssetType(opt?.key || 'Other'), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Serial Number", value: serialNumber, onChange: (_, val) => setSerialNumber(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Purchase Date", type: "date", value: purchaseDate, onChange: (_, val) => setPurchaseDate(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Vendor", value: vendor, placeholder: "E.g., Dell, Apple, Microsoft, Lenovo", onChange: (_, val) => setVendor(val || '') }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: "Condition", selectedKey: condition, options: conditionOptions, onChange: (_, opt) => setCondition(opt?.key || 'New') }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Warranty Expiry Date", type: "date", value: warrantyExpiry, onChange: (_, val) => setWarrantyExpiry(val || '') }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Specifications", placeholder: "E.g., Intel i7, 16GB RAM, 512GB SSD, etc.", multiline: true, rows: 3, value: specifications, onChange: (_, val) => setSpecifications(val || '') }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: "Add Asset", onClick: onSave, disabled: !assetName || !serialNumber }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Cancel", onClick: props.onClose })))));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PanelType.custom, customWidth: "450px", headerText: isAdmin ? "Add New Asset" : "Register New Asset", closeButtonAriaLabel: "Close" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: stackTokens },
+            isManager && !isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning }, "You are registering a new asset. After adding, you can assign it to employees in the Asset Tracking section.")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Title (Group/Category)", value: title, onChange: (_, val) => setTitle(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Asset Name", value: assetName, onChange: (_, val) => setAssetName(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Asset Type", selectedKey: assetType, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.DEFAULT_ASSET_TYPE_OPTIONS, onChange: (_, opt) => setAssetType(opt?.key || 'Other'), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Serial Number", value: serialNumber, onChange: (_, val) => setSerialNumber(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Purchase Date", type: "date", value: purchaseDate, onChange: (_, val) => setPurchaseDate(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Vendor", value: vendor, placeholder: "E.g., Dell, Apple, Microsoft, Lenovo", onChange: (_, val) => setVendor(val || '') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Condition", selectedKey: condition, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_CONDITION_OPTIONS, onChange: (_, opt) => setCondition(opt?.key || 'New') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Warranty Expiry Date", type: "date", value: warrantyExpiry, onChange: (_, val) => setWarrantyExpiry(val || '') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Specifications", placeholder: "E.g., Intel i7, 16GB RAM, 512GB SSD, etc.", multiline: true, rows: 3, value: specifications, onChange: (_, val) => setSpecifications(val || '') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: "Add Asset", onClick: onSave, disabled: !assetName || !serialNumber }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: "Cancel", onClick: props.onClose })))));
 };
 
 
@@ -1215,6 +1202,188 @@ const Dashboard = (props) => {
 
 /***/ }),
 
+/***/ 46615:
+/*!*********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/EventFilters.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EventFilters: () => (/* binding */ EventFilters)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 46412);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 44533);
+
+
+const EventFilters = (props) => {
+    const { filters, onChange, onClear, actionsList, assetTypesList, usersList } = props;
+    const dateOptions = [
+        { key: 'All', text: 'All Time' },
+        { key: 'Today', text: 'Today' },
+        { key: 'Yesterday', text: 'Yesterday' },
+        { key: 'Last7', text: 'Last 7 Days' },
+        { key: 'Last15', text: 'Last 15 Days' },
+        { key: 'Last30', text: 'Last 30 Days' },
+        { key: 'Last60', text: 'Last 60 Days' },
+        { key: 'Last90', text: 'Last 90 Days' },
+        { key: 'ThisWeek', text: 'This Week' },
+        { key: 'ThisMonth', text: 'This Month' },
+        { key: 'Custom', text: 'Custom Date Range' }
+    ];
+    const moduleOptions = [
+        { key: 'All', text: 'All Modules' },
+        { key: 'Inventory', text: 'Inventory' },
+        { key: 'Requests', text: 'Requests' },
+        { key: 'Returns', text: 'Returns' },
+        { key: 'Users', text: 'Users' },
+        { key: 'Reports', text: 'Reports' },
+        { key: 'Configuration', text: 'Configuration' },
+        { key: 'Notifications', text: 'Notifications' }
+    ];
+    const statusOptions = [
+        { key: 'All', text: 'All Statuses' },
+        { key: 'Pending', text: 'Pending' },
+        { key: 'Approved', text: 'Approved' },
+        { key: 'Rejected', text: 'Rejected' },
+        { key: 'Assigned', text: 'Assigned' },
+        { key: 'Returned', text: 'Returned' },
+        { key: 'Completed', text: 'Completed' }
+    ];
+    const sortOptions = [
+        { key: 'NewestFirst', text: 'Newest First' },
+        { key: 'OldestFirst', text: 'Oldest First' },
+        { key: 'AssetNameAZ', text: 'Asset Name A-Z' },
+        { key: 'AssetNameZA', text: 'Asset Name Z-A' },
+        { key: 'UserAZ', text: 'User A-Z' },
+        { key: 'UserZA', text: 'User Z-A' }
+    ];
+    const actionOptions = [
+        { key: 'All', text: 'All Actions' },
+        ...actionsList.map(action => ({
+            key: action,
+            text: action.charAt(0).toUpperCase() + action.slice(1)
+        }))
+    ];
+    const assetTypeOptions = [
+        { key: 'All', text: 'All Assets' },
+        ...assetTypesList.map(type => ({
+            key: type,
+            text: type
+        }))
+    ];
+    const userOptions = [
+        { key: 'All', text: 'All Users' },
+        ...usersList.map(user => ({
+            key: user,
+            text: user
+        }))
+    ];
+    // Helper to check if any filter is active (excluding default search/sort)
+    const hasActiveFilters = filters.dateRangeType !== 'All' ||
+        filters.action !== 'All' ||
+        filters.module !== 'All' ||
+        filters.assetType !== 'All' ||
+        filters.user !== 'All' ||
+        filters.status !== 'All';
+    // Format date range labels for chips
+    const getDateLabel = () => {
+        if (filters.dateRangeType !== 'Custom') {
+            return dateOptions.find(o => o.key === filters.dateRangeType)?.text || filters.dateRangeType;
+        }
+        const startStr = filters.startDate ? new Date(filters.startDate).toLocaleDateString() : '';
+        const endStr = filters.endDate ? new Date(filters.endDate).toLocaleDateString() : '';
+        return `${startStr} - ${endStr}`;
+    };
+    const handleDateChange = (type) => {
+        onChange({
+            ...filters,
+            dateRangeType: type,
+            startDate: type === 'Custom' ? filters.startDate || new Date() : undefined,
+            endDate: type === 'Custom' ? filters.endDate || new Date() : undefined
+        });
+    };
+    // Date range validation
+    const isDateRangeInvalid = filters.dateRangeType === 'Custom' &&
+        filters.startDate &&
+        filters.endDate &&
+        new Date(filters.startDate) > new Date(filters.endDate);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '20px' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.SearchBox, { placeholder: "Search by asset name, title, details, user, or action...", value: filters.searchQuery, onChange: (_, newValue) => onChange({ ...filters, searchQuery: newValue || '' }), onClear: () => onChange({ ...filters, searchQuery: '' }), styles: { root: { flexGrow: 1, minWidth: '300px' } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Clear Filters", iconProps: { iconName: 'ClearFilter' }, onClick: onClear, disabled: !hasActiveFilters && !filters.searchQuery })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '12px'
+            } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "Date Range", selectedKey: filters.dateRangeType, options: dateOptions, onChange: (_, option) => option && handleDateChange(option.key) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "Action", selectedKey: filters.action, options: actionOptions, onChange: (_, option) => option && onChange({ ...filters, action: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "Module", selectedKey: filters.module, options: moduleOptions, onChange: (_, option) => option && onChange({ ...filters, module: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "Asset Type", selectedKey: filters.assetType, options: assetTypeOptions, onChange: (_, option) => option && onChange({ ...filters, assetType: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "User", selectedKey: filters.user, options: userOptions, onChange: (_, option) => option && onChange({ ...filters, user: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "Status", selectedKey: filters.status, options: statusOptions, onChange: (_, option) => option && onChange({ ...filters, status: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Dropdown, { label: "Sort Order", selectedKey: filters.sortOrder, options: sortOptions, onChange: (_, option) => option && onChange({ ...filters, sortOrder: option.key }) })),
+        filters.dateRangeType === 'Custom' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, wrap: true, tokens: { childrenGap: 16 }, style: { alignItems: 'flex-end', backgroundColor: '#f3f2f1', padding: '12px', borderRadius: '4px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DatePicker, { label: "Start Date", value: filters.startDate, onSelectDate: (date) => date && onChange({ ...filters, startDate: date }), placeholder: "Select a start date..." })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DatePicker, { label: "End Date", value: filters.endDate, onSelectDate: (date) => date && onChange({ ...filters, endDate: date }), placeholder: "Select an end date..." })),
+            isDateRangeInvalid && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Text, { style: { color: '#a80000', alignSelf: 'center', fontWeight: 'bold' } }, "Warning: Start Date must be less than or equal to End Date.")))),
+        hasActiveFilters && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center', marginTop: '4px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Text, { variant: "smallPlus", style: { color: 'var(--text-muted)', marginRight: '4px', fontWeight: 'bold' } }, "Active Filters:"),
+            filters.dateRangeType !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
+                getDateLabel(),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => handleDateChange('All'), styles: chipButtonStyles }))),
+            filters.action !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
+                "Action: ",
+                filters.action,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, action: 'All' }), styles: chipButtonStyles }))),
+            filters.module !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
+                "Module: ",
+                filters.module,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, module: 'All' }), styles: chipButtonStyles }))),
+            filters.assetType !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
+                "Asset: ",
+                filters.assetType,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, assetType: 'All' }), styles: chipButtonStyles }))),
+            filters.user !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
+                "User: ",
+                filters.user,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, user: 'All' }), styles: chipButtonStyles }))),
+            filters.status !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
+                "Status: ",
+                filters.status,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, status: 'All' }), styles: chipButtonStyles }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Clear All", onClick: onClear, styles: { root: { height: 26, minWidth: 0, padding: '0 8px', fontSize: '0.8rem' } } })))));
+};
+const chipStyle = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    backgroundColor: '#edebe9',
+    padding: '2px 8px',
+    borderRadius: '16px',
+    fontSize: '0.8rem',
+    color: '#323130',
+    border: '1px solid #d2d0ce',
+    gap: '4px'
+};
+const chipButtonStyles = {
+    root: { width: 14, height: 14, marginLeft: 2, padding: 0 },
+    icon: { fontSize: 8, color: '#605e5c' }
+};
+
+
+/***/ }),
+
 /***/ 19178:
 /*!********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/EventStream.js ***!
@@ -1228,12 +1397,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
 /* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _EventFilters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EventFilters */ 46615);
+/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
+
 
 
 
@@ -1241,12 +1412,103 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const EventStream = (props) => {
-    const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [filters, setFilters] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+        searchQuery: '',
+        dateRangeType: 'All',
+        action: 'All',
+        module: 'All',
+        assetType: 'All',
+        user: 'All',
+        status: 'All',
+        sortOrder: 'NewestFirst'
+    });
+    const [logs, setLogs] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
     const [currentPage, setCurrentPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
     const pageSize = 10;
-    const isAdmin = props.currentUserRole === 'Admin';
-    const isManager = props.currentUserRole === 'Inventory Manager';
+    // Filter option lists
+    const [actionsList, setActionsList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [assetTypesList, setAssetTypesList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [usersList, setUsersList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const isEmployee = props.currentUserRole === 'Inventory Employee';
+    // Load filter lists from the recent logs to populate dropdown options dynamically
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        const loadFilterMetadata = async () => {
+            try {
+                // Fetch last 90 days of logs as a baseline for filter options
+                const initLogs = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__.InventoryService.getFilteredAuditLogs({
+                    searchQuery: '',
+                    dateRangeType: 'Last90',
+                    action: 'All',
+                    module: 'All',
+                    assetType: 'All',
+                    user: 'All',
+                    status: 'All',
+                    sortOrder: 'NewestFirst'
+                });
+                // Extract unique options
+                const actions = Array.from(new Set(initLogs.map(l => l.action).filter(Boolean)));
+                const users = Array.from(new Set(initLogs.map(l => l.user).filter(Boolean)));
+                const defaultAssetTypes = ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset', 'Dock', 'Printer'];
+                const foundAssetTypes = initLogs.map(l => l.assetName).filter(Boolean);
+                const uniqueAssetTypes = Array.from(new Set([...defaultAssetTypes, ...foundAssetTypes]));
+                setActionsList(actions.sort());
+                setUsersList(users.sort());
+                setAssetTypesList(uniqueAssetTypes.sort());
+            }
+            catch (err) {
+                console.warn("Failed to load filter metadata:", err);
+            }
+        };
+        loadFilterMetadata();
+    }, []);
+    // Fetch logs whenever server-side filters or refresh trigger change
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        const fetchLogs = async () => {
+            setLoading(true);
+            try {
+                const fetched = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__.InventoryService.getFilteredAuditLogs({
+                    ...filters,
+                    searchQuery: ''
+                });
+                setLogs(fetched);
+            }
+            catch (err) {
+                console.error("Failed to fetch filtered audit logs:", err);
+            }
+            finally {
+                setLoading(false);
+            }
+        };
+        fetchLogs();
+        setCurrentPage(1); // Reset page to 1 when filters change
+    }, [
+        filters.dateRangeType,
+        filters.startDate,
+        filters.endDate,
+        filters.action,
+        filters.module,
+        filters.user,
+        props.refreshTrigger
+    ]);
+    // Reset to page 1 when client-side filters change
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        setCurrentPage(1);
+    }, [filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
+    const handleClearFilters = () => {
+        setFilters(prev => ({
+            searchQuery: prev.searchQuery, // Preserve search text
+            dateRangeType: 'All',
+            startDate: undefined,
+            endDate: undefined,
+            action: 'All',
+            module: 'All',
+            assetType: 'All',
+            user: 'All',
+            status: 'All',
+            sortOrder: 'NewestFirst'
+        }));
+    };
     const columns = [
         {
             key: 'column_action',
@@ -1331,7 +1593,7 @@ const EventStream = (props) => {
                     displayText = 'deactivated';
                 }
                 else if (normalizedAction === 'update') {
-                    backgroundColor = '#ffedd5'; // Light orange/yellow (fallback for generic Update)
+                    backgroundColor = '#ffedd5'; // Light orange/yellow
                     textColor = '#9a3412';
                     displayText = 'updated';
                 }
@@ -1358,30 +1620,64 @@ const EventStream = (props) => {
             { key: 'column_details', name: 'Details', fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
         ] : [])
     ];
+    // 1. Apply role-based visibility filtering client-side
     const roleBasedFilteredLogs = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
         if (isEmployee) {
-            return props.logs.filter(log => (log.user || '').toLowerCase().includes(props.currentUserName.toLowerCase()) ||
+            return logs.filter(log => (log.user || '').toLowerCase().includes(props.currentUserName.toLowerCase()) ||
                 (log.details || '').toLowerCase().includes(props.currentUserName.toLowerCase()));
         }
-        return props.logs;
-    }, [props.logs, isEmployee, props.currentUserName]);
+        return logs;
+    }, [logs, isEmployee, props.currentUserName]);
+    // 2. Apply client-side search, assetType, status filters, and sorting
     const filteredLogs = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        if (!searchQuery) {
-            return roleBasedFilteredLogs;
+        let result = [...roleBasedFilteredLogs];
+        // Search query filtering
+        if (filters.searchQuery) {
+            const lowerQuery = filters.searchQuery.toLowerCase();
+            result = result.filter(log => log.title?.toLowerCase().includes(lowerQuery) ||
+                log.assetName?.toLowerCase().includes(lowerQuery) ||
+                log.details?.toLowerCase().includes(lowerQuery) ||
+                log.user?.toLowerCase().includes(lowerQuery) ||
+                log.action?.toLowerCase().includes(lowerQuery) ||
+                log.entityType?.toLowerCase().includes(lowerQuery) ||
+                log.entityId?.toLowerCase().includes(lowerQuery));
         }
-        const lowerQuery = searchQuery.toLowerCase();
-        return roleBasedFilteredLogs.filter(log => log.title?.toLowerCase().includes(lowerQuery) ||
-            log.assetName?.toLowerCase().includes(lowerQuery) ||
-            log.details?.toLowerCase().includes(lowerQuery) ||
-            log.user?.toLowerCase().includes(lowerQuery) ||
-            log.action?.toLowerCase().includes(lowerQuery) ||
-            log.entityType?.toLowerCase().includes(lowerQuery) ||
-            log.entityId?.toLowerCase().includes(lowerQuery));
-    }, [roleBasedFilteredLogs, searchQuery]);
-    // Reset page when searchQuery or logs array changes
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        setCurrentPage(1);
-    }, [searchQuery, props.logs]);
+        // Asset type filtering
+        if (filters.assetType && filters.assetType !== 'All') {
+            const lowerAssetType = filters.assetType.toLowerCase();
+            result = result.filter(log => (log.assetName || '').toLowerCase().includes(lowerAssetType) ||
+                (log.title || '').toLowerCase().includes(lowerAssetType));
+        }
+        // Status filtering
+        if (filters.status && filters.status !== 'All') {
+            const lowerStatus = filters.status.toLowerCase();
+            result = result.filter(log => (log.details || '').toLowerCase().includes(lowerStatus) ||
+                (log.action || '').toLowerCase().includes(lowerStatus) ||
+                (log.title || '').toLowerCase().includes(lowerStatus));
+        }
+        // Sorting
+        if (filters.sortOrder) {
+            result.sort((a, b) => {
+                switch (filters.sortOrder) {
+                    case 'NewestFirst':
+                        return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+                    case 'OldestFirst':
+                        return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+                    case 'AssetNameAZ':
+                        return (a.assetName || '').localeCompare(b.assetName || '');
+                    case 'AssetNameZA':
+                        return (b.assetName || '').localeCompare(a.assetName || '');
+                    case 'UserAZ':
+                        return (a.user || '').localeCompare(b.user || '');
+                    case 'UserZA':
+                        return (b.user || '').localeCompare(a.user || '');
+                    default:
+                        return 0;
+                }
+            });
+        }
+        return result;
+    }, [roleBasedFilteredLogs, filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
     const totalItems = filteredLogs.length;
     const totalPages = Math.ceil(totalItems / pageSize);
     const activePage = Math.min(currentPage, Math.max(1, totalPages));
@@ -1413,17 +1709,16 @@ const EventStream = (props) => {
         return pages;
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px' } },
-            props.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Notice:"),
-                " ",
-                props.errorMessage)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_3__.SearchBox, { placeholder: "Search by asset name, title, details, user, or action...", value: searchQuery, onChange: (_, newValue) => setSearchQuery(newValue || ''), onClear: () => setSearchQuery(''), styles: { root: { maxWidth: 400 } } })),
-        props.loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading audit logs...")) : roleBasedFilteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } },
+        props.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Notice:"),
+            " ",
+            props.errorMessage)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventFilters__WEBPACK_IMPORTED_MODULE_3__.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, usersList: usersList }),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading audit logs...")) : roleBasedFilteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } },
             "No audit events ",
             isEmployee ? 'for you' : '',
-            " recorded yet.")) : filteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No audit events match your search query.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }),
+            " recorded yet.")) : filteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No audit events match your active filters.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.SelectionMode.none }),
             totalPages > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationContainer },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationInfo },
                     "Showing ",
@@ -1917,41 +2212,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 5613);
 /* harmony import */ var _IncidentRequestModule_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IncidentRequestModule.module.scss */ 39131);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
 
 
 
 
 
-const incidentTypeOptions = [
-    { key: 'Hardware Issue', text: 'Hardware Issue' },
-    { key: 'Software Issue', text: 'Software Issue' },
-    { key: 'Network Issue', text: 'Network Issue' },
-    { key: 'Asset Damage', text: 'Asset Damage' },
-    { key: 'Replacement Request', text: 'Replacement Request' },
-    { key: 'Access Issue', text: 'Access Issue' },
-    { key: 'Login Issue', text: 'Login Issue' },
-    { key: 'Performance Issue', text: 'Performance Issue' },
-    { key: 'Email Issue', text: 'Email Issue' },
-    { key: 'Printer Issue', text: 'Printer Issue' },
-    { key: 'Other', text: 'Other' }
-];
-const priorityOptions = [
-    { key: 'Low', text: 'Low' },
-    { key: 'Medium', text: 'Medium' },
-    { key: 'High', text: 'High' },
-    { key: 'Critical', text: 'Critical' },
-];
+
+const incidentTypeOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_3__.INCIDENT_TYPE_OPTIONS;
+const priorityOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_3__.INCIDENT_PRIORITY_OPTIONS;
 const raisedToOptions = [
     { key: 'Admin', text: 'Admin' }
 ];
@@ -2026,7 +2306,7 @@ const IncidentRequestModule = (props) => {
     const handleSubmit = async () => {
         try {
             if (!formData.incidentType || !formData.description) {
-                setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.error, text: 'Please fill in all required fields.' });
+                setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.error, text: 'Please fill in all required fields.' });
                 return;
             }
             setIsSubmitting(true);
@@ -2039,7 +2319,7 @@ const IncidentRequestModule = (props) => {
             };
             console.log('Submitting incident payload:', payload);
             await service.createIncidentRequest(payload);
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.success, text: 'Incident reported successfully!' });
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.success, text: 'Incident reported successfully!' });
             setTimeout(() => {
                 setFormData({
                     employeeName: props.userDisplayName || '',
@@ -2064,7 +2344,7 @@ const IncidentRequestModule = (props) => {
         catch (error) {
             console.error('Error submitting incident:', error);
             const errorMessage = error instanceof Error ? error.message : 'Failed to report incident. Please try again.';
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.error, text: `Error: ${errorMessage}` });
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.error, text: `Error: ${errorMessage}` });
         }
         finally {
             setIsSubmitting(false);
@@ -2093,13 +2373,13 @@ const IncidentRequestModule = (props) => {
         text: `${a.assetName} (S/N: ${a.serialNumber || 'N/A'})`,
     }));
     const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PanelType.custom, customWidth: "450px", headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "450px", headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _IncidentRequestModule_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].incidentRequestModule },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 15 } },
-                message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),
-                !isLoadingAssets && assignedAssets.length === 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.info }, "You currently have no assets assigned. You can still raise generic incidents.")),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Employee Name", value: formData.employeeName, onChange: (ev, val) => handleInputChange('employeeName', val || ''), required: true }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Stack, { tokens: { childrenGap: 15 } },
+                message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),
+                !isLoadingAssets && assignedAssets.length === 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.info }, "You currently have no assets assigned. You can still raise generic incidents.")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Employee Name", value: formData.employeeName, onChange: (ev, val) => handleInputChange('employeeName', val || ''), required: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
                         const selected = assignedAssets.find(a => a.id === option?.key);
                         if (selected) {
                             handleInputChange('assetName', selected.assetName);
@@ -2112,17 +2392,17 @@ const IncidentRequestModule = (props) => {
                             handleInputChange('assignedDate', '');
                         }
                     }, disabled: isLoadingAssets }),
-                formData.assetName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Asset Name", value: formData.assetName, disabled: true })),
-                formData.serialNo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Serial NO", value: formData.serialNo, disabled: true })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Incident Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Incident Type" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Priority", options: priorityOptions, selectedKey: formData.priority, onChange: (ev, option) => handleInputChange('priority', option?.key) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Description", multiline: true, rows: 5, placeholder: "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: "Raised To", options: raisedToOptions, selectedKey: formData.raisedTo, onChange: (ev, option) => handleInputChange('raisedTo', option?.key), placeholder: "Select Team" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Raised Date", value: formData.raisedDate, readOnly: true }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Status", value: formData.status, readOnly: true }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: 20 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: "Cancel", onClick: handleCancel }))))));
+                formData.assetName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Asset Name", value: formData.assetName, disabled: true })),
+                formData.serialNo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Serial NO", value: formData.serialNo, disabled: true })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Incident Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Incident Type" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Priority", options: priorityOptions, selectedKey: formData.priority, onChange: (ev, option) => handleInputChange('priority', option?.key) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Description", multiline: true, rows: 5, placeholder: "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Raised To", options: raisedToOptions, selectedKey: formData.raisedTo, onChange: (ev, option) => handleInputChange('raisedTo', option?.key), placeholder: "Select Team" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Raised Date", value: formData.raisedDate, readOnly: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Status", value: formData.status, readOnly: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: 20 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PrimaryButton, { text: "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: "Cancel", onClick: handleCancel }))))));
 };
 
 
@@ -2386,36 +2666,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EventStream__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./EventStream */ 19178);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
 /* harmony import */ var _ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReturnRequestList */ 18397);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 20472);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! jspdf */ 28339);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Dashboard */ 71422);
-/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./AssetTracking */ 20867);
+/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./AssetTracking */ 20867);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../pages */ 56330);
 /* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
 /* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./IncidentHistory/IncidentHistory */ 27885);
-/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
 
 
 
@@ -2434,7 +2713,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 chart_js__WEBPACK_IMPORTED_MODULE_14__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_14__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_14__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_14__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_14__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_14__.Title, chart_js__WEBPACK_IMPORTED_MODULE_14__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_14__.Legend);
-
 
 
 
@@ -2473,6 +2751,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             const effectiveRole = this.state.previewRole || this.state.userRole;
             const isAdminOrManager = effectiveRole === 'Admin' || effectiveRole === 'Inventory Manager';
             const isAdmin = effectiveRole === 'Admin';
+            const isManager = effectiveRole === 'Inventory Manager';
             const notifications = [];
             const readIds = new Set(this.state.readNotificationIds);
             const clearedIds = new Set(this.state.clearedNotificationIds);
@@ -2609,13 +2888,28 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             returnRequests.forEach(ret => {
                 const isMyReturn = normalize(ret.requesterName) === activeUserNorm || activeUserNorm.includes(normalize(ret.requesterName)) || normalize(ret.requesterName).includes(activeUserNorm);
                 if (isAdminOrManager) {
-                    if (ret.status === 'Pending') {
-                        const id = `ret-pending-${ret.id}`;
+                    if (isManager && (ret.status === 'Pending Manager Approval' || ret.status === 'Pending')) {
+                        const id = `ret-pending-mgr-${ret.id}`;
                         if (!clearedIds.has(id)) {
                             notifications.push({
                                 id,
-                                title: "Asset Return Pending",
+                                title: "Asset Return Pending Manager Approval",
                                 message: `${ret.requesterName} requested to return ${ret.assetName} (Reason: ${ret.returnReason || "None"})`,
+                                type: 'info',
+                                timestamp: formatTime(ret.requestDate),
+                                isRead: readIds.has(id),
+                                actionLink: 'AssetReturns',
+                                category: 'Request'
+                            });
+                        }
+                    }
+                    else if (isAdmin && ret.status === 'Pending Admin Verification') {
+                        const id = `ret-pending-adm-${ret.id}`;
+                        if (!clearedIds.has(id)) {
+                            notifications.push({
+                                id,
+                                title: "Asset Return Pending Admin Verification",
+                                message: `Manager approved return of ${ret.assetName} by ${ret.requesterName}. Awaiting Admin verification.`,
                                 type: 'info',
                                 timestamp: formatTime(ret.requestDate),
                                 isRead: readIds.has(id),
@@ -2626,18 +2920,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }
                 }
                 if (isMyReturn) {
-                    if (ret.status === 'Approved' || ret.status === 'Rejected' || ret.status === 'Completed') {
+                    if (ret.status === 'Approved' || ret.status === 'Rejected' || ret.status === 'Completed' || ret.status === 'Pending Admin Verification') {
                         const id = `ret-resolved-${ret.id}-${ret.status}`;
                         if (!clearedIds.has(id)) {
-                            let titleText = "Return Request Approved";
-                            let type = 'success';
-                            let messageText = `Your return request for ${ret.assetName} has been approved. Please hand it over.`;
+                            let titleText = "Return Request Manager Approved";
+                            let type = 'info';
+                            let messageText = `Your return request for ${ret.assetName} has been approved by your manager. Awaiting Admin verification.`;
                             if (ret.status === 'Rejected') {
                                 titleText = "Return Request Rejected";
                                 type = 'error';
                                 messageText = `Your return request for ${ret.assetName} was rejected. Note: ${ret.managerComment || ""}`;
                             }
-                            else if (ret.status === 'Completed') {
+                            else if (ret.status === 'Completed' || ret.status === 'Approved') {
                                 titleText = "Asset Return Completed";
                                 type = 'success';
                                 messageText = `Your return of ${ret.assetName} is complete and has been checked back into stock.`;
@@ -2811,15 +3105,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             }
         };
         this._loadAuditLogs = async () => {
-            try {
-                this.setState({ auditLogsLoading: true });
-                const auditLogs = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.getAuditLogs();
-                this.setState({ auditLogs, auditLogsLoading: false });
-            }
-            catch (error) {
-                console.error("Failed to load audit logs:", error);
-                this.setState({ auditLogsLoading: false });
-            }
+            this.setState(prevState => ({
+                auditLogsRefreshTrigger: (prevState.auditLogsRefreshTrigger || 0) + 1
+            }));
         };
         this._loadReturnRequests = async () => {
             try {
@@ -2854,19 +3142,27 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
-                this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined });
+                this.setState({
+                    isReturnFormOpen: false,
+                    selectedAssetForReturn: undefined,
+                    syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                });
             }
             catch (error) {
+                const msg = error.message && error.message.includes("already in progress")
+                    ? error.message
+                    : `Failed to submit return request: ${error.message || JSON.stringify(error)}`;
                 this.setState({
-                    errorMessage: `Failed to submit return request: ${error.message || JSON.stringify(error)}`,
+                    errorMessage: msg,
                     returnRequestsLoading: false
                 });
             }
         };
-        this._onUpdateReturnRequestStatus = async (requestId, status, comment, finalCondition) => {
+        this._onUpdateReturnRequestStatus = async (requestId, status, comment, finalCondition, adminComments, managerStatus, adminStatus) => {
             try {
                 this.setState({ returnRequestsLoading: true });
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition, adminComments, managerStatus, adminStatus);
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
@@ -3029,13 +3325,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
                 });
                 const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3045,7 +3341,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
                 });
             }
         };
@@ -3054,21 +3350,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
                 });
                 const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
                 });
             }
         };
@@ -3308,7 +3604,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 progressPercent = 1.0;
                 currentStepText = "Declined by Manager";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
@@ -3352,18 +3648,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
                         " Detailed Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Check Passed:"),
                                 " There are currently ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
                                 " unit(s) of ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Warning:"),
                                 " Only ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
@@ -3395,7 +3691,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
             const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
@@ -3417,7 +3713,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 healthRating = "Critical Needs Replacement";
                 healthIcon = "Warning";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
@@ -3458,9 +3754,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#374151' } }, asset.note)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
                         ageInMonths !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
@@ -3471,21 +3767,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
                                 asset.warrantyExpiry,
-                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
                                 " Covered under manufacturer protection until ",
                                 asset.warrantyExpiry,
-                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                     "Health Classification: ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } }, healthRating))),
@@ -3524,7 +3820,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const id = parts[0];
                 associatedAsset = items.find(a => a.id === id);
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Received:"),
@@ -3536,7 +3832,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     associatedAsset && this._renderAssetAnalysis(associatedAsset),
                     !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3628,7 +3924,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 ? "Select asset to assign..."
                 : "No assets of this type in stock";
             const isBusy = this.state.requestActionInProgressId === request.id;
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -3715,13 +4011,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                         root: { color: '#dc2626', borderColor: '#dc2626' },
                                         rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                                     } })))))));
@@ -3752,6 +4048,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             isRequestFormOpen: false,
             loading: true,
             auditLogsLoading: true,
+            auditLogsRefreshTrigger: 0,
             errorMessage: undefined,
             selectedTabKey: 'Dashboard',
             readNotificationIds: readIds,
@@ -3847,7 +4144,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     key: 'AssetReturns',
                     text: 'Asset Returns',
                     icon: 'ReturnToSession',
-                    badge: this.state.returnRequests.filter(r => r.status === 'Pending').length || undefined,
+                    badge: this.state.returnRequests.filter(r => {
+                        if (isAdmin)
+                            return r.status === 'Pending Admin Verification';
+                        if (isManager)
+                            return r.status === 'Pending Manager Approval';
+                        return r.status === 'Pending';
+                    }).length || undefined,
                     badgeColor: '#ea580c'
                 }
             ] : []),
@@ -3878,7 +4181,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             "SharePoint Groups: ",
                             (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', '))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_24__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
                     " ",
@@ -3902,7 +4205,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
@@ -3912,33 +4215,63 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` }, (() => {
+                        const dashboardState = {
+                            items: isAdmin || isManager ? items : myAssets,
+                            requests: isAdmin || isManager ? this.state.requests : myRequests,
+                            isAdmin,
+                            isInventoryManager: isManager
+                        };
+                        const dashboardActions = {
+                            onNavigate: (key) => this.setState({ selectedTabKey: key })
+                        };
+                        const reportsState = {
+                            reportsSelectedTab: this.state.reportsSelectedTab,
+                            reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
+                            reportsStatusFilter: this.state.reportsStatusFilter,
+                            items,
+                            requests: this.state.requests
+                        };
+                        const reportsActions = {
+                            onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
+                            onAssetTypeFilterChange: (type) => this.setState({ reportsAssetTypeFilter: type }),
+                            onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
+                            onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
+                            onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
+                            onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
+                            onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                        };
+                        const incidentHistoryState = {
+                            userDisplayName: activeUserDisplayName || '',
+                            userEmail: activeUserEmail || '',
+                            userRole: effectiveRole
+                        };
+                        const incidentHistoryActions = {
+                            setIsLoading: (loading) => this.setState({ loading })
+                        };
                         switch (this.state.selectedTabKey) {
                             case 'Dashboard':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_19__.Dashboard, { items: isAdmin || isManager ? items : myAssets, requests: isAdmin || isManager ? this.state.requests : myRequests, isAdmin: isAdmin, isInventoryManager: isManager, onNavigate: (key) => this.setState({ selectedTabKey: key }) }));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
                             case 'MyWorkspace':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { "aria-label": "My Workspace Tabs" },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Assets" },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Requests" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                             case 'Notifications':
                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_21__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
                             case 'IncidentHistory':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Incident History")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_23__.IncidentHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
+                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                             case 'Inventory':
                                 return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -3946,18 +4279,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage your organizational assets efficiently within the SharePoint Framework."),
                                     this.state.loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading inventory...")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
                             case 'Approvals':
                                 return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Pie, { data: {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
                                                     labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                         const status = req.status || 'Pending';
                                                         acc[status] = (acc[status] || 0) + 1;
@@ -4007,7 +4340,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                             case 'AssetReturns':
                                 return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -4016,7 +4349,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Review and complete employee asset return requests, and verify physical hardware check-ins."),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__.ReturnRequestList, { items: this.state.returnRequests, isAdmin: isAdmin, isManager: isManager, onUpdateStatus: this._onUpdateReturnRequestStatus, loading: this.state.returnRequestsLoading }))) : null;
                             case 'EventStream':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventStream__WEBPACK_IMPORTED_MODULE_10__.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName })) : null;
+                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventStream__WEBPACK_IMPORTED_MODULE_10__.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, refreshTrigger: this.state.auditLogsRefreshTrigger })) : null;
                             case 'Users':
                                 return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -4025,13 +4358,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
                                                 const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
                                                 window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                                             } })),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: this.state.employees.map(emp => {
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
                                                 const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                 const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                 const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -4062,13 +4395,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                         } }, item.assignedAssets))
                                                 },
                                                 { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                 if (!rowProps)
                                                     return null;
                                                 const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                 return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_42__.DetailsRow, { ...rowProps })),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
                                                     isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                             "Assets assigned to ",
@@ -4079,392 +4412,31 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Employee Asset Tracking")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_20__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_19__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
                             case 'Reports':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader, style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Reporting & Insights"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Interactive dashboards, live graphs, status analysis, and exporter module."))),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { selectedKey: this.state.reportsSelectedTab, onLinkClick: (item) => this.setState({ reportsSelectedTab: item ? item.props.itemKey || 'insights' : 'insights' }), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Visual Insights", itemKey: "insights" }),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Detailed Reports", itemKey: "detailed" }),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Warranty Expiry", itemKey: "expiry" })),
-                                    this.state.reportsSelectedTab === 'insights' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 24 } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' } }, "TOTAL INVENTORY ASSETS"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' } }, items.length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' } }, "ASSETS CURRENTLY ASSIGNED"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' } }, "UTILIZATION RATE"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' } },
-                                                    items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0,
-                                                    "%")),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' } }, "TOTAL APPROVAL REQUESTS"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' } }, this.state.requests.length))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Status Distribution"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Pie, { data: {
-                                                            labels: ['In Stock', 'Assigned', 'Pending Return', 'Under Maintenance'],
-                                                            datasets: [{
-                                                                    data: [
-                                                                        items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
-                                                                        items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
-                                                                        items.filter(i => i.status === 'Pending Return').length,
-                                                                        items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
-                                                                    ],
-                                                                    backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
-                                                                }]
-                                                        }, options: {
-                                                            responsive: true,
-                                                            maintainAspectRatio: false,
-                                                            plugins: { legend: { display: false } }
-                                                        } })),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "In Stock"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "Assigned"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "Pending Return"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "Maintenance"))),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Asset Type Distribution"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } }, (() => {
-                                                    const typeCounts = {};
-                                                    items.forEach(i => {
-                                                        const type = i.assetType || "Other";
-                                                        typeCounts[type] = (typeCounts[type] || 0) + 1;
-                                                    });
-                                                    const labels = Object.keys(typeCounts);
-                                                    const data = Object.keys(typeCounts).map(key => typeCounts[key]);
-                                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Bar, { data: {
-                                                            labels,
-                                                            datasets: [{
-                                                                    label: 'Assets Count',
-                                                                    data,
-                                                                    backgroundColor: '#1f77b4',
-                                                                    borderRadius: 4
-                                                                }]
-                                                        }, options: {
-                                                            responsive: true,
-                                                            maintainAspectRatio: false,
-                                                            plugins: { legend: { display: false } },
-                                                            scales: {
-                                                                y: { beginAtZero: true, ticks: { precision: 0 } }
-                                                            }
-                                                        } }));
-                                                })())),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Aging Analysis"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } }, (() => {
-                                                    const now = new Date();
-                                                    const aging = items.reduce((acc, item) => {
-                                                        if (!item.purchaseDate) {
-                                                            acc.unknown++;
-                                                            return acc;
-                                                        }
-                                                        const pd = new Date(item.purchaseDate);
-                                                        const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                                                        if (diffYears < 1)
-                                                            acc.under1++;
-                                                        else if (diffYears <= 3)
-                                                            acc.between1and3++;
-                                                        else
-                                                            acc.over3++;
-                                                        return acc;
-                                                    }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-                                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Doughnut, { data: {
-                                                            labels: ['< 1 Year (New)', '1-3 Years', '> 3 Years (Aging)', 'Unknown'],
-                                                            datasets: [{
-                                                                    data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
-                                                                    backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
-                                                                }]
-                                                        }, options: {
-                                                            responsive: true,
-                                                            maintainAspectRatio: false,
-                                                            plugins: { legend: { display: false } }
-                                                        } }));
-                                                })()),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "< 1 Year"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "1-3 Years"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "> 3 Years"),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                                                        "Unknown"))),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Request Approval Trends"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Bar, { data: {
-                                                            labels: ['Approved', 'Declined/Rejected', 'Pending'],
-                                                            datasets: [{
-                                                                    data: [
-                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
-                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
-                                                                        this.state.requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
-                                                                    ],
-                                                                    backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
-                                                                }]
-                                                        }, options: {
-                                                            responsive: true,
-                                                            maintainAspectRatio: false,
-                                                            plugins: { legend: { display: false } },
-                                                            scales: {
-                                                                y: { beginAtZero: true, ticks: { precision: 0 } }
-                                                            }
-                                                        } })))))),
-                                    this.state.reportsSelectedTab === 'detailed' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Filterable Asset Inventory"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: () => {
-                                                        const filtered = items.filter(i => {
-                                                            const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
-                                                            const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
-                                                            return typeMatch && statusMatch;
-                                                        });
-                                                        this._exportDetailedReportToExcel(filtered);
-                                                    }, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: () => {
-                                                        const filtered = items.filter(i => {
-                                                            const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
-                                                            const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
-                                                            return typeMatch && statusMatch;
-                                                        });
-                                                        this._exportDetailedReportToPDF(filtered);
-                                                    }, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { label: "Asset Type", selectedKey: this.state.reportsAssetTypeFilter, options: [
-                                                        { key: 'All', text: 'All Types' },
-                                                        ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
-                                                    ], onChange: (_, opt) => this.setState({ reportsAssetTypeFilter: opt ? opt.key : 'All' }) })),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { label: "Asset Status", selectedKey: this.state.reportsStatusFilter, options: [
-                                                        { key: 'All', text: 'All Statuses' },
-                                                        ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
-                                                    ], onChange: (_, opt) => this.setState({ reportsStatusFilter: opt ? opt.key : 'All' }) }))),
-                                        (() => {
-                                            const filtered = items.filter(i => {
-                                                const typeMatch = this.state.reportsAssetTypeFilter === 'All' || i.assetType === this.state.reportsAssetTypeFilter;
-                                                const statusMatch = this.state.reportsStatusFilter === 'All' || i.status === this.state.reportsStatusFilter;
-                                                return typeMatch && statusMatch;
-                                            });
-                                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: filtered, columns: [
-                                                    { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
-                                                    { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
-                                                    { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
-                                                    { key: 'col4', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-                                                    { key: 'col5', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9ca3af', fontStyle: 'italic' } }, "Unassigned") }
-                                                ], setKey: "detailedReportList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none }));
-                                        })())),
-                                    this.state.reportsSelectedTab === 'expiry' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Warranty Expiry Report"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: this._exportWarrantyReportToExcel, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: this._exportWarrantyReportToPDF, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px', display: 'flex', gap: '20px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Assets Count"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.length)),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Assets with Warranty Data"),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.filter(i => i.warrantyExpiry).length))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: items, columns: [
-                                                { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
-                                                { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                                                { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
-                                                { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-                                                {
-                                                    key: 'col5',
-                                                    name: 'Warranty Expiry Date',
-                                                    fieldName: 'warrantyExpiry',
-                                                    minWidth: 140,
-                                                    maxWidth: 200,
-                                                    isResizable: true,
-                                                    onRender: (item) => {
-                                                        const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
-                                                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                                                color: isExpired ? '#ef4444' : '#166534',
-                                                                fontWeight: 600,
-                                                                backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
-                                                                padding: '2px 8px',
-                                                                borderRadius: '9999px',
-                                                                fontSize: '0.75rem',
-                                                                display: 'inline-block'
-                                                            } },
-                                                            item.warrantyExpiry || 'N/A',
-                                                            " ",
-                                                            isExpired ? '(Expired)' : '(Active)'));
-                                                    }
-                                                }
-                                            ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none }))))) : null;
-                            case 'Config':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Configuration & List Management"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Admin-only control center for list syncing, database connection tests, role diagnostics, and list schemas.")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { selectedKey: this.state.configSelectedTab, onLinkClick: (item) => this.setState({ configSelectedTab: item ? item.props.itemKey || 'operations' : 'operations' }), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Sync Operations", itemKey: "operations" }),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "List Connections", itemKey: "connections" }),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "RBAC Site Groups", itemKey: "rbac" }),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Required Schema Guides", itemKey: "schema" })),
-                                    this.state.configSelectedTab === 'operations' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px', color: '#111827', marginTop: 0 } }, "Mapping List Management & Sync"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' } },
-                                            "Ensure all assets currently assigned to active employees are properly mapped to the SharePoint ",
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Mapping List"),
-                                            ". Use the buttons below to perform a manual synchronization check or diagnose the list's database schema."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: this.state.syncInProgress ? "Processing..." : "Sync Assigned Assets", iconProps: { iconName: 'Sync' }, onClick: this._onSyncAssignedAssets, disabled: this.state.syncInProgress }),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: this.state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics", iconProps: { iconName: 'Database' }, onClick: this._onRunDiagnostics, disabled: this.state.syncInProgress, styles: {
-                                                    root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
-                                                    rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
-                                                } })),
-                                        this.state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: this.state.syncMessageType, onDismiss: () => this.setState({ syncMessage: undefined }), styles: { root: { marginBottom: '15px', borderRadius: '6px' } } }, this.state.syncMessage)),
-                                        this.state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' } }, "Diagnostic Log Output:"),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: this.state.diagnosticInfo, rows: 10, style: {
-                                                    width: '100%',
-                                                    fontFamily: 'monospace',
-                                                    fontSize: '0.82rem',
-                                                    padding: '10px',
-                                                    backgroundColor: '#f3f2f1',
-                                                    border: '1px solid #e1dfdd',
-                                                    borderRadius: '4px',
-                                                    resize: 'vertical',
-                                                    color: '#323130'
-                                                } }))))),
-                                    this.state.configSelectedTab === 'connections' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "SharePoint List Connections"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Verify the read/write database connection status of the required SharePoint storage lists."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 16 } }, [
-                                            { title: 'Inventory List', internal: 'InventoryList', desc: 'Stores the master catalog of all physical assets and hardware.' },
-                                            { title: 'Request List', internal: 'RequestList', desc: 'Manages employee request tickets, workflow histories, and assignment queues.' },
-                                            { title: 'Asset Return Request List', internal: 'Asset Return Request List', desc: 'Handles asset return forms, check-in inspections, and manager validations.' },
-                                            { title: 'Mapping List', internal: 'Mapping List', desc: 'Maintains live active assignment mapping for automated clearing checks.' },
-                                            { title: 'System Audit Log', internal: 'AuditLogList', desc: 'Tracks historical change logs, lifecycle states, and admin operations.' }
-                                        ].map(list => {
-                                            const status = this.state.connectionStatuses[list.title];
-                                            const errorMsg = this.state.connectionErrorMessages[list.title];
-                                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: list.title, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 300px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { margin: '0 0 4px 0', fontSize: '0.95rem', fontWeight: 600, color: '#111827' } },
-                                                        list.title,
-                                                        " ",
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#6b7280', fontSize: '0.8rem' } },
-                                                            "(",
-                                                            list.internal,
-                                                            ")")),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.82rem', color: '#4b5563' } }, list.desc),
-                                                    errorMsg && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '8px', color: '#d13438', fontSize: '0.78rem', backgroundColor: '#fde7e9', padding: '6px 10px', borderRadius: '4px' } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
-                                                        " ",
-                                                        errorMsg))),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '12px' } },
-                                                    status === 'testing' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#0078d4', display: 'flex', alignItems: 'center', gap: '6px' } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "ProgressLoopOuter", style: { animation: 'spin 1.5s linear infinite' } }),
-                                                        " Verifying...")),
-                                                    status === 'connected' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                                            color: '#166534',
-                                                            backgroundColor: '#dcfce7',
-                                                            padding: '4px 12px',
-                                                            borderRadius: '9999px',
-                                                            fontSize: '0.75rem',
-                                                            fontWeight: 600,
-                                                            display: 'inline-flex',
-                                                            alignItems: 'center',
-                                                            gap: '4px'
-                                                        } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "Completed" }),
-                                                        " Connected")),
-                                                    status === 'error' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                                            color: '#b91c1c',
-                                                            backgroundColor: '#fee2e2',
-                                                            padding: '4px 12px',
-                                                            borderRadius: '9999px',
-                                                            fontSize: '0.75rem',
-                                                            fontWeight: 600,
-                                                            display: 'inline-flex',
-                                                            alignItems: 'center',
-                                                            gap: '4px'
-                                                        } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "ErrorBadge" }),
-                                                        " Failed")),
-                                                    !status && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                                            color: '#4b5563',
-                                                            backgroundColor: '#f3f4f6',
-                                                            padding: '4px 12px',
-                                                            borderRadius: '9999px',
-                                                            fontSize: '0.75rem',
-                                                            fontWeight: 500
-                                                        } }, "Not Verified")),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: "Test Live", iconProps: { iconName: 'PlugConnected' }, onClick: () => this._testListConnection(list.title, list.internal), disabled: status === 'testing' }))));
-                                        })))),
-                                    this.state.configSelectedTab === 'rbac' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "Role Based Access Control (RBAC)"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Inspect user groups resolved from SharePoint for permission level verification."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 16 } }, [
-                                            { group: 'MSFT Owners', role: 'Admin', desc: 'Full administrative rights to modify assets, approve returns, and manage database connection setups.' },
-                                            { group: 'MSFT Members', role: 'Inventory Manager', desc: 'Write access to create items, process returns, assign assets, and view reports.' },
-                                            { group: 'MSFT Visitors', role: 'Inventory Employee', desc: 'Read-only access to available stocks and permission to request return tickets.' }
-                                        ].map(item => {
-                                            const isLoading = this.state.loadingGroupUsers[item.group];
-                                            const members = this.state.groupUsersList[item.group];
-                                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.group, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { margin: 0, fontSize: '1rem', fontWeight: 600, color: '#111827' } },
-                                                            item.group,
-                                                            " ",
-                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#0078d4', fontSize: '0.8rem', backgroundColor: '#deecf9', padding: '2px 8px', borderRadius: '4px', marginLeft: '6px', fontWeight: 600 } }, item.role)),
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#4b5563', display: 'block', marginTop: '4px' } }, item.desc)),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: isLoading ? "Loading..." : "View Members", iconProps: { iconName: 'People' }, onClick: () => this._loadGroupUsers(item.group), disabled: isLoading })),
-                                                members && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '12px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid rgba(128,128,128,0.1)' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.78rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '6px' } },
-                                                        "Group Members (",
-                                                        members.length,
-                                                        "):"),
-                                                    members.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' } }, "No members found in this group")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, members.map((m, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: idx, style: { backgroundColor: '#ffffff', border: '1px solid rgba(128,128,128,0.15)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.78rem', color: '#111827', fontWeight: 500 } }, m)))))))));
-                                        })))),
-                                    this.state.configSelectedTab === 'schema' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '5px', color: '#111827', marginTop: 0 } }, "Required List Schema (Developer Reference)"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px', marginTop: 0 } }, "Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginTop: '15px', marginBottom: '8px', color: '#374151' } },
-                                            "InventoryList ",
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Asset Database)")),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
-                                            "RequestList ",
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Approval Workflows)")),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
-                                            "Asset Return Request List ",
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Returns Handling)")),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'AssetID', 'AssetName', 'SerialNumber', 'Employee', 'ReasonforReturn', 'ProposedCondition', 'RequestStatus', 'ManagerComments'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
-                                            "Mapping List ",
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Custody Tracking)")),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, ['Title', 'SerialNumber', 'Employe', 'EmployeeID', 'AssetName', 'AssignmentID'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))))))) : null;
+                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
+                            case 'Config': {
+                                const configState = {
+                                    configSelectedTab: this.state.configSelectedTab,
+                                    syncInProgress: this.state.syncInProgress,
+                                    syncMessage: this.state.syncMessage,
+                                    syncMessageType: this.state.syncMessageType,
+                                    diagnosticInfo: this.state.diagnosticInfo,
+                                    connectionStatuses: this.state.connectionStatuses,
+                                    connectionErrorMessages: this.state.connectionErrorMessages,
+                                    loadingGroupUsers: this.state.loadingGroupUsers,
+                                    groupUsersList: this.state.groupUsersList
+                                };
+                                const configActions = {
+                                    onSyncAssignedAssets: this._onSyncAssignedAssets,
+                                    onRunDiagnostics: this._onRunDiagnostics,
+                                    onTestListConnection: this._testListConnection,
+                                    onLoadGroupUsers: this._loadGroupUsers,
+                                    onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
+                                    onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
+                                };
+                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ConfigPage, { state: configState, actions: configActions })) : null;
+                            }
                             default:
                                 return null;
                         }
@@ -4494,18 +4466,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 29425);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+
 
 
 
@@ -4654,7 +4628,7 @@ const MyAssignedAssetsView = (props) => {
             healthRating = 'Unusable / Broken';
             healthIcon = 'Warning';
         }
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '20px' } },
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '20px' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' } }, "Lifecycle & Health Report"),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Asset Lifecycle Age"),
@@ -4670,25 +4644,25 @@ const MyAssignedAssetsView = (props) => {
                         " months remaining).")))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#64748b' } }, "Purchase date is not registered. Age cannot be calculated."))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Warranty Coverage"),
-                asset.warrantyExpiry ? (w.isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                asset.warrantyExpiry ? (w.isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                     " Coverage ended on ",
                     asset.warrantyExpiry,
-                    ". Future repairs will be billed to the departmental cost center.")) : w.isExpiringSoon ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                    ". Future repairs will be billed to the departmental cost center.")) : w.isExpiringSoon ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expiring Soon:"),
                     " Expires on ",
                     asset.warrantyExpiry,
-                    ". Please plan hardware checks before expiry.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                    ". Please plan hardware checks before expiry.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
                     " Fully protected until ",
                     asset.warrantyExpiry,
-                    "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                    "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                     " No warranty expiration record exists for this item."))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Physical Condition"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                         "Health Rating: ",
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } },
@@ -4737,27 +4711,21 @@ const MyAssignedAssetsView = (props) => {
                 padding: '0 0 10px 0'
             } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.TextField, { placeholder: "Search by asset name, type, serial number...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { placeholder: "Search by asset name, type, serial number...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { options: typeOptions, selectedKey: selectedType, onChange: (e, option) => setSelectedType(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: typeOptions, selectedKey: selectedType, onChange: (e, option) => setSelectedType(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { options: [
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
                         { key: 'All', text: 'All Conditions' },
-                        { key: 'Good', text: 'Good' },
-                        { key: 'Fair', text: 'Fair' },
-                        { key: 'Poor', text: 'Poor' },
-                        { key: 'Damaged', text: 'Damaged' }
+                        ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_CONDITION_OPTIONS
                     ], selectedKey: selectedCondition, onChange: (e, option) => setSelectedCondition(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { options: [
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
                         { key: 'All', text: 'All Coverage' },
-                        { key: 'Active', text: 'Active' },
-                        { key: 'Expiring Soon', text: 'Expiring Soon' },
-                        { key: 'Expired', text: 'Expired' },
-                        { key: 'Unknown', text: 'Unknown' }
+                        ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.WARRANTY_STATUS_OPTIONS
                     ], selectedKey: selectedWarranty, onChange: (e, option) => setSelectedWarranty(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
                         setSearchQuery('');
                         setSelectedType('All');
                         setSelectedCondition('All');
@@ -4806,7 +4774,7 @@ const MyAssignedAssetsView = (props) => {
                         justifyContent: 'space-between'
                     } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: getTypeIcon(item.assetType), style: { fontSize: '14px', color: 'var(--text-muted)' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: getTypeIcon(item.assetType), style: { fontSize: '14px', color: 'var(--text-muted)' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.assetName || item.title),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } },
@@ -4863,7 +4831,7 @@ const MyAssignedAssetsView = (props) => {
                             color: w.isExpired ? '#c5221f' : '#b06000',
                             marginTop: 'auto'
                         } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: w.isExpired ? "ShieldAlert" : "Warning", style: { fontSize: '10px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: w.isExpired ? "ShieldAlert" : "Warning", style: { fontSize: '10px' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
                                 "Warranty ",
@@ -4872,7 +4840,7 @@ const MyAssignedAssetsView = (props) => {
                             " ",
                             w.text))),
                     item.warrantyExpiry && !w.isExpired && !w.isExpiringSoon && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.72rem', color: '#137333', display: 'flex', alignItems: 'center', gap: '3px', marginTop: 'auto' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "VerifiedBrand", style: { fontSize: '10px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "VerifiedBrand", style: { fontSize: '10px' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                             "Warranty Active (Expires: ",
                             new Date(item.warrantyExpiry).toLocaleDateString(),
@@ -4884,11 +4852,11 @@ const MyAssignedAssetsView = (props) => {
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
                         alignItems: 'center'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Details", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Details", onClick: () => {
                             setSelectedAsset(item);
                             setIsPanelOpen(true);
                         }, style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
                     isPendingReturn ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
                             backgroundColor: '#ffe8d6',
                             color: '#a63e00',
@@ -4905,7 +4873,7 @@ const MyAssignedAssetsView = (props) => {
                             padding: '2px 6px',
                             borderRadius: '4px',
                             marginLeft: 'auto'
-                        } }, "Approved")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Return", onClick: () => onReturnAsset(item), style: {
+                        } }, "Approved")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Return", onClick: () => onReturnAsset(item), style: {
                             height: '24px',
                             padding: '0 6px',
                             fontSize: '0.72rem',
@@ -4921,13 +4889,13 @@ const MyAssignedAssetsView = (props) => {
                 borderRadius: '6px',
                 border: '1px solid rgba(0, 0, 0, 0.08)'
             } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Assigned Assets Found"),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))),
-        selectedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Panel, { isOpen: isPanelOpen, onDismiss: () => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Assigned Assets Found"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))),
+        selectedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Panel, { isOpen: isPanelOpen, onDismiss: () => {
                 setIsPanelOpen(false);
                 setSelectedAsset(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
+            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         display: 'grid',
@@ -4959,18 +4927,18 @@ const MyAssignedAssetsView = (props) => {
                         " ",
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedAsset.title))),
                 renderLifecycleAnalysis(selectedAsset),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PrimaryButton, { text: "Report Incident", onClick: () => {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.PrimaryButton, { text: "Report Incident", onClick: () => {
                             setIsPanelOpen(false);
                             onRaiseIncident(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'AlertSolid' } }),
-                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Request Return", onClick: () => {
+                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Request Return", onClick: () => {
                             setIsPanelOpen(false);
                             onReturnAsset(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'ReturnToSession' } })),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Close", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Close", onClick: () => {
                             setIsPanelOpen(false);
                             setSelectedAsset(null);
                         } })))))));
@@ -4992,17 +4960,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 21314);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+
 
 
 
@@ -5051,9 +5021,9 @@ const MyRequestsView = (props) => {
         let completedCount = 0;
         returnRequests.forEach(r => {
             const status = r.status || 'Pending';
-            if (status === 'Pending')
+            if (status === 'Pending' || status === 'Pending Manager Approval')
                 pendingCount++;
-            else if (status === 'Approved')
+            else if (status === 'Approved' || status === 'Pending Admin Verification')
                 approvedCount++;
             else if (status === 'Rejected')
                 rejectedCount++;
@@ -5091,15 +5061,22 @@ const MyRequestsView = (props) => {
                 (r.serialNumber || '').toLowerCase().includes(normQuery) ||
                 (r.returnReason || '').toLowerCase().includes(normQuery) ||
                 (r.id || '').toLowerCase().includes(normQuery);
-            const matchesStatus = returnSelectedStatus === 'All' || r.status === returnSelectedStatus;
+            const matchesStatus = returnSelectedStatus === 'All' ||
+                r.status === returnSelectedStatus ||
+                (returnSelectedStatus === 'Pending' && (r.status === 'Pending Manager Approval' || r.status === 'Pending')) ||
+                (returnSelectedStatus === 'Approved' && (r.status === 'Pending Admin Verification' || r.status === 'Approved'));
             return matchesSearch && matchesStatus;
         });
     }, [returnRequests, returnSearchQuery, returnSelectedStatus]);
     // Return status badge styles
     const getReturnStatusStyle = (status) => {
         switch (status) {
-            case 'Pending': return { bg: '#fff8e6', color: '#b06000' };
-            case 'Approved': return { bg: '#e8f0fe', color: '#1558d6' };
+            case 'Pending':
+            case 'Pending Manager Approval':
+                return { bg: '#fff8e6', color: '#b06000' };
+            case 'Approved':
+            case 'Pending Admin Verification':
+                return { bg: '#e8f0fe', color: '#1558d6' };
             case 'Rejected': return { bg: '#fce8e6', color: '#c5221f' };
             case 'Completed': return { bg: '#e6f4ea', color: '#137333' };
             default: return { bg: '#f1f3f4', color: '#5f6368' };
@@ -5107,16 +5084,20 @@ const MyRequestsView = (props) => {
     };
     const getReturnStatusIcon = (status) => {
         switch (status) {
-            case 'Pending': return 'Clock';
-            case 'Approved': return 'CompletedSolid';
+            case 'Pending':
+            case 'Pending Manager Approval':
+                return 'Clock';
+            case 'Approved':
+            case 'Pending Admin Verification':
+                return 'CompletedSolid';
             case 'Rejected': return 'ErrorBadge';
             case 'Completed': return 'CheckMark';
             default: return 'Info';
         }
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Pivot, { "aria-label": "My Requests" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Asset Requests", itemIcon: "Send", itemCount: metrics.total },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Pivot, { "aria-label": "My Requests" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: "Asset Requests", itemIcon: "Send", itemCount: metrics.total },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                             display: 'flex',
@@ -5142,23 +5123,19 @@ const MyRequestsView = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.declined))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.TextField, { placeholder: "Search by Request ID, asset type, reason...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.TextField, { placeholder: "Search by Request ID, asset type, reason...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { options: [
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { options: [
                                     { key: 'All', text: 'All Statuses' },
-                                    { key: 'Pending', text: 'Pending' },
-                                    { key: 'Approved', text: 'Approved' },
-                                    { key: 'Declined', text: 'Declined' }
+                                    ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: selectedStatus, onChange: (e, option) => setSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { options: [
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { options: [
                                     { key: 'All', text: 'All Priorities' },
-                                    { key: 'Low', text: 'Low' },
-                                    { key: 'Medium', text: 'Medium' },
-                                    { key: 'High', text: 'High' }
+                                    ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_REQUEST_PRIORITY_OPTIONS
                                 ], selectedKey: selectedPriority, onChange: (e, option) => setSelectedPriority(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
                                     setSearchQuery('');
                                     setSelectedStatus('All');
                                     setSelectedPriority('All');
@@ -5243,12 +5220,12 @@ const MyRequestsView = (props) => {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: adminAllocationColor, fontWeight: 500 } }, adminAllocationText),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: priorityBg, color: priorityColor, padding: '2px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 500 } }, priority))),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "View Details", onClick: () => { setSelectedRequest(item); setIsPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: "View Details", onClick: () => { setSelectedRequest(item); setIsPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
                     }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Asset Requests Found"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Return Requests", itemIcon: "ReturnToSession", itemCount: returnMetrics.total },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Asset Requests Found"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: "Return Requests", itemIcon: "ReturnToSession", itemCount: returnMetrics.total },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                             display: 'flex',
@@ -5278,17 +5255,14 @@ const MyRequestsView = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.rejected > 0 ? '#dc2626' : 'var(--text-muted)' } }, returnMetrics.rejected))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.TextField, { placeholder: "Search by asset name, serial number, reason...", value: returnSearchQuery, onChange: (e, val) => setReturnSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.TextField, { placeholder: "Search by asset name, serial number, reason...", value: returnSearchQuery, onChange: (e, val) => setReturnSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '150px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { options: [
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { options: [
                                     { key: 'All', text: 'All Statuses' },
-                                    { key: 'Pending', text: 'Pending' },
-                                    { key: 'Approved', text: 'Approved' },
-                                    { key: 'Rejected', text: 'Rejected' },
-                                    { key: 'Completed', text: 'Completed' }
+                                    ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.RETURN_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: returnSelectedStatus, onChange: (e, option) => setReturnSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
                                     setReturnSearchQuery('');
                                     setReturnSelectedStatus('All');
                                 }, style: { height: '30px', border: 'none', background: 'transparent' } }))),
@@ -5327,7 +5301,7 @@ const MyRequestsView = (props) => {
                             }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].assetCardHover },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '14px 14px 6px 14px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'flex-start' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReturnToSession", style: { fontSize: '14px', color: 'var(--text-muted)', marginTop: '2px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "ReturnToSession", style: { fontSize: '14px', color: 'var(--text-muted)', marginTop: '2px' } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.assetName),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } },
@@ -5336,7 +5310,7 @@ const MyRequestsView = (props) => {
                                             " \u2022 Submitted: ",
                                             item.requestDate))),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: statusBg, color: statusColor, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: statusIcon, style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: statusIcon, style: { fontSize: '10px' } }),
                                     item.status)),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
                                 item.returnReason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } },
@@ -5360,20 +5334,20 @@ const MyRequestsView = (props) => {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', marginBottom: '2px', color: 'var(--text-main)' } }, "Manager Notes:"),
                                     item.managerComment)),
                                 item.status === 'Pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#b06000' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Clock", style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "Clock", style: { fontSize: '10px' } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Awaiting manager review"))),
                                 item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#1558d6' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Info", style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "Info", style: { fontSize: '10px' } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Please physically hand over the asset to the IT team")))),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "View Details", onClick: () => { setSelectedReturnRequest(item); setIsReturnPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: "View Details", onClick: () => { setSelectedReturnRequest(item); setIsReturnPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
                     }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReturnToSession", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Return Requests Found"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, returnRequests.length === 0
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "ReturnToSession", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Return Requests Found"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, returnRequests.length === 0
                             ? 'You have not submitted any return requests yet. Use the "Return" button on an asset in My Assets.'
                             : 'Try adjusting your search query or filters.')))))),
-        selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: isPanelOpen, onDismiss: () => { setIsPanelOpen(false); setSelectedRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: `Request Details: ${selectedRequest.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
+        selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Panel, { isOpen: isPanelOpen, onDismiss: () => { setIsPanelOpen(false); setSelectedRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PanelType.medium, headerText: `Request Details: ${selectedRequest.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -5418,21 +5392,23 @@ const MyRequestsView = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Admin Allocation Status"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } }, selectedRequest.status === 'Approved' ? ((selectedRequest.assetStatus || '').toLowerCase().includes('approv') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#137333', fontWeight: 600 } }, "Asset Allocated & Dispatched \u2713")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b06000', fontWeight: 600 } }, "Pending physical asset allocation by system administrator"))) : selectedRequest.status === 'Declined' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#c5221f' } }, "Not applicable (Request was rejected by manager)")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', fontStyle: 'italic' } }, "Pending manager approval first")))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Close", onClick: () => { setIsPanelOpen(false); setSelectedRequest(null); } }))))),
-        selectedReturnRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: isReturnPanelOpen, onDismiss: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: `Return Request: ${selectedReturnRequest.assetName}`, closeButtonAriaLabel: "Close" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: "Close", onClick: () => { setIsPanelOpen(false); setSelectedRequest(null); } }))))),
+        selectedReturnRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Panel, { isOpen: isReturnPanelOpen, onDismiss: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PanelType.medium, headerText: `Return Request: ${selectedReturnRequest.assetName}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                 (() => {
                     const { bg, color } = getReturnStatusStyle(selectedReturnRequest.status);
                     const icon = getReturnStatusIcon(selectedReturnRequest.status);
                     const statusMessages = {
                         'Pending': 'Your return request has been submitted and is awaiting manager review.',
-                        'Approved': 'Your return has been approved. Please hand over the asset to the IT/Asset team.',
+                        'Pending Manager Approval': 'Your return request has been submitted and is awaiting manager review.',
+                        'Pending Admin Verification': 'Your return has been approved by your manager and is awaiting final IT Admin verification.',
+                        'Approved': 'Your return has been approved and completed. The asset has been checked in.',
                         'Rejected': 'Your return request was rejected. Please check the manager notes below.',
                         'Completed': 'The asset has been successfully checked in. This return is complete.'
                     };
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: bg, padding: '12px 15px', borderRadius: '8px', display: 'flex', gap: '10px', alignItems: 'flex-start' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: icon, style: { fontSize: '20px', color, marginTop: '2px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: icon, style: { fontSize: '20px', color, marginTop: '2px' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color, display: 'block', marginBottom: '2px' } }, selectedReturnRequest.status),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color } }, statusMessages[selectedReturnRequest.status] || ''))));
@@ -5472,18 +5448,17 @@ const MyRequestsView = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', fontWeight: 600 } }, "Return Workflow Progress"),
                     [
                         { label: 'Return Submitted', done: true },
-                        { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' },
-                        { label: 'Physical Asset Handover', done: selectedReturnRequest.status === 'Completed' },
-                        { label: 'Asset Checked In & Verified', done: selectedReturnRequest.status === 'Completed' }
+                        { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' && selectedReturnRequest.status !== 'Pending Manager Approval' },
+                        { label: 'Physical Asset Handover & Admin Verification', done: selectedReturnRequest.status === 'Completed' || selectedReturnRequest.status === 'Approved' }
                     ].map((step, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: idx, style: { display: 'flex', alignItems: 'center', gap: '10px', marginBottom: idx < 3 ? '8px' : 0, fontSize: '0.85rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                                 width: '20px', height: '20px', borderRadius: '50%', flexShrink: 0,
                                 backgroundColor: step.done ? '#16a34a' : '#e2e8f0',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center'
-                            } }, step.done && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CheckMark", style: { fontSize: '10px', color: '#ffffff' } })),
+                            } }, step.done && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "CheckMark", style: { fontSize: '10px', color: '#ffffff' } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: step.done ? '#166534' : '#94a3b8', fontWeight: step.done ? 600 : 400 } }, step.label))))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '10px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: "Close", onClick: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); } })))))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '10px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: "Close", onClick: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); } })))))));
 };
 
 
@@ -5674,15 +5649,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+
 
 
 const stackTokens = { childrenGap: 15 };
@@ -5732,14 +5709,7 @@ const RequestForm = (props) => {
     const dynamicAssetTypeOptions = uniqueAssetTypes.map(type => ({ key: type, text: type }));
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
-        : [
-            { key: 'Laptop', text: 'Laptop' },
-            { key: 'Monitor', text: 'Monitor' },
-            { key: 'Mouse', text: 'Mouse' },
-            { key: 'Keyboard', text: 'Keyboard' },
-            { key: 'Headset', text: 'Headset' },
-            { key: 'Other', text: 'Other' }
-        ];
+        : _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS;
     const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
     const onSave = () => {
         // Validate role: employees can only request for themselves
@@ -5778,10 +5748,10 @@ const RequestForm = (props) => {
             props.onClose();
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PanelType.custom, customWidth: "450px", headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Stack, { tokens: stackTokens },
-            isEmployee && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.info }, "You can only request assets for yourself. Contact your manager to request assets for others.")),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { label: isEmployee ? "Requester (You)" : "Requester (Employee)", selectedKey: selectedRequesterId, options: employeeOptions, onChange: (_, opt) => {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PanelType.custom, customWidth: "450px", headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: stackTokens },
+            isEmployee && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.info }, "You can only request assets for yourself. Contact your manager to request assets for others.")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: isEmployee ? "Requester (You)" : "Requester (Employee)", selectedKey: selectedRequesterId, options: employeeOptions, onChange: (_, opt) => {
                     const empId = opt?.key;
                     setSelectedRequesterId(empId);
                     const emp = allEmployees.find(e => e.id === empId);
@@ -5789,21 +5759,17 @@ const RequestForm = (props) => {
                         setEmployeeId(emp.id);
                     }
                 }, required: true, disabled: isEmployee && employeeOptions.length === 1 }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
                 }, required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { label: "Priority", selectedKey: priority, options: [
-                    { key: 'High', text: 'High' },
-                    { key: 'Medium', text: 'Medium' },
-                    { key: 'Low', text: 'Low' }
-                ], onChange: (_, opt) => setPriority(opt?.key), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Quantity", type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Reason for Request", multiline: true, rows: 3, value: reason, onChange: (_, val) => setReason(val || '') }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PrimaryButton, { text: "Submit Request", onClick: onSave, disabled: !isFormValid }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Cancel", onClick: props.onClose })))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Priority", selectedKey: priority, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Quantity", type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Reason for Request", multiline: true, rows: 3, value: reason, onChange: (_, val) => setReason(val || '') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: "Submit Request", onClick: onSave, disabled: !isFormValid }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Cancel", onClick: props.onClose })))));
 };
 
 
@@ -6175,13 +6141,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 27006);
-/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 18681);
-/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
-/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
-/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 27006);
+/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 18681);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 
 
 
@@ -6189,12 +6156,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const conditionOptions = [
-    { key: 'Good', text: 'Good (No visible damage, fully functional)' },
-    { key: 'Fair', text: 'Fair (Minor cosmetic wear, fully functional)' },
-    { key: 'Poor', text: 'Poor (Significant wear or partial issues)' },
-    { key: 'Damaged', text: 'Damaged (Broken, non-functional, physical damage)' }
-];
+
+const conditionOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.RETURN_CONDITION_OPTIONS;
 const stackTokens = { childrenGap: 15 };
 const ReturnAssetForm = (props) => {
     const { isOpen, onDismiss, asset, onSubmit } = props;
@@ -6224,16 +6187,16 @@ const ReturnAssetForm = (props) => {
             setSubmitting(false);
         }
     };
-    const onRenderFooterContent = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_1__.Stack, { horizontal: true, tokens: { childrenGap: 10 } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Submit Request", onClick: handleSubmit, disabled: submitting }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Cancel", onClick: onDismiss, disabled: submitting })));
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_4__.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_5__.PanelType.custom, customWidth: "450px", headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
+    const onRenderFooterContent = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 10 } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Submit Request", onClick: handleSubmit, disabled: submitting }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "Cancel", onClick: onDismiss, disabled: submitting })));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "450px", headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
             error && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '10px 15px', borderRadius: '4px', marginBottom: '15px', fontSize: '0.88rem' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
                 " ",
                 error)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_1__.Stack, { tokens: stackTokens },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: stackTokens },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f3f4f6', padding: '15px', borderRadius: '6px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 10px 0', fontSize: '0.95rem', color: '#1f2937' } }, "Asset Information"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.85rem' } },
@@ -6253,8 +6216,8 @@ const ReturnAssetForm = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Current Condition:"),
                             " ",
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, asset.condition || 'Good')))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { label: "Returned Asset Condition", selectedKey: condition, options: conditionOptions, onChange: (_, option) => setCondition(option ? option.key : 'Good'), required: true }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_7__.TextField, { label: "Reason for Return", placeholder: "Please detail why you are returning this asset (e.g. Upgrade received, hardware failure, contract ended...)", multiline: true, rows: 4, value: reason, onChange: (_, newValue) => setReason(newValue || ''), required: true, errorMessage: reason.trim() ? '' : error && !reason.trim() ? 'Reason is required' : '' })))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Returned Asset Condition", selectedKey: condition, options: conditionOptions, onChange: (_, option) => setCondition(option ? option.key : 'Good'), required: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Reason for Return", placeholder: "Please detail why you are returning this asset (e.g. Upgrade received, hardware failure, contract ended...)", multiline: true, rows: 4, value: reason, onChange: (_, newValue) => setReason(newValue || ''), required: true, errorMessage: reason.trim() ? '' : error && !reason.trim() ? 'Reason is required' : '' })))));
 };
 
 
@@ -6273,18 +6236,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
-/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
-/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
-/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
-/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 
 
 
@@ -6294,12 +6258,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const conditionOptions = [
-    { key: 'Good', text: 'Good (No damage, fully functional)' },
-    { key: 'Fair', text: 'Fair (Minor wear, fully functional)' },
-    { key: 'Poor', text: 'Poor (Significant wear, needs repair)' },
-    { key: 'Damaged', text: 'Damaged (Broken, non-functional)' }
-];
+
+const conditionOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.RETURN_CONDITION_OPTIONS;
 const ReturnRequestList = (props) => {
     const { items, isAdmin, isManager, onUpdateStatus, loading } = props;
     const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
@@ -6309,17 +6269,24 @@ const ReturnRequestList = (props) => {
     const [comment, setComment] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     const [finalCondition, setFinalCondition] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Good');
     const [submitting, setSubmitting] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-    // Search filter
+    // Search filter and role filter
     const filteredItems = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+        let roleFiltered = items;
+        if (isAdmin) {
+            roleFiltered = items.filter(item => item.status === 'Pending Admin Verification');
+        }
+        else if (isManager) {
+            roleFiltered = items.filter(item => item.status === 'Pending Manager Approval' || item.status === 'Pending');
+        }
         if (!searchQuery)
-            return items;
+            return roleFiltered;
         const q = searchQuery.toLowerCase();
-        return items.filter(item => (item.assetName || '').toLowerCase().includes(q) ||
+        return roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(q) ||
             (item.serialNumber || '').toLowerCase().includes(q) ||
             (item.requesterName || '').toLowerCase().includes(q) ||
             (item.status || '').toLowerCase().includes(q) ||
             (item.returnReason || '').toLowerCase().includes(q));
-    }, [items, searchQuery]);
+    }, [items, searchQuery, isAdmin, isManager]);
     const openDialog = (request, type) => {
         setActiveRequest(request);
         setActionType(type);
@@ -6335,20 +6302,20 @@ const ReturnRequestList = (props) => {
     const handleAction = async () => {
         if (!activeRequest || !actionType)
             return;
-        if (actionType === 'Reject' && !comment.trim()) {
-            alert('Please provide a reason/comment for rejection.');
+        if ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) {
+            alert(actionType === 'Reject' ? 'Please provide a reason/comment for rejection.' : 'Please provide verification comments.');
             return;
         }
         try {
             setSubmitting(true);
             if (actionType === 'Approve') {
-                await onUpdateStatus(activeRequest.id, 'Approved', comment || 'Approved by Manager');
+                await onUpdateStatus(activeRequest.id, 'Pending Admin Verification', comment || 'Approved by Manager', undefined, undefined, 'Approved', 'Not Started');
             }
             else if (actionType === 'Reject') {
-                await onUpdateStatus(activeRequest.id, 'Rejected', comment);
+                await onUpdateStatus(activeRequest.id, 'Rejected', comment, undefined, undefined, 'Rejected', 'Not Started');
             }
             else if (actionType === 'Complete') {
-                await onUpdateStatus(activeRequest.id, 'Completed', comment || 'Checked in & Verified', finalCondition);
+                await onUpdateStatus(activeRequest.id, 'Completed', activeRequest.managerComment || '', finalCondition, comment, 'Approved', 'Completed');
             }
             closeDialog();
         }
@@ -6362,8 +6329,10 @@ const ReturnRequestList = (props) => {
     const getStatusStyles = (status) => {
         switch (status) {
             case 'Pending':
+            case 'Pending Manager Approval':
                 return { bg: '#ffedd5', fg: '#9a3412' }; // Light orange
             case 'Approved':
+            case 'Pending Admin Verification':
                 return { bg: '#dbeafe', fg: '#1e40af' }; // Light blue
             case 'Rejected':
                 return { bg: '#fee2e2', fg: '#991b1b' }; // Light red
@@ -6419,33 +6388,35 @@ const ReturnRequestList = (props) => {
                 maxWidth: 260,
                 isResizable: true,
                 onRender: (item) => {
-                    const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
-                    if (item.status !== 'Pending') {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" },
+                    const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
+                    if (isManager && (item.status === 'Pending Manager Approval' || item.status === 'Pending')) {
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
                             viewButton,
-                            item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } }))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })));
                     }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
-                        viewButton,
-                        item.status === 'Pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })))));
+                    if (isAdmin && item.status === 'Pending Admin Verification') {
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                            viewButton,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } })));
+                    }
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
                 }
             }
         ] : [])
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_4__.SearchBox, { placeholder: "Search return requests...", value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), styles: { root: { maxWidth: 350 } } })),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading return requests...")) : filteredItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, "No return requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.SelectionMode.none })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_8__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
-                type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__.DialogType.normal,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_5__.SearchBox, { placeholder: "Search return requests...", value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), styles: { root: { maxWidth: 350 } } })),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading return requests...")) : filteredItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, "No return requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.SelectionMode.none })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
+                type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_10__.DialogType.normal,
                 title: actionType === 'Approve' ? 'Approve Return Request' :
                     actionType === 'Reject' ? 'Reject Return Request' :
                         actionType === 'Complete' ? 'Verify & Complete Return' : 'Return Request Details',
                 subText: activeRequest ? `Request by ${activeRequest.requesterName} for asset ${activeRequest.assetName}` : ''
             }, modalProps: { isBlocking: true } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
                 activeRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'rgba(128, 128, 128, 0.05)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -6496,13 +6467,124 @@ const ReturnRequestList = (props) => {
                                     fontWeight: 500,
                                     color: 'var(--text-main, #333333)'
                                 } }, activeRequest.managerComment)))))),
-                actionType === 'Complete' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
-                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' : 'Manager Comments / Verification Notes', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 'Add check-in details (e.g. checked power cords, verified serial number...)', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
-                        actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || (actionType === 'Reject' && !comment.trim()) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_1__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
+                actionType === 'Complete' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
+                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_12__.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' :
+                        actionType === 'Complete' ? 'Verification Comments (Required)' :
+                            'Manager Comments', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' :
+                        actionType === 'Complete' ? 'Please enter verification details (required)...' :
+                            'Add comments for the return request...', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' || actionType === 'Complete' }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_13__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
+                        actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
 };
+
+
+/***/ }),
+
+/***/ 82889:
+/*!*************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/constants/DropdownConstants.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ASSET_CONDITION_OPTIONS: () => (/* binding */ ASSET_CONDITION_OPTIONS),
+/* harmony export */   ASSET_REQUEST_PRIORITY_OPTIONS: () => (/* binding */ ASSET_REQUEST_PRIORITY_OPTIONS),
+/* harmony export */   ASSET_REQUEST_STATUS_OPTIONS: () => (/* binding */ ASSET_REQUEST_STATUS_OPTIONS),
+/* harmony export */   DEFAULT_ASSET_TYPE_OPTIONS: () => (/* binding */ DEFAULT_ASSET_TYPE_OPTIONS),
+/* harmony export */   INCIDENT_PRIORITY_OPTIONS: () => (/* binding */ INCIDENT_PRIORITY_OPTIONS),
+/* harmony export */   INCIDENT_STATUS_OPTIONS: () => (/* binding */ INCIDENT_STATUS_OPTIONS),
+/* harmony export */   INCIDENT_TYPE_OPTIONS: () => (/* binding */ INCIDENT_TYPE_OPTIONS),
+/* harmony export */   RETURN_CONDITION_OPTIONS: () => (/* binding */ RETURN_CONDITION_OPTIONS),
+/* harmony export */   RETURN_REQUEST_STATUS_OPTIONS: () => (/* binding */ RETURN_REQUEST_STATUS_OPTIONS),
+/* harmony export */   WARRANTY_STATUS_OPTIONS: () => (/* binding */ WARRANTY_STATUS_OPTIONS)
+/* harmony export */ });
+// ==========================================
+// Asset Options
+// ==========================================
+const DEFAULT_ASSET_TYPE_OPTIONS = [
+    { key: 'Laptop', text: 'Laptop' },
+    { key: 'Monitor', text: 'Monitor' },
+    { key: 'Mouse', text: 'Mouse' },
+    { key: 'Keyboard', text: 'Keyboard' },
+    { key: 'Headset', text: 'Headset' },
+    { key: 'Other', text: 'Other' }
+];
+const ASSET_CONDITION_OPTIONS = [
+    { key: 'New', text: 'New' },
+    { key: 'Good', text: 'Good' },
+    { key: 'Fair', text: 'Fair' },
+    { key: 'Poor', text: 'Poor' },
+    { key: 'Damaged', text: 'Damaged' }
+];
+// ==========================================
+// Incident Options
+// ==========================================
+const INCIDENT_TYPE_OPTIONS = [
+    { key: 'Hardware Issue', text: 'Hardware Issue' },
+    { key: 'Software Issue', text: 'Software Issue' },
+    { key: 'Network Issue', text: 'Network Issue' },
+    { key: 'Asset Damage', text: 'Asset Damage' },
+    { key: 'Replacement Request', text: 'Replacement Request' },
+    { key: 'Access Issue', text: 'Access Issue' },
+    { key: 'Login Issue', text: 'Login Issue' },
+    { key: 'Performance Issue', text: 'Performance Issue' },
+    { key: 'Email Issue', text: 'Email Issue' },
+    { key: 'Printer Issue', text: 'Printer Issue' },
+    { key: 'Other', text: 'Other' }
+];
+const INCIDENT_PRIORITY_OPTIONS = [
+    { key: 'Low', text: 'Low' },
+    { key: 'Medium', text: 'Medium' },
+    { key: 'High', text: 'High' },
+    { key: 'Critical', text: 'Critical' }
+];
+const INCIDENT_STATUS_OPTIONS = [
+    { key: 'Open', text: 'Open' },
+    { key: 'In Progress', text: 'In Progress' },
+    { key: 'Resolved', text: 'Resolved' },
+    { key: 'Closed', text: 'Closed' }
+];
+// ==========================================
+// Return Options
+// ==========================================
+const RETURN_CONDITION_OPTIONS = [
+    { key: 'Good', text: 'Good (No damage, fully functional)' },
+    { key: 'Fair', text: 'Fair (Minor wear, fully functional)' },
+    { key: 'Poor', text: 'Poor (Significant wear, needs repair)' },
+    { key: 'Damaged', text: 'Damaged (Broken, non-functional)' }
+];
+const RETURN_REQUEST_STATUS_OPTIONS = [
+    { key: 'Pending', text: 'Pending' },
+    { key: 'Approved', text: 'Approved' },
+    { key: 'Rejected', text: 'Rejected' },
+    { key: 'Completed', text: 'Completed' }
+];
+// ==========================================
+// Request Options
+// ==========================================
+const ASSET_REQUEST_PRIORITY_OPTIONS = [
+    { key: 'Low', text: 'Low' },
+    { key: 'Medium', text: 'Medium' },
+    { key: 'High', text: 'High' }
+];
+const ASSET_REQUEST_STATUS_OPTIONS = [
+    { key: 'Pending', text: 'Pending' },
+    { key: 'Approved', text: 'Approved' },
+    { key: 'Declined', text: 'Declined' }
+];
+// ==========================================
+// Warranty Options
+// ==========================================
+const WARRANTY_STATUS_OPTIONS = [
+    { key: 'Active', text: 'Active' },
+    { key: 'Expiring Soon', text: 'Expiring Soon' },
+    { key: 'Expired', text: 'Expired' },
+    { key: 'Unknown', text: 'Unknown' }
+];
 
 
 /***/ }),
@@ -6533,6 +6615,534 @@ const ASSET_CATEGORIES = [
     { key: 'Furniture', text: 'Furniture' },
     { key: 'Other', text: 'Other' }
 ];
+
+
+/***/ }),
+
+/***/ 43325:
+/*!**************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/ConfigPage.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ConfigPage: () => (/* binding */ ConfigPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+
+
+
+const ConfigPage = (props) => {
+    const { state, actions } = props;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Configuration & List Management"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Admin-only control center for list syncing, database connection tests, role diagnostics, and list schemas.")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Pivot, { selectedKey: state.configSelectedTab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'operations' : 'operations'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Sync Operations", itemKey: "operations" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "List Connections", itemKey: "connections" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "RBAC Site Groups", itemKey: "rbac" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Required Schema Guides", itemKey: "schema" })),
+        state.configSelectedTab === 'operations' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px', color: '#111827', marginTop: 0 } }, "Mapping List Management & Sync"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.88rem', color: '#4b5563', margin: '0 0 15px 0' } },
+                "Ensure all assets currently assigned to active employees are properly mapped to the SharePoint ",
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Mapping List"),
+                ". Use the buttons below to perform a manual synchronization check or diagnose the list's database schema."),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '15px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: state.syncInProgress ? "Processing..." : "Sync Assigned Assets", iconProps: { iconName: 'Sync' }, onClick: actions.onSyncAssignedAssets, disabled: state.syncInProgress }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: state.syncInProgress ? "Checking Schema..." : "Run Schema Diagnostics", iconProps: { iconName: 'Database' }, onClick: actions.onRunDiagnostics, disabled: state.syncInProgress, styles: {
+                        root: { backgroundColor: '#5c2d91', borderColor: '#5c2d91' },
+                        rootHovered: { backgroundColor: '#4b2278', borderColor: '#4b2278' }
+                    } })),
+            state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: state.syncMessageType, onDismiss: actions.onDismissSyncMessage, styles: { root: { marginBottom: '15px', borderRadius: '6px' } } }, state.syncMessage)),
+            state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '15px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#323130', marginBottom: '6px' } }, "Diagnostic Log Output:"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: state.diagnosticInfo, rows: 10, style: {
+                        width: '100%',
+                        fontFamily: 'monospace',
+                        fontSize: '0.82rem',
+                        padding: '10px',
+                        backgroundColor: '#f3f2f1',
+                        border: '1px solid #e1dfdd',
+                        borderRadius: '4px',
+                        resize: 'vertical',
+                        color: '#323130'
+                    } }))))),
+        state.configSelectedTab === 'connections' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "SharePoint List Connections"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Verify the read/write database connection status of the required SharePoint storage lists."),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 16 } }, [
+                { title: 'Inventory List', internal: 'InventoryList', desc: 'Stores the master catalog of all physical assets and hardware.' },
+                { title: 'Request List', internal: 'RequestList', desc: 'Manages employee request tickets, workflow histories, and assignment queues.' },
+                { title: 'Asset Return Request List', internal: 'Asset Return Request List', desc: 'Handles asset return forms, check-in inspections, and manager validations.' },
+                { title: 'Mapping List', internal: 'Mapping List', desc: 'Maintains live active assignment mapping for automated clearing checks.' },
+                { title: 'System Audit Log', internal: 'AuditLogList', desc: 'Tracks historical change logs, lifecycle states, and admin operations.' }
+            ].map(list => {
+                const connectionStatus = state.connectionStatuses[list.title];
+                const errorMsg = state.connectionErrorMessages[list.title];
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: list.title, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 300px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { margin: '0 0 4px 0', fontSize: '0.95rem', fontWeight: 600, color: '#111827' } },
+                            list.title,
+                            " ",
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#6b7280', fontSize: '0.8rem' } },
+                                "(",
+                                list.internal,
+                                ")")),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.82rem', color: '#4b5563' } }, list.desc),
+                        errorMsg && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '8px', color: '#d13438', fontSize: '0.78rem', backgroundColor: '#fde7e9', padding: '6px 10px', borderRadius: '4px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
+                            " ",
+                            errorMsg))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '12px' } },
+                        connectionStatus === 'testing' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#0078d4', display: 'flex', alignItems: 'center', gap: '6px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ProgressLoopOuter", style: { animation: 'spin 1.5s linear infinite' } }),
+                            " Verifying...")),
+                        connectionStatus === 'connected' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                color: '#166534',
+                                backgroundColor: '#dcfce7',
+                                padding: '4px 12px',
+                                borderRadius: '9999px',
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px'
+                            } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Completed" }),
+                            " Connected")),
+                        connectionStatus === 'error' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                color: '#b91c1c',
+                                backgroundColor: '#fee2e2',
+                                padding: '4px 12px',
+                                borderRadius: '9999px',
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px'
+                            } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ErrorBadge" }),
+                            " Failed")),
+                        !connectionStatus && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                color: '#4b5563',
+                                backgroundColor: '#f3f4f6',
+                                padding: '4px 12px',
+                                borderRadius: '9999px',
+                                fontSize: '0.75rem',
+                                fontWeight: 500
+                            } }, "Not Verified")),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: "Test Live", iconProps: { iconName: 'PlugConnected' }, onClick: () => actions.onTestListConnection(list.title, list.internal), disabled: connectionStatus === 'testing' }))));
+            })))),
+        state.configSelectedTab === 'rbac' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px', color: '#111827', marginTop: 0 } }, "Role Based Access Control (RBAC)"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px' } }, "Inspect user groups resolved from SharePoint for permission level verification."),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 16 } }, [
+                { group: 'MSFT Owners', role: 'Admin', desc: 'Full administrative rights to modify assets, approve returns, and manage database connection setups.' },
+                { group: 'MSFT Members', role: 'Inventory Manager', desc: 'Write access to create items, process returns, assign assets, and view reports.' },
+                { group: 'MSFT Visitors', role: 'Inventory Employee', desc: 'Read-only access to available stocks and permission to request return tickets.' }
+            ].map(item => {
+                const isLoading = state.loadingGroupUsers[item.group];
+                const members = state.groupUsersList[item.group];
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.group, style: { padding: '16px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.15)', backgroundColor: 'var(--surface-color, #ffffff)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { margin: 0, fontSize: '1rem', fontWeight: 600, color: '#111827' } },
+                                item.group,
+                                " ",
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#0078d4', fontSize: '0.8rem', backgroundColor: '#deecf9', padding: '2px 8px', borderRadius: '4px', marginLeft: '6px', fontWeight: 600 } }, item.role)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#4b5563', display: 'block', marginTop: '4px' } }, item.desc)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: isLoading ? "Loading..." : "View Members", iconProps: { iconName: 'People' }, onClick: () => actions.onLoadGroupUsers(item.group), disabled: isLoading })),
+                    members && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '12px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid rgba(128,128,128,0.1)' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.78rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: '6px' } },
+                            "Group Members (",
+                            members.length,
+                            "):"),
+                        members.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#6b7280', fontStyle: 'italic' } }, "No members found in this group")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, members.map((m, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: idx, style: { backgroundColor: '#ffffff', border: '1px solid rgba(128,128,128,0.15)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.78rem', color: '#111827', fontWeight: 500 } }, m)))))))));
+            })))),
+        state.configSelectedTab === 'schema' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '5px', color: '#111827', marginTop: 0 } }, "Required List Schema (Developer Reference)"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontSize: '0.85rem', color: '#6b7280', marginBottom: '20px', marginTop: 0 } }, "Ensure your SharePoint lists contain the following columns exactly as written to prevent validation errors."),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginTop: '15px', marginBottom: '8px', color: '#374151' } },
+                "InventoryList ",
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Asset Database)")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'AssetName', 'AssetType', 'SerialNumber', 'PurchaseDate', 'Status', 'Specifications', 'AssignedTo (Person/Group)'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                "RequestList ",
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Approval Workflows)")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'Employee', 'AssetType', 'Quantity', 'ReasonforRequest', 'RequestStatus', 'RequestKey', 'AssetStatus'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                "Asset Return Request List ",
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Returns Handling)")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '25px' } }, ['Title', 'AssetID', 'AssetName', 'SerialNumber', 'Employee', 'ReasonforReturn', 'ProposedCondition', 'RequestStatus', 'ManagerComments'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { style: { marginBottom: '8px', color: '#374151' } },
+                "Mapping List ",
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontWeight: 'normal', color: '#9ca3af' } }, "(Custody Tracking)")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } }, ['Title', 'SerialNumber', 'Employe', 'EmployeeID', 'AssetName', 'AssignmentID'].map(col => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col, style: { backgroundColor: '#f3f4f6', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', border: '1px solid #e5e7eb' } }, col))))))));
+};
+
+
+/***/ }),
+
+/***/ 76577:
+/*!*****************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/DashboardPage.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DashboardPage: () => (/* binding */ DashboardPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Dashboard */ 71422);
+
+
+const DashboardPage = (props) => {
+    const { state, actions } = props;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Dashboard__WEBPACK_IMPORTED_MODULE_1__.Dashboard, { items: state.items, requests: state.requests, isAdmin: state.isAdmin, isInventoryManager: state.isInventoryManager, onNavigate: actions.onNavigate }));
+};
+
+
+/***/ }),
+
+/***/ 34575:
+/*!***********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/IncidentHistoryPage.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   IncidentHistoryPage: () => (/* binding */ IncidentHistoryPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/IncidentHistory/IncidentHistory */ 27885);
+/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+
+
+
+const IncidentHistoryPage = (props) => {
+    const { state, actions, ...rest } = props;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].cardHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Incident History")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_1__.IncidentHistory, { ...rest, userDisplayName: state.userDisplayName, userEmail: state.userEmail, userRole: state.userRole, setIsLoading: actions.setIsLoading })));
+};
+
+
+/***/ }),
+
+/***/ 22882:
+/*!***************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/ReportsPage.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReportsPage: () => (/* binding */ ReportsPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+
+
+
+
+const ReportsPage = (props) => {
+    const { state, actions } = props;
+    const { items, requests } = state;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader, style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Reporting & Insights"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, "Interactive dashboards, live graphs, status analysis, and exporter module."))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Pivot, { selectedKey: state.reportsSelectedTab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'insights' : 'insights'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Visual Insights", itemKey: "insights" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Detailed Reports", itemKey: "detailed" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "Warranty Expiry", itemKey: "expiry" })),
+        state.reportsSelectedTab === 'insights' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: { childrenGap: 24 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' } }, "TOTAL INVENTORY ASSETS"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' } }, items.length)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' } }, "ASSETS CURRENTLY ASSIGNED"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' } }, "UTILIZATION RATE"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' } },
+                        items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0,
+                        "%")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' } }, "TOTAL APPROVAL REQUESTS"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' } }, requests.length))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Status Distribution"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__.Pie, { data: {
+                                labels: ['In Stock', 'Assigned', 'Pending Return', 'Under Maintenance'],
+                                datasets: [{
+                                        data: [
+                                            items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
+                                            items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
+                                            items.filter(i => i.status === 'Pending Return').length,
+                                            items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
+                                        ],
+                                        backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
+                                    }]
+                            }, options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { display: false } }
+                            } })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "In Stock"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "Assigned"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "Pending Return"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "Maintenance"))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Asset Type Distribution"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } }, (() => {
+                        const typeCounts = {};
+                        items.forEach(i => {
+                            const type = i.assetType || "Other";
+                            typeCounts[type] = (typeCounts[type] || 0) + 1;
+                        });
+                        const labels = Object.keys(typeCounts);
+                        const data = Object.keys(typeCounts).map(key => typeCounts[key]);
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__.Bar, { data: {
+                                labels,
+                                datasets: [{
+                                        label: 'Assets Count',
+                                        data,
+                                        backgroundColor: '#1f77b4',
+                                        borderRadius: 4
+                                    }]
+                            }, options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { display: false } },
+                                scales: {
+                                    y: { beginAtZero: true, ticks: { precision: 0 } }
+                                }
+                            } }));
+                    })())),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Aging Analysis"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } }, (() => {
+                        const now = new Date();
+                        const aging = items.reduce((acc, item) => {
+                            if (!item.purchaseDate) {
+                                acc.unknown++;
+                                return acc;
+                            }
+                            const pd = new Date(item.purchaseDate);
+                            const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
+                            if (diffYears < 1)
+                                acc.under1++;
+                            else if (diffYears <= 3)
+                                acc.between1and3++;
+                            else
+                                acc.over3++;
+                            return acc;
+                        }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__.Doughnut, { data: {
+                                labels: ['< 1 Year (New)', '1-3 Years', '> 3 Years (Aging)', 'Unknown'],
+                                datasets: [{
+                                        data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
+                                        backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
+                                    }]
+                            }, options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { display: false } }
+                            } }));
+                    })()),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "< 1 Year"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "1-3 Years"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "> 3 Years"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
+                            "Unknown"))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, "Request Approval Trends"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__.Bar, { data: {
+                                labels: ['Approved', 'Declined/Rejected', 'Pending'],
+                                datasets: [{
+                                        data: [
+                                            requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
+                                            requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
+                                            requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
+                                        ],
+                                        backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
+                                    }]
+                            }, options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { display: false } },
+                                scales: {
+                                    y: { beginAtZero: true, ticks: { precision: 0 } }
+                                }
+                            } })))))),
+        state.reportsSelectedTab === 'detailed' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Filterable Asset Inventory"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: () => {
+                            const filtered = items.filter(i => {
+                                const typeMatch = state.reportsAssetTypeFilter === 'All' || i.assetType === state.reportsAssetTypeFilter;
+                                const statusMatch = state.reportsStatusFilter === 'All' || i.status === state.reportsStatusFilter;
+                                return typeMatch && statusMatch;
+                            });
+                            actions.onExportDetailedReportToExcel(filtered);
+                        }, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: () => {
+                            const filtered = items.filter(i => {
+                                const typeMatch = state.reportsAssetTypeFilter === 'All' || i.assetType === state.reportsAssetTypeFilter;
+                                const statusMatch = state.reportsStatusFilter === 'All' || i.status === state.reportsStatusFilter;
+                                return typeMatch && statusMatch;
+                            });
+                            actions.onExportDetailedReportToPDF(filtered);
+                        }, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Asset Type", selectedKey: state.reportsAssetTypeFilter, options: [
+                            { key: 'All', text: 'All Types' },
+                            ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
+                        ], onChange: (_, opt) => actions.onAssetTypeFilterChange(opt ? opt.key : 'All') })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Asset Status", selectedKey: state.reportsStatusFilter, options: [
+                            { key: 'All', text: 'All Statuses' },
+                            ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
+                        ], onChange: (_, opt) => actions.onStatusFilterChange(opt ? opt.key : 'All') }))),
+            (() => {
+                const filtered = items.filter(i => {
+                    const typeMatch = state.reportsAssetTypeFilter === 'All' || i.assetType === state.reportsAssetTypeFilter;
+                    const statusMatch = state.reportsStatusFilter === 'All' || i.status === state.reportsStatusFilter;
+                    return typeMatch && statusMatch;
+                });
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DetailsList, { items: filtered, columns: [
+                        { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
+                        { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
+                        { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
+                        { key: 'col4', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
+                        { key: 'col5', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9ca3af', fontStyle: 'italic' } }, "Unassigned") }
+                    ], setKey: "detailedReportList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none }));
+            })())),
+        state.reportsSelectedTab === 'expiry' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, "Warranty Expiry Report"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Export Excel", iconProps: { iconName: 'ExcelDocument' }, onClick: actions.onExportWarrantyReportToExcel, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Export PDF", iconProps: { iconName: 'PDF' }, onClick: actions.onExportWarrantyReportToPDF, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px', display: 'flex', gap: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Total Assets Count"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.length)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, "Assets with Warranty Data"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.filter(i => i.warrantyExpiry).length))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DetailsList, { items: items, columns: [
+                    { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
+                    { key: 'col2', name: 'Asset Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
+                    { key: 'col3', name: 'Status', fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
+                    { key: 'col4', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
+                    {
+                        key: 'col5',
+                        name: 'Warranty Expiry Date',
+                        fieldName: 'warrantyExpiry',
+                        minWidth: 140,
+                        maxWidth: 200,
+                        isResizable: true,
+                        onRender: (item) => {
+                            const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
+                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: isExpired ? '#ef4444' : '#166534',
+                                    fontWeight: 600,
+                                    backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
+                                    padding: '2px 8px',
+                                    borderRadius: '9999px',
+                                    fontSize: '0.75rem',
+                                    display: 'inline-block'
+                                } },
+                                item.warrantyExpiry || 'N/A',
+                                " ",
+                                isExpired ? '(Expired)' : '(Active)'));
+                        }
+                    }
+                ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none })))));
+};
+
+
+/***/ }),
+
+/***/ 56330:
+/*!*********************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/index.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ConfigPage: () => (/* reexport safe */ _ConfigPage__WEBPACK_IMPORTED_MODULE_0__.ConfigPage),
+/* harmony export */   DashboardPage: () => (/* reexport safe */ _DashboardPage__WEBPACK_IMPORTED_MODULE_1__.DashboardPage),
+/* harmony export */   IncidentHistoryPage: () => (/* reexport safe */ _IncidentHistoryPage__WEBPACK_IMPORTED_MODULE_3__.IncidentHistoryPage),
+/* harmony export */   ReportsPage: () => (/* reexport safe */ _ReportsPage__WEBPACK_IMPORTED_MODULE_2__.ReportsPage)
+/* harmony export */ });
+/* harmony import */ var _ConfigPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfigPage */ 43325);
+/* harmony import */ var _DashboardPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPage */ 76577);
+/* harmony import */ var _ReportsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReportsPage */ 22882);
+/* harmony import */ var _IncidentHistoryPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IncidentHistoryPage */ 34575);
+
+
+
+
 
 
 /***/ }),
@@ -7683,6 +8293,512 @@ class AuditLogService {
         logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
         return logs;
     }
+    static async getFilteredAuditLogs(filters) {
+        const logs = [];
+        const processedEventLogIds = new Set();
+        const formatTimestamp = (isoString) => {
+            if (!isoString)
+                return new Date().toISOString().replace('T', ' ').substring(0, 19);
+            try {
+                const formatted = isoString.replace('T', ' ');
+                if (formatted.indexOf('.') > 0) {
+                    return formatted.substring(0, formatted.indexOf('.'));
+                }
+                if (formatted.indexOf('Z') > 0) {
+                    return formatted.substring(0, formatted.indexOf('Z'));
+                }
+                return formatted.substring(0, 19);
+            }
+            catch {
+                return isoString.replace('T', ' ').substring(0, 19);
+            }
+        };
+        // Calculate dates for OData server-side filter
+        let startIso;
+        let endIso;
+        const now = new Date();
+        if (filters.dateRangeType && filters.dateRangeType !== 'All') {
+            let start;
+            let end;
+            switch (filters.dateRangeType) {
+                case 'Today':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                    break;
+                case 'Yesterday':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+                    end = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1, 23, 59, 59, 999);
+                    break;
+                case 'Last7':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7);
+                    break;
+                case 'Last15':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 15);
+                    break;
+                case 'Last30':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
+                    break;
+                case 'Last60':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 60);
+                    break;
+                case 'Last90':
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 90);
+                    break;
+                case 'ThisWeek': {
+                    const day = now.getDay();
+                    start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - day);
+                    break;
+                }
+                case 'ThisMonth':
+                    start = new Date(now.getFullYear(), now.getMonth(), 1);
+                    break;
+                case 'Custom':
+                    if (filters.startDate) {
+                        const sd = new Date(filters.startDate);
+                        start = new Date(sd.getFullYear(), sd.getMonth(), sd.getDate());
+                    }
+                    if (filters.endDate) {
+                        const ed = new Date(filters.endDate);
+                        end = new Date(ed.getFullYear(), ed.getMonth(), ed.getDate(), 23, 59, 59, 999);
+                    }
+                    break;
+            }
+            startIso = start?.toISOString();
+            endIso = end?.toISOString();
+        }
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        // 1. Fetch from EventLogList (Primary list)
+        const shouldFetchEventLog = !filters.module ||
+            filters.module === 'All' ||
+            ['Inventory', 'Requests', 'Returns'].indexOf(filters.module) >= 0;
+        if (shouldFetchEventLog) {
+            try {
+                const eventLogList = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST);
+                const filterParts = [];
+                if (startIso) {
+                    filterParts.push(`Created ge '${startIso}'`);
+                }
+                if (endIso) {
+                    filterParts.push(`Created le '${endIso}'`);
+                }
+                // Server-side module filter
+                if (filters.module && filters.module !== 'All') {
+                    let moduleVal = filters.module;
+                    if (filters.module === 'Inventory')
+                        moduleVal = 'Asset';
+                    else if (filters.module === 'Requests')
+                        moduleVal = 'Request';
+                    if (filters.module !== 'Returns') {
+                        filterParts.push(`EntityType eq '${moduleVal}'`);
+                    }
+                }
+                // Server-side action filter
+                if (filters.action && filters.action !== 'All') {
+                    const actionMap = {
+                        'Created': ['Create', 'created'],
+                        'Updated': ['Update', 'updated'],
+                        'Deleted': ['Delete', 'deleted'],
+                        'Assigned': ['Activated', 'admin assigned'],
+                        'Admin Assigned': ['Activated', 'admin assigned'],
+                        'Returned': ['ReturnRequested', 'return requested'],
+                        'Approved': ['Approved', 'return approved', 'manager approved'],
+                        'Rejected': ['Rejected', 'return rejected', 'manager rejected'],
+                        'Manager Approved': ['Approved', 'manager approved'],
+                        'Manager Rejected': ['Rejected', 'manager rejected'],
+                        'Return Approved': ['ReturnApproved', 'return approved'],
+                        'Return Completed': ['ReturnCompleted', 'return completed'],
+                        'Return Rejected': ['ReturnRejected', 'return rejected'],
+                    };
+                    const mappedActions = actionMap[filters.action] || [filters.action];
+                    const actionFilters = mappedActions.map(act => `Action eq '${act}'`).join(' or ');
+                    filterParts.push(`(${actionFilters})`);
+                }
+                // Server-side user filter
+                if (filters.user && filters.user !== 'All') {
+                    filterParts.push(`User eq '${filters.user}'`);
+                }
+                let eventQuery = eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created");
+                if (filterParts.length > 0) {
+                    eventQuery = eventQuery.filter(filterParts.join(' and '));
+                }
+                const eventItems = await eventQuery();
+                eventItems.forEach((item) => {
+                    let assetName = "";
+                    let detailsText = item.Details || "";
+                    let actionText = item.Action || "";
+                    // Parse JSON details if possible
+                    if (detailsText.trim().startsWith("{") && detailsText.trim().endsWith("}")) {
+                        try {
+                            const parsed = JSON.parse(detailsText);
+                            assetName = parsed.assetName || parsed.assetTitle || parsed.Title || "";
+                            if (parsed.lifecycle) {
+                                if (parsed.lifecycle === "DirectAssignment") {
+                                    detailsText = `Asset assigned to employee`;
+                                    actionText = "admin assigned";
+                                }
+                                else if (parsed.lifecycle === "Approved") {
+                                    detailsText = `Approved request for ${assetName || "Asset"}`;
+                                    actionText = "manager approved";
+                                }
+                                else if (parsed.lifecycle === "Rejected" || parsed.lifecycle === "Declined") {
+                                    detailsText = `Rejected request for ${assetName || "Asset"}`;
+                                    actionText = "manager rejected";
+                                }
+                                else if (parsed.lifecycle === "Submitted") {
+                                    detailsText = `Submitted asset request for ${assetName || "Asset"}`;
+                                    actionText = "created";
+                                }
+                                else if (parsed.lifecycle === "ReturnRequested") {
+                                    detailsText = `Requested return of ${assetName || "Asset"}`;
+                                    actionText = "return requested";
+                                }
+                                else if (parsed.lifecycle === "ReturnApproved") {
+                                    detailsText = `Approved return request for ${assetName || "Asset"}`;
+                                    actionText = "return approved";
+                                }
+                                else if (parsed.lifecycle === "ReturnRejected") {
+                                    detailsText = `Rejected return request for ${assetName || "Asset"}`;
+                                    actionText = "return rejected";
+                                }
+                                else if (parsed.lifecycle === "ReturnCompleted") {
+                                    detailsText = `Completed return of ${assetName || "Asset"}`;
+                                    actionText = "return completed";
+                                }
+                            }
+                            else if (parsed.assetStatus === "Approved" || parsed.lifecycle === "AssetStatusUpdated") {
+                                detailsText = `Assigned ${assetName || "Asset"}`;
+                                actionText = "admin assigned";
+                            }
+                        }
+                        catch (e) {
+                            // Keep detailsText as string
+                        }
+                    }
+                    const titleLower = (item.Title || "").toLowerCase();
+                    const actionLower = (item.Action || "").toLowerCase();
+                    const detailsLower = (detailsText || "").toLowerCase();
+                    // High fidelity text mapping
+                    if (actionLower === "create") {
+                        actionText = "created";
+                    }
+                    else if (actionLower === "delete") {
+                        actionText = "deleted";
+                    }
+                    if (titleLower.includes("directly assigned") || detailsLower.includes("assigned to employee") || detailsLower.includes("assigned to:")) {
+                        actionText = "admin assigned";
+                        detailsText = "Asset assigned to employee";
+                    }
+                    else if (titleLower.includes("approved return request") || detailsLower.includes("approved return request")) {
+                        actionText = "return approved";
+                        detailsText = `Approved return request for ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("rejected return request") || detailsLower.includes("rejected return request")) {
+                        actionText = "return rejected";
+                        detailsText = `Rejected return request for ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("completed return") || detailsLower.includes("completed return")) {
+                        actionText = "return completed";
+                        detailsText = `Completed return of ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("requested return") || detailsLower.includes("requested return")) {
+                        actionText = "return requested";
+                        detailsText = `Requested return of ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("approved request") || detailsLower.includes("approved request")) {
+                        actionText = "manager approved";
+                        detailsText = `Approved request for ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("rejected request") || detailsLower.includes("rejected request") || titleLower.includes("declined request") || detailsLower.includes("declined request")) {
+                        actionText = "manager rejected";
+                        detailsText = `Rejected request for ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("created request") || detailsLower.includes("submitted asset request")) {
+                        actionText = "created";
+                        detailsText = `Submitted asset request for ${assetName || "Asset"}`;
+                    }
+                    else if (titleLower.includes("created asset") || detailsLower.includes("added to inventory")) {
+                        actionText = "created";
+                        detailsText = "Asset was added to inventory";
+                    }
+                    else if (titleLower.includes("deleted asset") || detailsLower.includes("retired due to damage")) {
+                        actionText = "deleted";
+                        detailsText = "Asset retired due to damage";
+                    }
+                    else if (detailsLower.includes("under investigation") || detailsLower.includes("in progress")) {
+                        actionText = "status updated to in progress";
+                        detailsText = "Under investigation";
+                    }
+                    else if (detailsLower.includes("resolved") || detailsLower.includes("replacement cable")) {
+                        actionText = "status updated to resolved";
+                        detailsText = "Replacement cable sourced";
+                    }
+                    // Try to extract assetName if empty
+                    if (!assetName) {
+                        if (titleLower.includes("created asset:")) {
+                            assetName = item.Title.substring(titleLower.indexOf("created asset:") + 14).trim();
+                        }
+                        else if (titleLower.includes("updated asset:")) {
+                            assetName = item.Title.substring(titleLower.indexOf("updated asset:") + 14).trim();
+                        }
+                        else if (titleLower.includes("deleted asset:")) {
+                            assetName = item.Title.substring(titleLower.indexOf("deleted asset:") + 14).trim();
+                        }
+                        else if (titleLower.includes("request for")) {
+                            assetName = item.Title.substring(titleLower.indexOf("request for") + 11).trim();
+                        }
+                    }
+                    logs.push({
+                        id: `event-log-${item.ID}`,
+                        title: item.Title || "",
+                        action: actionText,
+                        entityType: item.EntityType || "",
+                        entityId: item.EntityId || "",
+                        assetName: assetName,
+                        details: detailsText,
+                        user: item.User || "System",
+                        timestamp: formatTimestamp(item.Created)
+                    });
+                    processedEventLogIds.add(`${item.EntityType}-${item.EntityId}-${item.Action}-${formatTimestamp(item.Created).substring(0, 16)}`);
+                });
+            }
+            catch (err) {
+                console.warn("Could not fetch EventLogList, relying on live list generation", err);
+            }
+        }
+        // 2. Fetch from InventoryList for dynamic fallback logs
+        const shouldFetchInventory = !filters.module ||
+            filters.module === 'All' ||
+            filters.module === 'Inventory';
+        if (shouldFetchInventory) {
+            try {
+                let list;
+                try {
+                    list = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.LIST_NAME);
+                    await list.select("Title")();
+                }
+                catch {
+                    list = sp.web.lists.getByTitle("Inventory List");
+                }
+                const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+                const findFieldInternalName = (searchStr, fallback) => {
+                    let field = fields.find((f) => f.InternalName.toLowerCase() === searchStr.toLowerCase());
+                    if (field)
+                        return field.InternalName;
+                    field = fields.find((f) => f.InternalName.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr.toLowerCase()) >= 0);
+                    if (field)
+                        return field.InternalName;
+                    field = fields.find((f) => f.Title.toLowerCase().replace(/[^a-z0-9]/g, '').indexOf(searchStr.toLowerCase()) >= 0);
+                    return field ? field.InternalName : fallback;
+                };
+                const assetNameKey = findFieldInternalName("assetname", "AssetName");
+                const statusKey = findFieldInternalName("status", "Status");
+                const invFilters = [];
+                if (startIso) {
+                    invFilters.push(`(Created ge '${startIso}' or Modified ge '${startIso}')`);
+                }
+                if (filters.user && filters.user !== 'All') {
+                    invFilters.push(`(Author/Title eq '${filters.user}' or Editor/Title eq '${filters.user}')`);
+                }
+                let invQuery = list.items.select("ID", "Title", assetNameKey, statusKey, "Created", "Modified", "Author/Title", "Editor/Title").expand("Author", "Editor");
+                if (invFilters.length > 0) {
+                    invQuery = invQuery.filter(invFilters.join(' and '));
+                }
+                const inventoryItems = await invQuery();
+                inventoryItems.forEach((item) => {
+                    const itemCreated = formatTimestamp(item.Created);
+                    const itemModified = formatTimestamp(item.Modified);
+                    const assetName = item[assetNameKey] || item.Title || "";
+                    const itemStatus = item[statusKey] || "";
+                    // Add dynamic Create event
+                    const createKey = `Asset-${item.ID}-Create-${itemCreated.substring(0, 16)}`;
+                    if (!processedEventLogIds.has(createKey)) {
+                        logs.push({
+                            id: `asset-create-${item.ID}`,
+                            title: `Created Asset: ${item.Title}`,
+                            action: 'created',
+                            entityType: 'Asset',
+                            entityId: item.ID.toString(),
+                            assetName: assetName,
+                            details: `Asset was added to inventory`,
+                            user: item.Author?.Title || "System",
+                            timestamp: itemCreated
+                        });
+                    }
+                    // Add dynamic Update event if item has been updated
+                    if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {
+                        const updateKey = `Asset-${item.ID}-Update-${itemModified.substring(0, 16)}`;
+                        const updateKeyAssigned = `Asset-${item.ID}-admin assigned-${itemModified.substring(0, 16)}`;
+                        if (!processedEventLogIds.has(updateKey) && !processedEventLogIds.has(updateKeyAssigned)) {
+                            let actionText = "updated";
+                            let detailsText = "Asset details were modified";
+                            if (itemStatus.toLowerCase().includes("assigned") || itemStatus.toLowerCase() === "active" || itemStatus.toLowerCase() === "in use") {
+                                actionText = "admin assigned";
+                                detailsText = "Asset assigned to employee";
+                            }
+                            else if (itemStatus.toLowerCase().includes("maintenance")) {
+                                actionText = "status updated to in progress";
+                                detailsText = "Under investigation";
+                            }
+                            else if (itemStatus.toLowerCase() === "in stock" || itemStatus.toLowerCase() === "yes") {
+                                actionText = "status updated to resolved";
+                                detailsText = "Replacement cable sourced";
+                            }
+                            logs.push({
+                                id: `asset-update-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                title: `Updated Asset: ${item.Title}`,
+                                action: actionText,
+                                entityType: 'Asset',
+                                entityId: item.ID.toString(),
+                                assetName: assetName,
+                                details: detailsText,
+                                user: item.Editor?.Title || "System",
+                                timestamp: itemModified
+                            });
+                        }
+                    }
+                });
+            }
+            catch (err) {
+                console.warn("Could not fetch InventoryList for audit logs", err);
+            }
+        }
+        // 3. Fetch from RequestList for dynamic fallback logs
+        const shouldFetchRequests = !filters.module ||
+            filters.module === 'All' ||
+            filters.module === 'Requests' ||
+            filters.module === 'Returns';
+        if (shouldFetchRequests) {
+            try {
+                let reqList;
+                try {
+                    reqList = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_LIST_NAME);
+                    await reqList.select("Title")();
+                }
+                catch {
+                    reqList = sp.web.lists.getByTitle("Request List");
+                }
+                const reqFilters = [];
+                if (startIso) {
+                    reqFilters.push(`(Created ge '${startIso}' or Modified ge '${startIso}')`);
+                }
+                if (filters.user && filters.user !== 'All') {
+                    reqFilters.push(`(Author/Title eq '${filters.user}' or Editor/Title eq '${filters.user}')`);
+                }
+                const requestItems = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._fetchItemsWithExpandedUsers(reqList, reqFilters.length > 0 ? reqFilters.join(' and ') : undefined);
+                requestItems.forEach((item) => {
+                    const keys = Object.keys(item);
+                    const findKey = (searchStr) => {
+                        const nonIdMatch = keys.find(k => {
+                            const kl = k.toLowerCase().replace(/_x0020_/g, '');
+                            return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
+                        });
+                        if (nonIdMatch)
+                            return nonIdMatch;
+                        return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
+                    };
+                    const employeeKey = findKey("requester") || findKey("employee") || "Employee";
+                    const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                    const statusKey = keys.find(key => _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._isBusinessStatusKey(key)) || "RequestStatus";
+                    const assetStatusKey = findKey("assetstatus") || "AssetStatus";
+                    const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
+                    const rawEmp = item[employeeKey] || item.Employee || item.Author;
+                    const reqUser = (() => {
+                        if (!rawEmp)
+                            return item.Title || "System";
+                        if (typeof rawEmp === 'string')
+                            return rawEmp;
+                        if (Array.isArray(rawEmp))
+                            return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
+                        if (typeof rawEmp === 'object')
+                            return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
+                        return rawEmp.toString();
+                    })();
+                    const itemCreated = formatTimestamp(item.Created);
+                    const itemModified = formatTimestamp(item.Modified);
+                    const requestStatus = item[statusKey] || "";
+                    const assetStatus = item[assetStatusKey] || "";
+                    // Add dynamic Create event
+                    const createKey = `Request-${item.ID}-Create-${itemCreated.substring(0, 16)}`;
+                    if (!processedEventLogIds.has(createKey)) {
+                        logs.push({
+                            id: `request-create-${item.ID}`,
+                            title: `Created Request: ${reqAssetName}`,
+                            action: 'created',
+                            entityType: 'Request',
+                            entityId: item.ID.toString(),
+                            assetName: reqAssetName,
+                            details: `Submitted asset request for ${reqAssetName}`,
+                            user: reqUser,
+                            timestamp: itemCreated
+                        });
+                    }
+                    // Add dynamic Update event
+                    if (item.Modified && item.Created && new Date(item.Modified).getTime() - new Date(item.Created).getTime() > 5000) {
+                        const updateKey = `Request-${item.ID}-Update-${itemModified.substring(0, 16)}`;
+                        if (!processedEventLogIds.has(updateKey)) {
+                            if (requestStatus.toLowerCase().includes("approv")) {
+                                logs.push({
+                                    id: `request-approve-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                    title: `Approved Request: ${reqAssetName}`,
+                                    action: 'manager approved',
+                                    entityType: 'Request',
+                                    entityId: item.ID.toString(),
+                                    assetName: reqAssetName,
+                                    details: `Approved request for ${reqAssetName}`,
+                                    user: reqUser,
+                                    timestamp: itemModified
+                                });
+                                if (assetStatus.toLowerCase().includes("approv")) {
+                                    logs.push({
+                                        id: `request-assign-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                        title: `Assigned Request: ${reqAssetName}`,
+                                        action: 'admin assigned',
+                                        entityType: 'Request',
+                                        entityId: item.ID.toString(),
+                                        assetName: reqAssetName,
+                                        details: `Assigned ${reqAssetName}`,
+                                        user: reqUser,
+                                        timestamp: itemModified
+                                    });
+                                }
+                            }
+                            else if (requestStatus.toLowerCase().includes("reject") || requestStatus.toLowerCase().includes("declin")) {
+                                logs.push({
+                                    id: `request-reject-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                    title: `Rejected Request: ${reqAssetName}`,
+                                    action: 'manager rejected',
+                                    entityType: 'Request',
+                                    entityId: item.ID.toString(),
+                                    assetName: reqAssetName,
+                                    details: `Rejected request for ${reqAssetName}`,
+                                    user: reqUser,
+                                    timestamp: itemModified
+                                });
+                            }
+                            else {
+                                logs.push({
+                                    id: `request-update-${item.ID}-${new Date(item.Modified).getTime()}`,
+                                    title: `Updated Request: ${reqAssetName}`,
+                                    action: 'updated',
+                                    entityType: 'Request',
+                                    entityId: item.ID.toString(),
+                                    assetName: reqAssetName,
+                                    details: `Request details were modified`,
+                                    user: reqUser,
+                                    timestamp: itemModified
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+            catch (err) {
+                console.warn("Could not fetch RequestList for audit logs", err);
+            }
+        }
+        // Sort logs initially by timestamp descending
+        logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        return logs;
+    }
 }
 
 
@@ -8745,8 +9861,8 @@ class InventoryService {
     static async addReturnRequest(request, userDisplayName) {
         return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.addReturnRequest(request, userDisplayName);
     }
-    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
-        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
+    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus) {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus);
     }
     static async cleanupReturnApprovedAssets() {
         return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.cleanupReturnApprovedAssets();
@@ -8757,6 +9873,9 @@ class InventoryService {
     }
     static async getAuditLogs() {
         return _AuditLogService__WEBPACK_IMPORTED_MODULE_4__.AuditLogService.getAuditLogs();
+    }
+    static async getFilteredAuditLogs(filters) {
+        return _AuditLogService__WEBPACK_IMPORTED_MODULE_4__.AuditLogService.getFilteredAuditLogs(filters);
     }
     // SharePointBaseService Methods
     static async getListFieldsMetadata(list) {
@@ -9599,7 +10718,27 @@ class ReturnRequestService {
         catch (e) {
             console.warn("Failed to scan localStorage for RR- keys", e);
         }
-        return list;
+        const coerceWorkflowStatus = (item) => {
+            const spStatus = item.status || 'Pending';
+            let mappedStatus = 'Pending Manager Approval';
+            if (spStatus === 'Approved' || spStatus === 'Pending Admin Verification') {
+                mappedStatus = 'Pending Admin Verification';
+            }
+            else if (spStatus === 'Rejected') {
+                mappedStatus = 'Rejected';
+            }
+            else if (spStatus === 'Returned' || spStatus === 'Completed') {
+                mappedStatus = 'Completed';
+            }
+            else {
+                mappedStatus = 'Pending Manager Approval';
+            }
+            return {
+                ...item,
+                status: mappedStatus
+            };
+        };
+        return list.map(coerceWorkflowStatus);
     }
     static async getReturnRequests() {
         try {
@@ -9621,6 +10760,10 @@ class ReturnRequestService {
             const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
             const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
             const completedDateKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+            const managerStatusKey = f('ManagerStatus', 'Manager Status') || 'ManagerStatus';
+            const adminStatusKey = f('AdminStatus', 'Admin Status') || 'AdminStatus';
+            const adminCommentsKey = f('AdminComments', 'Admin Comments', 'AdminComment', 'Admin Comment') || 'AdminComments';
+            const verifiedDateKey = f('VerifiedDate', 'Verified Date') || 'VerifiedDate';
             const items = await list.items.select('*', 'ID').orderBy('ID', false)();
             const spMapped = items.map((item) => {
                 const idVal = returnRequestIdKey ? item[returnRequestIdKey] : null;
@@ -9636,9 +10779,27 @@ class ReturnRequestService {
                     requestDate: item[requestDateKey] || item.Created?.split('T')[0] || "",
                     returnReason: item[returnReasonKey] || item.ReturnReason || item.Return_x0020_Reason || "",
                     proposedCondition: item[conditionKey] || item.ProposedCondition || "",
-                    status: (item[statusKey] || 'Pending'),
+                    status: (() => {
+                        const spStatus = item[statusKey] || 'Pending';
+                        if (spStatus === 'Approved' || spStatus === 'Pending Admin Verification') {
+                            return 'Pending Admin Verification';
+                        }
+                        else if (spStatus === 'Rejected') {
+                            return 'Rejected';
+                        }
+                        else if (spStatus === 'Returned' || spStatus === 'Completed') {
+                            return 'Completed';
+                        }
+                        else {
+                            return 'Pending Manager Approval';
+                        }
+                    })(),
                     managerComment: item[commentKey] || item.ManagerComment || "",
-                    completedDate: item[completedDateKey] || item.CompletedDate || ""
+                    completedDate: item[completedDateKey] || item.CompletedDate || "",
+                    managerStatus: item[managerStatusKey] || item.ManagerStatus || "Pending",
+                    adminStatus: item[adminStatusKey] || item.AdminStatus || "Not Started",
+                    adminComments: item[adminCommentsKey] || item.AdminComments || "",
+                    verifiedDate: item[verifiedDateKey] || item.VerifiedDate || ""
                 };
             });
             // Get local items and merge them
@@ -9655,6 +10816,14 @@ class ReturnRequestService {
         }
     }
     static async addReturnRequest(request, userDisplayName) {
+        // Check for existing active return request for the same asset
+        const requests = await ReturnRequestService.getReturnRequests();
+        const activeRequest = requests.find(r => r.assetId === request.assetId &&
+            r.status !== 'Completed' &&
+            r.status !== 'Rejected');
+        if (activeRequest) {
+            throw new Error("A return request for this asset is already in progress.");
+        }
         const listTitle = ReturnRequestService._resolvedReturnListName || "Asset Return Request List";
         console.log(`[Return Request Workflow] Accessing Return Requests List: "${listTitle}"`);
         const autoDate = new Date().toISOString().split('T')[0];
@@ -9662,7 +10831,9 @@ class ReturnRequestService {
             ...request,
             requestDate: autoDate,
             id: `RR-${Date.now()}`,
-            status: 'Pending'
+            status: 'Pending Manager Approval',
+            managerStatus: 'Pending',
+            adminStatus: 'Not Started'
         };
         let list;
         let schema;
@@ -9694,6 +10865,8 @@ class ReturnRequestService {
         getField("ReturnReason", ["returnreason", "return reason", "reason"]);
         getField("ReturnedAssetCondition", ["proposedcondition", "proposed condition", "returnedassetcondition", "returned asset condition", "condition"]);
         getField("Status", ["status", "returnstatus", "return status", "requeststatus", "return request status"]);
+        getField("ManagerStatus", ["managerstatus", "manager status"]);
+        getField("AdminStatus", ["adminstatus", "admin status"]);
         console.log(`[Return Request Workflow] Resolved field mappings:`, JSON.stringify(resolvedMapping, null, 2));
         const logicalPayload = {
             ReturnRequestID: newRequest.id,
@@ -9706,7 +10879,9 @@ class ReturnRequestService {
             ReturnRequestDate: newRequest.requestDate,
             ReturnReason: request.returnReason,
             ReturnedAssetCondition: request.proposedCondition,
-            Status: "Pending"
+            Status: "Pending", // Set Status choice to 'Pending' (valid value)
+            ManagerStatus: "Pending",
+            AdminStatus: "Not Started"
         };
         const requiredKeys = ["AssetID", "AssetName", "RequesterName", "Status"];
         let finalPayload;
@@ -9731,56 +10906,9 @@ class ReturnRequestService {
             console.error(`[Return Request Workflow] Operation Failed: Creating Return Request. Error details:`, translatedErr.message);
             throw new Error(`Creating Return Request failed: ${translatedErr.message}`);
         }
-        // Operation 2: Updating Inventory Status
-        const invListTitle = "InventoryList";
-        console.log(`[Return Request Workflow] Accessing list: "${invListTitle}" to update status of asset ${request.assetId}`);
-        try {
-            const invList = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getInventoryList();
-            const invFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(invList);
-            const statusField = invFields.find(f => f.internalName.toLowerCase() === "status" || f.displayName.toLowerCase() === "status");
-            const statusKey = statusField ? statusField.internalName : "Status";
-            const updatePayload = {
-                [statusKey]: "Pending Return"
-            };
-            console.log(`[Return Request Workflow] Updating Inventory Asset ${request.assetId} with payload:`, JSON.stringify(updatePayload));
-            await invList.items.getById(parseInt(request.assetId, 10)).update(updatePayload);
-            console.log(`[Return Request Workflow] Success: Updated Inventory Asset status to 'Pending Return' in SharePoint.`);
-        }
-        catch (error) {
-            console.error(`[Return Request Workflow] Operation Failed: Updating Inventory Status. Error details:`, error);
-            throw new Error(`Updating Inventory Status failed: ${error.message || JSON.stringify(error)}`);
-        }
-        // Operation 3: Writing Audit Log
-        const auditListTitle = "EventLogList";
-        console.log(`[Return Request Workflow] Writing to audit log list: "${auditListTitle}"`);
-        try {
-            const auditPayload = {
-                title: `Requested Return & Deactivated: ${request.assetName}`,
-                action: 'Deactivated',
-                entityType: 'Asset',
-                entityId: request.assetId,
-                details: JSON.stringify({
-                    lifecycle: "ReturnRequested",
-                    assetId: request.assetId,
-                    assetName: request.assetName,
-                    serialNumber: request.serialNumber,
-                    requesterName: request.requesterName,
-                    returnReason: request.returnReason,
-                    proposedCondition: request.proposedCondition,
-                    requestedAt: new Date().toISOString()
-                }),
-                user: userDisplayName
-            };
-            console.log(`[Return Request Workflow] Submitting Audit Log with payload:`, JSON.stringify(auditPayload));
-            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog(auditPayload);
-            console.log(`[Return Request Workflow] Success: Created Audit Log record in SharePoint.`);
-        }
-        catch (e) {
-            console.error(`[Return Request Workflow] Operation Failed: Writing Audit Log. Error details:`, e);
-            throw new Error(`Writing Audit Log failed: ${e.message || JSON.stringify(e)}`);
-        }
+        // Operations 2 & 3 (Updating Inventory status & Writing Audit Log) are now deferred to manager/admin approval.
     }
-    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
+    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus) {
         console.log("========================");
         console.log("RETURN WORKFLOW START");
         console.log("========================");
@@ -9808,11 +10936,37 @@ class ReturnRequestService {
             const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
             const commentKey = f('ManagerComment', 'Manager Comment', 'Comment', 'Notes') || 'ManagerComment';
             const completedKey = f('CompletedDate', 'Completed Date', 'ReturnCompletedDate') || 'CompletedDate';
+            const managerStatusKey = f('ManagerStatus', 'Manager Status') || 'ManagerStatus';
+            const adminStatusKey = f('AdminStatus', 'Admin Status') || 'AdminStatus';
+            const adminCommentsKey = f('AdminComments', 'Admin Comments', 'AdminComment', 'Admin Comment') || 'AdminComments';
+            const verifiedDateKey = f('VerifiedDate', 'Verified Date') || 'VerifiedDate';
+            let spStatusValue = 'Pending';
+            if (status === 'Pending Admin Verification' || status === 'Approved') {
+                spStatusValue = 'Approved';
+            }
+            else if (status === 'Rejected') {
+                spStatusValue = 'Rejected';
+            }
+            else if (status === 'Completed') {
+                spStatusValue = 'Returned';
+            }
             const payload = {
-                [statusKey]: status,
+                [statusKey]: spStatusValue, // Store valid SharePoint Choice value: Pending, Approved, Rejected, Returned
                 [commentKey]: managerComment
             };
-            if (status === 'Completed') {
+            if (managerStatusKey && managerStatus) {
+                payload[managerStatusKey] = managerStatus;
+            }
+            if (adminStatusKey && adminStatus) {
+                payload[adminStatusKey] = adminStatus;
+            }
+            if (adminCommentsKey && adminComments) {
+                payload[adminCommentsKey] = adminComments;
+            }
+            if (verifiedDateKey && status === 'Completed') {
+                payload[verifiedDateKey] = new Date().toISOString().split('T')[0];
+            }
+            if (status === 'Approved' || status === 'Completed') {
                 payload[completedKey] = new Date().toISOString().split('T')[0];
             }
             const numericId = parseInt(requestId, 10);
@@ -9850,7 +11004,15 @@ class ReturnRequestService {
                     const localList = JSON.parse(local);
                     const updated = localList.map(r => {
                         if (r.id === requestId) {
-                            const updatedReq = { ...r, status, managerComment };
+                            const updatedReq = {
+                                ...r,
+                                status,
+                                managerComment,
+                                managerStatus: managerStatus || r.managerStatus,
+                                adminStatus: adminStatus || r.adminStatus,
+                                adminComments: adminComments || r.adminComments,
+                                verifiedDate: status === 'Completed' ? new Date().toISOString().split('T')[0] : r.verifiedDate
+                            };
                             if (status === 'Completed') {
                                 updatedReq.completedDate = new Date().toISOString().split('T')[0];
                             }
@@ -9866,8 +11028,15 @@ class ReturnRequestService {
                     const item = JSON.parse(itemStr);
                     item.status = status;
                     item.managerComment = managerComment;
+                    if (managerStatus)
+                        item.managerStatus = managerStatus;
+                    if (adminStatus)
+                        item.adminStatus = adminStatus;
+                    if (adminComments)
+                        item.adminComments = adminComments;
                     if (status === 'Completed') {
                         item.completedDate = new Date().toISOString().split('T')[0];
+                        item.verifiedDate = new Date().toISOString().split('T')[0];
                     }
                     localStorage.setItem(requestId, JSON.stringify(item));
                 }
@@ -9894,7 +11063,7 @@ class ReturnRequestService {
             const assetIdNum = parseInt(req.assetId, 10);
             console.log("Inventory Item ID:", assetIdNum);
             if (status === 'Completed') {
-                const condition = finalCondition || req.proposedCondition || "Activated";
+                const condition = finalCondition || req.proposedCondition || "Good";
                 let nextStatus = "In Stock";
                 if (condition === "Poor" || condition === "Damaged") {
                     nextStatus = "Under Maintenance";
@@ -9904,7 +11073,7 @@ class ReturnRequestService {
                     [assignedToKey]: null,
                     [`${assignedToKey}Id`]: null,
                     [conditionKey]: condition,
-                    [noteKey]: `Returned by employee. Manager Note: ${managerComment}`
+                    [noteKey]: `Returned by employee. Verification Note: ${adminComments || managerComment}`
                 };
                 if (assignedToKey !== "AssignedTo") {
                     payload.AssignedTo = null;
@@ -9970,64 +11139,59 @@ class ReturnRequestService {
             console.error("Exception in Asset inventory sync block:", error.message, error.stack);
         }
         try {
-            let logTitle = "";
-            let lifecycle = "";
-            if (status === 'Approved') {
-                logTitle = `Approved Return Request for Asset: ${req.assetName}`;
-                lifecycle = "ReturnApproved";
-            }
-            else if (status === 'Rejected') {
-                logTitle = `Rejected Return Request for Asset: ${req.assetName}`;
-                lifecycle = "ReturnRejected";
-            }
-            else if (status === 'Completed') {
-                logTitle = `Completed Return for Asset: ${req.assetName}`;
-                lifecycle = "ReturnCompleted";
-            }
-            let finalAction = 'Update';
-            let finalTitle = logTitle;
-            if (status === 'Approved') {
-                finalAction = 'Deactivated';
-                finalTitle = `Approved Return Request & Deactivated: ${req.assetName}`;
-            }
-            else if (status === 'Rejected') {
-                finalAction = 'Activated';
-                finalTitle = `Rejected Return Request & Reactivated: ${req.assetName}`;
-            }
-            else if (status === 'Completed') {
-                const condition = finalCondition || req.proposedCondition || "Good";
-                let nextStatus = "In Stock";
-                if (condition === "Poor" || condition === "Damaged") {
-                    nextStatus = "Under Maintenance";
+            if (status === 'Completed' || status === 'Rejected') {
+                let logTitle = "";
+                let lifecycle = "";
+                if (status === 'Completed') {
+                    logTitle = `Completed Return for Asset: ${req.assetName}`;
+                    lifecycle = "ReturnCompleted";
                 }
-                if (nextStatus === 'In Stock') {
-                    finalAction = 'Inactivated';
-                    finalTitle = `Completed Return & Inactivated: ${req.assetName} (Returned to Stock)`;
+                else if (status === 'Rejected') {
+                    logTitle = `Rejected Return Request for Asset: ${req.assetName}`;
+                    lifecycle = "ReturnRejected";
                 }
-                else {
-                    finalAction = 'Deactivated';
-                    finalTitle = `Completed Return & Deactivated: ${req.assetName} (Under Maintenance)`;
+                let finalAction = 'Update';
+                let finalTitle = logTitle;
+                if (status === 'Completed') {
+                    const condition = finalCondition || req.proposedCondition || "Good";
+                    let nextStatus = "In Stock";
+                    if (condition === "Poor" || condition === "Damaged") {
+                        nextStatus = "Under Maintenance";
+                    }
+                    if (nextStatus === 'In Stock') {
+                        finalAction = 'Inactivated';
+                        finalTitle = `Completed Return & Inactivated: ${req.assetName} (Returned to Stock)`;
+                    }
+                    else {
+                        finalAction = 'Deactivated';
+                        finalTitle = `Completed Return & Deactivated: ${req.assetName} (Under Maintenance)`;
+                    }
                 }
+                else if (status === 'Rejected') {
+                    finalAction = 'Activated';
+                    finalTitle = `Rejected Return Request & Reactivated: ${req.assetName}`;
+                }
+                console.log("Submitting Audit Log payload...");
+                await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
+                    title: finalTitle,
+                    action: finalAction,
+                    entityType: 'Asset',
+                    entityId: req.assetId,
+                    details: JSON.stringify({
+                        requestKey: req.id,
+                        lifecycle,
+                        assetName: req.assetName,
+                        requesterName: req.requesterName,
+                        changedBy: approverName,
+                        changedAt: new Date().toISOString(),
+                        managerComment,
+                        adminComments,
+                        condition: finalCondition || req.proposedCondition
+                    }),
+                    user: approverName
+                });
+                console.log("Audit Log created successfully.");
             }
-            console.log("Submitting Audit Log payload...");
-            await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
-                title: finalTitle,
-                action: finalAction,
-                entityType: 'Asset',
-                entityId: req.assetId,
-                details: JSON.stringify({
-                    requestKey: req.id,
-                    lifecycle,
-                    assetName: req.assetName,
-                    requesterName: req.requesterName,
-                    changedBy: approverName,
-                    changedAt: new Date().toISOString(),
-                    managerComment,
-                    condition: finalCondition || req.proposedCondition
-                }),
-                user: approverName
-            });
-            console.log("Audit Log created successfully.");
         }
         catch (e) {
             console.error("Exception in writing Audit Log:", e.message, e.stack);
@@ -10371,7 +11535,7 @@ class SharePointBaseService {
         }
         return null;
     }
-    static async _fetchItemsWithExpandedUsers(list) {
+    static async _fetchItemsWithExpandedUsers(list, filterStr) {
         try {
             const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
             const selectFields = ["*"];
@@ -10403,7 +11567,11 @@ class SharePointBaseService {
                 selectFields.push("Editor/Title", "Editor/Id");
                 expandFields.push("Editor");
             }
-            return await list.items.select(selectFields.join(",")).expand(...expandFields)();
+            let query = list.items.select(selectFields.join(",")).expand(...expandFields);
+            if (filterStr) {
+                query = query.filter(filterStr);
+            }
+            return await query();
         }
         catch (error) {
             console.error("Dynamic user expansion failed:", error);
@@ -10492,6 +11660,934 @@ const RoleUtils = {
     getRoleDisplayName: (role) => {
         return role;
     }
+};
+
+
+/***/ }),
+
+/***/ 37915:
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateFormatting/dateFormatting.defaults.js ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_CALENDAR_STRINGS: () => (/* binding */ DEFAULT_CALENDAR_STRINGS),
+/* harmony export */   DEFAULT_DATE_FORMATTING: () => (/* binding */ DEFAULT_DATE_FORMATTING),
+/* harmony export */   DEFAULT_DATE_GRID_STRINGS: () => (/* binding */ DEFAULT_DATE_GRID_STRINGS),
+/* harmony export */   formatDay: () => (/* binding */ formatDay),
+/* harmony export */   formatMonth: () => (/* binding */ formatMonth),
+/* harmony export */   formatMonthDayYear: () => (/* binding */ formatMonthDayYear),
+/* harmony export */   formatMonthYear: () => (/* binding */ formatMonthYear),
+/* harmony export */   formatYear: () => (/* binding */ formatYear)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
+
+/**
+ * Format date to a day string representation
+ * @param date - input date to format
+ */
+var formatDay = function (date) { return date.getDate().toString(); };
+/**
+ * Format date to a month-day-year string
+ * @param date - input date to format
+ * @param strings - localized strings
+ */
+var formatMonthDayYear = function (date, strings) {
+    return strings.months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+};
+/**
+ * Format date to a month-year string
+ * @param date - input date to format
+ * @param strings - localized strings
+ */
+var formatMonthYear = function (date, strings) {
+    return strings.months[date.getMonth()] + ' ' + date.getFullYear();
+};
+/**
+ * Format date to a month string
+ * @param date - input date to format
+ * @param strings - localized strings
+ */
+var formatMonth = function (date, strings) { return strings.months[date.getMonth()]; };
+/**
+ * Format date to a year string representation
+ * @param date - input date to format
+ */
+var formatYear = function (date) { return date.getFullYear().toString(); };
+var DEFAULT_DATE_GRID_STRINGS = {
+    months: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ],
+    shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+};
+var DEFAULT_DATE_FORMATTING = {
+    formatDay: formatDay,
+    formatMonth: formatMonth,
+    formatYear: formatYear,
+    formatMonthDayYear: formatMonthDayYear,
+    formatMonthYear: formatMonthYear,
+};
+var DEFAULT_CALENDAR_STRINGS = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, DEFAULT_DATE_GRID_STRINGS), { goToToday: 'Go to today', weekNumberFormatString: 'Week number {0}', prevMonthAriaLabel: 'Previous month', nextMonthAriaLabel: 'Next month', prevYearAriaLabel: 'Previous year', nextYearAriaLabel: 'Next year', prevYearRangeAriaLabel: 'Previous year range', nextYearRangeAriaLabel: 'Next year range', closeButtonAriaLabel: 'Close', selectedDateFormatString: 'Selected date {0}', todayDateFormatString: "Today's date {0}", monthPickerHeaderAriaLabel: '{0}, change year', yearPickerHeaderAriaLabel: '{0}, change month', dayMarkedAriaLabel: 'marked' });
+
+
+/***/ }),
+
+/***/ 97743:
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/findAvailableDate.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   findAvailableDate: () => (/* binding */ findAvailableDate)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _isRestrictedDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isRestrictedDate */ 68180);
+/* harmony import */ var _isAfterMaxDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isAfterMaxDate */ 98773);
+/* harmony import */ var _isBeforeMinDate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isBeforeMinDate */ 14648);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+
+
+
+
+
+/**
+ * Returns closest available date given the restriction `options`, or undefined otherwise
+ * @param options - list of search options
+ */
+var findAvailableDate = function (options) {
+    var targetDate = options.targetDate, initialDate = options.initialDate, direction = options.direction, restrictedDateOptions = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__rest)(options, ["targetDate", "initialDate", "direction"]);
+    var availableDate = targetDate;
+    // if the target date is available, return it immediately
+    if (!(0,_isRestrictedDate__WEBPACK_IMPORTED_MODULE_1__.isRestrictedDate)(targetDate, restrictedDateOptions)) {
+        return targetDate;
+    }
+    while ((0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_2__.compareDatePart)(initialDate, availableDate) !== 0 &&
+        (0,_isRestrictedDate__WEBPACK_IMPORTED_MODULE_1__.isRestrictedDate)(availableDate, restrictedDateOptions) &&
+        !(0,_isAfterMaxDate__WEBPACK_IMPORTED_MODULE_3__.isAfterMaxDate)(availableDate, restrictedDateOptions) &&
+        !(0,_isBeforeMinDate__WEBPACK_IMPORTED_MODULE_4__.isBeforeMinDate)(availableDate, restrictedDateOptions)) {
+        availableDate = (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_2__.addDays)(availableDate, direction);
+    }
+    if ((0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_2__.compareDatePart)(initialDate, availableDate) !== 0 && !(0,_isRestrictedDate__WEBPACK_IMPORTED_MODULE_1__.isRestrictedDate)(availableDate, restrictedDateOptions)) {
+        return availableDate;
+    }
+    return undefined;
+};
+
+
+/***/ }),
+
+/***/ 43555:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/getBoundedDateRange.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBoundedDateRange: () => (/* binding */ getBoundedDateRange)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+
+
+/**
+ * Generates a list of dates, bounded by min and max dates
+ * @param dateRange - input date range
+ * @param minDate - min date to limit the range
+ * @param maxDate - max date to limit the range
+ */
+var getBoundedDateRange = function (dateRange, minDate, maxDate) {
+    var boundedDateRange = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__spreadArray)([], dateRange, true);
+    if (minDate) {
+        boundedDateRange = boundedDateRange.filter(function (date) { return (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_1__.compareDatePart)(date, minDate) >= 0; });
+    }
+    if (maxDate) {
+        boundedDateRange = boundedDateRange.filter(function (date) { return (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_1__.compareDatePart)(date, maxDate) <= 0; });
+    }
+    return boundedDateRange;
+};
+
+
+/***/ }),
+
+/***/ 96922:
+/*!******************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/getDateRangeTypeToUse.js ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getDateRangeTypeToUse: () => (/* binding */ getDateRangeTypeToUse)
+/* harmony export */ });
+/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateValues/dateValues */ 30029);
+/* harmony import */ var _isContiguous__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isContiguous */ 62053);
+
+
+/**
+ * Return corrected date range type, given `dateRangeType` and list of working days.
+ * For non-contiguous working days and working week range type, returns general week range type.
+ * For other cases returns input date range type.
+ * @param dateRangeType - input type of range
+ * @param workWeekDays - list of working days in a week
+ */
+var getDateRangeTypeToUse = function (dateRangeType, workWeekDays, firstDayOfWeek) {
+    if (workWeekDays && dateRangeType === _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_0__.DateRangeType.WorkWeek) {
+        if (!(0,_isContiguous__WEBPACK_IMPORTED_MODULE_1__.isContiguous)(workWeekDays, true, firstDayOfWeek) || workWeekDays.length === 0) {
+            return _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_0__.DateRangeType.Week;
+        }
+    }
+    return dateRangeType;
+};
+
+
+/***/ }),
+
+/***/ 46703:
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/getDayGrid.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getDayGrid: () => (/* binding */ getDayGrid)
+/* harmony export */ });
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateValues/dateValues */ 30029);
+/* harmony import */ var _getDateRangeTypeToUse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getDateRangeTypeToUse */ 96922);
+/* harmony import */ var _getBoundedDateRange__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getBoundedDateRange */ 43555);
+/* harmony import */ var _isRestrictedDate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isRestrictedDate */ 68180);
+
+
+
+
+
+/**
+ * Generates a grid of days, given the `options`.
+ * Returns one additional week at the begining from the previous range
+ * and one at the end from the future range
+ * @param options - parameters to specify date related restrictions for the resulting grid
+ */
+var getDayGrid = function (options) {
+    var selectedDate = options.selectedDate, dateRangeType = options.dateRangeType, firstDayOfWeek = options.firstDayOfWeek, today = options.today, minDate = options.minDate, maxDate = options.maxDate, weeksToShow = options.weeksToShow, workWeekDays = options.workWeekDays, daysToSelectInDayView = options.daysToSelectInDayView, restrictedDates = options.restrictedDates, markedDays = options.markedDays;
+    var restrictedDateOptions = { minDate: minDate, maxDate: maxDate, restrictedDates: restrictedDates };
+    var todaysDate = today || new Date();
+    var navigatedDate = options.navigatedDate ? options.navigatedDate : todaysDate;
+    var date;
+    if (weeksToShow && weeksToShow <= 4) {
+        // if showing less than a full month, just use date == navigatedDate
+        date = new Date(navigatedDate.getFullYear(), navigatedDate.getMonth(), navigatedDate.getDate());
+    }
+    else {
+        date = new Date(navigatedDate.getFullYear(), navigatedDate.getMonth(), 1);
+    }
+    var weeks = [];
+    // Cycle the date backwards to get to the first day of the week.
+    while (date.getDay() !== firstDayOfWeek) {
+        date.setDate(date.getDate() - 1);
+    }
+    // add the transition week as last week of previous range
+    date = (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.addDays)(date, -_dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DAYS_IN_WEEK);
+    // a flag to indicate whether all days of the week are outside the month
+    var isAllDaysOfWeekOutOfMonth = false;
+    // in work week view if the days aren't contiguous we use week view instead
+    var selectedDateRangeType = (0,_getDateRangeTypeToUse__WEBPACK_IMPORTED_MODULE_2__.getDateRangeTypeToUse)(dateRangeType, workWeekDays, firstDayOfWeek);
+    var selectedDates = [];
+    if (selectedDate) {
+        selectedDates = (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.getDateRangeArray)(selectedDate, selectedDateRangeType, firstDayOfWeek, workWeekDays, daysToSelectInDayView);
+        selectedDates = (0,_getBoundedDateRange__WEBPACK_IMPORTED_MODULE_3__.getBoundedDateRange)(selectedDates, minDate, maxDate);
+    }
+    var shouldGetWeeks = true;
+    for (var weekIndex = 0; shouldGetWeeks; weekIndex++) {
+        var week = [];
+        isAllDaysOfWeekOutOfMonth = true;
+        var _loop_1 = function (dayIndex) {
+            var originalDate = new Date(date.getTime());
+            var dayInfo = {
+                key: date.toString(),
+                date: date.getDate().toString(),
+                originalDate: originalDate,
+                isInMonth: date.getMonth() === navigatedDate.getMonth(),
+                isToday: (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.compareDates)(todaysDate, date),
+                isSelected: (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.isInDateRangeArray)(date, selectedDates),
+                isInBounds: !(0,_isRestrictedDate__WEBPACK_IMPORTED_MODULE_4__.isRestrictedDate)(date, restrictedDateOptions),
+                isMarked: (markedDays === null || markedDays === void 0 ? void 0 : markedDays.some(function (markedDay) { return (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.compareDates)(originalDate, markedDay); })) || false,
+            };
+            week.push(dayInfo);
+            if (dayInfo.isInMonth) {
+                isAllDaysOfWeekOutOfMonth = false;
+            }
+            date.setDate(date.getDate() + 1);
+        };
+        for (var dayIndex = 0; dayIndex < _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DAYS_IN_WEEK; dayIndex++) {
+            _loop_1(dayIndex);
+        }
+        // We append the condition of the loop depending upon the showSixWeeksByDefault prop.
+        shouldGetWeeks = weeksToShow ? weekIndex < weeksToShow + 1 : !isAllDaysOfWeekOutOfMonth || weekIndex === 0;
+        // we don't check shouldGetWeeks before pushing because we want to add one extra week for transition state
+        weeks.push(week);
+    }
+    return weeks;
+};
+
+
+/***/ }),
+
+/***/ 98773:
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isAfterMaxDate.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isAfterMaxDate: () => (/* binding */ isAfterMaxDate)
+/* harmony export */ });
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+
+/**
+ * Checks if `date` happens later than max date
+ * @param date - date to check
+ * @param options - object with max date to check against
+ */
+var isAfterMaxDate = function (date, options) {
+    var maxDate = options.maxDate;
+    return maxDate ? (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.compareDatePart)(date, maxDate) >= 1 : false;
+};
+
+
+/***/ }),
+
+/***/ 14648:
+/*!************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isBeforeMinDate.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isBeforeMinDate: () => (/* binding */ isBeforeMinDate)
+/* harmony export */ });
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+
+/**
+ * Checks if `date` happens earlier than min date
+ * @param date - date to check
+ * @param options - object with min date to check against
+ */
+var isBeforeMinDate = function (date, options) {
+    var minDate = options.minDate;
+    return minDate ? (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.compareDatePart)(minDate, date) >= 1 : false;
+};
+
+
+/***/ }),
+
+/***/ 62053:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isContiguous.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isContiguous: () => (/* binding */ isContiguous)
+/* harmony export */ });
+/**
+ * Returns whether provided week days are contiguous.
+ * @param days - list of days in a week
+ * @param isSingleWeek - decides whether the contiguous logic applies across week boundaries or not
+ * @param firstDayOfWeek - decides which day of week is the first one in the order.
+ */
+var isContiguous = function (days, isSingleWeek, firstDayOfWeek) {
+    var daySet = new Set(days);
+    var amountOfNoNeighbors = 0;
+    for (var _i = 0, days_1 = days; _i < days_1.length; _i++) {
+        var day = days_1[_i];
+        var nextDay = (day + 1) % 7;
+        if (!(daySet.has(nextDay) && (!isSingleWeek || firstDayOfWeek !== nextDay))) {
+            amountOfNoNeighbors++;
+        }
+    }
+    // In case the full week is provided, then each day has a neighbor
+    //, otherwise the last day does not have a neighbor.
+    return amountOfNoNeighbors < 2;
+};
+
+
+/***/ }),
+
+/***/ 68180:
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isRestrictedDate.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isRestrictedDate: () => (/* binding */ isRestrictedDate)
+/* harmony export */ });
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+/* harmony import */ var _isBeforeMinDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isBeforeMinDate */ 14648);
+/* harmony import */ var _isAfterMaxDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isAfterMaxDate */ 98773);
+
+
+
+/**
+ * Checks if `date` falls into the restricted `options`
+ * @param date - date to check
+ * @param options - restriction options (min date, max date and list of restricted dates)
+ */
+var isRestrictedDate = function (date, options) {
+    var restrictedDates = options.restrictedDates, minDate = options.minDate, maxDate = options.maxDate;
+    if (!restrictedDates && !minDate && !maxDate) {
+        return false;
+    }
+    var inRestrictedDates = restrictedDates && restrictedDates.some(function (rd) { return (0,_dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__.compareDates)(rd, date); });
+    return inRestrictedDates || (0,_isBeforeMinDate__WEBPACK_IMPORTED_MODULE_1__.isBeforeMinDate)(date, options) || (0,_isAfterMaxDate__WEBPACK_IMPORTED_MODULE_2__.isAfterMaxDate)(date, options);
+};
+
+
+/***/ }),
+
+/***/ 82921:
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateMath/dateMath.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addDays: () => (/* binding */ addDays),
+/* harmony export */   addMonths: () => (/* binding */ addMonths),
+/* harmony export */   addWeeks: () => (/* binding */ addWeeks),
+/* harmony export */   addYears: () => (/* binding */ addYears),
+/* harmony export */   compareDatePart: () => (/* binding */ compareDatePart),
+/* harmony export */   compareDates: () => (/* binding */ compareDates),
+/* harmony export */   getDatePartHashValue: () => (/* binding */ getDatePartHashValue),
+/* harmony export */   getDateRangeArray: () => (/* binding */ getDateRangeArray),
+/* harmony export */   getEndDateOfWeek: () => (/* binding */ getEndDateOfWeek),
+/* harmony export */   getMonthEnd: () => (/* binding */ getMonthEnd),
+/* harmony export */   getMonthStart: () => (/* binding */ getMonthStart),
+/* harmony export */   getStartDateOfWeek: () => (/* binding */ getStartDateOfWeek),
+/* harmony export */   getWeekNumber: () => (/* binding */ getWeekNumber),
+/* harmony export */   getWeekNumbersInMonth: () => (/* binding */ getWeekNumbersInMonth),
+/* harmony export */   getYearEnd: () => (/* binding */ getYearEnd),
+/* harmony export */   getYearStart: () => (/* binding */ getYearStart),
+/* harmony export */   isInDateRangeArray: () => (/* binding */ isInDateRangeArray),
+/* harmony export */   setMonth: () => (/* binding */ setMonth)
+/* harmony export */ });
+/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateValues/dateValues */ 30029);
+/* harmony import */ var _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateValues/timeConstants */ 66369);
+
+
+/**
+ * Returns a date offset from the given date by the specified number of days.
+ * @param date - The origin date
+ * @param days - The number of days to offset. 'days' can be negative.
+ * @returns A new Date object offset from the origin date by the given number of days
+ */
+function addDays(date, days) {
+    var result = new Date(date.getTime());
+    result.setDate(result.getDate() + days);
+    return result;
+}
+/**
+ * Returns a date offset from the given date by the specified number of weeks.
+ * @param date - The origin date
+ * @param weeks - The number of weeks to offset. 'weeks' can be negative.
+ * @returns A new Date object offset from the origin date by the given number of weeks
+ */
+function addWeeks(date, weeks) {
+    return addDays(date, weeks * _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek);
+}
+/**
+ * Returns a date offset from the given date by the specified number of months.
+ * The method tries to preserve the day-of-month; however, if the new month does not have enough days
+ * to contain the original day-of-month, we'll use the last day of the new month.
+ * @param date - The origin date
+ * @param months - The number of months to offset. 'months' can be negative.
+ * @returns A new Date object offset from the origin date by the given number of months
+ */
+function addMonths(date, months) {
+    var result = new Date(date.getTime());
+    var newMonth = result.getMonth() + months;
+    result.setMonth(newMonth);
+    // We want to maintain the same day-of-month, but that may not be possible if the new month doesn't have enough days.
+    // Loop until we back up to a day the new month has.
+    // (Weird modulo math is due to Javascript's treatment of negative numbers in modulo)
+    if (result.getMonth() !==
+        ((newMonth % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.MonthInOneYear) + _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.MonthInOneYear) % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.MonthInOneYear) {
+        result = addDays(result, -result.getDate());
+    }
+    return result;
+}
+/**
+ * Returns a date offset from the given date by the specified number of years.
+ * The method tries to preserve the day-of-month; however, if the new month does not have enough days
+ * to contain the original day-of-month, we'll use the last day of the new month.
+ * @param date - The origin date
+ * @param years - The number of years to offset. 'years' can be negative.
+ * @returns A new Date object offset from the origin date by the given number of years
+ */
+function addYears(date, years) {
+    var result = new Date(date.getTime());
+    result.setFullYear(date.getFullYear() + years);
+    // We want to maintain the same day-of-month, but that may not be possible if the new month doesn't have enough days.
+    // Loop until we back up to a day the new month has.
+    // (Weird modulo math is due to Javascript's treatment of negative numbers in modulo)
+    if (result.getMonth() !==
+        ((date.getMonth() % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.MonthInOneYear) + _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.MonthInOneYear) % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.MonthInOneYear) {
+        result = addDays(result, -result.getDate());
+    }
+    return result;
+}
+/**
+ * Returns a date that is the first day of the month of the provided date.
+ * @param date - The origin date
+ * @returns A new Date object with the day set to the first day of the month.
+ */
+function getMonthStart(date) {
+    return new Date(date.getFullYear(), date.getMonth(), 1, 0, 0, 0, 0);
+}
+/**
+ * Returns a date that is the last day of the month of the provided date.
+ * @param date - The origin date
+ * @returns A new Date object with the day set to the last day of the month.
+ */
+function getMonthEnd(date) {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0, 0, 0, 0, 0);
+}
+/**
+ * Returns a date that is the first day of the year of the provided date.
+ * @param date - The origin date
+ * @returns A new Date object with the day set to the first day of the year.
+ */
+function getYearStart(date) {
+    return new Date(date.getFullYear(), 0, 1, 0, 0, 0, 0);
+}
+/**
+ * Returns a date that is the last day of the year of the provided date.
+ * @param date - The origin date
+ * @returns A new Date object with the day set to the last day of the year.
+ */
+function getYearEnd(date) {
+    return new Date(date.getFullYear() + 1, 0, 0, 0, 0, 0, 0);
+}
+/**
+ * Returns a date that is a copy of the given date, aside from the month changing to the given month.
+ *  The method tries to preserve the day-of-month; however, if the new month does not have enough days
+ * to contain the original day-of-month, we'll use the last day of the new month.
+ * @param date - The origin date
+ * @param month - The 0-based index of the month to set on the date.
+ * @returns A new Date object with the given month set.
+ */
+function setMonth(date, month) {
+    return addMonths(date, month - date.getMonth());
+}
+/**
+ * Compares two dates, and returns true if the two dates (not accounting for time-of-day) are equal.
+ * @returns True if the two dates represent the same date (regardless of time-of-day), false otherwise.
+ */
+function compareDates(date1, date2) {
+    if (!date1 && !date2) {
+        return true;
+    }
+    else if (!date1 || !date2) {
+        return false;
+    }
+    else {
+        return (date1.getFullYear() === date2.getFullYear() &&
+            date1.getMonth() === date2.getMonth() &&
+            date1.getDate() === date2.getDate());
+    }
+}
+/**
+ * Compare the date parts of two dates
+ * @param date1 - The first date to compare
+ * @param date2 - The second date to compare
+ * @returns A negative value if date1 is earlier than date2, 0 if the dates are equal, or a positive value
+ * if date1 is later than date2.
+ */
+function compareDatePart(date1, date2) {
+    return getDatePartHashValue(date1) - getDatePartHashValue(date2);
+}
+/**
+ * Gets the date range array including the specified date. The date range array is calculated as the list
+ * of dates accounting for the specified first day of the week and date range type.
+ * @param date - The input date
+ * @param dateRangeType - The desired date range type, i.e., day, week, month, etc.
+ * @param firstDayOfWeek - The first day of the week.
+ * @param workWeekDays - The allowed days in work week. If not provided, assumes all days are allowed.
+ * @param daysToSelectInDayView - The number of days to include when using dateRangeType === DateRangeType.Day
+ * for multiday view. Defaults to 1
+ * @returns An array of dates representing the date range containing the specified date.
+ */
+function getDateRangeArray(date, dateRangeType, firstDayOfWeek, workWeekDays, daysToSelectInDayView) {
+    if (daysToSelectInDayView === void 0) { daysToSelectInDayView = 1; }
+    var datesArray = [];
+    var startDate;
+    var endDate = null;
+    if (!workWeekDays) {
+        workWeekDays = [_dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DayOfWeek.Monday, _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DayOfWeek.Tuesday, _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DayOfWeek.Wednesday, _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DayOfWeek.Thursday, _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DayOfWeek.Friday];
+    }
+    daysToSelectInDayView = Math.max(daysToSelectInDayView, 1);
+    switch (dateRangeType) {
+        case _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DateRangeType.Day:
+            startDate = getDatePart(date);
+            endDate = addDays(startDate, daysToSelectInDayView);
+            break;
+        case _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DateRangeType.Week:
+        case _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DateRangeType.WorkWeek:
+            startDate = getStartDateOfWeek(getDatePart(date), firstDayOfWeek);
+            endDate = addDays(startDate, _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek);
+            break;
+        case _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DateRangeType.Month:
+            startDate = new Date(date.getFullYear(), date.getMonth(), 1);
+            endDate = addMonths(startDate, 1);
+            break;
+        default:
+            throw new Error('Unexpected object: ' + dateRangeType);
+    }
+    // Populate the dates array with the dates in range
+    var nextDate = startDate;
+    do {
+        if (dateRangeType !== _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DateRangeType.WorkWeek) {
+            // push all days not in work week view
+            datesArray.push(nextDate);
+        }
+        else if (workWeekDays.indexOf(nextDate.getDay()) !== -1) {
+            datesArray.push(nextDate);
+        }
+        nextDate = addDays(nextDate, 1);
+    } while (!compareDates(nextDate, endDate));
+    return datesArray;
+}
+/**
+ * Checks whether the specified date is in the given date range.
+ * @param date - The origin date
+ * @param dateRange - An array of dates to do the lookup on
+ * @returns True if the date matches one of the dates in the specified array, false otherwise.
+ */
+function isInDateRangeArray(date, dateRange) {
+    for (var _i = 0, dateRange_1 = dateRange; _i < dateRange_1.length; _i++) {
+        var dateInRange = dateRange_1[_i];
+        if (compareDates(date, dateInRange)) {
+            return true;
+        }
+    }
+    return false;
+}
+/**
+ * Returns the week number for a date.
+ * Week numbers are 1 - 52 (53) in a year
+ * @param navigatedDate - A date to find the week number for.
+ * @param firstDayOfWeek - The first day of the week (0-6, Sunday = 0)
+ * @param firstWeekOfYear - The first week of the year (1-2)
+ * @returns The weeks number array for the current month.
+ */
+function getWeekNumbersInMonth(weeksInMonth, firstDayOfWeek, firstWeekOfYear, navigatedDate) {
+    var selectedYear = navigatedDate.getFullYear();
+    var selectedMonth = navigatedDate.getMonth();
+    var dayOfMonth = 1;
+    var fistDayOfMonth = new Date(selectedYear, selectedMonth, dayOfMonth);
+    var endOfFirstWeek = dayOfMonth +
+        (firstDayOfWeek + _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek - 1) -
+        adjustWeekDay(firstDayOfWeek, fistDayOfMonth.getDay());
+    var endOfWeekRange = new Date(selectedYear, selectedMonth, endOfFirstWeek);
+    dayOfMonth = endOfWeekRange.getDate();
+    var weeksArray = [];
+    for (var i = 0; i < weeksInMonth; i++) {
+        // Get week number for end of week
+        weeksArray.push(getWeekNumber(endOfWeekRange, firstDayOfWeek, firstWeekOfYear));
+        dayOfMonth += _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+        endOfWeekRange = new Date(selectedYear, selectedMonth, dayOfMonth);
+    }
+    return weeksArray;
+}
+/**
+ * Returns the week number for a date.
+ * Week numbers are 1 - 52 (53) in a year
+ * @param date - A date to find the week number for.
+ * @param firstDayOfWeek - The first day of the week (0-6, Sunday = 0)
+ * @param firstWeekOfYear - The first week of the year (1-2)
+ * @returns The week's number in the year.
+ */
+function getWeekNumber(date, firstDayOfWeek, firstWeekOfYear) {
+    // First four-day week of the year - minumum days count
+    var fourDayWeek = 4;
+    switch (firstWeekOfYear) {
+        case _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.FirstWeekOfYear.FirstFullWeek:
+            return getWeekOfYearFullDays(date, firstDayOfWeek, _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek);
+        case _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.FirstWeekOfYear.FirstFourDayWeek:
+            return getWeekOfYearFullDays(date, firstDayOfWeek, fourDayWeek);
+        default:
+            return getFirstDayWeekOfYear(date, firstDayOfWeek);
+    }
+}
+/**
+ * Gets the date for the first day of the week based on the given date assuming
+ * the specified first day of the week.
+ * @param date - The date to find the beginning of the week date for.
+ * @returns A new date object representing the first day of the week containing the input date.
+ */
+function getStartDateOfWeek(date, firstDayOfWeek) {
+    var daysOffset = firstDayOfWeek - date.getDay();
+    if (daysOffset > 0) {
+        // If first day of week is > date, go 1 week back, to ensure resulting date is in the past.
+        daysOffset -= _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+    }
+    return addDays(date, daysOffset);
+}
+/**
+ * Gets the date for the last day of the week based on the given date assuming
+ * the specified first day of the week.
+ * @param date - The date to find the beginning of the week date for.
+ * @returns A new date object representing the first day of the week containing the input date.
+ */
+function getEndDateOfWeek(date, firstDayOfWeek) {
+    var lastDayOfWeek = firstDayOfWeek - 1 >= 0 ? firstDayOfWeek - 1 : _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek - 1;
+    var daysOffset = lastDayOfWeek - date.getDay();
+    if (daysOffset < 0) {
+        // If last day of week is < date, go 1 week forward, to ensure resulting date is in the future.
+        daysOffset += _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+    }
+    return addDays(date, daysOffset);
+}
+/**
+ * Gets a new date with the time portion zeroed out, i.e., set to midnight
+ * @param date - The origin date
+ * @returns A new date with the time set to midnight
+ */
+function getDatePart(date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+/**
+ * Helper function to assist in date comparisons
+ */
+function getDatePartHashValue(date) {
+    // Generate date hash value created as sum of Date (up to 31 = 5 bits), Month (up to 11 = 4 bits) and Year.
+    // eslint-disable-next-line no-bitwise
+    return date.getDate() + (date.getMonth() << 5) + (date.getFullYear() << 9);
+}
+/**
+ * Helper function for `getWeekNumber`.
+ * Returns week number for a date.
+ * @param date - current selected date.
+ * @param firstDayOfWeek - The first day of week (0-6, Sunday = 0)
+ * @param numberOfFullDays - week settings.
+ * @returns The week's number in the year.
+ */
+function getWeekOfYearFullDays(date, firstDayOfWeek, numberOfFullDays) {
+    var dayOfYear = getDayOfYear(date) - 1;
+    var num = date.getDay() - (dayOfYear % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek);
+    var lastDayOfPrevYear = new Date(date.getFullYear() - 1, _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.MonthOfYear.December, 31);
+    var daysInYear = getDayOfYear(lastDayOfPrevYear) - 1;
+    var num2 = (firstDayOfWeek - num + 2 * _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek) % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+    if (num2 !== 0 && num2 >= numberOfFullDays) {
+        num2 -= _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+    }
+    var num3 = dayOfYear - num2;
+    if (num3 < 0) {
+        num -= daysInYear % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+        num2 = (firstDayOfWeek - num + 2 * _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek) % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+        if (num2 !== 0 && num2 + 1 >= numberOfFullDays) {
+            num2 -= _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+        }
+        num3 = daysInYear - num2;
+    }
+    return Math.floor(num3 / _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek + 1);
+}
+/**
+ * Helper function for `getWeekNumber`.
+ * Returns week number for a date.
+ * @param date - current selected date.
+ * @param firstDayOfWeek - The first day of week (0-6, Sunday = 0)
+ * @returns The week's number in the year.
+ */
+function getFirstDayWeekOfYear(date, firstDayOfWeek) {
+    var num = getDayOfYear(date) - 1;
+    var num2 = date.getDay() - (num % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek);
+    var num3 = (num2 - firstDayOfWeek + 2 * _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek) % _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek;
+    return Math.floor((num + num3) / _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek + 1);
+}
+/**
+ * Helper function for `getWeekNumber`.
+ * Returns adjusted week day number when `firstDayOfWeek` is other than Sunday.
+ * For Week Day Number comparison checks
+ * @param firstDayOfWeek - The first day of week (0-6, Sunday = 0)
+ * @param dateWeekDay - shifts number forward to 1 week in case passed as true
+ * @returns The day of week adjusted to `firstDayOfWeek`; e.g. when `firstDayOfWeek` is Monday (1),
+ * Sunday becomes 7.
+ */
+function adjustWeekDay(firstDayOfWeek, dateWeekDay) {
+    return firstDayOfWeek !== _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__.DayOfWeek.Sunday && dateWeekDay < firstDayOfWeek
+        ? dateWeekDay + _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__.TimeConstants.DaysInOneWeek
+        : dateWeekDay;
+}
+/**
+ * Returns the day number for a date in a year:
+ * the number of days since January 1st in the particular year.
+ * @param date - A date to find the day number for.
+ * @returns The day's number in the year.
+ */
+function getDayOfYear(date) {
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    var daysUntilDate = 0;
+    for (var i = 0; i < month; i++) {
+        daysUntilDate += daysInMonth(i + 1, year);
+    }
+    daysUntilDate += date.getDate();
+    return daysUntilDate;
+}
+/**
+ * Returns the number of days in the month
+ * @param month - The month number to target (months 1-12).
+ * @param year - The year to target.
+ * @returns The number of days in the month.
+ */
+function daysInMonth(month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+
+/***/ }),
+
+/***/ 30029:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateValues/dateValues.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DAYS_IN_WEEK: () => (/* binding */ DAYS_IN_WEEK),
+/* harmony export */   DateRangeType: () => (/* binding */ DateRangeType),
+/* harmony export */   DayOfWeek: () => (/* binding */ DayOfWeek),
+/* harmony export */   FirstWeekOfYear: () => (/* binding */ FirstWeekOfYear),
+/* harmony export */   MonthOfYear: () => (/* binding */ MonthOfYear)
+/* harmony export */ });
+/**
+ * The days of the week
+ * {@docCategory DateTimeUtilities}
+ */
+var DayOfWeek;
+(function (DayOfWeek) {
+    DayOfWeek[DayOfWeek["Sunday"] = 0] = "Sunday";
+    DayOfWeek[DayOfWeek["Monday"] = 1] = "Monday";
+    DayOfWeek[DayOfWeek["Tuesday"] = 2] = "Tuesday";
+    DayOfWeek[DayOfWeek["Wednesday"] = 3] = "Wednesday";
+    DayOfWeek[DayOfWeek["Thursday"] = 4] = "Thursday";
+    DayOfWeek[DayOfWeek["Friday"] = 5] = "Friday";
+    DayOfWeek[DayOfWeek["Saturday"] = 6] = "Saturday";
+})(DayOfWeek || (DayOfWeek = {}));
+/**
+ * The months
+ * {@docCategory DateTimeUtilities}
+ */
+var MonthOfYear;
+(function (MonthOfYear) {
+    MonthOfYear[MonthOfYear["January"] = 0] = "January";
+    MonthOfYear[MonthOfYear["February"] = 1] = "February";
+    MonthOfYear[MonthOfYear["March"] = 2] = "March";
+    MonthOfYear[MonthOfYear["April"] = 3] = "April";
+    MonthOfYear[MonthOfYear["May"] = 4] = "May";
+    MonthOfYear[MonthOfYear["June"] = 5] = "June";
+    MonthOfYear[MonthOfYear["July"] = 6] = "July";
+    MonthOfYear[MonthOfYear["August"] = 7] = "August";
+    MonthOfYear[MonthOfYear["September"] = 8] = "September";
+    MonthOfYear[MonthOfYear["October"] = 9] = "October";
+    MonthOfYear[MonthOfYear["November"] = 10] = "November";
+    MonthOfYear[MonthOfYear["December"] = 11] = "December";
+})(MonthOfYear || (MonthOfYear = {}));
+/**
+ * First week of the year settings types
+ * {@docCategory DateTimeUtilities}
+ */
+var FirstWeekOfYear;
+(function (FirstWeekOfYear) {
+    FirstWeekOfYear[FirstWeekOfYear["FirstDay"] = 0] = "FirstDay";
+    FirstWeekOfYear[FirstWeekOfYear["FirstFullWeek"] = 1] = "FirstFullWeek";
+    FirstWeekOfYear[FirstWeekOfYear["FirstFourDayWeek"] = 2] = "FirstFourDayWeek";
+})(FirstWeekOfYear || (FirstWeekOfYear = {}));
+/**
+ * The supported date range types
+ * {@docCategory DateTimeUtilities}
+ */
+var DateRangeType;
+(function (DateRangeType) {
+    DateRangeType[DateRangeType["Day"] = 0] = "Day";
+    DateRangeType[DateRangeType["Week"] = 1] = "Week";
+    DateRangeType[DateRangeType["Month"] = 2] = "Month";
+    DateRangeType[DateRangeType["WorkWeek"] = 3] = "WorkWeek";
+})(DateRangeType || (DateRangeType = {}));
+var DAYS_IN_WEEK = 7;
+
+
+/***/ }),
+
+/***/ 66369:
+/*!************************************************************************************!*\
+  !*** ./node_modules/@fluentui/date-time-utilities/lib/dateValues/timeConstants.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TimeConstants: () => (/* binding */ TimeConstants)
+/* harmony export */ });
+var TimeConstants = {
+    MillisecondsInOneDay: 86400000,
+    MillisecondsIn1Sec: 1000,
+    MillisecondsIn1Min: 60000,
+    MillisecondsIn30Mins: 1800000,
+    MillisecondsIn1Hour: 3600000,
+    MinutesInOneDay: 1440,
+    MinutesInOneHour: 60,
+    DaysInOneWeek: 7,
+    MonthInOneYear: 12,
+    HoursInOneDay: 24,
+    SecondsInOneMinute: 60,
+    OffsetTo24HourFormat: 12,
+    /**
+     * Matches a time string. Groups:
+     * 1. hours (with or without leading 0)
+     * 2. minutes
+     * 3. seconds (optional)
+     * 4. meridiem (am/pm, case-insensitive, optional)
+     */
+    TimeFormatRegex: /^(\d\d?):(\d\d):?(\d\d)? ?([ap]m)?/i,
 };
 
 
@@ -16509,6 +18605,2410 @@ var getStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(func
 
 /***/ }),
 
+/***/ 40835:
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarDayGrid.base.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarDayGridBase: () => (/* binding */ CalendarDayGridBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/utilities */ 46657);
+/* harmony import */ var _FocusZone__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../FocusZone */ 68885);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 46703);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 43555);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 68180);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react-hooks */ 72515);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
+/* harmony import */ var _CalendarMonthHeaderRow__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CalendarMonthHeaderRow */ 51831);
+/* harmony import */ var _CalendarGridRow__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./CalendarGridRow */ 82008);
+
+
+
+
+
+
+
+
+var getClassNames = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+function useDayRefs() {
+    var daysRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef({});
+    var getSetRefCallback = function (dayKey) { return function (element) {
+        if (element === null) {
+            delete daysRef.current[dayKey];
+        }
+        else {
+            daysRef.current[dayKey] = element;
+        }
+    }; };
+    return [daysRef, getSetRefCallback];
+}
+function useWeeks(props, onSelectDate, getSetRefCallback) {
+    /**
+     * Initial parsing of the given props to generate IDayInfo two dimensional array, which contains a representation
+     * of every day in the grid. Convenient for helping with conversions between day refs and Date objects in callbacks.
+     */
+    var weeks = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(function () {
+        var _a;
+        var weeksGrid = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.getDayGrid)(props);
+        var firstVisibleDay = weeksGrid[1][0].originalDate;
+        var lastVisibleDay = weeksGrid[weeksGrid.length - 1][6].originalDate;
+        var markedDays = ((_a = props.getMarkedDays) === null || _a === void 0 ? void 0 : _a.call(props, firstVisibleDay, lastVisibleDay)) || [];
+        /**
+         * Weeks is a 2D array. Weeks[0] contains the last week of the prior range,
+         * Weeks[weeks.length - 1] contains first week of next range. These are for transition states.
+         *
+         * Weeks[1... weeks.length - 2] contains the actual visible data
+         */
+        var returnValue = [];
+        for (var weekIndex = 0; weekIndex < weeksGrid.length; weekIndex++) {
+            var week = [];
+            var _loop_1 = function (dayIndex) {
+                var day = weeksGrid[weekIndex][dayIndex];
+                var dayInfo = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ onSelected: function () { return onSelectDate(day.originalDate); }, setRef: getSetRefCallback(day.key) }, day), { isMarked: day.isMarked || (markedDays === null || markedDays === void 0 ? void 0 : markedDays.some(function (markedDay) { return (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.compareDates)(day.originalDate, markedDay); })) });
+                week.push(dayInfo);
+            };
+            for (var dayIndex = 0; dayIndex < _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DAYS_IN_WEEK; dayIndex++) {
+                _loop_1(dayIndex);
+            }
+            returnValue.push(week);
+        }
+        return returnValue;
+        // TODO: this is missing deps on getSetRefCallback and onSelectDate (and depending on the entire
+        // props object may not be a good idea due to likely frequent mutation). It would be easy to
+        // fix getSetRefCallback to not mutate every render, but onSelectDate is passed down from
+        // Calendar and trying to fix it requires a huge cascade of changes.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props]);
+    return weeks;
+}
+/**
+ * Hook to determine whether to animate the CalendarDayGrid forwards or backwards
+ * @returns true if the grid should animate backwards; false otherwise
+ */
+function useAnimateBackwards(weeks) {
+    var previousNavigatedDate = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__.usePrevious)(weeks[0][0].originalDate);
+    if (!previousNavigatedDate || previousNavigatedDate.getTime() === weeks[0][0].originalDate.getTime()) {
+        return undefined;
+    }
+    else if (previousNavigatedDate <= weeks[0][0].originalDate) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+function useWeekCornerStyles(props) {
+    /**
+     *
+     * Section for setting the rounded corner styles on individual day cells. Individual day cells need different
+     * corners to be rounded depending on which date range type and where the cell is located in the current grid.
+     * If we just round all of the corners, there isn't a good overlap and we get gaps between contiguous day boxes
+     * in Edge browser.
+     *
+     */
+    var getWeekCornerStyles = function (classNames, initialWeeks) {
+        var weekCornersStyled = {};
+        /* need to handle setting all of the corners on arbitrarily shaped blobs
+              __
+           __|A |
+          |B |C |__
+          |D |E |F |
+    
+          in this case, A needs top left rounded, top right rounded
+          B needs top left rounded
+          C doesn't need any rounding
+          D needs bottom left rounded
+          E doesn't need any rounding
+          F needs top right rounding
+        */
+        // cut off the animation transition weeks
+        var weeks = initialWeeks.slice(1, initialWeeks.length - 1);
+        // if there's an item above, lose both top corners. Item below, lose both bottom corners, etc.
+        weeks.forEach(function (week, weekIndex) {
+            week.forEach(function (day, dayIndex) {
+                var above = weeks[weekIndex - 1] &&
+                    weeks[weekIndex - 1][dayIndex] &&
+                    isInSameHoverRange(weeks[weekIndex - 1][dayIndex].originalDate, day.originalDate, weeks[weekIndex - 1][dayIndex].isSelected, day.isSelected);
+                var below = weeks[weekIndex + 1] &&
+                    weeks[weekIndex + 1][dayIndex] &&
+                    isInSameHoverRange(weeks[weekIndex + 1][dayIndex].originalDate, day.originalDate, weeks[weekIndex + 1][dayIndex].isSelected, day.isSelected);
+                var left = weeks[weekIndex][dayIndex - 1] &&
+                    isInSameHoverRange(weeks[weekIndex][dayIndex - 1].originalDate, day.originalDate, weeks[weekIndex][dayIndex - 1].isSelected, day.isSelected);
+                var right = weeks[weekIndex][dayIndex + 1] &&
+                    isInSameHoverRange(weeks[weekIndex][dayIndex + 1].originalDate, day.originalDate, weeks[weekIndex][dayIndex + 1].isSelected, day.isSelected);
+                var style = [];
+                style.push(calculateRoundedStyles(classNames, above, below, left, right));
+                style.push(calculateBorderStyles(classNames, above, below, left, right));
+                weekCornersStyled[weekIndex + '_' + dayIndex] = style.join(' ');
+            });
+        });
+        return weekCornersStyled;
+    };
+    var calculateRoundedStyles = function (classNames, above, below, left, right) {
+        var style = [];
+        var roundedTopLeft = !above && !left;
+        var roundedTopRight = !above && !right;
+        var roundedBottomLeft = !below && !left;
+        var roundedBottomRight = !below && !right;
+        if (roundedTopLeft) {
+            style.push((0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)() ? classNames.topRightCornerDate : classNames.topLeftCornerDate);
+        }
+        if (roundedTopRight) {
+            style.push((0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)() ? classNames.topLeftCornerDate : classNames.topRightCornerDate);
+        }
+        if (roundedBottomLeft) {
+            style.push((0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)() ? classNames.bottomRightCornerDate : classNames.bottomLeftCornerDate);
+        }
+        if (roundedBottomRight) {
+            style.push((0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)() ? classNames.bottomLeftCornerDate : classNames.bottomRightCornerDate);
+        }
+        return style.join(' ');
+    };
+    var calculateBorderStyles = function (classNames, above, below, left, right) {
+        var style = [];
+        if (!above) {
+            style.push(classNames.datesAbove);
+        }
+        if (!below) {
+            style.push(classNames.datesBelow);
+        }
+        if (!left) {
+            style.push((0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)() ? classNames.datesRight : classNames.datesLeft);
+        }
+        if (!right) {
+            style.push((0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)() ? classNames.datesLeft : classNames.datesRight);
+        }
+        return style.join(' ');
+    };
+    var isInSameHoverRange = function (date1, date2, date1Selected, date2Selected) {
+        var dateRangeType = props.dateRangeType, firstDayOfWeek = props.firstDayOfWeek, workWeekDays = props.workWeekDays;
+        // The hover state looks weird with non-contiguous days in work week view. In work week, show week hover state
+        var dateRangeHoverType = dateRangeType === _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DateRangeType.WorkWeek ? _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DateRangeType.Week : dateRangeType;
+        // we do not pass daysToSelectInDayView because we handle setting those styles dyanamically in onMouseOver
+        var dateRange = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.getDateRangeArray)(date1, dateRangeHoverType, firstDayOfWeek, workWeekDays);
+        if (date1Selected !== date2Selected) {
+            // if one is selected and the other is not, they can't be in the same range
+            return false;
+        }
+        else if (date1Selected && date2Selected) {
+            // if they're both selected at the same time they must be in the same range
+            return true;
+        }
+        // otherwise, both must be unselected, so check the dateRange
+        return dateRange.filter(function (date) { return date.getTime() === date2.getTime(); }).length > 0;
+    };
+    return [getWeekCornerStyles, calculateRoundedStyles];
+}
+var CalendarDayGridBase = function (props) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var navigatedDayRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var activeDescendantId = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_8__.useId)();
+    var onSelectDate = function (selectedDate) {
+        var _a, _b;
+        var firstDayOfWeek = props.firstDayOfWeek, minDate = props.minDate, maxDate = props.maxDate, workWeekDays = props.workWeekDays, daysToSelectInDayView = props.daysToSelectInDayView, restrictedDates = props.restrictedDates;
+        var restrictedDatesOptions = { minDate: minDate, maxDate: maxDate, restrictedDates: restrictedDates };
+        var dateRange = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.getDateRangeArray)(selectedDate, dateRangeType, firstDayOfWeek, workWeekDays, daysToSelectInDayView);
+        dateRange = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_9__.getBoundedDateRange)(dateRange, minDate, maxDate);
+        dateRange = dateRange.filter(function (d) {
+            return !(0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__.isRestrictedDate)(d, restrictedDatesOptions);
+        });
+        (_a = props.onSelectDate) === null || _a === void 0 ? void 0 : _a.call(props, selectedDate, dateRange);
+        (_b = props.onNavigateDate) === null || _b === void 0 ? void 0 : _b.call(props, selectedDate, true);
+    };
+    var _a = useDayRefs(), daysRef = _a[0], getSetRefCallback = _a[1];
+    var weeks = useWeeks(props, onSelectDate, getSetRefCallback);
+    var animateBackwards = useAnimateBackwards(weeks);
+    var _b = useWeekCornerStyles(props), getWeekCornerStyles = _b[0], calculateRoundedStyles = _b[1];
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(props.componentRef, function () { return ({
+        focus: function () {
+            var _a, _b;
+            (_b = (_a = navigatedDayRef.current) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+        },
+    }); }, []);
+    /**
+     *
+     * Section for setting hover/pressed styles. Because we want arbitrary blobs of days to be selectable, to support
+     * highlighting every day in the month for month view, css :hover style isn't enough, so we need mouse callbacks
+     * to set classnames on all relevant child refs to apply the styling
+     *
+     */
+    var getDayInfosInRangeOfDay = function (dayToCompare) {
+        // The hover state looks weird with non-contiguous days in work week view. In work week, show week hover state
+        var dateRangeHoverType = getDateRangeTypeToUse(props.dateRangeType, props.workWeekDays);
+        // gets all the dates for the given date range type that are in the same date range as the given day
+        var dateRange = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.getDateRangeArray)(dayToCompare.originalDate, dateRangeHoverType, props.firstDayOfWeek, props.workWeekDays, props.daysToSelectInDayView).map(function (date) { return date.getTime(); });
+        // gets all the day refs for the given dates
+        var dayInfosInRange = weeks.reduce(function (accumulatedValue, currentWeek) {
+            return accumulatedValue.concat(currentWeek.filter(function (weekDay) { return dateRange.indexOf(weekDay.originalDate.getTime()) !== -1; }));
+        }, []);
+        return dayInfosInRange;
+    };
+    var getRefsFromDayInfos = function (dayInfosInRange) {
+        var dayRefs = [];
+        dayRefs = dayInfosInRange.map(function (dayInfo) { return daysRef.current[dayInfo.key]; });
+        return dayRefs;
+    };
+    var styles = props.styles, theme = props.theme, className = props.className, dateRangeType = props.dateRangeType, showWeekNumbers = props.showWeekNumbers, labelledBy = props.labelledBy, lightenDaysOutsideNavigatedMonth = props.lightenDaysOutsideNavigatedMonth, animationDirection = props.animationDirection;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        dateRangeType: dateRangeType,
+        showWeekNumbers: showWeekNumbers,
+        lightenDaysOutsideNavigatedMonth: lightenDaysOutsideNavigatedMonth === undefined ? true : lightenDaysOutsideNavigatedMonth,
+        animationDirection: animationDirection,
+        animateBackwards: animateBackwards,
+    });
+    // When the month is highlighted get the corner dates so that styles can be added to them
+    var weekCorners = getWeekCornerStyles(classNames, weeks);
+    var partialWeekProps = {
+        weeks: weeks,
+        navigatedDayRef: navigatedDayRef,
+        calculateRoundedStyles: calculateRoundedStyles,
+        activeDescendantId: activeDescendantId,
+        classNames: classNames,
+        weekCorners: weekCorners,
+        getDayInfosInRangeOfDay: getDayInfosInRangeOfDay,
+        getRefsFromDayInfos: getRefsFromDayInfos,
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FocusZone__WEBPACK_IMPORTED_MODULE_11__.FocusZone, { className: classNames.wrapper, preventDefaultWhenHandled: true },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: classNames.table, "aria-multiselectable": "false", "aria-labelledby": labelledBy, "aria-activedescendant": activeDescendantId, role: "grid" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarMonthHeaderRow__WEBPACK_IMPORTED_MODULE_12__.CalendarMonthHeaderRow, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props, { classNames: classNames, weeks: weeks })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarGridRow__WEBPACK_IMPORTED_MODULE_13__.CalendarGridRow, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props, partialWeekProps, { week: weeks[0], weekIndex: -1, rowClassName: classNames.firstTransitionWeek, ariaRole: "presentation", ariaHidden: true })),
+                weeks.slice(1, weeks.length - 1).map(function (week, weekIndex) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarGridRow__WEBPACK_IMPORTED_MODULE_13__.CalendarGridRow, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props, partialWeekProps, { key: weekIndex, week: week, weekIndex: weekIndex, rowClassName: classNames.weekRow }))); }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarGridRow__WEBPACK_IMPORTED_MODULE_13__.CalendarGridRow, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props, partialWeekProps, { week: weeks[weeks.length - 1], weekIndex: -2, rowClassName: classNames.lastTransitionWeek, ariaRole: "presentation", ariaHidden: true }))))));
+};
+CalendarDayGridBase.displayName = 'CalendarDayGridBase';
+/**
+ * When given work week, if the days are non-contiguous, the hover states look really weird. So for non-contiguous
+ * work weeks, we'll just show week view instead.
+ */
+function getDateRangeTypeToUse(dateRangeType, workWeekDays) {
+    if (workWeekDays && dateRangeType === _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DateRangeType.WorkWeek) {
+        var sortedWWDays = workWeekDays.slice().sort();
+        var isContiguous = true;
+        for (var i = 1; i < sortedWWDays.length; i++) {
+            if (sortedWWDays[i] !== sortedWWDays[i - 1] + 1) {
+                isContiguous = false;
+                break;
+            }
+        }
+        if (!isContiguous || workWeekDays.length === 0) {
+            return _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DateRangeType.Week;
+        }
+    }
+    return dateRangeType;
+}
+
+
+/***/ }),
+
+/***/ 2142:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarDayGrid.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarDayGrid: () => (/* binding */ CalendarDayGrid)
+/* harmony export */ });
+/* harmony import */ var _CalendarDayGrid_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarDayGrid.base */ 40835);
+/* harmony import */ var _CalendarDayGrid_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarDayGrid.styles */ 95544);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+
+
+
+var CalendarDayGrid = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_CalendarDayGrid_base__WEBPACK_IMPORTED_MODULE_1__.CalendarDayGridBase, _CalendarDayGrid_styles__WEBPACK_IMPORTED_MODULE_2__.styles, undefined, { scope: 'CalendarDayGrid' });
+
+
+/***/ }),
+
+/***/ 95544:
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarDayGrid.styles.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _Calendar_Calendar_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Calendar/Calendar.types */ 99675);
+
+
+
+
+var GlobalClassNames = {
+    hoverStyle: 'ms-CalendarDay-hoverStyle',
+    pressedStyle: 'ms-CalendarDay-pressedStyle',
+    dayIsTodayStyle: 'ms-CalendarDay-dayIsToday',
+    daySelectedStyle: 'ms-CalendarDay-daySelected',
+};
+var transitionRowDisappearance = (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.keyframes)({
+    '100%': {
+        width: 0,
+        height: 0,
+        overflow: 'hidden',
+    },
+    '99.9%': {
+        width: '100%',
+        height: 28,
+        overflow: 'visible',
+    },
+    '0%': {
+        width: '100%',
+        height: 28,
+        overflow: 'visible',
+    },
+});
+var styles = function (props) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    var theme = props.theme, dateRangeType = props.dateRangeType, showWeekNumbers = props.showWeekNumbers, lightenDaysOutsideNavigatedMonth = props.lightenDaysOutsideNavigatedMonth, animateBackwards = props.animateBackwards, animationDirection = props.animationDirection;
+    var palette = theme.palette;
+    var classNames = (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var rowAnimationStyle = {};
+    if (animateBackwards !== undefined) {
+        if (animationDirection === _Calendar_Calendar_types__WEBPACK_IMPORTED_MODULE_1__.AnimationDirection.Horizontal) {
+            rowAnimationStyle = animateBackwards ? _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideRightIn20 : _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideLeftIn20;
+        }
+        else {
+            rowAnimationStyle = animateBackwards ? _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideDownIn20 : _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideUpIn20;
+        }
+    }
+    var firstTransitionRowAnimationStyle = {};
+    var lastTransitionRowAnimationStyle = {};
+    if (animateBackwards !== undefined) {
+        if (animationDirection !== _Calendar_Calendar_types__WEBPACK_IMPORTED_MODULE_1__.AnimationDirection.Horizontal) {
+            firstTransitionRowAnimationStyle = animateBackwards ? { animationName: '' } : _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideUpOut20;
+            lastTransitionRowAnimationStyle = animateBackwards ? _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideDownOut20 : { animationName: '' };
+        }
+    }
+    var disabledStyle = {
+        selectors: {
+            '&, &:disabled, & button': {
+                color: palette.neutralTertiaryAlt,
+                pointerEvents: 'none',
+            },
+        },
+    };
+    return {
+        wrapper: {
+            paddingBottom: 10,
+        },
+        table: [
+            {
+                textAlign: 'center',
+                borderCollapse: 'collapse',
+                borderSpacing: '0',
+                tableLayout: 'fixed',
+                fontSize: 'inherit',
+                marginTop: 4,
+                width: 196,
+                position: 'relative',
+                paddingBottom: 10,
+            },
+            showWeekNumbers && {
+                width: 226,
+            },
+        ],
+        dayCell: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -3 }),
+            {
+                margin: 0,
+                padding: 0,
+                width: 28,
+                height: 28,
+                lineHeight: 28,
+                fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+                fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+                color: palette.neutralPrimary,
+                cursor: 'pointer',
+                position: 'relative',
+                selectors: (_a = {},
+                    _a[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'WindowText', backgroundColor: 'transparent', zIndex: 0 }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                    _a['&.' + classNames.hoverStyle] = {
+                        backgroundColor: palette.neutralLighter,
+                        selectors: (_b = {},
+                            _b[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                zIndex: 3,
+                                backgroundColor: 'Window',
+                                outline: '1px solid Highlight',
+                            },
+                            _b),
+                    },
+                    _a['&.' + classNames.pressedStyle] = {
+                        backgroundColor: palette.neutralLight,
+                        selectors: (_c = {},
+                            _c[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                borderColor: 'Highlight',
+                                color: 'Highlight',
+                                backgroundColor: 'Window',
+                            },
+                            _c),
+                    },
+                    _a['&.' + classNames.pressedStyle + '.' + classNames.hoverStyle] = {
+                        selectors: (_d = {},
+                            _d[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                backgroundColor: 'Window',
+                                outline: '1px solid Highlight',
+                            },
+                            _d),
+                    },
+                    _a),
+            },
+        ],
+        daySelected: [
+            dateRangeType !== _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__.DateRangeType.Month && {
+                backgroundColor: palette.neutralLight + '!important',
+                selectors: (_e = {
+                        '&::before': {
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                        }
+                    },
+                    _e['&:hover, &.' + classNames.hoverStyle + ', &.' + classNames.pressedStyle] = (_f = {
+                            backgroundColor: palette.neutralLight + '!important'
+                        },
+                        _f[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            color: 'HighlightText!important',
+                            background: 'Highlight!important',
+                        },
+                        _f),
+                    _e[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'Highlight!important', color: 'HighlightText!important', borderColor: 'Highlight!important' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                    _e),
+            },
+        ],
+        weekRow: rowAnimationStyle,
+        weekDayLabelCell: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.fadeIn200,
+        weekNumberCell: {
+            margin: 0,
+            padding: 0,
+            borderRight: '1px solid',
+            borderColor: palette.neutralLight,
+            backgroundColor: palette.neutralLighterAlt,
+            color: palette.neutralSecondary,
+            boxSizing: 'border-box',
+            width: 28,
+            height: 28,
+            fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+            fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+        },
+        dayOutsideBounds: disabledStyle,
+        dayOutsideNavigatedMonth: lightenDaysOutsideNavigatedMonth && {
+            color: palette.neutralSecondary,
+            fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+        },
+        dayButton: {
+            width: 24,
+            height: 24,
+            lineHeight: 24,
+            fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+            fontWeight: 'inherit',
+            borderRadius: 2,
+            border: 'none',
+            padding: 0,
+            color: 'inherit',
+            backgroundColor: 'transparent',
+            cursor: 'pointer',
+            overflow: 'visible', // explicitly specify for IE11
+            selectors: {
+                span: {
+                    height: 'inherit',
+                    lineHeight: 'inherit',
+                },
+            },
+        },
+        dayIsToday: {
+            backgroundColor: palette.themePrimary + '!important',
+            borderRadius: '100%',
+            color: palette.white + '!important',
+            fontWeight: (_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.semibold + '!important'),
+            selectors: (_g = {},
+                _g[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'WindowText!important', color: 'Window!important', borderColor: 'WindowText!important' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                _g),
+        },
+        firstTransitionWeek: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ position: 'absolute', opacity: 0, width: 0, height: 0, overflow: 'hidden' }, firstTransitionRowAnimationStyle), { animationName: firstTransitionRowAnimationStyle.animationName + ',' + transitionRowDisappearance }),
+        lastTransitionWeek: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ position: 'absolute', opacity: 0, width: 0, height: 0, overflow: 'hidden', marginTop: -28 }, lastTransitionRowAnimationStyle), { animationName: lastTransitionRowAnimationStyle.animationName + ',' + transitionRowDisappearance }),
+        dayMarker: {
+            width: 4,
+            height: 4,
+            backgroundColor: palette.neutralSecondary,
+            borderRadius: '100%',
+            bottom: 1,
+            left: 0,
+            right: 0,
+            position: 'absolute',
+            margin: 'auto',
+            selectors: (_h = {},
+                _h['.' + classNames.dayIsTodayStyle + ' &'] = {
+                    backgroundColor: palette.white,
+                    selectors: (_j = {},
+                        _j[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            backgroundColor: 'Window',
+                        },
+                        _j),
+                },
+                _h['.' + classNames.daySelectedStyle + ' &'] = {
+                    selectors: (_k = {},
+                        _k[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            backgroundColor: 'HighlightText',
+                        },
+                        _k),
+                },
+                _h[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ backgroundColor: 'WindowText' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                _h),
+        },
+        topRightCornerDate: {
+            borderTopRightRadius: '2px',
+        },
+        topLeftCornerDate: {
+            borderTopLeftRadius: '2px',
+        },
+        bottomRightCornerDate: {
+            borderBottomRightRadius: '2px',
+        },
+        bottomLeftCornerDate: {
+            borderBottomLeftRadius: '2px',
+        },
+        datesAbove: {
+            '&::before': {
+                borderTop: "1px solid ".concat(palette.neutralSecondary),
+            },
+        },
+        datesBelow: {
+            '&::before': {
+                borderBottom: "1px solid ".concat(palette.neutralSecondary),
+            },
+        },
+        datesLeft: {
+            '&::before': {
+                borderLeft: "1px solid ".concat(palette.neutralSecondary),
+            },
+        },
+        datesRight: {
+            '&::before': {
+                borderRight: "1px solid ".concat(palette.neutralSecondary),
+            },
+        },
+    };
+};
+
+
+/***/ }),
+
+/***/ 36614:
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarGridDayCell.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarGridDayCell: () => (/* binding */ CalendarGridDayCell)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 46657);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 97743);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+
+
+
+var CalendarGridDayCell = function (props) {
+    var _a;
+    var navigatedDate = props.navigatedDate, dateTimeFormatter = props.dateTimeFormatter, allFocusable = props.allFocusable, strings = props.strings, activeDescendantId = props.activeDescendantId, navigatedDayRef = props.navigatedDayRef, calculateRoundedStyles = props.calculateRoundedStyles, weeks = props.weeks, classNames = props.classNames, day = props.day, dayIndex = props.dayIndex, weekIndex = props.weekIndex, weekCorners = props.weekCorners, ariaHidden = props.ariaHidden, customDayCellRef = props.customDayCellRef, dateRangeType = props.dateRangeType, daysToSelectInDayView = props.daysToSelectInDayView, onSelectDate = props.onSelectDate, restrictedDates = props.restrictedDates, minDate = props.minDate, maxDate = props.maxDate, onNavigateDate = props.onNavigateDate, getDayInfosInRangeOfDay = props.getDayInfosInRangeOfDay, getRefsFromDayInfos = props.getRefsFromDayInfos;
+    var cornerStyle = (_a = weekCorners === null || weekCorners === void 0 ? void 0 : weekCorners[weekIndex + '_' + dayIndex]) !== null && _a !== void 0 ? _a : '';
+    var isNavigatedDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.compareDates)(navigatedDate, day.originalDate);
+    var navigateMonthEdge = function (ev, date) {
+        var targetDate = undefined;
+        var direction = 1; // by default search forward
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        if (ev.which === _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.up) {
+            targetDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.addWeeks)(date, -1);
+            direction = -1;
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+        }
+        else if (ev.which === _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.down) {
+            targetDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.addWeeks)(date, 1);
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+        }
+        else if (ev.which === (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__.getRTLSafeKeyCode)(_fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.left)) {
+            targetDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.addDays)(date, -1);
+            direction = -1;
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+        }
+        else if (ev.which === (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__.getRTLSafeKeyCode)(_fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.right)) {
+            targetDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.addDays)(date, 1);
+        }
+        if (!targetDate) {
+            // if we couldn't find a target date at all, do nothing
+            return;
+        }
+        var findAvailableDateOptions = {
+            initialDate: date,
+            targetDate: targetDate,
+            direction: direction,
+            restrictedDates: restrictedDates,
+            minDate: minDate,
+            maxDate: maxDate,
+        };
+        // target date is restricted, search in whatever direction until finding the next possible date,
+        // stopping at boundaries
+        var nextDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.findAvailableDate)(findAvailableDateOptions);
+        if (!nextDate) {
+            // if no dates available in initial direction, try going backwards
+            findAvailableDateOptions.direction = -direction;
+            nextDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.findAvailableDate)(findAvailableDateOptions);
+        }
+        // if the nextDate is still inside the same focusZone area, let the focusZone handle setting the focus so we
+        // don't jump the view unnecessarily
+        var isInCurrentView = weeks &&
+            nextDate &&
+            weeks.slice(1, weeks.length - 1).some(function (week) {
+                return week.some(function (dayToCompare) {
+                    return (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.compareDates)(dayToCompare.originalDate, nextDate);
+                });
+            });
+        if (isInCurrentView) {
+            return;
+        }
+        // else, fire navigation on the date to change the view to show it
+        if (nextDate) {
+            onNavigateDate(nextDate, true);
+            ev.preventDefault();
+        }
+    };
+    var onMouseOverDay = function (ev) {
+        var dayInfos = getDayInfosInRangeOfDay(day);
+        var dayRefs = getRefsFromDayInfos(dayInfos);
+        dayRefs.forEach(function (dayRef, index) {
+            var _a;
+            if (dayRef) {
+                dayRef.classList.add('ms-CalendarDay-hoverStyle');
+                if (!dayInfos[index].isSelected &&
+                    dateRangeType === _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DateRangeType.Day &&
+                    daysToSelectInDayView &&
+                    daysToSelectInDayView > 1) {
+                    // remove the static classes first to overwrite them
+                    dayRef.classList.remove(classNames.bottomLeftCornerDate, classNames.bottomRightCornerDate, classNames.topLeftCornerDate, classNames.topRightCornerDate);
+                    var classNamesToAdd = calculateRoundedStyles(classNames, false, false, index > 0, index < dayRefs.length - 1).trim();
+                    if (classNamesToAdd) {
+                        (_a = dayRef.classList).add.apply(_a, classNamesToAdd.split(' '));
+                    }
+                }
+            }
+        });
+    };
+    var onMouseDownDay = function (ev) {
+        var dayInfos = getDayInfosInRangeOfDay(day);
+        var dayRefs = getRefsFromDayInfos(dayInfos);
+        dayRefs.forEach(function (dayRef) {
+            if (dayRef) {
+                dayRef.classList.add('ms-CalendarDay-pressedStyle');
+            }
+        });
+    };
+    var onMouseUpDay = function (ev) {
+        var dayInfos = getDayInfosInRangeOfDay(day);
+        var dayRefs = getRefsFromDayInfos(dayInfos);
+        dayRefs.forEach(function (dayRef) {
+            if (dayRef) {
+                dayRef.classList.remove('ms-CalendarDay-pressedStyle');
+            }
+        });
+    };
+    var onMouseOutDay = function (ev) {
+        var dayInfos = getDayInfosInRangeOfDay(day);
+        var dayRefs = getRefsFromDayInfos(dayInfos);
+        dayRefs.forEach(function (dayRef, index) {
+            var _a;
+            if (dayRef) {
+                dayRef.classList.remove('ms-CalendarDay-hoverStyle');
+                dayRef.classList.remove('ms-CalendarDay-pressedStyle');
+                if (!dayInfos[index].isSelected &&
+                    dateRangeType === _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__.DateRangeType.Day &&
+                    daysToSelectInDayView &&
+                    daysToSelectInDayView > 1) {
+                    var classNamesToAdd = calculateRoundedStyles(classNames, false, false, index > 0, index < dayRefs.length - 1).trim();
+                    if (classNamesToAdd) {
+                        (_a = dayRef.classList).remove.apply(_a, classNamesToAdd.split(' '));
+                    }
+                }
+            }
+        });
+    };
+    var onDayKeyDown = function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        if (ev.which === _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.enter) {
+            onSelectDate === null || onSelectDate === void 0 ? void 0 : onSelectDate(day.originalDate);
+        }
+        else {
+            navigateMonthEdge(ev, day.originalDate);
+        }
+    };
+    var ariaLabel = day.originalDate.getDate() +
+        ', ' +
+        strings.months[day.originalDate.getMonth()] +
+        ', ' +
+        day.originalDate.getFullYear();
+    if (day.isMarked) {
+        ariaLabel = ariaLabel + ', ' + strings.dayMarkedAriaLabel;
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__.css)(classNames.dayCell, weekCorners && cornerStyle, day.isSelected && classNames.daySelected, day.isSelected && 'ms-CalendarDay-daySelected', !day.isInBounds && classNames.dayOutsideBounds, !day.isInMonth && classNames.dayOutsideNavigatedMonth), ref: function (element) {
+            customDayCellRef === null || customDayCellRef === void 0 ? void 0 : customDayCellRef(element, day.originalDate, classNames);
+            day.setRef(element);
+            isNavigatedDate && (navigatedDayRef.current = element);
+        }, "aria-hidden": ariaHidden, "aria-disabled": !ariaHidden && !day.isInBounds, onClick: day.isInBounds && !ariaHidden ? day.onSelected : undefined, onMouseOver: !ariaHidden ? onMouseOverDay : undefined, onMouseDown: !ariaHidden ? onMouseDownDay : undefined, onMouseUp: !ariaHidden ? onMouseUpDay : undefined, onMouseOut: !ariaHidden ? onMouseOutDay : undefined, onKeyDown: !ariaHidden ? onDayKeyDown : undefined, role: "gridcell", tabIndex: isNavigatedDate ? 0 : undefined, "aria-current": day.isToday ? 'date' : undefined, "aria-selected": day.isInBounds ? day.isSelected : undefined, "data-is-focusable": !ariaHidden && (allFocusable || (day.isInBounds ? true : undefined)) },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: day.key + 'button', "aria-hidden": ariaHidden, className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__.css)(classNames.dayButton, day.isToday && classNames.dayIsToday, day.isToday && 'ms-CalendarDay-dayIsToday'), "aria-label": ariaLabel, id: isNavigatedDate ? activeDescendantId : undefined, disabled: !ariaHidden && !day.isInBounds, type: "button", tabIndex: -1, "data-is-focusable": "false" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-hidden": "true" }, dateTimeFormatter.formatDay(day.originalDate)),
+            day.isMarked && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { "aria-hidden": "true", className: classNames.dayMarker }))));
+};
+
+
+/***/ }),
+
+/***/ 82008:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarGridRow.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarGridRow: () => (/* binding */ CalendarGridRow)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _CalendarGridDayCell__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CalendarGridDayCell */ 36614);
+
+
+
+
+
+var CalendarGridRow = function (props) {
+    var classNames = props.classNames, week = props.week, weeks = props.weeks, weekIndex = props.weekIndex, rowClassName = props.rowClassName, ariaRole = props.ariaRole, showWeekNumbers = props.showWeekNumbers, firstDayOfWeek = props.firstDayOfWeek, firstWeekOfYear = props.firstWeekOfYear, navigatedDate = props.navigatedDate, strings = props.strings;
+    var weekNumbers = showWeekNumbers
+        ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__.getWeekNumbersInMonth)(weeks.length, firstDayOfWeek, firstWeekOfYear, navigatedDate)
+        : null;
+    var titleString = weekNumbers
+        ? strings.weekNumberFormatString && (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__.format)(strings.weekNumberFormatString, weekNumbers[weekIndex])
+        : '';
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { role: ariaRole, className: rowClassName, key: weekIndex + '_' + week[0].key },
+        showWeekNumbers && weekNumbers && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", { className: classNames.weekNumberCell, key: weekIndex, title: titleString, "aria-label": titleString, scope: "row" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, weekNumbers[weekIndex]))),
+        week.map(function (day, dayIndex) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarGridDayCell__WEBPACK_IMPORTED_MODULE_3__.CalendarGridDayCell, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { key: day.key, day: day, dayIndex: dayIndex }))); })));
+};
+
+
+/***/ }),
+
+/***/ 51831:
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarMonthHeaderRow.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarMonthHeaderRow: () => (/* binding */ CalendarMonthHeaderRow)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 77158);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+
+
+
+var CalendarMonthHeaderRow = function (props) {
+    var showWeekNumbers = props.showWeekNumbers, strings = props.strings, firstDayOfWeek = props.firstDayOfWeek, allFocusable = props.allFocusable, weeksToShow = props.weeksToShow, weeks = props.weeks, classNames = props.classNames;
+    var dayLabels = strings.shortDays.slice();
+    var firstOfMonthIndex = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.findIndex)(weeks[1], function (day) { return day.originalDate.getDate() === 1; });
+    if (weeksToShow === 1 && firstOfMonthIndex >= 0) {
+        // if we only show one week, replace the header with short month name
+        var firstOfMonthIndexOffset = (firstOfMonthIndex + firstDayOfWeek) % _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DAYS_IN_WEEK;
+        dayLabels[firstOfMonthIndexOffset] = strings.shortMonths[weeks[1][firstOfMonthIndex].originalDate.getMonth()];
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+        showWeekNumbers && react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", { className: classNames.dayCell }),
+        dayLabels.map(function (val, index) {
+            var i = (index + firstDayOfWeek) % _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DAYS_IN_WEEK;
+            var label = strings.days[i];
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__.css)(classNames.dayCell, classNames.weekDayLabelCell), scope: "col", key: dayLabels[i] + ' ' + index, title: label, "aria-label": label, "data-is-focusable": allFocusable ? true : undefined }, dayLabels[i]));
+        })));
+};
+
+
+/***/ }),
+
+/***/ 89229:
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.base.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarBase: () => (/* binding */ CalendarBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 37915);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _CalendarDay_CalendarDay__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CalendarDay/CalendarDay */ 95107);
+/* harmony import */ var _CalendarMonth_CalendarMonth__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./CalendarMonth/CalendarMonth */ 24335);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 53703);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/utilities */ 34751);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/utilities */ 85123);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/utilities */ 97520);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 36228);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./defaults */ 72280);
+
+
+
+
+
+
+
+
+var MIN_SIZE_FORCE_OVERLAY = 440;
+var getClassNames = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var defaultWorkWeekDays = [
+    _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Monday,
+    _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Tuesday,
+    _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Wednesday,
+    _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Thursday,
+    _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Friday,
+];
+var DEFAULT_PROPS = {
+    isMonthPickerVisible: true,
+    isDayPickerVisible: true,
+    showMonthPickerAsOverlay: false,
+    today: new Date(),
+    firstDayOfWeek: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Sunday,
+    dateRangeType: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DateRangeType.Day,
+    showGoToToday: true,
+    strings: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__.DEFAULT_CALENDAR_STRINGS,
+    highlightCurrentMonth: false,
+    highlightSelectedMonth: false,
+    navigationIcons: _defaults__WEBPACK_IMPORTED_MODULE_4__.defaultCalendarNavigationIcons,
+    showWeekNumbers: false,
+    firstWeekOfYear: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.FirstWeekOfYear.FirstDay,
+    dateTimeFormatter: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__.DEFAULT_DATE_FORMATTING,
+    showSixWeeksByDefault: false,
+    workWeekDays: defaultWorkWeekDays,
+    showCloseButton: false,
+    allFocusable: false,
+};
+function useDateState(props) {
+    var value = props.value, todayProp = props.today, onSelectDate = props.onSelectDate;
+    var today = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(function () {
+        if (todayProp === undefined) {
+            return new Date();
+        }
+        return todayProp;
+    }, [todayProp]);
+    /** The currently selected date in the calendar */
+    var _a = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useControllableValue)(value, today), _b = _a[0], selectedDate = _b === void 0 ? today : _b, setSelectedDate = _a[1];
+    /** The currently focused date in the day picker, but not necessarily selected */
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(value), _d = _c[0], navigatedDay = _d === void 0 ? today : _d, setNavigatedDay = _c[1];
+    /** The currently focused date in the month picker, but not necessarily selected */
+    var _e = react__WEBPACK_IMPORTED_MODULE_0__.useState(value), _f = _e[0], navigatedMonth = _f === void 0 ? today : _f, setNavigatedMonth = _e[1];
+    /** If using a controlled value, when that value changes, navigate to that date */
+    var _g = react__WEBPACK_IMPORTED_MODULE_0__.useState(value), _h = _g[0], lastSelectedDate = _h === void 0 ? today : _h, setLastSelectedDate = _g[1];
+    if (value && lastSelectedDate.valueOf() !== value.valueOf()) {
+        setNavigatedDay(value);
+        setNavigatedMonth(value);
+        setLastSelectedDate(value);
+    }
+    var navigateMonth = function (date) {
+        setNavigatedMonth(date);
+    };
+    var navigateDay = function (date) {
+        setNavigatedMonth(date);
+        setNavigatedDay(date);
+    };
+    var onDateSelected = function (date, selectedDateRangeArray) {
+        setNavigatedMonth(date);
+        setNavigatedDay(date);
+        setSelectedDate(date);
+        onSelectDate === null || onSelectDate === void 0 ? void 0 : onSelectDate(date, selectedDateRangeArray);
+    };
+    return [selectedDate, navigatedDay, navigatedMonth, onDateSelected, navigateDay, navigateMonth];
+}
+function useVisibilityState(props) {
+    /** State used to show/hide month picker */
+    var _a = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useControllableValue)(getShowMonthPickerAsOverlay(props) ? undefined : props.isMonthPickerVisible, false), _b = _a[0], isMonthPickerVisible = _b === void 0 ? true : _b, setIsMonthPickerVisible = _a[1];
+    /** State used to show/hide day picker */
+    var _c = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useControllableValue)(getShowMonthPickerAsOverlay(props) ? undefined : props.isDayPickerVisible, true), _d = _c[0], isDayPickerVisible = _d === void 0 ? true : _d, setIsDayPickerVisible = _c[1];
+    var toggleDayMonthPickerVisibility = function () {
+        setIsMonthPickerVisible(!isMonthPickerVisible);
+        setIsDayPickerVisible(!isDayPickerVisible);
+    };
+    return [isMonthPickerVisible, isDayPickerVisible, toggleDayMonthPickerVisibility];
+}
+function useFocusLogic(_a, isDayPickerVisible, isMonthPickerVisible) {
+    var componentRef = _a.componentRef;
+    var dayPicker = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var monthPicker = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var focusOnUpdate = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    var focus = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function () {
+        if (isDayPickerVisible && dayPicker.current) {
+            (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__.focusAsync)(dayPicker.current);
+        }
+        else if (isMonthPickerVisible && monthPicker.current) {
+            (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__.focusAsync)(monthPicker.current);
+        }
+    }, [isDayPickerVisible, isMonthPickerVisible]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(componentRef, function () { return ({ focus: focus }); }, [focus]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (focusOnUpdate.current) {
+            focus();
+            focusOnUpdate.current = false;
+        }
+    });
+    var focusOnNextUpdate = function () {
+        focusOnUpdate.current = true;
+    };
+    return [dayPicker, monthPicker, focusOnNextUpdate];
+}
+var CalendarBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (propsWithoutDefaults, forwardedRef) {
+    var props = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.getPropsWithDefaults)(DEFAULT_PROPS, propsWithoutDefaults);
+    var _a = useDateState(props), selectedDate = _a[0], navigatedDay = _a[1], navigatedMonth = _a[2], onDateSelected = _a[3], navigateDay = _a[4], navigateMonth = _a[5];
+    var _b = useVisibilityState(props), isMonthPickerVisible = _b[0], isDayPickerVisible = _b[1], toggleDayMonthPickerVisibility = _b[2];
+    var _c = useFocusLogic(props, isDayPickerVisible, isMonthPickerVisible), dayPicker = _c[0], monthPicker = _c[1], focusOnNextUpdate = _c[2];
+    var renderGoToTodayButton = function () {
+        var goTodayEnabled = showGoToToday;
+        if (goTodayEnabled && today) {
+            goTodayEnabled =
+                navigatedDay.getFullYear() !== today.getFullYear() ||
+                    navigatedDay.getMonth() !== today.getMonth() ||
+                    navigatedMonth.getFullYear() !== today.getFullYear() ||
+                    navigatedMonth.getMonth() !== today.getMonth();
+        }
+        return (showGoToToday && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__.css)('js-goToday', classes.goTodayButton), onClick: onGotoToday, onKeyDown: onButtonKeyDown(onGotoToday), type: "button", disabled: !goTodayEnabled }, strings.goToToday)));
+    };
+    var onNavigateDayDate = function (date, focusOnNavigatedDay) {
+        navigateDay(date);
+        if (focusOnNavigatedDay) {
+            focusOnNextUpdate();
+        }
+    };
+    var onNavigateMonthDate = function (date, focusOnNavigatedDay) {
+        if (focusOnNavigatedDay) {
+            focusOnNextUpdate();
+        }
+        if (!focusOnNavigatedDay) {
+            navigateMonth(date);
+            return;
+        }
+        if (monthPickerOnly) {
+            onDateSelected(date);
+        }
+        navigateDay(date);
+    };
+    var onHeaderSelect = getShowMonthPickerAsOverlay(props)
+        ? function () {
+            toggleDayMonthPickerVisibility();
+            focusOnNextUpdate();
+        }
+        : undefined;
+    var onGotoToday = function () {
+        navigateDay(today);
+        focusOnNextUpdate();
+    };
+    var onButtonKeyDown = function (callback) {
+        return function (ev) {
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            switch (ev.which) {
+                case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.enter:
+                case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.space:
+                    callback();
+                    break;
+            }
+        };
+    };
+    var onDatePickerPopupKeyDown = function (ev) {
+        var _a;
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        switch (ev.which) {
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.enter:
+                ev.preventDefault();
+                break;
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.backspace:
+                ev.preventDefault();
+                break;
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.escape:
+                (_a = props.onDismiss) === null || _a === void 0 ? void 0 : _a.call(props);
+                break;
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.pageUp:
+                if (ev.ctrlKey) {
+                    // go to next year
+                    navigateDay((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__.addYears)(navigatedDay, 1));
+                }
+                else {
+                    // go to next month
+                    navigateDay((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__.addMonths)(navigatedDay, 1));
+                }
+                ev.preventDefault();
+                break;
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.pageDown:
+                if (ev.ctrlKey) {
+                    // go to previous year
+                    navigateDay((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__.addYears)(navigatedDay, -1));
+                }
+                else {
+                    // go to previous month
+                    navigateDay((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__.addMonths)(navigatedDay, -1));
+                }
+                ev.preventDefault();
+                break;
+            default:
+                break;
+        }
+    };
+    var rootClass = 'ms-DatePicker';
+    var firstDayOfWeek = props.firstDayOfWeek, dateRangeType = props.dateRangeType, strings = props.strings, showGoToToday = props.showGoToToday, highlightCurrentMonth = props.highlightCurrentMonth, highlightSelectedMonth = props.highlightSelectedMonth, navigationIcons = props.navigationIcons, minDate = props.minDate, maxDate = props.maxDate, restrictedDates = props.restrictedDates, id = props.id, className = props.className, showCloseButton = props.showCloseButton, allFocusable = props.allFocusable, styles = props.styles, showWeekNumbers = props.showWeekNumbers, theme = props.theme, calendarDayProps = props.calendarDayProps, calendarMonthProps = props.calendarMonthProps, dateTimeFormatter = props.dateTimeFormatter, _d = props.today, today = _d === void 0 ? new Date() : _d;
+    var showMonthPickerAsOverlay = getShowMonthPickerAsOverlay(props);
+    var monthPickerOnly = !showMonthPickerAsOverlay && !isDayPickerVisible;
+    var overlaidWithButton = showMonthPickerAsOverlay && showGoToToday;
+    var classes = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        isMonthPickerVisible: isMonthPickerVisible,
+        isDayPickerVisible: isDayPickerVisible,
+        monthPickerOnly: monthPickerOnly,
+        showMonthPickerAsOverlay: showMonthPickerAsOverlay,
+        overlaidWithButton: overlaidWithButton,
+        overlayedWithButton: overlaidWithButton,
+        showGoToToday: showGoToToday,
+        showWeekNumbers: showWeekNumbers,
+    });
+    var todayDateString = '';
+    var selectedDateString = '';
+    if (dateTimeFormatter && strings.todayDateFormatString) {
+        todayDateString = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__.format)(strings.todayDateFormatString, dateTimeFormatter.formatMonthDayYear(today, strings));
+    }
+    if (dateTimeFormatter && strings.selectedDateFormatString) {
+        var dateStringFormatter = monthPickerOnly
+            ? dateTimeFormatter.formatMonthYear
+            : dateTimeFormatter.formatMonthDayYear;
+        selectedDateString = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__.format)(strings.selectedDateFormatString, dateStringFormatter(selectedDate, strings));
+    }
+    var selectionAndTodayString = selectedDateString + ', ' + todayDateString;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: id, ref: forwardedRef, role: "group", "aria-label": selectionAndTodayString, className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__.css)(rootClass, classes.root, className, 'ms-slideDownIn10'), onKeyDown: onDatePickerPopupKeyDown },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.liveRegion, "aria-live": "polite", "aria-atomic": "true" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, selectedDateString)),
+        isDayPickerVisible && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarDay_CalendarDay__WEBPACK_IMPORTED_MODULE_12__.CalendarDay, (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__assign)({ selectedDate: selectedDate, navigatedDate: navigatedDay, today: props.today, onSelectDate: onDateSelected, 
+            // eslint-disable-next-line react/jsx-no-bind
+            onNavigateDate: onNavigateDayDate, onDismiss: props.onDismiss, firstDayOfWeek: firstDayOfWeek, dateRangeType: dateRangeType, strings: strings, 
+            // eslint-disable-next-line react/jsx-no-bind
+            onHeaderSelect: onHeaderSelect, navigationIcons: navigationIcons, showWeekNumbers: props.showWeekNumbers, firstWeekOfYear: props.firstWeekOfYear, dateTimeFormatter: props.dateTimeFormatter, showSixWeeksByDefault: props.showSixWeeksByDefault, minDate: minDate, maxDate: maxDate, restrictedDates: restrictedDates, workWeekDays: props.workWeekDays, componentRef: dayPicker, showCloseButton: showCloseButton, allFocusable: allFocusable }, calendarDayProps))),
+        isDayPickerVisible && isMonthPickerVisible && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.divider }),
+        isMonthPickerVisible ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.monthPickerWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarMonth_CalendarMonth__WEBPACK_IMPORTED_MODULE_14__.CalendarMonth, (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__assign)({ navigatedDate: navigatedMonth, selectedDate: navigatedDay, strings: strings, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onNavigateDate: onNavigateMonthDate, today: props.today, highlightCurrentMonth: highlightCurrentMonth, highlightSelectedMonth: highlightSelectedMonth, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onHeaderSelect: onHeaderSelect, navigationIcons: navigationIcons, dateTimeFormatter: props.dateTimeFormatter, minDate: minDate, maxDate: maxDate, componentRef: monthPicker }, calendarMonthProps)),
+            renderGoToTodayButton())) : (renderGoToTodayButton()),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_utilities__WEBPACK_IMPORTED_MODULE_15__.FocusRects, null)));
+});
+CalendarBase.displayName = 'CalendarBase';
+function getShowMonthPickerAsOverlay(_a) {
+    var showMonthPickerAsOverlay = _a.showMonthPickerAsOverlay, isDayPickerVisible = _a.isDayPickerVisible;
+    var win = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__.getWindow)();
+    return showMonthPickerAsOverlay || (isDayPickerVisible && win && win.innerWidth <= MIN_SIZE_FORCE_OVERLAY);
+}
+
+
+/***/ }),
+
+/***/ 95344:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Calendar: () => (/* binding */ Calendar)
+/* harmony export */ });
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/utilities */ 55336);
+/* harmony import */ var _Calendar_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Calendar.base */ 89229);
+/* harmony import */ var _Calendar_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Calendar.styles */ 8058);
+
+
+
+var Calendar = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Calendar_base__WEBPACK_IMPORTED_MODULE_1__.CalendarBase, _Calendar_styles__WEBPACK_IMPORTED_MODULE_2__.styles, undefined, {
+    scope: 'Calendar',
+});
+
+
+/***/ }),
+
+/***/ 8058:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.styles.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
+
+var styles = function (props) {
+    var _a;
+    var className = props.className, theme = props.theme, isDayPickerVisible = props.isDayPickerVisible, isMonthPickerVisible = props.isMonthPickerVisible, showWeekNumbers = props.showWeekNumbers;
+    var palette = theme.palette;
+    var totalWidth = isDayPickerVisible && isMonthPickerVisible ? 440 : 220;
+    if (showWeekNumbers && isDayPickerVisible) {
+        totalWidth += 30;
+    }
+    return {
+        root: [
+            _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.normalize,
+            {
+                display: 'flex',
+                width: totalWidth,
+            },
+            !isMonthPickerVisible && {
+                flexDirection: 'column',
+            },
+            className,
+        ],
+        divider: {
+            top: 0,
+            borderRight: '1px solid',
+            borderColor: palette.neutralLight,
+        },
+        monthPickerWrapper: [
+            {
+                display: 'flex',
+                flexDirection: 'column',
+            },
+        ],
+        goTodayButton: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -1 }),
+            {
+                bottom: 0,
+                color: palette.neutralPrimary,
+                height: 30,
+                lineHeight: 30,
+                backgroundColor: 'transparent',
+                border: 'none',
+                boxSizing: 'content-box',
+                padding: '0 4px',
+                alignSelf: 'flex-end',
+                marginRight: 16,
+                marginTop: 3,
+                fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+                fontFamily: 'inherit',
+                overflow: 'visible', // explicitly specify for IE11
+                selectors: {
+                    '& div': {
+                        fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+                    },
+                    '&:hover': {
+                        color: palette.themePrimary,
+                        backgroundColor: 'transparent',
+                        cursor: 'pointer',
+                        selectors: (_a = {},
+                            _a[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                outline: '1px solid Buttontext',
+                                borderRadius: '2px',
+                            },
+                            _a),
+                    },
+                    '&:active': {
+                        color: palette.themeDark,
+                    },
+                    '&:disabled': {
+                        color: palette.neutralTertiaryAlt,
+                        pointerEvents: 'none',
+                    },
+                },
+            },
+        ],
+        liveRegion: {
+            border: 0,
+            height: '1px',
+            margin: '-1px',
+            overflow: 'hidden',
+            padding: 0,
+            width: '1px',
+            position: 'absolute',
+        },
+    };
+};
+
+
+/***/ }),
+
+/***/ 99675:
+/*!********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.types.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AnimationDirection: () => (/* binding */ AnimationDirection)
+/* harmony export */ });
+/**
+ * {@docCategory Calendar}
+ */
+var AnimationDirection;
+(function (AnimationDirection) {
+    /**
+     * Grid will transition out and in horizontally
+     */
+    AnimationDirection[AnimationDirection["Horizontal"] = 0] = "Horizontal";
+    /**
+     * Grid will transition out and in vertically
+     */
+    AnimationDirection[AnimationDirection["Vertical"] = 1] = "Vertical";
+})(AnimationDirection || (AnimationDirection = {}));
+
+
+/***/ }),
+
+/***/ 28504:
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarDay/CalendarDay.base.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarDayBase: () => (/* binding */ CalendarDayBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Icon */ 52394);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _CalendarDayGrid_CalendarDayGrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../CalendarDayGrid/CalendarDayGrid */ 2142);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
+
+
+
+
+
+
+
+var getClassNames = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var CalendarDayBase = function (props) {
+    var dayGrid = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(props.componentRef, function () { return ({
+        focus: function () {
+            var _a, _b;
+            (_b = (_a = dayGrid.current) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+        },
+    }); }, []);
+    var strings = props.strings, navigatedDate = props.navigatedDate, dateTimeFormatter = props.dateTimeFormatter, styles = props.styles, theme = props.theme, className = props.className, onHeaderSelect = props.onHeaderSelect, showSixWeeksByDefault = props.showSixWeeksByDefault, minDate = props.minDate, maxDate = props.maxDate, restrictedDates = props.restrictedDates, onNavigateDate = props.onNavigateDate, showWeekNumbers = props.showWeekNumbers, dateRangeType = props.dateRangeType, animationDirection = props.animationDirection;
+    var monthAndYearId = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__.useId)();
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        headerIsClickable: !!onHeaderSelect,
+        showWeekNumbers: showWeekNumbers,
+        animationDirection: animationDirection,
+    });
+    var monthAndYear = dateTimeFormatter.formatMonthYear(navigatedDate, strings);
+    var HeaderButtonComponentType = onHeaderSelect ? 'button' : 'div';
+    var headerAriaLabel = strings.yearPickerHeaderAriaLabel
+        ? (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__.format)(strings.yearPickerHeaderAriaLabel, monthAndYear)
+        : monthAndYear;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(HeaderButtonComponentType, { "aria-label": onHeaderSelect ? headerAriaLabel : undefined, className: classNames.monthAndYear, onClick: onHeaderSelect, "data-is-focusable": !!onHeaderSelect, tabIndex: onHeaderSelect ? 0 : -1, onKeyDown: onButtonKeyDown(onHeaderSelect), type: "button" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { id: monthAndYearId, "aria-live": "polite", "aria-atomic": "true" }, monthAndYear)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarDayNavigationButtons, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { classNames: classNames }))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarDayGrid_CalendarDayGrid__WEBPACK_IMPORTED_MODULE_5__.CalendarDayGrid, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { styles: styles, componentRef: dayGrid, strings: strings, navigatedDate: navigatedDate, weeksToShow: showSixWeeksByDefault ? 6 : undefined, dateTimeFormatter: dateTimeFormatter, minDate: minDate, maxDate: maxDate, restrictedDates: restrictedDates, onNavigateDate: onNavigateDate, labelledBy: monthAndYearId, dateRangeType: dateRangeType }))));
+};
+CalendarDayBase.displayName = 'CalendarDayBase';
+var CalendarDayNavigationButtons = function (props) {
+    var _a, _b;
+    var minDate = props.minDate, maxDate = props.maxDate, navigatedDate = props.navigatedDate, allFocusable = props.allFocusable, strings = props.strings, navigationIcons = props.navigationIcons, showCloseButton = props.showCloseButton, classNames = props.classNames, onNavigateDate = props.onNavigateDate, onDismiss = props.onDismiss;
+    var onSelectNextMonth = function () {
+        onNavigateDate((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.addMonths)(navigatedDate, 1), false);
+    };
+    var onSelectPrevMonth = function () {
+        onNavigateDate((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.addMonths)(navigatedDate, -1), false);
+    };
+    var leftNavigationIcon = navigationIcons.leftNavigation;
+    var rightNavigationIcon = navigationIcons.rightNavigation;
+    var closeNavigationIcon = navigationIcons.closeIcon;
+    // determine if previous/next months are in bounds
+    var prevMonthInBounds = minDate ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.compareDatePart)(minDate, (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.getMonthStart)(navigatedDate)) < 0 : true;
+    var nextMonthInBounds = maxDate ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.compareDatePart)((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.getMonthEnd)(navigatedDate), maxDate) < 0 : true;
+    // use aria-disabled instead of disabled so focus is not lost
+    // when a prev/next button becomes disabled after being clicked
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.monthComponents },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.css)(classNames.headerIconButton, (_a = {},
+                _a[classNames.disabledStyle] = !prevMonthInBounds,
+                _a)), tabIndex: prevMonthInBounds ? undefined : allFocusable ? 0 : -1, "aria-disabled": !prevMonthInBounds, onClick: prevMonthInBounds ? onSelectPrevMonth : undefined, onKeyDown: prevMonthInBounds ? onButtonKeyDown(onSelectPrevMonth) : undefined, title: strings.prevMonthAriaLabel
+                ? strings.prevMonthAriaLabel + ' ' + strings.months[(0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.addMonths)(navigatedDate, -1).getMonth()]
+                : undefined, type: "button" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: leftNavigationIcon })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.css)(classNames.headerIconButton, (_b = {},
+                _b[classNames.disabledStyle] = !nextMonthInBounds,
+                _b)), tabIndex: nextMonthInBounds ? undefined : allFocusable ? 0 : -1, "aria-disabled": !nextMonthInBounds, onClick: nextMonthInBounds ? onSelectNextMonth : undefined, onKeyDown: nextMonthInBounds ? onButtonKeyDown(onSelectNextMonth) : undefined, title: strings.nextMonthAriaLabel
+                ? strings.nextMonthAriaLabel + ' ' + strings.months[(0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__.addMonths)(navigatedDate, 1).getMonth()]
+                : undefined, type: "button" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: rightNavigationIcon })),
+        showCloseButton && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__.css)(classNames.headerIconButton), onClick: onDismiss, onKeyDown: onButtonKeyDown(onDismiss), title: strings.closeButtonAriaLabel, type: "button" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: closeNavigationIcon })))));
+};
+CalendarDayNavigationButtons.displayName = 'CalendarDayNavigationButtons';
+var onButtonKeyDown = function (callback) {
+    return function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        switch (ev.which) {
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.enter:
+                callback === null || callback === void 0 ? void 0 : callback();
+                break;
+        }
+    };
+};
+
+
+/***/ }),
+
+/***/ 95107:
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarDay/CalendarDay.js ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarDay: () => (/* binding */ CalendarDay)
+/* harmony export */ });
+/* harmony import */ var _CalendarDay_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarDay.base */ 28504);
+/* harmony import */ var _CalendarDay_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarDay.styles */ 3615);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+
+
+
+var CalendarDay = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_CalendarDay_base__WEBPACK_IMPORTED_MODULE_1__.CalendarDayBase, _CalendarDay_styles__WEBPACK_IMPORTED_MODULE_2__.styles, undefined, {
+    scope: 'CalendarDay',
+});
+
+
+/***/ }),
+
+/***/ 3615:
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarDay/CalendarDay.styles.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
+
+
+var styles = function (props) {
+    var _a;
+    var className = props.className, theme = props.theme, headerIsClickable = props.headerIsClickable, showWeekNumbers = props.showWeekNumbers;
+    var palette = theme.palette;
+    var disabledStyle = {
+        selectors: (_a = {
+                '&, &:disabled, & button': {
+                    color: palette.neutralTertiaryAlt,
+                    pointerEvents: 'none',
+                }
+            },
+            _a[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                color: 'GrayText',
+                forcedColorAdjust: 'none',
+            },
+            _a),
+    };
+    return {
+        root: [
+            _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.normalize,
+            {
+                width: 196,
+                padding: 12,
+                boxSizing: 'content-box',
+            },
+            showWeekNumbers && {
+                width: 226,
+            },
+            className,
+        ],
+        header: {
+            position: 'relative',
+            display: 'inline-flex',
+            height: 28,
+            lineHeight: 44,
+            width: '100%',
+        },
+        monthAndYear: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: 1 }),
+            (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.fadeIn200), { alignItems: 'center', fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.medium, fontFamily: 'inherit', color: palette.neutralPrimary, display: 'inline-block', flexGrow: 1, fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.semibold, padding: '0 4px 0 10px', border: 'none', backgroundColor: 'transparent', borderRadius: 2, lineHeight: 28, overflow: 'hidden', whiteSpace: 'nowrap', textAlign: 'left', textOverflow: 'ellipsis' }),
+            headerIsClickable && {
+                selectors: {
+                    '&:hover': {
+                        cursor: 'pointer',
+                        background: palette.neutralLight,
+                        color: palette.black,
+                    },
+                },
+            },
+        ],
+        monthComponents: {
+            display: 'inline-flex',
+            alignSelf: 'flex-end',
+        },
+        headerIconButton: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -1 }),
+            {
+                width: 28,
+                height: 28,
+                display: 'block',
+                textAlign: 'center',
+                lineHeight: 28,
+                fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+                fontFamily: 'inherit',
+                color: palette.neutralPrimary,
+                borderRadius: 2,
+                position: 'relative',
+                backgroundColor: 'transparent',
+                border: 'none',
+                padding: 0,
+                overflow: 'visible', // explicitly specify for IE11
+                selectors: {
+                    '&:hover': {
+                        color: palette.neutralDark,
+                        backgroundColor: palette.neutralLight,
+                        cursor: 'pointer',
+                        outline: '1px solid transparent',
+                    },
+                },
+            },
+        ],
+        disabledStyle: disabledStyle,
+    };
+};
+
+
+/***/ }),
+
+/***/ 6492:
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarMonth/CalendarMonth.base.js ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarMonthBase: () => (/* binding */ CalendarMonthBase)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _FocusZone__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../FocusZone */ 68885);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 37915);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../Icon */ 52394);
+/* harmony import */ var _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarMonth.styles */ 11411);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 34751);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/utilities */ 46657);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
+/* harmony import */ var _CalendarYear_CalendarYear__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../CalendarYear/CalendarYear */ 54159);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 72515);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../defaults */ 72280);
+
+
+
+
+
+
+
+
+
+var MONTHS_PER_ROW = 4;
+var getClassNames = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var DEFAULT_PROPS = {
+    styles: _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles,
+    strings: undefined,
+    navigationIcons: _defaults__WEBPACK_IMPORTED_MODULE_3__.defaultCalendarNavigationIcons,
+    dateTimeFormatter: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__.DEFAULT_DATE_FORMATTING,
+    yearPickerHidden: false,
+};
+function useAnimateBackwards(_a) {
+    var navigatedDate = _a.navigatedDate;
+    var currentYear = navigatedDate.getFullYear();
+    var previousYear = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.usePrevious)(currentYear);
+    if (previousYear === undefined || previousYear === currentYear) {
+        return undefined;
+    }
+    else {
+        return previousYear > currentYear;
+    }
+}
+function useFocusLogic(_a) {
+    var componentRef = _a.componentRef;
+    var navigatedMonthRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var calendarYearRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var focusOnUpdate = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    var focus = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function () {
+        if (calendarYearRef.current) {
+            calendarYearRef.current.focus();
+        }
+        else if (navigatedMonthRef.current) {
+            navigatedMonthRef.current.focus();
+        }
+    }, []);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(componentRef, function () { return ({ focus: focus }); }, [focus]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (focusOnUpdate.current) {
+            focus();
+            focusOnUpdate.current = false;
+        }
+    });
+    var focusOnNextUpdate = function () {
+        focusOnUpdate.current = true;
+    };
+    return [navigatedMonthRef, calendarYearRef, focusOnNextUpdate];
+}
+var CalendarMonthBase = function (propsWithoutDefaults) {
+    var _a, _b;
+    var props = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__.getPropsWithDefaults)(DEFAULT_PROPS, propsWithoutDefaults);
+    var _c = useFocusLogic(props), navigatedMonthRef = _c[0], calendarYearRef = _c[1], focusOnNextUpdate = _c[2];
+    var _d = react__WEBPACK_IMPORTED_MODULE_0__.useState(false), isYearPickerVisible = _d[0], setIsYearPickerVisible = _d[1];
+    var animateBackwards = useAnimateBackwards(props);
+    var navigatedDate = props.navigatedDate, selectedDate = props.selectedDate, strings = props.strings, _e = props.today, today = _e === void 0 ? new Date() : _e, navigationIcons = props.navigationIcons, dateTimeFormatter = props.dateTimeFormatter, minDate = props.minDate, maxDate = props.maxDate, theme = props.theme, styles = props.styles, className = props.className, allFocusable = props.allFocusable, highlightCurrentMonth = props.highlightCurrentMonth, highlightSelectedMonth = props.highlightSelectedMonth, animationDirection = props.animationDirection, yearPickerHidden = props.yearPickerHidden, onNavigateDate = props.onNavigateDate;
+    var selectMonthCallback = function (newMonth) {
+        return function () { return onSelectMonth(newMonth); };
+    };
+    var onSelectNextYear = function () {
+        onNavigateDate((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.addYears)(navigatedDate, 1), false);
+    };
+    var onSelectPrevYear = function () {
+        onNavigateDate((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.addYears)(navigatedDate, -1), false);
+    };
+    var onSelectMonth = function (newMonth) {
+        var _a;
+        // If header is clickable the calendars are overlayed, switch back to day picker when month is clicked
+        (_a = props.onHeaderSelect) === null || _a === void 0 ? void 0 : _a.call(props);
+        onNavigateDate((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.setMonth)(navigatedDate, newMonth), true);
+    };
+    var onHeaderSelect = function () {
+        var _a;
+        if (!yearPickerHidden) {
+            focusOnNextUpdate();
+            setIsYearPickerVisible(true);
+        }
+        else {
+            (_a = props.onHeaderSelect) === null || _a === void 0 ? void 0 : _a.call(props);
+        }
+    };
+    var onSelectYear = function (selectedYear) {
+        focusOnNextUpdate();
+        var navYear = navigatedDate.getFullYear();
+        if (navYear !== selectedYear) {
+            var newNavigationDate = new Date(navigatedDate.getTime());
+            newNavigationDate.setFullYear(selectedYear);
+            // for min and max dates, adjust the new navigation date - perhaps this should be
+            // checked on the master navigation date handler (i.e. in Calendar)
+            if (maxDate && newNavigationDate > maxDate) {
+                newNavigationDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.setMonth)(newNavigationDate, maxDate.getMonth());
+            }
+            else if (minDate && newNavigationDate < minDate) {
+                newNavigationDate = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.setMonth)(newNavigationDate, minDate.getMonth());
+            }
+            onNavigateDate(newNavigationDate, true);
+        }
+        setIsYearPickerVisible(false);
+    };
+    var onYearPickerHeaderSelect = function (focus) {
+        focusOnNextUpdate();
+        setIsYearPickerVisible(false);
+    };
+    // navigationIcons has a default value in defaultProps, but typescript doesn't recognize this
+    var leftNavigationIcon = navigationIcons.leftNavigation;
+    var rightNavigationIcon = navigationIcons.rightNavigation;
+    var dateFormatter = dateTimeFormatter;
+    // determine if previous/next years are in bounds
+    var isPrevYearInBounds = minDate ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.compareDatePart)(minDate, (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getYearStart)(navigatedDate)) < 0 : true;
+    var isNextYearInBounds = maxDate ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.compareDatePart)((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getYearEnd)(navigatedDate), maxDate) < 0 : true;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        hasHeaderClickCallback: !!props.onHeaderSelect || !yearPickerHidden,
+        highlightCurrent: highlightCurrentMonth,
+        highlightSelected: highlightSelectedMonth,
+        animateBackwards: animateBackwards,
+        animationDirection: animationDirection,
+    });
+    if (isYearPickerVisible) {
+        var _f = getYearStrings(props), onRenderYear = _f[0], yearStrings = _f[1];
+        // use navigated date for the year picker
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CalendarYear_CalendarYear__WEBPACK_IMPORTED_MODULE_8__.CalendarYear, { key: 'calendarYear', minYear: minDate ? minDate.getFullYear() : undefined, maxYear: maxDate ? maxDate.getFullYear() : undefined, 
+            // eslint-disable-next-line react/jsx-no-bind
+            onSelectYear: onSelectYear, navigationIcons: navigationIcons, 
+            // eslint-disable-next-line react/jsx-no-bind
+            onHeaderSelect: onYearPickerHeaderSelect, selectedYear: selectedDate ? selectedDate.getFullYear() : navigatedDate ? navigatedDate.getFullYear() : undefined, navigatedYear: navigatedDate.getFullYear(), onRenderYear: onRenderYear, strings: yearStrings, componentRef: calendarYearRef, styles: styles, highlightCurrentYear: highlightCurrentMonth, highlightSelectedYear: highlightSelectedMonth, animationDirection: animationDirection }));
+    }
+    var rowIndexes = [];
+    for (var i = 0; i < strings.shortMonths.length / MONTHS_PER_ROW; i++) {
+        rowIndexes.push(i);
+    }
+    var yearString = dateFormatter.formatYear(navigatedDate);
+    var headerAriaLabel = strings.monthPickerHeaderAriaLabel
+        ? (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__.format)(strings.monthPickerHeaderAriaLabel, yearString)
+        : yearString;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.headerContainer },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: classNames.currentItemButton, onClick: onHeaderSelect, onKeyDown: onButtonKeyDown(onHeaderSelect), "aria-label": headerAriaLabel, "data-is-focusable": !!props.onHeaderSelect || !yearPickerHidden, tabIndex: !!props.onHeaderSelect || !yearPickerHidden ? 0 : -1, type: "button" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-live": "polite", "aria-atomic": "true" }, yearString)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.navigationButtonsContainer },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_10__.css)(classNames.navigationButton, (_a = {},
+                        _a[classNames.disabled] = !isPrevYearInBounds,
+                        _a)), "aria-disabled": !isPrevYearInBounds, tabIndex: isPrevYearInBounds ? undefined : allFocusable ? 0 : -1, onClick: isPrevYearInBounds ? onSelectPrevYear : undefined, onKeyDown: isPrevYearInBounds ? onButtonKeyDown(onSelectPrevYear) : undefined, title: strings.prevYearAriaLabel
+                        ? strings.prevYearAriaLabel + ' ' + dateFormatter.formatYear((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.addYears)(navigatedDate, -1))
+                        : undefined, type: "button" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__.getRTL)() ? rightNavigationIcon : leftNavigationIcon })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_10__.css)(classNames.navigationButton, (_b = {},
+                        _b[classNames.disabled] = !isNextYearInBounds,
+                        _b)), "aria-disabled": !isNextYearInBounds, tabIndex: isNextYearInBounds ? undefined : allFocusable ? 0 : -1, onClick: isNextYearInBounds ? onSelectNextYear : undefined, onKeyDown: isNextYearInBounds ? onButtonKeyDown(onSelectNextYear) : undefined, title: strings.nextYearAriaLabel
+                        ? strings.nextYearAriaLabel + ' ' + dateFormatter.formatYear((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.addYears)(navigatedDate, 1))
+                        : undefined, type: "button" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__.getRTL)() ? leftNavigationIcon : rightNavigationIcon })))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FocusZone__WEBPACK_IMPORTED_MODULE_13__.FocusZone, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.gridContainer, role: "grid", "aria-label": yearString }, rowIndexes.map(function (rowNum) {
+                var monthsForRow = strings.shortMonths.slice(rowNum * MONTHS_PER_ROW, (rowNum + 1) * MONTHS_PER_ROW);
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: 'monthRow_' + rowNum + navigatedDate.getFullYear(), role: "row", className: classNames.buttonRow }, monthsForRow.map(function (month, index) {
+                    var _a;
+                    var monthIndex = rowNum * MONTHS_PER_ROW + index;
+                    var indexedMonth = (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.setMonth)(navigatedDate, monthIndex);
+                    var isNavigatedMonth = navigatedDate.getMonth() === monthIndex;
+                    var isSelectedMonth = selectedDate.getMonth() === monthIndex;
+                    var isSelectedYear = selectedDate.getFullYear() === navigatedDate.getFullYear();
+                    var isInBounds = (minDate ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.compareDatePart)(minDate, (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getMonthEnd)(indexedMonth)) < 1 : true) &&
+                        (maxDate ? (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.compareDatePart)((0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getMonthStart)(indexedMonth), maxDate) < 1 : true);
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { ref: isNavigatedMonth ? navigatedMonthRef : undefined, role: 'gridcell', className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_10__.css)(classNames.itemButton, (_a = {},
+                            _a[classNames.current] = highlightCurrentMonth && isCurrentMonth(monthIndex, navigatedDate.getFullYear(), today),
+                            _a[classNames.selected] = highlightSelectedMonth && isSelectedMonth && isSelectedYear,
+                            _a[classNames.disabled] = !isInBounds,
+                            _a)), disabled: !allFocusable && !isInBounds, key: monthIndex, onClick: isInBounds ? selectMonthCallback(monthIndex) : undefined, onKeyDown: isInBounds ? onButtonKeyDown(selectMonthCallback(monthIndex)) : undefined, "aria-label": dateFormatter.formatMonth(indexedMonth, strings), "aria-selected": isNavigatedMonth, "data-is-focusable": isInBounds ? true : undefined, type: "button" }, month));
+                })));
+            })))));
+};
+CalendarMonthBase.displayName = 'CalendarMonthBase';
+function getYearStrings(_a) {
+    var strings = _a.strings, navigatedDate = _a.navigatedDate, dateTimeFormatter = _a.dateTimeFormatter;
+    var yearToString = function (year) {
+        if (dateTimeFormatter) {
+            // create a date based on the current nav date
+            var yearFormattingDate = new Date(navigatedDate.getTime());
+            yearFormattingDate.setFullYear(year);
+            return dateTimeFormatter.formatYear(yearFormattingDate);
+        }
+        return String(year);
+    };
+    var yearRangeToString = function (yearRange) {
+        return "".concat(yearToString(yearRange.fromYear), " - ").concat(yearToString(yearRange.toYear));
+    };
+    var yearRangeToNextDecadeLabel = function (yearRange) {
+        return strings.nextYearRangeAriaLabel ? "".concat(strings.nextYearRangeAriaLabel, " ").concat(yearRangeToString(yearRange)) : '';
+    };
+    var yearRangeToPrevDecadeLabel = function (yearRange) {
+        return strings.prevYearRangeAriaLabel ? "".concat(strings.prevYearRangeAriaLabel, " ").concat(yearRangeToString(yearRange)) : '';
+    };
+    return [
+        yearToString,
+        {
+            rangeAriaLabel: yearRangeToString,
+            prevRangeAriaLabel: yearRangeToPrevDecadeLabel,
+            nextRangeAriaLabel: yearRangeToNextDecadeLabel,
+            headerAriaLabelFormatString: strings.yearPickerHeaderAriaLabel,
+        },
+    ];
+}
+function isCurrentMonth(month, year, today) {
+    return today.getFullYear() === year && today.getMonth() === month;
+}
+function onButtonKeyDown(callback) {
+    return function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        switch (ev.which) {
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_14__.KeyCodes.enter:
+                callback();
+                break;
+        }
+    };
+}
+
+
+/***/ }),
+
+/***/ 24335:
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarMonth/CalendarMonth.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarMonth: () => (/* binding */ CalendarMonth)
+/* harmony export */ });
+/* harmony import */ var _CalendarMonth_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarMonth.base */ 6492);
+/* harmony import */ var _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarMonth.styles */ 11411);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+
+
+
+var CalendarMonth = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_CalendarMonth_base__WEBPACK_IMPORTED_MODULE_1__.CalendarMonthBase, _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'CalendarMonth' });
+
+
+/***/ }),
+
+/***/ 11411:
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarMonth/CalendarMonth.styles.js ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CalendarPicker/CalendarPicker.styles */ 55677);
+
+var getStyles = function (props) {
+    /*  Return styles from the base class.
+     *  If this component has extra styles not in the base, apply them here i.e.:
+     *  const myStyle: IStyle = {
+     *    display: "block"
+     *  };     *
+     *  return {...getPickerStyles(props), myStyle};
+     */
+    return (0,_CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__.getStyles)(props);
+};
+
+
+/***/ }),
+
+/***/ 55677:
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarPicker/CalendarPicker.styles.js ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
+/* harmony import */ var _Calendar_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Calendar.types */ 99675);
+
+
+
+var getStyles = function (props) {
+    var _a, _b, _c, _d, _e, _f, _g;
+    var className = props.className, theme = props.theme, hasHeaderClickCallback = props.hasHeaderClickCallback, highlightCurrent = props.highlightCurrent, highlightSelected = props.highlightSelected, animateBackwards = props.animateBackwards, animationDirection = props.animationDirection;
+    var palette = theme.palette;
+    var animationStyle = {};
+    if (animateBackwards !== undefined) {
+        if (animationDirection === _Calendar_types__WEBPACK_IMPORTED_MODULE_1__.AnimationDirection.Horizontal) {
+            animationStyle = animateBackwards ? _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideRightIn20 : _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideLeftIn20;
+        }
+        else {
+            animationStyle = animateBackwards ? _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideDownIn20 : _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.slideUpIn20;
+        }
+    }
+    var headerAnimationStyle = animateBackwards !== undefined ? _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.AnimationStyles.fadeIn200 : {};
+    return {
+        root: [
+            _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.normalize,
+            {
+                width: 196,
+                padding: 12,
+                boxSizing: 'content-box',
+                overflow: 'hidden',
+            },
+            className,
+        ],
+        headerContainer: {
+            display: 'flex',
+        },
+        currentItemButton: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -1 }),
+            (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, headerAnimationStyle), { fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.medium, fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.semibold, fontFamily: 'inherit', textAlign: 'left', color: 'inherit', backgroundColor: 'transparent', flexGrow: 1, padding: '0 4px 0 10px', border: 'none', overflow: 'visible' }),
+            hasHeaderClickCallback && {
+                selectors: {
+                    '&:hover, &:active': {
+                        cursor: !hasHeaderClickCallback ? 'default' : 'pointer',
+                        color: palette.neutralDark,
+                        outline: '1px solid transparent',
+                        backgroundColor: palette.neutralLight,
+                    },
+                },
+            },
+        ],
+        navigationButtonsContainer: {
+            display: 'flex',
+            alignItems: 'center',
+        },
+        navigationButton: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -1 }),
+            {
+                fontFamily: 'inherit',
+                width: 28,
+                minWidth: 28,
+                height: 28,
+                minHeight: 28,
+                display: 'block',
+                textAlign: 'center',
+                lineHeight: 28,
+                fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+                color: palette.neutralPrimary,
+                borderRadius: 2,
+                position: 'relative',
+                backgroundColor: 'transparent',
+                border: 'none',
+                padding: 0,
+                overflow: 'visible', // explicitly specify for IE11
+                selectors: {
+                    '&:hover': {
+                        color: palette.neutralDark,
+                        cursor: 'pointer',
+                        outline: '1px solid transparent',
+                        backgroundColor: palette.neutralLight,
+                    },
+                },
+            },
+        ],
+        gridContainer: {
+            marginTop: 4,
+        },
+        buttonRow: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, animationStyle), { marginBottom: 16, selectors: {
+                '&:nth-child(n + 3)': {
+                    marginBottom: 0,
+                },
+            } }),
+        itemButton: [
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -1 }),
+            {
+                width: 40,
+                height: 40,
+                minWidth: 40,
+                minHeight: 40,
+                lineHeight: 40,
+                fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.small,
+                fontFamily: 'inherit',
+                padding: 0,
+                margin: '0 12px 0 0',
+                color: palette.neutralPrimary,
+                backgroundColor: 'transparent',
+                border: 'none',
+                borderRadius: 2,
+                overflow: 'visible', // explicitly specify for IE11
+                selectors: {
+                    '&:nth-child(4n + 4)': {
+                        marginRight: 0,
+                    },
+                    '&:nth-child(n + 9)': {
+                        marginBottom: 0,
+                    },
+                    '& div': {
+                        fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+                    },
+                    '&:hover': {
+                        color: palette.neutralDark,
+                        backgroundColor: palette.neutralLight,
+                        cursor: 'pointer',
+                        outline: '1px solid transparent',
+                        selectors: (_a = {},
+                            _a[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'Window', color: 'WindowText', outline: '1px solid Highlight' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                            _a),
+                    },
+                    '&:active': {
+                        backgroundColor: palette.themeLight,
+                        selectors: (_b = {},
+                            _b[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'Window', color: 'Highlight' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                            _b),
+                    },
+                },
+            },
+        ],
+        current: highlightCurrent
+            ? {
+                color: palette.white,
+                backgroundColor: palette.themePrimary,
+                selectors: (_c = {
+                        '& div': {
+                            fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.semibold,
+                        },
+                        '&:hover': {
+                            backgroundColor: palette.themePrimary,
+                            selectors: (_d = {},
+                                _d[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ backgroundColor: 'WindowText', color: 'Window' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                                _d),
+                        }
+                    },
+                    _c[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ backgroundColor: 'WindowText', color: 'Window' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                    _c),
+            }
+            : {},
+        selected: highlightSelected
+            ? {
+                color: palette.neutralPrimary,
+                backgroundColor: palette.themeLight,
+                fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.semibold,
+                selectors: (_e = {
+                        '& div': {
+                            fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.semibold,
+                        },
+                        '&:hover, &:active': {
+                            backgroundColor: palette.themeLight,
+                            selectors: (_f = {},
+                                _f[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'Window', background: 'Highlight' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                                _f),
+                        }
+                    },
+                    _e[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'Highlight', color: 'Window' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                    _e),
+            }
+            : {},
+        disabled: {
+            selectors: (_g = {
+                    '&, &:disabled, & button': {
+                        color: palette.neutralTertiaryAlt,
+                        pointerEvents: 'none',
+                    }
+                },
+                _g[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                    color: 'GrayText',
+                    forcedColorAdjust: 'none',
+                },
+                _g),
+        },
+    };
+};
+
+
+/***/ }),
+
+/***/ 3324:
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarYear/CalendarYear.base.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarYearBase: () => (/* binding */ CalendarYearBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilities */ 79524);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Utilities */ 38972);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Utilities */ 46657);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Utilities */ 87578);
+/* harmony import */ var _FocusZone__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../FocusZone */ 68885);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Icon */ 52394);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react-hooks */ 72515);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../defaults */ 72280);
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var CELL_COUNT = 12;
+var CELLS_PER_ROW = 4;
+var DefaultCalendarYearStrings = {
+    prevRangeAriaLabel: undefined,
+    nextRangeAriaLabel: undefined,
+};
+var CalendarYearGridCell = function (props) {
+    var _a;
+    var _b;
+    var styles = props.styles, theme = props.theme, className = props.className, highlightCurrentYear = props.highlightCurrentYear, highlightSelectedYear = props.highlightSelectedYear, year = props.year, selected = props.selected, disabled = props.disabled, componentRef = props.componentRef, onSelectYear = props.onSelectYear, onRenderYear = props.onRenderYear;
+    var buttonRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(componentRef, function () { return ({
+        focus: function () {
+            var _a, _b;
+            (_b = (_a = buttonRef.current) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+        },
+    }); }, []);
+    var onClick = function () {
+        onSelectYear === null || onSelectYear === void 0 ? void 0 : onSelectYear(year);
+    };
+    var onKeyDown = function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        if (ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.enter) {
+            onSelectYear === null || onSelectYear === void 0 ? void 0 : onSelectYear(year);
+        }
+    };
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        highlightCurrent: highlightCurrentYear,
+        highlightSelected: highlightSelectedYear,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.css)(classNames.itemButton, (_a = {},
+            _a[classNames.selected] = selected,
+            _a[classNames.disabled] = disabled,
+            _a)), type: "button", role: "gridcell", onClick: !disabled ? onClick : undefined, onKeyDown: !disabled ? onKeyDown : undefined, disabled: disabled, "aria-selected": selected, ref: buttonRef }, (_b = onRenderYear === null || onRenderYear === void 0 ? void 0 : onRenderYear(year)) !== null && _b !== void 0 ? _b : year));
+};
+CalendarYearGridCell.displayName = 'CalendarYearGridCell';
+var CalendarYearGrid = function (props) {
+    var styles = props.styles, theme = props.theme, className = props.className, fromYear = props.fromYear, toYear = props.toYear, animationDirection = props.animationDirection, animateBackwards = props.animateBackwards, minYear = props.minYear, maxYear = props.maxYear, onSelectYear = props.onSelectYear, selectedYear = props.selectedYear, componentRef = props.componentRef;
+    var selectedCellRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var currentCellRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(componentRef, function () { return ({
+        focus: function () {
+            var _a, _b;
+            (_b = (_a = (selectedCellRef.current || currentCellRef.current)) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+        },
+    }); }, []);
+    var renderCell = function (yearToRender) {
+        var selected = yearToRender === selectedYear;
+        var disabled = (minYear !== undefined && yearToRender < minYear) || (maxYear !== undefined && yearToRender > maxYear);
+        var current = yearToRender === new Date().getFullYear();
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearGridCell, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { key: yearToRender, year: yearToRender, selected: selected, current: current, disabled: disabled, onSelectYear: onSelectYear, componentRef: selected ? selectedCellRef : current ? currentCellRef : undefined, theme: theme })));
+    };
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        animateBackwards: animateBackwards,
+        animationDirection: animationDirection,
+    });
+    var onRenderYear = function (value) {
+        var _a, _b;
+        return (_b = (_a = props.onRenderYear) === null || _a === void 0 ? void 0 : _a.call(props, value)) !== null && _b !== void 0 ? _b : value;
+    };
+    var gridAriaLabel = "".concat(onRenderYear(fromYear), " - ").concat(onRenderYear(toYear));
+    var year = fromYear;
+    var cells = [];
+    for (var i = 0; i < (toYear - fromYear + 1) / CELLS_PER_ROW; i++) {
+        cells.push([]);
+        for (var j = 0; j < CELLS_PER_ROW; j++) {
+            cells[i].push(renderCell(year));
+            year++;
+        }
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FocusZone__WEBPACK_IMPORTED_MODULE_5__.FocusZone, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.gridContainer, role: "grid", "aria-label": gridAriaLabel }, cells.map(function (cellRow, index) {
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(react__WEBPACK_IMPORTED_MODULE_0__, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__spreadArray)(["div", { key: 'yearPickerRow_' + index + '_' + fromYear, role: "row", className: classNames.buttonRow }], cellRow, false)));
+        }))));
+};
+CalendarYearGrid.displayName = 'CalendarYearGrid';
+var CalendarYearNavDirection;
+(function (CalendarYearNavDirection) {
+    CalendarYearNavDirection[CalendarYearNavDirection["Previous"] = 0] = "Previous";
+    CalendarYearNavDirection[CalendarYearNavDirection["Next"] = 1] = "Next";
+})(CalendarYearNavDirection || (CalendarYearNavDirection = {}));
+var CalendarYearNavArrow = function (props) {
+    var _a;
+    var styles = props.styles, theme = props.theme, className = props.className, _b = props.navigationIcons, navigationIcons = _b === void 0 ? _defaults__WEBPACK_IMPORTED_MODULE_6__.defaultCalendarNavigationIcons : _b, _c = props.strings, strings = _c === void 0 ? DefaultCalendarYearStrings : _c, direction = props.direction, onSelectPrev = props.onSelectPrev, onSelectNext = props.onSelectNext, fromYear = props.fromYear, toYear = props.toYear, maxYear = props.maxYear, minYear = props.minYear;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+    });
+    var ariaLabel = direction === CalendarYearNavDirection.Previous ? strings.prevRangeAriaLabel : strings.nextRangeAriaLabel;
+    var newRangeOffset = direction === CalendarYearNavDirection.Previous ? -CELL_COUNT : CELL_COUNT;
+    var newRange = { fromYear: fromYear + newRangeOffset, toYear: toYear + newRangeOffset };
+    var ariaLabelString = ariaLabel ? (typeof ariaLabel === 'string' ? ariaLabel : ariaLabel(newRange)) : undefined;
+    var disabled = direction === CalendarYearNavDirection.Previous
+        ? minYear !== undefined && fromYear < minYear
+        : maxYear !== undefined && props.fromYear + CELL_COUNT > maxYear;
+    var onNavigate = function () {
+        direction === CalendarYearNavDirection.Previous ? onSelectPrev === null || onSelectPrev === void 0 ? void 0 : onSelectPrev() : onSelectNext === null || onSelectNext === void 0 ? void 0 : onSelectNext();
+    };
+    var onKeyDown = function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        if (ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.enter) {
+            onNavigate();
+        }
+    };
+    // can be condensed, but leaving verbose for clarity due to regressions
+    var isLeftNavigation = (0,_Utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)()
+        ? direction === CalendarYearNavDirection.Next
+        : direction === CalendarYearNavDirection.Previous;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.css)(classNames.navigationButton, (_a = {},
+            _a[classNames.disabled] = disabled,
+            _a)), onClick: !disabled ? onNavigate : undefined, onKeyDown: !disabled ? onKeyDown : undefined, type: "button", title: ariaLabelString, disabled: disabled },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: isLeftNavigation ? navigationIcons.leftNavigation : navigationIcons.rightNavigation })));
+};
+CalendarYearNavArrow.displayName = 'CalendarYearNavArrow';
+var CalendarYearNav = function (props) {
+    var styles = props.styles, theme = props.theme, className = props.className;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.navigationButtonsContainer },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearNavArrow, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { direction: CalendarYearNavDirection.Previous })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearNavArrow, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { direction: CalendarYearNavDirection.Next }))));
+};
+CalendarYearNav.displayName = 'CalendarYearNav';
+var CalendarYearTitle = function (props) {
+    var styles = props.styles, theme = props.theme, className = props.className, fromYear = props.fromYear, toYear = props.toYear, _a = props.strings, strings = _a === void 0 ? DefaultCalendarYearStrings : _a, animateBackwards = props.animateBackwards, animationDirection = props.animationDirection;
+    var onHeaderSelect = function () {
+        var _a;
+        (_a = props.onHeaderSelect) === null || _a === void 0 ? void 0 : _a.call(props, true);
+    };
+    var onHeaderKeyDown = function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        if (ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.enter || ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_2__.KeyCodes.space) {
+            onHeaderSelect();
+        }
+    };
+    var onRenderYear = function (year) {
+        var _a, _b;
+        return (_b = (_a = props.onRenderYear) === null || _a === void 0 ? void 0 : _a.call(props, year)) !== null && _b !== void 0 ? _b : year;
+    };
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        hasHeaderClickCallback: !!props.onHeaderSelect,
+        animateBackwards: animateBackwards,
+        animationDirection: animationDirection,
+    });
+    if (props.onHeaderSelect) {
+        var rangeAriaLabel = strings.rangeAriaLabel;
+        var headerAriaLabelFormatString = strings.headerAriaLabelFormatString;
+        var currentDateRange = rangeAriaLabel
+            ? typeof rangeAriaLabel === 'string'
+                ? rangeAriaLabel
+                : rangeAriaLabel(props)
+            : undefined;
+        var ariaLabel = headerAriaLabelFormatString
+            ? (0,_Utilities__WEBPACK_IMPORTED_MODULE_9__.format)(headerAriaLabelFormatString, currentDateRange)
+            : currentDateRange;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: classNames.currentItemButton, onClick: onHeaderSelect, onKeyDown: onHeaderKeyDown, "aria-label": ariaLabel, role: "button", type: "button" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-live": "assertive", "aria-atomic": "true" },
+                onRenderYear(fromYear),
+                " - ",
+                onRenderYear(toYear))));
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.current },
+        onRenderYear(fromYear),
+        " - ",
+        onRenderYear(toYear)));
+};
+CalendarYearTitle.displayName = 'CalendarYearTitle';
+var CalendarYearHeader = function (props) {
+    var _a;
+    var styles = props.styles, theme = props.theme, className = props.className, animateBackwards = props.animateBackwards, animationDirection = props.animationDirection, onRenderTitle = props.onRenderTitle;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        hasHeaderClickCallback: !!props.onHeaderSelect,
+        animateBackwards: animateBackwards,
+        animationDirection: animationDirection,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.headerContainer }, (_a = onRenderTitle === null || onRenderTitle === void 0 ? void 0 : onRenderTitle(props)) !== null && _a !== void 0 ? _a : react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearTitle, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearNav, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props))));
+};
+CalendarYearHeader.displayName = 'CalendarYearHeader';
+function useAnimateBackwards(_a) {
+    var selectedYear = _a.selectedYear, navigatedYear = _a.navigatedYear;
+    var rangeYear = selectedYear || navigatedYear || new Date().getFullYear();
+    var fromYear = Math.floor(rangeYear / 10) * 10;
+    var previousFromYear = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__.usePrevious)(fromYear);
+    if (!previousFromYear || previousFromYear === fromYear) {
+        return undefined;
+    }
+    else if (previousFromYear > fromYear) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function useYearRangeState(_a) {
+    var selectedYear = _a.selectedYear, navigatedYear = _a.navigatedYear;
+    var rangeYear = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(function () {
+        return selectedYear || navigatedYear || Math.floor(new Date().getFullYear() / 10) * 10;
+    }, [navigatedYear, selectedYear]);
+    var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(rangeYear), fromYear = _b[0], setFromYear = _b[1];
+    var onNavNext = function () {
+        setFromYear(function (year) { return year + CELL_COUNT; });
+    };
+    var onNavPrevious = function () {
+        setFromYear(function (year) { return year - CELL_COUNT; });
+    };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        setFromYear(rangeYear);
+    }, [rangeYear]);
+    var toYear = fromYear + CELL_COUNT - 1;
+    return [fromYear, toYear, onNavNext, onNavPrevious];
+}
+var CalendarYearBase = function (props) {
+    var animateBackwards = useAnimateBackwards(props);
+    var _a = useYearRangeState(props), fromYear = _a[0], toYear = _a[1], onNavNext = _a[2], onNavPrevious = _a[3];
+    var gridRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(props.componentRef, function () { return ({
+        focus: function () {
+            var _a, _b;
+            (_b = (_a = gridRef.current) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+        },
+    }); });
+    var styles = props.styles, theme = props.theme, className = props.className;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearHeader, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { fromYear: fromYear, toYear: toYear, onSelectPrev: onNavPrevious, onSelectNext: onNavNext, animateBackwards: animateBackwards })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarYearGrid, (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__assign)({}, props, { fromYear: fromYear, toYear: toYear, animateBackwards: animateBackwards, componentRef: gridRef }))));
+};
+CalendarYearBase.displayName = 'CalendarYearBase';
+
+
+/***/ }),
+
+/***/ 54159:
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarYear/CalendarYear.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CalendarYear: () => (/* binding */ CalendarYear)
+/* harmony export */ });
+/* harmony import */ var _CalendarYear_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarYear.styles */ 88179);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _CalendarYear_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarYear.base */ 3324);
+
+
+
+var CalendarYear = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_CalendarYear_base__WEBPACK_IMPORTED_MODULE_1__.CalendarYearBase, _CalendarYear_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'CalendarYear' });
+
+
+/***/ }),
+
+/***/ 88179:
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarYear/CalendarYear.styles.js ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CalendarPicker/CalendarPicker.styles */ 55677);
+
+var getStyles = function (props) {
+    /*  Return styles from the base class.
+     *  If this component has extra styles not in the base, apply them here i.e.:
+     *  const myStyle: IStyle = {
+     *    display: "block"
+     *  };
+     *  return {...getPickerStyles(props), myStyle};
+     */
+    return (0,_CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__.getStyles)(props);
+};
+
+
+/***/ }),
+
+/***/ 72280:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Calendar/defaults.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultCalendarNavigationIcons: () => (/* binding */ defaultCalendarNavigationIcons),
+/* harmony export */   defaultCalendarStrings: () => (/* binding */ defaultCalendarStrings),
+/* harmony export */   defaultDayPickerStrings: () => (/* binding */ defaultDayPickerStrings)
+/* harmony export */ });
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 37915);
+
+var defaultCalendarStrings = _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_0__.DEFAULT_CALENDAR_STRINGS;
+/**
+ * @deprecated Use `defaultCalendarStrings`
+ */
+var defaultDayPickerStrings = defaultCalendarStrings;
+var defaultCalendarNavigationIcons = {
+    leftNavigation: 'Up',
+    rightNavigation: 'Down',
+    closeIcon: 'CalculatorMultiply',
+};
+
+
+/***/ }),
+
 /***/ 26650:
 /*!************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Callout/Callout.js ***!
@@ -20080,6 +24580,598 @@ var ContextualMenuSplitButton = /** @class */ (function (_super) {
     return ContextualMenuSplitButton;
 }(_ContextualMenuItemWrapper__WEBPACK_IMPORTED_MODULE_15__.ContextualMenuItemWrapper));
 
+
+
+/***/ }),
+
+/***/ 1073:
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/DatePicker/DatePicker.base.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DatePickerBase: () => (/* binding */ DatePickerBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/utilities */ 34751);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/utilities */ 37974);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
+/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Calendar */ 95344);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../Callout */ 26650);
+/* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../Callout */ 19861);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Styling */ 38455);
+/* harmony import */ var _TextField__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../TextField */ 67102);
+/* harmony import */ var _FocusTrapZone__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../FocusTrapZone */ 43634);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react-hooks */ 15672);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 36228);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defaults */ 18848);
+
+
+
+
+
+
+
+
+
+
+
+var getClassNames = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var DEFAULT_PROPS = {
+    allowTextInput: false,
+    formatDate: function (date) { return (date ? date.toDateString() : ''); },
+    parseDateFromString: function (dateStr) {
+        //if dateStr is DATE ONLY ISO 8601 -> add time so Date.parse() won't convert it to UTC
+        //See here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse#date_time_string_format
+        if (dateStr.match(/^\d{4}(-\d{2}){2}$/)) {
+            dateStr += 'T12:00';
+        }
+        var date = Date.parse(dateStr);
+        return date ? new Date(date) : null;
+    },
+    firstDayOfWeek: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.DayOfWeek.Sunday,
+    initialPickerDate: new Date(),
+    isRequired: false,
+    isMonthPickerVisible: true,
+    showMonthPickerAsOverlay: false,
+    strings: _defaults__WEBPACK_IMPORTED_MODULE_3__.defaultDatePickerStrings,
+    highlightCurrentMonth: false,
+    highlightSelectedMonth: false,
+    borderless: false,
+    pickerAriaLabel: 'Calendar',
+    showWeekNumbers: false,
+    firstWeekOfYear: _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__.FirstWeekOfYear.FirstDay,
+    showGoToToday: true,
+    showCloseButton: false,
+    underlined: false,
+    allFocusable: false,
+};
+function useFocusLogic() {
+    var textFieldRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var preventFocusOpeningPicker = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    var focus = function () {
+        var _a, _b;
+        (_b = (_a = textFieldRef.current) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+    };
+    var preventNextFocusOpeningPicker = function () {
+        preventFocusOpeningPicker.current = true;
+    };
+    return [textFieldRef, focus, preventFocusOpeningPicker, preventNextFocusOpeningPicker];
+}
+function useCalendarVisibility(_a, focus) {
+    var allowTextInput = _a.allowTextInput, onAfterMenuDismiss = _a.onAfterMenuDismiss;
+    var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(false), isCalendarShown = _b[0], setIsCalendarShown = _b[1];
+    var isMounted = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    var async = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__.useAsync)();
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (isMounted.current && !isCalendarShown) {
+            // In browsers like IE, textfield gets unfocused when datepicker is collapsed
+            if (allowTextInput) {
+                async.requestAnimationFrame(focus);
+            }
+            // If DatePicker's menu (Calendar) is closed, run onAfterMenuDismiss
+            onAfterMenuDismiss === null || onAfterMenuDismiss === void 0 ? void 0 : onAfterMenuDismiss();
+        }
+        isMounted.current = true;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isCalendarShown]);
+    return [isCalendarShown, setIsCalendarShown];
+}
+function useSelectedDate(_a) {
+    var formatDate = _a.formatDate, value = _a.value, onSelectDate = _a.onSelectDate;
+    var _b = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useControllableValue)(value, undefined, function (ev, newValue) {
+        return onSelectDate === null || onSelectDate === void 0 ? void 0 : onSelectDate(newValue);
+    }), selectedDate = _b[0], setSelectedDateState = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(function () { return (value && formatDate ? formatDate(value) : ''); }), formattedDate = _c[0], setFormattedDate = _c[1];
+    var setSelectedDate = function (newDate) {
+        setSelectedDateState(newDate);
+        setFormattedDate(newDate && formatDate ? formatDate(newDate) : '');
+    };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        setFormattedDate(value && formatDate ? formatDate(value) : '');
+    }, [formatDate, value]);
+    return [selectedDate, formattedDate, setSelectedDate, setFormattedDate];
+}
+function useErrorMessage(_a, selectedDate, setSelectedDate, inputValue, isCalendarShown) {
+    var _b;
+    var isRequired = _a.isRequired, allowTextInput = _a.allowTextInput, strings = _a.strings, parseDateFromString = _a.parseDateFromString, onSelectDate = _a.onSelectDate, formatDate = _a.formatDate, minDate = _a.minDate, maxDate = _a.maxDate, textField = _a.textField;
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(), errorMessage = _c[0], setErrorMessage = _c[1];
+    var _d = react__WEBPACK_IMPORTED_MODULE_0__.useState(), statusMessage = _d[0], setStatusMessage = _d[1];
+    var isFirstLoadRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(true);
+    var validateOnLoad = (_b = textField === null || textField === void 0 ? void 0 : textField.validateOnLoad) !== null && _b !== void 0 ? _b : true;
+    var validateTextInput = function (date) {
+        if (date === void 0) { date = null; }
+        if (allowTextInput) {
+            if (inputValue || date) {
+                // Don't parse if the selected date has the same formatted string as what we're about to parse.
+                // The formatted string might be ambiguous (ex: "1/2/3" or "New Year Eve") and the parser might
+                // not be able to come up with the exact same date.
+                if (selectedDate && !errorMessage && formatDate && formatDate(date !== null && date !== void 0 ? date : selectedDate) === inputValue) {
+                    return;
+                }
+                date = date || parseDateFromString(inputValue);
+                // Check if date is null, or date is Invalid Date
+                if (!date || isNaN(date.getTime())) {
+                    // Reset invalid input field, if formatting is available
+                    setSelectedDate(selectedDate);
+                    // default the newer isResetStatusMessage string to invalidInputErrorMessage for legacy support
+                    var selectedText = formatDate ? formatDate(selectedDate) : '';
+                    var statusText = strings.isResetStatusMessage
+                        ? (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__.format)(strings.isResetStatusMessage, inputValue, selectedText)
+                        : strings.invalidInputErrorMessage || '';
+                    setStatusMessage(statusText);
+                }
+                else {
+                    // Check against optional date boundaries
+                    if (isDateOutOfBounds(date, minDate, maxDate)) {
+                        setErrorMessage(strings.isOutOfBoundsErrorMessage || ' ');
+                    }
+                    else {
+                        setSelectedDate(date);
+                        setErrorMessage(undefined);
+                        setStatusMessage(undefined);
+                    }
+                }
+            }
+            else {
+                // Only show error for empty inputValue if it is a required field
+                setErrorMessage(isRequired ? strings.isRequiredErrorMessage || ' ' : undefined);
+                // If no input date string or input date string is invalid
+                // date variable will be null, callback should expect null value for this case
+                onSelectDate === null || onSelectDate === void 0 ? void 0 : onSelectDate(date);
+            }
+        }
+        else if (isRequired && !inputValue) {
+            // Check when DatePicker is a required field but has NO input value
+            setErrorMessage(strings.isRequiredErrorMessage || ' ');
+        }
+        else {
+            // Cleanup the error message and status message
+            setErrorMessage(undefined);
+            setStatusMessage(undefined);
+        }
+    };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (isFirstLoadRef.current) {
+            isFirstLoadRef.current = false;
+            if (!validateOnLoad) {
+                return;
+            }
+        }
+        if (isRequired && !selectedDate) {
+            setErrorMessage(strings.isRequiredErrorMessage || ' ');
+        }
+        else if (selectedDate && isDateOutOfBounds(selectedDate, minDate, maxDate)) {
+            setErrorMessage(strings.isOutOfBoundsErrorMessage || ' ');
+        }
+        else {
+            setErrorMessage(undefined);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        // We don't want to compare the date itself, since two instances of date at the same time are not equal
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        minDate && (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getDatePartHashValue)(minDate),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        maxDate && (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getDatePartHashValue)(maxDate),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        selectedDate && (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.getDatePartHashValue)(selectedDate),
+        isRequired,
+        validateOnLoad,
+    ]);
+    return [
+        isCalendarShown ? undefined : errorMessage,
+        validateTextInput,
+        setErrorMessage,
+        isCalendarShown ? undefined : statusMessage,
+        setStatusMessage,
+    ];
+}
+var DatePickerBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (propsWithoutDefaults, forwardedRef) {
+    var _a, _b;
+    var props = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__.getPropsWithDefaults)(DEFAULT_PROPS, propsWithoutDefaults);
+    var firstDayOfWeek = props.firstDayOfWeek, strings = props.strings, label = props.label, theme = props.theme, className = props.className, styles = props.styles, initialPickerDate = props.initialPickerDate, isRequired = props.isRequired, disabled = props.disabled, ariaLabel = props.ariaLabel, pickerAriaLabel = props.pickerAriaLabel, placeholder = props.placeholder, allowTextInput = props.allowTextInput, borderless = props.borderless, minDate = props.minDate, maxDate = props.maxDate, showCloseButton = props.showCloseButton, calendarProps = props.calendarProps, calloutProps = props.calloutProps, textFieldProps = props.textField, underlined = props.underlined, allFocusable = props.allFocusable, _c = props.calendarAs, CalendarType = _c === void 0 ? _Calendar__WEBPACK_IMPORTED_MODULE_9__.Calendar : _c, tabIndex = props.tabIndex, _d = props.disableAutoFocus, disableAutoFocus = _d === void 0 ? true : _d;
+    var id = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__.useId)('DatePicker', props.id);
+    var calloutId = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__.useId)('DatePicker-Callout');
+    var calendar = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var datePickerDiv = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var _e = useFocusLogic(), textFieldRef = _e[0], focus = _e[1], preventFocusOpeningPicker = _e[2], preventNextFocusOpeningPicker = _e[3];
+    var _f = useCalendarVisibility(props, focus), isCalendarShown = _f[0], setIsCalendarShown = _f[1];
+    var _g = useSelectedDate(props), selectedDate = _g[0], formattedDate = _g[1], setSelectedDate = _g[2], setFormattedDate = _g[3];
+    var _h = useErrorMessage(props, selectedDate, setSelectedDate, formattedDate, isCalendarShown), errorMessage = _h[0], validateTextInput = _h[1], setErrorMessage = _h[2], statusMessage = _h[3], setStatusMessage = _h[4];
+    var showDatePickerPopup = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function () {
+        if (!isCalendarShown) {
+            preventNextFocusOpeningPicker();
+            setIsCalendarShown(true);
+        }
+    }, [isCalendarShown, preventNextFocusOpeningPicker, setIsCalendarShown]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(props.componentRef, function () { return ({
+        focus: focus,
+        reset: function () {
+            setIsCalendarShown(false);
+            setSelectedDate(undefined);
+            setErrorMessage(undefined);
+            setStatusMessage(undefined);
+        },
+        showDatePickerPopup: showDatePickerPopup,
+    }); }, [focus, setErrorMessage, setIsCalendarShown, setSelectedDate, setStatusMessage, showDatePickerPopup]);
+    var onTextFieldFocus = function () {
+        if (disableAutoFocus) {
+            return;
+        }
+        if (!allowTextInput) {
+            if (!preventFocusOpeningPicker.current) {
+                showDatePickerPopup();
+            }
+            preventFocusOpeningPicker.current = false;
+        }
+    };
+    var onSelectDate = function (date) {
+        if (props.calendarProps && props.calendarProps.onSelectDate) {
+            props.calendarProps.onSelectDate(date);
+        }
+        calendarDismissed(date);
+    };
+    var onCalloutPositioned = function () {
+        var shouldFocus = true;
+        // If the user has specified that the callout shouldn't use initial focus, then respect
+        // that and don't attempt to set focus. That will default to true within the callout
+        // so we need to check if it's undefined here.
+        if (props.calloutProps && props.calloutProps.setInitialFocus !== undefined) {
+            shouldFocus = props.calloutProps.setInitialFocus;
+        }
+        if (calendar.current && shouldFocus) {
+            calendar.current.focus();
+        }
+    };
+    var onTextFieldBlur = function (ev) {
+        validateTextInput();
+    };
+    var onTextFieldChanged = function (ev, newValue) {
+        var _a;
+        var textField = props.textField;
+        if (allowTextInput) {
+            if (isCalendarShown) {
+                dismissDatePickerPopup();
+            }
+            setFormattedDate(newValue);
+        }
+        (_a = textField === null || textField === void 0 ? void 0 : textField.onChange) === null || _a === void 0 ? void 0 : _a.call(textField, ev, newValue);
+    };
+    var onTextFieldKeyDown = function (ev) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        switch (ev.which) {
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__.KeyCodes.enter:
+                ev.preventDefault();
+                ev.stopPropagation();
+                if (!isCalendarShown) {
+                    validateTextInput();
+                    showDatePickerPopup();
+                }
+                else {
+                    // When DatePicker allows input date string directly,
+                    // it is expected to hit another enter to close the popup
+                    if (props.allowTextInput) {
+                        dismissDatePickerPopup();
+                    }
+                }
+                break;
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__.KeyCodes.escape:
+                handleEscKey(ev);
+                break;
+            case _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__.KeyCodes.down:
+                if (ev.altKey && !isCalendarShown) {
+                    showDatePickerPopup();
+                }
+                break;
+            default:
+                break;
+        }
+    };
+    var onTextFieldClick = function (ev) {
+        // default openOnClick to !props.disableAutoFocus for legacy support of disableAutoFocus behavior
+        var openOnClick = props.openOnClick || !props.disableAutoFocus;
+        if (openOnClick && !isCalendarShown && !props.disabled) {
+            showDatePickerPopup();
+            return;
+        }
+        if (props.allowTextInput) {
+            dismissDatePickerPopup();
+        }
+    };
+    var onIconClick = function (ev) {
+        ev.stopPropagation();
+        if (!isCalendarShown && !props.disabled) {
+            showDatePickerPopup();
+        }
+        else if (props.allowTextInput) {
+            dismissDatePickerPopup();
+        }
+    };
+    var dismissDatePickerPopup = function (newlySelectedDate) {
+        if (isCalendarShown) {
+            setIsCalendarShown(false);
+            validateTextInput(newlySelectedDate);
+            if (!allowTextInput && newlySelectedDate) {
+                setSelectedDate(newlySelectedDate);
+            }
+        }
+    };
+    var renderTextfieldDescription = function (inputProps, defaultRender) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            inputProps.description || inputProps.onRenderDescription ? defaultRender(inputProps) : null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { "aria-live": "assertive", className: classNames.statusMessage }, statusMessage)));
+    };
+    var renderReadOnlyInput = function (inputProps) {
+        var divProps = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__.getNativeProps)(inputProps, _fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__.divProperties);
+        // Need to merge styles so the provided styles win over the default ones. This is due to the classnames having the
+        // same specificity.
+        var readOnlyTextFieldClassName = (0,_Styling__WEBPACK_IMPORTED_MODULE_13__.mergeStyles)(divProps.className, classNames.readOnlyTextField);
+        // Talkback on Android treats readonly inputs as disabled, so swipe gestures to open the Calendar
+        // don't register. Workaround is rendering a div with role="combobox" (passed in via TextField props).
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)({}, divProps, { className: readOnlyTextFieldClassName, tabIndex: tabIndex || 0 }), formattedDate || (
+        // Putting the placeholder in a separate span fixes specificity issues for the text color
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: classNames.readOnlyPlaceholder }, placeholder))));
+    };
+    /**
+     * Callback for closing the calendar callout
+     */
+    var calendarDismissed = function (newlySelectedDate) {
+        preventNextFocusOpeningPicker();
+        dismissDatePickerPopup(newlySelectedDate);
+        // don't need to focus the text box, if necessary the focusTrapZone will do it
+    };
+    var calloutDismissed = function (ev) {
+        calendarDismissed();
+    };
+    var handleEscKey = function (ev) {
+        if (isCalendarShown) {
+            ev.stopPropagation();
+            calendarDismissed();
+        }
+    };
+    var onCalendarDismissed = function (ev) {
+        calendarDismissed();
+    };
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        disabled: disabled,
+        underlined: underlined,
+        label: !!label,
+        isDatePickerShown: isCalendarShown,
+    });
+    var nativeProps = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__.getNativeProps)(props, _fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__.divProperties, ['value']);
+    var iconProps = textFieldProps && textFieldProps.iconProps;
+    var textFieldId = textFieldProps && textFieldProps.id && textFieldProps.id !== id ? textFieldProps.id : id + '-label';
+    var readOnly = !allowTextInput && !disabled;
+    var dataIsFocusable = (_b = (_a = textFieldProps === null || textFieldProps === void 0 ? void 0 : textFieldProps['data-is-focusable']) !== null && _a !== void 0 ? _a : props['data-is-focusable']) !== null && _b !== void 0 ? _b : true;
+    // Props to create a semantic but non-focusable button when the datepicker has a text input
+    // Used for voice control and touch screen reader accessibility
+    var iconA11yProps = allowTextInput
+        ? {
+            role: 'button',
+            'aria-expanded': isCalendarShown,
+            'aria-label': ariaLabel !== null && ariaLabel !== void 0 ? ariaLabel : label,
+            'aria-labelledby': textFieldProps && textFieldProps['aria-labelledby'],
+        }
+        : {};
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)({}, nativeProps, { className: classNames.root, ref: forwardedRef }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { ref: datePickerDiv, "aria-owns": isCalendarShown ? calloutId : undefined, className: classNames.wrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TextField__WEBPACK_IMPORTED_MODULE_15__.TextField, (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)({ role: "combobox", label: label, "aria-expanded": isCalendarShown, "aria-required": isRequired, ariaLabel: ariaLabel, "aria-haspopup": "dialog", "aria-controls": isCalendarShown ? calloutId : undefined, required: isRequired, disabled: disabled, errorMessage: errorMessage, placeholder: placeholder, borderless: borderless, value: formattedDate, componentRef: textFieldRef, underlined: underlined, tabIndex: tabIndex, readOnly: !allowTextInput }, textFieldProps, { "data-is-focusable": dataIsFocusable, id: textFieldId, className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__.css)(classNames.textField, textFieldProps && textFieldProps.className), iconProps: (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)({ iconName: 'Calendar' }, iconA11yProps), iconProps), { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__.css)(classNames.icon, iconProps && iconProps.className), onClick: onIconClick }), 
+                // eslint-disable-next-line react/jsx-no-bind
+                onRenderDescription: renderTextfieldDescription, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onKeyDown: onTextFieldKeyDown, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onFocus: onTextFieldFocus, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onBlur: onTextFieldBlur, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onClick: onTextFieldClick, 
+                // eslint-disable-next-line react/jsx-no-bind
+                onChange: onTextFieldChanged, onRenderInput: readOnly ? renderReadOnlyInput : undefined }))),
+        isCalendarShown && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Callout__WEBPACK_IMPORTED_MODULE_17__.Callout, (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)({ id: calloutId, role: "dialog", ariaLabel: pickerAriaLabel, isBeakVisible: false, gapSpace: 0, doNotLayer: false, target: datePickerDiv.current, directionalHint: _Callout__WEBPACK_IMPORTED_MODULE_18__.DirectionalHint.bottomLeftEdge }, calloutProps, { className: (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__.css)(classNames.callout, calloutProps && calloutProps.className), 
+            // eslint-disable-next-line react/jsx-no-bind
+            onDismiss: calloutDismissed, 
+            // eslint-disable-next-line react/jsx-no-bind
+            onPositioned: onCalloutPositioned }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FocusTrapZone__WEBPACK_IMPORTED_MODULE_19__.FocusTrapZone, { isClickableOutsideFocusTrap: true, disableFirstFocus: disableAutoFocus },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(CalendarType, (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__assign)({}, calendarProps, { 
+                    // eslint-disable-next-line react/jsx-no-bind
+                    onSelectDate: onSelectDate, 
+                    // eslint-disable-next-line react/jsx-no-bind
+                    onDismiss: onCalendarDismissed, isMonthPickerVisible: props.isMonthPickerVisible, showMonthPickerAsOverlay: props.showMonthPickerAsOverlay, today: props.today, value: selectedDate || initialPickerDate, firstDayOfWeek: firstDayOfWeek, strings: strings, highlightCurrentMonth: props.highlightCurrentMonth, highlightSelectedMonth: props.highlightSelectedMonth, showWeekNumbers: props.showWeekNumbers, firstWeekOfYear: props.firstWeekOfYear, showGoToToday: props.showGoToToday, dateTimeFormatter: props.dateTimeFormatter, minDate: minDate, maxDate: maxDate, componentRef: calendar, showCloseButton: showCloseButton, allFocusable: allFocusable })))))));
+});
+DatePickerBase.displayName = 'DatePickerBase';
+function isDateOutOfBounds(date, minDate, maxDate) {
+    return (!!minDate && (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.compareDatePart)(minDate, date) > 0) || (!!maxDate && (0,_fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__.compareDatePart)(maxDate, date) < 0);
+}
+
+
+/***/ }),
+
+/***/ 46412:
+/*!******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/DatePicker/DatePicker.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DatePicker: () => (/* binding */ DatePicker)
+/* harmony export */ });
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/utilities */ 55336);
+/* harmony import */ var _DatePicker_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatePicker.base */ 1073);
+/* harmony import */ var _DatePicker_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DatePicker.styles */ 50414);
+
+
+
+var DatePicker = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_DatePicker_base__WEBPACK_IMPORTED_MODULE_1__.DatePickerBase, _DatePicker_styles__WEBPACK_IMPORTED_MODULE_2__.styles, undefined, {
+    scope: 'DatePicker',
+});
+
+
+/***/ }),
+
+/***/ 50414:
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/DatePicker/DatePicker.styles.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   styles: () => (/* binding */ styles)
+/* harmony export */ });
+/* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-DatePicker',
+    callout: 'ms-DatePicker-callout',
+    withLabel: 'ms-DatePicker-event--with-label',
+    withoutLabel: 'ms-DatePicker-event--without-label',
+    disabled: 'msDatePickerDisabled ',
+};
+var TEXTFIELD_HEIGHT = 32;
+var styles = function (props) {
+    var _a;
+    var className = props.className, theme = props.theme, disabled = props.disabled, underlined = props.underlined, label = props.label, isDatePickerShown = props.isDatePickerShown;
+    var palette = theme.palette, semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var classNames = (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var DatePickerIcon = {
+        color: palette.neutralSecondary,
+        fontSize: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontSizes.icon,
+        lineHeight: '18px',
+        pointerEvents: 'none',
+        position: 'absolute',
+        right: '4px',
+        padding: '5px',
+    };
+    return {
+        root: [classNames.root, theme.fonts.large, isDatePickerShown && 'is-open', _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.normalize, className],
+        textField: [
+            {
+                position: 'relative',
+                selectors: {
+                    '& input[readonly]': {
+                        cursor: 'pointer',
+                    },
+                    input: {
+                        selectors: {
+                            '::-ms-clear': {
+                                display: 'none',
+                            },
+                        },
+                    },
+                },
+            },
+            disabled && {
+                selectors: {
+                    '& input[readonly]': {
+                        cursor: 'default',
+                    },
+                },
+            },
+        ],
+        callout: [classNames.callout],
+        icon: [
+            DatePickerIcon,
+            label ? classNames.withLabel : classNames.withoutLabel,
+            { paddingTop: '7px' },
+            !disabled && [
+                classNames.disabled,
+                {
+                    pointerEvents: 'initial',
+                    cursor: 'pointer',
+                },
+            ],
+            disabled && {
+                color: semanticColors.disabledText,
+                cursor: 'default',
+            },
+        ],
+        statusMessage: [
+            fonts.small,
+            {
+                color: semanticColors.errorText,
+                marginTop: 5,
+            },
+        ],
+        readOnlyTextField: [
+            {
+                cursor: 'pointer',
+                height: TEXTFIELD_HEIGHT,
+                lineHeight: TEXTFIELD_HEIGHT - 2,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+            },
+            underlined && {
+                lineHeight: TEXTFIELD_HEIGHT + 2,
+            },
+        ],
+        readOnlyPlaceholder: (_a = {
+                color: semanticColors.inputPlaceholderText
+            },
+            _a[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                color: 'GrayText',
+            },
+            _a),
+    };
+};
+
+
+/***/ }),
+
+/***/ 18848:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/DatePicker/defaults.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultDatePickerStrings: () => (/* binding */ defaultDatePickerStrings)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Calendar */ 72280);
+
+
+var defaultDatePickerStrings = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, _Calendar__WEBPACK_IMPORTED_MODULE_1__.defaultCalendarStrings), { prevMonthAriaLabel: 'Go to previous month', nextMonthAriaLabel: 'Go to next month', prevYearAriaLabel: 'Go to previous year', nextYearAriaLabel: 'Go to next year', closeButtonAriaLabel: 'Close date picker', isRequiredErrorMessage: 'Field is required', invalidInputErrorMessage: 'Invalid date format', isResetStatusMessage: 'Invalid entry "{0}", date reset to "{1}"' });
 
 
 /***/ }),
@@ -47034,6 +52126,58 @@ var useHasMergeStylesShadowRootContext = function () {
 var useMergeStylesShadowRootContext = function () {
     return react__WEBPACK_IMPORTED_MODULE_0__.useContext(_contexts_MergeStylesShadowRootContext__WEBPACK_IMPORTED_MODULE_1__.MergeStylesShadowRootContext);
 };
+
+
+/***/ }),
+
+/***/ 87578:
+/*!********************************************************!*\
+  !*** ./node_modules/@fluentui/utilities/lib/string.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   format: () => (/* binding */ format)
+/* harmony export */ });
+// Regex that finds { and } so they can be removed on a lookup for string format
+var FORMAT_ARGS_REGEX = /[\{\}]/g;
+// Regex that finds {#} so it can be replaced by the arguments in string format
+var FORMAT_REGEX = /\{\d+\}/g;
+/**
+ * String format method, used for scenarios where at runtime you
+ * need to evaluate a formatted string given a tokenized string. This
+ * usually only is needed in localization scenarios.
+
+ * @example
+ * ```tsx
+ * "I love {0} every {1}".format("CXP")
+ * ```
+ * will result in a Debug Exception.
+ *
+ * @public
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function format(s) {
+    var values = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        values[_i - 1] = arguments[_i];
+    }
+    var args = values;
+    // Callback match function
+    function replaceFunc(match) {
+        // looks up in the args
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        var replacement = args[match.replace(FORMAT_ARGS_REGEX, '')];
+        // catches undefined in nondebug and null in debug and nondebug
+        if (replacement === null || replacement === undefined) {
+            replacement = '';
+        }
+        return replacement;
+    }
+    return s.replace(FORMAT_REGEX, replaceFunc);
+}
 
 
 /***/ }),
@@ -88394,7 +93538,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5879ca27179e3c6d25e3")
+/******/ 		__webpack_require__.h = () => ("32871dff7097d3669bbc")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -75,8 +75,8 @@ class InventoryService {
     static async addReturnRequest(request, userDisplayName) {
         return ReturnRequestService_1.ReturnRequestService.addReturnRequest(request, userDisplayName);
     }
-    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition) {
-        return ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition);
+    static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus) {
+        return ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus);
     }
     static async cleanupReturnApprovedAssets() {
         return ReturnRequestService_1.ReturnRequestService.cleanupReturnApprovedAssets();
@@ -87,6 +87,9 @@ class InventoryService {
     }
     static async getAuditLogs() {
         return AuditLogService_1.AuditLogService.getAuditLogs();
+    }
+    static async getFilteredAuditLogs(filters) {
+        return AuditLogService_1.AuditLogService.getFilteredAuditLogs(filters);
     }
     // SharePointBaseService Methods
     static async getListFieldsMetadata(list) {
