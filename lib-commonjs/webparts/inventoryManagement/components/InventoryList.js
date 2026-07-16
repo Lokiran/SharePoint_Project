@@ -190,7 +190,8 @@ const InventoryList = (props) => {
         return pages;
     };
     return (React.createElement("div", { style: { marginTop: '10px' } },
-        React.createElement(DetailsList_1.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }),
+        React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
+            React.createElement(DetailsList_1.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none })),
         props.enablePagination && totalPages > 1 && (React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationContainer },
             React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationInfo },
                 "Showing ",

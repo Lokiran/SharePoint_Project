@@ -47,7 +47,7 @@ import { IEmployee } from '../models/IEmployee';
 import { InventoryService } from '../services/InventoryService';
 import { Dashboard } from './Dashboard';
 import { AssetTracking } from './AssetTracking';
-import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage } from '../pages';
+import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage, InventoryPage } from '../pages';
 import { INotification } from '../models/INotification';
 import { NotificationCenter } from './NotificationCenter';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
@@ -1169,7 +1169,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         {/* Request Overview */}
         <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
           <h4 style={{ margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>Request Overview</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' }}>
+          <div className={styles.responsiveGrid} style={{ fontSize: '0.88rem' }}>
             <div><span style={{ color: '#6b7280' }}>Request Key:</span> <strong style={{ color: '#111827' }}>{request.requestKey}</strong></div>
             <div><span style={{ color: '#6b7280' }}>Requested Asset:</span> <strong style={{ color: '#111827' }}>{request.assetTitle}</strong></div>
             <div><span style={{ color: '#6b7280' }}>Quantity:</span> <strong style={{ color: '#111827' }}>{request.quantity}</strong></div>
@@ -1276,7 +1276,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         {/* Asset Overview */}
         <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
           <h4 style={{ margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>Asset Specifications</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' }}>
+          <div className={styles.responsiveGrid} style={{ fontSize: '0.88rem' }}>
             <div><span style={{ color: '#6b7280' }}>Asset Name:</span> <strong style={{ color: '#111827' }}>{asset.assetName || asset.title}</strong></div>
             <div><span style={{ color: '#6b7280' }}>Serial Number:</span> <strong style={{ color: '#111827' }}>{asset.serialNumber}</strong></div>
             <div><span style={{ color: '#6b7280' }}>Asset Type:</span> <strong style={{ color: '#111827' }}>{asset.assetType}</strong></div>
@@ -1572,7 +1572,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                 Pending Admin
               </span>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' }}>
+            <div className={styles.responsiveGridGap16} style={{ fontSize: '0.85rem' }}>
               <div>
                 <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '2px' }}>Category</span>
                 <strong style={{ color: 'var(--text-main)' }}>{request.assetTitle}</strong>
@@ -1751,7 +1751,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       requestActionInProgressId,
       requestSearchId,
       activeUserDisplayName,
-      activeUserEmail
+      activeUserEmail,
+      loading
     } = this.state;
 
     const effectiveRole = previewRole || userRole;
@@ -1864,6 +1865,14 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
 
           <div className={styles.appLayoutContainer}>
+            {/* Mobile Sidebar backdrop overlay */}
+            {!this.state.sidebarCollapsed && (
+              <div
+                className={styles.sidebarOverlay}
+                onClick={() => this.setState({ sidebarCollapsed: true })}
+                role="presentation"
+              />
+            )}
             {/* Left Sidebar Navigation */}
             <div
               className={`${styles.sidebarContainer} ${this.state.sidebarCollapsed ? styles.sidebarCollapsed : ''}`}
@@ -1933,6 +1942,17 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
             {/* Right Main Content Area */}
             <div className={`${styles.card} ${styles.contentContainer}`}>
+              {/* Mobile Navigation Header */}
+              <div className={styles.mobileNavHeader}>
+                <button
+                  className={styles.mobileMenuToggle}
+                  onClick={() => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }))}
+                  aria-label="Toggle navigation menu"
+                >
+                  <Icon iconName="GlobalNavButton" />
+                </button>
+                <span className={styles.mobileNavTitle}>Inventory Management</span>
+              </div>
               {(() => {
                 const dashboardState = {
                   items: isAdmin || isManager ? items : myAssets,
@@ -1971,6 +1991,17 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
                 const incidentHistoryActions = {
                   setIsLoading: (loading: boolean) => this.setState({ loading })
+                };
+
+                const inventoryState = {
+                  items,
+                  loading,
+                  isAdmin,
+                  isInventoryManager: isManager
+                };
+
+                const inventoryActions = {
+                  onOpenAssetForm: () => this.setState({ isAssetFormOpen: true })
                 };
 
                 switch (this.state.selectedTabKey) {
@@ -2041,28 +2072,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                     );
                   case 'Inventory':
                     return (isAdmin || isManager) ? (
-                      <div>
-                        <div className={styles.cardHeader}>
-                          <h3>Current Inventory Overview</h3>
-                        </div>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
-                          Track and manage your organizational assets efficiently within the SharePoint Framework.
-                        </p>
-                        {this.state.loading ? (
-                          <p>Loading inventory...</p>
-                        ) : (
-                          <div>
-                            <div style={{ marginBottom: '15px' }}>
-                              <PrimaryButton
-                                text={isAdmin ? "Add New Asset" : "Assign / Manage Assets"}
-                                onClick={() => this.setState({ isAssetFormOpen: true })}
-                                iconProps={{ iconName: 'Add' }}
-                              />
-                            </div>
-                            <InventoryList items={items} isAdmin={isAdmin} enablePagination={true} />
-                          </div>
-                        )}
-                      </div>
+                      <InventoryPage
+                        state={inventoryState}
+                        actions={inventoryActions}
+                      />
                     ) : null;
                   case 'Approvals':
                     return isManager ? (

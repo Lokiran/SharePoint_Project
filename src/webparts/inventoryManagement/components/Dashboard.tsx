@@ -696,7 +696,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       <td>{req.assetTitle}</td>
                       <td>{req.quantity}</td>
                       <td>{formatDate(req.requestDate)}</td>
-                      <td style={{ maxWidth: '240px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      <td className={styles.tableCellJustification}>
                         {req.reason || 'No justification specified'}
                       </td>
                       <td>

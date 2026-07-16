@@ -38,6 +38,9 @@ $transition-normal: 0.25s $ease-standard;
 
 :local {
   .inventoryManagement {
+    container-type: inline-size;
+    position: relative;
+    @import './responsive.scss';
     --primary-blue: #{$color-blue};
     --primary-gradient: linear-gradient(135deg, #1a4fa0 0%, #2b7cd4 50%, #4a9be8 100%);
     --surface-bg: #{$card-bg};
@@ -116,7 +119,7 @@ $transition-normal: 0.25s $ease-standard;
       flex-wrap: wrap;
       gap: 20px;
 
-      @media (max-width: 768px) {
+      @include mobile-and-tablet {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -178,7 +181,7 @@ $transition-normal: 0.25s $ease-standard;
           line-height: 1.4;
         }
 
-        @media (max-width: 768px) {
+        @include mobile-and-tablet {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -193,7 +196,7 @@ $transition-normal: 0.25s $ease-standard;
         margin-left: 16px;
         flex-shrink: 0;
 
-        @media (max-width: 768px) {
+        @include mobile-and-tablet {
           margin-left: 0;
           margin-top: 8px;
         }
@@ -271,7 +274,7 @@ $transition-normal: 0.25s $ease-standard;
       align-items: flex-start;
       margin-top: 16px;
 
-      @media (max-width: 768px) {
+      @include mobile {
         flex-direction: column;
         align-items: stretch;
       }
@@ -293,76 +296,144 @@ $transition-normal: 0.25s $ease-standard;
       flex-direction: column;
       gap: 3px;
       flex-shrink: 0;
-      transition: width $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+      transition: width $transition-normal, box-shadow $transition-normal, border-color $transition-normal, left 0.3s ease;
 
-      @media (max-width: 768px) {
-        width: 100%;
+      @include desktop {
+        width: 250px !important;
+
+        .collapseToggle {
+          display: none !important;
+        }
+      }
+
+      @include tablet {
         box-sizing: border-box;
+      }
+
+      @include mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1001;
+        border-radius: 0;
+        box-shadow: $shadow-lg;
+        background: var(--surface-bg);
+        width: 250px !important;
+        margin: 0;
+        transition: left 0.3s ease;
       }
 
       // Collapsed state
       &.sidebarCollapsed {
-        width: 56px;
-        padding: 12px 6px;
-
-        .navHeader {
-          padding: 4px 0 8px 0;
-          text-align: center;
-
-          h4,
-          span {
-            display: none;
-          }
+        @include desktop {
+          width: 250px !important;
         }
 
-        .navGroupLabel {
-          display: none;
-        }
+        @include tablet {
+          width: 56px;
+          padding: 12px 6px;
 
-        .sidebarNavItem {
-          justify-content: center;
-          padding: 10px 0;
+          .navHeader {
+            padding: 4px 0 8px 0;
+            text-align: center;
 
-          .navItemText,
-          .navBadge {
-            display: none;
-          }
-
-          i {
-            margin: 0;
-          }
-        }
-
-        .collapseToggle {
-          justify-content: center;
-
-          .collapseText {
-            display: none;
-          }
-        }
-
-        @media (max-width: 768px) {
-          width: 100%;
-
-          .navHeader h4,
-          .navHeader span,
-          .navGroupLabel {
-            display: block;
-          }
-
-          .sidebarNavItem {
-            justify-content: flex-start;
-            padding: 10px 14px;
-
-            .navItemText,
-            .navBadge {
-              display: inline-flex;
+            h4,
+            span {
+              display: none;
             }
           }
 
-          .collapseToggle .collapseText {
-            display: inline;
+          .navGroupLabel {
+            display: none;
           }
+
+          .sidebarNavItem {
+            justify-content: center;
+            padding: 10px 0;
+
+            .navItemText,
+            .navBadge {
+              display: none;
+            }
+
+            i {
+              margin: 0;
+            }
+          }
+
+          .collapseToggle {
+            justify-content: center;
+
+            .collapseText {
+              display: none;
+            }
+          }
+        }
+
+        @include mobile {
+          left: -260px;
+          width: 250px !important;
+        }
+      }
+    }
+
+    // Sidebar backdrop overlay for mobile
+    .sidebarOverlay {
+      display: none;
+
+      @include mobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        backdrop-filter: blur(2px);
+      }
+    }
+
+    // Mobile Navigation Bar Header
+    .mobileNavHeader {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        background-color: var(--surface-bg, #ffffff);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: var(--radius-md);
+        margin-bottom: 15px;
+        box-shadow: $shadow-sm;
+
+        .mobileMenuToggle {
+          background: none;
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+          color: var(--text-main);
+          padding: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 4px;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          background-color: rgba(0, 0, 0, 0.02);
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.06);
+          }
+        }
+
+        .mobileNavTitle {
+          font-weight: 700;
+          font-size: 0.95rem;
+          color: var(--text-main);
+          letter-spacing: -0.01em;
         }
       }
     }
@@ -700,7 +771,7 @@ $transition-normal: 0.25s $ease-standard;
       padding-top: 16px;
       border-top: 1px solid $border-color;
 
-      @media (max-width: 600px) {
+      @include mobile {
         flex-direction: column;
         gap: 12px;
         align-items: center;
@@ -808,6 +879,56 @@ $transition-normal: 0.25s $ease-standard;
         transform: translateY(-3px) !important;
         box-shadow: $shadow-hover !important;
         border-color: rgba(0, 120, 212, 0.15) !important;
+      }
+    }
+
+    // ----------------------------------------------------------
+    // RESPONSIVE GRID UTILITIES
+    // ----------------------------------------------------------
+
+    .responsiveGrid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+
+      @include mobile {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .responsiveGridGap8 {
+      @extend .responsiveGrid;
+      gap: 8px;
+    }
+
+    .responsiveGridGap16 {
+      @extend .responsiveGrid;
+      gap: 16px;
+    }
+
+    .responsiveGridGap20 {
+      @extend .responsiveGrid;
+      gap: 20px;
+    }
+
+    .responsiveGridAlignItemsCenter {
+      @extend .responsiveGrid;
+      align-items: center;
+    }
+
+    .lifecycleDiagram {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        transform: scale(0.9);
+        transform-origin: center center;
+        margin: -10px 0;
       }
     }
 

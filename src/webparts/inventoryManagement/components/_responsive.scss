@@ -1,0 +1,123 @@
+// ============================================================
+// RESPONSIVE UTILITIES & MIXINS
+// ============================================================
+
+// Breakpoints
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 1024px;
+
+// Container Queries Mixins
+@mixin mobile {
+  @container (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @container (min-width: #{$breakpoint-mobile + 1px}) and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile-and-tablet {
+  @container (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @container (min-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+// Spacing Utilities (Margins and Paddings)
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: 4px !important; }
+.mt-2 { margin-top: 8px !important; }
+.mt-3 { margin-top: 12px !important; }
+.mt-4 { margin-top: 16px !important; }
+.mt-5 { margin-top: 20px !important; }
+.mb-1 { margin-bottom: 4px !important; }
+.mb-2 { margin-bottom: 8px !important; }
+.mb-3 { margin-bottom: 12px !important; }
+.mb-4 { margin-bottom: 16px !important; }
+.mb-5 { margin-bottom: 20px !important; }
+
+.p-0 { padding: 0 !important; }
+.p-1 { padding: 4px !important; }
+.p-2 { padding: 8px !important; }
+.p-3 { padding: 12px !important; }
+.p-4 { padding: 16px !important; }
+.p-5 { padding: 20px !important; }
+
+// Helper classes
+.tableWrapper {
+  overflow-x: auto !important;
+  width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 15px;
+}
+
+.hide-on-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.show-only-on-mobile {
+  @include desktop {
+    display: none !important;
+  }
+  @include tablet {
+    display: none !important;
+  }
+}
+
+// Metrics Row Container
+.metricsRow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  padding: 0 4px 16px 4px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+
+  .metricItem {
+    flex: 1 1 auto !important;
+    min-width: 110px !important;
+  }
+
+  .metricDivider {
+    width: 1px !important;
+    background-color: #e2e8f0 !important;
+    align-self: stretch !important;
+
+    @include mobile {
+      display: none !important;
+    }
+  }
+}
+
+// Filters & Search Bar Container
+.filtersRow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: flex-end !important;
+  padding: 0 0 10px 0 !important;
+  width: 100% !important;
+
+  .searchField {
+    flex: 1 1 200px !important;
+  }
+
+  .filterDropdown {
+    width: 130px !important;
+
+    @include mobile {
+      width: 100% !important;
+      flex-grow: 1 !important;
+    }
+  }
+}
+

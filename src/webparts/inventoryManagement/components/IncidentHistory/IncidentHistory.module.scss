@@ -1,11 +1,13 @@
 .incidentHistory {
+  @import '../responsive.scss';
+
   .filterSection {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
     flex-wrap: wrap;
 
-    @media (max-width: 768px) {
+    @include mobile {
       flex-direction: column;
     }
   }

@@ -42,7 +42,7 @@ const AssetForm = (props) => {
         setSpecifications('');
         props.onClose();
     };
-    return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.custom, customWidth: "450px", headerText: isAdmin ? "Add New Asset" : "Register New Asset", closeButtonAriaLabel: "Close" },
+    return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: isAdmin ? "Add New Asset" : "Register New Asset", closeButtonAriaLabel: "Close" },
         React.createElement(react_1.Stack, { tokens: stackTokens },
             isManager && !isAdmin && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.warning }, "You are registering a new asset. After adding, you can assign it to employees in the Asset Tracking section.")),
             React.createElement(react_1.TextField, { label: "Title (Group/Category)", value: title, onChange: (_, val) => setTitle(val || ''), required: true }),

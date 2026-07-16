@@ -2,6 +2,8 @@
   Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
 */
 :local .inventoryManagement {
+  container-type: inline-size;
+  position: relative;
   --primary-blue: #0078d4;
   --primary-gradient: linear-gradient(135deg, #1a4fa0 0%, #2b7cd4 50%, #4a9be8 100%);
   --surface-bg: #ffffff;
@@ -22,6 +24,119 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+:local .inventoryManagement .m-0 {
+  margin: 0 !important;
+}
+:local .inventoryManagement .mt-1 {
+  margin-top: 4px !important;
+}
+:local .inventoryManagement .mt-2 {
+  margin-top: 8px !important;
+}
+:local .inventoryManagement .mt-3 {
+  margin-top: 12px !important;
+}
+:local .inventoryManagement .mt-4 {
+  margin-top: 16px !important;
+}
+:local .inventoryManagement .mt-5 {
+  margin-top: 20px !important;
+}
+:local .inventoryManagement .mb-1 {
+  margin-bottom: 4px !important;
+}
+:local .inventoryManagement .mb-2 {
+  margin-bottom: 8px !important;
+}
+:local .inventoryManagement .mb-3 {
+  margin-bottom: 12px !important;
+}
+:local .inventoryManagement .mb-4 {
+  margin-bottom: 16px !important;
+}
+:local .inventoryManagement .mb-5 {
+  margin-bottom: 20px !important;
+}
+:local .inventoryManagement .p-0 {
+  padding: 0 !important;
+}
+:local .inventoryManagement .p-1 {
+  padding: 4px !important;
+}
+:local .inventoryManagement .p-2 {
+  padding: 8px !important;
+}
+:local .inventoryManagement .p-3 {
+  padding: 12px !important;
+}
+:local .inventoryManagement .p-4 {
+  padding: 16px !important;
+}
+:local .inventoryManagement .p-5 {
+  padding: 20px !important;
+}
+:local .inventoryManagement .tableWrapper {
+  overflow-x: auto !important;
+  width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 15px;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .hide-on-mobile {
+    display: none !important;
+  }
+}
+@container (min-width: 1025px) {
+  :local .inventoryManagement .show-only-on-mobile {
+    display: none !important;
+  }
+}
+@container (min-width: 601px) and (max-width: 1024px) {
+  :local .inventoryManagement .show-only-on-mobile {
+    display: none !important;
+  }
+}
+:local .inventoryManagement .metricsRow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  padding: 0 4px 16px 4px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+:local .inventoryManagement .metricsRow .metricItem {
+  flex: 1 1 auto !important;
+  min-width: 110px !important;
+}
+:local .inventoryManagement .metricsRow .metricDivider {
+  width: 1px !important;
+  background-color: #e2e8f0 !important;
+  align-self: stretch !important;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .metricsRow .metricDivider {
+    display: none !important;
+  }
+}
+:local .inventoryManagement .filtersRow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: flex-end !important;
+  padding: 0 0 10px 0 !important;
+  width: 100% !important;
+}
+:local .inventoryManagement .filtersRow .searchField {
+  flex: 1 1 200px !important;
+}
+:local .inventoryManagement .filtersRow .filterDropdown {
+  width: 130px !important;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .filtersRow .filterDropdown {
+    width: 100% !important;
+    flex-grow: 1 !important;
+  }
 }
 :local .inventoryManagement.dark {
   --surface-bg: #1e293b;
@@ -63,7 +178,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-@media (max-width: 768px) {
+@container (max-width: 1024px) {
   :local .inventoryManagement .heroSection {
     flex-direction: column;
     align-items: center;
@@ -120,7 +235,7 @@
   display: block;
   line-height: 1.4;
 }
-@media (max-width: 768px) {
+@container (max-width: 1024px) {
   :local .inventoryManagement .heroSection .heroText {
     display: flex;
     flex-direction: column;
@@ -135,7 +250,7 @@
   margin-left: 16px;
   flex-shrink: 0;
 }
-@media (max-width: 768px) {
+@container (max-width: 1024px) {
   :local .inventoryManagement .heroSection .welcomeDiagramContainer {
     margin-left: 0;
     margin-top: 8px;
@@ -192,7 +307,7 @@
   align-items: flex-start;
   margin-top: 16px;
 }
-@media (max-width: 768px) {
+@container (max-width: 600px) {
   :local .inventoryManagement .appLayoutContainer {
     flex-direction: column;
     align-items: stretch;
@@ -210,65 +325,134 @@
   flex-direction: column;
   gap: 3px;
   flex-shrink: 0;
-  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s ease;
 }
-@media (max-width: 768px) {
+@container (min-width: 1025px) {
   :local .inventoryManagement .sidebarContainer {
-    width: 100%;
+    width: 250px !important;
+  }
+  :local .inventoryManagement .sidebarContainer .collapseToggle {
+    display: none !important;
+  }
+}
+@container (min-width: 601px) and (max-width: 1024px) {
+  :local .inventoryManagement .sidebarContainer {
     box-sizing: border-box;
   }
 }
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed {
-  width: 56px;
-  padding: 12px 6px;
+@container (max-width: 600px) {
+  :local .inventoryManagement .sidebarContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1001;
+    border-radius: 0;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    background: var(--surface-bg);
+    width: 250px !important;
+    margin: 0;
+    transition: left 0.3s ease;
+  }
 }
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader {
-  padding: 4px 0 8px 0;
-  text-align: center;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader h4,
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span {
-  display: none;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .navGroupLabel {
-  display: none;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem {
-  justify-content: center;
-  padding: 10px 0;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navItemText,
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navBadge {
-  display: none;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem i {
-  margin: 0;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle {
-  justify-content: center;
-}
-:local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle .collapseText {
-  display: none;
-}
-@media (max-width: 768px) {
+@container (min-width: 1025px) {
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed {
-    width: 100%;
+    width: 250px !important;
+  }
+}
+@container (min-width: 601px) and (max-width: 1024px) {
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed {
+    width: 56px;
+    padding: 12px 6px;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader {
+    padding: 4px 0 8px 0;
+    text-align: center;
   }
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader h4,
-  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span,
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navHeader span {
+    display: none;
+  }
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed .navGroupLabel {
-    display: block;
+    display: none;
   }
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem {
-    justify-content: flex-start;
-    padding: 10px 14px;
+    justify-content: center;
+    padding: 10px 0;
   }
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navItemText,
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem .navBadge {
-    display: inline-flex;
+    display: none;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .sidebarNavItem i {
+    margin: 0;
+  }
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle {
+    justify-content: center;
   }
   :local .inventoryManagement .sidebarContainer.sidebarCollapsed .collapseToggle .collapseText {
-    display: inline;
+    display: none;
+  }
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .sidebarContainer.sidebarCollapsed {
+    left: -260px;
+    width: 250px !important;
+  }
+}
+:local .inventoryManagement .sidebarOverlay {
+  display: none;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .sidebarOverlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+  }
+}
+:local .inventoryManagement .mobileNavHeader {
+  display: none;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .mobileNavHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: var(--surface-bg, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-md);
+    margin-bottom: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  }
+  :local .inventoryManagement .mobileNavHeader .mobileMenuToggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--text-main);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  :local .inventoryManagement .mobileNavHeader .mobileMenuToggle:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+  :local .inventoryManagement .mobileNavHeader .mobileNavTitle {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
   }
 }
 :local .inventoryManagement .navHeader {
@@ -533,7 +717,7 @@
   padding-top: 16px;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
-@media (max-width: 600px) {
+@container (max-width: 600px) {
   :local .inventoryManagement .paginationContainer {
     flex-direction: column;
     gap: 12px;
@@ -614,6 +798,44 @@
   transform: translateY(-3px) !important;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.06) !important;
   border-color: rgba(0, 120, 212, 0.15) !important;
+}
+:local .inventoryManagement .responsiveGrid, :local .inventoryManagement .responsiveGridAlignItemsCenter, :local .inventoryManagement .responsiveGridGap20, :local .inventoryManagement .responsiveGridGap16, :local .inventoryManagement .responsiveGridGap8 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .responsiveGrid, :local .inventoryManagement .responsiveGridAlignItemsCenter, :local .inventoryManagement .responsiveGridGap20, :local .inventoryManagement .responsiveGridGap16, :local .inventoryManagement .responsiveGridGap8 {
+    grid-template-columns: 1fr !important;
+  }
+}
+:local .inventoryManagement .responsiveGridGap8 {
+  gap: 8px;
+}
+:local .inventoryManagement .responsiveGridGap16 {
+  gap: 16px;
+}
+:local .inventoryManagement .responsiveGridGap20 {
+  gap: 20px;
+}
+:local .inventoryManagement .responsiveGridAlignItemsCenter {
+  align-items: center;
+}
+:local .inventoryManagement .lifecycleDiagram {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@container (max-width: 600px) {
+  :local .inventoryManagement .lifecycleDiagram {
+    transform: scale(0.9);
+    transform-origin: center center;
+    margin: -10px 0;
+  }
 }
 :local .inventoryManagement.teams {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;

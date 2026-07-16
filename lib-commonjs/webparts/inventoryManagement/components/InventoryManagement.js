@@ -913,7 +913,7 @@ class InventoryManagement extends React.Component {
             return (React.createElement(react_1.Stack, { tokens: { childrenGap: 20 } },
                 React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
-                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
+                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: { fontSize: '0.88rem' } },
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: '#6b7280' } }, "Request Key:"),
                             " ",
@@ -1022,7 +1022,7 @@ class InventoryManagement extends React.Component {
             return (React.createElement(react_1.Stack, { tokens: { childrenGap: 20 } },
                 React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
-                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
+                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: { fontSize: '0.88rem' } },
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
                             " ",
@@ -1250,7 +1250,7 @@ class InventoryManagement extends React.Component {
                                     padding: '3px 8px',
                                     borderRadius: '4px'
                                 } }, "Pending Admin")),
-                        React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' } },
+                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridGap16, style: { fontSize: '0.85rem' } },
                             React.createElement("div", null,
                                 React.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '2px' } }, "Category"),
                                 React.createElement("strong", { style: { color: 'var(--text-main)' } }, request.assetTitle)),
@@ -1407,7 +1407,7 @@ class InventoryManagement extends React.Component {
     }
     render() {
         const { description, isDarkTheme, environmentMessage, hasTeamsContext } = this.props;
-        const { items, isAssetFormOpen, isRequestFormOpen, auditLogs, auditLogsLoading, userRole, previewRole, roleLoading, roleGroups, requestActionInProgressId, requestSearchId, activeUserDisplayName, activeUserEmail } = this.state;
+        const { items, isAssetFormOpen, isRequestFormOpen, auditLogs, auditLogsLoading, userRole, previewRole, roleLoading, roleGroups, requestActionInProgressId, requestSearchId, activeUserDisplayName, activeUserEmail, loading } = this.state;
         const effectiveRole = previewRole || userRole;
         const isAdmin = effectiveRole === 'Admin';
         const isManager = effectiveRole === 'Inventory Manager';
@@ -1494,6 +1494,7 @@ class InventoryManagement extends React.Component {
                     this.state.errorMessage,
                     React.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": "Dismiss error" }, "\u00D7"))),
                 React.createElement("div", { className: InventoryManagement_module_scss_1.default.appLayoutContainer },
+                    !this.state.sidebarCollapsed && (React.createElement("div", { className: InventoryManagement_module_scss_1.default.sidebarOverlay, onClick: () => this.setState({ sidebarCollapsed: true }), role: "presentation" })),
                     React.createElement("div", { className: `${InventoryManagement_module_scss_1.default.sidebarContainer} ${this.state.sidebarCollapsed ? InventoryManagement_module_scss_1.default.sidebarCollapsed : ''}`, role: "navigation", "aria-label": "Main navigation" },
                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.navHeader },
                             React.createElement("h4", null, "Navigation"),
@@ -1523,230 +1524,237 @@ class InventoryManagement extends React.Component {
                             } },
                             React.createElement(react_1.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             React.createElement("span", { className: InventoryManagement_module_scss_1.default.collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
-                    React.createElement("div", { className: `${InventoryManagement_module_scss_1.default.card} ${InventoryManagement_module_scss_1.default.contentContainer}` }, (() => {
-                        const dashboardState = {
-                            items: isAdmin || isManager ? items : myAssets,
-                            requests: isAdmin || isManager ? this.state.requests : myRequests,
-                            isAdmin,
-                            isInventoryManager: isManager
-                        };
-                        const dashboardActions = {
-                            onNavigate: (key) => this.setState({ selectedTabKey: key })
-                        };
-                        const reportsState = {
-                            reportsSelectedTab: this.state.reportsSelectedTab,
-                            reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
-                            reportsStatusFilter: this.state.reportsStatusFilter,
-                            items,
-                            requests: this.state.requests
-                        };
-                        const reportsActions = {
-                            onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
-                            onAssetTypeFilterChange: (type) => this.setState({ reportsAssetTypeFilter: type }),
-                            onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
-                            onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
-                            onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
-                            onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
-                            onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
-                        };
-                        const incidentHistoryState = {
-                            userDisplayName: activeUserDisplayName || '',
-                            userEmail: activeUserEmail || '',
-                            userRole: effectiveRole
-                        };
-                        const incidentHistoryActions = {
-                            setIsLoading: (loading) => this.setState({ loading })
-                        };
-                        switch (this.state.selectedTabKey) {
-                            case 'Dashboard':
-                                return (React.createElement(pages_1.DashboardPage, { state: dashboardState, actions: dashboardActions }));
-                            case 'MyWorkspace':
-                                return (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "My Workspace")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                    React.createElement(react_1.Pivot, { "aria-label": "My Workspace Tabs" },
-                                        React.createElement(react_1.PivotItem, { headerText: "Assets" },
-                                            React.createElement("div", { style: { marginTop: '20px' } },
-                                                React.createElement("div", { style: { marginBottom: '15px' } },
-                                                    React.createElement(react_1.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
-                                                React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
-                                        React.createElement(react_1.PivotItem, { headerText: "Requests" },
-                                            React.createElement("div", { style: { marginTop: '20px' } },
-                                                React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
-                            case 'Notifications':
-                                return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
-                            case 'IncidentHistory':
-                                return (React.createElement(pages_1.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
-                            case 'Inventory':
-                                return (isAdmin || isManager) ? (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "Current Inventory Overview")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage your organizational assets efficiently within the SharePoint Framework."),
-                                    this.state.loading ? (React.createElement("p", null, "Loading inventory...")) : (React.createElement("div", null,
-                                        React.createElement("div", { style: { marginBottom: '15px' } },
-                                            React.createElement(react_1.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
-                                        React.createElement(InventoryList_1.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
-                            case 'Approvals':
-                                return isManager ? (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "Request Approvals & Assignment Queue")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                    React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                    React.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        React.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
-                                        React.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                            React.createElement(react_chartjs_2_1.Pie, { data: {
-                                                    labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                        const status = req.status || 'Pending';
-                                                        acc[status] = (acc[status] || 0) + 1;
-                                                        return acc;
-                                                    }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                        const status = req.status || 'Pending';
-                                                        acc[status] = (acc[status] || 0) + 1;
-                                                        return acc;
-                                                    }, {})) : ['No data'],
-                                                    datasets: [
-                                                        {
-                                                            label: 'Requests by Status',
-                                                            data: Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                                const status = req.status || 'Pending';
-                                                                acc[status] = (acc[status] || 0) + 1;
-                                                                return acc;
-                                                            }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                                const status = req.status || 'Pending';
-                                                                acc[status] = (acc[status] || 0) + 1;
-                                                                return acc;
-                                                            }, {})).map(k => (managerQueueRequests.reduce((acc, req) => {
-                                                                const status = req.status || 'Pending';
-                                                                acc[status] = (acc[status] || 0) + 1;
-                                                                return acc;
-                                                            }, {}))[k]) : [1],
-                                                            backgroundColor: [
-                                                                'rgba(255, 206, 86, 0.6)',
-                                                                'rgba(75, 192, 192, 0.6)',
-                                                                'rgba(255, 99, 132, 0.6)',
-                                                                'rgba(153, 102, 255, 0.6)',
-                                                                'rgba(54, 162, 235, 0.6)',
-                                                            ],
-                                                            borderColor: [
-                                                                'rgba(255, 206, 86, 1)',
-                                                                'rgba(75, 192, 192, 1)',
-                                                                'rgba(255, 99, 132, 1)',
-                                                                'rgba(153, 102, 255, 1)',
-                                                                'rgba(54, 162, 235, 1)',
-                                                            ],
-                                                            borderWidth: 1,
-                                                        },
-                                                    ],
-                                                }, options: { maintainAspectRatio: false } }))),
-                                    React.createElement(RequestList_1.RequestList, { items: visibleManagerRequests, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
-                            case 'AssetAssignmentQueue':
-                                return isAdmin ? (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "Approved Requests for Asset Assignment")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                    React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                    React.createElement(RequestList_1.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
-                            case 'AssetReturns':
-                                return isAdmin || isManager ? (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "Asset Returns Registry")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Review and complete employee asset return requests, and verify physical hardware check-ins."),
-                                    React.createElement(ReturnRequestList_1.ReturnRequestList, { items: this.state.returnRequests, isAdmin: isAdmin, isManager: isManager, onUpdateStatus: this._onUpdateReturnRequestStatus, loading: this.state.returnRequestsLoading }))) : null;
-                            case 'EventStream':
-                                return isAdmin ? (React.createElement(EventStream_1.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, refreshTrigger: this.state.auditLogsRefreshTrigger })) : null;
-                            case 'Users':
-                                return isAdmin ? (React.createElement("div", null,
-                                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                        React.createElement("h3", null, "User Administration")),
-                                    React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only area. Manage SharePoint groups and user onboarding from your site permissions."),
-                                    React.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
-                                        React.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
-                                        React.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                        React.createElement(react_1.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
-                                                const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
-                                                window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
-                                            } })),
-                                    React.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
-                                    React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        React.createElement(react_1.DetailsList, { items: this.state.employees.map(emp => {
-                                                const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
-                                                const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
-                                                const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
-                                                return {
-                                                    ...emp,
-                                                    assignedAssets: assignedItems.length,
-                                                    assignedItems: assignedItems,
-                                                    assetTypes: assetTypes || 'None'
-                                                };
-                                            }), columns: [
-                                                { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
-                                                { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
-                                                { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
-                                                { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
-                                                {
-                                                    key: 'col5',
-                                                    name: 'Assigned Assets',
-                                                    fieldName: 'assignedAssets',
-                                                    minWidth: 100,
-                                                    maxWidth: 120,
-                                                    isResizable: true,
-                                                    onRender: (item) => (React.createElement("span", { style: {
-                                                            backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
-                                                            color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
-                                                            padding: '4px 10px',
-                                                            borderRadius: '9999px',
-                                                            fontWeight: 'bold'
-                                                        } }, item.assignedAssets))
-                                                },
-                                                { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                            ], setKey: "usersList", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none, onRenderRow: (rowProps) => {
-                                                if (!rowProps)
-                                                    return null;
-                                                const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
-                                                return (React.createElement("div", null,
-                                                    React.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                        React.createElement(react_1.DetailsRow, { ...rowProps })),
-                                                    isExpanded && (React.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
-                                                        React.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
-                                                            "Assets assigned to ",
-                                                            rowProps.item.name),
-                                                        rowProps.item.assignedItems.length > 0 ? (React.createElement(InventoryList_1.InventoryList, { items: rowProps.item.assignedItems, isAdmin: false })) : (React.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem', margin: 0 } }, "This user currently has no assets assigned to them."))))));
-                                            } })),
-                                    React.createElement("div", { style: { marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' } },
+                    React.createElement("div", { className: `${InventoryManagement_module_scss_1.default.card} ${InventoryManagement_module_scss_1.default.contentContainer}` },
+                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.mobileNavHeader },
+                            React.createElement("button", { className: InventoryManagement_module_scss_1.default.mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": "Toggle navigation menu" },
+                                React.createElement(react_1.Icon, { iconName: "GlobalNavButton" })),
+                            React.createElement("span", { className: InventoryManagement_module_scss_1.default.mobileNavTitle }, "Inventory Management")),
+                        (() => {
+                            const dashboardState = {
+                                items: isAdmin || isManager ? items : myAssets,
+                                requests: isAdmin || isManager ? this.state.requests : myRequests,
+                                isAdmin,
+                                isInventoryManager: isManager
+                            };
+                            const dashboardActions = {
+                                onNavigate: (key) => this.setState({ selectedTabKey: key })
+                            };
+                            const reportsState = {
+                                reportsSelectedTab: this.state.reportsSelectedTab,
+                                reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
+                                reportsStatusFilter: this.state.reportsStatusFilter,
+                                items,
+                                requests: this.state.requests
+                            };
+                            const reportsActions = {
+                                onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
+                                onAssetTypeFilterChange: (type) => this.setState({ reportsAssetTypeFilter: type }),
+                                onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
+                                onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
+                                onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
+                                onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
+                                onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                            };
+                            const incidentHistoryState = {
+                                userDisplayName: activeUserDisplayName || '',
+                                userEmail: activeUserEmail || '',
+                                userRole: effectiveRole
+                            };
+                            const incidentHistoryActions = {
+                                setIsLoading: (loading) => this.setState({ loading })
+                            };
+                            const inventoryState = {
+                                items,
+                                loading,
+                                isAdmin,
+                                isInventoryManager: isManager
+                            };
+                            const inventoryActions = {
+                                onOpenAssetForm: () => this.setState({ isAssetFormOpen: true })
+                            };
+                            switch (this.state.selectedTabKey) {
+                                case 'Dashboard':
+                                    return (React.createElement(pages_1.DashboardPage, { state: dashboardState, actions: dashboardActions }));
+                                case 'MyWorkspace':
+                                    return (React.createElement("div", null,
                                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                            React.createElement("h3", null, "Employee Asset Tracking")),
-                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                        React.createElement(AssetTracking_1.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
-                            case 'Reports':
-                                return isAdmin ? (React.createElement(pages_1.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
-                            case 'Config': {
-                                const configState = {
-                                    configSelectedTab: this.state.configSelectedTab,
-                                    syncInProgress: this.state.syncInProgress,
-                                    syncMessage: this.state.syncMessage,
-                                    syncMessageType: this.state.syncMessageType,
-                                    diagnosticInfo: this.state.diagnosticInfo,
-                                    connectionStatuses: this.state.connectionStatuses,
-                                    connectionErrorMessages: this.state.connectionErrorMessages,
-                                    loadingGroupUsers: this.state.loadingGroupUsers,
-                                    groupUsersList: this.state.groupUsersList
-                                };
-                                const configActions = {
-                                    onSyncAssignedAssets: this._onSyncAssignedAssets,
-                                    onRunDiagnostics: this._onRunDiagnostics,
-                                    onTestListConnection: this._testListConnection,
-                                    onLoadGroupUsers: this._loadGroupUsers,
-                                    onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
-                                    onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
-                                };
-                                return isAdmin ? (React.createElement(pages_1.ConfigPage, { state: configState, actions: configActions })) : null;
+                                            React.createElement("h3", null, "My Workspace")),
+                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
+                                        React.createElement(react_1.Pivot, { "aria-label": "My Workspace Tabs" },
+                                            React.createElement(react_1.PivotItem, { headerText: "Assets" },
+                                                React.createElement("div", { style: { marginTop: '20px' } },
+                                                    React.createElement("div", { style: { marginBottom: '15px' } },
+                                                        React.createElement(react_1.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                    React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
+                                            React.createElement(react_1.PivotItem, { headerText: "Requests" },
+                                                React.createElement("div", { style: { marginTop: '20px' } },
+                                                    React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
+                                case 'Notifications':
+                                    return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                case 'IncidentHistory':
+                                    return (React.createElement(pages_1.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
+                                case 'Inventory':
+                                    return (isAdmin || isManager) ? (React.createElement(pages_1.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
+                                case 'Approvals':
+                                    return isManager ? (React.createElement("div", null,
+                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                            React.createElement("h3", null, "Request Approvals & Assignment Queue")),
+                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
+                                        React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        React.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
+                                            React.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
+                                            React.createElement("div", { style: { height: '250px', position: 'relative' } },
+                                                React.createElement(react_chartjs_2_1.Pie, { data: {
+                                                        labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                            const status = req.status || 'Pending';
+                                                            acc[status] = (acc[status] || 0) + 1;
+                                                            return acc;
+                                                        }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                            const status = req.status || 'Pending';
+                                                            acc[status] = (acc[status] || 0) + 1;
+                                                            return acc;
+                                                        }, {})) : ['No data'],
+                                                        datasets: [
+                                                            {
+                                                                label: 'Requests by Status',
+                                                                data: Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                                    const status = req.status || 'Pending';
+                                                                    acc[status] = (acc[status] || 0) + 1;
+                                                                    return acc;
+                                                                }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                                    const status = req.status || 'Pending';
+                                                                    acc[status] = (acc[status] || 0) + 1;
+                                                                    return acc;
+                                                                }, {})).map(k => (managerQueueRequests.reduce((acc, req) => {
+                                                                    const status = req.status || 'Pending';
+                                                                    acc[status] = (acc[status] || 0) + 1;
+                                                                    return acc;
+                                                                }, {}))[k]) : [1],
+                                                                backgroundColor: [
+                                                                    'rgba(255, 206, 86, 0.6)',
+                                                                    'rgba(75, 192, 192, 0.6)',
+                                                                    'rgba(255, 99, 132, 0.6)',
+                                                                    'rgba(153, 102, 255, 0.6)',
+                                                                    'rgba(54, 162, 235, 0.6)',
+                                                                ],
+                                                                borderColor: [
+                                                                    'rgba(255, 206, 86, 1)',
+                                                                    'rgba(75, 192, 192, 1)',
+                                                                    'rgba(255, 99, 132, 1)',
+                                                                    'rgba(153, 102, 255, 1)',
+                                                                    'rgba(54, 162, 235, 1)',
+                                                                ],
+                                                                borderWidth: 1,
+                                                            },
+                                                        ],
+                                                    }, options: { maintainAspectRatio: false } }))),
+                                        React.createElement(RequestList_1.RequestList, { items: visibleManagerRequests, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
+                                case 'AssetAssignmentQueue':
+                                    return isAdmin ? (React.createElement("div", null,
+                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                            React.createElement("h3", null, "Approved Requests for Asset Assignment")),
+                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
+                                        React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        React.createElement(RequestList_1.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
+                                case 'AssetReturns':
+                                    return isAdmin || isManager ? (React.createElement("div", null,
+                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                            React.createElement("h3", null, "Asset Returns Registry")),
+                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Review and complete employee asset return requests, and verify physical hardware check-ins."),
+                                        React.createElement(ReturnRequestList_1.ReturnRequestList, { items: this.state.returnRequests, isAdmin: isAdmin, isManager: isManager, onUpdateStatus: this._onUpdateReturnRequestStatus, loading: this.state.returnRequestsLoading }))) : null;
+                                case 'EventStream':
+                                    return isAdmin ? (React.createElement(EventStream_1.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, refreshTrigger: this.state.auditLogsRefreshTrigger })) : null;
+                                case 'Users':
+                                    return isAdmin ? (React.createElement("div", null,
+                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                            React.createElement("h3", null, "User Administration")),
+                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only area. Manage SharePoint groups and user onboarding from your site permissions."),
+                                        React.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
+                                            React.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
+                                            React.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
+                                            React.createElement(react_1.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                                    const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
+                                                    window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
+                                                } })),
+                                        React.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
+                                        React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
+                                            React.createElement(react_1.DetailsList, { items: this.state.employees.map(emp => {
+                                                    const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
+                                                    const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
+                                                    const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
+                                                    return {
+                                                        ...emp,
+                                                        assignedAssets: assignedItems.length,
+                                                        assignedItems: assignedItems,
+                                                        assetTypes: assetTypes || 'None'
+                                                    };
+                                                }), columns: [
+                                                    { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
+                                                    { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
+                                                    { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
+                                                    { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
+                                                    {
+                                                        key: 'col5',
+                                                        name: 'Assigned Assets',
+                                                        fieldName: 'assignedAssets',
+                                                        minWidth: 100,
+                                                        maxWidth: 120,
+                                                        isResizable: true,
+                                                        onRender: (item) => (React.createElement("span", { style: {
+                                                                backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
+                                                                color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
+                                                                padding: '4px 10px',
+                                                                borderRadius: '9999px',
+                                                                fontWeight: 'bold'
+                                                            } }, item.assignedAssets))
+                                                    },
+                                                    { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
+                                                ], setKey: "usersList", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none, onRenderRow: (rowProps) => {
+                                                    if (!rowProps)
+                                                        return null;
+                                                    const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
+                                                    return (React.createElement("div", null,
+                                                        React.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
+                                                            React.createElement(react_1.DetailsRow, { ...rowProps })),
+                                                        isExpanded && (React.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
+                                                            React.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
+                                                                "Assets assigned to ",
+                                                                rowProps.item.name),
+                                                            rowProps.item.assignedItems.length > 0 ? (React.createElement(InventoryList_1.InventoryList, { items: rowProps.item.assignedItems, isAdmin: false })) : (React.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem', margin: 0 } }, "This user currently has no assets assigned to them."))))));
+                                                } })),
+                                        React.createElement("div", { style: { marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' } },
+                                            React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                                React.createElement("h3", null, "Employee Asset Tracking")),
+                                            React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
+                                            React.createElement(AssetTracking_1.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                case 'Reports':
+                                    return isAdmin ? (React.createElement(pages_1.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
+                                case 'Config': {
+                                    const configState = {
+                                        configSelectedTab: this.state.configSelectedTab,
+                                        syncInProgress: this.state.syncInProgress,
+                                        syncMessage: this.state.syncMessage,
+                                        syncMessageType: this.state.syncMessageType,
+                                        diagnosticInfo: this.state.diagnosticInfo,
+                                        connectionStatuses: this.state.connectionStatuses,
+                                        connectionErrorMessages: this.state.connectionErrorMessages,
+                                        loadingGroupUsers: this.state.loadingGroupUsers,
+                                        groupUsersList: this.state.groupUsersList
+                                    };
+                                    const configActions = {
+                                        onSyncAssignedAssets: this._onSyncAssignedAssets,
+                                        onRunDiagnostics: this._onRunDiagnostics,
+                                        onTestListConnection: this._testListConnection,
+                                        onLoadGroupUsers: this._loadGroupUsers,
+                                        onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
+                                        onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
+                                    };
+                                    return isAdmin ? (React.createElement(pages_1.ConfigPage, { state: configState, actions: configActions })) : null;
+                                }
+                                default:
+                                    return null;
                             }
-                            default:
-                                return null;
-                        }
-                    })()))),
+                        })()))),
             (isAdmin || isManager) && (React.createElement(AssetForm_1.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
             (isAdmin || isManager || isEmployee) && (React.createElement(RequestForm_1.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
             (isAdmin || isManager || isEmployee) && (React.createElement(IncidentRequestModule_1.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),

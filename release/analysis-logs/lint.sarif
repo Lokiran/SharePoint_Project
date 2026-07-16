@@ -1,0 +1,759 @@
+{
+  "version": "2.1.0",
+  "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.5",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "ESLint",
+          "informationUri": "https://eslint.org",
+          "version": "8.57.1",
+          "rules": [
+            {
+              "id": "eqeqeq",
+              "helpUri": "https://eslint.org/docs/latest/rules/eqeqeq",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require the use of `===` and `!==`"
+              }
+            },
+            {
+              "id": "no-var",
+              "helpUri": "https://eslint.org/docs/latest/rules/no-var",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require `let` or `const` instead of `var`"
+              }
+            },
+            {
+              "id": "@rushstack/no-new-null",
+              "helpUri": "https://www.npmjs.com/package/@rushstack/eslint-plugin",
+              "properties": {},
+              "shortDescription": {
+                "text": "Prevent usage of JavaScript's \"null\" keyword in new type declarations. To avoid hampering usage of preexisting APIs that require \"null\", the rule ignores declarations that are local variables, private members, or types that are not exported."
+              }
+            },
+            {
+              "id": "dot-notation",
+              "helpUri": "https://eslint.org/docs/latest/rules/dot-notation",
+              "properties": {},
+              "shortDescription": {
+                "text": "Enforce dot notation whenever possible"
+              }
+            },
+            {
+              "id": "require-atomic-updates",
+              "helpUri": "https://eslint.org/docs/latest/rules/require-atomic-updates",
+              "properties": {},
+              "shortDescription": {
+                "text": "Disallow assignments that can lead to race conditions due to usage of `await` or `yield`"
+              }
+            },
+            {
+              "id": "react/no-unescaped-entities",
+              "helpUri": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unescaped-entities.md",
+              "properties": {
+                "category": "Possible Errors"
+              },
+              "shortDescription": {
+                "text": "Disallow unescaped HTML entities from appearing in markup"
+              }
+            },
+            {
+              "id": "max-lines",
+              "helpUri": "https://eslint.org/docs/latest/rules/max-lines",
+              "properties": {},
+              "shortDescription": {
+                "text": "Enforce a maximum number of lines per file"
+              }
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/pnpjsConfig.ts"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/services/base/SharePointBaseService.ts"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/services/ReturnRequestService.ts"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/components/NotificationCenter.tsx"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/webparts/inventoryManagement/components/InventoryManagement.tsx"
+          }
+        }
+      ],
+      "results": [
+        {
+          "level": "warning",
+          "message": {
+            "text": "Expected '!==' and instead saw '!='."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/pnpjsConfig.ts",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 15,
+                  "endLine": 14,
+                  "endColumn": 17,
+                  "snippet": {
+                    "text": "!="
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "eqeqeq",
+          "ruleIndex": 0,
+          "suppressions": []
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Unexpected var, use let or const instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/pnpjsConfig.ts",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 15,
+                  "snippet": {
+                    "text": "var _sp: SPFI;"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "no-var",
+          "ruleIndex": 1,
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "justification": ""
+            }
+          ]
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Usage of \"null\" is deprecated except when describing legacy APIs; use \"undefined\" instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/base/SharePointBaseService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 64,
+                  "endLine": 33,
+                  "endColumn": 68,
+                  "snippet": {
+                    "text": "null"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "@rushstack/no-new-null",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/base/SharePointBaseService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 202,
+                  "startColumn": 23,
+                  "endLine": 202,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"AssetName\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/base/SharePointBaseService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 203,
+                  "startColumn": 39,
+                  "endLine": 203,
+                  "endColumn": 50,
+                  "snippet": {
+                    "text": "\"AssetName\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/base/SharePointBaseService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 204,
+                  "startColumn": 20,
+                  "endLine": 204,
+                  "endColumn": 27,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Usage of \"null\" is deprecated except when describing legacy APIs; use \"undefined\" instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/base/SharePointBaseService.ts",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 248,
+                  "startColumn": 15,
+                  "endLine": 248,
+                  "endColumn": 19,
+                  "snippet": {
+                    "text": "null"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "@rushstack/no-new-null",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 299,
+                  "startColumn": 15,
+                  "endLine": 299,
+                  "endColumn": 22,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 301,
+                  "startColumn": 15,
+                  "endLine": 301,
+                  "endColumn": 22,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"EmployeeName\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 364,
+                  "startColumn": 23,
+                  "endLine": 364,
+                  "endColumn": 37,
+                  "snippet": {
+                    "text": "\"EmployeeName\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"EmployeeID\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 381,
+                  "startColumn": 35,
+                  "endLine": 381,
+                  "endColumn": 47,
+                  "snippet": {
+                    "text": "\"EmployeeID\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"AssetName\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 384,
+                  "startColumn": 39,
+                  "endLine": 384,
+                  "endColumn": 50,
+                  "snippet": {
+                    "text": "\"AssetName\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"SerialNumber\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 387,
+                  "startColumn": 36,
+                  "endLine": 387,
+                  "endColumn": 50,
+                  "snippet": {
+                    "text": "\"SerialNumber\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"AssignedDate\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 390,
+                  "startColumn": 42,
+                  "endLine": 390,
+                  "endColumn": 56,
+                  "snippet": {
+                    "text": "\"AssignedDate\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"AssignmentID\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 393,
+                  "startColumn": 42,
+                  "endLine": 393,
+                  "endColumn": 56,
+                  "snippet": {
+                    "text": "\"AssignmentID\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3,
+          "suppressions": []
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Possible race condition: `AssetAssignmentService._resolvedMappingListName` might be assigned based on an outdated state of `AssetAssignmentService`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 7,
+                  "endLine": 21,
+                  "endColumn": 96,
+                  "snippet": {
+                    "text": "AssetAssignmentService._resolvedMappingListName = SharePointBaseService.MAPPING_LIST_NAME"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "require-atomic-updates",
+          "ruleIndex": 4,
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "justification": ""
+            }
+          ]
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Possible race condition: `AssetAssignmentService._resolvedMappingListName` might be assigned based on an outdated state of `AssetAssignmentService`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 9,
+                  "endLine": 30,
+                  "endColumn": 71,
+                  "snippet": {
+                    "text": "AssetAssignmentService._resolvedMappingListName = fallbackName"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "require-atomic-updates",
+          "ruleIndex": 4,
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "justification": ""
+            }
+          ]
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Possible race condition: `AssetAssignmentService._resolvedMappingListName` might be assigned based on an outdated state of `AssetAssignmentService`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/AssetAssignmentService.ts",
+                  "index": 2
+                },
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 11,
+                  "endLine": 38,
+                  "endColumn": 100,
+                  "snippet": {
+                    "text": "AssetAssignmentService._resolvedMappingListName = SharePointBaseService.MAPPING_LIST_NAME"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "require-atomic-updates",
+          "ruleIndex": 4,
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "justification": ""
+            }
+          ]
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/ReturnRequestService.ts",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 280,
+                  "startColumn": 25,
+                  "endLine": 280,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "[\"Title\"] is better written in dot notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/services/ReturnRequestService.ts",
+                  "index": 3
+                },
+                "region": {
+                  "startLine": 281,
+                  "startColumn": 22,
+                  "endLine": 281,
+                  "endColumn": 29,
+                  "snippet": {
+                    "text": "\"Title\""
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "dot-notation",
+          "ruleIndex": 3
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "`\"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/components/NotificationCenter.tsx",
+                  "index": 4
+                },
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 45,
+                  "snippet": {
+                    "text": "\"{filter === 'All' ? 'All' : filter + 's'}\" category."
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "react/no-unescaped-entities",
+          "ruleIndex": 5
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "`\"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/components/NotificationCenter.tsx",
+                  "index": 4
+                },
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 87,
+                  "snippet": {
+                    "text": "\" category."
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "react/no-unescaped-entities",
+          "ruleIndex": 5
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "File has too many lines (2428). Maximum allowed is 2000."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/webparts/inventoryManagement/components/InventoryManagement.tsx",
+                  "index": 5
+                },
+                "region": {
+                  "startLine": 2001,
+                  "startColumn": 1,
+                  "endLine": 2429,
+                  "endColumn": 1,
+                  "snippet": {
+                    "text": "                };\n\n                const inventoryActions = {\n                  onOpenAssetForm: () => this.setState({ isAssetFormOpen: true })\n                };\n\n                switch (this.state.selectedTabKey) {\n                  case 'Dashboard':\n                    return (\n                      <DashboardPage\n                        state={dashboardState}\n                        actions={dashboardActions}\n                      />\n                    );\n                  case 'MyWorkspace':\n                    return (\n                      <div>\n                        <div className={styles.cardHeader}>\n                          <h3>My Workspace</h3>\n                        </div>\n                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                          Manage your assigned assets and track your requests.\n                        </p>\n                        <Pivot aria-label=\"My Workspace Tabs\">\n                          <PivotItem headerText=\"Assets\">\n                            <div style={{ marginTop: '20px' }}>\n                              <div style={{ marginBottom: '15px' }}>\n                                <PrimaryButton\n                                  text=\"Request Asset\"\n                                  onClick={() => this.setState({ isRequestFormOpen: true })}\n                                  iconProps={{ iconName: 'Send' }}\n                                />\n                              </div>\n                              <MyAssignedAssetsView \n                                items={myAssets} \n                                onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}\n                                onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}\n                              />\n                            </div>\n                          </PivotItem>\n                          <PivotItem headerText=\"Requests\">\n                            <div style={{ marginTop: '20px' }}>\n                              <MyRequestsView\n                                requests={myRequests}\n                                returnRequests={this.state.returnRequests.filter(r =>\n                                  this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')\n                                )}\n                              />\n                            </div>\n                          </PivotItem>\n                        </Pivot>\n                      </div>\n                    );\n                  case 'Notifications':\n                    return (\n                      <NotificationCenter\n                        notifications={notifications}\n                        onMarkAsRead={this._markNotificationAsRead}\n                        onMarkAllAsRead={this._markAllNotificationsAsRead}\n                        onClearNotification={this._clearNotification}\n                        onClearAllNotifications={this._clearAllNotifications}\n                        onNotificationAction={this._handleNotificationAction}\n                      />\n                    );\n                  case 'IncidentHistory':\n                    return (\n                      <IncidentHistoryPage\n                        {...this.props}\n                        state={incidentHistoryState}\n                        actions={incidentHistoryActions}\n                      />\n                    );\n                  case 'Inventory':\n                    return (isAdmin || isManager) ? (\n                      <InventoryPage\n                        state={inventoryState}\n                        actions={inventoryActions}\n                      />\n                    ) : null;\n                  case 'Approvals':\n                    return isManager ? (\n                      <div>\n                        <div className={styles.cardHeader}>\n                          <h3>Request Approvals & Assignment Queue</h3>\n                        </div>\n                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                          Track and manage all asset requests efficiently.\n                        </p>\n                        <TextField\n                          label=\"Search by Request ID\"\n                          placeholder=\"e.g. REQ-000123\"\n                          value={requestSearchId}\n                          onChange={(_, value) => this.setState({ requestSearchId: value || '' })}\n                          styles={{ root: { marginBottom: '12px', maxWidth: 320 } }}\n                        />\n                        <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>\n                          <h4 style={{ marginBottom: '10px' }}>Request Approval Distribution</h4>\n                          <div style={{ height: '250px', position: 'relative' }}>\n                            <Pie\n                              data={{\n                                labels: Object.keys(\n                                  managerQueueRequests.reduce((acc, req) => {\n                                    const status = req.status || 'Pending';\n                                    acc[status] = (acc[status] || 0) + 1;\n                                    return acc;\n                                  }, {} as Record<string, number>)\n                                ).length ? Object.keys(\n                                  managerQueueRequests.reduce((acc, req) => {\n                                    const status = req.status || 'Pending';\n                                    acc[status] = (acc[status] || 0) + 1;\n                                    return acc;\n                                  }, {} as Record<string, number>)\n                                ) : ['No data'],\n                                datasets: [\n                                  {\n                                    label: 'Requests by Status',\n                                    data: Object.keys(\n                                      managerQueueRequests.reduce((acc, req) => {\n                                        const status = req.status || 'Pending';\n                                        acc[status] = (acc[status] || 0) + 1;\n                                        return acc;\n                                      }, {} as Record<string, number>)\n                                    ).length ? Object.keys(\n                                      managerQueueRequests.reduce((acc, req) => {\n                                        const status = req.status || 'Pending';\n                                        acc[status] = (acc[status] || 0) + 1;\n                                        return acc;\n                                      }, {} as Record<string, number>)\n                                    ).map(k =>\n                                      (managerQueueRequests.reduce((acc, req) => {\n                                        const status = req.status || 'Pending';\n                                        acc[status] = (acc[status] || 0) + 1;\n                                        return acc;\n                                      }, {} as Record<string, number>))[k]\n                                    ) : [1],\n                                    backgroundColor: [\n                                      'rgba(255, 206, 86, 0.6)',\n                                      'rgba(75, 192, 192, 0.6)',\n                                      'rgba(255, 99, 132, 0.6)',\n                                      'rgba(153, 102, 255, 0.6)',\n                                      'rgba(54, 162, 235, 0.6)',\n                                    ],\n                                    borderColor: [\n                                      'rgba(255, 206, 86, 1)',\n                                      'rgba(75, 192, 192, 1)',\n                                      'rgba(255, 99, 132, 1)',\n                                      'rgba(153, 102, 255, 1)',\n                                      'rgba(54, 162, 235, 1)',\n                                    ],\n                                    borderWidth: 1,\n                                  },\n                                ],\n                              }}\n                              options={{ maintainAspectRatio: false }}\n                            />\n                          </div>\n                        </div>\n                        <RequestList\n                          items={visibleManagerRequests}\n                          canApproveReject={true}\n                          canApproveAsset={false}\n                          hideStatusColumn={false}\n                          showResponseColumns={false}\n                          onApproveRequest={this._onApproveRequest}\n                          onRejectRequest={this._onRejectRequest}\n                          actionInProgressId={requestActionInProgressId}\n                        />\n                      </div>\n                    ) : null;\n                  case 'AssetAssignmentQueue':\n                    return isAdmin ? (\n                      <div>\n                        <div className={styles.cardHeader}>\n                          <h3>Approved Requests for Asset Assignment</h3>\n                        </div>\n                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                          Only approved requests are shown here so assets can be assigned.\n                        </p>\n                        <TextField\n                          label=\"Search by Request ID\"\n                          placeholder=\"e.g. REQ-000123\"\n                          value={requestSearchId}\n                          onChange={(_, value) => this.setState({ requestSearchId: value || '' })}\n                          styles={{ root: { marginBottom: '12px', maxWidth: 320 } }}\n                        />\n                        <RequestList\n                          items={visibleAdminRequests}\n                          canApproveReject={false}\n                          canApproveAsset={true}\n                          hideStatusColumn={true}\n                          showResponseColumns={false}\n                          onSelectRequestForAssignment={(request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })}\n                          actionInProgressId={requestActionInProgressId}\n                        />\n                      </div>\n                    ) : null;\n                  case 'AssetReturns':\n                    return isAdmin || isManager ? (\n                      <div>\n                        <div className={styles.cardHeader}>\n                          <h3>Asset Returns Registry</h3>\n                        </div>\n                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                          Review and complete employee asset return requests, and verify physical hardware check-ins.\n                        </p>\n                        <ReturnRequestList\n                          items={this.state.returnRequests}\n                          isAdmin={isAdmin}\n                          isManager={isManager}\n                          onUpdateStatus={this._onUpdateReturnRequestStatus}\n                          loading={this.state.returnRequestsLoading}\n                        />\n                      </div>\n                    ) : null;\n                  case 'EventStream':\n                    return isAdmin ? (\n                      <EventStream\n                        logs={auditLogs}\n                        loading={auditLogsLoading}\n                        errorMessage={undefined}\n                        currentUserRole={effectiveRole}\n                        currentUserName={activeUserDisplayName}\n                        refreshTrigger={this.state.auditLogsRefreshTrigger}\n                      />\n                    ) : null;\n                  case 'Users':\n                    return isAdmin ? (\n                      <div>\n                        <div className={styles.cardHeader}>\n                          <h3>User Administration</h3>\n                        </div>\n                        <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                          Admin-only area. Manage SharePoint groups and user onboarding from your site permissions.\n                        </p>\n                        <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' }}>\n                          <h4 style={{ marginTop: 0, marginBottom: '10px', color: '#0078d4' }}>SharePoint Group Management</h4>\n                          <p style={{ margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' }}>\n                            To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups.\n                          </p>\n                          <PrimaryButton\n                            text=\"Manage Site Permissions\"\n                            iconProps={{ iconName: 'Permissions' }}\n                            onClick={() => {\n                              const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));\n                              window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');\n                            }}\n                          />\n                        </div>\n\n                        <h4 style={{ marginBottom: '15px' }}>Employee Directory & Asset Ownership</h4>\n                        <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>\n                          <DetailsList\n                            items={this.state.employees.map(emp => {\n                              const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;\n                              const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));\n                              const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');\n                              return {\n                                ...emp,\n                                assignedAssets: assignedItems.length,\n                                assignedItems: assignedItems,\n                                assetTypes: assetTypes || 'None'\n                              };\n                            })}\n                            columns={[\n                              { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },\n                              { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },\n                              { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },\n                              { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },\n                              {\n                                key: 'col5',\n                                name: 'Assigned Assets',\n                                fieldName: 'assignedAssets',\n                                minWidth: 100,\n                                maxWidth: 120,\n                                isResizable: true,\n                                onRender: (item) => (\n                                  <span style={{\n                                    backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',\n                                    color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',\n                                    padding: '4px 10px',\n                                    borderRadius: '9999px',\n                                    fontWeight: 'bold'\n                                  }}>\n                                    {item.assignedAssets}\n                                  </span>\n                                )\n                              },\n                              { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }\n                            ]}\n                            setKey=\"usersList\"\n                            layoutMode={DetailsListLayoutMode.justified}\n                            selectionMode={SelectionMode.none}\n                            onRenderRow={(rowProps) => {\n                              if (!rowProps) return null;\n                              const isExpanded = this.state.expandedUserEmail === rowProps.item.email;\n\n                              return (\n                                <div>\n                                  <div\n                                    onClick={() => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email })}\n                                    style={{ cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } as any}\n                                  >\n                                    <DetailsRow {...rowProps} />\n                                  </div>\n                                  {isExpanded && (\n                                    <div style={{ padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>\n                                      <h4 style={{ marginTop: 0, marginBottom: '15px', color: '#111827' }}>Assets assigned to {rowProps.item.name}</h4>\n                                      {rowProps.item.assignedItems.length > 0 ? (\n                                        <InventoryList items={rowProps.item.assignedItems} isAdmin={false} />\n                                      ) : (\n                                        <p style={{ color: '#6b7280', fontSize: '0.9rem', margin: 0 }}>This user currently has no assets assigned to them.</p>\n                                      )}\n                                    </div>\n                                  )}\n                                </div>\n                              );\n                            }}\n                          />\n                        </div>\n\n                        <div style={{ marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' }}>\n                          <div className={styles.cardHeader}>\n                            <h3>Employee Asset Tracking</h3>\n                          </div>\n                          <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>\n                            Admin and Manager area. Select an employee to view all assets currently assigned to them.\n                          </p>\n                          <AssetTracking\n                            items={items}\n                            employees={this.state.employees}\n                            currentUserRole={effectiveRole}\n                            currentUserName={activeUserDisplayName}\n                            currentUserEmail={activeUserEmail}\n                          />\n                        </div>\n\n                      </div>\n                    ) : null;\n                  case 'Reports':\n                    return isAdmin ? (\n                      <ReportsPage\n                        state={reportsState}\n                        actions={reportsActions}\n                      />\n                    ) : null;\n                  case 'Config': {\n                    const configState = {\n                      configSelectedTab: this.state.configSelectedTab,\n                      syncInProgress: this.state.syncInProgress,\n                      syncMessage: this.state.syncMessage,\n                      syncMessageType: this.state.syncMessageType,\n                      diagnosticInfo: this.state.diagnosticInfo,\n                      connectionStatuses: this.state.connectionStatuses,\n                      connectionErrorMessages: this.state.connectionErrorMessages,\n                      loadingGroupUsers: this.state.loadingGroupUsers,\n                      groupUsersList: this.state.groupUsersList\n                    };\n\n                    const configActions = {\n                      onSyncAssignedAssets: this._onSyncAssignedAssets,\n                      onRunDiagnostics: this._onRunDiagnostics,\n                      onTestListConnection: this._testListConnection,\n                      onLoadGroupUsers: this._loadGroupUsers,\n                      onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),\n                      onTabChange: (tabKey: 'operations' | 'connections' | 'rbac' | 'schema' | string) => this.setState({ configSelectedTab: tabKey as any })\n                    };\n\n                    return isAdmin ? (\n                      <ConfigPage\n                        state={configState}\n                        actions={configActions}\n                      />\n                    ) : null;\n                  }\n                  default:\n                    return null;\n                }\n              })()}\n            </div>\n          </div>\n\n        </div>\n\n        {(isAdmin || isManager) && (\n          <AssetForm\n            isOpen={isAssetFormOpen}\n            onClose={() => this.setState({ isAssetFormOpen: false })}\n            currentUserRole={effectiveRole}\n            onAddAsset={this._onAddAsset}\n          />\n        )}\n\n        {(isAdmin || isManager || isEmployee) && (\n          <RequestForm\n            isOpen={isRequestFormOpen}\n            onClose={() => this.setState({ isRequestFormOpen: false })}\n            availableAssets={items}\n            employees={this.state.employees}\n            currentUserRole={effectiveRole}\n            currentUserName={activeUserDisplayName}\n            onSubmitRequest={this._onSubmitRequest}\n          />\n        )}\n\n        {(isAdmin || isManager || isEmployee) && (\n          <IncidentRequestModule\n            {...this.props}\n            isOpen={this.state.isIncidentFormOpen}\n            onClose={() => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined })}\n            userDisplayName={activeUserDisplayName}\n            userEmail={activeUserEmail}\n            setIsLoading={(loading) => this.setState({ loading })}\n            preselectedAsset={this.state.selectedAssetForIncident}\n          />\n        )}\n\n        {this._renderNotificationDetailsPanel()}\n        {this._renderAdminAssignmentPanel()}\n        <ReturnAssetForm\n          isOpen={this.state.isReturnFormOpen}\n          onDismiss={() => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined })}\n          asset={this.state.selectedAssetForReturn}\n          onSubmit={this._onSubmitReturnRequest}\n        />\n      </section>\n    );\n  }\n}\n"
+                  }
+                }
+              }
+            }
+          ],
+          "ruleId": "max-lines",
+          "ruleIndex": 6
+        }
+      ]
+    }
+  ]
+}

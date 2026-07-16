@@ -8,6 +8,7 @@ import {
   IColumn
 } from '@fluentui/react/lib/DetailsList';
 import { PrimaryButton, DefaultButton, Panel, PanelType } from '@fluentui/react';
+import styles from './InventoryManagement.module.scss';
 
 export interface IRequestListProps {
   items: IRequest[];
@@ -265,13 +266,15 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
       {props.items.length === 0 ? (
         <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No asset requests found.</p>
       ) : (
-        <DetailsList
-          items={props.items}
-          columns={columns}
-          setKey="set"
-          layoutMode={DetailsListLayoutMode.justified}
-          selectionMode={SelectionMode.none}
-        />
+        <div className={styles.tableWrapper}>
+          <DetailsList
+            items={props.items}
+            columns={columns}
+            setKey="set"
+            layoutMode={DetailsListLayoutMode.justified}
+            selectionMode={SelectionMode.none}
+          />
+        </div>
       )}
 
       {selectedRequestForDetails && (
@@ -298,7 +301,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
               <h4 style={{ margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' }}>
                 Request Information
               </h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' }}>
+              <div className={styles.responsiveGridGap16} style={{ fontSize: '0.85rem' }}>
                 <div>
                   <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Request ID</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.requestKey || 'N/A'}</strong>

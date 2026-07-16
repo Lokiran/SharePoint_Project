@@ -7,6 +7,7 @@ import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
 import { Stack, IStackTokens } from '@fluentui/react/lib/Stack';
 import { IInventoryItem } from '../models/IInventoryItem';
 import { RETURN_CONDITION_OPTIONS } from '../constants/DropdownConstants';
+import styles from './InventoryManagement.module.scss';
 
 export interface IReturnAssetFormProps {
   isOpen: boolean;
@@ -69,7 +70,8 @@ export const ReturnAssetForm: React.FC<IReturnAssetFormProps> = (props) => {
       isOpen={isOpen}
       onDismiss={onDismiss}
       type={PanelType.custom}
-      customWidth="450px"
+      customWidth="100%"
+      styles={{ main: { maxWidth: '450px' } }}
       headerText="Request Asset Return"
       closeButtonAriaLabel="Close"
       onRenderFooterContent={onRenderFooterContent}
@@ -85,7 +87,7 @@ export const ReturnAssetForm: React.FC<IReturnAssetFormProps> = (props) => {
         <Stack tokens={stackTokens}>
           <div style={{ backgroundColor: '#f3f4f6', padding: '15px', borderRadius: '6px' }}>
             <h4 style={{ margin: '0 0 10px 0', fontSize: '0.95rem', color: '#1f2937' }}>Asset Information</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.85rem' }}>
+            <div className={styles.responsiveGridGap8} style={{ fontSize: '0.85rem' }}>
               <div><span style={{ color: '#6b7280' }}>Asset Name:</span> <strong>{asset.assetName || asset.title}</strong></div>
               <div><span style={{ color: '#6b7280' }}>Serial Number:</span> <strong>{asset.serialNumber || 'N/A'}</strong></div>
               <div><span style={{ color: '#6b7280' }}>Type:</span> <strong>{asset.assetType}</strong></div>

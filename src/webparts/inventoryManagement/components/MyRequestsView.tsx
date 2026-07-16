@@ -168,37 +168,32 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
           <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
 
             {/* Metrics Row */}
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '24px',
-              padding: '0 4px 16px 4px',
-              borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-            }}>
-              <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+            <div className={styles.metricsRow}>
+              <div className={styles.metricItem}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Total Requests</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' }}>{metrics.total}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Pending Approval</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.pending > 0 ? '#d97706' : 'var(--text-muted)' }}>{metrics.pending}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Approved</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' }}>{metrics.approved}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Declined</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' }}>{metrics.declined}</span>
               </div>
             </div>
 
             {/* Filters */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' }}>
-              <div style={{ flex: '1 1 200px' }}>
+            {/* Filters */}
+            <div className={styles.filtersRow}>
+              <div className={styles.searchField}>
                 <TextField
                   placeholder="Search by Request ID, asset type, reason..."
                   value={searchQuery}
@@ -207,7 +202,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                   underlined
                 />
               </div>
-              <div style={{ width: '130px' }}>
+              <div className={styles.filterDropdown}>
                 <Dropdown
                   options={[
                     { key: 'All', text: 'All Statuses' },
@@ -218,7 +213,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                   styles={{ root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } }}
                 />
               </div>
-              <div style={{ width: '130px' }}>
+              <div className={styles.filterDropdown}>
                 <Dropdown
                   options={[
                     { key: 'All', text: 'All Priorities' },
@@ -364,42 +359,37 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
           <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
 
             {/* Return Metrics Row */}
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '24px',
-              padding: '0 4px 16px 4px',
-              borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-            }}>
-              <div style={{ flex: '1 1 auto', minWidth: '90px' }}>
+            <div className={styles.metricsRow}>
+              <div className={styles.metricItem} style={{ minWidth: '90px' }}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Total</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' }}>{returnMetrics.total}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '90px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem} style={{ minWidth: '90px' }}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Pending</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.pending > 0 ? '#d97706' : 'var(--text-muted)' }}>{returnMetrics.pending}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '90px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem} style={{ minWidth: '90px' }}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Approved</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#1558d6' }}>{returnMetrics.approved}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '90px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem} style={{ minWidth: '90px' }}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Completed</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' }}>{returnMetrics.completed}</span>
               </div>
-              <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-              <div style={{ flex: '1 1 auto', minWidth: '90px' }}>
+              <div className={styles.metricDivider} />
+              <div className={styles.metricItem} style={{ minWidth: '90px' }}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Rejected</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.rejected > 0 ? '#dc2626' : 'var(--text-muted)' }}>{returnMetrics.rejected}</span>
               </div>
             </div>
 
             {/* Return Filters */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' }}>
-              <div style={{ flex: '1 1 200px' }}>
+            {/* Return Filters */}
+            <div className={styles.filtersRow}>
+              <div className={styles.searchField}>
                 <TextField
                   placeholder="Search by asset name, serial number, reason..."
                   value={returnSearchQuery}
@@ -408,7 +398,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                   underlined
                 />
               </div>
-              <div style={{ width: '150px' }}>
+              <div className={styles.filterDropdown} style={{ width: '150px' }}>
                 <Dropdown
                   options={[
                     { key: 'All', text: 'All Statuses' },
@@ -575,7 +565,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
           closeButtonAriaLabel="Close"
         >
           <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' }}>
+            <div className={styles.responsiveGrid} style={{ backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' }}>
               <div><span style={{ color: '#64748b', display: 'block' }}>Request ID:</span> <strong>{selectedRequest.requestKey || 'N/A'}</strong></div>
               <div><span style={{ color: '#64748b', display: 'block' }}>Date Requested:</span> <strong>{selectedRequest.requestDate}</strong></div>
               <div><span style={{ color: '#64748b', display: 'block' }}>Requester:</span> <strong>{selectedRequest.requesterName}</strong></div>
@@ -671,7 +661,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             })()}
 
             {/* Asset Info */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' }}>
+            <div className={styles.responsiveGrid} style={{ backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' }}>
               <div><span style={{ color: '#64748b', display: 'block' }}>Asset Name:</span> <strong>{selectedReturnRequest.assetName}</strong></div>
               <div><span style={{ color: '#64748b', display: 'block' }}>Serial Number:</span> <strong>{selectedReturnRequest.serialNumber || 'N/A'}</strong></div>
               <div><span style={{ color: '#64748b', display: 'block' }}>Submitted On:</span> <strong>{selectedReturnRequest.requestDate}</strong></div>

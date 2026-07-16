@@ -10,6 +10,7 @@ const Dropdown_1 = require("@fluentui/react/lib/Dropdown");
 const Button_1 = require("@fluentui/react/lib/Button");
 const Stack_1 = require("@fluentui/react/lib/Stack");
 const DropdownConstants_1 = require("../constants/DropdownConstants");
+const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const conditionOptions = DropdownConstants_1.RETURN_CONDITION_OPTIONS;
 const stackTokens = { childrenGap: 15 };
 const ReturnAssetForm = (props) => {
@@ -43,7 +44,7 @@ const ReturnAssetForm = (props) => {
     const onRenderFooterContent = () => (React.createElement(Stack_1.Stack, { horizontal: true, tokens: { childrenGap: 10 } },
         React.createElement(Button_1.PrimaryButton, { text: "Submit Request", onClick: handleSubmit, disabled: submitting }),
         React.createElement(Button_1.DefaultButton, { text: "Cancel", onClick: onDismiss, disabled: submitting })));
-    return (React.createElement(Panel_1.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: Panel_1.PanelType.custom, customWidth: "450px", headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
+    return (React.createElement(Panel_1.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: Panel_1.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
         React.createElement("div", { style: { marginTop: '20px' } },
             error && (React.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '10px 15px', borderRadius: '4px', marginBottom: '15px', fontSize: '0.88rem' } },
                 React.createElement("strong", null, "Error:"),
@@ -52,7 +53,7 @@ const ReturnAssetForm = (props) => {
             React.createElement(Stack_1.Stack, { tokens: stackTokens },
                 React.createElement("div", { style: { backgroundColor: '#f3f4f6', padding: '15px', borderRadius: '6px' } },
                     React.createElement("h4", { style: { margin: '0 0 10px 0', fontSize: '0.95rem', color: '#1f2937' } }, "Asset Information"),
-                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.85rem' } },
+                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridGap8, style: { fontSize: '0.85rem' } },
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
                             " ",

@@ -108,17 +108,18 @@ const NotificationCenter = (props) => {
                         marginTop: '2px'
                     } }),
                 React.createElement("div", { style: { flexGrow: 1 } },
-                    React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' } },
-                        React.createElement("strong", { style: { color: '#111827', fontSize: '0.95rem' } }, notif.title),
-                        !notif.isRead && (React.createElement("span", { style: {
-                                width: '8px',
-                                height: '8px',
-                                backgroundColor: '#ef4444',
-                                borderRadius: '50%',
-                                display: 'inline-block',
-                                boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
-                            } })),
-                        React.createElement("span", { style: { fontSize: '0.75rem', color: '#6b7280', marginLeft: 'auto' } }, notif.timestamp)),
+                    React.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' } },
+                        React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
+                            React.createElement("strong", { style: { color: '#111827', fontSize: '0.95rem' } }, notif.title),
+                            !notif.isRead && (React.createElement("span", { style: {
+                                    width: '8px',
+                                    height: '8px',
+                                    backgroundColor: '#ef4444',
+                                    borderRadius: '50%',
+                                    display: 'inline-block',
+                                    boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
+                                } }))),
+                        React.createElement("span", { style: { fontSize: '0.75rem', color: '#6b7280', whiteSpace: 'nowrap' } }, notif.timestamp)),
                     React.createElement("p", { style: { margin: '0 0 10px 0', color: '#4b5563', fontSize: '0.88rem', lineHeight: '1.4' } }, notif.message),
                     React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
                         React.createElement(react_1.PrimaryButton, { text: "View details", onClick: () => props.onNotificationAction(notif.actionLink, notif.id), styles: {

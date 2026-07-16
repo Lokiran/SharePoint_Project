@@ -151,7 +151,7 @@ const IncidentRequestModule = (props) => {
         text: `${a.assetName} (S/N: ${a.serialNumber || 'N/A'})`,
     }));
     const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
-    return (React.createElement(react_2.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_2.PanelType.custom, customWidth: "450px", headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
+    return (React.createElement(react_2.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_2.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
         React.createElement("div", { className: IncidentRequestModule_module_scss_1.default.incidentRequestModule },
             React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
                 message && (React.createElement(react_2.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),

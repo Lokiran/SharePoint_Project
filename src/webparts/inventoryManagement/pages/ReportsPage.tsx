@@ -63,7 +63,7 @@ export const ReportsPage: React.FC<IReportsPageProps> = (props) => {
           </div>
 
           {/* Charts Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+          <div className={styles.responsiveGridGap20}>
             {/* Chart 1: Status Distribution */}
             <div style={{ backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <h4 style={{ margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' }}>Asset Status Distribution</h4>

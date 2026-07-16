@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Icon } from '@fluentui/react';
+import styles from './InventoryManagement.module.scss';
 
 export interface IAssetLifecycleDiagramProps {
   isDarkTheme?: boolean;
@@ -57,15 +58,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
   ];
 
   return (
-    <div style={{
-      position: 'relative',
-      width: '280px',
-      height: '280px',
-      userSelect: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
+    <div className={styles.lifecycleDiagram}>
       {/* SVG Background for Connecting Ring */}
       <svg
         width="280"

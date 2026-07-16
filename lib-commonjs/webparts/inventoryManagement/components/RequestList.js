@@ -6,6 +6,7 @@ const React = tslib_1.__importStar(require("react"));
 const react_1 = require("react");
 const DetailsList_1 = require("@fluentui/react/lib/DetailsList");
 const react_2 = require("@fluentui/react");
+const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0, react_1.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0, react_1.useState)(false);
@@ -195,7 +196,8 @@ const RequestList = (props) => {
         }
     ];
     return (React.createElement("div", { style: { marginTop: '10px' } },
-        props.items.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (React.createElement(DetailsList_1.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none })),
+        props.items.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
+            React.createElement(DetailsList_1.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }))),
         selectedRequestForDetails && (React.createElement(react_2.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
@@ -209,7 +211,7 @@ const RequestList = (props) => {
                         boxShadow: 'var(--card-shadow)'
                     } },
                     React.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, "Request Information"),
-                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' } },
+                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridGap16, style: { fontSize: '0.85rem' } },
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestKey || 'N/A')),

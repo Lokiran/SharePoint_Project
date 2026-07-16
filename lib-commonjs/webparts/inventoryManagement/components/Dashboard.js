@@ -451,7 +451,7 @@ const Dashboard = (props) => {
                     React.createElement("td", null, req.assetTitle),
                     React.createElement("td", null, req.quantity),
                     React.createElement("td", null, formatDate(req.requestDate)),
-                    React.createElement("td", { style: { maxWidth: '240px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' } }, req.reason || 'No justification specified'),
+                    React.createElement("td", { className: Dashboard_module_scss_1.default.tableCellJustification }, req.reason || 'No justification specified'),
                     React.createElement("td", null,
                         React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${Dashboard_module_scss_1.default.badgePending}` }, "Awaiting Approval")))))))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
                 React.createElement(Icon_1.Icon, { iconName: "CheckMark" }),

@@ -51,6 +51,10 @@ export interface IExportStyles {
 
   'fadeInUp': string;
 
+  'filterDropdown': string;
+
+  'filtersRow': string;
+
   'headerDate': string;
 
   'headerLeft': string;
@@ -61,9 +65,51 @@ export interface IExportStyles {
 
   'headerTitle': string;
 
+  'hide-on-mobile': string;
+
   'iconContainer': string;
 
+  'm-0': string;
+
+  'mb-1': string;
+
+  'mb-2': string;
+
+  'mb-3': string;
+
+  'mb-4': string;
+
+  'mb-5': string;
+
+  'metricDivider': string;
+
+  'metricItem': string;
+
+  'metricsRow': string;
+
+  'mt-1': string;
+
+  'mt-2': string;
+
+  'mt-3': string;
+
+  'mt-4': string;
+
+  'mt-5': string;
+
   'noDataMessage': string;
+
+  'p-0': string;
+
+  'p-1': string;
+
+  'p-2': string;
+
+  'p-3': string;
+
+  'p-4': string;
+
+  'p-5': string;
 
   'pulse': string;
 
@@ -71,11 +117,15 @@ export interface IExportStyles {
 
   'quickActions': string;
 
+  'searchField': string;
+
   'sectionHeader': string;
 
   'sectionSubtitle': string;
 
   'shimmer': string;
+
+  'show-only-on-mobile': string;
 
   'skeleton': string;
 
@@ -98,6 +148,8 @@ export interface IExportStyles {
   'summarySubtitle': string;
 
   'summaryValue': string;
+
+  'tableCellJustification': string;
 
   'tableWrapper': string;
 

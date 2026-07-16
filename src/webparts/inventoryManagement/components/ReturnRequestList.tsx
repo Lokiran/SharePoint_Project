@@ -14,6 +14,7 @@ import { Stack } from '@fluentui/react/lib/Stack';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import { IReturnRequest } from '../models/IReturnRequest';
 import { RETURN_CONDITION_OPTIONS } from '../constants/DropdownConstants';
+import styles from './InventoryManagement.module.scss';
 
 export interface IReturnRequestListProps {
   items: IReturnRequest[];
@@ -260,13 +261,15 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
       ) : filteredItems.length === 0 ? (
         <p style={{ fontStyle: 'italic', color: '#6b7280' }}>No return requests found.</p>
       ) : (
-        <DetailsList
-          items={filteredItems}
-          columns={columns}
-          setKey="returnSet"
-          layoutMode={DetailsListLayoutMode.justified}
-          selectionMode={SelectionMode.none}
-        />
+        <div className={styles.tableWrapper}>
+          <DetailsList
+            items={filteredItems}
+            columns={columns}
+            setKey="returnSet"
+            layoutMode={DetailsListLayoutMode.justified}
+            selectionMode={SelectionMode.none}
+          />
+        </div>
       )}
 
       {/* Confirmation Dialog */}
@@ -296,7 +299,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
               <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' }}>
                 Asset Return Details
               </h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 16px' }}>
+              <div className={styles.responsiveGrid} style={{ gap: '12px 16px' }}>
                 <div>
                   <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Request ID</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.id.replace('RR-', '#')}</strong>

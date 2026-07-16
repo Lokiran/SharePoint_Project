@@ -12,6 +12,7 @@ const TextField_1 = require("@fluentui/react/lib/TextField");
 const Stack_1 = require("@fluentui/react/lib/Stack");
 const SearchBox_1 = require("@fluentui/react/lib/SearchBox");
 const DropdownConstants_1 = require("../constants/DropdownConstants");
+const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const conditionOptions = DropdownConstants_1.RETURN_CONDITION_OPTIONS;
 const ReturnRequestList = (props) => {
     const { items, isAdmin, isManager, onUpdateStatus, loading } = props;
@@ -161,7 +162,8 @@ const ReturnRequestList = (props) => {
     return (React.createElement("div", { style: { marginTop: '10px' } },
         React.createElement("div", { style: { marginBottom: '15px' } },
             React.createElement(SearchBox_1.SearchBox, { placeholder: "Search return requests...", value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), styles: { root: { maxWidth: 350 } } })),
-        loading ? (React.createElement("p", null, "Loading return requests...")) : filteredItems.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, "No return requests found.")) : (React.createElement(DetailsList_1.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none })),
+        loading ? (React.createElement("p", null, "Loading return requests...")) : filteredItems.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, "No return requests found.")) : (React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
+            React.createElement(DetailsList_1.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }))),
         React.createElement(Dialog_1.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
                 type: Dialog_1.DialogType.normal,
                 title: actionType === 'Approve' ? 'Approve Return Request' :
@@ -179,7 +181,7 @@ const ReturnRequestList = (props) => {
                         fontFamily: 'inherit'
                     } },
                     React.createElement("h4", { style: { margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' } }, "Asset Return Details"),
-                    React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 16px' } },
+                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: { gap: '12px 16px' } },
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.id.replace('RR-', '#'))),

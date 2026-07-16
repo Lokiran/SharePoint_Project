@@ -23,15 +23,57 @@ export interface IExportStyles {
 
   'dark': string;
 
+  'filterDropdown': string;
+
+  'filtersRow': string;
+
   'heroSection': string;
 
   'heroText': string;
+
+  'hide-on-mobile': string;
 
   'inventoryManagement': string;
 
   'is-selected': string;
 
+  'lifecycleDiagram': string;
+
+  'm-0': string;
+
   'mainContent': string;
+
+  'mb-1': string;
+
+  'mb-2': string;
+
+  'mb-3': string;
+
+  'mb-4': string;
+
+  'mb-5': string;
+
+  'metricDivider': string;
+
+  'metricItem': string;
+
+  'metricsRow': string;
+
+  'mobileMenuToggle': string;
+
+  'mobileNavHeader': string;
+
+  'mobileNavTitle': string;
+
+  'mt-1': string;
+
+  'mt-2': string;
+
+  'mt-3': string;
+
+  'mt-4': string;
+
+  'mt-5': string;
 
   'navBadge': string;
 
@@ -45,6 +87,18 @@ export interface IExportStyles {
 
   'navItemText': string;
 
+  'p-0': string;
+
+  'p-1': string;
+
+  'p-2': string;
+
+  'p-3': string;
+
+  'p-4': string;
+
+  'p-5': string;
+
   'paginationButton': string;
 
   'paginationContainer': string;
@@ -53,13 +107,31 @@ export interface IExportStyles {
 
   'paginationInfo': string;
 
+  'responsiveGrid': string;
+
+  'responsiveGridAlignItemsCenter': string;
+
+  'responsiveGridGap16': string;
+
+  'responsiveGridGap20': string;
+
+  'responsiveGridGap8': string;
+
+  'searchField': string;
+
+  'show-only-on-mobile': string;
+
   'sidebarCollapsed': string;
 
   'sidebarContainer': string;
 
   'sidebarNavItem': string;
 
+  'sidebarOverlay': string;
+
   'smallText': string;
+
+  'tableWrapper': string;
 
   'teams': string;
 

@@ -266,43 +266,31 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
     <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
       
       {/* 1. Minimalist Summary Metrics Row */}
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '24px',
-        padding: '0 4px 16px 4px',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-      }}>
-        <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+      <div className={styles.metricsRow}>
+        <div className={styles.metricItem}>
           <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Assigned Assets</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' }}>{metrics.total}</span>
         </div>
-        <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-        <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+        <div className={styles.metricDivider} />
+        <div className={styles.metricItem}>
           <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Under Warranty</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' }}>{metrics.activeWarranties}</span>
         </div>
-        <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-        <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+        <div className={styles.metricDivider} />
+        <div className={styles.metricItem}>
           <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Warranty Action</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.expiredOrExpiringWarranties > 0 ? '#d97706' : 'var(--text-muted)' }}>{metrics.expiredOrExpiringWarranties}</span>
         </div>
-        <div style={{ width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' }} />
-        <div style={{ flex: '1 1 auto', minWidth: '110px' }}>
+        <div className={styles.metricDivider} />
+        <div className={styles.metricItem}>
           <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Critical Alerts</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.actionNeeded > 0 ? '#dc2626' : 'var(--text-muted)' }}>{metrics.actionNeeded}</span>
         </div>
       </div>
 
       {/* 2. Filters & Search Bar (Minimalist) */}
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '12px',
-        alignItems: 'flex-end',
-        padding: '0 0 10px 0'
-      }}>
-        <div style={{ flex: '1 1 200px' }}>
+      <div className={styles.filtersRow}>
+        <div className={styles.searchField}>
           <TextField
             placeholder="Search by asset name, type, serial number..."
             value={searchQuery}
@@ -311,7 +299,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
             underlined
           />
         </div>
-        <div style={{ width: '130px' }}>
+        <div className={styles.filterDropdown}>
           <Dropdown
             options={typeOptions}
             selectedKey={selectedType}
@@ -319,7 +307,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
             styles={{ root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } }}
           />
         </div>
-        <div style={{ width: '130px' }}>
+        <div className={styles.filterDropdown}>
           <Dropdown
             options={[
               { key: 'All', text: 'All Conditions' },
@@ -330,7 +318,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
             styles={{ root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } }}
           />
         </div>
-        <div style={{ width: '130px' }}>
+        <div className={styles.filterDropdown}>
           <Dropdown
             options={[
               { key: 'All', text: 'All Coverage' },
@@ -509,7 +497,8 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                   display: 'flex',
                   gap: '6px',
                   borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  flexWrap: 'wrap'
                 }}>
                   <DefaultButton
                     text="Details"
@@ -602,10 +591,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         >
           <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
             
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '12px',
+            <div className={styles.responsiveGrid} style={{
               backgroundColor: '#f1f5f9',
               padding: '15px',
               borderRadius: '8px',

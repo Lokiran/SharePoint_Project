@@ -19,6 +19,7 @@ import {
 import { jsPDF } from 'jspdf';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
+import styles from '../InventoryManagement.module.scss';
 
 interface IIncidentHistoryItem {
   id: string;
@@ -497,7 +498,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
               <h4 style={{ margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
                 Incident Specifications
               </h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' }}>
+              <div className={styles.responsiveGridAlignItemsCenter} style={{ fontSize: '0.88rem' }}>
                 <div><span style={{ color: '#6b7280' }}>Incident ID:</span> <strong style={{ color: '#111827' }}>{selectedIncident.incidentId}</strong></div>
                 <div><span style={{ color: '#6b7280' }}>Asset Name:</span> <strong style={{ color: '#111827' }}>{selectedIncident.assetName}</strong></div>
                 <div><span style={{ color: '#6b7280' }}>Issue Type:</span> <strong style={{ color: '#111827' }}>{selectedIncident.issueType}</strong></div>

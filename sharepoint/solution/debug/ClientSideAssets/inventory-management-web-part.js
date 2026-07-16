@@ -16,12 +16,38 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("@keyframes fadeInUp_b75d33de{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_b75d33de{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_b75d33de{0%,to{opacity:1}50%{opacity:.6}}.dashboard_b75d33de{animation:fadeInUp_b75d33de .4s cubic-bezier(0,0,.2,1);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_b75d33de .dashboardHeader_b75d33de{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de{flex:1;min-width:200px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerTitle_b75d33de{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerSubtitle_b75d33de{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerDate_b75d33de{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerDate_b75d33de i{color:#8a8886;font-size:12px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerRight_b75d33de{align-items:center;display:flex;gap:8px}.dashboard_b75d33de .quickActions_b75d33de{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de{align-items:center;background:linear-gradient(180deg,#fff,#f3f2f1);border:1px solid rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.28);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.8),0 2px 4px rgba(0,0,0,.05);color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:600;gap:7px;padding:8px 16px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background-color .15s ease,box-shadow .1s ease;white-space:nowrap}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de i{color:#0078d4;font-size:14px}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de:hover{background:linear-gradient(180deg,#fff,#eaeaea);border-color:rgba(0,0,0,.18);border-bottom:3px solid rgba(0,0,0,.32);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.9),0 4px 8px rgba(0,0,0,.08);color:#005a9e;transform:translateY(-2px)}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04);transform:translateY(2px)}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_b75d33de .dashboardIntro_b75d33de{animation:fadeInUp_b75d33de .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_b75d33de .summaryGrid_b75d33de{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@media (max-width:1100px){.dashboard_b75d33de .summaryGrid_b75d33de{grid-template-columns:repeat(2,1fr)}}@media (max-width:600px){.dashboard_b75d33de .summaryGrid_b75d33de{grid-template-columns:1fr}}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de{align-items:center;animation:fadeInUp_b75d33de .4s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:before{background-color:transparent;border-radius:0 4px 4px 0;bottom:12px;box-shadow:0 0 8px rgba(0,0,0,.05);content:\"\";left:0;position:absolute;top:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);width:5px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-5px)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:hover:before{transform:scaleY(1.15)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:hover .iconContainer_b75d33de{transform:scale(1.05) translateZ(0)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:first-child{animation-delay:0s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:nth-child(2){animation-delay:.06s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:nth-child(3){animation-delay:.12s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:nth-child(4){animation-delay:.18s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardBlue_b75d33de:before{background-color:#0078d4;box-shadow:0 0 10px rgba(0,120,212,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardBlue_b75d33de .iconContainer_b75d33de{background-color:rgba(0,120,212,.08);border-color:rgba(0,120,212,.15);color:#0078d4}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGreen_b75d33de:before{background-color:#107c10;box-shadow:0 0 10px rgba(16,124,16,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGreen_b75d33de .iconContainer_b75d33de{background-color:rgba(16,124,16,.08);border-color:rgba(16,124,16,.15);color:#107c10}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardPurple_b75d33de:before{background-color:#8764b8;box-shadow:0 0 10px rgba(135,100,184,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardPurple_b75d33de .iconContainer_b75d33de{background-color:rgba(135,100,184,.08);border-color:rgba(135,100,184,.15);color:#8764b8}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGold_b75d33de:before{background-color:#ffb900;box-shadow:0 0 10px rgba(255,185,0,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGold_b75d33de .iconContainer_b75d33de{background-color:rgba(255,185,0,.12);border-color:rgba(255,185,0,.2);color:#b37d00}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .iconContainer_b75d33de{align-items:center;border:1px solid rgba(0,0,0,.05);border-radius:12px;box-shadow:inset 1px 2px 4px rgba(0,0,0,.06),inset -1px -1px 2px hsla(0,0%,100%,.7);display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summaryValue_b75d33de{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summaryLabel_b75d33de{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendUp_b75d33de{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendUp_b75d33de i{font-size:10px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendDown_b75d33de{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendDown_b75d33de i{font-size:10px}.dashboard_b75d33de .chartsGrid_b75d33de{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@media (max-width:720px){.dashboard_b75d33de .chartsGrid_b75d33de{grid-template-columns:1fr}}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de{align-items:flex-start;animation:fadeInUp_b75d33de .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:first-child{animation-delay:.1s}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:nth-child(2){animation-delay:.16s}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:nth-child(3){animation-delay:.22s}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartIcon_b75d33de{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartTitleBlock_b75d33de{flex:1;min-width:0}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartTitleBlock_b75d33de h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartTitleBlock_b75d33de .chartSubtitle_b75d33de{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartContainer_b75d33de{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_b75d33de .actionCenter_b75d33de{animation:fadeInUp_b75d33de .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);margin-bottom:20px;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_b75d33de .actionCenter_b75d33de:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de h3 i{color:#0078d4;font-size:16px}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de .sectionSubtitle_b75d33de{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_b75d33de .actionCenter_b75d33de .tableWrapper_b75d33de{border-radius:8px;overflow-x:auto;width:100%}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de th:first-child{border-radius:8px 0 0 0}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de th:last-child{border-radius:0 8px 0 0}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de tbody tr:last-child td{border-bottom:none}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de{align-items:center;border-radius:100px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 1px 2px rgba(0,0,0,.05);display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.45),0 2px 4px rgba(0,0,0,.08);transform:translateY(-.5px)}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgePending_b75d33de{background:linear-gradient(180deg,#fff7dc,#fff4ce);border:1px solid rgba(255,185,0,.3);border-bottom:2px solid rgba(213,155,0,.4);color:#7a5200}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeApproved_b75d33de{background:linear-gradient(180deg,#e8f9e6,#dff6dd);border:1px solid rgba(16,124,16,.25);border-bottom:2px solid rgba(11,88,11,.3);color:#0e700e}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeDeclined_b75d33de{background:linear-gradient(180deg,#ffeef0,#fde7e9);border:1px solid rgba(216,59,1,.25);border-bottom:2px solid rgba(160,40,1,.3);color:#a80000}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeAssigned_b75d33de{background:linear-gradient(180deg,#f0f5ff,#e8f0fe);border:1px solid rgba(0,120,212,.25);border-bottom:2px solid rgba(0,90,158,.3);color:#1a56db}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeReturned_b75d33de{background:linear-gradient(180deg,#edfaf8,#e6f7f5);border:1px solid rgba(0,130,114,.25);border-bottom:2px solid rgba(0,90,78,.3);color:#006d62}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeMaintenance_b75d33de{background:linear-gradient(180deg,#fff5eb,#fff0e0);border:1px solid rgba(216,59,1,.2);border-bottom:2px solid rgba(160,40,1,.25);color:#9a3412}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de span{line-height:1.5;max-width:320px}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de .emptyStateHint_b75d33de{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_b75d33de .splitLayout_b75d33de{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@media (max-width:900px){.dashboard_b75d33de .splitLayout_b75d33de{grid-template-columns:1fr}}.dashboard_b75d33de .splitLayout_b75d33de .actionCenter_b75d33de{margin-bottom:0}.dashboard_b75d33de .skeletonCard_b75d33de,.dashboard_b75d33de .skeletonChart_b75d33de,.dashboard_b75d33de .skeletonLine_b75d33de,.dashboard_b75d33de .skeleton_b75d33de{animation:shimmer_b75d33de 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_b75d33de .skeletonCard_b75d33de{border-radius:14px;height:100px}.dashboard_b75d33de .skeletonChart_b75d33de{border-radius:14px;height:260px}.dashboard_b75d33de .skeletonLine_b75d33de{height:14px;margin-bottom:10px}.dashboard_b75d33de .skeletonLine_b75d33de:last-child{width:60%}@media (prefers-reduced-motion:reduce){.dashboard_b75d33de{animation:none!important}.dashboard_b75d33de .actionCenter_b75d33de,.dashboard_b75d33de .chartCard_b75d33de,.dashboard_b75d33de .summaryCard_b75d33de{animation:none!important;transition:none!important}.dashboard_b75d33de .skeletonCard_b75d33de,.dashboard_b75d33de .skeletonChart_b75d33de,.dashboard_b75d33de .skeletonLine_b75d33de,.dashboard_b75d33de .skeleton_b75d33de{animation:none!important}}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles("@keyframes fadeInUp_b75d33de{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_b75d33de{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_b75d33de{0%,to{opacity:1}50%{opacity:.6}}.dashboard_b75d33de{animation:fadeInUp_b75d33de .4s cubic-bezier(0,0,.2,1);container-type:inline-size;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_b75d33de .m-0_b75d33de{margin:0!important}.dashboard_b75d33de .mt-1_b75d33de{margin-top:4px!important}.dashboard_b75d33de .mt-2_b75d33de{margin-top:8px!important}.dashboard_b75d33de .mt-3_b75d33de{margin-top:12px!important}.dashboard_b75d33de .mt-4_b75d33de{margin-top:16px!important}.dashboard_b75d33de .mt-5_b75d33de{margin-top:20px!important}.dashboard_b75d33de .mb-1_b75d33de{margin-bottom:4px!important}.dashboard_b75d33de .mb-2_b75d33de{margin-bottom:8px!important}.dashboard_b75d33de .mb-3_b75d33de{margin-bottom:12px!important}.dashboard_b75d33de .mb-4_b75d33de{margin-bottom:16px!important}.dashboard_b75d33de .mb-5_b75d33de{margin-bottom:20px!important}.dashboard_b75d33de .p-0_b75d33de{padding:0!important}.dashboard_b75d33de .p-1_b75d33de{padding:4px!important}.dashboard_b75d33de .p-2_b75d33de{padding:8px!important}.dashboard_b75d33de .p-3_b75d33de{padding:12px!important}.dashboard_b75d33de .p-4_b75d33de{padding:16px!important}.dashboard_b75d33de .p-5_b75d33de{padding:20px!important}.dashboard_b75d33de .tableWrapper_b75d33de{-webkit-overflow-scrolling:touch;margin-bottom:15px;overflow-x:auto!important;width:100%!important}@container (max-width: 600px){.dashboard_b75d33de .hide-on-mobile_b75d33de{display:none!important}}@container (min-width: 1025px){.dashboard_b75d33de .show-only-on-mobile_b75d33de{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.dashboard_b75d33de .show-only-on-mobile_b75d33de{display:none!important}}.dashboard_b75d33de .metricsRow_b75d33de{border-bottom:1px solid rgba(0,0,0,.06)!important;display:flex!important;flex-wrap:wrap!important;gap:24px!important;padding:0 4px 16px!important}.dashboard_b75d33de .metricsRow_b75d33de .metricItem_b75d33de{flex:1 1 auto!important;min-width:110px!important}.dashboard_b75d33de .metricsRow_b75d33de .metricDivider_b75d33de{align-self:stretch!important;background-color:#e2e8f0!important;width:1px!important}@container (max-width: 600px){.dashboard_b75d33de .metricsRow_b75d33de .metricDivider_b75d33de{display:none!important}}.dashboard_b75d33de .filtersRow_b75d33de{align-items:flex-end!important;display:flex!important;flex-wrap:wrap!important;gap:12px!important;padding:0 0 10px!important;width:100%!important}.dashboard_b75d33de .filtersRow_b75d33de .searchField_b75d33de{flex:1 1 200px!important}.dashboard_b75d33de .filtersRow_b75d33de .filterDropdown_b75d33de{width:130px!important}@container (max-width: 600px){.dashboard_b75d33de .filtersRow_b75d33de .filterDropdown_b75d33de{flex-grow:1!important;width:100%!important}}.dashboard_b75d33de .dashboardHeader_b75d33de{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de{flex:1;min-width:200px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerTitle_b75d33de{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerSubtitle_b75d33de{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerDate_b75d33de{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerLeft_b75d33de .headerDate_b75d33de i{color:#8a8886;font-size:12px}.dashboard_b75d33de .dashboardHeader_b75d33de .headerRight_b75d33de{align-items:center;display:flex;gap:8px}.dashboard_b75d33de .quickActions_b75d33de{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de{align-items:center;background:linear-gradient(180deg,#fff,#f3f2f1);border:1px solid rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.28);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.8),0 2px 4px rgba(0,0,0,.05);color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:600;gap:7px;padding:8px 16px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background-color .15s ease,box-shadow .1s ease;white-space:nowrap}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de i{color:#0078d4;font-size:14px}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de:hover{background:linear-gradient(180deg,#fff,#eaeaea);border-color:rgba(0,0,0,.18);border-bottom:3px solid rgba(0,0,0,.32);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.9),0 4px 8px rgba(0,0,0,.08);color:#005a9e;transform:translateY(-2px)}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04);transform:translateY(2px)}.dashboard_b75d33de .quickActions_b75d33de .quickActionBtn_b75d33de:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_b75d33de .dashboardIntro_b75d33de{animation:fadeInUp_b75d33de .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_b75d33de .summaryGrid_b75d33de{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@container (max-width: 1024px){.dashboard_b75d33de .summaryGrid_b75d33de{grid-template-columns:repeat(2,1fr)}}@container (max-width: 600px){.dashboard_b75d33de .summaryGrid_b75d33de{grid-template-columns:1fr}}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de{align-items:center;animation:fadeInUp_b75d33de .4s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:before{background-color:transparent;border-radius:0 4px 4px 0;bottom:12px;box-shadow:0 0 8px rgba(0,0,0,.05);content:\"\";left:0;position:absolute;top:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);width:5px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-5px)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:hover:before{transform:scaleY(1.15)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:hover .iconContainer_b75d33de{transform:scale(1.05) translateZ(0)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:first-child{animation-delay:0s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:nth-child(2){animation-delay:.06s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:nth-child(3){animation-delay:.12s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de:nth-child(4){animation-delay:.18s}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardBlue_b75d33de:before{background-color:#0078d4;box-shadow:0 0 10px rgba(0,120,212,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardBlue_b75d33de .iconContainer_b75d33de{background-color:rgba(0,120,212,.08);border-color:rgba(0,120,212,.15);color:#0078d4}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGreen_b75d33de:before{background-color:#107c10;box-shadow:0 0 10px rgba(16,124,16,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGreen_b75d33de .iconContainer_b75d33de{background-color:rgba(16,124,16,.08);border-color:rgba(16,124,16,.15);color:#107c10}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardPurple_b75d33de:before{background-color:#8764b8;box-shadow:0 0 10px rgba(135,100,184,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardPurple_b75d33de .iconContainer_b75d33de{background-color:rgba(135,100,184,.08);border-color:rgba(135,100,184,.15);color:#8764b8}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGold_b75d33de:before{background-color:#ffb900;box-shadow:0 0 10px rgba(255,185,0,.45)}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de.cardGold_b75d33de .iconContainer_b75d33de{background-color:rgba(255,185,0,.12);border-color:rgba(255,185,0,.2);color:#b37d00}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .iconContainer_b75d33de{align-items:center;border:1px solid rgba(0,0,0,.05);border-radius:12px;box-shadow:inset 1px 2px 4px rgba(0,0,0,.06),inset -1px -1px 2px hsla(0,0%,100%,.7);display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summaryValue_b75d33de{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summaryLabel_b75d33de{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendUp_b75d33de{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendUp_b75d33de i{font-size:10px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendDown_b75d33de{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_b75d33de .summaryGrid_b75d33de .summaryCard_b75d33de .cardInfo_b75d33de .summarySubtitle_b75d33de .trendDown_b75d33de i{font-size:10px}.dashboard_b75d33de .chartsGrid_b75d33de{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@container (max-width: 600px){.dashboard_b75d33de .chartsGrid_b75d33de{grid-template-columns:1fr}}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de{align-items:flex-start;animation:fadeInUp_b75d33de .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:first-child{animation-delay:.1s}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:nth-child(2){animation-delay:.16s}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:nth-child(3){animation-delay:.22s}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartIcon_b75d33de{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartTitleBlock_b75d33de{flex:1;min-width:0}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartTitleBlock_b75d33de h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartHeader_b75d33de .chartTitleBlock_b75d33de .chartSubtitle_b75d33de{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_b75d33de .chartsGrid_b75d33de .chartCard_b75d33de .chartContainer_b75d33de{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_b75d33de .actionCenter_b75d33de{animation:fadeInUp_b75d33de .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);margin-bottom:20px;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_b75d33de .actionCenter_b75d33de:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de h3 i{color:#0078d4;font-size:16px}.dashboard_b75d33de .actionCenter_b75d33de .sectionHeader_b75d33de .sectionSubtitle_b75d33de{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_b75d33de .actionCenter_b75d33de .tableWrapper_b75d33de{border-radius:8px;overflow-x:auto;width:100%}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de th:first-child{border-radius:8px 0 0 0}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de th:last-child{border-radius:0 8px 0 0}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de tbody tr:last-child td{border-bottom:none}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_b75d33de .actionCenter_b75d33de .actionTable_b75d33de code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de{align-items:center;border-radius:100px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 1px 2px rgba(0,0,0,.05);display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.45),0 2px 4px rgba(0,0,0,.08);transform:translateY(-.5px)}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgePending_b75d33de{background:linear-gradient(180deg,#fff7dc,#fff4ce);border:1px solid rgba(255,185,0,.3);border-bottom:2px solid rgba(213,155,0,.4);color:#7a5200}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeApproved_b75d33de{background:linear-gradient(180deg,#e8f9e6,#dff6dd);border:1px solid rgba(16,124,16,.25);border-bottom:2px solid rgba(11,88,11,.3);color:#0e700e}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeDeclined_b75d33de{background:linear-gradient(180deg,#ffeef0,#fde7e9);border:1px solid rgba(216,59,1,.25);border-bottom:2px solid rgba(160,40,1,.3);color:#a80000}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeAssigned_b75d33de{background:linear-gradient(180deg,#f0f5ff,#e8f0fe);border:1px solid rgba(0,120,212,.25);border-bottom:2px solid rgba(0,90,158,.3);color:#1a56db}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeReturned_b75d33de{background:linear-gradient(180deg,#edfaf8,#e6f7f5);border:1px solid rgba(0,130,114,.25);border-bottom:2px solid rgba(0,90,78,.3);color:#006d62}.dashboard_b75d33de .actionCenter_b75d33de .statusBadge_b75d33de.badgeMaintenance_b75d33de{background:linear-gradient(180deg,#fff5eb,#fff0e0);border:1px solid rgba(216,59,1,.2);border-bottom:2px solid rgba(160,40,1,.25);color:#9a3412}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de span{line-height:1.5;max-width:320px}.dashboard_b75d33de .actionCenter_b75d33de .noDataMessage_b75d33de .emptyStateHint_b75d33de{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_b75d33de .splitLayout_b75d33de{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@container (max-width: 1024px){.dashboard_b75d33de .splitLayout_b75d33de{grid-template-columns:1fr}}.dashboard_b75d33de .splitLayout_b75d33de .actionCenter_b75d33de{margin-bottom:0}.dashboard_b75d33de .skeletonCard_b75d33de,.dashboard_b75d33de .skeletonChart_b75d33de,.dashboard_b75d33de .skeletonLine_b75d33de,.dashboard_b75d33de .skeleton_b75d33de{animation:shimmer_b75d33de 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_b75d33de .skeletonCard_b75d33de{border-radius:14px;height:100px}.dashboard_b75d33de .skeletonChart_b75d33de{border-radius:14px;height:260px}.dashboard_b75d33de .skeletonLine_b75d33de{height:14px;margin-bottom:10px}.dashboard_b75d33de .skeletonLine_b75d33de:last-child{width:60%}.dashboard_b75d33de .tableCellJustification_b75d33de{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@container (max-width: 600px){.dashboard_b75d33de .tableCellJustification_b75d33de{max-width:120px!important}}@media (prefers-reduced-motion:reduce){.dashboard_b75d33de{animation:none!important}.dashboard_b75d33de .actionCenter_b75d33de,.dashboard_b75d33de .chartCard_b75d33de,.dashboard_b75d33de .summaryCard_b75d33de{animation:none!important;transition:none!important}.dashboard_b75d33de .skeletonCard_b75d33de,.dashboard_b75d33de .skeletonChart_b75d33de,.dashboard_b75d33de .skeletonLine_b75d33de,.dashboard_b75d33de .skeleton_b75d33de{animation:none!important}}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   dashboard: "dashboard_b75d33de",
   fadeInUp: "fadeInUp_b75d33de",
+  "m-0": "m-0_b75d33de",
+  "mt-1": "mt-1_b75d33de",
+  "mt-2": "mt-2_b75d33de",
+  "mt-3": "mt-3_b75d33de",
+  "mt-4": "mt-4_b75d33de",
+  "mt-5": "mt-5_b75d33de",
+  "mb-1": "mb-1_b75d33de",
+  "mb-2": "mb-2_b75d33de",
+  "mb-3": "mb-3_b75d33de",
+  "mb-4": "mb-4_b75d33de",
+  "mb-5": "mb-5_b75d33de",
+  "p-0": "p-0_b75d33de",
+  "p-1": "p-1_b75d33de",
+  "p-2": "p-2_b75d33de",
+  "p-3": "p-3_b75d33de",
+  "p-4": "p-4_b75d33de",
+  "p-5": "p-5_b75d33de",
+  tableWrapper: "tableWrapper_b75d33de",
+  "hide-on-mobile": "hide-on-mobile_b75d33de",
+  "show-only-on-mobile": "show-only-on-mobile_b75d33de",
+  metricsRow: "metricsRow_b75d33de",
+  metricItem: "metricItem_b75d33de",
+  metricDivider: "metricDivider_b75d33de",
+  filtersRow: "filtersRow_b75d33de",
+  searchField: "searchField_b75d33de",
+  filterDropdown: "filterDropdown_b75d33de",
   dashboardHeader: "dashboardHeader_b75d33de",
   headerLeft: "headerLeft_b75d33de",
   headerTitle: "headerTitle_b75d33de",
@@ -54,7 +80,6 @@ _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_
   actionCenter: "actionCenter_b75d33de",
   sectionHeader: "sectionHeader_b75d33de",
   sectionSubtitle: "sectionSubtitle_b75d33de",
-  tableWrapper: "tableWrapper_b75d33de",
   actionTable: "actionTable_b75d33de",
   statusBadge: "statusBadge_b75d33de",
   badgePending: "badgePending_b75d33de",
@@ -71,6 +96,7 @@ _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_
   skeletonChart: "skeletonChart_b75d33de",
   skeletonCard: "skeletonCard_b75d33de",
   shimmer: "shimmer_b75d33de",
+  tableCellJustification: "tableCellJustification_b75d33de",
   pulse: "pulse_b75d33de"
 });
 
@@ -120,42 +146,78 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_67c3bf46{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;box-sizing:border-box;color:var(--text-main);font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;margin:0;max-width:100%;min-width:100%;overflow-x:visible;overflow-y:visible;padding:0;width:100%}.inventoryManagement_67c3bf46.dark_67c3bf46{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_67c3bf46.dark_67c3bf46 .sidebarNavItem_67c3bf46:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_67c3bf46.dark_67c3bf46 .sidebarContainer_67c3bf46{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_67c3bf46.dark_67c3bf46 .navGroupLabel_67c3bf46{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_67c3bf46 .mainContent_67c3bf46{box-sizing:border-box;display:flex;flex-direction:column;gap:20px;margin:0;max-width:none;min-width:100%;padding:0;width:100%}.inventoryManagement_67c3bf46 .heroSection_67c3bf46{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@media (max-width:768px){.inventoryManagement_67c3bf46 .heroSection_67c3bf46{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_67c3bf46 .heroSection_67c3bf46:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46{flex:1;min-width:250px;z-index:1}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46 h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46 p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46 .smallText_67c3bf46{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@media (max-width:768px){.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .heroText_67c3bf46{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .welcomeDiagramContainer_67c3bf46{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@media (max-width:768px){.inventoryManagement_67c3bf46 .heroSection_67c3bf46 .welcomeDiagramContainer_67c3bf46{margin-left:0;margin-top:8px}}.inventoryManagement_67c3bf46 .actionGrid_67c3bf46{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-bottom:2px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:4px;transform:translateY(-1px);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-3px)}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46 .ms-Button--primary{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 4px rgba(0,120,212,.15);color:#fff;font-size:.85rem;font-weight:600;height:38px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,filter .15s ease,box-shadow .1s ease;width:100%}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46 .ms-Button--primary:hover{border-color:#0f3c73;border-bottom:3px solid #0b2d54;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.25);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_67c3bf46 .actionButtonContainer_67c3bf46 .ms-Button--primary:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_67c3bf46 .appLayoutContainer_67c3bf46{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@media (max-width:768px){.inventoryManagement_67c3bf46 .appLayoutContainer_67c3bf46{align-items:stretch;flex-direction:column}}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46{background:linear-gradient(145deg,var(--surface-bg) 0,rgba(0,0,0,.01) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-md);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;flex-shrink:0;gap:3px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1);width:250px}@media (max-width:768px){.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46{box-sizing:border-box;width:100%}}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46{padding:12px 6px;width:56px}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46{padding:4px 0 8px;text-align:center}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navGroupLabel_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 h4,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 span{display:none}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46{justify-content:center;padding:10px 0}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navBadge_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navItemText_67c3bf46{display:none}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 i{margin:0}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .collapseToggle_67c3bf46{justify-content:center}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .collapseToggle_67c3bf46 .collapseText_67c3bf46{display:none}@media (max-width:768px){.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46{width:100%}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navGroupLabel_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 h4,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .navHeader_67c3bf46 span{display:block}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46{justify-content:flex-start;padding:10px 14px}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navBadge_67c3bf46,.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .sidebarNavItem_67c3bf46 .navItemText_67c3bf46{display:inline-flex}.inventoryManagement_67c3bf46 .sidebarContainer_67c3bf46.sidebarCollapsed_67c3bf46 .collapseToggle_67c3bf46 .collapseText_67c3bf46{display:inline}}.inventoryManagement_67c3bf46 .navHeader_67c3bf46{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_67c3bf46 .navHeader_67c3bf46 h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_67c3bf46 .navHeader_67c3bf46 span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_67c3bf46 .navGroupLabel_67c3bf46{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_67c3bf46 .navDivider_67c3bf46{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s ease;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46 i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46 .navItemText_67c3bf46{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46 .navBadge_67c3bf46{border-radius:100px;box-shadow:0 1px 3px rgba(0,0,0,.15);color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46:hover{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05));border:1px solid rgba(0,0,0,.06);border-bottom:2px solid rgba(0,0,0,.1);box-shadow:0 1px 2px rgba(0,0,0,.04);color:var(--text-main);transform:translateY(-.5px)}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46:active{border-bottom-width:1px;box-shadow:none;transform:translateY(.5px)}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46.navItemActive_67c3bf46{background:linear-gradient(180deg,rgba(0,120,212,.06),rgba(0,120,212,.1))!important;border:1px solid rgba(0,120,212,.12)!important;border-bottom:2px solid rgba(0,120,212,.22)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.4),0 1px 2px rgba(0,120,212,.06)!important;color:#0078d4;font-weight:600}.inventoryManagement_67c3bf46 .sidebarNavItem_67c3bf46.navItemActive_67c3bf46:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:8px;box-shadow:0 0 6px rgba(0,120,212,.5);content:\"\";left:0;position:absolute;top:8px;width:3px}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46:hover{color:#616161}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46 i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .collapseToggle_67c3bf46 .collapseText_67c3bf46{flex-grow:1}.inventoryManagement_67c3bf46 .contentContainer_67c3bf46{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_67c3bf46 .card_67c3bf46{background:linear-gradient(145deg,var(--surface-bg) 0,hsla(0,0%,100%,.02) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-lg);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_67c3bf46 .card_67c3bf46:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.inventoryManagement_67c3bf46 .card_67c3bf46 .cardHeader_67c3bf46{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_67c3bf46 .card_67c3bf46 .cardHeader_67c3bf46 h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_67c3bf46 .ms-DetailsList{background:transparent!important}.inventoryManagement_67c3bf46 .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_67c3bf46 .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_67c3bf46 .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_67c3bf46 .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link{align-items:center!important;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%)!important;border:1px solid rgba(0,0,0,.12)!important;border-bottom:3px solid rgba(0,0,0,.24)!important;border-radius:8px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 2px 4px rgba(0,0,0,.05)!important;color:var(--text-main)!important;display:flex!important;font-weight:600!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transform:translateY(-1px)!important;transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link:hover{background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%)!important;border-color:rgba(0,0,0,.15)!important;border-bottom:3px solid rgba(0,0,0,.28)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 4px 8px rgba(0,0,0,.08)!important;transform:translateY(-2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04)!important;transform:translateY(2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46{background:var(--primary-gradient)!important;border:1px solid #103f7a!important;border-bottom:3px solid #0f3566!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 3px 8px rgba(0,120,212,.3)!important;color:#fff!important;font-weight:700!important;transform:translateY(-1px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46:before{display:none!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46:hover{background:linear-gradient(180deg,#388ae6,#205ab3)!important;border-color:#0f3c73!important;border-bottom:3px solid #0b2d54!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 5px 12px rgba(0,120,212,.4)!important;transform:translateY(-2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.2),0 1px 2px rgba(0,120,212,.1)!important;transform:translateY(2px)!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46 .ms-Pivot-link-content,.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46 .ms-Pivot-link-content i,.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link.is-selected_67c3bf46 .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_67c3bf46 .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@media (max-width:600px){.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationInfo_67c3bf46{color:var(--text-muted);font-size:.82rem}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationInfo_67c3bf46 strong{color:var(--text-main)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46{align-items:center;display:flex;gap:4px}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46{align-items:center;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%);border:1px solid rgba(0,0,0,.12);border-bottom:3px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 1px 2px rgba(0,0,0,.03);color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:600;height:32px;justify-content:center;min-width:32px;padding:0 8px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46:hover:not(:disabled){background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%);border-color:rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.25);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 3px 6px rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46:active:not(:disabled){border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.03);transform:translateY(2px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46:disabled{border-bottom:1px solid rgba(0,0,0,.1);box-shadow:none;cursor:not-allowed;opacity:.35;transform:none}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46.active_67c3bf46{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 5px rgba(0,120,212,.25);color:#fff;font-weight:700;transform:translateY(-1px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46.active_67c3bf46:hover{border-bottom-width:3px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.3);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_67c3bf46 .paginationContainer_67c3bf46 .paginationControls_67c3bf46 .paginationButton_67c3bf46.active_67c3bf46:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_67c3bf46 .assetCardHover_67c3bf46:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_67c3bf46.teams_67c3bf46{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".inventoryManagement_a6c9d8ee{--primary-blue:#0078d4;--primary-gradient:linear-gradient(135deg,#1a4fa0,#2b7cd4 50%,#4a9be8);--surface-bg:#fff;--text-main:#242424;--text-muted:#616161;--card-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);--card-shadow-hover:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06);--radius-lg:16px;--radius-md:12px;background-color:transparent;box-sizing:border-box;color:var(--text-main);container-type:inline-size;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;margin:0;max-width:100%;min-width:100%;overflow-x:visible;overflow-y:visible;padding:0;position:relative;width:100%}.inventoryManagement_a6c9d8ee .m-0_a6c9d8ee{margin:0!important}.inventoryManagement_a6c9d8ee .mt-1_a6c9d8ee{margin-top:4px!important}.inventoryManagement_a6c9d8ee .mt-2_a6c9d8ee{margin-top:8px!important}.inventoryManagement_a6c9d8ee .mt-3_a6c9d8ee{margin-top:12px!important}.inventoryManagement_a6c9d8ee .mt-4_a6c9d8ee{margin-top:16px!important}.inventoryManagement_a6c9d8ee .mt-5_a6c9d8ee{margin-top:20px!important}.inventoryManagement_a6c9d8ee .mb-1_a6c9d8ee{margin-bottom:4px!important}.inventoryManagement_a6c9d8ee .mb-2_a6c9d8ee{margin-bottom:8px!important}.inventoryManagement_a6c9d8ee .mb-3_a6c9d8ee{margin-bottom:12px!important}.inventoryManagement_a6c9d8ee .mb-4_a6c9d8ee{margin-bottom:16px!important}.inventoryManagement_a6c9d8ee .mb-5_a6c9d8ee{margin-bottom:20px!important}.inventoryManagement_a6c9d8ee .p-0_a6c9d8ee{padding:0!important}.inventoryManagement_a6c9d8ee .p-1_a6c9d8ee{padding:4px!important}.inventoryManagement_a6c9d8ee .p-2_a6c9d8ee{padding:8px!important}.inventoryManagement_a6c9d8ee .p-3_a6c9d8ee{padding:12px!important}.inventoryManagement_a6c9d8ee .p-4_a6c9d8ee{padding:16px!important}.inventoryManagement_a6c9d8ee .p-5_a6c9d8ee{padding:20px!important}.inventoryManagement_a6c9d8ee .tableWrapper_a6c9d8ee{-webkit-overflow-scrolling:touch;margin-bottom:15px;overflow-x:auto!important;width:100%!important}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .hide-on-mobile_a6c9d8ee{display:none!important}}@container (min-width: 1025px){.inventoryManagement_a6c9d8ee .show-only-on-mobile_a6c9d8ee{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.inventoryManagement_a6c9d8ee .show-only-on-mobile_a6c9d8ee{display:none!important}}.inventoryManagement_a6c9d8ee .metricsRow_a6c9d8ee{border-bottom:1px solid rgba(0,0,0,.06)!important;display:flex!important;flex-wrap:wrap!important;gap:24px!important;padding:0 4px 16px!important}.inventoryManagement_a6c9d8ee .metricsRow_a6c9d8ee .metricItem_a6c9d8ee{flex:1 1 auto!important;min-width:110px!important}.inventoryManagement_a6c9d8ee .metricsRow_a6c9d8ee .metricDivider_a6c9d8ee{align-self:stretch!important;background-color:#e2e8f0!important;width:1px!important}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .metricsRow_a6c9d8ee .metricDivider_a6c9d8ee{display:none!important}}.inventoryManagement_a6c9d8ee .filtersRow_a6c9d8ee{align-items:flex-end!important;display:flex!important;flex-wrap:wrap!important;gap:12px!important;padding:0 0 10px!important;width:100%!important}.inventoryManagement_a6c9d8ee .filtersRow_a6c9d8ee .searchField_a6c9d8ee{flex:1 1 200px!important}.inventoryManagement_a6c9d8ee .filtersRow_a6c9d8ee .filterDropdown_a6c9d8ee{width:130px!important}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .filtersRow_a6c9d8ee .filterDropdown_a6c9d8ee{flex-grow:1!important;width:100%!important}}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee{--surface-bg:#1e293b;--text-main:#f8fafc;--text-muted:#94a3b8}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee .sidebarNavItem_a6c9d8ee:hover{background-color:hsla(0,0%,100%,.06)!important}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee .sidebarContainer_a6c9d8ee{background-color:#1e293b;border-color:hsla(0,0%,100%,.08)}.inventoryManagement_a6c9d8ee.dark_a6c9d8ee .navGroupLabel_a6c9d8ee{color:hsla(0,0%,100%,.35)!important}.inventoryManagement_a6c9d8ee .mainContent_a6c9d8ee{box-sizing:border-box;display:flex;flex-direction:column;gap:20px;margin:0;max-width:none;min-width:100%;padding:0;width:100%}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee{align-items:center;background:var(--primary-gradient);border-radius:var(--radius-lg);box-shadow:0 2px 4px 0 rgba(0,0,0,.08),0 1px 2px 0 rgba(0,0,0,.04);color:#fff;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;overflow:hidden;padding:32px 36px;position:relative}@container (max-width: 1024px){.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee{align-items:center;flex-direction:column;padding:28px 20px;text-align:center}}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee:after{background:hsla(0,0%,100%,.08);border-radius:50%;content:\"\";filter:blur(50px);height:320px;pointer-events:none;position:absolute;right:-8%;top:-60%;width:320px}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee:before{background:hsla(0,0%,100%,.05);border-radius:50%;bottom:-40%;content:\"\";filter:blur(40px);height:200px;left:-5%;pointer-events:none;position:absolute;width:200px}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee{flex:1;min-width:250px;z-index:1}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee h2{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee p{font-size:.95rem;line-height:1.5;margin:0;opacity:.92}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee .smallText_a6c9d8ee{display:block;font-size:.78rem;line-height:1.4;margin-top:10px;opacity:.65}@container (max-width: 1024px){.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .heroText_a6c9d8ee{align-items:center;display:flex;flex-direction:column}}.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .welcomeDiagramContainer_a6c9d8ee{align-items:center;display:flex;flex-shrink:0;justify-content:center;margin-left:16px;z-index:1}@container (max-width: 1024px){.inventoryManagement_a6c9d8ee .heroSection_a6c9d8ee .welcomeDiagramContainer_a6c9d8ee{margin-left:0;margin-top:8px}}.inventoryManagement_a6c9d8ee .actionGrid_a6c9d8ee{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee{background:var(--surface-bg);border:1px solid rgba(0,0,0,.05);border-bottom:2px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:4px;transform:translateY(-1px);transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-3px)}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee .ms-Button--primary{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 4px rgba(0,120,212,.15);color:#fff;font-size:.85rem;font-weight:600;height:38px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,filter .15s ease,box-shadow .1s ease;width:100%}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee .ms-Button--primary:hover{border-color:#0f3c73;border-bottom:3px solid #0b2d54;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.25);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_a6c9d8ee .actionButtonContainer_a6c9d8ee .ms-Button--primary:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_a6c9d8ee .appLayoutContainer_a6c9d8ee{align-items:flex-start;display:flex;gap:20px;margin-top:16px}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .appLayoutContainer_a6c9d8ee{align-items:stretch;flex-direction:column}}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee{background:linear-gradient(145deg,var(--surface-bg) 0,rgba(0,0,0,.01) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-md);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;flex-shrink:0;gap:3px;padding:12px 10px;transition:width .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1),left .3s ease;width:250px}@container (min-width: 1025px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee{width:250px!important}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee .collapseToggle_a6c9d8ee{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee{box-sizing:border-box}}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee{background:var(--surface-bg);border-radius:0;box-shadow:0 8px 16px 0 rgba(0,0,0,.1),0 2px 4px 0 rgba(0,0,0,.05);height:100%;left:0;margin:0;position:absolute;top:0;transition:left .3s ease;width:250px!important;z-index:1001}}@container (min-width: 1025px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee{width:250px!important}}@container (min-width: 601px) and (max-width: 1024px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee{padding:12px 6px;width:56px}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee{padding:4px 0 8px;text-align:center}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navGroupLabel_a6c9d8ee,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee h4,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .navHeader_a6c9d8ee span{display:none}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee{justify-content:center;padding:10px 0}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee .navBadge_a6c9d8ee,.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee .navItemText_a6c9d8ee{display:none}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .sidebarNavItem_a6c9d8ee i{margin:0}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .collapseToggle_a6c9d8ee{justify-content:center}.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee .collapseToggle_a6c9d8ee .collapseText_a6c9d8ee{display:none}}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .sidebarContainer_a6c9d8ee.sidebarCollapsed_a6c9d8ee{left:-260px;width:250px!important}}.inventoryManagement_a6c9d8ee .sidebarOverlay_a6c9d8ee{display:none}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .sidebarOverlay_a6c9d8ee{backdrop-filter:blur(2px);background-color:rgba(0,0,0,.4);display:block;height:100%;left:0;position:absolute;top:0;width:100%;z-index:1000}}.inventoryManagement_a6c9d8ee .mobileNavHeader_a6c9d8ee{display:none}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .mobileNavHeader_a6c9d8ee{align-items:center;background-color:var(--surface-bg,#fff);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius-md);box-shadow:0 1px 2px 0 rgba(0,0,0,.06),0 1px 3px 0 rgba(0,0,0,.04);display:flex;gap:12px;margin-bottom:15px;padding:12px 16px}.inventoryManagement_a6c9d8ee .mobileNavHeader_a6c9d8ee .mobileMenuToggle_a6c9d8ee{align-items:center;background:none;background-color:rgba(0,0,0,.02);border:none;border:1px solid rgba(0,0,0,.08);border-radius:4px;color:var(--text-main);cursor:pointer;display:flex;font-size:18px;justify-content:center;padding:6px}.inventoryManagement_a6c9d8ee .mobileNavHeader_a6c9d8ee .mobileMenuToggle_a6c9d8ee:hover{background-color:rgba(0,0,0,.06)}.inventoryManagement_a6c9d8ee .mobileNavHeader_a6c9d8ee .mobileNavTitle_a6c9d8ee{color:var(--text-main);font-size:.95rem;font-weight:700;letter-spacing:-.01em}}.inventoryManagement_a6c9d8ee .navHeader_a6c9d8ee{border-bottom:1px solid rgba(0,0,0,.07);margin-bottom:6px;padding:8px 14px 14px}.inventoryManagement_a6c9d8ee .navHeader_a6c9d8ee h4{color:var(--text-main);font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0}.inventoryManagement_a6c9d8ee .navHeader_a6c9d8ee span{color:var(--text-muted);font-size:.72rem}.inventoryManagement_a6c9d8ee .navGroupLabel_a6c9d8ee{color:#8a8886;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:14px 14px 5px;text-transform:uppercase;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_a6c9d8ee .navDivider_a6c9d8ee{background-color:rgba(0,0,0,.07);height:1px;margin:4px 10px}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee{align-items:center;border:1px solid transparent;border-radius:6px;color:var(--text-muted);cursor:pointer;display:flex;font-size:.84rem;font-weight:500;gap:11px;padding:9px 14px;position:relative;transition:all .15s ease;-webkit-user-select:none;-ms-user-select:none;user-select:none}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee i{flex-shrink:0;font-size:15px;text-align:center;width:18px}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee .navItemText_a6c9d8ee{flex-grow:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee .navBadge_a6c9d8ee{border-radius:100px;box-shadow:0 1px 3px rgba(0,0,0,.15);color:#fff;flex-shrink:0;font-size:.65rem;font-weight:700;line-height:1.35;min-width:18px;padding:2px 7px;text-align:center}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee:hover{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05));border:1px solid rgba(0,0,0,.06);border-bottom:2px solid rgba(0,0,0,.1);box-shadow:0 1px 2px rgba(0,0,0,.04);color:var(--text-main);transform:translateY(-.5px)}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee:active{border-bottom-width:1px;box-shadow:none;transform:translateY(.5px)}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee:focus-visible{outline:2px solid #0078d4;outline-offset:-2px}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee.navItemActive_a6c9d8ee{background:linear-gradient(180deg,rgba(0,120,212,.06),rgba(0,120,212,.1))!important;border:1px solid rgba(0,120,212,.12)!important;border-bottom:2px solid rgba(0,120,212,.22)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.4),0 1px 2px rgba(0,120,212,.06)!important;color:#0078d4;font-weight:600}.inventoryManagement_a6c9d8ee .sidebarNavItem_a6c9d8ee.navItemActive_a6c9d8ee:before{background-color:#0078d4;border-radius:0 2px 2px 0;bottom:8px;box-shadow:0 0 6px rgba(0,120,212,.5);content:\"\";left:0;position:absolute;top:8px;width:3px}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee{align-items:center;border-top:1px solid rgba(0,0,0,.07);color:#8a8886;cursor:pointer;display:flex;font-size:.78rem;gap:8px;margin-top:6px;padding:8px 14px;transition:color .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee:hover{color:#616161}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee i{font-size:12px;transition:transform .15s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .collapseToggle_a6c9d8ee .collapseText_a6c9d8ee{flex-grow:1}.inventoryManagement_a6c9d8ee .contentContainer_a6c9d8ee{flex-grow:1;margin-top:0;min-width:0}.inventoryManagement_a6c9d8ee .card_a6c9d8ee{background:linear-gradient(145deg,var(--surface-bg) 0,hsla(0,0%,100%,.02) 100%);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:var(--radius-lg);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.inventoryManagement_a6c9d8ee .card_a6c9d8ee:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.inventoryManagement_a6c9d8ee .card_a6c9d8ee .cardHeader_a6c9d8ee{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.inventoryManagement_a6c9d8ee .card_a6c9d8ee .cardHeader_a6c9d8ee h3{color:var(--text-main);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:0}.inventoryManagement_a6c9d8ee .ms-DetailsList{background:transparent!important}.inventoryManagement_a6c9d8ee .ms-DetailsHeader{background:transparent;padding-top:0}.inventoryManagement_a6c9d8ee .ms-DetailsRow{border:none!important;border-radius:6px;margin-bottom:2px}.inventoryManagement_a6c9d8ee .ms-DetailsRow:hover{background-color:rgba(0,0,0,.02)!important}.inventoryManagement_a6c9d8ee .ms-Pivot{border-bottom:none!important;display:grid!important;gap:12px!important;grid-template-columns:repeat(4,1fr)!important;margin-bottom:20px!important;width:100%!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link{align-items:center!important;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%)!important;border:1px solid rgba(0,0,0,.12)!important;border-bottom:3px solid rgba(0,0,0,.24)!important;border-radius:8px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 2px 4px rgba(0,0,0,.05)!important;color:var(--text-main)!important;display:flex!important;font-weight:600!important;gap:6px!important;height:42px!important;justify-content:center!important;margin:0!important;transform:translateY(-1px)!important;transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link:hover{background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%)!important;border-color:rgba(0,0,0,.15)!important;border-bottom:3px solid rgba(0,0,0,.28)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 4px 8px rgba(0,0,0,.08)!important;transform:translateY(-2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04)!important;transform:translateY(2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee{background:var(--primary-gradient)!important;border:1px solid #103f7a!important;border-bottom:3px solid #0f3566!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 3px 8px rgba(0,120,212,.3)!important;color:#fff!important;font-weight:700!important;transform:translateY(-1px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee:before{display:none!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee:hover{background:linear-gradient(180deg,#388ae6,#205ab3)!important;border-color:#0f3c73!important;border-bottom:3px solid #0b2d54!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 5px 12px rgba(0,120,212,.4)!important;transform:translateY(-2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee:active{border-bottom-width:1px!important;box-shadow:inset 0 2px 4px rgba(0,0,0,.2),0 1px 2px rgba(0,120,212,.1)!important;transform:translateY(2px)!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee .ms-Pivot-link-content,.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee .ms-Pivot-link-content i,.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link.is-selected_a6c9d8ee .ms-Pivot-link-content span{color:#fff!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content{align-items:center!important;display:flex!important;gap:8px!important;justify-content:center!important;width:100%!important}.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content i,.inventoryManagement_a6c9d8ee .ms-Pivot .ms-Pivot-link .ms-Pivot-link-content span{transition:color .2s ease!important}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee{align-items:center;border-top:1px solid rgba(0,0,0,.07);display:flex;justify-content:space-between;margin-top:24px;padding-top:16px}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee{align-items:center;flex-direction:column;gap:12px}}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationInfo_a6c9d8ee{color:var(--text-muted);font-size:.82rem}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationInfo_a6c9d8ee strong{color:var(--text-main)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee{align-items:center;display:flex;gap:4px}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee{align-items:center;background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.02) 100%);border:1px solid rgba(0,0,0,.12);border-bottom:3px solid rgba(0,0,0,.2);border-radius:6px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.5),0 1px 2px rgba(0,0,0,.03);color:var(--text-main);cursor:pointer;display:flex;font-size:.8rem;font-weight:600;height:32px;justify-content:center;min-width:32px;padding:0 8px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background .15s ease,box-shadow .1s ease}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee:hover:not(:disabled){background:linear-gradient(180deg,var(--surface-bg) 0,rgba(0,0,0,.05) 100%);border-color:rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.25);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75),0 3px 6px rgba(0,0,0,.06);transform:translateY(-2px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee:active:not(:disabled){border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.03);transform:translateY(2px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee:disabled{border-bottom:1px solid rgba(0,0,0,.1);box-shadow:none;cursor:not-allowed;opacity:.35;transform:none}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee.active_a6c9d8ee{background:var(--primary-gradient);border:1px solid #103f7a;border-bottom:3px solid #0f3566;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.25),0 2px 5px rgba(0,120,212,.25);color:#fff;font-weight:700;transform:translateY(-1px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee.active_a6c9d8ee:hover{border-bottom-width:3px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 4px 8px rgba(0,120,212,.3);filter:brightness(1.08);transform:translateY(-2px)}.inventoryManagement_a6c9d8ee .paginationContainer_a6c9d8ee .paginationControls_a6c9d8ee .paginationButton_a6c9d8ee.active_a6c9d8ee:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25),0 1px 1px rgba(0,120,212,.1);transform:translateY(2px)}.inventoryManagement_a6c9d8ee .assetCardHover_a6c9d8ee:hover{border-color:rgba(0,120,212,.15)!important;box-shadow:0 4px 12px 0 rgba(0,0,0,.12),0 2px 6px 0 rgba(0,0,0,.06)!important;transform:translateY(-3px)!important}.inventoryManagement_a6c9d8ee .responsiveGridAlignItemsCenter_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGridGap16_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGridGap20_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGridGap8_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGrid_a6c9d8ee{display:grid!important;gap:12px;grid-template-columns:1fr 1fr}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .responsiveGridAlignItemsCenter_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGridGap16_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGridGap20_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGridGap8_a6c9d8ee,.inventoryManagement_a6c9d8ee .responsiveGrid_a6c9d8ee{grid-template-columns:1fr!important}}.inventoryManagement_a6c9d8ee .responsiveGridGap8_a6c9d8ee{gap:8px}.inventoryManagement_a6c9d8ee .responsiveGridGap16_a6c9d8ee{gap:16px}.inventoryManagement_a6c9d8ee .responsiveGridGap20_a6c9d8ee{gap:20px}.inventoryManagement_a6c9d8ee .responsiveGridAlignItemsCenter_a6c9d8ee{align-items:center}.inventoryManagement_a6c9d8ee .lifecycleDiagram_a6c9d8ee{align-items:center;display:flex;height:280px;justify-content:center;position:relative;-webkit-user-select:none;-ms-user-select:none;user-select:none;width:280px}@container (max-width: 600px){.inventoryManagement_a6c9d8ee .lifecycleDiagram_a6c9d8ee{margin:-10px 0;transform:scale(.9);transform-origin:center center}}.inventoryManagement_a6c9d8ee.teams_a6c9d8ee{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  inventoryManagement: "inventoryManagement_67c3bf46",
-  dark: "dark_67c3bf46",
-  sidebarNavItem: "sidebarNavItem_67c3bf46",
-  sidebarContainer: "sidebarContainer_67c3bf46",
-  navGroupLabel: "navGroupLabel_67c3bf46",
-  mainContent: "mainContent_67c3bf46",
-  heroSection: "heroSection_67c3bf46",
-  heroText: "heroText_67c3bf46",
-  smallText: "smallText_67c3bf46",
-  welcomeDiagramContainer: "welcomeDiagramContainer_67c3bf46",
-  actionGrid: "actionGrid_67c3bf46",
-  actionButtonContainer: "actionButtonContainer_67c3bf46",
-  appLayoutContainer: "appLayoutContainer_67c3bf46",
-  sidebarCollapsed: "sidebarCollapsed_67c3bf46",
-  navHeader: "navHeader_67c3bf46",
-  navItemText: "navItemText_67c3bf46",
-  navBadge: "navBadge_67c3bf46",
-  collapseToggle: "collapseToggle_67c3bf46",
-  collapseText: "collapseText_67c3bf46",
-  navDivider: "navDivider_67c3bf46",
-  navItemActive: "navItemActive_67c3bf46",
-  contentContainer: "contentContainer_67c3bf46",
-  card: "card_67c3bf46",
-  cardHeader: "cardHeader_67c3bf46",
-  "is-selected": "is-selected_67c3bf46",
-  paginationContainer: "paginationContainer_67c3bf46",
-  paginationInfo: "paginationInfo_67c3bf46",
-  paginationControls: "paginationControls_67c3bf46",
-  paginationButton: "paginationButton_67c3bf46",
-  active: "active_67c3bf46",
-  assetCardHover: "assetCardHover_67c3bf46",
-  teams: "teams_67c3bf46"
+  inventoryManagement: "inventoryManagement_a6c9d8ee",
+  "m-0": "m-0_a6c9d8ee",
+  "mt-1": "mt-1_a6c9d8ee",
+  "mt-2": "mt-2_a6c9d8ee",
+  "mt-3": "mt-3_a6c9d8ee",
+  "mt-4": "mt-4_a6c9d8ee",
+  "mt-5": "mt-5_a6c9d8ee",
+  "mb-1": "mb-1_a6c9d8ee",
+  "mb-2": "mb-2_a6c9d8ee",
+  "mb-3": "mb-3_a6c9d8ee",
+  "mb-4": "mb-4_a6c9d8ee",
+  "mb-5": "mb-5_a6c9d8ee",
+  "p-0": "p-0_a6c9d8ee",
+  "p-1": "p-1_a6c9d8ee",
+  "p-2": "p-2_a6c9d8ee",
+  "p-3": "p-3_a6c9d8ee",
+  "p-4": "p-4_a6c9d8ee",
+  "p-5": "p-5_a6c9d8ee",
+  tableWrapper: "tableWrapper_a6c9d8ee",
+  "hide-on-mobile": "hide-on-mobile_a6c9d8ee",
+  "show-only-on-mobile": "show-only-on-mobile_a6c9d8ee",
+  metricsRow: "metricsRow_a6c9d8ee",
+  metricItem: "metricItem_a6c9d8ee",
+  metricDivider: "metricDivider_a6c9d8ee",
+  filtersRow: "filtersRow_a6c9d8ee",
+  searchField: "searchField_a6c9d8ee",
+  filterDropdown: "filterDropdown_a6c9d8ee",
+  dark: "dark_a6c9d8ee",
+  sidebarNavItem: "sidebarNavItem_a6c9d8ee",
+  sidebarContainer: "sidebarContainer_a6c9d8ee",
+  navGroupLabel: "navGroupLabel_a6c9d8ee",
+  mainContent: "mainContent_a6c9d8ee",
+  heroSection: "heroSection_a6c9d8ee",
+  heroText: "heroText_a6c9d8ee",
+  smallText: "smallText_a6c9d8ee",
+  welcomeDiagramContainer: "welcomeDiagramContainer_a6c9d8ee",
+  actionGrid: "actionGrid_a6c9d8ee",
+  actionButtonContainer: "actionButtonContainer_a6c9d8ee",
+  appLayoutContainer: "appLayoutContainer_a6c9d8ee",
+  collapseToggle: "collapseToggle_a6c9d8ee",
+  sidebarCollapsed: "sidebarCollapsed_a6c9d8ee",
+  navHeader: "navHeader_a6c9d8ee",
+  navItemText: "navItemText_a6c9d8ee",
+  navBadge: "navBadge_a6c9d8ee",
+  collapseText: "collapseText_a6c9d8ee",
+  sidebarOverlay: "sidebarOverlay_a6c9d8ee",
+  mobileNavHeader: "mobileNavHeader_a6c9d8ee",
+  mobileMenuToggle: "mobileMenuToggle_a6c9d8ee",
+  mobileNavTitle: "mobileNavTitle_a6c9d8ee",
+  navDivider: "navDivider_a6c9d8ee",
+  navItemActive: "navItemActive_a6c9d8ee",
+  contentContainer: "contentContainer_a6c9d8ee",
+  card: "card_a6c9d8ee",
+  cardHeader: "cardHeader_a6c9d8ee",
+  "is-selected": "is-selected_a6c9d8ee",
+  paginationContainer: "paginationContainer_a6c9d8ee",
+  paginationInfo: "paginationInfo_a6c9d8ee",
+  paginationControls: "paginationControls_a6c9d8ee",
+  paginationButton: "paginationButton_a6c9d8ee",
+  active: "active_a6c9d8ee",
+  assetCardHover: "assetCardHover_a6c9d8ee",
+  responsiveGrid: "responsiveGrid_a6c9d8ee",
+  responsiveGridAlignItemsCenter: "responsiveGridAlignItemsCenter_a6c9d8ee",
+  responsiveGridGap20: "responsiveGridGap20_a6c9d8ee",
+  responsiveGridGap16: "responsiveGridGap16_a6c9d8ee",
+  responsiveGridGap8: "responsiveGridGap8_a6c9d8ee",
+  lifecycleDiagram: "lifecycleDiagram_a6c9d8ee",
+  teams: "teams_a6c9d8ee"
 });
 
 
@@ -350,7 +412,7 @@ const AssetForm = (props) => {
         setSpecifications('');
         props.onClose();
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PanelType.custom, customWidth: "450px", headerText: isAdmin ? "Add New Asset" : "Register New Asset", closeButtonAriaLabel: "Close" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: isAdmin ? "Add New Asset" : "Register New Asset", closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: stackTokens },
             isManager && !isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning }, "You are registering a new asset. After adding, you can assign it to employees in the Asset Tracking section.")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Title (Group/Category)", value: title, onChange: (_, val) => setTitle(val || ''), required: true }),
@@ -383,7 +445,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+
 
 
 const AssetLifecycleDiagram = ({ isDarkTheme }) => {
@@ -435,15 +499,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
             top: 112,
         },
     ];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-            position: 'relative',
-            width: '280px',
-            height: '280px',
-            userSelect: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-        } },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].lifecycleDiagram },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { width: "280", height: "280", viewBox: "0 0 280 280", style: {
                 position: 'absolute',
                 top: 0,
@@ -536,7 +592,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
                         transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
                         color: isHovered ? '#1e293b' : '#ffffff',
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.Icon, { iconName: node.icon, style: {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Icon, { iconName: node.icon, style: {
                             fontSize: '15px',
                             fontWeight: isHovered ? 'bold' : 'normal',
                         } })),
@@ -571,14 +627,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 37805);
 /* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+
 
 
 
@@ -586,7 +644,7 @@ const AssetTracking = (props) => {
     const [selectedEmployeeId, setSelectedEmployeeId] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
     const stackTokens = { childrenGap: 20 };
     if (!_utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__.RoleUtils.canAssignAssets(props.currentUserRole)) {
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBarType.error }, "You do not have permission to access the Asset Tracking section. Only Admins and Managers can assign assets."));
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.error }, "You do not have permission to access the Asset Tracking section. Only Admins and Managers can assign assets."));
     }
     // Patch the Admin employee with the REAL user's email and name so that SharePoint's ensureUser works correctly
     const patchedEmployees = props.employees.map(emp => {
@@ -618,36 +676,37 @@ const AssetTracking = (props) => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } }, "Select Employee"),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Dropdown, { placeholder: "Select an employee to view assets", options: employeeOptions, selectedKey: selectedEmployeeId, onChange: (_, option) => setSelectedEmployeeId(option?.key), styles: { dropdown: { width: 400 } } })),
-        selectedEmployee && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: stackTokens },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { placeholder: "Select an employee to view assets", options: employeeOptions, selectedKey: selectedEmployeeId, onChange: (_, option) => setSelectedEmployeeId(option?.key), styles: { dropdown: { width: '100%', maxWidth: 400 } } })),
+        selectedEmployee && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: stackTokens },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                     "Currently Assigned to ",
                     selectedEmployee.name),
-                employeeAssignedAssets.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DetailsList, { items: employeeAssignedAssets, columns: [
-                        { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 150, maxWidth: 200, isResizable: true, onRender: item => item.assetName || item.title },
-                        { key: 'col2', name: 'Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                        { key: 'col3', name: 'Serial Number', fieldName: 'serialNumber', minWidth: 120, maxWidth: 180, isResizable: true },
-                        { key: 'col4', name: 'Status', fieldName: 'status', minWidth: 100, maxWidth: 120, isResizable: true },
-                        {
-                            key: 'col5',
-                            name: 'Assigned Date',
-                            fieldName: 'assignedDate',
-                            minWidth: 120,
-                            maxWidth: 150,
-                            isResizable: true,
-                            onRender: item => {
-                                if (!item.assignedDate)
-                                    return 'N/A';
-                                try {
-                                    return new Date(item.assignedDate).toLocaleString();
-                                }
-                                catch {
-                                    return item.assignedDate;
+                employeeAssignedAssets.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].tableWrapper },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DetailsList, { items: employeeAssignedAssets, columns: [
+                            { key: 'col1', name: 'Asset Name', fieldName: 'assetName', minWidth: 150, maxWidth: 200, isResizable: true, onRender: item => item.assetName || item.title },
+                            { key: 'col2', name: 'Type', fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
+                            { key: 'col3', name: 'Serial Number', fieldName: 'serialNumber', minWidth: 120, maxWidth: 180, isResizable: true },
+                            { key: 'col4', name: 'Status', fieldName: 'status', minWidth: 100, maxWidth: 120, isResizable: true },
+                            {
+                                key: 'col5',
+                                name: 'Assigned Date',
+                                fieldName: 'assignedDate',
+                                minWidth: 120,
+                                maxWidth: 150,
+                                isResizable: true,
+                                onRender: item => {
+                                    if (!item.assignedDate)
+                                        return 'N/A';
+                                    try {
+                                        return new Date(item.assignedDate).toLocaleString();
+                                    }
+                                    catch {
+                                        return item.assignedDate;
+                                    }
                                 }
                             }
-                        }
-                    ], selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SelectionMode.none, layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DetailsListLayoutMode.justified })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem' } }, "This employee has no assets currently assigned.")))))));
+                        ], selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.SelectionMode.none, layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem' } }, "This employee has no assets currently assigned.")))))));
 };
 
 
@@ -1121,7 +1180,7 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.assetTitle),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.quantity),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { maxWidth: '240px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' } }, req.reason || 'No justification specified'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableCellJustification }, req.reason || 'No justification specified'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, "Awaiting Approval")))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "CheckMark" }),
@@ -1202,7 +1261,7 @@ const Dashboard = (props) => {
 
 /***/ }),
 
-/***/ 6615:
+/***/ 46615:
 /*!*********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/EventFilters.js ***!
   \*********************************************************************/
@@ -1219,7 +1278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 5613);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 12042);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 6412);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 46412);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 72674);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 44533);
 
@@ -1402,7 +1461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
 /* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
-/* harmony import */ var _EventFilters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EventFilters */ 6615);
+/* harmony import */ var _EventFilters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EventFilters */ 46615);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
 
 
@@ -1757,20 +1816,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21262);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../InventoryManagement.module.scss */ 99623);
+
 
 
 
@@ -2027,7 +2088,7 @@ const IncidentHistory = (props) => {
             minWidth: 90,
             maxWidth: 120,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, null, item.incidentId),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.incidentId),
         },
         {
             key: 'assetName',
@@ -2036,7 +2097,7 @@ const IncidentHistory = (props) => {
             minWidth: 100,
             maxWidth: 150,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, null, item.assetName),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.assetName),
         },
         {
             key: 'issueType',
@@ -2045,7 +2106,7 @@ const IncidentHistory = (props) => {
             minWidth: 100,
             maxWidth: 130,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, null, item.issueType),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.issueType),
         },
         {
             key: 'priority',
@@ -2078,12 +2139,12 @@ const IncidentHistory = (props) => {
             isResizable: true,
             onRender: (item) => {
                 if (!item.reportedDate)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, null, "-");
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "-");
                 try {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, null, new Date(item.reportedDate).toLocaleDateString());
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, new Date(item.reportedDate).toLocaleDateString());
                 }
                 catch {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, null, item.reportedDate);
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.reportedDate);
                 }
             },
         },
@@ -2093,11 +2154,11 @@ const IncidentHistory = (props) => {
             minWidth: 160,
             maxWidth: 220,
             isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }))),
         },
@@ -2110,17 +2171,17 @@ const IncidentHistory = (props) => {
         { key: 'Closed', text: 'Closed' },
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: { childrenGap: 15 } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 15 } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.SearchBox, { placeholder: "Search by incident ID, asset name, or issue type...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SearchBox, { placeholder: "Search by incident ID, asset name, or issue type...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
                 "Showing ",
                 filteredIncidents.length,
                 " of ",
                 incidents.length,
                 " incidents"),
-            filteredIncidents.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+            filteredIncidents.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -2130,9 +2191,9 @@ const IncidentHistory = (props) => {
                     borderRadius: '8px',
                     padding: '30px'
                 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No incidents found.")))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_13__.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No incidents found.")))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Reported:"),
                 " ",
@@ -2141,7 +2202,7 @@ const IncidentHistory = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Incident Specifications"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].responsiveGridAlignItemsCenter, style: { fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Incident ID:"),
                         " ",
@@ -2159,7 +2220,7 @@ const IncidentHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(selectedIncident.priority) }, selectedIncident.priority || 'Medium')),
                     props.userRole === 'Admin' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: [
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: [
                                 { key: 'Open', text: 'Open' },
                                 { key: 'In Progress', text: 'In Progress' },
                                 { key: 'Resolved', text: 'Resolved' },
@@ -2173,17 +2234,17 @@ const IncidentHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedIncident.assignedTo))))),
             props.userRole === 'Admin' && (selectedIncident.status === 'Resolved' || selectedIncident.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " Update Resolution Details"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: { childrenGap: 10 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 10 } },
                     selectedIncident.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
                         ' ',
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedIncident.resolvedDate).toLocaleString()))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this issue was resolved..." }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this issue was resolved..." }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " Resolution Details"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
                     selectedIncident.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -2373,7 +2434,7 @@ const IncidentRequestModule = (props) => {
         text: `${a.assetName} (S/N: ${a.serialNumber || 'N/A'})`,
     }));
     const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "450px", headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _IncidentRequestModule_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].incidentRequestModule },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Stack, { tokens: { childrenGap: 15 } },
                 message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),
@@ -2614,7 +2675,8 @@ const InventoryList = (props) => {
         return pages;
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_3__.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.SelectionMode.none }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_3__.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.SelectionMode.none })),
         props.enablePagination && totalPages > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationContainer },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationInfo },
                 "Showing ",
@@ -2691,7 +2753,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
 /* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./AssetTracking */ 20867);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../pages */ 330);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../pages */ 56330);
 /* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
 /* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
 /* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
@@ -3607,7 +3669,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Request Key:"),
                             " ",
@@ -3716,7 +3778,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
                             " ",
@@ -3944,7 +4006,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     padding: '3px 8px',
                                     borderRadius: '4px'
                                 } }, "Pending Admin")),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGridGap16, style: { fontSize: '0.85rem' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '2px' } }, "Category"),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main)' } }, request.assetTitle)),
@@ -4101,7 +4163,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     }
     render() {
         const { description, isDarkTheme, environmentMessage, hasTeamsContext } = this.props;
-        const { items, isAssetFormOpen, isRequestFormOpen, auditLogs, auditLogsLoading, userRole, previewRole, roleLoading, roleGroups, requestActionInProgressId, requestSearchId, activeUserDisplayName, activeUserEmail } = this.state;
+        const { items, isAssetFormOpen, isRequestFormOpen, auditLogs, auditLogsLoading, userRole, previewRole, roleLoading, roleGroups, requestActionInProgressId, requestSearchId, activeUserDisplayName, activeUserEmail, loading } = this.state;
         const effectiveRole = previewRole || userRole;
         const isAdmin = effectiveRole === 'Admin';
         const isManager = effectiveRole === 'Inventory Manager';
@@ -4188,6 +4250,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     this.state.errorMessage,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": "Dismiss error" }, "\u00D7"))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].appLayoutContainer },
+                    !this.state.sidebarCollapsed && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarOverlay, onClick: () => this.setState({ sidebarCollapsed: true }), role: "presentation" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": "Main navigation" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navHeader },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Navigation"),
@@ -4217,230 +4280,237 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` }, (() => {
-                        const dashboardState = {
-                            items: isAdmin || isManager ? items : myAssets,
-                            requests: isAdmin || isManager ? this.state.requests : myRequests,
-                            isAdmin,
-                            isInventoryManager: isManager
-                        };
-                        const dashboardActions = {
-                            onNavigate: (key) => this.setState({ selectedTabKey: key })
-                        };
-                        const reportsState = {
-                            reportsSelectedTab: this.state.reportsSelectedTab,
-                            reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
-                            reportsStatusFilter: this.state.reportsStatusFilter,
-                            items,
-                            requests: this.state.requests
-                        };
-                        const reportsActions = {
-                            onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
-                            onAssetTypeFilterChange: (type) => this.setState({ reportsAssetTypeFilter: type }),
-                            onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
-                            onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
-                            onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
-                            onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
-                            onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
-                        };
-                        const incidentHistoryState = {
-                            userDisplayName: activeUserDisplayName || '',
-                            userEmail: activeUserEmail || '',
-                            userRole: effectiveRole
-                        };
-                        const incidentHistoryActions = {
-                            setIsLoading: (loading) => this.setState({ loading })
-                        };
-                        switch (this.state.selectedTabKey) {
-                            case 'Dashboard':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
-                            case 'MyWorkspace':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
-                            case 'Notifications':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_21__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
-                            case 'IncidentHistory':
-                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
-                            case 'Inventory':
-                                return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Current Inventory Overview")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage your organizational assets efficiently within the SharePoint Framework."),
-                                    this.state.loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading inventory...")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: () => this.setState({ isAssetFormOpen: true }), iconProps: { iconName: 'Add' } })),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
-                            case 'Approvals':
-                                return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
-                                                    labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                        const status = req.status || 'Pending';
-                                                        acc[status] = (acc[status] || 0) + 1;
-                                                        return acc;
-                                                    }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                        const status = req.status || 'Pending';
-                                                        acc[status] = (acc[status] || 0) + 1;
-                                                        return acc;
-                                                    }, {})) : ['No data'],
-                                                    datasets: [
-                                                        {
-                                                            label: 'Requests by Status',
-                                                            data: Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                                const status = req.status || 'Pending';
-                                                                acc[status] = (acc[status] || 0) + 1;
-                                                                return acc;
-                                                            }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                                const status = req.status || 'Pending';
-                                                                acc[status] = (acc[status] || 0) + 1;
-                                                                return acc;
-                                                            }, {})).map(k => (managerQueueRequests.reduce((acc, req) => {
-                                                                const status = req.status || 'Pending';
-                                                                acc[status] = (acc[status] || 0) + 1;
-                                                                return acc;
-                                                            }, {}))[k]) : [1],
-                                                            backgroundColor: [
-                                                                'rgba(255, 206, 86, 0.6)',
-                                                                'rgba(75, 192, 192, 0.6)',
-                                                                'rgba(255, 99, 132, 0.6)',
-                                                                'rgba(153, 102, 255, 0.6)',
-                                                                'rgba(54, 162, 235, 0.6)',
-                                                            ],
-                                                            borderColor: [
-                                                                'rgba(255, 206, 86, 1)',
-                                                                'rgba(75, 192, 192, 1)',
-                                                                'rgba(255, 99, 132, 1)',
-                                                                'rgba(153, 102, 255, 1)',
-                                                                'rgba(54, 162, 235, 1)',
-                                                            ],
-                                                            borderWidth: 1,
-                                                        },
-                                                    ],
-                                                }, options: { maintainAspectRatio: false } }))),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleManagerRequests, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
-                            case 'AssetAssignmentQueue':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
-                            case 'AssetReturns':
-                                return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Asset Returns Registry")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Review and complete employee asset return requests, and verify physical hardware check-ins."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__.ReturnRequestList, { items: this.state.returnRequests, isAdmin: isAdmin, isManager: isManager, onUpdateStatus: this._onUpdateReturnRequestStatus, loading: this.state.returnRequestsLoading }))) : null;
-                            case 'EventStream':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventStream__WEBPACK_IMPORTED_MODULE_10__.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, refreshTrigger: this.state.auditLogsRefreshTrigger })) : null;
-                            case 'Users':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "User Administration")),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only area. Manage SharePoint groups and user onboarding from your site permissions."),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
-                                                const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
-                                                window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
-                                            } })),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
-                                                const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
-                                                const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
-                                                const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
-                                                return {
-                                                    ...emp,
-                                                    assignedAssets: assignedItems.length,
-                                                    assignedItems: assignedItems,
-                                                    assetTypes: assetTypes || 'None'
-                                                };
-                                            }), columns: [
-                                                { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
-                                                { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
-                                                { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
-                                                { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
-                                                {
-                                                    key: 'col5',
-                                                    name: 'Assigned Assets',
-                                                    fieldName: 'assignedAssets',
-                                                    minWidth: 100,
-                                                    maxWidth: 120,
-                                                    isResizable: true,
-                                                    onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                                            backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
-                                                            color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
-                                                            padding: '4px 10px',
-                                                            borderRadius: '9999px',
-                                                            fontWeight: 'bold'
-                                                        } }, item.assignedAssets))
-                                                },
-                                                { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                            ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
-                                                if (!rowProps)
-                                                    return null;
-                                                const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
-                                                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
-                                                    isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
-                                                            "Assets assigned to ",
-                                                            rowProps.item.name),
-                                                        rowProps.item.assignedItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: rowProps.item.assignedItems, isAdmin: false })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem', margin: 0 } }, "This user currently has no assets assigned to them."))))));
-                                            } })),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": "Toggle navigation menu" },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "GlobalNavButton" })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, "Inventory Management")),
+                        (() => {
+                            const dashboardState = {
+                                items: isAdmin || isManager ? items : myAssets,
+                                requests: isAdmin || isManager ? this.state.requests : myRequests,
+                                isAdmin,
+                                isInventoryManager: isManager
+                            };
+                            const dashboardActions = {
+                                onNavigate: (key) => this.setState({ selectedTabKey: key })
+                            };
+                            const reportsState = {
+                                reportsSelectedTab: this.state.reportsSelectedTab,
+                                reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
+                                reportsStatusFilter: this.state.reportsStatusFilter,
+                                items,
+                                requests: this.state.requests
+                            };
+                            const reportsActions = {
+                                onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
+                                onAssetTypeFilterChange: (type) => this.setState({ reportsAssetTypeFilter: type }),
+                                onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
+                                onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
+                                onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
+                                onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
+                                onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                            };
+                            const incidentHistoryState = {
+                                userDisplayName: activeUserDisplayName || '',
+                                userEmail: activeUserEmail || '',
+                                userRole: effectiveRole
+                            };
+                            const incidentHistoryActions = {
+                                setIsLoading: (loading) => this.setState({ loading })
+                            };
+                            const inventoryState = {
+                                items,
+                                loading,
+                                isAdmin,
+                                isInventoryManager: isManager
+                            };
+                            const inventoryActions = {
+                                onOpenAssetForm: () => this.setState({ isAssetFormOpen: true })
+                            };
+                            switch (this.state.selectedTabKey) {
+                                case 'Dashboard':
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
+                                case 'MyWorkspace':
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Employee Asset Tracking")),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_19__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
-                            case 'Reports':
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
-                            case 'Config': {
-                                const configState = {
-                                    configSelectedTab: this.state.configSelectedTab,
-                                    syncInProgress: this.state.syncInProgress,
-                                    syncMessage: this.state.syncMessage,
-                                    syncMessageType: this.state.syncMessageType,
-                                    diagnosticInfo: this.state.diagnosticInfo,
-                                    connectionStatuses: this.state.connectionStatuses,
-                                    connectionErrorMessages: this.state.connectionErrorMessages,
-                                    loadingGroupUsers: this.state.loadingGroupUsers,
-                                    groupUsersList: this.state.groupUsersList
-                                };
-                                const configActions = {
-                                    onSyncAssignedAssets: this._onSyncAssignedAssets,
-                                    onRunDiagnostics: this._onRunDiagnostics,
-                                    onTestListConnection: this._testListConnection,
-                                    onLoadGroupUsers: this._loadGroupUsers,
-                                    onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
-                                    onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
-                                };
-                                return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ConfigPage, { state: configState, actions: configActions })) : null;
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
+                                case 'Notifications':
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_21__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                case 'IncidentHistory':
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
+                                case 'Inventory':
+                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
+                                case 'Approvals':
+                                    return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
+                                                        labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                            const status = req.status || 'Pending';
+                                                            acc[status] = (acc[status] || 0) + 1;
+                                                            return acc;
+                                                        }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                            const status = req.status || 'Pending';
+                                                            acc[status] = (acc[status] || 0) + 1;
+                                                            return acc;
+                                                        }, {})) : ['No data'],
+                                                        datasets: [
+                                                            {
+                                                                label: 'Requests by Status',
+                                                                data: Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                                    const status = req.status || 'Pending';
+                                                                    acc[status] = (acc[status] || 0) + 1;
+                                                                    return acc;
+                                                                }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
+                                                                    const status = req.status || 'Pending';
+                                                                    acc[status] = (acc[status] || 0) + 1;
+                                                                    return acc;
+                                                                }, {})).map(k => (managerQueueRequests.reduce((acc, req) => {
+                                                                    const status = req.status || 'Pending';
+                                                                    acc[status] = (acc[status] || 0) + 1;
+                                                                    return acc;
+                                                                }, {}))[k]) : [1],
+                                                                backgroundColor: [
+                                                                    'rgba(255, 206, 86, 0.6)',
+                                                                    'rgba(75, 192, 192, 0.6)',
+                                                                    'rgba(255, 99, 132, 0.6)',
+                                                                    'rgba(153, 102, 255, 0.6)',
+                                                                    'rgba(54, 162, 235, 0.6)',
+                                                                ],
+                                                                borderColor: [
+                                                                    'rgba(255, 206, 86, 1)',
+                                                                    'rgba(75, 192, 192, 1)',
+                                                                    'rgba(255, 99, 132, 1)',
+                                                                    'rgba(153, 102, 255, 1)',
+                                                                    'rgba(54, 162, 235, 1)',
+                                                                ],
+                                                                borderWidth: 1,
+                                                            },
+                                                        ],
+                                                    }, options: { maintainAspectRatio: false } }))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleManagerRequests, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
+                                case 'AssetAssignmentQueue':
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
+                                case 'AssetReturns':
+                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Asset Returns Registry")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Review and complete employee asset return requests, and verify physical hardware check-ins."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__.ReturnRequestList, { items: this.state.returnRequests, isAdmin: isAdmin, isManager: isManager, onUpdateStatus: this._onUpdateReturnRequestStatus, loading: this.state.returnRequestsLoading }))) : null;
+                                case 'EventStream':
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventStream__WEBPACK_IMPORTED_MODULE_10__.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, refreshTrigger: this.state.auditLogsRefreshTrigger })) : null;
+                                case 'Users':
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "User Administration")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only area. Manage SharePoint groups and user onboarding from your site permissions."),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                                    const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
+                                                    window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
+                                                } })),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
+                                                    const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
+                                                    const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
+                                                    const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
+                                                    return {
+                                                        ...emp,
+                                                        assignedAssets: assignedItems.length,
+                                                        assignedItems: assignedItems,
+                                                        assetTypes: assetTypes || 'None'
+                                                    };
+                                                }), columns: [
+                                                    { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
+                                                    { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
+                                                    { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
+                                                    { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
+                                                    {
+                                                        key: 'col5',
+                                                        name: 'Assigned Assets',
+                                                        fieldName: 'assignedAssets',
+                                                        minWidth: 100,
+                                                        maxWidth: 120,
+                                                        isResizable: true,
+                                                        onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                                                backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
+                                                                color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
+                                                                padding: '4px 10px',
+                                                                borderRadius: '9999px',
+                                                                fontWeight: 'bold'
+                                                            } }, item.assignedAssets))
+                                                    },
+                                                    { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
+                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                                    if (!rowProps)
+                                                        return null;
+                                                    const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
+                                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
+                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
+                                                        isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
+                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
+                                                                "Assets assigned to ",
+                                                                rowProps.item.name),
+                                                            rowProps.item.assignedItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InventoryList__WEBPACK_IMPORTED_MODULE_3__.InventoryList, { items: rowProps.item.assignedItems, isAdmin: false })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem', margin: 0 } }, "This user currently has no assets assigned to them."))))));
+                                                } })),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' } },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Employee Asset Tracking")),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_19__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                case 'Reports':
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
+                                case 'Config': {
+                                    const configState = {
+                                        configSelectedTab: this.state.configSelectedTab,
+                                        syncInProgress: this.state.syncInProgress,
+                                        syncMessage: this.state.syncMessage,
+                                        syncMessageType: this.state.syncMessageType,
+                                        diagnosticInfo: this.state.diagnosticInfo,
+                                        connectionStatuses: this.state.connectionStatuses,
+                                        connectionErrorMessages: this.state.connectionErrorMessages,
+                                        loadingGroupUsers: this.state.loadingGroupUsers,
+                                        groupUsersList: this.state.groupUsersList
+                                    };
+                                    const configActions = {
+                                        onSyncAssignedAssets: this._onSyncAssignedAssets,
+                                        onRunDiagnostics: this._onRunDiagnostics,
+                                        onTestListConnection: this._testListConnection,
+                                        onLoadGroupUsers: this._loadGroupUsers,
+                                        onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
+                                        onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
+                                    };
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ConfigPage, { state: configState, actions: configActions })) : null;
+                                }
+                                default:
+                                    return null;
                             }
-                            default:
-                                return null;
-                        }
-                    })()))),
+                        })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_8__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
             (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
             (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
@@ -4681,45 +4751,33 @@ const MyAssignedAssetsView = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("pre", { style: { margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'monospace', fontSize: '0.82rem', color: '#334155' } }, asset.specifications)))));
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '15px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '24px',
-                padding: '0 4px 16px 4px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricsRow },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Assigned Assets"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, metrics.total)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Under Warranty"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, metrics.activeWarranties)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Warranty Action"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.expiredOrExpiringWarranties > 0 ? '#d97706' : 'var(--text-muted)' } }, metrics.expiredOrExpiringWarranties)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Critical Alerts"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.actionNeeded > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.actionNeeded))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
-                alignItems: 'flex-end',
-                padding: '0 0 10px 0'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filtersRow },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].searchField },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { placeholder: "Search by asset name, type, serial number...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: typeOptions, selectedKey: selectedType, onChange: (e, option) => setSelectedType(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
                         { key: 'All', text: 'All Conditions' },
                         ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_CONDITION_OPTIONS
                     ], selectedKey: selectedCondition, onChange: (e, option) => setSelectedCondition(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
                         { key: 'All', text: 'All Coverage' },
                         ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.WARRANTY_STATUS_OPTIONS
@@ -4850,7 +4908,8 @@ const MyAssignedAssetsView = (props) => {
                         display: 'flex',
                         gap: '6px',
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        flexWrap: 'wrap'
                     } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Details", onClick: () => {
                             setSelectedAsset(item);
@@ -4897,10 +4956,7 @@ const MyAssignedAssetsView = (props) => {
                 setSelectedAsset(null);
             }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '12px',
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: {
                         backgroundColor: '#f1f5f9',
                         padding: '15px',
                         borderRadius: '8px',
@@ -5099,37 +5155,31 @@ const MyRequestsView = (props) => {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Pivot, { "aria-label": "My Requests" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: "Asset Requests", itemIcon: "Send", itemCount: metrics.total },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            gap: '24px',
-                            padding: '0 4px 16px 4px',
-                            borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-                        } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricsRow },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Total Requests"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, metrics.total)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Pending Approval"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.pending > 0 ? '#d97706' : 'var(--text-muted)' } }, metrics.pending)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Approved"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, metrics.approved)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Declined"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.declined))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filtersRow },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].searchField },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.TextField, { placeholder: "Search by Request ID, asset type, reason...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { options: [
                                     { key: 'All', text: 'All Statuses' },
                                     ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: selectedStatus, onChange: (e, option) => setSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '130px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { options: [
                                     { key: 'All', text: 'All Priorities' },
                                     ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_REQUEST_PRIORITY_OPTIONS
@@ -5227,36 +5277,30 @@ const MyRequestsView = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: "Return Requests", itemIcon: "ReturnToSession", itemCount: returnMetrics.total },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            gap: '24px',
-                            padding: '0 4px 16px 4px',
-                            borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-                        } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricsRow },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem, style: { minWidth: '90px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Total"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, returnMetrics.total)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem, style: { minWidth: '90px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Pending"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.pending > 0 ? '#d97706' : 'var(--text-muted)' } }, returnMetrics.pending)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem, style: { minWidth: '90px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Approved"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#1558d6' } }, returnMetrics.approved)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem, style: { minWidth: '90px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Completed"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, returnMetrics.completed)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 auto', minWidth: '90px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricDivider }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem, style: { minWidth: '90px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Rejected"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.rejected > 0 ? '#dc2626' : 'var(--text-muted)' } }, returnMetrics.rejected))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', padding: '0 0 10px 0' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 200px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filtersRow },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].searchField },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.TextField, { placeholder: "Search by asset name, serial number, reason...", value: returnSearchQuery, onChange: (e, val) => setReturnSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: '150px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown, style: { width: '150px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { options: [
                                     { key: 'All', text: 'All Statuses' },
                                     ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.RETURN_REQUEST_STATUS_OPTIONS
@@ -5349,7 +5393,7 @@ const MyRequestsView = (props) => {
                             : 'Try adjusting your search query or filters.')))))),
         selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Panel, { isOpen: isPanelOpen, onDismiss: () => { setIsPanelOpen(false); setSelectedRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PanelType.medium, headerText: `Request Details: ${selectedRequest.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Request ID:"),
                         " ",
@@ -5413,7 +5457,7 @@ const MyRequestsView = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color, display: 'block', marginBottom: '2px' } }, selectedReturnRequest.status),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color } }, statusMessages[selectedReturnRequest.status] || ''))));
                 })(),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Asset Name:"),
                         " ",
@@ -5590,17 +5634,18 @@ const NotificationCenter = (props) => {
                         marginTop: '2px'
                     } }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flexGrow: 1 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827', fontSize: '0.95rem' } }, notif.title),
-                        !notif.isRead && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                width: '8px',
-                                height: '8px',
-                                backgroundColor: '#ef4444',
-                                borderRadius: '50%',
-                                display: 'inline-block',
-                                boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
-                            } })),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.75rem', color: '#6b7280', marginLeft: 'auto' } }, notif.timestamp)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827', fontSize: '0.95rem' } }, notif.title),
+                            !notif.isRead && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    width: '8px',
+                                    height: '8px',
+                                    backgroundColor: '#ef4444',
+                                    borderRadius: '50%',
+                                    display: 'inline-block',
+                                    boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
+                                } }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.75rem', color: '#6b7280', whiteSpace: 'nowrap' } }, notif.timestamp)),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 10px 0', color: '#4b5563', fontSize: '0.88rem', lineHeight: '1.4' } }, notif.message),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "View details", onClick: () => props.onNotificationAction(notif.actionLink, notif.id), styles: {
@@ -5748,7 +5793,7 @@ const RequestForm = (props) => {
             props.onClose();
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PanelType.custom, customWidth: "450px", headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: stackTokens },
             isEmployee && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.info }, "You can only request assets for yourself. Contact your manager to request assets for others.")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: isEmployee ? "Requester (You)" : "Requester (Employee)", selectedKey: selectedRequesterId, options: employeeOptions, onChange: (_, opt) => {
@@ -5788,13 +5833,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+
 
 
 
@@ -5909,7 +5956,7 @@ const RequestList = (props) => {
                                 fontWeight: 600,
                                 display: 'inline-block'
                             } }, value),
-                        !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.PrimaryButton, { text: "Review & Assign", onClick: () => {
+                        !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Review & Assign", onClick: () => {
                                 if (props.onSelectRequestForAssignment) {
                                     props.onSelectRequestForAssignment(item);
                                 }
@@ -5957,8 +6004,8 @@ const RequestList = (props) => {
                         return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)' } }, "No action");
                     }
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.PrimaryButton, { text: "Approve", onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.PrimaryButton, { text: "Reject", onClick: () => {
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Approve", onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Reject", onClick: () => {
                                 if (!props.onRejectRequest) {
                                     return;
                                 }
@@ -5979,7 +6026,7 @@ const RequestList = (props) => {
             minWidth: 70,
             maxWidth: 90,
             isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "View", onClick: () => {
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "View", onClick: () => {
                     setSelectedRequestForDetails(item);
                     setIsDetailsPanelOpen(true);
                 }, styles: {
@@ -5988,11 +6035,12 @@ const RequestList = (props) => {
         }
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        props.items.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_3__.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.SelectionMode.none })),
-        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
+        props.items.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }))),
+        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PanelType.medium, headerText: `Request Details: ${selectedRequestForDetails.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
+            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PanelType.medium, headerText: `Request Details: ${selectedRequestForDetails.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
@@ -6002,7 +6050,7 @@ const RequestList = (props) => {
                         boxShadow: 'var(--card-shadow)'
                     } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, "Request Information"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85rem' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGridGap16, style: { fontSize: '0.85rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestKey || 'N/A')),
@@ -6078,7 +6126,7 @@ const RequestList = (props) => {
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? "Processing..." : "Approve", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? "Processing..." : "Approve", onClick: () => {
                             if (props.onApproveRequest) {
                                 props.onApproveRequest(selectedRequestForDetails)
                                     .then(() => {
@@ -6088,7 +6136,7 @@ const RequestList = (props) => {
                                     .catch(err => console.error(err));
                             }
                         }, disabled: props.actionInProgressId === selectedRequestForDetails.id }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Reject", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Reject", onClick: () => {
                             if (!props.onRejectRequest)
                                 return;
                             const rejectionReason = window.prompt('Enter rejection reason for this request:');
@@ -6111,7 +6159,7 @@ const RequestList = (props) => {
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.PrimaryButton, { text: "Review & Assign", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Review & Assign", onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                             if (props.onSelectRequestForAssignment) {
@@ -6119,7 +6167,7 @@ const RequestList = (props) => {
                             }
                         }, iconProps: { iconName: 'CompletedSolid' } }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', marginTop: '10px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Close", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Close", onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                         } })))))));
@@ -6141,14 +6189,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 27006);
-/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 18681);
-/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
-/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
-/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 27006);
+/* harmony import */ var _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Panel */ 18681);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+
 
 
 
@@ -6187,19 +6237,19 @@ const ReturnAssetForm = (props) => {
             setSubmitting(false);
         }
     };
-    const onRenderFooterContent = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 10 } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Submit Request", onClick: handleSubmit, disabled: submitting }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "Cancel", onClick: onDismiss, disabled: submitting })));
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "450px", headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
+    const onRenderFooterContent = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 10 } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Submit Request", onClick: handleSubmit, disabled: submitting }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: "Cancel", onClick: onDismiss, disabled: submitting })));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_6__.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: _fluentui_react_lib_Panel__WEBPACK_IMPORTED_MODULE_7__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Request Asset Return", closeButtonAriaLabel: "Close", onRenderFooterContent: onRenderFooterContent, isFooterAtBottom: true },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
             error && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '10px 15px', borderRadius: '4px', marginBottom: '15px', fontSize: '0.88rem' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
                 " ",
                 error)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: stackTokens },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { tokens: stackTokens },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f3f4f6', padding: '15px', borderRadius: '6px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 10px 0', fontSize: '0.95rem', color: '#1f2937' } }, "Asset Information"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.85rem' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].responsiveGridGap8, style: { fontSize: '0.85rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
                             " ",
@@ -6216,8 +6266,8 @@ const ReturnAssetForm = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Current Condition:"),
                             " ",
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, asset.condition || 'Good')))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Returned Asset Condition", selectedKey: condition, options: conditionOptions, onChange: (_, option) => setCondition(option ? option.key : 'Good'), required: true }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Reason for Return", placeholder: "Please detail why you are returning this asset (e.g. Upgrade received, hardware failure, contract ended...)", multiline: true, rows: 4, value: reason, onChange: (_, newValue) => setReason(newValue || ''), required: true, errorMessage: reason.trim() ? '' : error && !reason.trim() ? 'Reason is required' : '' })))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: "Returned Asset Condition", selectedKey: condition, options: conditionOptions, onChange: (_, option) => setCondition(option ? option.key : 'Good'), required: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Reason for Return", placeholder: "Please detail why you are returning this asset (e.g. Upgrade received, hardware failure, contract ended...)", multiline: true, rows: 4, value: reason, onChange: (_, newValue) => setReason(newValue || ''), required: true, errorMessage: reason.trim() ? '' : error && !reason.trim() ? 'Reason is required' : '' })))));
 };
 
 
@@ -6236,19 +6286,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
-/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
-/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
-/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
-/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+
 
 
 
@@ -6388,35 +6440,36 @@ const ReturnRequestList = (props) => {
                 maxWidth: 260,
                 isResizable: true,
                 onRender: (item) => {
-                    const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
+                    const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "View", onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
                     if (isManager && (item.status === 'Pending Manager Approval' || item.status === 'Pending')) {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
                             viewButton,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Approve", onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Reject", onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })));
                     }
                     if (isAdmin && item.status === 'Pending Admin Verification') {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
                             viewButton,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } })));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Verify & Complete", onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } })));
                     }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
                 }
             }
         ] : [])
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_5__.SearchBox, { placeholder: "Search return requests...", value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), styles: { root: { maxWidth: 350 } } })),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading return requests...")) : filteredItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, "No return requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.SelectionMode.none })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_9__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
-                type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_10__.DialogType.normal,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_6__.SearchBox, { placeholder: "Search return requests...", value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), styles: { root: { maxWidth: 350 } } })),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading return requests...")) : filteredItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, "No return requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__.SelectionMode.none }))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_10__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
+                type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_11__.DialogType.normal,
                 title: actionType === 'Approve' ? 'Approve Return Request' :
                     actionType === 'Reject' ? 'Reject Return Request' :
                         actionType === 'Complete' ? 'Verify & Complete Return' : 'Return Request Details',
                 subText: activeRequest ? `Request by ${activeRequest.requesterName} for asset ${activeRequest.assetName}` : ''
             }, modalProps: { isBlocking: true } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_3__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
                 activeRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'rgba(128, 128, 128, 0.05)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -6426,7 +6479,7 @@ const ReturnRequestList = (props) => {
                         fontFamily: 'inherit'
                     } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' } }, "Asset Return Details"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 16px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].responsiveGrid, style: { gap: '12px 16px' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.id.replace('RR-', '#'))),
@@ -6467,16 +6520,16 @@ const ReturnRequestList = (props) => {
                                     fontWeight: 500,
                                     color: 'var(--text-main, #333333)'
                                 } }, activeRequest.managerComment)))))),
-                actionType === 'Complete' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
-                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_12__.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' :
+                actionType === 'Complete' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_12__.Dropdown, { label: "Final Verified Condition", selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
+                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_13__.TextField, { label: actionType === 'Reject' ? 'Rejection Reason (Required)' :
                         actionType === 'Complete' ? 'Verification Comments (Required)' :
                             'Manager Comments', placeholder: actionType === 'Reject' ? 'Please specify why this return request is being rejected...' :
                         actionType === 'Complete' ? 'Please enter verification details (required)...' :
                             'Add comments for the return request...', multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' || actionType === 'Complete' }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_13__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_14__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
                         actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
 };
 
 
@@ -6619,7 +6672,7 @@ const ASSET_CATEGORIES = [
 
 /***/ }),
 
-/***/ 325:
+/***/ 43325:
 /*!**************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/ConfigPage.js ***!
   \**************************************************************/
@@ -6796,7 +6849,7 @@ const ConfigPage = (props) => {
 
 /***/ }),
 
-/***/ 577:
+/***/ 76577:
 /*!*****************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/DashboardPage.js ***!
   \*****************************************************************/
@@ -6820,7 +6873,7 @@ const DashboardPage = (props) => {
 
 /***/ }),
 
-/***/ 575:
+/***/ 34575:
 /*!***********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/IncidentHistoryPage.js ***!
   \***********************************************************************/
@@ -6849,7 +6902,43 @@ const IncidentHistoryPage = (props) => {
 
 /***/ }),
 
-/***/ 882:
+/***/ 44809:
+/*!*****************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/InventoryPage.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   InventoryPage: () => (/* binding */ InventoryPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _components_InventoryList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryList */ 4938);
+/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+
+
+
+
+const InventoryPage = (props) => {
+    const { state, actions } = props;
+    const { items, loading, isAdmin, isInventoryManager } = state;
+    return (isAdmin || isInventoryManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].cardHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Current Inventory Overview")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage your organizational assets efficiently within the SharePoint Framework."),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Loading inventory...")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: isAdmin ? "Add New Asset" : "Assign / Manage Assets", onClick: actions.onOpenAssetForm, iconProps: { iconName: 'Add' } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InventoryList__WEBPACK_IMPORTED_MODULE_1__.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
+};
+
+
+/***/ }),
+
+/***/ 22882:
 /*!***************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/ReportsPage.js ***!
   \***************************************************************/
@@ -6904,7 +6993,7 @@ const ReportsPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' } }, "TOTAL APPROVAL REQUESTS"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' } }, requests.length))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGridGap20 },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, "Asset Status Distribution"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } },
@@ -7121,7 +7210,7 @@ const ReportsPage = (props) => {
 
 /***/ }),
 
-/***/ 330:
+/***/ 56330:
 /*!*********************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/index.js ***!
   \*********************************************************/
@@ -7133,12 +7222,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   ConfigPage: () => (/* reexport safe */ _ConfigPage__WEBPACK_IMPORTED_MODULE_0__.ConfigPage),
 /* harmony export */   DashboardPage: () => (/* reexport safe */ _DashboardPage__WEBPACK_IMPORTED_MODULE_1__.DashboardPage),
 /* harmony export */   IncidentHistoryPage: () => (/* reexport safe */ _IncidentHistoryPage__WEBPACK_IMPORTED_MODULE_3__.IncidentHistoryPage),
+/* harmony export */   InventoryPage: () => (/* reexport safe */ _InventoryPage__WEBPACK_IMPORTED_MODULE_4__.InventoryPage),
 /* harmony export */   ReportsPage: () => (/* reexport safe */ _ReportsPage__WEBPACK_IMPORTED_MODULE_2__.ReportsPage)
 /* harmony export */ });
-/* harmony import */ var _ConfigPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfigPage */ 325);
-/* harmony import */ var _DashboardPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPage */ 577);
-/* harmony import */ var _ReportsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReportsPage */ 882);
-/* harmony import */ var _IncidentHistoryPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IncidentHistoryPage */ 575);
+/* harmony import */ var _ConfigPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfigPage */ 43325);
+/* harmony import */ var _DashboardPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPage */ 76577);
+/* harmony import */ var _ReportsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReportsPage */ 22882);
+/* harmony import */ var _IncidentHistoryPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IncidentHistoryPage */ 34575);
+/* harmony import */ var _InventoryPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InventoryPage */ 44809);
+
 
 
 
@@ -11665,7 +11757,7 @@ const RoleUtils = {
 
 /***/ }),
 
-/***/ 7915:
+/***/ 37915:
 /*!**************************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateFormatting/dateFormatting.defaults.js ***!
   \**************************************************************************************************/
@@ -11748,7 +11840,7 @@ var DEFAULT_CALENDAR_STRINGS = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((
 
 /***/ }),
 
-/***/ 7743:
+/***/ 97743:
 /*!**************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/findAvailableDate.js ***!
   \**************************************************************************************/
@@ -11760,10 +11852,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   findAvailableDate: () => (/* binding */ findAvailableDate)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
-/* harmony import */ var _isRestrictedDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isRestrictedDate */ 8180);
-/* harmony import */ var _isAfterMaxDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isAfterMaxDate */ 8773);
-/* harmony import */ var _isBeforeMinDate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isBeforeMinDate */ 4648);
-/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dateMath/dateMath */ 2921);
+/* harmony import */ var _isRestrictedDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isRestrictedDate */ 68180);
+/* harmony import */ var _isAfterMaxDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isAfterMaxDate */ 98773);
+/* harmony import */ var _isBeforeMinDate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isBeforeMinDate */ 14648);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
 
 
 
@@ -11795,7 +11887,7 @@ var findAvailableDate = function (options) {
 
 /***/ }),
 
-/***/ 3555:
+/***/ 43555:
 /*!****************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/getBoundedDateRange.js ***!
   \****************************************************************************************/
@@ -11807,7 +11899,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getBoundedDateRange: () => (/* binding */ getBoundedDateRange)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
-/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateMath/dateMath */ 2921);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
 
 
 /**
@@ -11830,7 +11922,7 @@ var getBoundedDateRange = function (dateRange, minDate, maxDate) {
 
 /***/ }),
 
-/***/ 6922:
+/***/ 96922:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/getDateRangeTypeToUse.js ***!
   \******************************************************************************************/
@@ -11841,8 +11933,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getDateRangeTypeToUse: () => (/* binding */ getDateRangeTypeToUse)
 /* harmony export */ });
-/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateValues/dateValues */ 2410);
-/* harmony import */ var _isContiguous__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isContiguous */ 2053);
+/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateValues/dateValues */ 30029);
+/* harmony import */ var _isContiguous__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isContiguous */ 62053);
 
 
 /**
@@ -11864,7 +11956,7 @@ var getDateRangeTypeToUse = function (dateRangeType, workWeekDays, firstDayOfWee
 
 /***/ }),
 
-/***/ 6703:
+/***/ 46703:
 /*!*******************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/getDayGrid.js ***!
   \*******************************************************************************/
@@ -11875,11 +11967,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getDayGrid: () => (/* binding */ getDayGrid)
 /* harmony export */ });
-/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 2921);
-/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateValues/dateValues */ 2410);
-/* harmony import */ var _getDateRangeTypeToUse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getDateRangeTypeToUse */ 6922);
-/* harmony import */ var _getBoundedDateRange__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getBoundedDateRange */ 3555);
-/* harmony import */ var _isRestrictedDate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isRestrictedDate */ 8180);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateValues/dateValues */ 30029);
+/* harmony import */ var _getDateRangeTypeToUse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getDateRangeTypeToUse */ 96922);
+/* harmony import */ var _getBoundedDateRange__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getBoundedDateRange */ 43555);
+/* harmony import */ var _isRestrictedDate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isRestrictedDate */ 68180);
 
 
 
@@ -11956,7 +12048,7 @@ var getDayGrid = function (options) {
 
 /***/ }),
 
-/***/ 8773:
+/***/ 98773:
 /*!***********************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isAfterMaxDate.js ***!
   \***********************************************************************************/
@@ -11967,7 +12059,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   isAfterMaxDate: () => (/* binding */ isAfterMaxDate)
 /* harmony export */ });
-/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 2921);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
 
 /**
  * Checks if `date` happens later than max date
@@ -11982,7 +12074,7 @@ var isAfterMaxDate = function (date, options) {
 
 /***/ }),
 
-/***/ 4648:
+/***/ 14648:
 /*!************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isBeforeMinDate.js ***!
   \************************************************************************************/
@@ -11993,7 +12085,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   isBeforeMinDate: () => (/* binding */ isBeforeMinDate)
 /* harmony export */ });
-/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 2921);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
 
 /**
  * Checks if `date` happens earlier than min date
@@ -12008,7 +12100,7 @@ var isBeforeMinDate = function (date, options) {
 
 /***/ }),
 
-/***/ 2053:
+/***/ 62053:
 /*!*********************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isContiguous.js ***!
   \*********************************************************************************/
@@ -12043,7 +12135,7 @@ var isContiguous = function (days, isSingleWeek, firstDayOfWeek) {
 
 /***/ }),
 
-/***/ 8180:
+/***/ 68180:
 /*!*************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateGrid/isRestrictedDate.js ***!
   \*************************************************************************************/
@@ -12054,9 +12146,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   isRestrictedDate: () => (/* binding */ isRestrictedDate)
 /* harmony export */ });
-/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 2921);
-/* harmony import */ var _isBeforeMinDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isBeforeMinDate */ 4648);
-/* harmony import */ var _isAfterMaxDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isAfterMaxDate */ 8773);
+/* harmony import */ var _dateMath_dateMath__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateMath/dateMath */ 82921);
+/* harmony import */ var _isBeforeMinDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isBeforeMinDate */ 14648);
+/* harmony import */ var _isAfterMaxDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isAfterMaxDate */ 98773);
 
 
 
@@ -12077,7 +12169,7 @@ var isRestrictedDate = function (date, options) {
 
 /***/ }),
 
-/***/ 2921:
+/***/ 82921:
 /*!*****************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateMath/dateMath.js ***!
   \*****************************************************************************/
@@ -12105,8 +12197,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   isInDateRangeArray: () => (/* binding */ isInDateRangeArray),
 /* harmony export */   setMonth: () => (/* binding */ setMonth)
 /* harmony export */ });
-/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateValues/dateValues */ 2410);
-/* harmony import */ var _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateValues/timeConstants */ 6369);
+/* harmony import */ var _dateValues_dateValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dateValues/dateValues */ 30029);
+/* harmony import */ var _dateValues_timeConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../dateValues/timeConstants */ 66369);
 
 
 /**
@@ -12482,7 +12574,7 @@ function daysInMonth(month, year) {
 
 /***/ }),
 
-/***/ 2410:
+/***/ 30029:
 /*!*********************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateValues/dateValues.js ***!
   \*********************************************************************************/
@@ -12556,7 +12648,7 @@ var DAYS_IN_WEEK = 7;
 
 /***/ }),
 
-/***/ 6369:
+/***/ 66369:
 /*!************************************************************************************!*\
   !*** ./node_modules/@fluentui/date-time-utilities/lib/dateValues/timeConstants.js ***!
   \************************************************************************************/
@@ -18605,7 +18697,7 @@ var getStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(func
 
 /***/ }),
 
-/***/ 835:
+/***/ 40835:
 /*!*********************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarDayGrid.base.js ***!
   \*********************************************************************************************/
@@ -18622,15 +18714,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/utilities */ 46657);
 /* harmony import */ var _FocusZone__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../FocusZone */ 68885);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 6703);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2410);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 3555);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 8180);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 46703);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 43555);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 68180);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react-hooks */ 72515);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
-/* harmony import */ var _CalendarMonthHeaderRow__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CalendarMonthHeaderRow */ 1831);
-/* harmony import */ var _CalendarGridRow__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./CalendarGridRow */ 2008);
+/* harmony import */ var _CalendarMonthHeaderRow__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CalendarMonthHeaderRow */ 51831);
+/* harmony import */ var _CalendarGridRow__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./CalendarGridRow */ 82008);
 
 
 
@@ -18924,8 +19016,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CalendarDayGrid: () => (/* binding */ CalendarDayGrid)
 /* harmony export */ });
-/* harmony import */ var _CalendarDayGrid_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarDayGrid.base */ 835);
-/* harmony import */ var _CalendarDayGrid_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarDayGrid.styles */ 5544);
+/* harmony import */ var _CalendarDayGrid_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarDayGrid.base */ 40835);
+/* harmony import */ var _CalendarDayGrid_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarDayGrid.styles */ 95544);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
 
 
@@ -18935,7 +19027,7 @@ var CalendarDayGrid = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Calend
 
 /***/ }),
 
-/***/ 5544:
+/***/ 95544:
 /*!***********************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarDayGrid.styles.js ***!
   \***********************************************************************************************/
@@ -18948,8 +19040,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
 /* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2410);
-/* harmony import */ var _Calendar_Calendar_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Calendar/Calendar.types */ 9675);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _Calendar_Calendar_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Calendar/Calendar.types */ 99675);
 
 
 
@@ -19216,7 +19308,7 @@ var styles = function (props) {
 
 /***/ }),
 
-/***/ 6614:
+/***/ 36614:
 /*!********************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarGridDayCell.js ***!
   \********************************************************************************************/
@@ -19232,9 +19324,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 46657);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 7743);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2410);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 97743);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
 
 
 
@@ -19391,7 +19483,7 @@ var CalendarGridDayCell = function (props) {
 
 /***/ }),
 
-/***/ 2008:
+/***/ 82008:
 /*!****************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarGridRow.js ***!
   \****************************************************************************************/
@@ -19405,9 +19497,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 10196);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/utilities */ 7578);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
-/* harmony import */ var _CalendarGridDayCell__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CalendarGridDayCell */ 6614);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _CalendarGridDayCell__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CalendarGridDayCell */ 36614);
 
 
 
@@ -19430,7 +19522,7 @@ var CalendarGridRow = function (props) {
 
 /***/ }),
 
-/***/ 1831:
+/***/ 51831:
 /*!***********************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/CalendarDayGrid/CalendarMonthHeaderRow.js ***!
   \***********************************************************************************************/
@@ -19445,7 +19537,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 77158);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2410);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
 
 
 
@@ -19470,7 +19562,7 @@ var CalendarMonthHeaderRow = function (props) {
 
 /***/ }),
 
-/***/ 9229:
+/***/ 89229:
 /*!*******************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.base.js ***!
   \*******************************************************************************/
@@ -19484,21 +19576,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! tslib */ 10196);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2410);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 7915);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
-/* harmony import */ var _CalendarDay_CalendarDay__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CalendarDay/CalendarDay */ 5107);
-/* harmony import */ var _CalendarMonth_CalendarMonth__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./CalendarMonth/CalendarMonth */ 4335);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 37915);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
+/* harmony import */ var _CalendarDay_CalendarDay__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CalendarDay/CalendarDay */ 95107);
+/* harmony import */ var _CalendarMonth_CalendarMonth__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./CalendarMonth/CalendarMonth */ 24335);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 53703);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/utilities */ 34751);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
-/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/utilities */ 7578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/utilities */ 85123);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/utilities */ 97520);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 36228);
-/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./defaults */ 2280);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./defaults */ 72280);
 
 
 
@@ -19760,7 +19852,7 @@ function getShowMonthPickerAsOverlay(_a) {
 
 /***/ }),
 
-/***/ 5344:
+/***/ 95344:
 /*!**************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.js ***!
   \**************************************************************************/
@@ -19772,7 +19864,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Calendar: () => (/* binding */ Calendar)
 /* harmony export */ });
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/utilities */ 55336);
-/* harmony import */ var _Calendar_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Calendar.base */ 9229);
+/* harmony import */ var _Calendar_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Calendar.base */ 89229);
 /* harmony import */ var _Calendar_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Calendar.styles */ 8058);
 
 
@@ -19885,7 +19977,7 @@ var styles = function (props) {
 
 /***/ }),
 
-/***/ 9675:
+/***/ 99675:
 /*!********************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/Calendar.types.js ***!
   \********************************************************************************/
@@ -19914,7 +20006,7 @@ var AnimationDirection;
 
 /***/ }),
 
-/***/ 8504:
+/***/ 28504:
 /*!**********************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarDay/CalendarDay.base.js ***!
   \**********************************************************************************************/
@@ -19929,11 +20021,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
-/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 7578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Icon */ 52394);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
 /* harmony import */ var _CalendarDayGrid_CalendarDayGrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../CalendarDayGrid/CalendarDayGrid */ 2142);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
 
@@ -20022,7 +20114,7 @@ var onButtonKeyDown = function (callback) {
 
 /***/ }),
 
-/***/ 5107:
+/***/ 95107:
 /*!*****************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarDay/CalendarDay.js ***!
   \*****************************************************************************************/
@@ -20033,7 +20125,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CalendarDay: () => (/* binding */ CalendarDay)
 /* harmony export */ });
-/* harmony import */ var _CalendarDay_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarDay.base */ 8504);
+/* harmony import */ var _CalendarDay_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarDay.base */ 28504);
 /* harmony import */ var _CalendarDay_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarDay.styles */ 3615);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
 
@@ -20163,19 +20255,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _FocusZone__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../FocusZone */ 68885);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 7915);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 37915);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../Icon */ 52394);
-/* harmony import */ var _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarMonth.styles */ 1411);
+/* harmony import */ var _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarMonth.styles */ 11411);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 34751);
-/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 7578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/utilities */ 46657);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
-/* harmony import */ var _CalendarYear_CalendarYear__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../CalendarYear/CalendarYear */ 4159);
+/* harmony import */ var _CalendarYear_CalendarYear__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../CalendarYear/CalendarYear */ 54159);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 72515);
-/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../defaults */ 2280);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../defaults */ 72280);
 
 
 
@@ -20402,7 +20494,7 @@ function onButtonKeyDown(callback) {
 
 /***/ }),
 
-/***/ 4335:
+/***/ 24335:
 /*!*********************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarMonth/CalendarMonth.js ***!
   \*********************************************************************************************/
@@ -20414,7 +20506,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   CalendarMonth: () => (/* binding */ CalendarMonth)
 /* harmony export */ });
 /* harmony import */ var _CalendarMonth_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarMonth.base */ 6492);
-/* harmony import */ var _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarMonth.styles */ 1411);
+/* harmony import */ var _CalendarMonth_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarMonth.styles */ 11411);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
 
 
@@ -20424,7 +20516,7 @@ var CalendarMonth = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Calendar
 
 /***/ }),
 
-/***/ 1411:
+/***/ 11411:
 /*!****************************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarMonth/CalendarMonth.styles.js ***!
   \****************************************************************************************************/
@@ -20435,7 +20527,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getStyles: () => (/* binding */ getStyles)
 /* harmony export */ });
-/* harmony import */ var _CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CalendarPicker/CalendarPicker.styles */ 5677);
+/* harmony import */ var _CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CalendarPicker/CalendarPicker.styles */ 55677);
 
 var getStyles = function (props) {
     /*  Return styles from the base class.
@@ -20451,7 +20543,7 @@ var getStyles = function (props) {
 
 /***/ }),
 
-/***/ 5677:
+/***/ 55677:
 /*!******************************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarPicker/CalendarPicker.styles.js ***!
   \******************************************************************************************************/
@@ -20464,7 +20556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
 /* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
-/* harmony import */ var _Calendar_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Calendar.types */ 9675);
+/* harmony import */ var _Calendar_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Calendar.types */ 99675);
 
 
 
@@ -20672,11 +20764,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilities */ 79524);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Utilities */ 38972);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Utilities */ 46657);
-/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Utilities */ 7578);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Utilities */ 87578);
 /* harmony import */ var _FocusZone__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../FocusZone */ 68885);
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Icon */ 52394);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react-hooks */ 72515);
-/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../defaults */ 2280);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../defaults */ 72280);
 
 
 
@@ -20931,7 +21023,7 @@ CalendarYearBase.displayName = 'CalendarYearBase';
 
 /***/ }),
 
-/***/ 4159:
+/***/ 54159:
 /*!*******************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarYear/CalendarYear.js ***!
   \*******************************************************************************************/
@@ -20942,7 +21034,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CalendarYear: () => (/* binding */ CalendarYear)
 /* harmony export */ });
-/* harmony import */ var _CalendarYear_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarYear.styles */ 8179);
+/* harmony import */ var _CalendarYear_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalendarYear.styles */ 88179);
 /* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
 /* harmony import */ var _CalendarYear_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalendarYear.base */ 3324);
 
@@ -20953,7 +21045,7 @@ var CalendarYear = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_CalendarY
 
 /***/ }),
 
-/***/ 8179:
+/***/ 88179:
 /*!**************************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/CalendarYear/CalendarYear.styles.js ***!
   \**************************************************************************************************/
@@ -20964,7 +21056,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getStyles: () => (/* binding */ getStyles)
 /* harmony export */ });
-/* harmony import */ var _CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CalendarPicker/CalendarPicker.styles */ 5677);
+/* harmony import */ var _CalendarPicker_CalendarPicker_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CalendarPicker/CalendarPicker.styles */ 55677);
 
 var getStyles = function (props) {
     /*  Return styles from the base class.
@@ -20980,7 +21072,7 @@ var getStyles = function (props) {
 
 /***/ }),
 
-/***/ 2280:
+/***/ 72280:
 /*!**************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Calendar/defaults.js ***!
   \**************************************************************************/
@@ -20993,7 +21085,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   defaultCalendarStrings: () => (/* binding */ defaultCalendarStrings),
 /* harmony export */   defaultDayPickerStrings: () => (/* binding */ defaultDayPickerStrings)
 /* harmony export */ });
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 7915);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 37915);
 
 var defaultCalendarStrings = _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_0__.DEFAULT_CALENDAR_STRINGS;
 /**
@@ -24599,14 +24691,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
-/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 7578);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/utilities */ 87578);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/utilities */ 34751);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/utilities */ 79524);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/utilities */ 37974);
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/utilities */ 38972);
-/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Calendar */ 5344);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2410);
-/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 2921);
+/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Calendar */ 95344);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 30029);
+/* harmony import */ var _fluentui_date_time_utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/date-time-utilities */ 82921);
 /* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../Callout */ 26650);
 /* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../Callout */ 19861);
 /* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Styling */ 38455);
@@ -24615,7 +24707,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react-hooks */ 15672);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 36228);
 /* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
-/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defaults */ 8848);
+/* harmony import */ var _defaults__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defaults */ 18848);
 
 
 
@@ -25022,7 +25114,7 @@ function isDateOutOfBounds(date, minDate, maxDate) {
 
 /***/ }),
 
-/***/ 6412:
+/***/ 46412:
 /*!******************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/DatePicker/DatePicker.js ***!
   \******************************************************************************/
@@ -25035,7 +25127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/utilities */ 55336);
 /* harmony import */ var _DatePicker_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatePicker.base */ 1073);
-/* harmony import */ var _DatePicker_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DatePicker.styles */ 414);
+/* harmony import */ var _DatePicker_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DatePicker.styles */ 50414);
 
 
 
@@ -25046,7 +25138,7 @@ var DatePicker = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Da
 
 /***/ }),
 
-/***/ 414:
+/***/ 50414:
 /*!*************************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/DatePicker/DatePicker.styles.js ***!
   \*************************************************************************************/
@@ -25156,7 +25248,7 @@ var styles = function (props) {
 
 /***/ }),
 
-/***/ 8848:
+/***/ 18848:
 /*!****************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/DatePicker/defaults.js ***!
   \****************************************************************************/
@@ -25168,7 +25260,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   defaultDatePickerStrings: () => (/* binding */ defaultDatePickerStrings)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 10196);
-/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Calendar */ 2280);
+/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Calendar */ 72280);
 
 
 var defaultDatePickerStrings = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, _Calendar__WEBPACK_IMPORTED_MODULE_1__.defaultCalendarStrings), { prevMonthAriaLabel: 'Go to previous month', nextMonthAriaLabel: 'Go to next month', prevYearAriaLabel: 'Go to previous year', nextYearAriaLabel: 'Go to next year', closeButtonAriaLabel: 'Close date picker', isRequiredErrorMessage: 'Field is required', invalidInputErrorMessage: 'Invalid date format', isResetStatusMessage: 'Invalid entry "{0}", date reset to "{1}"' });
@@ -52130,7 +52222,7 @@ var useMergeStylesShadowRootContext = function () {
 
 /***/ }),
 
-/***/ 7578:
+/***/ 87578:
 /*!********************************************************!*\
   !*** ./node_modules/@fluentui/utilities/lib/string.js ***!
   \********************************************************/
@@ -93538,7 +93630,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("dd888e358d208c0aa145")
+/******/ 		__webpack_require__.h = () => ("56f08d826217ad716fa7")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

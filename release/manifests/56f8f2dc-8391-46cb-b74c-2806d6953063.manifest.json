@@ -35,7 +35,7 @@
     "scriptResources": {
       "inventory-management-web-part": {
         "type": "path",
-        "path": "inventory-management-web-part.js"
+        "path": "inventory-management-web-part_24c10078fbc120df7239.js"
       },
       "react": {
         "type": "component",
@@ -64,7 +64,7 @@
       },
       "InventoryManagementWebPartStrings": {
         "type": "path",
-        "path": "InventoryManagementWebPartStrings_en-us.js"
+        "path": "InventoryManagementWebPartStrings_en-us_2889bc4c5bbbf19938618e0678f128da.js"
       },
       "@microsoft/sp-lodash-subset": {
         "type": "component",

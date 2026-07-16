@@ -4,6 +4,7 @@ exports.AssetLifecycleDiagram = void 0;
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("@fluentui/react");
+const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const AssetLifecycleDiagram = ({ isDarkTheme }) => {
     const [hoveredNode, setHoveredNode] = React.useState(null);
     const nodes = [
@@ -53,15 +54,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
             top: 112,
         },
     ];
-    return (React.createElement("div", { style: {
-            position: 'relative',
-            width: '280px',
-            height: '280px',
-            userSelect: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-        } },
+    return (React.createElement("div", { className: InventoryManagement_module_scss_1.default.lifecycleDiagram },
         React.createElement("svg", { width: "280", height: "280", viewBox: "0 0 280 280", style: {
                 position: 'absolute',
                 top: 0,

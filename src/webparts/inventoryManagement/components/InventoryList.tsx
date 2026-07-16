@@ -242,14 +242,16 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
 
   return (
     <div style={{ marginTop: '10px' }}>
-      <DetailsList
-        items={itemsToRender}
-        columns={columns}
-        groups={groups}
-        setKey="set"
-        layoutMode={DetailsListLayoutMode.justified}
-        selectionMode={SelectionMode.none}
-      />
+      <div className={styles.tableWrapper}>
+        <DetailsList
+          items={itemsToRender}
+          columns={columns}
+          groups={groups}
+          setKey="set"
+          layoutMode={DetailsListLayoutMode.justified}
+          selectionMode={SelectionMode.none}
+        />
+      </div>
 
       {props.enablePagination && totalPages > 1 && (
         <div className={styles.paginationContainer}>

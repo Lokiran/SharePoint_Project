@@ -7,6 +7,7 @@ const react_1 = require("react");
 const react_2 = require("@fluentui/react");
 const jspdf_1 = require("jspdf");
 const IncidentService_1 = require("../../services/IncidentService");
+const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../InventoryManagement.module.scss"));
 const IncidentHistory = (props) => {
     const [incidents, setIncidents] = (0, react_1.useState)([]);
     const [filteredIncidents, setFilteredIncidents] = (0, react_1.useState)([]);
@@ -372,7 +373,7 @@ const IncidentHistory = (props) => {
                 React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
                 React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Incident Specifications"),
-                React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' } },
+                React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridAlignItemsCenter, style: { fontSize: '0.88rem' } },
                     React.createElement("div", null,
                         React.createElement("span", { style: { color: '#6b7280' } }, "Incident ID:"),
                         " ",

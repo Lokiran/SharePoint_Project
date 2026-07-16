@@ -166,22 +166,24 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
 
                 {/* Content */}
                 <div style={{ flexGrow: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                    <strong style={{ color: '#111827', fontSize: '0.95rem' }}>{notif.title}</strong>
-                    
-                    {/* Pulsing red dot for unread */}
-                    {!notif.isRead && (
-                      <span style={{
-                        width: '8px',
-                        height: '8px',
-                        backgroundColor: '#ef4444',
-                        borderRadius: '50%',
-                        display: 'inline-block',
-                        boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
-                      }} />
-                    )}
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <strong style={{ color: '#111827', fontSize: '0.95rem' }}>{notif.title}</strong>
+                      
+                      {/* Pulsing red dot for unread */}
+                      {!notif.isRead && (
+                        <span style={{
+                          width: '8px',
+                          height: '8px',
+                          backgroundColor: '#ef4444',
+                          borderRadius: '50%',
+                          display: 'inline-block',
+                          boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
+                        }} />
+                      )}
+                    </div>
 
-                    <span style={{ fontSize: '0.75rem', color: '#6b7280', marginLeft: 'auto' }}>
+                    <span style={{ fontSize: '0.75rem', color: '#6b7280', whiteSpace: 'nowrap' }}>
                       {notif.timestamp}
                     </span>
                   </div>

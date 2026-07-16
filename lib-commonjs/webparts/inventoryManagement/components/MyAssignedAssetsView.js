@@ -204,45 +204,33 @@ const MyAssignedAssetsView = (props) => {
                 React.createElement("pre", { style: { margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'monospace', fontSize: '0.82rem', color: '#334155' } }, asset.specifications)))));
     };
     return (React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '15px' } },
-        React.createElement("div", { style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '24px',
-                padding: '0 4px 16px 4px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
-            } },
-            React.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+        React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricsRow },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricItem },
                 React.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Assigned Assets"),
                 React.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' } }, metrics.total)),
-            React.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            React.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricDivider }),
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricItem },
                 React.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Under Warranty"),
                 React.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' } }, metrics.activeWarranties)),
-            React.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            React.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricDivider }),
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricItem },
                 React.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Warranty Action"),
                 React.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.expiredOrExpiringWarranties > 0 ? '#d97706' : 'var(--text-muted)' } }, metrics.expiredOrExpiringWarranties)),
-            React.createElement("div", { style: { width: '1px', backgroundColor: '#e2e8f0', alignSelf: 'stretch' } }),
-            React.createElement("div", { style: { flex: '1 1 auto', minWidth: '110px' } },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricDivider }),
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.metricItem },
                 React.createElement("span", { style: { display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' } }, "Critical Alerts"),
                 React.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.actionNeeded > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.actionNeeded))),
-        React.createElement("div", { style: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
-                alignItems: 'flex-end',
-                padding: '0 0 10px 0'
-            } },
-            React.createElement("div", { style: { flex: '1 1 200px' } },
+        React.createElement("div", { className: InventoryManagement_module_scss_1.default.filtersRow },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.searchField },
                 React.createElement(react_2.TextField, { placeholder: "Search by asset name, type, serial number...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
-            React.createElement("div", { style: { width: '130px' } },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.filterDropdown },
                 React.createElement(react_2.Dropdown, { options: typeOptions, selectedKey: selectedType, onChange: (e, option) => setSelectedType(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-            React.createElement("div", { style: { width: '130px' } },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.filterDropdown },
                 React.createElement(react_2.Dropdown, { options: [
                         { key: 'All', text: 'All Conditions' },
                         ...DropdownConstants_1.ASSET_CONDITION_OPTIONS
                     ], selectedKey: selectedCondition, onChange: (e, option) => setSelectedCondition(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
-            React.createElement("div", { style: { width: '130px' } },
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.filterDropdown },
                 React.createElement(react_2.Dropdown, { options: [
                         { key: 'All', text: 'All Coverage' },
                         ...DropdownConstants_1.WARRANTY_STATUS_OPTIONS
@@ -373,7 +361,8 @@ const MyAssignedAssetsView = (props) => {
                         display: 'flex',
                         gap: '6px',
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        flexWrap: 'wrap'
                     } },
                     React.createElement(react_2.DefaultButton, { text: "Details", onClick: () => {
                             setSelectedAsset(item);
@@ -420,10 +409,7 @@ const MyAssignedAssetsView = (props) => {
                 setSelectedAsset(null);
             }, type: react_2.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
             React.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                React.createElement("div", { style: {
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '12px',
+                React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: {
                         backgroundColor: '#f1f5f9',
                         padding: '15px',
                         borderRadius: '8px',

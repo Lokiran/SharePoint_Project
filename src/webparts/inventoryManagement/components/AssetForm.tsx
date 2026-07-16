@@ -68,7 +68,8 @@ export const AssetForm: React.FC<IAssetFormProps> = (props) => {
       isOpen={props.isOpen}
       onDismiss={props.onClose}
       type={PanelType.custom}
-      customWidth="450px"
+      customWidth="100%"
+      styles={{ main: { maxWidth: '450px' } }}
       headerText={isAdmin ? "Add New Asset" : "Register New Asset"}
       closeButtonAriaLabel="Close"
     >
