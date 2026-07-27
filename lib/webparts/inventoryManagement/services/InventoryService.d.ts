@@ -31,7 +31,7 @@ export declare class InventoryService {
     static addItem(item: Omit<IInventoryItem, 'id'>, userDisplayName?: string): Promise<void>;
     static addRequest(request: Omit<IRequest, 'id' | 'requestKey' | 'status'> & {
         status?: string;
-    }, userDisplayName?: string): Promise<void>;
+    }, userDisplayName?: string, userRole?: string, isEmployeeUI?: boolean): Promise<void>;
     static deleteItem(id: number, itemTitle?: string, userDisplayName?: string): Promise<void>;
     static getRequests(): Promise<IRequest[]>;
     static updateRequestStatus(requestId: number, status: 'Approved' | 'Declined', approverName?: string, rejectionReason?: string): Promise<void>;

@@ -49,7 +49,6 @@ const incidentTypeOptions: IDropdownOption[] = [
   { key: 'Software Issue', text: 'Software Issue' },
   { key: 'Network Issue', text: 'Network Issue' },
   { key: 'Asset Damage', text: 'Asset Damage' },
-  { key: 'Replacement Request', text: 'Replacement Request' },
   { key: 'Access Issue', text: 'Access Issue' },
   { key: 'Login Issue', text: 'Login Issue' },
   { key: 'Performance Issue', text: 'Performance Issue' },

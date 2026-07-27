@@ -1861,7 +1861,6 @@ const incidentTypeOptions = [
     { key: 'Software Issue', text: 'Software Issue' },
     { key: 'Network Issue', text: 'Network Issue' },
     { key: 'Asset Damage', text: 'Asset Damage' },
-    { key: 'Replacement Request', text: 'Replacement Request' },
     { key: 'Access Issue', text: 'Access Issue' },
     { key: 'Login Issue', text: 'Login Issue' },
     { key: 'Performance Issue', text: 'Performance Issue' },
@@ -2909,10 +2908,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState(prevState => ({
                     requests: [localRequest, ...prevState.requests]
                 }));
+                const effectiveRole = this.state.previewRole || this.state.userRole;
+                const isEmpUI = effectiveRole !== 'Admin';
                 await _services_InventoryService__WEBPACK_IMPORTED_MODULE_17__.InventoryService.addRequest({
                     ...requestData,
                     status: initialStatus
-                }, this.state.activeUserDisplayName);
+                }, this.state.activeUserDisplayName, effectiveRole, isEmpUI);
                 console.log('Successfully saved request to SharePoint');
                 await this._loadRequests(); // Refresh list from SharePoint
                 await this._loadAuditLogs(); // Refresh audit logs
@@ -6777,10 +6778,9 @@ class EmailService {
 // Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
 EmailService.USE_MOCK_TEST_EMAILS = true;
 EmailService.MOCK_ADMIN_EMAILS = [
-    "akhilareddydodla542@gmail.com",
-    "chadivelokiranreddy@gmail.com"
+    "Akhila.Dodla@3bh3kf.onmicrosoft.com"
 ];
-EmailService.MOCK_MANAGER_EMAIL = "akhilareddydodla@gmail.com";
+EmailService.MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
 
 
 /***/ }),
@@ -8267,7 +8267,7 @@ class InventoryService {
             console.warn("Failed to write audit log for newly created asset:", auditError);
         }
     }
-    static async addRequest(request, userDisplayName = "Unknown") {
+    static async addRequest(request, userDisplayName = "Unknown", userRole = "Inventory Employee", isEmployeeUI = false) {
         const list = await InventoryService.getRequestList();
         await this._ensureRequestWorkflowFields();
         const initialStatus = request.status || "Pending";
@@ -8537,15 +8537,57 @@ class InventoryService {
             }
         }
         if (!success) {
-            let fieldsDiag = "";
+            console.warn("SharePoint rejected the save, falling back to local storage:", errors);
+            const localId = `local-req-${Date.now()}`;
+            const localRequestKey = `REQ-${("000000" + Math.floor(Math.random() * 1000000)).slice(-6)}`;
+            const localRequest = {
+                id: localId,
+                requestKey: localRequestKey,
+                requesterName: request.requesterName,
+                requesterEmail: request.requesterEmail || "",
+                employeeId: request.employeeId || "",
+                assetId: request.assetId || "1",
+                assetTitle: request.assetTitle,
+                assetName: "",
+                priority: request.priority || "Medium",
+                quantity: request.quantity || 1,
+                status: request.status || "Pending",
+                assetStatus: 'Pending',
+                requestDate: request.requestDate || new Date().toISOString().split('T')[0],
+                reason: request.reason || "",
+                managerResponse: ""
+            };
             try {
-                const listFields = await list.fields.select("InternalName", "Title", "TypeAsString", "Required")();
-                fieldsDiag = listFields.map((f) => `${f.Title} (${f.InternalName}): ${f.TypeAsString}${f.Required ? ' *Required*' : ''}`).join(" | ");
+                const local = localStorage.getItem("inventory_requests");
+                const listItems = local ? JSON.parse(local) : [];
+                listItems.push(localRequest);
+                localStorage.setItem("inventory_requests", JSON.stringify(listItems));
             }
-            catch (fErr) {
-                fieldsDiag = "Could not load fields: " + (fErr.message || JSON.stringify(fErr));
+            catch (e) {
+                console.error("Local storage save failed for request", e);
             }
-            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Errors: [ ${errors.join(" | ")} ] --- Fields in list: [ ${fieldsDiag} ]`);
+            try {
+                await this.addAuditLog({
+                    title: `Created Local Request ${localRequestKey} for Asset: ${request.assetTitle}`,
+                    action: 'Create',
+                    entityType: 'Request',
+                    entityId: localRequestKey,
+                    details: JSON.stringify({
+                        requestKey: localRequestKey,
+                        lifecycle: "Submitted (Local Fallback)",
+                        requesterName: request.requesterName,
+                        assetTitle: request.assetTitle,
+                        quantity: request.quantity,
+                        reason: request.reason || "",
+                        requestedAt: new Date().toISOString()
+                    }),
+                    user: userDisplayName
+                });
+            }
+            catch (auditErr) {
+                console.warn("Failed to add audit log for local fallback request:", auditErr);
+            }
+            return;
         }
         // Safely perform post-save actions (key generation, updating, logging) outside the creation loop
         try {
@@ -8589,28 +8631,35 @@ class InventoryService {
                 }),
                 user: userDisplayName
             });
-            // Trigger Email Notification to Manager
-            try {
-                let liveManagerEmail = "";
-                try {
-                    const resolvedEmail = await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.resolveLiveManagerEmail(request.requesterName);
-                    if (resolvedEmail) {
-                        liveManagerEmail = resolvedEmail;
+            // Trigger Email Notification to Manager (only from Admin UI, and NOT when requested from Employee UI)
+            if (userRole === 'Admin' && !isEmployeeUI) {
+                // Run email sending asynchronously so it does not block or disturb the asset request creation flow
+                Promise.resolve().then(async () => {
+                    try {
+                        let liveManagerEmail = "";
+                        try {
+                            const resolvedEmail = await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.resolveLiveManagerEmail(request.requesterName);
+                            if (resolvedEmail) {
+                                liveManagerEmail = resolvedEmail;
+                            }
+                        }
+                        catch (resolveErr) {
+                            console.warn("Failed to resolve live manager email:", resolveErr);
+                        }
+                        await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.sendApprovalRequestToManager({
+                            requestKey,
+                            employeeName: request.requesterName,
+                            assetName: request.assetTitle,
+                            requestDate: request.requestDate || new Date().toLocaleDateString(),
+                            adminName: userDisplayName
+                        }, liveManagerEmail || undefined);
                     }
-                }
-                catch (resolveErr) {
-                    console.warn("Failed to resolve live manager email:", resolveErr);
-                }
-                await _EmailService__WEBPACK_IMPORTED_MODULE_2__.EmailService.sendApprovalRequestToManager({
-                    requestKey,
-                    employeeName: request.requesterName,
-                    assetName: request.assetTitle,
-                    requestDate: request.requestDate || new Date().toLocaleDateString(),
-                    adminName: userDisplayName
-                }, liveManagerEmail || undefined);
-            }
-            catch (mailErr) {
-                console.warn("Failed to send approval request email:", mailErr);
+                    catch (mailErr) {
+                        console.warn("Failed to send approval request email in background:", mailErr);
+                    }
+                }).catch(err => {
+                    console.warn("Unhandled error in background email generation:", err);
+                });
             }
         }
         catch (postError) {
@@ -8637,6 +8686,7 @@ class InventoryService {
         }
     }
     static async getRequests() {
+        let mapped = [];
         try {
             await this._ensureRequestWorkflowFields();
             const list = await InventoryService.getRequestList();
@@ -8664,7 +8714,7 @@ class InventoryService {
             const priorityKey = findFieldInternalName("priority", "Priority");
             const requestDateKey = findFieldInternalName("requestdate", "RequestDate");
             const resolvedKeyName = this._resolveRequestKeyInternalName(fields);
-            const mapped = items.map((item) => {
+            mapped = items.map((item) => {
                 const rawStatus = item[statusKey] || item.Status || 'Pending';
                 const normalizedStatus = (rawStatus || '').toString().toLowerCase();
                 const status = (normalizedStatus.includes('approv')) ? 'Approved' :
@@ -8705,12 +8755,21 @@ class InventoryService {
                     console.warn("Background update of missing RequestKeys failed:", err);
                 });
             }
-            return mapped;
         }
         catch (error) {
-            console.error("Error fetching requests from SharePoint:", error);
-            throw error;
+            console.warn("Error fetching requests from SharePoint, falling back to local storage items:", error);
         }
+        try {
+            const local = localStorage.getItem("inventory_requests");
+            if (local) {
+                const localRequests = JSON.parse(local);
+                return [...localRequests, ...mapped];
+            }
+        }
+        catch (e) {
+            console.error("Failed to parse local requests from localStorage:", e);
+        }
+        return mapped;
     }
     static async updateRequestStatus(requestId, status, approverName = 'Unknown', rejectionReason) {
         try {
@@ -88670,7 +88729,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("104052c02ebce0801000")
+/******/ 		__webpack_require__.h = () => ("907ab180cc906f315489")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

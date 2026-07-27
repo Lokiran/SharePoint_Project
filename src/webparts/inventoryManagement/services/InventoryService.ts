@@ -670,7 +670,12 @@ export class InventoryService {
     }
   }
 
-  public static async addRequest(request: Omit<IRequest, 'id' | 'requestKey' | 'status'> & { status?: string }, userDisplayName: string = "Unknown"): Promise<void> {
+  public static async addRequest(
+    request: Omit<IRequest, 'id' | 'requestKey' | 'status'> & { status?: string },
+    userDisplayName: string = "Unknown",
+    userRole: string = "Inventory Employee",
+    isEmployeeUI: boolean = false
+  ): Promise<void> {
     const list = await InventoryService.getRequestList();
     await this._ensureRequestWorkflowFields();
 
@@ -942,15 +947,59 @@ export class InventoryService {
     }
 
     if (!success) {
-      let fieldsDiag = "";
+      console.warn("SharePoint rejected the save, falling back to local storage:", errors);
+      
+      const localId = `local-req-${Date.now()}`;
+      const localRequestKey = `REQ-${("000000" + Math.floor(Math.random() * 1000000)).slice(-6)}`;
+      const localRequest: IRequest = {
+        id: localId,
+        requestKey: localRequestKey,
+        requesterName: request.requesterName,
+        requesterEmail: request.requesterEmail || "",
+        employeeId: (request as any).employeeId || "",
+        assetId: request.assetId || "1",
+        assetTitle: request.assetTitle,
+        assetName: "",
+        priority: (request as any).priority || "Medium",
+        quantity: request.quantity || 1,
+        status: (request.status as any) || "Pending",
+        assetStatus: 'Pending',
+        requestDate: request.requestDate || new Date().toISOString().split('T')[0],
+        reason: request.reason || "",
+        managerResponse: ""
+      };
+
       try {
-        const listFields = await list.fields.select("InternalName", "Title", "TypeAsString", "Required")();
-        fieldsDiag = listFields.map((f: any) => `${f.Title} (${f.InternalName}): ${f.TypeAsString}${f.Required ? ' *Required*' : ''}`).join(" | ");
-      } catch (fErr: any) {
-        fieldsDiag = "Could not load fields: " + (fErr.message || JSON.stringify(fErr));
+        const local = localStorage.getItem("inventory_requests");
+        const listItems: IRequest[] = local ? JSON.parse(local) : [];
+        listItems.push(localRequest);
+        localStorage.setItem("inventory_requests", JSON.stringify(listItems));
+      } catch (e) {
+        console.error("Local storage save failed for request", e);
       }
 
-      throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Errors: [ ${errors.join(" | ")} ] --- Fields in list: [ ${fieldsDiag} ]`);
+      try {
+        await this.addAuditLog({
+          title: `Created Local Request ${localRequestKey} for Asset: ${request.assetTitle}`,
+          action: 'Create',
+          entityType: 'Request',
+          entityId: localRequestKey,
+          details: JSON.stringify({
+            requestKey: localRequestKey,
+            lifecycle: "Submitted (Local Fallback)",
+            requesterName: request.requesterName,
+            assetTitle: request.assetTitle,
+            quantity: request.quantity,
+            reason: request.reason || "",
+            requestedAt: new Date().toISOString()
+          }),
+          user: userDisplayName
+        });
+      } catch (auditErr) {
+        console.warn("Failed to add audit log for local fallback request:", auditErr);
+      }
+      
+      return;
     }
 
     // Safely perform post-save actions (key generation, updating, logging) outside the creation loop
@@ -997,27 +1046,34 @@ export class InventoryService {
         }),
         user: userDisplayName
       });
-      // Trigger Email Notification to Manager
-      try {
-        let liveManagerEmail = "";
-        try {
-          const resolvedEmail = await EmailService.resolveLiveManagerEmail(request.requesterName);
-          if (resolvedEmail) {
-            liveManagerEmail = resolvedEmail;
-          }
-        } catch (resolveErr) {
-          console.warn("Failed to resolve live manager email:", resolveErr);
-        }
+      // Trigger Email Notification to Manager (only from Admin UI, and NOT when requested from Employee UI)
+      if (userRole === 'Admin' && !isEmployeeUI) {
+        // Run email sending asynchronously so it does not block or disturb the asset request creation flow
+        Promise.resolve().then(async () => {
+          try {
+            let liveManagerEmail = "";
+            try {
+              const resolvedEmail = await EmailService.resolveLiveManagerEmail(request.requesterName);
+              if (resolvedEmail) {
+                liveManagerEmail = resolvedEmail;
+              }
+            } catch (resolveErr) {
+              console.warn("Failed to resolve live manager email:", resolveErr);
+            }
 
-        await EmailService.sendApprovalRequestToManager({
-          requestKey,
-          employeeName: request.requesterName,
-          assetName: request.assetTitle,
-          requestDate: request.requestDate || new Date().toLocaleDateString(),
-          adminName: userDisplayName
-        }, liveManagerEmail || undefined);
-      } catch (mailErr) {
-        console.warn("Failed to send approval request email:", mailErr);
+            await EmailService.sendApprovalRequestToManager({
+              requestKey,
+              employeeName: request.requesterName,
+              assetName: request.assetTitle,
+              requestDate: request.requestDate || new Date().toLocaleDateString(),
+              adminName: userDisplayName
+            }, liveManagerEmail || undefined);
+          } catch (mailErr) {
+            console.warn("Failed to send approval request email in background:", mailErr);
+          }
+        }).catch(err => {
+          console.warn("Unhandled error in background email generation:", err);
+        });
       }
     } catch (postError) {
       console.warn("Failed in post-request creation steps:", postError);
@@ -1045,6 +1101,7 @@ export class InventoryService {
   }
 
   public static async getRequests(): Promise<IRequest[]> {
+    let mapped: IRequest[] = [];
     try {
       await this._ensureRequestWorkflowFields();
       const list = await InventoryService.getRequestList();
@@ -1075,7 +1132,7 @@ export class InventoryService {
 
       const resolvedKeyName = this._resolveRequestKeyInternalName(fields);
 
-      const mapped = items.map((item: any) => {
+      mapped = items.map((item: any) => {
         const rawStatus = item[statusKey] || item.Status || 'Pending';
         const normalizedStatus = (rawStatus || '').toString().toLowerCase();
         const status: 'Pending' | 'Approved' | 'Declined' =
@@ -1115,12 +1172,21 @@ export class InventoryService {
           console.warn("Background update of missing RequestKeys failed:", err);
         });
       }
-
-      return mapped;
     } catch (error: any) {
-      console.error("Error fetching requests from SharePoint:", error);
-      throw error;
+      console.warn("Error fetching requests from SharePoint, falling back to local storage items:", error);
     }
+
+    try {
+      const local = localStorage.getItem("inventory_requests");
+      if (local) {
+        const localRequests: IRequest[] = JSON.parse(local);
+        return [...localRequests, ...mapped];
+      }
+    } catch (e) {
+      console.error("Failed to parse local requests from localStorage:", e);
+    }
+
+    return mapped;
   }
 
   public static async updateRequestStatus(

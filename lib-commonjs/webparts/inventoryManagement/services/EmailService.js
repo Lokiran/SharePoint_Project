@@ -331,8 +331,7 @@ exports.EmailService = EmailService;
 // Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
 EmailService.USE_MOCK_TEST_EMAILS = true;
 EmailService.MOCK_ADMIN_EMAILS = [
-    "akhilareddydodla542@gmail.com",
-    "chadivelokiranreddy@gmail.com"
+    "Akhila.Dodla@3bh3kf.onmicrosoft.com"
 ];
-EmailService.MOCK_MANAGER_EMAIL = "akhilareddydodla@gmail.com";
+EmailService.MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
 //# sourceMappingURL=EmailService.js.map

@@ -748,10 +748,13 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         requests: [localRequest, ...prevState.requests]
       }));
 
+      const effectiveRole = this.state.previewRole || this.state.userRole;
+      const isEmpUI = effectiveRole !== 'Admin';
+
       await InventoryService.addRequest({
         ...requestData,
         status: initialStatus
-      }, this.state.activeUserDisplayName);
+      }, this.state.activeUserDisplayName, effectiveRole, isEmpUI);
       console.log('Successfully saved request to SharePoint');
       await this._loadRequests(); // Refresh list from SharePoint
       await this._loadAuditLogs(); // Refresh audit logs

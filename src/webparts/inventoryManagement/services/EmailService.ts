@@ -33,11 +33,10 @@ export class EmailService {
   private static readonly USE_MOCK_TEST_EMAILS = true;
 
   private static readonly MOCK_ADMIN_EMAILS = [
-    "akhilareddydodla542@gmail.com",
-    "chadivelokiranreddy@gmail.com"
+    "Akhila.Dodla@3bh3kf.onmicrosoft.com"
   ];
 
-  private static readonly MOCK_MANAGER_EMAIL = "akhilareddydodla@gmail.com";
+  private static readonly MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
 
   /**
    * Helper to get target emails for Admins
