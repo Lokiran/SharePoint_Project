@@ -3,7 +3,7 @@ self["webpackHotUpdate_56f8f2dc_8391_46cb_b74c_2806d6953063_0_0_1"]("inventory-m
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("02847e9a4103537f768f")
+/******/ 	__webpack_require__.h = () => ("09a6b9959ebe1672797f")
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/jsonp chunk loading */
@@ -520,4 +520,4 @@ self["webpackHotUpdate_56f8f2dc_8391_46cb_b74c_2806d6953063_0_0_1"]("inventory-m
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=inventory-management-web-part.e49f308c2345dc9a3c76.hot-update.js.map
+//# sourceMappingURL=inventory-management-web-part.e26c36c2b1bb16049009.hot-update.js.map
