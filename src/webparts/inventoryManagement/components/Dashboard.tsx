@@ -311,20 +311,54 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   const totalDecidedRequests = approvedReqCount + declinedReqCount;
   const approvalSuccessRate = totalDecidedRequests > 0 ? ((approvedReqCount / totalDecidedRequests) * 100).toFixed(0) : '0';
 
-  // --- Filter for pending assignments (Admin Action Center) ---
-  const pendingAssignments = requests.filter(
+  // --- Utility: Sort requests & assets new-to-old ---
+  const sortRequestsNewToOld = (reqs: IRequest[]) => {
+    return [...reqs].sort((a, b) => {
+      const dateA = a.requestDate || '';
+      const dateB = b.requestDate || '';
+      if (dateA && dateB && dateA !== dateB) {
+        return new Date(dateB).getTime() - new Date(dateA).getTime();
+      }
+      const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+      const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+        return numB - numA;
+      }
+      return (b.id || '').localeCompare(a.id || '');
+    });
+  };
+
+  const sortItemsNewToOld = (itemList: IInventoryItem[]) => {
+    return [...itemList].sort((a, b) => {
+      const dateA = a.assignedDate || a.purchaseDate || '';
+      const dateB = b.assignedDate || b.purchaseDate || '';
+      if (dateA && dateB && dateA !== dateB) {
+        return new Date(dateB).getTime() - new Date(dateA).getTime();
+      }
+      const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+      const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+        return numB - numA;
+      }
+      return (b.id || '').localeCompare(a.id || '');
+    });
+  };
+
+  // --- Filter for pending assignments (Admin Action Center - New to Old) ---
+  const pendingAssignments = sortRequestsNewToOld(requests.filter(
     r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending'
-  );
+  ));
   const recentAssignments = pendingAssignments.slice(0, 5);
 
-  // --- Filter for pending decisions (Manager Action Center) ---
-  const pendingApprovals = requests.filter(
+  // --- Filter for pending decisions (Manager Action Center - New to Old) ---
+  const pendingApprovals = sortRequestsNewToOld(requests.filter(
     r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending'
-  );
+  ));
   const recentApprovals = pendingApprovals.slice(0, 5);
 
-  // --- Filter for employee's recent requests (Employee Action Center) ---
-  const recentEmployeeRequests = requests.slice(0, 5);
+  // --- Filter for employee's recent requests (Employee Action Center - New to Old) ---
+  const recentEmployeeRequests = sortRequestsNewToOld(requests).slice(0, 5);
+  const sortedEmployeeItems = sortItemsNewToOld(items).slice(0, 5);
 
   // --- Role label for header ---
   const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
@@ -463,7 +497,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
 
       {/* ===== KPI SUMMARY CARDS ===== */}
       <div className={styles.summaryGrid} role="region" aria-label="Key performance indicators">
-        {/* Card 1: Total Assets */}
+        {/* Card 1: Total Assets / My Devices */}
         <div
           className={`${styles.summaryCard} ${styles.cardBlue}`}
           role="status"
@@ -487,25 +521,27 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           </div>
         </div>
 
-        {/* Card 2: Available Assets */}
-        <div
-          className={`${styles.summaryCard} ${styles.cardGreen}`}
-          role="status"
-          aria-label={`Available Assets: ${availableAssets}`}
-        >
-          <div className={styles.iconContainer}>
-            <Icon iconName="Accept" />
+        {/* Card 2: Available Assets (Admin / Manager only) */}
+        {(isAdmin || isInventoryManager) && (
+          <div
+            className={`${styles.summaryCard} ${styles.cardGreen}`}
+            role="status"
+            aria-label={`Available Assets: ${availableAssets}`}
+          >
+            <div className={styles.iconContainer}>
+              <Icon iconName="Accept" />
+            </div>
+            <div className={styles.cardInfo}>
+              <span className={styles.summaryValue}>{availableAssets}</span>
+              <span className={styles.summaryLabel}>Available Assets</span>
+              <span className={styles.summarySubtitle}>
+                {availableAssets} in stock ({stockPercentage}% of total)
+              </span>
+            </div>
           </div>
-          <div className={styles.cardInfo}>
-            <span className={styles.summaryValue}>{availableAssets}</span>
-            <span className={styles.summaryLabel}>Available Assets</span>
-            <span className={styles.summarySubtitle}>
-              {availableAssets} in stock ({stockPercentage}% of total)
-            </span>
-          </div>
-        </div>
+        )}
 
-        {/* Card 3: Requests in queue / Total Requests */}
+        {/* Card 3: Requests in queue / My Requests */}
         <div
           className={`${styles.summaryCard} ${styles.cardPurple}`}
           role="status"
@@ -517,7 +553,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           <div className={styles.cardInfo}>
             <span className={styles.summaryValue}>{totalRequests}</span>
             <span className={styles.summaryLabel}>
-              {isManagerView ? 'Requests in Queue' : 'Total Requests'}
+              {isManagerView ? 'Requests in Queue' : !isAdmin ? 'My Requests' : 'Total Requests'}
             </span>
             <span className={styles.summarySubtitle}>
               {isAdmin
@@ -527,87 +563,91 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           </div>
         </div>
 
-        {/* Card 4: Awaiting Approval / Pending Requests */}
-        <div
-          className={`${styles.summaryCard} ${styles.cardGold}`}
-          role="status"
-          aria-label={`${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}`}
-        >
-          <div className={styles.iconContainer}>
-            <Icon iconName="Clock" />
-          </div>
-          <div className={styles.cardInfo}>
-            <span className={styles.summaryValue}>
-              {isManagerView ? awaitingManagerDecision : pendingRequests}
-            </span>
-            <span className={styles.summaryLabel}>
-              {isManagerView ? 'Awaiting Approval' : 'Pending Requests'}
-            </span>
-            <span className={styles.summarySubtitle}>
-              {isManagerView
-                ? `${awaitingManagerDecision} requires review`
-                : `${pendingRequests} under assignment review`}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== CHART CARDS ===== */}
-      <div className={styles.chartsGrid}>
-        {/* Chart 1: Primary Status (Pie) */}
-        <div className={styles.chartCard}>
-          <div className={styles.chartHeader}>
-            <div className={styles.chartIcon}>
-              <Icon iconName="DonutChart" />
+        {/* Card 4: Awaiting Approval / Pending Requests (Admin / Manager only) */}
+        {(isAdmin || isInventoryManager) && (
+          <div
+            className={`${styles.summaryCard} ${styles.cardGold}`}
+            role="status"
+            aria-label={`${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}`}
+          >
+            <div className={styles.iconContainer}>
+              <Icon iconName="Clock" />
             </div>
-            <div className={styles.chartTitleBlock}>
-              <h3>{primaryPieTitle}</h3>
-              <span className={styles.chartSubtitle}>{primaryPieSubtitle}</span>
-            </div>
-          </div>
-          <div className={styles.chartContainer}>
-            <Pie data={assetStatusData} options={pieOptions} />
-          </div>
-        </div>
-
-        {/* Chart 2: Types (Bar) */}
-        <div className={styles.chartCard}>
-          <div className={styles.chartHeader}>
-            <div className={styles.chartIcon}>
-              <Icon iconName="BarChart4" />
-            </div>
-            <div className={styles.chartTitleBlock}>
-              <h3>Assets by Type</h3>
-              <span className={styles.chartSubtitle}>Categorized distribution of equipment</span>
-            </div>
-          </div>
-          <div className={styles.chartContainer}>
-            <Bar data={assetTypeData} options={assetTypeOptions} />
-          </div>
-        </div>
-
-        {/* Chart 3: Doughnut (Request Status) */}
-        <div className={styles.chartCard}>
-          <div className={styles.chartHeader}>
-            <div className={styles.chartIcon}>
-              <Icon iconName="PieDouble" />
-            </div>
-            <div className={styles.chartTitleBlock}>
-              <h3>
-                {isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'}
-              </h3>
-              <span className={styles.chartSubtitle}>
+            <div className={styles.cardInfo}>
+              <span className={styles.summaryValue}>
+                {isManagerView ? awaitingManagerDecision : pendingRequests}
+              </span>
+              <span className={styles.summaryLabel}>
+                {isManagerView ? 'Awaiting Approval' : 'Pending Requests'}
+              </span>
+              <span className={styles.summarySubtitle}>
                 {isManagerView
-                  ? 'Status of asset handouts for manager-approved requests'
-                  : 'Current status across all request pipelines'}
+                  ? `${awaitingManagerDecision} requires review`
+                  : `${pendingRequests} under assignment review`}
               </span>
             </div>
           </div>
-          <div className={styles.chartContainer}>
-            <Doughnut data={requestStatusData} options={doughnutOptions} />
+        )}
+      </div>
+
+      {/* ===== CHART CARDS (Admin & Manager only) ===== */}
+      {(isAdmin || isInventoryManager) && (
+        <div className={styles.chartsGrid}>
+          {/* Chart 1: Primary Status (Pie) */}
+          <div className={styles.chartCard}>
+            <div className={styles.chartHeader}>
+              <div className={styles.chartIcon}>
+                <Icon iconName="DonutChart" />
+              </div>
+              <div className={styles.chartTitleBlock}>
+                <h3>{primaryPieTitle}</h3>
+                <span className={styles.chartSubtitle}>{primaryPieSubtitle}</span>
+              </div>
+            </div>
+            <div className={styles.chartContainer}>
+              <Pie data={assetStatusData} options={pieOptions} />
+            </div>
+          </div>
+
+          {/* Chart 2: Types (Bar) */}
+          <div className={styles.chartCard}>
+            <div className={styles.chartHeader}>
+              <div className={styles.chartIcon}>
+                <Icon iconName="BarChart4" />
+              </div>
+              <div className={styles.chartTitleBlock}>
+                <h3>Assets by Type</h3>
+                <span className={styles.chartSubtitle}>Categorized distribution of equipment</span>
+              </div>
+            </div>
+            <div className={styles.chartContainer}>
+              <Bar data={assetTypeData} options={assetTypeOptions} />
+            </div>
+          </div>
+
+          {/* Chart 3: Doughnut (Request Status) */}
+          <div className={styles.chartCard}>
+            <div className={styles.chartHeader}>
+              <div className={styles.chartIcon}>
+                <Icon iconName="PieDouble" />
+              </div>
+              <div className={styles.chartTitleBlock}>
+                <h3>
+                  {isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'}
+                </h3>
+                <span className={styles.chartSubtitle}>
+                  {isManagerView
+                    ? 'Status of asset handouts for manager-approved requests'
+                    : 'Current status across all request pipelines'}
+                </span>
+              </div>
+            </div>
+            <div className={styles.chartContainer}>
+              <Doughnut data={requestStatusData} options={doughnutOptions} />
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ===== ACTION CENTER — ADMIN ===== */}
       {isAdmin && (
@@ -741,8 +781,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                   <thead>
                     <tr>
                       <th>Asset</th>
+                      <th>Manager Name</th>
                       <th>Qty</th>
                       <th>Requested Date</th>
+                      <th>Manager Comment</th>
                       <th>Fulfillment State</th>
                     </tr>
                   </thead>
@@ -771,8 +813,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       return (
                         <tr key={req.id}>
                           <td><strong>{req.assetTitle}</strong></td>
+                          <td>{req.managerName || '-'}</td>
                           <td>{req.quantity}</td>
                           <td>{formatDate(req.requestDate)}</td>
+                          <td style={{ color: isDeclined ? '#991b1b' : 'inherit' }}>
+                            {req.managerResponse || '-'}
+                          </td>
                           <td>
                             <span className={`${styles.statusBadge} ${badgeClass}`}>
                               {badgeText}
@@ -807,7 +853,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               </div>
             </div>
             <div className={styles.tableWrapper}>
-              {items.length > 0 ? (
+              {sortedEmployeeItems.length > 0 ? (
                 <table className={styles.actionTable}>
                   <thead>
                     <tr>
@@ -818,7 +864,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {items.slice(0, 5).map(item => (
+                    {sortedEmployeeItems.map(item => (
                       <tr key={item.id}>
                         <td><strong>{item.title}</strong></td>
                         <td>{item.assetType}</td>

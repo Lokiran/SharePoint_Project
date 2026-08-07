@@ -53,6 +53,16 @@ import { NotificationCenter } from './NotificationCenter';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
 import { IncidentHistory } from './IncidentHistory/IncidentHistory';
 import { AssetLifecycleDiagram } from './AssetLifecycleDiagram';
+import { WorkflowPopup, IWorkflowPopupDetails } from './WorkflowPopup';
+
+export interface IWorkflowPopupConfig {
+  isOpen: boolean;
+  title: string;
+  stage: string;
+  type: 'success' | 'info' | 'warning' | 'error';
+  message: string;
+  details?: IWorkflowPopupDetails;
+}
 
 export interface IInventoryManagementState {
   items: IInventoryItem[];
@@ -103,6 +113,7 @@ export interface IInventoryManagementState {
   connectionErrorMessages: { [listTitle: string]: string };
   groupUsersList: { [groupName: string]: string[] };
   loadingGroupUsers: { [groupName: string]: boolean };
+  workflowPopup: IWorkflowPopupConfig;
 }
 
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
@@ -121,6 +132,39 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     const activeUser = normalize(currentUser);
     if (!activeUser) return false;
 
+    // 1. Check item status - returned or in-stock assets are no longer assigned
+    const statusLower = (item.status || '').toLowerCase().trim();
+    if (
+      statusLower === 'in stock' || 
+      statusLower === 'instock' || 
+      statusLower === 'available' || 
+      statusLower === 'returned' || 
+      statusLower === 'return approved' || 
+      statusLower === 'returnapproved' || 
+      statusLower === 'under maintenance' || 
+      statusLower === 'damaged' || 
+      statusLower === 'disposed' || 
+      statusLower === 'retired'
+    ) {
+      return false;
+    }
+
+    // 2. Check if there is a completed return request for this asset
+    const returnRequests = this.state ? this.state.returnRequests : [];
+    if (returnRequests && returnRequests.length > 0) {
+      const isReturned = returnRequests.some(r => {
+        const isSameAsset = (r.assetId && r.assetId === item.id) ||
+                            (r.serialNumber && item.serialNumber && r.serialNumber.toLowerCase().trim() === item.serialNumber.toLowerCase().trim()) ||
+                            (r.assetName && item.assetName && r.assetName.toLowerCase().trim() === item.assetName.toLowerCase().trim() && normalize(r.requesterName) === activeUser);
+        const isCompleted = r.status === 'Completed' || r.status === 'Returned' || r.adminStatus === 'Completed';
+        return isSameAsset && isCompleted;
+      });
+      if (isReturned) {
+        return false;
+      }
+    }
+
+    // 3. Match user assignment
     const assignedNorm = normalize(item.assignedTo);
     const isAssigned = assignedNorm && (assignedNorm === activeUser || assignedNorm.includes(activeUser) || activeUser.includes(assignedNorm));
     const isNoted = (item.note || '').toLowerCase().includes('assigned to:') && normalize(item.note).includes(activeUser);
@@ -446,27 +490,36 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       connectionStatuses: {},
       connectionErrorMessages: {},
       groupUsersList: {},
-      loadingGroupUsers: {}
+      loadingGroupUsers: {},
+      workflowPopup: {
+        isOpen: false,
+        title: '',
+        stage: '',
+        type: 'info',
+        message: ''
+      }
     };
   }
 
   public async componentDidMount(): Promise<void> {
     await this._resolveUserRole();
-    await this._loadInventory();
-    await this._loadRequests();
-    await this._loadAuditLogs();
     await this._loadReturnRequests();
 
-    // Run self-healing cleanup for Return Approved assets
+    // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
     try {
       await InventoryService.cleanupReturnApprovedAssets();
     } catch (e) {
       console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
     }
 
+    await this._loadInventory();
+    await this._loadRequests();
+    await this._loadAuditLogs();
+
     // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
     try {
       await InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+      await this._loadInventory();
     } catch (e) {
       console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
     }
@@ -642,8 +695,24 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       this.setState({
         isReturnFormOpen: false,
         selectedAssetForReturn: undefined,
+        returnRequestsLoading: false,
         syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-        syncMessageType: MessageBarType.success
+        syncMessageType: MessageBarType.success,
+        workflowPopup: {
+          isOpen: true,
+          title: 'Asset Return Request Submitted',
+          stage: 'Return Stage 1: Submitted',
+          type: 'info',
+          message: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" has been submitted and is awaiting manager review.`,
+          details: {
+            assetTitle: selectedAssetForReturn.assetName || selectedAssetForReturn.title,
+            requesterName: this.state.activeUserDisplayName,
+            status: 'Pending Manager Approval',
+            condition: condition,
+            comment: reason,
+            date: new Date().toISOString().split('T')[0]
+          }
+        }
       });
     } catch (error: any) {
       const msg = error.message && error.message.includes("already in progress") 
@@ -681,6 +750,30 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       await this._loadInventory();
       await this._loadReturnRequests();
       await this._loadAuditLogs();
+
+      const isCompleted = status === 'Completed';
+      const isRejected = status === 'Rejected';
+
+      this.setState({
+        returnRequestsLoading: false,
+        workflowPopup: {
+          isOpen: true,
+          title: isCompleted ? 'Asset Return Completed' : isRejected ? 'Return Request Rejected' : 'Return Request Approved',
+          stage: isCompleted ? 'Return Stage 3: Completed & Checked In' : isRejected ? 'Return Stage: Rejected' : 'Return Stage 2: Manager Approved',
+          type: isCompleted ? 'success' : isRejected ? 'error' : 'info',
+          message: isCompleted
+            ? `Asset return #${requestId} has been verified by IT Admin and checked back into active stock.`
+            : isRejected
+              ? `Return request #${requestId} was rejected.`
+              : `Return request #${requestId} was approved by manager and sent to IT Admin for verification.`,
+          details: {
+            requestId: `#${requestId}`,
+            status: status,
+            comment: comment || adminComments,
+            date: new Date().toISOString().split('T')[0]
+          }
+        }
+      });
     } catch (error: any) {
       this.setState({ 
         errorMessage: `Failed to update return status: ${error.message || JSON.stringify(error)}`,
@@ -700,6 +793,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       await InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
       await this._loadInventory(); // Refresh list
       await this._loadAuditLogs(); // Refresh audit logs
+
+      this.setState({
+        loading: false,
+        isAssetFormOpen: false,
+        workflowPopup: {
+          isOpen: true,
+          title: 'New Inventory Asset Created',
+          stage: 'Catalog Management',
+          type: 'success',
+          message: `Asset "${newAssetData.title || newAssetData.assetName}" was successfully added to stock inventory.`,
+          details: {
+            assetTitle: newAssetData.title || newAssetData.assetName,
+            status: 'In Stock',
+            date: newAssetData.purchaseDate || new Date().toISOString().split('T')[0]
+          }
+        }
+      });
     } catch (error: any) {
       console.error("Failed to add asset:", error);
       this.setState({
@@ -711,9 +821,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
   private _onSubmitRequest = async (requestData: Omit<IRequest, 'id' | 'requestKey' | 'status'>): Promise<void> => {
     try {
-      const requesterEmployee = this.state.employees.find(e => e.name.toLowerCase() === requestData.requesterName.toLowerCase());
-      const requesterRole = requesterEmployee ? requesterEmployee.jobTitle : 'Inventory Employee';
-      const initialStatus = (requesterRole === 'Inventory Manager' || requesterRole === 'Admin') ? 'Approved' : 'Pending';
+      const initialStatus = 'Pending';
 
       const tempId = `temp-${Date.now()}`;
       const localRequest: IRequest = {
@@ -721,6 +829,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         requestKey: `REQ-${("000000" + (this.state.requests.length + 1)).slice(-6)}`,
         requesterName: requestData.requesterName,
         employeeId: (requestData as any).employeeId || "",
+        managerName: (requestData as any).managerName || "",
         assetId: requestData.assetId || "1",
         assetTitle: requestData.assetTitle,
         assetName: "",
@@ -734,7 +843,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
       // Optimistic update so it gets added to the RequestList directly
       this.setState(prevState => ({
-        requests: [localRequest, ...prevState.requests]
+        requests: [localRequest, ...prevState.requests],
+        workflowPopup: {
+          isOpen: true,
+          title: 'Asset Request Created',
+          stage: 'Stage 1: Request Submitted',
+          type: 'success',
+          message: `Your request for "${requestData.assetTitle}" has been submitted successfully and routed to manager (${(requestData as any).managerName || 'Manager'}) for approval.`,
+          details: {
+            requestId: localRequest.requestKey,
+            assetTitle: requestData.assetTitle,
+            quantity: requestData.quantity,
+            requesterName: requestData.requesterName,
+            managerName: (requestData as any).managerName,
+            status: initialStatus,
+            date: localRequest.requestDate
+          }
+        }
       }));
 
       await InventoryService.addRequest({
@@ -765,6 +890,24 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         await this._loadRequests();
         await this._loadAuditLogs();
       }
+
+      this.setState({
+        workflowPopup: {
+          isOpen: true,
+          title: 'Asset Request Approved by Manager',
+          stage: 'Stage 2: Manager Approved',
+          type: 'success',
+          message: `Request ${request.requestKey || `#${request.id}`} for "${request.assetTitle}" requested by ${request.requesterName} was APPROVED by Manager. Moved to IT Admin for physical asset allocation.`,
+          details: {
+            requestId: request.requestKey || `#${request.id}`,
+            assetTitle: request.assetTitle,
+            requesterName: request.requesterName,
+            managerName: request.managerName || this.state.activeUserDisplayName,
+            status: 'Approved',
+            date: request.requestDate
+          }
+        }
+      });
     } catch (error: any) {
       this.setState({
         errorMessage: `Failed to approve request #${request.id}. ${error.message || JSON.stringify(error)}`
@@ -791,6 +934,25 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         await this._loadRequests();
         await this._loadAuditLogs();
       }
+
+      this.setState({
+        workflowPopup: {
+          isOpen: true,
+          title: 'Asset Request Rejected by Manager',
+          stage: 'Stage 2: Manager Review',
+          type: 'error',
+          message: `Request ${request.requestKey || `#${request.id}`} for "${request.assetTitle}" requested by ${request.requesterName} was REJECTED by Manager.`,
+          details: {
+            requestId: request.requestKey || `#${request.id}`,
+            assetTitle: request.assetTitle,
+            requesterName: request.requesterName,
+            managerName: request.managerName || this.state.activeUserDisplayName,
+            status: 'Declined',
+            comment: reason,
+            date: request.requestDate
+          }
+        }
+      });
     } catch (error: any) {
       this.setState({
         errorMessage: `Failed to reject request #${request.id}. ${error.message || JSON.stringify(error)}`
@@ -812,6 +974,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         await this._loadRequests();
         await this._loadAuditLogs();
       }
+
+      this.setState({
+        workflowPopup: {
+          isOpen: true,
+          title: 'Physical Asset Allocated & Dispatched',
+          stage: 'Stage 3: Admin Asset Allocation',
+          type: 'success',
+          message: `Physical asset "${request.assetTitle}" has been allocated to ${request.requesterName} by System Administrator! Request fulfilled.`,
+          details: {
+            requestId: request.requestKey || `#${request.id}`,
+            assetTitle: request.assetTitle,
+            requesterName: request.requesterName,
+            status: 'Asset Allocated & Dispatched',
+            date: new Date().toISOString().split('T')[0]
+          }
+        }
+      });
     } catch (error: any) {
       this.setState({
         errorMessage: `Failed to approve asset status for request #${request.requestKey || request.id}. ${error.message || JSON.stringify(error)}`
@@ -1461,7 +1640,22 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         isAdminPanelOpen: false,
         selectedAdminRequest: undefined,
         adminSelectedAssetId: undefined,
-        adminComment: ''
+        adminComment: '',
+        workflowPopup: {
+          isOpen: true,
+          title: 'Physical Asset Allocated & Dispatched',
+          stage: 'Stage 3: Admin Asset Allocation',
+          type: 'success',
+          message: `Asset "${request.assetTitle}" has been allocated to ${request.requesterName} by System Administrator! Request fulfilled.`,
+          details: {
+            requestId: request.requestKey || `#${request.id}`,
+            assetTitle: request.assetTitle,
+            requesterName: request.requesterName,
+            status: 'Asset Allocated & Dispatched',
+            comment: adminComment,
+            date: new Date().toISOString().split('T')[0]
+          }
+        }
       });
       
       await this._loadInventory();
@@ -2411,6 +2605,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             userEmail={activeUserEmail}
             setIsLoading={(loading) => this.setState({ loading })}
             preselectedAsset={this.state.selectedAssetForIncident}
+            onSuccessPopup={(details) => {
+              this.setState({
+                workflowPopup: {
+                  isOpen: true,
+                  title: 'Incident Ticket Logged',
+                  stage: 'Incident Management: Logged',
+                  type: 'warning',
+                  message: `Incident ticket for "${details.assetName}" (${details.incidentType}) has been logged and assigned to Admin IT support.`,
+                  details: {
+                    assetTitle: details.assetName,
+                    requesterName: details.requesterName,
+                    status: 'Open Ticket',
+                    date: new Date().toISOString().split('T')[0]
+                  }
+                }
+              });
+            }}
           />
         )}
 
@@ -2421,6 +2632,15 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           onDismiss={() => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined })}
           asset={this.state.selectedAssetForReturn}
           onSubmit={this._onSubmitReturnRequest}
+        />
+        <WorkflowPopup
+          isOpen={this.state.workflowPopup?.isOpen}
+          title={this.state.workflowPopup?.title || ''}
+          stage={this.state.workflowPopup?.stage || ''}
+          type={this.state.workflowPopup?.type || 'info'}
+          message={this.state.workflowPopup?.message || ''}
+          details={this.state.workflowPopup?.details}
+          onDismiss={() => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } })}
         />
       </section>
     );

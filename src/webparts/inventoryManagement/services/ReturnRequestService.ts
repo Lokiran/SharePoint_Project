@@ -467,9 +467,7 @@ export class ReturnRequestService {
       console.log("Resolved Condition Field:", conditionKey);
 
       const assetIdNum = parseInt(req.assetId, 10);
-      console.log("Inventory Item ID:", assetIdNum);
-
-      if (status === 'Completed') {
+      console.log("Inventory Item ID:", assetIdNum);      if (status === 'Completed' || status === 'Approved') {
         const condition = finalCondition || req.proposedCondition || "Good";
         let nextStatus = "In Stock";
         if (condition === "Poor" || condition === "Damaged") {
@@ -481,7 +479,7 @@ export class ReturnRequestService {
           [assignedToKey]: null,
           [`${assignedToKey}Id`]: null,
           [conditionKey]: condition,
-          [noteKey]: `Returned by employee. Verification Note: ${adminComments || managerComment}`
+          [noteKey]: `In Stock - Returned by employee. Verification Note: ${adminComments || managerComment || 'Returned to Stock'}`
         };
 
         if (assignedToKey !== "AssignedTo") {
@@ -493,32 +491,56 @@ export class ReturnRequestService {
 
         let assetUpdateResult: any = null;
         try {
-          assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
-          console.log("Result of list.items.update() (Inventory update):", JSON.stringify(assetUpdateResult));
+          if (!isNaN(assetIdNum)) {
+            assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
+            console.log("Result of list.items.update() (Inventory update by ID):", JSON.stringify(assetUpdateResult));
+          }
         } catch (err: any) {
-          console.error(`Exception in SharePoint Asset update on Return ${status}:`, err.message, err.stack);
-          if (err.data) console.error("Error details:", JSON.stringify(err.data));
+          console.error(`Exception in SharePoint Asset update by ID on Return ${status}:`, err.message);
         }
 
+        // Fallback update by Serial Number or Title if ID update didn't run or failed
+        try {
+          let matchingAssets: any[] = [];
+          if (req.serialNumber) {
+            const serialCol = findField("serialnumber", "SerialNumber");
+            matchingAssets = await list.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
+          }
+          if ((!matchingAssets || matchingAssets.length === 0) && req.assetName) {
+            const titleCol = findField("assetname", "Title");
+            matchingAssets = await list.items.filter(`${titleCol} eq '${req.assetName.replace(/'/g, "''")}'`).select("ID")();
+          }
+
+          for (const mAsset of matchingAssets) {
+            if (mAsset.ID !== assetIdNum) {
+              await list.items.getById(mAsset.ID).update(payload);
+              console.log(`Updated inventory asset ID ${mAsset.ID} (${req.assetName}) to '${nextStatus}' via fallback search.`);
+            }
+          }
+        } catch (err: any) {
+          console.warn("Fallback inventory update failed:", err.message);
+        }
+
+        // Delete Mapping List records for the returned asset
         try {
           const mappingList = await AssetAssignmentService.getMappingList();
           console.log("Resolved Mapping List Name:", mappingList.Title || "Mapping List");
           const mappingFields = await SharePointBaseService.getListFieldsMetadata(mappingList);
           const serialCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+          const assetNameCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+          const employeeCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
           
           let mappedItems: any[] = [];
           if (serialCol && req.serialNumber) {
             mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
           }
 
-          if ((!mappedItems || mappedItems.length === 0) && req.assetName) {
-            console.log("[Return Request Workflow] Mapping record not found by serial number. Trying fallback search by Asset Name and Employee Name...");
-            const assetNameCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
-            const employeeCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
-            if (assetNameCol && employeeCol && req.requesterName) {
-              const filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}' and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
-              mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+          if ((!mappedItems || mappedItems.length === 0) && assetNameCol && req.assetName) {
+            let filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}'`;
+            if (employeeCol && req.requesterName) {
+              filterQuery += ` and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
             }
+            mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
           }
 
           console.log("Mapping Records Found for deletion:", JSON.stringify(mappedItems));
@@ -611,7 +633,7 @@ export class ReturnRequestService {
   }
 
   public static async cleanupReturnApprovedAssets(): Promise<void> {
-    console.log("[Cleanup] Starting self-healing cleanup for Return Approved assets...");
+    console.log("[Cleanup] Starting self-healing cleanup for Return Approved & Completed assets...");
     try {
       const list = await InventoryItemService.getInventoryList();
       if (!list || !list.items || typeof list.items.select !== 'function') {
@@ -629,70 +651,107 @@ export class ReturnRequestService {
       const statusKey = findField("status", "Status");
       const assignedToKey = findField("assignedto", "AssignedTo");
       const conditionKey = findField("condition", "Condition");
+      const noteKey = findField("note", "Note");
 
-      const items = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title")();
-      
-      for (const item of items) {
-        const rawStatus = item[statusKey] || "";
-        const val = item[assignedToKey];
-        let hasAssignee = false;
-        if (val) {
-          if (typeof val === 'object') {
-            hasAssignee = Object.keys(val).length > 0;
-          } else {
-            hasAssignee = true;
+      // 1. Fetch completed/approved return requests
+      const returnRequests = await ReturnRequestService.getReturnRequests();
+      const resolvedReturns = returnRequests.filter(r => {
+        const s = (r.status || '').toLowerCase();
+        return s === 'completed' || s === 'approved' || s === 'returned' || s === 'pending admin verification';
+      });
+
+      console.log(`[Cleanup] Found ${resolvedReturns.length} approved/completed return request(s) to verify against inventory.`);
+
+      const inventoryItems = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title", noteKey)();
+
+      // Clean up mapping list records for resolved returns
+      let mappingList: any = null;
+      let mappingFields: any[] = [];
+      let serialCol = "";
+      let assetNameCol = "";
+      let employeeCol = "";
+
+      try {
+        mappingList = await AssetAssignmentService.getMappingList();
+        mappingFields = await SharePointBaseService.getListFieldsMetadata(mappingList);
+        serialCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]) || "";
+        assetNameCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]) || "";
+        employeeCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]) || "";
+      } catch (e) {
+        console.warn("[Cleanup] Could not bind mapping list", e);
+      }
+
+      for (const ret of resolvedReturns) {
+        const serial = (ret.serialNumber || '').trim().toLowerCase();
+        const title = (ret.assetName || '').trim().toLowerCase();
+        const reqAssetId = (ret.assetId || '').trim();
+
+        // Match inventory item
+        const matchingInventoryItem = inventoryItems.find((item: any) => {
+          const itemID = item.ID ? item.ID.toString() : "";
+          const itemSerial = (item.SerialNumber || '').trim().toLowerCase();
+          const itemTitle = (item.Title || item.AssetName || '').trim().toLowerCase();
+
+          return (reqAssetId && itemID === reqAssetId) ||
+                 (serial && itemSerial && itemSerial === serial) ||
+                 (title && itemTitle && itemTitle === title);
+        });
+
+        if (matchingInventoryItem) {
+          const rawStatus = (matchingInventoryItem[statusKey] || '').toString().toLowerCase();
+          const val = matchingInventoryItem[assignedToKey];
+          const hasAssignee = !!(val && (typeof val === 'object' ? Object.keys(val).length > 0 : String(val).trim() !== ''));
+
+          if (rawStatus === 'assigned' || hasAssignee || rawStatus === 'return approved' || rawStatus === 'returnapproved') {
+            console.log(`[Cleanup] Resetting returned asset '${ret.assetName}' (ID: ${matchingInventoryItem.ID}) to 'In Stock'.`);
+
+            const payload: any = {
+              [statusKey]: "In Stock",
+              [assignedToKey]: null,
+              [`${assignedToKey}Id`]: null,
+              [noteKey]: `In Stock - Returned by employee (${ret.requesterName || ''})`
+            };
+
+            if (assignedToKey !== "AssignedTo") {
+              payload.AssignedTo = null;
+              payload.AssignedToId = null;
+            }
+
+            try {
+              await list.items.getById(matchingInventoryItem.ID).update(payload);
+              console.log(`[Cleanup] Successfully set Inventory item ID ${matchingInventoryItem.ID} to 'In Stock'.`);
+            } catch (err: any) {
+              console.error(`[Cleanup] Failed to update inventory item ID ${matchingInventoryItem.ID}:`, err.message);
+            }
           }
         }
 
-        if (rawStatus === "Return Approved" || rawStatus === "ReturnApproved" || (rawStatus === "In Stock" && hasAssignee)) {
-          console.log(`[Cleanup] Found return approved or in-stock asset with assignee: ${item.Title || "Asset"} (ID: ${item.ID})`);
-          
-          const payload: any = {
-            [statusKey]: "In Stock",
-            [assignedToKey]: null,
-            [`${assignedToKey}Id`]: null
-          };
-
-          if (assignedToKey !== "AssignedTo") {
-            payload.AssignedTo = null;
-            payload.AssignedToId = null;
-          }
-
-          await list.items.getById(item.ID).update(payload);
-          console.log(`[Cleanup] Updated asset ID ${item.ID} in SharePoint to 'In Stock' and cleared assignee.`);
-
-          const serialNumber = item.SerialNumber || "";
-          const assetTitle = item.Title || "";
-          const requesterName = (val && (val.Title || val.Name || (typeof val === 'object' ? '' : val.toString()))) || "";
-
+        // Clean up mapping record
+        if (mappingList) {
           try {
-            const mappingList = await AssetAssignmentService.getMappingList();
-            const mappingFields = await SharePointBaseService.getListFieldsMetadata(mappingList);
-            const serialCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
-            
             let mappedItems: any[] = [];
-            if (serialCol && serialNumber) {
-              mappedItems = await mappingList.items.filter(`${serialCol} eq '${serialNumber.replace(/'/g, "''")}'`).select("ID")();
+            if (serialCol && ret.serialNumber) {
+              mappedItems = await mappingList.items.filter(`${serialCol} eq '${ret.serialNumber.replace(/'/g, "''")}'`).select("ID")();
             }
 
-            if ((!mappedItems || mappedItems.length === 0) && assetTitle) {
-              const assetNameCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
-              const employeeCol = SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
-              if (assetNameCol && employeeCol && requesterName) {
-                const filterQuery = `${assetNameCol} eq '${assetTitle.replace(/'/g, "''")}' and ${employeeCol} eq '${requesterName.replace(/'/g, "''")}'`;
-                mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+            if ((!mappedItems || mappedItems.length === 0) && assetNameCol && ret.assetName) {
+              let filterQuery = `${assetNameCol} eq '${ret.assetName.replace(/'/g, "''")}'`;
+              if (employeeCol && ret.requesterName) {
+                filterQuery += ` and ${employeeCol} eq '${ret.requesterName.replace(/'/g, "''")}'`;
               }
+              mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
             }
 
             for (const mItem of mappedItems) {
               await mappingList.items.getById(mItem.ID).delete();
-              console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for asset ${assetTitle}`);
+              console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for returned asset ${ret.assetName}`);
             }
-          } catch (err: any) {
-            console.warn(`[Cleanup] Failed to clean up mapping record for asset ${assetTitle}`, err);
+          } catch (mErr: any) {
+            console.warn(`[Cleanup] Mapping deletion warning for ${ret.assetName}:`, mErr.message);
           }
         }
       }
+
       console.log("[Cleanup] Self-healing cleanup finished.");
     } catch (error: any) {
       console.warn("[Cleanup] Failed to run return approved assets cleanup:", error);

@@ -119,9 +119,9 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
     return options;
   }, [items]);
 
-  // Filtering Logic
+  // Filtering Logic (New to Old)
   const filteredItems = useMemo(() => {
-    return items.filter(item => {
+    const filtered = items.filter(item => {
       // 1. Search filter
       const normQuery = searchQuery.toLowerCase().trim();
       const matchesSearch = !normQuery || 
@@ -143,6 +143,20 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
       const matchesWarranty = selectedWarranty === 'All' || w.status === selectedWarranty;
 
       return matchesSearch && matchesType && matchesCondition && matchesWarranty;
+    });
+
+    return filtered.sort((a, b) => {
+      const dateA = a.assignedDate || a.purchaseDate || '';
+      const dateB = b.assignedDate || b.purchaseDate || '';
+      if (dateA && dateB && dateA !== dateB) {
+        return new Date(dateB).getTime() - new Date(dateA).getTime();
+      }
+      const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+      const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+        return numB - numA;
+      }
+      return (b.id || '').localeCompare(a.id || '');
     });
   }, [items, searchQuery, selectedType, selectedCondition, selectedWarranty]);
 

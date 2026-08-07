@@ -87,14 +87,15 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
     };
   }, [returnRequests]);
 
-  // Filtering Logic (Asset Requests)
+  // Filtering Logic (Asset Requests - New to Old)
   const filteredRequests = useMemo(() => {
-    return requests.filter(r => {
+    const filtered = requests.filter(r => {
       const normQuery = searchQuery.toLowerCase().trim();
       const matchesSearch = !normQuery || 
         (r.requestKey || '').toLowerCase().includes(normQuery) ||
         (r.assetTitle || '').toLowerCase().includes(normQuery) ||
         (r.reason || '').toLowerCase().includes(normQuery) ||
+        (r.managerName || '').toLowerCase().includes(normQuery) ||
         (r.id || '').toLowerCase().includes(normQuery);
 
       const matchesStatus = selectedStatus === 'All' || (r.status || 'Pending') === selectedStatus;
@@ -102,11 +103,25 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
 
       return matchesSearch && matchesStatus && matchesPriority;
     });
+
+    return filtered.sort((a, b) => {
+      const dateA = a.requestDate || '';
+      const dateB = b.requestDate || '';
+      if (dateA && dateB && dateA !== dateB) {
+        return new Date(dateB).getTime() - new Date(dateA).getTime();
+      }
+      const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+      const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+        return numB - numA;
+      }
+      return (b.id || '').localeCompare(a.id || '');
+    });
   }, [requests, searchQuery, selectedStatus, selectedPriority]);
 
-  // Filtering Logic (Return Requests)
+  // Filtering Logic (Return Requests - New to Old)
   const filteredReturnRequests = useMemo(() => {
-    return returnRequests.filter(r => {
+    const filtered = returnRequests.filter(r => {
       const normQuery = returnSearchQuery.toLowerCase().trim();
       const matchesSearch = !normQuery ||
         (r.assetName || '').toLowerCase().includes(normQuery) ||
@@ -120,6 +135,20 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
         (returnSelectedStatus === 'Approved' && (r.status === 'Pending Admin Verification' || r.status === 'Approved'));
 
       return matchesSearch && matchesStatus;
+    });
+
+    return filtered.sort((a, b) => {
+      const dateA = a.requestDate || '';
+      const dateB = b.requestDate || '';
+      if (dateA && dateB && dateA !== dateB) {
+        return new Date(dateB).getTime() - new Date(dateA).getTime();
+      }
+      const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+      const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+        return numB - numA;
+      }
+      return (b.id || '').localeCompare(a.id || '');
     });
   }, [returnRequests, returnSearchQuery, returnSelectedStatus]);
 
@@ -315,10 +344,27 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                         <div style={{ fontSize: '0.82rem', color: 'var(--text-main)' }}>
                           Asset: <strong>{item.assetTitle}</strong> (Qty: {item.quantity})
                         </div>
+                        {item.managerName && (
+                          <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                            Manager: <strong style={{ color: 'var(--text-main)' }}>{item.managerName}</strong>
+                          </div>
+                        )}
                         {item.reason && (
                           <p style={{ margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' }}>
                             Reason: {item.reason}
                           </p>
+                        )}
+                        {item.managerResponse && (
+                          <div style={{
+                            backgroundColor: status === 'Declined' ? '#fef2f2' : '#f8fafc',
+                            borderRadius: '4px',
+                            padding: '4px 8px',
+                            borderLeft: `3px solid ${status === 'Declined' ? '#dc2626' : '#16a34a'}`,
+                            fontSize: '0.75rem',
+                            color: status === 'Declined' ? '#991b1b' : 'var(--text-main)'
+                          }}>
+                            <strong>Manager Note:</strong> {item.managerResponse}
+                          </div>
                         )}
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px', marginTop: 'auto' }}>
                           <span style={{ color: adminAllocationColor, fontWeight: 500 }}>{adminAllocationText}</span>

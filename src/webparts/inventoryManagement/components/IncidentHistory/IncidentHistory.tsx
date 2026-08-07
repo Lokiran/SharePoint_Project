@@ -44,6 +44,12 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
   const [selectedIncident, setSelectedIncident] = useState<IIncidentHistoryItem | null>(null);
   const [showDetailPanel, setShowDetailPanel] = useState(false);
   const [tempResolution, setTempResolution] = useState('');
+  const [toastNotification, setToastNotification] = useState<{ message: string; title?: string } | null>(null);
+
+  const triggerToast = (message: string, title: string = 'Incident Updated') => {
+    setToastNotification({ message, title });
+    setTimeout(() => setToastNotification(null), 4000);
+  };
 
   const getPriorityBadgeStyle = (priority?: string) => {
     const p = priority || 'Medium';
@@ -153,6 +159,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
       };
       setSelectedIncident(updatedIncident);
       await loadIncidents();
+      triggerToast(`Status for incident ${incident.incidentId || '#' + incident.id} updated to '${newStatus}'.`, 'Status Updated');
     } catch (error) {
       console.error('Error updating status:', error);
     } finally {
@@ -172,6 +179,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
       };
       setSelectedIncident(updatedIncident);
       await loadIncidents();
+      triggerToast(`Resolution summary saved for incident ${incident.incidentId || '#' + incident.id}.`, 'Resolution Saved');
     } catch (error) {
       console.error('Error saving resolution:', error);
     } finally {
@@ -590,6 +598,53 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
           </div>
         )}
       </Panel>
+
+      {/* Bottom-Right Corner Toast Notification */}
+      {toastNotification && (
+        <div style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          zIndex: 100000,
+          backgroundColor: '#ffffff',
+          color: '#0f172a',
+          padding: '14px 18px',
+          borderRadius: '12px',
+          boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06)',
+          borderLeft: '5px solid #10b981',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          maxWidth: '380px',
+          fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif'
+        }}>
+          <div style={{
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            backgroundColor: '#dcfce7',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <Icon iconName="Accept" style={{ color: '#166534', fontSize: '15px', fontWeight: 'bold' }} />
+          </div>
+          <div style={{ flex: 1 }}>
+            <strong style={{ display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' }}>
+              {toastNotification.title || 'Success'}
+            </strong>
+            <span style={{ fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' }}>
+              {toastNotification.message}
+            </span>
+          </div>
+          <Icon
+            iconName="Cancel"
+            style={{ cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }}
+            onClick={() => setToastNotification(null)}
+          />
+        </div>
+      )}
     </div>
   );
 };

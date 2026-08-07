@@ -16,6 +16,11 @@ const IncidentHistory = (props) => {
     const [selectedIncident, setSelectedIncident] = (0, react_1.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0, react_1.useState)(false);
     const [tempResolution, setTempResolution] = (0, react_1.useState)('');
+    const [toastNotification, setToastNotification] = (0, react_1.useState)(null);
+    const triggerToast = (message, title = 'Incident Updated') => {
+        setToastNotification({ message, title });
+        setTimeout(() => setToastNotification(null), 4000);
+    };
     const getPriorityBadgeStyle = (priority) => {
         const p = priority || 'Medium';
         let backgroundColor = '#f3f4f6';
@@ -115,6 +120,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
+            triggerToast(`Status for incident ${incident.incidentId || '#' + incident.id} updated to '${newStatus}'.`, 'Status Updated');
         }
         catch (error) {
             console.error('Error updating status:', error);
@@ -134,6 +140,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
+            triggerToast(`Resolution summary saved for incident ${incident.incidentId || '#' + incident.id}.`, 'Resolution Saved');
         }
         catch (error) {
             console.error('Error saving resolution:', error);
@@ -425,7 +432,39 @@ const IncidentHistory = (props) => {
                     React.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
                         React.createElement("strong", null, "Resolution Summary:"),
                         " ",
-                        selectedIncident.resolution))))))))));
+                        selectedIncident.resolution)))))))),
+        toastNotification && (React.createElement("div", { style: {
+                position: 'fixed',
+                bottom: '24px',
+                right: '24px',
+                zIndex: 100000,
+                backgroundColor: '#ffffff',
+                color: '#0f172a',
+                padding: '14px 18px',
+                borderRadius: '12px',
+                boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06)',
+                borderLeft: '5px solid #10b981',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                maxWidth: '380px',
+                fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif'
+            } },
+            React.createElement("div", { style: {
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    backgroundColor: '#dcfce7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                } },
+                React.createElement(react_2.Icon, { iconName: "Accept", style: { color: '#166534', fontSize: '15px', fontWeight: 'bold' } })),
+            React.createElement("div", { style: { flex: 1 } },
+                React.createElement("strong", { style: { display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' } }, toastNotification.title || 'Success'),
+                React.createElement("span", { style: { fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' } }, toastNotification.message)),
+            React.createElement(react_2.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
 };
 exports.IncidentHistory = IncidentHistory;
 //# sourceMappingURL=IncidentHistory.js.map

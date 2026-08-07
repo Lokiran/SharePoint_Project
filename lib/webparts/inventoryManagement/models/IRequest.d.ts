@@ -11,6 +11,7 @@ export interface IRequest {
     status: 'Pending' | 'Approved' | 'Declined';
     assetStatus?: 'Pending' | 'Approved';
     managerResponse?: string;
+    managerName?: string;
     requestDate: string;
     reason?: string;
 }

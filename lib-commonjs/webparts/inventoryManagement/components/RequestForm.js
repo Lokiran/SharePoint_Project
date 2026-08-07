@@ -9,6 +9,7 @@ const stackTokens = { childrenGap: 15 };
 const RequestForm = (props) => {
     const [selectedRequesterId, setSelectedRequesterId] = React.useState(undefined);
     const [employeeId, setEmployeeId] = React.useState('');
+    const [managerName, setManagerName] = React.useState('');
     const [selectedAssetType, setSelectedAssetType] = React.useState(undefined);
     const [priority, setPriority] = React.useState('Medium');
     const [quantity, setQuantity] = React.useState(1);
@@ -53,7 +54,7 @@ const RequestForm = (props) => {
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
         : DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS;
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0;
     const onSave = () => {
         // Validate role: employees can only request for themselves
         if (isEmployee && selectedRequesterId) {
@@ -74,6 +75,7 @@ const RequestForm = (props) => {
             props.onSubmitRequest({
                 requesterName: employee.name,
                 employeeId: employeeId,
+                managerName: managerName.trim(),
                 assetId: matchingAsset ? matchingAsset.id : '1',
                 assetTitle: selectedAssetType,
                 priority: priority,
@@ -83,6 +85,7 @@ const RequestForm = (props) => {
             });
             setSelectedRequesterId(undefined);
             setEmployeeId('');
+            setManagerName('');
             setSelectedAssetType(undefined);
             setPriority('Medium');
             setQuantity(1);
@@ -103,6 +106,7 @@ const RequestForm = (props) => {
                     }
                 }, required: true, disabled: isEmployee && employeeOptions.length === 1 }),
             React.createElement(react_1.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true }),
+            React.createElement(react_1.TextField, { label: "Manager's Name", value: managerName, onChange: (_, val) => setManagerName(val || ''), placeholder: "Enter manager's name", required: true }),
             React.createElement(react_1.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
             React.createElement(react_1.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);

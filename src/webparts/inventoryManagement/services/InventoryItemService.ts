@@ -93,12 +93,14 @@ export class InventoryItemService {
         })();
 
         const rawStatus = item[statusKey] || item.Status || item.AssetStatus || "";
+        const noteText = item[noteKey] || item.Note || item.Notes || "";
         let finalStatus = rawStatus;
         let finalAssignedTo = assignedToVal;
         const statusLower = (rawStatus || "").toLowerCase();
+        const noteLower = (noteText || "").toLowerCase();
         
-        if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock") {
-          finalStatus = "In Stock";
+        if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock" || statusLower === "returned" || statusLower === "completed" || statusLower === "available" || noteLower.indexOf("returned by employee") >= 0 || noteLower.indexOf("in stock") >= 0) {
+          finalStatus = statusLower === "under maintenance" ? "Under Maintenance" : "In Stock";
           finalAssignedTo = "";
         } else if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
           if (!assignedToVal || assignedToVal.trim() === "") {

@@ -29,6 +29,22 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
   const [selectedRequestForDetails, setSelectedRequestForDetails] = useState<IRequest | null>(null);
   const [isDetailsPanelOpen, setIsDetailsPanelOpen] = useState<boolean>(false);
 
+  const sortedItems = React.useMemo(() => {
+    return [...props.items].sort((a, b) => {
+      const dateA = a.requestDate || '';
+      const dateB = b.requestDate || '';
+      if (dateA && dateB && dateA !== dateB) {
+        return new Date(dateB).getTime() - new Date(dateA).getTime();
+      }
+      const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+      const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+        return numB - numA;
+      }
+      return (b.id || '').localeCompare(a.id || '');
+    });
+  }, [props.items]);
+
   const columns: IColumn[] = [
     {
       key: 'columnRequestKey',
@@ -45,6 +61,15 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
       minWidth: 100,
       maxWidth: 150,
       isResizable: true
+    },
+    {
+      key: 'columnManagerName',
+      name: "Manager's Name",
+      fieldName: 'managerName',
+      minWidth: 110,
+      maxWidth: 140,
+      isResizable: true,
+      onRender: (item: IRequest) => item.managerName || 'N/A'
     },
     {
       key: 'columnAssetType',
@@ -123,6 +148,23 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
         );
       }
     } as IColumn]),
+    {
+      key: 'columnManagerComment',
+      name: 'Manager Comment',
+      fieldName: 'managerResponse',
+      minWidth: 150,
+      maxWidth: 220,
+      isResizable: true,
+      onRender: (item: IRequest) => {
+        if (!item.managerResponse) return <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>-</span>;
+        const isDeclined = item.status === 'Declined';
+        return (
+          <span style={{ color: isDeclined ? '#991b1b' : 'inherit', fontWeight: isDeclined ? 600 : 400 }}>
+            {item.managerResponse}
+          </span>
+        );
+      }
+    },
     ...(props.canApproveAsset ? [{
       key: 'columnAssetStatus',
       name: 'Asset Status',
@@ -169,7 +211,6 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
       }
     } as IColumn] : []),
     ...(props.showResponseColumns ? [
-      { key: 'columnManagerResponse', name: 'Manager Response', fieldName: 'managerResponse', minWidth: 170, maxWidth: 240, isResizable: true },
       {
         key: 'columnAdminResponse',
         name: 'Admin Response',
@@ -263,12 +304,12 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
 
   return (
     <div style={{ marginTop: '10px' }}>
-      {props.items.length === 0 ? (
+      {sortedItems.length === 0 ? (
         <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No asset requests found.</p>
       ) : (
         <div className={styles.tableWrapper}>
           <DetailsList
-            items={props.items}
+            items={sortedItems}
             columns={columns}
             setKey="set"
             layoutMode={DetailsListLayoutMode.justified}
@@ -317,6 +358,10 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                 <div>
                   <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Employee ID</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.employeeId || '-'}</strong>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Manager&apos;s Name</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.managerName || '-'}</strong>
                 </div>
                 <div>
                   <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Asset Category</span>

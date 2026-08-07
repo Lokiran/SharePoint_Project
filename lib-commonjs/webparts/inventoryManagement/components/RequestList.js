@@ -10,6 +10,21 @@ const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./Inv
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0, react_1.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0, react_1.useState)(false);
+    const sortedItems = React.useMemo(() => {
+        return [...props.items].sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    }, [props.items]);
     const columns = [
         {
             key: 'columnRequestKey',
@@ -26,6 +41,15 @@ const RequestList = (props) => {
             minWidth: 100,
             maxWidth: 150,
             isResizable: true
+        },
+        {
+            key: 'columnManagerName',
+            name: "Manager's Name",
+            fieldName: 'managerName',
+            minWidth: 110,
+            maxWidth: 140,
+            isResizable: true,
+            onRender: (item) => item.managerName || 'N/A'
         },
         {
             key: 'columnAssetType',
@@ -96,6 +120,20 @@ const RequestList = (props) => {
                         } }, val));
                 }
             }]),
+        {
+            key: 'columnManagerComment',
+            name: 'Manager Comment',
+            fieldName: 'managerResponse',
+            minWidth: 150,
+            maxWidth: 220,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.managerResponse)
+                    return React.createElement("span", { style: { color: 'var(--text-muted)', fontStyle: 'italic' } }, "-");
+                const isDeclined = item.status === 'Declined';
+                return (React.createElement("span", { style: { color: isDeclined ? '#991b1b' : 'inherit', fontWeight: isDeclined ? 600 : 400 } }, item.managerResponse));
+            }
+        },
         ...(props.canApproveAsset ? [{
                 key: 'columnAssetStatus',
                 name: 'Asset Status',
@@ -130,7 +168,6 @@ const RequestList = (props) => {
                 }
             }] : []),
         ...(props.showResponseColumns ? [
-            { key: 'columnManagerResponse', name: 'Manager Response', fieldName: 'managerResponse', minWidth: 170, maxWidth: 240, isResizable: true },
             {
                 key: 'columnAdminResponse',
                 name: 'Admin Response',
@@ -196,8 +233,8 @@ const RequestList = (props) => {
         }
     ];
     return (React.createElement("div", { style: { marginTop: '10px' } },
-        props.items.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
-            React.createElement(DetailsList_1.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }))),
+        sortedItems.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
+            React.createElement(DetailsList_1.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }))),
         selectedRequestForDetails && (React.createElement(react_2.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
@@ -224,6 +261,9 @@ const RequestList = (props) => {
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee ID"),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.employeeId || '-')),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager's Name"),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.managerName || '-')),
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Category"),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.assetTitle)),

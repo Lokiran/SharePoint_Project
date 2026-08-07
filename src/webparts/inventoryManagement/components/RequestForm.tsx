@@ -33,6 +33,7 @@ const stackTokens: IStackTokens = { childrenGap: 15 };
 export const RequestForm: React.FC<IRequestFormProps> = (props) => {
   const [selectedRequesterId, setSelectedRequesterId] = React.useState<string | undefined>(undefined);
   const [employeeId, setEmployeeId] = React.useState('');
+  const [managerName, setManagerName] = React.useState('');
   const [selectedAssetType, setSelectedAssetType] = React.useState<string | undefined>(undefined);
   const [priority, setPriority] = React.useState<'High' | 'Medium' | 'Low'>('Medium');
   const [quantity, setQuantity] = React.useState<number>(1);
@@ -87,7 +88,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
     ? dynamicAssetTypeOptions
     : DEFAULT_ASSET_TYPE_OPTIONS;
 
-  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
+  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0;
 
   const onSave = () => {
     // Validate role: employees can only request for themselves
@@ -114,6 +115,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
       props.onSubmitRequest({
         requesterName: employee.name,
         employeeId: employeeId,
+        managerName: managerName.trim(),
         assetId: matchingAsset ? matchingAsset.id : '1',
         assetTitle: selectedAssetType,
         priority: priority,
@@ -124,6 +126,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
 
       setSelectedRequesterId(undefined);
       setEmployeeId('');
+      setManagerName('');
       setSelectedAssetType(undefined);
       setPriority('Medium');
       setQuantity(1);
@@ -168,6 +171,13 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
           label="Employee ID"
           value={employeeId}
           onChange={(_, val) => setEmployeeId(val || '')}
+          required
+        />
+        <TextField
+          label="Manager's Name"
+          value={managerName}
+          onChange={(_, val) => setManagerName(val || '')}
+          placeholder="Enter manager's name"
           required
         />
         <TextField

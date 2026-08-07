@@ -858,14 +858,46 @@ const Dashboard = (props) => {
     const declinedReqCount = requests.filter(r => (r.status || '').toLowerCase() === 'declined' || (r.status || '').toLowerCase() === 'rejected').length;
     const totalDecidedRequests = approvedReqCount + declinedReqCount;
     const approvalSuccessRate = totalDecidedRequests > 0 ? ((approvedReqCount / totalDecidedRequests) * 100).toFixed(0) : '0';
-    // --- Filter for pending assignments (Admin Action Center) ---
-    const pendingAssignments = requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending');
+    // --- Utility: Sort requests & assets new-to-old ---
+    const sortRequestsNewToOld = (reqs) => {
+        return [...reqs].sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    };
+    const sortItemsNewToOld = (itemList) => {
+        return [...itemList].sort((a, b) => {
+            const dateA = a.assignedDate || a.purchaseDate || '';
+            const dateB = b.assignedDate || b.purchaseDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    };
+    // --- Filter for pending assignments (Admin Action Center - New to Old) ---
+    const pendingAssignments = sortRequestsNewToOld(requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending'));
     const recentAssignments = pendingAssignments.slice(0, 5);
-    // --- Filter for pending decisions (Manager Action Center) ---
-    const pendingApprovals = requests.filter(r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending');
+    // --- Filter for pending decisions (Manager Action Center - New to Old) ---
+    const pendingApprovals = sortRequestsNewToOld(requests.filter(r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending'));
     const recentApprovals = pendingApprovals.slice(0, 5);
-    // --- Filter for employee's recent requests (Employee Action Center) ---
-    const recentEmployeeRequests = requests.slice(0, 5);
+    // --- Filter for employee's recent requests (Employee Action Center - New to Old) ---
+    const recentEmployeeRequests = sortRequestsNewToOld(requests).slice(0, 5);
+    const sortedEmployeeItems = sortItemsNewToOld(items).slice(0, 5);
     // --- Role label for header ---
     const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
     const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
@@ -942,7 +974,7 @@ const Dashboard = (props) => {
                         : !isInventoryManager
                             ? `${totalAssets} assigned hardware item${totalAssets === 1 ? '' : 's'}`
                             : `${totalAssets} items in catalog`))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
+            (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Accept" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
@@ -952,17 +984,17 @@ const Dashboard = (props) => {
                         availableAssets,
                         " in stock (",
                         stockPercentage,
-                        "% of total)"))),
+                        "% of total)")))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple}`, role: "status", "aria-label": `${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Send" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Requests in Queue' : 'Total Requests'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Requests in Queue' : !isAdmin ? 'My Requests' : 'Total Requests'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
                         ? `${totalRequests} queue requests`
                         : `Approval success: ${approvalSuccessRate}%`))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
+            (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Clock" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
@@ -970,8 +1002,8 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Awaiting Approval' : 'Pending Requests'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isManagerView
                         ? `${awaitingManagerDecision} requires review`
-                        : `${pendingRequests} under assignment review`)))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
+                        : `${pendingRequests} under assignment review`))))),
+        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
@@ -1000,7 +1032,7 @@ const Dashboard = (props) => {
                             ? 'Status of asset handouts for manager-approved requests'
                             : 'Current status across all request pipelines'))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Doughnut, { data: requestStatusData, options: doughnutOptions })))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Doughnut, { data: requestStatusData, options: doughnutOptions }))))),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -1067,8 +1099,10 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Asset"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Manager Name"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Qty"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Requested Date"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Manager Comment"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Fulfillment State"))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentEmployeeRequests.map(req => {
                         const isApproved = (req.status || '').toLowerCase() === 'approved';
@@ -1093,8 +1127,10 @@ const Dashboard = (props) => {
                         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.assetTitle)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.managerName || '-'),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.quantity),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { color: isDeclined ? '#991b1b' : 'inherit' } }, req.managerResponse || '-'),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
@@ -1108,14 +1144,14 @@ const Dashboard = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Devices3" }),
                             "My Assigned Equipment"),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, "Hardware currently registered and assigned to you"))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, items.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, sortedEmployeeItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Device Name"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Category"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Serial Number"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Assigned Date"))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, items.slice(0, 5).map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.id },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, sortedEmployeeItems.map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.id },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.title)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, item.assetType),
@@ -1711,6 +1747,11 @@ const IncidentHistory = (props) => {
     const [selectedIncident, setSelectedIncident] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [toastNotification, setToastNotification] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const triggerToast = (message, title = 'Incident Updated') => {
+        setToastNotification({ message, title });
+        setTimeout(() => setToastNotification(null), 4000);
+    };
     const getPriorityBadgeStyle = (priority) => {
         const p = priority || 'Medium';
         let backgroundColor = '#f3f4f6';
@@ -1810,6 +1851,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
+            triggerToast(`Status for incident ${incident.incidentId || '#' + incident.id} updated to '${newStatus}'.`, 'Status Updated');
         }
         catch (error) {
             console.error('Error updating status:', error);
@@ -1829,6 +1871,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
+            triggerToast(`Resolution summary saved for incident ${incident.incidentId || '#' + incident.id}.`, 'Resolution Saved');
         }
         catch (error) {
             console.error('Error saving resolution:', error);
@@ -2120,7 +2163,39 @@ const IncidentHistory = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Resolution Summary:"),
                         " ",
-                        selectedIncident.resolution))))))))));
+                        selectedIncident.resolution)))))))),
+        toastNotification && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                position: 'fixed',
+                bottom: '24px',
+                right: '24px',
+                zIndex: 100000,
+                backgroundColor: '#ffffff',
+                color: '#0f172a',
+                padding: '14px 18px',
+                borderRadius: '12px',
+                boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06)',
+                borderLeft: '5px solid #10b981',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                maxWidth: '380px',
+                fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif'
+            } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    backgroundColor: '#dcfce7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Accept", style: { color: '#166534', fontSize: '15px', fontWeight: 'bold' } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' } }, toastNotification.title || 'Success'),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' } }, toastNotification.message)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
 };
 
 
@@ -2245,27 +2320,30 @@ const IncidentRequestModule = (props) => {
             };
             console.log('Submitting incident payload:', payload);
             await service.createIncidentRequest(payload);
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.success, text: 'Incident reported successfully!' });
-            setTimeout(() => {
-                setFormData({
-                    employeeName: props.userDisplayName || '',
-                    employeeId: props.employeeId || '',
-                    employeeEmail: props.userEmail || '',
-                    serialNo: '',
-                    assetName: '',
-                    incidentType: '',
-                    priority: 'Medium',
-                    description: '',
-                    raisedDate: new Date().toLocaleString(),
-                    status: 'Open',
-                    raisedTo: 'Admin',
-                    assignedDate: '',
+            props.onClose();
+            setFormData({
+                employeeName: props.userDisplayName || '',
+                employeeId: props.employeeId || '',
+                employeeEmail: props.userEmail || '',
+                serialNo: '',
+                assetName: '',
+                incidentType: '',
+                priority: 'Medium',
+                description: '',
+                raisedDate: new Date().toLocaleString(),
+                status: 'Open',
+                raisedTo: 'Admin',
+                assignedDate: '',
+            });
+            setMessage(null);
+            if (props.onSuccessPopup) {
+                props.onSuccessPopup({
+                    incidentType: formData.incidentType,
+                    assetName: formData.assetName || 'General Device',
+                    requesterName: formData.employeeName,
+                    priority: formData.priority
                 });
-                setMessage(null);
-                // Refresh assigned assets in case it changes
-                loadAssignedAssetsForName(props.userDisplayName);
-                props.onClose();
-            }, 2000);
+            }
         }
         catch (error) {
             console.error('Error submitting incident:', error);
@@ -2469,11 +2547,22 @@ const InventoryList = (props) => {
             return 'Leased Assets';
         return t;
     };
-    // 1. Process items (sorting by group title if admin)
-    let itemsToProcess = props.items;
-    if (props.isAdmin && itemsToProcess.length > 0) {
-        itemsToProcess = [...props.items].sort((a, b) => normalizeGroupTitle(a.title).localeCompare(normalizeGroupTitle(b.title)));
-    }
+    // 1. Process items (new-to-old sorting)
+    const itemsToProcess = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        return [...props.items].sort((a, b) => {
+            const dateA = a.purchaseDate || a.assignedDate || '';
+            const dateB = b.purchaseDate || b.assignedDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    }, [props.items]);
     // 2. Paginate if enabled
     const pageSize = props.pageSize || 10;
     const totalItems = itemsToProcess.length;
@@ -2591,25 +2680,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EventStream__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./EventStream */ 19178);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
 /* harmony import */ var _ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReturnRequestList */ 18397);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @fluentui/react */ 20472);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! jspdf */ 28339);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
@@ -2620,6 +2709,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
 /* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
 /* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
 
 
 
@@ -2647,6 +2737,7 @@ chart_js__WEBPACK_IMPORTED_MODULE_14__.Chart.register(chart_js__WEBPACK_IMPORTED
 
 
 
+
 class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     constructor(props) {
         super(props);
@@ -2664,6 +2755,35 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             const activeUser = normalize(currentUser);
             if (!activeUser)
                 return false;
+            // 1. Check item status - returned or in-stock assets are no longer assigned
+            const statusLower = (item.status || '').toLowerCase().trim();
+            if (statusLower === 'in stock' ||
+                statusLower === 'instock' ||
+                statusLower === 'available' ||
+                statusLower === 'returned' ||
+                statusLower === 'return approved' ||
+                statusLower === 'returnapproved' ||
+                statusLower === 'under maintenance' ||
+                statusLower === 'damaged' ||
+                statusLower === 'disposed' ||
+                statusLower === 'retired') {
+                return false;
+            }
+            // 2. Check if there is a completed return request for this asset
+            const returnRequests = this.state ? this.state.returnRequests : [];
+            if (returnRequests && returnRequests.length > 0) {
+                const isReturned = returnRequests.some(r => {
+                    const isSameAsset = (r.assetId && r.assetId === item.id) ||
+                        (r.serialNumber && item.serialNumber && r.serialNumber.toLowerCase().trim() === item.serialNumber.toLowerCase().trim()) ||
+                        (r.assetName && item.assetName && r.assetName.toLowerCase().trim() === item.assetName.toLowerCase().trim() && normalize(r.requesterName) === activeUser);
+                    const isCompleted = r.status === 'Completed' || r.status === 'Returned' || r.adminStatus === 'Completed';
+                    return isSameAsset && isCompleted;
+                });
+                if (isReturned) {
+                    return false;
+                }
+            }
+            // 3. Match user assignment
             const assignedNorm = normalize(item.assignedTo);
             const isAssigned = assignedNorm && (assignedNorm === activeUser || assignedNorm.includes(activeUser) || activeUser.includes(assignedNorm));
             const isNoted = (item.note || '').toLowerCase().includes('assigned to:') && normalize(item.note).includes(activeUser);
@@ -3070,8 +3190,24 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     isReturnFormOpen: false,
                     selectedAssetForReturn: undefined,
+                    returnRequestsLoading: false,
                     syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success,
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Return Request Submitted',
+                        stage: 'Return Stage 1: Submitted',
+                        type: 'info',
+                        message: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" has been submitted and is awaiting manager review.`,
+                        details: {
+                            assetTitle: selectedAssetForReturn.assetName || selectedAssetForReturn.title,
+                            requesterName: this.state.activeUserDisplayName,
+                            status: 'Pending Manager Approval',
+                            condition: condition,
+                            comment: reason,
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
                 });
             }
             catch (error) {
@@ -3091,6 +3227,28 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
+                const isCompleted = status === 'Completed';
+                const isRejected = status === 'Rejected';
+                this.setState({
+                    returnRequestsLoading: false,
+                    workflowPopup: {
+                        isOpen: true,
+                        title: isCompleted ? 'Asset Return Completed' : isRejected ? 'Return Request Rejected' : 'Return Request Approved',
+                        stage: isCompleted ? 'Return Stage 3: Completed & Checked In' : isRejected ? 'Return Stage: Rejected' : 'Return Stage 2: Manager Approved',
+                        type: isCompleted ? 'success' : isRejected ? 'error' : 'info',
+                        message: isCompleted
+                            ? `Asset return #${requestId} has been verified by IT Admin and checked back into active stock.`
+                            : isRejected
+                                ? `Return request #${requestId} was rejected.`
+                                : `Return request #${requestId} was approved by manager and sent to IT Admin for verification.`,
+                        details: {
+                            requestId: `#${requestId}`,
+                            status: status,
+                            comment: comment || adminComments,
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3109,6 +3267,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
                 await this._loadInventory(); // Refresh list
                 await this._loadAuditLogs(); // Refresh audit logs
+                this.setState({
+                    loading: false,
+                    isAssetFormOpen: false,
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'New Inventory Asset Created',
+                        stage: 'Catalog Management',
+                        type: 'success',
+                        message: `Asset "${newAssetData.title || newAssetData.assetName}" was successfully added to stock inventory.`,
+                        details: {
+                            assetTitle: newAssetData.title || newAssetData.assetName,
+                            status: 'In Stock',
+                            date: newAssetData.purchaseDate || new Date().toISOString().split('T')[0]
+                        }
+                    }
+                });
             }
             catch (error) {
                 console.error("Failed to add asset:", error);
@@ -3120,15 +3294,14 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         };
         this._onSubmitRequest = async (requestData) => {
             try {
-                const requesterEmployee = this.state.employees.find(e => e.name.toLowerCase() === requestData.requesterName.toLowerCase());
-                const requesterRole = requesterEmployee ? requesterEmployee.jobTitle : 'Inventory Employee';
-                const initialStatus = (requesterRole === 'Inventory Manager' || requesterRole === 'Admin') ? 'Approved' : 'Pending';
+                const initialStatus = 'Pending';
                 const tempId = `temp-${Date.now()}`;
                 const localRequest = {
                     id: tempId,
                     requestKey: `REQ-${("000000" + (this.state.requests.length + 1)).slice(-6)}`,
                     requesterName: requestData.requesterName,
                     employeeId: requestData.employeeId || "",
+                    managerName: requestData.managerName || "",
                     assetId: requestData.assetId || "1",
                     assetTitle: requestData.assetTitle,
                     assetName: "",
@@ -3141,7 +3314,23 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 };
                 // Optimistic update so it gets added to the RequestList directly
                 this.setState(prevState => ({
-                    requests: [localRequest, ...prevState.requests]
+                    requests: [localRequest, ...prevState.requests],
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Request Created',
+                        stage: 'Stage 1: Request Submitted',
+                        type: 'success',
+                        message: `Your request for "${requestData.assetTitle}" has been submitted successfully and routed to manager (${requestData.managerName || 'Manager'}) for approval.`,
+                        details: {
+                            requestId: localRequest.requestKey,
+                            assetTitle: requestData.assetTitle,
+                            quantity: requestData.quantity,
+                            requesterName: requestData.requesterName,
+                            managerName: requestData.managerName,
+                            status: initialStatus,
+                            date: localRequest.requestDate
+                        }
+                    }
                 }));
                 await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addRequest({
                     ...requestData,
@@ -3171,6 +3360,23 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Request Approved by Manager',
+                        stage: 'Stage 2: Manager Approved',
+                        type: 'success',
+                        message: `Request ${request.requestKey || `#${request.id}`} for "${request.assetTitle}" requested by ${request.requesterName} was APPROVED by Manager. Moved to IT Admin for physical asset allocation.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            managerName: request.managerName || this.state.activeUserDisplayName,
+                            status: 'Approved',
+                            date: request.requestDate
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3194,6 +3400,24 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Request Rejected by Manager',
+                        stage: 'Stage 2: Manager Review',
+                        type: 'error',
+                        message: `Request ${request.requestKey || `#${request.id}`} for "${request.assetTitle}" requested by ${request.requesterName} was REJECTED by Manager.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            managerName: request.managerName || this.state.activeUserDisplayName,
+                            status: 'Declined',
+                            comment: reason,
+                            date: request.requestDate
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3217,6 +3441,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Physical Asset Allocated & Dispatched',
+                        stage: 'Stage 3: Admin Asset Allocation',
+                        type: 'success',
+                        message: `Physical asset "${request.assetTitle}" has been allocated to ${request.requesterName} by System Administrator! Request fulfilled.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            status: 'Asset Allocated & Dispatched',
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3250,13 +3490,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
                 });
                 const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3266,7 +3506,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
                 });
             }
         };
@@ -3275,21 +3515,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
                 });
                 const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
                 });
             }
         };
@@ -3529,7 +3769,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 progressPercent = 1.0;
                 currentStepText = "Declined by Manager";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
@@ -3573,18 +3813,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
                         " Detailed Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 12 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Check Passed:"),
                                 " There are currently ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
                                 " unit(s) of ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Warning:"),
                                 " Only ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
@@ -3616,7 +3856,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
             const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
@@ -3638,7 +3878,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 healthRating = "Critical Needs Replacement";
                 healthIcon = "Warning";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
@@ -3679,9 +3919,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#374151' } }, asset.note)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Stack, { tokens: { childrenGap: 12 } },
                         ageInMonths !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
@@ -3692,21 +3932,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
                                 asset.warrantyExpiry,
-                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
                                 " Covered under manufacturer protection until ",
                                 asset.warrantyExpiry,
-                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                     "Health Classification: ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } }, healthRating))),
@@ -3745,7 +3985,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const id = parts[0];
                 associatedAsset = items.find(a => a.id === id);
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Received:"),
@@ -3757,7 +3997,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     associatedAsset && this._renderAssetAnalysis(associatedAsset),
                     !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3789,7 +4029,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     isAdminPanelOpen: false,
                     selectedAdminRequest: undefined,
                     adminSelectedAssetId: undefined,
-                    adminComment: ''
+                    adminComment: '',
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Physical Asset Allocated & Dispatched',
+                        stage: 'Stage 3: Admin Asset Allocation',
+                        type: 'success',
+                        message: `Asset "${request.assetTitle}" has been allocated to ${request.requesterName} by System Administrator! Request fulfilled.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            status: 'Asset Allocated & Dispatched',
+                            comment: adminComment,
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
                 });
                 await this._loadInventory();
                 await this._loadRequests();
@@ -3849,7 +4104,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 ? "Select asset to assign..."
                 : "No assets of this type in stock";
             const isBusy = this.state.requestActionInProgressId === request.id;
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -3936,13 +4191,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                         root: { color: '#dc2626', borderColor: '#dc2626' },
                                         rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                                     } })))))));
@@ -4000,25 +4255,33 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             connectionStatuses: {},
             connectionErrorMessages: {},
             groupUsersList: {},
-            loadingGroupUsers: {}
+            loadingGroupUsers: {},
+            workflowPopup: {
+                isOpen: false,
+                title: '',
+                stage: '',
+                type: 'info',
+                message: ''
+            }
         };
     }
     async componentDidMount() {
         await this._resolveUserRole();
-        await this._loadInventory();
-        await this._loadRequests();
-        await this._loadAuditLogs();
         await this._loadReturnRequests();
-        // Run self-healing cleanup for Return Approved assets
+        // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
         try {
             await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.cleanupReturnApprovedAssets();
         }
         catch (e) {
             console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
         }
+        await this._loadInventory();
+        await this._loadRequests();
+        await this._loadAuditLogs();
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
             await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+            await this._loadInventory();
         }
         catch (e) {
             console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
@@ -4131,7 +4394,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
@@ -4141,12 +4404,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": "Toggle navigation menu" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "GlobalNavButton" })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "GlobalNavButton" })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, "Inventory Management")),
                         (() => {
                             const dashboardState = {
@@ -4199,13 +4462,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Assets" },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.PivotItem, { headerText: "Requests" },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                                 case 'Notifications':
@@ -4219,11 +4482,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_38__.Pie, { data: {
                                                         labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                             const status = req.status || 'Pending';
                                                             acc[status] = (acc[status] || 0) + 1;
@@ -4273,7 +4536,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                                 case 'AssetReturns':
                                     return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -4291,13 +4554,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
                                                     const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
                                                     window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                                                 } })),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsList, { items: this.state.employees.map(emp => {
                                                     const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                     const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                     const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -4328,13 +4591,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                             } }, item.assignedAssets))
                                                     },
                                                     { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_41__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                     if (!rowProps)
                                                         return null;
                                                     const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
+                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_42__.DetailsRow, { ...rowProps })),
                                                         isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                                 "Assets assigned to ",
@@ -4376,10 +4639,27 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_8__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
             (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, onSuccessPopup: (details) => {
+                    this.setState({
+                        workflowPopup: {
+                            isOpen: true,
+                            title: 'Incident Ticket Logged',
+                            stage: 'Incident Management: Logged',
+                            type: 'warning',
+                            message: `Incident ticket for "${details.assetName}" (${details.incidentType}) has been logged and assigned to Admin IT support.`,
+                            details: {
+                                assetTitle: details.assetName,
+                                requesterName: details.requesterName,
+                                status: 'Open Ticket',
+                                date: new Date().toISOString().split('T')[0]
+                            }
+                        }
+                    });
+                } })),
             this._renderNotificationDetailsPanel(),
             this._renderAdminAssignmentPanel(),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest })));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_24__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) })));
     }
 }
 
@@ -4514,9 +4794,9 @@ const MyAssignedAssetsView = (props) => {
         });
         return options;
     }, [items]);
-    // Filtering Logic
+    // Filtering Logic (New to Old)
     const filteredItems = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        return items.filter(item => {
+        const filtered = items.filter(item => {
             // 1. Search filter
             const normQuery = searchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
@@ -4534,6 +4814,19 @@ const MyAssignedAssetsView = (props) => {
             const w = evaluateWarranty(item.warrantyExpiry);
             const matchesWarranty = selectedWarranty === 'All' || w.status === selectedWarranty;
             return matchesSearch && matchesType && matchesCondition && matchesWarranty;
+        });
+        return filtered.sort((a, b) => {
+            const dateA = a.assignedDate || a.purchaseDate || '';
+            const dateB = b.assignedDate || b.purchaseDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
         });
     }, [items, searchQuery, selectedType, selectedCondition, selectedWarranty]);
     // Detailed Age and Lifecycle Recommendation rendering for the panel
@@ -4955,23 +5248,37 @@ const MyRequestsView = (props) => {
             completed: completedCount
         };
     }, [returnRequests]);
-    // Filtering Logic (Asset Requests)
+    // Filtering Logic (Asset Requests - New to Old)
     const filteredRequests = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        return requests.filter(r => {
+        const filtered = requests.filter(r => {
             const normQuery = searchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
                 (r.requestKey || '').toLowerCase().includes(normQuery) ||
                 (r.assetTitle || '').toLowerCase().includes(normQuery) ||
                 (r.reason || '').toLowerCase().includes(normQuery) ||
+                (r.managerName || '').toLowerCase().includes(normQuery) ||
                 (r.id || '').toLowerCase().includes(normQuery);
             const matchesStatus = selectedStatus === 'All' || (r.status || 'Pending') === selectedStatus;
             const matchesPriority = selectedPriority === 'All' || (r.priority || 'Medium') === selectedPriority;
             return matchesSearch && matchesStatus && matchesPriority;
         });
+        return filtered.sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
     }, [requests, searchQuery, selectedStatus, selectedPriority]);
-    // Filtering Logic (Return Requests)
+    // Filtering Logic (Return Requests - New to Old)
     const filteredReturnRequests = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        return returnRequests.filter(r => {
+        const filtered = returnRequests.filter(r => {
             const normQuery = returnSearchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
                 (r.assetName || '').toLowerCase().includes(normQuery) ||
@@ -4983,6 +5290,19 @@ const MyRequestsView = (props) => {
                 (returnSelectedStatus === 'Pending' && (r.status === 'Pending Manager Approval' || r.status === 'Pending')) ||
                 (returnSelectedStatus === 'Approved' && (r.status === 'Pending Admin Verification' || r.status === 'Approved'));
             return matchesSearch && matchesStatus;
+        });
+        return filtered.sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
         });
     }, [returnRequests, returnSearchQuery, returnSelectedStatus]);
     // Return status badge styles
@@ -5124,9 +5444,23 @@ const MyRequestsView = (props) => {
                                     " (Qty: ",
                                     item.quantity,
                                     ")"),
+                                item.managerName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.78rem', color: 'var(--text-muted)' } },
+                                    "Manager: ",
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main)' } }, item.managerName))),
                                 item.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } },
                                     "Reason: ",
                                     item.reason)),
+                                item.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                        backgroundColor: status === 'Declined' ? '#fef2f2' : '#f8fafc',
+                                        borderRadius: '4px',
+                                        padding: '4px 8px',
+                                        borderLeft: `3px solid ${status === 'Declined' ? '#dc2626' : '#16a34a'}`,
+                                        fontSize: '0.75rem',
+                                        color: status === 'Declined' ? '#991b1b' : 'var(--text-main)'
+                                    } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Manager Note:"),
+                                    " ",
+                                    item.managerResponse)),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px', marginTop: 'auto' } },
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: adminAllocationColor, fontWeight: 500 } }, adminAllocationText),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: priorityBg, color: priorityColor, padding: '2px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 500 } }, priority))),
@@ -5570,6 +5904,7 @@ const stackTokens = { childrenGap: 15 };
 const RequestForm = (props) => {
     const [selectedRequesterId, setSelectedRequesterId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [employeeId, setEmployeeId] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [managerName, setManagerName] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
     const [selectedAssetType, setSelectedAssetType] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [priority, setPriority] = react__WEBPACK_IMPORTED_MODULE_0__.useState('Medium');
     const [quantity, setQuantity] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
@@ -5614,7 +5949,7 @@ const RequestForm = (props) => {
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
         : _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS;
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0;
     const onSave = () => {
         // Validate role: employees can only request for themselves
         if (isEmployee && selectedRequesterId) {
@@ -5635,6 +5970,7 @@ const RequestForm = (props) => {
             props.onSubmitRequest({
                 requesterName: employee.name,
                 employeeId: employeeId,
+                managerName: managerName.trim(),
                 assetId: matchingAsset ? matchingAsset.id : '1',
                 assetTitle: selectedAssetType,
                 priority: priority,
@@ -5644,6 +5980,7 @@ const RequestForm = (props) => {
             });
             setSelectedRequesterId(undefined);
             setEmployeeId('');
+            setManagerName('');
             setSelectedAssetType(undefined);
             setPriority('Medium');
             setQuantity(1);
@@ -5664,6 +6001,7 @@ const RequestForm = (props) => {
                     }
                 }, required: true, disabled: isEmployee && employeeOptions.length === 1 }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Manager's Name", value: managerName, onChange: (_, val) => setManagerName(val || ''), placeholder: "Enter manager's name", required: true }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
@@ -5707,6 +6045,21 @@ __webpack_require__.r(__webpack_exports__);
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const sortedItems = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        return [...props.items].sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    }, [props.items]);
     const columns = [
         {
             key: 'columnRequestKey',
@@ -5723,6 +6076,15 @@ const RequestList = (props) => {
             minWidth: 100,
             maxWidth: 150,
             isResizable: true
+        },
+        {
+            key: 'columnManagerName',
+            name: "Manager's Name",
+            fieldName: 'managerName',
+            minWidth: 110,
+            maxWidth: 140,
+            isResizable: true,
+            onRender: (item) => item.managerName || 'N/A'
         },
         {
             key: 'columnAssetType',
@@ -5793,6 +6155,20 @@ const RequestList = (props) => {
                         } }, val));
                 }
             }]),
+        {
+            key: 'columnManagerComment',
+            name: 'Manager Comment',
+            fieldName: 'managerResponse',
+            minWidth: 150,
+            maxWidth: 220,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.managerResponse)
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)', fontStyle: 'italic' } }, "-");
+                const isDeclined = item.status === 'Declined';
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: isDeclined ? '#991b1b' : 'inherit', fontWeight: isDeclined ? 600 : 400 } }, item.managerResponse));
+            }
+        },
         ...(props.canApproveAsset ? [{
                 key: 'columnAssetStatus',
                 name: 'Asset Status',
@@ -5827,7 +6203,6 @@ const RequestList = (props) => {
                 }
             }] : []),
         ...(props.showResponseColumns ? [
-            { key: 'columnManagerResponse', name: 'Manager Response', fieldName: 'managerResponse', minWidth: 170, maxWidth: 240, isResizable: true },
             {
                 key: 'columnAdminResponse',
                 name: 'Admin Response',
@@ -5893,8 +6268,8 @@ const RequestList = (props) => {
         }
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        props.items.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }))),
+        sortedItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }))),
         selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
@@ -5921,6 +6296,9 @@ const RequestList = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee ID"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.employeeId || '-')),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager's Name"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.managerName || '-')),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Category"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.assetTitle)),
@@ -6186,14 +6564,24 @@ const ReturnRequestList = (props) => {
         else if (isManager) {
             roleFiltered = items.filter(item => item.status === 'Pending Manager Approval' || item.status === 'Pending');
         }
-        if (!searchQuery)
-            return roleFiltered;
-        const q = searchQuery.toLowerCase();
-        return roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(q) ||
-            (item.serialNumber || '').toLowerCase().includes(q) ||
-            (item.requesterName || '').toLowerCase().includes(q) ||
-            (item.status || '').toLowerCase().includes(q) ||
-            (item.returnReason || '').toLowerCase().includes(q));
+        const filtered = !searchQuery ? roleFiltered : roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.serialNumber || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.requesterName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.status || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.returnReason || '').toLowerCase().includes(searchQuery.toLowerCase()));
+        return filtered.sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
     }, [items, searchQuery, isAdmin, isManager]);
     const openDialog = (request, type) => {
         setActiveRequest(request);
@@ -6386,6 +6774,182 @@ const ReturnRequestList = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
                         actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
+};
+
+
+/***/ }),
+
+/***/ 48235:
+/*!**********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/WorkflowPopup.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   WorkflowPopup: () => (/* binding */ WorkflowPopup)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+
+
+
+
+const WorkflowPopup = (props) => {
+    const { isOpen, title, stage, type, message, details, onDismiss } = props;
+    if (!isOpen)
+        return null;
+    let iconName = 'CheckMark';
+    let iconColor = '#15803d';
+    let badgeBg = '#dcfce7';
+    let badgeTextColor = '#166534';
+    let borderColor = '#22c55e';
+    let iconBg = '#f0fdf4';
+    if (type === 'error' || (details?.status || '').toLowerCase().includes('reject') || (details?.status || '').toLowerCase().includes('declin')) {
+        iconName = 'ErrorBadge';
+        iconColor = '#b91c1c';
+        badgeBg = '#fee2e2';
+        badgeTextColor = '#991b1b';
+        borderColor = '#ef4444';
+        iconBg = '#fef2f2';
+    }
+    else if (type === 'warning' || (details?.status || '').toLowerCase().includes('pending')) {
+        iconName = 'Clock';
+        iconColor = '#b45309';
+        badgeBg = '#fef3c7';
+        badgeTextColor = '#92400e';
+        borderColor = '#f59e0b';
+        iconBg = '#fffbeb';
+    }
+    else if (type === 'info') {
+        iconName = 'Info';
+        iconColor = '#1d4ed8';
+        badgeBg = '#dbeafe';
+        badgeTextColor = '#1e40af';
+        borderColor = '#3b82f6';
+        iconBg = '#eff6ff';
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_1__.Dialog, { hidden: !isOpen, onDismiss: onDismiss, dialogContentProps: {
+            type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_2__.DialogType.normal,
+            title: '',
+        }, modalProps: {
+            isBlocking: true,
+            styles: {
+                main: {
+                    maxWidth: '520px',
+                    minWidth: '340px',
+                    borderRadius: '16px',
+                    padding: '24px 28px',
+                    borderTop: `5px solid ${borderColor}`,
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
+                    backgroundColor: '#ffffff'
+                }
+            }
+        } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '18px', fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', gap: '14px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                        width: '46px',
+                        height: '46px',
+                        borderRadius: '12px',
+                        backgroundColor: iconBg,
+                        border: `1px solid ${borderColor}33`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        boxShadow: `0 4px 12px ${borderColor}22`
+                    } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: iconName, style: { fontSize: '22px', color: iconColor, fontWeight: 'bold' } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                display: 'inline-block',
+                                backgroundColor: badgeBg,
+                                color: badgeTextColor,
+                                padding: '3px 10px',
+                                borderRadius: '9999px',
+                                fontSize: '0.7rem',
+                                fontWeight: 700,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.06em'
+                            } }, stage)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { style: { margin: 0, fontSize: '1.15rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.3 } }, title))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 } }, message),
+            details && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    backgroundColor: '#f8fafc',
+                    borderRadius: '12px',
+                    padding: '16px',
+                    border: '1px solid #e2e8f0',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                    gap: '12px',
+                    fontSize: '0.82rem'
+                } },
+                details.requestId && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Request ID"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requestId))),
+                details.assetTitle && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Asset"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } },
+                        details.assetTitle,
+                        " ",
+                        details.quantity ? `(Qty: ${details.quantity})` : ''))),
+                details.requesterName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Requester"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requesterName))),
+                details.managerName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Manager's Name"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.managerName))),
+                details.status && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Workflow Status"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            backgroundColor: badgeBg,
+                            color: badgeTextColor,
+                            padding: '3px 9px',
+                            borderRadius: '6px',
+                            fontWeight: 600,
+                            fontSize: '0.75rem',
+                            display: 'inline-block'
+                        } }, details.status))),
+                details.date && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Date"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.date))),
+                details.condition && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Condition"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.condition))),
+                details.comment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: '1 / -1', marginTop: '4px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' } }, "Manager / Admin Notes"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            backgroundColor: '#ffffff',
+                            padding: '10px 12px',
+                            borderRadius: '8px',
+                            border: '1px solid #cbd5e1',
+                            color: '#334155',
+                            fontStyle: 'italic',
+                            lineHeight: 1.4
+                        } },
+                        "\u201C",
+                        details.comment,
+                        "\u201D")))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_4__.DialogFooter, { styles: { actionsRight: { marginTop: '20px' } } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Got it", onClick: onDismiss, iconProps: { iconName: 'Accept' }, styles: {
+                    root: {
+                        borderRadius: '8px',
+                        padding: '0 20px',
+                        height: '36px',
+                        backgroundColor: '#005a9e',
+                        border: 'none'
+                    },
+                    rootHovered: {
+                        backgroundColor: '#004578'
+                    }
+                } }))));
 };
 
 
@@ -9062,6 +9626,10 @@ class IncidentService {
                 const inventoryItems = await _InventoryService__WEBPACK_IMPORTED_MODULE_7__.InventoryService.getItems();
                 if (inventoryItems && inventoryItems.length > 0) {
                     const matchedInventoryItems = inventoryItems.filter(item => {
+                        const statusLower = (item.status || '').toLowerCase().trim();
+                        if (statusLower === 'in stock' || statusLower === 'instock' || statusLower === 'available' || statusLower === 'returned' || statusLower === 'return approved' || statusLower === 'under maintenance' || statusLower === 'disposed' || statusLower === 'retired') {
+                            return false;
+                        }
                         const assignedNorm = normalize(item.assignedTo);
                         const isAssigned = assignedNorm && (assignedNorm === nameNorm || assignedNorm.includes(nameNorm) || nameNorm.includes(assignedNorm));
                         const isNoted = (item.note || '').toLowerCase().includes('assigned to:') && normalize(item.note).includes(nameNorm);
@@ -9377,11 +9945,13 @@ class InventoryItemService {
                     return "";
                 })();
                 const rawStatus = item[statusKey] || item.Status || item.AssetStatus || "";
+                const noteText = item[noteKey] || item.Note || item.Notes || "";
                 let finalStatus = rawStatus;
                 let finalAssignedTo = assignedToVal;
                 const statusLower = (rawStatus || "").toLowerCase();
-                if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock") {
-                    finalStatus = "In Stock";
+                const noteLower = (noteText || "").toLowerCase();
+                if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock" || statusLower === "returned" || statusLower === "completed" || statusLower === "available" || noteLower.indexOf("returned by employee") >= 0 || noteLower.indexOf("in stock") >= 0) {
+                    finalStatus = statusLower === "under maintenance" ? "Under Maintenance" : "In Stock";
                     finalAssignedTo = "";
                 }
                 else if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
@@ -10064,6 +10634,7 @@ class RequestService {
             const employeeIdField = findField("employeeid") || findField("employee id") || findField("employee_x0020_id");
             const priorityField = findField("priority");
             const requestDateField = findField("requestdate") || findField("request date") || findField("requesteddate") || findField("requested date");
+            const managerNameField = findField("managername") || findField("manager's name") || findField("managers name") || findField("manager_x0027_s_x0020_name") || findField("manager");
             dynamicPayload = {
                 Title: `Request for ${request.assetTitle}`
             };
@@ -10106,6 +10677,9 @@ class RequestService {
             if (requestDateField) {
                 dynamicPayload[requestDateField.InternalName] = request.requestDate || new Date().toISOString().split('T')[0];
             }
+            if (managerNameField) {
+                dynamicPayload[managerNameField.InternalName] = request.managerName || "";
+            }
         }
         catch (e) {
             console.warn("Failed to generate dynamic payload from schema, will use hardcoded candidates", e);
@@ -10118,6 +10692,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     EmployeeId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Asset_x0020_type: request.assetTitle,
                     Quantity: request.quantity,
@@ -10130,6 +10708,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     EmployeeId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Assettype: request.assetTitle,
                     Quantity: request.quantity,
@@ -10142,6 +10724,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     RequesterId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Asset_x0020_type: request.assetTitle,
                     Quantity: request.quantity,
@@ -10154,6 +10740,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     RequesterId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Assettype: request.assetTitle,
                     Quantity: request.quantity,
@@ -10168,6 +10758,10 @@ class RequestService {
                 Title: `Request for ${request.assetTitle}`,
                 Employee: request.requesterName,
                 EmployeeID: request.employeeId || "",
+                ManagerName: request.managerName || "",
+                Manager_x0027_s_x0020_Name: request.managerName || "",
+                Manager_x0020_Name: request.managerName || "",
+                Manager: request.managerName || "",
                 Priority: request.priority || "Medium",
                 Asset_x0020_type: request.assetTitle,
                 Quantity: request.quantity,
@@ -10340,6 +10934,7 @@ class RequestService {
             const employeeIdKey = findFieldInternalName("employeeid", "EmployeeID");
             const priorityKey = findFieldInternalName("priority", "Priority");
             const requestDateKey = findFieldInternalName("requestdate", "RequestDate");
+            const managerNameKey = findFieldInternalName("managername", "ManagerName");
             const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
             const mapped = items.map((item) => {
                 const rawStatus = item[statusKey] || item.Status || 'Pending';
@@ -10364,6 +10959,7 @@ class RequestService {
                         return rawEmp.toString();
                     })(),
                     employeeId: item[employeeIdKey] || "",
+                    managerName: item[managerNameKey] || item.ManagerName || item.Manager_x0020_Name || item.Manager || "",
                     assetId: "",
                     assetTitle: item[selectAssetKey] || item.Title || "",
                     assetName: "",
@@ -10994,7 +11590,7 @@ class ReturnRequestService {
             console.log("Resolved Condition Field:", conditionKey);
             const assetIdNum = parseInt(req.assetId, 10);
             console.log("Inventory Item ID:", assetIdNum);
-            if (status === 'Completed') {
+            if (status === 'Completed' || status === 'Approved') {
                 const condition = finalCondition || req.proposedCondition || "Good";
                 let nextStatus = "In Stock";
                 if (condition === "Poor" || condition === "Damaged") {
@@ -11005,7 +11601,7 @@ class ReturnRequestService {
                     [assignedToKey]: null,
                     [`${assignedToKey}Id`]: null,
                     [conditionKey]: condition,
-                    [noteKey]: `Returned by employee. Verification Note: ${adminComments || managerComment}`
+                    [noteKey]: `In Stock - Returned by employee. Verification Note: ${adminComments || managerComment || 'Returned to Stock'}`
                 };
                 if (assignedToKey !== "AssignedTo") {
                     payload.AssignedTo = null;
@@ -11014,31 +11610,53 @@ class ReturnRequestService {
                 console.log("Inventory Update Payload:", JSON.stringify(payload));
                 let assetUpdateResult = null;
                 try {
-                    assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
-                    console.log("Result of list.items.update() (Inventory update):", JSON.stringify(assetUpdateResult));
+                    if (!isNaN(assetIdNum)) {
+                        assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
+                        console.log("Result of list.items.update() (Inventory update by ID):", JSON.stringify(assetUpdateResult));
+                    }
                 }
                 catch (err) {
-                    console.error(`Exception in SharePoint Asset update on Return ${status}:`, err.message, err.stack);
-                    if (err.data)
-                        console.error("Error details:", JSON.stringify(err.data));
+                    console.error(`Exception in SharePoint Asset update by ID on Return ${status}:`, err.message);
                 }
+                // Fallback update by Serial Number or Title if ID update didn't run or failed
+                try {
+                    let matchingAssets = [];
+                    if (req.serialNumber) {
+                        const serialCol = findField("serialnumber", "SerialNumber");
+                        matchingAssets = await list.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                    }
+                    if ((!matchingAssets || matchingAssets.length === 0) && req.assetName) {
+                        const titleCol = findField("assetname", "Title");
+                        matchingAssets = await list.items.filter(`${titleCol} eq '${req.assetName.replace(/'/g, "''")}'`).select("ID")();
+                    }
+                    for (const mAsset of matchingAssets) {
+                        if (mAsset.ID !== assetIdNum) {
+                            await list.items.getById(mAsset.ID).update(payload);
+                            console.log(`Updated inventory asset ID ${mAsset.ID} (${req.assetName}) to '${nextStatus}' via fallback search.`);
+                        }
+                    }
+                }
+                catch (err) {
+                    console.warn("Fallback inventory update failed:", err.message);
+                }
+                // Delete Mapping List records for the returned asset
                 try {
                     const mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
                     console.log("Resolved Mapping List Name:", mappingList.Title || "Mapping List");
                     const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
                     const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+                    const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+                    const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
                     let mappedItems = [];
                     if (serialCol && req.serialNumber) {
                         mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
                     }
-                    if ((!mappedItems || mappedItems.length === 0) && req.assetName) {
-                        console.log("[Return Request Workflow] Mapping record not found by serial number. Trying fallback search by Asset Name and Employee Name...");
-                        const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
-                        const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
-                        if (assetNameCol && employeeCol && req.requesterName) {
-                            const filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}' and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
-                            mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+                    if ((!mappedItems || mappedItems.length === 0) && assetNameCol && req.assetName) {
+                        let filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}'`;
+                        if (employeeCol && req.requesterName) {
+                            filterQuery += ` and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
                         }
+                        mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
                     }
                     console.log("Mapping Records Found for deletion:", JSON.stringify(mappedItems));
                     if (mappedItems && mappedItems.length > 0) {
@@ -11133,7 +11751,7 @@ class ReturnRequestService {
         console.log("========================");
     }
     static async cleanupReturnApprovedAssets() {
-        console.log("[Cleanup] Starting self-healing cleanup for Return Approved assets...");
+        console.log("[Cleanup] Starting self-healing cleanup for Return Approved & Completed assets...");
         try {
             const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getInventoryList();
             if (!list || !list.items || typeof list.items.select !== 'function') {
@@ -11148,58 +11766,90 @@ class ReturnRequestService {
             const statusKey = findField("status", "Status");
             const assignedToKey = findField("assignedto", "AssignedTo");
             const conditionKey = findField("condition", "Condition");
-            const items = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title")();
-            for (const item of items) {
-                const rawStatus = item[statusKey] || "";
-                const val = item[assignedToKey];
-                let hasAssignee = false;
-                if (val) {
-                    if (typeof val === 'object') {
-                        hasAssignee = Object.keys(val).length > 0;
-                    }
-                    else {
-                        hasAssignee = true;
+            const noteKey = findField("note", "Note");
+            // 1. Fetch completed/approved return requests
+            const returnRequests = await ReturnRequestService.getReturnRequests();
+            const resolvedReturns = returnRequests.filter(r => {
+                const s = (r.status || '').toLowerCase();
+                return s === 'completed' || s === 'approved' || s === 'returned' || s === 'pending admin verification';
+            });
+            console.log(`[Cleanup] Found ${resolvedReturns.length} approved/completed return request(s) to verify against inventory.`);
+            const inventoryItems = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title", noteKey)();
+            // Clean up mapping list records for resolved returns
+            let mappingList = null;
+            let mappingFields = [];
+            let serialCol = "";
+            let assetNameCol = "";
+            let employeeCol = "";
+            try {
+                mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
+                mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
+                serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]) || "";
+                assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]) || "";
+                employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]) || "";
+            }
+            catch (e) {
+                console.warn("[Cleanup] Could not bind mapping list", e);
+            }
+            for (const ret of resolvedReturns) {
+                const serial = (ret.serialNumber || '').trim().toLowerCase();
+                const title = (ret.assetName || '').trim().toLowerCase();
+                const reqAssetId = (ret.assetId || '').trim();
+                // Match inventory item
+                const matchingInventoryItem = inventoryItems.find((item) => {
+                    const itemID = item.ID ? item.ID.toString() : "";
+                    const itemSerial = (item.SerialNumber || '').trim().toLowerCase();
+                    const itemTitle = (item.Title || item.AssetName || '').trim().toLowerCase();
+                    return (reqAssetId && itemID === reqAssetId) ||
+                        (serial && itemSerial && itemSerial === serial) ||
+                        (title && itemTitle && itemTitle === title);
+                });
+                if (matchingInventoryItem) {
+                    const rawStatus = (matchingInventoryItem[statusKey] || '').toString().toLowerCase();
+                    const val = matchingInventoryItem[assignedToKey];
+                    const hasAssignee = !!(val && (typeof val === 'object' ? Object.keys(val).length > 0 : String(val).trim() !== ''));
+                    if (rawStatus === 'assigned' || hasAssignee || rawStatus === 'return approved' || rawStatus === 'returnapproved') {
+                        console.log(`[Cleanup] Resetting returned asset '${ret.assetName}' (ID: ${matchingInventoryItem.ID}) to 'In Stock'.`);
+                        const payload = {
+                            [statusKey]: "In Stock",
+                            [assignedToKey]: null,
+                            [`${assignedToKey}Id`]: null,
+                            [noteKey]: `In Stock - Returned by employee (${ret.requesterName || ''})`
+                        };
+                        if (assignedToKey !== "AssignedTo") {
+                            payload.AssignedTo = null;
+                            payload.AssignedToId = null;
+                        }
+                        try {
+                            await list.items.getById(matchingInventoryItem.ID).update(payload);
+                            console.log(`[Cleanup] Successfully set Inventory item ID ${matchingInventoryItem.ID} to 'In Stock'.`);
+                        }
+                        catch (err) {
+                            console.error(`[Cleanup] Failed to update inventory item ID ${matchingInventoryItem.ID}:`, err.message);
+                        }
                     }
                 }
-                if (rawStatus === "Return Approved" || rawStatus === "ReturnApproved" || (rawStatus === "In Stock" && hasAssignee)) {
-                    console.log(`[Cleanup] Found return approved or in-stock asset with assignee: ${item.Title || "Asset"} (ID: ${item.ID})`);
-                    const payload = {
-                        [statusKey]: "In Stock",
-                        [assignedToKey]: null,
-                        [`${assignedToKey}Id`]: null
-                    };
-                    if (assignedToKey !== "AssignedTo") {
-                        payload.AssignedTo = null;
-                        payload.AssignedToId = null;
-                    }
-                    await list.items.getById(item.ID).update(payload);
-                    console.log(`[Cleanup] Updated asset ID ${item.ID} in SharePoint to 'In Stock' and cleared assignee.`);
-                    const serialNumber = item.SerialNumber || "";
-                    const assetTitle = item.Title || "";
-                    const requesterName = (val && (val.Title || val.Name || (typeof val === 'object' ? '' : val.toString()))) || "";
+                // Clean up mapping record
+                if (mappingList) {
                     try {
-                        const mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
-                        const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
-                        const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
                         let mappedItems = [];
-                        if (serialCol && serialNumber) {
-                            mappedItems = await mappingList.items.filter(`${serialCol} eq '${serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                        if (serialCol && ret.serialNumber) {
+                            mappedItems = await mappingList.items.filter(`${serialCol} eq '${ret.serialNumber.replace(/'/g, "''")}'`).select("ID")();
                         }
-                        if ((!mappedItems || mappedItems.length === 0) && assetTitle) {
-                            const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
-                            const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
-                            if (assetNameCol && employeeCol && requesterName) {
-                                const filterQuery = `${assetNameCol} eq '${assetTitle.replace(/'/g, "''")}' and ${employeeCol} eq '${requesterName.replace(/'/g, "''")}'`;
-                                mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+                        if ((!mappedItems || mappedItems.length === 0) && assetNameCol && ret.assetName) {
+                            let filterQuery = `${assetNameCol} eq '${ret.assetName.replace(/'/g, "''")}'`;
+                            if (employeeCol && ret.requesterName) {
+                                filterQuery += ` and ${employeeCol} eq '${ret.requesterName.replace(/'/g, "''")}'`;
                             }
+                            mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
                         }
                         for (const mItem of mappedItems) {
                             await mappingList.items.getById(mItem.ID).delete();
-                            console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for asset ${assetTitle}`);
+                            console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for returned asset ${ret.assetName}`);
                         }
                     }
-                    catch (err) {
-                        console.warn(`[Cleanup] Failed to clean up mapping record for asset ${assetTitle}`, err);
+                    catch (mErr) {
+                        console.warn(`[Cleanup] Mapping deletion warning for ${ret.assetName}:`, mErr.message);
                     }
                 }
             }

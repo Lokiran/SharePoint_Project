@@ -260,14 +260,46 @@ const Dashboard = (props) => {
     const declinedReqCount = requests.filter(r => (r.status || '').toLowerCase() === 'declined' || (r.status || '').toLowerCase() === 'rejected').length;
     const totalDecidedRequests = approvedReqCount + declinedReqCount;
     const approvalSuccessRate = totalDecidedRequests > 0 ? ((approvedReqCount / totalDecidedRequests) * 100).toFixed(0) : '0';
-    // --- Filter for pending assignments (Admin Action Center) ---
-    const pendingAssignments = requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending');
+    // --- Utility: Sort requests & assets new-to-old ---
+    const sortRequestsNewToOld = (reqs) => {
+        return [...reqs].sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    };
+    const sortItemsNewToOld = (itemList) => {
+        return [...itemList].sort((a, b) => {
+            const dateA = a.assignedDate || a.purchaseDate || '';
+            const dateB = b.assignedDate || b.purchaseDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    };
+    // --- Filter for pending assignments (Admin Action Center - New to Old) ---
+    const pendingAssignments = sortRequestsNewToOld(requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending'));
     const recentAssignments = pendingAssignments.slice(0, 5);
-    // --- Filter for pending decisions (Manager Action Center) ---
-    const pendingApprovals = requests.filter(r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending');
+    // --- Filter for pending decisions (Manager Action Center - New to Old) ---
+    const pendingApprovals = sortRequestsNewToOld(requests.filter(r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending'));
     const recentApprovals = pendingApprovals.slice(0, 5);
-    // --- Filter for employee's recent requests (Employee Action Center) ---
-    const recentEmployeeRequests = requests.slice(0, 5);
+    // --- Filter for employee's recent requests (Employee Action Center - New to Old) ---
+    const recentEmployeeRequests = sortRequestsNewToOld(requests).slice(0, 5);
+    const sortedEmployeeItems = sortItemsNewToOld(items).slice(0, 5);
     // --- Role label for header ---
     const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
     const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
@@ -344,7 +376,7 @@ const Dashboard = (props) => {
                         : !isInventoryManager
                             ? `${totalAssets} assigned hardware item${totalAssets === 1 ? '' : 's'}`
                             : `${totalAssets} items in catalog`))),
-            React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
+            (isAdmin || isInventoryManager) && (React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Accept" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
@@ -354,17 +386,17 @@ const Dashboard = (props) => {
                         availableAssets,
                         " in stock (",
                         stockPercentage,
-                        "% of total)"))),
+                        "% of total)")))),
             React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardPurple}`, role: "status", "aria-label": `${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Send" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summaryValue }, totalRequests),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? 'Requests in Queue' : 'Total Requests'),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? 'Requests in Queue' : !isAdmin ? 'My Requests' : 'Total Requests'),
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, isAdmin
                         ? `${totalRequests} queue requests`
                         : `Approval success: ${approvalSuccessRate}%`))),
-            React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
+            (isAdmin || isInventoryManager) && (React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Clock" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
@@ -372,8 +404,8 @@ const Dashboard = (props) => {
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? 'Awaiting Approval' : 'Pending Requests'),
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, isManagerView
                         ? `${awaitingManagerDecision} requires review`
-                        : `${pendingRequests} under assignment review`)))),
-        React.createElement("div", { className: Dashboard_module_scss_1.default.chartsGrid },
+                        : `${pendingRequests} under assignment review`))))),
+        (isAdmin || isInventoryManager) && (React.createElement("div", { className: Dashboard_module_scss_1.default.chartsGrid },
             React.createElement("div", { className: Dashboard_module_scss_1.default.chartCard },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartHeader },
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartIcon },
@@ -402,7 +434,7 @@ const Dashboard = (props) => {
                             ? 'Status of asset handouts for manager-approved requests'
                             : 'Current status across all request pipelines'))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartContainer },
-                    React.createElement(react_chartjs_2_1.Doughnut, { data: requestStatusData, options: doughnutOptions })))),
+                    React.createElement(react_chartjs_2_1.Doughnut, { data: requestStatusData, options: doughnutOptions }))))),
         isAdmin && (React.createElement("div", { className: Dashboard_module_scss_1.default.actionCenter },
             React.createElement("div", { className: Dashboard_module_scss_1.default.sectionHeader },
                 React.createElement("div", null,
@@ -469,8 +501,10 @@ const Dashboard = (props) => {
                     React.createElement("thead", null,
                         React.createElement("tr", null,
                             React.createElement("th", null, "Asset"),
+                            React.createElement("th", null, "Manager Name"),
                             React.createElement("th", null, "Qty"),
                             React.createElement("th", null, "Requested Date"),
+                            React.createElement("th", null, "Manager Comment"),
                             React.createElement("th", null, "Fulfillment State"))),
                     React.createElement("tbody", null, recentEmployeeRequests.map(req => {
                         const isApproved = (req.status || '').toLowerCase() === 'approved';
@@ -495,8 +529,10 @@ const Dashboard = (props) => {
                         return (React.createElement("tr", { key: req.id },
                             React.createElement("td", null,
                                 React.createElement("strong", null, req.assetTitle)),
+                            React.createElement("td", null, req.managerName || '-'),
                             React.createElement("td", null, req.quantity),
                             React.createElement("td", null, formatDate(req.requestDate)),
+                            React.createElement("td", { style: { color: isDeclined ? '#991b1b' : 'inherit' } }, req.managerResponse || '-'),
                             React.createElement("td", null,
                                 React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
@@ -510,14 +546,14 @@ const Dashboard = (props) => {
                             React.createElement(Icon_1.Icon, { iconName: "Devices3" }),
                             "My Assigned Equipment"),
                         React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, "Hardware currently registered and assigned to you"))),
-                React.createElement("div", { className: Dashboard_module_scss_1.default.tableWrapper }, items.length > 0 ? (React.createElement("table", { className: Dashboard_module_scss_1.default.actionTable },
+                React.createElement("div", { className: Dashboard_module_scss_1.default.tableWrapper }, sortedEmployeeItems.length > 0 ? (React.createElement("table", { className: Dashboard_module_scss_1.default.actionTable },
                     React.createElement("thead", null,
                         React.createElement("tr", null,
                             React.createElement("th", null, "Device Name"),
                             React.createElement("th", null, "Category"),
                             React.createElement("th", null, "Serial Number"),
                             React.createElement("th", null, "Assigned Date"))),
-                    React.createElement("tbody", null, items.slice(0, 5).map(item => (React.createElement("tr", { key: item.id },
+                    React.createElement("tbody", null, sortedEmployeeItems.map(item => (React.createElement("tr", { key: item.id },
                         React.createElement("td", null,
                             React.createElement("strong", null, item.title)),
                         React.createElement("td", null, item.assetType),

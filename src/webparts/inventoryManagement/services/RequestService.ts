@@ -242,6 +242,7 @@ export class RequestService {
       const employeeIdField = findField("employeeid") || findField("employee id") || findField("employee_x0020_id");
       const priorityField = findField("priority");
       const requestDateField = findField("requestdate") || findField("request date") || findField("requesteddate") || findField("requested date");
+      const managerNameField = findField("managername") || findField("manager's name") || findField("managers name") || findField("manager_x0027_s_x0020_name") || findField("manager");
 
       dynamicPayload = {
         Title: `Request for ${request.assetTitle}`
@@ -288,6 +289,9 @@ export class RequestService {
       if (requestDateField) {
         dynamicPayload[requestDateField.InternalName] = request.requestDate || new Date().toISOString().split('T')[0];
       }
+      if (managerNameField) {
+        dynamicPayload[managerNameField.InternalName] = (request as any).managerName || "";
+      }
     } catch (e) {
       console.warn("Failed to generate dynamic payload from schema, will use hardcoded candidates", e);
     }
@@ -300,6 +304,10 @@ export class RequestService {
           Title: `Request for ${request.assetTitle}`,
           EmployeeId: requesterId,
           EmployeeID: (request as any).employeeId || "",
+          ManagerName: (request as any).managerName || "",
+          Manager_x0027_s_x0020_Name: (request as any).managerName || "",
+          Manager_x0020_Name: (request as any).managerName || "",
+          Manager: (request as any).managerName || "",
           Priority: (request as any).priority || "Medium",
           Asset_x0020_type: request.assetTitle,
           Quantity: request.quantity,
@@ -312,6 +320,10 @@ export class RequestService {
           Title: `Request for ${request.assetTitle}`,
           EmployeeId: requesterId,
           EmployeeID: (request as any).employeeId || "",
+          ManagerName: (request as any).managerName || "",
+          Manager_x0027_s_x0020_Name: (request as any).managerName || "",
+          Manager_x0020_Name: (request as any).managerName || "",
+          Manager: (request as any).managerName || "",
           Priority: (request as any).priority || "Medium",
           Assettype: request.assetTitle,
           Quantity: request.quantity,
@@ -324,6 +336,10 @@ export class RequestService {
           Title: `Request for ${request.assetTitle}`,
           RequesterId: requesterId,
           EmployeeID: (request as any).employeeId || "",
+          ManagerName: (request as any).managerName || "",
+          Manager_x0027_s_x0020_Name: (request as any).managerName || "",
+          Manager_x0020_Name: (request as any).managerName || "",
+          Manager: (request as any).managerName || "",
           Priority: (request as any).priority || "Medium",
           Asset_x0020_type: request.assetTitle,
           Quantity: request.quantity,
@@ -336,6 +352,10 @@ export class RequestService {
           Title: `Request for ${request.assetTitle}`,
           RequesterId: requesterId,
           EmployeeID: (request as any).employeeId || "",
+          ManagerName: (request as any).managerName || "",
+          Manager_x0027_s_x0020_Name: (request as any).managerName || "",
+          Manager_x0020_Name: (request as any).managerName || "",
+          Manager: (request as any).managerName || "",
           Priority: (request as any).priority || "Medium",
           Assettype: request.assetTitle,
           Quantity: request.quantity,
@@ -350,6 +370,10 @@ export class RequestService {
         Title: `Request for ${request.assetTitle}`,
         Employee: request.requesterName,
         EmployeeID: (request as any).employeeId || "",
+        ManagerName: (request as any).managerName || "",
+        Manager_x0027_s_x0020_Name: (request as any).managerName || "",
+        Manager_x0020_Name: (request as any).managerName || "",
+        Manager: (request as any).managerName || "",
         Priority: (request as any).priority || "Medium",
         Asset_x0020_type: request.assetTitle,
         Quantity: request.quantity,
@@ -527,6 +551,7 @@ export class RequestService {
       const employeeIdKey = findFieldInternalName("employeeid", "EmployeeID");
       const priorityKey = findFieldInternalName("priority", "Priority");
       const requestDateKey = findFieldInternalName("requestdate", "RequestDate");
+      const managerNameKey = findFieldInternalName("managername", "ManagerName");
 
       const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
 
@@ -551,6 +576,7 @@ export class RequestService {
             return rawEmp.toString();
           })(),
           employeeId: item[employeeIdKey] || "",
+          managerName: item[managerNameKey] || item.ManagerName || item.Manager_x0020_Name || item.Manager || "",
           assetId: "",
           assetTitle: item[selectAssetKey] || item.Title || "",
           assetName: "",

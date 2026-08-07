@@ -27,6 +27,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   isOpen: boolean;
   onClose: () => void;
   preselectedAsset?: IInventoryItem;
+  onSuccessPopup?: (details: { incidentType: string; assetName: string; requesterName: string; priority: string }) => void;
 }
 
 interface IIncidentForm {
@@ -145,28 +146,31 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
       console.log('Submitting incident payload:', payload);
       await service.createIncidentRequest(payload);
 
-      setMessage({ type: MessageBarType.success, text: 'Incident reported successfully!' });
+      props.onClose();
+      setFormData({
+        employeeName: props.userDisplayName || '',
+        employeeId: props.employeeId || '',
+        employeeEmail: props.userEmail || '',
+        serialNo: '',
+        assetName: '',
+        incidentType: '',
+        priority: 'Medium',
+        description: '',
+        raisedDate: new Date().toLocaleString(),
+        status: 'Open',
+        raisedTo: 'Admin',
+        assignedDate: '',
+      });
+      setMessage(null);
 
-      setTimeout(() => {
-        setFormData({
-          employeeName: props.userDisplayName || '',
-          employeeId: props.employeeId || '',
-          employeeEmail: props.userEmail || '',
-          serialNo: '',
-          assetName: '',
-          incidentType: '',
-          priority: 'Medium',
-          description: '',
-          raisedDate: new Date().toLocaleString(),
-          status: 'Open',
-          raisedTo: 'Admin',
-          assignedDate: '',
+      if (props.onSuccessPopup) {
+        props.onSuccessPopup({
+          incidentType: formData.incidentType,
+          assetName: formData.assetName || 'General Device',
+          requesterName: formData.employeeName,
+          priority: formData.priority
         });
-        setMessage(null);
-        // Refresh assigned assets in case it changes
-        loadAssignedAssetsForName(props.userDisplayName);
-        props.onClose();
-      }, 2000);
+      }
     } catch (error) {
       console.error('Error submitting incident:', error);
       const errorMessage = error instanceof Error ? error.message : 'Failed to report incident. Please try again.';

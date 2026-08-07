@@ -9,6 +9,15 @@ import "@pnp/sp/site-users/web";
 import "@pnp/sp/site-groups/web";
 import { IEmployee } from '../models/IEmployee';
 import { INotification } from '../models/INotification';
+import { IWorkflowPopupDetails } from './WorkflowPopup';
+export interface IWorkflowPopupConfig {
+    isOpen: boolean;
+    title: string;
+    stage: string;
+    type: 'success' | 'info' | 'warning' | 'error';
+    message: string;
+    details?: IWorkflowPopupDetails;
+}
 export interface IInventoryManagementState {
     items: IInventoryItem[];
     employees: IEmployee[];
@@ -66,6 +75,7 @@ export interface IInventoryManagementState {
     loadingGroupUsers: {
         [groupName: string]: boolean;
     };
+    workflowPopup: IWorkflowPopupConfig;
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _isRequestOwnedByCurrentUser;

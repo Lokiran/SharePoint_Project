@@ -8,6 +8,12 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
     isOpen: boolean;
     onClose: () => void;
     preselectedAsset?: IInventoryItem;
+    onSuccessPopup?: (details: {
+        incidentType: string;
+        assetName: string;
+        requesterName: string;
+        priority: string;
+    }) => void;
 }
 export declare const IncidentRequestModule: React.FC<IIncidentRequestModuleProps>;
 export {};
