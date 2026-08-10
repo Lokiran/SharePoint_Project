@@ -1,293 +1,189 @@
-# Employee Asset Management System
+# Inventory Management SPFx Solution
 
-A comprehensive web-based asset management solution for enterprises using SharePoint Framework (SPFx), React, ASP.NET Core, and SQL Server.
+A comprehensive enterprise asset management web part for SharePoint Online built with **SharePoint Framework (SPFx)**, **React**, **Fluent UI**, and **PnPjs**.
 
 ## 🎯 Overview
 
-The Employee Asset Management System enables organizations to:
+The **Inventory Management SPFx Solution** empowers organizations to manage physical and digital assets within Microsoft 365 / SharePoint Online. It provides full lifecycle tracking, employee request workflows, asset return handling, incident history tracking, interactive analytics reporting, and real-time audit logging directly integrated with SharePoint Online lists.
 
-✅ Manage employee asset requests (laptops, peripherals, etc.)
-✅ Track and report incidents on assigned assets
-✅ Monitor asset assignment lifecycle
-✅ View request history and incident tracking
-✅ Generate analytics and reports
-✅ Maintain audit logs for compliance
-✅ Send notifications for request updates
+## ✨ Key Features
 
-## ✨ Features
+### 📊 Interactive Dashboard
+- Real-time asset inventory metrics and status breakdowns.
+- Visual charts powered by Chart.js (asset status distribution, category allocation).
+- Summary cards for pending requests, active assignments, and total inventory.
 
-### For Employees
-- 📊 Dashboard with request and incident statistics
-- 📝 Request new assets with priority levels
-- 🔧 Report incidents and issues with attachments
-- 👁️ Track request approval status
-- 🏷️ View assigned assets with conditions
-- 📥 Download request and incident history
-- 📢 Receive notifications for approvals and updates
+### 📦 Asset & Inventory Management
+- Full inventory catalog view with searching, filtering, and pagination.
+- Add, update, and inspect asset details (Serial Numbers, Model, Category, Status, Location, Value).
+- **Asset Lifecycle Diagram**: Visual state machine illustrating asset status transitions (`Available`, `Assigned`, `In Repair`, `Retired`, etc.).
 
-### For Managers
-- ✅ Approve or reject asset requests
-- 📋 Review pending requests
-- 🔍 Track team's assets and incidents
-- 📊 View department analytics
+### 📝 Asset Request & Manager Workflow
+- Employee self-service request submission for new assets or replacements.
+- Manager review with approve, reject, and comment controls.
+- Request status tracking with request key generation (e.g., `REQ-000123`).
 
-### For IT Administrators
-- 🛠️ Manage asset inventory
-- 👤 Manage user roles and permissions
-- 📝 Generate compliance reports
-- 🔐 View and manage audit logs
+### 🔄 Assigned Assets & Return Requests
+- Employees view their active asset assignments.
+- Asset return request initiation with return reason and condition status.
+- Return request workflow approval and asset status sync.
+
+### 📈 Reports & Data Export
+- Comprehensive report generator with category, date, and status filtering.
+- One-click **PDF Export** (via `jsPDF`) and **CSV Export** for inventory and request data.
+- Executive summary metrics and formatted report data tables.
+
+### 📜 Audit Log & Real-Time Event Stream
+- Full activity logging (`EventLogList`) capturing asset changes, approvals, and returns.
+- Interactive **Event Stream** viewer with filtering options (`EventFilters`).
+
+### ⚙️ Schema & List Mapping Config
+- Dynamic column and field mapping resolution engine (`SharePointBaseService`).
+- Inspection utility for list schema metadata, field names, and custom column mappings.
+
+---
 
 ## 🛠️ Technology Stack
 
-### Frontend
-- **Framework**: React 17
-- **UI Library**: Fluent UI (Office UI Fabric)
-- **Build Tool**: SharePoint Framework (SPFx) v1.22.2
-- **Charting**: Chart.js & react-chartjs-2
-- **Language**: TypeScript
+### Frontend & UI
+- **Framework**: SharePoint Framework (SPFx) v1.22.2
+- **UI Components**: React 17.0.1 & Fluent UI (`@fluentui/react` v8.106.4)
+- **Charts & Visualization**: Chart.js 4.5.1 & `react-chartjs-2`
+- **PDF Generation**: `jspdf` v4.2.1
+- **Language**: TypeScript ~5.8.0
 
-### Backend
-- **Runtime**: ASP.NET Core 8
-- **ORM**: Entity Framework Core
-- **API**: RESTful with Swagger/OpenAPI
-- **Authentication**: JWT (ready to implement)
-- **Language**: C#
+### Data Layer
+- **SharePoint Integration**: PnPjs v4 (`@pnp/sp`, `@pnp/logging`, `@pnp/common`)
+- **Backend Data Store**: Native SharePoint Online Lists
+- **Schema Resolution**: Dynamic field metadata matching & mapping fallback
 
-### Database
-- **Engine**: SQL Server 2019+
-- **Schema**: Normalized relational design
-- **Stored Procedures**: Performance-optimized queries
+### Build & Tooling
+- **Build Rig**: Rushstack Heft (`@rushstack/heft` v1.1.2)
+- **Linting**: ESLint v8 with SPFx rules
+- **Runtime**: Node.js `>=22.14.0 < 23.0.0`
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
-- Node.js 22.14.0+
-- .NET 8 SDK
-- SQL Server 2019+
-- Visual Studio Code or Visual Studio 2022
+## 🗄️ Required SharePoint Lists
 
-### Frontend Setup
-```bash
-cd INVENTORY
-npm install
-npm start
-```
+The solution interfaces with five primary SharePoint Online lists in the web part site context:
 
-### Backend Setup
-```bash
-cd Backend/EmployeeAssetManagement.Api
-dotnet restore
-dotnet build
-dotnet run
-```
+| List Name | Purpose | Key Fields |
+|-----------|---------|------------|
+| `InventoryList` | Asset catalog & assignment state | `Title`, `Category`, `SerialNumber`, `AssetStatus`, `AssignedTo`, `Model`, `Location` |
+| `RequestList` | Asset request tracking | `Title`, `RequestKey`, `Requester`, `ManagerComment`, `RequestStatus`, `Priority` |
+| `Asset Return Request List` | Return workflow management | `Title`, `AssetID`, `Requester`, `ReturnStatus`, `Condition`, `Reason` |
+| `EventLogList` | Audit logging & activity stream | `Title`, `EventType`, `Description`, `User`, `Timestamp` |
+| `Mapping List` | Column & list name resolution | `Title`, `TargetList`, `LogicalName`, `SharePointInternalName` |
 
-API will be available at: `https://localhost:5001/swagger`
-
-### Database Setup
-```bash
-sqlcmd -S YOUR_SERVER -U sa -P YOUR_PASSWORD -i Backend/Database/DatabaseSchema.sql
-```
-
-For detailed setup instructions, see [SETUP_GUIDE.md](SETUP_GUIDE.md).
+---
 
 ## 📁 Project Structure
 
 ```
-INVENTORY/
-├── src/webparts/employeeManagement/    # React Web Part
-├── Backend/
-│   ├── EmployeeAssetManagement.Api/    # ASP.NET Core API
-│   └── Database/                       # SQL scripts
-├── SETUP_GUIDE.md                      # Complete setup guide
-├── FOLDER_STRUCTURE.md                 # Folder descriptions
-├── API_REFERENCE.md                    # API endpoints
-├── ARCHITECTURE.md                     # System architecture
-└── README.md                           # This file
+InventoryManagement/
+├── config/                                 # SPFx configuration files (package-solution, serve, rig, etc.)
+├── sharepoint/                             # Packaged solution output (.sppkg)
+├── src/
+│   └── webparts/
+│       └── inventoryManagement/            # Main Web Part folder
+│           ├── assets/                     # Static assets & icons
+│           ├── components/                 # React UI components
+│           │   ├── AssetForm.tsx           # Asset creation/edit modal
+│           │   ├── AssetLifecycleDiagram.tsx # Visual lifecycle status flow
+│           │   ├── Dashboard.tsx           # Main dashboard container
+│           │   ├── EventStream.tsx         # Activity audit stream
+│           │   ├── InventoryList.tsx       # Asset inventory grid
+│           │   ├── MyAssignedAssetsView.tsx# Employee assigned asset view
+│           │   ├── MyRequestsView.tsx      # Employee request tracking
+│           │   ├── ReturnAssetForm.tsx     # Return request form
+│           │   └── WorkflowPopup.tsx       # Approval workflow popup
+│           ├── constants/                  # Application constants & dropdown options
+│           ├── data/                       # Mock/seed data helpers
+│           ├── loc/                        # Localization files
+│           ├── models/                     # TypeScript interfaces & types
+│           ├── pages/                      # Main view pages (Dashboard, Inventory, Reports, Config, etc.)
+│           ├── services/                   # SharePoint PnPjs Data Services
+│           │   ├── AssetAssignmentService.ts
+│           │   ├── AuditLogService.ts
+│           │   ├── IncidentService.ts
+│           │   ├── InventoryItemService.ts
+│           │   ├── RequestService.ts
+│           │   ├── ReturnRequestService.ts
+│           │   └── base/
+│           │       └── SharePointBaseService.ts # Dynamic field mapping & coercion engine
+│           ├── utils/                      # Formatting, export & utility helpers
+│           ├── InventoryManagementWebPart.manifest.json # Web Part manifest
+│           ├── InventoryManagementWebPart.ts          # Entry web part class
+│           └── pnpjsConfig.ts              # PnPjs initialization
+├── package.json                            # Package manifest & scripts
+├── tsconfig.json                           # TypeScript configuration
+├── .eslintrc.js                            # Linting configuration
+└── README.md                               # Project documentation
 ```
-
-## 📚 Documentation
-
-- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Complete installation and configuration guide
-- **[FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md)** - Project organization and file descriptions
-- **[API_REFERENCE.md](API_REFERENCE.md)** - API endpoints and specifications
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System design and architecture diagrams
-
-## 🔗 API Endpoints
-
-### Dashboard
-- `GET /api/dashboard/stats` - Get dashboard statistics
-
-### Asset Requests
-- `POST /api/asset-requests` - Create request
-- `GET /api/asset-requests/employee` - Get employee requests
-- `PUT /api/asset-requests/{id}/cancel` - Cancel request
-- `PUT /api/asset-requests/{id}/approve` - Approve request
-
-### Incidents
-- `POST /api/incidents` - Report incident
-- `GET /api/incidents/employee` - Get employee incidents
-- `PUT /api/incidents/{id}/status` - Update incident status
-
-### Assets
-- `GET /api/assets` - Get all assets
-- `GET /api/assets/available` - Get available assets
-- `GET /api/assets/assigned` - Get assigned assets
-
-For complete API documentation, see [API_REFERENCE.md](API_REFERENCE.md).
-
-## 🗄️ Database Schema
-
-The system uses 6 main tables:
-- **Employees** - User information and roles
-- **Assets** - Inventory of available assets
-- **AssetRequests** - Employee asset requests
-- **Incidents** - Asset issue tracking
-- **AssetAssignments** - Asset-to-employee mappings
-- **AuditLogs** - Compliance and audit trail
-
-## 🚢 Deployment
-
-### Development
-```bash
-# Frontend
-npm run build
-npm run package-solution
-
-# Backend
-dotnet build
-dotnet run
-```
-
-### Production
-```bash
-# Frontend
-npm run build -- --production
-npm run package-solution -- --production
-
-# Backend
-dotnet publish -c Release -o ./publish
-```
-
-For detailed deployment instructions, see [SETUP_GUIDE.md#deployment](SETUP_GUIDE.md#deployment).
-
-## ⚙️ Configuration
-
-### Frontend Configuration
-Edit `src/webparts/employeeManagement/EmployeeManagementWebPart.ts` and set the API base URL.
-
-### Backend Configuration
-Edit `appsettings.json` and provide your SQL Server connection string.
-
-## 🔐 Security
-
-- ✅ JWT authentication ready
-- ✅ CORS configuration
-- ✅ Input validation
-- ✅ SQL injection prevention (EF Core)
-- ✅ Audit logging
-- ✅ Role-based authorization
-
-## 📊 Key Components
-
-### Frontend Components
-- Dashboard - Statistics and analytics
-- AssetRequestModule - Request form
-- IncidentRequestModule - Incident reporting
-- MyRequests - Request tracking
-- MyAssignedAssets - Asset inventory
-- IncidentHistory - Incident tracking
-
-### Backend Controllers
-- AssetRequestController - Request management
-- IncidentController - Incident management
-- DashboardController - Statistics
-- AssetsController - Asset inventory
-
-## 🧪 Testing
-
-### Frontend
-```bash
-npm test
-```
-
-### Backend
-```bash
-dotnet test
-```
-
-## 🐛 Troubleshooting
-
-### Frontend Issues
-- **Web part not showing?** Clear cache (Ctrl+F5)
-- **CORS errors?** Check API URL configuration
-- **Build errors?** Run `npm cache clean --force && npm install`
-
-### Backend Issues
-- **Database connection error?** Verify connection string
-- **Port in use?** Change port in `launchSettings.json`
-
-For more help, see [SETUP_GUIDE.md#troubleshooting](SETUP_GUIDE.md#troubleshooting).
-
-## 🛣️ Roadmap
-
-### Future Features
-- [ ] Advanced reporting and analytics
-- [ ] Asset lifecycle management
-- [ ] Mobile app support
-- [ ] Automated approval workflows
-- [ ] Integration with external systems
-- [ ] Multi-tenancy support
-
-## 📝 Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0.0 | 2024-01-01 | Initial release |
-
-## 📞 Support
-
-For issues and questions, please refer to the documentation or contact the development team.
-
-## 📄 License
-
-Proprietary - All rights reserved
-
-## 🔗 Resources
-
-- [SharePoint Framework Documentation](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/)
-- [React Documentation](https://reactjs.org)
-- [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/dotnet/core/aspnet/)
-- [Fluent UI Components](https://developer.microsoft.com/en-us/fluentui)
 
 ---
 
-**Last Updated**: 2024  
-**Version**: 1.0.0  
-**Status**: Production Ready ✅
+## 🚀 Getting Started
 
-> Include any additional steps as needed.
+### Prerequisites
 
-Other build commands can be listed using `heft --help`.
+- **Node.js**: `>=22.14.0 < 23.0.0`
+- **Package Manager**: `npm`
+- **SharePoint Online Tenant** with developer/App Catalog permissions.
 
-## Features
+### Installation
 
-Description of the extension that expands upon high-level summary above.
+1. Clone the repository and navigate to the project directory:
+   ```bash
+   cd InventoryManagement
+   ```
 
-This extension illustrates the following concepts:
+2. Install project dependencies:
+   ```bash
+   npm install
+   ```
 
-- topic 1
-- topic 2
-- topic 3
+### Local Development
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+Start the local development server and SPFx workbench:
+```bash
+npm start
+```
+*Runs `heft start --clean` to compile TypeScript and launch the local workbench.*
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+---
 
-## References
+## 🚢 Building & Deployment
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
-- [Heft Documentation](https://heft.rushstack.io/)
+### Build & Package for Production
+
+Generate the production bundle and create the SharePoint solution package (`.sppkg`):
+```bash
+npm run build
+```
+*Runs `heft test --clean --production && heft package-solution --production`.*
+
+The solution package file will be generated at:
+`sharepoint/solution/spfx-project.sppkg`
+
+### Clean Build Output
+
+To clean temporary build artifacts:
+```bash
+npm run clean
+```
+
+### SharePoint Deployment Instructions
+
+1. Go to your SharePoint **Tenant App Catalog** (or Site Collection App Catalog).
+2. Upload the `sharepoint/solution/spfx-project.sppkg` file.
+3. Select **Deploy** (check *Make this solution available to all sites* if desired).
+4. Navigate to any SharePoint page, edit the page, search for **Inventory Management** web part, and add it to the page.
+5. Ensure the required SharePoint Lists (`InventoryList`, `RequestList`, `Asset Return Request List`, `EventLogList`, `Mapping List`) exist in the site context.
+
+---
+
+## 📝 License
+
+Proprietary - All rights reserved.
