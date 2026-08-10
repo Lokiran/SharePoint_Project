@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Stack,
   Text,
@@ -28,6 +28,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   onClose: () => void;
   preselectedAsset?: IInventoryItem;
   onSuccessPopup?: (details: { incidentType: string; assetName: string; requesterName: string; priority: string }) => void;
+  preselectedIncidentType?: string;
 }
 
 interface IIncidentForm {
@@ -80,17 +81,38 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
     return () => clearTimeout(timer);
   }, [formData.employeeName]);
 
-  // Sync with props when employee context changes or when a preselected asset is passed
+  const prevIsOpenRef = useRef(props.isOpen);
+
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
       employeeName: props.userDisplayName || '',
       employeeId: props.employeeId || '',
       employeeEmail: props.userEmail || '',
-      assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : (props.isOpen ? '' : prev.assetName),
-      serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : (props.isOpen ? '' : prev.serialNo),
     }));
-  }, [props.userDisplayName, props.employeeId, props.userEmail, props.preselectedAsset, props.isOpen]);
+  }, [props.userDisplayName, props.employeeId, props.userEmail]);
+
+  useEffect(() => {
+    if (props.isOpen && !prevIsOpenRef.current) {
+      // Panel just opened! Reset fields.
+      setFormData((prev) => ({
+        ...prev,
+        assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : '',
+        serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : '',
+        incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : '',
+        description: '',
+      }));
+    } else if (props.preselectedAsset || props.preselectedIncidentType) {
+      // Sync preselected asset or incident type if props update while open
+      setFormData((prev) => ({
+        ...prev,
+        assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : prev.assetName,
+        serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : prev.serialNo,
+        incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : prev.incidentType,
+      }));
+    }
+    prevIsOpenRef.current = props.isOpen;
+  }, [props.isOpen, props.preselectedAsset, props.preselectedIncidentType]);
 
   const loadAssignedAssetsForName = async (name: string) => {
     if (!name.trim()) {
@@ -206,6 +228,8 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
   const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
 
+  const isReplacementMode = props.preselectedIncidentType === 'Replacement Request';
+
   return (
     <Panel
       isOpen={props.isOpen}
@@ -213,7 +237,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
       type={PanelType.custom}
       customWidth="100%"
       styles={{ main: { maxWidth: '450px' } }}
-      headerText="Raise Incident"
+      headerText={isReplacementMode ? "Request Asset Replacement" : "Raise Incident"}
       closeButtonAriaLabel="Close"
     >
       <div className={styles.incidentRequestModule}>
@@ -226,7 +250,9 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           {!isLoadingAssets && assignedAssets.length === 0 && (
             <MessageBar messageBarType={MessageBarType.info}>
-              You currently have no assets assigned. You can still raise generic incidents.
+              {isReplacementMode 
+                ? "You currently have no assets assigned to request a replacement for." 
+                : "You currently have no assets assigned. You can still raise generic incidents."}
             </MessageBar>
           )}
 
@@ -273,14 +299,16 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
             />
           )}
 
-          <Dropdown
-            label="Incident Type"
-            options={incidentTypeOptions}
-            selectedKey={formData.incidentType}
-            onChange={(ev, option) => handleInputChange('incidentType', option?.key)}
-            required
-            placeholder="Select Incident Type"
-          />
+          {!isReplacementMode && (
+            <Dropdown
+              label="Issue Type"
+              options={incidentTypeOptions}
+              selectedKey={formData.incidentType}
+              onChange={(ev, option) => handleInputChange('incidentType', option?.key)}
+              required
+              placeholder="Select Issue Type"
+            />
+          )}
 
           <Dropdown
             label="Priority"
@@ -290,10 +318,10 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
           />
 
           <TextField
-            label="Description"
+            label={isReplacementMode ? "Reason for Replacement" : "Description"}
             multiline
             rows={5}
-            placeholder="Describe the issue..."
+            placeholder={isReplacementMode ? "Describe the reason for replacement..." : "Describe the issue..."}
             value={formData.description}
             onChange={(ev, newValue) => handleInputChange('description', newValue)}
             required
@@ -321,7 +349,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: 20 }}>
             <PrimaryButton
-              text="Report Incident"
+              text={isReplacementMode ? "Request Replacement" : "Report Incident"}
               onClick={handleSubmit}
               disabled={isSubmitting}
             />

@@ -22,10 +22,11 @@ export interface IMyAssignedAssetsViewProps {
   items: IInventoryItem[];
   onReturnAsset: (item: IInventoryItem) => void;
   onRaiseIncident: (item: IInventoryItem) => void;
+  onAssetReplacement?: (item: IInventoryItem) => void;
 }
 
 export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props) => {
-  const { items, onReturnAsset, onRaiseIncident } = props;
+  const { items, onReturnAsset, onRaiseIncident, onAssetReplacement } = props;
 
   // Search and Filter States
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -509,10 +510,10 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                 <div style={{
                   padding: '8px 14px 10px 14px',
                   display: 'flex',
+                  flexWrap: 'wrap',
                   gap: '6px',
                   borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                  alignItems: 'center',
-                  flexWrap: 'wrap'
+                  alignItems: 'center'
                 }}>
                   <DefaultButton
                     text="Details"
@@ -527,6 +528,14 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                     onClick={() => onRaiseIncident(item)}
                     style={{ height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' }}
                   />
+                  {onAssetReplacement && (
+                    <DefaultButton
+                      text="Asset Replacement"
+                      iconProps={{ iconName: 'Sync' }}
+                      onClick={() => onAssetReplacement(item)}
+                      style={{ height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' }}
+                    />
+                  )}
 
                   {isPendingReturn ? (
                     <span style={{
@@ -632,6 +641,17 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                 }}
                 iconProps={{ iconName: 'AlertSolid' }}
               />
+              {selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (
+                <DefaultButton
+                  text="Asset Replacement"
+                  onClick={() => {
+                    setIsPanelOpen(false);
+                    onAssetReplacement(selectedAsset);
+                    setSelectedAsset(null);
+                  }}
+                  iconProps={{ iconName: 'Sync' }}
+                />
+              )}
               {selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (
                 <DefaultButton
                   text="Request Return"

@@ -6,7 +6,9 @@
   "manifestVersion": 2,
   "requiresCustomScript": false,
   "supportedHosts": [
-    "SharePointWebPart"
+    "SharePointWebPart",
+    "TeamsTab",
+    "TeamsPersonalApp"
   ],
   "supportsThemeVariants": true,
   "preconfiguredEntries": [
@@ -35,7 +37,7 @@
     "scriptResources": {
       "inventory-management-web-part": {
         "type": "path",
-        "path": "inventory-management-web-part.js"
+        "path": "inventory-management-web-part_85d34697c0a9b22f0a66.js"
       },
       "react": {
         "type": "component",
@@ -64,7 +66,7 @@
       },
       "InventoryManagementWebPartStrings": {
         "type": "path",
-        "path": "InventoryManagementWebPartStrings_en-us.js"
+        "path": "InventoryManagementWebPartStrings_en-us_9695bf17d9457a88794a5fd4655a63a6.js"
       },
       "@microsoft/sp-lodash-subset": {
         "type": "component",

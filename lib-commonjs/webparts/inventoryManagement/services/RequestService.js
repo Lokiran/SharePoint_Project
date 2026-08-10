@@ -4,6 +4,7 @@ exports.RequestService = void 0;
 const pnpjsConfig_1 = require("../pnpjsConfig");
 const SharePointBaseService_1 = require("./base/SharePointBaseService");
 const AuditLogService_1 = require("./AuditLogService");
+const EmailService_1 = require("./EmailService");
 class RequestService {
     static _normalizeRequestKey(input) {
         return (input || "").trim().toUpperCase();
@@ -191,7 +192,7 @@ class RequestService {
             console.warn("Could not ensure RequestList workflow fields. Continuing with fallback behavior.", error);
         }
     }
-    static async addRequest(request, userDisplayName = "Unknown") {
+    static async addRequest(request, userDisplayName = "Unknown", userRole, isEmployeeUI) {
         const list = await RequestService.getRequestList();
         await RequestService._ensureRequestWorkflowFields();
         const initialStatus = request.status || "Pending";
@@ -452,8 +453,56 @@ class RequestService {
             }
         }
         if (!success) {
-            console.error("Error adding request to SharePoint after trying all column combinations.", lastError);
-            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Please check the Developer Console (F12) for the exact column name mismatch.`);
+            // localStorage Fallback logic
+            const localRequestKey = `REQ-LOCAL-${Date.now().toString(36).toUpperCase()}`;
+            const localRequest = {
+                id: localRequestKey,
+                requestKey: localRequestKey,
+                requesterName: request.requesterName,
+                employeeId: request.employeeId || "",
+                managerName: request.managerName || "",
+                assetId: request.assetId || "",
+                assetTitle: request.assetTitle,
+                assetName: request.assetTitle,
+                priority: request.priority || "Medium",
+                quantity: request.quantity,
+                status: initialStatus,
+                assetStatus: "Pending",
+                requestDate: request.requestDate || new Date().toISOString().split('T')[0],
+                reason: request.reason || "",
+                managerResponse: ""
+            };
+            try {
+                const local = localStorage.getItem("inventory_requests");
+                const listItems = local ? JSON.parse(local) : [];
+                listItems.push(localRequest);
+                localStorage.setItem("inventory_requests", JSON.stringify(listItems));
+            }
+            catch (e) {
+                console.error("Local storage save failed for request", e);
+            }
+            try {
+                await AuditLogService_1.AuditLogService.addAuditLog({
+                    title: `Created Local Request ${localRequestKey} for Asset: ${request.assetTitle}`,
+                    action: 'Create',
+                    entityType: 'Request',
+                    entityId: localRequestKey,
+                    details: JSON.stringify({
+                        requestKey: localRequestKey,
+                        lifecycle: "Submitted (Local Fallback)",
+                        requesterName: request.requesterName,
+                        assetTitle: request.assetTitle,
+                        quantity: request.quantity,
+                        reason: request.reason || "",
+                        requestedAt: new Date().toISOString()
+                    }),
+                    user: userDisplayName
+                });
+            }
+            catch (auditErr) {
+                console.warn("Failed to add audit log for local fallback request:", auditErr);
+            }
+            return;
         }
         // Safely perform post-save actions (key generation, updating, logging) outside the creation loop
         try {
@@ -497,12 +546,43 @@ class RequestService {
                 }),
                 user: userDisplayName
             });
+            // Trigger Email Notification to Manager (only from Admin UI, and NOT when requested from Employee UI)
+            if (userRole === 'Admin' && !isEmployeeUI) {
+                // Run email sending asynchronously so it does not block or disturb the asset request creation flow
+                Promise.resolve().then(async () => {
+                    try {
+                        let liveManagerEmail = "";
+                        try {
+                            const resolvedEmail = await EmailService_1.EmailService.resolveLiveManagerEmail(request.requesterName);
+                            if (resolvedEmail) {
+                                liveManagerEmail = resolvedEmail;
+                            }
+                        }
+                        catch (resolveErr) {
+                            console.warn("Failed to resolve live manager email:", resolveErr);
+                        }
+                        await EmailService_1.EmailService.sendApprovalRequestToManager({
+                            requestKey,
+                            employeeName: request.requesterName,
+                            assetName: request.assetTitle,
+                            requestDate: request.requestDate || new Date().toLocaleDateString(),
+                            adminName: userDisplayName
+                        }, liveManagerEmail || undefined);
+                    }
+                    catch (mailErr) {
+                        console.warn("Failed to send approval request email in background:", mailErr);
+                    }
+                }).catch(err => {
+                    console.warn("Unhandled error in background email generation:", err);
+                });
+            }
         }
         catch (postError) {
             console.warn("Failed in post-request creation steps:", postError);
         }
     }
     static async getRequests() {
+        let mapped = [];
         try {
             await RequestService._ensureRequestWorkflowFields();
             const list = await RequestService.getRequestList();
@@ -531,7 +611,7 @@ class RequestService {
             const requestDateKey = findFieldInternalName("requestdate", "RequestDate");
             const managerNameKey = findFieldInternalName("managername", "ManagerName");
             const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
-            const mapped = items.map((item) => {
+            mapped = items.map((item) => {
                 const rawStatus = item[statusKey] || item.Status || 'Pending';
                 const normalizedStatus = (rawStatus || '').toString().toLowerCase();
                 const status = (normalizedStatus.includes('approv')) ? 'Approved' :
@@ -576,9 +656,19 @@ class RequestService {
             return mapped;
         }
         catch (error) {
-            console.error("Error fetching requests from SharePoint:", error);
-            throw error;
+            console.warn("Error fetching requests from SharePoint, falling back to local storage items:", error);
         }
+        try {
+            const local = localStorage.getItem("inventory_requests");
+            if (local) {
+                const localRequests = JSON.parse(local);
+                return [...localRequests, ...mapped];
+            }
+        }
+        catch (e) {
+            console.error("Failed to parse local requests from localStorage:", e);
+        }
+        return mapped;
     }
     static async updateRequestStatus(requestId, status, approverName = 'Unknown', rejectionReason) {
         try {
@@ -668,6 +758,26 @@ class RequestService {
                 }),
                 user: approverName
             });
+            // Trigger Email Notification to Admin on Approval
+            if (status === 'Approved') {
+                try {
+                    const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                    const employeeKey = findKey("employee") || findKey("requester") || "Employee";
+                    const requesterKey = findKey("requester") || "Requester";
+                    const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Title || "Employee";
+                    const employeeName = typeof rawEmp === 'string' ? rawEmp : (rawEmp && rawEmp.Title ? rawEmp.Title : "Employee");
+                    await EmailService_1.EmailService.sendApprovalConfirmationToAdmin({
+                        requestKey: requestKey || RequestService._buildRequestKeyFromItemId(requestId),
+                        employeeName,
+                        assetName: item[selectAssetKey] || item.Title || "Asset",
+                        approvedBy: approverName,
+                        approvalDate: new Date().toLocaleDateString()
+                    });
+                }
+                catch (mailErr) {
+                    console.warn("Failed to send approval confirmation email to Admins:", mailErr);
+                }
+            }
         }
         catch (error) {
             console.error(`Failed to update RequestList item ${requestId} status`, error);

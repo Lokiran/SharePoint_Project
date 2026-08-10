@@ -2,6 +2,7 @@ export interface IRequest {
   id: string;
   requestKey: string;
   requesterName: string;
+  requesterEmail?: string;
   employeeId?: string;
   assetId: string;
   assetTitle: string;

@@ -40,8 +40,8 @@ class InventoryService {
     static async getRequestList() {
         return RequestService_1.RequestService.getRequestList();
     }
-    static async addRequest(request, userDisplayName) {
-        return RequestService_1.RequestService.addRequest(request, userDisplayName);
+    static async addRequest(request, userDisplayName, userRole, isEmployeeUI) {
+        return RequestService_1.RequestService.addRequest(request, userDisplayName, userRole, isEmployeeUI);
     }
     static async getRequests() {
         return RequestService_1.RequestService.getRequests();
@@ -69,11 +69,11 @@ class InventoryService {
     static async getReturnRequestList() {
         return ReturnRequestService_1.ReturnRequestService.getReturnRequestList();
     }
-    static async getReturnRequests() {
-        return ReturnRequestService_1.ReturnRequestService.getReturnRequests();
-    }
     static async addReturnRequest(request, userDisplayName) {
         return ReturnRequestService_1.ReturnRequestService.addReturnRequest(request, userDisplayName);
+    }
+    static async getReturnRequests() {
+        return ReturnRequestService_1.ReturnRequestService.getReturnRequests();
     }
     static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus) {
         return ReturnRequestService_1.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus);

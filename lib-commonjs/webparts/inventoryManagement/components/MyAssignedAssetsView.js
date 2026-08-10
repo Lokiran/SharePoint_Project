@@ -8,7 +8,7 @@ const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const DropdownConstants_1 = require("../constants/DropdownConstants");
 const MyAssignedAssetsView = (props) => {
-    const { items, onReturnAsset, onRaiseIncident } = props;
+    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement } = props;
     // Search and Filter States
     const [searchQuery, setSearchQuery] = (0, react_1.useState)('');
     const [selectedType, setSelectedType] = (0, react_1.useState)('All');
@@ -372,16 +372,17 @@ const MyAssignedAssetsView = (props) => {
                 React.createElement("div", { style: {
                         padding: '8px 14px 10px 14px',
                         display: 'flex',
+                        flexWrap: 'wrap',
                         gap: '6px',
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                        alignItems: 'center',
-                        flexWrap: 'wrap'
+                        alignItems: 'center'
                     } },
                     React.createElement(react_2.DefaultButton, { text: "Details", onClick: () => {
                             setSelectedAsset(item);
                             setIsPanelOpen(true);
                         }, style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
                     React.createElement(react_2.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
+                    onAssetReplacement && (React.createElement(react_2.DefaultButton, { text: "Asset Replacement", iconProps: { iconName: 'Sync' }, onClick: () => onAssetReplacement(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } })),
                     isPendingReturn ? (React.createElement("span", { style: {
                             backgroundColor: '#ffe8d6',
                             color: '#a63e00',
@@ -455,6 +456,11 @@ const MyAssignedAssetsView = (props) => {
                             onRaiseIncident(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'AlertSolid' } }),
+                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (React.createElement(react_2.DefaultButton, { text: "Asset Replacement", onClick: () => {
+                            setIsPanelOpen(false);
+                            onAssetReplacement(selectedAsset);
+                            setSelectedAsset(null);
+                        }, iconProps: { iconName: 'Sync' } })),
                     selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (React.createElement(react_2.DefaultButton, { text: "Request Return", onClick: () => {
                             setIsPanelOpen(false);
                             onReturnAsset(selectedAsset);

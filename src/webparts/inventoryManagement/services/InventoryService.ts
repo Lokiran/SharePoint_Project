@@ -35,8 +35,8 @@ export class InventoryService {
   public static async getRequestList(): Promise<any> {
     return RequestService.getRequestList();
   }
-  public static async addRequest(request: any, userDisplayName: string): Promise<void> {
-    return RequestService.addRequest(request, userDisplayName);
+  public static async addRequest(request: any, userDisplayName: string, userRole?: string, isEmployeeUI?: boolean): Promise<void> {
+    return RequestService.addRequest(request, userDisplayName, userRole, isEmployeeUI);
   }
   public static async getRequests(): Promise<any[]> {
     return RequestService.getRequests();
@@ -66,11 +66,11 @@ export class InventoryService {
   public static async getReturnRequestList(): Promise<any> {
     return ReturnRequestService.getReturnRequestList();
   }
-  public static async getReturnRequests(): Promise<any[]> {
-    return ReturnRequestService.getReturnRequests();
-  }
   public static async addReturnRequest(request: any, userDisplayName: string): Promise<void> {
     return ReturnRequestService.addReturnRequest(request, userDisplayName);
+  }
+  public static async getReturnRequests(): Promise<any[]> {
+    return ReturnRequestService.getReturnRequests();
   }
   public static async updateReturnRequestStatus(
     requestId: string,

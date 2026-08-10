@@ -14,6 +14,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
         requesterName: string;
         priority: string;
     }) => void;
+    preselectedIncidentType?: string;
 }
 export declare const IncidentRequestModule: React.FC<IIncidentRequestModuleProps>;
 export {};

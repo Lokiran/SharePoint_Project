@@ -25,6 +25,7 @@ export interface IRequestFormProps {
   employees: IEmployee[];
   currentUserRole: UserRole;
   currentUserName: string;
+  currentUserEmail?: string;
   onSubmitRequest: (request: Omit<IRequest, 'id' | 'requestKey' | 'status'>) => void;
 }
 
@@ -53,7 +54,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
   const currentUserOption: IEmployee = {
     id: 'current-user',
     name: props.currentUserName,
-    email: '',
+    email: props.currentUserEmail || '',
     department: 'Your Department',
     jobTitle: 'Employee'
   };
@@ -114,6 +115,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
     if (selectedAssetType && employee) {
       props.onSubmitRequest({
         requesterName: employee.name,
+        requesterEmail: employee.email,
         employeeId: employeeId,
         managerName: managerName.trim(),
         assetId: matchingAsset ? matchingAsset.id : '1',

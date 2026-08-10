@@ -12,7 +12,7 @@ export declare class RequestService {
     private static _ensureRequestWorkflowFields;
     static addRequest(request: Omit<IRequest, 'id' | 'requestKey' | 'status'> & {
         status?: string;
-    }, userDisplayName?: string): Promise<void>;
+    }, userDisplayName?: string, userRole?: string, isEmployeeUI?: boolean): Promise<void>;
     static getRequests(): Promise<IRequest[]>;
     static updateRequestStatus(requestId: number, status: 'Approved' | 'Declined', approverName?: string, rejectionReason?: string): Promise<void>;
     static getRequestHistoryById(requestLookupId: string): Promise<{

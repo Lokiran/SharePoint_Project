@@ -26,7 +26,7 @@ const RequestForm = (props) => {
     const currentUserOption = {
         id: 'current-user',
         name: props.currentUserName,
-        email: '',
+        email: props.currentUserEmail || '',
         department: 'Your Department',
         jobTitle: 'Employee'
     };
@@ -74,6 +74,7 @@ const RequestForm = (props) => {
         if (selectedAssetType && employee) {
             props.onSubmitRequest({
                 requesterName: employee.name,
+                requesterEmail: employee.email,
                 employeeId: employeeId,
                 managerName: managerName.trim(),
                 assetId: matchingAsset ? matchingAsset.id : '1',

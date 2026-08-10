@@ -7,6 +7,7 @@ const SharePointBaseService_1 = require("./base/SharePointBaseService");
 const AuditLogService_1 = require("./AuditLogService");
 const InventoryItemService_1 = require("./InventoryItemService");
 const RequestService_1 = require("./RequestService");
+const EmailService_1 = require("./EmailService");
 class AssetAssignmentService {
     static async getMappingList() {
         const sp = (0, pnpjsConfig_1.getSP)();
@@ -320,6 +321,23 @@ class AssetAssignmentService {
         const mappingList = await AssetAssignmentService.getMappingList();
         const schema = await SharePointBaseService_1.SharePointBaseService.getListFieldsMetadata(mappingList);
         const finalAssignmentId = assignmentId || `ASG-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+        let assignedToId = null;
+        try {
+            const sp = (0, pnpjsConfig_1.getSP)();
+            const user = await sp.web.ensureUser(employeeEmail);
+            assignedToId = user.data ? user.data.Id : user.Id;
+        }
+        catch (e) {
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write. Falling back to current user.`, e);
+            try {
+                const sp = (0, pnpjsConfig_1.getSP)();
+                const currentUser = await sp.web.currentUser();
+                assignedToId = currentUser.Id;
+            }
+            catch (currUserErr) {
+                console.warn("Failed to get current user as fallback in mapping write", currUserErr);
+            }
+        }
         const resolvedMapping = {};
         let employeeNameField = schema.find(f => f.internalName.toLowerCase() === "employe" ||
             f.internalName.toLowerCase() === "employee" ||
@@ -356,7 +374,7 @@ class AssetAssignmentService {
         if (assignmentIdCol)
             resolvedMapping["AssignmentID"] = assignmentIdCol;
         const logicalPayload = {
-            EmployeeName: employeeName,
+            EmployeeName: assignedToId || employeeName,
             EmployeeID: employeeId,
             AssetName: assetName,
             SerialNumber: serialNumber,
@@ -399,7 +417,14 @@ class AssetAssignmentService {
             assignedToId = user.data ? user.data.Id : user.Id;
         }
         catch (e) {
-            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to string assignment if column allows.`, e);
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to current user.`, e);
+            try {
+                const currentUser = await sp.web.currentUser();
+                assignedToId = currentUser.Id;
+            }
+            catch (currUserErr) {
+                console.warn("Failed to get current user as fallback in assignAssetsToEmployee", currUserErr);
+            }
         }
         const updatePromises = assetIds.map(async (assetId) => {
             // 1. Get asset details first
@@ -521,6 +546,20 @@ class AssetAssignmentService {
                 }),
                 user: adminName
             });
+            // Trigger Email Notification to Employee on Assignment
+            try {
+                await EmailService_1.EmailService.sendAssignmentNotificationToEmployee({
+                    employeeName,
+                    employeeEmail,
+                    assetName,
+                    assetId: serialNumber || assetId,
+                    assignedBy: adminName,
+                    assignedDate: finalAssignedDate
+                });
+            }
+            catch (mailErr) {
+                console.warn("Failed to send assignment notification email to Employee:", mailErr);
+            }
         });
         await Promise.all(updatePromises);
     }

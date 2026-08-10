@@ -10,6 +10,7 @@ export interface IRequestFormProps {
     employees: IEmployee[];
     currentUserRole: UserRole;
     currentUserName: string;
+    currentUserEmail?: string;
     onSubmitRequest: (request: Omit<IRequest, 'id' | 'requestKey' | 'status'>) => void;
 }
 export declare const RequestForm: React.FC<IRequestFormProps>;
