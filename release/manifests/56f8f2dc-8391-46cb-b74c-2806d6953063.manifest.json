@@ -6,7 +6,9 @@
   "manifestVersion": 2,
   "requiresCustomScript": false,
   "supportedHosts": [
-    "SharePointWebPart"
+    "SharePointWebPart",
+    "TeamsTab",
+    "TeamsPersonalApp"
   ],
   "supportsThemeVariants": true,
   "preconfiguredEntries": [

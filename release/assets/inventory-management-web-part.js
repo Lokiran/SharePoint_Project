@@ -223,7 +223,7 @@ _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_
 
 /***/ }),
 
-/***/ 217:
+/***/ 45217:
 /*!***********************************************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/ReplacementHistory/ReplacementHistory.module.scss.css ***!
   \***********************************************************************************************************/
@@ -2891,12 +2891,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/EmailService */ 407);
+/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/EmailService */ 86407);
 /* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./AssetTracking */ 20867);
 /* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../pages */ 56330);
 /* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
 /* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./ReplacementHistory/ReplacementHistory */ 635);
+/* harmony import */ var _ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./ReplacementHistory/ReplacementHistory */ 81635);
 /* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
 /* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
 
@@ -6155,7 +6155,7 @@ const NotificationCenter = (props) => {
 
 /***/ }),
 
-/***/ 635:
+/***/ 81635:
 /*!**********************************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/ReplacementHistory/ReplacementHistory.js ***!
   \**********************************************************************************************/
@@ -6181,7 +6181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
-/* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 217);
+/* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
 
 
@@ -8461,7 +8461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AuditLogService */ 43584);
 /* harmony import */ var _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InventoryItemService */ 32974);
 /* harmony import */ var _RequestService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RequestService */ 50764);
-/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./EmailService */ 407);
+/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./EmailService */ 86407);
 
 
 
@@ -10103,7 +10103,7 @@ class AuditLogService {
 
 /***/ }),
 
-/***/ 407:
+/***/ 86407:
 /*!*******************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/EmailService.js ***!
   \*******************************************************************/
@@ -10346,7 +10346,7 @@ class EmailService {
             // 2. Try User Profile Service using ensureUser first
             try {
                 // eslint-disable-next-line @typescript-eslint/no-var-requires
-                __webpack_require__(/*! @pnp/sp/profiles */ 878);
+                __webpack_require__(/*! @pnp/sp/profiles */ 39878);
                 const matchingEmp = _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
                 const userIdentifier = matchingEmp ? matchingEmp.email : employeeName;
                 const user = await sp.web.ensureUser(userIdentifier);
@@ -10408,7 +10408,7 @@ class EmailService {
         try {
             const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
             // eslint-disable-next-line @typescript-eslint/no-var-requires
-            const { Utilities } = __webpack_require__(/*! @pnp/sp/sputilities */ 229);
+            const { Utilities } = __webpack_require__(/*! @pnp/sp/sputilities */ 38229);
             const utility = Utilities(sp.web);
             await utility.sendEmail({
                 To: validEmails,
@@ -11846,7 +11846,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
 /* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuditLogService */ 43584);
-/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EmailService */ 407);
+/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EmailService */ 86407);
 
 
 
@@ -78883,7 +78883,7 @@ _webs_types_js__WEBPACK_IMPORTED_MODULE_1__._Web.prototype.getCatalog = async fu
 
 /***/ }),
 
-/***/ 878:
+/***/ 39878:
 /*!************************************************!*\
   !*** ./node_modules/@pnp/sp/profiles/index.js ***!
   \************************************************/
@@ -78896,7 +78896,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   UrlZone: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.UrlZone)
 /* harmony export */ });
 /* harmony import */ var _fi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fi.js */ 17066);
-/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 19);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 13019);
 
 
 
@@ -78911,7 +78911,7 @@ Reflect.defineProperty(_fi_js__WEBPACK_IMPORTED_MODULE_0__.SPFI.prototype, "prof
 
 /***/ }),
 
-/***/ 19:
+/***/ 13019:
 /*!************************************************!*\
   !*** ./node_modules/@pnp/sp/profiles/types.js ***!
   \************************************************/
@@ -80515,7 +80515,7 @@ class ComparisonResult extends BaseQuery {
 
 /***/ }),
 
-/***/ 229:
+/***/ 38229:
 /*!***************************************************!*\
   !*** ./node_modules/@pnp/sp/sputilities/index.js ***!
   \***************************************************/
@@ -80527,7 +80527,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Utilities: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.Utilities)
 /* harmony export */ });
 /* harmony import */ var _fi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fi.js */ 17066);
-/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 636);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 88636);
 
 
 
@@ -80542,7 +80542,7 @@ Reflect.defineProperty(_fi_js__WEBPACK_IMPORTED_MODULE_0__.SPFI.prototype, "util
 
 /***/ }),
 
-/***/ 636:
+/***/ 88636:
 /*!***************************************************!*\
   !*** ./node_modules/@pnp/sp/sputilities/types.js ***!
   \***************************************************/
@@ -96190,7 +96190,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("403c032425752de14112")
+/******/ 		__webpack_require__.h = () => ("aa8d97d74ba46ced45fa")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
