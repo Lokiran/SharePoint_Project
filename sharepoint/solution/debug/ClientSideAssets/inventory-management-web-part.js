@@ -223,6 +223,33 @@ _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_
 
 /***/ }),
 
+/***/ 45217:
+/*!***********************************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/ReplacementHistory/ReplacementHistory.module.scss.css ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/@microsoft/sp-css-loader/node_modules/@microsoft/load-themed-styles/lib-es6/index.js */ 96323);
+// Imports
+
+
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".replacementHistory_b9999860 .filterSection_b9999860{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px}@media (max-width:768px){.replacementHistory_b9999860 .filterSection_b9999860{flex-direction:column}}.replacementHistory_b9999860 .statusBadge_b9999860{border-radius:4px;display:inline-block;font-size:12px;font-weight:600;padding:6px 12px;text-align:center}", true);
+
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  replacementHistory: "replacementHistory_b9999860",
+  filterSection: "filterSection_b9999860",
+  statusBadge: "statusBadge_b9999860"
+});
+
+
+/***/ }),
+
 /***/ 25831:
 /*!************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/InventoryManagementWebPart.js ***!
@@ -989,14 +1016,46 @@ const Dashboard = (props) => {
     const declinedReqCount = requests.filter(r => (r.status || '').toLowerCase() === 'declined' || (r.status || '').toLowerCase() === 'rejected').length;
     const totalDecidedRequests = approvedReqCount + declinedReqCount;
     const approvalSuccessRate = totalDecidedRequests > 0 ? ((approvedReqCount / totalDecidedRequests) * 100).toFixed(0) : '0';
-    // --- Filter for pending assignments (Admin Action Center) ---
-    const pendingAssignments = requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending');
+    // --- Utility: Sort requests & assets new-to-old ---
+    const sortRequestsNewToOld = (reqs) => {
+        return [...reqs].sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    };
+    const sortItemsNewToOld = (itemList) => {
+        return [...itemList].sort((a, b) => {
+            const dateA = a.assignedDate || a.purchaseDate || '';
+            const dateB = b.assignedDate || b.purchaseDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    };
+    // --- Filter for pending assignments (Admin Action Center - New to Old) ---
+    const pendingAssignments = sortRequestsNewToOld(requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || 'Pending') === 'Pending'));
     const recentAssignments = pendingAssignments.slice(0, 5);
-    // --- Filter for pending decisions (Manager Action Center) ---
-    const pendingApprovals = requests.filter(r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending');
+    // --- Filter for pending decisions (Manager Action Center - New to Old) ---
+    const pendingApprovals = sortRequestsNewToOld(requests.filter(r => (r.status || 'Pending') === 'Pending' || (r.status || '').toLowerCase() === 'pending'));
     const recentApprovals = pendingApprovals.slice(0, 5);
-    // --- Filter for employee's recent requests (Employee Action Center) ---
-    const recentEmployeeRequests = requests.slice(0, 5);
+    // --- Filter for employee's recent requests (Employee Action Center - New to Old) ---
+    const recentEmployeeRequests = sortRequestsNewToOld(requests).slice(0, 5);
+    const sortedEmployeeItems = sortItemsNewToOld(items).slice(0, 5);
     // --- Role label for header ---
     const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
     const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
@@ -1073,7 +1132,7 @@ const Dashboard = (props) => {
                         : !isInventoryManager
                             ? `${totalAssets} assigned hardware item${totalAssets === 1 ? '' : 's'}`
                             : `${totalAssets} items in catalog`))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
+            (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Accept" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
@@ -1083,17 +1142,17 @@ const Dashboard = (props) => {
                         availableAssets,
                         " in stock (",
                         stockPercentage,
-                        "% of total)"))),
+                        "% of total)")))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple}`, role: "status", "aria-label": `${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Send" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Requests in Queue' : 'Total Requests'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Requests in Queue' : !isAdmin ? 'My Requests' : 'Total Requests'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
                         ? `${totalRequests} queue requests`
                         : `Approval success: ${approvalSuccessRate}%`))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
+            (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Clock" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
@@ -1101,8 +1160,8 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? 'Awaiting Approval' : 'Pending Requests'),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isManagerView
                         ? `${awaitingManagerDecision} requires review`
-                        : `${pendingRequests} under assignment review`)))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
+                        : `${pendingRequests} under assignment review`))))),
+        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
@@ -1131,7 +1190,7 @@ const Dashboard = (props) => {
                             ? 'Status of asset handouts for manager-approved requests'
                             : 'Current status across all request pipelines'))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Doughnut, { data: requestStatusData, options: doughnutOptions })))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Doughnut, { data: requestStatusData, options: doughnutOptions }))))),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -1198,8 +1257,10 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Asset"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Manager Name"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Qty"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Requested Date"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Manager Comment"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Fulfillment State"))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentEmployeeRequests.map(req => {
                         const isApproved = (req.status || '').toLowerCase() === 'approved';
@@ -1224,8 +1285,10 @@ const Dashboard = (props) => {
                         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.assetTitle)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.managerName || '-'),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.quantity),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { color: isDeclined ? '#991b1b' : 'inherit' } }, req.managerResponse || '-'),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
@@ -1239,14 +1302,14 @@ const Dashboard = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "Devices3" }),
                             "My Assigned Equipment"),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, "Hardware currently registered and assigned to you"))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, items.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, sortedEmployeeItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Device Name"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Category"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Serial Number"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "Assigned Date"))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, items.slice(0, 5).map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.id },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, sortedEmployeeItems.map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.id },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.title)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, item.assetType),
@@ -1845,6 +1908,11 @@ const IncidentHistory = (props) => {
     const [selectedIncident, setSelectedIncident] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [toastNotification, setToastNotification] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const triggerToast = (message, title = 'Incident Updated') => {
+        setToastNotification({ message, title });
+        setTimeout(() => setToastNotification(null), 4000);
+    };
     const getPriorityBadgeStyle = (priority) => {
         const p = priority || 'Medium';
         let backgroundColor = '#f3f4f6';
@@ -1944,6 +2012,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
+            triggerToast(`Status for incident ${incident.incidentId || '#' + incident.id} updated to '${newStatus}'.`, 'Status Updated');
         }
         catch (error) {
             console.error('Error updating status:', error);
@@ -1963,6 +2032,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
+            triggerToast(`Resolution summary saved for incident ${incident.incidentId || '#' + incident.id}.`, 'Resolution Saved');
         }
         catch (error) {
             console.error('Error saving resolution:', error);
@@ -2254,7 +2324,39 @@ const IncidentHistory = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Resolution Summary:"),
                         " ",
-                        selectedIncident.resolution))))))))));
+                        selectedIncident.resolution)))))))),
+        toastNotification && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                position: 'fixed',
+                bottom: '24px',
+                right: '24px',
+                zIndex: 100000,
+                backgroundColor: '#ffffff',
+                color: '#0f172a',
+                padding: '14px 18px',
+                borderRadius: '12px',
+                boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06)',
+                borderLeft: '5px solid #10b981',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                maxWidth: '380px',
+                fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif'
+            } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    backgroundColor: '#dcfce7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Accept", style: { color: '#166534', fontSize: '15px', fontWeight: 'bold' } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' } }, toastNotification.title || 'Success'),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' } }, toastNotification.message)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
 };
 
 
@@ -2321,17 +2423,37 @@ const IncidentRequestModule = (props) => {
         }, 500);
         return () => clearTimeout(timer);
     }, [formData.employeeName]);
-    // Sync with props when employee context changes or when a preselected asset is passed
+    const prevIsOpenRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(props.isOpen);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         setFormData((prev) => ({
             ...prev,
             employeeName: props.userDisplayName || '',
             employeeId: props.employeeId || '',
             employeeEmail: props.userEmail || '',
-            assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : (props.isOpen ? '' : prev.assetName),
-            serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : (props.isOpen ? '' : prev.serialNo),
         }));
-    }, [props.userDisplayName, props.employeeId, props.userEmail, props.preselectedAsset, props.isOpen]);
+    }, [props.userDisplayName, props.employeeId, props.userEmail]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        if (props.isOpen && !prevIsOpenRef.current) {
+            // Panel just opened! Reset fields.
+            setFormData((prev) => ({
+                ...prev,
+                assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : '',
+                serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : '',
+                incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : '',
+                description: '',
+            }));
+        }
+        else if (props.preselectedAsset || props.preselectedIncidentType) {
+            // Sync preselected asset or incident type if props update while open
+            setFormData((prev) => ({
+                ...prev,
+                assetName: props.preselectedAsset ? (props.preselectedAsset.assetName || props.preselectedAsset.title) : prev.assetName,
+                serialNo: props.preselectedAsset ? props.preselectedAsset.serialNumber : prev.serialNo,
+                incidentType: props.preselectedIncidentType ? props.preselectedIncidentType : prev.incidentType,
+            }));
+        }
+        prevIsOpenRef.current = props.isOpen;
+    }, [props.isOpen, props.preselectedAsset, props.preselectedIncidentType]);
     const loadAssignedAssetsForName = async (name) => {
         if (!name.trim()) {
             setAssignedAssets([]);
@@ -2380,27 +2502,30 @@ const IncidentRequestModule = (props) => {
             };
             console.log('Submitting incident payload:', payload);
             await service.createIncidentRequest(payload);
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.success, text: 'Incident reported successfully!' });
-            setTimeout(() => {
-                setFormData({
-                    employeeName: props.userDisplayName || '',
-                    employeeId: props.employeeId || '',
-                    employeeEmail: props.userEmail || '',
-                    serialNo: '',
-                    assetName: '',
-                    incidentType: '',
-                    priority: 'Medium',
-                    description: '',
-                    raisedDate: new Date().toLocaleString(),
-                    status: 'Open',
-                    raisedTo: 'Admin',
-                    assignedDate: '',
+            props.onClose();
+            setFormData({
+                employeeName: props.userDisplayName || '',
+                employeeId: props.employeeId || '',
+                employeeEmail: props.userEmail || '',
+                serialNo: '',
+                assetName: '',
+                incidentType: '',
+                priority: 'Medium',
+                description: '',
+                raisedDate: new Date().toLocaleString(),
+                status: 'Open',
+                raisedTo: 'Admin',
+                assignedDate: '',
+            });
+            setMessage(null);
+            if (props.onSuccessPopup) {
+                props.onSuccessPopup({
+                    incidentType: formData.incidentType,
+                    assetName: formData.assetName || 'General Device',
+                    requesterName: formData.employeeName,
+                    priority: formData.priority
                 });
-                setMessage(null);
-                // Refresh assigned assets in case it changes
-                loadAssignedAssetsForName(props.userDisplayName);
-                props.onClose();
-            }, 2000);
+            }
         }
         catch (error) {
             console.error('Error submitting incident:', error);
@@ -2434,11 +2559,14 @@ const IncidentRequestModule = (props) => {
         text: `${a.assetName} (S/N: ${a.serialNumber || 'N/A'})`,
     }));
     const selectedAssetKey = assignedAssets.find(a => a.serialNumber === formData.serialNo && a.assetName === formData.assetName)?.id;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Raise Incident", closeButtonAriaLabel: "Close" },
+    const isReplacementMode = props.preselectedIncidentType === 'Replacement Request';
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: isReplacementMode ? "Request Asset Replacement" : "Raise Incident", closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _IncidentRequestModule_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].incidentRequestModule },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Stack, { tokens: { childrenGap: 15 } },
                 message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: message.type, isMultiline: true }, message.text)),
-                !isLoadingAssets && assignedAssets.length === 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.info }, "You currently have no assets assigned. You can still raise generic incidents.")),
+                !isLoadingAssets && assignedAssets.length === 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBarType.info }, isReplacementMode
+                    ? "You currently have no assets assigned to request a replacement for."
+                    : "You currently have no assets assigned. You can still raise generic incidents.")),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Employee Name", value: formData.employeeName, onChange: (ev, val) => handleInputChange('employeeName', val || ''), required: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
                         const selected = assignedAssets.find(a => a.id === option?.key);
@@ -2455,14 +2583,14 @@ const IncidentRequestModule = (props) => {
                     }, disabled: isLoadingAssets }),
                 formData.assetName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Asset Name", value: formData.assetName, disabled: true })),
                 formData.serialNo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Serial NO", value: formData.serialNo, disabled: true })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Incident Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Incident Type" }),
+                !isReplacementMode && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Issue Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Issue Type" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Priority", options: priorityOptions, selectedKey: formData.priority, onChange: (ev, option) => handleInputChange('priority', option?.key) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Description", multiline: true, rows: 5, placeholder: "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: isReplacementMode ? "Reason for Replacement" : "Description", multiline: true, rows: 5, placeholder: isReplacementMode ? "Describe the reason for replacement..." : "Describe the issue...", value: formData.description, onChange: (ev, newValue) => handleInputChange('description', newValue), required: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: "Raised To", options: raisedToOptions, selectedKey: formData.raisedTo, onChange: (ev, option) => handleInputChange('raisedTo', option?.key), placeholder: "Select Team" }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Raised Date", value: formData.raisedDate, readOnly: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: "Status", value: formData.status, readOnly: true }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: 20 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PrimaryButton, { text: "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PrimaryButton, { text: isReplacementMode ? "Request Replacement" : "Report Incident", onClick: handleSubmit, disabled: isSubmitting }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: "Cancel", onClick: handleCancel }))))));
 };
 
@@ -2605,11 +2733,22 @@ const InventoryList = (props) => {
             return 'Leased Assets';
         return t;
     };
-    // 1. Process items (sorting by group title if admin)
-    let itemsToProcess = props.items;
-    if (props.isAdmin && itemsToProcess.length > 0) {
-        itemsToProcess = [...props.items].sort((a, b) => normalizeGroupTitle(a.title).localeCompare(normalizeGroupTitle(b.title)));
-    }
+    // 1. Process items (new-to-old sorting)
+    const itemsToProcess = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        return [...props.items].sort((a, b) => {
+            const dateA = a.purchaseDate || a.assignedDate || '';
+            const dateB = b.purchaseDate || b.assignedDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    }, [props.items]);
     // 2. Paginate if enabled
     const pageSize = props.pageSize || 10;
     const totalItems = itemsToProcess.length;
@@ -2728,35 +2867,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EventStream__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./EventStream */ 19178);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
 /* harmony import */ var _ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReturnRequestList */ 18397);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @fluentui/react */ 20472);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! jspdf */ 28339);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./AssetTracking */ 20867);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../pages */ 56330);
-/* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
-/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/EmailService */ 86407);
+/* harmony import */ var _AssetTracking__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./AssetTracking */ 20867);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../pages */ 56330);
+/* harmony import */ var _NotificationCenter__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./NotificationCenter */ 58350);
+/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
+/* harmony import */ var _ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./ReplacementHistory/ReplacementHistory */ 81635);
+/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
 
 
 
@@ -2775,6 +2917,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 chart_js__WEBPACK_IMPORTED_MODULE_14__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_14__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_14__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_14__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_14__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_14__.Title, chart_js__WEBPACK_IMPORTED_MODULE_14__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_14__.Legend);
+
+
+
 
 
 
@@ -3076,6 +3221,46 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 isNotificationDetailsOpen: true
             });
         };
+        this._handleMockEmailSent = (ev) => {
+            this.setState({
+                lastMockEmail: ev.detail,
+                editMockEmailTo: ev.detail.to.join(', '),
+                editMockEmailSubject: ev.detail.subject,
+                isSendingMockEmail: false,
+                mockEmailSendError: undefined,
+                mockEmailSendSuccess: false
+            });
+        };
+        this._handleEmailSendFailed = (ev) => {
+            this.setState({
+                syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
+                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.warning
+            });
+        };
+        this._onSendMockEmail = async () => {
+            const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
+            if (!lastMockEmail)
+                return;
+            this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
+            try {
+                const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
+                await _services_EmailService__WEBPACK_IMPORTED_MODULE_19__.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
+                this.setState({
+                    isSendingMockEmail: false,
+                    mockEmailSendSuccess: true
+                });
+                setTimeout(() => {
+                    this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
+                }, 2000);
+            }
+            catch (e) {
+                console.error("Failed to send email from panel:", e);
+                this.setState({
+                    isSendingMockEmail: false,
+                    mockEmailSendError: e.message || JSON.stringify(e)
+                });
+            }
+        };
         this._resolveUserRole = async () => {
             try {
                 const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_7__.getSP)();
@@ -3236,8 +3421,24 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     isReturnFormOpen: false,
                     selectedAssetForReturn: undefined,
+                    returnRequestsLoading: false,
                     syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success,
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Return Request Submitted',
+                        stage: 'Return Stage 1: Submitted',
+                        type: 'info',
+                        message: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" has been submitted and is awaiting manager review.`,
+                        details: {
+                            assetTitle: selectedAssetForReturn.assetName || selectedAssetForReturn.title,
+                            requesterName: this.state.activeUserDisplayName,
+                            status: 'Pending Manager Approval',
+                            condition: condition,
+                            comment: reason,
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
                 });
             }
             catch (error) {
@@ -3257,6 +3458,28 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
+                const isCompleted = status === 'Completed';
+                const isRejected = status === 'Rejected';
+                this.setState({
+                    returnRequestsLoading: false,
+                    workflowPopup: {
+                        isOpen: true,
+                        title: isCompleted ? 'Asset Return Completed' : isRejected ? 'Return Request Rejected' : 'Return Request Approved',
+                        stage: isCompleted ? 'Return Stage 3: Completed & Checked In' : isRejected ? 'Return Stage: Rejected' : 'Return Stage 2: Manager Approved',
+                        type: isCompleted ? 'success' : isRejected ? 'error' : 'info',
+                        message: isCompleted
+                            ? `Asset return #${requestId} has been verified by IT Admin and checked back into active stock.`
+                            : isRejected
+                                ? `Return request #${requestId} was rejected.`
+                                : `Return request #${requestId} was approved by manager and sent to IT Admin for verification.`,
+                        details: {
+                            requestId: `#${requestId}`,
+                            status: status,
+                            comment: comment || adminComments,
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3275,6 +3498,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
                 await this._loadInventory(); // Refresh list
                 await this._loadAuditLogs(); // Refresh audit logs
+                this.setState({
+                    loading: false,
+                    isAssetFormOpen: false,
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'New Inventory Asset Created',
+                        stage: 'Catalog Management',
+                        type: 'success',
+                        message: `Asset "${newAssetData.title || newAssetData.assetName}" was successfully added to stock inventory.`,
+                        details: {
+                            assetTitle: newAssetData.title || newAssetData.assetName,
+                            status: 'In Stock',
+                            date: newAssetData.purchaseDate || new Date().toISOString().split('T')[0]
+                        }
+                    }
+                });
             }
             catch (error) {
                 console.error("Failed to add asset:", error);
@@ -3286,15 +3525,15 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         };
         this._onSubmitRequest = async (requestData) => {
             try {
-                const requesterEmployee = this.state.employees.find(e => e.name.toLowerCase() === requestData.requesterName.toLowerCase());
-                const requesterRole = requesterEmployee ? requesterEmployee.jobTitle : 'Inventory Employee';
-                const initialStatus = (requesterRole === 'Inventory Manager' || requesterRole === 'Admin') ? 'Approved' : 'Pending';
+                const initialStatus = 'Pending';
                 const tempId = `temp-${Date.now()}`;
                 const localRequest = {
                     id: tempId,
                     requestKey: `REQ-${("000000" + (this.state.requests.length + 1)).slice(-6)}`,
                     requesterName: requestData.requesterName,
+                    requesterEmail: requestData.requesterEmail,
                     employeeId: requestData.employeeId || "",
+                    managerName: requestData.managerName || "",
                     assetId: requestData.assetId || "1",
                     assetTitle: requestData.assetTitle,
                     assetName: "",
@@ -3307,12 +3546,30 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 };
                 // Optimistic update so it gets added to the RequestList directly
                 this.setState(prevState => ({
-                    requests: [localRequest, ...prevState.requests]
+                    requests: [localRequest, ...prevState.requests],
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Request Created',
+                        stage: 'Stage 1: Request Submitted',
+                        type: 'success',
+                        message: `Your request for "${requestData.assetTitle}" has been submitted successfully and routed to manager (${requestData.managerName || 'Manager'}) for approval.`,
+                        details: {
+                            requestId: localRequest.requestKey,
+                            assetTitle: requestData.assetTitle,
+                            quantity: requestData.quantity,
+                            requesterName: requestData.requesterName,
+                            managerName: requestData.managerName,
+                            status: initialStatus,
+                            date: localRequest.requestDate
+                        }
+                    }
                 }));
+                const effectiveRole = this.state.previewRole || this.state.userRole;
+                const isEmpUI = effectiveRole !== 'Admin';
                 await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.addRequest({
                     ...requestData,
                     status: initialStatus
-                }, this.state.activeUserDisplayName);
+                }, this.state.activeUserDisplayName, effectiveRole, isEmpUI);
                 console.log('Successfully saved request to SharePoint');
                 await this._loadRequests(); // Refresh list from SharePoint
                 await this._loadAuditLogs(); // Refresh audit logs
@@ -3337,6 +3594,23 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Request Approved by Manager',
+                        stage: 'Stage 2: Manager Approved',
+                        type: 'success',
+                        message: `Request ${request.requestKey || `#${request.id}`} for "${request.assetTitle}" requested by ${request.requesterName} was APPROVED by Manager. Moved to IT Admin for physical asset allocation.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            managerName: request.managerName || this.state.activeUserDisplayName,
+                            status: 'Approved',
+                            date: request.requestDate
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3360,6 +3634,24 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Asset Request Rejected by Manager',
+                        stage: 'Stage 2: Manager Review',
+                        type: 'error',
+                        message: `Request ${request.requestKey || `#${request.id}`} for "${request.assetTitle}" requested by ${request.requesterName} was REJECTED by Manager.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            managerName: request.managerName || this.state.activeUserDisplayName,
+                            status: 'Declined',
+                            comment: reason,
+                            date: request.requestDate
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3383,6 +3675,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Physical Asset Allocated & Dispatched',
+                        stage: 'Stage 3: Admin Asset Allocation',
+                        type: 'success',
+                        message: `Physical asset "${request.assetTitle}" has been allocated to ${request.requesterName} by System Administrator! Request fulfilled.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            status: 'Asset Allocated & Dispatched',
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
+                });
             }
             catch (error) {
                 this.setState({
@@ -3416,13 +3724,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info
                 });
                 const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3432,7 +3740,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error
                 });
             }
         };
@@ -3441,21 +3749,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info
                 });
                 const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error
                 });
             }
         };
@@ -3695,7 +4003,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 progressPercent = 1.0;
                 currentStepText = "Declined by Manager";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
@@ -3739,18 +4047,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
                         " Detailed Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 12 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Check Passed:"),
                                 " There are currently ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
                                 " unit(s) of ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Warning:"),
                                 " Only ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
@@ -3782,7 +4090,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
             const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
@@ -3804,7 +4112,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 healthRating = "Critical Needs Replacement";
                 healthIcon = "Warning";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
@@ -3845,9 +4153,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#374151' } }, asset.note)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 12 } },
                         ageInMonths !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
@@ -3858,21 +4166,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
                                 asset.warrantyExpiry,
-                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
                                 " Covered under manufacturer protection until ",
                                 asset.warrantyExpiry,
-                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                     "Health Classification: ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } }, healthRating))),
@@ -3911,7 +4219,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const id = parts[0];
                 associatedAsset = items.find(a => a.id === id);
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Received:"),
@@ -3923,7 +4231,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     associatedAsset && this._renderAssetAnalysis(associatedAsset),
                     !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_24__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3955,7 +4263,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     isAdminPanelOpen: false,
                     selectedAdminRequest: undefined,
                     adminSelectedAssetId: undefined,
-                    adminComment: ''
+                    adminComment: '',
+                    workflowPopup: {
+                        isOpen: true,
+                        title: 'Physical Asset Allocated & Dispatched',
+                        stage: 'Stage 3: Admin Asset Allocation',
+                        type: 'success',
+                        message: `Asset "${request.assetTitle}" has been allocated to ${request.requesterName} by System Administrator! Request fulfilled.`,
+                        details: {
+                            requestId: request.requestKey || `#${request.id}`,
+                            assetTitle: request.assetTitle,
+                            requesterName: request.requesterName,
+                            status: 'Asset Allocated & Dispatched',
+                            comment: adminComment,
+                            date: new Date().toISOString().split('T')[0]
+                        }
+                    }
                 });
                 await this._loadInventory();
                 await this._loadRequests();
@@ -4015,7 +4338,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 ? "Select asset to assign..."
                 : "No assets of this type in stock";
             const isBusy = this.state.requestActionInProgressId === request.id;
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_30__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -4102,13 +4425,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                         root: { color: '#dc2626', borderColor: '#dc2626' },
                                         rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                                     } })))))));
@@ -4154,6 +4477,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             activeUserEmail: activeEmail,
             isIncidentFormOpen: false,
             selectedAssetForIncident: undefined,
+            preselectedIncidentType: undefined,
             selectedAdminRequest: undefined,
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
@@ -4166,28 +4490,52 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             connectionStatuses: {},
             connectionErrorMessages: {},
             groupUsersList: {},
-            loadingGroupUsers: {}
+            loadingGroupUsers: {},
+            workflowPopup: {
+                isOpen: false,
+                title: '',
+                stage: '',
+                type: 'info',
+                message: ''
+            },
+            lastMockEmail: undefined,
+            editMockEmailTo: '',
+            editMockEmailSubject: '',
+            isSendingMockEmail: false,
+            mockEmailSendError: undefined,
+            mockEmailSendSuccess: false
         };
     }
     async componentDidMount() {
         await this._resolveUserRole();
-        await this._loadInventory();
-        await this._loadRequests();
-        await this._loadAuditLogs();
         await this._loadReturnRequests();
-        // Run self-healing cleanup for Return Approved assets
+        // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
         try {
             await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.cleanupReturnApprovedAssets();
         }
         catch (e) {
             console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
         }
+        await this._loadInventory();
+        await this._loadRequests();
+        await this._loadAuditLogs();
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
             await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+            await this._loadInventory();
         }
         catch (e) {
             console.warn("Failed to auto-sync existing assignments to Mapping List:", e);
+        }
+        if (typeof window !== 'undefined') {
+            window.addEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
+            window.addEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
+        }
+    }
+    componentWillUnmount() {
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
+            window.removeEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
         }
     }
     render() {
@@ -4221,6 +4569,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 badgeColor: '#0078d4'
             },
             { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
+            { key: 'ReplacementHistory', text: 'Replacement History', icon: 'Sync' },
             ...(isAdmin || isManager ? [
                 { key: 'Inventory', text: 'Inventory', icon: 'List', group: 'MANAGEMENT' }
             ] : []),
@@ -4272,7 +4621,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             "SharePoint Groups: ",
                             (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', '))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_23__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_25__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error:"),
                     " ",
@@ -4297,7 +4646,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
@@ -4307,12 +4656,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": "Toggle navigation menu" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Icon, { iconName: "GlobalNavButton" })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: "GlobalNavButton" })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, "Inventory Management")),
                         (() => {
                             const dashboardState = {
@@ -4359,37 +4708,42 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             };
                             switch (this.state.selectedTabKey) {
                                 case 'Dashboard':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
                                 case 'MyWorkspace':
                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.Pivot, { "aria-label": "My Workspace Tabs" },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Assets" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.PivotItem, { headerText: "Assets" },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
-                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }) }))),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PivotItem, { headerText: "Requests" },
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }), onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' }) }))),
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.PivotItem, { headerText: "Requests" },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                                 case 'Notifications':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_21__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_22__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
                                 case 'IncidentHistory':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
+                                case 'ReplacementHistory':
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Replacement History")),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__.ReplacementHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                                 case 'Inventory':
-                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
+                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
                                 case 'Approvals':
                                     return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_37__.Pie, { data: {
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_40__.Pie, { data: {
                                                         labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                             const status = req.status || 'Pending';
                                                             acc[status] = (acc[status] || 0) + 1;
@@ -4439,7 +4793,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                                 case 'AssetReturns':
                                     return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -4457,13 +4811,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
                                                     const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
                                                     window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                                                 } })),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.DetailsList, { items: this.state.employees.map(emp => {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsList, { items: this.state.employees.map(emp => {
                                                     const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                     const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                     const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -4494,13 +4848,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                             } }, item.assignedAssets))
                                                     },
                                                     { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_40__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_42__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_43__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                     if (!rowProps)
                                                         return null;
                                                     const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsRow, { ...rowProps })),
+                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_44__.DetailsRow, { ...rowProps })),
                                                         isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                                 "Assets assigned to ",
@@ -4511,9 +4865,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Employee Asset Tracking")),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_19__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetTracking__WEBPACK_IMPORTED_MODULE_20__.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
                                 case 'Reports':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
                                 case 'Config': {
                                     const configState = {
                                         configSelectedTab: this.state.configSelectedTab,
@@ -4534,18 +4888,49 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
                                         onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
                                     };
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_20__.ConfigPage, { state: configState, actions: configActions })) : null;
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.ConfigPage, { state: configState, actions: configActions })) : null;
                                 }
                                 default:
                                     return null;
                             }
                         })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_8__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_22__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_9__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_23__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
+                    this.setState({
+                        workflowPopup: {
+                            isOpen: true,
+                            title: 'Incident Ticket Logged',
+                            stage: 'Incident Management: Logged',
+                            type: 'warning',
+                            message: `Incident ticket for "${details.assetName}" (${details.incidentType}) has been logged and assigned to Admin IT support.`,
+                            details: {
+                                assetTitle: details.assetName,
+                                requesterName: details.requesterName,
+                                status: 'Open Ticket',
+                                date: new Date().toISOString().split('T')[0]
+                            }
+                        }
+                    });
+                } })),
             this._renderNotificationDetailsPanel(),
             this._renderAdminAssignmentPanel(),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest })));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_26__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PanelType.medium, headerText: "\uD83D\uDCEC Outgoing Email Notification (Developer Preview)", closeButtonAriaLabel: "Close", onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: this.state.isSendingMockEmail ? "Sending..." : "Send Email", onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DefaultButton, { text: "Close", onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
+                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
+                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error },
+                    "Failed to send email: ",
+                    this.state.mockEmailSendError)),
+                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.ProgressIndicator, { label: "Dispatched email transaction in progress..." })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, "Email Content Preview:"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
     }
 }
 
@@ -4584,7 +4969,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const MyAssignedAssetsView = (props) => {
-    const { items, onReturnAsset, onRaiseIncident } = props;
+    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement } = props;
     // Search and Filter States
     const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     const [selectedType, setSelectedType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All');
@@ -4681,9 +5066,9 @@ const MyAssignedAssetsView = (props) => {
         });
         return options;
     }, [items]);
-    // Filtering Logic
+    // Filtering Logic (New to Old)
     const filteredItems = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        return items.filter(item => {
+        const filtered = items.filter(item => {
             // 1. Search filter
             const normQuery = searchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
@@ -4701,6 +5086,19 @@ const MyAssignedAssetsView = (props) => {
             const w = evaluateWarranty(item.warrantyExpiry);
             const matchesWarranty = selectedWarranty === 'All' || w.status === selectedWarranty;
             return matchesSearch && matchesType && matchesCondition && matchesWarranty;
+        });
+        return filtered.sort((a, b) => {
+            const dateA = a.assignedDate || a.purchaseDate || '';
+            const dateB = b.assignedDate || b.purchaseDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
         });
     }, [items, searchQuery, selectedType, selectedCondition, selectedWarranty]);
     // Detailed Age and Lifecycle Recommendation rendering for the panel
@@ -4935,16 +5333,17 @@ const MyAssignedAssetsView = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         padding: '8px 14px 10px 14px',
                         display: 'flex',
+                        flexWrap: 'wrap',
                         gap: '6px',
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-                        alignItems: 'center',
-                        flexWrap: 'wrap'
+                        alignItems: 'center'
                     } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Details", onClick: () => {
                             setSelectedAsset(item);
                             setIsPanelOpen(true);
                         }, style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
+                    onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Asset Replacement", iconProps: { iconName: 'Sync' }, onClick: () => onAssetReplacement(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } })),
                     isPendingReturn ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
                             backgroundColor: '#ffe8d6',
                             color: '#a63e00',
@@ -5018,6 +5417,11 @@ const MyAssignedAssetsView = (props) => {
                             onRaiseIncident(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'AlertSolid' } }),
+                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Asset Replacement", onClick: () => {
+                            setIsPanelOpen(false);
+                            onAssetReplacement(selectedAsset);
+                            setSelectedAsset(null);
+                        }, iconProps: { iconName: 'Sync' } })),
                     selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Request Return", onClick: () => {
                             setIsPanelOpen(false);
                             onReturnAsset(selectedAsset);
@@ -5123,23 +5527,37 @@ const MyRequestsView = (props) => {
             completed: completedCount
         };
     }, [returnRequests]);
-    // Filtering Logic (Asset Requests)
+    // Filtering Logic (Asset Requests - New to Old)
     const filteredRequests = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        return requests.filter(r => {
+        const filtered = requests.filter(r => {
             const normQuery = searchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
                 (r.requestKey || '').toLowerCase().includes(normQuery) ||
                 (r.assetTitle || '').toLowerCase().includes(normQuery) ||
                 (r.reason || '').toLowerCase().includes(normQuery) ||
+                (r.managerName || '').toLowerCase().includes(normQuery) ||
                 (r.id || '').toLowerCase().includes(normQuery);
             const matchesStatus = selectedStatus === 'All' || (r.status || 'Pending') === selectedStatus;
             const matchesPriority = selectedPriority === 'All' || (r.priority || 'Medium') === selectedPriority;
             return matchesSearch && matchesStatus && matchesPriority;
         });
+        return filtered.sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
     }, [requests, searchQuery, selectedStatus, selectedPriority]);
-    // Filtering Logic (Return Requests)
+    // Filtering Logic (Return Requests - New to Old)
     const filteredReturnRequests = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        return returnRequests.filter(r => {
+        const filtered = returnRequests.filter(r => {
             const normQuery = returnSearchQuery.toLowerCase().trim();
             const matchesSearch = !normQuery ||
                 (r.assetName || '').toLowerCase().includes(normQuery) ||
@@ -5151,6 +5569,19 @@ const MyRequestsView = (props) => {
                 (returnSelectedStatus === 'Pending' && (r.status === 'Pending Manager Approval' || r.status === 'Pending')) ||
                 (returnSelectedStatus === 'Approved' && (r.status === 'Pending Admin Verification' || r.status === 'Approved'));
             return matchesSearch && matchesStatus;
+        });
+        return filtered.sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
         });
     }, [returnRequests, returnSearchQuery, returnSelectedStatus]);
     // Return status badge styles
@@ -5292,9 +5723,23 @@ const MyRequestsView = (props) => {
                                     " (Qty: ",
                                     item.quantity,
                                     ")"),
+                                item.managerName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.78rem', color: 'var(--text-muted)' } },
+                                    "Manager: ",
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main)' } }, item.managerName))),
                                 item.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } },
                                     "Reason: ",
                                     item.reason)),
+                                item.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                        backgroundColor: status === 'Declined' ? '#fef2f2' : '#f8fafc',
+                                        borderRadius: '4px',
+                                        padding: '4px 8px',
+                                        borderLeft: `3px solid ${status === 'Declined' ? '#dc2626' : '#16a34a'}`,
+                                        fontSize: '0.75rem',
+                                        color: status === 'Declined' ? '#991b1b' : 'var(--text-main)'
+                                    } },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Manager Note:"),
+                                    " ",
+                                    item.managerResponse)),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px', marginTop: 'auto' } },
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: adminAllocationColor, fontWeight: 500 } }, adminAllocationText),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: priorityBg, color: priorityColor, padding: '2px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 500 } }, priority))),
@@ -5710,6 +6155,462 @@ const NotificationCenter = (props) => {
 
 /***/ }),
 
+/***/ 81635:
+/*!**********************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/ReplacementHistory/ReplacementHistory.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReplacementHistory: () => (/* binding */ ReplacementHistory)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
+/* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
+/* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+
+
+
+
+
+
+const ReplacementHistory = (props) => {
+    const [replacements, setReplacements] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [filteredReplacements, setFilteredReplacements] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [searchText, setSearchText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [statusFilter, setStatusFilter] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [selectedReplacement, setSelectedReplacement] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const getPriorityBadgeStyle = (priority) => {
+        const p = priority || 'Medium';
+        let backgroundColor = '#f3f4f6';
+        let color = '#4b5563';
+        if (p === 'High' || p === 'Critical') {
+            backgroundColor = '#fee2e2';
+            color = '#b91c1c';
+        }
+        else if (p === 'Low') {
+            backgroundColor = '#dbeafe';
+            color = '#1e3a8a';
+        }
+        return {
+            backgroundColor,
+            color,
+            padding: '4px 10px',
+            borderRadius: '9999px',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            display: 'inline-block'
+        };
+    };
+    const getStatusBadgeStyle = (status) => {
+        const s = status || 'Open';
+        let backgroundColor = '#fee2e2';
+        let color = '#991b1b';
+        if (s === 'In Progress') {
+            backgroundColor = '#fef3c7';
+            color = '#92400e';
+        }
+        else if (s === 'Resolved') {
+            backgroundColor = '#dcfce7';
+            color = '#166534';
+        }
+        else if (s === 'Closed') {
+            backgroundColor = '#f3f4f6';
+            color = '#4b5563';
+        }
+        return {
+            backgroundColor,
+            color,
+            padding: '4px 12px',
+            borderRadius: '9999px',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            display: 'inline-block',
+            textAlign: 'center'
+        };
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        loadReplacements();
+    }, [props.userEmail]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        filterReplacements();
+    }, [searchText, statusFilter, replacements]);
+    const loadReplacements = async () => {
+        try {
+            props.setIsLoading(true);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            const isAdmin = props.userRole === 'Admin';
+            const data = await service.getEmployeeReplacementHistory(props.userEmail, isAdmin);
+            setReplacements(data);
+        }
+        catch (error) {
+            console.error('Error loading replacement history:', error);
+        }
+        finally {
+            props.setIsLoading(false);
+        }
+    };
+    const filterReplacements = () => {
+        let filtered = [...replacements];
+        if (searchText) {
+            filtered = filtered.filter((rep) => (rep.assetName || '').toLowerCase().includes(searchText.toLowerCase()) ||
+                (rep.incidentId || '').toLowerCase().includes(searchText.toLowerCase()));
+        }
+        if (statusFilter) {
+            filtered = filtered.filter((rep) => rep.status === statusFilter);
+        }
+        setFilteredReplacements(filtered);
+    };
+    const handleViewDetails = (item) => {
+        setSelectedReplacement(item);
+        setTempResolution(item.resolution || '');
+        setShowDetailPanel(true);
+    };
+    const handleStatusChange = async (rep, newStatus) => {
+        try {
+            props.setIsLoading(true);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            await service.updateIncidentStatus(rep.id, newStatus, rep.resolution);
+            const updated = {
+                ...rep,
+                status: newStatus,
+                resolvedDate: newStatus === 'Resolved' || newStatus === 'Closed' ? new Date().toISOString() : rep.resolvedDate
+            };
+            setSelectedReplacement(updated);
+            await loadReplacements();
+        }
+        catch (error) {
+            console.error('Error updating status:', error);
+        }
+        finally {
+            props.setIsLoading(false);
+        }
+    };
+    const handleSaveResolution = async (rep) => {
+        try {
+            props.setIsLoading(true);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            await service.updateIncidentStatus(rep.id, rep.status, tempResolution);
+            const updated = {
+                ...rep,
+                resolution: tempResolution
+            };
+            setSelectedReplacement(updated);
+            await loadReplacements();
+        }
+        catch (error) {
+            console.error('Error saving resolution:', error);
+        }
+        finally {
+            props.setIsLoading(false);
+        }
+    };
+    const handleDownloadReport = (rep) => {
+        try {
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.jsPDF();
+            // Top header banner
+            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
+            doc.rect(0, 0, 210, 25, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(16);
+            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
+            // Document Title
+            doc.setTextColor(51, 65, 85); // Slate 700
+            doc.setFontSize(14);
+            doc.text("ASSET REPLACEMENT REPORT", 14, 38);
+            // Metadata
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(9);
+            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
+            // Separator line
+            doc.setDrawColor(226, 232, 240); // Slate 200
+            doc.line(14, 48, 196, 48);
+            // Specifications Section Title
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(11);
+            doc.text("REPLACEMENT SPECIFICATIONS", 14, 58);
+            // Render Specifications Key-Value grid
+            let y = 68;
+            const printField = (label, value) => {
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(9);
+                doc.setTextColor(100, 116, 139); // Slate 500
+                doc.text(label, 14, y);
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9.5);
+                doc.setTextColor(15, 23, 42); // Slate 900
+                doc.text(value, 55, y);
+                y += 8;
+            };
+            printField("Replacement ID:", rep.incidentId);
+            printField("Asset Name:", rep.assetName);
+            printField("Type:", "Replacement Request");
+            printField("Priority:", rep.priority || "Medium");
+            printField("Current Status:", rep.status || "Open");
+            printField("Reported Date:", new Date(rep.reportedDate).toLocaleString());
+            if (rep.assignedTo) {
+                printField("Assigned To:", rep.assignedTo);
+            }
+            if (rep.resolvedDate) {
+                printField("Resolved Date:", new Date(rep.resolvedDate).toLocaleString());
+            }
+            // Reason Title
+            y += 4;
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(11);
+            doc.setTextColor(51, 65, 85);
+            doc.text("REPLACEMENT REASON & DETAILS", 14, y);
+            y += 6;
+            // Reason Box
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(9.5);
+            doc.setTextColor(51, 65, 85);
+            const splitDesc = doc.splitTextToSize(rep.issueDescription || "No reason provided.", 170);
+            const descHeight = splitDesc.length * 6 + 10;
+            // Draw background box
+            doc.setFillColor(248, 250, 252); // slate 50
+            doc.setDrawColor(226, 232, 240); // slate 200
+            doc.rect(14, y, 182, descHeight, 'FD');
+            // Draw left accent bar
+            doc.setFillColor(100, 116, 139); // slate 500
+            doc.rect(14, y, 3, descHeight, 'F');
+            // Draw text
+            let textY = y + 8;
+            splitDesc.forEach((line) => {
+                doc.text(line, 22, textY);
+                textY += 6;
+            });
+            y += descHeight + 10;
+            // Resolution Details (if resolved/closed)
+            if (rep.resolution) {
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(11);
+                doc.setTextColor(51, 65, 85);
+                doc.text("RESOLUTION SUMMARY", 14, y);
+                y += 6;
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9.5);
+                doc.setTextColor(22, 101, 52); // green 800
+                const splitRes = doc.splitTextToSize(rep.resolution, 170);
+                const resHeight = splitRes.length * 6 + 10;
+                // Draw green background box
+                doc.setFillColor(240, 253, 244); // green 50
+                doc.setDrawColor(220, 252, 231); // green 200
+                doc.rect(14, y, 182, resHeight, 'FD');
+                // Draw green left accent bar
+                doc.setFillColor(22, 101, 52); // green 800
+                doc.rect(14, y, 3, resHeight, 'F');
+                // Draw resolution text
+                let resTextY = y + 8;
+                splitRes.forEach((line) => {
+                    doc.text(line, 22, resTextY);
+                    resTextY += 6;
+                });
+            }
+            doc.save(`replacement-${rep.incidentId}.pdf`);
+        }
+        catch (error) {
+            console.error('Error generating PDF report:', error);
+        }
+    };
+    const columns = [
+        {
+            key: 'replacementId',
+            name: 'Replacement ID',
+            fieldName: 'incidentId',
+            minWidth: 100,
+            maxWidth: 130,
+            isResizable: true,
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.incidentId),
+        },
+        {
+            key: 'assetName',
+            name: 'Asset',
+            fieldName: 'assetName',
+            minWidth: 120,
+            maxWidth: 180,
+            isResizable: true,
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.assetName),
+        },
+        {
+            key: 'issueType',
+            name: 'Type',
+            fieldName: 'issueType',
+            minWidth: 120,
+            maxWidth: 150,
+            isResizable: true,
+            onRender: () => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "Replacement Request"),
+        },
+        {
+            key: 'priority',
+            name: 'Priority',
+            fieldName: 'priority',
+            minWidth: 80,
+            maxWidth: 100,
+            isResizable: true,
+            onRender: (item) => {
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(item.priority) }, item.priority || 'Medium'));
+            },
+        },
+        {
+            key: 'status',
+            name: 'Status',
+            fieldName: 'status',
+            minWidth: 90,
+            maxWidth: 120,
+            isResizable: true,
+            onRender: (item) => {
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getStatusBadgeStyle(item.status) }, item.status || 'Open'));
+            },
+        },
+        {
+            key: 'reportedDate',
+            name: 'Reported',
+            fieldName: 'reportedDate',
+            minWidth: 100,
+            maxWidth: 130,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.reportedDate)
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "-");
+                try {
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, new Date(item.reportedDate).toLocaleDateString());
+                }
+                catch {
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.reportedDate);
+                }
+            },
+        },
+        {
+            key: 'actions',
+            name: 'Actions',
+            minWidth: 160,
+            maxWidth: 220,
+            isResizable: true,
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
+                    } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
+                    } }))),
+        },
+    ];
+    const statusFilterOptions = [
+        { key: '', text: 'All Status' },
+        { key: 'Open', text: 'Open' },
+        { key: 'In Progress', text: 'In Progress' },
+        { key: 'Resolved', text: 'Resolved' },
+        { key: 'Closed', text: 'Closed' },
+    ];
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' }, className: _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].replacementHistory },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 15 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SearchBox, { placeholder: "Search by replacement ID, asset name...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
+                "Showing ",
+                filteredReplacements.length,
+                " of ",
+                replacements.length,
+                " replacement requests"),
+            filteredReplacements.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    minHeight: '250px',
+                    border: '1px dashed #e5e7eb',
+                    borderRadius: '8px',
+                    padding: '30px'
+                } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No replacement requests found.")))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: "Replacement Request Details", closeButtonAriaLabel: "Close" }, selectedReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Reported:"),
+                " ",
+                new Date(selectedReplacement.reportedDate).toLocaleString()),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedReplacement.issueDescription)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Replacement Specifications"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Replacement ID:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.incidentId)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assetName)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Type:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, "Replacement Request")),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Priority:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(selectedReplacement.priority) }, selectedReplacement.priority || 'Medium')),
+                    props.userRole === 'Admin' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { selectedKey: selectedReplacement.status || 'Open', options: [
+                                { key: 'Open', text: 'Open' },
+                                { key: 'In Progress', text: 'In Progress' },
+                                { key: 'Resolved', text: 'Resolved' },
+                                { key: 'Closed', text: 'Closed' }
+                            ], onChange: (ev, option) => handleStatusChange(selectedReplacement, option?.key), styles: { root: { width: 120 } } }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Status:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getStatusBadgeStyle(selectedReplacement.status) }, selectedReplacement.status || 'Open'))),
+                    selectedReplacement.assignedTo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Assigned To:"),
+                        " ",
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assignedTo))))),
+            props.userRole === 'Admin' && (selectedReplacement.status === 'Resolved' || selectedReplacement.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    " Update Resolution Details"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 10 } },
+                    selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        ' ',
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this replacement was completed..." }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    " Resolution Details"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
+                    selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        ' ',
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Resolution Summary:"),
+                        " ",
+                        selectedReplacement.resolution))))))))));
+};
+
+
+/***/ }),
+
 /***/ 28333:
 /*!********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/RequestForm.js ***!
@@ -5740,6 +6641,7 @@ const stackTokens = { childrenGap: 15 };
 const RequestForm = (props) => {
     const [selectedRequesterId, setSelectedRequesterId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [employeeId, setEmployeeId] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [managerName, setManagerName] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
     const [selectedAssetType, setSelectedAssetType] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [priority, setPriority] = react__WEBPACK_IMPORTED_MODULE_0__.useState('Medium');
     const [quantity, setQuantity] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
@@ -5756,7 +6658,7 @@ const RequestForm = (props) => {
     const currentUserOption = {
         id: 'current-user',
         name: props.currentUserName,
-        email: '',
+        email: props.currentUserEmail || '',
         department: 'Your Department',
         jobTitle: 'Employee'
     };
@@ -5784,7 +6686,7 @@ const RequestForm = (props) => {
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
         : _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS;
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!selectedAssetType && quantity > 0;
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0;
     const onSave = () => {
         // Validate role: employees can only request for themselves
         if (isEmployee && selectedRequesterId) {
@@ -5804,7 +6706,9 @@ const RequestForm = (props) => {
         if (selectedAssetType && employee) {
             props.onSubmitRequest({
                 requesterName: employee.name,
+                requesterEmail: employee.email,
                 employeeId: employeeId,
+                managerName: managerName.trim(),
                 assetId: matchingAsset ? matchingAsset.id : '1',
                 assetTitle: selectedAssetType,
                 priority: priority,
@@ -5814,6 +6718,7 @@ const RequestForm = (props) => {
             });
             setSelectedRequesterId(undefined);
             setEmployeeId('');
+            setManagerName('');
             setSelectedAssetType(undefined);
             setPriority('Medium');
             setQuantity(1);
@@ -5834,6 +6739,7 @@ const RequestForm = (props) => {
                     }
                 }, required: true, disabled: isEmployee && employeeOptions.length === 1 }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Manager's Name", value: managerName, onChange: (_, val) => setManagerName(val || ''), placeholder: "Enter manager's name", required: true }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
@@ -5878,6 +6784,21 @@ __webpack_require__.r(__webpack_exports__);
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const sortedItems = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        return [...props.items].sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
+    }, [props.items]);
     const columns = [
         {
             key: 'columnRequestKey',
@@ -5894,6 +6815,15 @@ const RequestList = (props) => {
             minWidth: 100,
             maxWidth: 150,
             isResizable: true
+        },
+        {
+            key: 'columnManagerName',
+            name: "Manager's Name",
+            fieldName: 'managerName',
+            minWidth: 110,
+            maxWidth: 140,
+            isResizable: true,
+            onRender: (item) => item.managerName || 'N/A'
         },
         {
             key: 'columnAssetType',
@@ -5964,6 +6894,20 @@ const RequestList = (props) => {
                         } }, val));
                 }
             }]),
+        {
+            key: 'columnManagerComment',
+            name: 'Manager Comment',
+            fieldName: 'managerResponse',
+            minWidth: 150,
+            maxWidth: 220,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.managerResponse)
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)', fontStyle: 'italic' } }, "-");
+                const isDeclined = item.status === 'Declined';
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: isDeclined ? '#991b1b' : 'inherit', fontWeight: isDeclined ? 600 : 400 } }, item.managerResponse));
+            }
+        },
         ...(props.canApproveAsset ? [{
                 key: 'columnAssetStatus',
                 name: 'Asset Status',
@@ -5998,7 +6942,6 @@ const RequestList = (props) => {
                 }
             }] : []),
         ...(props.showResponseColumns ? [
-            { key: 'columnManagerResponse', name: 'Manager Response', fieldName: 'managerResponse', minWidth: 170, maxWidth: 240, isResizable: true },
             {
                 key: 'columnAdminResponse',
                 name: 'Admin Response',
@@ -6064,8 +7007,8 @@ const RequestList = (props) => {
         }
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        props.items.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: props.items, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }))),
+        sortedItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }))),
         selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
@@ -6092,6 +7035,9 @@ const RequestList = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee ID"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.employeeId || '-')),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager's Name"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.managerName || '-')),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Category"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.assetTitle)),
@@ -6359,14 +7305,24 @@ const ReturnRequestList = (props) => {
         else if (isManager) {
             roleFiltered = items.filter(item => item.status === 'Pending Manager Approval' || item.status === 'Pending');
         }
-        if (!searchQuery)
-            return roleFiltered;
-        const q = searchQuery.toLowerCase();
-        return roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(q) ||
-            (item.serialNumber || '').toLowerCase().includes(q) ||
-            (item.requesterName || '').toLowerCase().includes(q) ||
-            (item.status || '').toLowerCase().includes(q) ||
-            (item.returnReason || '').toLowerCase().includes(q));
+        const filtered = !searchQuery ? roleFiltered : roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.serialNumber || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.requesterName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.status || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.returnReason || '').toLowerCase().includes(searchQuery.toLowerCase()));
+        return filtered.sort((a, b) => {
+            const dateA = a.requestDate || '';
+            const dateB = b.requestDate || '';
+            if (dateA && dateB && dateA !== dateB) {
+                return new Date(dateB).getTime() - new Date(dateA).getTime();
+            }
+            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
+            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
+            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
+                return numB - numA;
+            }
+            return (b.id || '').localeCompare(a.id || '');
+        });
     }, [items, searchQuery, isAdmin, isManager]);
     const openDialog = (request, type) => {
         setActiveRequest(request);
@@ -6559,6 +7515,183 @@ const ReturnRequestList = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: actionType === 'Approve' ? 'Approve' :
                         actionType === 'Reject' ? 'Reject' : 'Verify & Complete', onClick: handleAction, disabled: submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Cancel", onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Close", onClick: closeDialog }))))));
+};
+
+
+/***/ }),
+
+/***/ 48235:
+/*!**********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/WorkflowPopup.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   WorkflowPopup: () => (/* binding */ WorkflowPopup)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+
+
+
+
+const WorkflowPopup = (props) => {
+    const { isOpen, title, stage, type, message, details, onDismiss } = props;
+    if (!isOpen)
+        return null;
+    let iconName = 'CheckMark';
+    let iconColor = '#15803d';
+    let badgeBg = '#dcfce7';
+    let badgeTextColor = '#166534';
+    let borderColor = '#22c55e';
+    let iconBg = '#f0fdf4';
+    if (type === 'error' || (details?.status || '').toLowerCase().includes('reject') || (details?.status || '').toLowerCase().includes('declin')) {
+        iconName = 'ErrorBadge';
+        iconColor = '#b91c1c';
+        badgeBg = '#fee2e2';
+        badgeTextColor = '#991b1b';
+        borderColor = '#ef4444';
+        iconBg = '#fef2f2';
+    }
+    else if (type === 'warning' || (details?.status || '').toLowerCase().includes('pending')) {
+        iconName = 'Clock';
+        iconColor = '#b45309';
+        badgeBg = '#fef3c7';
+        badgeTextColor = '#92400e';
+        borderColor = '#f59e0b';
+        iconBg = '#fffbeb';
+    }
+    else if (type === 'info') {
+        iconName = 'Info';
+        iconColor = '#1d4ed8';
+        badgeBg = '#dbeafe';
+        badgeTextColor = '#1e40af';
+        borderColor = '#3b82f6';
+        iconBg = '#eff6ff';
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_1__.Dialog, { hidden: !isOpen, onDismiss: onDismiss, dialogContentProps: {
+            type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_2__.DialogType.normal,
+            title: '',
+        }, modalProps: {
+            isBlocking: true,
+            styles: {
+                main: {
+                    maxWidth: '520px',
+                    minWidth: '340px',
+                    borderRadius: '16px',
+                    padding: '24px 28px',
+                    borderTop: `5px solid ${borderColor}`,
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
+                    backgroundColor: '#ffffff'
+                }
+            }
+        } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '18px', fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', gap: '14px' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                        width: '46px',
+                        height: '46px',
+                        borderRadius: '12px',
+                        backgroundColor: iconBg,
+                        border: `1px solid ${borderColor}33`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        boxShadow: `0 4px 12px ${borderColor}22`
+                    } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: iconName, style: { fontSize: '22px', color: iconColor, fontWeight: 'bold' } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                display: 'inline-block',
+                                backgroundColor: badgeBg,
+                                color: badgeTextColor,
+                                padding: '3px 10px',
+                                borderRadius: '9999px',
+                                fontSize: '0.7rem',
+                                fontWeight: 700,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.06em'
+                            } }, stage)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { style: { margin: 0, fontSize: '1.15rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.3 } }, title))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 } }, message),
+            details && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    backgroundColor: '#f8fafc',
+                    borderRadius: '12px',
+                    padding: '16px',
+                    border: '1px solid #e2e8f0',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                    gap: '12px',
+                    fontSize: '0.82rem'
+                } },
+                details.requestId && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Request ID"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requestId))),
+                details.assetTitle && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Asset"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } },
+                        details.assetTitle,
+                        " ",
+                        details.quantity ? `(Qty: ${details.quantity})` : ''))),
+                details.requesterName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Requester"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requesterName))),
+                details.managerName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Manager's Name"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.managerName))),
+                details.status && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Workflow Status"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            backgroundColor: badgeBg,
+                            color: badgeTextColor,
+                            padding: '3px 9px',
+                            borderRadius: '6px',
+                            fontWeight: 600,
+                            fontSize: '0.75rem',
+                            display: 'inline-block'
+                        } }, details.status))),
+                details.date && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Date"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.date))),
+                details.condition && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Condition"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.condition))),
+                details.comment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: '1 / -1', marginTop: '4px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' } }, "Manager / Admin Notes"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            backgroundColor: '#ffffff',
+                            padding: '10px 12px',
+                            borderRadius: '8px',
+                            border: '1px solid #cbd5e1',
+                            color: '#334155',
+                            fontStyle: 'italic',
+                            lineHeight: 1.4
+                        } },
+                        "\u201C",
+                        details.comment,
+                        "\u201D")))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_4__.DialogFooter, { styles: { actionsRight: { marginTop: '20px' } } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: "Got it", onClick: onDismiss, iconProps: { iconName: 'Accept' }, styles: {
+                    root: {
+                        borderRadius: '8px',
+                        padding: '0 20px',
+                        height: '36px',
+                        backgroundColor: '#005a9e',
+                        border: 'none'
+                    },
+                    rootHovered: {
+                        backgroundColor: '#004578'
+                    }
+                } }))));
 };
 
 
@@ -7277,6 +8410,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getContext: () => (/* binding */ getContext),
 /* harmony export */   getSP: () => (/* binding */ getSP)
 /* harmony export */ });
 /* harmony import */ var _pnp_sp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/sp */ 2011);
@@ -7293,14 +8427,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// eslint-disable-next-line no-var
-var _sp;
+let _sp;
+let _context;
 const getSP = (context) => {
     if (context != null) {
+        _context = context;
         // Initialize the sp object with SPFx context and logging
         _sp = (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.spfi)().using((0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPFx)(context)).using((0,_pnp_logging__WEBPACK_IMPORTED_MODULE_1__.PnPLogging)(_pnp_logging__WEBPACK_IMPORTED_MODULE_1__.LogLevel.Warning));
     }
     return _sp;
+};
+const getContext = () => {
+    return _context;
 };
 
 
@@ -7323,6 +8461,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AuditLogService */ 43584);
 /* harmony import */ var _InventoryItemService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InventoryItemService */ 32974);
 /* harmony import */ var _RequestService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RequestService */ 50764);
+/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./EmailService */ 86407);
+
 
 
 
@@ -7642,6 +8782,23 @@ class AssetAssignmentService {
         const mappingList = await AssetAssignmentService.getMappingList();
         const schema = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_2__.SharePointBaseService.getListFieldsMetadata(mappingList);
         const finalAssignmentId = assignmentId || `ASG-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+        let assignedToId = null;
+        try {
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            const user = await sp.web.ensureUser(employeeEmail);
+            assignedToId = user.data ? user.data.Id : user.Id;
+        }
+        catch (e) {
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint during mapping write. Falling back to current user.`, e);
+            try {
+                const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+                const currentUser = await sp.web.currentUser();
+                assignedToId = currentUser.Id;
+            }
+            catch (currUserErr) {
+                console.warn("Failed to get current user as fallback in mapping write", currUserErr);
+            }
+        }
         const resolvedMapping = {};
         let employeeNameField = schema.find(f => f.internalName.toLowerCase() === "employe" ||
             f.internalName.toLowerCase() === "employee" ||
@@ -7678,7 +8835,7 @@ class AssetAssignmentService {
         if (assignmentIdCol)
             resolvedMapping["AssignmentID"] = assignmentIdCol;
         const logicalPayload = {
-            EmployeeName: employeeName,
+            EmployeeName: assignedToId || employeeName,
             EmployeeID: employeeId,
             AssetName: assetName,
             SerialNumber: serialNumber,
@@ -7721,7 +8878,14 @@ class AssetAssignmentService {
             assignedToId = user.data ? user.data.Id : user.Id;
         }
         catch (e) {
-            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to string assignment if column allows.`, e);
+            console.warn(`Could not resolve user ${employeeEmail} in SharePoint. Falling back to current user.`, e);
+            try {
+                const currentUser = await sp.web.currentUser();
+                assignedToId = currentUser.Id;
+            }
+            catch (currUserErr) {
+                console.warn("Failed to get current user as fallback in assignAssetsToEmployee", currUserErr);
+            }
         }
         const updatePromises = assetIds.map(async (assetId) => {
             // 1. Get asset details first
@@ -7843,6 +9007,20 @@ class AssetAssignmentService {
                 }),
                 user: adminName
             });
+            // Trigger Email Notification to Employee on Assignment
+            try {
+                await _EmailService__WEBPACK_IMPORTED_MODULE_6__.EmailService.sendAssignmentNotificationToEmployee({
+                    employeeName,
+                    employeeEmail,
+                    assetName,
+                    assetId: serialNumber || assetId,
+                    assignedBy: adminName,
+                    assignedDate: finalAssignedDate
+                });
+            }
+            catch (mailErr) {
+                console.warn("Failed to send assignment notification email to Employee:", mailErr);
+            }
         });
         await Promise.all(updatePromises);
     }
@@ -8925,6 +10103,357 @@ class AuditLogService {
 
 /***/ }),
 
+/***/ 86407:
+/*!*******************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/EmailService.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EmailService: () => (/* binding */ EmailService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/mockData */ 27962);
+
+
+class EmailService {
+    /**
+     * Helper to get target emails for Admins
+     */
+    static async getAdminEmails(liveEmails) {
+        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS : liveEmails;
+    }
+    /**
+     * Helper to get target email for Manager
+     */
+    static async getManagerEmail(liveEmail) {
+        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_MANAGER_EMAIL : liveEmail;
+    }
+    /**
+     * Helper to get target email for Employee
+     */
+    static async getEmployeeEmail(liveEmail) {
+        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS[0] : (liveEmail || this.MOCK_ADMIN_EMAILS[0]);
+    }
+    /**
+     * Send Approval Request Email to Manager (Diego / sanikommurohitha123@gmail.com)
+     */
+    static async sendApprovalRequestToManager(params, liveManagerEmail) {
+        const toEmail = await this.getManagerEmail(liveManagerEmail || "");
+        const subject = "Approval Required - Asset Request";
+        const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #2563eb, #1d4ed8); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Approval Required</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Asset Requisition Pending Your Action</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Hello,</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">A new asset request has been created and requires your review and approval:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Employee Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.employeeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Requested Asset</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Request ID</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #2563eb; font-weight: 700; font-size: 14px;">${params.requestKey}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Request Date</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.requestDate}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Requested By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.adminName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Status</td>
+                <td style="padding: 12px 15px; color: #d97706; font-weight: 700; font-size: 14px;">Pending Approval</td>
+              </tr>
+            </table>
+
+            <p style="font-size: 15px; line-height: 1.6; color: #4b5563; text-align: center; margin-top: 30px;">
+              Please open the Asset Management Portal to Approve or Reject this request.
+            </p>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated request from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+        await this.sendMail([toEmail], subject, body);
+    }
+    /**
+     * Send Approval Confirmation Email to Admins (Kiran / Akhila)
+     */
+    static async sendApprovalConfirmationToAdmin(params, liveAdminEmails) {
+        const toEmails = await this.getAdminEmails(liveAdminEmails || []);
+        const subject = "Asset Request Approved";
+        const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Request Approved</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Requisition Ready for Asset Assignment</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Hello Admin,</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">The following asset request has been approved by the manager. Please proceed to allocate the asset to the employee in the Admin panel:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Request ID</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #2563eb; font-weight: 700; font-size: 14px;">${params.requestKey}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Employee Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.employeeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Approved By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.approvedBy}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Approval Date</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.approvalDate}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Status</td>
+                <td style="padding: 12px 15px; color: #059669; font-weight: 700; font-size: 14px;">Approved</td>
+              </tr>
+            </table>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated confirmation from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+        await this.sendMail(toEmails, subject, body);
+    }
+    /**
+     * Send Asset Assignment Notification Email to Employee (Adele / Alex)
+     */
+    static async sendAssignmentNotificationToEmployee(params, liveEmployeeEmail) {
+        const toEmail = await this.getEmployeeEmail(liveEmployeeEmail || "");
+        const subject = "Your Asset Has Been Assigned";
+        const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #0284c7, #0369a1); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Asset Assigned</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">IT Device Handover Notification</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Dear ${params.employeeName},</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">Your requested asset has been assigned to you. Here are the assignment details:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Employee Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.employeeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset ID / Serial</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.assetId || "N/A"}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Assigned By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.assignedBy}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Assignment Date</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.assignedDate}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Status</td>
+                <td style="padding: 12px 15px; color: #0284c7; font-weight: 700; font-size: 14px;">Assigned</td>
+              </tr>
+            </table>
+
+            <p style="font-size: 15px; line-height: 1.6; color: #4b5563; margin-top: 30px;">
+              Please contact the IT Helpdesk if you have any questions regarding your device or if you require deployment assistance.
+            </p>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated handover receipt from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+        await this.sendMail([toEmail], subject, body);
+    }
+    /**
+     * Try to resolve the manager's email dynamically from SharePoint User Profiles or EmployeeList
+     */
+    static async resolveLiveManagerEmail(employeeName) {
+        try {
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            // 1. Try to query the EmployeeList first
+            try {
+                const employeeList = sp.web.lists.getByTitle("EmployeeList");
+                const fields = await employeeList.fields.select("InternalName", "Title")();
+                const getFieldName = (candidates) => {
+                    const found = fields.find(f => candidates.some(c => f.Title.toLowerCase() === c.toLowerCase() || f.InternalName.toLowerCase() === c.toLowerCase()));
+                    return found ? found.InternalName : null;
+                };
+                const nameField = getFieldName(['Employee Name', 'EmployeeName', 'Name', 'Title']);
+                const managerField = getFieldName(['Manager', 'ManagerEmail', 'ReportsTo', 'ManagerName', 'Manager_x0020_Email']);
+                if (nameField && managerField) {
+                    const items = await employeeList.items.select(nameField, managerField)();
+                    const employee = items.find((item) => {
+                        const nameVal = item[nameField];
+                        return nameVal && nameVal.toString().toLowerCase().trim() === employeeName.toLowerCase().trim();
+                    });
+                    if (employee) {
+                        const managerVal = employee[managerField];
+                        if (managerVal) {
+                            if (typeof managerVal === 'string' && managerVal.indexOf("@") > 0) {
+                                return managerVal;
+                            }
+                            // If it's a Person field
+                            if (managerVal.Email) {
+                                return managerVal.Email;
+                            }
+                            if (managerVal.Title && managerVal.Title.indexOf("@") > 0) {
+                                return managerVal.Title;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (listErr) {
+                console.warn("Could not query EmployeeList for manager:", listErr);
+            }
+            // 2. Try User Profile Service using ensureUser first
+            try {
+                // eslint-disable-next-line @typescript-eslint/no-var-requires
+                __webpack_require__(/*! @pnp/sp/profiles */ 39878);
+                const matchingEmp = _data_mockData__WEBPACK_IMPORTED_MODULE_1__.EMPLOYEES.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
+                const userIdentifier = matchingEmp ? matchingEmp.email : employeeName;
+                const user = await sp.web.ensureUser(userIdentifier);
+                const loginName = user.data ? user.data.LoginName : user.LoginName;
+                const profile = await sp.profiles.getPropertiesFor(loginName);
+                const managerProp = profile.UserProfileProperties.find((p) => p.Key === "Manager");
+                if (managerProp && managerProp.Value) {
+                    const managerProfile = await sp.profiles.getPropertiesFor(managerProp.Value);
+                    const emailProp = managerProfile.UserProfileProperties.find((p) => p.Key === "WorkEmail");
+                    if (emailProp && emailProp.Value) {
+                        return emailProp.Value;
+                    }
+                }
+            }
+            catch (profileErr) {
+                console.warn("Could not query User Profile Service for manager:", profileErr);
+            }
+        }
+        catch (e) {
+            console.warn("Error resolving live manager email:", e);
+        }
+        return null;
+    }
+    /**
+     * Internal sender method using SharePoint sp.utility.sendEmail or developer console fallback.
+     */
+    static async sendMail(to, subject, htmlBody) {
+        const validEmails = to.filter(email => email && email.indexOf("@") > 0);
+        if (validEmails.length === 0) {
+            console.warn(`[EmailService] No valid recipient emails found:`, to);
+            return;
+        }
+        // Try sending email via Microsoft Graph API first (allows sending to external addresses like nexergroup.com)
+        try {
+            const context = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+            if (context && context.msGraphClientFactory) {
+                const client = await context.msGraphClientFactory.getClient("3");
+                await client.api("/me/sendMail").post({
+                    message: {
+                        subject: subject,
+                        body: {
+                            contentType: "HTML",
+                            content: htmlBody
+                        },
+                        toRecipients: validEmails.map(email => ({
+                            emailAddress: {
+                                address: email
+                            }
+                        }))
+                    }
+                });
+                console.log(`[EmailService] Outgoing mail successfully sent via Microsoft Graph to: ${validEmails.join(", ")}`);
+                return; // Success! Skip SharePoint Utility fallback
+            }
+        }
+        catch (graphError) {
+            console.warn("[EmailService] Failed to send email via Microsoft Graph. Falling back to SharePoint Utility...", graphError);
+        }
+        try {
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            // eslint-disable-next-line @typescript-eslint/no-var-requires
+            const { Utilities } = __webpack_require__(/*! @pnp/sp/sputilities */ 38229);
+            const utility = Utilities(sp.web);
+            await utility.sendEmail({
+                To: validEmails,
+                Subject: subject,
+                Body: htmlBody,
+                AdditionalHeaders: {
+                    "content-type": "text/html"
+                }
+            });
+            console.log(`[EmailService] Outgoing mail successfully sent via SharePoint Utility to: ${validEmails.join(", ")}`);
+        }
+        catch (error) {
+            console.warn("[EmailService] Failed to send email via SharePoint Utility. Using console logs fallback:", error);
+            if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('spfx_email_send_failed', {
+                    detail: {
+                        to: validEmails,
+                        subject,
+                        errorMessage: error instanceof Error ? error.message : JSON.stringify(error)
+                    }
+                }));
+            }
+        }
+        finally {
+            // Always write a beautiful colored log in the developer console to allow testing without live exchange configs.
+            console.log(`%c📬 [EMAIL NOTIFICATION OUTBOX]\nTo: ${validEmails.join(", ")}\nSubject: ${subject}\n\n[HTML RENDERED EMAIL BODY]:\n${htmlBody.trim()}`, "background: #1e3a8a; color: #ffffff; border-left: 5px solid #3b82f6; padding: 12px; font-family: monospace; font-size: 12px; line-height: 1.5; border-radius: 4px;");
+            // Dispatch event to allow the UI to render the email banner popup directly
+            if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('spfx_mock_email_sent', {
+                    detail: { to: validEmails, subject, body: htmlBody }
+                }));
+            }
+        }
+    }
+}
+// Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
+EmailService.USE_MOCK_TEST_EMAILS = true;
+EmailService.MOCK_ADMIN_EMAILS = [
+    "Akhila.Dodla@3bh3kf.onmicrosoft.com"
+];
+EmailService.MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
+
+
+/***/ }),
+
 /***/ 76911:
 /*!**********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/IncidentService.js ***!
@@ -8953,15 +10482,176 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class IncidentService {
+    async getReplacementList() {
+        try {
+            const list = this.sp.web.lists.getByTitle(this.replacementListName);
+            await list.select("Title")(); // check if list exists
+            return list;
+        }
+        catch (e) {
+            try {
+                console.log("Attempting to auto-create 'Asset Replacements' list...");
+                await this.sp.web.lists.add(this.replacementListName, "List for tracking asset replacements", 100);
+                console.log("Successfully created 'Asset Replacements' list in SharePoint.");
+                return this.sp.web.lists.getByTitle(this.replacementListName);
+            }
+            catch (createError) {
+                console.error("Failed to auto-create 'Asset Replacements' list:", createError);
+                throw createError;
+            }
+        }
+    }
+    async _ensureReplacementListFields() {
+        if (IncidentService._replacementListFieldsEnsured) {
+            return;
+        }
+        IncidentService._replacementListFieldsEnsured = true;
+        try {
+            const list = await this.getReplacementList();
+            const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            const hasField = (name) => fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                const title = (field.Title || '').toString().toLowerCase();
+                const search = name.toLowerCase();
+                return internalName === search || title === search;
+            });
+            if (!hasField("EmployeeID")) {
+                try {
+                    await list.fields.addText("EmployeeID", { Title: "Employee ID" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create EmployeeID field. Continuing.", err);
+                }
+            }
+            if (!hasField("EmployeeEmail")) {
+                try {
+                    await list.fields.addText("EmployeeEmail", { Title: "Employee Email" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create EmployeeEmail field. Continuing.", err);
+                }
+            }
+            if (!hasField("AssetName")) {
+                try {
+                    await list.fields.addText("AssetName", { Title: "Asset Name" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create AssetName field. Continuing.", err);
+                }
+            }
+            if (!hasField("SerialNo")) {
+                try {
+                    await list.fields.addText("SerialNo", { Title: "Serial No" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create SerialNo field. Continuing.", err);
+                }
+            }
+            if (!hasField("Priority")) {
+                try {
+                    await list.fields.addChoice("Priority", {
+                        Choices: ["High", "Medium", "Low"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Priority field. Continuing.", err);
+                }
+            }
+            if (!hasField("Description")) {
+                try {
+                    await list.fields.addMultilineText("Description", { Title: "Description" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Description field. Continuing.", err);
+                }
+            }
+            if (!hasField("Status")) {
+                try {
+                    await list.fields.addChoice("Status", {
+                        Choices: ["Open", "In Progress", "Resolved", "Closed"],
+                        FillInChoice: false
+                    });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create Status field. Continuing.", err);
+                }
+            }
+            if (!hasField("RequestDate")) {
+                try {
+                    await list.fields.addText("RequestDate", { Title: "Request Date" });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestDate field. Continuing.", err);
+                }
+            }
+        }
+        catch (error) {
+            // eslint-disable-next-line require-atomic-updates
+            IncidentService._replacementListFieldsEnsured = false;
+            console.warn("Could not ensure Asset Replacements List fields. Continuing.", error);
+        }
+    }
     constructor(spContext) {
         this.incidentListName = 'Incident List';
         this.employeeListName = 'EmployeeList';
         this.mappingListName = 'Mapping List';
+        this.replacementListName = 'Asset Replacements';
         if (!spContext) {
             throw new Error('SPFx context is required. Ensure the web part is loaded in SharePoint.');
         }
         this.sp = (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.spfi)().using((0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPFx)(spContext)).using((0,_pnp_logging__WEBPACK_IMPORTED_MODULE_5__.PnPLogging)(_pnp_logging__WEBPACK_IMPORTED_MODULE_5__.LogLevel.Warning));
         console.log('IncidentService initialized with SharePoint context');
+        this._migrateLocalReplacements();
+    }
+    _migrateLocalReplacements() {
+        try {
+            const localIncidents = this.getLocalItems('spfx_mock_incidents');
+            const replacementsToMove = localIncidents.filter(item => item.incidentType === 'Replacement Request' ||
+                item.issueType === 'Replacement Request' ||
+                item.id === '384' ||
+                item.id === '976' ||
+                item.id === '166' ||
+                item.id === '369' ||
+                item.id === '859' ||
+                item.incidentId === 'INC-384' ||
+                item.incidentId === 'INC-976' ||
+                item.incidentId === 'INC-166' ||
+                item.incidentId === 'INC-369' ||
+                item.incidentId === 'INC-859');
+            if (replacementsToMove.length > 0) {
+                console.log(`[Migration] Moving ${replacementsToMove.length} replacement items from spfx_mock_incidents to spfx_mock_replacements`);
+                // 1. Remove them from spfx_mock_incidents
+                const remainingIncidents = localIncidents.filter(item => item.incidentType !== 'Replacement Request' &&
+                    item.issueType !== 'Replacement Request' &&
+                    item.id !== '384' &&
+                    item.id !== '976' &&
+                    item.id !== '166' &&
+                    item.id !== '369' &&
+                    item.id !== '859' &&
+                    item.incidentId !== 'INC-384' &&
+                    item.incidentId !== 'INC-976' &&
+                    item.incidentId !== 'INC-166' &&
+                    item.incidentId !== 'INC-369' &&
+                    item.incidentId !== 'INC-859');
+                this.saveLocalItems('spfx_mock_incidents', remainingIncidents);
+                // 2. Add them to spfx_mock_replacements
+                const localReplacements = this.getLocalItems('spfx_mock_replacements');
+                const updatedReplacements = [...localReplacements, ...replacementsToMove.map(item => ({
+                        ...item,
+                        incidentType: 'Replacement Request',
+                        issueType: 'Replacement Request',
+                        id: item.id.startsWith('INC-') ? item.id.replace('INC-', 'REP-') : item.id,
+                        incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.id || Math.floor(Math.random() * 1000)}`
+                    }))];
+                // Filter duplicates
+                const uniqueReplacements = updatedReplacements.filter((item, index, self) => self.findIndex(t => t.id === item.id || t.incidentId === item.incidentId) === index);
+                this.saveLocalItems('spfx_mock_replacements', uniqueReplacements);
+            }
+        }
+        catch (e) {
+            console.warn("Failed to migrate local storage replacement items:", e);
+        }
     }
     async getMappedPayload(listName, data) {
         try {
@@ -9006,7 +10696,7 @@ class IncidentService {
             const statusField = getInternalName(['Status', 'Request Status', 'RequestStatus']);
             if (statusField)
                 payload[statusField] = data.status || 'Pending';
-            const incidentTypeField = getInternalName(['Incident Type', 'IncidentType']);
+            const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
             if (incidentTypeField)
                 payload[incidentTypeField] = data.incidentType || '';
             const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
@@ -9062,7 +10752,7 @@ class IncidentService {
         const dateField = getInternalName(['Raised Date', 'RaisedDate', 'Requested Date', 'RequestedDate', 'Reported Date', 'ReportedDate']);
         const reasonField = getInternalName(['Description', 'Reason for Request', 'ReasonforRequest', 'Reason', 'Issue Description', 'IssueDescription']);
         const statusField = getInternalName(['Status', 'Request Status', 'RequestStatus']);
-        const incidentTypeField = getInternalName(['Incident Type', 'IncidentType']);
+        const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
         const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
         const empNameField = getInternalName(['Employe Name', 'Employee Name', 'EmployeeName', 'EmployeName']);
         return items.map(item => ({
@@ -9117,52 +10807,211 @@ class IncidentService {
         }));
     }
     async getEmployeeIncidentHistory(userEmail, isAdmin) {
+        let incidentItems = [];
+        // 1. Load standard incidents
         try {
             console.log(`[SharePoint IncidentList Read] Fetching incident history for: ${userEmail}, isAdmin: ${isAdmin}`);
             const fields = await this.sp.web.lists.getByTitle(this.incidentListName).fields();
             const items = await this.sp.web.lists.getByTitle(this.incidentListName).items();
-            const mappedItems = await this.getMappedItems(fields, items);
-            const filtered = isAdmin ? mappedItems : this.filterByUser(mappedItems, userEmail);
-            const localIncidents = this.getLocalItems('spfx_mock_incidents');
-            const filteredLocal = isAdmin ? localIncidents : this.filterByUser(localIncidents, userEmail);
-            console.log(`[SharePoint IncidentList Read] Found ${filtered.length + filteredLocal.length} incidents`);
-            return [...filtered, ...filteredLocal];
+            const mapped = await this.getMappedItems(fields, items);
+            // Filter out replacements and specific items from standard incident history
+            incidentItems = (isAdmin ? mapped : this.filterByUser(mapped, userEmail))
+                .filter(item => item.incidentType !== 'Replacement Request' &&
+                item.issueType !== 'Replacement Request' &&
+                item.id !== '384' &&
+                item.id !== '976' &&
+                item.id !== '166' &&
+                item.id !== '369' &&
+                item.id !== '859' &&
+                item.incidentId !== 'INC-384' &&
+                item.incidentId !== 'INC-976' &&
+                item.incidentId !== 'INC-166' &&
+                item.incidentId !== 'INC-369' &&
+                item.incidentId !== 'INC-859');
         }
         catch (error) {
-            console.warn('Failed to fetch incident history from SharePoint, returning localStorage fallback:', error.message);
-            let localIncidents = this.getLocalItems('spfx_mock_incidents');
-            if (localIncidents.length === 0) {
-                localIncidents = [
-                    {
-                        id: 'INC-101',
-                        incidentId: 'INC-782',
-                        employeeName: this.getEmployeeNameFromEmail(userEmail),
-                        employeeId: userEmail,
-                        serialNo: 'XYZ890123',
-                        assetName: 'Dell Latitude Laptop',
-                        priority: 'High',
-                        reason: 'Screen flickers when connected to external monitor.',
-                        description: 'Screen flickers when connected to external monitor.',
-                        issueDescription: 'Screen flickers when connected to external monitor.',
-                        reportedDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
-                        raisedDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
-                        incidentType: 'Hardware',
-                        status: 'Resolved',
-                        raisedTo: 'Admin'
-                    }
-                ];
-                this.saveLocalItems('spfx_mock_incidents', localIncidents);
-            }
-            return isAdmin ? localIncidents : this.filterByUser(localIncidents, userEmail);
+            console.warn('Failed to fetch standard incidents from SharePoint:', error.message);
         }
+        // 2. Load local storage fallback items
+        const localIncidents = this.getLocalItems('spfx_mock_incidents');
+        const filteredLocalIncidents = (isAdmin ? localIncidents : this.filterByUser(localIncidents, userEmail))
+            .filter(item => item.incidentType !== 'Replacement Request' &&
+            item.issueType !== 'Replacement Request' &&
+            item.id !== '384' &&
+            item.id !== '976' &&
+            item.id !== '166' &&
+            item.id !== '369' &&
+            item.id !== '859' &&
+            item.incidentId !== 'INC-384' &&
+            item.incidentId !== 'INC-976' &&
+            item.incidentId !== 'INC-166' &&
+            item.incidentId !== 'INC-369' &&
+            item.incidentId !== 'INC-859');
+        // Merge and sort chronologically (newest first)
+        const combined = [
+            ...incidentItems,
+            ...filteredLocalIncidents
+        ];
+        combined.sort((a, b) => {
+            const dateA = new Date(a.reportedDate || a.raisedDate || 0).getTime();
+            const dateB = new Date(b.reportedDate || b.raisedDate || 0).getTime();
+            return dateB - dateA;
+        });
+        return combined;
+    }
+    async getEmployeeReplacementHistory(userEmail, isAdmin) {
+        let replacementItems = [];
+        let historicalSharePointReplacements = [];
+        // 1. Load replacements from Asset Replacements list
+        try {
+            console.log(`[SharePoint AssetReplacements Read] Fetching replacements history for: ${userEmail}, isAdmin: ${isAdmin}`);
+            const list = await this.getReplacementList();
+            const fields = await list.fields();
+            const items = await list.items();
+            const mapped = await this.getMappedItems(fields, items);
+            const mappedWithTypes = mapped.map(item => ({
+                ...item,
+                incidentType: 'Replacement Request',
+                issueType: 'Replacement Request',
+                incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+            }));
+            replacementItems = isAdmin ? mappedWithTypes : this.filterByUser(mappedWithTypes, userEmail);
+        }
+        catch (error) {
+            console.warn('Failed to fetch replacements from SharePoint:', error.message);
+        }
+        // 2. Load any historical replacements that were saved in the Incident List, including items 384, 976, 166, 369, 859
+        try {
+            const fields = await this.sp.web.lists.getByTitle(this.incidentListName).fields();
+            const items = await this.sp.web.lists.getByTitle(this.incidentListName).items();
+            const mapped = await this.getMappedItems(fields, items);
+            historicalSharePointReplacements = (isAdmin ? mapped : this.filterByUser(mapped, userEmail))
+                .filter(item => item.incidentType === 'Replacement Request' ||
+                item.issueType === 'Replacement Request' ||
+                item.id === '384' ||
+                item.id === '976' ||
+                item.id === '166' ||
+                item.id === '369' ||
+                item.id === '859' ||
+                item.incidentId === 'INC-384' ||
+                item.incidentId === 'INC-976' ||
+                item.incidentId === 'INC-166' ||
+                item.incidentId === 'INC-369' ||
+                item.incidentId === 'INC-859')
+                .map(item => ({
+                ...item,
+                incidentType: 'Replacement Request',
+                issueType: 'Replacement Request',
+                incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+            }));
+        }
+        catch (error) {
+            console.warn('Failed to fetch historical replacements from Incident List:', error.message);
+        }
+        // 3. Load local storage fallback items
+        const localReplacements = this.getLocalItems('spfx_mock_replacements');
+        const filteredLocalReplacements = (isAdmin ? localReplacements : this.filterByUser(localReplacements, userEmail))
+            .map(item => ({
+            ...item,
+            incidentType: 'Replacement Request',
+            issueType: 'Replacement Request',
+            incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+        }));
+        // Merge and sort chronologically (newest first)
+        const combined = [
+            ...replacementItems,
+            ...historicalSharePointReplacements,
+            ...filteredLocalReplacements
+        ];
+        combined.sort((a, b) => {
+            const dateA = new Date(a.reportedDate || a.raisedDate || 0).getTime();
+            const dateB = new Date(b.reportedDate || b.raisedDate || 0).getTime();
+            return dateB - dateA;
+        });
+        return combined;
     }
     async updateIncidentStatus(id, status, resolution) {
         try {
             console.log(`[IncidentService] Updating status of incident ${id} to: ${status}`);
-            const isLocal = id.startsWith('INC-') || isNaN(Number(id));
+            const isLocal = id.startsWith('INC-') || id.startsWith('REP-') || isNaN(Number(id));
             if (isLocal) {
-                const localIncidents = this.getLocalItems('spfx_mock_incidents');
-                const updated = localIncidents.map(inc => {
+                const isReplacement = id.startsWith('REP-');
+                const localKey = isReplacement ? 'spfx_mock_replacements' : 'spfx_mock_incidents';
+                const localItems = this.getLocalItems(localKey);
+                const updated = localItems.map(item => {
+                    if (item.id === id || item.incidentId === id) {
+                        return {
+                            ...item,
+                            status,
+                            resolution: resolution || item.resolution,
+                            resolvedDate: status === 'Resolved' || status === 'Closed' ? new Date().toISOString() : item.resolvedDate
+                        };
+                    }
+                    return item;
+                });
+                this.saveLocalItems(localKey, updated);
+                return { success: true };
+            }
+            else {
+                // Try standard list first, then replacement list
+                try {
+                    const list = this.sp.web.lists.getByTitle(this.incidentListName);
+                    const fields = await list.fields();
+                    const getFieldName = (displayNames) => {
+                        for (const name of displayNames) {
+                            const field = fields.find((f) => f.Title && f.Title.toLowerCase() === name.toLowerCase());
+                            if (field)
+                                return field.InternalName;
+                        }
+                        return null;
+                    };
+                    const statusField = getFieldName(['Status', 'Request Status', 'RequestStatus']) || 'Status';
+                    const resolutionField = getFieldName(['Resolution', 'Resolution Summary', 'ResolutionDetails', 'ResolutionDescription']);
+                    const resolvedDateField = getFieldName(['Resolved Date', 'ResolvedDate', 'Resolution Date', 'ResolutionDate']);
+                    const payload = { [statusField]: status };
+                    if (resolution && resolutionField) {
+                        payload[resolutionField] = resolution;
+                    }
+                    if ((status === 'Resolved' || status === 'Closed') && resolvedDateField) {
+                        payload[resolvedDateField] = new Date().toISOString();
+                    }
+                    const numericId = parseInt(id, 10);
+                    const result = await list.items.getById(numericId).update(payload);
+                    return result;
+                }
+                catch (standardError) {
+                    console.log("Not in standard list, trying replacement list...");
+                    const list = await this.getReplacementList();
+                    const fields = await list.fields();
+                    const getFieldName = (displayNames) => {
+                        for (const name of displayNames) {
+                            const field = fields.find((f) => f.Title && f.Title.toLowerCase() === name.toLowerCase());
+                            if (field)
+                                return field.InternalName;
+                        }
+                        return null;
+                    };
+                    const statusField = getFieldName(['Status', 'Request Status', 'RequestStatus']) || 'Status';
+                    const resolutionField = getFieldName(['Resolution', 'Resolution Summary', 'ResolutionDetails', 'ResolutionDescription']);
+                    const resolvedDateField = getFieldName(['Resolved Date', 'ResolvedDate', 'Resolution Date', 'ResolutionDate']);
+                    const payload = { [statusField]: status };
+                    if (resolution && resolutionField) {
+                        payload[resolutionField] = resolution;
+                    }
+                    if ((status === 'Resolved' || status === 'Closed') && resolvedDateField) {
+                        payload[resolvedDateField] = new Date().toISOString();
+                    }
+                    const numericId = parseInt(id, 10);
+                    const result = await list.items.getById(numericId).update(payload);
+                    return result;
+                }
+            }
+        }
+        catch (error) {
+            console.warn('[IncidentService] Failed to update SharePoint list item status, using localStorage fallback:', error.message);
+            for (const localKey of ['spfx_mock_incidents', 'spfx_mock_replacements']) {
+                const localItems = this.getLocalItems(localKey);
+                const updated = localItems.map(inc => {
                     if (inc.id === id || inc.incidentId === id) {
                         return {
                             ...inc,
@@ -9173,57 +11022,8 @@ class IncidentService {
                     }
                     return inc;
                 });
-                this.saveLocalItems('spfx_mock_incidents', updated);
-                return { success: true };
+                this.saveLocalItems(localKey, updated);
             }
-            else {
-                const list = this.sp.web.lists.getByTitle(this.incidentListName);
-                const fields = await list.fields();
-                const getFieldName = (displayNames) => {
-                    for (const name of displayNames) {
-                        const field = fields.find(f => f.Title && f.Title.toLowerCase() === name.toLowerCase());
-                        if (field)
-                            return field.InternalName;
-                    }
-                    return null;
-                };
-                const statusField = getFieldName(['Status', 'Request Status', 'RequestStatus']);
-                const resolutionField = getFieldName(['Resolution', 'Resolution Summary', 'ResolutionDetails', 'ResolutionDescription']);
-                const resolvedDateField = getFieldName(['Resolved Date', 'ResolvedDate', 'Resolution Date', 'ResolutionDate']);
-                const payload = {};
-                if (statusField) {
-                    payload[statusField] = status;
-                }
-                else {
-                    payload.Status = status;
-                }
-                if (resolution && resolutionField) {
-                    payload[resolutionField] = resolution;
-                }
-                if ((status === 'Resolved' || status === 'Closed') && resolvedDateField) {
-                    payload[resolvedDateField] = new Date().toISOString();
-                }
-                const numericId = parseInt(id, 10);
-                const result = await list.items.getById(numericId).update(payload);
-                console.log('[IncidentService] SharePoint update completed successfully:', result);
-                return result;
-            }
-        }
-        catch (error) {
-            console.warn('[IncidentService] Failed to update SharePoint list item status, using localStorage fallback:', error.message);
-            const localIncidents = this.getLocalItems('spfx_mock_incidents');
-            const updated = localIncidents.map(inc => {
-                if (inc.id === id || inc.incidentId === id) {
-                    return {
-                        ...inc,
-                        status,
-                        resolution: resolution || inc.resolution,
-                        resolvedDate: status === 'Resolved' || status === 'Closed' ? new Date().toISOString() : inc.resolvedDate
-                    };
-                }
-                return inc;
-            });
-            this.saveLocalItems('spfx_mock_incidents', updated);
             return { success: true };
         }
     }
@@ -9346,25 +11146,40 @@ class IncidentService {
         }
     }
     async createIncidentRequest(incidentData, file) {
+        const isReplacement = incidentData.incidentType === 'Replacement Request' ||
+            incidentData.issueType === 'Replacement Request' ||
+            (incidentData.incidentType && incidentData.incidentType.toLowerCase().indexOf('replace') > -1) ||
+            (incidentData.issueType && incidentData.issueType.toLowerCase().indexOf('replace') > -1);
+        const targetListName = isReplacement ? this.replacementListName : this.incidentListName;
         try {
-            const payload = await this.getMappedPayload(this.incidentListName, { ...incidentData, status: 'Open' });
-            console.log(`[SharePoint Write] TARGET LIST: "${this.incidentListName}"`);
+            if (isReplacement) {
+                await this._ensureReplacementListFields();
+            }
+            const payload = await this.getMappedPayload(targetListName, { ...incidentData, status: 'Open' });
+            console.log(`[SharePoint Write] TARGET LIST: "${targetListName}"`);
             console.log('[SharePoint Write] PAYLOAD DATA:', JSON.stringify(payload, null, 2));
-            const result = await this.sp.web.lists.getByTitle(this.incidentListName).items.add(payload);
+            const list = isReplacement ? await this.getReplacementList() : this.sp.web.lists.getByTitle(this.incidentListName);
+            const result = await list.items.add(payload);
             console.log('[SharePoint Write] RESPONSE:', result);
             return result;
         }
         catch (error) {
-            console.error('Failed to create incident request in SharePoint:', error);
-            const isListMissing = error.message && (error.message.indexOf('404') > -1 || error.message.indexOf('does not exist') > -1 || error.message.indexOf('ArgumentException') > -1);
-            if (isListMissing) {
-                console.warn('SharePoint IncidentList not found, saving to localStorage instead.');
-                const localIncidents = this.getLocalItems('spfx_mock_incidents');
-                const newIncident = {
-                    id: `INC-${Date.now()}`,
-                    incidentId: `INC-${Math.floor(100 + Math.random() * 900)}`,
+            console.error(`Failed to create request in SharePoint on ${targetListName}:`, error);
+            const isForbiddenOrMissing = error.message && (error.message.indexOf('404') > -1 ||
+                error.message.indexOf('does not exist') > -1 ||
+                error.message.indexOf('ArgumentException') > -1 ||
+                error.message.indexOf('403') > -1 ||
+                error.message.indexOf('Unauthorized') > -1);
+            if (isForbiddenOrMissing) {
+                console.warn(`SharePoint list write failed, saving to localStorage instead.`);
+                const localKey = isReplacement ? 'spfx_mock_replacements' : 'spfx_mock_incidents';
+                const localItems = this.getLocalItems(localKey);
+                const newRecord = {
+                    id: isReplacement ? `REP-${Date.now()}` : `INC-${Date.now()}`,
+                    incidentId: isReplacement ? `REP-${Math.floor(100 + Math.random() * 900)}` : `INC-${Math.floor(100 + Math.random() * 900)}`,
                     employeeName: incidentData.employeeName || 'Unknown',
                     employeeId: incidentData.employeeId || 'N/A',
+                    employeeEmail: incidentData.employeeEmail || '',
                     serialNo: incidentData.serialNo || '',
                     assetName: incidentData.assetName || incidentData.assetType || 'Device',
                     priority: incidentData.priority || 'Medium',
@@ -9374,13 +11189,13 @@ class IncidentService {
                     requestDate: new Date().toISOString(),
                     reportedDate: new Date().toISOString(),
                     raisedDate: new Date().toISOString(),
-                    incidentType: incidentData.incidentType || 'Other',
+                    incidentType: incidentData.incidentType || (isReplacement ? 'Replacement Request' : 'Other'),
                     status: 'Open',
                     raisedTo: incidentData.raisedTo || 'Admin'
                 };
-                localIncidents.push(newIncident);
-                this.saveLocalItems('spfx_mock_incidents', localIncidents);
-                return { data: newIncident };
+                localItems.push(newRecord);
+                this.saveLocalItems(localKey, localItems);
+                return { data: newRecord };
             }
             const errorDetails = this.formatError(error);
             throw new Error(`SharePoint list submission failed. ${errorDetails}`);
@@ -9458,6 +11273,7 @@ class IncidentService {
         return JSON.stringify(error);
     }
 }
+IncidentService._replacementListFieldsEnsured = false;
 
 
 /***/ }),
@@ -9567,11 +11383,13 @@ class InventoryItemService {
                     return "";
                 })();
                 const rawStatus = item[statusKey] || item.Status || item.AssetStatus || "";
+                const noteText = item[noteKey] || item.Note || item.Notes || "";
                 let finalStatus = rawStatus;
                 let finalAssignedTo = assignedToVal;
                 const statusLower = (rawStatus || "").toLowerCase();
-                if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock" || statusLower === "returned" || statusLower === "completed" || statusLower === "available") {
-                    finalStatus = "In Stock";
+                const noteLower = (noteText || "").toLowerCase();
+                if (statusLower === "return approved" || statusLower === "returnapproved" || statusLower === "in stock" || statusLower === "instock" || statusLower === "returned" || statusLower === "completed" || statusLower === "available" || noteLower.indexOf("returned by employee") >= 0 || noteLower.indexOf("in stock") >= 0) {
+                    finalStatus = statusLower === "under maintenance" ? "Under Maintenance" : "In Stock";
                     finalAssignedTo = "";
                 }
                 else if (statusLower === "assigned" || statusLower.startsWith("assigned")) {
@@ -9951,8 +11769,8 @@ class InventoryService {
     static async getRequestList() {
         return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.getRequestList();
     }
-    static async addRequest(request, userDisplayName) {
-        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.addRequest(request, userDisplayName);
+    static async addRequest(request, userDisplayName, userRole, isEmployeeUI) {
+        return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.addRequest(request, userDisplayName, userRole, isEmployeeUI);
     }
     static async getRequests() {
         return _RequestService__WEBPACK_IMPORTED_MODULE_1__.RequestService.getRequests();
@@ -9980,11 +11798,11 @@ class InventoryService {
     static async getReturnRequestList() {
         return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.getReturnRequestList();
     }
-    static async getReturnRequests() {
-        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.getReturnRequests();
-    }
     static async addReturnRequest(request, userDisplayName) {
         return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.addReturnRequest(request, userDisplayName);
+    }
+    static async getReturnRequests() {
+        return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.getReturnRequests();
     }
     static async updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus) {
         return _ReturnRequestService__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestService.updateReturnRequestStatus(requestId, status, managerComment, approverName, finalCondition, adminComments, managerStatus, adminStatus);
@@ -10028,6 +11846,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
 /* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EmailService */ 86407);
+
 
 
 
@@ -10218,7 +12038,7 @@ class RequestService {
             console.warn("Could not ensure RequestList workflow fields. Continuing with fallback behavior.", error);
         }
     }
-    static async addRequest(request, userDisplayName = "Unknown") {
+    static async addRequest(request, userDisplayName = "Unknown", userRole, isEmployeeUI) {
         const list = await RequestService.getRequestList();
         await RequestService._ensureRequestWorkflowFields();
         const initialStatus = request.status || "Pending";
@@ -10256,6 +12076,7 @@ class RequestService {
             const employeeIdField = findField("employeeid") || findField("employee id") || findField("employee_x0020_id");
             const priorityField = findField("priority");
             const requestDateField = findField("requestdate") || findField("request date") || findField("requesteddate") || findField("requested date");
+            const managerNameField = findField("managername") || findField("manager's name") || findField("managers name") || findField("manager_x0027_s_x0020_name") || findField("manager");
             dynamicPayload = {
                 Title: `Request for ${request.assetTitle}`
             };
@@ -10298,6 +12119,9 @@ class RequestService {
             if (requestDateField) {
                 dynamicPayload[requestDateField.InternalName] = request.requestDate || new Date().toISOString().split('T')[0];
             }
+            if (managerNameField) {
+                dynamicPayload[managerNameField.InternalName] = request.managerName || "";
+            }
         }
         catch (e) {
             console.warn("Failed to generate dynamic payload from schema, will use hardcoded candidates", e);
@@ -10310,6 +12134,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     EmployeeId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Asset_x0020_type: request.assetTitle,
                     Quantity: request.quantity,
@@ -10322,6 +12150,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     EmployeeId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Assettype: request.assetTitle,
                     Quantity: request.quantity,
@@ -10334,6 +12166,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     RequesterId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Asset_x0020_type: request.assetTitle,
                     Quantity: request.quantity,
@@ -10346,6 +12182,10 @@ class RequestService {
                     Title: `Request for ${request.assetTitle}`,
                     RequesterId: requesterId,
                     EmployeeID: request.employeeId || "",
+                    ManagerName: request.managerName || "",
+                    Manager_x0027_s_x0020_Name: request.managerName || "",
+                    Manager_x0020_Name: request.managerName || "",
+                    Manager: request.managerName || "",
                     Priority: request.priority || "Medium",
                     Assettype: request.assetTitle,
                     Quantity: request.quantity,
@@ -10360,6 +12200,10 @@ class RequestService {
                 Title: `Request for ${request.assetTitle}`,
                 Employee: request.requesterName,
                 EmployeeID: request.employeeId || "",
+                ManagerName: request.managerName || "",
+                Manager_x0027_s_x0020_Name: request.managerName || "",
+                Manager_x0020_Name: request.managerName || "",
+                Manager: request.managerName || "",
                 Priority: request.priority || "Medium",
                 Asset_x0020_type: request.assetTitle,
                 Quantity: request.quantity,
@@ -10455,8 +12299,56 @@ class RequestService {
             }
         }
         if (!success) {
-            console.error("Error adding request to SharePoint after trying all column combinations.", lastError);
-            throw new Error(`SharePoint rejected the save. The columns you created in RequestList do not match the expected format. Please check the Developer Console (F12) for the exact column name mismatch.`);
+            // localStorage Fallback logic
+            const localRequestKey = `REQ-LOCAL-${Date.now().toString(36).toUpperCase()}`;
+            const localRequest = {
+                id: localRequestKey,
+                requestKey: localRequestKey,
+                requesterName: request.requesterName,
+                employeeId: request.employeeId || "",
+                managerName: request.managerName || "",
+                assetId: request.assetId || "",
+                assetTitle: request.assetTitle,
+                assetName: request.assetTitle,
+                priority: request.priority || "Medium",
+                quantity: request.quantity,
+                status: initialStatus,
+                assetStatus: "Pending",
+                requestDate: request.requestDate || new Date().toISOString().split('T')[0],
+                reason: request.reason || "",
+                managerResponse: ""
+            };
+            try {
+                const local = localStorage.getItem("inventory_requests");
+                const listItems = local ? JSON.parse(local) : [];
+                listItems.push(localRequest);
+                localStorage.setItem("inventory_requests", JSON.stringify(listItems));
+            }
+            catch (e) {
+                console.error("Local storage save failed for request", e);
+            }
+            try {
+                await _AuditLogService__WEBPACK_IMPORTED_MODULE_2__.AuditLogService.addAuditLog({
+                    title: `Created Local Request ${localRequestKey} for Asset: ${request.assetTitle}`,
+                    action: 'Create',
+                    entityType: 'Request',
+                    entityId: localRequestKey,
+                    details: JSON.stringify({
+                        requestKey: localRequestKey,
+                        lifecycle: "Submitted (Local Fallback)",
+                        requesterName: request.requesterName,
+                        assetTitle: request.assetTitle,
+                        quantity: request.quantity,
+                        reason: request.reason || "",
+                        requestedAt: new Date().toISOString()
+                    }),
+                    user: userDisplayName
+                });
+            }
+            catch (auditErr) {
+                console.warn("Failed to add audit log for local fallback request:", auditErr);
+            }
+            return;
         }
         // Safely perform post-save actions (key generation, updating, logging) outside the creation loop
         try {
@@ -10500,12 +12392,43 @@ class RequestService {
                 }),
                 user: userDisplayName
             });
+            // Trigger Email Notification to Manager (only from Admin UI, and NOT when requested from Employee UI)
+            if (userRole === 'Admin' && !isEmployeeUI) {
+                // Run email sending asynchronously so it does not block or disturb the asset request creation flow
+                Promise.resolve().then(async () => {
+                    try {
+                        let liveManagerEmail = "";
+                        try {
+                            const resolvedEmail = await _EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.resolveLiveManagerEmail(request.requesterName);
+                            if (resolvedEmail) {
+                                liveManagerEmail = resolvedEmail;
+                            }
+                        }
+                        catch (resolveErr) {
+                            console.warn("Failed to resolve live manager email:", resolveErr);
+                        }
+                        await _EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.sendApprovalRequestToManager({
+                            requestKey,
+                            employeeName: request.requesterName,
+                            assetName: request.assetTitle,
+                            requestDate: request.requestDate || new Date().toLocaleDateString(),
+                            adminName: userDisplayName
+                        }, liveManagerEmail || undefined);
+                    }
+                    catch (mailErr) {
+                        console.warn("Failed to send approval request email in background:", mailErr);
+                    }
+                }).catch(err => {
+                    console.warn("Unhandled error in background email generation:", err);
+                });
+            }
         }
         catch (postError) {
             console.warn("Failed in post-request creation steps:", postError);
         }
     }
     static async getRequests() {
+        let mapped = [];
         try {
             await RequestService._ensureRequestWorkflowFields();
             const list = await RequestService.getRequestList();
@@ -10532,8 +12455,9 @@ class RequestService {
             const employeeIdKey = findFieldInternalName("employeeid", "EmployeeID");
             const priorityKey = findFieldInternalName("priority", "Priority");
             const requestDateKey = findFieldInternalName("requestdate", "RequestDate");
+            const managerNameKey = findFieldInternalName("managername", "ManagerName");
             const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
-            const mapped = items.map((item) => {
+            mapped = items.map((item) => {
                 const rawStatus = item[statusKey] || item.Status || 'Pending';
                 const normalizedStatus = (rawStatus || '').toString().toLowerCase();
                 const status = (normalizedStatus.includes('approv')) ? 'Approved' :
@@ -10556,6 +12480,7 @@ class RequestService {
                         return rawEmp.toString();
                     })(),
                     employeeId: item[employeeIdKey] || "",
+                    managerName: item[managerNameKey] || item.ManagerName || item.Manager_x0020_Name || item.Manager || "",
                     assetId: "",
                     assetTitle: item[selectAssetKey] || item.Title || "",
                     assetName: "",
@@ -10577,9 +12502,19 @@ class RequestService {
             return mapped;
         }
         catch (error) {
-            console.error("Error fetching requests from SharePoint:", error);
-            throw error;
+            console.warn("Error fetching requests from SharePoint, falling back to local storage items:", error);
         }
+        try {
+            const local = localStorage.getItem("inventory_requests");
+            if (local) {
+                const localRequests = JSON.parse(local);
+                return [...localRequests, ...mapped];
+            }
+        }
+        catch (e) {
+            console.error("Failed to parse local requests from localStorage:", e);
+        }
+        return mapped;
     }
     static async updateRequestStatus(requestId, status, approverName = 'Unknown', rejectionReason) {
         try {
@@ -10669,6 +12604,26 @@ class RequestService {
                 }),
                 user: approverName
             });
+            // Trigger Email Notification to Admin on Approval
+            if (status === 'Approved') {
+                try {
+                    const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                    const employeeKey = findKey("employee") || findKey("requester") || "Employee";
+                    const requesterKey = findKey("requester") || "Requester";
+                    const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Title || "Employee";
+                    const employeeName = typeof rawEmp === 'string' ? rawEmp : (rawEmp && rawEmp.Title ? rawEmp.Title : "Employee");
+                    await _EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.sendApprovalConfirmationToAdmin({
+                        requestKey: requestKey || RequestService._buildRequestKeyFromItemId(requestId),
+                        employeeName,
+                        assetName: item[selectAssetKey] || item.Title || "Asset",
+                        approvedBy: approverName,
+                        approvalDate: new Date().toLocaleDateString()
+                    });
+                }
+                catch (mailErr) {
+                    console.warn("Failed to send approval confirmation email to Admins:", mailErr);
+                }
+            }
         }
         catch (error) {
             console.error(`Failed to update RequestList item ${requestId} status`, error);
@@ -11187,7 +13142,7 @@ class ReturnRequestService {
             console.log("Resolved Condition Field:", conditionKey);
             const assetIdNum = parseInt(req.assetId, 10);
             console.log("Inventory Item ID:", assetIdNum);
-            if (status === 'Completed') {
+            if (status === 'Completed' || status === 'Approved') {
                 const condition = finalCondition || req.proposedCondition || "Good";
                 let nextStatus = "In Stock";
                 if (condition === "Poor" || condition === "Damaged") {
@@ -11198,7 +13153,7 @@ class ReturnRequestService {
                     [assignedToKey]: null,
                     [`${assignedToKey}Id`]: null,
                     [conditionKey]: condition,
-                    [noteKey]: `Returned by employee. Verification Note: ${adminComments || managerComment}`
+                    [noteKey]: `In Stock - Returned by employee. Verification Note: ${adminComments || managerComment || 'Returned to Stock'}`
                 };
                 if (assignedToKey !== "AssignedTo") {
                     payload.AssignedTo = null;
@@ -11207,31 +13162,53 @@ class ReturnRequestService {
                 console.log("Inventory Update Payload:", JSON.stringify(payload));
                 let assetUpdateResult = null;
                 try {
-                    assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
-                    console.log("Result of list.items.update() (Inventory update):", JSON.stringify(assetUpdateResult));
+                    if (!isNaN(assetIdNum)) {
+                        assetUpdateResult = await list.items.getById(assetIdNum).update(payload);
+                        console.log("Result of list.items.update() (Inventory update by ID):", JSON.stringify(assetUpdateResult));
+                    }
                 }
                 catch (err) {
-                    console.error(`Exception in SharePoint Asset update on Return ${status}:`, err.message, err.stack);
-                    if (err.data)
-                        console.error("Error details:", JSON.stringify(err.data));
+                    console.error(`Exception in SharePoint Asset update by ID on Return ${status}:`, err.message);
                 }
+                // Fallback update by Serial Number or Title if ID update didn't run or failed
+                try {
+                    let matchingAssets = [];
+                    if (req.serialNumber) {
+                        const serialCol = findField("serialnumber", "SerialNumber");
+                        matchingAssets = await list.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                    }
+                    if ((!matchingAssets || matchingAssets.length === 0) && req.assetName) {
+                        const titleCol = findField("assetname", "Title");
+                        matchingAssets = await list.items.filter(`${titleCol} eq '${req.assetName.replace(/'/g, "''")}'`).select("ID")();
+                    }
+                    for (const mAsset of matchingAssets) {
+                        if (mAsset.ID !== assetIdNum) {
+                            await list.items.getById(mAsset.ID).update(payload);
+                            console.log(`Updated inventory asset ID ${mAsset.ID} (${req.assetName}) to '${nextStatus}' via fallback search.`);
+                        }
+                    }
+                }
+                catch (err) {
+                    console.warn("Fallback inventory update failed:", err.message);
+                }
+                // Delete Mapping List records for the returned asset
                 try {
                     const mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
                     console.log("Resolved Mapping List Name:", mappingList.Title || "Mapping List");
                     const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
                     const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
+                    const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
+                    const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
                     let mappedItems = [];
                     if (serialCol && req.serialNumber) {
                         mappedItems = await mappingList.items.filter(`${serialCol} eq '${req.serialNumber.replace(/'/g, "''")}'`).select("ID")();
                     }
-                    if ((!mappedItems || mappedItems.length === 0) && req.assetName) {
-                        console.log("[Return Request Workflow] Mapping record not found by serial number. Trying fallback search by Asset Name and Employee Name...");
-                        const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
-                        const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
-                        if (assetNameCol && employeeCol && req.requesterName) {
-                            const filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}' and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
-                            mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+                    if ((!mappedItems || mappedItems.length === 0) && assetNameCol && req.assetName) {
+                        let filterQuery = `${assetNameCol} eq '${req.assetName.replace(/'/g, "''")}'`;
+                        if (employeeCol && req.requesterName) {
+                            filterQuery += ` and ${employeeCol} eq '${req.requesterName.replace(/'/g, "''")}'`;
                         }
+                        mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
                     }
                     console.log("Mapping Records Found for deletion:", JSON.stringify(mappedItems));
                     if (mappedItems && mappedItems.length > 0) {
@@ -11326,7 +13303,7 @@ class ReturnRequestService {
         console.log("========================");
     }
     static async cleanupReturnApprovedAssets() {
-        console.log("[Cleanup] Starting self-healing cleanup for Return Approved assets...");
+        console.log("[Cleanup] Starting self-healing cleanup for Return Approved & Completed assets...");
         try {
             const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getInventoryList();
             if (!list || !list.items || typeof list.items.select !== 'function') {
@@ -11341,58 +13318,90 @@ class ReturnRequestService {
             const statusKey = findField("status", "Status");
             const assignedToKey = findField("assignedto", "AssignedTo");
             const conditionKey = findField("condition", "Condition");
-            const items = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title")();
-            for (const item of items) {
-                const rawStatus = item[statusKey] || "";
-                const val = item[assignedToKey];
-                let hasAssignee = false;
-                if (val) {
-                    if (typeof val === 'object') {
-                        hasAssignee = Object.keys(val).length > 0;
-                    }
-                    else {
-                        hasAssignee = true;
+            const noteKey = findField("note", "Note");
+            // 1. Fetch completed/approved return requests
+            const returnRequests = await ReturnRequestService.getReturnRequests();
+            const resolvedReturns = returnRequests.filter(r => {
+                const s = (r.status || '').toLowerCase();
+                return s === 'completed' || s === 'approved' || s === 'returned' || s === 'pending admin verification';
+            });
+            console.log(`[Cleanup] Found ${resolvedReturns.length} approved/completed return request(s) to verify against inventory.`);
+            const inventoryItems = await list.items.select("ID", statusKey, assignedToKey, "SerialNumber", "Title", noteKey)();
+            // Clean up mapping list records for resolved returns
+            let mappingList = null;
+            let mappingFields = [];
+            let serialCol = "";
+            let assetNameCol = "";
+            let employeeCol = "";
+            try {
+                mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
+                mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
+                serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]) || "";
+                assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]) || "";
+                employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]) || "";
+            }
+            catch (e) {
+                console.warn("[Cleanup] Could not bind mapping list", e);
+            }
+            for (const ret of resolvedReturns) {
+                const serial = (ret.serialNumber || '').trim().toLowerCase();
+                const title = (ret.assetName || '').trim().toLowerCase();
+                const reqAssetId = (ret.assetId || '').trim();
+                // Match inventory item
+                const matchingInventoryItem = inventoryItems.find((item) => {
+                    const itemID = item.ID ? item.ID.toString() : "";
+                    const itemSerial = (item.SerialNumber || '').trim().toLowerCase();
+                    const itemTitle = (item.Title || item.AssetName || '').trim().toLowerCase();
+                    return (reqAssetId && itemID === reqAssetId) ||
+                        (serial && itemSerial && itemSerial === serial) ||
+                        (title && itemTitle && itemTitle === title);
+                });
+                if (matchingInventoryItem) {
+                    const rawStatus = (matchingInventoryItem[statusKey] || '').toString().toLowerCase();
+                    const val = matchingInventoryItem[assignedToKey];
+                    const hasAssignee = !!(val && (typeof val === 'object' ? Object.keys(val).length > 0 : String(val).trim() !== ''));
+                    if (rawStatus === 'assigned' || hasAssignee || rawStatus === 'return approved' || rawStatus === 'returnapproved') {
+                        console.log(`[Cleanup] Resetting returned asset '${ret.assetName}' (ID: ${matchingInventoryItem.ID}) to 'In Stock'.`);
+                        const payload = {
+                            [statusKey]: "In Stock",
+                            [assignedToKey]: null,
+                            [`${assignedToKey}Id`]: null,
+                            [noteKey]: `In Stock - Returned by employee (${ret.requesterName || ''})`
+                        };
+                        if (assignedToKey !== "AssignedTo") {
+                            payload.AssignedTo = null;
+                            payload.AssignedToId = null;
+                        }
+                        try {
+                            await list.items.getById(matchingInventoryItem.ID).update(payload);
+                            console.log(`[Cleanup] Successfully set Inventory item ID ${matchingInventoryItem.ID} to 'In Stock'.`);
+                        }
+                        catch (err) {
+                            console.error(`[Cleanup] Failed to update inventory item ID ${matchingInventoryItem.ID}:`, err.message);
+                        }
                     }
                 }
-                if (rawStatus === "Return Approved" || rawStatus === "ReturnApproved" || (rawStatus === "In Stock" && hasAssignee)) {
-                    console.log(`[Cleanup] Found return approved or in-stock asset with assignee: ${item.Title || "Asset"} (ID: ${item.ID})`);
-                    const payload = {
-                        [statusKey]: "In Stock",
-                        [assignedToKey]: null,
-                        [`${assignedToKey}Id`]: null
-                    };
-                    if (assignedToKey !== "AssignedTo") {
-                        payload.AssignedTo = null;
-                        payload.AssignedToId = null;
-                    }
-                    await list.items.getById(item.ID).update(payload);
-                    console.log(`[Cleanup] Updated asset ID ${item.ID} in SharePoint to 'In Stock' and cleared assignee.`);
-                    const serialNumber = item.SerialNumber || "";
-                    const assetTitle = item.Title || "";
-                    const requesterName = (val && (val.Title || val.Name || (typeof val === 'object' ? '' : val.toString()))) || "";
+                // Clean up mapping record
+                if (mappingList) {
                     try {
-                        const mappingList = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_4__.AssetAssignmentService.getMappingList();
-                        const mappingFields = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getListFieldsMetadata(mappingList);
-                        const serialCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["serialnumber", "serial number"]);
                         let mappedItems = [];
-                        if (serialCol && serialNumber) {
-                            mappedItems = await mappingList.items.filter(`${serialCol} eq '${serialNumber.replace(/'/g, "''")}'`).select("ID")();
+                        if (serialCol && ret.serialNumber) {
+                            mappedItems = await mappingList.items.filter(`${serialCol} eq '${ret.serialNumber.replace(/'/g, "''")}'`).select("ID")();
                         }
-                        if ((!mappedItems || mappedItems.length === 0) && assetTitle) {
-                            const assetNameCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["assetname", "asset name"]);
-                            const employeeCol = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(mappingFields, ["employee", "employee name", "employe"]);
-                            if (assetNameCol && employeeCol && requesterName) {
-                                const filterQuery = `${assetNameCol} eq '${assetTitle.replace(/'/g, "''")}' and ${employeeCol} eq '${requesterName.replace(/'/g, "''")}'`;
-                                mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
+                        if ((!mappedItems || mappedItems.length === 0) && assetNameCol && ret.assetName) {
+                            let filterQuery = `${assetNameCol} eq '${ret.assetName.replace(/'/g, "''")}'`;
+                            if (employeeCol && ret.requesterName) {
+                                filterQuery += ` and ${employeeCol} eq '${ret.requesterName.replace(/'/g, "''")}'`;
                             }
+                            mappedItems = await mappingList.items.filter(filterQuery).select("ID")();
                         }
                         for (const mItem of mappedItems) {
                             await mappingList.items.getById(mItem.ID).delete();
-                            console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for asset ${assetTitle}`);
+                            console.log(`[Cleanup] Deleted mapping record ID ${mItem.ID} for returned asset ${ret.assetName}`);
                         }
                     }
-                    catch (err) {
-                        console.warn(`[Cleanup] Failed to clean up mapping record for asset ${assetTitle}`, err);
+                    catch (mErr) {
+                        console.warn(`[Cleanup] Mapping deletion warning for ${ret.assetName}:`, mErr.message);
                     }
                 }
             }
@@ -76874,6 +78883,413 @@ _webs_types_js__WEBPACK_IMPORTED_MODULE_1__._Web.prototype.getCatalog = async fu
 
 /***/ }),
 
+/***/ 39878:
+/*!************************************************!*\
+  !*** ./node_modules/@pnp/sp/profiles/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Profiles: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.Profiles),
+/* harmony export */   UrlZone: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.UrlZone)
+/* harmony export */ });
+/* harmony import */ var _fi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fi.js */ 17066);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 13019);
+
+
+
+Reflect.defineProperty(_fi_js__WEBPACK_IMPORTED_MODULE_0__.SPFI.prototype, "profiles", {
+    configurable: true,
+    enumerable: true,
+    get: function () {
+        return this.create(_types_js__WEBPACK_IMPORTED_MODULE_1__.Profiles);
+    },
+});
+
+
+/***/ }),
+
+/***/ 13019:
+/*!************************************************!*\
+  !*** ./node_modules/@pnp/sp/profiles/types.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Profiles: () => (/* binding */ Profiles),
+/* harmony export */   UrlZone: () => (/* binding */ UrlZone),
+/* harmony export */   _Profiles: () => (/* binding */ _Profiles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 13759);
+/* harmony import */ var _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../spqueryable.js */ 96290);
+/* harmony import */ var _pnp_queryable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/queryable */ 2464);
+/* harmony import */ var _decorators_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../decorators.js */ 43445);
+/* harmony import */ var _pnp_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/core */ 49671);
+
+
+
+
+
+class _Profiles extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__._SPInstance {
+    /**
+     * Creates a new instance of the UserProfileQuery class
+     *
+     * @param baseUrl The url or SharePointQueryable which forms the parent of this user profile query
+     */
+    constructor(baseUrl, path = "_api/sp.userprofiles.peoplemanager") {
+        super(baseUrl, path);
+        this.clientPeoplePickerQuery = (new ClientPeoplePickerQuery(baseUrl)).using((0,_pnp_core__WEBPACK_IMPORTED_MODULE_2__.AssignFrom)(this));
+        this.profileLoader = (new ProfileLoader(baseUrl)).using((0,_pnp_core__WEBPACK_IMPORTED_MODULE_2__.AssignFrom)(this));
+    }
+    /**
+     * The url of the edit profile page for the current user
+     */
+    getEditProfileLink() {
+        return Profiles(this, "EditProfileLink")();
+    }
+    /**
+     * A boolean value that indicates whether the current user's "People I'm Following" list is public
+     */
+    getIsMyPeopleListPublic() {
+        return Profiles(this, "IsMyPeopleListPublic")();
+    }
+    /**
+     * A boolean value that indicates whether the current user is being followed by the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    amIFollowedBy(loginName) {
+        const q = Profiles(this, "amifollowedby(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * A boolean value that indicates whether the current user is following the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    amIFollowing(loginName) {
+        const q = Profiles(this, "amifollowing(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets tags that the current user is following
+     *
+     * @param maxCount The maximum number of tags to retrieve (default is 20)
+     */
+    getFollowedTags(maxCount = 20) {
+        return Profiles(this, `getfollowedtags(${maxCount})`)();
+    }
+    /**
+     * Gets the people who are following the specified user
+     *
+     * @param loginName The account name of the user
+     */
+    getFollowersFor(loginName) {
+        const q = Profiles(this, "getfollowersfor(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets the people who are following the current user
+     *
+     */
+    get myFollowers() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.SPCollection)(this, "getmyfollowers");
+    }
+    /**
+     * Gets user properties for the current user
+     *
+     */
+    get myProperties() {
+        return Profiles(this, "getmyproperties");
+    }
+    /**
+     * Gets the people who the specified user is following
+     *
+     * @param loginName The account name of the user.
+     */
+    getPeopleFollowedBy(loginName) {
+        const q = Profiles(this, "getpeoplefollowedby(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets user properties for the specified user.
+     *
+     * @param loginName The account name of the user.
+     */
+    getPropertiesFor(loginName) {
+        const q = Profiles(this, "getpropertiesfor(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Gets the 20 most popular hash tags over the past week, sorted so that the most popular tag appears first
+     *
+     */
+    get trendingTags() {
+        const q = Profiles(this, null);
+        q.concat(".gettrendingtags");
+        return q();
+    }
+    /**
+     * Gets the specified user profile property for the specified user
+     *
+     * @param loginName The account name of the user
+     * @param propertyName The case-sensitive name of the property to get
+     */
+    getUserProfilePropertyFor(loginName, propertyName) {
+        const q = Profiles(this, `getuserprofilepropertyfor(accountname=@v, propertyname='${propertyName}')`);
+        q.query.set("@v", `'${loginName}'`);
+        return q();
+    }
+    /**
+     * Removes the specified user from the user's list of suggested people to follow
+     *
+     * @param loginName The account name of the user
+     */
+    hideSuggestion(loginName) {
+        const q = Profiles(this, "hidesuggestion(@v)");
+        q.query.set("@v", `'${loginName}'`);
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(q);
+    }
+    /**
+     * A boolean values that indicates whether the first user is following the second user
+     *
+     * @param follower The account name of the user who might be following the followee
+     * @param followee The account name of the user who might be followed by the follower
+     */
+    isFollowing(follower, followee) {
+        const q = Profiles(this, null);
+        q.concat(".isfollowing(possiblefolloweraccountname=@v, possiblefolloweeaccountname=@y)");
+        q.query.set("@v", `'${follower}'`);
+        q.query.set("@y", `'${followee}'`);
+        return q();
+    }
+    /**
+     * Uploads and sets the user profile picture (Users can upload a picture to their own profile only). Not supported for batching.
+     *
+     * @param profilePicSource Blob data representing the user's picture in BMP, JPEG, or PNG format of up to 4.76MB
+     */
+    setMyProfilePic(profilePicSource) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                const buffer = e.target.result;
+                try {
+                    await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(Profiles(this, "setmyprofilepicture"), { body: buffer });
+                    resolve();
+                }
+                catch (e) {
+                    reject(e);
+                }
+            };
+            reader.readAsArrayBuffer(profilePicSource);
+        });
+    }
+    /**
+     * Sets single value User Profile property
+     *
+     * @param accountName The account name of the user
+     * @param propertyName Property name
+     * @param propertyValue Property value
+     */
+    setSingleValueProfileProperty(accountName, propertyName, propertyValue) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(Profiles(this, "SetSingleValueProfileProperty"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({
+            accountName,
+            propertyName,
+            propertyValue,
+        }));
+    }
+    /**
+     * Sets multi valued User Profile property
+     *
+     * @param accountName The account name of the user
+     * @param propertyName Property name
+     * @param propertyValues Property values
+     */
+    setMultiValuedProfileProperty(accountName, propertyName, propertyValues) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(Profiles(this, "SetMultiValuedProfileProperty"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({
+            accountName,
+            propertyName,
+            propertyValues,
+        }));
+    }
+    /**
+     * Provisions one or more users' personal sites. (My Site administrator on SharePoint Online only)
+     *
+     * @param emails The email addresses of the users to provision sites for
+     */
+    createPersonalSiteEnqueueBulk(...emails) {
+        return this.profileLoader.createPersonalSiteEnqueueBulk(emails);
+    }
+    /**
+     * Gets the user profile of the site owner
+     *
+     */
+    get ownerUserProfile() {
+        return this.profileLoader.ownerUserProfile;
+    }
+    /**
+     * Gets the user profile for the current user
+     */
+    get userProfile() {
+        return this.profileLoader.userProfile;
+    }
+    /**
+     * Enqueues creating a personal site for this user, which can be used to share documents, web pages, and other files
+     *
+     * @param interactiveRequest true if interactively (web) initiated request, or false (default) if non-interactively (client) initiated request
+     */
+    createPersonalSite(interactiveRequest = false) {
+        return this.profileLoader.createPersonalSite(interactiveRequest);
+    }
+    /**
+     * Sets the privacy settings for this profile
+     *
+     * @param share true to make all social data public; false to make all social data private
+     */
+    shareAllSocialData(share) {
+        return this.profileLoader.shareAllSocialData(share);
+    }
+    /**
+     * Resolves user or group using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform resolve
+     */
+    clientPeoplePickerResolveUser(queryParams) {
+        return this.clientPeoplePickerQuery.clientPeoplePickerResolveUser(queryParams);
+    }
+    /**
+     * Searches for users or groups using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform search
+     */
+    clientPeoplePickerSearchUser(queryParams) {
+        return this.clientPeoplePickerQuery.clientPeoplePickerSearchUser(queryParams);
+    }
+}
+const Profiles = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spInvokableFactory)(_Profiles);
+let ProfileLoader = class ProfileLoader extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__._SPQueryable {
+    /**
+     * Provisions one or more users' personal sites. (My Site administrator on SharePoint Online only) Doesn't support batching
+     *
+     * @param emails The email addresses of the users to provision sites for
+     */
+    createPersonalSiteEnqueueBulk(emails) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, "createpersonalsiteenqueuebulk"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({ "emailIDs": emails }));
+    }
+    /**
+     * Gets the user profile of the site owner.
+     *
+     */
+    get ownerUserProfile() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(this.getParent(ProfileLoaderFactory, "_api/sp.userprofiles.profileloader.getowneruserprofile"));
+    }
+    /**
+     * Gets the user profile of the current user.
+     *
+     */
+    get userProfile() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, "getuserprofile"));
+    }
+    /**
+     * Enqueues creating a personal site for this user, which can be used to share documents, web pages, and other files.
+     *
+     * @param interactiveRequest true if interactively (web) initiated request, or false (default) if non-interactively (client) initiated request
+     */
+    createPersonalSite(interactiveRequest = false) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, `getuserprofile/createpersonalsiteenque(${interactiveRequest})`));
+    }
+    /**
+     * Sets the privacy settings for this profile
+     *
+     * @param share true to make all social data public; false to make all social data private.
+     */
+    shareAllSocialData(share) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(ProfileLoaderFactory(this, `getuserprofile/shareallsocialdata(${share})`));
+    }
+};
+ProfileLoader = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_decorators_js__WEBPACK_IMPORTED_MODULE_4__.defaultPath)("_api/sp.userprofiles.profileloader.getprofileloader")
+], ProfileLoader);
+const ProfileLoaderFactory = (baseUrl, path) => {
+    return new ProfileLoader(baseUrl, path);
+};
+let ClientPeoplePickerQuery = class ClientPeoplePickerQuery extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_0__._SPQueryable {
+    /**
+     * Resolves user or group using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform resolve
+     */
+    async clientPeoplePickerResolveUser(queryParams) {
+        const q = ClientPeoplePickerFactory(this, null);
+        q.concat(".clientpeoplepickerresolveuser");
+        const res = await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(q, this.getBodyFrom(queryParams));
+        return JSON.parse(typeof res === "object" ? res.ClientPeoplePickerResolveUser : res);
+    }
+    /**
+     * Searches for users or groups using specified query parameters
+     *
+     * @param queryParams The query parameters used to perform search
+     */
+    async clientPeoplePickerSearchUser(queryParams) {
+        const q = ClientPeoplePickerFactory(this, null);
+        q.concat(".clientpeoplepickersearchuser");
+        const res = await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_0__.spPost)(q, this.getBodyFrom(queryParams));
+        return JSON.parse(typeof res === "object" ? res.ClientPeoplePickerSearchUser : res);
+    }
+    /**
+     * Creates ClientPeoplePickerQueryParameters request body
+     *
+     * @param queryParams The query parameters to create request body
+     */
+    getBodyFrom(queryParams) {
+        return (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_1__.body)({ queryParams });
+    }
+};
+ClientPeoplePickerQuery = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_decorators_js__WEBPACK_IMPORTED_MODULE_4__.defaultPath)("_api/sp.ui.applicationpages.clientpeoplepickerwebserviceinterface")
+], ClientPeoplePickerQuery);
+const ClientPeoplePickerFactory = (baseUrl, path) => {
+    return new ClientPeoplePickerQuery(baseUrl, path);
+};
+/**
+ * Specifies the originating zone of a request received.
+ */
+var UrlZone;
+(function (UrlZone) {
+    /**
+     * Specifies the default zone used for requests unless another zone is specified.
+     */
+    UrlZone[UrlZone["DefaultZone"] = 0] = "DefaultZone";
+    /**
+     * Specifies an intranet zone.
+     */
+    UrlZone[UrlZone["Intranet"] = 1] = "Intranet";
+    /**
+     * Specifies an Internet zone.
+     */
+    UrlZone[UrlZone["Internet"] = 2] = "Internet";
+    /**
+     * Specifies a custom zone.
+     */
+    UrlZone[UrlZone["Custom"] = 3] = "Custom";
+    /**
+     * Specifies an extranet zone.
+     */
+    UrlZone[UrlZone["Extranet"] = 4] = "Extranet";
+})(UrlZone || (UrlZone = {}));
+
+
+/***/ }),
+
 /***/ 2737:
 /*!************************************************!*\
   !*** ./node_modules/@pnp/sp/security/funcs.js ***!
@@ -78095,6 +80511,117 @@ class ComparisonResult extends BaseQuery {
         return this.query.join(" ");
     }
 }
+
+
+/***/ }),
+
+/***/ 38229:
+/*!***************************************************!*\
+  !*** ./node_modules/@pnp/sp/sputilities/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Utilities: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.Utilities)
+/* harmony export */ });
+/* harmony import */ var _fi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fi.js */ 17066);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 88636);
+
+
+
+Reflect.defineProperty(_fi_js__WEBPACK_IMPORTED_MODULE_0__.SPFI.prototype, "utility", {
+    configurable: true,
+    enumerable: true,
+    get: function () {
+        return this.create(_types_js__WEBPACK_IMPORTED_MODULE_1__.Utilities, "");
+    },
+});
+
+
+/***/ }),
+
+/***/ 88636:
+/*!***************************************************!*\
+  !*** ./node_modules/@pnp/sp/sputilities/types.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Utilities: () => (/* binding */ Utilities),
+/* harmony export */   _Utilities: () => (/* binding */ _Utilities)
+/* harmony export */ });
+/* harmony import */ var _pnp_queryable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/queryable */ 2464);
+/* harmony import */ var _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../spqueryable.js */ 96290);
+/* harmony import */ var _utils_extract_web_url_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/extract-web-url.js */ 48939);
+/* harmony import */ var _pnp_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pnp/core */ 49671);
+
+
+
+
+class _Utilities extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__._SPQueryable {
+    constructor(base, methodName = "") {
+        super(base);
+        this._url = (0,_pnp_core__WEBPACK_IMPORTED_MODULE_3__.combine)((0,_utils_extract_web_url_js__WEBPACK_IMPORTED_MODULE_2__.extractWebUrl)(this._url), `_api/SP.Utilities.Utility.${methodName}`);
+    }
+    excute(props) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(this, (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.body)(props));
+    }
+    sendEmail(properties) {
+        if (properties.AdditionalHeaders) {
+            // we have to remap the additional headers into this format #2253
+            properties.AdditionalHeaders = Reflect.ownKeys(properties.AdditionalHeaders).map(key => ({
+                Key: key,
+                Value: Reflect.get(properties.AdditionalHeaders, key),
+                ValueType: "Edm.String",
+            }));
+        }
+        return UtilitiesCloneFactory(this, "SendEmail").excute({ properties });
+    }
+    getCurrentUserEmailAddresses() {
+        return UtilitiesCloneFactory(this, "GetCurrentUserEmailAddresses").excute({});
+    }
+    resolvePrincipal(input, scopes, sources, inputIsEmailOnly, addToUserInfoList, matchUserInfoList = false) {
+        const params = {
+            addToUserInfoList,
+            input,
+            inputIsEmailOnly,
+            matchUserInfoList,
+            scopes,
+            sources,
+        };
+        return UtilitiesCloneFactory(this, "ResolvePrincipalInCurrentContext").excute(params);
+    }
+    searchPrincipals(input, scopes, sources, groupName, maxCount) {
+        const params = {
+            groupName: groupName,
+            input: input,
+            maxCount: maxCount,
+            scopes: scopes,
+            sources: sources,
+        };
+        return UtilitiesCloneFactory(this, "SearchPrincipalsUsingContextWeb").excute(params);
+    }
+    createEmailBodyForInvitation(pageAddress) {
+        const params = {
+            pageAddress: pageAddress,
+        };
+        return UtilitiesCloneFactory(this, "CreateEmailBodyForInvitation").excute(params);
+    }
+    expandGroupsToPrincipals(inputs, maxCount = 30) {
+        const params = {
+            inputs: inputs,
+            maxCount: maxCount,
+        };
+        const clone = UtilitiesCloneFactory(this, "ExpandGroupsToPrincipals");
+        return clone.excute(params);
+    }
+}
+const Utilities = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spInvokableFactory)(_Utilities);
+const UtilitiesCloneFactory = (base, path) => Utilities(base, path);
 
 
 /***/ }),
@@ -93663,7 +96190,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("2249d96573e518e1545b")
+/******/ 		__webpack_require__.h = () => ("b44f1ad577015af6d559")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

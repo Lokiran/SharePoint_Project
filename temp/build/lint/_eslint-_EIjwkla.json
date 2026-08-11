@@ -1,5 +1,5 @@
 {
-  "cacheVersion": "8.57.1_v20.20.2",
+  "cacheVersion": "8.57.1_v22.22.2",
   "fileVersions": [
     [
       "webparts/inventoryManagement/models/IInventoryManagementProps.ts",
@@ -183,7 +183,7 @@
     ],
     [
       "webparts/inventoryManagement/test/AssetAssignmentWorkflow.test.ts",
-      "PTeSu720kyjPTa16h2v90v33Ht4=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
+      "5Vhj5x3w3fE8ZB5PsjPOCI/x6Vk=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
     ],
     [
       "webparts/inventoryManagement/test/AssetRequestWorkflow.test.ts",
