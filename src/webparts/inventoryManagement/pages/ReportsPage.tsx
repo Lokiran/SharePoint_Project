@@ -12,6 +12,7 @@ import {
 import { Pie, Bar, Doughnut } from 'react-chartjs-2';
 import { IReportsPageProps } from '../types/Reports.types';
 import styles from '../components/InventoryManagement.module.scss';
+import { getWarrantyColorInfo } from '../utils/WarrantyUtils';
 
 export const ReportsPage: React.FC<IReportsPageProps> = (props) => {
   const { state, actions } = props;
@@ -340,18 +341,19 @@ export const ReportsPage: React.FC<IReportsPageProps> = (props) => {
                 maxWidth: 200,
                 isResizable: true,
                 onRender: (item) => {
-                  const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
+                  const warrantyInfo = getWarrantyColorInfo(item.warrantyExpiry);
                   return (
                     <span style={{
-                      color: isExpired ? '#ef4444' : '#166534',
+                      color: warrantyInfo.textColor,
                       fontWeight: 600,
-                      backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
+                      backgroundColor: warrantyInfo.bgColor,
+                      border: `1px solid ${warrantyInfo.borderColor}`,
                       padding: '2px 8px',
                       borderRadius: '9999px',
                       fontSize: '0.75rem',
                       display: 'inline-block'
                     }}>
-                      {item.warrantyExpiry || 'N/A'} {isExpired ? '(Expired)' : '(Active)'}
+                      {item.warrantyExpiry || 'N/A'} {item.warrantyExpiry ? warrantyInfo.statusText : ''}
                     </span>
                   );
                 }

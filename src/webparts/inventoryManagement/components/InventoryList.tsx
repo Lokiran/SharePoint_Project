@@ -9,6 +9,7 @@ import {
 } from '@fluentui/react/lib/DetailsList';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
 import styles from './InventoryManagement.module.scss';
+import { getWarrantyColorInfo } from '../utils/WarrantyUtils';
 
 export interface IInventoryListProps {
   items: IInventoryItem[];
@@ -29,7 +30,32 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
     { key: 'column6', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
     { key: 'columnVendor', name: 'Vendor', fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
     { key: 'columnCondition', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-    { key: 'columnWarranty', name: 'Warranty Expiry', fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
+    { 
+      key: 'columnWarranty', 
+      name: 'Warranty Expiry', 
+      fieldName: 'warrantyExpiry', 
+      minWidth: 120, 
+      maxWidth: 160, 
+      isResizable: true,
+      onRender: (item: IInventoryItem) => {
+        if (!item.warrantyExpiry) return <span style={{ color: '#9ca3af' }}>N/A</span>;
+        const info = getWarrantyColorInfo(item.warrantyExpiry);
+        return (
+          <span style={{ 
+            backgroundColor: info.bgColor, 
+            color: info.textColor,
+            border: `1px solid ${info.borderColor}`,
+            padding: '2px 8px', 
+            borderRadius: '9999px', 
+            fontSize: '0.75rem', 
+            fontWeight: 600,
+            display: 'inline-block'
+          }}>
+            {item.warrantyExpiry}
+          </span>
+        );
+      }
+    },
     { 
       key: 'column7', 
       name: 'Status', 

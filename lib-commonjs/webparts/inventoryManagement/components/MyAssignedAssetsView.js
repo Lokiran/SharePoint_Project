@@ -7,6 +7,7 @@ const react_1 = require("react");
 const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const DropdownConstants_1 = require("../constants/DropdownConstants");
+const WarrantyUtils_1 = require("../utils/WarrantyUtils");
 const MyAssignedAssetsView = (props) => {
     const { items, onReturnAsset, onRaiseIncident, onAssetReplacement } = props;
     // Search and Filter States
@@ -32,22 +33,16 @@ const MyAssignedAssetsView = (props) => {
     // Helper: Evaluate Warranty Coverage
     const evaluateWarranty = (expiryStr) => {
         if (!expiryStr)
-            return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'No warranty registered' };
-        const expiryDate = new Date(expiryStr);
-        if (isNaN(expiryDate.getTime()))
-            return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'Invalid Date' };
-        const now = new Date();
-        const diffTime = expiryDate.getTime() - now.getTime();
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        if (diffDays < 0) {
-            return { status: 'Expired', isExpired: true, isExpiringSoon: false, text: 'Expired' };
-        }
-        else if (diffDays <= 30) {
-            return { status: 'Expiring Soon', isExpired: false, isExpiringSoon: true, text: `Expiring Soon (${diffDays} days)` };
-        }
-        else {
-            return { status: 'Active', isExpired: false, isExpiringSoon: false, text: 'Active' };
-        }
+            return { status: 'Unknown', isExpired: false, isExpiringSoon: false, isLessThan1Year: false, text: 'No warranty registered', colorInfo: (0, WarrantyUtils_1.getWarrantyColorInfo)(undefined) };
+        const info = (0, WarrantyUtils_1.getWarrantyColorInfo)(expiryStr);
+        return {
+            status: info.isExpired ? 'Expired' : info.isLessThan6Months ? 'Expiring Soon' : info.isLessThan1Year ? 'Expiring (<1 Yr)' : 'Active',
+            isExpired: info.isExpired,
+            isExpiringSoon: info.isLessThan6Months,
+            isLessThan1Year: info.isLessThan1Year,
+            text: info.isExpired ? 'Expired' : info.isLessThan6Months ? 'Expiring soon (< 6 months)' : info.isLessThan1Year ? 'Expiring in < 1 year' : 'Active',
+            colorInfo: info
+        };
     };
     // Helper: Get Type Icon Name
     const getTypeIcon = (type) => {
@@ -140,10 +135,10 @@ const MyAssignedAssetsView = (props) => {
             return (b.id || '').localeCompare(a.id || '');
         });
     }, [items, searchQuery, selectedType, selectedCondition, selectedWarranty]);
-    // Detailed Age and Lifecycle Recommendation rendering for the panel
+    // Detailed Age, EOL Date, and Warranty Coverage rendering for the side panel
     const renderLifecycleAnalysis = (asset) => {
-        const age = getAgeInMonths(asset.purchaseDate);
-        const w = evaluateWarranty(asset.warrantyExpiry);
+        const lifecycle = (0, WarrantyUtils_1.getAssetLifecycleInfo)(asset.purchaseDate);
+        const warranty = (0, WarrantyUtils_1.getWarrantyColorInfo)(asset.warrantyExpiry);
         const condition = asset.condition || 'Good';
         const isCritical = condition === 'Poor' || condition === 'Damaged';
         let conditionColor = '#166534';
@@ -164,39 +159,71 @@ const MyAssignedAssetsView = (props) => {
             healthRating = 'Unusable / Broken';
             healthIcon = 'Warning';
         }
-        return (React.createElement(react_2.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '20px' } },
-            React.createElement("h4", { style: { margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' } }, "Lifecycle & Health Report"),
-            React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Asset Lifecycle Age"),
-                age !== null ? (React.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
-                    "This asset is ",
-                    React.createElement("strong", null, age),
-                    " month(s) old (",
-                    Math.round(age / 12 * 10) / 10,
-                    " years). Standard enterprise deprecation lifecycle is 36 months.",
-                    age >= 36 ? (React.createElement("span", { style: { color: '#b45309', display: 'block', marginTop: '6px', fontWeight: 'bold' } }, "\u26A0\uFE0F Asset has reached/passed its standard 3-year lifecycle. Eligible for refresh replacement.")) : (React.createElement("span", { style: { color: '#166534', display: 'block', marginTop: '6px' } },
-                        "\u2713 Asset is within standard usage lifecycle (",
-                        36 - age,
-                        " months remaining).")))) : (React.createElement("span", { style: { fontSize: '0.9rem', color: '#64748b' } }, "Purchase date is not registered. Age cannot be calculated."))),
-            React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Warranty Coverage"),
-                asset.warrantyExpiry ? (w.isExpired ? (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+        return (React.createElement(react_2.Stack, { tokens: { childrenGap: 16 }, style: { marginTop: '20px' } },
+            React.createElement("h4", { style: { margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' } }, "Lifecycle & Warranty Coverage Report"),
+            React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '14px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
+                React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' } },
+                    React.createElement("span", { style: { fontSize: '0.88rem', color: '#1e293b', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' } },
+                        React.createElement(react_2.Icon, { iconName: "History", style: { color: '#0284c7' } }),
+                        " Asset Lifecycle & EOL Date"),
+                    lifecycle.usedPercentage !== null && (React.createElement("span", { style: { fontSize: '0.75rem', fontWeight: 600, padding: '2px 8px', borderRadius: '9999px', backgroundColor: lifecycle.isLifecycleExpired ? '#fee2e2' : '#e0f2fe', color: lifecycle.isLifecycleExpired ? '#b91c1c' : '#0369a1' } },
+                        lifecycle.usedPercentage,
+                        "% Lifecycle Used"))),
+                React.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', fontSize: '0.82rem', marginBottom: '10px' } },
+                    React.createElement("div", null,
+                        React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Purchase Date:"),
+                        React.createElement("strong", { style: { color: '#0f172a' } }, lifecycle.purchaseDateFormatted)),
+                    React.createElement("div", null,
+                        React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Current Asset Age:"),
+                        React.createElement("strong", { style: { color: '#0f172a' } }, lifecycle.ageInMonths !== null ? `${lifecycle.ageInMonths} mo (${lifecycle.ageInYears} yrs)` : 'N/A')),
+                    React.createElement("div", null,
+                        React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Enterprise EOL Expiry Date:"),
+                        React.createElement("strong", { style: { color: lifecycle.isLifecycleExpired ? '#b91c1c' : '#0f172a' } }, lifecycle.eolDateFormatted || 'N/A'))),
+                lifecycle.eolDateFormatted ? (lifecycle.isLifecycleExpired ? (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                    React.createElement("strong", null, "Lifecycle Expired:"),
+                    " Passed standard 36-month enterprise usage limit on ",
+                    React.createElement("strong", null, lifecycle.eolDateFormatted),
+                    ". Eligible for hardware refresh.")) : (React.createElement("div", { style: { backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', padding: '8px 12px', borderRadius: '6px', fontSize: '0.8rem', color: '#166534' } },
+                    React.createElement("strong", null, "Active Lifecycle:"),
+                    " Within standard 36-month usage limit. ",
+                    React.createElement("strong", null, lifecycle.remainingText),
+                    "."))) : (React.createElement("span", { style: { fontSize: '0.8rem', color: '#64748b' } }, "Purchase date is missing. Asset lifecycle age cannot be calculated."))),
+            React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '14px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
+                React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' } },
+                    React.createElement("span", { style: { fontSize: '0.88rem', color: '#1e293b', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' } },
+                        React.createElement(react_2.Icon, { iconName: "ShieldAlert", style: { color: warranty.textColor } }),
+                        " Warranty Coverage Details"),
+                    React.createElement("span", { style: { fontSize: '0.75rem', fontWeight: 600, padding: '2px 8px', borderRadius: '9999px', backgroundColor: warranty.bgColor, color: warranty.textColor, border: `1px solid ${warranty.borderColor}` } }, warranty.color === 'red' ? (warranty.isExpired ? 'Expired' : 'Expiring < 6 Mos') : warranty.color === 'yellow' ? 'Expiring < 1 Yr' : 'Active Coverage')),
+                React.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', fontSize: '0.82rem', marginBottom: '10px' } },
+                    React.createElement("div", null,
+                        React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Warranty Expiry Date:"),
+                        React.createElement("strong", { style: { color: warranty.textColor } }, warranty.formattedDate)),
+                    React.createElement("div", { style: { gridColumn: 'span 2' } },
+                        React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Warranty Time Remaining:"),
+                        React.createElement("strong", { style: { color: warranty.textColor } }, warranty.remainingText))),
+                asset.warrantyExpiry ? (warranty.isExpired ? (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                     React.createElement("strong", null, "Warranty Expired:"),
                     " Coverage ended on ",
-                    asset.warrantyExpiry,
-                    ". Future repairs will be billed to the departmental cost center.")) : w.isExpiringSoon ? (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
-                    React.createElement("strong", null, "Warranty Expiring Soon:"),
-                    " Expires on ",
-                    asset.warrantyExpiry,
-                    ". Please plan hardware checks before expiry.")) : (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
-                    React.createElement("strong", null, "Warranty Active:"),
-                    " Fully protected until ",
-                    asset.warrantyExpiry,
+                    React.createElement("strong", null, warranty.formattedDate),
+                    " (",
+                    warranty.remainingText,
+                    "). Future repairs will be billed to departmental cost center.")) : warranty.isLessThan6Months ? (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                    React.createElement("strong", null, "Warranty Expiring Soon (< 6 Months):"),
+                    " Protection expires on ",
+                    React.createElement("strong", null, warranty.formattedDate),
+                    ". High priority: schedule hardware inspection or extension.")) : warranty.isLessThan1Year ? (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                    React.createElement("strong", null, "Warranty Expiring (< 1 Year):"),
+                    " Protection expires on ",
+                    React.createElement("strong", null, warranty.formattedDate),
+                    ". Plan for upcoming warranty renewal or equipment refresh.")) : (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                    React.createElement("strong", null, "Warranty Active (> 1 Year):"),
+                    " Fully protected under manufacturer coverage until ",
+                    React.createElement("strong", null, warranty.formattedDate),
                     "."))) : (React.createElement(react_2.MessageBar, { messageBarType: react_2.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                     React.createElement("strong", null, "Warranty Unknown:"),
                     " No warranty expiration record exists for this item."))),
             React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Physical Condition"),
+                React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Physical Condition & Health"),
                 React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
                     React.createElement(react_2.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                     React.createElement("span", null,
@@ -207,7 +234,7 @@ const MyAssignedAssetsView = (props) => {
                             condition,
                             ")"))),
                 isCritical && (React.createElement("div", { style: { marginTop: '10px', padding: '8px', backgroundColor: '#fef2f2', borderRadius: '4px', borderLeft: '3px solid #dc2626' } },
-                    React.createElement("span", { style: { fontSize: '0.82rem', color: '#991b1b', fontWeight: 'bold', display: 'block' } }, "Recommendation: RETIRE ASSET"),
+                    React.createElement("span", { style: { fontSize: '0.82rem', color: '#991b1b', fontWeight: 'bold', display: 'block' } }, "Recommendation: RETIRE / REPLACE ASSET"),
                     React.createElement("span", { style: { fontSize: '0.8rem', color: '#991b1b' } },
                         "Since this asset is in ",
                         condition.toLowerCase(),
@@ -344,31 +371,28 @@ const MyAssignedAssetsView = (props) => {
                         React.createElement("strong", null, age),
                         " month(s) ",
                         age >= 36 && React.createElement("span", { style: { color: '#d97706', fontWeight: 500 } }, "(Refresh Eligible \u26A0\uFE0F)"))),
-                    item.warrantyExpiry && (w.isExpired || w.isExpiringSoon) && (React.createElement("div", { style: {
+                    item.warrantyExpiry && (React.createElement("div", { style: {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '4px',
-                            backgroundColor: w.isExpired ? '#fdf2f2' : '#fff9e6',
+                            backgroundColor: w.colorInfo.bgColor,
+                            border: `1px solid ${w.colorInfo.borderColor}`,
                             padding: '4px 6px',
                             borderRadius: '4px',
                             fontSize: '0.7rem',
-                            color: w.isExpired ? '#c5221f' : '#b06000',
+                            color: w.colorInfo.textColor,
                             marginTop: 'auto'
                         } },
-                        React.createElement(react_2.Icon, { iconName: w.isExpired ? "ShieldAlert" : "Warning", style: { fontSize: '10px' } }),
+                        React.createElement(react_2.Icon, { iconName: w.isExpired ? "ShieldAlert" : w.isExpiringSoon ? "Warning" : "VerifiedBrand", style: { fontSize: '10px' } }),
                         React.createElement("span", null,
                             React.createElement("strong", null,
                                 "Warranty ",
-                                w.isExpired ? 'Expired' : 'Expiring',
+                                w.isExpired ? 'Expired' : 'Expiry',
                                 ":"),
                             " ",
-                            w.text))),
-                    item.warrantyExpiry && !w.isExpired && !w.isExpiringSoon && (React.createElement("div", { style: { fontSize: '0.72rem', color: '#137333', display: 'flex', alignItems: 'center', gap: '3px', marginTop: 'auto' } },
-                        React.createElement(react_2.Icon, { iconName: "VerifiedBrand", style: { fontSize: '10px' } }),
-                        React.createElement("span", null,
-                            "Warranty Active (Expires: ",
-                            new Date(item.warrantyExpiry).toLocaleDateString(),
-                            ")")))),
+                            item.warrantyExpiry,
+                            " ",
+                            w.colorInfo.statusText)))),
                 React.createElement("div", { style: {
                         padding: '8px 14px 10px 14px',
                         display: 'flex',

@@ -6,6 +6,7 @@ const React = tslib_1.__importStar(require("react"));
 const DetailsList_1 = require("@fluentui/react/lib/DetailsList");
 const Button_1 = require("@fluentui/react/lib/Button");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
+const WarrantyUtils_1 = require("../utils/WarrantyUtils");
 const InventoryList = (props) => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const columns = [
@@ -17,7 +18,29 @@ const InventoryList = (props) => {
         { key: 'column6', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
         { key: 'columnVendor', name: 'Vendor', fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
         { key: 'columnCondition', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'columnWarranty', name: 'Warranty Expiry', fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
+        {
+            key: 'columnWarranty',
+            name: 'Warranty Expiry',
+            fieldName: 'warrantyExpiry',
+            minWidth: 120,
+            maxWidth: 160,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.warrantyExpiry)
+                    return React.createElement("span", { style: { color: '#9ca3af' } }, "N/A");
+                const info = (0, WarrantyUtils_1.getWarrantyColorInfo)(item.warrantyExpiry);
+                return (React.createElement("span", { style: {
+                        backgroundColor: info.bgColor,
+                        color: info.textColor,
+                        border: `1px solid ${info.borderColor}`,
+                        padding: '2px 8px',
+                        borderRadius: '9999px',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        display: 'inline-block'
+                    } }, item.warrantyExpiry));
+            }
+        },
         {
             key: 'column7',
             name: 'Status',

@@ -5,9 +5,10 @@ const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@fluentui/react");
-const jspdf_1 = require("jspdf");
 const IncidentService_1 = require("../../services/IncidentService");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../InventoryManagement.module.scss"));
+const NexerHeader_1 = require("../shared/NexerHeader");
+const NexerTheme_1 = require("../../utils/NexerTheme");
 const IncidentHistory = (props) => {
     const [incidents, setIncidents] = (0, react_1.useState)([]);
     const [filteredIncidents, setFilteredIncidents] = (0, react_1.useState)([]);
@@ -149,114 +150,25 @@ const IncidentHistory = (props) => {
             props.setIsLoading(false);
         }
     };
-    const handleDownloadReport = (incident) => {
-        try {
-            const doc = new jspdf_1.jsPDF();
-            // Top header banner
-            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-            doc.rect(0, 0, 210, 25, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(16);
-            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
-            // Document Title
-            doc.setTextColor(51, 65, 85); // Slate 700
-            doc.setFontSize(14);
-            doc.text("INCIDENT REPORT", 14, 38);
-            // Metadata
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9);
-            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
-            // Separator line
-            doc.setDrawColor(226, 232, 240); // Slate 200
-            doc.line(14, 48, 196, 48);
-            // Specifications Section Title
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.text("INCIDENT SPECIFICATIONS", 14, 58);
-            // Render Specifications Key-Value grid
-            let y = 68;
-            const printField = (label, value) => {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(9);
-                doc.setTextColor(100, 116, 139); // Slate 500
-                doc.text(label, 14, y);
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(15, 23, 42); // Slate 900
-                doc.text(value, 55, y);
-                y += 8;
-            };
-            printField("Incident ID:", incident.incidentId);
-            printField("Asset Name:", incident.assetName);
-            printField("Issue Type:", incident.issueType);
-            printField("Priority:", incident.priority || "Medium");
-            printField("Current Status:", incident.status || "Open");
-            printField("Reported Date:", new Date(incident.reportedDate).toLocaleString());
-            if (incident.assignedTo) {
-                printField("Assigned To:", incident.assignedTo);
-            }
-            if (incident.resolvedDate) {
-                printField("Resolved Date:", new Date(incident.resolvedDate).toLocaleString());
-            }
-            // Issue Description Title
-            y += 4;
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.setTextColor(51, 65, 85);
-            doc.text("ISSUE DESCRIPTION", 14, y);
-            y += 6;
-            // Issue Description Box
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9.5);
-            doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(incident.issueDescription || "No description provided.", 170);
-            const descHeight = splitDesc.length * 6 + 10;
-            // Draw background box
-            doc.setFillColor(248, 250, 252); // slate 50
-            doc.setDrawColor(226, 232, 240); // slate 200
-            doc.rect(14, y, 182, descHeight, 'FD');
-            // Draw left accent bar
-            doc.setFillColor(100, 116, 139); // slate 500
-            doc.rect(14, y, 3, descHeight, 'F');
-            // Draw text
-            let textY = y + 8;
-            splitDesc.forEach((line) => {
-                doc.text(line, 22, textY);
-                textY += 6;
-            });
-            y += descHeight + 10;
-            // Resolution Details (if resolved/closed)
-            if (incident.resolution) {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(11);
-                doc.setTextColor(51, 65, 85);
-                doc.text("RESOLUTION SUMMARY", 14, y);
-                y += 6;
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(22, 101, 52); // green 800
-                const splitRes = doc.splitTextToSize(incident.resolution, 170);
-                const resHeight = splitRes.length * 6 + 10;
-                // Draw green background box
-                doc.setFillColor(240, 253, 244); // green 50
-                doc.setDrawColor(220, 252, 231); // green 200
-                doc.rect(14, y, 182, resHeight, 'FD');
-                // Draw green left accent bar
-                doc.setFillColor(22, 101, 52); // green 800
-                doc.rect(14, y, 3, resHeight, 'F');
-                // Draw resolution text
-                let resTextY = y + 8;
-                splitRes.forEach((line) => {
-                    doc.text(line, 22, resTextY);
-                    resTextY += 6;
-                });
-            }
-            doc.save(`incident-${incident.incidentId}.pdf`);
-        }
-        catch (error) {
-            console.error('Error generating PDF report:', error);
-        }
+    const handleDownloadReport = async (incident) => {
+        await (0, NexerTheme_1.generateNexerPdfReport)({
+            reportTitle: 'INCIDENT REPORT',
+            docTitle: 'INCIDENT SPECIFICATIONS',
+            idLabel: 'Incident ID:',
+            idValue: incident.incidentId,
+            assetName: incident.assetName,
+            typeLabel: 'Issue Type:',
+            typeValue: incident.issueType,
+            priority: incident.priority || 'Medium',
+            status: incident.status || 'Open',
+            reportedDate: incident.reportedDate,
+            assignedTo: incident.assignedTo,
+            resolvedDate: incident.resolvedDate,
+            descriptionTitle: 'ISSUE DESCRIPTION',
+            description: incident.issueDescription,
+            resolution: incident.resolution,
+            fileName: `incident-${incident.incidentId}.pdf`,
+        });
     };
     const columns = [
         {
@@ -348,7 +260,8 @@ const IncidentHistory = (props) => {
         { key: 'Resolved', text: 'Resolved' },
         { key: 'Closed', text: 'Closed' },
     ];
-    return (React.createElement("div", { style: { marginTop: '20px' } },
+    return (React.createElement("div", { style: { marginTop: '10px' } },
+        React.createElement(NexerHeader_1.NexerHeader, { title: "Incident History", subtitle: "Track and manage reported hardware & software incidents" }),
         React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
             React.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
                 React.createElement(react_2.SearchBox, { placeholder: "Search by incident ID, asset name, or issue type...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
@@ -371,11 +284,8 @@ const IncidentHistory = (props) => {
                 } },
                 React.createElement(react_2.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
                 React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, "No incidents found.")))),
-        React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (React.createElement("div", { style: { marginTop: '10px' } },
-            React.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                React.createElement("strong", null, "Reported:"),
-                " ",
-                new Date(selectedIncident.reportedDate).toLocaleString()),
+        React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (React.createElement("div", { style: { marginTop: '0px' } },
+            React.createElement(NexerHeader_1.NexerHeader, { title: `Incident Details - ${selectedIncident.incidentId}`, subtitle: `Reported: ${new Date(selectedIncident.reportedDate).toLocaleString()}`, isPanel: true }),
             React.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },

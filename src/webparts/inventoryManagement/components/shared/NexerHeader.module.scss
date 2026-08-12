@@ -1,0 +1,72 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.nexerHeader {
+  background-color: #111827; // Dark Nexer Header
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  margin-bottom: 16px;
+
+  &.panelHeader {
+    border-radius: 0;
+    margin: -1px -1px 16px -1px;
+    padding: 16px 24px;
+  }
+}
+
+.brandSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  height: 26px;
+
+  img, svg {
+    height: 26px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  margin: 2px 0 0 0;
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

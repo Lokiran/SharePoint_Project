@@ -20,6 +20,8 @@ import { jsPDF } from 'jspdf';
 import styles from './ReplacementHistory.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
+import { NexerHeader } from '../shared/NexerHeader';
+import { generateNexerPdfReport } from '../../utils/NexerTheme';
 
 interface IReplacementHistoryItem {
   id: string;
@@ -178,137 +180,25 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
     }
   };
 
-  const handleDownloadReport = (rep: IReplacementHistoryItem) => {
-    try {
-      const doc = new jsPDF();
-      
-      // Top header banner
-      doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-      doc.rect(0, 0, 210, 25, 'F');
-      
-      doc.setTextColor(255, 255, 255);
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(16);
-      doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
-      
-      // Document Title
-      doc.setTextColor(51, 65, 85); // Slate 700
-      doc.setFontSize(14);
-      doc.text("ASSET REPLACEMENT REPORT", 14, 38);
-      
-      // Metadata
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(9);
-      doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
-      
-      // Separator line
-      doc.setDrawColor(226, 232, 240); // Slate 200
-      doc.line(14, 48, 196, 48);
-      
-      // Specifications Section Title
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
-      doc.text("REPLACEMENT SPECIFICATIONS", 14, 58);
-      
-      // Render Specifications Key-Value grid
-      let y = 68;
-      const printField = (label: string, value: string) => {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(9);
-        doc.setTextColor(100, 116, 139); // Slate 500
-        doc.text(label, 14, y);
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9.5);
-        doc.setTextColor(15, 23, 42); // Slate 900
-        doc.text(value, 55, y);
-        y += 8;
-      };
-      
-      printField("Replacement ID:", rep.incidentId);
-      printField("Asset Name:", rep.assetName);
-      printField("Type:", "Replacement Request");
-      printField("Priority:", rep.priority || "Medium");
-      printField("Current Status:", rep.status || "Open");
-      printField("Reported Date:", new Date(rep.reportedDate).toLocaleString());
-      
-      if (rep.assignedTo) {
-        printField("Assigned To:", rep.assignedTo);
-      }
-      if (rep.resolvedDate) {
-        printField("Resolved Date:", new Date(rep.resolvedDate).toLocaleString());
-      }
-      
-      // Reason Title
-      y += 4;
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
-      doc.setTextColor(51, 65, 85);
-      doc.text("REPLACEMENT REASON & DETAILS", 14, y);
-      y += 6;
-      
-      // Reason Box
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(9.5);
-      doc.setTextColor(51, 65, 85);
-      
-      const splitDesc = doc.splitTextToSize(rep.issueDescription || "No reason provided.", 170);
-      const descHeight = splitDesc.length * 6 + 10;
-      
-      // Draw background box
-      doc.setFillColor(248, 250, 252); // slate 50
-      doc.setDrawColor(226, 232, 240); // slate 200
-      doc.rect(14, y, 182, descHeight, 'FD');
-      
-      // Draw left accent bar
-      doc.setFillColor(100, 116, 139); // slate 500
-      doc.rect(14, y, 3, descHeight, 'F');
-      
-      // Draw text
-      let textY = y + 8;
-      splitDesc.forEach((line: string) => {
-        doc.text(line, 22, textY);
-        textY += 6;
-      });
-      
-      y += descHeight + 10;
-      
-      // Resolution Details (if resolved/closed)
-      if (rep.resolution) {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(11);
-        doc.setTextColor(51, 65, 85);
-        doc.text("RESOLUTION SUMMARY", 14, y);
-        y += 6;
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9.5);
-        doc.setTextColor(22, 101, 52); // green 800
-        
-        const splitRes = doc.splitTextToSize(rep.resolution, 170);
-        const resHeight = splitRes.length * 6 + 10;
-        
-        // Draw green background box
-        doc.setFillColor(240, 253, 244); // green 50
-        doc.setDrawColor(220, 252, 231); // green 200
-        doc.rect(14, y, 182, resHeight, 'FD');
-        
-        // Draw green left accent bar
-        doc.setFillColor(22, 101, 52); // green 800
-        doc.rect(14, y, 3, resHeight, 'F');
-        
-        // Draw resolution text
-        let resTextY = y + 8;
-        splitRes.forEach((line: string) => {
-          doc.text(line, 22, resTextY);
-          resTextY += 6;
-        });
-      }
-      
-      doc.save(`replacement-${rep.incidentId}.pdf`);
-    } catch (error) {
-      console.error('Error generating PDF report:', error);
-    }
+  const handleDownloadReport = async (rep: IReplacementHistoryItem) => {
+    await generateNexerPdfReport({
+      reportTitle: 'ASSET REPLACEMENT REPORT',
+      docTitle: 'REPLACEMENT SPECIFICATIONS',
+      idLabel: 'Replacement ID:',
+      idValue: rep.incidentId,
+      assetName: rep.assetName,
+      typeLabel: 'Type:',
+      typeValue: 'Replacement Request',
+      priority: rep.priority || 'Medium',
+      status: rep.status || 'Open',
+      reportedDate: rep.reportedDate,
+      assignedTo: rep.assignedTo,
+      resolvedDate: rep.resolvedDate,
+      descriptionTitle: 'REPLACEMENT REASON & DETAILS',
+      description: rep.issueDescription,
+      resolution: rep.resolution,
+      fileName: `replacement-${rep.incidentId}.pdf`,
+    });
   };
 
   const columns: IColumn[] = [
@@ -421,7 +311,11 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
   ];
 
   return (
-    <div style={{ marginTop: '20px' }} className={styles.replacementHistory}>
+    <div style={{ marginTop: '10px' }} className={styles.replacementHistory}>
+      <NexerHeader
+        title="Replacement History"
+        subtitle="Track and manage asset replacement requests"
+      />
       <Stack tokens={{ childrenGap: 15 }}>
         {/* Filters */}
         <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' }}>
@@ -482,10 +376,12 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
         closeButtonAriaLabel="Close"
       >
         {selectedReplacement && (
-          <div style={{ marginTop: '10px' }}>
-            <p style={{ color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' }}>
-              <strong>Reported:</strong> {new Date(selectedReplacement.reportedDate).toLocaleString()}
-            </p>
+          <div style={{ marginTop: '0px' }}>
+            <NexerHeader
+              title={`Replacement Details - ${selectedReplacement.incidentId}`}
+              subtitle={`Reported: ${new Date(selectedReplacement.reportedDate).toLocaleString()}`}
+              isPanel={true}
+            />
 
             <div style={{ padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' }}>
               <p style={{ margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' }}>

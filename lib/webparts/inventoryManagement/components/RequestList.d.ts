@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { IRequest } from '../models/IRequest';
+import { IInventoryItem } from "../models/IInventoryItem";
 export interface IRequestListProps {
+    inventoryItems: IInventoryItem[];
     items: IRequest[];
     canApproveReject?: boolean;
     canApproveAsset?: boolean;

@@ -250,6 +250,39 @@ _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_
 
 /***/ }),
 
+/***/ 14833:
+/*!****************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/shared/NexerHeader.module.scss.css ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/@microsoft/sp-css-loader/node_modules/@microsoft/load-themed-styles/lib-es6/index.js */ 96323);
+// Imports
+
+
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".nexerHeader_e514b2de{align-items:center;background-color:#111827;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.12);color:#fff;display:flex;justify-content:space-between;margin-bottom:16px;padding:14px 20px}.nexerHeader_e514b2de.panelHeader_e514b2de{border-radius:0;margin:-1px -1px 16px;padding:16px 24px}.brandSection_e514b2de{align-items:center;display:flex;gap:16px}.logoContainer_e514b2de{align-items:center;display:flex;height:26px}.logoContainer_e514b2de img,.logoContainer_e514b2de svg{display:block;height:26px;max-width:130px;object-fit:contain;width:auto}.divider_e514b2de{background-color:hsla(0,0%,100%,.25);height:22px;width:1px}.titleContainer_e514b2de{display:flex;flex-direction:column}.title_e514b2de{color:#fff!important;font-size:1.1rem;font-weight:600;letter-spacing:-.01em;line-height:1.25;margin:0}.subtitle_e514b2de{color:#94a3b8;font-size:.78rem;font-weight:400;margin:2px 0 0}.actions_e514b2de{align-items:center;display:flex;gap:8px}", true);
+
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  nexerHeader: "nexerHeader_e514b2de",
+  panelHeader: "panelHeader_e514b2de",
+  brandSection: "brandSection_e514b2de",
+  logoContainer: "logoContainer_e514b2de",
+  divider: "divider_e514b2de",
+  titleContainer: "titleContainer_e514b2de",
+  title: "title_e514b2de",
+  subtitle: "subtitle_e514b2de",
+  actions: "actions_e514b2de"
+});
+
+
+/***/ }),
+
 /***/ 25831:
 /*!************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/InventoryManagementWebPart.js ***!
@@ -1879,21 +1912,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21262);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
-/* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
-/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _shared_NexerHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/NexerHeader */ 90891);
+/* harmony import */ var _utils_NexerTheme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/NexerTheme */ 88658);
+
 
 
 
@@ -1971,7 +2006,7 @@ const IncidentHistory = (props) => {
     const loadIncidents = async () => {
         try {
             props.setIsLoading(true);
-            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__.IncidentService(props.spContext);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_1__.IncidentService(props.spContext);
             const isAdmin = props.userRole === 'Admin';
             const data = await service.getEmployeeIncidentHistory(props.userEmail, isAdmin);
             setIncidents(data);
@@ -2003,7 +2038,7 @@ const IncidentHistory = (props) => {
     const handleStatusChange = async (incident, newStatus) => {
         try {
             props.setIsLoading(true);
-            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__.IncidentService(props.spContext);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_1__.IncidentService(props.spContext);
             await service.updateIncidentStatus(incident.id, newStatus, incident.resolution);
             const updatedIncident = {
                 ...incident,
@@ -2024,7 +2059,7 @@ const IncidentHistory = (props) => {
     const handleSaveResolution = async (incident) => {
         try {
             props.setIsLoading(true);
-            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__.IncidentService(props.spContext);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_1__.IncidentService(props.spContext);
             await service.updateIncidentStatus(incident.id, incident.status, tempResolution);
             const updatedIncident = {
                 ...incident,
@@ -2041,114 +2076,25 @@ const IncidentHistory = (props) => {
             props.setIsLoading(false);
         }
     };
-    const handleDownloadReport = (incident) => {
-        try {
-            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.jsPDF();
-            // Top header banner
-            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-            doc.rect(0, 0, 210, 25, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(16);
-            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
-            // Document Title
-            doc.setTextColor(51, 65, 85); // Slate 700
-            doc.setFontSize(14);
-            doc.text("INCIDENT REPORT", 14, 38);
-            // Metadata
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9);
-            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
-            // Separator line
-            doc.setDrawColor(226, 232, 240); // Slate 200
-            doc.line(14, 48, 196, 48);
-            // Specifications Section Title
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.text("INCIDENT SPECIFICATIONS", 14, 58);
-            // Render Specifications Key-Value grid
-            let y = 68;
-            const printField = (label, value) => {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(9);
-                doc.setTextColor(100, 116, 139); // Slate 500
-                doc.text(label, 14, y);
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(15, 23, 42); // Slate 900
-                doc.text(value, 55, y);
-                y += 8;
-            };
-            printField("Incident ID:", incident.incidentId);
-            printField("Asset Name:", incident.assetName);
-            printField("Issue Type:", incident.issueType);
-            printField("Priority:", incident.priority || "Medium");
-            printField("Current Status:", incident.status || "Open");
-            printField("Reported Date:", new Date(incident.reportedDate).toLocaleString());
-            if (incident.assignedTo) {
-                printField("Assigned To:", incident.assignedTo);
-            }
-            if (incident.resolvedDate) {
-                printField("Resolved Date:", new Date(incident.resolvedDate).toLocaleString());
-            }
-            // Issue Description Title
-            y += 4;
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.setTextColor(51, 65, 85);
-            doc.text("ISSUE DESCRIPTION", 14, y);
-            y += 6;
-            // Issue Description Box
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9.5);
-            doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(incident.issueDescription || "No description provided.", 170);
-            const descHeight = splitDesc.length * 6 + 10;
-            // Draw background box
-            doc.setFillColor(248, 250, 252); // slate 50
-            doc.setDrawColor(226, 232, 240); // slate 200
-            doc.rect(14, y, 182, descHeight, 'FD');
-            // Draw left accent bar
-            doc.setFillColor(100, 116, 139); // slate 500
-            doc.rect(14, y, 3, descHeight, 'F');
-            // Draw text
-            let textY = y + 8;
-            splitDesc.forEach((line) => {
-                doc.text(line, 22, textY);
-                textY += 6;
-            });
-            y += descHeight + 10;
-            // Resolution Details (if resolved/closed)
-            if (incident.resolution) {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(11);
-                doc.setTextColor(51, 65, 85);
-                doc.text("RESOLUTION SUMMARY", 14, y);
-                y += 6;
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(22, 101, 52); // green 800
-                const splitRes = doc.splitTextToSize(incident.resolution, 170);
-                const resHeight = splitRes.length * 6 + 10;
-                // Draw green background box
-                doc.setFillColor(240, 253, 244); // green 50
-                doc.setDrawColor(220, 252, 231); // green 200
-                doc.rect(14, y, 182, resHeight, 'FD');
-                // Draw green left accent bar
-                doc.setFillColor(22, 101, 52); // green 800
-                doc.rect(14, y, 3, resHeight, 'F');
-                // Draw resolution text
-                let resTextY = y + 8;
-                splitRes.forEach((line) => {
-                    doc.text(line, 22, resTextY);
-                    resTextY += 6;
-                });
-            }
-            doc.save(`incident-${incident.incidentId}.pdf`);
-        }
-        catch (error) {
-            console.error('Error generating PDF report:', error);
-        }
+    const handleDownloadReport = async (incident) => {
+        await (0,_utils_NexerTheme__WEBPACK_IMPORTED_MODULE_4__.generateNexerPdfReport)({
+            reportTitle: 'INCIDENT REPORT',
+            docTitle: 'INCIDENT SPECIFICATIONS',
+            idLabel: 'Incident ID:',
+            idValue: incident.incidentId,
+            assetName: incident.assetName,
+            typeLabel: 'Issue Type:',
+            typeValue: incident.issueType,
+            priority: incident.priority || 'Medium',
+            status: incident.status || 'Open',
+            reportedDate: incident.reportedDate,
+            assignedTo: incident.assignedTo,
+            resolvedDate: incident.resolvedDate,
+            descriptionTitle: 'ISSUE DESCRIPTION',
+            description: incident.issueDescription,
+            resolution: incident.resolution,
+            fileName: `incident-${incident.incidentId}.pdf`,
+        });
     };
     const columns = [
         {
@@ -2158,7 +2104,7 @@ const IncidentHistory = (props) => {
             minWidth: 90,
             maxWidth: 120,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.incidentId),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.incidentId),
         },
         {
             key: 'assetName',
@@ -2167,7 +2113,7 @@ const IncidentHistory = (props) => {
             minWidth: 100,
             maxWidth: 150,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.assetName),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.assetName),
         },
         {
             key: 'issueType',
@@ -2176,7 +2122,7 @@ const IncidentHistory = (props) => {
             minWidth: 100,
             maxWidth: 130,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.issueType),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.issueType),
         },
         {
             key: 'priority',
@@ -2209,12 +2155,12 @@ const IncidentHistory = (props) => {
             isResizable: true,
             onRender: (item) => {
                 if (!item.reportedDate)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "-");
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, "-");
                 try {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, new Date(item.reportedDate).toLocaleDateString());
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, new Date(item.reportedDate).toLocaleDateString());
                 }
                 catch {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.reportedDate);
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.reportedDate);
                 }
             },
         },
@@ -2224,11 +2170,11 @@ const IncidentHistory = (props) => {
             minWidth: 160,
             maxWidth: 220,
             isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }))),
         },
@@ -2240,18 +2186,19 @@ const IncidentHistory = (props) => {
         { key: 'Resolved', text: 'Resolved' },
         { key: 'Closed', text: 'Closed' },
     ];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 15 } },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shared_NexerHeader__WEBPACK_IMPORTED_MODULE_3__.NexerHeader, { title: "Incident History", subtitle: "Track and manage reported hardware & software incidents" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 15 } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SearchBox, { placeholder: "Search by incident ID, asset name, or issue type...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.SearchBox, { placeholder: "Search by incident ID, asset name, or issue type...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
                 "Showing ",
                 filteredIncidents.length,
                 " of ",
                 incidents.length,
                 " incidents"),
-            filteredIncidents.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+            filteredIncidents.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -2261,18 +2208,15 @@ const IncidentHistory = (props) => {
                     borderRadius: '8px',
                     padding: '30px'
                 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No incidents found.")))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Reported:"),
-                " ",
-                new Date(selectedIncident.reportedDate).toLocaleString()),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No incidents found.")))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '0px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shared_NexerHeader__WEBPACK_IMPORTED_MODULE_3__.NexerHeader, { title: `Incident Details - ${selectedIncident.incidentId}`, subtitle: `Reported: ${new Date(selectedIncident.reportedDate).toLocaleString()}`, isPanel: true }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Incident Specifications"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].responsiveGridAlignItemsCenter, style: { fontSize: '0.88rem' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].responsiveGridAlignItemsCenter, style: { fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Incident ID:"),
                         " ",
@@ -2290,7 +2234,7 @@ const IncidentHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(selectedIncident.priority) }, selectedIncident.priority || 'Medium')),
                     props.userRole === 'Admin' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: [
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: [
                                 { key: 'Open', text: 'Open' },
                                 { key: 'In Progress', text: 'In Progress' },
                                 { key: 'Resolved', text: 'Resolved' },
@@ -2304,17 +2248,17 @@ const IncidentHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedIncident.assignedTo))))),
             props.userRole === 'Admin' && (selectedIncident.status === 'Resolved' || selectedIncident.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " Update Resolution Details"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 10 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 10 } },
                     selectedIncident.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
                         ' ',
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedIncident.resolvedDate).toLocaleString()))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this issue was resolved..." }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this issue was resolved..." }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " Resolution Details"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
                     selectedIncident.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -2352,11 +2296,11 @@ const IncidentHistory = (props) => {
                     justifyContent: 'center',
                     flexShrink: 0
                 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Accept", style: { color: '#166534', fontSize: '15px', fontWeight: 'bold' } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "Accept", style: { color: '#166534', fontSize: '15px', fontWeight: 'bold' } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' } }, toastNotification.title || 'Success'),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' } }, toastNotification.message)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
 };
 
 
@@ -2610,11 +2554,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/WarrantyUtils */ 98126);
+
 
 
 
@@ -2630,7 +2576,29 @@ const InventoryList = (props) => {
         { key: 'column6', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
         { key: 'columnVendor', name: 'Vendor', fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
         { key: 'columnCondition', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'columnWarranty', name: 'Warranty Expiry', fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
+        {
+            key: 'columnWarranty',
+            name: 'Warranty Expiry',
+            fieldName: 'warrantyExpiry',
+            minWidth: 120,
+            maxWidth: 160,
+            isResizable: true,
+            onRender: (item) => {
+                if (!item.warrantyExpiry)
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9ca3af' } }, "N/A");
+                const info = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_2__.getWarrantyColorInfo)(item.warrantyExpiry);
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                        backgroundColor: info.bgColor,
+                        color: info.textColor,
+                        border: `1px solid ${info.borderColor}`,
+                        padding: '2px 8px',
+                        borderRadius: '9999px',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        display: 'inline-block'
+                    } }, item.warrantyExpiry));
+            }
+        },
         {
             key: 'column7',
             name: 'Status',
@@ -2717,7 +2685,7 @@ const InventoryList = (props) => {
                     if (isReturnApproved) {
                         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' } }, "Approved"));
                     }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Return", onClick: () => props.onReturnAsset(item), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.8rem' } } }));
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Return", onClick: () => props.onReturnAsset(item), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.8rem' } } }));
                 }
             }
         ] : [])
@@ -2815,7 +2783,7 @@ const InventoryList = (props) => {
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_3__.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.SelectionMode.none })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none })),
         props.enablePagination && totalPages > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationContainer },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationInfo },
                 "Showing ",
@@ -2867,25 +2835,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EventStream__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./EventStream */ 19178);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
 /* harmony import */ var _ReturnRequestList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReturnRequestList */ 18397);
+/* harmony import */ var _utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../utils/WarrantyUtils */ 98126);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @fluentui/react */ 20472);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @fluentui/react */ 20472);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! jspdf */ 28339);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
@@ -2899,6 +2869,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./ReplacementHistory/ReplacementHistory */ 81635);
 /* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
 /* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
+
+
 
 
 
@@ -3582,8 +3554,20 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             }
         };
         this._onApproveRequest = async (request) => {
+            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_28__.getAvailableStock)(this.state.items, request);
+            const requestedQuantity = Number(request.quantity || 0);
+            if (availableStock < requestedQuantity) {
+                this.setState({
+                    errorMessage: `Insufficient stock for "${request.assetTitle}". Available: ${availableStock}, Requested: ${requestedQuantity}`
+                });
+                return;
+            }
             try {
-                this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
+                this.setState({
+                    requestActionInProgressId: request.id,
+                    errorMessage: undefined
+                });
+                // KEEP THE REST OF YOUR EXISTING CODE EXACTLY AS IT IS
                 if (request.id.indexOf('temp-') === 0) {
                     this.setState(prevState => ({
                         requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved' } : r)
@@ -4003,7 +3987,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 progressPercent = 1.0;
                 currentStepText = "Declined by Manager";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
@@ -4047,18 +4031,18 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
                         " Detailed Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Stack, { tokens: { childrenGap: 12 } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                            isSufficient ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Check Passed:"),
                                 " There are currently ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
                                 " unit(s) of ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                " in stock, which is sufficient to fulfill this request.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Inventory Warning:"),
                                 " Only ",
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, inStockCount),
@@ -4090,15 +4074,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
-            const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
-            const now = new Date();
-            const ageInMonths = purchaseDateVal
-                ? Math.round((now.getTime() - purchaseDateVal.getTime()) / (1000 * 60 * 60 * 24 * 30.4))
-                : null;
-            const isExpired = asset.warrantyExpiry && new Date(asset.warrantyExpiry) < now;
+            const lifecycleInfo = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_33__.getAssetLifecycleInfo)(asset.purchaseDate);
+            const warrantyInfo = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_33__.getWarrantyColorInfo)(asset.warrantyExpiry);
             let conditionColor = '#16a34a';
             let healthRating = "Excellent";
             let healthIcon = "Heart";
@@ -4112,7 +4092,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 healthRating = "Critical Needs Replacement";
                 healthIcon = "Warning";
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 20 } },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Stack, { tokens: { childrenGap: 20 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { fontSize: '0.88rem' } },
@@ -4147,40 +4127,57 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Warranty Expiry:"),
                             " ",
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: isExpired ? '#dc2626' : '#111827' } }, asset.warrantyExpiry || "N/A"))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: warrantyInfo.textColor, backgroundColor: asset.warrantyExpiry ? warrantyInfo.bgColor : 'transparent', padding: asset.warrantyExpiry ? '2px 8px' : 0, borderRadius: '4px' } }, asset.warrantyExpiry || "N/A"))),
                     asset.note && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '12px', fontSize: '0.88rem', padding: '8px 10px', backgroundColor: '#f9fafb', borderRadius: '4px', border: '1px solid #f3f4f6' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280', display: 'block', marginBottom: '2px' } }, "Asset Notes:"),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#374151' } }, asset.note)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 12 } },
-                        ageInMonths !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Stack, { tokens: { childrenGap: 12 } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Lifecycle & EOL Date:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
-                                "This asset is ",
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, ageInMonths),
-                                " month(s) old (",
-                                Math.round(ageInMonths / 12 * 10) / 10,
-                                " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
+                                lifecycleInfo.statusText,
+                                ". Purchase Date: ",
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, lifecycleInfo.purchaseDateFormatted),
+                                " | Enterprise EOL Date: ",
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, lifecycleInfo.eolDateFormatted || 'N/A'),
+                                ".")),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (warrantyInfo.isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
-                                asset.warrantyExpiry,
-                                ". Any future repair operations will incur full direct business costs.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
-                                " Covered under manufacturer protection until ",
-                                asset.warrantyExpiry,
-                                "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warrantyInfo.formattedDate),
+                                " (",
+                                warrantyInfo.remainingText,
+                                "). Any future repair operations will incur full direct business costs.")) : warrantyInfo.isLessThan6Months ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expiring Soon (< 6 months):"),
+                                " Expiration date is ",
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warrantyInfo.formattedDate),
+                                " (",
+                                warrantyInfo.remainingText,
+                                "). High priority for hardware refresh/warranty renewal.")) : warrantyInfo.isLessThan1Year ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expiring (< 1 year):"),
+                                " Expiration date is ",
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warrantyInfo.formattedDate),
+                                " (",
+                                warrantyInfo.remainingText,
+                                "). Plan for upcoming hardware lifecycle management.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active (> 1 year):"),
+                                " Fully protected under manufacturer coverage until ",
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warrantyInfo.formattedDate),
+                                " (",
+                                warrantyInfo.remainingText,
+                                ")."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                     "Health Classification: ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } }, healthRating))),
@@ -4219,7 +4216,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const id = parts[0];
                 associatedAsset = items.find(a => a.id === id);
             }
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Received:"),
@@ -4231,7 +4228,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     associatedAsset && this._renderAssetAnalysis(associatedAsset),
                     !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -4338,7 +4335,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 ? "Select asset to assign..."
                 : "No assets of this type in stock";
             const isBusy = this.state.requestActionInProgressId === request.id;
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -4425,13 +4422,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                         root: { color: '#dc2626', borderColor: '#dc2626' },
                                         rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                                     } })))))));
@@ -4646,7 +4643,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
@@ -4656,12 +4653,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": "Toggle navigation menu" },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Icon, { iconName: "GlobalNavButton" })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: "GlobalNavButton" })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, "Inventory Management")),
                         (() => {
                             const dashboardState = {
@@ -4714,13 +4711,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "My Workspace")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.Pivot, { "aria-label": "My Workspace Tabs" },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.PivotItem, { headerText: "Assets" },
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_40__.Pivot, { "aria-label": "My Workspace Tabs" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.PivotItem, { headerText: "Assets" },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
+                                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyAssignedAssetsView__WEBPACK_IMPORTED_MODULE_4__.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }), onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' }) }))),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.PivotItem, { headerText: "Requests" },
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.PivotItem, { headerText: "Requests" },
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                                 case 'Notifications':
@@ -4729,8 +4726,6 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':
                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Replacement History")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReplacementHistory_ReplacementHistory__WEBPACK_IMPORTED_MODULE_24__.ReplacementHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                                 case 'Inventory':
                                     return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
@@ -4739,11 +4734,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Request Approvals & Assignment Queue")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_40__.Pie, { data: {
+                                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_42__.Pie, { data: {
                                                         labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
                                                             const status = req.status || 'Pending';
                                                             acc[status] = (acc[status] || 0) + 1;
@@ -4787,14 +4782,14 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                             },
                                                         ],
                                                     }, options: { maintainAspectRatio: false } }))),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleManagerRequests, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleManagerRequests, inventoryItems: this.state.items, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
                                 case 'AssetAssignmentQueue':
                                     return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestList__WEBPACK_IMPORTED_MODULE_6__.RequestList, { items: visibleAdminRequests, inventoryItems: this.state.items, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                                 case 'AssetReturns':
                                     return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
@@ -4811,13 +4806,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
                                                     const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
                                                     window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
                                                 } })),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_41__.DetailsList, { items: this.state.employees.map(emp => {
+                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_43__.DetailsList, { items: this.state.employees.map(emp => {
                                                     const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
                                                     const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
                                                     const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
@@ -4848,13 +4843,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                             } }, item.assignedAssets))
                                                     },
                                                     { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_42__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_43__.SelectionMode.none, onRenderRow: (rowProps) => {
+                                                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_44__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_45__.SelectionMode.none, onRenderRow: (rowProps) => {
                                                     if (!rowProps)
                                                         return null;
                                                     const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
                                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_44__.DetailsRow, { ...rowProps })),
+                                                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_46__.DetailsRow, { ...rowProps })),
                                                         isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
                                                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
                                                                 "Assets assigned to ",
@@ -4917,17 +4912,17 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             this._renderAdminAssignmentPanel(),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_11__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_26__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_33__.PanelType.medium, headerText: "\uD83D\uDCEC Outgoing Email Notification (Developer Preview)", closeButtonAriaLabel: "Close", onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_36__.PrimaryButton, { text: this.state.isSendingMockEmail ? "Sending..." : "Send Email", onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.DefaultButton, { text: "Close", onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
-                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
-                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_35__.PanelType.medium, headerText: "\uD83D\uDCEC Outgoing Email Notification (Developer Preview)", closeButtonAriaLabel: "Close", onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_38__.PrimaryButton, { text: this.state.isSendingMockEmail ? "Sending..." : "Send Email", onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_39__.DefaultButton, { text: "Close", onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_37__.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
+                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
+                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.MessageBarType.error },
                     "Failed to send email: ",
                     this.state.mockEmailSendError)),
-                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.ProgressIndicator, { label: "Dispatched email transaction in progress..." })),
+                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.ProgressIndicator, { label: "Dispatched email transaction in progress..." })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, "Email Content Preview:"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
@@ -4950,19 +4945,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 29425);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+/* harmony import */ var _utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/WarrantyUtils */ 98126);
+
 
 
 
@@ -4993,22 +4990,16 @@ const MyAssignedAssetsView = (props) => {
     // Helper: Evaluate Warranty Coverage
     const evaluateWarranty = (expiryStr) => {
         if (!expiryStr)
-            return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'No warranty registered' };
-        const expiryDate = new Date(expiryStr);
-        if (isNaN(expiryDate.getTime()))
-            return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'Invalid Date' };
-        const now = new Date();
-        const diffTime = expiryDate.getTime() - now.getTime();
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        if (diffDays < 0) {
-            return { status: 'Expired', isExpired: true, isExpiringSoon: false, text: 'Expired' };
-        }
-        else if (diffDays <= 30) {
-            return { status: 'Expiring Soon', isExpired: false, isExpiringSoon: true, text: `Expiring Soon (${diffDays} days)` };
-        }
-        else {
-            return { status: 'Active', isExpired: false, isExpiringSoon: false, text: 'Active' };
-        }
+            return { status: 'Unknown', isExpired: false, isExpiringSoon: false, isLessThan1Year: false, text: 'No warranty registered', colorInfo: (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_3__.getWarrantyColorInfo)(undefined) };
+        const info = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_3__.getWarrantyColorInfo)(expiryStr);
+        return {
+            status: info.isExpired ? 'Expired' : info.isLessThan6Months ? 'Expiring Soon' : info.isLessThan1Year ? 'Expiring (<1 Yr)' : 'Active',
+            isExpired: info.isExpired,
+            isExpiringSoon: info.isLessThan6Months,
+            isLessThan1Year: info.isLessThan1Year,
+            text: info.isExpired ? 'Expired' : info.isLessThan6Months ? 'Expiring soon (< 6 months)' : info.isLessThan1Year ? 'Expiring in < 1 year' : 'Active',
+            colorInfo: info
+        };
     };
     // Helper: Get Type Icon Name
     const getTypeIcon = (type) => {
@@ -5101,10 +5092,10 @@ const MyAssignedAssetsView = (props) => {
             return (b.id || '').localeCompare(a.id || '');
         });
     }, [items, searchQuery, selectedType, selectedCondition, selectedWarranty]);
-    // Detailed Age and Lifecycle Recommendation rendering for the panel
+    // Detailed Age, EOL Date, and Warranty Coverage rendering for the side panel
     const renderLifecycleAnalysis = (asset) => {
-        const age = getAgeInMonths(asset.purchaseDate);
-        const w = evaluateWarranty(asset.warrantyExpiry);
+        const lifecycle = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_3__.getAssetLifecycleInfo)(asset.purchaseDate);
+        const warranty = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_3__.getWarrantyColorInfo)(asset.warrantyExpiry);
         const condition = asset.condition || 'Good';
         const isCritical = condition === 'Poor' || condition === 'Damaged';
         let conditionColor = '#166534';
@@ -5125,41 +5116,73 @@ const MyAssignedAssetsView = (props) => {
             healthRating = 'Unusable / Broken';
             healthIcon = 'Warning';
         }
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '20px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' } }, "Lifecycle & Health Report"),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, "Asset Lifecycle Age"),
-                age !== null ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
-                    "This asset is ",
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, age),
-                    " month(s) old (",
-                    Math.round(age / 12 * 10) / 10,
-                    " years). Standard enterprise deprecation lifecycle is 36 months.",
-                    age >= 36 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b45309', display: 'block', marginTop: '6px', fontWeight: 'bold' } }, "\u26A0\uFE0F Asset has reached/passed its standard 3-year lifecycle. Eligible for refresh replacement.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534', display: 'block', marginTop: '6px' } },
-                        "\u2713 Asset is within standard usage lifecycle (",
-                        36 - age,
-                        " months remaining).")))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#64748b' } }, "Purchase date is not registered. Age cannot be calculated."))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Warranty Coverage"),
-                asset.warrantyExpiry ? (w.isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { tokens: { childrenGap: 16 }, style: { marginTop: '20px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' } }, "Lifecycle & Warranty Coverage Report"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '14px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.88rem', color: '#1e293b', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "History", style: { color: '#0284c7' } }),
+                        " Asset Lifecycle & EOL Date"),
+                    lifecycle.usedPercentage !== null && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.75rem', fontWeight: 600, padding: '2px 8px', borderRadius: '9999px', backgroundColor: lifecycle.isLifecycleExpired ? '#fee2e2' : '#e0f2fe', color: lifecycle.isLifecycleExpired ? '#b91c1c' : '#0369a1' } },
+                        lifecycle.usedPercentage,
+                        "% Lifecycle Used"))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', fontSize: '0.82rem', marginBottom: '10px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Purchase Date:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a' } }, lifecycle.purchaseDateFormatted)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Current Asset Age:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a' } }, lifecycle.ageInMonths !== null ? `${lifecycle.ageInMonths} mo (${lifecycle.ageInYears} yrs)` : 'N/A')),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Enterprise EOL Expiry Date:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: lifecycle.isLifecycleExpired ? '#b91c1c' : '#0f172a' } }, lifecycle.eolDateFormatted || 'N/A'))),
+                lifecycle.eolDateFormatted ? (lifecycle.isLifecycleExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Lifecycle Expired:"),
+                    " Passed standard 36-month enterprise usage limit on ",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, lifecycle.eolDateFormatted),
+                    ". Eligible for hardware refresh.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', padding: '8px 12px', borderRadius: '6px', fontSize: '0.8rem', color: '#166534' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Active Lifecycle:"),
+                    " Within standard 36-month usage limit. ",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, lifecycle.remainingText),
+                    "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#64748b' } }, "Purchase date is missing. Asset lifecycle age cannot be calculated."))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '14px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.88rem', color: '#1e293b', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ShieldAlert", style: { color: warranty.textColor } }),
+                        " Warranty Coverage Details"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.75rem', fontWeight: 600, padding: '2px 8px', borderRadius: '9999px', backgroundColor: warranty.bgColor, color: warranty.textColor, border: `1px solid ${warranty.borderColor}` } }, warranty.color === 'red' ? (warranty.isExpired ? 'Expired' : 'Expiring < 6 Mos') : warranty.color === 'yellow' ? 'Expiring < 1 Yr' : 'Active Coverage')),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', fontSize: '0.82rem', marginBottom: '10px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Warranty Expiry Date:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: warranty.textColor } }, warranty.formattedDate)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: 'span 2' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem' } }, "Warranty Time Remaining:"),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: warranty.textColor } }, warranty.remainingText))),
+                asset.warrantyExpiry ? (warranty.isExpired ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expired:"),
                     " Coverage ended on ",
-                    asset.warrantyExpiry,
-                    ". Future repairs will be billed to the departmental cost center.")) : w.isExpiringSoon ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expiring Soon:"),
-                    " Expires on ",
-                    asset.warrantyExpiry,
-                    ". Please plan hardware checks before expiry.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active:"),
-                    " Fully protected until ",
-                    asset.warrantyExpiry,
-                    "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warranty.formattedDate),
+                    " (",
+                    warranty.remainingText,
+                    "). Future repairs will be billed to departmental cost center.")) : warranty.isLessThan6Months ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expiring Soon (< 6 Months):"),
+                    " Protection expires on ",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warranty.formattedDate),
+                    ". High priority: schedule hardware inspection or extension.")) : warranty.isLessThan1Year ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Expiring (< 1 Year):"),
+                    " Protection expires on ",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warranty.formattedDate),
+                    ". Plan for upcoming warranty renewal or equipment refresh.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Active (> 1 Year):"),
+                    " Fully protected under manufacturer coverage until ",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, warranty.formattedDate),
+                    "."))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Warranty Unknown:"),
                     " No warranty expiration record exists for this item."))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Physical Condition"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 } }, "Physical Condition & Health"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                         "Health Rating: ",
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: conditionColor } },
@@ -5168,7 +5191,7 @@ const MyAssignedAssetsView = (props) => {
                             condition,
                             ")"))),
                 isCritical && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', padding: '8px', backgroundColor: '#fef2f2', borderRadius: '4px', borderLeft: '3px solid #dc2626' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.82rem', color: '#991b1b', fontWeight: 'bold', display: 'block' } }, "Recommendation: RETIRE ASSET"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.82rem', color: '#991b1b', fontWeight: 'bold', display: 'block' } }, "Recommendation: RETIRE / REPLACE ASSET"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#991b1b' } },
                         "Since this asset is in ",
                         condition.toLowerCase(),
@@ -5196,21 +5219,21 @@ const MyAssignedAssetsView = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.actionNeeded > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.actionNeeded))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filtersRow },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].searchField },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { placeholder: "Search by asset name, type, serial number...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { placeholder: "Search by asset name, type, serial number...", value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: typeOptions, selectedKey: selectedType, onChange: (e, option) => setSelectedType(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { options: typeOptions, selectedKey: selectedType, onChange: (e, option) => setSelectedType(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { options: [
                         { key: 'All', text: 'All Conditions' },
                         ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_CONDITION_OPTIONS
                     ], selectedKey: selectedCondition, onChange: (e, option) => setSelectedCondition(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { options: [
                         { key: 'All', text: 'All Coverage' },
                         ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.WARRANTY_STATUS_OPTIONS
                     ], selectedKey: selectedWarranty, onChange: (e, option) => setSelectedWarranty(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Reset", iconProps: { iconName: 'ClearFilter' }, onClick: () => {
                         setSearchQuery('');
                         setSelectedType('All');
                         setSelectedCondition('All');
@@ -5259,7 +5282,7 @@ const MyAssignedAssetsView = (props) => {
                         justifyContent: 'space-between'
                     } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: getTypeIcon(item.assetType), style: { fontSize: '14px', color: 'var(--text-muted)' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: getTypeIcon(item.assetType), style: { fontSize: '14px', color: 'var(--text-muted)' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.assetName || item.title),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } },
@@ -5305,31 +5328,28 @@ const MyAssignedAssetsView = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, age),
                         " month(s) ",
                         age >= 36 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#d97706', fontWeight: 500 } }, "(Refresh Eligible \u26A0\uFE0F)"))),
-                    item.warrantyExpiry && (w.isExpired || w.isExpiringSoon) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    item.warrantyExpiry && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '4px',
-                            backgroundColor: w.isExpired ? '#fdf2f2' : '#fff9e6',
+                            backgroundColor: w.colorInfo.bgColor,
+                            border: `1px solid ${w.colorInfo.borderColor}`,
                             padding: '4px 6px',
                             borderRadius: '4px',
                             fontSize: '0.7rem',
-                            color: w.isExpired ? '#c5221f' : '#b06000',
+                            color: w.colorInfo.textColor,
                             marginTop: 'auto'
                         } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: w.isExpired ? "ShieldAlert" : "Warning", style: { fontSize: '10px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: w.isExpired ? "ShieldAlert" : w.isExpiringSoon ? "Warning" : "VerifiedBrand", style: { fontSize: '10px' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
                                 "Warranty ",
-                                w.isExpired ? 'Expired' : 'Expiring',
+                                w.isExpired ? 'Expired' : 'Expiry',
                                 ":"),
                             " ",
-                            w.text))),
-                    item.warrantyExpiry && !w.isExpired && !w.isExpiringSoon && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.72rem', color: '#137333', display: 'flex', alignItems: 'center', gap: '3px', marginTop: 'auto' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "VerifiedBrand", style: { fontSize: '10px' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            "Warranty Active (Expires: ",
-                            new Date(item.warrantyExpiry).toLocaleDateString(),
-                            ")")))),
+                            item.warrantyExpiry,
+                            " ",
+                            w.colorInfo.statusText)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         padding: '8px 14px 10px 14px',
                         display: 'flex',
@@ -5338,12 +5358,12 @@ const MyAssignedAssetsView = (props) => {
                         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
                         alignItems: 'center'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Details", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Details", onClick: () => {
                             setSelectedAsset(item);
                             setIsPanelOpen(true);
                         }, style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
-                    onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Asset Replacement", iconProps: { iconName: 'Sync' }, onClick: () => onAssetReplacement(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Report Issue", onClick: () => onRaiseIncident(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } }),
+                    onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Asset Replacement", iconProps: { iconName: 'Sync' }, onClick: () => onAssetReplacement(item), style: { height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' } })),
                     isPendingReturn ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
                             backgroundColor: '#ffe8d6',
                             color: '#a63e00',
@@ -5360,7 +5380,7 @@ const MyAssignedAssetsView = (props) => {
                             padding: '2px 6px',
                             borderRadius: '4px',
                             marginLeft: 'auto'
-                        } }, "Approved")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Return", onClick: () => onReturnAsset(item), style: {
+                        } }, "Approved")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Return", onClick: () => onReturnAsset(item), style: {
                             height: '24px',
                             padding: '0 6px',
                             fontSize: '0.72rem',
@@ -5376,13 +5396,13 @@ const MyAssignedAssetsView = (props) => {
                 borderRadius: '6px',
                 border: '1px solid rgba(0, 0, 0, 0.08)'
             } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Assigned Assets Found"),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))),
-        selectedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Panel, { isOpen: isPanelOpen, onDismiss: () => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Assigned Assets Found"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))),
+        selectedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Panel, { isOpen: isPanelOpen, onDismiss: () => {
                 setIsPanelOpen(false);
                 setSelectedAsset(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
+            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_13__.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: {
                         backgroundColor: '#f1f5f9',
@@ -5411,23 +5431,23 @@ const MyAssignedAssetsView = (props) => {
                         " ",
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedAsset.title))),
                 renderLifecycleAnalysis(selectedAsset),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.PrimaryButton, { text: "Report Incident", onClick: () => {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PrimaryButton, { text: "Report Incident", onClick: () => {
                             setIsPanelOpen(false);
                             onRaiseIncident(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'AlertSolid' } }),
-                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Asset Replacement", onClick: () => {
+                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Asset Replacement", onClick: () => {
                             setIsPanelOpen(false);
                             onAssetReplacement(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'Sync' } })),
-                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Request Return", onClick: () => {
+                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Request Return", onClick: () => {
                             setIsPanelOpen(false);
                             onReturnAsset(selectedAsset);
                             setSelectedAsset(null);
                         }, iconProps: { iconName: 'ReturnToSession' } })),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: "Close", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: "Close", onClick: () => {
                             setIsPanelOpen(false);
                             setSelectedAsset(null);
                         } })))))));
@@ -6168,21 +6188,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21262);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
-/* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
-/* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 79370);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 37805);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
+/* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
+/* harmony import */ var _shared_NexerHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/NexerHeader */ 90891);
+/* harmony import */ var _utils_NexerTheme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/NexerTheme */ 88658);
+
 
 
 
@@ -6255,7 +6277,7 @@ const ReplacementHistory = (props) => {
     const loadReplacements = async () => {
         try {
             props.setIsLoading(true);
-            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__.IncidentService(props.spContext);
             const isAdmin = props.userRole === 'Admin';
             const data = await service.getEmployeeReplacementHistory(props.userEmail, isAdmin);
             setReplacements(data);
@@ -6286,7 +6308,7 @@ const ReplacementHistory = (props) => {
     const handleStatusChange = async (rep, newStatus) => {
         try {
             props.setIsLoading(true);
-            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__.IncidentService(props.spContext);
             await service.updateIncidentStatus(rep.id, newStatus, rep.resolution);
             const updated = {
                 ...rep,
@@ -6306,7 +6328,7 @@ const ReplacementHistory = (props) => {
     const handleSaveResolution = async (rep) => {
         try {
             props.setIsLoading(true);
-            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(props.spContext);
+            const service = new _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__.IncidentService(props.spContext);
             await service.updateIncidentStatus(rep.id, rep.status, tempResolution);
             const updated = {
                 ...rep,
@@ -6322,114 +6344,25 @@ const ReplacementHistory = (props) => {
             props.setIsLoading(false);
         }
     };
-    const handleDownloadReport = (rep) => {
-        try {
-            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.jsPDF();
-            // Top header banner
-            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-            doc.rect(0, 0, 210, 25, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(16);
-            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
-            // Document Title
-            doc.setTextColor(51, 65, 85); // Slate 700
-            doc.setFontSize(14);
-            doc.text("ASSET REPLACEMENT REPORT", 14, 38);
-            // Metadata
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9);
-            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
-            // Separator line
-            doc.setDrawColor(226, 232, 240); // Slate 200
-            doc.line(14, 48, 196, 48);
-            // Specifications Section Title
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.text("REPLACEMENT SPECIFICATIONS", 14, 58);
-            // Render Specifications Key-Value grid
-            let y = 68;
-            const printField = (label, value) => {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(9);
-                doc.setTextColor(100, 116, 139); // Slate 500
-                doc.text(label, 14, y);
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(15, 23, 42); // Slate 900
-                doc.text(value, 55, y);
-                y += 8;
-            };
-            printField("Replacement ID:", rep.incidentId);
-            printField("Asset Name:", rep.assetName);
-            printField("Type:", "Replacement Request");
-            printField("Priority:", rep.priority || "Medium");
-            printField("Current Status:", rep.status || "Open");
-            printField("Reported Date:", new Date(rep.reportedDate).toLocaleString());
-            if (rep.assignedTo) {
-                printField("Assigned To:", rep.assignedTo);
-            }
-            if (rep.resolvedDate) {
-                printField("Resolved Date:", new Date(rep.resolvedDate).toLocaleString());
-            }
-            // Reason Title
-            y += 4;
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.setTextColor(51, 65, 85);
-            doc.text("REPLACEMENT REASON & DETAILS", 14, y);
-            y += 6;
-            // Reason Box
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9.5);
-            doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(rep.issueDescription || "No reason provided.", 170);
-            const descHeight = splitDesc.length * 6 + 10;
-            // Draw background box
-            doc.setFillColor(248, 250, 252); // slate 50
-            doc.setDrawColor(226, 232, 240); // slate 200
-            doc.rect(14, y, 182, descHeight, 'FD');
-            // Draw left accent bar
-            doc.setFillColor(100, 116, 139); // slate 500
-            doc.rect(14, y, 3, descHeight, 'F');
-            // Draw text
-            let textY = y + 8;
-            splitDesc.forEach((line) => {
-                doc.text(line, 22, textY);
-                textY += 6;
-            });
-            y += descHeight + 10;
-            // Resolution Details (if resolved/closed)
-            if (rep.resolution) {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(11);
-                doc.setTextColor(51, 65, 85);
-                doc.text("RESOLUTION SUMMARY", 14, y);
-                y += 6;
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(22, 101, 52); // green 800
-                const splitRes = doc.splitTextToSize(rep.resolution, 170);
-                const resHeight = splitRes.length * 6 + 10;
-                // Draw green background box
-                doc.setFillColor(240, 253, 244); // green 50
-                doc.setDrawColor(220, 252, 231); // green 200
-                doc.rect(14, y, 182, resHeight, 'FD');
-                // Draw green left accent bar
-                doc.setFillColor(22, 101, 52); // green 800
-                doc.rect(14, y, 3, resHeight, 'F');
-                // Draw resolution text
-                let resTextY = y + 8;
-                splitRes.forEach((line) => {
-                    doc.text(line, 22, resTextY);
-                    resTextY += 6;
-                });
-            }
-            doc.save(`replacement-${rep.incidentId}.pdf`);
-        }
-        catch (error) {
-            console.error('Error generating PDF report:', error);
-        }
+    const handleDownloadReport = async (rep) => {
+        await (0,_utils_NexerTheme__WEBPACK_IMPORTED_MODULE_4__.generateNexerPdfReport)({
+            reportTitle: 'ASSET REPLACEMENT REPORT',
+            docTitle: 'REPLACEMENT SPECIFICATIONS',
+            idLabel: 'Replacement ID:',
+            idValue: rep.incidentId,
+            assetName: rep.assetName,
+            typeLabel: 'Type:',
+            typeValue: 'Replacement Request',
+            priority: rep.priority || 'Medium',
+            status: rep.status || 'Open',
+            reportedDate: rep.reportedDate,
+            assignedTo: rep.assignedTo,
+            resolvedDate: rep.resolvedDate,
+            descriptionTitle: 'REPLACEMENT REASON & DETAILS',
+            description: rep.issueDescription,
+            resolution: rep.resolution,
+            fileName: `replacement-${rep.incidentId}.pdf`,
+        });
     };
     const columns = [
         {
@@ -6439,7 +6372,7 @@ const ReplacementHistory = (props) => {
             minWidth: 100,
             maxWidth: 130,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.incidentId),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.incidentId),
         },
         {
             key: 'assetName',
@@ -6448,7 +6381,7 @@ const ReplacementHistory = (props) => {
             minWidth: 120,
             maxWidth: 180,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.assetName),
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.assetName),
         },
         {
             key: 'issueType',
@@ -6457,7 +6390,7 @@ const ReplacementHistory = (props) => {
             minWidth: 120,
             maxWidth: 150,
             isResizable: true,
-            onRender: () => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "Replacement Request"),
+            onRender: () => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, "Replacement Request"),
         },
         {
             key: 'priority',
@@ -6490,12 +6423,12 @@ const ReplacementHistory = (props) => {
             isResizable: true,
             onRender: (item) => {
                 if (!item.reportedDate)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, "-");
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, "-");
                 try {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, new Date(item.reportedDate).toLocaleDateString());
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, new Date(item.reportedDate).toLocaleDateString());
                 }
                 catch {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, null, item.reportedDate);
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, null, item.reportedDate);
                 }
             },
         },
@@ -6505,11 +6438,11 @@ const ReplacementHistory = (props) => {
             minWidth: 160,
             maxWidth: 220,
             isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }))),
         },
@@ -6521,18 +6454,19 @@ const ReplacementHistory = (props) => {
         { key: 'Resolved', text: 'Resolved' },
         { key: 'Closed', text: 'Closed' },
     ];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' }, className: _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].replacementHistory },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 15 } },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' }, className: _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].replacementHistory },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shared_NexerHeader__WEBPACK_IMPORTED_MODULE_3__.NexerHeader, { title: "Replacement History", subtitle: "Track and manage asset replacement requests" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 15 } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SearchBox, { placeholder: "Search by replacement ID, asset name...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.SearchBox, { placeholder: "Search by replacement ID, asset name...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
                 "Showing ",
                 filteredReplacements.length,
                 " of ",
                 replacements.length,
                 " replacement requests"),
-            filteredReplacements.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+            filteredReplacements.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -6542,13 +6476,10 @@ const ReplacementHistory = (props) => {
                     borderRadius: '8px',
                     padding: '30px'
                 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No replacement requests found.")))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: "Replacement Request Details", closeButtonAriaLabel: "Close" }, selectedReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Reported:"),
-                " ",
-                new Date(selectedReplacement.reportedDate).toLocaleString()),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Text, { variant: "medium", style: { color: '#6b7280' } }, "No replacement requests found.")))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PanelType.medium, headerText: "Replacement Request Details", closeButtonAriaLabel: "Close" }, selectedReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '0px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shared_NexerHeader__WEBPACK_IMPORTED_MODULE_3__.NexerHeader, { title: `Replacement Details - ${selectedReplacement.incidentId}`, subtitle: `Reported: ${new Date(selectedReplacement.reportedDate).toLocaleString()}`, isPanel: true }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedReplacement.issueDescription)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
@@ -6571,7 +6502,7 @@ const ReplacementHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(selectedReplacement.priority) }, selectedReplacement.priority || 'Medium')),
                     props.userRole === 'Admin' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { selectedKey: selectedReplacement.status || 'Open', options: [
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { selectedKey: selectedReplacement.status || 'Open', options: [
                                 { key: 'Open', text: 'Open' },
                                 { key: 'In Progress', text: 'In Progress' },
                                 { key: 'Resolved', text: 'Resolved' },
@@ -6585,17 +6516,17 @@ const ReplacementHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assignedTo))))),
             props.userRole === 'Admin' && (selectedReplacement.status === 'Resolved' || selectedReplacement.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " Update Resolution Details"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 10 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 10 } },
                     selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
                         ' ',
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this replacement was completed..." }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this replacement was completed..." }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " Resolution Details"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
                     selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -6768,14 +6699,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
+
 
 
 
@@ -6784,6 +6717,12 @@ __webpack_require__.r(__webpack_exports__);
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const selectedRequestAvailableStock = selectedRequestForDetails
+        ? (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_2__.getAvailableStock)(props.inventoryItems, selectedRequestForDetails)
+        : 0;
+    const selectedRequestHasEnoughStock = selectedRequestForDetails
+        ? selectedRequestAvailableStock >= Number(selectedRequestForDetails.quantity || 0)
+        : false;
     const sortedItems = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
         return [...props.items].sort((a, b) => {
             const dateA = a.requestDate || '';
@@ -6842,7 +6781,7 @@ const RequestList = (props) => {
             isResizable: true,
             onRender: (item) => {
                 const priority = item.priority || 'Medium';
-                let color = '#4b5563'; // default medium (gray)
+                let color = '#4b5563';
                 let backgroundColor = '#f3f4f6';
                 if (priority === 'High') {
                     color = '#b91c1c';
@@ -6862,38 +6801,43 @@ const RequestList = (props) => {
                     } }, priority));
             }
         },
-        ...(props.hideStatusColumn ? [] : [{
-                key: 'column6',
-                name: props.statusColumnLabel || 'Status',
-                fieldName: props.statusField || 'status',
-                minWidth: 80,
-                maxWidth: 100,
-                isResizable: true,
-                onRender: (item) => {
-                    let val = item[props.statusField || 'status'] || 'Pending';
-                    if (val === 'Pending')
-                        val = 'Pending';
-                    let backgroundColor = '#fef3c7'; // default pending (yellow)
-                    let textColor = '#92400e';
-                    if (val === 'Approved') {
-                        backgroundColor = '#dcfce7';
-                        textColor = '#166534';
+        ...(props.hideStatusColumn
+            ? []
+            : [
+                {
+                    key: 'column6',
+                    name: props.statusColumnLabel || 'Status',
+                    fieldName: props.statusField || 'status',
+                    minWidth: 80,
+                    maxWidth: 100,
+                    isResizable: true,
+                    onRender: (item) => {
+                        let val = item[props.statusField || 'status'] || 'Pending';
+                        if (val === 'Pending') {
+                            val = 'Pending';
+                        }
+                        let backgroundColor = '#fef3c7';
+                        let textColor = '#92400e';
+                        if (val === 'Approved') {
+                            backgroundColor = '#dcfce7';
+                            textColor = '#166534';
+                        }
+                        else if (val === 'Declined') {
+                            backgroundColor = '#fee2e2';
+                            textColor = '#991b1b';
+                        }
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                backgroundColor,
+                                color: textColor,
+                                padding: '4px 12px',
+                                borderRadius: '9999px',
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                display: 'inline-block'
+                            } }, val));
                     }
-                    else if (val === 'Declined') {
-                        backgroundColor = '#fee2e2';
-                        textColor = '#991b1b';
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                            backgroundColor,
-                            color: textColor,
-                            padding: '4px 12px',
-                            borderRadius: '9999px',
-                            fontSize: '0.75rem',
-                            fontWeight: 600,
-                            display: 'inline-block'
-                        } }, val));
                 }
-            }]),
+            ]),
         {
             key: 'columnManagerComment',
             name: 'Manager Comment',
@@ -6902,118 +6846,223 @@ const RequestList = (props) => {
             maxWidth: 220,
             isResizable: true,
             onRender: (item) => {
-                if (!item.managerResponse)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)', fontStyle: 'italic' } }, "-");
+                if (!item.managerResponse) {
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            color: 'var(--text-muted)',
+                            fontStyle: 'italic'
+                        } }, "-"));
+                }
                 const isDeclined = item.status === 'Declined';
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: isDeclined ? '#991b1b' : 'inherit', fontWeight: isDeclined ? 600 : 400 } }, item.managerResponse));
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                        color: isDeclined ? '#991b1b' : 'inherit',
+                        fontWeight: isDeclined ? 600 : 400
+                    } }, item.managerResponse));
             }
         },
-        ...(props.canApproveAsset ? [{
-                key: 'columnAssetStatus',
-                name: 'Asset Status',
-                fieldName: 'assetStatus',
-                minWidth: 200,
-                maxWidth: 260,
-                isResizable: true,
-                onRender: (item) => {
-                    const value = item.assetStatus || 'Pending';
-                    const isApproved = value.toLowerCase().includes('approv');
-                    const isBusy = props.actionInProgressId === item.id;
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'nowrap' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                backgroundColor: isApproved ? '#dcfce7' : '#fef3c7',
-                                color: isApproved ? '#166534' : '#92400e',
-                                padding: '4px 10px',
-                                borderRadius: '9999px',
-                                fontSize: '0.75rem',
-                                fontWeight: 600,
-                                display: 'inline-block'
-                            } }, value),
-                        !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Review & Assign", onClick: () => {
-                                if (props.onSelectRequestForAssignment) {
-                                    props.onSelectRequestForAssignment(item);
-                                }
-                                else if (props.onApproveAsset) {
-                                    props.onApproveAsset(item).catch(err => console.error(err));
-                                }
-                            }, disabled: isBusy, styles: {
-                                root: { height: '24px', minHeight: '24px', padding: '0 8px', fontSize: '0.75rem', borderRadius: '4px', border: 'none' }
-                            } }))));
-                }
-            }] : []),
-        ...(props.showResponseColumns ? [
-            {
-                key: 'columnAdminResponse',
-                name: 'Admin Response',
-                fieldName: 'assetStatus',
-                minWidth: 140,
-                maxWidth: 200,
-                isResizable: true,
-                onRender: (item) => {
-                    const managerStatus = (item.status || '').toLowerCase();
-                    if (managerStatus === 'pending') {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#92400e', fontStyle: 'italic' } }, "Waiting on Manager");
+        ...(props.canApproveAsset
+            ? [
+                {
+                    key: 'columnAssetStatus',
+                    name: 'Asset Status',
+                    fieldName: 'assetStatus',
+                    minWidth: 200,
+                    maxWidth: 260,
+                    isResizable: true,
+                    onRender: (item) => {
+                        const value = item.assetStatus || 'Pending';
+                        const isApproved = value.toLowerCase().includes('approv');
+                        const isBusy = props.actionInProgressId === item.id;
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                flexWrap: 'nowrap'
+                            } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    backgroundColor: isApproved
+                                        ? '#dcfce7'
+                                        : '#fef3c7',
+                                    color: isApproved
+                                        ? '#166534'
+                                        : '#92400e',
+                                    padding: '4px 10px',
+                                    borderRadius: '9999px',
+                                    fontSize: '0.75rem',
+                                    fontWeight: 600,
+                                    display: 'inline-block'
+                                } }, value),
+                            !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Review & Assign", onClick: () => {
+                                    if (props.onSelectRequestForAssignment) {
+                                        props.onSelectRequestForAssignment(item);
+                                    }
+                                    else if (props.onApproveAsset) {
+                                        props
+                                            .onApproveAsset(item)
+                                            .catch(err => console.error(err));
+                                    }
+                                }, disabled: isBusy, styles: {
+                                    root: {
+                                        height: '24px',
+                                        minHeight: '24px',
+                                        padding: '0 8px',
+                                        fontSize: '0.75rem',
+                                        borderRadius: '4px',
+                                        border: 'none'
+                                    }
+                                } }))));
                     }
-                    if (managerStatus === 'declined' || managerStatus === 'rejected') {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#991b1b', fontStyle: 'italic' } }, "N/A (Rejected)");
-                    }
-                    const isApproved = (item.assetStatus || '').toLowerCase().includes('approv');
-                    return isApproved ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, "Asset Allocated")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, "Pending Admin Approval"));
                 }
-            }
-        ] : []),
-        ...(props.canApproveReject ? [{
-                key: 'column8',
-                name: 'Actions',
-                fieldName: 'actions',
-                minWidth: 220,
-                maxWidth: 260,
-                isResizable: true,
-                onRender: (item) => {
-                    const isPending = (item.status || '').toLowerCase() === 'pending';
-                    const isBusy = props.actionInProgressId === item.id;
-                    if (!isPending) {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)' } }, "No action");
+            ]
+            : []),
+        ...(props.showResponseColumns
+            ? [
+                {
+                    key: 'columnAdminResponse',
+                    name: 'Admin Response',
+                    fieldName: 'assetStatus',
+                    minWidth: 140,
+                    maxWidth: 200,
+                    isResizable: true,
+                    onRender: (item) => {
+                        const managerStatus = (item.status || '').toLowerCase();
+                        if (managerStatus === 'pending') {
+                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: '#92400e',
+                                    fontStyle: 'italic'
+                                } }, "Waiting on Manager"));
+                        }
+                        if (managerStatus === 'declined' ||
+                            managerStatus === 'rejected') {
+                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: '#991b1b',
+                                    fontStyle: 'italic'
+                                } }, "N/A (Rejected)"));
+                        }
+                        const isApproved = (item.assetStatus || '')
+                            .toLowerCase()
+                            .includes('approv');
+                        return isApproved ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                color: '#166534',
+                                fontWeight: 600
+                            } }, "Asset Allocated")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                color: '#92400e',
+                                fontWeight: 600
+                            } }, "Pending Admin Approval"));
                     }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Approve", onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Reject", onClick: () => {
-                                if (!props.onRejectRequest) {
-                                    return;
-                                }
-                                const rejectionReason = window.prompt('Enter rejection reason for this request:');
-                                if (!rejectionReason || !rejectionReason.trim()) {
-                                    return;
-                                }
-                                props.onRejectRequest(item, rejectionReason.trim()).catch(err => console.error(err));
-                            }, disabled: isBusy, styles: {
-                                root: { backgroundColor: '#991b1b', borderColor: '#991b1b' },
-                                rootHovered: { backgroundColor: '#7f1d1d', borderColor: '#7f1d1d' }
-                            } })));
                 }
-            }] : []),
+            ]
+            : []),
+        ...(props.canApproveReject
+            ? [
+                {
+                    key: 'column8',
+                    name: 'Actions',
+                    fieldName: 'actions',
+                    minWidth: 280,
+                    maxWidth: 320,
+                    isResizable: true,
+                    onRender: (item) => {
+                        const isPending = (item.status || '').toLowerCase() === 'pending';
+                        const isBusy = props.actionInProgressId === item.id;
+                        const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_2__.getAvailableStock)(props.inventoryItems, item);
+                        const requestedQuantity = Number(item.quantity || 0);
+                        const hasEnoughStock = availableStock >= requestedQuantity;
+                        if (!isPending) {
+                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted)'
+                                } }, "No action"));
+                        }
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '4px'
+                            } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                    display: 'flex',
+                                    gap: '8px'
+                                } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Approve", onClick: () => {
+                                        if (props.onApproveRequest) {
+                                            props
+                                                .onApproveRequest(item)
+                                                .catch(err => console.error(err));
+                                        }
+                                    }, disabled: isBusy || !hasEnoughStock }),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Reject", onClick: () => {
+                                        if (!props.onRejectRequest) {
+                                            return;
+                                        }
+                                        const rejectionReason = window.prompt('Enter rejection reason for this request:');
+                                        if (!rejectionReason ||
+                                            !rejectionReason.trim()) {
+                                            return;
+                                        }
+                                        props
+                                            .onRejectRequest(item, rejectionReason.trim())
+                                            .catch(err => console.error(err));
+                                    }, disabled: isBusy, styles: {
+                                        root: {
+                                            backgroundColor: '#991b1b',
+                                            borderColor: '#991b1b'
+                                        },
+                                        rootHovered: {
+                                            backgroundColor: '#7f1d1d',
+                                            borderColor: '#7f1d1d'
+                                        }
+                                    } })),
+                            !hasEnoughStock && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                    fontSize: '12px',
+                                    color: '#d13438',
+                                    lineHeight: '1.3'
+                                } },
+                                "Insufficient stock \u2014 Available:",
+                                ' ',
+                                availableStock,
+                                ", Requested:",
+                                ' ',
+                                requestedQuantity))));
+                    }
+                }
+            ]
+            : []),
         {
             key: 'columnViewDetails',
             name: 'Details',
             minWidth: 70,
             maxWidth: 90,
             isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "View", onClick: () => {
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "View", onClick: () => {
                     setSelectedRequestForDetails(item);
                     setIsDetailsPanelOpen(true);
                 }, styles: {
-                    root: { height: '24px', minHeight: '24px', padding: '0 8px', fontSize: '0.75rem', borderRadius: '4px' }
+                    root: {
+                        height: '24px',
+                        minHeight: '24px',
+                        padding: '0 8px',
+                        fontSize: '0.75rem',
+                        borderRadius: '4px'
+                    }
                 } }))
         }
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        sortedItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none }))),
-        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
+        sortedItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: {
+                fontStyle: 'italic',
+                color: 'var(--text-muted)'
+            } }, "No asset requests found.")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.SelectionMode.none }))),
+        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PanelType.medium, headerText: `Request Details: ${selectedRequestForDetails.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
+            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PanelType.medium, headerText: `Request Details: ${selectedRequestForDetails.requestKey ||
+                'Asset Request'}`, closeButtonAriaLabel: "Close" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    marginTop: '20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    fontFamily: 'inherit'
+                } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -7021,32 +7070,91 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, "Request Information"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: {
+                            margin: '0 0 16px 0',
+                            fontSize: '0.95rem',
+                            fontWeight: 600,
+                            color: 'var(--text-main, #333333)',
+                            borderBottom: '1px solid rgba(128, 128, 128, 0.1)',
+                            paddingBottom: '10px'
+                        } }, "Request Information"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGridGap16, style: { fontSize: '0.85rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestKey || 'N/A')),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Request ID"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.requestKey ||
+                                'N/A')),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request Date"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestDate)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Request Date"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.requestDate)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Requester"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requesterName)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Requester"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.requesterName)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee ID"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.employeeId || '-')),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Employee ID"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.employeeId ||
+                                '-')),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager's Name"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.managerName || '-')),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Manager's Name"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.managerName ||
+                                '-')),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Category"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.assetTitle)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Asset Category"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.assetTitle)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Quantity"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.quantity)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Quantity"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.quantity)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Priority"),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.priority || 'Medium')))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                    color: 'var(--text-muted, #666666)',
+                                    display: 'block',
+                                    marginBottom: '2px'
+                                } }, "Priority"),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: {
+                                    color: 'var(--text-main, #333333)'
+                                } }, selectedRequestForDetails.priority ||
+                                'Medium')))),
                 selectedRequestForDetails.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -7054,7 +7162,13 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, "Justification / Reason"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            display: 'block',
+                            fontSize: '0.9rem',
+                            fontWeight: 600,
+                            color: 'var(--text-main, #333333)',
+                            marginBottom: '8px'
+                        } }, "Justification / Reason"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                             backgroundColor: 'rgba(128, 128, 128, 0.05)',
                             border: '1px solid rgba(128, 128, 128, 0.1)',
@@ -7071,17 +7185,43 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, "Manager Approval"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            display: 'block',
+                            fontSize: '0.9rem',
+                            fontWeight: 600,
+                            color: 'var(--text-main, #333333)',
+                            marginBottom: '8px'
+                        } }, "Manager Approval"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                        } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                backgroundColor: selectedRequestForDetails.status === 'Approved' ? '#dcfce7' : selectedRequestForDetails.status === 'Declined' ? '#fee2e2' : '#fef3c7',
-                                color: selectedRequestForDetails.status === 'Approved' ? '#166534' : selectedRequestForDetails.status === 'Declined' ? '#991b1b' : '#92400e',
+                                backgroundColor: selectedRequestForDetails.status ===
+                                    'Approved'
+                                    ? '#dcfce7'
+                                    : selectedRequestForDetails.status ===
+                                        'Declined'
+                                        ? '#fee2e2'
+                                        : '#fef3c7',
+                                color: selectedRequestForDetails.status ===
+                                    'Approved'
+                                    ? '#166534'
+                                    : selectedRequestForDetails.status ===
+                                        'Declined'
+                                        ? '#991b1b'
+                                        : '#92400e',
                                 padding: '4px 10px',
                                 borderRadius: '9999px',
                                 fontSize: '0.75rem',
                                 fontWeight: 600
-                            } }, selectedRequestForDetails.status || 'Pending'),
-                        selectedRequestForDetails.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
+                            } }, selectedRequestForDetails.status ||
+                            'Pending'),
+                        selectedRequestForDetails.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                                fontSize: '0.85rem',
+                                color: 'var(--text-muted, #666666)'
+                            } },
                             "- \u201C",
                             selectedRequestForDetails.managerResponse,
                             "\u201D")))),
@@ -7092,57 +7232,127 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, "Admin Allocation"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.85rem', color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.status === 'Approved' ? ((selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, "Asset Allocated & Dispatched \u2713")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, "Pending physical asset allocation by system administrator"))) : selectedRequestForDetails.status === 'Declined' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#991b1b' } }, "Not applicable (Request was rejected by manager)")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', fontStyle: 'italic' } }, "Pending manager approval first")))),
-                props.canApproveReject && (selectedRequestForDetails.status || '').toLowerCase() === 'pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            display: 'block',
+                            fontSize: '0.9rem',
+                            fontWeight: 600,
+                            color: 'var(--text-main, #333333)',
+                            marginBottom: '8px'
+                        } }, "Admin Allocation"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            fontSize: '0.85rem',
+                            color: 'var(--text-main, #333333)'
+                        } }, selectedRequestForDetails.status ===
+                        'Approved' ? ((selectedRequestForDetails.assetStatus ||
+                        '')
+                        .toLowerCase()
+                        .includes('approv') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            color: '#166534',
+                            fontWeight: 600
+                        } }, "Asset Allocated & Dispatched \u2713")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            color: '#92400e',
+                            fontWeight: 600
+                        } }, "Pending physical asset allocation by system administrator"))) : selectedRequestForDetails.status ===
+                        'Declined' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            color: '#991b1b'
+                        } }, "Not applicable (Request was rejected by manager)")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+                            color: 'var(--text-muted, #666666)',
+                            fontStyle: 'italic'
+                        } }, "Pending manager approval first")))),
+                props.canApproveReject &&
+                    (selectedRequestForDetails.status || '')
+                        .toLowerCase() === 'pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         display: 'flex',
-                        gap: '12px',
+                        flexDirection: 'column',
+                        gap: '8px',
                         marginTop: '10px',
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? "Processing..." : "Approve", onClick: () => {
-                            if (props.onApproveRequest) {
-                                props.onApproveRequest(selectedRequestForDetails)
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            display: 'flex',
+                            gap: '12px'
+                        } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: props.actionInProgressId ===
+                                selectedRequestForDetails.id
+                                ? 'Processing...'
+                                : 'Approve', onClick: () => {
+                                if (props.onApproveRequest) {
+                                    props
+                                        .onApproveRequest(selectedRequestForDetails)
+                                        .then(() => {
+                                        setIsDetailsPanelOpen(false);
+                                        setSelectedRequestForDetails(null);
+                                    })
+                                        .catch(err => console.error(err));
+                                }
+                            }, disabled: props.actionInProgressId ===
+                                selectedRequestForDetails.id ||
+                                !selectedRequestHasEnoughStock }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "Reject", onClick: () => {
+                                if (!props.onRejectRequest) {
+                                    return;
+                                }
+                                const rejectionReason = window.prompt('Enter rejection reason for this request:');
+                                if (!rejectionReason ||
+                                    !rejectionReason.trim()) {
+                                    return;
+                                }
+                                props
+                                    .onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
                                     .then(() => {
                                     setIsDetailsPanelOpen(false);
                                     setSelectedRequestForDetails(null);
                                 })
                                     .catch(err => console.error(err));
-                            }
-                        }, disabled: props.actionInProgressId === selectedRequestForDetails.id }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Reject", onClick: () => {
-                            if (!props.onRejectRequest)
-                                return;
-                            const rejectionReason = window.prompt('Enter rejection reason for this request:');
-                            if (!rejectionReason || !rejectionReason.trim())
-                                return;
-                            props.onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
-                                .then(() => {
-                                setIsDetailsPanelOpen(false);
-                                setSelectedRequestForDetails(null);
-                            })
-                                .catch(err => console.error(err));
-                        }, disabled: props.actionInProgressId === selectedRequestForDetails.id, styles: {
-                            root: { color: '#dc2626', borderColor: '#dc2626' },
-                            rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
-                        } }))),
-                props.canApproveAsset && !(selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            }, disabled: props.actionInProgressId ===
+                                selectedRequestForDetails.id, styles: {
+                                root: {
+                                    color: '#dc2626',
+                                    borderColor: '#dc2626'
+                                },
+                                rootHovered: {
+                                    color: '#ffffff',
+                                    backgroundColor: '#dc2626',
+                                    borderColor: '#dc2626'
+                                }
+                            } })),
+                    !selectedRequestHasEnoughStock && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            fontSize: '12px',
+                            color: '#d13438',
+                            lineHeight: '1.3'
+                        } },
+                        "Insufficient stock \u2014 Available:",
+                        ' ',
+                        selectedRequestAvailableStock,
+                        ", Requested:",
+                        ' ',
+                        selectedRequestForDetails.quantity)))),
+                props.canApproveAsset &&
+                    !(selectedRequestForDetails.assetStatus || '')
+                        .toLowerCase()
+                        .includes('approv') && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         display: 'flex',
                         gap: '12px',
                         marginTop: '10px',
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.PrimaryButton, { text: "Review & Assign", onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Review & Assign", onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                             if (props.onSelectRequestForAssignment) {
                                 props.onSelectRequestForAssignment(selectedRequestForDetails);
                             }
-                        }, iconProps: { iconName: 'CompletedSolid' } }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', marginTop: '10px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.DefaultButton, { text: "Close", onClick: () => {
+                        }, iconProps: {
+                            iconName: 'CompletedSolid'
+                        } }))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        marginTop: '10px'
+                    } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: "Close", onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                         } })))))));
@@ -7697,6 +7907,40 @@ const WorkflowPopup = (props) => {
 
 /***/ }),
 
+/***/ 90891:
+/*!***************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/shared/NexerHeader.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NexerHeader: () => (/* binding */ NexerHeader)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NexerHeader.module.scss */ 14833);
+/* harmony import */ var _utils_NexerTheme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/NexerTheme */ 88658);
+
+
+
+const NexerHeader = ({ title, subtitle, logoVariant = 'white', isPanel = false, className, children, }) => {
+    const logoSvg = logoVariant === 'white' ? _utils_NexerTheme__WEBPACK_IMPORTED_MODULE_2__.NEXER_LOGO_WHITE_SVG : _utils_NexerTheme__WEBPACK_IMPORTED_MODULE_2__.NEXER_LOGO_BLACK_SVG;
+    const headerClass = `${_NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].nexerHeader} ${isPanel ? _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panelHeader : ''} ${className || ''}`.trim();
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: headerClass },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].brandSection },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].logoContainer, dangerouslySetInnerHTML: { __html: logoSvg } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].divider }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].titleContainer },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].title }, title),
+                subtitle && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].subtitle }, subtitle))),
+        children && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _NexerHeader_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actions }, children)));
+};
+
+
+/***/ }),
+
 /***/ 82889:
 /*!*************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/constants/DropdownConstants.js ***!
@@ -8049,15 +8293,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/IncidentHistory/IncidentHistory */ 27885);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-
 
 
 const IncidentHistoryPage = (props) => {
     const { state, actions, ...rest } = props;
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Incident History")),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_1__.IncidentHistory, { ...rest, userDisplayName: state.userDisplayName, userEmail: state.userEmail, userRole: state.userRole, setIsLoading: actions.setIsLoading })));
 };
 
@@ -8123,6 +8363,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 74423);
 /* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/WarrantyUtils */ 98126);
+
 
 
 
@@ -8351,11 +8593,12 @@ const ReportsPage = (props) => {
                         maxWidth: 200,
                         isResizable: true,
                         onRender: (item) => {
-                            const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
+                            const warrantyInfo = (0,_utils_WarrantyUtils__WEBPACK_IMPORTED_MODULE_11__.getWarrantyColorInfo)(item.warrantyExpiry);
                             return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                    color: isExpired ? '#ef4444' : '#166534',
+                                    color: warrantyInfo.textColor,
                                     fontWeight: 600,
-                                    backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
+                                    backgroundColor: warrantyInfo.bgColor,
+                                    border: `1px solid ${warrantyInfo.borderColor}`,
                                     padding: '2px 8px',
                                     borderRadius: '9999px',
                                     fontSize: '0.75rem',
@@ -8363,7 +8606,7 @@ const ReportsPage = (props) => {
                                 } },
                                 item.warrantyExpiry || 'N/A',
                                 " ",
-                                isExpired ? '(Expired)' : '(Active)'));
+                                item.warrantyExpiry ? warrantyInfo.statusText : ''));
                         }
                     }
                 ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none })))));
@@ -13734,6 +13977,262 @@ SharePointBaseService.MAPPING_LIST_NAME = "Mapping List";
 
 /***/ }),
 
+/***/ 88658:
+/*!**************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/NexerTheme.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NEXER_COLORS: () => (/* binding */ NEXER_COLORS),
+/* harmony export */   NEXER_LOGO_BLACK_SVG: () => (/* binding */ NEXER_LOGO_BLACK_SVG),
+/* harmony export */   NEXER_LOGO_WHITE_SVG: () => (/* binding */ NEXER_LOGO_WHITE_SVG),
+/* harmony export */   generateNexerPdfReport: () => (/* binding */ generateNexerPdfReport),
+/* harmony export */   getNexerLogoPng: () => (/* binding */ getNexerLogoPng)
+/* harmony export */ });
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ 28339);
+
+const NEXER_COLORS = {
+    darkHeader: '#111827',
+    headerText: '#ffffff',
+    subtitleText: '#94a3b8',
+    accent: '#0284c7',
+    border: '#e2e8f0',
+    bgLight: '#f8fafc',
+};
+const NEXER_LOGO_WHITE_SVG = `<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1457.17 322.98"><defs><style>.cls-1{fill:#fff;}</style></defs><polygon class="cls-1" points="210.07 311.18 95.12 0 0 0 0 322.98 48.17 322.98 48.17 11.9 163.08 322.98 258.24 322.98 258.24 0 210.07 0 210.07 311.18"/><polygon class="cls-1" points="877.18 0 792.31 119.05 707.43 0 646.86 0 762.02 161.53 646.92 322.98 707.5 322.98 792.31 204.01 877.12 322.98 937.69 322.98 822.6 161.53 937.76 0 877.18 0"/><polygon class="cls-1" points="595.91 0 535.34 0 650.5 161.53 535.4 322.98 595.97 322.98 711.07 161.53 595.91 0"/><polygon class="cls-1" points="306.14 322.98 518.47 322.98 518.47 276.92 354.56 276.92 354.56 184.52 509.2 184.52 509.2 138.46 354.56 138.46 354.56 46.2 518.47 46.2 518.47 0 306.14 0 306.14 322.98"/><polygon class="cls-1" points="954.66 322.98 1166.99 322.98 1166.99 276.92 1003.07 276.92 1003.07 184.52 1157.72 184.52 1157.72 138.46 1003.07 138.46 1003.07 46.2 1166.99 46.2 1166.99 0 954.66 0 954.66 322.98"/><path class="cls-1" d="M1358.55,184.39c53.48-2.66,94.95-36.41,94.95-92.1,0-58.5-45.06-92.29-101.82-92.29h-144.62v322.98h48.17v-138.4h42.87l98.49,138.4h60.59l-98.62-138.59ZM1255.22,138.46V46.2h94.1c31.8,0,55.55,16.88,55.55,46.33s-23.75,45.93-55.55,45.93h-94.1Z"/></svg>`;
+const NEXER_LOGO_BLACK_SVG = `<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1457.17 322.98"><polygon points="210.07 311.18 95.12 0 0 0 0 322.98 48.17 322.98 48.17 11.9 163.08 322.98 258.24 322.98 258.24 0 210.07 0 210.07 311.18"/><polygon points="877.18 0 792.31 119.05 707.43 0 646.86 0 762.02 161.53 646.92 322.98 707.5 322.98 792.31 204.01 877.12 322.98 937.69 322.98 822.6 161.53 937.76 0 877.18 0"/><polygon points="595.91 0 535.34 0 650.5 161.53 535.4 322.98 595.97 322.98 711.07 161.53 595.91 0"/><polygon points="306.14 322.98 518.47 322.98 518.47 276.92 354.56 276.92 354.56 184.52 509.2 184.52 509.2 138.46 354.56 138.46 354.56 46.2 518.47 46.2 518.47 0 306.14 0 306.14 322.98"/><polygon points="954.66 322.98 1166.99 322.98 1166.99 276.92 1003.07 276.92 1003.07 184.52 1157.72 184.52 1157.72 138.46 1003.07 138.46 1003.07 46.2 1166.99 46.2 1166.99 0 954.66 0 954.66 322.98"/><path d="M1358.55,184.39c53.48-2.66,94.95-36.41,94.95-92.1,0-58.5-45.06-92.29-101.82-92.29h-144.62v322.98h48.17v-138.4h42.87l98.49,138.4h60.59l-98.62-138.59ZM1255.22,138.46V46.2h94.1c31.8,0,55.55,16.88,55.55,46.33s-23.75,45.93-55.55,45.93h-94.1Z"/></svg>`;
+let cachedWhitePng;
+let cachedBlackPng;
+const getNexerLogoPng = (variant = 'white') => {
+    if (variant === 'white' && cachedWhitePng) {
+        return Promise.resolve(cachedWhitePng);
+    }
+    if (variant === 'black' && cachedBlackPng) {
+        return Promise.resolve(cachedBlackPng);
+    }
+    return new Promise((resolve) => {
+        try {
+            if (typeof window === 'undefined' || typeof document === 'undefined') {
+                resolve('');
+                return;
+            }
+            const svgString = variant === 'white' ? NEXER_LOGO_WHITE_SVG : NEXER_LOGO_BLACK_SVG;
+            const img = new Image();
+            const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(svgBlob);
+            img.onload = () => {
+                try {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 1457;
+                    canvas.height = 323;
+                    const ctx = canvas.getContext('2d');
+                    if (ctx) {
+                        ctx.drawImage(img, 0, 0);
+                        const pngDataUrl = canvas.toDataURL('image/png');
+                        if (variant === 'white')
+                            cachedWhitePng = pngDataUrl;
+                        else
+                            cachedBlackPng = pngDataUrl;
+                        URL.revokeObjectURL(url);
+                        resolve(pngDataUrl);
+                        return;
+                    }
+                }
+                catch {
+                    // Fallback if canvas context fails
+                }
+                URL.revokeObjectURL(url);
+                resolve('');
+            };
+            img.onerror = () => {
+                URL.revokeObjectURL(url);
+                resolve('');
+            };
+            img.src = url;
+        }
+        catch {
+            resolve('');
+        }
+    });
+};
+const generateNexerPdfReport = async (options) => {
+    try {
+        const doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__.jsPDF();
+        // Top Dark Nexer Header Banner
+        doc.setFillColor(17, 24, 39); // #111827 (Dark Nexer Header)
+        doc.rect(0, 0, 210, 28, 'F');
+        // Try rendering White Nexer Logo
+        const logoPng = await getNexerLogoPng('white');
+        if (logoPng) {
+            doc.addImage(logoPng, 'PNG', 14, 7, 36, 8);
+        }
+        else {
+            // Fallback Nexer text logo
+            doc.setTextColor(255, 255, 255);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(16);
+            doc.text('NEXER', 14, 17);
+        }
+        // Header Right Subtitle
+        doc.setTextColor(255, 255, 255);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(11);
+        doc.text('INVENTORY MANAGEMENT', 196, 17, { align: 'right' });
+        // Document Main Title
+        doc.setTextColor(17, 24, 39); // Slate 900
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text(options.reportTitle, 14, 40);
+        // Metadata line
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        doc.setTextColor(100, 116, 139); // Slate 500
+        doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 46);
+        // Separator line
+        doc.setDrawColor(226, 232, 240); // Slate 200
+        doc.line(14, 50, 196, 50);
+        // Specifications Section Title
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(11);
+        doc.setTextColor(30, 41, 59); // Slate 800
+        doc.text(options.docTitle, 14, 60);
+        // Specifications Grid
+        let y = 68;
+        const printField = (label, value) => {
+            if (y > 265) {
+                doc.addPage();
+                y = 20;
+            }
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(9);
+            doc.setTextColor(100, 116, 139);
+            doc.text(label, 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.setTextColor(15, 23, 42);
+            doc.text(value || '-', 55, y);
+            y += 8;
+        };
+        printField(options.idLabel, options.idValue);
+        printField('Asset Name:', options.assetName);
+        printField(options.typeLabel || 'Type:', options.typeValue);
+        printField('Priority:', options.priority || 'Medium');
+        printField('Current Status:', options.status || 'Open');
+        let formattedReported = options.reportedDate;
+        try {
+            if (options.reportedDate)
+                formattedReported = new Date(options.reportedDate).toLocaleString();
+        }
+        catch {
+            // keep raw string
+        }
+        printField('Reported Date:', formattedReported);
+        if (options.assignedTo) {
+            printField('Assigned To:', options.assignedTo);
+        }
+        if (options.resolvedDate) {
+            let formattedResolved = options.resolvedDate;
+            try {
+                formattedResolved = new Date(options.resolvedDate).toLocaleString();
+            }
+            catch {
+                // keep raw string
+            }
+            printField('Resolved Date:', formattedResolved);
+        }
+        // Description Section
+        y += 4;
+        if (y > 260) {
+            doc.addPage();
+            y = 20;
+        }
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(11);
+        doc.setTextColor(30, 41, 59);
+        doc.text(options.descriptionTitle, 14, y);
+        y += 6;
+        const splitDesc = doc.splitTextToSize(options.description || 'No details provided.', 170);
+        const descHeight = splitDesc.length * 6 + 10;
+        if (y + descHeight > 270) {
+            doc.addPage();
+            y = 20;
+        }
+        // Draw description background box
+        doc.setFillColor(248, 250, 252); // slate 50
+        doc.setDrawColor(226, 232, 240); // slate 200
+        doc.rect(14, y, 182, descHeight, 'FD');
+        // Draw left accent bar
+        doc.setFillColor(100, 116, 139); // slate 500
+        doc.rect(14, y, 3, descHeight, 'F');
+        // Draw description text
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9.5);
+        doc.setTextColor(51, 65, 85);
+        let textY = y + 8;
+        splitDesc.forEach((line) => {
+            doc.text(line, 22, textY);
+            textY += 6;
+        });
+        y += descHeight + 10;
+        // Resolution Details (if available)
+        if (options.resolution) {
+            if (y > 250) {
+                doc.addPage();
+                y = 20;
+            }
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.setTextColor(30, 41, 59);
+            doc.text('RESOLUTION SUMMARY', 14, y);
+            y += 6;
+            const splitRes = doc.splitTextToSize(options.resolution, 170);
+            const resHeight = splitRes.length * 6 + 10;
+            if (y + resHeight > 270) {
+                doc.addPage();
+                y = 20;
+            }
+            // Draw green background box
+            doc.setFillColor(240, 253, 244); // green 50
+            doc.setDrawColor(220, 252, 231); // green 200
+            doc.rect(14, y, 182, resHeight, 'FD');
+            // Draw green left accent bar
+            doc.setFillColor(22, 101, 52); // green 800
+            doc.rect(14, y, 3, resHeight, 'F');
+            // Draw resolution text
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9.5);
+            doc.setTextColor(22, 101, 52);
+            let resTextY = y + 8;
+            splitRes.forEach((line) => {
+                doc.text(line, 22, resTextY);
+                resTextY += 6;
+            });
+        }
+        // Add footer to all pages
+        const totalPages = doc.getNumberOfPages();
+        for (let i = 1; i <= totalPages; i++) {
+            doc.setPage(i);
+            doc.setDrawColor(226, 232, 240);
+            doc.line(14, 280, 196, 280);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8);
+            doc.setTextColor(148, 163, 184); // slate 400
+            doc.text('Nexer Inventory Management System', 14, 286);
+            doc.text(`Page ${i} of ${totalPages}`, 196, 286, { align: 'right' });
+        }
+        doc.save(options.fileName);
+    }
+    catch (error) {
+        console.error('Error generating branded PDF report:', error);
+    }
+};
+
+
+/***/ }),
+
 /***/ 41094:
 /*!*************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/utils/RoleUtils.js ***!
@@ -13794,6 +14293,254 @@ const RoleUtils = {
     getRoleDisplayName: (role) => {
         return role;
     }
+};
+
+
+/***/ }),
+
+/***/ 19256:
+/*!**************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/StockUtils.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getAvailableStock: () => (/* binding */ getAvailableStock),
+/* harmony export */   hasEnoughStock: () => (/* binding */ hasEnoughStock)
+/* harmony export */ });
+function getAvailableStock(inventoryItems, request) {
+    const requestedAsset = (request.assetTitle || "").trim().toLowerCase();
+    return inventoryItems.filter(item => {
+        const assetType = (item.assetType || "").trim().toLowerCase();
+        const isMatchingAsset = assetType === requestedAsset;
+        const isAvailable = item.status === "In Stock" ||
+            item.status === "Yes";
+        return isMatchingAsset && isAvailable;
+    }).length;
+}
+function hasEnoughStock(inventoryItems, request) {
+    const availableStock = getAvailableStock(inventoryItems, request);
+    return availableStock >= Number(request.quantity || 0);
+}
+
+
+/***/ }),
+
+/***/ 98126:
+/*!*****************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/WarrantyUtils.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   formatPrettyDate: () => (/* binding */ formatPrettyDate),
+/* harmony export */   getAssetLifecycleInfo: () => (/* binding */ getAssetLifecycleInfo),
+/* harmony export */   getWarrantyColorInfo: () => (/* binding */ getWarrantyColorInfo)
+/* harmony export */ });
+/**
+ * Formats a date string into clean 'DD-MMM-YYYY' or 'DD MMM YYYY' format
+ */
+const formatPrettyDate = (dateStr) => {
+    if (!dateStr)
+        return 'N/A';
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime()))
+        return dateStr;
+    return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+};
+/**
+ * Calculates complete warranty coverage information, status, and remaining time details.
+ */
+const getWarrantyColorInfo = (warrantyExpiryStr) => {
+    if (!warrantyExpiryStr) {
+        return {
+            color: 'gray',
+            textColor: '#4b5563',
+            bgColor: '#f3f4f6',
+            borderColor: '#e5e7eb',
+            statusText: 'N/A',
+            isExpired: false,
+            isLessThan6Months: false,
+            isLessThan1Year: false,
+            remainingDays: null,
+            remainingMonths: null,
+            remainingText: 'No warranty date registered',
+            formattedDate: 'N/A'
+        };
+    }
+    const expiryDate = new Date(warrantyExpiryStr);
+    if (isNaN(expiryDate.getTime())) {
+        return {
+            color: 'gray',
+            textColor: '#4b5563',
+            bgColor: '#f3f4f6',
+            borderColor: '#e5e7eb',
+            statusText: 'Invalid Date',
+            isExpired: false,
+            isLessThan6Months: false,
+            isLessThan1Year: false,
+            remainingDays: null,
+            remainingMonths: null,
+            remainingText: 'Invalid warranty date format',
+            formattedDate: warrantyExpiryStr
+        };
+    }
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const expDateOnly = new Date(expiryDate.getFullYear(), expiryDate.getMonth(), expiryDate.getDate());
+    const formattedDate = expDateOnly.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    // Thresholds: 6 months and 1 year from today
+    const sixMonthsFromToday = new Date(today.getFullYear(), today.getMonth() + 6, today.getDate());
+    const oneYearFromToday = new Date(today.getFullYear() + 1, today.getMonth(), today.getDate());
+    const isExpired = expDateOnly.getTime() < today.getTime();
+    const diffTime = expDateOnly.getTime() - today.getTime();
+    const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const remainingMonths = Math.round(remainingDays / 30.4375);
+    let remainingText = '';
+    if (isExpired) {
+        const pastDays = Math.abs(remainingDays);
+        remainingText = `Expired ${pastDays} day(s) ago`;
+    }
+    else {
+        const remMonths = Math.floor(remainingDays / 30.4375);
+        const remDaysMod = Math.round(remainingDays % 30.4375);
+        if (remMonths > 0) {
+            remainingText = `${remMonths} month(s), ${remDaysMod} day(s) remaining (${remainingDays} days total)`;
+        }
+        else {
+            remainingText = `${remainingDays} day(s) remaining`;
+        }
+    }
+    if (expDateOnly < sixMonthsFromToday) {
+        // Less than 6 months (includes expired and < 6 months remaining) -> Red
+        return {
+            color: 'red',
+            textColor: '#b91c1c',
+            bgColor: '#fee2e2',
+            borderColor: '#fca5a5',
+            statusText: isExpired ? '(Expired)' : '(Active - Expiring Soon)',
+            isExpired,
+            isLessThan6Months: true,
+            isLessThan1Year: true,
+            remainingDays,
+            remainingMonths,
+            remainingText,
+            formattedDate
+        };
+    }
+    else if (expDateOnly < oneYearFromToday) {
+        // Less than 1 year (6 months to 1 year remaining) -> Yellow
+        return {
+            color: 'yellow',
+            textColor: '#b45309',
+            bgColor: '#fef3c7',
+            borderColor: '#fde68a',
+            statusText: '(Active - Expiring < 1 Yr)',
+            isExpired: false,
+            isLessThan6Months: false,
+            isLessThan1Year: true,
+            remainingDays,
+            remainingMonths,
+            remainingText,
+            formattedDate
+        };
+    }
+    else {
+        // 1 year or more remaining -> Green
+        return {
+            color: 'green',
+            textColor: '#166534',
+            bgColor: '#dcfce7',
+            borderColor: '#86efac',
+            statusText: '(Active)',
+            isExpired: false,
+            isLessThan6Months: false,
+            isLessThan1Year: false,
+            remainingDays,
+            remainingMonths,
+            remainingText,
+            formattedDate
+        };
+    }
+};
+/**
+ * Calculates complete asset lifecycle, purchase date details, age, standard 3-year End-of-Life (EOL) date, and deprecation percentage.
+ */
+const getAssetLifecycleInfo = (purchaseDateStr) => {
+    if (!purchaseDateStr) {
+        return {
+            purchaseDateFormatted: 'Not registered',
+            ageInMonths: null,
+            ageInYears: null,
+            eolDateFormatted: null,
+            remainingMonths: null,
+            remainingDays: null,
+            remainingText: 'Purchase date is missing',
+            usedPercentage: null,
+            isLifecycleExpired: false,
+            statusText: 'No purchase date available'
+        };
+    }
+    const pd = new Date(purchaseDateStr);
+    if (isNaN(pd.getTime())) {
+        return {
+            purchaseDateFormatted: purchaseDateStr,
+            ageInMonths: null,
+            ageInYears: null,
+            eolDateFormatted: null,
+            remainingMonths: null,
+            remainingDays: null,
+            remainingText: 'Invalid purchase date format',
+            usedPercentage: null,
+            isLifecycleExpired: false,
+            statusText: 'Invalid date'
+        };
+    }
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const purchaseDateOnly = new Date(pd.getFullYear(), pd.getMonth(), pd.getDate());
+    const purchaseDateFormatted = purchaseDateOnly.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    // Enterprise standard lifecycle: 36 months (3 years)
+    const eolDate = new Date(purchaseDateOnly.getFullYear() + 3, purchaseDateOnly.getMonth(), purchaseDateOnly.getDate());
+    const eolDateFormatted = eolDate.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    const ageTime = today.getTime() - purchaseDateOnly.getTime();
+    const ageDays = Math.max(0, Math.floor(ageTime / (1000 * 60 * 60 * 24)));
+    const ageInMonths = Math.round(ageDays / 30.4375);
+    const ageInYears = Math.round((ageInMonths / 12) * 10) / 10;
+    const remTime = eolDate.getTime() - today.getTime();
+    const remainingDays = Math.ceil(remTime / (1000 * 60 * 60 * 24));
+    const remainingMonths = Math.round(remainingDays / 30.4375);
+    const isLifecycleExpired = remainingDays <= 0;
+    const usedPercentage = Math.min(100, Math.max(0, Math.round((ageInMonths / 36) * 100)));
+    let remainingText = '';
+    if (isLifecycleExpired) {
+        const pastDays = Math.abs(remainingDays);
+        remainingText = `Lifecycle ended on ${eolDateFormatted} (${pastDays} days ago)`;
+    }
+    else {
+        const remMonths = Math.floor(remainingDays / 30.4375);
+        const remDaysMod = Math.round(remainingDays % 30.4375);
+        remainingText = `${remMonths} month(s), ${remDaysMod} day(s) remaining until ${eolDateFormatted} (${remainingDays} days remaining)`;
+    }
+    const statusText = isLifecycleExpired
+        ? `⚠️ Lifecycle Expired (Reached standard 3-year lifecycle limit on ${eolDateFormatted})`
+        : `✓ Within standard 3-year enterprise lifecycle (${remainingMonths} months remaining until ${eolDateFormatted})`;
+    return {
+        purchaseDateFormatted,
+        ageInMonths,
+        ageInYears,
+        eolDateFormatted,
+        remainingMonths,
+        remainingDays,
+        remainingText,
+        usedPercentage,
+        isLifecycleExpired,
+        statusText
+    };
 };
 
 
@@ -96190,7 +96937,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b44f1ad577015af6d559")
+/******/ 		__webpack_require__.h = () => ("42135a3c2d0788e95dfc")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

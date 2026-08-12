@@ -16,6 +16,8 @@ import { EventStream } from './EventStream';
 import { IReturnRequest } from '../models/IReturnRequest';
 import { ReturnAssetForm } from './ReturnAssetForm';
 import { ReturnRequestList } from './ReturnRequestList';
+import { getWarrantyColorInfo, getAssetLifecycleInfo } from '../utils/WarrantyUtils';
+import { getAvailableStock } from '../utils/StockUtils';
 import { PrimaryButton, DefaultButton, Pivot, PivotItem, TextField, Dropdown, IDropdownOption, DetailsList, DetailsListLayoutMode, SelectionMode, IColumn, DetailsRow, Panel, PanelType, MessageBar, MessageBarType, ProgressIndicator, Icon, Stack } from '@fluentui/react';
 import {
   Chart as ChartJS,
@@ -144,15 +146,15 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     // 1. Check item status - returned or in-stock assets are no longer assigned
     const statusLower = (item.status || '').toLowerCase().trim();
     if (
-      statusLower === 'in stock' || 
-      statusLower === 'instock' || 
-      statusLower === 'available' || 
-      statusLower === 'returned' || 
-      statusLower === 'return approved' || 
-      statusLower === 'returnapproved' || 
-      statusLower === 'under maintenance' || 
-      statusLower === 'damaged' || 
-      statusLower === 'disposed' || 
+      statusLower === 'in stock' ||
+      statusLower === 'instock' ||
+      statusLower === 'available' ||
+      statusLower === 'returned' ||
+      statusLower === 'return approved' ||
+      statusLower === 'returnapproved' ||
+      statusLower === 'under maintenance' ||
+      statusLower === 'damaged' ||
+      statusLower === 'disposed' ||
       statusLower === 'retired'
     ) {
       return false;
@@ -163,8 +165,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     if (returnRequests && returnRequests.length > 0) {
       const isReturned = returnRequests.some(r => {
         const isSameAsset = (r.assetId && r.assetId === item.id) ||
-                            (r.serialNumber && item.serialNumber && r.serialNumber.toLowerCase().trim() === item.serialNumber.toLowerCase().trim()) ||
-                            (r.assetName && item.assetName && r.assetName.toLowerCase().trim() === item.assetName.toLowerCase().trim() && normalize(r.requesterName) === activeUser);
+          (r.serialNumber && item.serialNumber && r.serialNumber.toLowerCase().trim() === item.serialNumber.toLowerCase().trim()) ||
+          (r.assetName && item.assetName && r.assetName.toLowerCase().trim() === item.assetName.toLowerCase().trim() && normalize(r.requesterName) === activeUser);
         const isCompleted = r.status === 'Completed' || r.status === 'Returned' || r.adminStatus === 'Completed';
         return isSameAsset && isCompleted;
       });
@@ -436,7 +438,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     this._markNotificationAsRead(notificationId);
     const notifications = this._getNotifications();
     const selectedNotification = notifications.find(n => n.id === notificationId);
-    this.setState({ 
+    this.setState({
       selectedNotification,
       isNotificationDetailsOpen: true
     });
@@ -554,7 +556,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   }
 
   private _handleMockEmailSent = (ev: CustomEvent<{ to: string[]; subject: string; body: string }>): void => {
-    this.setState({ 
+    this.setState({
       lastMockEmail: ev.detail,
       editMockEmailTo: ev.detail.to.join(', '),
       editMockEmailSubject: ev.detail.subject,
@@ -576,12 +578,12 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     if (!lastMockEmail) return;
 
     this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
-    
+
     try {
       const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
       await EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
-      this.setState({ 
-        isSendingMockEmail: false, 
+      this.setState({
+        isSendingMockEmail: false,
         mockEmailSendSuccess: true
       });
       setTimeout(() => {
@@ -589,9 +591,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       }, 2000);
     } catch (e: any) {
       console.error("Failed to send email from panel:", e);
-      this.setState({ 
-        isSendingMockEmail: false, 
-        mockEmailSendError: e.message || JSON.stringify(e) 
+      this.setState({
+        isSendingMockEmail: false,
+        mockEmailSendError: e.message || JSON.stringify(e)
       });
     }
   };
@@ -786,10 +788,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         }
       });
     } catch (error: any) {
-      const msg = error.message && error.message.includes("already in progress") 
-        ? error.message 
+      const msg = error.message && error.message.includes("already in progress")
+        ? error.message
         : `Failed to submit return request: ${error.message || JSON.stringify(error)}`;
-      this.setState({ 
+      this.setState({
         errorMessage: msg,
         returnRequestsLoading: false
       });
@@ -846,7 +848,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         }
       });
     } catch (error: any) {
-      this.setState({ 
+      this.setState({
         errorMessage: `Failed to update return status: ${error.message || JSON.stringify(error)}`,
         returnRequestsLoading: false
       });
@@ -954,8 +956,31 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   };
 
   private _onApproveRequest = async (request: IRequest): Promise<void> => {
+
+    const availableStock = getAvailableStock(
+      this.state.items,
+      request
+    );
+
+    const requestedQuantity = Number(
+      request.quantity || 0
+    );
+
+    if (availableStock < requestedQuantity) {
+      this.setState({
+        errorMessage: `Insufficient stock for "${request.assetTitle}". Available: ${availableStock}, Requested: ${requestedQuantity}`
+      });
+
+      return;
+    }
+
     try {
-      this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
+      this.setState({
+        requestActionInProgressId: request.id,
+        errorMessage: undefined
+      });
+
+      // KEEP THE REST OF YOUR EXISTING CODE EXACTLY AS IT IS
       if (request.id.indexOf('temp-') === 0) {
         this.setState(prevState => ({
           requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved' } : r)
@@ -1156,7 +1181,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const status = (item.status || "").replace(/"/g, '""');
       const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
       const warrantyExpiry = (item.warrantyExpiry || "N/A").replace(/"/g, '""');
-      
+
       const row = [
         `"${name}"`,
         `"${type}"`,
@@ -1169,7 +1194,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
     const csvContent = "\uFEFF" + csvRows.join("\n");
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    
+
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
     link.setAttribute("href", url);
@@ -1183,17 +1208,17 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   private _exportWarrantyReportToPDF = (): void => {
     const { items } = this.state;
     const doc = new jsPDF();
-    
+
     // Header
     doc.setFont("helvetica", "bold");
     doc.setFontSize(18);
     doc.text("Asset Warranty Expiry Report", 14, 20);
-    
+
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
     doc.text(`Total Assets: ${items.length} | Assets with Warranty: ${items.filter(i => i.warrantyExpiry).length}`, 14, 34);
-    
+
     // Table Headers
     doc.setFont("helvetica", "bold");
     doc.setFillColor(240, 240, 240);
@@ -1203,10 +1228,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     doc.text("Status", 110, 47);
     doc.text("Purchase Date", 140, 47);
     doc.text("Warranty Expiry", 170, 47);
-    
+
     doc.setDrawColor(200, 200, 200);
     doc.line(14, 50, 196, 50);
-    
+
     // Rows
     doc.setFont("helvetica", "normal");
     let y = 56;
@@ -1226,30 +1251,30 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         doc.setFont("helvetica", "normal");
         y += 8;
       }
-      
+
       const name = (item.assetName || item.title || "").substring(0, 25);
       const type = (item.assetType || "").substring(0, 18);
       const status = (item.status || "").substring(0, 15);
       const purchaseDate = item.purchaseDate || "N/A";
       const warrantyExpiry = item.warrantyExpiry || "N/A";
-      
+
       doc.text(name, 16, y);
       doc.text(type, 70, y);
       doc.text(status, 110, y);
       doc.text(purchaseDate, 140, y);
       doc.text(warrantyExpiry, 170, y);
-      
+
       doc.line(14, y + 2, 196, y + 2);
       y += 8;
     });
-    
+
     doc.save(`Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.pdf`);
   };
 
   private _exportDetailedReportToExcel = (filteredItems: IInventoryItem[]): void => {
     const headers = ["Asset Name", "Asset Type", "Status", "Condition", "Purchase Date", "Assigned To", "Specifications"];
     const csvRows = [headers.join(",")];
-    
+
     filteredItems.forEach(item => {
       const name = (item.assetName || item.title || "").replace(/"/g, '""');
       const type = (item.assetType || "").replace(/"/g, '""');
@@ -1258,7 +1283,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
       const assignedTo = (item.assignedTo || "N/A").replace(/"/g, '""');
       const specs = (item.specifications || "").replace(/"/g, '""');
-      
+
       const row = [
         `"${name}"`,
         `"${type}"`,
@@ -1270,10 +1295,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       ];
       csvRows.push(row.join(","));
     });
-    
+
     const csvContent = "\uFEFF" + csvRows.join("\n");
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    
+
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
     link.setAttribute("href", url);
@@ -1286,17 +1311,17 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
   private _exportDetailedReportToPDF = (filteredItems: IInventoryItem[]): void => {
     const doc = new jsPDF();
-    
+
     // Header
     doc.setFont("helvetica", "bold");
     doc.setFontSize(18);
     doc.text("Detailed Inventory Asset Report", 14, 20);
-    
+
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
     doc.text(`Total Assets Displayed: ${filteredItems.length}`, 14, 34);
-    
+
     // Table Headers
     doc.setFont("helvetica", "bold");
     doc.setFillColor(240, 240, 240);
@@ -1306,10 +1331,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     doc.text("Status", 100, 47);
     doc.text("Condition", 130, 47);
     doc.text("Assigned To", 160, 47);
-    
+
     doc.setDrawColor(200, 200, 200);
     doc.line(14, 50, 196, 50);
-    
+
     // Rows
     doc.setFont("helvetica", "normal");
     let y = 56;
@@ -1329,23 +1354,23 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         doc.setFont("helvetica", "normal");
         y += 8;
       }
-      
+
       const name = (item.assetName || item.title || "").substring(0, 23);
       const type = (item.assetType || "").substring(0, 15);
       const status = (item.status || "").substring(0, 14);
       const condition = (item.condition || "N/A").substring(0, 14);
       const assignedTo = (item.assignedTo || "N/A").substring(0, 18);
-      
+
       doc.text(name, 16, y);
       doc.text(type, 65, y);
       doc.text(status, 100, y);
       doc.text(condition, 130, y);
       doc.text(assignedTo, 160, y);
-      
+
       doc.line(14, y + 2, 196, y + 2);
       y += 8;
     });
-    
+
     doc.save(`Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.pdf`);
   };
 
@@ -1359,7 +1384,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const sp = getSP();
       // Try to load 1 item from list to test connection and permissions
       await sp.web.lists.getByTitle(internalTitle).items.select("ID").top(1)();
-      
+
       this.setState(prevState => ({
         connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'connected' }
       }));
@@ -1381,7 +1406,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const sp = getSP();
       const users = await sp.web.siteGroups.getByName(groupName).users();
       const userList = users.map((u: any) => u.Title || u.LoginName || 'Unknown User');
-      
+
       this.setState(prevState => ({
         groupUsersList: { ...prevState.groupUsersList, [groupName]: userList },
         loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
@@ -1397,8 +1422,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
   private _renderRequestAnalysis = (request: IRequest): React.ReactNode => {
     const reqAssetTitle = request.assetTitle || "";
-    const inStockItems = this.state.items.filter(item => 
-      (item.assetType || '').toLowerCase() === reqAssetTitle.toLowerCase() && 
+    const inStockItems = this.state.items.filter(item =>
+      (item.assetType || '').toLowerCase() === reqAssetTitle.toLowerCase() &&
       (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock')
     );
     const inStockCount = inStockItems.length;
@@ -1452,7 +1477,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           <h4 style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Icon iconName="BarChart4" style={{ color: '#0078d4' }} /> Detailed Analysis
           </h4>
-          
+
           <Stack tokens={{ childrenGap: 12 }}>
             {/* Inventory Status Check */}
             <div>
@@ -1491,9 +1516,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             {/* Lifecycle Timeline Tracker */}
             <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '10px' }}>
               <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' }}>Request Lifecycle Stage:</span>
-              <ProgressIndicator 
-                label={currentStepText} 
-                percentComplete={progressPercent} 
+              <ProgressIndicator
+                label={currentStepText}
+                percentComplete={progressPercent}
                 styles={{ root: { marginTop: '5px' } }}
               />
             </div>
@@ -1504,14 +1529,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   };
 
   private _renderAssetAnalysis = (asset: IInventoryItem): React.ReactNode => {
-    const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
-    const now = new Date();
-    const ageInMonths = purchaseDateVal 
-      ? Math.round((now.getTime() - purchaseDateVal.getTime()) / (1000 * 60 * 60 * 24 * 30.4)) 
-      : null;
-      
-    const isExpired = asset.warrantyExpiry && new Date(asset.warrantyExpiry) < now;
-    
+    const lifecycleInfo = getAssetLifecycleInfo(asset.purchaseDate);
+    const warrantyInfo = getWarrantyColorInfo(asset.warrantyExpiry);
+
     let conditionColor = '#16a34a';
     let healthRating = "Excellent";
     let healthIcon = "Heart";
@@ -1538,7 +1558,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             <div><span style={{ color: '#6b7280' }}>Condition:</span> <strong style={{ color: conditionColor }}>{asset.condition || "New"}</strong></div>
             <div><span style={{ color: '#6b7280' }}>Vendor:</span> <strong style={{ color: '#111827' }}>{asset.vendor || "N/A"}</strong></div>
             <div><span style={{ color: '#6b7280' }}>Purchase Date:</span> <strong style={{ color: '#111827' }}>{asset.purchaseDate || "N/A"}</strong></div>
-            <div><span style={{ color: '#6b7280' }}>Warranty Expiry:</span> <strong style={{ color: isExpired ? '#dc2626' : '#111827' }}>{asset.warrantyExpiry || "N/A"}</strong></div>
+            <div><span style={{ color: '#6b7280' }}>Warranty Expiry:</span> <strong style={{ color: warrantyInfo.textColor, backgroundColor: asset.warrantyExpiry ? warrantyInfo.bgColor : 'transparent', padding: asset.warrantyExpiry ? '2px 8px' : 0, borderRadius: '4px' }}>{asset.warrantyExpiry || "N/A"}</strong></div>
           </div>
           {asset.note && (
             <div style={{ marginTop: '12px', fontSize: '0.88rem', padding: '8px 10px', backgroundColor: '#f9fafb', borderRadius: '4px', border: '1px solid #f3f4f6' }}>
@@ -1553,29 +1573,35 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           <h4 style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Icon iconName="Heart" style={{ color: conditionColor }} /> Health & Depreciation Analysis
           </h4>
-          
+
           <Stack tokens={{ childrenGap: 12 }}>
-            {/* Age evaluation */}
-            {ageInMonths !== null && (
-              <div>
-                <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' }}>Asset Age:</span>
-                <span style={{ fontSize: '0.9rem', color: '#334155' }}>
-                  This asset is <strong>{ageInMonths}</strong> month(s) old ({Math.round(ageInMonths / 12 * 10) / 10} year(s)). Standard lifecycle depreciation period is 36 months (3 years).
-                </span>
-              </div>
-            )}
+            {/* Lifecycle & Age evaluation */}
+            <div>
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' }}>Asset Lifecycle & EOL Date:</span>
+              <span style={{ fontSize: '0.9rem', color: '#334155' }}>
+                {lifecycleInfo.statusText}. Purchase Date: <strong>{lifecycleInfo.purchaseDateFormatted}</strong> | Enterprise EOL Date: <strong>{lifecycleInfo.eolDateFormatted || 'N/A'}</strong>.
+              </span>
+            </div>
 
             {/* Warranty alert */}
             <div>
               <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' }}>Warranty Expiry Evaluation:</span>
               {asset.warrantyExpiry ? (
-                isExpired ? (
+                warrantyInfo.isExpired ? (
                   <MessageBar messageBarType={MessageBarType.error} styles={{ root: { borderRadius: '6px' } }}>
-                    <strong>Warranty Expired:</strong> Coverage ended on {asset.warrantyExpiry}. Any future repair operations will incur full direct business costs.
+                    <strong>Warranty Expired:</strong> Coverage ended on <strong>{warrantyInfo.formattedDate}</strong> ({warrantyInfo.remainingText}). Any future repair operations will incur full direct business costs.
+                  </MessageBar>
+                ) : warrantyInfo.isLessThan6Months ? (
+                  <MessageBar messageBarType={MessageBarType.error} styles={{ root: { borderRadius: '6px' } }}>
+                    <strong>Warranty Expiring Soon (&lt; 6 months):</strong> Expiration date is <strong>{warrantyInfo.formattedDate}</strong> ({warrantyInfo.remainingText}). High priority for hardware refresh/warranty renewal.
+                  </MessageBar>
+                ) : warrantyInfo.isLessThan1Year ? (
+                  <MessageBar messageBarType={MessageBarType.warning} styles={{ root: { borderRadius: '6px' } }}>
+                    <strong>Warranty Expiring (&lt; 1 year):</strong> Expiration date is <strong>{warrantyInfo.formattedDate}</strong> ({warrantyInfo.remainingText}). Plan for upcoming hardware lifecycle management.
                   </MessageBar>
                 ) : (
                   <MessageBar messageBarType={MessageBarType.success} styles={{ root: { borderRadius: '6px' } }}>
-                    <strong>Warranty Active:</strong> Covered under manufacturer protection until {asset.warrantyExpiry}.
+                    <strong>Warranty Active (&gt; 1 year):</strong> Fully protected under manufacturer coverage until <strong>{warrantyInfo.formattedDate}</strong> ({warrantyInfo.remainingText}).
                   </MessageBar>
                 )
               ) : (
@@ -1646,7 +1672,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           <p style={{ color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' }}>
             <strong>Received:</strong> {selectedNotification.timestamp}
           </p>
-          
+
           <div style={{ padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' }}>
             <p style={{ margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5' }}>
               {selectedNotification.message}
@@ -1681,7 +1707,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
     try {
       this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
-      
+
       const { adminSelectedAssetId, adminComment } = this.state;
       const approverName = this.state.activeUserDisplayName;
 
@@ -1732,7 +1758,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           }
         }
       });
-      
+
       await this._loadInventory();
       await this._loadRequests();
       await this._loadAuditLogs();
@@ -1752,7 +1778,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
     try {
       this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
-      
+
       const { adminComment } = this.state;
       const approverName = this.state.activeUserDisplayName;
 
@@ -1771,7 +1797,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         adminSelectedAssetId: undefined,
         adminComment: ''
       });
-      
+
       await this._loadInventory();
       await this._loadRequests();
       await this._loadAuditLogs();
@@ -1790,8 +1816,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     if (!request || !this.state.isAdminPanelOpen) return null;
 
     const requestedAssetTitle = request.assetTitle || "";
-    const matchingAssets = this.state.items.filter(item => 
-      (item.assetType || '').toLowerCase() === requestedAssetTitle.toLowerCase() && 
+    const matchingAssets = this.state.items.filter(item =>
+      (item.assetType || '').toLowerCase() === requestedAssetTitle.toLowerCase() &&
       (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock')
     );
 
@@ -1800,8 +1826,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       text: `${asset.assetName || asset.title} (SN: ${asset.serialNumber || 'N/A'})`
     }));
 
-    const dropdownPlaceholder = matchingAssets.length > 0 
-      ? "Select asset to assign..." 
+    const dropdownPlaceholder = matchingAssets.length > 0
+      ? "Select asset to assign..."
       : "No assets of this type in stock";
 
     const isBusy = this.state.requestActionInProgressId === request.id;
@@ -1815,7 +1841,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         closeButtonAriaLabel="Close"
       >
         <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' }}>
-          
+
           <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' }}>
             Asset request details
           </p>
@@ -1940,7 +1966,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
               Admin Assignment
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              
+
               {/* Dropdown */}
               <div>
                 <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' }}>
@@ -2053,10 +2079,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     const navItems: Array<{ key: string; text: string; icon: string; badge?: number; badgeColor?: string; group?: string }> = [
       { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4', group: 'MAIN' },
       { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
-      { 
-        key: 'Notifications', 
-        text: 'Notifications', 
-        icon: 'Ringer', 
+      {
+        key: 'Notifications',
+        text: 'Notifications',
+        icon: 'Ringer',
         badge: notifications.filter(n => !n.isRead).length || undefined,
         badgeColor: '#0078d4'
       },
@@ -2301,8 +2327,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                                   iconProps={{ iconName: 'Send' }}
                                 />
                               </div>
-                              <MyAssignedAssetsView 
-                                items={myAssets} 
+                              <MyAssignedAssetsView
+                                items={myAssets}
                                 onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
                                 onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
                                 onAssetReplacement={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })}
@@ -2344,9 +2370,6 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   case 'ReplacementHistory':
                     return (
                       <div>
-                        <div className={styles.cardHeader}>
-                          <h3>Replacement History</h3>
-                        </div>
                         <ReplacementHistory
                           {...this.props}
                           userDisplayName={activeUserDisplayName}
@@ -2443,6 +2466,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         </div>
                         <RequestList
                           items={visibleManagerRequests}
+                          inventoryItems={this.state.items}
                           canApproveReject={true}
                           canApproveAsset={false}
                           hideStatusColumn={false}
@@ -2471,6 +2495,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         />
                         <RequestList
                           items={visibleAdminRequests}
+                          inventoryItems={this.state.items}
                           canApproveReject={false}
                           canApproveAsset={true}
                           hideStatusColumn={true}
@@ -2745,15 +2770,15 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           closeButtonAriaLabel="Close"
           onRenderFooterContent={() => (
             <Stack horizontal tokens={{ childrenGap: 10 }} style={{ padding: '10px 0' }}>
-              <PrimaryButton 
-                text={this.state.isSendingMockEmail ? "Sending..." : "Send Email"} 
-                onClick={this._onSendMockEmail} 
+              <PrimaryButton
+                text={this.state.isSendingMockEmail ? "Sending..." : "Send Email"}
+                onClick={this._onSendMockEmail}
                 disabled={this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo}
                 iconProps={{ iconName: 'Send' }}
               />
-              <DefaultButton 
-                text="Close" 
-                onClick={() => this.setState({ lastMockEmail: undefined })} 
+              <DefaultButton
+                text="Close"
+                onClick={() => this.setState({ lastMockEmail: undefined })}
                 disabled={this.state.isSendingMockEmail}
               />
             </Stack>
@@ -2765,7 +2790,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
               <MessageBar messageBarType={MessageBarType.info}>
                 You can review, modify the recipient(s) or subject, and send this email to test delivery.
               </MessageBar>
-              
+
               <TextField
                 label="Recipients (comma separated)"
                 value={this.state.editMockEmailTo}
@@ -2774,7 +2799,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                 disabled={this.state.isSendingMockEmail}
                 iconProps={{ iconName: 'Mail' }}
               />
-              
+
               <TextField
                 label="Subject"
                 value={this.state.editMockEmailSubject}
@@ -2801,7 +2826,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
               <div style={{ marginTop: '10px' }}>
                 <span style={{ fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Email Content Preview:</span>
-                <div 
+                <div
                   style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }}
                   dangerouslySetInnerHTML={{ __html: this.state.lastMockEmail.body }}
                 />

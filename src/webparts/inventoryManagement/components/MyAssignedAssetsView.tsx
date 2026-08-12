@@ -17,6 +17,7 @@ import {
 } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
 import { ASSET_CONDITION_OPTIONS, WARRANTY_STATUS_OPTIONS } from '../constants/DropdownConstants';
+import { getWarrantyColorInfo, getAssetLifecycleInfo } from '../utils/WarrantyUtils';
 
 export interface IMyAssignedAssetsViewProps {
   items: IInventoryItem[];
@@ -51,22 +52,17 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
 
   // Helper: Evaluate Warranty Coverage
   const evaluateWarranty = (expiryStr: string | undefined) => {
-    if (!expiryStr) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'No warranty registered' };
+    if (!expiryStr) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, isLessThan1Year: false, text: 'No warranty registered', colorInfo: getWarrantyColorInfo(undefined) };
     
-    const expiryDate = new Date(expiryStr);
-    if (isNaN(expiryDate.getTime())) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'Invalid Date' };
-    
-    const now = new Date();
-    const diffTime = expiryDate.getTime() - now.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
-    if (diffDays < 0) {
-      return { status: 'Expired', isExpired: true, isExpiringSoon: false, text: 'Expired' };
-    } else if (diffDays <= 30) {
-      return { status: 'Expiring Soon', isExpired: false, isExpiringSoon: true, text: `Expiring Soon (${diffDays} days)` };
-    } else {
-      return { status: 'Active', isExpired: false, isExpiringSoon: false, text: 'Active' };
-    }
+    const info = getWarrantyColorInfo(expiryStr);
+    return { 
+      status: info.isExpired ? 'Expired' : info.isLessThan6Months ? 'Expiring Soon' : info.isLessThan1Year ? 'Expiring (<1 Yr)' : 'Active', 
+      isExpired: info.isExpired, 
+      isExpiringSoon: info.isLessThan6Months, 
+      isLessThan1Year: info.isLessThan1Year,
+      text: info.isExpired ? 'Expired' : info.isLessThan6Months ? 'Expiring soon (< 6 months)' : info.isLessThan1Year ? 'Expiring in < 1 year' : 'Active',
+      colorInfo: info
+    };
   };
 
   // Helper: Get Type Icon Name
@@ -161,10 +157,10 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
     });
   }, [items, searchQuery, selectedType, selectedCondition, selectedWarranty]);
 
-  // Detailed Age and Lifecycle Recommendation rendering for the panel
+  // Detailed Age, EOL Date, and Warranty Coverage rendering for the side panel
   const renderLifecycleAnalysis = (asset: IInventoryItem) => {
-    const age = getAgeInMonths(asset.purchaseDate);
-    const w = evaluateWarranty(asset.warrantyExpiry);
+    const lifecycle = getAssetLifecycleInfo(asset.purchaseDate);
+    const warranty = getWarrantyColorInfo(asset.warrantyExpiry);
     const condition = asset.condition || 'Good';
     const isCritical = condition === 'Poor' || condition === 'Damaged';
 
@@ -187,51 +183,92 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
     }
 
     return (
-      <Stack tokens={{ childrenGap: 15 }} style={{ marginTop: '20px' }}>
+      <Stack tokens={{ childrenGap: 16 }} style={{ marginTop: '20px' }}>
         <h4 style={{ margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' }}>
-          Lifecycle & Health Report
+          Lifecycle & Warranty Coverage Report
         </h4>
         
-        {/* Age Evaluation */}
-        <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-          <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>
-            Asset Lifecycle Age
-          </span>
-          {age !== null ? (
-            <span style={{ fontSize: '0.9rem', color: '#334155' }}>
-              This asset is <strong>{age}</strong> month(s) old ({Math.round(age / 12 * 10) / 10} years). Standard enterprise deprecation lifecycle is 36 months. 
-              {age >= 36 ? (
-                <span style={{ color: '#b45309', display: 'block', marginTop: '6px', fontWeight: 'bold' }}>
-                  ⚠️ Asset has reached/passed its standard 3-year lifecycle. Eligible for refresh replacement.
-                </span>
-              ) : (
-                <span style={{ color: '#166534', display: 'block', marginTop: '6px' }}>
-                  ✓ Asset is within standard usage lifecycle ({36 - age} months remaining).
-                </span>
-              )}
+        {/* 1. Asset Lifecycle Age & End-of-Life (EOL) Date */}
+        <div style={{ backgroundColor: '#f8fafc', padding: '14px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+            <span style={{ fontSize: '0.88rem', color: '#1e293b', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Icon iconName="History" style={{ color: '#0284c7' }} /> Asset Lifecycle & EOL Date
             </span>
+            {lifecycle.usedPercentage !== null && (
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, padding: '2px 8px', borderRadius: '9999px', backgroundColor: lifecycle.isLifecycleExpired ? '#fee2e2' : '#e0f2fe', color: lifecycle.isLifecycleExpired ? '#b91c1c' : '#0369a1' }}>
+                {lifecycle.usedPercentage}% Lifecycle Used
+              </span>
+            )}
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', fontSize: '0.82rem', marginBottom: '10px' }}>
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem' }}>Purchase Date:</span>
+              <strong style={{ color: '#0f172a' }}>{lifecycle.purchaseDateFormatted}</strong>
+            </div>
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem' }}>Current Asset Age:</span>
+              <strong style={{ color: '#0f172a' }}>{lifecycle.ageInMonths !== null ? `${lifecycle.ageInMonths} mo (${lifecycle.ageInYears} yrs)` : 'N/A'}</strong>
+            </div>
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem' }}>Enterprise EOL Expiry Date:</span>
+              <strong style={{ color: lifecycle.isLifecycleExpired ? '#b91c1c' : '#0f172a' }}>{lifecycle.eolDateFormatted || 'N/A'}</strong>
+            </div>
+          </div>
+
+          {lifecycle.eolDateFormatted ? (
+            lifecycle.isLifecycleExpired ? (
+              <MessageBar messageBarType={MessageBarType.warning} styles={{ root: { borderRadius: '6px' } }}>
+                <strong>Lifecycle Expired:</strong> Passed standard 36-month enterprise usage limit on <strong>{lifecycle.eolDateFormatted}</strong>. Eligible for hardware refresh.
+              </MessageBar>
+            ) : (
+              <div style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', padding: '8px 12px', borderRadius: '6px', fontSize: '0.8rem', color: '#166534' }}>
+                <strong>Active Lifecycle:</strong> Within standard 36-month usage limit. <strong>{lifecycle.remainingText}</strong>.
+              </div>
+            )
           ) : (
-            <span style={{ fontSize: '0.9rem', color: '#64748b' }}>Purchase date is not registered. Age cannot be calculated.</span>
+            <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Purchase date is missing. Asset lifecycle age cannot be calculated.</span>
           )}
         </div>
 
-        {/* Warranty Evaluation */}
-        <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-          <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 }}>
-            Warranty Coverage
-          </span>
+        {/* 2. Warranty Coverage & Remaining Duration */}
+        <div style={{ backgroundColor: '#f8fafc', padding: '14px 16px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+            <span style={{ fontSize: '0.88rem', color: '#1e293b', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Icon iconName="ShieldAlert" style={{ color: warranty.textColor }} /> Warranty Coverage Details
+            </span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, padding: '2px 8px', borderRadius: '9999px', backgroundColor: warranty.bgColor, color: warranty.textColor, border: `1px solid ${warranty.borderColor}` }}>
+              {warranty.color === 'red' ? (warranty.isExpired ? 'Expired' : 'Expiring < 6 Mos') : warranty.color === 'yellow' ? 'Expiring < 1 Yr' : 'Active Coverage'}
+            </span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', fontSize: '0.82rem', marginBottom: '10px' }}>
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem' }}>Warranty Expiry Date:</span>
+              <strong style={{ color: warranty.textColor }}>{warranty.formattedDate}</strong>
+            </div>
+            <div style={{ gridColumn: 'span 2' }}>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem' }}>Warranty Time Remaining:</span>
+              <strong style={{ color: warranty.textColor }}>{warranty.remainingText}</strong>
+            </div>
+          </div>
+
           {asset.warrantyExpiry ? (
-            w.isExpired ? (
+            warranty.isExpired ? (
               <MessageBar messageBarType={MessageBarType.error} styles={{ root: { borderRadius: '6px' } }}>
-                <strong>Warranty Expired:</strong> Coverage ended on {asset.warrantyExpiry}. Future repairs will be billed to the departmental cost center.
+                <strong>Warranty Expired:</strong> Coverage ended on <strong>{warranty.formattedDate}</strong> ({warranty.remainingText}). Future repairs will be billed to departmental cost center.
               </MessageBar>
-            ) : w.isExpiringSoon ? (
+            ) : warranty.isLessThan6Months ? (
+              <MessageBar messageBarType={MessageBarType.error} styles={{ root: { borderRadius: '6px' } }}>
+                <strong>Warranty Expiring Soon (&lt; 6 Months):</strong> Protection expires on <strong>{warranty.formattedDate}</strong>. High priority: schedule hardware inspection or extension.
+              </MessageBar>
+            ) : warranty.isLessThan1Year ? (
               <MessageBar messageBarType={MessageBarType.warning} styles={{ root: { borderRadius: '6px' } }}>
-                <strong>Warranty Expiring Soon:</strong> Expires on {asset.warrantyExpiry}. Please plan hardware checks before expiry.
+                <strong>Warranty Expiring (&lt; 1 Year):</strong> Protection expires on <strong>{warranty.formattedDate}</strong>. Plan for upcoming warranty renewal or equipment refresh.
               </MessageBar>
             ) : (
               <MessageBar messageBarType={MessageBarType.success} styles={{ root: { borderRadius: '6px' } }}>
-                <strong>Warranty Active:</strong> Fully protected until {asset.warrantyExpiry}.
+                <strong>Warranty Active (&gt; 1 Year):</strong> Fully protected under manufacturer coverage until <strong>{warranty.formattedDate}</strong>.
               </MessageBar>
             )
           ) : (
@@ -241,10 +278,10 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
           )}
         </div>
 
-        {/* Condition Check */}
+        {/* 3. Physical Condition Check */}
         <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
           <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 }}>
-            Physical Condition
+            Physical Condition & Health
           </span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' }}>
             <Icon iconName={healthIcon} style={{ fontSize: '18px', color: conditionColor }} />
@@ -253,7 +290,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
           {isCritical && (
             <div style={{ marginTop: '10px', padding: '8px', backgroundColor: '#fef2f2', borderRadius: '4px', borderLeft: '3px solid #dc2626' }}>
               <span style={{ fontSize: '0.82rem', color: '#991b1b', fontWeight: 'bold', display: 'block' }}>
-                Recommendation: RETIRE ASSET
+                Recommendation: RETIRE / REPLACE ASSET
               </span>
               <span style={{ fontSize: '0.8rem', color: '#991b1b' }}>
                 Since this asset is in {condition.toLowerCase()} condition, it is recommended to return the asset and raise a replacement request.
@@ -262,7 +299,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
           )}
         </div>
 
-        {/* Specifications */}
+        {/* 4. Specifications */}
         {asset.specifications && (
           <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
             <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 }}>
@@ -479,28 +516,23 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                   )}
 
                   {/* Warranty strip */}
-                  {item.warrantyExpiry && (w.isExpired || w.isExpiringSoon) && (
+                  {item.warrantyExpiry && (
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '4px',
-                      backgroundColor: w.isExpired ? '#fdf2f2' : '#fff9e6',
+                      backgroundColor: w.colorInfo.bgColor,
+                      border: `1px solid ${w.colorInfo.borderColor}`,
                       padding: '4px 6px',
                       borderRadius: '4px',
                       fontSize: '0.7rem',
-                      color: w.isExpired ? '#c5221f' : '#b06000',
+                      color: w.colorInfo.textColor,
                       marginTop: 'auto'
                     }}>
-                      <Icon iconName={w.isExpired ? "ShieldAlert" : "Warning"} style={{ fontSize: '10px' }} />
+                      <Icon iconName={w.isExpired ? "ShieldAlert" : w.isExpiringSoon ? "Warning" : "VerifiedBrand"} style={{ fontSize: '10px' }} />
                       <span>
-                        <strong>Warranty {w.isExpired ? 'Expired' : 'Expiring'}:</strong> {w.text}
+                        <strong>Warranty {w.isExpired ? 'Expired' : 'Expiry'}:</strong> {item.warrantyExpiry} {w.colorInfo.statusText}
                       </span>
-                    </div>
-                  )}
-                  {item.warrantyExpiry && !w.isExpired && !w.isExpiringSoon && (
-                    <div style={{ fontSize: '0.72rem', color: '#137333', display: 'flex', alignItems: 'center', gap: '3px', marginTop: 'auto' }}>
-                      <Icon iconName="VerifiedBrand" style={{ fontSize: '10px' }} />
-                      <span>Warranty Active (Expires: {new Date(item.warrantyExpiry).toLocaleDateString()})</span>
                     </div>
                   )}
 
