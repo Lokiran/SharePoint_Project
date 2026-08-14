@@ -108,7 +108,7 @@ export const AssetForm: React.FC<IAssetFormProps> = (props) => {
           label="Purchase Date"
           type="date"
           value={purchaseDate}
-          onChange={(_, val) => setPurchaseDate(val || '')}
+          onChange={(_, val) => setPurchaseDate(val || '')} 
           required
         />
         <TextField

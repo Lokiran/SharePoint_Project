@@ -955,7 +955,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     }
   };
 
-  private _onApproveRequest = async (request: IRequest): Promise<void> => {
+  private _onApproveRequest = async (
+    request: IRequest,
+    comment: string
+  ): Promise<void> => {
 
     const availableStock = getAvailableStock(
       this.state.items,
@@ -983,10 +986,24 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       // KEEP THE REST OF YOUR EXISTING CODE EXACTLY AS IT IS
       if (request.id.indexOf('temp-') === 0) {
         this.setState(prevState => ({
-          requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved' } : r)
+          requests: prevState.requests.map(
+            r =>
+              r.id === request.id
+                ? {
+                  ...r,
+                  status: 'Approved',
+                  managerResponse: comment
+                }
+                : r
+          )
         }));
       } else {
-        await InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
+        await InventoryService.updateRequestStatus(
+          parseInt(request.id, 10),
+          'Approved',
+          this.state.activeUserDisplayName,
+          comment
+        );
         await this._loadRequests();
         await this._loadAuditLogs();
       }

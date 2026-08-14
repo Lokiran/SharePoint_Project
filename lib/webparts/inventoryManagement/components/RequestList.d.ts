@@ -10,7 +10,7 @@ export interface IRequestListProps {
     statusColumnLabel?: string;
     statusField?: 'status' | 'assetStatus';
     hideStatusColumn?: boolean;
-    onApproveRequest?: (request: IRequest) => Promise<void>;
+    onApproveRequest?: (request: IRequest, comment: string) => Promise<void>;
     onRejectRequest?: (request: IRequest, reason: string) => Promise<void>;
     onApproveAsset?: (request: IRequest) => Promise<void>;
     onSelectRequestForAssignment?: (request: IRequest) => void;

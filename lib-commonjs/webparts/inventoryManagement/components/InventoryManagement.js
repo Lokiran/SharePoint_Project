@@ -685,7 +685,7 @@ class InventoryManagement extends React.Component {
                 });
             }
         };
-        this._onApproveRequest = async (request) => {
+        this._onApproveRequest = async (request, comment) => {
             const availableStock = (0, StockUtils_1.getAvailableStock)(this.state.items, request);
             const requestedQuantity = Number(request.quantity || 0);
             if (availableStock < requestedQuantity) {
@@ -702,11 +702,17 @@ class InventoryManagement extends React.Component {
                 // KEEP THE REST OF YOUR EXISTING CODE EXACTLY AS IT IS
                 if (request.id.indexOf('temp-') === 0) {
                     this.setState(prevState => ({
-                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved' } : r)
+                        requests: prevState.requests.map(r => r.id === request.id
+                            ? {
+                                ...r,
+                                status: 'Approved',
+                                managerResponse: comment
+                            }
+                            : r)
                     }));
                 }
                 else {
-                    await InventoryService_1.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
+                    await InventoryService_1.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName, comment);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }

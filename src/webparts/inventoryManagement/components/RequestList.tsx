@@ -21,7 +21,7 @@ export interface IRequestListProps {
   statusColumnLabel?: string;
   statusField?: 'status' | 'assetStatus';
   hideStatusColumn?: boolean;
-  onApproveRequest?: (request: IRequest) => Promise<void>;
+  onApproveRequest?: (request: IRequest, comment: string) => Promise<void>;
   onRejectRequest?: (request: IRequest, reason: string) => Promise<void>;
   onApproveAsset?: (request: IRequest) => Promise<void>;
   onSelectRequestForAssignment?: (request: IRequest) => void;
@@ -422,13 +422,24 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                   <PrimaryButton
                     text="Approve"
                     onClick={() => {
-                      if (props.onApproveRequest) {
-                        props
-                          .onApproveRequest(item)
-                          .catch(err =>
-                            console.error(err)
-                          );
+                      if (!props.onApproveRequest) {
+                        return;
                       }
+
+                      const approvalComment = window.prompt(
+                        'Add a comment or note for this approval:'
+                      );
+
+                      if (approvalComment === null) {
+                        return;
+                      }
+
+                      props
+                        .onApproveRequest(
+                          item,
+                          approvalComment.trim()
+                        )
+                        .catch(err => console.error(err));
                     }}
                     disabled={
                       isBusy || !hasEnoughStock
@@ -1011,21 +1022,30 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                           : 'Approve'
                       }
                       onClick={() => {
-                        if (props.onApproveRequest) {
-                          props
-                            .onApproveRequest(
-                              selectedRequestForDetails
-                            )
-                            .then(() => {
-                              setIsDetailsPanelOpen(false);
-                              setSelectedRequestForDetails(
-                                null
-                              );
-                            })
-                            .catch(err =>
-                              console.error(err)
-                            );
+                        if (!props.onApproveRequest) {
+                          return;
                         }
+
+                        const approvalComment = window.prompt(
+                          'Add a comment or note for this approval:'
+                        );
+
+                        if (approvalComment === null) {
+                          return;
+                        }
+
+                        props
+                          .onApproveRequest(
+                            selectedRequestForDetails,
+                            approvalComment.trim()
+                          )
+                          .then(() => {
+                            setIsDetailsPanelOpen(false);
+                            setSelectedRequestForDetails(null);
+                          })
+                          .catch(err => {
+                            console.error(err);
+                          });
                       }}
                       disabled={
                         props.actionInProgressId ===

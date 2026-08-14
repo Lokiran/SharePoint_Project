@@ -3553,7 +3553,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 });
             }
         };
-        this._onApproveRequest = async (request) => {
+        this._onApproveRequest = async (request, comment) => {
             const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_28__.getAvailableStock)(this.state.items, request);
             const requestedQuantity = Number(request.quantity || 0);
             if (availableStock < requestedQuantity) {
@@ -3570,11 +3570,17 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 // KEEP THE REST OF YOUR EXISTING CODE EXACTLY AS IT IS
                 if (request.id.indexOf('temp-') === 0) {
                     this.setState(prevState => ({
-                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved' } : r)
+                        requests: prevState.requests.map(r => r.id === request.id
+                            ? {
+                                ...r,
+                                status: 'Approved',
+                                managerResponse: comment
+                            }
+                            : r)
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_18__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName, comment);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -6982,11 +6988,16 @@ const RequestList = (props) => {
                                     gap: '8px'
                                 } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Approve", onClick: () => {
-                                        if (props.onApproveRequest) {
-                                            props
-                                                .onApproveRequest(item)
-                                                .catch(err => console.error(err));
+                                        if (!props.onApproveRequest) {
+                                            return;
                                         }
+                                        const approvalComment = window.prompt('Add a comment or note for this approval:');
+                                        if (approvalComment === null) {
+                                            return;
+                                        }
+                                        props
+                                            .onApproveRequest(item, approvalComment.trim())
+                                            .catch(err => console.error(err));
                                     }, disabled: isBusy || !hasEnoughStock }),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: "Reject", onClick: () => {
                                         if (!props.onRejectRequest) {
@@ -7277,15 +7288,22 @@ const RequestList = (props) => {
                                 selectedRequestForDetails.id
                                 ? 'Processing...'
                                 : 'Approve', onClick: () => {
-                                if (props.onApproveRequest) {
-                                    props
-                                        .onApproveRequest(selectedRequestForDetails)
-                                        .then(() => {
-                                        setIsDetailsPanelOpen(false);
-                                        setSelectedRequestForDetails(null);
-                                    })
-                                        .catch(err => console.error(err));
+                                if (!props.onApproveRequest) {
+                                    return;
                                 }
+                                const approvalComment = window.prompt('Add a comment or note for this approval:');
+                                if (approvalComment === null) {
+                                    return;
+                                }
+                                props
+                                    .onApproveRequest(selectedRequestForDetails, approvalComment.trim())
+                                    .then(() => {
+                                    setIsDetailsPanelOpen(false);
+                                    setSelectedRequestForDetails(null);
+                                })
+                                    .catch(err => {
+                                    console.error(err);
+                                });
                             }, disabled: props.actionInProgressId ===
                                 selectedRequestForDetails.id ||
                                 !selectedRequestHasEnoughStock }),
@@ -96937,7 +96955,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("42135a3c2d0788e95dfc")
+/******/ 		__webpack_require__.h = () => ("b72feb9d5b8b86a6c86d")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -276,11 +276,16 @@ const RequestList = (props) => {
                                     gap: '8px'
                                 } },
                                 React.createElement(react_2.PrimaryButton, { text: "Approve", onClick: () => {
-                                        if (props.onApproveRequest) {
-                                            props
-                                                .onApproveRequest(item)
-                                                .catch(err => console.error(err));
+                                        if (!props.onApproveRequest) {
+                                            return;
                                         }
+                                        const approvalComment = window.prompt('Add a comment or note for this approval:');
+                                        if (approvalComment === null) {
+                                            return;
+                                        }
+                                        props
+                                            .onApproveRequest(item, approvalComment.trim())
+                                            .catch(err => console.error(err));
                                     }, disabled: isBusy || !hasEnoughStock }),
                                 React.createElement(react_2.PrimaryButton, { text: "Reject", onClick: () => {
                                         if (!props.onRejectRequest) {
@@ -571,15 +576,22 @@ const RequestList = (props) => {
                                 selectedRequestForDetails.id
                                 ? 'Processing...'
                                 : 'Approve', onClick: () => {
-                                if (props.onApproveRequest) {
-                                    props
-                                        .onApproveRequest(selectedRequestForDetails)
-                                        .then(() => {
-                                        setIsDetailsPanelOpen(false);
-                                        setSelectedRequestForDetails(null);
-                                    })
-                                        .catch(err => console.error(err));
+                                if (!props.onApproveRequest) {
+                                    return;
                                 }
+                                const approvalComment = window.prompt('Add a comment or note for this approval:');
+                                if (approvalComment === null) {
+                                    return;
+                                }
+                                props
+                                    .onApproveRequest(selectedRequestForDetails, approvalComment.trim())
+                                    .then(() => {
+                                    setIsDetailsPanelOpen(false);
+                                    setSelectedRequestForDetails(null);
+                                })
+                                    .catch(err => {
+                                    console.error(err);
+                                });
                             }, disabled: props.actionInProgressId ===
                                 selectedRequestForDetails.id ||
                                 !selectedRequestHasEnoughStock }),
