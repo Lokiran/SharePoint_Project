@@ -5,6 +5,7 @@ const pnpjsConfig_1 = require("../pnpjsConfig");
 const SharePointBaseService_1 = require("./base/SharePointBaseService");
 const AuditLogService_1 = require("./AuditLogService");
 const EmailService_1 = require("./EmailService");
+const mockData_1 = require("../data/mockData");
 class RequestService {
     static _normalizeRequestKey(input) {
         return (input || "").trim().toUpperCase();
@@ -186,6 +187,18 @@ class RequestService {
                     console.warn("Could not auto-create Priority field. Continuing.", err);
                 }
             }
+            const hasRequestDateField = fields.some(field => {
+                const internalName = (field.InternalName || '').toString().toLowerCase();
+                return internalName === 'requestdate' || internalName === 'request_x0020_date';
+            });
+            if (!hasRequestDateField) {
+                try {
+                    await list.fields.addText('RequestDate', { Title: 'Request Date' });
+                }
+                catch (err) {
+                    console.warn("Could not auto-create RequestDate field. Continuing.", err);
+                }
+            }
         }
         catch (error) {
             // Non-admin users may not have schema permissions. Don't block request flows.
@@ -195,7 +208,7 @@ class RequestService {
     static async addRequest(request, userDisplayName = "Unknown", userRole, isEmployeeUI) {
         const list = await RequestService.getRequestList();
         await RequestService._ensureRequestWorkflowFields();
-        const initialStatus = request.status || "Pending";
+        const initialStatus = request.status || "Pending Manager Approval";
         const sp = (0, pnpjsConfig_1.getSP)();
         let requesterId = null;
         try {
@@ -546,36 +559,33 @@ class RequestService {
                 }),
                 user: userDisplayName
             });
-            // Trigger Email Notification to Manager (only from Admin UI, and NOT when requested from Employee UI)
-            if (userRole === 'Admin' && !isEmployeeUI) {
-                // Run email sending asynchronously so it does not block or disturb the asset request creation flow
-                Promise.resolve().then(async () => {
+            // Trigger Email Notification to Manager
+            Promise.resolve().then(async () => {
+                try {
+                    let liveManagerEmail = "";
                     try {
-                        let liveManagerEmail = "";
-                        try {
-                            const resolvedEmail = await EmailService_1.EmailService.resolveLiveManagerEmail(request.requesterName);
-                            if (resolvedEmail) {
-                                liveManagerEmail = resolvedEmail;
-                            }
+                        const resolvedEmail = await EmailService_1.EmailService.resolveLiveManagerEmail(request.managerName || "");
+                        if (resolvedEmail) {
+                            liveManagerEmail = resolvedEmail;
                         }
-                        catch (resolveErr) {
-                            console.warn("Failed to resolve live manager email:", resolveErr);
-                        }
-                        await EmailService_1.EmailService.sendApprovalRequestToManager({
-                            requestKey,
-                            employeeName: request.requesterName,
-                            assetName: request.assetTitle,
-                            requestDate: request.requestDate || new Date().toLocaleDateString(),
-                            adminName: userDisplayName
-                        }, liveManagerEmail || undefined);
                     }
-                    catch (mailErr) {
-                        console.warn("Failed to send approval request email in background:", mailErr);
+                    catch (resolveErr) {
+                        console.warn("Failed to resolve live manager email:", resolveErr);
                     }
-                }).catch(err => {
-                    console.warn("Unhandled error in background email generation:", err);
-                });
-            }
+                    await EmailService_1.EmailService.sendApprovalRequestToManager({
+                        requestKey,
+                        employeeName: request.requesterName,
+                        assetName: request.assetTitle,
+                        requestDate: request.requestDate || new Date().toLocaleDateString(),
+                        adminName: request.requesterName
+                    }, liveManagerEmail || undefined);
+                }
+                catch (mailErr) {
+                    console.warn("Failed to send approval request email in background:", mailErr);
+                }
+            }).catch(err => {
+                console.warn("Unhandled error in background email generation:", err);
+            });
         }
         catch (postError) {
             console.warn("Failed in post-request creation steps:", postError);
@@ -612,11 +622,18 @@ class RequestService {
             const managerNameKey = findFieldInternalName("managername", "ManagerName");
             const resolvedKeyName = RequestService._resolveRequestKeyInternalName(fields);
             mapped = items.map((item) => {
-                const rawStatus = item[statusKey] || item.Status || 'Pending';
-                const normalizedStatus = (rawStatus || '').toString().toLowerCase();
-                const status = (normalizedStatus.includes('approv')) ? 'Approved' :
-                    (normalizedStatus.includes('declin') || normalizedStatus.includes('reject')) ? 'Declined' :
-                        'Pending';
+                const rawStatus = item[statusKey] || item.Status || 'Pending Manager Approval';
+                const isAssetAllocated = (item[assetStatusKey] || "Pending").toString().toLowerCase().includes("approv");
+                let status = rawStatus;
+                if (rawStatus === 'Pending') {
+                    status = 'Pending Manager Approval';
+                }
+                else if (rawStatus === 'Approved') {
+                    status = isAssetAllocated ? 'Asset Assigned' : 'Approved by Manager';
+                }
+                else if (rawStatus === 'Declined') {
+                    status = 'Rejected';
+                }
                 const requestKey = item[resolvedKeyName] || RequestService._extractRequestKey(item);
                 return {
                     id: item.ID ? item.ID.toString() : Math.random().toString(36).substr(2, 9),
@@ -653,7 +670,6 @@ class RequestService {
                     console.warn("Background update of missing RequestKeys failed:", err);
                 });
             }
-            return mapped;
         }
         catch (error) {
             console.warn("Error fetching requests from SharePoint, falling back to local storage items:", error);
@@ -728,7 +744,7 @@ class RequestService {
             };
             const statusValue = status === 'Declined'
                 ? pickChoice(['rejected', 'declined'], 'Rejected')
-                : pickChoice(['approved'], 'Approved');
+                : pickChoice(['approved by manager', 'approved'], 'Approved by Manager');
             const requestKey = RequestService._extractRequestKey(item);
             const basePayload = {};
             basePayload[statusKey] = statusValue;
@@ -776,6 +792,33 @@ class RequestService {
                 }
                 catch (mailErr) {
                     console.warn("Failed to send approval confirmation email to Admins:", mailErr);
+                }
+            }
+            else if (status === 'Declined') {
+                try {
+                    const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
+                    const employeeKey = findKey("employee") || findKey("requester") || "Employee";
+                    const requesterKey = findKey("requester") || "Requester";
+                    const rawEmp = item[employeeKey] || item[requesterKey] || item.Employee || item.Title || "Employee";
+                    const employeeName = typeof rawEmp === 'string' ? rawEmp : (rawEmp && rawEmp.Title ? rawEmp.Title : "Employee");
+                    const employeeEmail = typeof rawEmp === 'object' && rawEmp && rawEmp.EMail ? rawEmp.EMail : (item.RequesterEmail || item.EmployeeEmail || item.Author?.Email || "");
+                    let finalEmployeeEmail = employeeEmail;
+                    if (!finalEmployeeEmail) {
+                        const empRecord = mockData_1.EMPLOYEES.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
+                        if (empRecord)
+                            finalEmployeeEmail = empRecord.email;
+                    }
+                    await EmailService_1.EmailService.sendRejectionNotificationToEmployee({
+                        requestKey: requestKey || RequestService._buildRequestKeyFromItemId(requestId),
+                        employeeName,
+                        employeeEmail: finalEmployeeEmail,
+                        assetName: item[selectAssetKey] || item.Title || "Asset",
+                        rejectionReason: rejectionReason || "Rejected by manager",
+                        managerName: approverName
+                    });
+                }
+                catch (mailErr) {
+                    console.warn("Failed to send manager rejection email to employee:", mailErr);
                 }
             }
         }

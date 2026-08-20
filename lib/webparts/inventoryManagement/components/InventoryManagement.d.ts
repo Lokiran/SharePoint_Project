@@ -87,6 +87,7 @@ export interface IInventoryManagementState {
     isSendingMockEmail: boolean;
     mockEmailSendError?: string;
     mockEmailSendSuccess: boolean;
+    mockEmailSendMethod?: "graph" | "spUtility";
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _isRequestOwnedByCurrentUser;
@@ -96,6 +97,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _markAllNotificationsAsRead;
     private _clearNotification;
     private _clearAllNotifications;
+    private _clearNotifications;
     private _handleNotificationAction;
     constructor(props: IInventoryManagementProps);
     componentDidMount(): Promise<void>;

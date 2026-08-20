@@ -8,30 +8,45 @@ import {
   DefaultButton, 
   PrimaryButton, 
   IconButton, 
-  Icon 
+  Icon,
+  Checkbox
 } from '@fluentui/react';
 
 export interface INotificationCenterProps {
   notifications: INotification[];
+  clearedNotificationIds: string[];
   onMarkAsRead: (id: string) => void;
   onMarkAllAsRead: () => void;
-  onClearNotification: (id: string) => void;
+  onClearNotification: (id: string, tab: string) => void;
   onClearAllNotifications: () => void;
+  onClearNotifications?: (ids: string[], tab: string) => void;
   onNotificationAction: (actionLink: string, notificationId: string) => void;
 }
 
 export const NotificationCenter: React.FC<INotificationCenterProps> = (props) => {
   const [filter, setFilter] = React.useState<string>('All');
+  const [selectedIds, setSelectedIds] = React.useState<Set<string>>(new Set());
+  const [isSelectionMode, setIsSelectionMode] = React.useState<boolean>(false);
   const containerStackTokens: IStackTokens = { childrenGap: 15 };
   const itemStackTokens: IStackTokens = { childrenGap: 10 };
 
   const handleFilterClick = (item?: PivotItem) => {
     if (item) {
       setFilter(item.props.itemKey || 'All');
+      setSelectedIds(new Set());
+      setIsSelectionMode(false);
     }
   };
 
   const filteredNotifications = props.notifications.filter(n => {
+    // 1. Check if cleared for this specific tab view
+    const clearKey = `${n.id}::${filter}`;
+    if (props.clearedNotificationIds.indexOf(clearKey) !== -1) return false;
+
+    // 2. Legacy check
+    if (props.clearedNotificationIds.indexOf(n.id) !== -1) return false;
+
+    // 3. Category match
     if (filter === 'All') return true;
     if (filter === 'Request' && n.category === 'Request') return true;
     if (filter === 'Assignment' && n.category === 'Assignment') return true;
@@ -91,22 +106,70 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
           <PivotItem headerText="System Alerts" itemKey="Audit" />
         </Pivot>
 
-        <Stack horizontal tokens={{ childrenGap: 8 }}>
-          {unreadCount > 0 && (
-            <DefaultButton 
-              iconProps={{ iconName: 'CheckMark' }} 
-              text="Mark all as read" 
-              onClick={props.onMarkAllAsRead} 
-              styles={{ root: { borderRadius: '6px' } }}
-            />
-          )}
-          {filteredNotifications.length > 0 && (
-            <DefaultButton 
-              iconProps={{ iconName: 'Clear' }} 
-              text="Clear filtered" 
-              onClick={props.onClearAllNotifications} 
-              styles={{ root: { borderRadius: '6px', color: '#b91c1c' } }}
-            />
+        <Stack horizontal tokens={{ childrenGap: 12 }} verticalAlign="center" styles={{ root: { flexWrap: 'wrap' } }}>
+          {!isSelectionMode ? (
+            <>
+              {unreadCount > 0 && (
+                <DefaultButton 
+                  iconProps={{ iconName: 'CheckMark' }} 
+                  text="Mark all as read" 
+                  onClick={props.onMarkAllAsRead} 
+                  styles={{ root: { borderRadius: '6px' } }}
+                />
+              )}
+              {filteredNotifications.length > 0 && (
+                <DefaultButton 
+                  iconProps={{ iconName: 'Clear' }} 
+                  text="Clear filtered" 
+                  onClick={() => setIsSelectionMode(true)} 
+                  styles={{ root: { borderRadius: '6px', color: '#b91c1c' } }}
+                />
+              )}
+            </>
+          ) : (
+            <>
+              {filteredNotifications.length > 0 && (
+                <Checkbox
+                  label="Select all"
+                  checked={filteredNotifications.length > 0 && filteredNotifications.every(n => selectedIds.has(n.id))}
+                  indeterminate={filteredNotifications.some(n => selectedIds.has(n.id)) && !filteredNotifications.every(n => selectedIds.has(n.id))}
+                  onChange={(_, checked) => {
+                    const newSelected = new Set(selectedIds);
+                    if (checked) {
+                      filteredNotifications.forEach(n => newSelected.add(n.id));
+                    } else {
+                      filteredNotifications.forEach(n => newSelected.delete(n.id));
+                    }
+                    setSelectedIds(newSelected);
+                  }}
+                  styles={{ root: { marginRight: 8 } }}
+                />
+              )}
+              <DefaultButton 
+                text="Cancel" 
+                onClick={() => {
+                  setIsSelectionMode(false);
+                  setSelectedIds(new Set());
+                }} 
+                styles={{ root: { borderRadius: '6px' } }}
+              />
+              <PrimaryButton 
+                iconProps={{ iconName: 'Clear' }} 
+                text={`Clear selected (${selectedIds.size})`} 
+                disabled={selectedIds.size === 0}
+                onClick={() => {
+                  const idsToClear = Array.from(selectedIds);
+                  if (props.onClearNotifications) {
+                    props.onClearNotifications(idsToClear, filter);
+                  } else {
+                    idsToClear.forEach(id => props.onClearNotification(id, filter));
+                  }
+                  setSelectedIds(new Set());
+                  setIsSelectionMode(false);
+                }}
+                styles={{ root: { borderRadius: '6px', backgroundColor: '#b91c1c', borderColor: '#b91c1c' } }}
+              />
+            </>
           )}
         </Stack>
       </Stack>
@@ -154,6 +217,27 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
                   gap: '12px'
                 }}
               >
+                {/* Selection Checkbox */}
+                {isSelectionMode && (
+                  <Checkbox
+                    checked={selectedIds.has(notif.id)}
+                    onChange={(_, checked) => {
+                      const newSelected = new Set(selectedIds);
+                      if (checked) {
+                        newSelected.add(notif.id);
+                      } else {
+                        newSelected.delete(notif.id);
+                      }
+                      setSelectedIds(newSelected);
+                    }}
+                    styles={{
+                      root: {
+                        marginTop: '4px'
+                      }
+                    }}
+                  />
+                )}
+
                 {/* Type Icon */}
                 <Icon 
                   iconName={styles.iconName} 
@@ -230,7 +314,7 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
                   iconProps={{ iconName: 'Cancel' }} 
                   title="Dismiss notification" 
                   ariaLabel="Dismiss notification"
-                  onClick={() => props.onClearNotification(notif.id)}
+                  onClick={() => props.onClearNotification(notif.id, filter)}
                   styles={{ 
                     root: { 
                       color: '#9ca3af', 

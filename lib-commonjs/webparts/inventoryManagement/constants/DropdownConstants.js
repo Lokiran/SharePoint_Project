@@ -14,6 +14,7 @@ exports.DEFAULT_ASSET_TYPE_OPTIONS = [
 ];
 exports.ASSET_CONDITION_OPTIONS = [
     { key: 'New', text: 'New' },
+    { key: 'Excellent', text: 'Excellent' },
     { key: 'Good', text: 'Good' },
     { key: 'Fair', text: 'Fair' },
     { key: 'Poor', text: 'Poor' },
@@ -71,9 +72,10 @@ exports.ASSET_REQUEST_PRIORITY_OPTIONS = [
     { key: 'High', text: 'High' }
 ];
 exports.ASSET_REQUEST_STATUS_OPTIONS = [
-    { key: 'Pending', text: 'Pending' },
-    { key: 'Approved', text: 'Approved' },
-    { key: 'Declined', text: 'Declined' }
+    { key: 'Pending Manager Approval', text: 'Pending Manager Approval' },
+    { key: 'Approved by Manager', text: 'Approved by Manager' },
+    { key: 'Rejected', text: 'Rejected' },
+    { key: 'Asset Assigned', text: 'Asset Assigned' }
 ];
 // ==========================================
 // Warranty Options

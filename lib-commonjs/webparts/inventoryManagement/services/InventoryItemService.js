@@ -383,9 +383,23 @@ class InventoryItemService {
             };
             const requestKey = extractRequestKey(item);
             const assetStatusKey = findKey("assetstatus") || SharePointBaseService_1.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME;
+            const statusField = fields.find(field => {
+                const internalNameRaw = (field.InternalName || '').toString();
+                const internalName = internalNameRaw.toLowerCase();
+                const title = (field.Title || '').toLowerCase();
+                const normalizedInternal = internalName.replace(/_x0020_/g, '');
+                const isModerationField = internalName.includes('moderation');
+                const isBusinessStatusField = normalizedInternal === 'status' || title.trim() === 'status';
+                return isBusinessStatusField && !isModerationField;
+            });
+            const statusKeyFromItem = keys.find(key => SharePointBaseService_1.SharePointBaseService._isBusinessStatusKey(key));
+            const statusKey = statusKeyFromItem || statusField?.InternalName || SharePointBaseService_1.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME;
             const updatePayload = {
                 [assetStatusKey]: assetStatus
             };
+            if (statusKey && assetStatus === 'Approved') {
+                updatePayload[statusKey] = 'Asset Assigned';
+            }
             if (comment) {
                 const managerCommentKey = findKey("managercomment") || findKey("comment") || findKey("response") || SharePointBaseService_1.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME;
                 if (managerCommentKey) {

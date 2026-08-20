@@ -14,8 +14,6 @@ const RequestForm_1 = require("./RequestForm");
 const EventStream_1 = require("./EventStream");
 const ReturnAssetForm_1 = require("./ReturnAssetForm");
 const ReturnRequestList_1 = require("./ReturnRequestList");
-const WarrantyUtils_1 = require("../utils/WarrantyUtils");
-const StockUtils_1 = require("../utils/StockUtils");
 const react_1 = require("@fluentui/react");
 const chart_js_1 = require("chart.js");
 const react_chartjs_2_1 = require("react-chartjs-2");
@@ -305,14 +303,21 @@ class InventoryManagement extends React.Component {
             this.setState({ readNotificationIds });
             localStorage.setItem('inventory_read_notifications', JSON.stringify(readNotificationIds));
         };
-        this._clearNotification = (id) => {
-            const clearedNotificationIds = [...this.state.clearedNotificationIds, id];
+        this._clearNotification = (id, tab) => {
+            const clearedKey = `${id}::${tab}`;
+            const clearedNotificationIds = [...this.state.clearedNotificationIds, clearedKey];
             this.setState({ clearedNotificationIds });
             localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
         };
         this._clearAllNotifications = () => {
             const notifications = this._getNotifications();
-            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...notifications.map(n => n.id)]));
+            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...notifications.map(n => `${n.id}::All`)]));
+            this.setState({ clearedNotificationIds });
+            localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+        };
+        this._clearNotifications = (ids, tab) => {
+            const clearedKeys = ids.map(id => `${id}::${tab}`);
+            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...clearedKeys]));
             this.setState({ clearedNotificationIds });
             localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
         };
@@ -332,7 +337,8 @@ class InventoryManagement extends React.Component {
                 editMockEmailSubject: ev.detail.subject,
                 isSendingMockEmail: false,
                 mockEmailSendError: undefined,
-                mockEmailSendSuccess: false
+                mockEmailSendSuccess: false,
+                mockEmailSendMethod: undefined
             });
         };
         this._handleEmailSendFailed = (ev) => {
@@ -345,17 +351,40 @@ class InventoryManagement extends React.Component {
             const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
             if (!lastMockEmail)
                 return;
-            this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
+            this.setState({
+                isSendingMockEmail: true,
+                mockEmailSendError: undefined,
+                mockEmailSendSuccess: false,
+                mockEmailSendMethod: undefined
+            });
             try {
                 const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
-                await EmailService_1.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
-                this.setState({
-                    isSendingMockEmail: false,
-                    mockEmailSendSuccess: true
+                const emailService = new EmailService_1.EmailService(this.props.spContext);
+                const result = await emailService.sendEmail({
+                    to: recipients,
+                    subject: editMockEmailSubject,
+                    htmlBody: lastMockEmail.body
                 });
-                setTimeout(() => {
-                    this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
-                }, 2000);
+                if (result.success) {
+                    this.setState({
+                        isSendingMockEmail: false,
+                        mockEmailSendSuccess: true,
+                        mockEmailSendMethod: result.method
+                    });
+                    setTimeout(() => {
+                        this.setState({
+                            lastMockEmail: undefined,
+                            mockEmailSendSuccess: false,
+                            mockEmailSendMethod: undefined
+                        });
+                    }, 3000);
+                }
+                else {
+                    this.setState({
+                        isSendingMockEmail: false,
+                        mockEmailSendError: result.error || "Email failed to send."
+                    });
+                }
             }
             catch (e) {
                 console.error("Failed to send email from panel:", e);
@@ -629,7 +658,7 @@ class InventoryManagement extends React.Component {
         };
         this._onSubmitRequest = async (requestData) => {
             try {
-                const initialStatus = 'Pending';
+                const initialStatus = 'Pending Manager Approval';
                 const tempId = `temp-${Date.now()}`;
                 const localRequest = {
                     id: tempId,
@@ -686,23 +715,11 @@ class InventoryManagement extends React.Component {
             }
         };
         this._onApproveRequest = async (request) => {
-            const availableStock = (0, StockUtils_1.getAvailableStock)(this.state.items, request);
-            const requestedQuantity = Number(request.quantity || 0);
-            if (availableStock < requestedQuantity) {
-                this.setState({
-                    errorMessage: `Insufficient stock for "${request.assetTitle}". Available: ${availableStock}, Requested: ${requestedQuantity}`
-                });
-                return;
-            }
             try {
-                this.setState({
-                    requestActionInProgressId: request.id,
-                    errorMessage: undefined
-                });
-                // KEEP THE REST OF YOUR EXISTING CODE EXACTLY AS IT IS
+                this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
                 if (request.id.indexOf('temp-') === 0) {
                     this.setState(prevState => ({
-                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved' } : r)
+                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Approved by Manager' } : r)
                     }));
                 }
                 else {
@@ -722,7 +739,7 @@ class InventoryManagement extends React.Component {
                             assetTitle: request.assetTitle,
                             requesterName: request.requesterName,
                             managerName: request.managerName || this.state.activeUserDisplayName,
-                            status: 'Approved',
+                            status: 'Approved by Manager',
                             date: request.requestDate
                         }
                     }
@@ -742,7 +759,7 @@ class InventoryManagement extends React.Component {
                 this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
                 if (request.id.indexOf('temp-') === 0) {
                     this.setState(prevState => ({
-                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Declined', managerResponse: reason } : r)
+                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, status: 'Rejected', managerResponse: reason } : r)
                     }));
                 }
                 else {
@@ -762,7 +779,7 @@ class InventoryManagement extends React.Component {
                             assetTitle: request.assetTitle,
                             requesterName: request.requesterName,
                             managerName: request.managerName || this.state.activeUserDisplayName,
-                            status: 'Declined',
+                            status: 'Rejected',
                             comment: reason,
                             date: request.requestDate
                         }
@@ -783,7 +800,7 @@ class InventoryManagement extends React.Component {
                 this.setState({ requestActionInProgressId: request.id, errorMessage: undefined });
                 if (request.id.indexOf('temp-') === 0) {
                     this.setState(prevState => ({
-                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, assetStatus: 'Approved' } : r)
+                        requests: prevState.requests.map(r => r.id === request.id ? { ...r, assetStatus: 'Approved', status: 'Asset Assigned' } : r)
                     }));
                 }
                 else {
@@ -802,7 +819,7 @@ class InventoryManagement extends React.Component {
                             requestId: request.requestKey || `#${request.id}`,
                             assetTitle: request.assetTitle,
                             requesterName: request.requesterName,
-                            status: 'Asset Allocated & Dispatched',
+                            status: 'Asset Assigned',
                             date: new Date().toISOString().split('T')[0]
                         }
                     }
@@ -1209,8 +1226,12 @@ class InventoryManagement extends React.Component {
                             React.createElement(react_1.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
         };
         this._renderAssetAnalysis = (asset) => {
-            const lifecycleInfo = (0, WarrantyUtils_1.getAssetLifecycleInfo)(asset.purchaseDate);
-            const warrantyInfo = (0, WarrantyUtils_1.getWarrantyColorInfo)(asset.warrantyExpiry);
+            const purchaseDateVal = asset.purchaseDate ? new Date(asset.purchaseDate) : null;
+            const now = new Date();
+            const ageInMonths = purchaseDateVal
+                ? Math.round((now.getTime() - purchaseDateVal.getTime()) / (1000 * 60 * 60 * 24 * 30.4))
+                : null;
+            const isExpired = asset.warrantyExpiry && new Date(asset.warrantyExpiry) < now;
             let conditionColor = '#16a34a';
             let healthRating = "Excellent";
             let healthIcon = "Heart";
@@ -1259,7 +1280,7 @@ class InventoryManagement extends React.Component {
                         React.createElement("div", null,
                             React.createElement("span", { style: { color: '#6b7280' } }, "Warranty Expiry:"),
                             " ",
-                            React.createElement("strong", { style: { color: warrantyInfo.textColor, backgroundColor: asset.warrantyExpiry ? warrantyInfo.bgColor : 'transparent', padding: asset.warrantyExpiry ? '2px 8px' : 0, borderRadius: '4px' } }, asset.warrantyExpiry || "N/A"))),
+                            React.createElement("strong", { style: { color: isExpired ? '#dc2626' : '#111827' } }, asset.warrantyExpiry || "N/A"))),
                     asset.note && (React.createElement("div", { style: { marginTop: '12px', fontSize: '0.88rem', padding: '8px 10px', backgroundColor: '#f9fafb', borderRadius: '4px', border: '1px solid #f3f4f6' } },
                         React.createElement("span", { style: { color: '#6b7280', display: 'block', marginBottom: '2px' } }, "Asset Notes:"),
                         React.createElement("span", { style: { color: '#374151' } }, asset.note)))),
@@ -1268,42 +1289,25 @@ class InventoryManagement extends React.Component {
                         React.createElement(react_1.Icon, { iconName: "Heart", style: { color: conditionColor } }),
                         " Health & Depreciation Analysis"),
                     React.createElement(react_1.Stack, { tokens: { childrenGap: 12 } },
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Lifecycle & EOL Date:"),
+                        ageInMonths !== null && (React.createElement("div", null,
+                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Age:"),
                             React.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
-                                lifecycleInfo.statusText,
-                                ". Purchase Date: ",
-                                React.createElement("strong", null, lifecycleInfo.purchaseDateFormatted),
-                                " | Enterprise EOL Date: ",
-                                React.createElement("strong", null, lifecycleInfo.eolDateFormatted || 'N/A'),
-                                ".")),
+                                "This asset is ",
+                                React.createElement("strong", null, ageInMonths),
+                                " month(s) old (",
+                                Math.round(ageInMonths / 12 * 10) / 10,
+                                " year(s)). Standard lifecycle depreciation period is 36 months (3 years)."))),
                         React.createElement("div", null,
                             React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (warrantyInfo.isExpired ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
+                            asset.warrantyExpiry ? (isExpired ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
                                 React.createElement("strong", null, "Warranty Expired:"),
                                 " Coverage ended on ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                "). Any future repair operations will incur full direct business costs.")) : warrantyInfo.isLessThan6Months ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Expiring Soon (< 6 months):"),
-                                " Expiration date is ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                "). High priority for hardware refresh/warranty renewal.")) : warrantyInfo.isLessThan1Year ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Expiring (< 1 year):"),
-                                " Expiration date is ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                "). Plan for upcoming hardware lifecycle management.")) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Active (> 1 year):"),
-                                " Fully protected under manufacturer coverage until ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                ")."))) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
+                                asset.warrantyExpiry,
+                                ". Any future repair operations will incur full direct business costs.")) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
+                                React.createElement("strong", null, "Warranty Active:"),
+                                " Covered under manufacturer protection until ",
+                                asset.warrantyExpiry,
+                                "."))) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
                                 React.createElement("strong", null, "Warranty Unknown:"),
                                 " No warranty expiration date has been registered for this asset."))),
                         React.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
@@ -1632,7 +1636,8 @@ class InventoryManagement extends React.Component {
             editMockEmailSubject: '',
             isSendingMockEmail: false,
             mockEmailSendError: undefined,
-            mockEmailSendSuccess: false
+            mockEmailSendSuccess: false,
+            mockEmailSendMethod: undefined
         };
     }
     async componentDidMount() {
@@ -1853,11 +1858,13 @@ class InventoryManagement extends React.Component {
                                                 React.createElement("div", { style: { marginTop: '20px' } },
                                                     React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                                 case 'Notifications':
-                                    return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                    return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, clearedNotificationIds: this.state.clearedNotificationIds, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onClearNotifications: this._clearNotifications, onNotificationAction: this._handleNotificationAction }));
                                 case 'IncidentHistory':
                                     return (React.createElement(pages_1.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':
                                     return (React.createElement("div", null,
+                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
+                                            React.createElement("h3", null, "Replacement History")),
                                         React.createElement(ReplacementHistory_1.ReplacementHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
                                 case 'Inventory':
                                     return (isAdmin || isManager) ? (React.createElement(pages_1.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
@@ -1914,14 +1921,14 @@ class InventoryManagement extends React.Component {
                                                             },
                                                         ],
                                                     }, options: { maintainAspectRatio: false } }))),
-                                        React.createElement(RequestList_1.RequestList, { items: visibleManagerRequests, inventoryItems: this.state.items, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
+                                        React.createElement(RequestList_1.RequestList, { items: visibleManagerRequests, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
                                 case 'AssetAssignmentQueue':
                                     return isAdmin ? (React.createElement("div", null,
                                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
                                             React.createElement("h3", null, "Approved Requests for Asset Assignment")),
                                         React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
                                         React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                        React.createElement(RequestList_1.RequestList, { items: visibleAdminRequests, inventoryItems: this.state.items, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
+                                        React.createElement(RequestList_1.RequestList, { items: visibleAdminRequests, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
                                 case 'AssetReturns':
                                     return isAdmin || isManager ? (React.createElement("div", null,
                                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
@@ -2050,7 +2057,8 @@ class InventoryManagement extends React.Component {
                 React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
                 React.createElement(react_1.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
                 React.createElement(react_1.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
-                this.state.mockEmailSendSuccess && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
+                this.state.mockEmailSendSuccess && this.state.mockEmailSendMethod === "graph" && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success }, "Email sent via Microsoft Graph.")),
+                this.state.mockEmailSendSuccess && this.state.mockEmailSendMethod === "spUtility" && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.warning }, "Queued via legacy SharePoint mail - please verify delivery.")),
                 this.state.mockEmailSendError && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error },
                     "Failed to send email: ",
                     this.state.mockEmailSendError)),

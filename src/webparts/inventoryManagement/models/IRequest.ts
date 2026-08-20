@@ -9,7 +9,7 @@ export interface IRequest {
   assetName?: string;
   priority?: 'High' | 'Medium' | 'Low' | string;
   quantity: number;
-  status: 'Pending' | 'Approved' | 'Declined';
+  status: 'Pending Manager Approval' | 'Approved by Manager' | 'Rejected' | 'Asset Assigned' | 'Pending' | 'Approved' | 'Declined' | string;
   assetStatus?: 'Pending' | 'Approved';
   managerResponse?: string;
   managerName?: string;

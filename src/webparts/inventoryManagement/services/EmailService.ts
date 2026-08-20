@@ -1,3 +1,5 @@
+import { WebPartContext } from "@microsoft/sp-webpart-base";
+import { MSGraphClientV3 } from "@microsoft/sp-http";
 import { getSP, getContext } from "../pnpjsConfig";
 import { EMPLOYEES } from "../data/mockData";
 
@@ -26,6 +28,30 @@ export interface IAssignmentNotificationParams {
   assignedDate: string;
 }
 
+export interface IEmailProps {
+  to: string[];
+  cc?: string[];
+  subject: string;
+  htmlBody: string;
+  saveToSentItems?: boolean;
+}
+
+export interface IEmailSendResult {
+  success: boolean;
+  method: "graph" | "spUtility";
+  error?: string;
+  statusCode?: number;
+}
+
+/**
+ * EmailService
+ * -------------------------------------------------------------------------
+ * Graph /sendMail is now the PRIMARY path. sp.utility.sendEmail is kept only
+ * as a last-resort fallback because Microsoft's own PnPjs docs mark it
+ * deprecated, and in practice it can resolve "successfully" even when the
+ * message never reaches Exchange (silent failure - no thrown error, so old
+ * code never triggered its own fallback).
+ */
 export class EmailService {
   // Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
   private static readonly USE_MOCK_TEST_EMAILS = true;
@@ -35,6 +61,98 @@ export class EmailService {
   ];
 
   private static readonly MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
+
+  constructor(private context: WebPartContext) {}
+
+  public async sendEmail(props: IEmailProps): Promise<IEmailSendResult> {
+    // ---- PRIMARY: direct Microsoft Graph call --------------------------
+    try {
+      const client: MSGraphClientV3 = await this.context.msGraphClientFactory.getClient("3");
+
+      const message = {
+        subject: props.subject,
+        body: {
+          contentType: "HTML",
+          content: props.htmlBody
+        },
+        toRecipients: props.to.map((addr) => ({
+          emailAddress: { address: addr.trim() }
+        })),
+        ccRecipients: (props.cc ?? []).map((addr) => ({
+          emailAddress: { address: addr.trim() }
+        }))
+      };
+
+      // client.api(...).post() resolves with no content on success (202-equivalent).
+      // If it throws, we land in catch below and know for certain it failed -
+      // no more silent false positives.
+      await client.api("/me/sendMail").post({
+        message,
+        saveToSentItems: props.saveToSentItems ?? true
+      });
+
+      return { success: true, method: "graph" };
+    } catch (graphError: any) {
+      // eslint-disable-next-line no-console
+      console.error("[EmailService] Graph sendMail failed:", graphError);
+
+      const statusCode = graphError?.statusCode ?? graphError?.code;
+
+      // Common, actionable cases - surface these distinctly instead of a
+      // generic "something went wrong" so you can fix the real cause fast.
+      if (statusCode === 403) {
+        return {
+          success: false,
+          method: "graph",
+          statusCode,
+          error:
+            "Graph Mail.Send permission is not approved for this app. " +
+            "Check SharePoint Admin Center > Advanced > API access."
+        };
+      }
+      if (statusCode === 401) {
+        return {
+          success: false,
+          method: "graph",
+          statusCode,
+          error: "User token invalid/expired for Graph. Try re-authenticating."
+        };
+      }
+
+      // ---- FALLBACK: SharePoint's SendEmail utility (deprecated) -------
+      // Only reached if Graph itself throws (auth/consent/network issue).
+      try {
+        const { spfi, SPFx } = await import(/* webpackChunkName: 'pnp-sp' */ "@pnp/sp");
+        await import(/* webpackChunkName: 'pnp-sp-webs' */ "@pnp/sp/webs");
+        await import(/* webpackChunkName: 'pnp-sp-sputilities' */ "@pnp/sp/sputilities");
+
+        const sp = spfi().using(SPFx(this.context));
+
+        await sp.utility.sendEmail({
+          To: props.to,
+          CC: props.cc ?? [],
+          Subject: props.subject,
+          Body: props.htmlBody,
+          AdditionalHeaders: { "content-type": "text/html" }
+        });
+
+        // NOTE: this resolving does NOT guarantee delivery - PnPjs docs
+        // mark this method deprecated precisely because of that. Treat
+        // this branch as "queued, unconfirmed" rather than "sent".
+        return {
+          success: true,
+          method: "spUtility",
+          error: "Sent via deprecated SharePoint utility - delivery not guaranteed. Verify with message trace."
+        };
+      } catch (spError: any) {
+        return {
+          success: false,
+          method: "spUtility",
+          error: `Both Graph and SharePoint utility failed. Graph: ${graphError?.message || graphError}. SP: ${spError?.message || spError}`
+        };
+      }
+    }
+  }
 
   /**
    * Helper to get target emails for Admins
@@ -172,6 +290,64 @@ export class EmailService {
   }
 
   /**
+   * Send Rejection Notification Email to Employee
+   */
+  public static async sendRejectionNotificationToEmployee(params: {
+    requestKey: string;
+    employeeName: string;
+    employeeEmail: string;
+    assetName: string;
+    rejectionReason: string;
+    managerName: string;
+  }): Promise<void> {
+    const toEmail = await this.getEmployeeEmail(params.employeeEmail || "");
+    const subject = `Asset Request Rejected - ${params.requestKey}`;
+
+    const body = `
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f3f4f6; padding: 20px; color: #1f2937; min-height: 100%;">
+        <div style="max-width: 600px; background: #ffffff; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+          <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); padding: 30px; text-align: center; color: #ffffff;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Request Rejected</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Asset Requisition Declined by Manager</p>
+          </div>
+          <div style="padding: 30px;">
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 0; color: #374151;">Dear ${params.employeeName},</p>
+            <p style="font-size: 16px; line-height: 1.6; color: #374151;">Unfortunately, your request for the following asset has been rejected by the manager:</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 24px 0; background-color: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden;">
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase; width: 40%;">Request ID</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #dc2626; font-weight: 700; font-size: 14px;">${params.requestKey}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Asset Name</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-weight: 600; font-size: 14px;">${params.assetName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Rejected By</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #e5e7eb; color: #111827; font-size: 14px;">${params.managerName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 15px; font-weight: 600; color: #4b5563; font-size: 12px; text-transform: uppercase;">Rejection Comments</td>
+                <td style="padding: 12px 15px; color: #b91c1c; font-style: italic; font-size: 14px;">${params.rejectionReason || "No comments provided."}</td>
+              </tr>
+            </table>
+
+            <p style="font-size: 15px; line-height: 1.6; color: #4b5563; margin-top: 30px;">
+              If you have any questions or require clarification, please reach out to your manager directly.
+            </p>
+          </div>
+          <div style="text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; background-color: #fafafa;">
+            This is an automated notification from the Asset Management Portal.
+          </div>
+        </div>
+      </div>
+    `;
+
+    await this.sendMail([toEmail], subject, body);
+  }
+
+  /**
    * Send Asset Assignment Notification Email to Employee (Adele / Alex)
    */
   public static async sendAssignmentNotificationToEmployee(params: IAssignmentNotificationParams, liveEmployeeEmail?: string): Promise<void> {
@@ -233,11 +409,32 @@ export class EmailService {
   /**
    * Try to resolve the manager's email dynamically from SharePoint User Profiles or EmployeeList
    */
-  public static async resolveLiveManagerEmail(employeeName: string): Promise<string | null> {
+  public static async resolveLiveManagerEmail(employeeName: string): Promise<string | undefined> {
     try {
       const sp = getSP();
       
-      // 1. Try to query the EmployeeList first
+      // 1. Try to resolve user email directly by name from mock data or SharePoint
+      const matchingEmp = EMPLOYEES.find(e => 
+        e.name.toLowerCase() === employeeName.toLowerCase() || 
+        e.email.toLowerCase() === employeeName.toLowerCase()
+      );
+      if (matchingEmp) {
+        return matchingEmp.email;
+      }
+
+      try {
+        const user: any = await sp.web.ensureUser(employeeName);
+        if (user) {
+          const email = user.Email || user.data?.Email || user.UserPrincipalName || user.data?.UserPrincipalName;
+          if (email && email.indexOf('@') > 0) {
+            return email;
+          }
+        }
+      } catch (err) {
+        console.warn("Could not directly resolve user email by name:", err);
+      }
+
+      // 2. Try to query the EmployeeList first
       try {
         const employeeList = sp.web.lists.getByTitle("EmployeeList");
         const fields = await employeeList.fields.select("InternalName", "Title")();
@@ -301,7 +498,7 @@ export class EmailService {
     } catch (e) {
       console.warn("Error resolving live manager email:", e);
     }
-    return null;
+    return undefined;
   }
 
   /**
@@ -314,57 +511,32 @@ export class EmailService {
       return;
     }
 
-    // Try sending email via Microsoft Graph API first (allows sending to external addresses like nexergroup.com)
     try {
       const context = getContext();
-      if (context && context.msGraphClientFactory) {
-        const client = await context.msGraphClientFactory.getClient("3");
-        await client.api("/me/sendMail").post({
-          message: {
-            subject: subject,
-            body: {
-              contentType: "HTML",
-              content: htmlBody
-            },
-            toRecipients: validEmails.map(email => ({
-              emailAddress: {
-                address: email
-              }
-            }))
-          }
-        });
-        console.log(`[EmailService] Outgoing mail successfully sent via Microsoft Graph to: ${validEmails.join(", ")}`);
-        return; // Success! Skip SharePoint Utility fallback
+      if (!context) {
+        throw new Error("SPFx Context not initialized in EmailService");
       }
-    } catch (graphError) {
-      console.warn("[EmailService] Failed to send email via Microsoft Graph. Falling back to SharePoint Utility...", graphError);
-    }
-
-    try {
-      const sp = getSP();
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const { Utilities } = require("@pnp/sp/sputilities");
-      const utility = Utilities(sp.web);
-      await utility.sendEmail({
-        To: validEmails,
-        Subject: subject,
-        Body: htmlBody,
-        AdditionalHeaders: {
-          "content-type": "text/html"
-        }
+      const service = new EmailService(context);
+      const result = await service.sendEmail({
+        to: validEmails,
+        subject,
+        htmlBody
       });
-      console.log(`[EmailService] Outgoing mail successfully sent via SharePoint Utility to: ${validEmails.join(", ")}`);
-    } catch (error) {
-      console.warn("[EmailService] Failed to send email via SharePoint Utility. Using console logs fallback:", error);
+      if (!result.success) {
+        throw new Error(result.error);
+      }
+    } catch (error: any) {
+      // Dispatch error event with true error details
       if (typeof window !== 'undefined') {
         window.dispatchEvent(new CustomEvent('spfx_email_send_failed', {
           detail: { 
             to: validEmails, 
             subject, 
-            errorMessage: error instanceof Error ? error.message : JSON.stringify(error) 
+            errorMessage: error?.message || error 
           }
         }));
       }
+      throw error;
     } finally {
       // Always write a beautiful colored log in the developer console to allow testing without live exchange configs.
       console.log(

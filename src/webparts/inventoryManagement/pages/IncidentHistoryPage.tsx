@@ -8,6 +8,9 @@ export const IncidentHistoryPage: React.FC<IIncidentHistoryPageProps> = (props) 
 
   return (
     <div>
+      <div className={styles.cardHeader}>
+        <h3>Incident History</h3>
+      </div>
       <IncidentHistory
         {...rest}
         userDisplayName={state.userDisplayName}

@@ -1,15 +1,3 @@
-if (typeof localStorage === 'undefined') {
-  let store: Record<string, string> = {};
-  (globalThis as any).localStorage = {
-    getItem: (key: string) => store[key] || null,
-    setItem: (key: string, value: string) => { store[key] = value.toString(); },
-    removeItem: (key: string) => { delete store[key]; },
-    clear: () => { store = {}; },
-    key: (i: number) => Object.keys(store)[i] || null,
-    get length() { return Object.keys(store).length; }
-  };
-}
-
 // Mock the configuration context before regular imports to satisfy linter hoisting rules
 const mockSP = {
   web: {
@@ -23,6 +11,8 @@ const mockSP = {
 jest.mock("../pnpjsConfig", () => ({
   getSP: () => mockSP
 }));
+
+jest.mock("@pnp/sp/sputilities", () => ({}), { virtual: true });
 
 import { ReturnRequestService } from "../services/ReturnRequestService";
 

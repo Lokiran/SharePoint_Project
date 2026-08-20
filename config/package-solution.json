@@ -3,7 +3,7 @@
   "solution": {
     "name": "Nexer-Inventory-Management-Tool",
     "id": "5328a6b9-aa28-4c42-8feb-4138a8d077e4",
-    "version": "1.0.0.0",
+    "version": "1.0.0.5",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -36,7 +36,7 @@
         "title": "Inventory-Management Feature",
         "description": "The feature that activates elements of the Inventory-Management solution.",
         "id": "7a5555d4-f1ea-414f-9fed-ab78cc789f4f",
-        "version": "1.0.0.0"
+        "version": "1.0.0.5"
       }
     ]
   },

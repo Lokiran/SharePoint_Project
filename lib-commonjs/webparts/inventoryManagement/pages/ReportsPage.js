@@ -6,7 +6,6 @@ const React = tslib_1.__importStar(require("react"));
 const react_1 = require("@fluentui/react");
 const react_chartjs_2_1 = require("react-chartjs-2");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../components/InventoryManagement.module.scss"));
-const WarrantyUtils_1 = require("../utils/WarrantyUtils");
 const ReportsPage = (props) => {
     const { state, actions } = props;
     const { items, requests } = state;
@@ -231,12 +230,11 @@ const ReportsPage = (props) => {
                         maxWidth: 200,
                         isResizable: true,
                         onRender: (item) => {
-                            const warrantyInfo = (0, WarrantyUtils_1.getWarrantyColorInfo)(item.warrantyExpiry);
+                            const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
                             return (React.createElement("span", { style: {
-                                    color: warrantyInfo.textColor,
+                                    color: isExpired ? '#ef4444' : '#166534',
                                     fontWeight: 600,
-                                    backgroundColor: warrantyInfo.bgColor,
-                                    border: `1px solid ${warrantyInfo.borderColor}`,
+                                    backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
                                     padding: '2px 8px',
                                     borderRadius: '9999px',
                                     fontSize: '0.75rem',
@@ -244,7 +242,7 @@ const ReportsPage = (props) => {
                                 } },
                                 item.warrantyExpiry || 'N/A',
                                 " ",
-                                item.warrantyExpiry ? warrantyInfo.statusText : ''));
+                                isExpired ? '(Expired)' : '(Active)'));
                         }
                     }
                 ], setKey: "warrantyReport", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none })))));

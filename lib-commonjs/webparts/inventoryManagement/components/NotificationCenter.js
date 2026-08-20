@@ -6,14 +6,26 @@ const React = tslib_1.__importStar(require("react"));
 const react_1 = require("@fluentui/react");
 const NotificationCenter = (props) => {
     const [filter, setFilter] = React.useState('All');
+    const [selectedIds, setSelectedIds] = React.useState(new Set());
+    const [isSelectionMode, setIsSelectionMode] = React.useState(false);
     const containerStackTokens = { childrenGap: 15 };
     const itemStackTokens = { childrenGap: 10 };
     const handleFilterClick = (item) => {
         if (item) {
             setFilter(item.props.itemKey || 'All');
+            setSelectedIds(new Set());
+            setIsSelectionMode(false);
         }
     };
     const filteredNotifications = props.notifications.filter(n => {
+        // 1. Check if cleared for this specific tab view
+        const clearKey = `${n.id}::${filter}`;
+        if (props.clearedNotificationIds.indexOf(clearKey) !== -1)
+            return false;
+        // 2. Legacy check
+        if (props.clearedNotificationIds.indexOf(n.id) !== -1)
+            return false;
+        // 3. Category match
         if (filter === 'All')
             return true;
         if (filter === 'Request' && n.category === 'Request')
@@ -65,9 +77,34 @@ const NotificationCenter = (props) => {
                 React.createElement(react_1.PivotItem, { headerText: "Requests", itemKey: "Request" }),
                 React.createElement(react_1.PivotItem, { headerText: "Assignments", itemKey: "Assignment" }),
                 React.createElement(react_1.PivotItem, { headerText: "System Alerts", itemKey: "Audit" })),
-            React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
+            React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 12 }, verticalAlign: "center", styles: { root: { flexWrap: 'wrap' } } }, !isSelectionMode ? (React.createElement(React.Fragment, null,
                 unreadCount > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'CheckMark' }, text: "Mark all as read", onClick: props.onMarkAllAsRead, styles: { root: { borderRadius: '6px' } } })),
-                filteredNotifications.length > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: props.onClearAllNotifications, styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
+                filteredNotifications.length > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: () => setIsSelectionMode(true), styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))) : (React.createElement(React.Fragment, null,
+                filteredNotifications.length > 0 && (React.createElement(react_1.Checkbox, { label: "Select all", checked: filteredNotifications.length > 0 && filteredNotifications.every(n => selectedIds.has(n.id)), indeterminate: filteredNotifications.some(n => selectedIds.has(n.id)) && !filteredNotifications.every(n => selectedIds.has(n.id)), onChange: (_, checked) => {
+                        const newSelected = new Set(selectedIds);
+                        if (checked) {
+                            filteredNotifications.forEach(n => newSelected.add(n.id));
+                        }
+                        else {
+                            filteredNotifications.forEach(n => newSelected.delete(n.id));
+                        }
+                        setSelectedIds(newSelected);
+                    }, styles: { root: { marginRight: 8 } } })),
+                React.createElement(react_1.DefaultButton, { text: "Cancel", onClick: () => {
+                        setIsSelectionMode(false);
+                        setSelectedIds(new Set());
+                    }, styles: { root: { borderRadius: '6px' } } }),
+                React.createElement(react_1.PrimaryButton, { iconProps: { iconName: 'Clear' }, text: `Clear selected (${selectedIds.size})`, disabled: selectedIds.size === 0, onClick: () => {
+                        const idsToClear = Array.from(selectedIds);
+                        if (props.onClearNotifications) {
+                            props.onClearNotifications(idsToClear, filter);
+                        }
+                        else {
+                            idsToClear.forEach(id => props.onClearNotification(id, filter));
+                        }
+                        setSelectedIds(new Set());
+                        setIsSelectionMode(false);
+                    }, styles: { root: { borderRadius: '6px', backgroundColor: '#b91c1c', borderColor: '#b91c1c' } } }))))),
         React.createElement(react_1.Stack, { tokens: itemStackTokens }, filteredNotifications.length === 0 ? (React.createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',
@@ -102,6 +139,20 @@ const NotificationCenter = (props) => {
                     position: 'relative',
                     gap: '12px'
                 } },
+                isSelectionMode && (React.createElement(react_1.Checkbox, { checked: selectedIds.has(notif.id), onChange: (_, checked) => {
+                        const newSelected = new Set(selectedIds);
+                        if (checked) {
+                            newSelected.add(notif.id);
+                        }
+                        else {
+                            newSelected.delete(notif.id);
+                        }
+                        setSelectedIds(newSelected);
+                    }, styles: {
+                        root: {
+                            marginTop: '4px'
+                        }
+                    } })),
                 React.createElement(react_1.Icon, { iconName: styles.iconName, style: {
                         fontSize: '20px',
                         color: styles.iconColor,
@@ -138,7 +189,7 @@ const NotificationCenter = (props) => {
                                     padding: '0 12px'
                                 }
                             } })))),
-                React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, title: "Dismiss notification", ariaLabel: "Dismiss notification", onClick: () => props.onClearNotification(notif.id), styles: {
+                React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, title: "Dismiss notification", ariaLabel: "Dismiss notification", onClick: () => props.onClearNotification(notif.id, filter), styles: {
                         root: {
                             color: '#9ca3af',
                             marginTop: '-8px',

@@ -15,9 +15,13 @@ const RequestForm = (props) => {
     const [quantity, setQuantity] = React.useState(1);
     const [reason, setReason] = React.useState('');
     const [requestDate, setRequestDate] = React.useState(new Date().toISOString().split('T')[0]);
+    const [reasonTouched, setReasonTouched] = React.useState(false);
+    const [managerNameTouched, setManagerNameTouched] = React.useState(false);
     React.useEffect(() => {
         if (props.isOpen) {
             setRequestDate(new Date().toISOString().split('T')[0]);
+            setReasonTouched(false);
+            setManagerNameTouched(false);
         }
     }, [props.isOpen]);
     const isAdmin = props.currentUserRole === 'Admin';
@@ -28,43 +32,32 @@ const RequestForm = (props) => {
         name: props.currentUserName,
         email: props.currentUserEmail || '',
         department: 'Your Department',
-        jobTitle: 'Employee'
+        jobTitle: props.currentUserRole
     };
-    const employeeExists = props.employees.some(emp => emp.name.toLowerCase() === props.currentUserName.toLowerCase());
-    const allEmployees = employeeExists ? props.employees : [currentUserOption, ...props.employees];
-    const availableEmployees = isEmployee
-        ? allEmployees.filter(emp => emp.name.toLowerCase() === props.currentUserName.toLowerCase())
-        : allEmployees;
+    const matchedEmployee = props.employees.find(emp => (props.currentUserEmail && emp.email.toLowerCase() === props.currentUserEmail.toLowerCase()) ||
+        emp.name.toLowerCase() === props.currentUserName.toLowerCase());
+    const activeEmployee = matchedEmployee || currentUserOption;
+    const availableEmployees = [activeEmployee];
+    const allEmployees = props.employees.some(e => e.id === activeEmployee.id) ? props.employees : [activeEmployee, ...props.employees];
     const employeeOptions = availableEmployees.map(emp => ({
         key: emp.id,
         text: `${emp.name} (${emp.department})`
     }));
-    // Auto-select current user if employee
+    // Auto-select current user and pre-populate Employee ID
     React.useEffect(() => {
-        if (isEmployee && employeeOptions.length === 1) {
-            setSelectedRequesterId(employeeOptions[0].key);
-            const emp = allEmployees.find(e => e.id === employeeOptions[0].key);
-            if (emp) {
-                setEmployeeId(emp.id);
-            }
+        if (props.isOpen && employeeOptions.length > 0) {
+            setSelectedRequesterId(activeEmployee.id);
+            setEmployeeId(activeEmployee.id === 'current-user' ? '' : activeEmployee.id);
         }
-    }, [isEmployee, employeeOptions, props.isOpen]);
+    }, [props.isOpen, employeeOptions]);
     const uniqueAssetTypes = Array.from(new Set(props.availableAssets.map(a => a.assetType).filter(Boolean)));
     const dynamicAssetTypeOptions = uniqueAssetTypes.map(type => ({ key: type, text: type }));
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
         : DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS;
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0;
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0 && !!reason.trim();
     const onSave = () => {
-        // Validate role: employees can only request for themselves
-        if (isEmployee && selectedRequesterId) {
-            const selectedEmployee = allEmployees.find(e => e.id === selectedRequesterId);
-            if (selectedEmployee && selectedEmployee.name.toLowerCase() !== props.currentUserName.toLowerCase()) {
-                alert('Employees can only request assets for themselves.');
-                return;
-            }
-        }
-        const employee = allEmployees.find(e => e.id === selectedRequesterId);
+        const employee = activeEmployee;
         // Find a real asset ID to satisfy SharePoint backend lookups
         let matchingAsset = props.availableAssets.find(a => a.assetType === selectedAssetType &&
             (a.status === 'In Stock' || a.status === 'Yes'));
@@ -92,29 +85,30 @@ const RequestForm = (props) => {
             setQuantity(1);
             setReason('');
             setRequestDate(new Date().toISOString().split('T')[0]);
+            setReasonTouched(false);
+            setManagerNameTouched(false);
             props.onClose();
         }
     };
     return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
         React.createElement(react_1.Stack, { tokens: stackTokens },
-            isEmployee && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You can only request assets for yourself. Contact your manager to request assets for others.")),
-            React.createElement(react_1.Dropdown, { label: isEmployee ? "Requester (You)" : "Requester (Employee)", selectedKey: selectedRequesterId, options: employeeOptions, onChange: (_, opt) => {
-                    const empId = opt?.key;
-                    setSelectedRequesterId(empId);
-                    const emp = allEmployees.find(e => e.id === empId);
-                    if (emp) {
-                        setEmployeeId(emp.id);
-                    }
-                }, required: true, disabled: isEmployee && employeeOptions.length === 1 }),
-            React.createElement(react_1.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true }),
-            React.createElement(react_1.TextField, { label: "Manager's Name", value: managerName, onChange: (_, val) => setManagerName(val || ''), placeholder: "Enter manager's name", required: true }),
+            React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You are requesting this asset for yourself. Requesting on behalf of other users is disabled."),
+            React.createElement(react_1.Dropdown, { label: "Requester", selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
+            React.createElement(react_1.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
+            React.createElement(react_1.TextField, { label: "Manager's Name", value: managerName, onChange: (_, val) => {
+                    setManagerName(val || '');
+                    setManagerNameTouched(true);
+                }, onBlur: () => setManagerNameTouched(true), placeholder: "Enter manager's name", required: true, errorMessage: managerNameTouched && !managerName.trim() ? "Manager's name is required" : undefined }),
             React.createElement(react_1.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
             React.createElement(react_1.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
                 }, required: true }),
             React.createElement(react_1.Dropdown, { label: "Priority", selectedKey: priority, options: DropdownConstants_1.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
             React.createElement(react_1.TextField, { label: "Quantity", type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
-            React.createElement(react_1.TextField, { label: "Reason for Request", multiline: true, rows: 3, value: reason, onChange: (_, val) => setReason(val || '') }),
+            React.createElement(react_1.TextField, { label: "Reason for Request", multiline: true, rows: 3, value: reason, onChange: (_, val) => {
+                    setReason(val || '');
+                    setReasonTouched(true);
+                }, onBlur: () => setReasonTouched(true), required: true, errorMessage: reasonTouched && !reason.trim() ? "Reason for request is required" : undefined }),
             React.createElement(react_1.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
                 React.createElement(react_1.PrimaryButton, { text: "Submit Request", onClick: onSave, disabled: !isFormValid }),
                 React.createElement(react_1.DefaultButton, { text: "Cancel", onClick: props.onClose })))));
