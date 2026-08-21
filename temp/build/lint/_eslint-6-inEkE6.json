@@ -34,8 +34,12 @@
       "b283jmT2wbruaUf6h2bFIgsSd2M=_G1C9oeTzzYgVGemAXIfRpUmnAJw="
     ],
     [
+      "webparts/inventoryManagement/utils/StockUtils.ts",
+      "yK6uRcZ0uvzwiV1u72TuVI5mOfc=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
+    ],
+    [
       "webparts/inventoryManagement/components/RequestList.tsx",
-      "EiKMtZ8P4dJNfuB3To0ydSDfyEk=_G1C9oeTzzYgVGemAXIfRpUmnAJw="
+      "6x5wZTB8c4aLTlvmWpaF79L0nOw=_G1C9oeTzzYgVGemAXIfRpUmnAJw="
     ],
     [
       "webparts/inventoryManagement/models/IEventLog.ts",
@@ -47,7 +51,7 @@
     ],
     [
       "webparts/inventoryManagement/components/AssetForm.tsx",
-      "SKhbqyj+zkDwkkrcGVBGYlR9A+A=_G1C9oeTzzYgVGemAXIfRpUmnAJw="
+      "fzsIp8MVScC2V1H16whe2r6PJjU=_G1C9oeTzzYgVGemAXIfRpUmnAJw="
     ],
     [
       "webparts/inventoryManagement/models/IEmployee.ts",
@@ -72,10 +76,6 @@
     [
       "webparts/inventoryManagement/data/mockData.ts",
       "Hm/Q+9mgN1J7qcKnru7K3uEtN8Q=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
-    ],
-    [
-      "webparts/inventoryManagement/services/RequestService.ts",
-      "0RWXIlBT9sVdacynL6wYfeoVcKc=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
     ],
     [
       "webparts/inventoryManagement/services/InventoryService.ts",
@@ -128,6 +128,10 @@
     [
       "webparts/inventoryManagement/services/IncidentService.ts",
       "5TEEID9Yvcfg3lcW23C22J1d/cw=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
+    ],
+    [
+      "webparts/inventoryManagement/utils/NexerTheme.ts",
+      "/KoZimhf03d76cUNtSMRxROmZRI=_TCi2r28SVDzOrS8QtWzpk4htUvQ="
     ],
     [
       "webparts/inventoryManagement/components/shared/NexerHeader.tsx",
