@@ -1,6 +1,7 @@
 import * as React from 'react';
 export interface IWorkflowPopupDetails {
     requestId?: string;
+    incidentId?: string;
     assetTitle?: string;
     requesterName?: string;
     managerName?: string;

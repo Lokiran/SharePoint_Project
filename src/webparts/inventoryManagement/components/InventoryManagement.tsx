@@ -53,6 +53,7 @@ import { INotification } from '../models/INotification';
 import { NotificationCenter } from './NotificationCenter';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
 import { IncidentHistory } from './IncidentHistory/IncidentHistory';
+import { IncidentService } from '../services/IncidentService';
 import { ReplacementHistory } from './ReplacementHistory/ReplacementHistory';
 import { AssetLifecycleDiagram } from './AssetLifecycleDiagram';
 import { WorkflowPopup, IWorkflowPopupDetails } from './WorkflowPopup';
@@ -96,6 +97,8 @@ export interface IInventoryManagementState {
   isReturnFormOpen: boolean;
   activeUserDisplayName: string;
   activeUserEmail: string;
+  userIncidents: any[];
+  userReplacements: any[];
   isIncidentFormOpen: boolean;
   selectedAssetForIncident: IInventoryItem | undefined;
   preselectedIncidentType?: string;
@@ -479,6 +482,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       requestSearchId: '',
       isAssetFormOpen: false,
       isRequestFormOpen: false,
+      userIncidents: [],
+      userReplacements: [],
       loading: true,
       auditLogsLoading: true,
       auditLogsRefreshTrigger: 0,
@@ -530,6 +535,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   public async componentDidMount(): Promise<void> {
     await this._resolveUserRole();
     await this._loadReturnRequests();
+    await this._loadUserIncidentsAndReplacements();
 
     // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
     try {
@@ -771,6 +777,20 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     } catch (error) {
       console.error("Failed to load return requests:", error);
       this.setState({ returnRequestsLoading: false });
+    }
+  };
+
+  private _loadUserIncidentsAndReplacements = async (): Promise<void> => {
+    try {
+      const activeEmail = this.state.activeUserEmail || (this.props.spContext?.pageContext?.user?.email || '');
+      if (activeEmail) {
+        const incidentService = new IncidentService(this.props.spContext);
+        const userIncidents = await incidentService.getEmployeeIncidentHistory(activeEmail);
+        const userReplacements = await incidentService.getEmployeeReplacementHistory(activeEmail);
+        this.setState({ userIncidents, userReplacements });
+      }
+    } catch (error) {
+      console.error("Failed to load user incidents and replacements:", error);
     }
   };
 
@@ -2340,6 +2360,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                                 onReturnAsset={(item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true })}
                                 onRaiseIncident={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true })}
                                 onAssetReplacement={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })}
+                                userIncidents={this.state.userIncidents}
+                                userReplacements={this.state.userReplacements}
                               />
                             </div>
                           </PivotItem>
@@ -2736,14 +2758,18 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             preselectedAsset={this.state.selectedAssetForIncident}
             preselectedIncidentType={this.state.preselectedIncidentType}
             onSuccessPopup={(details) => {
+              const isReplacement = details.incidentType === 'Replacement Request';
               this.setState({
                 workflowPopup: {
                   isOpen: true,
-                  title: 'Incident Ticket Logged',
-                  stage: 'Incident Management: Logged',
+                  title: isReplacement ? 'Replacement Request Logged' : 'Incident Ticket Logged',
+                  stage: isReplacement ? 'Replacement Management: Logged' : 'Incident Management: Logged',
                   type: 'warning',
-                  message: `Incident ticket for "${details.assetName}" (${details.incidentType}) has been logged and assigned to Admin IT support.`,
+                  message: isReplacement
+                    ? `Replacement request for "${details.assetName}" has been logged and assigned to Admin IT support.`
+                    : `Incident ticket for "${details.assetName}" (${details.incidentType}) has been logged and assigned to Admin IT support.`,
                   details: {
+                    incidentId: details.incidentId,
                     assetTitle: details.assetName,
                     requesterName: details.requesterName,
                     status: 'Open Ticket',
@@ -2751,6 +2777,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   }
                 }
               });
+              this._loadUserIncidentsAndReplacements();
             }}
           />
         )}

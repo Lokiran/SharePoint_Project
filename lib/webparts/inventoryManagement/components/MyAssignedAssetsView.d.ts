@@ -5,6 +5,8 @@ export interface IMyAssignedAssetsViewProps {
     onReturnAsset: (item: IInventoryItem) => void;
     onRaiseIncident: (item: IInventoryItem) => void;
     onAssetReplacement?: (item: IInventoryItem) => void;
+    userIncidents?: any[];
+    userReplacements?: any[];
 }
 export declare const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps>;
 //# sourceMappingURL=MyAssignedAssetsView.d.ts.map

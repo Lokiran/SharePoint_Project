@@ -21,13 +21,37 @@ export class SharePointBaseService {
 
   public static async getListFieldsMetadata(list: any): Promise<IFieldMetadata[]> {
     const fields = await list.fields.select("Title", "InternalName", "TypeAsString", "Required", "Choices")();
-    return fields.map((f: any) => ({
-      displayName: f.Title || "",
-      internalName: f.InternalName || "",
-      fieldType: f.TypeAsString || "",
-      required: !!f.Required,
-      choices: f.Choices || undefined
-    }));
+    return fields.map((f: any) => {
+      let choices = f.Choices || undefined;
+      const internalName = f.InternalName || "";
+      const displayName = f.Title || "";
+      
+      // Ensure all standard conditions are available if this is a condition choice field
+      if (f.TypeAsString === "Choice" && choices && choices.length > 0) {
+        const isConditionField = 
+          internalName.toLowerCase().includes("condition") || 
+          displayName.toLowerCase().includes("condition");
+          
+        if (isConditionField) {
+          const standardConditions = ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'];
+          const newChoices = [...choices];
+          for (const cond of standardConditions) {
+            if (!newChoices.some(c => c.toLowerCase() === cond.toLowerCase())) {
+              newChoices.push(cond);
+            }
+          }
+          choices = newChoices;
+        }
+      }
+
+      return {
+        displayName: displayName,
+        internalName: internalName,
+        fieldType: f.TypeAsString || "",
+        required: !!f.Required,
+        choices: choices
+      };
+    });
   }
 
   public static formatToSharePointDate(dateStr: any): string | null {

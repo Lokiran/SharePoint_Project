@@ -8,7 +8,7 @@ const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const DropdownConstants_1 = require("../constants/DropdownConstants");
 const MyAssignedAssetsView = (props) => {
-    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement } = props;
+    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement, userIncidents = [], userReplacements = [] } = props;
     // Search and Filter States
     const [searchQuery, setSearchQuery] = (0, react_1.useState)('');
     const [selectedType, setSelectedType] = (0, react_1.useState)('All');
@@ -80,8 +80,20 @@ const MyAssignedAssetsView = (props) => {
             if (w.status === 'Expired' || w.status === 'Expiring Soon')
                 expiredOrExpiringWarranties++;
             const cond = (item.condition || '').toLowerCase();
-            if (cond === 'poor' || cond === 'damaged')
+            if (cond === 'poor' || cond === 'damaged') {
                 actionNeeded++;
+            }
+            else {
+                // Also count if there is an active incident or replacement request for the asset
+                const serial = (item.serialNumber || '').toLowerCase().trim();
+                const hasIncident = userIncidents.some(inc => inc.serialNo && inc.serialNo.toLowerCase().trim() === serial &&
+                    inc.status !== 'Resolved' && inc.status !== 'Closed');
+                const hasReplacement = userReplacements.some(rep => rep.serialNo && rep.serialNo.toLowerCase().trim() === serial &&
+                    rep.status !== 'Completed' && rep.status !== 'Rejected');
+                if (hasIncident || hasReplacement) {
+                    actionNeeded++;
+                }
+            }
         });
         return {
             total: items.length,
@@ -89,7 +101,7 @@ const MyAssignedAssetsView = (props) => {
             expiredOrExpiringWarranties,
             actionNeeded
         };
-    }, [items]);
+    }, [items, userIncidents, userReplacements]);
     // Unique Asset Types for filter dropdown
     const typeOptions = (0, react_1.useMemo)(() => {
         const types = new Set();
@@ -282,6 +294,11 @@ const MyAssignedAssetsView = (props) => {
             // Return action states
             const isPendingReturn = item.status === 'Pending Return';
             const isReturnApproved = item.status === 'Return Approved';
+            const serial = (item.serialNumber || '').toLowerCase().trim();
+            const activeIncident = userIncidents.find(inc => inc.serialNo && inc.serialNo.toLowerCase().trim() === serial &&
+                inc.status !== 'Resolved' && inc.status !== 'Closed');
+            const activeReplacement = userReplacements.find(rep => rep.serialNo && rep.serialNo.toLowerCase().trim() === serial &&
+                rep.status !== 'Completed' && rep.status !== 'Rejected');
             return (React.createElement("div", { key: item.id, style: {
                     backgroundColor: 'var(--surface-bg)',
                     borderRadius: '6px',
@@ -305,14 +322,33 @@ const MyAssignedAssetsView = (props) => {
                                 item.vendor || 'Brand Unknown',
                                 " \u2022 ",
                                 item.assetType))),
-                    React.createElement("span", { style: {
-                            backgroundColor: conditionBg,
-                            color: conditionText,
-                            padding: '2px 8px',
-                            borderRadius: '4px',
-                            fontSize: '0.68rem',
-                            fontWeight: 600
-                        } }, condition)),
+                    React.createElement("div", { style: { display: 'flex', gap: '6px', alignItems: 'center' } },
+                        activeIncident && (React.createElement("span", { style: {
+                                backgroundColor: '#fef2f2',
+                                color: '#991b1b',
+                                padding: '2px 6px',
+                                borderRadius: '4px',
+                                fontSize: '0.68rem',
+                                fontWeight: 600,
+                                border: '1px solid #fca5a5'
+                            } }, "Issue Active")),
+                        activeReplacement && (React.createElement("span", { style: {
+                                backgroundColor: '#fffbeb',
+                                color: '#92400e',
+                                padding: '2px 6px',
+                                borderRadius: '4px',
+                                fontSize: '0.68rem',
+                                fontWeight: 600,
+                                border: '1px solid #fde047'
+                            } }, "Replacement Requested")),
+                        React.createElement("span", { style: {
+                                backgroundColor: conditionBg,
+                                color: conditionText,
+                                padding: '2px 8px',
+                                borderRadius: '4px',
+                                fontSize: '0.68rem',
+                                fontWeight: 600
+                            } }, condition))),
                 React.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
                     item.specifications && (React.createElement("p", { style: {
                             margin: '0 0 2px 0',

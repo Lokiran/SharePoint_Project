@@ -13,6 +13,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
         assetName: string;
         requesterName: string;
         priority: string;
+        incidentId?: string;
     }) => void;
     preselectedIncidentType?: string;
 }

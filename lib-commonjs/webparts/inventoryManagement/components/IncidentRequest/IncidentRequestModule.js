@@ -116,7 +116,20 @@ const IncidentRequestModule = (props) => {
                 employeeId: formData.employeeId,
             };
             console.log('Submitting incident payload:', payload);
-            await service.createIncidentRequest(payload);
+            const result = await service.createIncidentRequest(payload);
+            let incidentId = '';
+            if (result && result.data) {
+                if (result.data.incidentId) {
+                    incidentId = result.data.incidentId;
+                }
+                else {
+                    const itemId = result.data.Id || result.data.ID;
+                    if (itemId) {
+                        const isReplacement = formData.incidentType === 'Replacement Request';
+                        incidentId = isReplacement ? `REP-${itemId}` : `INC-${itemId}`;
+                    }
+                }
+            }
             props.onClose();
             setFormData({
                 employeeName: props.userDisplayName || '',
@@ -138,7 +151,8 @@ const IncidentRequestModule = (props) => {
                     incidentType: formData.incidentType,
                     assetName: formData.assetName || 'General Device',
                     requesterName: formData.employeeName,
-                    priority: formData.priority
+                    priority: formData.priority,
+                    incidentId: incidentId
                 });
             }
         }
@@ -183,7 +197,7 @@ const IncidentRequestModule = (props) => {
                     ? "You currently have no assets assigned to request a replacement for."
                     : "You currently have no assets assigned. You can still raise generic incidents.")),
                 React.createElement(react_2.TextField, { label: "Employee Name", value: formData.employeeName, onChange: (ev, val) => handleInputChange('employeeName', val || ''), required: true }),
-                React.createElement(react_2.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
+                !props.preselectedAsset && (React.createElement(react_2.Dropdown, { label: "Select Assigned Asset", placeholder: isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets", options: assetOptions, selectedKey: selectedAssetKey, onChange: (ev, option) => {
                         const selected = assignedAssets.find(a => a.id === option?.key);
                         if (selected) {
                             handleInputChange('assetName', selected.assetName);
@@ -195,7 +209,7 @@ const IncidentRequestModule = (props) => {
                             handleInputChange('serialNo', '');
                             handleInputChange('assignedDate', '');
                         }
-                    }, disabled: isLoadingAssets }),
+                    }, disabled: isLoadingAssets })),
                 formData.assetName && (React.createElement(react_2.TextField, { label: "Asset Name", value: formData.assetName, disabled: true })),
                 formData.serialNo && (React.createElement(react_2.TextField, { label: "Serial NO", value: formData.serialNo, disabled: true })),
                 !isReplacementMode && (React.createElement(react_2.Dropdown, { label: "Issue Type", options: incidentTypeOptions, selectedKey: formData.incidentType, onChange: (ev, option) => handleInputChange('incidentType', option?.key), required: true, placeholder: "Select Issue Type" })),

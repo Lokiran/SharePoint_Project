@@ -48,6 +48,8 @@ export interface IInventoryManagementState {
     isReturnFormOpen: boolean;
     activeUserDisplayName: string;
     activeUserEmail: string;
+    userIncidents: any[];
+    userReplacements: any[];
     isIncidentFormOpen: boolean;
     selectedAssetForIncident: IInventoryItem | undefined;
     preselectedIncidentType?: string;
@@ -110,6 +112,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _loadRequests;
     private _loadAuditLogs;
     private _loadReturnRequests;
+    private _loadUserIncidentsAndReplacements;
     private _onSubmitReturnRequest;
     private _onUpdateReturnRequestStatus;
     private _onAddAsset;
