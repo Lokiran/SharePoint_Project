@@ -15,6 +15,7 @@ export declare class SharePointBaseService {
     static readonly REQUEST_KEY_INTERNAL_NAME = "RequestKey";
     static readonly ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
     static readonly MAPPING_LIST_NAME = "Mapping List";
+    static getSafeListFields(list: any): Promise<any[]>;
     static getListFieldsMetadata(list: any): Promise<IFieldMetadata[]>;
     static formatToSharePointDate(dateStr: any): string | null;
     static _coerceAndValidatePayload(logicalPayload: {

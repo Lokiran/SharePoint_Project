@@ -119,7 +119,7 @@ export class ReturnRequestService {
   public static async getReturnRequests(): Promise<IReturnRequest[]> {
     try {
       const list = await ReturnRequestService.getReturnRequestList();
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
 
       // Resolve column internal names dynamically
       const f = ((...c: string[]) => ReturnRequestService._findReturnField(fields, ...c));
@@ -335,7 +335,7 @@ export class ReturnRequestService {
     try {
       const list = await ReturnRequestService.getReturnRequestList();
       console.log("Resolved Return Request List Name:", list.Title || "Asset Return Request List");
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
       const f = ((...c: string[]) => ReturnRequestService._findReturnField(fields, ...c));
       const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
       const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
@@ -450,7 +450,7 @@ export class ReturnRequestService {
     try {
       const list = await InventoryItemService.getInventoryList();
       console.log("Resolved Inventory List Name:", list.Title || "InventoryList");
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
 
       const findField = (searchStr: string, fallback: string): string => {
         const field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());
@@ -641,7 +641,7 @@ export class ReturnRequestService {
         return;
       }
 
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
       
       const findField = (searchStr: string, fallback: string): string => {
         const field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());
