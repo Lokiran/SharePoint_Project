@@ -37,7 +37,7 @@
     "scriptResources": {
       "inventory-management-web-part": {
         "type": "path",
-        "path": "inventory-management-web-part_e59ea0b0e49a3349f99c.js"
+        "path": "inventory-management-web-part_af01e6bafc1a6cb1d144.js"
       },
       "react": {
         "type": "component",
