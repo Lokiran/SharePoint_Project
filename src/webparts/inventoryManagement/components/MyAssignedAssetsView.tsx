@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useMemo } from 'react';
 import { IInventoryItem } from '../models/IInventoryItem';
+import { IReturnRequest } from '../models/IReturnRequest';
 import { 
   Stack, 
   Text, 
@@ -25,10 +26,11 @@ export interface IMyAssignedAssetsViewProps {
   onAssetReplacement?: (item: IInventoryItem) => void;
   userIncidents?: any[];
   userReplacements?: any[];
+  returnRequests?: IReturnRequest[];
 }
 
 export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props) => {
-  const { items, onReturnAsset, onRaiseIncident, onAssetReplacement, userIncidents = [], userReplacements = [] } = props;
+  const { items, onReturnAsset, onRaiseIncident, onAssetReplacement, userIncidents = [], userReplacements = [], returnRequests = [] } = props;
 
   // Search and Filter States
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -405,8 +407,25 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
             }
 
             // Return action states
-            const isPendingReturn = item.status === 'Pending Return';
-            const isReturnApproved = item.status === 'Return Approved';
+            const activeReturn = (returnRequests || []).find(r => {
+              const submittingId = String(item.id || "").trim().toLowerCase();
+              const existingId = String(r.assetId || "").trim().toLowerCase();
+              
+              const submittingSerial = String(item.serialNumber || "").trim().toLowerCase();
+              const existingSerial = String(r.serialNumber || "").trim().toLowerCase();
+
+              const isIdMatch = submittingId && existingId && submittingId === existingId;
+              const isSerialMatch = submittingSerial && existingSerial && submittingSerial === existingSerial;
+
+              const isActive = r.status !== 'Completed' && r.status !== 'Rejected';
+
+              return (isIdMatch || isSerialMatch) && isActive;
+            });
+
+            const isPendingReturn = item.status === 'Pending Return' || 
+              (activeReturn && activeReturn.status === 'Pending Manager Approval');
+            const isReturnApproved = item.status === 'Return Approved' || 
+              (activeReturn && activeReturn.status === 'Pending Admin Verification');
 
             const serial = (item.serialNumber || '').toLowerCase().trim();
             const activeIncident = userIncidents.find(inc => 
@@ -657,80 +676,107 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
       )}
 
       {/* Details Side Panel */}
-      {selectedAsset && (
-        <Panel
-          isOpen={isPanelOpen}
-          onDismiss={() => {
-            setIsPanelOpen(false);
-            setSelectedAsset(null);
-          }}
-          type={PanelType.medium}
-          headerText={`Asset Details: ${selectedAsset.assetName || selectedAsset.title}`}
-          closeButtonAriaLabel="Close"
-        >
-          <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-            
-            <div className={styles.responsiveGrid} style={{
-              backgroundColor: '#f1f5f9',
-              padding: '15px',
-              borderRadius: '8px',
-              fontSize: '0.88rem'
-            }}>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Asset Type:</span> <strong>{selectedAsset.assetType}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Vendor/Brand:</span> <strong>{selectedAsset.vendor || 'Unknown'}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Serial Number:</span> <strong>{selectedAsset.serialNumber || 'N/A'}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Asset Status:</span> <strong>{selectedAsset.status}</strong></div>
-              <div style={{ gridColumn: 'span 2' }}>
-                <span style={{ color: '#64748b', display: 'block' }}>Title Description:</span> <strong>{selectedAsset.title}</strong>
+      {selectedAsset && (() => {
+        const activeReturnForSelected = (returnRequests || []).find(r => {
+          const submittingId = String(selectedAsset.id || "").trim().toLowerCase();
+          const existingId = String(r.assetId || "").trim().toLowerCase();
+          
+          const submittingSerial = String(selectedAsset.serialNumber || "").trim().toLowerCase();
+          const existingSerial = String(r.serialNumber || "").trim().toLowerCase();
+
+          const isIdMatch = submittingId && existingId && submittingId === existingId;
+          const isSerialMatch = submittingSerial && existingSerial && submittingSerial === existingSerial;
+
+          const isActive = r.status !== 'Completed' && r.status !== 'Rejected';
+
+          return (isIdMatch || isSerialMatch) && isActive;
+        });
+
+        const isSelectedPendingReturn = selectedAsset.status === 'Pending Return' || 
+          (activeReturnForSelected && activeReturnForSelected.status === 'Pending Manager Approval');
+        const isSelectedReturnApproved = selectedAsset.status === 'Return Approved' || 
+          (activeReturnForSelected && activeReturnForSelected.status === 'Pending Admin Verification');
+
+        return (
+          <Panel
+            isOpen={isPanelOpen}
+            onDismiss={() => {
+              setIsPanelOpen(false);
+              setSelectedAsset(null);
+            }}
+            type={PanelType.medium}
+            headerText={`Asset Details: ${selectedAsset.assetName || selectedAsset.title}`}
+            closeButtonAriaLabel="Close"
+          >
+            <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              
+              <div className={styles.responsiveGrid} style={{
+                backgroundColor: '#f1f5f9',
+                padding: '15px',
+                borderRadius: '8px',
+                fontSize: '0.88rem'
+              }}>
+                <div><span style={{ color: '#64748b', display: 'block' }}>Asset Type:</span> <strong>{selectedAsset.assetType}</strong></div>
+                <div><span style={{ color: '#64748b', display: 'block' }}>Vendor/Brand:</span> <strong>{selectedAsset.vendor || 'Unknown'}</strong></div>
+                <div><span style={{ color: '#64748b', display: 'block' }}>Serial Number:</span> <strong>{selectedAsset.serialNumber || 'N/A'}</strong></div>
+                <div>
+                  <span style={{ color: '#64748b', display: 'block' }}>Asset Status:</span> 
+                  <strong>
+                    {isSelectedPendingReturn ? 'Pending Return' : isSelectedReturnApproved ? 'Return Approved' : selectedAsset.status}
+                  </strong>
+                </div>
+                <div style={{ gridColumn: 'span 2' }}>
+                  <span style={{ color: '#64748b', display: 'block' }}>Title Description:</span> <strong>{selectedAsset.title}</strong>
+                </div>
               </div>
+
+              {renderLifecycleAnalysis(selectedAsset)}
+
+              <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' }}>
+                <PrimaryButton
+                  text="Report Incident"
+                  onClick={() => {
+                    setIsPanelOpen(false);
+                    onRaiseIncident(selectedAsset);
+                    setSelectedAsset(null);
+                  }}
+                  iconProps={{ iconName: 'AlertSolid' }}
+                />
+                {!isSelectedPendingReturn && !isSelectedReturnApproved && onAssetReplacement && (
+                  <DefaultButton
+                    text="Asset Replacement"
+                    onClick={() => {
+                      setIsPanelOpen(false);
+                      onAssetReplacement(selectedAsset);
+                      setSelectedAsset(null);
+                    }}
+                    iconProps={{ iconName: 'Sync' }}
+                  />
+                )}
+                {!isSelectedPendingReturn && !isSelectedReturnApproved && (
+                  <DefaultButton
+                    text="Request Return"
+                    onClick={() => {
+                      setIsPanelOpen(false);
+                      onReturnAsset(selectedAsset);
+                      setSelectedAsset(null);
+                    }}
+                    iconProps={{ iconName: 'ReturnToSession' }}
+                  />
+                )}
+                <DefaultButton
+                  text="Close"
+                  onClick={() => {
+                    setIsPanelOpen(false);
+                    setSelectedAsset(null);
+                  }}
+                />
+              </Stack>
+
             </div>
-
-            {renderLifecycleAnalysis(selectedAsset)}
-
-            <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' }}>
-              <PrimaryButton
-                text="Report Incident"
-                onClick={() => {
-                  setIsPanelOpen(false);
-                  onRaiseIncident(selectedAsset);
-                  setSelectedAsset(null);
-                }}
-                iconProps={{ iconName: 'AlertSolid' }}
-              />
-              {selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (
-                <DefaultButton
-                  text="Asset Replacement"
-                  onClick={() => {
-                    setIsPanelOpen(false);
-                    onAssetReplacement(selectedAsset);
-                    setSelectedAsset(null);
-                  }}
-                  iconProps={{ iconName: 'Sync' }}
-                />
-              )}
-              {selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (
-                <DefaultButton
-                  text="Request Return"
-                  onClick={() => {
-                    setIsPanelOpen(false);
-                    onReturnAsset(selectedAsset);
-                    setSelectedAsset(null);
-                  }}
-                  iconProps={{ iconName: 'ReturnToSession' }}
-                />
-              )}
-              <DefaultButton
-                text="Close"
-                onClick={() => {
-                  setIsPanelOpen(false);
-                  setSelectedAsset(null);
-                }}
-              />
-            </Stack>
-
-          </div>
-        </Panel>
-      )}
+          </Panel>
+        );
+      })()}
 
     </div>
   );

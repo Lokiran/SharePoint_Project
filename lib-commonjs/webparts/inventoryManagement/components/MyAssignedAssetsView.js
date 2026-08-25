@@ -8,7 +8,7 @@ const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const DropdownConstants_1 = require("../constants/DropdownConstants");
 const MyAssignedAssetsView = (props) => {
-    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement, userIncidents = [], userReplacements = [] } = props;
+    const { items, onReturnAsset, onRaiseIncident, onAssetReplacement, userIncidents = [], userReplacements = [], returnRequests = [] } = props;
     // Search and Filter States
     const [searchQuery, setSearchQuery] = (0, react_1.useState)('');
     const [selectedType, setSelectedType] = (0, react_1.useState)('All');
@@ -292,8 +292,20 @@ const MyAssignedAssetsView = (props) => {
                 conditionText = '#c5221f';
             }
             // Return action states
-            const isPendingReturn = item.status === 'Pending Return';
-            const isReturnApproved = item.status === 'Return Approved';
+            const activeReturn = (returnRequests || []).find(r => {
+                const submittingId = String(item.id || "").trim().toLowerCase();
+                const existingId = String(r.assetId || "").trim().toLowerCase();
+                const submittingSerial = String(item.serialNumber || "").trim().toLowerCase();
+                const existingSerial = String(r.serialNumber || "").trim().toLowerCase();
+                const isIdMatch = submittingId && existingId && submittingId === existingId;
+                const isSerialMatch = submittingSerial && existingSerial && submittingSerial === existingSerial;
+                const isActive = r.status !== 'Completed' && r.status !== 'Rejected';
+                return (isIdMatch || isSerialMatch) && isActive;
+            });
+            const isPendingReturn = item.status === 'Pending Return' ||
+                (activeReturn && activeReturn.status === 'Pending Manager Approval');
+            const isReturnApproved = item.status === 'Return Approved' ||
+                (activeReturn && activeReturn.status === 'Pending Admin Verification');
             const serial = (item.serialNumber || '').toLowerCase().trim();
             const activeIncident = userIncidents.find(inc => inc.serialNo && inc.serialNo.toLowerCase().trim() === serial &&
                 inc.status !== 'Resolved' && inc.status !== 'Closed');
@@ -454,58 +466,73 @@ const MyAssignedAssetsView = (props) => {
             React.createElement(react_2.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
             React.createElement(react_2.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, "No Assigned Assets Found"),
             React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, "Try adjusting your search query or filters."))),
-        selectedAsset && (React.createElement(react_2.Panel, { isOpen: isPanelOpen, onDismiss: () => {
-                setIsPanelOpen(false);
-                setSelectedAsset(null);
-            }, type: react_2.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
-            React.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
-                React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: {
-                        backgroundColor: '#f1f5f9',
-                        padding: '15px',
-                        borderRadius: '8px',
-                        fontSize: '0.88rem'
-                    } },
-                    React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Asset Type:"),
-                        " ",
-                        React.createElement("strong", null, selectedAsset.assetType)),
-                    React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Vendor/Brand:"),
-                        " ",
-                        React.createElement("strong", null, selectedAsset.vendor || 'Unknown')),
-                    React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Serial Number:"),
-                        " ",
-                        React.createElement("strong", null, selectedAsset.serialNumber || 'N/A')),
-                    React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Asset Status:"),
-                        " ",
-                        React.createElement("strong", null, selectedAsset.status)),
-                    React.createElement("div", { style: { gridColumn: 'span 2' } },
-                        React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Title Description:"),
-                        " ",
-                        React.createElement("strong", null, selectedAsset.title))),
-                renderLifecycleAnalysis(selectedAsset),
-                React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    React.createElement(react_2.PrimaryButton, { text: "Report Incident", onClick: () => {
-                            setIsPanelOpen(false);
-                            onRaiseIncident(selectedAsset);
-                            setSelectedAsset(null);
-                        }, iconProps: { iconName: 'AlertSolid' } }),
-                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && onAssetReplacement && (React.createElement(react_2.DefaultButton, { text: "Asset Replacement", onClick: () => {
-                            setIsPanelOpen(false);
-                            onAssetReplacement(selectedAsset);
-                            setSelectedAsset(null);
-                        }, iconProps: { iconName: 'Sync' } })),
-                    selectedAsset.status !== 'Pending Return' && selectedAsset.status !== 'Return Approved' && (React.createElement(react_2.DefaultButton, { text: "Request Return", onClick: () => {
-                            setIsPanelOpen(false);
-                            onReturnAsset(selectedAsset);
-                            setSelectedAsset(null);
-                        }, iconProps: { iconName: 'ReturnToSession' } })),
-                    React.createElement(react_2.DefaultButton, { text: "Close", onClick: () => {
-                            setIsPanelOpen(false);
-                            setSelectedAsset(null);
-                        } })))))));
+        selectedAsset && (() => {
+            const activeReturnForSelected = (returnRequests || []).find(r => {
+                const submittingId = String(selectedAsset.id || "").trim().toLowerCase();
+                const existingId = String(r.assetId || "").trim().toLowerCase();
+                const submittingSerial = String(selectedAsset.serialNumber || "").trim().toLowerCase();
+                const existingSerial = String(r.serialNumber || "").trim().toLowerCase();
+                const isIdMatch = submittingId && existingId && submittingId === existingId;
+                const isSerialMatch = submittingSerial && existingSerial && submittingSerial === existingSerial;
+                const isActive = r.status !== 'Completed' && r.status !== 'Rejected';
+                return (isIdMatch || isSerialMatch) && isActive;
+            });
+            const isSelectedPendingReturn = selectedAsset.status === 'Pending Return' ||
+                (activeReturnForSelected && activeReturnForSelected.status === 'Pending Manager Approval');
+            const isSelectedReturnApproved = selectedAsset.status === 'Return Approved' ||
+                (activeReturnForSelected && activeReturnForSelected.status === 'Pending Admin Verification');
+            return (React.createElement(react_2.Panel, { isOpen: isPanelOpen, onDismiss: () => {
+                    setIsPanelOpen(false);
+                    setSelectedAsset(null);
+                }, type: react_2.PanelType.medium, headerText: `Asset Details: ${selectedAsset.assetName || selectedAsset.title}`, closeButtonAriaLabel: "Close" },
+                React.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
+                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: {
+                            backgroundColor: '#f1f5f9',
+                            padding: '15px',
+                            borderRadius: '8px',
+                            fontSize: '0.88rem'
+                        } },
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Asset Type:"),
+                            " ",
+                            React.createElement("strong", null, selectedAsset.assetType)),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Vendor/Brand:"),
+                            " ",
+                            React.createElement("strong", null, selectedAsset.vendor || 'Unknown')),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Serial Number:"),
+                            " ",
+                            React.createElement("strong", null, selectedAsset.serialNumber || 'N/A')),
+                        React.createElement("div", null,
+                            React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Asset Status:"),
+                            React.createElement("strong", null, isSelectedPendingReturn ? 'Pending Return' : isSelectedReturnApproved ? 'Return Approved' : selectedAsset.status)),
+                        React.createElement("div", { style: { gridColumn: 'span 2' } },
+                            React.createElement("span", { style: { color: '#64748b', display: 'block' } }, "Title Description:"),
+                            " ",
+                            React.createElement("strong", null, selectedAsset.title))),
+                    renderLifecycleAnalysis(selectedAsset),
+                    React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                        React.createElement(react_2.PrimaryButton, { text: "Report Incident", onClick: () => {
+                                setIsPanelOpen(false);
+                                onRaiseIncident(selectedAsset);
+                                setSelectedAsset(null);
+                            }, iconProps: { iconName: 'AlertSolid' } }),
+                        !isSelectedPendingReturn && !isSelectedReturnApproved && onAssetReplacement && (React.createElement(react_2.DefaultButton, { text: "Asset Replacement", onClick: () => {
+                                setIsPanelOpen(false);
+                                onAssetReplacement(selectedAsset);
+                                setSelectedAsset(null);
+                            }, iconProps: { iconName: 'Sync' } })),
+                        !isSelectedPendingReturn && !isSelectedReturnApproved && (React.createElement(react_2.DefaultButton, { text: "Request Return", onClick: () => {
+                                setIsPanelOpen(false);
+                                onReturnAsset(selectedAsset);
+                                setSelectedAsset(null);
+                            }, iconProps: { iconName: 'ReturnToSession' } })),
+                        React.createElement(react_2.DefaultButton, { text: "Close", onClick: () => {
+                                setIsPanelOpen(false);
+                                setSelectedAsset(null);
+                            } })))));
+        })()));
 };
 exports.MyAssignedAssetsView = MyAssignedAssetsView;
 //# sourceMappingURL=MyAssignedAssetsView.js.map

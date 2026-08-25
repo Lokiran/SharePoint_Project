@@ -2362,6 +2362,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                                 onAssetReplacement={(item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })}
                                 userIncidents={this.state.userIncidents}
                                 userReplacements={this.state.userReplacements}
+                                returnRequests={this.state.returnRequests}
                               />
                             </div>
                           </PivotItem>
