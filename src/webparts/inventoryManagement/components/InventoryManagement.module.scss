@@ -1,4 +1,5 @@
 @import '~@fluentui/react/dist/sass/References.scss';
+@import './responsive.scss';
 
 // ============================================================
 // DESIGN TOKENS (shared with Dashboard.module.scss)
@@ -40,7 +41,7 @@ $transition-normal: 0.25s $ease-standard;
   .inventoryManagement {
     container-type: inline-size;
     position: relative;
-    @import './responsive.scss';
+    
     --primary-blue: #{$color-blue};
     --primary-gradient: linear-gradient(135deg, #1a4fa0 0%, #2b7cd4 50%, #4a9be8 100%);
     --surface-bg: #{$card-bg};

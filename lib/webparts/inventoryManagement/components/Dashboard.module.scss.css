@@ -1,6 +1,141 @@
 /*
   Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
 */
+.m-0 {
+  margin: 0 !important;
+}
+
+.mt-1 {
+  margin-top: 4px !important;
+}
+
+.mt-2 {
+  margin-top: 8px !important;
+}
+
+.mt-3 {
+  margin-top: 12px !important;
+}
+
+.mt-4 {
+  margin-top: 16px !important;
+}
+
+.mt-5 {
+  margin-top: 20px !important;
+}
+
+.mb-1 {
+  margin-bottom: 4px !important;
+}
+
+.mb-2 {
+  margin-bottom: 8px !important;
+}
+
+.mb-3 {
+  margin-bottom: 12px !important;
+}
+
+.mb-4 {
+  margin-bottom: 16px !important;
+}
+
+.mb-5 {
+  margin-bottom: 20px !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-1 {
+  padding: 4px !important;
+}
+
+.p-2 {
+  padding: 8px !important;
+}
+
+.p-3 {
+  padding: 12px !important;
+}
+
+.p-4 {
+  padding: 16px !important;
+}
+
+.p-5 {
+  padding: 20px !important;
+}
+
+.tableWrapper {
+  overflow-x: auto !important;
+  width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 15px;
+}
+
+@container (max-width: 600px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@container (min-width: 1025px) {
+  .show-only-on-mobile {
+    display: none !important;
+  }
+}
+@container (min-width: 601px) and (max-width: 1024px) {
+  .show-only-on-mobile {
+    display: none !important;
+  }
+}
+
+.metricsRow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  padding: 0 4px 16px 4px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+.metricsRow .metricItem {
+  flex: 1 1 auto !important;
+  min-width: 110px !important;
+}
+.metricsRow .metricDivider {
+  width: 1px !important;
+  background-color: #e2e8f0 !important;
+  align-self: stretch !important;
+}
+@container (max-width: 600px) {
+  .metricsRow .metricDivider {
+    display: none !important;
+  }
+}
+
+.filtersRow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: flex-end !important;
+  padding: 0 0 10px 0 !important;
+  width: 100% !important;
+}
+.filtersRow .searchField {
+  flex: 1 1 200px !important;
+}
+.filtersRow .filterDropdown {
+  width: 130px !important;
+}
+@container (max-width: 600px) {
+  .filtersRow .filterDropdown {
+    width: 100% !important;
+    flex-grow: 1 !important;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -32,119 +167,6 @@
   padding: 0;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   animation: fadeInUp 0.4s cubic-bezier(0, 0, 0.2, 1);
-}
-.dashboard .m-0 {
-  margin: 0 !important;
-}
-.dashboard .mt-1 {
-  margin-top: 4px !important;
-}
-.dashboard .mt-2 {
-  margin-top: 8px !important;
-}
-.dashboard .mt-3 {
-  margin-top: 12px !important;
-}
-.dashboard .mt-4 {
-  margin-top: 16px !important;
-}
-.dashboard .mt-5 {
-  margin-top: 20px !important;
-}
-.dashboard .mb-1 {
-  margin-bottom: 4px !important;
-}
-.dashboard .mb-2 {
-  margin-bottom: 8px !important;
-}
-.dashboard .mb-3 {
-  margin-bottom: 12px !important;
-}
-.dashboard .mb-4 {
-  margin-bottom: 16px !important;
-}
-.dashboard .mb-5 {
-  margin-bottom: 20px !important;
-}
-.dashboard .p-0 {
-  padding: 0 !important;
-}
-.dashboard .p-1 {
-  padding: 4px !important;
-}
-.dashboard .p-2 {
-  padding: 8px !important;
-}
-.dashboard .p-3 {
-  padding: 12px !important;
-}
-.dashboard .p-4 {
-  padding: 16px !important;
-}
-.dashboard .p-5 {
-  padding: 20px !important;
-}
-.dashboard .tableWrapper {
-  overflow-x: auto !important;
-  width: 100% !important;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 15px;
-}
-@container (max-width: 600px) {
-  .dashboard .hide-on-mobile {
-    display: none !important;
-  }
-}
-@container (min-width: 1025px) {
-  .dashboard .show-only-on-mobile {
-    display: none !important;
-  }
-}
-@container (min-width: 601px) and (max-width: 1024px) {
-  .dashboard .show-only-on-mobile {
-    display: none !important;
-  }
-}
-.dashboard .metricsRow {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 24px !important;
-  padding: 0 4px 16px 4px !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-}
-.dashboard .metricsRow .metricItem {
-  flex: 1 1 auto !important;
-  min-width: 110px !important;
-}
-.dashboard .metricsRow .metricDivider {
-  width: 1px !important;
-  background-color: #e2e8f0 !important;
-  align-self: stretch !important;
-}
-@container (max-width: 600px) {
-  .dashboard .metricsRow .metricDivider {
-    display: none !important;
-  }
-}
-.dashboard .filtersRow {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 12px !important;
-  align-items: flex-end !important;
-  padding: 0 0 10px 0 !important;
-  width: 100% !important;
-}
-.dashboard .filtersRow .searchField {
-  flex: 1 1 200px !important;
-}
-.dashboard .filtersRow .filterDropdown {
-  width: 130px !important;
-}
-@container (max-width: 600px) {
-  .dashboard .filtersRow .filterDropdown {
-    width: 100% !important;
-    flex-grow: 1 !important;
-  }
 }
 .dashboard .dashboardHeader {
   display: flex;

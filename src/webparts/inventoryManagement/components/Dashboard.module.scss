@@ -1,4 +1,5 @@
 @import '~@fluentui/react/dist/sass/References.scss';
+@import './responsive.scss';
 
 // ============================================================
 // DESIGN TOKENS
@@ -97,7 +98,6 @@ $transition-normal: 0.25s $ease-standard;
 
 .dashboard {
   container-type: inline-size;
-  @import './responsive.scss';
   padding: 0;
   font-family: $font-family;
   animation: fadeInUp 0.4s $ease-decelerate;
