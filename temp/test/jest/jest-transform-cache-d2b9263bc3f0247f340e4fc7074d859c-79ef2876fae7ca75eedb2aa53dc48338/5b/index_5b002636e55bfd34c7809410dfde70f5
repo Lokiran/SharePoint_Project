@@ -1,0 +1,12 @@
+1591c7b69c72bf96dec8d4ce73ecbff4
+import { SPFI } from "../fi.js";
+import { Utilities } from "./types.js";
+export { Utilities, } from "./types.js";
+Reflect.defineProperty(SPFI.prototype, "utility", {
+    configurable: true,
+    enumerable: true,
+    get: function () {
+        return this.create(Utilities, "");
+    },
+});
+//# sourceMappingURL=index.js.map

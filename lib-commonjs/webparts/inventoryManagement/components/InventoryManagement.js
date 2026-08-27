@@ -310,11 +310,21 @@ class InventoryManagement extends React.Component {
             this.setState({ clearedNotificationIds });
             localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
         };
-        this._clearAllNotifications = () => {
-            const notifications = this._getNotifications();
-            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...notifications.map(n => n.id)]));
-            this.setState({ clearedNotificationIds });
-            localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+        this._clearAllNotifications = (filterTab) => {
+            const targetFilter = filterTab || 'All';
+            if (targetFilter === 'All') {
+                this.setState({ isAllNotificationsCleared: true });
+                localStorage.setItem('inventory_cleared_all_tab', 'true');
+            }
+            else {
+                const notifications = this._getNotifications();
+                const idsToClear = notifications
+                    .filter(n => n.category === targetFilter)
+                    .map(n => n.id);
+                const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...idsToClear]));
+                this.setState({ clearedNotificationIds });
+                localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+            }
         };
         this._handleNotificationAction = (actionLink, notificationId) => {
             this._markNotificationAsRead(notificationId);
@@ -1573,9 +1583,11 @@ class InventoryManagement extends React.Component {
         };
         let readIds = [];
         let clearedIds = [];
+        let isAllCleared = false;
         try {
             readIds = JSON.parse(localStorage.getItem('inventory_read_notifications') || '[]');
             clearedIds = JSON.parse(localStorage.getItem('inventory_cleared_notifications') || '[]');
+            isAllCleared = localStorage.getItem('inventory_cleared_all_tab') === 'true';
         }
         catch (e) {
             console.warn("localStorage parsing failed", e);
@@ -1602,6 +1614,7 @@ class InventoryManagement extends React.Component {
             selectedTabKey: 'Dashboard',
             readNotificationIds: readIds,
             clearedNotificationIds: clearedIds,
+            isAllNotificationsCleared: isAllCleared,
             selectedNotification: undefined,
             isNotificationDetailsOpen: false,
             returnRequests: [],
@@ -1859,7 +1872,7 @@ class InventoryManagement extends React.Component {
                                                 React.createElement("div", { style: { marginTop: '20px' } },
                                                     React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                                 case 'Notifications':
-                                    return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                    return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction, isAllCleared: this.state.isAllNotificationsCleared }));
                                 case 'IncidentHistory':
                                     return (React.createElement(pages_1.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':

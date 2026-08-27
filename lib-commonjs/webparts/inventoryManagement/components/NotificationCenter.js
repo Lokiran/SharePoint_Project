@@ -15,7 +15,7 @@ const NotificationCenter = (props) => {
     };
     const filteredNotifications = props.notifications.filter(n => {
         if (filter === 'All')
-            return true;
+            return !props.isAllCleared;
         if (filter === 'Request' && n.category === 'Request')
             return true;
         if (filter === 'Assignment' && n.category === 'Assignment')
@@ -67,7 +67,7 @@ const NotificationCenter = (props) => {
                 React.createElement(react_1.PivotItem, { headerText: "System Alerts", itemKey: "Audit" })),
             React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
                 unreadCount > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'CheckMark' }, text: "Mark all as read", onClick: props.onMarkAllAsRead, styles: { root: { borderRadius: '6px' } } })),
-                filteredNotifications.length > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: props.onClearAllNotifications, styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
+                filteredNotifications.length > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: () => props.onClearAllNotifications(filter), styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
         React.createElement(react_1.Stack, { tokens: itemStackTokens }, filteredNotifications.length === 0 ? (React.createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',
