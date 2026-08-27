@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { IRequest } from '../models/IRequest';
+import { IInventoryItem } from '../models/IInventoryItem';
 import { 
   DetailsList, 
   DetailsListLayoutMode, 
@@ -12,13 +13,14 @@ import styles from './InventoryManagement.module.scss';
 
 export interface IRequestListProps {
   items: IRequest[];
+  inventoryItems?: IInventoryItem[];
   canApproveReject?: boolean;
   canApproveAsset?: boolean;
   showResponseColumns?: boolean;
   statusColumnLabel?: string;
   statusField?: 'status' | 'assetStatus';
   hideStatusColumn?: boolean;
-  onApproveRequest?: (request: IRequest) => Promise<void>;
+  onApproveRequest?: (request: IRequest, comment?: string) => Promise<void>;
   onRejectRequest?: (request: IRequest, reason: string) => Promise<void>;
   onApproveAsset?: (request: IRequest) => Promise<void>;
   onSelectRequestForAssignment?: (request: IRequest) => void;

@@ -695,7 +695,7 @@ class InventoryManagement extends React.Component {
                 });
             }
         };
-        this._onApproveRequest = async (request, comment) => {
+        this._onApproveRequest = async (request, comment = '') => {
             const availableStock = (0, StockUtils_1.getAvailableStock)(this.state.items, request);
             const requestedQuantity = Number(request.quantity || 0);
             if (availableStock < requestedQuantity) {

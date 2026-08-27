@@ -970,7 +970,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
   private _onApproveRequest = async (
     request: IRequest,
-    comment: string
+    comment: string = ''
   ): Promise<void> => {
 
     const availableStock = getAvailableStock(
