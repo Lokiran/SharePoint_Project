@@ -3178,11 +3178,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             this.setState({ clearedNotificationIds });
             localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
         };
-        this._clearAllNotifications = () => {
-            const notifications = this._getNotifications();
-            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...notifications.map(n => n.id)]));
-            this.setState({ clearedNotificationIds });
-            localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+        this._clearAllNotifications = (filterTab) => {
+            const targetFilter = filterTab || 'All';
+            if (targetFilter === 'All') {
+                this.setState({ isAllNotificationsCleared: true });
+                localStorage.setItem('inventory_cleared_all_tab', 'true');
+            }
+            else {
+                const notifications = this._getNotifications();
+                const idsToClear = notifications
+                    .filter(n => n.category === targetFilter)
+                    .map(n => n.id);
+                const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...idsToClear]));
+                this.setState({ clearedNotificationIds });
+                localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+            }
         };
         this._handleNotificationAction = (actionLink, notificationId) => {
             this._markNotificationAsRead(notificationId);
@@ -4441,9 +4451,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         };
         let readIds = [];
         let clearedIds = [];
+        let isAllCleared = false;
         try {
             readIds = JSON.parse(localStorage.getItem('inventory_read_notifications') || '[]');
             clearedIds = JSON.parse(localStorage.getItem('inventory_cleared_notifications') || '[]');
+            isAllCleared = localStorage.getItem('inventory_cleared_all_tab') === 'true';
         }
         catch (e) {
             console.warn("localStorage parsing failed", e);
@@ -4470,6 +4482,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             selectedTabKey: 'Dashboard',
             readNotificationIds: readIds,
             clearedNotificationIds: clearedIds,
+            isAllNotificationsCleared: isAllCleared,
             selectedNotification: undefined,
             isNotificationDetailsOpen: false,
             returnRequests: [],
@@ -4727,7 +4740,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
                                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MyRequestsView__WEBPACK_IMPORTED_MODULE_5__.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
                                 case 'Notifications':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_22__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NotificationCenter__WEBPACK_IMPORTED_MODULE_22__.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction, isAllCleared: this.state.isAllNotificationsCleared }));
                                 case 'IncidentHistory':
                                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_21__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':
@@ -6041,7 +6054,7 @@ const NotificationCenter = (props) => {
     };
     const filteredNotifications = props.notifications.filter(n => {
         if (filter === 'All')
-            return true;
+            return !props.isAllCleared;
         if (filter === 'Request' && n.category === 'Request')
             return true;
         if (filter === 'Assignment' && n.category === 'Assignment')
@@ -6093,7 +6106,7 @@ const NotificationCenter = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.PivotItem, { headerText: "System Alerts", itemKey: "Audit" })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
                 unreadCount > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { iconProps: { iconName: 'CheckMark' }, text: "Mark all as read", onClick: props.onMarkAllAsRead, styles: { root: { borderRadius: '6px' } } })),
-                filteredNotifications.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: props.onClearAllNotifications, styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
+                filteredNotifications.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: () => props.onClearAllNotifications(filter), styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_1__.Stack, { tokens: itemStackTokens }, filteredNotifications.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',
@@ -97184,7 +97197,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("db330bab7316eabe10af")
+/******/ 		__webpack_require__.h = () => ("7cb16ca40fefc69cbfa0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

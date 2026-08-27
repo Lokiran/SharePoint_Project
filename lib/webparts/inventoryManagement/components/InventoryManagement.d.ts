@@ -39,6 +39,7 @@ export interface IInventoryManagementState {
     selectedTabKey?: string;
     readNotificationIds: string[];
     clearedNotificationIds: string[];
+    isAllNotificationsCleared: boolean;
     selectedNotification?: INotification;
     isNotificationDetailsOpen: boolean;
     returnRequests: IReturnRequest[];

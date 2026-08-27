@@ -89,6 +89,7 @@ export interface IInventoryManagementState {
   selectedTabKey?: string;
   readNotificationIds: string[];
   clearedNotificationIds: string[];
+  isAllNotificationsCleared: boolean;
   selectedNotification?: INotification;
   isNotificationDetailsOpen: boolean;
   returnRequests: IReturnRequest[];
@@ -427,11 +428,20 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
   };
 
-  private _clearAllNotifications = (): void => {
-    const notifications = this._getNotifications();
-    const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...notifications.map(n => n.id)]));
-    this.setState({ clearedNotificationIds });
-    localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+  private _clearAllNotifications = (filterTab?: string): void => {
+    const targetFilter = filterTab || 'All';
+    if (targetFilter === 'All') {
+      this.setState({ isAllNotificationsCleared: true });
+      localStorage.setItem('inventory_cleared_all_tab', 'true');
+    } else {
+      const notifications = this._getNotifications();
+      const idsToClear = notifications
+        .filter(n => n.category === targetFilter)
+        .map(n => n.id);
+      const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...idsToClear]));
+      this.setState({ clearedNotificationIds });
+      localStorage.setItem('inventory_cleared_notifications', JSON.stringify(clearedNotificationIds));
+    }
   };
 
   private _handleNotificationAction = (actionLink: string, notificationId: string): void => {
@@ -449,9 +459,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
     let readIds: string[] = [];
     let clearedIds: string[] = [];
+    let isAllCleared = false;
     try {
       readIds = JSON.parse(localStorage.getItem('inventory_read_notifications') || '[]');
       clearedIds = JSON.parse(localStorage.getItem('inventory_cleared_notifications') || '[]');
+      isAllCleared = localStorage.getItem('inventory_cleared_all_tab') === 'true';
     } catch (e) {
       console.warn("localStorage parsing failed", e);
     }
@@ -479,6 +491,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       selectedTabKey: 'Dashboard',
       readNotificationIds: readIds,
       clearedNotificationIds: clearedIds,
+      isAllNotificationsCleared: isAllCleared,
       selectedNotification: undefined,
       isNotificationDetailsOpen: false,
       returnRequests: [],
@@ -2374,6 +2387,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         onClearNotification={this._clearNotification}
                         onClearAllNotifications={this._clearAllNotifications}
                         onNotificationAction={this._handleNotificationAction}
+                        isAllCleared={this.state.isAllNotificationsCleared}
                       />
                     );
                   case 'IncidentHistory':

@@ -16,8 +16,9 @@ export interface INotificationCenterProps {
   onMarkAsRead: (id: string) => void;
   onMarkAllAsRead: () => void;
   onClearNotification: (id: string) => void;
-  onClearAllNotifications: () => void;
+  onClearAllNotifications: (filterTab?: string) => void;
   onNotificationAction: (actionLink: string, notificationId: string) => void;
+  isAllCleared?: boolean;
 }
 
 export const NotificationCenter: React.FC<INotificationCenterProps> = (props) => {
@@ -32,7 +33,7 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
   };
 
   const filteredNotifications = props.notifications.filter(n => {
-    if (filter === 'All') return true;
+    if (filter === 'All') return !props.isAllCleared;
     if (filter === 'Request' && n.category === 'Request') return true;
     if (filter === 'Assignment' && n.category === 'Assignment') return true;
     if (filter === 'Audit' && n.category === 'Audit') return true;
@@ -104,7 +105,7 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
             <DefaultButton 
               iconProps={{ iconName: 'Clear' }} 
               text="Clear filtered" 
-              onClick={props.onClearAllNotifications} 
+              onClick={() => props.onClearAllNotifications(filter)} 
               styles={{ root: { borderRadius: '6px', color: '#b91c1c' } }}
             />
           )}
@@ -129,7 +130,7 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
             <Icon iconName="Ringer" style={{ fontSize: '48px', color: '#9ca3af', marginBottom: '15px' }} />
             <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>All Caught Up!</h4>
             <p style={{ margin: 0, color: '#6b7280', fontSize: '0.85rem' }}>
-              No notifications found in the "{filter === 'All' ? 'All' : filter + 's'}" category.
+              No notifications found in the &quot;{filter === 'All' ? 'All' : filter + 's'}&quot; category.
             </p>
           </div>
         ) : (
