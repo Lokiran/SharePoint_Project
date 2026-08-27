@@ -27,7 +27,7 @@ interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   isOpen: boolean;
   onClose: () => void;
   preselectedAsset?: IInventoryItem;
-  onSuccessPopup?: (details: { incidentType: string; assetName: string; requesterName: string; priority: string }) => void;
+  onSuccessPopup?: (details: { incidentType: string; assetName: string; requesterName: string; priority: string; incidentId?: string }) => void;
   preselectedIncidentType?: string;
 }
 
@@ -166,7 +166,20 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
       };
       
       console.log('Submitting incident payload:', payload);
-      await service.createIncidentRequest(payload);
+      const result = await service.createIncidentRequest(payload);
+
+      let incidentId = '';
+      if (result && result.data) {
+        if (result.data.incidentId) {
+          incidentId = result.data.incidentId;
+        } else {
+          const itemId = result.data.Id || result.data.ID;
+          if (itemId) {
+            const isReplacement = formData.incidentType === 'Replacement Request';
+            incidentId = isReplacement ? `REP-${itemId}` : `INC-${itemId}`;
+          }
+        }
+      }
 
       props.onClose();
       setFormData({
@@ -190,7 +203,8 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
           incidentType: formData.incidentType,
           assetName: formData.assetName || 'General Device',
           requesterName: formData.employeeName,
-          priority: formData.priority
+          priority: formData.priority,
+          incidentId: incidentId
         });
       }
     } catch (error) {
@@ -263,25 +277,27 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
             required
           />
 
-          <Dropdown
-            label="Select Assigned Asset"
-            placeholder={isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets"}
-            options={assetOptions}
-            selectedKey={selectedAssetKey}
-            onChange={(ev, option) => {
-              const selected = assignedAssets.find(a => a.id === option?.key);
-              if (selected) {
-                handleInputChange('assetName', selected.assetName);
-                handleInputChange('serialNo', selected.serialNumber);
-                handleInputChange('assignedDate', selected.assignmentDate);
-              } else {
-                handleInputChange('assetName', '');
-                handleInputChange('serialNo', '');
-                handleInputChange('assignedDate', '');
-              }
-            }}
-            disabled={isLoadingAssets}
-          />
+          {!props.preselectedAsset && (
+            <Dropdown
+              label="Select Assigned Asset"
+              placeholder={isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets"}
+              options={assetOptions}
+              selectedKey={selectedAssetKey}
+              onChange={(ev, option) => {
+                const selected = assignedAssets.find(a => a.id === option?.key);
+                if (selected) {
+                  handleInputChange('assetName', selected.assetName);
+                  handleInputChange('serialNo', selected.serialNumber);
+                  handleInputChange('assignedDate', selected.assignmentDate);
+                } else {
+                  handleInputChange('assetName', '');
+                  handleInputChange('serialNo', '');
+                  handleInputChange('assignedDate', '');
+                }
+              }}
+              disabled={isLoadingAssets}
+            />
+          )}
 
           {formData.assetName && (
             <TextField

@@ -119,7 +119,7 @@ export class ReturnRequestService {
   public static async getReturnRequests(): Promise<IReturnRequest[]> {
     try {
       const list = await ReturnRequestService.getReturnRequestList();
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
 
       // Resolve column internal names dynamically
       const f = ((...c: string[]) => ReturnRequestService._findReturnField(fields, ...c));
@@ -194,14 +194,38 @@ export class ReturnRequestService {
   }
 
   public static async addReturnRequest(request: Omit<IReturnRequest, 'id' | 'status'>, userDisplayName: string): Promise<void> {
-    // Check for existing active return request for the same asset
     const requests = await ReturnRequestService.getReturnRequests();
-    const activeRequest = requests.find(r => 
-      r.assetId === request.assetId && 
-      r.status !== 'Completed' && 
-      r.status !== 'Rejected'
-    );
+    console.log("[addReturnRequest] Checking active return request for:", {
+      submittingAssetId: request.assetId,
+      submittingSerialNumber: request.serialNumber
+    });
+    console.log("[addReturnRequest] Existing return requests:", requests.map(r => ({
+      id: r.id,
+      assetId: r.assetId,
+      serialNumber: r.serialNumber,
+      status: r.status
+    })));
+
+    const activeRequest = requests.find(r => {
+      const submittingId = String(request.assetId || "").trim().toLowerCase();
+      const existingId = String(r.assetId || "").trim().toLowerCase();
+      
+      const submittingSerial = String(request.serialNumber || "").trim().toLowerCase();
+      const existingSerial = String(r.serialNumber || "").trim().toLowerCase();
+
+      // Only match on IDs if BOTH are truthy and not empty
+      const isIdMatch = submittingId && existingId && submittingId === existingId;
+      
+      // Only match on Serial Numbers if BOTH are truthy and not empty
+      const isSerialMatch = submittingSerial && existingSerial && submittingSerial === existingSerial;
+
+      const isActive = r.status !== 'Completed' && r.status !== 'Rejected';
+
+      return (isIdMatch || isSerialMatch) && isActive;
+    });
+
     if (activeRequest) {
+      console.warn("[addReturnRequest] Duplicate active request found:", activeRequest);
       throw new Error("A return request for this asset is already in progress.");
     }
 
@@ -335,7 +359,7 @@ export class ReturnRequestService {
     try {
       const list = await ReturnRequestService.getReturnRequestList();
       console.log("Resolved Return Request List Name:", list.Title || "Asset Return Request List");
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
       const f = ((...c: string[]) => ReturnRequestService._findReturnField(fields, ...c));
       const returnRequestIdKey = f('ReturnRequestID', 'Return Request ID', 'ReturnRequestId', 'ReturnRequestKey', 'Return Request Key');
       const statusKey = f('Status', 'ReturnStatus', 'Return Status', 'RequestStatus', 'Return Request Status') || 'Status';
@@ -450,7 +474,7 @@ export class ReturnRequestService {
     try {
       const list = await InventoryItemService.getInventoryList();
       console.log("Resolved Inventory List Name:", list.Title || "InventoryList");
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
 
       const findField = (searchStr: string, fallback: string): string => {
         const field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());
@@ -641,7 +665,7 @@ export class ReturnRequestService {
         return;
       }
 
-      const fields: any[] = await list.fields.select("InternalName", "Title", "TypeAsString")();
+      const fields: any[] = await SharePointBaseService.getSafeListFields(list);
       
       const findField = (searchStr: string, fallback: string): string => {
         const field = fields.find((f: any) => f.InternalName.toLowerCase() === searchStr.toLowerCase() || f.Title.toLowerCase() === searchStr.toLowerCase());

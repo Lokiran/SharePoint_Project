@@ -1,3 +1,4 @@
+import { WebPartContext } from "@microsoft/sp-webpart-base";
 export interface IApprovalRequestParams {
     requestKey: string;
     employeeName: string;
@@ -20,10 +21,35 @@ export interface IAssignmentNotificationParams {
     assignedBy: string;
     assignedDate: string;
 }
+export interface IEmailProps {
+    to: string[];
+    cc?: string[];
+    subject: string;
+    htmlBody: string;
+    saveToSentItems?: boolean;
+}
+export interface IEmailSendResult {
+    success: boolean;
+    method: "graph" | "spUtility";
+    error?: string;
+    statusCode?: number;
+}
+/**
+ * EmailService
+ * -------------------------------------------------------------------------
+ * Graph /sendMail is now the PRIMARY path. sp.utility.sendEmail is kept only
+ * as a last-resort fallback because Microsoft's own PnPjs docs mark it
+ * deprecated, and in practice it can resolve "successfully" even when the
+ * message never reaches Exchange (silent failure - no thrown error, so old
+ * code never triggered its own fallback).
+ */
 export declare class EmailService {
+    private context;
     private static readonly USE_MOCK_TEST_EMAILS;
     private static readonly MOCK_ADMIN_EMAILS;
     private static readonly MOCK_MANAGER_EMAIL;
+    constructor(context: WebPartContext);
+    sendEmail(props: IEmailProps): Promise<IEmailSendResult>;
     /**
      * Helper to get target emails for Admins
      */
@@ -45,13 +71,24 @@ export declare class EmailService {
      */
     static sendApprovalConfirmationToAdmin(params: IApprovalConfirmationParams, liveAdminEmails?: string[]): Promise<void>;
     /**
+     * Send Rejection Notification Email to Employee
+     */
+    static sendRejectionNotificationToEmployee(params: {
+        requestKey: string;
+        employeeName: string;
+        employeeEmail: string;
+        assetName: string;
+        rejectionReason: string;
+        managerName: string;
+    }): Promise<void>;
+    /**
      * Send Asset Assignment Notification Email to Employee (Adele / Alex)
      */
     static sendAssignmentNotificationToEmployee(params: IAssignmentNotificationParams, liveEmployeeEmail?: string): Promise<void>;
     /**
      * Try to resolve the manager's email dynamically from SharePoint User Profiles or EmployeeList
      */
-    static resolveLiveManagerEmail(employeeName: string): Promise<string | null>;
+    static resolveLiveManagerEmail(employeeName: string): Promise<string | undefined>;
     /**
      * Internal sender method using SharePoint sp.utility.sendEmail or developer console fallback.
      */

@@ -1,16 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-if (typeof localStorage === 'undefined') {
-    let store = {};
-    globalThis.localStorage = {
-        getItem: (key) => store[key] || null,
-        setItem: (key, value) => { store[key] = value.toString(); },
-        removeItem: (key) => { delete store[key]; },
-        clear: () => { store = {}; },
-        key: (i) => Object.keys(store)[i] || null,
-        get length() { return Object.keys(store).length; }
-    };
-}
 // Mock the configuration context before regular imports to satisfy linter hoisting rules
 const mockSP = {
     web: {
@@ -23,6 +12,7 @@ const mockSP = {
 jest.mock("../pnpjsConfig", () => ({
     getSP: () => mockSP
 }));
+jest.mock("@pnp/sp/sputilities", () => ({}), { virtual: true });
 const ReturnRequestService_1 = require("../services/ReturnRequestService");
 // Mock implementation of list data
 let returnRequestsListItems = [

@@ -26,3 +26,10 @@ obj
 
 # Styles Generated Code
 *.scss.ts
+
+# Build output & Temp directories
+dist
+lib
+lib-commonjs
+release
+temp

@@ -5,6 +5,7 @@ import { Icon } from '@fluentui/react/lib/Icon';
 
 export interface IWorkflowPopupDetails {
   requestId?: string;
+  incidentId?: string;
   assetTitle?: string;
   requesterName?: string;
   managerName?: string;
@@ -144,6 +145,14 @@ export const WorkflowPopup: React.FC<IWorkflowPopupProps> = (props) => {
               <div>
                 <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Request ID</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.requestId}</strong>
+              </div>
+            )}
+            {details.incidentId && (
+              <div>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>
+                  {details.incidentId.startsWith('REP-') ? 'Replacement ID' : 'Incident ID'}
+                </span>
+                <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.incidentId}</strong>
               </div>
             )}
             {details.assetTitle && (

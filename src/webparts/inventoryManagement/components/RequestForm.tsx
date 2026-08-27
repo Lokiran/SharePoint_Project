@@ -40,10 +40,14 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
   const [quantity, setQuantity] = React.useState<number>(1);
   const [reason, setReason] = React.useState('');
   const [requestDate, setRequestDate] = React.useState<string>(new Date().toISOString().split('T')[0]);
+  const [reasonTouched, setReasonTouched] = React.useState(false);
+  const [managerNameTouched, setManagerNameTouched] = React.useState(false);
 
   React.useEffect(() => {
     if (props.isOpen) {
       setRequestDate(new Date().toISOString().split('T')[0]);
+      setReasonTouched(false);
+      setManagerNameTouched(false);
     }
   }, [props.isOpen]);
 
@@ -56,31 +60,30 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
     name: props.currentUserName,
     email: props.currentUserEmail || '',
     department: 'Your Department',
-    jobTitle: 'Employee'
+    jobTitle: props.currentUserRole
   };
 
-  const employeeExists = props.employees.some(emp => emp.name.toLowerCase() === props.currentUserName.toLowerCase());
-  const allEmployees = employeeExists ? props.employees : [currentUserOption, ...props.employees];
+  const matchedEmployee = props.employees.find(emp => 
+    (props.currentUserEmail && emp.email.toLowerCase() === props.currentUserEmail.toLowerCase()) ||
+    emp.name.toLowerCase() === props.currentUserName.toLowerCase()
+  );
 
-  const availableEmployees = isEmployee
-    ? allEmployees.filter(emp => emp.name.toLowerCase() === props.currentUserName.toLowerCase())
-    : allEmployees;
+  const activeEmployee = matchedEmployee || currentUserOption;
+  const availableEmployees = [activeEmployee];
+  const allEmployees = props.employees.some(e => e.id === activeEmployee.id) ? props.employees : [activeEmployee, ...props.employees];
 
   const employeeOptions: IDropdownOption[] = availableEmployees.map(emp => ({
     key: emp.id,
     text: `${emp.name} (${emp.department})`
   }));
 
-  // Auto-select current user if employee
+  // Auto-select current user and pre-populate Employee ID
   React.useEffect(() => {
-    if (isEmployee && employeeOptions.length === 1) {
-      setSelectedRequesterId(employeeOptions[0].key as string);
-      const emp = allEmployees.find(e => e.id === employeeOptions[0].key);
-      if (emp) {
-        setEmployeeId(emp.id);
-      }
+    if (props.isOpen && employeeOptions.length > 0) {
+      setSelectedRequesterId(activeEmployee.id);
+      setEmployeeId(activeEmployee.id === 'current-user' ? '' : activeEmployee.id);
     }
-  }, [isEmployee, employeeOptions, props.isOpen]);
+  }, [props.isOpen, employeeOptions]);
 
   const uniqueAssetTypes = Array.from(new Set(props.availableAssets.map(a => a.assetType).filter(Boolean)));
   const dynamicAssetTypeOptions: IDropdownOption[] = uniqueAssetTypes.map(type => ({ key: type, text: type }));
@@ -89,19 +92,10 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
     ? dynamicAssetTypeOptions
     : DEFAULT_ASSET_TYPE_OPTIONS;
 
-  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0;
+  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0 && !!reason.trim();
 
   const onSave = () => {
-    // Validate role: employees can only request for themselves
-    if (isEmployee && selectedRequesterId) {
-      const selectedEmployee = allEmployees.find(e => e.id === selectedRequesterId);
-      if (selectedEmployee && selectedEmployee.name.toLowerCase() !== props.currentUserName.toLowerCase()) {
-        alert('Employees can only request assets for themselves.');
-        return;
-      }
-    }
-
-    const employee = allEmployees.find(e => e.id === selectedRequesterId);
+    const employee = activeEmployee;
 
     // Find a real asset ID to satisfy SharePoint backend lookups
     let matchingAsset = props.availableAssets.find(
@@ -134,6 +128,8 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
       setQuantity(1);
       setReason('');
       setRequestDate(new Date().toISOString().split('T')[0]);
+      setReasonTouched(false);
+      setManagerNameTouched(false);
       props.onClose();
     }
   };
@@ -149,38 +145,34 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
       closeButtonAriaLabel="Close"
     >
       <Stack tokens={stackTokens}>
-        {isEmployee && (
-          <MessageBar messageBarType={MessageBarType.info}>
-            You can only request assets for yourself. Contact your manager to request assets for others.
-          </MessageBar>
-        )}
+        <MessageBar messageBarType={MessageBarType.info}>
+          You are requesting this asset for yourself. Requesting on behalf of other users is disabled.
+        </MessageBar>
         <Dropdown
-          label={isEmployee ? "Requester (You)" : "Requester (Employee)"}
+          label="Requester"
           selectedKey={selectedRequesterId}
           options={employeeOptions}
-          onChange={(_, opt) => {
-            const empId = opt?.key as string;
-            setSelectedRequesterId(empId);
-            const emp = allEmployees.find(e => e.id === empId);
-            if (emp) {
-              setEmployeeId(emp.id);
-            }
-          }}
           required
-          disabled={isEmployee && employeeOptions.length === 1}
+          disabled
         />
         <TextField
           label="Employee ID"
           value={employeeId}
           onChange={(_, val) => setEmployeeId(val || '')}
           required
+          disabled={activeEmployee.id !== 'current-user'}
         />
         <TextField
           label="Manager's Name"
           value={managerName}
-          onChange={(_, val) => setManagerName(val || '')}
+          onChange={(_, val) => {
+            setManagerName(val || '');
+            setManagerNameTouched(true);
+          }}
+          onBlur={() => setManagerNameTouched(true)}
           placeholder="Enter manager's name"
           required
+          errorMessage={managerNameTouched && !managerName.trim() ? "Manager's name is required" : undefined}
         />
         <TextField
           label="Requested Date"
@@ -217,7 +209,13 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
           multiline
           rows={3}
           value={reason}
-          onChange={(_, val) => setReason(val || '')}
+          onChange={(_, val) => {
+            setReason(val || '');
+            setReasonTouched(true);
+          }}
+          onBlur={() => setReasonTouched(true)}
+          required
+          errorMessage={reasonTouched && !reason.trim() ? "Reason for request is required" : undefined}
         />
         <Stack horizontal tokens={stackTokens} style={{ marginTop: 20 }}>
           <PrimaryButton text="Submit Request" onClick={onSave} disabled={!isFormValid} />

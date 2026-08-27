@@ -19,15 +19,109 @@ export class SharePointBaseService {
   public static readonly ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
   public static readonly MAPPING_LIST_NAME = "Mapping List";
 
+  public static async getSafeListFields(list: any): Promise<any[]> {
+    try {
+      return await list.fields.select("Title", "InternalName", "TypeAsString", "Required", "Choices")();
+    } catch (error) {
+      console.warn("getSafeListFields failed, using fallback:", error);
+      
+      let listTitle = "";
+      try {
+        const listData = await list.select("Title")();
+        listTitle = listData.Title || "";
+      } catch (titleError) {
+        console.warn("Could not determine list title for fields fallback", titleError);
+      }
+
+      const isMappingList = listTitle.toLowerCase().includes("mapping");
+      const isInventoryList = listTitle.toLowerCase().includes("inventory") || listTitle.toLowerCase().includes("hardware");
+
+      if (isMappingList) {
+        return [
+          { Title: "Title", InternalName: "Title", TypeAsString: "Text", Required: true },
+          { Title: "Employee Name", InternalName: "EmployeeName", TypeAsString: "User", Required: true },
+          { Title: "Employee ID", InternalName: "EmployeeID", TypeAsString: "Text", Required: true },
+          { Title: "Asset Name", InternalName: "AssetName", TypeAsString: "Text", Required: true },
+          { Title: "Serial Number", InternalName: "SerialNumber", TypeAsString: "Text", Required: true },
+          { Title: "Assigned Date", InternalName: "AssignedDate", TypeAsString: "DateTime", Required: true },
+          { Title: "Assignment ID", InternalName: "AssignmentID", TypeAsString: "Text", Required: false }
+        ];
+      } else if (isInventoryList) {
+        return [
+          { Title: "Title", InternalName: "Title", TypeAsString: "Text", Required: true },
+          { Title: "Asset Name", InternalName: "AssetName", TypeAsString: "Text" },
+          { Title: "Asset Type", InternalName: "AssetType", TypeAsString: "Text" },
+          { Title: "Category", InternalName: "Category", TypeAsString: "Text" },
+          { Title: "Serial Number", InternalName: "SerialNumber", TypeAsString: "Text" },
+          { Title: "Model", InternalName: "Model", TypeAsString: "Text" },
+          { Title: "Location", InternalName: "Location", TypeAsString: "Text" },
+          { Title: "Status", InternalName: "Status", TypeAsString: "Choice", Choices: ['Available', 'Assigned', 'In Repair', 'Pending Return', 'Retired'] },
+          { Title: "Asset Status", InternalName: "AssetStatus", TypeAsString: "Choice", Choices: ['Available', 'Assigned', 'In Repair', 'Pending Return', 'Retired'] },
+          { Title: "Assigned To", InternalName: "AssignedTo", TypeAsString: "User" }
+        ];
+      } else {
+        // Return Request List fallback
+        return [
+          { Title: "Title", InternalName: "Title", TypeAsString: "Text", Required: true },
+          { Title: "Return Request ID", InternalName: "ReturnRequestID", TypeAsString: "Text", Required: false },
+          { Title: "Asset ID", InternalName: "AssetID", TypeAsString: "Text", Required: true },
+          { Title: "Asset Name", InternalName: "AssetName", TypeAsString: "Text", Required: true },
+          { Title: "Asset Type", InternalName: "AssetType", TypeAsString: "Text", Required: false },
+          { Title: "Serial Number", InternalName: "SerialNumber", TypeAsString: "Text", Required: false },
+          { Title: "Requester Name", InternalName: "RequesterName", TypeAsString: "Text", Required: true },
+          { Title: "Requester Email", InternalName: "RequesterEmail", TypeAsString: "Text", Required: false },
+          { Title: "Return Request Date", InternalName: "ReturnRequestDate", TypeAsString: "DateTime", Required: false },
+          { Title: "Return Reason", InternalName: "ReturnReason", TypeAsString: "Text", Required: false },
+          { Title: "Proposed Condition", InternalName: "ProposedCondition", TypeAsString: "Choice", Required: false, Choices: ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'] },
+          { Title: "Returned Asset Condition", InternalName: "ReturnedAssetCondition", TypeAsString: "Choice", Required: false, Choices: ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'] },
+          { Title: "Condition", InternalName: "Condition", TypeAsString: "Choice", Required: false, Choices: ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'] },
+          { Title: "Status", InternalName: "Status", TypeAsString: "Choice", Required: true, Choices: ['Pending', 'Approved', 'Rejected', 'Returned', 'Completed'] },
+          { Title: "Return Status", InternalName: "ReturnStatus", TypeAsString: "Choice", Required: true, Choices: ['Pending', 'Approved', 'Rejected', 'Returned', 'Completed'] },
+          { Title: "Manager Status", InternalName: "ManagerStatus", TypeAsString: "Choice", Required: false, Choices: ['Pending', 'Approved', 'Rejected'] },
+          { Title: "Admin Status", InternalName: "AdminStatus", TypeAsString: "Choice", Required: false, Choices: ['Not Started', 'Pending', 'In Progress', 'Completed'] },
+          { Title: "Manager Comment", InternalName: "ManagerComment", TypeAsString: "Text", Required: false },
+          { Title: "Completed Date", InternalName: "CompletedDate", TypeAsString: "DateTime", Required: false },
+          { Title: "Verified Date", InternalName: "VerifiedDate", TypeAsString: "DateTime", Required: false }
+        ];
+      }
+    }
+  }
+
   public static async getListFieldsMetadata(list: any): Promise<IFieldMetadata[]> {
-    const fields = await list.fields.select("Title", "InternalName", "TypeAsString", "Required", "Choices")();
-    return fields.map((f: any) => ({
-      displayName: f.Title || "",
-      internalName: f.InternalName || "",
-      fieldType: f.TypeAsString || "",
-      required: !!f.Required,
-      choices: f.Choices || undefined
-    }));
+    const fields = await SharePointBaseService.getSafeListFields(list);
+    return fields.map((f: any) => {
+      let choices = f.Choices || undefined;
+      const internalName = f.InternalName || "";
+      const displayName = f.Title || "";
+      
+      // Ensure all standard conditions are available if this is a condition choice field
+      if ((f.TypeAsString === "Choice" || f.TypeAsString === "Choice") && choices && choices.length > 0) {
+        const isConditionField = 
+          internalName.toLowerCase().includes("condition") || 
+          displayName.toLowerCase().includes("condition");
+          
+        if (isConditionField) {
+          const standardConditions = ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'];
+          const newChoices = [...choices];
+          for (const cond of standardConditions) {
+            if (!newChoices.some(c => c.toLowerCase() === cond.toLowerCase())) {
+              newChoices.push(cond);
+            }
+          }
+          choices = newChoices;
+        }
+      } else if (choices === undefined && (internalName.toLowerCase().includes("condition") || displayName.toLowerCase().includes("condition"))) {
+        choices = ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'];
+      }
+
+      return {
+        displayName: displayName,
+        internalName: internalName,
+        fieldType: f.TypeAsString || "",
+        required: !!f.Required,
+        choices: choices
+      };
+    });
   }
 
   public static formatToSharePointDate(dateStr: any): string | null {

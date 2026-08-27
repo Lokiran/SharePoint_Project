@@ -15,6 +15,7 @@ export const DEFAULT_ASSET_TYPE_OPTIONS: IDropdownOption[] = [
 
 export const ASSET_CONDITION_OPTIONS: IDropdownOption[] = [
   { key: 'New', text: 'New' },
+  { key: 'Excellent', text: 'Excellent' },
   { key: 'Good', text: 'Good' },
   { key: 'Fair', text: 'Fair' },
   { key: 'Poor', text: 'Poor' },
@@ -82,9 +83,10 @@ export const ASSET_REQUEST_PRIORITY_OPTIONS: IDropdownOption[] = [
 ];
 
 export const ASSET_REQUEST_STATUS_OPTIONS: IDropdownOption[] = [
-  { key: 'Pending', text: 'Pending' },
-  { key: 'Approved', text: 'Approved' },
-  { key: 'Declined', text: 'Declined' }
+  { key: 'Pending Manager Approval', text: 'Pending Manager Approval' },
+  { key: 'Approved by Manager', text: 'Approved by Manager' },
+  { key: 'Rejected', text: 'Rejected' },
+  { key: 'Asset Assigned', text: 'Asset Assigned' }
 ];
 
 // ==========================================

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { IRequest } from '../models/IRequest';
-import { IInventoryItem } from "../models/IInventoryItem";
 export interface IRequestListProps {
-    inventoryItems: IInventoryItem[];
     items: IRequest[];
     canApproveReject?: boolean;
     canApproveAsset?: boolean;
@@ -10,7 +8,7 @@ export interface IRequestListProps {
     statusColumnLabel?: string;
     statusField?: 'status' | 'assetStatus';
     hideStatusColumn?: boolean;
-    onApproveRequest?: (request: IRequest, comment: string) => Promise<void>;
+    onApproveRequest?: (request: IRequest) => Promise<void>;
     onRejectRequest?: (request: IRequest, reason: string) => Promise<void>;
     onApproveAsset?: (request: IRequest) => Promise<void>;
     onSelectRequestForAssignment?: (request: IRequest) => void;

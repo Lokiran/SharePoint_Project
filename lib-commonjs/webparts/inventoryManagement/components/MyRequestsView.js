@@ -28,12 +28,12 @@ const MyRequestsView = (props) => {
         let approvedCount = 0;
         let declinedCount = 0;
         requests.forEach(r => {
-            const status = r.status || 'Pending';
-            if (status === 'Pending')
+            const status = r.status || 'Pending Manager Approval';
+            if (status === 'Pending Manager Approval' || status === 'Pending')
                 pendingCount++;
-            else if (status === 'Approved')
+            else if (status === 'Approved by Manager' || status === 'Asset Assigned' || status === 'Approved')
                 approvedCount++;
-            else if (status === 'Declined')
+            else if (status === 'Rejected' || status === 'Declined')
                 declinedCount++;
         });
         return {
@@ -78,7 +78,14 @@ const MyRequestsView = (props) => {
                 (r.reason || '').toLowerCase().includes(normQuery) ||
                 (r.managerName || '').toLowerCase().includes(normQuery) ||
                 (r.id || '').toLowerCase().includes(normQuery);
-            const matchesStatus = selectedStatus === 'All' || (r.status || 'Pending') === selectedStatus;
+            let rStatus = r.status || 'Pending Manager Approval';
+            if (rStatus === 'Pending')
+                rStatus = 'Pending Manager Approval';
+            else if (rStatus === 'Approved')
+                rStatus = 'Approved by Manager';
+            else if (rStatus === 'Declined')
+                rStatus = 'Rejected';
+            const matchesStatus = selectedStatus === 'All' || rStatus === selectedStatus;
             const matchesPriority = selectedPriority === 'All' || (r.priority || 'Medium') === selectedPriority;
             return matchesSearch && matchesStatus && matchesPriority;
         });
@@ -197,15 +204,19 @@ const MyRequestsView = (props) => {
                             gap: '16px',
                             marginTop: '10px'
                         } }, filteredRequests.map(item => {
-                        const status = item.status || 'Pending';
-                        const priority = item.priority || 'Medium';
+                        let status = item.status || 'Pending';
+                        let priority = item.priority || 'Medium';
                         let statusBg = '#fef7e0';
                         let statusText = '#b06000';
-                        if (status === 'Approved') {
+                        if (status === 'Approved by Manager' || status === 'Approved') {
+                            statusBg = '#e0f2fe';
+                            statusText = '#0369a1';
+                        }
+                        else if (status === 'Asset Assigned') {
                             statusBg = '#e6f4ea';
                             statusText = '#137333';
                         }
-                        else if (status === 'Declined') {
+                        else if (status === 'Rejected' || status === 'Declined') {
                             statusBg = '#fce8e6';
                             statusText = '#c5221f';
                         }
@@ -222,11 +233,11 @@ const MyRequestsView = (props) => {
                         let adminAllocationText = '';
                         let adminAllocationColor = 'var(--text-muted)';
                         const managerStatusLower = status.toLowerCase();
-                        if (managerStatusLower === 'pending') {
+                        if (managerStatusLower.includes('pending')) {
                             adminAllocationText = 'Waiting on Manager';
                             adminAllocationColor = '#b06000';
                         }
-                        else if (managerStatusLower === 'declined') {
+                        else if (managerStatusLower === 'declined' || managerStatusLower === 'rejected') {
                             adminAllocationText = 'N/A (Rejected)';
                             adminAllocationColor = '#c5221f';
                         }
