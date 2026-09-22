@@ -20,6 +20,7 @@ import { jsPDF } from 'jspdf';
 import styles from './ReplacementHistory.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
+import { INCIDENT_STATUS_OPTIONS } from '../../constants/DropdownConstants';
 
 interface IReplacementHistoryItem {
   id: string;
@@ -514,12 +515,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
                     <span style={{ color: '#6b7280' }}>Status:</span>
                     <Dropdown
                       selectedKey={selectedReplacement.status || 'Open'}
-                      options={[
-                        { key: 'Open', text: 'Open' },
-                        { key: 'In Progress', text: 'In Progress' },
-                        { key: 'Resolved', text: 'Resolved' },
-                        { key: 'Closed', text: 'Closed' }
-                      ]}
+                      options={INCIDENT_STATUS_OPTIONS}
                       onChange={(ev, option) => handleStatusChange(selectedReplacement, option?.key as string)}
                       styles={{ root: { width: 120 } }}
                     />

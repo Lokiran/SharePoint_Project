@@ -19,6 +19,7 @@ import {
 import { jsPDF } from 'jspdf';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
+import { INCIDENT_STATUS_OPTIONS } from '../../constants/DropdownConstants';
 import styles from '../InventoryManagement.module.scss';
 
 interface IIncidentHistoryItem {
@@ -423,10 +424,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
 
   const statusFilterOptions: IDropdownOption[] = [
     { key: '', text: 'All Status' },
-    { key: 'Open', text: 'Open' },
-    { key: 'In Progress', text: 'In Progress' },
-    { key: 'Resolved', text: 'Resolved' },
-    { key: 'Closed', text: 'Closed' },
+    ...INCIDENT_STATUS_OPTIONS
   ];
 
   return (
@@ -523,12 +521,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
                     <span style={{ color: '#6b7280' }}>Status:</span>
                     <Dropdown
                       selectedKey={selectedIncident.status || 'Open'}
-                      options={[
-                        { key: 'Open', text: 'Open' },
-                        { key: 'In Progress', text: 'In Progress' },
-                        { key: 'Resolved', text: 'Resolved' },
-                        { key: 'Closed', text: 'Closed' }
-                      ]}
+                      options={INCIDENT_STATUS_OPTIONS}
                       onChange={(ev, option) => handleStatusChange(selectedIncident, option?.key as string)}
                       styles={{ root: { width: 120 } }}
                     />

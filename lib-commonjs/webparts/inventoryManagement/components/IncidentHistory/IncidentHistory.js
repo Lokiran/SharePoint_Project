@@ -7,6 +7,7 @@ const react_1 = require("react");
 const react_2 = require("@fluentui/react");
 const jspdf_1 = require("jspdf");
 const IncidentService_1 = require("../../services/IncidentService");
+const DropdownConstants_1 = require("../../constants/DropdownConstants");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../InventoryManagement.module.scss"));
 const IncidentHistory = (props) => {
     const [incidents, setIncidents] = (0, react_1.useState)([]);
@@ -343,10 +344,7 @@ const IncidentHistory = (props) => {
     ];
     const statusFilterOptions = [
         { key: '', text: 'All Status' },
-        { key: 'Open', text: 'Open' },
-        { key: 'In Progress', text: 'In Progress' },
-        { key: 'Resolved', text: 'Resolved' },
-        { key: 'Closed', text: 'Closed' },
+        ...DropdownConstants_1.INCIDENT_STATUS_OPTIONS
     ];
     return (React.createElement("div", { style: { marginTop: '20px' } },
         React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
@@ -398,12 +396,7 @@ const IncidentHistory = (props) => {
                         React.createElement("span", { style: getPriorityBadgeStyle(selectedIncident.priority) }, selectedIncident.priority || 'Medium')),
                     props.userRole === 'Admin' ? (React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
                         React.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
-                        React.createElement(react_2.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: [
-                                { key: 'Open', text: 'Open' },
-                                { key: 'In Progress', text: 'In Progress' },
-                                { key: 'Resolved', text: 'Resolved' },
-                                { key: 'Closed', text: 'Closed' }
-                            ], onChange: (ev, option) => handleStatusChange(selectedIncident, option?.key), styles: { root: { width: 120 } } }))) : (React.createElement("div", null,
+                        React.createElement(react_2.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: DropdownConstants_1.INCIDENT_STATUS_OPTIONS, onChange: (ev, option) => handleStatusChange(selectedIncident, option?.key), styles: { root: { width: 120 } } }))) : (React.createElement("div", null,
                         React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Status:"),
                         React.createElement("span", { style: getStatusBadgeStyle(selectedIncident.status) }, selectedIncident.status || 'Open'))),
                     selectedIncident.assignedTo && (React.createElement("div", null,
