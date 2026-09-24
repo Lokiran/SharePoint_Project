@@ -7,6 +7,9 @@ const react_1 = require("react");
 const DetailsList_1 = require("@fluentui/react/lib/DetailsList");
 const react_2 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../utils/LocalizationUtils");
+const RequestStatusUtils_1 = require("../utils/RequestStatusUtils");
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0, react_1.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0, react_1.useState)(false);
@@ -25,10 +28,11 @@ const RequestList = (props) => {
             return (b.id || '').localeCompare(a.id || '');
         });
     }, [props.items]);
+    const getStatusDisplayText = RequestStatusUtils_1.getAssetRequestStatusDisplayText;
     const columns = [
         {
             key: 'columnRequestKey',
-            name: 'Request ID',
+            name: strings.Columns.RequestId,
             fieldName: 'requestKey',
             minWidth: 90,
             maxWidth: 125,
@@ -36,7 +40,7 @@ const RequestList = (props) => {
         },
         {
             key: 'columnEmployeeName',
-            name: 'Employee Name',
+            name: strings.Columns.EmployeeName,
             fieldName: 'requesterName',
             minWidth: 100,
             maxWidth: 150,
@@ -44,16 +48,16 @@ const RequestList = (props) => {
         },
         {
             key: 'columnManagerName',
-            name: "Manager's Name",
+            name: strings.Columns.ManagerName,
             fieldName: 'managerName',
             minWidth: 110,
             maxWidth: 140,
             isResizable: true,
-            onRender: (item) => item.managerName || 'N/A'
+            onRender: (item) => item.managerName || strings.Common.NotAvailable
         },
         {
             key: 'columnAssetType',
-            name: 'Asset Type',
+            name: strings.Columns.AssetType,
             fieldName: 'assetTitle',
             minWidth: 100,
             maxWidth: 120,
@@ -61,7 +65,7 @@ const RequestList = (props) => {
         },
         {
             key: 'columnPriority',
-            name: 'Priority',
+            name: strings.Columns.Priority,
             fieldName: 'priority',
             minWidth: 80,
             maxWidth: 100,
@@ -90,28 +94,30 @@ const RequestList = (props) => {
         },
         ...(props.hideStatusColumn ? [] : [{
                 key: 'column6',
-                name: props.statusColumnLabel || 'Status',
+                name: props.statusColumnLabel || strings.Columns.Status,
                 fieldName: props.statusField || 'status',
                 minWidth: 80,
                 maxWidth: 100,
                 isResizable: true,
                 onRender: (item) => {
-                    let val = item[props.statusField || 'status'] || 'Pending Manager Approval';
-                    if (val === 'Pending')
-                        val = 'Pending Manager Approval';
+                    const val = item[props.statusField || 'status'] || 'Pending';
                     let backgroundColor = '#fef3c7'; // default pending (yellow)
                     let textColor = '#92400e';
+                    let displayVal = strings.RequestList.StatusPendingManagerApproval;
                     if (val === 'Approved by Manager' || val === 'Approved') {
                         backgroundColor = '#e0f2fe';
                         textColor = '#0369a1';
+                        displayVal = strings.Dropdowns.AssetRequestStatus.ApprovedByManager;
                     }
                     else if (val === 'Asset Assigned') {
                         backgroundColor = '#dcfce7';
                         textColor = '#166534';
+                        displayVal = strings.Dropdowns.AssetRequestStatus.AssetAssigned;
                     }
                     else if (val === 'Rejected' || val === 'Declined') {
                         backgroundColor = '#fee2e2';
                         textColor = '#991b1b';
+                        displayVal = strings.Dropdowns.AssetRequestStatus.Rejected;
                     }
                     return (React.createElement("span", { style: {
                             backgroundColor,
@@ -121,12 +127,12 @@ const RequestList = (props) => {
                             fontSize: '0.75rem',
                             fontWeight: 600,
                             display: 'inline-block'
-                        } }, val));
+                        } }, displayVal));
                 }
             }]),
         {
             key: 'columnManagerComment',
-            name: 'Manager Comment',
+            name: strings.Columns.ManagerComment,
             fieldName: 'managerResponse',
             minWidth: 150,
             maxWidth: 220,
@@ -140,7 +146,7 @@ const RequestList = (props) => {
         },
         ...(props.canApproveAsset ? [{
                 key: 'columnAssetStatus',
-                name: 'Asset Status',
+                name: strings.Columns.AssetStatus,
                 fieldName: 'assetStatus',
                 minWidth: 200,
                 maxWidth: 260,
@@ -149,6 +155,7 @@ const RequestList = (props) => {
                     const value = item.assetStatus || 'Pending';
                     const isApproved = value.toLowerCase().includes('approv');
                     const isBusy = props.actionInProgressId === item.id;
+                    const displayValue = isApproved ? strings.Dropdowns.AuditLogStatus.Approved : strings.Dropdowns.AuditLogStatus.Pending;
                     return (React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'nowrap' } },
                         React.createElement("span", { style: {
                                 backgroundColor: isApproved ? '#dcfce7' : '#fef3c7',
@@ -158,8 +165,8 @@ const RequestList = (props) => {
                                 fontSize: '0.75rem',
                                 fontWeight: 600,
                                 display: 'inline-block'
-                            } }, value),
-                        !isApproved && (React.createElement(react_2.PrimaryButton, { text: "Review & Assign", onClick: () => {
+                            } }, displayValue),
+                        !isApproved && (React.createElement(react_2.PrimaryButton, { text: strings.RequestList.ButtonReviewAssign, onClick: () => {
                                 if (props.onSelectRequestForAssignment) {
                                     props.onSelectRequestForAssignment(item);
                                 }
@@ -174,7 +181,7 @@ const RequestList = (props) => {
         ...(props.showResponseColumns ? [
             {
                 key: 'columnAdminResponse',
-                name: 'Admin Response',
+                name: strings.Columns.AdminResponse,
                 fieldName: 'assetStatus',
                 minWidth: 140,
                 maxWidth: 200,
@@ -182,19 +189,19 @@ const RequestList = (props) => {
                 onRender: (item) => {
                     const managerStatus = (item.status || '').toLowerCase();
                     if (managerStatus.includes('pending')) {
-                        return React.createElement("span", { style: { color: '#92400e', fontStyle: 'italic' } }, "Waiting on Manager");
+                        return React.createElement("span", { style: { color: '#92400e', fontStyle: 'italic' } }, strings.RequestList.AdminResponseWaitingOnManager);
                     }
                     if (managerStatus === 'declined' || managerStatus === 'rejected') {
-                        return React.createElement("span", { style: { color: '#991b1b', fontStyle: 'italic' } }, "N/A (Rejected)");
+                        return React.createElement("span", { style: { color: '#991b1b', fontStyle: 'italic' } }, strings.RequestList.AdminResponseRejected);
                     }
                     const isApproved = (item.assetStatus || '').toLowerCase().includes('approv') || managerStatus === 'asset assigned';
-                    return isApproved ? (React.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, "Asset Allocated")) : (React.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, "Pending Admin Approval"));
+                    return isApproved ? (React.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, strings.RequestList.AdminResponseAllocated)) : (React.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, strings.RequestList.AdminResponsePendingApproval));
                 }
             }
         ] : []),
         ...(props.canApproveReject ? [{
                 key: 'column8',
-                name: 'Actions',
+                name: strings.Columns.Actions,
                 fieldName: 'actions',
                 minWidth: 220,
                 maxWidth: 260,
@@ -203,15 +210,15 @@ const RequestList = (props) => {
                     const isPending = (item.status || '').toLowerCase().includes('pending');
                     const isBusy = props.actionInProgressId === item.id;
                     if (!isPending) {
-                        return React.createElement("span", { style: { color: 'var(--text-muted)' } }, "No action");
+                        return React.createElement("span", { style: { color: 'var(--text-muted)' } }, strings.RequestList.NoAction);
                     }
                     return (React.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        React.createElement(react_2.PrimaryButton, { text: "Approve", onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
-                        React.createElement(react_2.PrimaryButton, { text: "Reject", onClick: () => {
+                        React.createElement(react_2.PrimaryButton, { text: strings.Common.Approve, onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
+                        React.createElement(react_2.PrimaryButton, { text: strings.Common.Reject, onClick: () => {
                                 if (!props.onRejectRequest) {
                                     return;
                                 }
-                                const rejectionReason = window.prompt('Enter rejection reason for this request:');
+                                const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
                                 if (!rejectionReason || !rejectionReason.trim()) {
                                     return;
                                 }
@@ -224,11 +231,11 @@ const RequestList = (props) => {
             }] : []),
         {
             key: 'columnViewDetails',
-            name: 'Details',
+            name: strings.Common.Details,
             minWidth: 70,
             maxWidth: 90,
             isResizable: true,
-            onRender: (item) => (React.createElement(react_2.DefaultButton, { text: "View", onClick: () => {
+            onRender: (item) => (React.createElement(react_2.DefaultButton, { text: strings.Common.View, onClick: () => {
                     setSelectedRequestForDetails(item);
                     setIsDetailsPanelOpen(true);
                 }, styles: {
@@ -237,12 +244,12 @@ const RequestList = (props) => {
         }
     ];
     return (React.createElement("div", { style: { marginTop: '10px' } },
-        sortedItems.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, "No asset requests found.")) : (React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
+        sortedItems.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, strings.RequestList.EmptyState)) : (React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
             React.createElement(DetailsList_1.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }))),
         selectedRequestForDetails && (React.createElement(react_2.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
-            }, type: react_2.PanelType.medium, headerText: `Request Details: ${selectedRequestForDetails.requestKey || 'Asset Request'}`, closeButtonAriaLabel: "Close" },
+            }, type: react_2.PanelType.medium, headerText: (0, LocalizationUtils_1.formatString)(strings.RequestList.DetailsHeaderPrefix, selectedRequestForDetails.requestKey || strings.RequestList.DetailsHeaderFallback), closeButtonAriaLabel: strings.Common.Close },
             React.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                 React.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
@@ -251,31 +258,31 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    React.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, "Request Information"),
+                    React.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, strings.RequestList.SectionRequestInformation),
                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridGap16, style: { fontSize: '0.85rem' } },
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request ID"),
-                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestKey || 'N/A')),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.Columns.RequestId),
+                            React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestKey || strings.Common.NotAvailable)),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Request Date"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.RequestList.LabelRequestDate),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestDate)),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Requester"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.WorkflowPopup.LabelRequester),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requesterName)),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Employee ID"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.RequestForm.LabelEmployeeId),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.employeeId || '-')),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Manager's Name"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.Columns.ManagerName),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.managerName || '-')),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Asset Category"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.RequestList.LabelAssetCategory),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.assetTitle)),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Quantity"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.RequestForm.LabelQuantity),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.quantity)),
                         React.createElement("div", null,
-                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, "Priority"),
+                            React.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, strings.Columns.Priority),
                             React.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.priority || 'Medium')))),
                 selectedRequestForDetails.reason && (React.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
@@ -284,7 +291,7 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    React.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, "Justification / Reason"),
+                    React.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, strings.RequestList.SectionJustification),
                     React.createElement("div", { style: {
                             backgroundColor: 'rgba(128, 128, 128, 0.05)',
                             border: '1px solid rgba(128, 128, 128, 0.1)',
@@ -301,7 +308,7 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    React.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, "Manager Approval"),
+                    React.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, strings.RequestList.SectionManagerApproval),
                     React.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
                         React.createElement("span", { style: {
                                 backgroundColor: (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? '#dcfce7' : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? '#fee2e2' : '#fef3c7',
@@ -310,7 +317,7 @@ const RequestList = (props) => {
                                 borderRadius: '9999px',
                                 fontSize: '0.75rem',
                                 fontWeight: 600
-                            } }, selectedRequestForDetails.status || 'Pending'),
+                            } }, getStatusDisplayText(selectedRequestForDetails.status)),
                         selectedRequestForDetails.managerResponse && (React.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
                             "- \u201C",
                             selectedRequestForDetails.managerResponse,
@@ -322,8 +329,8 @@ const RequestList = (props) => {
                         padding: '20px',
                         boxShadow: 'var(--card-shadow)'
                     } },
-                    React.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, "Admin Allocation"),
-                    React.createElement("div", { style: { fontSize: '0.85rem', color: 'var(--text-main, #333333)' } }, (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? (((selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') || selectedRequestForDetails.status === 'Asset Assigned') ? (React.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, "Asset Allocated & Dispatched \u2713")) : (React.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, "Pending physical asset allocation by system administrator"))) : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? (React.createElement("span", { style: { color: '#991b1b' } }, "Not applicable (Request was rejected by manager)")) : (React.createElement("span", { style: { color: 'var(--text-muted, #666666)', fontStyle: 'italic' } }, "Pending manager approval first")))),
+                    React.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, strings.RequestList.SectionAdminAllocation),
+                    React.createElement("div", { style: { fontSize: '0.85rem', color: 'var(--text-main, #333333)' } }, (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? (((selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') || selectedRequestForDetails.status === 'Asset Assigned') ? (React.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, strings.RequestList.AllocationAllocated)) : (React.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, strings.RequestList.AllocationPendingAdmin))) : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? (React.createElement("span", { style: { color: '#991b1b' } }, strings.RequestList.AllocationNotApplicable)) : (React.createElement("span", { style: { color: 'var(--text-muted, #666666)', fontStyle: 'italic' } }, strings.RequestList.AllocationPendingManager)))),
                 props.canApproveReject && (selectedRequestForDetails.status || '').toLowerCase().includes('pending') && (React.createElement("div", { style: {
                         display: 'flex',
                         gap: '12px',
@@ -331,7 +338,7 @@ const RequestList = (props) => {
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    React.createElement(react_2.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? "Processing..." : "Approve", onClick: () => {
+                    React.createElement(react_2.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? strings.Common.Processing : strings.Common.Approve, onClick: () => {
                             if (props.onApproveRequest) {
                                 props.onApproveRequest(selectedRequestForDetails)
                                     .then(() => {
@@ -341,10 +348,10 @@ const RequestList = (props) => {
                                     .catch(err => console.error(err));
                             }
                         }, disabled: props.actionInProgressId === selectedRequestForDetails.id }),
-                    React.createElement(react_2.DefaultButton, { text: "Reject", onClick: () => {
+                    React.createElement(react_2.DefaultButton, { text: strings.Common.Reject, onClick: () => {
                             if (!props.onRejectRequest)
                                 return;
-                            const rejectionReason = window.prompt('Enter rejection reason for this request:');
+                            const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
                             if (!rejectionReason || !rejectionReason.trim())
                                 return;
                             props.onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
@@ -364,7 +371,7 @@ const RequestList = (props) => {
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    React.createElement(react_2.PrimaryButton, { text: "Review & Assign", onClick: () => {
+                    React.createElement(react_2.PrimaryButton, { text: strings.RequestList.ButtonReviewAssign, onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                             if (props.onSelectRequestForAssignment) {
@@ -372,7 +379,7 @@ const RequestList = (props) => {
                             }
                         }, iconProps: { iconName: 'CompletedSolid' } }))),
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', marginTop: '10px' } },
-                    React.createElement(react_2.DefaultButton, { text: "Close", onClick: () => {
+                    React.createElement(react_2.DefaultButton, { text: strings.Common.Close, onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                         } })))))));

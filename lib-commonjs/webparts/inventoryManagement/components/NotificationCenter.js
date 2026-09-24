@@ -3,11 +3,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationCenter = void 0;
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const react_1 = require("@fluentui/react");
 const NotificationCenter = (props) => {
     const [filter, setFilter] = React.useState('All');
     const containerStackTokens = { childrenGap: 15 };
     const itemStackTokens = { childrenGap: 10 };
+    const getFilterCategoryLabel = (filterKey) => {
+        switch (filterKey) {
+            case 'Request':
+                return strings.Notifications.CategoryRequests;
+            case 'Assignment':
+                return strings.Notifications.CategoryAssignments;
+            case 'Audit':
+                return strings.Notifications.CategoryAudits;
+            case 'All':
+            default:
+                return strings.Notifications.CategoryAll;
+        }
+    };
     const handleFilterClick = (item) => {
         if (item) {
             setFilter(item.props.itemKey || 'All');
@@ -60,14 +75,14 @@ const NotificationCenter = (props) => {
     };
     return (React.createElement(react_1.Stack, { tokens: containerStackTokens, style: { marginTop: '20px', padding: '5px' } },
         React.createElement(react_1.Stack, { horizontal: true, horizontalAlign: "space-between", verticalAlign: "center", styles: { root: { flexWrap: 'wrap', gap: '10px' } } },
-            React.createElement(react_1.Pivot, { "aria-label": "Filter Notifications", selectedKey: filter, onLinkClick: handleFilterClick, styles: { root: { marginBottom: 0 } } },
-                React.createElement(react_1.PivotItem, { headerText: "All", itemKey: "All" }),
-                React.createElement(react_1.PivotItem, { headerText: "Requests", itemKey: "Request" }),
-                React.createElement(react_1.PivotItem, { headerText: "Assignments", itemKey: "Assignment" }),
-                React.createElement(react_1.PivotItem, { headerText: "System Alerts", itemKey: "Audit" })),
+            React.createElement(react_1.Pivot, { "aria-label": strings.Notifications.FilterAriaLabel, selectedKey: filter, onLinkClick: handleFilterClick, styles: { root: { marginBottom: 0 } } },
+                React.createElement(react_1.PivotItem, { headerText: strings.Notifications.TabAll, itemKey: "All" }),
+                React.createElement(react_1.PivotItem, { headerText: strings.Notifications.TabRequests, itemKey: "Request" }),
+                React.createElement(react_1.PivotItem, { headerText: strings.Notifications.TabAssignments, itemKey: "Assignment" }),
+                React.createElement(react_1.PivotItem, { headerText: strings.Notifications.TabSystemAlerts, itemKey: "Audit" })),
             React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                unreadCount > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'CheckMark' }, text: "Mark all as read", onClick: props.onMarkAllAsRead, styles: { root: { borderRadius: '6px' } } })),
-                filteredNotifications.length > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'Clear' }, text: "Clear filtered", onClick: () => props.onClearAllNotifications(filter), styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
+                unreadCount > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'CheckMark' }, text: strings.Notifications.MarkAllAsRead, onClick: props.onMarkAllAsRead, styles: { root: { borderRadius: '6px' } } })),
+                filteredNotifications.length > 0 && (React.createElement(react_1.DefaultButton, { iconProps: { iconName: 'Clear' }, text: strings.Notifications.ClearFiltered, onClick: () => props.onClearAllNotifications(filter), styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
         React.createElement(react_1.Stack, { tokens: itemStackTokens }, filteredNotifications.length === 0 ? (React.createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',
@@ -81,11 +96,8 @@ const NotificationCenter = (props) => {
                 textAlign: 'center'
             } },
             React.createElement(react_1.Icon, { iconName: "Ringer", style: { fontSize: '48px', color: '#9ca3af', marginBottom: '15px' } }),
-            React.createElement("h4", { style: { margin: '0 0 5px 0', color: '#1f2937' } }, "All Caught Up!"),
-            React.createElement("p", { style: { margin: 0, color: '#6b7280', fontSize: '0.85rem' } },
-                "No notifications found in the \"",
-                filter === 'All' ? 'All' : filter + 's',
-                "\" category."))) : (filteredNotifications.map((notif) => {
+            React.createElement("h4", { style: { margin: '0 0 5px 0', color: '#1f2937' } }, strings.Notifications.AllCaughtUpTitle),
+            React.createElement("p", { style: { margin: 0, color: '#6b7280', fontSize: '0.85rem' } }, (0, LocalizationUtils_1.formatString)(strings.Notifications.EmptyStateMessage, getFilterCategoryLabel(filter))))) : (filteredNotifications.map((notif) => {
             const styles = getTypeStyles(notif.type);
             return (React.createElement("div", { key: notif.id, style: {
                     display: 'flex',
@@ -122,7 +134,7 @@ const NotificationCenter = (props) => {
                         React.createElement("span", { style: { fontSize: '0.75rem', color: '#6b7280', whiteSpace: 'nowrap' } }, notif.timestamp)),
                     React.createElement("p", { style: { margin: '0 0 10px 0', color: '#4b5563', fontSize: '0.88rem', lineHeight: '1.4' } }, notif.message),
                     React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                        React.createElement(react_1.PrimaryButton, { text: "View details", onClick: () => props.onNotificationAction(notif.actionLink, notif.id), styles: {
+                        React.createElement(react_1.PrimaryButton, { text: strings.Notifications.ViewDetails, onClick: () => props.onNotificationAction(notif.actionLink, notif.id), styles: {
                                 root: {
                                     height: '28px',
                                     borderRadius: '4px',
@@ -130,7 +142,7 @@ const NotificationCenter = (props) => {
                                     padding: '0 12px'
                                 }
                             } }),
-                        !notif.isRead && (React.createElement(react_1.DefaultButton, { text: "Mark as read", onClick: () => props.onMarkAsRead(notif.id), styles: {
+                        !notif.isRead && (React.createElement(react_1.DefaultButton, { text: strings.Notifications.MarkAsRead, onClick: () => props.onMarkAsRead(notif.id), styles: {
                                 root: {
                                     height: '28px',
                                     borderRadius: '4px',
@@ -138,7 +150,7 @@ const NotificationCenter = (props) => {
                                     padding: '0 12px'
                                 }
                             } })))),
-                React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, title: "Dismiss notification", ariaLabel: "Dismiss notification", onClick: () => props.onClearNotification(notif.id), styles: {
+                React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, title: strings.Notifications.DismissNotification, ariaLabel: strings.Notifications.DismissNotification, onClick: () => props.onClearNotification(notif.id), styles: {
                         root: {
                             color: '#9ca3af',
                             marginTop: '-8px',

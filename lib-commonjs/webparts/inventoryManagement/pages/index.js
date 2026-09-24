@@ -6,4 +6,16 @@ tslib_1.__exportStar(require("./DashboardPage"), exports);
 tslib_1.__exportStar(require("./ReportsPage"), exports);
 tslib_1.__exportStar(require("./IncidentHistoryPage"), exports);
 tslib_1.__exportStar(require("./InventoryPage"), exports);
+tslib_1.__exportStar(require("./ReplacementHistoryPage"), exports);
+tslib_1.__exportStar(require("./NotificationsPage"), exports);
+tslib_1.__exportStar(require("./RequestAnalysisPanel"), exports);
+tslib_1.__exportStar(require("./AssetAnalysisPanel"), exports);
+tslib_1.__exportStar(require("./NotificationDetailsPanel"), exports);
+tslib_1.__exportStar(require("./AssetReturnsPage"), exports);
+tslib_1.__exportStar(require("./EventStreamPage"), exports);
+tslib_1.__exportStar(require("./AssetAssignmentQueuePage"), exports);
+tslib_1.__exportStar(require("./MyWorkspacePage"), exports);
+tslib_1.__exportStar(require("./AdminAssignmentPanel"), exports);
+tslib_1.__exportStar(require("./ApprovalsPage"), exports);
+tslib_1.__exportStar(require("./UsersPage"), exports);
 //# sourceMappingURL=index.js.map

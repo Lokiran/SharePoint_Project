@@ -17,6 +17,7 @@ import { IRequest } from '../models/IRequest';
 import { IEmployee } from '../models/IEmployee';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
 import { DEFAULT_ASSET_TYPE_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS } from '../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
 
 export interface IRequestFormProps {
   isOpen: boolean;
@@ -141,48 +142,48 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
       type={PanelType.custom}
       customWidth="100%"
       styles={{ main: { maxWidth: '450px' } }}
-      headerText="Request an Asset"
-      closeButtonAriaLabel="Close"
+      headerText={strings.RequestForm.HeaderText}
+      closeButtonAriaLabel={strings.Common.Close}
     >
       <Stack tokens={stackTokens}>
         <MessageBar messageBarType={MessageBarType.info}>
-          You are requesting this asset for yourself. Requesting on behalf of other users is disabled.
+          {strings.RequestForm.OnBehalfHint}
         </MessageBar>
         <Dropdown
-          label="Requester"
+          label={strings.RequestForm.LabelRequester}
           selectedKey={selectedRequesterId}
           options={employeeOptions}
           required
           disabled
         />
         <TextField
-          label="Employee ID"
+          label={strings.RequestForm.LabelEmployeeId}
           value={employeeId}
           onChange={(_, val) => setEmployeeId(val || '')}
           required
           disabled={activeEmployee.id !== 'current-user'}
         />
         <TextField
-          label="Manager's Name"
+          label={strings.RequestForm.LabelManagerName}
           value={managerName}
           onChange={(_, val) => {
             setManagerName(val || '');
             setManagerNameTouched(true);
           }}
           onBlur={() => setManagerNameTouched(true)}
-          placeholder="Enter manager's name"
+          placeholder={strings.RequestForm.ManagerNamePlaceholder}
           required
-          errorMessage={managerNameTouched && !managerName.trim() ? "Manager's name is required" : undefined}
+          errorMessage={managerNameTouched && !managerName.trim() ? strings.RequestForm.ManagerNameRequired : undefined}
         />
         <TextField
-          label="Requested Date"
+          label={strings.RequestForm.LabelRequestedDate}
           type="date"
           value={requestDate}
           onChange={(_, val) => setRequestDate(val || '')}
           required
         />
         <Dropdown
-          label="Asset Type"
+          label={strings.RequestForm.LabelAssetType}
           selectedKey={selectedAssetType}
           options={assetTypeOptions}
           onChange={(_, opt) => {
@@ -191,21 +192,21 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
           required
         />
         <Dropdown
-          label="Priority"
+          label={strings.RequestForm.LabelPriority}
           selectedKey={priority}
           options={ASSET_REQUEST_PRIORITY_OPTIONS}
           onChange={(_, opt) => setPriority(opt?.key as any)}
           required
         />
         <TextField
-          label="Quantity"
+          label={strings.RequestForm.LabelQuantity}
           type="number"
           value={quantity.toString()}
           onChange={(_, val) => setQuantity(parseInt(val || '0'))}
           required
         />
         <TextField
-          label="Reason for Request"
+          label={strings.RequestForm.LabelReason}
           multiline
           rows={3}
           value={reason}
@@ -215,11 +216,11 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
           }}
           onBlur={() => setReasonTouched(true)}
           required
-          errorMessage={reasonTouched && !reason.trim() ? "Reason for request is required" : undefined}
+          errorMessage={reasonTouched && !reason.trim() ? strings.RequestForm.ReasonRequired : undefined}
         />
         <Stack horizontal tokens={stackTokens} style={{ marginTop: 20 }}>
-          <PrimaryButton text="Submit Request" onClick={onSave} disabled={!isFormValid} />
-          <DefaultButton text="Cancel" onClick={props.onClose} />
+          <PrimaryButton text={strings.RequestForm.SubmitRequest} onClick={onSave} disabled={!isFormValid} />
+          <DefaultButton text={strings.Common.Cancel} onClick={props.onClose} />
         </Stack>
       </Stack>
     </Panel>

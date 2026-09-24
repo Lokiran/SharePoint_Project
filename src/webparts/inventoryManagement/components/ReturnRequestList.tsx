@@ -15,6 +15,9 @@ import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import { IReturnRequest } from '../models/IReturnRequest';
 import { RETURN_CONDITION_OPTIONS } from '../constants/DropdownConstants';
 import styles from './InventoryManagement.module.scss';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
+import { getReturnRequestStatusDisplayText } from '../utils/RequestStatusUtils';
 
 export interface IReturnRequestListProps {
   items: IReturnRequest[];
@@ -96,7 +99,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
     if (!activeRequest || !actionType) return;
     
     if ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) {
-      alert(actionType === 'Reject' ? 'Please provide a reason/comment for rejection.' : 'Please provide verification comments.');
+      alert(actionType === 'Reject' ? strings.ReturnRequestList.AlertRejectionRequired : strings.ReturnRequestList.AlertVerificationRequired);
       return;
     }
 
@@ -135,11 +138,13 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
       }
       closeDialog();
     } catch (e: any) {
-      alert('Action failed: ' + (e.message || JSON.stringify(e)));
+      alert(strings.ReturnRequestList.AlertActionFailedPrefix + ' ' + (e.message || JSON.stringify(e)));
     } finally {
       setSubmitting(false);
     }
   };
+
+  const getStatusDisplayText = getReturnRequestStatusDisplayText;
 
   const getStatusStyles = (status: string): { bg: string; fg: string } => {
     switch (status) {
@@ -159,15 +164,15 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
   };
 
   const columns: IColumn[] = [
-    { key: 'id', name: 'ID', fieldName: 'id', minWidth: 50, maxWidth: 80, isResizable: true, onRender: (item: IReturnRequest) => item.id.replace('RR-', '#') },
-    { key: 'assetName', name: 'Asset Name', fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-    { key: 'serialNumber', name: 'Serial Number', fieldName: 'serialNumber', minWidth: 90, maxWidth: 120, isResizable: true },
-    { key: 'requesterName', name: 'Employee', fieldName: 'requesterName', minWidth: 100, maxWidth: 130, isResizable: true },
-    { key: 'returnReason', name: 'Reason', fieldName: 'returnReason', minWidth: 150, maxWidth: 220, isResizable: true, isMultiline: true },
-    { key: 'proposedCondition', name: 'Condition', fieldName: 'proposedCondition', minWidth: 80, maxWidth: 110, isResizable: true },
-    { 
-      key: 'status', 
-      name: 'Status', 
+    { key: 'id', name: strings.ReturnRequestList.ColId, fieldName: 'id', minWidth: 50, maxWidth: 80, isResizable: true, onRender: (item: IReturnRequest) => item.id.replace('RR-', '#') },
+    { key: 'assetName', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
+    { key: 'serialNumber', name: strings.Columns.SerialNumber, fieldName: 'serialNumber', minWidth: 90, maxWidth: 120, isResizable: true },
+    { key: 'requesterName', name: strings.ReturnRequestList.ColEmployee, fieldName: 'requesterName', minWidth: 100, maxWidth: 130, isResizable: true },
+    { key: 'returnReason', name: strings.ReturnRequestList.ColReason, fieldName: 'returnReason', minWidth: 150, maxWidth: 220, isResizable: true, isMultiline: true },
+    { key: 'proposedCondition', name: strings.Columns.Condition, fieldName: 'proposedCondition', minWidth: 80, maxWidth: 110, isResizable: true },
+    {
+      key: 'status',
+      name: strings.Columns.Status,
       fieldName: 'status', 
       minWidth: 90, 
       maxWidth: 110, 
@@ -184,33 +189,33 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
             fontWeight: 600,
             display: 'inline-block'
           }}>
-            {item.status}
+            {getStatusDisplayText(item.status)}
           </span>
         );
       }
     },
-    { key: 'requestDate', name: 'Requested Date', fieldName: 'requestDate', minWidth: 90, maxWidth: 120, isResizable: true },
-    { 
-      key: 'managerComment', 
-      name: 'Manager Notes', 
-      fieldName: 'managerComment', 
-      minWidth: 120, 
-      maxWidth: 200, 
+    { key: 'requestDate', name: strings.Columns.RequestedDate, fieldName: 'requestDate', minWidth: 90, maxWidth: 120, isResizable: true },
+    {
+      key: 'managerComment',
+      name: strings.Columns.ManagerNotes,
+      fieldName: 'managerComment',
+      minWidth: 120,
+      maxWidth: 200,
       isResizable: true,
-      onRender: (item: IReturnRequest) => item.managerComment || <span style={{ color: '#9ca3af', fontStyle: 'italic' }}>None</span>
+      onRender: (item: IReturnRequest) => item.managerComment || <span style={{ color: '#9ca3af', fontStyle: 'italic' }}>{strings.ReturnRequestList.None}</span>
     },
     // Actions Column (Visible to managers/admins)
     ...((isManager || isAdmin) ? [
       {
         key: 'actions',
-        name: 'Actions',
+        name: strings.Columns.Actions,
         minWidth: 200,
         maxWidth: 260,
         isResizable: true,
         onRender: (item: IReturnRequest) => {
           const viewButton = (
             <DefaultButton
-              text="View"
+              text={strings.Common.View}
               onClick={() => openDialog(item, 'View')}
               styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } }}
             />
@@ -221,12 +226,12 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
               <Stack horizontal tokens={{ childrenGap: 6 }}>
                 {viewButton}
                 <PrimaryButton
-                  text="Approve"
+                  text={strings.ReturnRequestList.ButtonApprove}
                   onClick={() => openDialog(item, 'Approve')}
                   styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } }}
                 />
                 <DefaultButton
-                  text="Reject"
+                  text={strings.ReturnRequestList.ButtonReject}
                   onClick={() => openDialog(item, 'Reject')}
                   styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } }}
                 />
@@ -239,7 +244,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
               <Stack horizontal tokens={{ childrenGap: 6 }}>
                 {viewButton}
                 <PrimaryButton
-                  text="Verify & Complete"
+                  text={strings.ReturnRequestList.ButtonVerifyComplete}
                   onClick={() => openDialog(item, 'Complete')}
                   styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } }}
                 />
@@ -261,7 +266,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
     <div style={{ marginTop: '10px' }}>
       <div style={{ marginBottom: '15px' }}>
         <SearchBox
-          placeholder="Search return requests..."
+          placeholder={strings.ReturnRequestList.SearchPlaceholder}
           value={searchQuery}
           onChange={(_, val) => setSearchQuery(val || '')}
           styles={{ root: { maxWidth: 350 } }}
@@ -269,9 +274,9 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
       </div>
 
       {loading ? (
-        <p>Loading return requests...</p>
+        <p>{strings.ReturnRequestList.LoadingReturnRequests}</p>
       ) : filteredItems.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: '#6b7280' }}>No return requests found.</p>
+        <p style={{ fontStyle: 'italic', color: '#6b7280' }}>{strings.ReturnRequestList.EmptyState}</p>
       ) : (
         <div className={styles.tableWrapper}>
           <DetailsList
@@ -290,10 +295,10 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
         onDismiss={closeDialog}
         dialogContentProps={{
           type: DialogType.normal,
-          title: actionType === 'Approve' ? 'Approve Return Request' :
-                 actionType === 'Reject' ? 'Reject Return Request' :
-                 actionType === 'Complete' ? 'Verify & Complete Return' : 'Return Request Details',
-          subText: activeRequest ? `Request by ${activeRequest.requesterName} for asset ${activeRequest.assetName}` : ''
+          title: actionType === 'Approve' ? strings.ReturnRequestList.DialogTitleApprove :
+                 actionType === 'Reject' ? strings.ReturnRequestList.DialogTitleReject :
+                 actionType === 'Complete' ? strings.ReturnRequestList.DialogTitleComplete : strings.ReturnRequestList.DialogTitleView,
+          subText: activeRequest ? formatString(strings.ReturnRequestList.DialogSubtext, activeRequest.requesterName, activeRequest.assetName) : ''
         }}
         modalProps={{ isBlocking: true }}
       >
@@ -309,35 +314,35 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
               fontFamily: 'inherit'
             }}>
               <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' }}>
-                Asset Return Details
+                {strings.ReturnRequestList.CardTitle}
               </h4>
               <div className={styles.responsiveGrid} style={{ gap: '12px 16px' }}>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Request ID</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.RequestId}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.id.replace('RR-', '#')}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Requested Date</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.RequestedDate}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.requestDate}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Asset Name</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.AssetName}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.assetName}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Serial Number</span>
-                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.serialNumber || 'N/A'}</strong>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.SerialNumber}</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.serialNumber || strings.Common.NotAvailable}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Employee</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.ReturnRequestList.ColEmployee}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.requesterName}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Proposed Condition</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.ReturnRequestList.LabelProposedCondition}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{activeRequest.proposedCondition}</strong>
                 </div>
                 <div style={{ gridColumn: 'span 2' }}>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Return Reason</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.ReturnRequestList.LabelReturnReason}</span>
                   <div style={{
                     backgroundColor: 'rgba(128, 128, 128, 0.05)',
                     padding: '8px 12px',
@@ -352,7 +357,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
                 </div>
                 {activeRequest.managerComment && (
                   <div style={{ gridColumn: 'span 2' }}>
-                    <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Manager Notes</span>
+                    <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.ManagerNotes}</span>
                     <div style={{
                       backgroundColor: 'rgba(128, 128, 128, 0.05)',
                       padding: '8px 12px',
@@ -376,7 +381,7 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
           */}
           {actionType === 'Complete' && (
             <Dropdown
-              label="Final Verified Condition"
+              label={strings.ReturnRequestList.LabelFinalCondition}
               selectedKey={finalCondition}
               options={conditionOptions}
               onChange={(_, opt) => setFinalCondition(opt ? (opt.key as string) : 'Good')}
@@ -386,14 +391,14 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
           {actionType !== 'View' && (
             <TextField
               label={
-                actionType === 'Reject' ? 'Rejection Reason (Required)' : 
-                actionType === 'Complete' ? 'Verification Comments (Required)' : 
-                'Manager Comments'
+                actionType === 'Reject' ? strings.ReturnRequestList.LabelRejectionReason :
+                actionType === 'Complete' ? strings.ReturnRequestList.LabelVerificationComments :
+                strings.ReturnRequestList.LabelManagerComments
               }
               placeholder={
-                actionType === 'Reject' ? 'Please specify why this return request is being rejected...' : 
-                actionType === 'Complete' ? 'Please enter verification details (required)...' : 
-                'Add comments for the return request...'
+                actionType === 'Reject' ? strings.ReturnRequestList.PlaceholderRejectionReason :
+                actionType === 'Complete' ? strings.ReturnRequestList.PlaceholderVerificationComments :
+                strings.ReturnRequestList.PlaceholderManagerComments
               }
               multiline
               rows={3}
@@ -407,16 +412,16 @@ export const ReturnRequestList: React.FC<IReturnRequestListProps> = (props) => {
         <DialogFooter>
           {actionType !== 'View' ? (
             <>
-              <PrimaryButton 
-                text={actionType === 'Approve' ? 'Approve' :
-                      actionType === 'Reject' ? 'Reject' : 'Verify & Complete'} 
-                onClick={handleAction} 
-                disabled={submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim())} 
+              <PrimaryButton
+                text={actionType === 'Approve' ? strings.ReturnRequestList.ButtonApprove :
+                      actionType === 'Reject' ? strings.ReturnRequestList.ButtonReject : strings.ReturnRequestList.ButtonVerifyComplete}
+                onClick={handleAction}
+                disabled={submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim())}
               />
-              <DefaultButton text="Cancel" onClick={closeDialog} disabled={submitting} />
+              <DefaultButton text={strings.Common.Cancel} onClick={closeDialog} disabled={submitting} />
             </>
           ) : (
-            <PrimaryButton text="Close" onClick={closeDialog} />
+            <PrimaryButton text={strings.Common.Close} onClick={closeDialog} />
           )}
         </DialogFooter>
       </Dialog>

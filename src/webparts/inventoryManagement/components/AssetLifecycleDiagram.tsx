@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Icon } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
+import * as strings from 'InventoryManagementWebPartStrings';
 
 export interface IAssetLifecycleDiagramProps {
   isDarkTheme?: boolean;
@@ -12,7 +13,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
   const nodes = [
     {
       id: 1,
-      label: 'Request for an IT asset',
+      label: strings.Lifecycle.RequestAsset,
       icon: 'DocumentApproval',
       color: '#60a5fa', // Light blue
       // Top: (140, 50)
@@ -21,7 +22,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
     },
     {
       id: 2,
-      label: 'Acquisition of an asset',
+      label: strings.Lifecycle.Acquisition,
       icon: 'PaymentCard',
       color: '#34d399', // Emerald/green
       // Top-right: (226, 112)
@@ -30,7 +31,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
     },
     {
       id: 3,
-      label: 'Deployment and assignment',
+      label: strings.Lifecycle.Deployment,
       icon: 'Settings',
       color: '#fb7185', // Rose/pink
       // Bottom-right: (193, 213)
@@ -39,7 +40,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
     },
     {
       id: 4,
-      label: 'Ongoing support & maintenance',
+      label: strings.Lifecycle.Support,
       icon: 'Headset',
       color: '#fbbf24', // Amber/yellow
       // Bottom-left: (87, 213)
@@ -48,7 +49,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
     },
     {
       id: 5,
-      label: 'End of life & disposition',
+      label: strings.Lifecycle.EndOfLife,
       icon: 'Recycle',
       color: '#a78bfa', // Purple
       // Top-left: (54, 112)
@@ -149,7 +150,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
           textTransform: 'uppercase',
           lineHeight: '1.2',
         }}>
-          IT Asset
+          {strings.Lifecycle.BadgeTitle}
         </div>
         <div style={{
           fontSize: '0.58rem',
@@ -158,7 +159,7 @@ export const AssetLifecycleDiagram: React.FC<IAssetLifecycleDiagramProps> = ({ i
           lineHeight: '1.2',
           fontWeight: 500,
         }}>
-          Lifecycle
+          {strings.Lifecycle.BadgeSubtitle}
         </div>
       </div>
 

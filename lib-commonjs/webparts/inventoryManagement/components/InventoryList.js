@@ -6,21 +6,23 @@ const React = tslib_1.__importStar(require("react"));
 const DetailsList_1 = require("@fluentui/react/lib/DetailsList");
 const Button_1 = require("@fluentui/react/lib/Button");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const InventoryList = (props) => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const columns = [
-        { key: 'column1', name: 'ID', fieldName: 'id', minWidth: 40, maxWidth: 40, isResizable: true },
-        { key: 'column2', name: 'Title', fieldName: 'title', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'column3', name: 'Asset Name', fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'column4', name: 'Type', fieldName: 'assetType', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'column5', name: 'Serial Number', fieldName: 'serialNumber', minWidth: 100, maxWidth: 120, isResizable: true },
-        { key: 'column6', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-        { key: 'columnVendor', name: 'Vendor', fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'columnCondition', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'columnWarranty', name: 'Warranty Expiry', fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
+        { key: 'column1', name: strings.Columns.Id, fieldName: 'id', minWidth: 40, maxWidth: 40, isResizable: true },
+        { key: 'column2', name: strings.Columns.Title, fieldName: 'title', minWidth: 100, maxWidth: 150, isResizable: true },
+        { key: 'column3', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
+        { key: 'column4', name: strings.Columns.Type, fieldName: 'assetType', minWidth: 80, maxWidth: 100, isResizable: true },
+        { key: 'column5', name: strings.Columns.SerialNumber, fieldName: 'serialNumber', minWidth: 100, maxWidth: 120, isResizable: true },
+        { key: 'column6', name: strings.Columns.PurchaseDate, fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
+        { key: 'columnVendor', name: strings.Columns.Vendor, fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
+        { key: 'columnCondition', name: strings.Columns.Condition, fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
+        { key: 'columnWarranty', name: strings.Columns.WarrantyExpiry, fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
         {
             key: 'column7',
-            name: 'Status',
+            name: strings.Columns.Status,
             fieldName: 'status',
             minWidth: 80,
             maxWidth: 100,
@@ -56,22 +58,22 @@ const InventoryList = (props) => {
         },
         {
             key: 'columnActivation',
-            name: 'Activation State',
+            name: strings.Columns.ActivationState,
             minWidth: 100,
             maxWidth: 120,
             isResizable: true,
             onRender: (item) => {
                 const statusVal = (item.status || '').toLowerCase();
-                let activationState = 'Deactivated';
+                let activationState = strings.InventoryList.ActivationDeactivated;
                 let badgeColor = '#991b1b'; // Red
                 let bgColor = '#fee2e2';
                 if (statusVal === 'assigned') {
-                    activationState = 'Activated';
+                    activationState = strings.InventoryList.ActivationActivated;
                     badgeColor = '#166534'; // Green
                     bgColor = '#dcfce7';
                 }
                 else if (statusVal === 'in stock' || statusVal === 'yes') {
-                    activationState = 'Inactivated';
+                    activationState = strings.InventoryList.ActivationInactivated;
                     badgeColor = '#92400e'; // Dark orange/amber
                     bgColor = '#fef3c7'; // Amber 100
                 }
@@ -86,12 +88,12 @@ const InventoryList = (props) => {
                     } }, activationState));
             }
         },
-        { key: 'column8', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'column9', name: 'Specifications', fieldName: 'specifications', minWidth: 150, maxWidth: 300, isResizable: true },
+        { key: 'column8', name: strings.Columns.AssignedTo, fieldName: 'assignedTo', minWidth: 100, maxWidth: 150, isResizable: true },
+        { key: 'column9', name: strings.Columns.Specifications, fieldName: 'specifications', minWidth: 150, maxWidth: 300, isResizable: true },
         ...(props.onReturnAsset ? [
             {
                 key: 'columnActions',
-                name: 'Actions',
+                name: strings.Columns.Actions,
                 minWidth: 100,
                 maxWidth: 120,
                 isResizable: true,
@@ -99,12 +101,12 @@ const InventoryList = (props) => {
                     const isPendingReturn = item.status === 'Pending Return';
                     const isReturnApproved = item.status === 'Return Approved';
                     if (isPendingReturn) {
-                        return (React.createElement("span", { style: { color: '#ea580c', fontWeight: 600, fontSize: '0.8rem' } }, "Pending Return"));
+                        return (React.createElement("span", { style: { color: '#ea580c', fontWeight: 600, fontSize: '0.8rem' } }, strings.InventoryList.ActionPendingReturn));
                     }
                     if (isReturnApproved) {
-                        return (React.createElement("span", { style: { color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' } }, "Approved"));
+                        return (React.createElement("span", { style: { color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' } }, strings.InventoryList.ActionApproved));
                     }
-                    return (React.createElement(Button_1.PrimaryButton, { text: "Return", onClick: () => props.onReturnAsset(item), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.8rem' } } }));
+                    return (React.createElement(Button_1.PrimaryButton, { text: strings.InventoryList.ActionReturn, onClick: () => props.onReturnAsset(item), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.8rem' } } }));
                 }
             }
         ] : [])
@@ -204,25 +206,18 @@ const InventoryList = (props) => {
         React.createElement("div", { className: InventoryManagement_module_scss_1.default.tableWrapper },
             React.createElement(DetailsList_1.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none })),
         props.enablePagination && totalPages > 1 && (React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationContainer },
-            React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationInfo },
-                "Showing ",
-                React.createElement("strong", null, startIndex + 1),
-                " to ",
-                React.createElement("strong", null, Math.min(startIndex + pageSize, totalItems)),
-                " of ",
-                React.createElement("strong", null, totalItems),
-                " entries"),
+            React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationInfo }, (0, LocalizationUtils_1.formatString)(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + pageSize, totalItems), totalItems)),
             React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationControls },
-                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: "First Page" }, "\u00AB"),
-                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: "Previous Page" }, "\u2039"),
+                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: strings.Pagination.FirstPage }, "\u00AB"),
+                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: strings.Pagination.PreviousPage }, "\u2039"),
                 getPageNumbers().map((page, idx) => {
                     if (page === '...') {
                         return React.createElement("span", { key: `ellipsis-${idx}`, style: { padding: '0 8px', color: 'var(--text-muted)' } }, "...");
                     }
                     return (React.createElement("button", { key: page, className: `${InventoryManagement_module_scss_1.default.paginationButton} ${activePage === page ? InventoryManagement_module_scss_1.default.active : ''}`, onClick: () => setCurrentPage(page) }, page));
                 }),
-                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: "Next Page" }, "\u203A"),
-                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: "Last Page" }, "\u00BB"))))));
+                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: strings.Pagination.NextPage }, "\u203A"),
+                React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: strings.Pagination.LastPage }, "\u00BB"))))));
 };
 exports.InventoryList = InventoryList;
 //# sourceMappingURL=InventoryList.js.map

@@ -4,6 +4,8 @@ import { IInventoryItem } from '../models/IInventoryItem';
 import { IRequest } from '../models/IRequest';
 import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
 import { Icon } from '@fluentui/react/lib/Icon';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
 
 import {
   Chart as ChartJS,
@@ -110,11 +112,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         return acc;
       }, {} as Record<string, number>);
 
-  const primaryPieLabel = isManagerView ? 'Requests in approval queue' : 'Assets by Status';
-  const primaryPieTitle = isManagerView ? 'Approvals Queue Status' : 'Asset Status Distribution';
-  const primaryPieSubtitle = isManagerView ? 'Requests categorized by manager approval state' : 'Current condition and status of registered assets';
+  const primaryPieLabel = isManagerView ? strings.Dashboard.RequestsInApprovalQueueLabel : strings.Dashboard.AssetsByStatusLabel;
+  const primaryPieTitle = isManagerView ? strings.Dashboard.ApprovalsQueueStatusTitle : strings.Dashboard.AssetStatusDistributionTitle;
+  const primaryPieSubtitle = isManagerView ? strings.Dashboard.ApprovalsQueueStatusSubtitle : strings.Dashboard.AssetStatusDistributionSubtitle;
 
-  const statusLabels = Object.keys(statusCounts).length ? Object.keys(statusCounts) : ['No data'];
+  const statusLabels = Object.keys(statusCounts).length ? Object.keys(statusCounts) : [strings.Dashboard.NoDataLabel];
   const statusDataValues = Object.keys(statusCounts).length
     ? Object.keys(statusCounts).map(k => statusCounts[k])
     : [1];
@@ -143,10 +145,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   const assetTypeDataValues = Object.keys(typeCounts).map(k => typeCounts[k]);
 
   const assetTypeData = {
-    labels: assetTypeLabels.length ? assetTypeLabels : ['No assets'],
+    labels: assetTypeLabels.length ? assetTypeLabels : [strings.Dashboard.NoAssetsLabel],
     datasets: [
       {
-        label: 'Number of Assets',
+        label: strings.Dashboard.NumberOfAssetsLabel,
         data: assetTypeDataValues.length ? assetTypeDataValues : [0],
         backgroundColor: 'rgba(0, 120, 212, 0.7)',
         borderColor: 'rgba(0, 120, 212, 1)',
@@ -176,8 +178,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   const doughnutLabels = Object.keys(requestStatusCounts).length
     ? Object.keys(requestStatusCounts)
     : isManagerView
-      ? ['No approved requests yet']
-      : ['No data'];
+      ? [strings.Dashboard.NoApprovedRequestsYetLabel]
+      : [strings.Dashboard.NoDataLabel];
   const doughnutDataValues = Object.keys(requestStatusCounts).length
     ? Object.keys(requestStatusCounts).map(k => requestStatusCounts[k])
     : [1];
@@ -186,7 +188,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     labels: doughnutLabels,
     datasets: [
       {
-        label: isManagerView ? 'Assignment status (approved requests)' : 'Requests by Status',
+        label: isManagerView ? strings.Dashboard.AssignmentStatusApprovedLabel : strings.Dashboard.RequestsByStatusLabel,
         data: doughnutDataValues,
         backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.75)),
         borderColor: doughnutLabels.map(label => getFluentColor(label, 1.0)),
@@ -361,8 +363,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   const sortedEmployeeItems = sortItemsNewToOld(items).slice(0, 5);
 
   // --- Role label for header ---
-  const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
-  const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
+  const roleLabel = isAdmin ? strings.Dashboard.RoleAdministrator : isManagerView ? strings.Dashboard.RoleManager : strings.Dashboard.RoleEmployee;
+  const dashboardTitle = isAdmin ? strings.Dashboard.AdminTitle : isManagerView ? strings.Dashboard.ManagerTitle : strings.Dashboard.EmployeeTitle;
 
   // --- Quick action handler ---
   const navigateTo = (key: string): void => {
@@ -379,9 +381,9 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           <h2 className={styles.headerTitle}>{dashboardTitle}</h2>
           <p className={styles.headerSubtitle}>
             <Icon iconName="ContactInfo" style={{ fontSize: 13, color: '#0078d4' }} />
-            {roleLabel} Overview
+            {roleLabel} {strings.Dashboard.OverviewSuffix}
             <span style={{ color: '#c8c6c4' }}>•</span>
-            Real-time analytics
+            {strings.Dashboard.RealTimeAnalytics}
           </p>
           <div className={styles.headerDate}>
             <Icon iconName="Calendar" />
@@ -398,34 +400,34 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('Inventory')}
-                aria-label="View Inventory"
+                aria-label={strings.Dashboard.ActionViewInventory}
               >
                 <Icon iconName="List" />
-                <span>View Inventory</span>
+                <span>{strings.Dashboard.ActionViewInventory}</span>
               </button>
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('AssetAssignmentQueue')}
-                aria-label="Assignment Queue"
+                aria-label={strings.Dashboard.ActionAssignmentQueue}
               >
                 <Icon iconName="Send" />
-                <span>Assignment Queue</span>
+                <span>{strings.Dashboard.ActionAssignmentQueue}</span>
               </button>
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('Reports')}
-                aria-label="View Reports"
+                aria-label={strings.Dashboard.ActionReports}
               >
                 <Icon iconName="ReportDocument" />
-                <span>Reports</span>
+                <span>{strings.Dashboard.ActionReports}</span>
               </button>
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('EventStream')}
-                aria-label="Event Stream"
+                aria-label={strings.Dashboard.ActionEventStream}
               >
                 <Icon iconName="ActivityFeed" />
-                <span>Event Stream</span>
+                <span>{strings.Dashboard.ActionEventStream}</span>
               </button>
             </>
           )}
@@ -434,18 +436,18 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('Approvals')}
-                aria-label="Review Approvals"
+                aria-label={strings.Dashboard.ActionReviewApprovals}
               >
                 <Icon iconName="DoubleChevronRight12" />
-                <span>Review Approvals</span>
+                <span>{strings.Dashboard.ActionReviewApprovals}</span>
               </button>
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('AssetReturns')}
-                aria-label="Asset Returns"
+                aria-label={strings.Dashboard.ActionAssetReturns}
               >
                 <Icon iconName="ReturnToSession" />
-                <span>Asset Returns</span>
+                <span>{strings.Dashboard.ActionAssetReturns}</span>
               </button>
             </>
           )}
@@ -454,18 +456,18 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('MyWorkspace')}
-                aria-label="My Workspace"
+                aria-label={strings.Dashboard.ActionMyWorkspace}
               >
                 <Icon iconName="Briefcase" />
-                <span>My Workspace</span>
+                <span>{strings.Dashboard.ActionMyWorkspace}</span>
               </button>
               <button
                 className={styles.quickActionBtn}
                 onClick={() => navigateTo('Notifications')}
-                aria-label="View Notifications"
+                aria-label={strings.Dashboard.ActionNotifications}
               >
                 <Icon iconName="Ringer" />
-                <span>Notifications</span>
+                <span>{strings.Dashboard.ActionNotifications}</span>
               </button>
             </>
           )}
@@ -476,32 +478,32 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
       {isManagerView && (
         <div className={styles.dashboardIntro}>
           <MessageBar messageBarType={MessageBarType.info}>
-            <strong>Inventory Manager Dashboard</strong> — Visual metrics and approval queues are aggregated from request lists. Full data resides in the <strong>Approvals</strong> registry.
+            <strong>{strings.Dashboard.ManagerBannerTitle}</strong> {strings.Dashboard.ManagerBannerTextBefore}<strong>{strings.Nav.Approvals}</strong>{strings.Dashboard.ManagerBannerTextAfter}
           </MessageBar>
         </div>
       )}
       {isAdmin && (
         <div className={styles.dashboardIntro}>
           <MessageBar messageBarType={MessageBarType.success}>
-            <strong>Administrator Dashboard</strong> — Analytics are derived directly from the physical inventory items. Assignment metrics display admin-approved items.
+            <strong>{strings.Dashboard.AdminBannerTitle}</strong> {strings.Dashboard.AdminBannerText}
           </MessageBar>
         </div>
       )}
       {!isAdmin && !isInventoryManager && (
         <div className={styles.dashboardIntro}>
           <MessageBar messageBarType={MessageBarType.info}>
-            <strong>Personal Asset Hub</strong> — Real-time telemetry tracking your assigned devices and ongoing request status.
+            <strong>{strings.Dashboard.EmployeeBannerTitle}</strong> {strings.Dashboard.EmployeeBannerText}
           </MessageBar>
         </div>
       )}
 
       {/* ===== KPI SUMMARY CARDS ===== */}
-      <div className={styles.summaryGrid} role="region" aria-label="Key performance indicators">
+      <div className={styles.summaryGrid} role="region" aria-label={strings.Dashboard.KpiRegionAriaLabel}>
         {/* Card 1: Total Assets / My Devices */}
         <div
           className={`${styles.summaryCard} ${styles.cardBlue}`}
           role="status"
-          aria-label={`${isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'}: ${totalAssets}`}
+          aria-label={`${isAdmin ? strings.Dashboard.TotalAssets : !isInventoryManager ? strings.Dashboard.MyDevices : strings.Dashboard.TotalAssets}: ${totalAssets}`}
         >
           <div className={styles.iconContainer}>
             <Icon iconName="Package" />
@@ -509,14 +511,14 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           <div className={styles.cardInfo}>
             <span className={styles.summaryValue}>{totalAssets}</span>
             <span className={styles.summaryLabel}>
-              {isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'}
+              {isAdmin ? strings.Dashboard.TotalAssets : !isInventoryManager ? strings.Dashboard.MyDevices : strings.Dashboard.TotalAssets}
             </span>
             <span className={styles.summarySubtitle}>
               {isAdmin
-                ? `Allocation rate: ${allocationRate}% allocated`
+                ? formatString(strings.Dashboard.AllocationRateSubtitle, allocationRate)
                 : !isInventoryManager
-                  ? `${totalAssets} assigned hardware item${totalAssets === 1 ? '' : 's'}`
-                  : `${totalAssets} items in catalog`}
+                  ? formatString(strings.Dashboard.AssignedHardwareSubtitle, totalAssets)
+                  : formatString(strings.Dashboard.ItemsInCatalogSubtitle, totalAssets)}
             </span>
           </div>
         </div>
@@ -526,16 +528,16 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           <div
             className={`${styles.summaryCard} ${styles.cardGreen}`}
             role="status"
-            aria-label={`Available Assets: ${availableAssets}`}
+            aria-label={`${strings.Dashboard.AvailableAssets}: ${availableAssets}`}
           >
             <div className={styles.iconContainer}>
               <Icon iconName="Accept" />
             </div>
             <div className={styles.cardInfo}>
               <span className={styles.summaryValue}>{availableAssets}</span>
-              <span className={styles.summaryLabel}>Available Assets</span>
+              <span className={styles.summaryLabel}>{strings.Dashboard.AvailableAssets}</span>
               <span className={styles.summarySubtitle}>
-                {availableAssets} in stock ({stockPercentage}% of total)
+                {formatString(strings.Dashboard.InStockSubtitle, availableAssets, stockPercentage)}
               </span>
             </div>
           </div>
@@ -545,7 +547,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         <div
           className={`${styles.summaryCard} ${styles.cardPurple}`}
           role="status"
-          aria-label={`${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}`}
+          aria-label={`${isManagerView ? strings.Dashboard.RequestsInQueue : strings.Dashboard.TotalRequests}: ${totalRequests}`}
         >
           <div className={styles.iconContainer}>
             <Icon iconName="Send" />
@@ -553,12 +555,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           <div className={styles.cardInfo}>
             <span className={styles.summaryValue}>{totalRequests}</span>
             <span className={styles.summaryLabel}>
-              {isManagerView ? 'Requests in Queue' : !isAdmin ? 'My Requests' : 'Total Requests'}
+              {isManagerView ? strings.Dashboard.RequestsInQueue : !isAdmin ? strings.Dashboard.MyRequests : strings.Dashboard.TotalRequests}
             </span>
             <span className={styles.summarySubtitle}>
               {isAdmin
-                ? `${totalRequests} queue requests`
-                : `Approval success: ${approvalSuccessRate}%`}
+                ? formatString(strings.Dashboard.QueueRequestsSubtitle, totalRequests)
+                : formatString(strings.Dashboard.ApprovalSuccessSubtitle, approvalSuccessRate)}
             </span>
           </div>
         </div>
@@ -568,7 +570,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
           <div
             className={`${styles.summaryCard} ${styles.cardGold}`}
             role="status"
-            aria-label={`${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}`}
+            aria-label={`${isManagerView ? strings.Dashboard.AwaitingApproval : strings.Dashboard.PendingRequests}: ${isManagerView ? awaitingManagerDecision : pendingRequests}`}
           >
             <div className={styles.iconContainer}>
               <Icon iconName="Clock" />
@@ -578,12 +580,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                 {isManagerView ? awaitingManagerDecision : pendingRequests}
               </span>
               <span className={styles.summaryLabel}>
-                {isManagerView ? 'Awaiting Approval' : 'Pending Requests'}
+                {isManagerView ? strings.Dashboard.AwaitingApproval : strings.Dashboard.PendingRequests}
               </span>
               <span className={styles.summarySubtitle}>
                 {isManagerView
-                  ? `${awaitingManagerDecision} requires review`
-                  : `${pendingRequests} under assignment review`}
+                  ? formatString(strings.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
+                  : formatString(strings.Dashboard.UnderReviewSubtitle, pendingRequests)}
               </span>
             </div>
           </div>
@@ -616,8 +618,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                 <Icon iconName="BarChart4" />
               </div>
               <div className={styles.chartTitleBlock}>
-                <h3>Assets by Type</h3>
-                <span className={styles.chartSubtitle}>Categorized distribution of equipment</span>
+                <h3>{strings.Dashboard.AssetsByTypeTitle}</h3>
+                <span className={styles.chartSubtitle}>{strings.Dashboard.AssetsByTypeSubtitle}</span>
               </div>
             </div>
             <div className={styles.chartContainer}>
@@ -633,12 +635,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               </div>
               <div className={styles.chartTitleBlock}>
                 <h3>
-                  {isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'}
+                  {isManagerView ? strings.Dashboard.PostApprovalAssignmentTitle : strings.Dashboard.RequestFulfillmentTitle}
                 </h3>
                 <span className={styles.chartSubtitle}>
                   {isManagerView
-                    ? 'Status of asset handouts for manager-approved requests'
-                    : 'Current status across all request pipelines'}
+                    ? strings.Dashboard.PostApprovalAssignmentSubtitle
+                    : strings.Dashboard.RequestFulfillmentSubtitle}
                 </span>
               </div>
             </div>
@@ -656,10 +658,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             <div>
               <h3>
                 <Icon iconName="ReviewRequestMirrored" />
-                Asset Assignment Action Center
+                {strings.Dashboard.AdminActionCenterTitle}
               </h3>
               <span className={styles.sectionSubtitle}>
-                Recent manager-approved requests awaiting physical hardware handout by administrators
+                {strings.Dashboard.AdminActionCenterSubtitle}
               </span>
             </div>
           </div>
@@ -668,11 +670,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <table className={styles.actionTable}>
                 <thead>
                   <tr>
-                    <th>Requester</th>
-                    <th>Asset Requested</th>
-                    <th>Qty</th>
-                    <th>Date Approved</th>
-                    <th>Status Action</th>
+                    <th>{strings.Dashboard.ColRequester}</th>
+                    <th>{strings.Dashboard.ColAssetRequested}</th>
+                    <th>{strings.Dashboard.ColQty}</th>
+                    <th>{strings.Dashboard.ColDateApproved}</th>
+                    <th>{strings.Dashboard.ColStatusAction}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -684,7 +686,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       <td>{formatDate(req.requestDate)}</td>
                       <td>
                         <span className={`${styles.statusBadge} ${styles.badgePending}`}>
-                          Awaiting Handoff
+                          {strings.Dashboard.BadgeAwaitingHandoff}
                         </span>
                       </td>
                     </tr>
@@ -694,8 +696,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             ) : (
               <div className={styles.noDataMessage}>
                 <Icon iconName="CompletedSolid" />
-                <span>All assignments caught up! No pending physical handouts.</span>
-                <span className={styles.emptyStateHint}>Check the Assignment Queue for historical data</span>
+                <span>{strings.Dashboard.AdminEmptyState}</span>
+                <span className={styles.emptyStateHint}>{strings.Dashboard.AdminEmptyStateHint}</span>
               </div>
             )}
           </div>
@@ -709,10 +711,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             <div>
               <h3>
                 <Icon iconName="ReviewRequest" />
-                Pending Manager Decisions
+                {strings.Dashboard.ManagerActionCenterTitle}
               </h3>
               <span className={styles.sectionSubtitle}>
-                Recent employee requests awaiting your approval or decline
+                {strings.Dashboard.ManagerActionCenterSubtitle}
               </span>
             </div>
           </div>
@@ -721,12 +723,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <table className={styles.actionTable}>
                 <thead>
                   <tr>
-                    <th>Requester</th>
-                    <th>Asset Requested</th>
-                    <th>Qty</th>
-                    <th>Date Requested</th>
-                    <th>Reason / Justification</th>
-                    <th>Action State</th>
+                    <th>{strings.Dashboard.ColRequester}</th>
+                    <th>{strings.Dashboard.ColAssetRequested}</th>
+                    <th>{strings.Dashboard.ColQty}</th>
+                    <th>{strings.Dashboard.ColDateRequested}</th>
+                    <th>{strings.Dashboard.ColReason}</th>
+                    <th>{strings.Dashboard.ColActionState}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -737,11 +739,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       <td>{req.quantity}</td>
                       <td>{formatDate(req.requestDate)}</td>
                       <td className={styles.tableCellJustification}>
-                        {req.reason || 'No justification specified'}
+                        {req.reason || strings.Dashboard.NoJustificationSpecified}
                       </td>
                       <td>
                         <span className={`${styles.statusBadge} ${styles.badgePending}`}>
-                          Awaiting Approval
+                          {strings.Dashboard.BadgeAwaitingApproval}
                         </span>
                       </td>
                     </tr>
@@ -751,8 +753,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             ) : (
               <div className={styles.noDataMessage}>
                 <Icon iconName="CheckMark" />
-                <span>Zero pending requests! Your approvals queue is clear.</span>
-                <span className={styles.emptyStateHint}>New requests will appear here automatically</span>
+                <span>{strings.Dashboard.ManagerEmptyState}</span>
+                <span className={styles.emptyStateHint}>{strings.Dashboard.ManagerEmptyStateHint}</span>
               </div>
             )}
           </div>
@@ -768,10 +770,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <div>
                 <h3>
                   <Icon iconName="Send" />
-                  Active Requests Status
+                  {strings.Dashboard.EmployeeActionCenterTitle}
                 </h3>
                 <span className={styles.sectionSubtitle}>
-                  Recent hardware requests in the verification pipeline
+                  {strings.Dashboard.EmployeeActionCenterSubtitle}
                 </span>
               </div>
             </div>
@@ -780,12 +782,12 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                 <table className={styles.actionTable}>
                   <thead>
                     <tr>
-                      <th>Asset</th>
-                      <th>Manager Name</th>
-                      <th>Qty</th>
-                      <th>Requested Date</th>
-                      <th>Manager Comment</th>
-                      <th>Fulfillment State</th>
+                      <th>{strings.Dashboard.ColAsset}</th>
+                      <th>{strings.Dashboard.ColManagerName}</th>
+                      <th>{strings.Dashboard.ColQty}</th>
+                      <th>{strings.Dashboard.ColDateRequested}</th>
+                      <th>{strings.Dashboard.ColManagerComment}</th>
+                      <th>{strings.Dashboard.ColFulfillmentState}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -795,19 +797,19 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       const isAssetAssigned = (req.assetStatus || '').toLowerCase() === 'approved';
 
                       let badgeClass = styles.badgePending;
-                      let badgeText = 'Awaiting Review';
+                      let badgeText = strings.Dashboard.BadgeAwaitingReview;
 
                       if (isApproved) {
                         if (isAssetAssigned) {
                           badgeClass = styles.badgeApproved;
-                          badgeText = 'Completed & Assigned';
+                          badgeText = strings.Dashboard.BadgeCompletedAssigned;
                         } else {
                           badgeClass = styles.badgePending;
-                          badgeText = 'Approved, Awaiting Handoff';
+                          badgeText = strings.Dashboard.BadgeApprovedAwaitingHandoff;
                         }
                       } else if (isDeclined) {
                         badgeClass = styles.badgeDeclined;
-                        badgeText = 'Declined';
+                        badgeText = strings.Dashboard.BadgeDeclined;
                       }
 
                       return (
@@ -832,8 +834,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               ) : (
                 <div className={styles.noDataMessage}>
                   <Icon iconName="Info" />
-                  <span>No active requests placed recently.</span>
-                  <span className={styles.emptyStateHint}>Use &quot;Request Asset&quot; to submit a new request</span>
+                  <span>{strings.Dashboard.EmployeeEmptyState}</span>
+                  <span className={styles.emptyStateHint}>{strings.Dashboard.EmployeeEmptyStateHint}</span>
                 </div>
               )}
             </div>
@@ -845,10 +847,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               <div>
                 <h3>
                   <Icon iconName="Devices3" />
-                  My Assigned Equipment
+                  {strings.Dashboard.MyEquipmentTitle}
                 </h3>
                 <span className={styles.sectionSubtitle}>
-                  Hardware currently registered and assigned to you
+                  {strings.Dashboard.MyEquipmentSubtitle}
                 </span>
               </div>
             </div>
@@ -857,10 +859,10 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                 <table className={styles.actionTable}>
                   <thead>
                     <tr>
-                      <th>Device Name</th>
-                      <th>Category</th>
-                      <th>Serial Number</th>
-                      <th>Assigned Date</th>
+                      <th>{strings.Dashboard.ColDeviceName}</th>
+                      <th>{strings.Dashboard.ColCategory}</th>
+                      <th>{strings.Dashboard.ColSerialNumber}</th>
+                      <th>{strings.Dashboard.ColAssignedDate}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -868,7 +870,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       <tr key={item.id}>
                         <td><strong>{item.title}</strong></td>
                         <td>{item.assetType}</td>
-                        <td><code>{item.serialNumber || 'N/A'}</code></td>
+                        <td><code>{item.serialNumber || strings.Common.NotAvailable}</code></td>
                         <td>{formatDate(item.assignedDate || '')}</td>
                       </tr>
                     ))}
@@ -877,8 +879,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               ) : (
                 <div className={styles.noDataMessage}>
                   <Icon iconName="Devices3" />
-                  <span>No equipment currently assigned to you.</span>
-                  <span className={styles.emptyStateHint}>Assigned devices will appear here after handoff</span>
+                  <span>{strings.Dashboard.MyEquipmentEmptyState}</span>
+                  <span className={styles.emptyStateHint}>{strings.Dashboard.MyEquipmentEmptyStateHint}</span>
                 </div>
               )}
             </div>

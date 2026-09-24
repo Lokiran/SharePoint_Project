@@ -15,6 +15,7 @@ import {
 import { IInventoryItem } from '../models/IInventoryItem';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
 import { DEFAULT_ASSET_TYPE_OPTIONS, ASSET_CONDITION_OPTIONS } from '../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
 
 export interface IAssetFormProps {
   isOpen: boolean;
@@ -70,76 +71,76 @@ export const AssetForm: React.FC<IAssetFormProps> = (props) => {
       type={PanelType.custom}
       customWidth="100%"
       styles={{ main: { maxWidth: '450px' } }}
-      headerText={isAdmin ? "Add New Asset" : "Register New Asset"}
-      closeButtonAriaLabel="Close"
+      headerText={isAdmin ? strings.AssetForm.HeaderAdmin : strings.AssetForm.HeaderManager}
+      closeButtonAriaLabel={strings.Common.Close}
     >
       <Stack tokens={stackTokens}>
         {isManager && !isAdmin && (
           <MessageBar messageBarType={MessageBarType.warning}>
-            You are registering a new asset. After adding, you can assign it to employees in the Asset Tracking section.
+            {strings.AssetForm.ManagerHint}
           </MessageBar>
         )}
         <TextField
-          label="Title (Group/Category)"
+          label={strings.AssetForm.LabelTitle}
           value={title}
           onChange={(_, val) => setTitle(val || '')}
           required
         />
         <TextField
-          label="Asset Name"
+          label={strings.AssetForm.LabelAssetName}
           value={assetName}
           onChange={(_, val) => setAssetName(val || '')}
           required
         />
         <Dropdown
-          label="Asset Type"
+          label={strings.AssetForm.LabelAssetType}
           selectedKey={assetType}
           options={DEFAULT_ASSET_TYPE_OPTIONS}
           onChange={(_, opt) => setAssetType(opt?.key as string || 'Other')}
           required
         />
         <TextField
-          label="Serial Number"
+          label={strings.AssetForm.LabelSerialNumber}
           value={serialNumber}
           onChange={(_, val) => setSerialNumber(val || '')}
           required
         />
         <TextField
-          label="Purchase Date"
+          label={strings.AssetForm.LabelPurchaseDate}
           type="date"
           value={purchaseDate}
-          onChange={(_, val) => setPurchaseDate(val || '')} 
+          onChange={(_, val) => setPurchaseDate(val || '')}
           required
         />
         <TextField
-          label="Vendor"
+          label={strings.AssetForm.LabelVendor}
           value={vendor}
-          placeholder="E.g., Dell, Apple, Microsoft, Lenovo"
+          placeholder={strings.AssetForm.VendorPlaceholder}
           onChange={(_, val) => setVendor(val || '')}
         />
         <Dropdown
-          label="Condition"
+          label={strings.AssetForm.LabelCondition}
           selectedKey={condition}
           options={ASSET_CONDITION_OPTIONS}
           onChange={(_, opt) => setCondition(opt?.key as string || 'New')}
         />
         <TextField
-          label="Warranty Expiry Date"
+          label={strings.AssetForm.LabelWarrantyExpiry}
           type="date"
           value={warrantyExpiry}
           onChange={(_, val) => setWarrantyExpiry(val || '')}
         />
         <TextField
-          label="Specifications"
-          placeholder="E.g., Intel i7, 16GB RAM, 512GB SSD, etc."
+          label={strings.AssetForm.LabelSpecifications}
+          placeholder={strings.AssetForm.SpecificationsPlaceholder}
           multiline
           rows={3}
           value={specifications}
           onChange={(_, val) => setSpecifications(val || '')}
         />
         <Stack horizontal tokens={stackTokens} style={{ marginTop: 20 }}>
-          <PrimaryButton text="Add Asset" onClick={onSave} disabled={!assetName || !serialNumber} />
-          <DefaultButton text="Cancel" onClick={props.onClose} />
+          <PrimaryButton text={strings.AssetForm.AddAsset} onClick={onSave} disabled={!assetName || !serialNumber} />
+          <DefaultButton text={strings.Common.Cancel} onClick={props.onClose} />
         </Stack>
       </Stack>
     </Panel>

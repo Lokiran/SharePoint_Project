@@ -1,3 +1,6 @@
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from './LocalizationUtils';
+
 export interface IWarrantyInfo {
   textColor: string;
   bgColor: string;
@@ -22,8 +25,8 @@ export function getWarrantyColorInfo(warrantyExpiry?: string): IWarrantyInfo {
       isExpired: false,
       isLessThan6Months: false,
       isLessThan1Year: false,
-      formattedDate: 'N/A',
-      remainingText: 'no warranty date'
+      formattedDate: strings.WarrantyUtils.NotAvailable,
+      remainingText: strings.WarrantyUtils.NoWarrantyDate
     };
   }
 
@@ -38,7 +41,7 @@ export function getWarrantyColorInfo(warrantyExpiry?: string): IWarrantyInfo {
       isLessThan6Months: false,
       isLessThan1Year: false,
       formattedDate: warrantyExpiry,
-      remainingText: 'invalid date'
+      remainingText: strings.WarrantyUtils.InvalidDate
     };
   }
 
@@ -50,9 +53,9 @@ export function getWarrantyColorInfo(warrantyExpiry?: string): IWarrantyInfo {
   let remainingText = '';
   if (isExpired) {
     const daysAgo = Math.abs(diffDays);
-    remainingText = `${daysAgo} day${daysAgo === 1 ? '' : 's'} ago`;
+    remainingText = formatString(daysAgo === 1 ? strings.WarrantyUtils.DaysAgoSingular : strings.WarrantyUtils.DaysAgoPlural, daysAgo);
   } else {
-    remainingText = `${diffDays} day${diffDays === 1 ? '' : 's'} remaining`;
+    remainingText = formatString(diffDays === 1 ? strings.WarrantyUtils.DaysRemainingSingular : strings.WarrantyUtils.DaysRemainingPlural, diffDays);
   }
 
   const isLessThan6Months = !isExpired && diffDays < 180;
@@ -86,18 +89,18 @@ export function getWarrantyColorInfo(warrantyExpiry?: string): IWarrantyInfo {
 export function getAssetLifecycleInfo(purchaseDate?: string): ILifecycleInfo {
   if (!purchaseDate) {
     return {
-      statusText: 'Unknown purchase date',
-      purchaseDateFormatted: 'N/A',
-      eolDateFormatted: 'N/A'
+      statusText: strings.WarrantyUtils.UnknownPurchaseDate,
+      purchaseDateFormatted: strings.WarrantyUtils.NotAvailable,
+      eolDateFormatted: strings.WarrantyUtils.NotAvailable
     };
   }
 
   const pDate = new Date(purchaseDate);
   if (isNaN(pDate.getTime())) {
     return {
-      statusText: 'Invalid purchase date',
+      statusText: strings.WarrantyUtils.InvalidPurchaseDate,
       purchaseDateFormatted: purchaseDate,
-      eolDateFormatted: 'N/A'
+      eolDateFormatted: strings.WarrantyUtils.NotAvailable
     };
   }
 
@@ -112,8 +115,8 @@ export function getAssetLifecycleInfo(purchaseDate?: string): ILifecycleInfo {
   const eolDateFormatted = eolDate.toISOString().split('T')[0];
 
   const statusText = isEol
-    ? 'Asset has reached End of Life (EOL)'
-    : 'Asset is within active enterprise lifecycle';
+    ? strings.WarrantyUtils.StatusEol
+    : strings.WarrantyUtils.StatusActive;
 
   return {
     statusText,

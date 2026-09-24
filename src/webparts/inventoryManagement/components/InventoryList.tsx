@@ -9,6 +9,8 @@ import {
 } from '@fluentui/react/lib/DetailsList';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
 import styles from './InventoryManagement.module.scss';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
 
 export interface IInventoryListProps {
   items: IInventoryItem[];
@@ -21,18 +23,18 @@ export interface IInventoryListProps {
 export const InventoryList: React.FC<IInventoryListProps> = (props) => {
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const columns: IColumn[] = [
-    { key: 'column1', name: 'ID', fieldName: 'id', minWidth: 40, maxWidth: 40, isResizable: true },
-    { key: 'column2', name: 'Title', fieldName: 'title', minWidth: 100, maxWidth: 150, isResizable: true },
-    { key: 'column3', name: 'Asset Name', fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-    { key: 'column4', name: 'Type', fieldName: 'assetType', minWidth: 80, maxWidth: 100, isResizable: true },
-    { key: 'column5', name: 'Serial Number', fieldName: 'serialNumber', minWidth: 100, maxWidth: 120, isResizable: true },
-    { key: 'column6', name: 'Purchase Date', fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-    { key: 'columnVendor', name: 'Vendor', fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
-    { key: 'columnCondition', name: 'Condition', fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-    { key: 'columnWarranty', name: 'Warranty Expiry', fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
-    { 
-      key: 'column7', 
-      name: 'Status', 
+    { key: 'column1', name: strings.Columns.Id, fieldName: 'id', minWidth: 40, maxWidth: 40, isResizable: true },
+    { key: 'column2', name: strings.Columns.Title, fieldName: 'title', minWidth: 100, maxWidth: 150, isResizable: true },
+    { key: 'column3', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
+    { key: 'column4', name: strings.Columns.Type, fieldName: 'assetType', minWidth: 80, maxWidth: 100, isResizable: true },
+    { key: 'column5', name: strings.Columns.SerialNumber, fieldName: 'serialNumber', minWidth: 100, maxWidth: 120, isResizable: true },
+    { key: 'column6', name: strings.Columns.PurchaseDate, fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
+    { key: 'columnVendor', name: strings.Columns.Vendor, fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
+    { key: 'columnCondition', name: strings.Columns.Condition, fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
+    { key: 'columnWarranty', name: strings.Columns.WarrantyExpiry, fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
+    {
+      key: 'column7',
+      name: strings.Columns.Status,
       fieldName: 'status', 
       minWidth: 80, 
       maxWidth: 100, 
@@ -73,22 +75,22 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
     },
     {
       key: 'columnActivation',
-      name: 'Activation State',
+      name: strings.Columns.ActivationState,
       minWidth: 100,
       maxWidth: 120,
       isResizable: true,
       onRender: (item: IInventoryItem) => {
         const statusVal = (item.status || '').toLowerCase();
-        let activationState = 'Deactivated';
+        let activationState = strings.InventoryList.ActivationDeactivated;
         let badgeColor = '#991b1b'; // Red
         let bgColor = '#fee2e2';
 
         if (statusVal === 'assigned') {
-          activationState = 'Activated';
+          activationState = strings.InventoryList.ActivationActivated;
           badgeColor = '#166534'; // Green
           bgColor = '#dcfce7';
         } else if (statusVal === 'in stock' || statusVal === 'yes') {
-          activationState = 'Inactivated';
+          activationState = strings.InventoryList.ActivationInactivated;
           badgeColor = '#92400e'; // Dark orange/amber
           bgColor = '#fef3c7'; // Amber 100
         }
@@ -108,36 +110,36 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
         );
       }
     },
-    { key: 'column8', name: 'Assigned To', fieldName: 'assignedTo', minWidth: 100, maxWidth: 150, isResizable: true },
-    { key: 'column9', name: 'Specifications', fieldName: 'specifications', minWidth: 150, maxWidth: 300, isResizable: true },
+    { key: 'column8', name: strings.Columns.AssignedTo, fieldName: 'assignedTo', minWidth: 100, maxWidth: 150, isResizable: true },
+    { key: 'column9', name: strings.Columns.Specifications, fieldName: 'specifications', minWidth: 150, maxWidth: 300, isResizable: true },
     ...(props.onReturnAsset ? [
       {
         key: 'columnActions',
-        name: 'Actions',
+        name: strings.Columns.Actions,
         minWidth: 100,
         maxWidth: 120,
         isResizable: true,
         onRender: (item: IInventoryItem) => {
           const isPendingReturn = item.status === 'Pending Return';
           const isReturnApproved = item.status === 'Return Approved';
-          
+
           if (isPendingReturn) {
             return (
               <span style={{ color: '#ea580c', fontWeight: 600, fontSize: '0.8rem' }}>
-                Pending Return
+                {strings.InventoryList.ActionPendingReturn}
               </span>
             );
           }
           if (isReturnApproved) {
             return (
               <span style={{ color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' }}>
-                Approved
+                {strings.InventoryList.ActionApproved}
               </span>
             );
           }
           return (
             <PrimaryButton
-              text="Return"
+              text={strings.InventoryList.ActionReturn}
               onClick={() => props.onReturnAsset!(item)}
               styles={{ root: { height: 26, padding: '4px 8px', fontSize: '0.8rem' } }}
             />
@@ -265,14 +267,14 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
       {props.enablePagination && totalPages > 1 && (
         <div className={styles.paginationContainer}>
           <div className={styles.paginationInfo}>
-            Showing <strong>{startIndex + 1}</strong> to <strong>{Math.min(startIndex + pageSize, totalItems)}</strong> of <strong>{totalItems}</strong> entries
+            {formatString(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + pageSize, totalItems), totalItems)}
           </div>
           <div className={styles.paginationControls}>
             <button
               className={styles.paginationButton}
               disabled={activePage === 1}
               onClick={() => setCurrentPage(1)}
-              title="First Page"
+              title={strings.Pagination.FirstPage}
             >
               &laquo;
             </button>
@@ -280,7 +282,7 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
               className={styles.paginationButton}
               disabled={activePage === 1}
               onClick={() => setCurrentPage(prev => prev - 1)}
-              title="Previous Page"
+              title={strings.Pagination.PreviousPage}
             >
               &lsaquo;
             </button>
@@ -304,7 +306,7 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
               className={styles.paginationButton}
               disabled={activePage === totalPages}
               onClick={() => setCurrentPage(prev => prev + 1)}
-              title="Next Page"
+              title={strings.Pagination.NextPage}
             >
               &rsaquo;
             </button>
@@ -312,7 +314,7 @@ export const InventoryList: React.FC<IInventoryListProps> = (props) => {
               className={styles.paginationButton}
               disabled={activePage === totalPages}
               onClick={() => setCurrentPage(totalPages)}
-              title="Last Page"
+              title={strings.Pagination.LastPage}
             >
               &raquo;
             </button>

@@ -16,6 +16,9 @@ import {
 } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
 import { ASSET_REQUEST_STATUS_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS, RETURN_REQUEST_STATUS_OPTIONS } from '../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
+import { getAssetRequestStatusDisplayText, getReturnRequestStatusDisplayText } from '../utils/RequestStatusUtils';
 
 export interface IMyRequestsViewProps {
   requests: IRequest[];
@@ -189,13 +192,13 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px' }}>
 
-      <Pivot aria-label="My Requests">
+      <Pivot aria-label={strings.MyRequests.PivotAriaLabel}>
 
         {/* ══════════════════════════════════════════
             TAB 1: My Asset Requests (existing)
         ══════════════════════════════════════════ */}
         <PivotItem
-          headerText="Asset Requests"
+          headerText={strings.MyRequests.TabAssetRequests}
           itemIcon="Send"
           itemCount={metrics.total}
         >
@@ -204,22 +207,22 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             {/* Metrics Row */}
             <div className={styles.metricsRow}>
               <div className={styles.metricItem}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Total Requests</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricTotalRequests}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' }}>{metrics.total}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Pending Approval</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricPendingApproval}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.pending > 0 ? '#d97706' : 'var(--text-muted)' }}>{metrics.pending}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Approved</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricApproved}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' }}>{metrics.approved}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Declined</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricDeclined}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' }}>{metrics.declined}</span>
               </div>
             </div>
@@ -229,7 +232,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             <div className={styles.filtersRow}>
               <div className={styles.searchField}>
                 <TextField
-                  placeholder="Search by Request ID, asset type, reason..."
+                  placeholder={strings.MyRequests.SearchAssetRequestsPlaceholder}
                   value={searchQuery}
                   onChange={(e, val) => setSearchQuery(val || '')}
                   iconProps={{ iconName: 'Search' }}
@@ -239,7 +242,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               <div className={styles.filterDropdown}>
                 <Dropdown
                   options={[
-                    { key: 'All', text: 'All Statuses' },
+                    { key: 'All', text: strings.Dropdowns.AuditLogStatus.All },
                     ...ASSET_REQUEST_STATUS_OPTIONS
                   ]}
                   selectedKey={selectedStatus}
@@ -250,7 +253,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               <div className={styles.filterDropdown}>
                 <Dropdown
                   options={[
-                    { key: 'All', text: 'All Priorities' },
+                    { key: 'All', text: strings.MyRequests.AllPrioritiesOption },
                     ...ASSET_REQUEST_PRIORITY_OPTIONS
                   ]}
                   selectedKey={selectedPriority}
@@ -260,7 +263,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               </div>
               <div>
                 <DefaultButton
-                  text="Reset"
+                  text={strings.Common.Reset}
                   iconProps={{ iconName: 'ClearFilter' }}
                   onClick={() => {
                     setSearchQuery('');
@@ -281,8 +284,9 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 marginTop: '10px'
               }}>
                 {filteredRequests.map(item => {
-                  let status = item.status || 'Pending';
-                  let priority = item.priority || 'Medium';
+                  const status = item.status || 'Pending';
+                  const priority = item.priority || 'Medium';
+                  const displayStatus = getAssetRequestStatusDisplayText(status);
 
                   let statusBg = '#fef7e0';
                   let statusText = '#b06000';
@@ -300,18 +304,18 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                   const managerStatusLower = status.toLowerCase();
 
                   if (managerStatusLower.includes('pending')) {
-                    adminAllocationText = 'Waiting on Manager';
+                    adminAllocationText = strings.MyRequests.WaitingOnManager;
                     adminAllocationColor = '#b06000';
                   } else if (managerStatusLower === 'declined' || managerStatusLower === 'rejected') {
-                    adminAllocationText = 'N/A (Rejected)';
+                    adminAllocationText = strings.MyRequests.NotApplicableRejected;
                     adminAllocationColor = '#c5221f';
                   } else {
                     const isAllocated = (item.assetStatus || '').toLowerCase().includes('approv');
                     if (isAllocated) {
-                      adminAllocationText = 'Asset Allocated ✓';
+                      adminAllocationText = strings.MyRequests.AssetAllocatedCheck;
                       adminAllocationColor = '#137333';
                     } else {
-                      adminAllocationText = 'Pending Admin Allocation';
+                      adminAllocationText = strings.MyRequests.PendingAdminAllocation;
                       adminAllocationColor = '#b06000';
                     }
                   }
@@ -337,27 +341,27 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                             {item.requestKey || `REQ-${item.id.substring(0, 6)}`}
                           </h4>
                           <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                            Requested: {item.requestDate}
+                            {formatString(strings.MyRequests.RequestedPrefix, item.requestDate)}
                           </span>
                         </div>
                         <span style={{ backgroundColor: statusBg, color: statusText, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600 }}>
-                          {status}
+                          {displayStatus}
                         </span>
                       </div>
 
                       {/* Body */}
                       <div style={{ padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         <div style={{ fontSize: '0.82rem', color: 'var(--text-main)' }}>
-                          Asset: <strong>{item.assetTitle}</strong> (Qty: {item.quantity})
+                          {strings.WorkflowPopup.LabelAsset}: <strong>{item.assetTitle}</strong> ({strings.MyRequests.QtyLabel}: {item.quantity})
                         </div>
                         {item.managerName && (
                           <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                            Manager: <strong style={{ color: 'var(--text-main)' }}>{item.managerName}</strong>
+                            {strings.MyRequests.ManagerLabel} <strong style={{ color: 'var(--text-main)' }}>{item.managerName}</strong>
                           </div>
                         )}
                         {item.reason && (
                           <p style={{ margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' }}>
-                            Reason: {item.reason}
+                            {formatString(strings.MyRequests.ReasonPrefix, item.reason)}
                           </p>
                         )}
                         {item.managerResponse && (
@@ -369,7 +373,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                             fontSize: '0.75rem',
                             color: status === 'Declined' ? '#991b1b' : 'var(--text-main)'
                           }}>
-                            <strong>Manager Note:</strong> {item.managerResponse}
+                            <strong>{strings.MyRequests.ManagerNoteLabel}</strong> {item.managerResponse}
                           </div>
                         )}
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px', marginTop: 'auto' }}>
@@ -381,7 +385,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                       {/* Actions */}
                       <div style={{ padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' }}>
                         <DefaultButton
-                          text="View Details"
+                          text={strings.Common.ViewDetails}
                           onClick={() => { setSelectedRequest(item); setIsPanelOpen(true); }}
                           style={{ height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' }}
                         />
@@ -393,8 +397,8 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             ) : (
               <div style={{ textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' }}>
                 <Icon iconName="DatabaseNoData" style={{ fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' }} />
-                <Text variant="medium" block style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>No Asset Requests Found</Text>
-                <Text variant="small" style={{ color: 'var(--text-muted)' }}>Try adjusting your search query or filters.</Text>
+                <Text variant="medium" block style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>{strings.MyRequests.EmptyAssetRequestsTitle}</Text>
+                <Text variant="small" style={{ color: 'var(--text-muted)' }}>{strings.MyRequests.EmptyFilterHint}</Text>
               </div>
             )}
           </div>
@@ -404,7 +408,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             TAB 2: My Return Requests (NEW)
         ══════════════════════════════════════════ */}
         <PivotItem
-          headerText="Return Requests"
+          headerText={strings.MyRequests.TabReturnRequests}
           itemIcon="ReturnToSession"
           itemCount={returnMetrics.total}
         >
@@ -413,37 +417,36 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             {/* Return Metrics Row */}
             <div className={styles.metricsRow}>
               <div className={styles.metricItem} style={{ minWidth: '90px' }}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Total</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricTotal}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' }}>{returnMetrics.total}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem} style={{ minWidth: '90px' }}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Pending</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricPending}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.pending > 0 ? '#d97706' : 'var(--text-muted)' }}>{returnMetrics.pending}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem} style={{ minWidth: '90px' }}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Approved</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricApproved}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#1558d6' }}>{returnMetrics.approved}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem} style={{ minWidth: '90px' }}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Completed</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricCompleted}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' }}>{returnMetrics.completed}</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem} style={{ minWidth: '90px' }}>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Rejected</span>
+                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.MyRequests.MetricRejected}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.rejected > 0 ? '#dc2626' : 'var(--text-muted)' }}>{returnMetrics.rejected}</span>
               </div>
             </div>
 
             {/* Return Filters */}
-            {/* Return Filters */}
             <div className={styles.filtersRow}>
               <div className={styles.searchField}>
                 <TextField
-                  placeholder="Search by asset name, serial number, reason..."
+                  placeholder={strings.MyRequests.SearchReturnRequestsPlaceholder}
                   value={returnSearchQuery}
                   onChange={(e, val) => setReturnSearchQuery(val || '')}
                   iconProps={{ iconName: 'Search' }}
@@ -453,7 +456,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               <div className={styles.filterDropdown} style={{ width: '150px' }}>
                 <Dropdown
                   options={[
-                    { key: 'All', text: 'All Statuses' },
+                    { key: 'All', text: strings.Dropdowns.AuditLogStatus.All },
                     ...RETURN_REQUEST_STATUS_OPTIONS
                   ]}
                   selectedKey={returnSelectedStatus}
@@ -463,7 +466,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               </div>
               <div>
                 <DefaultButton
-                  text="Reset"
+                  text={strings.Common.Reset}
                   iconProps={{ iconName: 'ClearFilter' }}
                   onClick={() => {
                     setReturnSearchQuery('');
@@ -485,6 +488,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 {filteredReturnRequests.map(item => {
                   const { bg: statusBg, color: statusColor } = getReturnStatusStyle(item.status);
                   const statusIcon = getReturnStatusIcon(item.status);
+                  const displayReturnStatus = getReturnRequestStatusDisplayText(item.status);
 
                   // Condition badge
                   let condBg = '#e6f4ea';
@@ -517,13 +521,13 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                               {item.assetName}
                             </h4>
                             <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                              S/N: {item.serialNumber || 'N/A'} &bull; Submitted: {item.requestDate}
+                              {formatString(strings.MyRequests.SubmittedPrefix, item.serialNumber || strings.Common.NotAvailable, item.requestDate)}
                             </span>
                           </div>
                         </div>
                         <span style={{ backgroundColor: statusBg, color: statusColor, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' }}>
                           <Icon iconName={statusIcon} style={{ fontSize: '10px' }} />
-                          {item.status}
+                          {displayReturnStatus}
                         </span>
                       </div>
 
@@ -531,19 +535,19 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                       <div style={{ padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         {item.returnReason && (
                           <p style={{ margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' }}>
-                            Reason: {item.returnReason}
+                            {formatString(strings.MyRequests.ReasonPrefix, item.returnReason)}
                           </p>
                         )}
 
                         {/* Condition & Return Date */}
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px' }}>
                           <span>
-                            Condition: <span style={{ backgroundColor: condBg, color: condColor, padding: '1px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 600 }}>
-                              {item.proposedCondition || 'N/A'}
+                            {strings.ReturnRequestList.LabelProposedCondition}: <span style={{ backgroundColor: condBg, color: condColor, padding: '1px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 600 }}>
+                              {item.proposedCondition || strings.Common.NotAvailable}
                             </span>
                           </span>
                           {item.completedDate && (
-                            <span style={{ color: '#16a34a', fontSize: '0.7rem' }}>✓ {item.completedDate}</span>
+                            <span style={{ color: '#16a34a', fontSize: '0.7rem' }}>&#10003; {item.completedDate}</span>
                           )}
                         </div>
 
@@ -557,7 +561,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                             fontSize: '0.75rem',
                             color: 'var(--text-muted)'
                           }}>
-                            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>Manager Notes:</strong>
+                            <strong style={{ display: 'block', marginBottom: '2px', color: 'var(--text-main)' }}>{strings.MyRequests.ManagerNotesLabel}</strong>
                             {item.managerComment}
                           </div>
                         )}
@@ -566,13 +570,13 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                         {item.status === 'Pending' && (
                           <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#b06000' }}>
                             <Icon iconName="Clock" style={{ fontSize: '10px' }} />
-                            <span>Awaiting manager review</span>
+                            <span>{strings.MyRequests.AwaitingManagerReview}</span>
                           </div>
                         )}
                         {item.status === 'Approved' && (
                           <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#1558d6' }}>
                             <Icon iconName="Info" style={{ fontSize: '10px' }} />
-                            <span>Please physically hand over the asset to the IT team</span>
+                            <span>{strings.MyRequests.HandoverToItTeam}</span>
                           </div>
                         )}
                       </div>
@@ -580,7 +584,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                       {/* Actions */}
                       <div style={{ padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' }}>
                         <DefaultButton
-                          text="View Details"
+                          text={strings.Common.ViewDetails}
                           onClick={() => { setSelectedReturnRequest(item); setIsReturnPanelOpen(true); }}
                           style={{ height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' }}
                         />
@@ -592,11 +596,11 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             ) : (
               <div style={{ textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' }}>
                 <Icon iconName="ReturnToSession" style={{ fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' }} />
-                <Text variant="medium" block style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>No Return Requests Found</Text>
+                <Text variant="medium" block style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>{strings.MyRequests.EmptyReturnRequestsTitle}</Text>
                 <Text variant="small" style={{ color: 'var(--text-muted)' }}>
                   {returnRequests.length === 0
-                    ? 'You have not submitted any return requests yet. Use the "Return" button on an asset in My Assets.'
-                    : 'Try adjusting your search query or filters.'}
+                    ? strings.MyRequests.EmptyReturnRequestsHint
+                    : strings.MyRequests.EmptyFilterHint}
                 </Text>
               </div>
             )}
@@ -613,33 +617,33 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
           isOpen={isPanelOpen}
           onDismiss={() => { setIsPanelOpen(false); setSelectedRequest(null); }}
           type={PanelType.medium}
-          headerText={`Request Details: ${selectedRequest.requestKey || 'Asset Request'}`}
-          closeButtonAriaLabel="Close"
+          headerText={formatString(strings.MyRequests.DetailsHeaderPrefix, selectedRequest.requestKey || strings.MyRequests.FallbackAssetRequest)}
+          closeButtonAriaLabel={strings.Common.Close}
         >
           <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <div className={styles.responsiveGrid} style={{ backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' }}>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Request ID:</span> <strong>{selectedRequest.requestKey || 'N/A'}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Date Requested:</span> <strong>{selectedRequest.requestDate}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Requester:</span> <strong>{selectedRequest.requesterName}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Employee ID:</span> <strong>{selectedRequest.employeeId || '-'}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Asset Type:</span> <strong>{selectedRequest.assetTitle}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Quantity:</span> <strong>{selectedRequest.quantity}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelRequestId}</span> <strong>{selectedRequest.requestKey || strings.Common.NotAvailable}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelDateRequested}</span> <strong>{selectedRequest.requestDate}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelRequester}</span> <strong>{selectedRequest.requesterName}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelEmployeeId}</span> <strong>{selectedRequest.employeeId || '-'}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelAssetType}</span> <strong>{selectedRequest.assetTitle}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelQuantity}</span> <strong>{selectedRequest.quantity}</strong></div>
             </div>
 
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>Reason for Request</span>
-              <span style={{ fontSize: '0.9rem', color: '#334155' }}>{selectedRequest.reason || 'No reason provided.'}</span>
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>{strings.MyRequests.ReasonForRequestTitle}</span>
+              <span style={{ fontSize: '0.9rem', color: '#334155' }}>{selectedRequest.reason || strings.MyRequests.NoReasonProvided}</span>
             </div>
 
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>Manager Approval Status</span>
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>{strings.MyRequests.ManagerApprovalStatusTitle}</span>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <span style={{
                   backgroundColor: selectedRequest.status === 'Approved' ? '#e6f4ea' : selectedRequest.status === 'Declined' ? '#fce8e6' : '#fef7e0',
                   color: selectedRequest.status === 'Approved' ? '#137333' : selectedRequest.status === 'Declined' ? '#c5221f' : '#b06000',
                   padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600
                 }}>
-                  {selectedRequest.status || 'Pending'}
+                  {getAssetRequestStatusDisplayText(selectedRequest.status)}
                 </span>
                 {selectedRequest.managerResponse && (
                   <span style={{ fontSize: '0.85rem', color: '#475569' }}>
@@ -650,25 +654,25 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
             </div>
 
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>Admin Allocation Status</span>
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>{strings.MyRequests.AdminAllocationStatusTitle}</span>
               <span style={{ fontSize: '0.9rem', color: '#334155' }}>
                 {selectedRequest.status === 'Approved' ? (
                   (selectedRequest.assetStatus || '').toLowerCase().includes('approv') ? (
-                    <span style={{ color: '#137333', fontWeight: 600 }}>Asset Allocated &amp; Dispatched ✓</span>
+                    <span style={{ color: '#137333', fontWeight: 600 }}>{strings.RequestList.AllocationAllocated}</span>
                   ) : (
-                    <span style={{ color: '#b06000', fontWeight: 600 }}>Pending physical asset allocation by system administrator</span>
+                    <span style={{ color: '#b06000', fontWeight: 600 }}>{strings.RequestList.AllocationPendingAdmin}</span>
                   )
                 ) : selectedRequest.status === 'Declined' ? (
-                  <span style={{ color: '#c5221f' }}>Not applicable (Request was rejected by manager)</span>
+                  <span style={{ color: '#c5221f' }}>{strings.RequestList.AllocationNotApplicable}</span>
                 ) : (
-                  <span style={{ color: '#64748b', fontStyle: 'italic' }}>Pending manager approval first</span>
+                  <span style={{ color: '#64748b', fontStyle: 'italic' }}>{strings.RequestList.AllocationPendingManager}</span>
                 )}
               </span>
             </div>
 
             <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' }}>
               <DefaultButton
-                text="Close"
+                text={strings.Common.Close}
                 onClick={() => { setIsPanelOpen(false); setSelectedRequest(null); }}
               />
             </Stack>
@@ -684,8 +688,8 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
           isOpen={isReturnPanelOpen}
           onDismiss={() => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }}
           type={PanelType.medium}
-          headerText={`Return Request: ${selectedReturnRequest.assetName}`}
-          closeButtonAriaLabel="Close"
+          headerText={formatString(strings.MyRequests.ReturnRequestDetailsPrefix, selectedReturnRequest.assetName)}
+          closeButtonAriaLabel={strings.Common.Close}
         >
           <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
 
@@ -694,18 +698,18 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
               const { bg, color } = getReturnStatusStyle(selectedReturnRequest.status);
               const icon = getReturnStatusIcon(selectedReturnRequest.status);
               const statusMessages: Record<string, string> = {
-                'Pending': 'Your return request has been submitted and is awaiting manager review.',
-                'Pending Manager Approval': 'Your return request has been submitted and is awaiting manager review.',
-                'Pending Admin Verification': 'Your return has been approved by your manager and is awaiting final IT Admin verification.',
-                'Approved': 'Your return has been approved and completed. The asset has been checked in.',
-                'Rejected': 'Your return request was rejected. Please check the manager notes below.',
-                'Completed': 'The asset has been successfully checked in. This return is complete.'
+                'Pending': strings.MyRequests.StatusPendingSubmitted,
+                'Pending Manager Approval': strings.MyRequests.StatusPendingSubmitted,
+                'Pending Admin Verification': strings.MyRequests.StatusPendingAdminMsg,
+                'Approved': strings.MyRequests.StatusApprovedCompleted,
+                'Rejected': strings.MyRequests.StatusRejectedMsg,
+                'Completed': strings.MyRequests.StatusCompletedMsg
               };
               return (
                 <div style={{ backgroundColor: bg, padding: '12px 15px', borderRadius: '8px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <Icon iconName={icon} style={{ fontSize: '20px', color, marginTop: '2px' }} />
                   <div>
-                    <strong style={{ color, display: 'block', marginBottom: '2px' }}>{selectedReturnRequest.status}</strong>
+                    <strong style={{ color, display: 'block', marginBottom: '2px' }}>{getReturnRequestStatusDisplayText(selectedReturnRequest.status)}</strong>
                     <span style={{ fontSize: '0.85rem', color }}>{statusMessages[selectedReturnRequest.status] || ''}</span>
                   </div>
                 </div>
@@ -714,19 +718,19 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
 
             {/* Asset Info */}
             <div className={styles.responsiveGrid} style={{ backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' }}>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Asset Name:</span> <strong>{selectedReturnRequest.assetName}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Serial Number:</span> <strong>{selectedReturnRequest.serialNumber || 'N/A'}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Submitted On:</span> <strong>{selectedReturnRequest.requestDate}</strong></div>
-              <div><span style={{ color: '#64748b', display: 'block' }}>Proposed Condition:</span> <strong>{selectedReturnRequest.proposedCondition || 'N/A'}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelAssetName}</span> <strong>{selectedReturnRequest.assetName}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelSerialNumber}</span> <strong>{selectedReturnRequest.serialNumber || strings.Common.NotAvailable}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelSubmittedOn}</span> <strong>{selectedReturnRequest.requestDate}</strong></div>
+              <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelProposedCondition}</span> <strong>{selectedReturnRequest.proposedCondition || strings.Common.NotAvailable}</strong></div>
               {selectedReturnRequest.completedDate && (
-                <div><span style={{ color: '#64748b', display: 'block' }}>Completed On:</span> <strong style={{ color: '#16a34a' }}>{selectedReturnRequest.completedDate}</strong></div>
+                <div><span style={{ color: '#64748b', display: 'block' }}>{strings.MyRequests.LabelCompletedOn}</span> <strong style={{ color: '#16a34a' }}>{selectedReturnRequest.completedDate}</strong></div>
               )}
             </div>
 
             {/* Return Reason */}
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>Reason for Return</span>
-              <span style={{ fontSize: '0.9rem', color: '#334155', lineHeight: '1.5' }}>{selectedReturnRequest.returnReason || 'No reason provided.'}</span>
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>{strings.MyRequests.ReasonForReturnTitle}</span>
+              <span style={{ fontSize: '0.9rem', color: '#334155', lineHeight: '1.5' }}>{selectedReturnRequest.returnReason || strings.MyRequests.NoReasonProvidedReturn}</span>
             </div>
 
             {/* Manager Comment */}
@@ -736,18 +740,18 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 padding: '12px 15px', borderRadius: '8px',
                 border: `1px solid ${selectedReturnRequest.status === 'Rejected' ? '#fecaca' : '#bbf7d0'}`
               }}>
-                <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>Manager / Admin Notes</span>
+                <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>{strings.WorkflowPopup.LabelManagerAdminNotes}</span>
                 <span style={{ fontSize: '0.9rem', color: '#334155', lineHeight: '1.5' }}>{selectedReturnRequest.managerComment}</span>
               </div>
             )}
 
             {/* Workflow Progress Steps */}
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', fontWeight: 600 }}>Return Workflow Progress</span>
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '12px', fontWeight: 600 }}>{strings.MyRequests.ProgressTitle}</span>
               {[
-                { label: 'Return Submitted', done: true },
-                { label: 'Manager Review', done: selectedReturnRequest.status !== 'Pending' && selectedReturnRequest.status !== 'Pending Manager Approval' },
-                { label: 'Physical Asset Handover & Admin Verification', done: selectedReturnRequest.status === 'Completed' || selectedReturnRequest.status === 'Approved' }
+                { label: strings.MyRequests.ProgressSubmitted, done: true },
+                { label: strings.MyRequests.ProgressManagerReview, done: selectedReturnRequest.status !== 'Pending' && selectedReturnRequest.status !== 'Pending Manager Approval' },
+                { label: strings.MyRequests.ProgressHandoverVerification, done: selectedReturnRequest.status === 'Completed' || selectedReturnRequest.status === 'Approved' }
               ].map((step, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: idx < 3 ? '8px' : 0, fontSize: '0.85rem' }}>
                   <div style={{
@@ -764,7 +768,7 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
 
             <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: '10px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' }}>
               <DefaultButton
-                text="Close"
+                text={strings.Common.Close}
                 onClick={() => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }}
               />
             </Stack>

@@ -1,0 +1,448 @@
+// Config page styles. Colours come from the theme variables defined in
+// InventoryManagement.module.scss so the page follows light/dark mode.
+
+// The app-wide Pivot style (InventoryManagement.module.scss) is a fixed 4-column
+// grid; the Config page has 5 tabs, so size the grid to fit instead of wrapping.
+// The doubled class raises specificity above the global rule.
+.configTabs.configTabs {
+  :global(.ms-Pivot) {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    }
+  }
+
+  :global(.ms-Pivot-link) {
+    min-width: 0 !important;
+    padding: 0 10px !important;
+  }
+
+  :global(.ms-Pivot-text),
+  :global(.ms-Pivot-count) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// ---------- Overall status banner ----------
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+
+  .bannerIcon {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .bannerText {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.bannerGood {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.35);
+  .bannerIcon { color: #16a34a; }
+}
+
+.bannerWarn {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.4);
+  .bannerIcon { color: #d97706; }
+}
+
+.bannerBad {
+  background-color: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.35);
+  .bannerIcon { color: #dc2626; }
+}
+
+.bannerNeutral {
+  background-color: rgba(128, 128, 128, 0.07);
+  border-color: rgba(128, 128, 128, 0.2);
+  .bannerIcon { color: var(--text-muted, #6b7280); }
+}
+
+.panel {
+  background-color: var(--surface-bg, #ffffff);
+  color: var(--text-main, #111827);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 16px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+
+  h4 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    color: var(--text-main, #111827);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted, #6b7280);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.muted {
+  color: var(--text-muted, #6b7280);
+  font-size: 0.8rem;
+}
+
+// ---------- Overview tiles ----------
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tile {
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  border-radius: 8px;
+  padding: 14px 16px;
+  border-left-width: 4px;
+
+  .tileHead {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--text-muted, #6b7280);
+    margin-bottom: 6px;
+
+    i {
+      font-size: 0.95rem;
+    }
+  }
+
+  .tileValue {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .tileLabel {
+    font-size: 0.8rem;
+    color: var(--text-muted, #6b7280);
+  }
+}
+
+.issueButton {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 10px 6px;
+  margin: 0 -6px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(128, 128, 128, 0.08);
+  }
+
+  .issueText {
+    flex: 1 1 auto;
+  }
+
+  .issueChevron {
+    color: var(--text-muted, #6b7280);
+    margin-top: 3px;
+  }
+}
+
+.toneGood { border-left-color: #16a34a; }
+.toneWarn { border-left-color: #d97706; }
+.toneBad { border-left-color: #dc2626; }
+.toneNeutral { border-left-color: #6b7280; }
+
+.twoCol {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.issueList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+    font-size: 0.85rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.issueIconBad { color: #dc2626; margin-top: 2px; }
+.issueIconWarn { color: #d97706; margin-top: 2px; }
+.issueIconGood { color: #16a34a; margin-top: 2px; }
+
+.envTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+
+  th, td {
+    text-align: left;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--text-muted, #6b7280);
+    font-weight: 500;
+    width: 45%;
+    padding-right: 8px;
+  }
+
+  td {
+    word-break: break-word;
+  }
+}
+
+// ---------- Status pills ----------
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pillGood { color: #166534; background-color: rgba(34, 197, 94, 0.18); }
+.pillWarn { color: #92400e; background-color: rgba(245, 158, 11, 0.2); }
+.pillBad { color: #b91c1c; background-color: rgba(239, 68, 68, 0.16); }
+.pillNeutral { color: var(--text-muted, #4b5563); background-color: rgba(128, 128, 128, 0.14); }
+.pillInfo { color: #0369a1; background-color: rgba(14, 165, 233, 0.16); }
+
+.spin {
+  animation: configSpin 1.2s linear infinite;
+}
+
+@keyframes configSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// ---------- List cards ----------
+.groupHeading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #6b7280);
+  margin: 20px 0 8px 0;
+  font-weight: 600;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.listCard {
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.listCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.listTitle {
+  margin: 0 0 2px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+
+  .internal {
+    font-weight: normal;
+    font-size: 0.78rem;
+    color: var(--text-muted, #6b7280);
+  }
+}
+
+.badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background-color: rgba(128, 128, 128, 0.14);
+  color: var(--text-muted, #4b5563);
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+
+  span {
+    color: var(--text-muted, #6b7280);
+  }
+
+  strong {
+    color: var(--text-main, #111827);
+    font-weight: 600;
+    margin-left: 4px;
+  }
+}
+
+.details {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background-color: rgba(128, 128, 128, 0.07);
+  font-size: 0.8rem;
+
+  div + div {
+    margin-top: 8px;
+  }
+}
+
+.errorBox {
+  margin-top: 10px;
+  color: #b91c1c;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  word-break: break-word;
+}
+
+// ---------- Chips (schema / members) ----------
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  background-color: rgba(128, 128, 128, 0.06);
+}
+
+.chipGood {
+  border-color: rgba(34, 197, 94, 0.45);
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.chipBad {
+  border-color: rgba(239, 68, 68, 0.45);
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+}
+
+.chipSelf {
+  border-color: #2b7cd4;
+  font-weight: 600;
+}
+
+.schemaBlock {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h5 {
+    margin: 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
+
+.roleTag {
+  color: #0078d4;
+  font-size: 0.75rem;
+  background-color: rgba(0, 120, 212, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.diagnosticLog {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 0.82rem;
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.08);
+  color: var(--text-main, #323130);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 4px;
+  resize: vertical;
+}

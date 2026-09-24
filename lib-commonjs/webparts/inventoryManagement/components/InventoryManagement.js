@@ -4,38 +4,43 @@ const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const sp_lodash_subset_1 = require("@microsoft/sp-lodash-subset");
-const InventoryList_1 = require("./InventoryList");
-const MyAssignedAssetsView_1 = require("./MyAssignedAssetsView");
-const MyRequestsView_1 = require("./MyRequestsView");
-const RequestList_1 = require("./RequestList");
 const pnpjsConfig_1 = require("../pnpjsConfig");
 const AssetForm_1 = require("./AssetForm");
 const RequestForm_1 = require("./RequestForm");
-const EventStream_1 = require("./EventStream");
 const ReturnAssetForm_1 = require("./ReturnAssetForm");
-const ReturnRequestList_1 = require("./ReturnRequestList");
-const WarrantyUtils_1 = require("../utils/WarrantyUtils");
 const StockUtils_1 = require("../utils/StockUtils");
 const react_1 = require("@fluentui/react");
 const chart_js_1 = require("chart.js");
-const react_chartjs_2_1 = require("react-chartjs-2");
-const jspdf_1 = require("jspdf");
 chart_js_1.Chart.register(chart_js_1.CategoryScale, chart_js_1.LinearScale, chart_js_1.ArcElement, chart_js_1.BarElement, chart_js_1.Title, chart_js_1.Tooltip, chart_js_1.Legend);
 require("@pnp/sp/site-users/web");
 require("@pnp/sp/site-groups/web");
 const mockData_1 = require("../data/mockData");
 const InventoryService_1 = require("../services/InventoryService");
 const EmailService_1 = require("../services/EmailService");
-const AssetTracking_1 = require("./AssetTracking");
 const pages_1 = require("../pages");
-const NotificationCenter_1 = require("./NotificationCenter");
 const IncidentRequestModule_1 = require("./IncidentRequest/IncidentRequestModule");
-const ReplacementHistory_1 = require("./ReplacementHistory/ReplacementHistory");
 const AssetLifecycleDiagram_1 = require("./AssetLifecycleDiagram");
 const WorkflowPopup_1 = require("./WorkflowPopup");
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../utils/LocalizationUtils");
+const LanguageSwitcherService_1 = require("../services/LanguageSwitcherService");
+const getNotifications_1 = require("../utils/getNotifications");
+const ReportExportUtils_1 = require("../utils/ReportExportUtils");
 class InventoryManagement extends React.Component {
     constructor(props) {
         super(props);
+        this._getRoleDisplayLabel = (role) => {
+            switch (role) {
+                case 'Admin':
+                    return strings.Roles.Admin;
+                case 'Inventory Manager':
+                    return strings.Roles.InventoryManager;
+                case 'Inventory Employee':
+                    return strings.Roles.InventoryEmployee;
+                default:
+                    return role;
+            }
+        };
         this._isRequestOwnedByCurrentUser = (requesterName, currentUser) => {
             const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
             const requestOwner = normalize(requesterName);
@@ -86,213 +91,16 @@ class InventoryManagement extends React.Component {
             return !!(isAssigned || isNoted || isStatus);
         };
         this._getNotifications = () => {
-            const { items, requests, activeUserDisplayName } = this.state;
-            const currentUser = activeUserDisplayName;
-            const effectiveRole = this.state.previewRole || this.state.userRole;
-            const isAdminOrManager = effectiveRole === 'Admin' || effectiveRole === 'Inventory Manager';
-            const isAdmin = effectiveRole === 'Admin';
-            const isManager = effectiveRole === 'Inventory Manager';
-            const notifications = [];
-            const readIds = new Set(this.state.readNotificationIds);
-            const clearedIds = new Set(this.state.clearedNotificationIds);
-            const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            const activeUserNorm = normalize(currentUser);
-            const formatTime = (isoString) => {
-                if (!isoString)
-                    return '';
-                try {
-                    const d = new Date(isoString);
-                    const pad = (n) => n < 10 ? '0' + n : '' + n;
-                    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
-                }
-                catch {
-                    return isoString;
-                }
-            };
-            // 1. Generate Asset Request Notifications
-            requests.forEach(req => {
-                const requesterNorm = normalize(req.requesterName);
-                const isMyRequest = requesterNorm && (requesterNorm === activeUserNorm || activeUserNorm.includes(requesterNorm) || requesterNorm.includes(activeUserNorm));
-                if (isAdminOrManager) {
-                    // Pending requests notify Admins & Managers
-                    if (req.status === 'Pending') {
-                        const id = `req-pending-${req.id}`;
-                        if (!clearedIds.has(id)) {
-                            notifications.push({
-                                id,
-                                title: "Asset Request Pending",
-                                message: `${req.requesterName} requested ${req.quantity}x ${req.assetTitle} (Reason: ${req.reason || "None"})`,
-                                type: 'info',
-                                timestamp: formatTime(req.requestDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'Approvals',
-                                category: 'Request'
-                            });
-                        }
-                    }
-                }
-                if (isMyRequest) {
-                    // Approved/Declined requests notify the Employee
-                    if (req.status === 'Approved' || req.status === 'Declined') {
-                        const id = `req-resolved-${req.id}-${req.status}`;
-                        if (!clearedIds.has(id)) {
-                            notifications.push({
-                                id,
-                                title: req.status === 'Approved' ? "Request Approved" : "Request Declined",
-                                message: req.status === 'Approved'
-                                    ? `Your request for ${req.quantity}x ${req.assetTitle} has been approved.`
-                                    : `Your request for ${req.quantity}x ${req.assetTitle} has been declined.`,
-                                type: req.status === 'Approved' ? 'success' : 'error',
-                                timestamp: formatTime(req.requestDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'My Requests',
-                                category: 'Request'
-                            });
-                        }
-                    }
-                }
-                if (isAdmin && req.status === 'Approved' && req.assetStatus === 'Pending') {
-                    const id = `req-assign-admin-${req.id}`;
-                    if (!clearedIds.has(id)) {
-                        notifications.push({
-                            id,
-                            title: "Asset Ready for Assignment",
-                            message: `${req.requesterName}'s request for ${req.quantity}x ${req.assetTitle} is approved and ready for assignment.`,
-                            type: 'info',
-                            timestamp: formatTime(req.requestDate),
-                            isRead: readIds.has(id),
-                            actionLink: 'AssetAssignmentQueue',
-                            category: 'Request'
-                        });
-                    }
-                }
+            return (0, getNotifications_1.getNotifications)({
+                items: this.state.items,
+                requests: this.state.requests,
+                returnRequests: this.state.returnRequests,
+                activeUserDisplayName: this.state.activeUserDisplayName,
+                previewRole: this.state.previewRole,
+                userRole: this.state.userRole,
+                readNotificationIds: this.state.readNotificationIds,
+                clearedNotificationIds: this.state.clearedNotificationIds
             });
-            // 2. Generate Asset Assignment & Audit Notifications
-            items.forEach(item => {
-                const assignedNorm = normalize(item.assignedTo);
-                const isMyAsset = assignedNorm && (assignedNorm === activeUserNorm || activeUserNorm.includes(assignedNorm) || assignedNorm.includes(activeUserNorm));
-                const isNotedMyAsset = (item.note || '').toLowerCase().includes('assigned to:') && normalize(item.note).includes(activeUserNorm);
-                if (isMyAsset || isNotedMyAsset) {
-                    // Asset Assignment notifies the Employee
-                    const id = `asset-assigned-${item.id}`;
-                    if (!clearedIds.has(id)) {
-                        notifications.push({
-                            id,
-                            title: "Asset Assigned",
-                            message: `Asset '${item.assetName || item.title}' (${item.serialNumber || 'N/A'}) has been assigned to you.`,
-                            type: 'success',
-                            timestamp: formatTime(item.assignedDate || item.purchaseDate),
-                            isRead: readIds.has(id),
-                            actionLink: 'My Assets',
-                            category: 'Assignment'
-                        });
-                    }
-                }
-                if (isAdminOrManager) {
-                    // When status is 'Assigned', notify Admin/Manager of assignments
-                    if (item.status === 'Assigned') {
-                        const id = `asset-assigned-admin-${item.id}`;
-                        if (!clearedIds.has(id)) {
-                            notifications.push({
-                                id,
-                                title: "Asset Assigned to Employee",
-                                message: `Asset '${item.assetName || item.title}' (${item.serialNumber || 'N/A'}) is assigned to ${item.assignedTo || "Employee"}.`,
-                                type: 'info',
-                                timestamp: formatTime(item.assignedDate || item.purchaseDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'Asset Tracking',
-                                category: 'Assignment'
-                            });
-                        }
-                    }
-                    // Audit/Maintenance warnings
-                    if (item.status === 'Under Maintenance' || item.condition === 'Damaged' || item.condition === 'Poor') {
-                        const id = `asset-maintenance-${item.id}-${item.status}-${item.condition}`;
-                        if (!clearedIds.has(id)) {
-                            notifications.push({
-                                id,
-                                title: "Asset Status Alert",
-                                message: `Asset '${item.assetName || item.title}' is in ${item.condition} condition and marked as ${item.status}.`,
-                                type: 'warning',
-                                timestamp: formatTime(item.purchaseDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'Inventory',
-                                category: 'Audit'
-                            });
-                        }
-                    }
-                }
-            });
-            // 3. Generate Asset Return Notifications
-            const returnRequests = this.state.returnRequests || [];
-            returnRequests.forEach(ret => {
-                const isMyReturn = normalize(ret.requesterName) === activeUserNorm || activeUserNorm.includes(normalize(ret.requesterName)) || normalize(ret.requesterName).includes(activeUserNorm);
-                if (isAdminOrManager) {
-                    if (isManager && (ret.status === 'Pending Manager Approval' || ret.status === 'Pending')) {
-                        const id = `ret-pending-mgr-${ret.id}`;
-                        if (!clearedIds.has(id)) {
-                            notifications.push({
-                                id,
-                                title: "Asset Return Pending Manager Approval",
-                                message: `${ret.requesterName} requested to return ${ret.assetName} (Reason: ${ret.returnReason || "None"})`,
-                                type: 'info',
-                                timestamp: formatTime(ret.requestDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'AssetReturns',
-                                category: 'Request'
-                            });
-                        }
-                    }
-                    else if (isAdmin && ret.status === 'Pending Admin Verification') {
-                        const id = `ret-pending-adm-${ret.id}`;
-                        if (!clearedIds.has(id)) {
-                            notifications.push({
-                                id,
-                                title: "Asset Return Pending Admin Verification",
-                                message: `Manager approved return of ${ret.assetName} by ${ret.requesterName}. Awaiting Admin verification.`,
-                                type: 'info',
-                                timestamp: formatTime(ret.requestDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'AssetReturns',
-                                category: 'Request'
-                            });
-                        }
-                    }
-                }
-                if (isMyReturn) {
-                    if (ret.status === 'Approved' || ret.status === 'Rejected' || ret.status === 'Completed' || ret.status === 'Pending Admin Verification') {
-                        const id = `ret-resolved-${ret.id}-${ret.status}`;
-                        if (!clearedIds.has(id)) {
-                            let titleText = "Return Request Manager Approved";
-                            let type = 'info';
-                            let messageText = `Your return request for ${ret.assetName} has been approved by your manager. Awaiting Admin verification.`;
-                            if (ret.status === 'Rejected') {
-                                titleText = "Return Request Rejected";
-                                type = 'error';
-                                messageText = `Your return request for ${ret.assetName} was rejected. Note: ${ret.managerComment || ""}`;
-                            }
-                            else if (ret.status === 'Completed' || ret.status === 'Approved') {
-                                titleText = "Asset Return Completed";
-                                type = 'success';
-                                messageText = `Your return of ${ret.assetName} is complete and has been checked back into stock.`;
-                            }
-                            notifications.push({
-                                id,
-                                title: titleText,
-                                message: messageText,
-                                type,
-                                timestamp: formatTime(ret.completedDate || ret.requestDate),
-                                isRead: readIds.has(id),
-                                actionLink: 'MyRequests',
-                                category: 'Assignment'
-                            });
-                        }
-                    }
-                }
-            });
-            // Sort notifications by timestamp descending
-            notifications.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-            return notifications;
         };
         this._markNotificationAsRead = (id) => {
             const readNotificationIds = [...this.state.readNotificationIds, id];
@@ -334,6 +142,12 @@ class InventoryManagement extends React.Component {
                 selectedNotification,
                 isNotificationDetailsOpen: true
             });
+        };
+        this._onLanguageChanged = () => {
+            this.setState(prev => ({ languageVersion: prev.languageVersion + 1 }));
+        };
+        this._onLanguageSelect = (languageCode) => {
+            (0, LanguageSwitcherService_1.setLanguage)(languageCode);
         };
         this._handleMockEmailSent = (ev) => {
             this.setState({
@@ -900,483 +714,16 @@ class InventoryManagement extends React.Component {
             }
         };
         this._exportWarrantyReportToExcel = () => {
-            const { items } = this.state;
-            const headers = ["Asset Name", "Asset Type", "Status", "Purchase Date", "Warranty Expiry Date"];
-            const csvRows = [headers.join(",")];
-            items.forEach(item => {
-                const name = (item.assetName || item.title || "").replace(/"/g, '""');
-                const type = (item.assetType || "").replace(/"/g, '""');
-                const status = (item.status || "").replace(/"/g, '""');
-                const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
-                const warrantyExpiry = (item.warrantyExpiry || "N/A").replace(/"/g, '""');
-                const row = [
-                    `"${name}"`,
-                    `"${type}"`,
-                    `"${status}"`,
-                    `"${purchaseDate}"`,
-                    `"${warrantyExpiry}"`
-                ];
-                csvRows.push(row.join(","));
-            });
-            const csvContent = "\uFEFF" + csvRows.join("\n");
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement("a");
-            const url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", `Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.csv`);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            (0, ReportExportUtils_1.exportWarrantyReportToExcel)(this.state.items);
         };
         this._exportWarrantyReportToPDF = () => {
-            const { items } = this.state;
-            const doc = new jspdf_1.jsPDF();
-            // Header
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(18);
-            doc.text("Asset Warranty Expiry Report", 14, 20);
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(10);
-            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
-            doc.text(`Total Assets: ${items.length} | Assets with Warranty: ${items.filter(i => i.warrantyExpiry).length}`, 14, 34);
-            // Table Headers
-            doc.setFont("helvetica", "bold");
-            doc.setFillColor(240, 240, 240);
-            doc.rect(14, 42, 182, 8, "F");
-            doc.text("Asset Name", 16, 47);
-            doc.text("Asset Type", 70, 47);
-            doc.text("Status", 110, 47);
-            doc.text("Purchase Date", 140, 47);
-            doc.text("Warranty Expiry", 170, 47);
-            doc.setDrawColor(200, 200, 200);
-            doc.line(14, 50, 196, 50);
-            // Rows
-            doc.setFont("helvetica", "normal");
-            let y = 56;
-            items.forEach((item) => {
-                if (y > 275) {
-                    doc.addPage();
-                    y = 20;
-                    doc.setFont("helvetica", "bold");
-                    doc.setFillColor(240, 240, 240);
-                    doc.rect(14, y - 6, 182, 8, "F");
-                    doc.text("Asset Name", 16, y - 1);
-                    doc.text("Asset Type", 70, y - 1);
-                    doc.text("Status", 110, y - 1);
-                    doc.text("Purchase Date", 140, y - 1);
-                    doc.text("Warranty Expiry", 170, y - 1);
-                    doc.line(14, y + 2, 196, y + 2);
-                    doc.setFont("helvetica", "normal");
-                    y += 8;
-                }
-                const name = (item.assetName || item.title || "").substring(0, 25);
-                const type = (item.assetType || "").substring(0, 18);
-                const status = (item.status || "").substring(0, 15);
-                const purchaseDate = item.purchaseDate || "N/A";
-                const warrantyExpiry = item.warrantyExpiry || "N/A";
-                doc.text(name, 16, y);
-                doc.text(type, 70, y);
-                doc.text(status, 110, y);
-                doc.text(purchaseDate, 140, y);
-                doc.text(warrantyExpiry, 170, y);
-                doc.line(14, y + 2, 196, y + 2);
-                y += 8;
-            });
-            doc.save(`Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+            (0, ReportExportUtils_1.exportWarrantyReportToPDF)(this.state.items);
         };
         this._exportDetailedReportToExcel = (filteredItems) => {
-            const headers = ["Asset Name", "Asset Type", "Status", "Condition", "Purchase Date", "Assigned To", "Specifications"];
-            const csvRows = [headers.join(",")];
-            filteredItems.forEach(item => {
-                const name = (item.assetName || item.title || "").replace(/"/g, '""');
-                const type = (item.assetType || "").replace(/"/g, '""');
-                const status = (item.status || "").replace(/"/g, '""');
-                const condition = (item.condition || "").replace(/"/g, '""');
-                const purchaseDate = (item.purchaseDate || "").replace(/"/g, '""');
-                const assignedTo = (item.assignedTo || "N/A").replace(/"/g, '""');
-                const specs = (item.specifications || "").replace(/"/g, '""');
-                const row = [
-                    `"${name}"`,
-                    `"${type}"`,
-                    `"${status}"`,
-                    `"${condition}"`,
-                    `"${purchaseDate}"`,
-                    `"${assignedTo}"`,
-                    `"${specs}"`
-                ];
-                csvRows.push(row.join(","));
-            });
-            const csvContent = "\uFEFF" + csvRows.join("\n");
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement("a");
-            const url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", `Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.csv`);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            (0, ReportExportUtils_1.exportDetailedReportToExcel)(filteredItems);
         };
         this._exportDetailedReportToPDF = (filteredItems) => {
-            const doc = new jspdf_1.jsPDF();
-            // Header
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(18);
-            doc.text("Detailed Inventory Asset Report", 14, 20);
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(10);
-            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
-            doc.text(`Total Assets Displayed: ${filteredItems.length}`, 14, 34);
-            // Table Headers
-            doc.setFont("helvetica", "bold");
-            doc.setFillColor(240, 240, 240);
-            doc.rect(14, 42, 182, 8, "F");
-            doc.text("Asset Name", 16, 47);
-            doc.text("Asset Type", 65, 47);
-            doc.text("Status", 100, 47);
-            doc.text("Condition", 130, 47);
-            doc.text("Assigned To", 160, 47);
-            doc.setDrawColor(200, 200, 200);
-            doc.line(14, 50, 196, 50);
-            // Rows
-            doc.setFont("helvetica", "normal");
-            let y = 56;
-            filteredItems.forEach((item) => {
-                if (y > 275) {
-                    doc.addPage();
-                    y = 20;
-                    doc.setFont("helvetica", "bold");
-                    doc.setFillColor(240, 240, 240);
-                    doc.rect(14, y - 6, 182, 8, "F");
-                    doc.text("Asset Name", 16, y - 1);
-                    doc.text("Asset Type", 65, y - 1);
-                    doc.text("Status", 100, y - 1);
-                    doc.text("Condition", 130, y - 1);
-                    doc.text("Assigned To", 160, y - 1);
-                    doc.line(14, y + 2, 196, y + 2);
-                    doc.setFont("helvetica", "normal");
-                    y += 8;
-                }
-                const name = (item.assetName || item.title || "").substring(0, 23);
-                const type = (item.assetType || "").substring(0, 15);
-                const status = (item.status || "").substring(0, 14);
-                const condition = (item.condition || "N/A").substring(0, 14);
-                const assignedTo = (item.assignedTo || "N/A").substring(0, 18);
-                doc.text(name, 16, y);
-                doc.text(type, 65, y);
-                doc.text(status, 100, y);
-                doc.text(condition, 130, y);
-                doc.text(assignedTo, 160, y);
-                doc.line(14, y + 2, 196, y + 2);
-                y += 8;
-            });
-            doc.save(`Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.pdf`);
-        };
-        this._testListConnection = async (listTitle, internalTitle) => {
-            this.setState(prevState => ({
-                connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'testing' },
-                connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: '' }
-            }));
-            try {
-                const sp = (0, pnpjsConfig_1.getSP)();
-                // Try to load 1 item from list to test connection and permissions
-                await sp.web.lists.getByTitle(internalTitle).items.select("ID").top(1)();
-                this.setState(prevState => ({
-                    connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'connected' }
-                }));
-            }
-            catch (e) {
-                console.warn(`Connection test failed for list ${listTitle}`, e);
-                this.setState(prevState => ({
-                    connectionStatuses: { ...prevState.connectionStatuses, [listTitle]: 'error' },
-                    connectionErrorMessages: { ...prevState.connectionErrorMessages, [listTitle]: e.message || 'Verification failed. List might be missing or inaccessible.' }
-                }));
-            }
-        };
-        this._loadGroupUsers = async (groupName) => {
-            this.setState(prevState => ({
-                loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: true }
-            }));
-            try {
-                const sp = (0, pnpjsConfig_1.getSP)();
-                const users = await sp.web.siteGroups.getByName(groupName).users();
-                const userList = users.map((u) => u.Title || u.LoginName || 'Unknown User');
-                this.setState(prevState => ({
-                    groupUsersList: { ...prevState.groupUsersList, [groupName]: userList },
-                    loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
-                }));
-            }
-            catch (e) {
-                console.warn(`Failed to load members for group ${groupName}`, e);
-                this.setState(prevState => ({
-                    groupUsersList: { ...prevState.groupUsersList, [groupName]: ['Error retrieving group members'] },
-                    loadingGroupUsers: { ...prevState.loadingGroupUsers, [groupName]: false }
-                }));
-            }
-        };
-        this._renderRequestAnalysis = (request) => {
-            const reqAssetTitle = request.assetTitle || "";
-            const inStockItems = this.state.items.filter(item => (item.assetType || '').toLowerCase() === reqAssetTitle.toLowerCase() &&
-                (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock'));
-            const inStockCount = inStockItems.length;
-            const isSufficient = inStockCount >= request.quantity;
-            let progressPercent = 0.33;
-            let currentStepText = "Submitted & Pending Approval";
-            if (request.status === 'Approved') {
-                progressPercent = 0.66;
-                currentStepText = "Manager Approved - Awaiting Asset Assignment";
-                if (request.assetStatus === 'Approved') {
-                    progressPercent = 1.0;
-                    currentStepText = "Completed & Asset Assigned";
-                }
-            }
-            else if (request.status === 'Declined') {
-                progressPercent = 1.0;
-                currentStepText = "Declined by Manager";
-            }
-            return (React.createElement(react_1.Stack, { tokens: { childrenGap: 20 } },
-                React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
-                    React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Request Overview"),
-                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: { fontSize: '0.88rem' } },
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Request Key:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.requestKey)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Requested Asset:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.assetTitle)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Quantity:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.quantity)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Priority:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.priority)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Requester Name:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.requesterName)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Employee ID:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.employeeId || "N/A")),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Request Date:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, request.requestDate)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Request Status:"),
-                            " ",
-                            React.createElement("strong", { style: { color: request.status === 'Approved' ? '#16a34a' : request.status === 'Declined' ? '#dc2626' : '#ea580c' } }, request.status))),
-                    request.reason && (React.createElement("div", { style: { marginTop: '12px', fontSize: '0.88rem', padding: '8px 10px', backgroundColor: '#f9fafb', borderRadius: '4px', border: '1px solid #f3f4f6' } },
-                        React.createElement("span", { style: { color: '#6b7280', display: 'block', marginBottom: '2px' } }, "Reason for Request:"),
-                        React.createElement("span", { style: { color: '#374151' } }, request.reason))),
-                    request.managerResponse && (React.createElement("div", { style: { marginTop: '12px', fontSize: '0.88rem', padding: '8px 10px', backgroundColor: '#f0fdf4', borderRadius: '4px', border: '1px solid #dcfce7' } },
-                        React.createElement("span", { style: { color: '#15803d', display: 'block', marginBottom: '2px' } }, "Manager Response:"),
-                        React.createElement("span", { style: { color: '#166534' } }, request.managerResponse)))),
-                React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                    React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        React.createElement(react_1.Icon, { iconName: "BarChart4", style: { color: '#0078d4' } }),
-                        " Detailed Analysis"),
-                    React.createElement(react_1.Stack, { tokens: { childrenGap: 12 } },
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Inventory Availability Check:"),
-                            isSufficient ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Inventory Check Passed:"),
-                                " There are currently ",
-                                React.createElement("strong", null, inStockCount),
-                                " unit(s) of ",
-                                React.createElement("strong", null, reqAssetTitle),
-                                " in stock, which is sufficient to fulfill this request.")) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Inventory Warning:"),
-                                " Only ",
-                                React.createElement("strong", null, inStockCount),
-                                " unit(s) of ",
-                                React.createElement("strong", null, reqAssetTitle),
-                                " in stock. Procurement is required to fully complete this order."))),
-                        React.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Strategic Recommendation:"),
-                            React.createElement("div", { style: { padding: '10px', backgroundColor: '#fff', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '0.85rem', lineHeight: '1.4', color: '#334155' } }, request.status === 'Pending' ? (isSufficient ? (React.createElement("span", null,
-                                React.createElement("strong", null, "Recommended Action:"),
-                                " Approve the request. Sufficient inventory is available, allowing immediate serial number allocation.")) : (React.createElement("span", null,
-                                React.createElement("strong", null, "Recommended Action:"),
-                                " Hold approval or assign alternate model. Current stock (",
-                                inStockCount,
-                                ") is insufficient. Order replenishment units."))) : request.status === 'Approved' && request.assetStatus === 'Pending' ? (React.createElement("span", null,
-                                React.createElement("strong", null, "Recommended Action:"),
-                                " Proceed to the ",
-                                React.createElement("strong", null, "Asset Assignment Queue"),
-                                " tab to allocate one of the ",
-                                React.createElement("strong", null, inStockCount),
-                                " available ",
-                                reqAssetTitle,
-                                "s to ",
-                                request.requesterName,
-                                ".")) : request.status === 'Approved' && request.assetStatus === 'Approved' ? (React.createElement("span", null,
-                                React.createElement("strong", null, "Lifecycle Complete:"),
-                                " The asset has been successfully allocated. No further manager or admin action is required.")) : (React.createElement("span", null,
-                                React.createElement("strong", null, "Closed:"),
-                                " Request has been declined. Fulfilling alternate options or review arguments if appealed.")))),
-                        React.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Request Lifecycle Stage:"),
-                            React.createElement(react_1.ProgressIndicator, { label: currentStepText, percentComplete: progressPercent, styles: { root: { marginTop: '5px' } } }))))));
-        };
-        this._renderAssetAnalysis = (asset) => {
-            const lifecycleInfo = (0, WarrantyUtils_1.getAssetLifecycleInfo)(asset.purchaseDate);
-            const warrantyInfo = (0, WarrantyUtils_1.getWarrantyColorInfo)(asset.warrantyExpiry);
-            let conditionColor = '#16a34a';
-            let healthRating = "Excellent";
-            let healthIcon = "Heart";
-            if (asset.condition === 'Fair') {
-                conditionColor = '#ea580c';
-                healthRating = "Fair";
-                healthIcon = "IncidentTriangle";
-            }
-            else if (asset.condition === 'Poor' || asset.condition === 'Damaged') {
-                conditionColor = '#dc2626';
-                healthRating = "Critical Needs Replacement";
-                healthIcon = "Warning";
-            }
-            return (React.createElement(react_1.Stack, { tokens: { childrenGap: 20 } },
-                React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb' } },
-                    React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Asset Specifications"),
-                    React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGrid, style: { fontSize: '0.88rem' } },
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, asset.assetName || asset.title)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Serial Number:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, asset.serialNumber)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Asset Type:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, asset.assetType)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Current Status:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, asset.status)),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Condition:"),
-                            " ",
-                            React.createElement("strong", { style: { color: conditionColor } }, asset.condition || "New")),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Vendor:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, asset.vendor || "N/A")),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Purchase Date:"),
-                            " ",
-                            React.createElement("strong", { style: { color: '#111827' } }, asset.purchaseDate || "N/A")),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { color: '#6b7280' } }, "Warranty Expiry:"),
-                            " ",
-                            React.createElement("strong", { style: { color: warrantyInfo.textColor, backgroundColor: asset.warrantyExpiry ? warrantyInfo.bgColor : 'transparent', padding: asset.warrantyExpiry ? '2px 8px' : 0, borderRadius: '4px' } }, asset.warrantyExpiry || "N/A"))),
-                    asset.note && (React.createElement("div", { style: { marginTop: '12px', fontSize: '0.88rem', padding: '8px 10px', backgroundColor: '#f9fafb', borderRadius: '4px', border: '1px solid #f3f4f6' } },
-                        React.createElement("span", { style: { color: '#6b7280', display: 'block', marginBottom: '2px' } }, "Asset Notes:"),
-                        React.createElement("span", { style: { color: '#374151' } }, asset.note)))),
-                React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
-                    React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                        React.createElement(react_1.Icon, { iconName: "Heart", style: { color: conditionColor } }),
-                        " Health & Depreciation Analysis"),
-                    React.createElement(react_1.Stack, { tokens: { childrenGap: 12 } },
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px' } }, "Asset Lifecycle & EOL Date:"),
-                            React.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } },
-                                lifecycleInfo.statusText,
-                                ". Purchase Date: ",
-                                React.createElement("strong", null, lifecycleInfo.purchaseDateFormatted),
-                                " | Enterprise EOL Date: ",
-                                React.createElement("strong", null, lifecycleInfo.eolDateFormatted || 'N/A'),
-                                ".")),
-                        React.createElement("div", null,
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Warranty Expiry Evaluation:"),
-                            asset.warrantyExpiry ? (warrantyInfo.isExpired ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Expired:"),
-                                " Coverage ended on ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                "). Any future repair operations will incur full direct business costs.")) : warrantyInfo.isLessThan6Months ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Expiring Soon (< 6 months):"),
-                                " Expiration date is ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                "). High priority for hardware refresh/warranty renewal.")) : warrantyInfo.isLessThan1Year ? (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.warning, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Expiring (< 1 year):"),
-                                " Expiration date is ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                "). Plan for upcoming hardware lifecycle management.")) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Active (> 1 year):"),
-                                " Fully protected under manufacturer coverage until ",
-                                React.createElement("strong", null, warrantyInfo.formattedDate),
-                                " (",
-                                warrantyInfo.remainingText,
-                                ")."))) : (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info, styles: { root: { borderRadius: '6px' } } },
-                                React.createElement("strong", null, "Warranty Unknown:"),
-                                " No warranty expiration date has been registered for this asset."))),
-                        React.createElement("div", { style: { borderTop: '1px solid #e2e8f0', paddingTop: '10px' } },
-                            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px' } }, "Asset Physical Health:"),
-                            React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' } },
-                                React.createElement(react_1.Icon, { iconName: healthIcon, style: { fontSize: '18px', color: conditionColor } }),
-                                React.createElement("span", null,
-                                    "Health Classification: ",
-                                    React.createElement("strong", { style: { color: conditionColor } }, healthRating))),
-                            (asset.condition === 'Poor' || asset.condition === 'Damaged') && (React.createElement("p", { style: { margin: '8px 0 0 0', fontSize: '0.8rem', color: '#b91c1c', fontWeight: 'bold' } }, "Critical Action Recommendation: It is highly advised to retire this asset and issue a replacement request.")))))));
-        };
-        this._renderNotificationDetailsPanel = () => {
-            const { selectedNotification, isNotificationDetailsOpen, items, requests } = this.state;
-            if (!selectedNotification)
-                return null;
-            const notifId = selectedNotification.id || "";
-            let associatedRequest;
-            let associatedAsset;
-            if (notifId.startsWith("req-pending-")) {
-                const id = notifId.replace("req-pending-", "");
-                associatedRequest = requests.find(r => r.id === id);
-            }
-            else if (notifId.startsWith("req-resolved-")) {
-                const parts = notifId.split("-");
-                const id = parts[2];
-                associatedRequest = requests.find(r => r.id === id);
-            }
-            else if (notifId.startsWith("req-assign-admin-")) {
-                const id = notifId.replace("req-assign-admin-", "");
-                associatedRequest = requests.find(r => r.id === id);
-            }
-            else if (notifId.startsWith("asset-assigned-admin-")) {
-                const id = notifId.replace("asset-assigned-admin-", "");
-                associatedAsset = items.find(a => a.id === id);
-            }
-            else if (notifId.startsWith("asset-assigned-")) {
-                const id = notifId.replace("asset-assigned-", "");
-                associatedAsset = items.find(a => a.id === id);
-            }
-            else if (notifId.startsWith("asset-maintenance-")) {
-                const parts = notifId.replace("asset-maintenance-", "").split("-");
-                const id = parts[0];
-                associatedAsset = items.find(a => a.id === id);
-            }
-            return (React.createElement(react_1.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: () => this.setState({ isNotificationDetailsOpen: false }), type: react_1.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
-                React.createElement("div", { style: { marginTop: '10px' } },
-                    React.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                        React.createElement("strong", null, "Received:"),
-                        " ",
-                        selectedNotification.timestamp),
-                    React.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
-                        React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5' } }, selectedNotification.message)),
-                    associatedRequest && this._renderRequestAnalysis(associatedRequest),
-                    associatedAsset && this._renderAssetAnalysis(associatedAsset),
-                    !associatedRequest && !associatedAsset && (React.createElement("div", null,
-                        React.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, "System Alert Analysis"),
-                        React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "This is a general system notification. There is no direct database link to an active request or asset."))))));
+            (0, ReportExportUtils_1.exportDetailedReportToPDF)(filteredItems);
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -1468,119 +815,6 @@ class InventoryManagement extends React.Component {
                 this.setState({ requestActionInProgressId: undefined });
             }
         };
-        this._renderAdminAssignmentPanel = () => {
-            const request = this.state.selectedAdminRequest;
-            if (!request || !this.state.isAdminPanelOpen)
-                return null;
-            const requestedAssetTitle = request.assetTitle || "";
-            const matchingAssets = this.state.items.filter(item => (item.assetType || '').toLowerCase() === requestedAssetTitle.toLowerCase() &&
-                (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock'));
-            const matchingAssetOptions = matchingAssets.map(asset => ({
-                key: asset.id,
-                text: `${asset.assetName || asset.title} (SN: ${asset.serialNumber || 'N/A'})`
-            }));
-            const dropdownPlaceholder = matchingAssets.length > 0
-                ? "Select asset to assign..."
-                : "No assets of this type in stock";
-            const isBusy = this.state.requestActionInProgressId === request.id;
-            return (React.createElement(react_1.Panel, { isOpen: this.state.isAdminPanelOpen, onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }), type: react_1.PanelType.medium, headerText: `Request #${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
-                React.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
-                    React.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, "Asset request details"),
-                    React.createElement("div", { style: {
-                            backgroundColor: 'var(--surface-bg)',
-                            border: '1px solid rgba(128, 128, 128, 0.15)',
-                            borderRadius: '8px',
-                            padding: '20px',
-                            boxShadow: 'var(--card-shadow)'
-                        } },
-                        React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } },
-                            React.createElement("h4", { style: { margin: 0, fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)' } }, "Request Information"),
-                            React.createElement("span", { style: {
-                                    backgroundColor: '#fef3c7',
-                                    color: '#d97706',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 600,
-                                    padding: '3px 8px',
-                                    borderRadius: '4px'
-                                } }, "Pending Admin")),
-                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridGap16, style: { fontSize: '0.85rem' } },
-                            React.createElement("div", null,
-                                React.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '2px' } }, "Category"),
-                                React.createElement("strong", { style: { color: 'var(--text-main)' } }, request.assetTitle)),
-                            React.createElement("div", null,
-                                React.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '2px' } }, "Quantity"),
-                                React.createElement("strong", { style: { color: 'var(--text-main)' } }, request.quantity)),
-                            React.createElement("div", null,
-                                React.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '2px' } }, "Urgency"),
-                                React.createElement("strong", { style: { color: 'var(--text-main)' } }, request.priority || 'Medium')),
-                            React.createElement("div", null,
-                                React.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '2px' } }, "Submitted"),
-                                React.createElement("strong", { style: { color: 'var(--text-main)' } }, request.requestDate))),
-                        request.reason && (React.createElement("div", { style: { marginTop: '16px' } },
-                            React.createElement("span", { style: { color: 'var(--text-muted)', display: 'block', marginBottom: '4px', fontSize: '0.85rem' } }, "Justification"),
-                            React.createElement("div", { style: {
-                                    backgroundColor: this.props.isDarkTheme ? 'rgba(255, 255, 255, 0.03)' : '#f8fafc',
-                                    border: '1px solid rgba(128, 128, 128, 0.1)',
-                                    borderRadius: '6px',
-                                    padding: '12px',
-                                    fontSize: '0.85rem',
-                                    color: 'var(--text-main)',
-                                    lineHeight: 1.5
-                                } }, request.reason)))),
-                    React.createElement("div", { style: {
-                            backgroundColor: 'var(--surface-bg)',
-                            border: '1px solid rgba(128, 128, 128, 0.15)',
-                            borderRadius: '8px',
-                            padding: '20px',
-                            boxShadow: 'var(--card-shadow)'
-                        } },
-                        React.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, "Approval Trail"),
-                        React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem' } },
-                            React.createElement("div", { style: { display: 'flex', gap: '12px' } },
-                                React.createElement("div", { style: { display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                                    React.createElement("div", { style: { width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#10b981', border: '2px solid var(--surface-bg)', boxShadow: '0 0 0 2px #10b981' } }),
-                                    React.createElement("div", { style: { width: '2px', flexGrow: 1, backgroundColor: '#10b981', minHeight: '20px', marginTop: '4px' } })),
-                                React.createElement("div", null,
-                                    React.createElement("strong", { style: { color: 'var(--text-main)', display: 'block' } }, "Submitted"),
-                                    React.createElement("span", { style: { color: 'var(--text-muted)', fontSize: '0.75rem' } }, request.requestDate))),
-                            React.createElement("div", { style: { display: 'flex', gap: '12px' } },
-                                React.createElement("div", { style: { display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                                    React.createElement("div", { style: { width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#10b981', border: '2px solid var(--surface-bg)', boxShadow: '0 0 0 2px #10b981' } }),
-                                    React.createElement("div", { style: { width: '2px', flexGrow: 1, backgroundColor: 'rgba(128, 128, 128, 0.25)', minHeight: '20px', marginTop: '4px' } })),
-                                React.createElement("div", null,
-                                    React.createElement("strong", { style: { color: 'var(--text-main)', display: 'block' } }, "Manager Review"),
-                                    React.createElement("span", { style: { color: 'var(--text-muted)', fontStyle: 'italic', display: 'block', marginTop: '2px', fontSize: '0.8rem' } },
-                                        "\u201C",
-                                        request.managerResponse || 'Approved - valid business need',
-                                        "\u201D"))),
-                            React.createElement("div", { style: { display: 'flex', gap: '12px' } },
-                                React.createElement("div", { style: { display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                                    React.createElement("div", { style: { width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#3b82f6', border: '2px solid var(--surface-bg)', boxShadow: '0 0 0 2px #3b82f6' } })),
-                                React.createElement("div", null,
-                                    React.createElement("strong", { style: { color: 'var(--text-main)', display: 'block' } }, "Admin Assignment"),
-                                    React.createElement("span", { style: { color: 'var(--text-muted)', fontSize: '0.75rem' } }, "Awaiting Asset Allocation"))))),
-                    React.createElement("div", { style: {
-                            backgroundColor: this.props.isDarkTheme ? 'rgba(59, 130, 246, 0.05)' : 'rgba(37, 99, 235, 0.03)',
-                            border: '1px solid rgba(37, 99, 235, 0.15)',
-                            borderRadius: '8px',
-                            padding: '20px',
-                            boxShadow: 'var(--card-shadow)'
-                        } },
-                        React.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)' } }, "Admin Assignment"),
-                        React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
-                            React.createElement("div", null,
-                                React.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Assign Asset (optional)"),
-                                React.createElement(react_1.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: this.state.adminSelectedAssetId, onChange: this._onAdminAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
-                            React.createElement("div", null,
-                                React.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, "Comment"),
-                                React.createElement(react_1.TextField, { multiline: true, rows: 4, placeholder: "Add a comment explaining your decision...", value: this.state.adminComment, onChange: (_, value) => this.setState({ adminComment: value || '' }), disabled: isBusy })),
-                            React.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                                React.createElement(react_1.PrimaryButton, { text: isBusy ? "Processing..." : "Assign & Approve", onClick: this._handleAdminAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                                React.createElement(react_1.DefaultButton, { text: "Reject", onClick: this._handleAdminReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
-                                        root: { color: '#dc2626', borderColor: '#dc2626' },
-                                        rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
-                                    } })))))));
-        };
         let readIds = [];
         let clearedIds = [];
         let isAllCleared = false;
@@ -1595,6 +829,7 @@ class InventoryManagement extends React.Component {
         const activeName = props.userDisplayName;
         const activeEmail = props.userEmail;
         this.state = {
+            languageVersion: 0,
             items: [],
             employees: mockData_1.EMPLOYEES,
             requests: [],
@@ -1630,15 +865,11 @@ class InventoryManagement extends React.Component {
             isAdminPanelOpen: false,
             adminSelectedAssetId: undefined,
             adminComment: '',
-            sidebarCollapsed: false,
+            sidebarCollapsed: window.innerWidth <= 600,
             reportsSelectedTab: 'insights',
             reportsAssetTypeFilter: 'All',
             reportsStatusFilter: 'All',
-            configSelectedTab: 'operations',
-            connectionStatuses: {},
-            connectionErrorMessages: {},
-            groupUsersList: {},
-            loadingGroupUsers: {},
+            configSelectedTab: 'overview',
             workflowPopup: {
                 isOpen: false,
                 title: '',
@@ -1655,6 +886,7 @@ class InventoryManagement extends React.Component {
         };
     }
     async componentDidMount() {
+        this._unsubscribeLanguageChange = (0, LanguageSwitcherService_1.onLanguageChange)(this._onLanguageChanged);
         await this._resolveUserRole();
         await this._loadReturnRequests();
         // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
@@ -1685,6 +917,9 @@ class InventoryManagement extends React.Component {
             window.removeEventListener('spfx_mock_email_sent', this._handleMockEmailSent);
             window.removeEventListener('spfx_email_send_failed', this._handleEmailSendFailed);
         }
+        if (this._unsubscribeLanguageChange) {
+            this._unsubscribeLanguageChange();
+        }
     }
     render() {
         const { description, isDarkTheme, environmentMessage, hasTeamsContext } = this.props;
@@ -1707,30 +942,30 @@ class InventoryManagement extends React.Component {
         const visibleManagerRequests = filterRequests(managerQueueRequests);
         const notifications = this._getNotifications();
         const navItems = [
-            { key: 'Dashboard', text: 'Dashboard', icon: 'BarChart4', group: 'MAIN' },
-            { key: 'MyWorkspace', text: 'My Workspace', icon: 'Briefcase' },
+            { key: 'Dashboard', text: strings.Nav.Dashboard, icon: 'BarChart4', group: strings.Nav.GroupMain },
+            { key: 'MyWorkspace', text: strings.Nav.MyWorkspace, icon: 'Briefcase' },
             {
                 key: 'Notifications',
-                text: 'Notifications',
+                text: strings.Nav.Notifications,
                 icon: 'Ringer',
                 badge: notifications.filter(n => !n.isRead).length || undefined,
                 badgeColor: '#0078d4'
             },
-            { key: 'IncidentHistory', text: 'Incident History', icon: 'History' },
-            { key: 'ReplacementHistory', text: 'Replacement History', icon: 'Sync' },
+            { key: 'IncidentHistory', text: strings.Nav.IncidentHistory, icon: 'History' },
+            { key: 'ReplacementHistory', text: strings.Nav.ReplacementHistory, icon: 'Sync' },
             ...(isAdmin || isManager ? [
-                { key: 'Inventory', text: 'Inventory', icon: 'List', group: 'MANAGEMENT' }
+                { key: 'Inventory', text: strings.Nav.Inventory, icon: 'List', group: strings.Nav.GroupManagement }
             ] : []),
             ...(isManager ? [
-                { key: 'Approvals', text: 'Approvals', icon: 'DoubleChevronRight12', group: 'MANAGEMENT' }
+                { key: 'Approvals', text: strings.Nav.Approvals, icon: 'DoubleChevronRight12', group: strings.Nav.GroupManagement }
             ] : []),
             ...(isAdmin ? [
-                { key: 'AssetAssignmentQueue', text: 'Asset Assignment Queue', icon: 'Send', ...(isManager ? {} : { group: undefined }) }
+                { key: 'AssetAssignmentQueue', text: strings.Nav.AssetAssignmentQueue, icon: 'Send', ...(isManager ? {} : { group: undefined }) }
             ] : []),
             ...(isAdmin || isManager ? [
                 {
                     key: 'AssetReturns',
-                    text: 'Asset Returns',
+                    text: strings.Nav.AssetReturns,
                     icon: 'ReturnToSession',
                     badge: this.state.returnRequests.filter(r => {
                         if (isAdmin)
@@ -1743,46 +978,45 @@ class InventoryManagement extends React.Component {
                 }
             ] : []),
             ...(isAdmin ? [
-                { key: 'EventStream', text: 'Event Stream', icon: 'ActivityFeed', group: 'SYSTEM' },
-                { key: 'Users', text: 'Users', icon: 'People' },
-                { key: 'Reports', text: 'Reports', icon: 'ReportDocument' },
-                { key: 'Config', text: 'Config', icon: 'Settings' }
+                { key: 'EventStream', text: strings.Nav.EventStream, icon: 'ActivityFeed', group: strings.Nav.GroupSystem },
+                { key: 'Users', text: strings.Nav.Users, icon: 'People' },
+                { key: 'Reports', text: strings.Nav.Reports, icon: 'ReportDocument' },
+                { key: 'Config', text: strings.Nav.Config, icon: 'Settings' }
             ] : [])
         ];
         return (React.createElement("section", { className: `${InventoryManagement_module_scss_1.default.inventoryManagement} ${hasTeamsContext ? InventoryManagement_module_scss_1.default.teams : ''} ${isDarkTheme ? InventoryManagement_module_scss_1.default.dark : ''}` },
             React.createElement("div", { className: InventoryManagement_module_scss_1.default.mainContent },
                 React.createElement("div", { className: InventoryManagement_module_scss_1.default.heroSection },
                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.heroText },
-                        React.createElement("h2", null, "Inventory Management"),
-                        React.createElement("p", null,
-                            "Welcome back, ",
-                            (0, sp_lodash_subset_1.escape)(activeUserDisplayName),
-                            "!"),
+                        React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' } },
+                            React.createElement("h2", { style: { margin: 0 } }, strings.Hero.Title),
+                            React.createElement(react_1.Dropdown, { "aria-label": strings.Common.LanguageLabel, title: strings.Common.LanguageLabel, selectedKey: (0, LanguageSwitcherService_1.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: LanguageSwitcherService_1.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
+                                    root: { minWidth: 130 },
+                                    title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
+                                    caretDown: { color: '#ffffff' }
+                                } })),
+                        React.createElement("p", null, (0, LocalizationUtils_1.formatString)(strings.Hero.WelcomeBack, (0, sp_lodash_subset_1.escape)(activeUserDisplayName))),
                         React.createElement("p", { className: InventoryManagement_module_scss_1.default.smallText },
-                            "Role: ",
-                            React.createElement("strong", null, effectiveRole)),
+                            strings.Hero.RoleLabel.split('{0}')[0],
+                            React.createElement("strong", null, this._getRoleDisplayLabel(effectiveRole))),
                         React.createElement("span", { className: InventoryManagement_module_scss_1.default.smallText },
                             environmentMessage,
-                            " \u2022 Location: ",
-                            (0, sp_lodash_subset_1.escape)(description)),
-                        isAdmin && roleGroups.length > 0 && (React.createElement("p", { className: InventoryManagement_module_scss_1.default.smallText },
-                            "SharePoint Groups: ",
-                            (0, sp_lodash_subset_1.escape)(roleGroups.join(', '))))),
+                            " \u2022 ",
+                            (0, LocalizationUtils_1.formatString)(strings.Hero.LocationLabel, (0, sp_lodash_subset_1.escape)(description))),
+                        isAdmin && roleGroups.length > 0 && (React.createElement("p", { className: InventoryManagement_module_scss_1.default.smallText }, (0, LocalizationUtils_1.formatString)(strings.Hero.SharePointGroupsLabel, (0, sp_lodash_subset_1.escape)(roleGroups.join(', ')))))),
                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.welcomeDiagramContainer },
                         React.createElement(AssetLifecycleDiagram_1.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (React.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
-                    React.createElement("strong", null, "Error:"),
+                    React.createElement("strong", null, strings.Common.ErrorLabel),
                     " ",
                     this.state.errorMessage,
-                    React.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": "Dismiss error" }, "\u00D7"))),
+                    React.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": strings.Common.DismissError }, "\u00D7"))),
                 React.createElement("div", { className: InventoryManagement_module_scss_1.default.appLayoutContainer },
                     !this.state.sidebarCollapsed && (React.createElement("div", { className: InventoryManagement_module_scss_1.default.sidebarOverlay, onClick: () => this.setState({ sidebarCollapsed: true }), role: "presentation" })),
-                    React.createElement("div", { className: `${InventoryManagement_module_scss_1.default.sidebarContainer} ${this.state.sidebarCollapsed ? InventoryManagement_module_scss_1.default.sidebarCollapsed : ''}`, role: "navigation", "aria-label": "Main navigation" },
+                    React.createElement("div", { className: `${InventoryManagement_module_scss_1.default.sidebarContainer} ${this.state.sidebarCollapsed ? InventoryManagement_module_scss_1.default.sidebarCollapsed : ''}`, role: "navigation", "aria-label": strings.Nav.MainNavigation },
                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.navHeader },
-                            React.createElement("h4", null, "Navigation"),
-                            React.createElement("span", null,
-                                "Role: ",
-                                effectiveRole)),
+                            React.createElement("h4", null, strings.Nav.Header),
+                            React.createElement("span", null, (0, LocalizationUtils_1.formatString)(strings.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
                         navItems.map((nav, index) => {
                             const isActive = this.state.selectedTabKey === nav.key;
                             const showGroupLabel = nav.group && (index === 0 || navItems[index - 1]?.group !== nav.group);
@@ -1798,19 +1032,19 @@ class InventoryManagement extends React.Component {
                                     React.createElement("span", { className: InventoryManagement_module_scss_1.default.navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (React.createElement("span", { className: InventoryManagement_module_scss_1.default.navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
-                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? 'Expand navigation' : 'Collapse navigation', onKeyDown: (e) => {
+                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? strings.Nav.Expand : strings.Nav.Collapse, onKeyDown: (e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
                                     e.preventDefault();
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
                             React.createElement(react_1.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
-                            React.createElement("span", { className: InventoryManagement_module_scss_1.default.collapseText }, this.state.sidebarCollapsed ? 'Expand' : 'Collapse'))),
+                            React.createElement("span", { className: InventoryManagement_module_scss_1.default.collapseText }, this.state.sidebarCollapsed ? strings.Nav.Expand : strings.Nav.Collapse))),
                     React.createElement("div", { className: `${InventoryManagement_module_scss_1.default.card} ${InventoryManagement_module_scss_1.default.contentContainer}` },
                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.mobileNavHeader },
-                            React.createElement("button", { className: InventoryManagement_module_scss_1.default.mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": "Toggle navigation menu" },
+                            React.createElement("button", { className: InventoryManagement_module_scss_1.default.mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": strings.Nav.ToggleNavigation },
                                 React.createElement(react_1.Icon, { iconName: "GlobalNavButton" })),
-                            React.createElement("span", { className: InventoryManagement_module_scss_1.default.mobileNavTitle }, "Inventory Management")),
+                            React.createElement("span", { className: InventoryManagement_module_scss_1.default.mobileNavTitle }, strings.Hero.Title)),
                         (() => {
                             const dashboardState = {
                                 items: isAdmin || isManager ? items : myAssets,
@@ -1858,160 +1092,90 @@ class InventoryManagement extends React.Component {
                                 case 'Dashboard':
                                     return (React.createElement(pages_1.DashboardPage, { state: dashboardState, actions: dashboardActions }));
                                 case 'MyWorkspace':
-                                    return (React.createElement("div", null,
-                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                            React.createElement("h3", null, "My Workspace")),
-                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Manage your assigned assets and track your requests."),
-                                        React.createElement(react_1.Pivot, { "aria-label": "My Workspace Tabs" },
-                                            React.createElement(react_1.PivotItem, { headerText: "Assets" },
-                                                React.createElement("div", { style: { marginTop: '20px' } },
-                                                    React.createElement("div", { style: { marginBottom: '15px' } },
-                                                        React.createElement(react_1.PrimaryButton, { text: "Request Asset", onClick: () => this.setState({ isRequestFormOpen: true }), iconProps: { iconName: 'Send' } })),
-                                                    React.createElement(MyAssignedAssetsView_1.MyAssignedAssetsView, { items: myAssets, onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }), onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }), onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' }) }))),
-                                            React.createElement(react_1.PivotItem, { headerText: "Requests" },
-                                                React.createElement("div", { style: { marginTop: '20px' } },
-                                                    React.createElement(MyRequestsView_1.MyRequestsView, { requests: myRequests, returnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || '')) }))))));
+                                    return (React.createElement(pages_1.MyWorkspacePage, { state: {
+                                            myAssets,
+                                            myRequests,
+                                            myReturnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || ''))
+                                        }, actions: {
+                                            onRequestAsset: () => this.setState({ isRequestFormOpen: true }),
+                                            onReturnAsset: (item) => this.setState({ selectedAssetForReturn: item, isReturnFormOpen: true }),
+                                            onRaiseIncident: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true }),
+                                            onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })
+                                        } }));
                                 case 'Notifications':
-                                    return (React.createElement(NotificationCenter_1.NotificationCenter, { notifications: notifications, onMarkAsRead: this._markNotificationAsRead, onMarkAllAsRead: this._markAllNotificationsAsRead, onClearNotification: this._clearNotification, onClearAllNotifications: this._clearAllNotifications, onNotificationAction: this._handleNotificationAction, isAllCleared: this.state.isAllNotificationsCleared }));
+                                    return (React.createElement(pages_1.NotificationsPage, { state: {
+                                            notifications,
+                                            isAllNotificationsCleared: this.state.isAllNotificationsCleared
+                                        }, actions: {
+                                            onMarkAsRead: this._markNotificationAsRead,
+                                            onMarkAllAsRead: this._markAllNotificationsAsRead,
+                                            onClearNotification: this._clearNotification,
+                                            onClearAllNotifications: this._clearAllNotifications,
+                                            onNotificationAction: this._handleNotificationAction
+                                        } }));
                                 case 'IncidentHistory':
                                     return (React.createElement(pages_1.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':
-                                    return (React.createElement("div", null,
-                                        React.createElement(ReplacementHistory_1.ReplacementHistory, { ...this.props, userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, userRole: effectiveRole, setIsLoading: (loading) => this.setState({ loading }) })));
+                                    return (React.createElement(pages_1.ReplacementHistoryPage, { ...this.props, state: {
+                                            userDisplayName: activeUserDisplayName,
+                                            userEmail: activeUserEmail,
+                                            userRole: effectiveRole
+                                        }, actions: {
+                                            setIsLoading: (loading) => this.setState({ loading })
+                                        } }));
                                 case 'Inventory':
                                     return (isAdmin || isManager) ? (React.createElement(pages_1.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
                                 case 'Approvals':
-                                    return isManager ? (React.createElement("div", null,
-                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                            React.createElement("h3", null, "Request Approvals & Assignment Queue")),
-                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Track and manage all asset requests efficiently."),
-                                        React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                        React.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            React.createElement("h4", { style: { marginBottom: '10px' } }, "Request Approval Distribution"),
-                                            React.createElement("div", { style: { height: '250px', position: 'relative' } },
-                                                React.createElement(react_chartjs_2_1.Pie, { data: {
-                                                        labels: Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                            const status = req.status || 'Pending';
-                                                            acc[status] = (acc[status] || 0) + 1;
-                                                            return acc;
-                                                        }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                            const status = req.status || 'Pending';
-                                                            acc[status] = (acc[status] || 0) + 1;
-                                                            return acc;
-                                                        }, {})) : ['No data'],
-                                                        datasets: [
-                                                            {
-                                                                label: 'Requests by Status',
-                                                                data: Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                                    const status = req.status || 'Pending';
-                                                                    acc[status] = (acc[status] || 0) + 1;
-                                                                    return acc;
-                                                                }, {})).length ? Object.keys(managerQueueRequests.reduce((acc, req) => {
-                                                                    const status = req.status || 'Pending';
-                                                                    acc[status] = (acc[status] || 0) + 1;
-                                                                    return acc;
-                                                                }, {})).map(k => (managerQueueRequests.reduce((acc, req) => {
-                                                                    const status = req.status || 'Pending';
-                                                                    acc[status] = (acc[status] || 0) + 1;
-                                                                    return acc;
-                                                                }, {}))[k]) : [1],
-                                                                backgroundColor: [
-                                                                    'rgba(255, 206, 86, 0.6)',
-                                                                    'rgba(75, 192, 192, 0.6)',
-                                                                    'rgba(255, 99, 132, 0.6)',
-                                                                    'rgba(153, 102, 255, 0.6)',
-                                                                    'rgba(54, 162, 235, 0.6)',
-                                                                ],
-                                                                borderColor: [
-                                                                    'rgba(255, 206, 86, 1)',
-                                                                    'rgba(75, 192, 192, 1)',
-                                                                    'rgba(255, 99, 132, 1)',
-                                                                    'rgba(153, 102, 255, 1)',
-                                                                    'rgba(54, 162, 235, 1)',
-                                                                ],
-                                                                borderWidth: 1,
-                                                            },
-                                                        ],
-                                                    }, options: { maintainAspectRatio: false } }))),
-                                        React.createElement(RequestList_1.RequestList, { items: visibleManagerRequests, inventoryItems: this.state.items, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: this._onApproveRequest, onRejectRequest: this._onRejectRequest, actionInProgressId: requestActionInProgressId }))) : null;
+                                    return isManager ? (React.createElement(pages_1.ApprovalsPage, { state: {
+                                            requestSearchId,
+                                            managerQueueRequests,
+                                            visibleManagerRequests,
+                                            items: this.state.items,
+                                            requestActionInProgressId
+                                        }, actions: {
+                                            onSearchChange: (value) => this.setState({ requestSearchId: value }),
+                                            onApproveRequest: this._onApproveRequest,
+                                            onRejectRequest: this._onRejectRequest
+                                        } })) : null;
                                 case 'AssetAssignmentQueue':
-                                    return isAdmin ? (React.createElement("div", null,
-                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                            React.createElement("h3", null, "Approved Requests for Asset Assignment")),
-                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Only approved requests are shown here so assets can be assigned."),
-                                        React.createElement(react_1.TextField, { label: "Search by Request ID", placeholder: "e.g. REQ-000123", value: requestSearchId, onChange: (_, value) => this.setState({ requestSearchId: value || '' }), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-                                        React.createElement(RequestList_1.RequestList, { items: visibleAdminRequests, inventoryItems: this.state.items, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' }), actionInProgressId: requestActionInProgressId }))) : null;
+                                    return isAdmin ? (React.createElement(pages_1.AssetAssignmentQueuePage, { state: {
+                                            requestSearchId,
+                                            visibleAdminRequests,
+                                            items: this.state.items,
+                                            requestActionInProgressId
+                                        }, actions: {
+                                            onSearchChange: (value) => this.setState({ requestSearchId: value }),
+                                            onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })
+                                        } })) : null;
                                 case 'AssetReturns':
-                                    return isAdmin || isManager ? (React.createElement("div", null,
-                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                            React.createElement("h3", null, "Asset Returns Registry")),
-                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Review and complete employee asset return requests, and verify physical hardware check-ins."),
-                                        React.createElement(ReturnRequestList_1.ReturnRequestList, { items: this.state.returnRequests, isAdmin: isAdmin, isManager: isManager, onUpdateStatus: this._onUpdateReturnRequestStatus, loading: this.state.returnRequestsLoading }))) : null;
+                                    return isAdmin || isManager ? (React.createElement(pages_1.AssetReturnsPage, { state: {
+                                            returnRequests: this.state.returnRequests,
+                                            returnRequestsLoading: this.state.returnRequestsLoading,
+                                            isAdmin,
+                                            isManager
+                                        }, actions: {
+                                            onUpdateStatus: this._onUpdateReturnRequestStatus
+                                        } })) : null;
                                 case 'EventStream':
-                                    return isAdmin ? (React.createElement(EventStream_1.EventStream, { logs: auditLogs, loading: auditLogsLoading, errorMessage: undefined, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, refreshTrigger: this.state.auditLogsRefreshTrigger })) : null;
+                                    return isAdmin ? (React.createElement(pages_1.EventStreamPage, { state: {
+                                            auditLogs,
+                                            auditLogsLoading,
+                                            effectiveRole,
+                                            activeUserDisplayName,
+                                            auditLogsRefreshTrigger: this.state.auditLogsRefreshTrigger
+                                        } })) : null;
                                 case 'Users':
-                                    return isAdmin ? (React.createElement("div", null,
-                                        React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                            React.createElement("h3", null, "User Administration")),
-                                        React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin-only area. Manage SharePoint groups and user onboarding from your site permissions."),
-                                        React.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
-                                            React.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, "SharePoint Group Management"),
-                                            React.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups."),
-                                            React.createElement(react_1.PrimaryButton, { text: "Manage Site Permissions", iconProps: { iconName: 'Permissions' }, onClick: () => {
-                                                    const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
-                                                    window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
-                                                } })),
-                                        React.createElement("h4", { style: { marginBottom: '15px' } }, "Employee Directory & Asset Ownership"),
-                                        React.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-                                            React.createElement(react_1.DetailsList, { items: this.state.employees.map(emp => {
-                                                    const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
-                                                    const assignedItems = items.filter(i => this._isAssetAssignedToCurrentUser(i, realName));
-                                                    const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
-                                                    return {
-                                                        ...emp,
-                                                        assignedAssets: assignedItems.length,
-                                                        assignedItems: assignedItems,
-                                                        assetTypes: assetTypes || 'None'
-                                                    };
-                                                }), columns: [
-                                                    { key: 'col1', name: 'Name', fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
-                                                    { key: 'col2', name: 'Email', fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
-                                                    { key: 'col3', name: 'Department', fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
-                                                    { key: 'col4', name: 'Job Title', fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
-                                                    {
-                                                        key: 'col5',
-                                                        name: 'Assigned Assets',
-                                                        fieldName: 'assignedAssets',
-                                                        minWidth: 100,
-                                                        maxWidth: 120,
-                                                        isResizable: true,
-                                                        onRender: (item) => (React.createElement("span", { style: {
-                                                                backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
-                                                                color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
-                                                                padding: '4px 10px',
-                                                                borderRadius: '9999px',
-                                                                fontWeight: 'bold'
-                                                            } }, item.assignedAssets))
-                                                    },
-                                                    { key: 'col6', name: 'Asset Types', fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                                                ], setKey: "usersList", layoutMode: react_1.DetailsListLayoutMode.justified, selectionMode: react_1.SelectionMode.none, onRenderRow: (rowProps) => {
-                                                    if (!rowProps)
-                                                        return null;
-                                                    const isExpanded = this.state.expandedUserEmail === rowProps.item.email;
-                                                    return (React.createElement("div", null,
-                                                        React.createElement("div", { onClick: () => this.setState({ expandedUserEmail: isExpanded ? undefined : rowProps.item.email }), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                                                            React.createElement(react_1.DetailsRow, { ...rowProps })),
-                                                        isExpanded && (React.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
-                                                            React.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
-                                                                "Assets assigned to ",
-                                                                rowProps.item.name),
-                                                            rowProps.item.assignedItems.length > 0 ? (React.createElement(InventoryList_1.InventoryList, { items: rowProps.item.assignedItems, isAdmin: false })) : (React.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem', margin: 0 } }, "This user currently has no assets assigned to them."))))));
-                                                } })),
-                                        React.createElement("div", { style: { marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' } },
-                                            React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
-                                                React.createElement("h3", null, "Employee Asset Tracking")),
-                                            React.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, "Admin and Manager area. Select an employee to view all assets currently assigned to them."),
-                                            React.createElement(AssetTracking_1.AssetTracking, { items: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail })))) : null;
+                                    return isAdmin ? (React.createElement(pages_1.UsersPage, { state: {
+                                            employees: this.state.employees,
+                                            items,
+                                            activeUserDisplayName,
+                                            effectiveRole,
+                                            activeUserEmail,
+                                            expandedUserEmail: this.state.expandedUserEmail
+                                        }, actions: {
+                                            onToggleExpandUser: (email) => this.setState({ expandedUserEmail: email }),
+                                            isAssetAssignedToCurrentUser: this._isAssetAssignedToCurrentUser
+                                        } })) : null;
                                 case 'Reports':
                                     return isAdmin ? (React.createElement(pages_1.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
                                 case 'Config': {
@@ -2020,17 +1184,11 @@ class InventoryManagement extends React.Component {
                                         syncInProgress: this.state.syncInProgress,
                                         syncMessage: this.state.syncMessage,
                                         syncMessageType: this.state.syncMessageType,
-                                        diagnosticInfo: this.state.diagnosticInfo,
-                                        connectionStatuses: this.state.connectionStatuses,
-                                        connectionErrorMessages: this.state.connectionErrorMessages,
-                                        loadingGroupUsers: this.state.loadingGroupUsers,
-                                        groupUsersList: this.state.groupUsersList
+                                        diagnosticInfo: this.state.diagnosticInfo
                                     };
                                     const configActions = {
                                         onSyncAssignedAssets: this._onSyncAssignedAssets,
                                         onRunDiagnostics: this._onRunDiagnostics,
-                                        onTestListConnection: this._testListConnection,
-                                        onLoadGroupUsers: this._loadGroupUsers,
                                         onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
                                         onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
                                     };
@@ -2046,36 +1204,58 @@ class InventoryManagement extends React.Component {
                     this.setState({
                         workflowPopup: {
                             isOpen: true,
-                            title: 'Incident Ticket Logged',
-                            stage: 'Incident Management: Logged',
+                            title: strings.IncidentSuccessPopup.Title,
+                            stage: strings.IncidentSuccessPopup.Stage,
                             type: 'warning',
-                            message: `Incident ticket for "${details.assetName}" (${details.incidentType}) has been logged and assigned to Admin IT support.`,
+                            message: (0, LocalizationUtils_1.formatString)(strings.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
                             details: {
                                 assetTitle: details.assetName,
                                 requesterName: details.requesterName,
-                                status: 'Open Ticket',
+                                status: strings.IncidentSuccessPopup.StatusOpenTicket,
                                 date: new Date().toISOString().split('T')[0]
                             }
                         }
                     });
                 } })),
-            this._renderNotificationDetailsPanel(),
-            this._renderAdminAssignmentPanel(),
+            React.createElement(pages_1.NotificationDetailsPanel, { state: {
+                    selectedNotification: this.state.selectedNotification,
+                    isNotificationDetailsOpen: this.state.isNotificationDetailsOpen,
+                    items: this.state.items,
+                    requests: this.state.requests
+                }, actions: {
+                    onDismiss: () => this.setState({ isNotificationDetailsOpen: false })
+                } }),
+            React.createElement(pages_1.AdminAssignmentPanel, { state: {
+                    selectedAdminRequest: this.state.selectedAdminRequest,
+                    isAdminPanelOpen: this.state.isAdminPanelOpen,
+                    items: this.state.items,
+                    requestActionInProgressId: this.state.requestActionInProgressId,
+                    adminSelectedAssetId: this.state.adminSelectedAssetId,
+                    adminComment: this.state.adminComment,
+                    isDarkTheme
+                }, actions: {
+                    onDismiss: () => this.setState({ isAdminPanelOpen: false, selectedAdminRequest: undefined }),
+                    onAssetChange: this._onAdminAssetChange,
+                    onCommentChange: (value) => this.setState({ adminComment: value }),
+                    onAssignAndApprove: this._handleAdminAssignAndApprove,
+                    onReject: this._handleAdminReject
+                } }),
             React.createElement(ReturnAssetForm_1.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
             React.createElement(WorkflowPopup_1.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
-            React.createElement(react_1.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: react_1.PanelType.medium, headerText: "\uD83D\uDCEC Outgoing Email Notification (Developer Preview)", closeButtonAriaLabel: "Close", onRenderFooterContent: () => (React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
-                    React.createElement(react_1.PrimaryButton, { text: this.state.isSendingMockEmail ? "Sending..." : "Send Email", onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
-                    React.createElement(react_1.DefaultButton, { text: "Close", onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (React.createElement(react_1.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
-                React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You can review, modify the recipient(s) or subject, and send this email to test delivery."),
-                React.createElement(react_1.TextField, { label: "Recipients (comma separated)", value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
-                React.createElement(react_1.TextField, { label: "Subject", value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
-                this.state.mockEmailSendSuccess && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success }, "Email has been successfully dispatched to the Microsoft Graph / SharePoint mail queue!")),
+            React.createElement(react_1.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: react_1.PanelType.medium, headerText: strings.MockEmailPanel.HeaderText, closeButtonAriaLabel: strings.Common.Close, onRenderFooterContent: () => (React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
+                    React.createElement(react_1.PrimaryButton, { text: this.state.isSendingMockEmail ? strings.MockEmailPanel.ButtonSending : strings.MockEmailPanel.ButtonSendEmail, onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
+                    React.createElement(react_1.DefaultButton, { text: strings.MockEmailPanel.ButtonClose, onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (React.createElement(react_1.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
+                React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, strings.MockEmailPanel.InfoText),
+                React.createElement(react_1.TextField, { label: strings.MockEmailPanel.LabelRecipients, value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
+                React.createElement(react_1.TextField, { label: strings.MockEmailPanel.LabelSubject, value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
+                this.state.mockEmailSendSuccess && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success }, strings.MockEmailPanel.SuccessText)),
                 this.state.mockEmailSendError && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error },
-                    "Failed to send email: ",
+                    strings.MockEmailPanel.ErrorPrefix,
+                    " ",
                     this.state.mockEmailSendError)),
-                this.state.isSendingMockEmail && (React.createElement(react_1.ProgressIndicator, { label: "Dispatched email transaction in progress..." })),
+                this.state.isSendingMockEmail && (React.createElement(react_1.ProgressIndicator, { label: strings.MockEmailPanel.ProgressLabel })),
                 React.createElement("div", { style: { marginTop: '10px' } },
-                    React.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, "Email Content Preview:"),
+                    React.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, strings.MockEmailPanel.PreviewLabel),
                     React.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
     }
 }

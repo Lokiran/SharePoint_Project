@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { INotification } from '../models/INotification';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
 import { 
   Pivot, 
   PivotItem, 
@@ -25,6 +27,20 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
   const [filter, setFilter] = React.useState<string>('All');
   const containerStackTokens: IStackTokens = { childrenGap: 15 };
   const itemStackTokens: IStackTokens = { childrenGap: 10 };
+
+  const getFilterCategoryLabel = (filterKey: string): string => {
+    switch (filterKey) {
+      case 'Request':
+        return strings.Notifications.CategoryRequests;
+      case 'Assignment':
+        return strings.Notifications.CategoryAssignments;
+      case 'Audit':
+        return strings.Notifications.CategoryAudits;
+      case 'All':
+      default:
+        return strings.Notifications.CategoryAll;
+    }
+  };
 
   const handleFilterClick = (item?: PivotItem) => {
     if (item) {
@@ -81,30 +97,30 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
       {/* Header controls */}
       <Stack horizontal horizontalAlign="space-between" verticalAlign="center" styles={{ root: { flexWrap: 'wrap', gap: '10px' } }}>
         <Pivot 
-          aria-label="Filter Notifications" 
+          aria-label={strings.Notifications.FilterAriaLabel}
           selectedKey={filter} 
           onLinkClick={handleFilterClick}
           styles={{ root: { marginBottom: 0 } }}
         >
-          <PivotItem headerText="All" itemKey="All" />
-          <PivotItem headerText="Requests" itemKey="Request" />
-          <PivotItem headerText="Assignments" itemKey="Assignment" />
-          <PivotItem headerText="System Alerts" itemKey="Audit" />
+          <PivotItem headerText={strings.Notifications.TabAll} itemKey="All" />
+          <PivotItem headerText={strings.Notifications.TabRequests} itemKey="Request" />
+          <PivotItem headerText={strings.Notifications.TabAssignments} itemKey="Assignment" />
+          <PivotItem headerText={strings.Notifications.TabSystemAlerts} itemKey="Audit" />
         </Pivot>
 
         <Stack horizontal tokens={{ childrenGap: 8 }}>
           {unreadCount > 0 && (
-            <DefaultButton 
-              iconProps={{ iconName: 'CheckMark' }} 
-              text="Mark all as read" 
-              onClick={props.onMarkAllAsRead} 
+            <DefaultButton
+              iconProps={{ iconName: 'CheckMark' }}
+              text={strings.Notifications.MarkAllAsRead}
+              onClick={props.onMarkAllAsRead}
               styles={{ root: { borderRadius: '6px' } }}
             />
           )}
           {filteredNotifications.length > 0 && (
-            <DefaultButton 
-              iconProps={{ iconName: 'Clear' }} 
-              text="Clear filtered" 
+            <DefaultButton
+              iconProps={{ iconName: 'Clear' }}
+              text={strings.Notifications.ClearFiltered}
               onClick={() => props.onClearAllNotifications(filter)} 
               styles={{ root: { borderRadius: '6px', color: '#b91c1c' } }}
             />
@@ -128,9 +144,9 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
             textAlign: 'center'
           }}>
             <Icon iconName="Ringer" style={{ fontSize: '48px', color: '#9ca3af', marginBottom: '15px' }} />
-            <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>All Caught Up!</h4>
+            <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>{strings.Notifications.AllCaughtUpTitle}</h4>
             <p style={{ margin: 0, color: '#6b7280', fontSize: '0.85rem' }}>
-              No notifications found in the &quot;{filter === 'All' ? 'All' : filter + 's'}&quot; category.
+              {formatString(strings.Notifications.EmptyStateMessage, getFilterCategoryLabel(filter))}
             </p>
           </div>
         ) : (
@@ -195,8 +211,8 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
 
                   <Stack horizontal tokens={{ childrenGap: 8 }}>
                     {/* View action button */}
-                    <PrimaryButton 
-                      text="View details" 
+                    <PrimaryButton
+                      text={strings.Notifications.ViewDetails}
                       onClick={() => props.onNotificationAction(notif.actionLink, notif.id)}
                       styles={{ 
                         root: { 
@@ -210,8 +226,8 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
                     
                     {/* Mark read button if unread */}
                     {!notif.isRead && (
-                      <DefaultButton 
-                        text="Mark as read" 
+                      <DefaultButton
+                        text={strings.Notifications.MarkAsRead}
                         onClick={() => props.onMarkAsRead(notif.id)}
                         styles={{ 
                           root: { 
@@ -227,10 +243,10 @@ export const NotificationCenter: React.FC<INotificationCenterProps> = (props) =>
                 </div>
 
                 {/* Individual Dismiss Button */}
-                <IconButton 
-                  iconProps={{ iconName: 'Cancel' }} 
-                  title="Dismiss notification" 
-                  ariaLabel="Dismiss notification"
+                <IconButton
+                  iconProps={{ iconName: 'Cancel' }}
+                  title={strings.Notifications.DismissNotification}
+                  ariaLabel={strings.Notifications.DismissNotification}
                   onClick={() => props.onClearNotification(notif.id)}
                   styles={{ 
                     root: { 

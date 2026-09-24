@@ -10,6 +10,9 @@ import {
 } from '@fluentui/react/lib/DetailsList';
 import { PrimaryButton, DefaultButton, Panel, PanelType } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
+import { getAssetRequestStatusDisplayText } from '../utils/RequestStatusUtils';
 
 export interface IRequestListProps {
   items: IRequest[];
@@ -47,10 +50,12 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     });
   }, [props.items]);
 
+  const getStatusDisplayText = getAssetRequestStatusDisplayText;
+
   const columns: IColumn[] = [
     {
       key: 'columnRequestKey',
-      name: 'Request ID',
+      name: strings.Columns.RequestId,
       fieldName: 'requestKey',
       minWidth: 90,
       maxWidth: 125,
@@ -58,7 +63,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     },
     {
       key: 'columnEmployeeName',
-      name: 'Employee Name',
+      name: strings.Columns.EmployeeName,
       fieldName: 'requesterName',
       minWidth: 100,
       maxWidth: 150,
@@ -66,16 +71,16 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     },
     {
       key: 'columnManagerName',
-      name: "Manager's Name",
+      name: strings.Columns.ManagerName,
       fieldName: 'managerName',
       minWidth: 110,
       maxWidth: 140,
       isResizable: true,
-      onRender: (item: IRequest) => item.managerName || 'N/A'
+      onRender: (item: IRequest) => item.managerName || strings.Common.NotAvailable
     },
     {
       key: 'columnAssetType',
-      name: 'Asset Type',
+      name: strings.Columns.AssetType,
       fieldName: 'assetTitle',
       minWidth: 100,
       maxWidth: 120,
@@ -83,7 +88,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     },
     {
       key: 'columnPriority',
-      name: 'Priority',
+      name: strings.Columns.Priority,
       fieldName: 'priority',
       minWidth: 80,
       maxWidth: 100,
@@ -113,49 +118,52 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
         );
       }
     },
-    ...(props.hideStatusColumn ? [] : [{ 
-      key: 'column6', 
-      name: props.statusColumnLabel || 'Status', 
-      fieldName: props.statusField || 'status', 
-      minWidth: 80, 
-      maxWidth: 100, 
+    ...(props.hideStatusColumn ? [] : [{
+      key: 'column6',
+      name: props.statusColumnLabel || strings.Columns.Status,
+      fieldName: props.statusField || 'status',
+      minWidth: 80,
+      maxWidth: 100,
       isResizable: true,
       onRender: (item: IRequest) => {
-        let val: string = item[props.statusField || 'status'] || 'Pending Manager Approval';
-        if (val === 'Pending') val = 'Pending Manager Approval';
+        const val: string = item[props.statusField || 'status'] || 'Pending';
 
         let backgroundColor = '#fef3c7'; // default pending (yellow)
         let textColor = '#92400e';
-        
+        let displayVal = strings.RequestList.StatusPendingManagerApproval;
+
         if (val === 'Approved by Manager' || val === 'Approved') {
           backgroundColor = '#e0f2fe';
           textColor = '#0369a1';
+          displayVal = strings.Dropdowns.AssetRequestStatus.ApprovedByManager;
         } else if (val === 'Asset Assigned') {
           backgroundColor = '#dcfce7';
           textColor = '#166534';
+          displayVal = strings.Dropdowns.AssetRequestStatus.AssetAssigned;
         } else if (val === 'Rejected' || val === 'Declined') {
           backgroundColor = '#fee2e2';
           textColor = '#991b1b';
+          displayVal = strings.Dropdowns.AssetRequestStatus.Rejected;
         }
-        
+
         return (
-          <span style={{ 
-            backgroundColor, 
-            color: textColor, 
-            padding: '4px 12px', 
-            borderRadius: '9999px', 
-            fontSize: '0.75rem', 
+          <span style={{
+            backgroundColor,
+            color: textColor,
+            padding: '4px 12px',
+            borderRadius: '9999px',
+            fontSize: '0.75rem',
             fontWeight: 600,
             display: 'inline-block'
           }}>
-            {val}
+            {displayVal}
           </span>
         );
       }
     } as IColumn]),
     {
       key: 'columnManagerComment',
-      name: 'Manager Comment',
+      name: strings.Columns.ManagerComment,
       fieldName: 'managerResponse',
       minWidth: 150,
       maxWidth: 220,
@@ -172,7 +180,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     },
     ...(props.canApproveAsset ? [{
       key: 'columnAssetStatus',
-      name: 'Asset Status',
+      name: strings.Columns.AssetStatus,
       fieldName: 'assetStatus',
       minWidth: 200,
       maxWidth: 260,
@@ -181,6 +189,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
         const value = item.assetStatus || 'Pending';
         const isApproved = value.toLowerCase().includes('approv');
         const isBusy = props.actionInProgressId === item.id;
+        const displayValue = isApproved ? strings.Dropdowns.AuditLogStatus.Approved : strings.Dropdowns.AuditLogStatus.Pending;
 
         return (
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'nowrap' }}>
@@ -193,11 +202,11 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
               fontWeight: 600,
               display: 'inline-block'
             }}>
-              {value}
+              {displayValue}
             </span>
             {!isApproved && (
               <PrimaryButton
-                text="Review & Assign"
+                text={strings.RequestList.ButtonReviewAssign}
                 onClick={() => {
                   if (props.onSelectRequestForAssignment) {
                     props.onSelectRequestForAssignment(item);
@@ -218,7 +227,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     ...(props.showResponseColumns ? [
       {
         key: 'columnAdminResponse',
-        name: 'Admin Response',
+        name: strings.Columns.AdminResponse,
         fieldName: 'assetStatus',
         minWidth: 140,
         maxWidth: 200,
@@ -226,23 +235,23 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
         onRender: (item: IRequest) => {
           const managerStatus = (item.status || '').toLowerCase();
           if (managerStatus.includes('pending')) {
-            return <span style={{ color: '#92400e', fontStyle: 'italic' }}>Waiting on Manager</span>;
+            return <span style={{ color: '#92400e', fontStyle: 'italic' }}>{strings.RequestList.AdminResponseWaitingOnManager}</span>;
           }
           if (managerStatus === 'declined' || managerStatus === 'rejected') {
-            return <span style={{ color: '#991b1b', fontStyle: 'italic' }}>N/A (Rejected)</span>;
+            return <span style={{ color: '#991b1b', fontStyle: 'italic' }}>{strings.RequestList.AdminResponseRejected}</span>;
           }
           const isApproved = (item.assetStatus || '').toLowerCase().includes('approv') || managerStatus === 'asset assigned';
           return isApproved ? (
-            <span style={{ color: '#166534', fontWeight: 600 }}>Asset Allocated</span>
+            <span style={{ color: '#166534', fontWeight: 600 }}>{strings.RequestList.AdminResponseAllocated}</span>
           ) : (
-            <span style={{ color: '#92400e', fontWeight: 600 }}>Pending Admin Approval</span>
+            <span style={{ color: '#92400e', fontWeight: 600 }}>{strings.RequestList.AdminResponsePendingApproval}</span>
           );
         }
       }
     ] as IColumn[] : []),
     ...(props.canApproveReject ? [{
       key: 'column8',
-      name: 'Actions',
+      name: strings.Columns.Actions,
       fieldName: 'actions',
       minWidth: 220,
       maxWidth: 260,
@@ -252,24 +261,24 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
         const isBusy = props.actionInProgressId === item.id;
 
         if (!isPending) {
-          return <span style={{ color: 'var(--text-muted)' }}>No action</span>;
+          return <span style={{ color: 'var(--text-muted)' }}>{strings.RequestList.NoAction}</span>;
         }
 
         return (
           <div style={{ display: 'flex', gap: '8px' }}>
             <PrimaryButton
-              text="Approve"
+              text={strings.Common.Approve}
               onClick={() => props.onApproveRequest && props.onApproveRequest(item)}
               disabled={isBusy}
             />
             <PrimaryButton
-              text="Reject"
+              text={strings.Common.Reject}
               onClick={() => {
                 if (!props.onRejectRequest) {
                   return;
                 }
 
-                const rejectionReason = window.prompt('Enter rejection reason for this request:');
+                const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
                 if (!rejectionReason || !rejectionReason.trim()) {
                   return;
                 }
@@ -288,13 +297,13 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
     } as IColumn] : []),
     {
       key: 'columnViewDetails',
-      name: 'Details',
+      name: strings.Common.Details,
       minWidth: 70,
       maxWidth: 90,
       isResizable: true,
       onRender: (item: IRequest) => (
         <DefaultButton
-          text="View"
+          text={strings.Common.View}
           onClick={() => {
             setSelectedRequestForDetails(item);
             setIsDetailsPanelOpen(true);
@@ -310,7 +319,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
   return (
     <div style={{ marginTop: '10px' }}>
       {sortedItems.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No asset requests found.</p>
+        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>{strings.RequestList.EmptyState}</p>
       ) : (
         <div className={styles.tableWrapper}>
           <DetailsList
@@ -331,11 +340,11 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
             setSelectedRequestForDetails(null);
           }}
           type={PanelType.medium}
-          headerText={`Request Details: ${selectedRequestForDetails.requestKey || 'Asset Request'}`}
-          closeButtonAriaLabel="Close"
+          headerText={formatString(strings.RequestList.DetailsHeaderPrefix, selectedRequestForDetails.requestKey || strings.RequestList.DetailsHeaderFallback)}
+          closeButtonAriaLabel={strings.Common.Close}
         >
           <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' }}>
-            
+
             {/* Request Info Card */}
             <div style={{
               backgroundColor: 'var(--surface-bg, #ffffff)',
@@ -345,39 +354,39 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
               boxShadow: 'var(--card-shadow)'
             }}>
               <h4 style={{ margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' }}>
-                Request Information
+                {strings.RequestList.SectionRequestInformation}
               </h4>
               <div className={styles.responsiveGridGap16} style={{ fontSize: '0.85rem' }}>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Request ID</span>
-                  <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.requestKey || 'N/A'}</strong>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.RequestId}</span>
+                  <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.requestKey || strings.Common.NotAvailable}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Request Date</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.RequestList.LabelRequestDate}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.requestDate}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Requester</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.WorkflowPopup.LabelRequester}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.requesterName}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Employee ID</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.RequestForm.LabelEmployeeId}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.employeeId || '-'}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Manager&apos;s Name</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.ManagerName}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.managerName || '-'}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Asset Category</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.RequestList.LabelAssetCategory}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.assetTitle}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Quantity</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.RequestForm.LabelQuantity}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.quantity}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>Priority</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' }}>{strings.Columns.Priority}</span>
                   <strong style={{ color: 'var(--text-main, #333333)' }}>{selectedRequestForDetails.priority || 'Medium'}</strong>
                 </div>
               </div>
@@ -392,7 +401,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                 padding: '20px',
                 boxShadow: 'var(--card-shadow)'
               }}>
-                <span style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' }}>Justification / Reason</span>
+                <span style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' }}>{strings.RequestList.SectionJustification}</span>
                 <div style={{
                   backgroundColor: 'rgba(128, 128, 128, 0.05)',
                   border: '1px solid rgba(128, 128, 128, 0.1)',
@@ -415,7 +424,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
               padding: '20px',
               boxShadow: 'var(--card-shadow)'
             }}>
-              <span style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' }}>Manager Approval</span>
+              <span style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' }}>{strings.RequestList.SectionManagerApproval}</span>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <span style={{
                   backgroundColor: (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? '#dcfce7' : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? '#fee2e2' : '#fef3c7',
@@ -425,7 +434,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                   fontSize: '0.75rem',
                   fontWeight: 600
                 }}>
-                  {selectedRequestForDetails.status || 'Pending'}
+                  {getStatusDisplayText(selectedRequestForDetails.status)}
                 </span>
                 {selectedRequestForDetails.managerResponse && (
                   <span style={{ fontSize: '0.85rem', color: 'var(--text-muted, #666666)' }}>
@@ -443,18 +452,18 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
               padding: '20px',
               boxShadow: 'var(--card-shadow)'
             }}>
-              <span style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' }}>Admin Allocation</span>
+              <span style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' }}>{strings.RequestList.SectionAdminAllocation}</span>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-main, #333333)' }}>
                 {(selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? (
                   ((selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') || selectedRequestForDetails.status === 'Asset Assigned') ? (
-                    <span style={{ color: '#166534', fontWeight: 600 }}>Asset Allocated & Dispatched ✓</span>
+                    <span style={{ color: '#166534', fontWeight: 600 }}>{strings.RequestList.AllocationAllocated}</span>
                   ) : (
-                    <span style={{ color: '#92400e', fontWeight: 600 }}>Pending physical asset allocation by system administrator</span>
+                    <span style={{ color: '#92400e', fontWeight: 600 }}>{strings.RequestList.AllocationPendingAdmin}</span>
                   )
                 ) : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? (
-                  <span style={{ color: '#991b1b' }}>Not applicable (Request was rejected by manager)</span>
+                  <span style={{ color: '#991b1b' }}>{strings.RequestList.AllocationNotApplicable}</span>
                 ) : (
-                  <span style={{ color: 'var(--text-muted, #666666)', fontStyle: 'italic' }}>Pending manager approval first</span>
+                  <span style={{ color: 'var(--text-muted, #666666)', fontStyle: 'italic' }}>{strings.RequestList.AllocationPendingManager}</span>
                 )}
               </div>
             </div>
@@ -470,7 +479,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                 paddingTop: '15px'
               }}>
                 <PrimaryButton
-                  text={props.actionInProgressId === selectedRequestForDetails.id ? "Processing..." : "Approve"}
+                  text={props.actionInProgressId === selectedRequestForDetails.id ? strings.Common.Processing : strings.Common.Approve}
                   onClick={() => {
                     if (props.onApproveRequest) {
                       props.onApproveRequest(selectedRequestForDetails)
@@ -484,10 +493,10 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                   disabled={props.actionInProgressId === selectedRequestForDetails.id}
                 />
                 <DefaultButton
-                  text="Reject"
+                  text={strings.Common.Reject}
                   onClick={() => {
                     if (!props.onRejectRequest) return;
-                    const rejectionReason = window.prompt('Enter rejection reason for this request:');
+                    const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
                     if (!rejectionReason || !rejectionReason.trim()) return;
                     
                     props.onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
@@ -516,7 +525,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                 paddingTop: '15px'
               }}>
                 <PrimaryButton
-                  text="Review & Assign"
+                  text={strings.RequestList.ButtonReviewAssign}
                   onClick={() => {
                     setIsDetailsPanelOpen(false);
                     setSelectedRequestForDetails(null);
@@ -531,7 +540,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
 
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
               <DefaultButton
-                text="Close"
+                text={strings.Common.Close}
                 onClick={() => {
                   setIsDetailsPanelOpen(false);
                   setSelectedRequestForDetails(null);

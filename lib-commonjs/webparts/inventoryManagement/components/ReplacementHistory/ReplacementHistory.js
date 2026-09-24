@@ -9,6 +9,8 @@ const jspdf_1 = require("jspdf");
 const ReplacementHistory_module_scss_1 = tslib_1.__importDefault(require("./ReplacementHistory.module.scss"));
 const IncidentService_1 = require("../../services/IncidentService");
 const DropdownConstants_1 = require("../../constants/DropdownConstants");
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../../utils/LocalizationUtils");
 const ReplacementHistory = (props) => {
     const [replacements, setReplacements] = (0, react_1.useState)([]);
     const [filteredReplacements, setFilteredReplacements] = (0, react_1.useState)([]);
@@ -151,22 +153,22 @@ const ReplacementHistory = (props) => {
             doc.setTextColor(255, 255, 255);
             doc.setFont("helvetica", "bold");
             doc.setFontSize(16);
-            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
+            doc.text(strings.IncidentHistory.PdfCompanyHeader, 14, 16);
             // Document Title
             doc.setTextColor(51, 65, 85); // Slate 700
             doc.setFontSize(14);
-            doc.text("ASSET REPLACEMENT REPORT", 14, 38);
+            doc.text(strings.IncidentHistory.PdfReplacementReportTitle, 14, 38);
             // Metadata
             doc.setFont("helvetica", "normal");
             doc.setFontSize(9);
-            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
+            doc.text((0, LocalizationUtils_1.formatString)(strings.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
             // Separator line
             doc.setDrawColor(226, 232, 240); // Slate 200
             doc.line(14, 48, 196, 48);
             // Specifications Section Title
             doc.setFont("helvetica", "bold");
             doc.setFontSize(11);
-            doc.text("REPLACEMENT SPECIFICATIONS", 14, 58);
+            doc.text(strings.IncidentHistory.PdfReplacementSpecs, 14, 58);
             // Render Specifications Key-Value grid
             let y = 68;
             const printField = (label, value) => {
@@ -180,30 +182,30 @@ const ReplacementHistory = (props) => {
                 doc.text(value, 55, y);
                 y += 8;
             };
-            printField("Replacement ID:", rep.incidentId);
-            printField("Asset Name:", rep.assetName);
-            printField("Type:", "Replacement Request");
-            printField("Priority:", rep.priority || "Medium");
-            printField("Current Status:", rep.status || "Open");
-            printField("Reported Date:", new Date(rep.reportedDate).toLocaleString());
+            printField(strings.IncidentHistory.PdfReplacementIdLabel, rep.incidentId);
+            printField(strings.IncidentHistory.PdfAssetNameLabel, rep.assetName);
+            printField(strings.IncidentHistory.PdfTypeLabel, strings.IncidentHistory.ReplacementRequestType);
+            printField(strings.IncidentHistory.PdfPriorityLabel, rep.priority || "Medium");
+            printField(strings.IncidentHistory.PdfCurrentStatusLabel, rep.status || "Open");
+            printField(strings.IncidentHistory.PdfReportedDateLabel, new Date(rep.reportedDate).toLocaleString());
             if (rep.assignedTo) {
-                printField("Assigned To:", rep.assignedTo);
+                printField(strings.IncidentHistory.PdfAssignedToLabel, rep.assignedTo);
             }
             if (rep.resolvedDate) {
-                printField("Resolved Date:", new Date(rep.resolvedDate).toLocaleString());
+                printField(strings.IncidentHistory.PdfResolvedDateLabel, new Date(rep.resolvedDate).toLocaleString());
             }
             // Reason Title
             y += 4;
             doc.setFont("helvetica", "bold");
             doc.setFontSize(11);
             doc.setTextColor(51, 65, 85);
-            doc.text("REPLACEMENT REASON & DETAILS", 14, y);
+            doc.text(strings.IncidentHistory.PdfReplacementReasonTitle, 14, y);
             y += 6;
             // Reason Box
             doc.setFont("helvetica", "normal");
             doc.setFontSize(9.5);
             doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(rep.issueDescription || "No reason provided.", 170);
+            const splitDesc = doc.splitTextToSize(rep.issueDescription || strings.IncidentHistory.PdfNoReason, 170);
             const descHeight = splitDesc.length * 6 + 10;
             // Draw background box
             doc.setFillColor(248, 250, 252); // slate 50
@@ -224,7 +226,7 @@ const ReplacementHistory = (props) => {
                 doc.setFont("helvetica", "bold");
                 doc.setFontSize(11);
                 doc.setTextColor(51, 65, 85);
-                doc.text("RESOLUTION SUMMARY", 14, y);
+                doc.text(strings.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
                 y += 6;
                 doc.setFont("helvetica", "normal");
                 doc.setFontSize(9.5);
@@ -254,7 +256,7 @@ const ReplacementHistory = (props) => {
     const columns = [
         {
             key: 'replacementId',
-            name: 'Replacement ID',
+            name: strings.IncidentHistory.ColReplacementId,
             fieldName: 'incidentId',
             minWidth: 100,
             maxWidth: 130,
@@ -263,7 +265,7 @@ const ReplacementHistory = (props) => {
         },
         {
             key: 'assetName',
-            name: 'Asset',
+            name: strings.IncidentHistory.ColAsset,
             fieldName: 'assetName',
             minWidth: 120,
             maxWidth: 180,
@@ -272,16 +274,16 @@ const ReplacementHistory = (props) => {
         },
         {
             key: 'issueType',
-            name: 'Type',
+            name: strings.IncidentHistory.ColType,
             fieldName: 'issueType',
             minWidth: 120,
             maxWidth: 150,
             isResizable: true,
-            onRender: () => React.createElement(react_2.Text, null, "Replacement Request"),
+            onRender: () => React.createElement(react_2.Text, null, strings.IncidentHistory.ReplacementRequestType),
         },
         {
             key: 'priority',
-            name: 'Priority',
+            name: strings.IncidentHistory.ColPriority,
             fieldName: 'priority',
             minWidth: 80,
             maxWidth: 100,
@@ -292,7 +294,7 @@ const ReplacementHistory = (props) => {
         },
         {
             key: 'status',
-            name: 'Status',
+            name: strings.IncidentHistory.ColStatus,
             fieldName: 'status',
             minWidth: 90,
             maxWidth: 120,
@@ -303,7 +305,7 @@ const ReplacementHistory = (props) => {
         },
         {
             key: 'reportedDate',
-            name: 'Reported',
+            name: strings.IncidentHistory.ColReported,
             fieldName: 'reportedDate',
             minWidth: 100,
             maxWidth: 130,
@@ -321,37 +323,29 @@ const ReplacementHistory = (props) => {
         },
         {
             key: 'actions',
-            name: 'Actions',
+            name: strings.IncidentHistory.ColActions,
             minWidth: 160,
             maxWidth: 220,
             isResizable: true,
             onRender: (item) => (React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                React.createElement(react_2.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonView, onClick: () => handleViewDetails(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }),
-                React.createElement(react_2.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonDownload, onClick: () => handleDownloadReport(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }))),
         },
     ];
     const statusFilterOptions = [
-        { key: '', text: 'All Status' },
-        { key: 'Open', text: 'Open' },
-        { key: 'In Progress', text: 'In Progress' },
-        { key: 'Resolved', text: 'Resolved' },
-        { key: 'Closed', text: 'Closed' },
+        { key: '', text: strings.IncidentHistory.AllStatusOption },
+        ...DropdownConstants_1.INCIDENT_STATUS_OPTIONS
     ];
     return (React.createElement("div", { style: { marginTop: '20px' }, className: ReplacementHistory_module_scss_1.default.replacementHistory },
         React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
             React.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                React.createElement(react_2.SearchBox, { placeholder: "Search by replacement ID, asset name...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                React.createElement(react_2.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
-                "Showing ",
-                filteredReplacements.length,
-                " of ",
-                replacements.length,
-                " replacement requests"),
+                React.createElement(react_2.SearchBox, { placeholder: strings.IncidentHistory.SearchReplacementsPlaceholder, value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                React.createElement(react_2.Dropdown, { placeholder: strings.IncidentHistory.FilterByStatusPlaceholder, options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } }, (0, LocalizationUtils_1.formatString)(strings.IncidentHistory.ShowingReplacements, filteredReplacements.length, replacements.length)),
             filteredReplacements.length > 0 ? (React.createElement(react_2.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: react_2.DetailsListLayoutMode.justified, selectionMode: react_2.SelectionMode.none })) : (React.createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',
@@ -363,62 +357,64 @@ const ReplacementHistory = (props) => {
                     padding: '30px'
                 } },
                 React.createElement(react_2.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, "No replacement requests found.")))),
-        React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: "Replacement Request Details", closeButtonAriaLabel: "Close" }, selectedReplacement && (React.createElement("div", { style: { marginTop: '10px' } },
+                React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, strings.IncidentHistory.NoReplacementsFound)))),
+        React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: strings.IncidentHistory.ReplacementDetailsTitle, closeButtonAriaLabel: strings.Common.Close }, selectedReplacement && (React.createElement("div", { style: { marginTop: '10px' } },
             React.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                React.createElement("strong", null, "Reported:"),
+                React.createElement("strong", null, strings.IncidentHistory.ReportedLabel),
                 " ",
                 new Date(selectedReplacement.reportedDate).toLocaleString()),
             React.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedReplacement.issueDescription)),
             React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
-                React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Replacement Specifications"),
+                React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, strings.IncidentHistory.ReplacementSpecificationsTitle),
                 React.createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' } },
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Replacement ID:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelReplacementId),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.incidentId)),
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelAssetName),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assetName)),
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Type:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelType),
                         " ",
-                        React.createElement("strong", { style: { color: '#111827' } }, "Replacement Request")),
+                        React.createElement("strong", { style: { color: '#111827' } }, strings.IncidentHistory.ReplacementRequestType)),
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Priority:"),
+                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, strings.IncidentHistory.LabelPriority),
                         React.createElement("span", { style: getPriorityBadgeStyle(selectedReplacement.priority) }, selectedReplacement.priority || 'Medium')),
                     props.userRole === 'Admin' ? (React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelStatus),
                         React.createElement(react_2.Dropdown, { selectedKey: selectedReplacement.status || 'Open', options: DropdownConstants_1.INCIDENT_STATUS_OPTIONS, onChange: (ev, option) => handleStatusChange(selectedReplacement, option?.key), styles: { root: { width: 120 } } }))) : (React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Status:"),
+                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, strings.IncidentHistory.LabelStatus),
                         React.createElement("span", { style: getStatusBadgeStyle(selectedReplacement.status) }, selectedReplacement.status || 'Open'))),
                     selectedReplacement.assignedTo && (React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Assigned To:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelAssignedTo),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assignedTo))))),
             props.userRole === 'Admin' && (selectedReplacement.status === 'Resolved' || selectedReplacement.status === 'Closed') ? (React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
                     React.createElement(react_2.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
-                    " Update Resolution Details"),
+                    " ",
+                    strings.IncidentHistory.UpdateResolutionTitle),
                 React.createElement(react_2.Stack, { tokens: { childrenGap: 10 } },
                     selectedReplacement.resolvedDate && (React.createElement("div", { style: { fontSize: '0.88rem' } },
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelResolvedDate),
                         ' ',
                         React.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
-                    React.createElement(react_2.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this replacement was completed..." }),
-                    React.createElement(react_2.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    React.createElement(react_2.TextField, { label: strings.IncidentHistory.ResolutionSummaryLabel, multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: strings.IncidentHistory.ResolutionSummaryPlaceholderReplacement }),
+                    React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.SaveResolutionButton, onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
                     React.createElement(react_2.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
-                    " Resolution Details"),
+                    " ",
+                    strings.IncidentHistory.ResolutionDetailsTitle),
                 React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
                     selectedReplacement.resolvedDate && (React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelResolvedDate),
                         ' ',
                         React.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
                     React.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
-                        React.createElement("strong", null, "Resolution Summary:"),
+                        React.createElement("strong", null, strings.IncidentHistory.ResolutionSummaryPrefix),
                         " ",
                         selectedReplacement.resolution))))))))));
 };

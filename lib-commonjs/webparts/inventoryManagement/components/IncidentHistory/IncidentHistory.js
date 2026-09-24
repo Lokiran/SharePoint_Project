@@ -9,6 +9,8 @@ const jspdf_1 = require("jspdf");
 const IncidentService_1 = require("../../services/IncidentService");
 const DropdownConstants_1 = require("../../constants/DropdownConstants");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../InventoryManagement.module.scss"));
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../../utils/LocalizationUtils");
 const IncidentHistory = (props) => {
     const [incidents, setIncidents] = (0, react_1.useState)([]);
     const [filteredIncidents, setFilteredIncidents] = (0, react_1.useState)([]);
@@ -18,7 +20,7 @@ const IncidentHistory = (props) => {
     const [showDetailPanel, setShowDetailPanel] = (0, react_1.useState)(false);
     const [tempResolution, setTempResolution] = (0, react_1.useState)('');
     const [toastNotification, setToastNotification] = (0, react_1.useState)(null);
-    const triggerToast = (message, title = 'Incident Updated') => {
+    const triggerToast = (message, title = strings.IncidentHistory.ToastIncidentUpdatedTitle) => {
         setToastNotification({ message, title });
         setTimeout(() => setToastNotification(null), 4000);
     };
@@ -121,7 +123,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
-            triggerToast(`Status for incident ${incident.incidentId || '#' + incident.id} updated to '${newStatus}'.`, 'Status Updated');
+            triggerToast((0, LocalizationUtils_1.formatString)(strings.IncidentHistory.ToastStatusMessage, incident.incidentId || '#' + incident.id, newStatus), strings.IncidentHistory.ToastStatusUpdatedTitle);
         }
         catch (error) {
             console.error('Error updating status:', error);
@@ -141,7 +143,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
-            triggerToast(`Resolution summary saved for incident ${incident.incidentId || '#' + incident.id}.`, 'Resolution Saved');
+            triggerToast((0, LocalizationUtils_1.formatString)(strings.IncidentHistory.ToastResolutionMessage, incident.incidentId || '#' + incident.id), strings.IncidentHistory.ToastResolutionSavedTitle);
         }
         catch (error) {
             console.error('Error saving resolution:', error);
@@ -159,22 +161,22 @@ const IncidentHistory = (props) => {
             doc.setTextColor(255, 255, 255);
             doc.setFont("helvetica", "bold");
             doc.setFontSize(16);
-            doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
+            doc.text(strings.IncidentHistory.PdfCompanyHeader, 14, 16);
             // Document Title
             doc.setTextColor(51, 65, 85); // Slate 700
             doc.setFontSize(14);
-            doc.text("INCIDENT REPORT", 14, 38);
+            doc.text(strings.IncidentHistory.PdfIncidentReportTitle, 14, 38);
             // Metadata
             doc.setFont("helvetica", "normal");
             doc.setFontSize(9);
-            doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
+            doc.text((0, LocalizationUtils_1.formatString)(strings.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
             // Separator line
             doc.setDrawColor(226, 232, 240); // Slate 200
             doc.line(14, 48, 196, 48);
             // Specifications Section Title
             doc.setFont("helvetica", "bold");
             doc.setFontSize(11);
-            doc.text("INCIDENT SPECIFICATIONS", 14, 58);
+            doc.text(strings.IncidentHistory.PdfIncidentSpecs, 14, 58);
             // Render Specifications Key-Value grid
             let y = 68;
             const printField = (label, value) => {
@@ -188,30 +190,30 @@ const IncidentHistory = (props) => {
                 doc.text(value, 55, y);
                 y += 8;
             };
-            printField("Incident ID:", incident.incidentId);
-            printField("Asset Name:", incident.assetName);
-            printField("Issue Type:", incident.issueType);
-            printField("Priority:", incident.priority || "Medium");
-            printField("Current Status:", incident.status || "Open");
-            printField("Reported Date:", new Date(incident.reportedDate).toLocaleString());
+            printField(strings.IncidentHistory.PdfIncidentIdLabel, incident.incidentId);
+            printField(strings.IncidentHistory.PdfAssetNameLabel, incident.assetName);
+            printField(strings.IncidentHistory.PdfIssueTypeLabel, incident.issueType);
+            printField(strings.IncidentHistory.PdfPriorityLabel, incident.priority || "Medium");
+            printField(strings.IncidentHistory.PdfCurrentStatusLabel, incident.status || "Open");
+            printField(strings.IncidentHistory.PdfReportedDateLabel, new Date(incident.reportedDate).toLocaleString());
             if (incident.assignedTo) {
-                printField("Assigned To:", incident.assignedTo);
+                printField(strings.IncidentHistory.PdfAssignedToLabel, incident.assignedTo);
             }
             if (incident.resolvedDate) {
-                printField("Resolved Date:", new Date(incident.resolvedDate).toLocaleString());
+                printField(strings.IncidentHistory.PdfResolvedDateLabel, new Date(incident.resolvedDate).toLocaleString());
             }
             // Issue Description Title
             y += 4;
             doc.setFont("helvetica", "bold");
             doc.setFontSize(11);
             doc.setTextColor(51, 65, 85);
-            doc.text("ISSUE DESCRIPTION", 14, y);
+            doc.text(strings.IncidentHistory.PdfIssueDescriptionTitle, 14, y);
             y += 6;
             // Issue Description Box
             doc.setFont("helvetica", "normal");
             doc.setFontSize(9.5);
             doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(incident.issueDescription || "No description provided.", 170);
+            const splitDesc = doc.splitTextToSize(incident.issueDescription || strings.IncidentHistory.PdfNoDescription, 170);
             const descHeight = splitDesc.length * 6 + 10;
             // Draw background box
             doc.setFillColor(248, 250, 252); // slate 50
@@ -232,7 +234,7 @@ const IncidentHistory = (props) => {
                 doc.setFont("helvetica", "bold");
                 doc.setFontSize(11);
                 doc.setTextColor(51, 65, 85);
-                doc.text("RESOLUTION SUMMARY", 14, y);
+                doc.text(strings.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
                 y += 6;
                 doc.setFont("helvetica", "normal");
                 doc.setFontSize(9.5);
@@ -262,7 +264,7 @@ const IncidentHistory = (props) => {
     const columns = [
         {
             key: 'incidentId',
-            name: 'Incident ID',
+            name: strings.IncidentHistory.ColIncidentId,
             fieldName: 'incidentId',
             minWidth: 90,
             maxWidth: 120,
@@ -271,7 +273,7 @@ const IncidentHistory = (props) => {
         },
         {
             key: 'assetName',
-            name: 'Asset',
+            name: strings.IncidentHistory.ColAsset,
             fieldName: 'assetName',
             minWidth: 100,
             maxWidth: 150,
@@ -280,7 +282,7 @@ const IncidentHistory = (props) => {
         },
         {
             key: 'issueType',
-            name: 'Issue Type',
+            name: strings.IncidentHistory.ColIssueType,
             fieldName: 'issueType',
             minWidth: 100,
             maxWidth: 130,
@@ -289,7 +291,7 @@ const IncidentHistory = (props) => {
         },
         {
             key: 'priority',
-            name: 'Priority',
+            name: strings.IncidentHistory.ColPriority,
             fieldName: 'priority',
             minWidth: 80,
             maxWidth: 100,
@@ -300,7 +302,7 @@ const IncidentHistory = (props) => {
         },
         {
             key: 'status',
-            name: 'Status',
+            name: strings.IncidentHistory.ColStatus,
             fieldName: 'status',
             minWidth: 90,
             maxWidth: 120,
@@ -311,7 +313,7 @@ const IncidentHistory = (props) => {
         },
         {
             key: 'reportedDate',
-            name: 'Reported',
+            name: strings.IncidentHistory.ColReported,
             fieldName: 'reportedDate',
             minWidth: 90,
             maxWidth: 120,
@@ -329,34 +331,29 @@ const IncidentHistory = (props) => {
         },
         {
             key: 'actions',
-            name: 'Actions',
+            name: strings.IncidentHistory.ColActions,
             minWidth: 160,
             maxWidth: 220,
             isResizable: true,
             onRender: (item) => (React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                React.createElement(react_2.PrimaryButton, { text: "View", onClick: () => handleViewDetails(item), styles: {
+                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonView, onClick: () => handleViewDetails(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }),
-                React.createElement(react_2.PrimaryButton, { text: "Download", onClick: () => handleDownloadReport(item), styles: {
+                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonDownload, onClick: () => handleDownloadReport(item), styles: {
                         root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
                     } }))),
         },
     ];
     const statusFilterOptions = [
-        { key: '', text: 'All Status' },
+        { key: '', text: strings.IncidentHistory.AllStatusOption },
         ...DropdownConstants_1.INCIDENT_STATUS_OPTIONS
     ];
     return (React.createElement("div", { style: { marginTop: '20px' } },
         React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
             React.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                React.createElement(react_2.SearchBox, { placeholder: "Search by incident ID, asset name, or issue type...", value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                React.createElement(react_2.Dropdown, { placeholder: "Filter by status", options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } },
-                "Showing ",
-                filteredIncidents.length,
-                " of ",
-                incidents.length,
-                " incidents"),
+                React.createElement(react_2.SearchBox, { placeholder: strings.IncidentHistory.SearchIncidentsPlaceholder, value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
+                React.createElement(react_2.Dropdown, { placeholder: strings.IncidentHistory.FilterByStatusPlaceholder, options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
+            React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } }, (0, LocalizationUtils_1.formatString)(strings.IncidentHistory.ShowingIncidents, filteredIncidents.length, incidents.length)),
             filteredIncidents.length > 0 ? (React.createElement(react_2.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: react_2.DetailsListLayoutMode.justified, selectionMode: react_2.SelectionMode.none })) : (React.createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',
@@ -368,62 +365,64 @@ const IncidentHistory = (props) => {
                     padding: '30px'
                 } },
                 React.createElement(react_2.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, "No incidents found.")))),
-        React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: "Incident Details", closeButtonAriaLabel: "Close" }, selectedIncident && (React.createElement("div", { style: { marginTop: '10px' } },
+                React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, strings.IncidentHistory.NoIncidentsFound)))),
+        React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: strings.IncidentHistory.IncidentDetailsTitle, closeButtonAriaLabel: strings.Common.Close }, selectedIncident && (React.createElement("div", { style: { marginTop: '10px' } },
             React.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                React.createElement("strong", null, "Reported:"),
+                React.createElement("strong", null, strings.IncidentHistory.ReportedLabel),
                 " ",
                 new Date(selectedIncident.reportedDate).toLocaleString()),
             React.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
-                React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, "Incident Specifications"),
+                React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' } }, strings.IncidentHistory.IncidentSpecificationsTitle),
                 React.createElement("div", { className: InventoryManagement_module_scss_1.default.responsiveGridAlignItemsCenter, style: { fontSize: '0.88rem' } },
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Incident ID:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelIncidentId),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedIncident.incidentId)),
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Asset Name:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelAssetName),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedIncident.assetName)),
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Issue Type:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelIssueType),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedIncident.issueType)),
                     React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Priority:"),
+                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, strings.IncidentHistory.LabelPriority),
                         React.createElement("span", { style: getPriorityBadgeStyle(selectedIncident.priority) }, selectedIncident.priority || 'Medium')),
                     props.userRole === 'Admin' ? (React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Status:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelStatus),
                         React.createElement(react_2.Dropdown, { selectedKey: selectedIncident.status || 'Open', options: DropdownConstants_1.INCIDENT_STATUS_OPTIONS, onChange: (ev, option) => handleStatusChange(selectedIncident, option?.key), styles: { root: { width: 120 } } }))) : (React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, "Status:"),
+                        React.createElement("span", { style: { color: '#6b7280', marginRight: '6px' } }, strings.IncidentHistory.LabelStatus),
                         React.createElement("span", { style: getStatusBadgeStyle(selectedIncident.status) }, selectedIncident.status || 'Open'))),
                     selectedIncident.assignedTo && (React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Assigned To:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelAssignedTo),
                         " ",
                         React.createElement("strong", { style: { color: '#111827' } }, selectedIncident.assignedTo))))),
             props.userRole === 'Admin' && (selectedIncident.status === 'Resolved' || selectedIncident.status === 'Closed') ? (React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
                     React.createElement(react_2.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
-                    " Update Resolution Details"),
+                    " ",
+                    strings.IncidentHistory.UpdateResolutionTitle),
                 React.createElement(react_2.Stack, { tokens: { childrenGap: 10 } },
                     selectedIncident.resolvedDate && (React.createElement("div", { style: { fontSize: '0.88rem' } },
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelResolvedDate),
                         ' ',
                         React.createElement("strong", { style: { color: '#111827' } }, new Date(selectedIncident.resolvedDate).toLocaleString()))),
-                    React.createElement(react_2.TextField, { label: "Resolution Summary", multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: "Describe how this issue was resolved..." }),
-                    React.createElement(react_2.PrimaryButton, { text: "Save Resolution", onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    React.createElement(react_2.TextField, { label: strings.IncidentHistory.ResolutionSummaryLabel, multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: strings.IncidentHistory.ResolutionSummaryPlaceholderIncident }),
+                    React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.SaveResolutionButton, onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 React.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
                     React.createElement(react_2.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
-                    " Resolution Details"),
+                    " ",
+                    strings.IncidentHistory.ResolutionDetailsTitle),
                 React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
                     selectedIncident.resolvedDate && (React.createElement("div", null,
-                        React.createElement("span", { style: { color: '#6b7280' } }, "Resolved Date:"),
+                        React.createElement("span", { style: { color: '#6b7280' } }, strings.IncidentHistory.LabelResolvedDate),
                         ' ',
                         React.createElement("strong", { style: { color: '#111827' } }, new Date(selectedIncident.resolvedDate).toLocaleString()))),
                     React.createElement("div", { style: { padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' } },
-                        React.createElement("strong", null, "Resolution Summary:"),
+                        React.createElement("strong", null, strings.IncidentHistory.ResolutionSummaryPrefix),
                         " ",
                         selectedIncident.resolution)))))))),
         toastNotification && (React.createElement("div", { style: {

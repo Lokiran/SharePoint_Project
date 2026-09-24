@@ -1,24 +1,20 @@
 import { MessageBarType } from '@fluentui/react';
 
+export type ConfigTabKey = 'overview' | 'connections' | 'schema' | 'rbac' | 'operations';
+
 export interface IConfigState {
-  configSelectedTab: 'operations' | 'connections' | 'rbac' | 'schema' | string;
+  configSelectedTab: ConfigTabKey | string;
   syncInProgress?: boolean;
   syncMessage?: string;
   syncMessageType?: MessageBarType;
   diagnosticInfo?: string;
-  connectionStatuses: Record<string, string>;
-  connectionErrorMessages: Record<string, string>;
-  loadingGroupUsers: Record<string, boolean>;
-  groupUsersList: Record<string, string[]>;
 }
 
 export interface IConfigActions {
   onSyncAssignedAssets: () => void;
   onRunDiagnostics: () => void;
-  onTestListConnection: (listTitle: string, internalTitle: string) => void;
-  onLoadGroupUsers: (groupName: string) => void;
   onDismissSyncMessage: () => void;
-  onTabChange: (tabKey: 'operations' | 'connections' | 'rbac' | 'schema' | string) => void;
+  onTabChange: (tabKey: ConfigTabKey | string) => void;
 }
 
 export interface IConfigPageProps {

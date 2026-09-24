@@ -10,6 +10,14 @@ import {
   Text
 } from '@fluentui/react';
 import { IAuditLogFilters } from '../models/IEventLog';
+import {
+  AUDIT_LOG_DATE_RANGE_OPTIONS,
+  AUDIT_LOG_MODULE_OPTIONS,
+  AUDIT_LOG_STATUS_OPTIONS,
+  AUDIT_LOG_SORT_OPTIONS
+} from '../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
 
 export interface IEventFiltersProps {
   filters: IAuditLogFilters;
@@ -23,52 +31,13 @@ export interface IEventFiltersProps {
 export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
   const { filters, onChange, onClear, actionsList, assetTypesList, usersList } = props;
 
-  const dateOptions: IDropdownOption[] = [
-    { key: 'All', text: 'All Time' },
-    { key: 'Today', text: 'Today' },
-    { key: 'Yesterday', text: 'Yesterday' },
-    { key: 'Last7', text: 'Last 7 Days' },
-    { key: 'Last15', text: 'Last 15 Days' },
-    { key: 'Last30', text: 'Last 30 Days' },
-    { key: 'Last60', text: 'Last 60 Days' },
-    { key: 'Last90', text: 'Last 90 Days' },
-    { key: 'ThisWeek', text: 'This Week' },
-    { key: 'ThisMonth', text: 'This Month' },
-    { key: 'Custom', text: 'Custom Date Range' }
-  ];
-
-  const moduleOptions: IDropdownOption[] = [
-    { key: 'All', text: 'All Modules' },
-    { key: 'Inventory', text: 'Inventory' },
-    { key: 'Requests', text: 'Requests' },
-    { key: 'Returns', text: 'Returns' },
-    { key: 'Users', text: 'Users' },
-    { key: 'Reports', text: 'Reports' },
-    { key: 'Configuration', text: 'Configuration' },
-    { key: 'Notifications', text: 'Notifications' }
-  ];
-
-  const statusOptions: IDropdownOption[] = [
-    { key: 'All', text: 'All Statuses' },
-    { key: 'Pending', text: 'Pending' },
-    { key: 'Approved', text: 'Approved' },
-    { key: 'Rejected', text: 'Rejected' },
-    { key: 'Assigned', text: 'Assigned' },
-    { key: 'Returned', text: 'Returned' },
-    { key: 'Completed', text: 'Completed' }
-  ];
-
-  const sortOptions: IDropdownOption[] = [
-    { key: 'NewestFirst', text: 'Newest First' },
-    { key: 'OldestFirst', text: 'Oldest First' },
-    { key: 'AssetNameAZ', text: 'Asset Name A-Z' },
-    { key: 'AssetNameZA', text: 'Asset Name Z-A' },
-    { key: 'UserAZ', text: 'User A-Z' },
-    { key: 'UserZA', text: 'User Z-A' }
-  ];
+  const dateOptions = AUDIT_LOG_DATE_RANGE_OPTIONS;
+  const moduleOptions = AUDIT_LOG_MODULE_OPTIONS;
+  const statusOptions = AUDIT_LOG_STATUS_OPTIONS;
+  const sortOptions = AUDIT_LOG_SORT_OPTIONS;
 
   const actionOptions: IDropdownOption[] = [
-    { key: 'All', text: 'All Actions' },
+    { key: 'All', text: strings.EventFilters.AllActionsOption },
     ...actionsList.map(action => ({
       key: action,
       text: action.charAt(0).toUpperCase() + action.slice(1)
@@ -76,7 +45,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
   ];
 
   const assetTypeOptions: IDropdownOption[] = [
-    { key: 'All', text: 'All Assets' },
+    { key: 'All', text: strings.EventFilters.AllAssetsOption },
     ...assetTypesList.map(type => ({
       key: type,
       text: type
@@ -84,7 +53,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
   ];
 
   const userOptions: IDropdownOption[] = [
-    { key: 'All', text: 'All Users' },
+    { key: 'All', text: strings.EventFilters.AllUsersOption },
     ...usersList.map(user => ({
       key: user,
       text: user
@@ -131,14 +100,14 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
       {/* Search box row */}
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
         <SearchBox
-          placeholder="Search by asset name, title, details, user, or action..."
+          placeholder={strings.EventFilters.SearchPlaceholder}
           value={filters.searchQuery}
           onChange={(_, newValue) => onChange({ ...filters, searchQuery: newValue || '' })}
           onClear={() => onChange({ ...filters, searchQuery: '' })}
           styles={{ root: { flexGrow: 1, minWidth: '300px' } }}
         />
         <DefaultButton
-          text="Clear Filters"
+          text={strings.Common.ClearFilters}
           iconProps={{ iconName: 'ClearFilter' }}
           onClick={onClear}
           disabled={!hasActiveFilters && !filters.searchQuery}
@@ -153,7 +122,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
       }}>
         {/* Date Filter */}
         <Dropdown
-          label="Date Range"
+          label={strings.EventFilters.LabelDateRange}
           selectedKey={filters.dateRangeType}
           options={dateOptions}
           onChange={(_, option) => option && handleDateChange(option.key as string)}
@@ -161,7 +130,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
 
         {/* Action Filter */}
         <Dropdown
-          label="Action"
+          label={strings.EventFilters.LabelAction}
           selectedKey={filters.action}
           options={actionOptions}
           onChange={(_, option) => option && onChange({ ...filters, action: option.key as string })}
@@ -169,7 +138,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
 
         {/* Module Filter */}
         <Dropdown
-          label="Module"
+          label={strings.EventFilters.LabelModule}
           selectedKey={filters.module}
           options={moduleOptions}
           onChange={(_, option) => option && onChange({ ...filters, module: option.key as string })}
@@ -177,7 +146,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
 
         {/* Asset Type Filter */}
         <Dropdown
-          label="Asset Type"
+          label={strings.EventFilters.LabelAssetType}
           selectedKey={filters.assetType}
           options={assetTypeOptions}
           onChange={(_, option) => option && onChange({ ...filters, assetType: option.key as string })}
@@ -185,7 +154,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
 
         {/* User Filter */}
         <Dropdown
-          label="User"
+          label={strings.EventFilters.LabelUser}
           selectedKey={filters.user}
           options={userOptions}
           onChange={(_, option) => option && onChange({ ...filters, user: option.key as string })}
@@ -193,7 +162,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
 
         {/* Status Filter */}
         <Dropdown
-          label="Status"
+          label={strings.EventFilters.LabelStatus}
           selectedKey={filters.status}
           options={statusOptions}
           onChange={(_, option) => option && onChange({ ...filters, status: option.key as string })}
@@ -201,7 +170,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
 
         {/* Sort Filter */}
         <Dropdown
-          label="Sort Order"
+          label={strings.EventFilters.LabelSortOrder}
           selectedKey={filters.sortOrder}
           options={sortOptions}
           onChange={(_, option) => option && onChange({ ...filters, sortOrder: option.key as any })}
@@ -213,23 +182,23 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
         <Stack horizontal wrap tokens={{ childrenGap: 16 }} style={{ alignItems: 'flex-end', backgroundColor: '#f3f2f1', padding: '12px', borderRadius: '4px' }}>
           <div>
             <DatePicker
-              label="Start Date"
+              label={strings.EventFilters.LabelStartDate}
               value={filters.startDate}
               onSelectDate={(date) => date && onChange({ ...filters, startDate: date })}
-              placeholder="Select a start date..."
+              placeholder={strings.EventFilters.StartDatePlaceholder}
             />
           </div>
           <div>
             <DatePicker
-              label="End Date"
+              label={strings.EventFilters.LabelEndDate}
               value={filters.endDate}
               onSelectDate={(date) => date && onChange({ ...filters, endDate: date })}
-              placeholder="Select an end date..."
+              placeholder={strings.EventFilters.EndDatePlaceholder}
             />
           </div>
           {isDateRangeInvalid && (
             <Text style={{ color: '#a80000', alignSelf: 'center', fontWeight: 'bold' }}>
-              Warning: Start Date must be less than or equal to End Date.
+              {strings.EventFilters.DateRangeWarning}
             </Text>
           )}
         </Stack>
@@ -239,7 +208,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
       {hasActiveFilters && (
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center', marginTop: '4px' }}>
           <Text variant="smallPlus" style={{ color: 'var(--text-muted)', marginRight: '4px', fontWeight: 'bold' }}>
-            Active Filters:
+            {strings.EventFilters.ActiveFilters}
           </Text>
 
           {/* Date Chip */}
@@ -257,7 +226,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* Action Chip */}
           {filters.action !== 'All' && (
             <span style={chipStyle}>
-              Action: {filters.action}
+              {formatString(strings.EventFilters.ChipAction, filters.action)}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, action: 'All' })}
@@ -269,7 +238,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* Module Chip */}
           {filters.module !== 'All' && (
             <span style={chipStyle}>
-              Module: {filters.module}
+              {formatString(strings.EventFilters.ChipModule, filters.module)}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, module: 'All' })}
@@ -281,7 +250,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* Asset Type Chip */}
           {filters.assetType !== 'All' && (
             <span style={chipStyle}>
-              Asset: {filters.assetType}
+              {formatString(strings.EventFilters.ChipAsset, filters.assetType)}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, assetType: 'All' })}
@@ -293,7 +262,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* User Chip */}
           {filters.user !== 'All' && (
             <span style={chipStyle}>
-              User: {filters.user}
+              {formatString(strings.EventFilters.ChipUser, filters.user)}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, user: 'All' })}
@@ -305,7 +274,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* Status Chip */}
           {filters.status !== 'All' && (
             <span style={chipStyle}>
-              Status: {filters.status}
+              {formatString(strings.EventFilters.ChipStatus, filters.status)}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, status: 'All' })}
@@ -315,7 +284,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           )}
 
           <DefaultButton
-            text="Clear All"
+            text={strings.EventFilters.ClearAll}
             onClick={onClear}
             styles={{ root: { height: 26, minWidth: 0, padding: '0 8px', fontSize: '0.8rem' } }}
           />

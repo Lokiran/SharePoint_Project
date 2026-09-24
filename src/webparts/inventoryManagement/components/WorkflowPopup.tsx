@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
 import { Icon } from '@fluentui/react/lib/Icon';
+import * as strings from 'InventoryManagementWebPartStrings';
 
 export interface IWorkflowPopupDetails {
   requestId?: string;
@@ -143,39 +144,39 @@ export const WorkflowPopup: React.FC<IWorkflowPopupProps> = (props) => {
           }}>
             {details.requestId && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Request ID</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelRequestId}</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.requestId}</strong>
               </div>
             )}
             {details.incidentId && (
               <div>
                 <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>
-                  {details.incidentId.startsWith('REP-') ? 'Replacement ID' : 'Incident ID'}
+                  {details.incidentId.startsWith('REP-') ? strings.WorkflowPopup.LabelReplacementId : strings.WorkflowPopup.LabelIncidentId}
                 </span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.incidentId}</strong>
               </div>
             )}
             {details.assetTitle && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Asset</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelAsset}</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.assetTitle} {details.quantity ? `(Qty: ${details.quantity})` : ''}</strong>
               </div>
             )}
             {details.requesterName && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Requester</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelRequester}</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.requesterName}</strong>
               </div>
             )}
             {details.managerName && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Manager&apos;s Name</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelManagerName}</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.managerName}</strong>
               </div>
             )}
             {details.status && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Workflow Status</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelWorkflowStatus}</span>
                 <span style={{
                   backgroundColor: badgeBg,
                   color: badgeTextColor,
@@ -191,19 +192,19 @@ export const WorkflowPopup: React.FC<IWorkflowPopupProps> = (props) => {
             )}
             {details.date && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Date</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelDate}</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.date}</strong>
               </div>
             )}
             {details.condition && (
               <div>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>Condition</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' }}>{strings.WorkflowPopup.LabelCondition}</span>
                 <strong style={{ color: '#0f172a', fontSize: '0.88rem' }}>{details.condition}</strong>
               </div>
             )}
             {details.comment && (
               <div style={{ gridColumn: '1 / -1', marginTop: '4px' }}>
-                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' }}>Manager / Admin Notes</span>
+                <span style={{ color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' }}>{strings.WorkflowPopup.LabelManagerAdminNotes}</span>
                 <div style={{
                   backgroundColor: '#ffffff',
                   padding: '10px 12px',
@@ -223,8 +224,8 @@ export const WorkflowPopup: React.FC<IWorkflowPopupProps> = (props) => {
       </div>
 
       <DialogFooter styles={{ actionsRight: { marginTop: '20px' } }}>
-        <PrimaryButton 
-          text="Got it" 
+        <PrimaryButton
+          text={strings.WorkflowPopup.GotIt}
           onClick={onDismiss} 
           iconProps={{ iconName: 'Accept' }} 
           styles={{

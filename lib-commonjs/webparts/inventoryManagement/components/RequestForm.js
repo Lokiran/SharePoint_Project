@@ -5,6 +5,7 @@ const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("@fluentui/react");
 const DropdownConstants_1 = require("../constants/DropdownConstants");
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const stackTokens = { childrenGap: 15 };
 const RequestForm = (props) => {
     const [selectedRequesterId, setSelectedRequesterId] = React.useState(undefined);
@@ -90,28 +91,28 @@ const RequestForm = (props) => {
             props.onClose();
         }
     };
-    return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: "Request an Asset", closeButtonAriaLabel: "Close" },
+    return (React.createElement(react_1.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: react_1.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: strings.RequestForm.HeaderText, closeButtonAriaLabel: strings.Common.Close },
         React.createElement(react_1.Stack, { tokens: stackTokens },
-            React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, "You are requesting this asset for yourself. Requesting on behalf of other users is disabled."),
-            React.createElement(react_1.Dropdown, { label: "Requester", selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
-            React.createElement(react_1.TextField, { label: "Employee ID", value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
-            React.createElement(react_1.TextField, { label: "Manager's Name", value: managerName, onChange: (_, val) => {
+            React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, strings.RequestForm.OnBehalfHint),
+            React.createElement(react_1.Dropdown, { label: strings.RequestForm.LabelRequester, selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
+            React.createElement(react_1.TextField, { label: strings.RequestForm.LabelEmployeeId, value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
+            React.createElement(react_1.TextField, { label: strings.RequestForm.LabelManagerName, value: managerName, onChange: (_, val) => {
                     setManagerName(val || '');
                     setManagerNameTouched(true);
-                }, onBlur: () => setManagerNameTouched(true), placeholder: "Enter manager's name", required: true, errorMessage: managerNameTouched && !managerName.trim() ? "Manager's name is required" : undefined }),
-            React.createElement(react_1.TextField, { label: "Requested Date", type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
-            React.createElement(react_1.Dropdown, { label: "Asset Type", selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
+                }, onBlur: () => setManagerNameTouched(true), placeholder: strings.RequestForm.ManagerNamePlaceholder, required: true, errorMessage: managerNameTouched && !managerName.trim() ? strings.RequestForm.ManagerNameRequired : undefined }),
+            React.createElement(react_1.TextField, { label: strings.RequestForm.LabelRequestedDate, type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
+            React.createElement(react_1.Dropdown, { label: strings.RequestForm.LabelAssetType, selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
                 }, required: true }),
-            React.createElement(react_1.Dropdown, { label: "Priority", selectedKey: priority, options: DropdownConstants_1.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
-            React.createElement(react_1.TextField, { label: "Quantity", type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
-            React.createElement(react_1.TextField, { label: "Reason for Request", multiline: true, rows: 3, value: reason, onChange: (_, val) => {
+            React.createElement(react_1.Dropdown, { label: strings.RequestForm.LabelPriority, selectedKey: priority, options: DropdownConstants_1.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
+            React.createElement(react_1.TextField, { label: strings.RequestForm.LabelQuantity, type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
+            React.createElement(react_1.TextField, { label: strings.RequestForm.LabelReason, multiline: true, rows: 3, value: reason, onChange: (_, val) => {
                     setReason(val || '');
                     setReasonTouched(true);
-                }, onBlur: () => setReasonTouched(true), required: true, errorMessage: reasonTouched && !reason.trim() ? "Reason for request is required" : undefined }),
+                }, onBlur: () => setReasonTouched(true), required: true, errorMessage: reasonTouched && !reason.trim() ? strings.RequestForm.ReasonRequired : undefined }),
             React.createElement(react_1.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
-                React.createElement(react_1.PrimaryButton, { text: "Submit Request", onClick: onSave, disabled: !isFormValid }),
-                React.createElement(react_1.DefaultButton, { text: "Cancel", onClick: props.onClose })))));
+                React.createElement(react_1.PrimaryButton, { text: strings.RequestForm.SubmitRequest, onClick: onSave, disabled: !isFormValid }),
+                React.createElement(react_1.DefaultButton, { text: strings.Common.Cancel, onClick: props.onClose })))));
 };
 exports.RequestForm = RequestForm;
 //# sourceMappingURL=RequestForm.js.map

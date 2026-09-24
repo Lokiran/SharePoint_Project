@@ -6,6 +6,7 @@ const React = tslib_1.__importStar(require("react"));
 const Dialog_1 = require("@fluentui/react/lib/Dialog");
 const Button_1 = require("@fluentui/react/lib/Button");
 const Icon_1 = require("@fluentui/react/lib/Icon");
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const WorkflowPopup = (props) => {
     const { isOpen, title, stage, type, message, details, onDismiss } = props;
     if (!isOpen)
@@ -98,25 +99,25 @@ const WorkflowPopup = (props) => {
                     fontSize: '0.82rem'
                 } },
                 details.requestId && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Request ID"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelRequestId),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requestId))),
                 details.incidentId && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, details.incidentId.startsWith('REP-') ? 'Replacement ID' : 'Incident ID'),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, details.incidentId.startsWith('REP-') ? strings.WorkflowPopup.LabelReplacementId : strings.WorkflowPopup.LabelIncidentId),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.incidentId))),
                 details.assetTitle && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Asset"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelAsset),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } },
                         details.assetTitle,
                         " ",
                         details.quantity ? `(Qty: ${details.quantity})` : ''))),
                 details.requesterName && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Requester"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelRequester),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requesterName))),
                 details.managerName && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Manager's Name"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelManagerName),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.managerName))),
                 details.status && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Workflow Status"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelWorkflowStatus),
                     React.createElement("span", { style: {
                             backgroundColor: badgeBg,
                             color: badgeTextColor,
@@ -127,13 +128,13 @@ const WorkflowPopup = (props) => {
                             display: 'inline-block'
                         } }, details.status))),
                 details.date && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Date"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelDate),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.date))),
                 details.condition && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, "Condition"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelCondition),
                     React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.condition))),
                 details.comment && (React.createElement("div", { style: { gridColumn: '1 / -1', marginTop: '4px' } },
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' } }, "Manager / Admin Notes"),
+                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' } }, strings.WorkflowPopup.LabelManagerAdminNotes),
                     React.createElement("div", { style: {
                             backgroundColor: '#ffffff',
                             padding: '10px 12px',
@@ -147,7 +148,7 @@ const WorkflowPopup = (props) => {
                         details.comment,
                         "\u201D")))))),
         React.createElement(Dialog_1.DialogFooter, { styles: { actionsRight: { marginTop: '20px' } } },
-            React.createElement(Button_1.PrimaryButton, { text: "Got it", onClick: onDismiss, iconProps: { iconName: 'Accept' }, styles: {
+            React.createElement(Button_1.PrimaryButton, { text: strings.WorkflowPopup.GotIt, onClick: onDismiss, iconProps: { iconName: 'Accept' }, styles: {
                     root: {
                         borderRadius: '8px',
                         padding: '0 20px',

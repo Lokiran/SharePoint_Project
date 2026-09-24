@@ -65,8 +65,14 @@
         "version": "1.22.2"
       },
       "InventoryManagementWebPartStrings": {
-        "type": "path",
-        "path": "InventoryManagementWebPartStrings_en-us.js"
+        "type": "localizedPath",
+        "paths": {
+          "en-US": "InventoryManagementWebPartStrings_en-us.js",
+          "pl-PL": "InventoryManagementWebPartStrings_pl-pl.js",
+          "pt-PT": "InventoryManagementWebPartStrings_pt-pt.js",
+          "sv-SE": "InventoryManagementWebPartStrings_sv-se.js"
+        },
+        "defaultPath": "InventoryManagementWebPartStrings_en-us.js"
       },
       "@microsoft/sp-lodash-subset": {
         "type": "component",

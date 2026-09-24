@@ -21,6 +21,8 @@ import styles from './ReplacementHistory.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
 import { INCIDENT_STATUS_OPTIONS } from '../../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../../utils/LocalizationUtils';
 
 interface IReplacementHistoryItem {
   id: string;
@@ -190,26 +192,26 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
       doc.setTextColor(255, 255, 255);
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
-      doc.text("MSFT INVENTORY MANAGEMENT", 14, 16);
-      
+      doc.text(strings.IncidentHistory.PdfCompanyHeader, 14, 16);
+
       // Document Title
       doc.setTextColor(51, 65, 85); // Slate 700
       doc.setFontSize(14);
-      doc.text("ASSET REPLACEMENT REPORT", 14, 38);
-      
+      doc.text(strings.IncidentHistory.PdfReplacementReportTitle, 14, 38);
+
       // Metadata
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9);
-      doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 44);
-      
+      doc.text(formatString(strings.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
+
       // Separator line
       doc.setDrawColor(226, 232, 240); // Slate 200
       doc.line(14, 48, 196, 48);
-      
+
       // Specifications Section Title
       doc.setFont("helvetica", "bold");
       doc.setFontSize(11);
-      doc.text("REPLACEMENT SPECIFICATIONS", 14, 58);
+      doc.text(strings.IncidentHistory.PdfReplacementSpecs, 14, 58);
       
       // Render Specifications Key-Value grid
       let y = 68;
@@ -226,34 +228,34 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
         y += 8;
       };
       
-      printField("Replacement ID:", rep.incidentId);
-      printField("Asset Name:", rep.assetName);
-      printField("Type:", "Replacement Request");
-      printField("Priority:", rep.priority || "Medium");
-      printField("Current Status:", rep.status || "Open");
-      printField("Reported Date:", new Date(rep.reportedDate).toLocaleString());
-      
+      printField(strings.IncidentHistory.PdfReplacementIdLabel, rep.incidentId);
+      printField(strings.IncidentHistory.PdfAssetNameLabel, rep.assetName);
+      printField(strings.IncidentHistory.PdfTypeLabel, strings.IncidentHistory.ReplacementRequestType);
+      printField(strings.IncidentHistory.PdfPriorityLabel, rep.priority || "Medium");
+      printField(strings.IncidentHistory.PdfCurrentStatusLabel, rep.status || "Open");
+      printField(strings.IncidentHistory.PdfReportedDateLabel, new Date(rep.reportedDate).toLocaleString());
+
       if (rep.assignedTo) {
-        printField("Assigned To:", rep.assignedTo);
+        printField(strings.IncidentHistory.PdfAssignedToLabel, rep.assignedTo);
       }
       if (rep.resolvedDate) {
-        printField("Resolved Date:", new Date(rep.resolvedDate).toLocaleString());
+        printField(strings.IncidentHistory.PdfResolvedDateLabel, new Date(rep.resolvedDate).toLocaleString());
       }
-      
+
       // Reason Title
       y += 4;
       doc.setFont("helvetica", "bold");
       doc.setFontSize(11);
       doc.setTextColor(51, 65, 85);
-      doc.text("REPLACEMENT REASON & DETAILS", 14, y);
+      doc.text(strings.IncidentHistory.PdfReplacementReasonTitle, 14, y);
       y += 6;
-      
+
       // Reason Box
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9.5);
       doc.setTextColor(51, 65, 85);
-      
-      const splitDesc = doc.splitTextToSize(rep.issueDescription || "No reason provided.", 170);
+
+      const splitDesc = doc.splitTextToSize(rep.issueDescription || strings.IncidentHistory.PdfNoReason, 170);
       const descHeight = splitDesc.length * 6 + 10;
       
       // Draw background box
@@ -279,7 +281,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
         doc.setFont("helvetica", "bold");
         doc.setFontSize(11);
         doc.setTextColor(51, 65, 85);
-        doc.text("RESOLUTION SUMMARY", 14, y);
+        doc.text(strings.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
         y += 6;
         
         doc.setFont("helvetica", "normal");
@@ -315,7 +317,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
   const columns: IColumn[] = [
     {
       key: 'replacementId',
-      name: 'Replacement ID',
+      name: strings.IncidentHistory.ColReplacementId,
       fieldName: 'incidentId',
       minWidth: 100,
       maxWidth: 130,
@@ -324,7 +326,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
     },
     {
       key: 'assetName',
-      name: 'Asset',
+      name: strings.IncidentHistory.ColAsset,
       fieldName: 'assetName',
       minWidth: 120,
       maxWidth: 180,
@@ -333,16 +335,16 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
     },
     {
       key: 'issueType',
-      name: 'Type',
+      name: strings.IncidentHistory.ColType,
       fieldName: 'issueType',
       minWidth: 120,
       maxWidth: 150,
       isResizable: true,
-      onRender: () => <Text>Replacement Request</Text>,
+      onRender: () => <Text>{strings.IncidentHistory.ReplacementRequestType}</Text>,
     },
     {
       key: 'priority',
-      name: 'Priority',
+      name: strings.IncidentHistory.ColPriority,
       fieldName: 'priority',
       minWidth: 80,
       maxWidth: 100,
@@ -357,7 +359,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
     },
     {
       key: 'status',
-      name: 'Status',
+      name: strings.IncidentHistory.ColStatus,
       fieldName: 'status',
       minWidth: 90,
       maxWidth: 120,
@@ -372,7 +374,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
     },
     {
       key: 'reportedDate',
-      name: 'Reported',
+      name: strings.IncidentHistory.ColReported,
       fieldName: 'reportedDate',
       minWidth: 100,
       maxWidth: 130,
@@ -388,21 +390,21 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
     },
     {
       key: 'actions',
-      name: 'Actions',
+      name: strings.IncidentHistory.ColActions,
       minWidth: 160,
       maxWidth: 220,
       isResizable: true,
       onRender: (item: IReplacementHistoryItem) => (
         <Stack horizontal tokens={{ childrenGap: 8 }}>
           <PrimaryButton
-            text="View"
+            text={strings.IncidentHistory.ButtonView}
             onClick={() => handleViewDetails(item)}
             styles={{
               root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
             }}
           />
           <PrimaryButton
-            text="Download"
+            text={strings.IncidentHistory.ButtonDownload}
             onClick={() => handleDownloadReport(item)}
             styles={{
               root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
@@ -414,11 +416,8 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
   ];
 
   const statusFilterOptions: IDropdownOption[] = [
-    { key: '', text: 'All Status' },
-    { key: 'Open', text: 'Open' },
-    { key: 'In Progress', text: 'In Progress' },
-    { key: 'Resolved', text: 'Resolved' },
-    { key: 'Closed', text: 'Closed' },
+    { key: '', text: strings.IncidentHistory.AllStatusOption },
+    ...INCIDENT_STATUS_OPTIONS
   ];
 
   return (
@@ -427,14 +426,14 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
         {/* Filters */}
         <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' }}>
           <SearchBox
-            placeholder="Search by replacement ID, asset name..."
+            placeholder={strings.IncidentHistory.SearchReplacementsPlaceholder}
             value={searchText}
             onChange={(ev, newValue) => setSearchText(newValue || '')}
             onClear={() => setSearchText('')}
             styles={{ root: { width: '100%', maxWidth: 400 } }}
           />
           <Dropdown
-            placeholder="Filter by status"
+            placeholder={strings.IncidentHistory.FilterByStatusPlaceholder}
             options={statusFilterOptions}
             onChange={(ev, option) => setStatusFilter(option?.key as string | null || null)}
             styles={{ root: { width: 200 } }}
@@ -443,7 +442,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
 
         {/* Items Count */}
         <Text variant="small" style={{ color: 'var(--text-muted, #6b7280)', display: 'block' }}>
-          Showing {filteredReplacements.length} of {replacements.length} replacement requests
+          {formatString(strings.IncidentHistory.ShowingReplacements, filteredReplacements.length, replacements.length)}
         </Text>
 
         {/* Details List */}
@@ -468,7 +467,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
           }}>
             <Icon iconName="ClearFilter" style={{ fontSize: '36px', color: '#9ca3af', marginBottom: '10px' }} />
             <Text variant="medium" style={{ color: '#6b7280' }}>
-              No replacement requests found.
+              {strings.IncidentHistory.NoReplacementsFound}
             </Text>
           </div>
         )}
@@ -479,13 +478,13 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
         isOpen={showDetailPanel}
         onDismiss={() => setShowDetailPanel(false)}
         type={PanelType.medium}
-        headerText="Replacement Request Details"
-        closeButtonAriaLabel="Close"
+        headerText={strings.IncidentHistory.ReplacementDetailsTitle}
+        closeButtonAriaLabel={strings.Common.Close}
       >
         {selectedReplacement && (
           <div style={{ marginTop: '10px' }}>
             <p style={{ color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' }}>
-              <strong>Reported:</strong> {new Date(selectedReplacement.reportedDate).toLocaleString()}
+              <strong>{strings.IncidentHistory.ReportedLabel}</strong> {new Date(selectedReplacement.reportedDate).toLocaleString()}
             </p>
 
             <div style={{ padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' }}>
@@ -496,23 +495,23 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
 
             <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' }}>
               <h4 style={{ margin: '0 0 12px 0', color: '#111827', fontSize: '1rem', borderBottom: '1px solid #f3f4f6', paddingBottom: '8px' }}>
-                Replacement Specifications
+                {strings.IncidentHistory.ReplacementSpecificationsTitle}
               </h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem', alignItems: 'center' }}>
-                <div><span style={{ color: '#6b7280' }}>Replacement ID:</span> <strong style={{ color: '#111827' }}>{selectedReplacement.incidentId}</strong></div>
-                <div><span style={{ color: '#6b7280' }}>Asset Name:</span> <strong style={{ color: '#111827' }}>{selectedReplacement.assetName}</strong></div>
-                <div><span style={{ color: '#6b7280' }}>Type:</span> <strong style={{ color: '#111827' }}>Replacement Request</strong></div>
-                
+                <div><span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelReplacementId}</span> <strong style={{ color: '#111827' }}>{selectedReplacement.incidentId}</strong></div>
+                <div><span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelAssetName}</span> <strong style={{ color: '#111827' }}>{selectedReplacement.assetName}</strong></div>
+                <div><span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelType}</span> <strong style={{ color: '#111827' }}>{strings.IncidentHistory.ReplacementRequestType}</strong></div>
+
                 <div>
-                  <span style={{ color: '#6b7280', marginRight: '6px' }}>Priority:</span>
+                  <span style={{ color: '#6b7280', marginRight: '6px' }}>{strings.IncidentHistory.LabelPriority}</span>
                   <span style={getPriorityBadgeStyle(selectedReplacement.priority)}>
                     {selectedReplacement.priority || 'Medium'}
                   </span>
                 </div>
-                
+
                 {props.userRole === 'Admin' ? (
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#6b7280' }}>Status:</span>
+                    <span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelStatus}</span>
                     <Dropdown
                       selectedKey={selectedReplacement.status || 'Open'}
                       options={INCIDENT_STATUS_OPTIONS}
@@ -522,7 +521,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
                   </div>
                 ) : (
                   <div>
-                    <span style={{ color: '#6b7280', marginRight: '6px' }}>Status:</span>
+                    <span style={{ color: '#6b7280', marginRight: '6px' }}>{strings.IncidentHistory.LabelStatus}</span>
                     <span style={getStatusBadgeStyle(selectedReplacement.status)}>
                       {selectedReplacement.status || 'Open'}
                     </span>
@@ -530,7 +529,7 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
                 )}
 
                 {selectedReplacement.assignedTo && (
-                  <div><span style={{ color: '#6b7280' }}>Assigned To:</span> <strong style={{ color: '#111827' }}>{selectedReplacement.assignedTo}</strong></div>
+                  <div><span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelAssignedTo}</span> <strong style={{ color: '#111827' }}>{selectedReplacement.assignedTo}</strong></div>
                 )}
               </div>
             </div>
@@ -538,25 +537,25 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
             {props.userRole === 'Admin' && (selectedReplacement.status === 'Resolved' || selectedReplacement.status === 'Closed') ? (
               <div style={{ backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
                 <h4 style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Icon iconName="CheckMark" style={{ color: '#166534', fontWeight: 'bold' }} /> Update Resolution Details
+                  <Icon iconName="CheckMark" style={{ color: '#166534', fontWeight: 'bold' }} /> {strings.IncidentHistory.UpdateResolutionTitle}
                 </h4>
                 <Stack tokens={{ childrenGap: 10 }}>
                   {selectedReplacement.resolvedDate && (
                     <div style={{ fontSize: '0.88rem' }}>
-                      <span style={{ color: '#6b7280' }}>Resolved Date:</span>{' '}
+                      <span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelResolvedDate}</span>{' '}
                       <strong style={{ color: '#111827' }}>{new Date(selectedReplacement.resolvedDate).toLocaleString()}</strong>
                     </div>
                   )}
                   <TextField
-                    label="Resolution Summary"
+                    label={strings.IncidentHistory.ResolutionSummaryLabel}
                     multiline
                     rows={3}
                     value={tempResolution}
                     onChange={(ev, newValue) => setTempResolution(newValue || '')}
-                    placeholder="Describe how this replacement was completed..."
+                    placeholder={strings.IncidentHistory.ResolutionSummaryPlaceholderReplacement}
                   />
                   <PrimaryButton
-                    text="Save Resolution"
+                    text={strings.IncidentHistory.SaveResolutionButton}
                     onClick={() => handleSaveResolution(selectedReplacement)}
                     styles={{ root: { alignSelf: 'flex-start' } }}
                   />
@@ -566,17 +565,17 @@ export const ReplacementHistory: React.FC<IInventoryManagementProps & { setIsLoa
               selectedReplacement.resolution && (
                 <div style={{ backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
                   <h4 style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Icon iconName="CheckMark" style={{ color: '#166534', fontWeight: 'bold' }} /> Resolution Details
+                    <Icon iconName="CheckMark" style={{ color: '#166534', fontWeight: 'bold' }} /> {strings.IncidentHistory.ResolutionDetailsTitle}
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' }}>
                     {selectedReplacement.resolvedDate && (
                       <div>
-                        <span style={{ color: '#6b7280' }}>Resolved Date:</span>{' '}
+                        <span style={{ color: '#6b7280' }}>{strings.IncidentHistory.LabelResolvedDate}</span>{' '}
                         <strong style={{ color: '#111827' }}>{new Date(selectedReplacement.resolvedDate).toLocaleString()}</strong>
                       </div>
                     )}
                     <div style={{ padding: '10px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #dcfce7', color: '#166534', fontSize: '0.88rem', lineHeight: '1.4', whiteSpace: 'pre-wrap' }}>
-                      <strong>Resolution Summary:</strong> {selectedReplacement.resolution}
+                      <strong>{strings.IncidentHistory.ResolutionSummaryPrefix}</strong> {selectedReplacement.resolution}
                     </div>
                   </div>
                 </div>

@@ -5,12 +5,13 @@ const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("@fluentui/react");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const AssetLifecycleDiagram = ({ isDarkTheme }) => {
     const [hoveredNode, setHoveredNode] = React.useState(null);
     const nodes = [
         {
             id: 1,
-            label: 'Request for an IT asset',
+            label: strings.Lifecycle.RequestAsset,
             icon: 'DocumentApproval',
             color: '#60a5fa', // Light blue
             // Top: (140, 50)
@@ -19,7 +20,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
         },
         {
             id: 2,
-            label: 'Acquisition of an asset',
+            label: strings.Lifecycle.Acquisition,
             icon: 'PaymentCard',
             color: '#34d399', // Emerald/green
             // Top-right: (226, 112)
@@ -28,7 +29,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
         },
         {
             id: 3,
-            label: 'Deployment and assignment',
+            label: strings.Lifecycle.Deployment,
             icon: 'Settings',
             color: '#fb7185', // Rose/pink
             // Bottom-right: (193, 213)
@@ -37,7 +38,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
         },
         {
             id: 4,
-            label: 'Ongoing support & maintenance',
+            label: strings.Lifecycle.Support,
             icon: 'Headset',
             color: '#fbbf24', // Amber/yellow
             // Bottom-left: (87, 213)
@@ -46,7 +47,7 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
         },
         {
             id: 5,
-            label: 'End of life & disposition',
+            label: strings.Lifecycle.EndOfLife,
             icon: 'Recycle',
             color: '#a78bfa', // Purple
             // Top-left: (54, 112)
@@ -109,14 +110,14 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
                     letterSpacing: '0.3px',
                     textTransform: 'uppercase',
                     lineHeight: '1.2',
-                } }, "IT Asset"),
+                } }, strings.Lifecycle.BadgeTitle),
             React.createElement("div", { style: {
                     fontSize: '0.58rem',
                     color: 'rgba(255, 255, 255, 0.8)',
                     marginTop: '2px',
                     lineHeight: '1.2',
                     fontWeight: 500,
-                } }, "Lifecycle")),
+                } }, strings.Lifecycle.BadgeSubtitle)),
         nodes.map((node) => {
             const isHovered = hoveredNode === node.id;
             return (React.createElement("div", { key: node.id, onMouseEnter: () => setHoveredNode(node.id), onMouseLeave: () => setHoveredNode(null), style: {

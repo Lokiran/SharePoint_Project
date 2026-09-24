@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SharePointBaseService = void 0;
 const pnpjsConfig_1 = require("../../pnpjsConfig");
+const DropdownConstants_1 = require("../../constants/DropdownConstants");
 class SharePointBaseService {
     static async getSafeListFields(list) {
         try {
@@ -57,9 +58,9 @@ class SharePointBaseService {
                     { Title: "Requester Email", InternalName: "RequesterEmail", TypeAsString: "Text", Required: false },
                     { Title: "Return Request Date", InternalName: "ReturnRequestDate", TypeAsString: "DateTime", Required: false },
                     { Title: "Return Reason", InternalName: "ReturnReason", TypeAsString: "Text", Required: false },
-                    { Title: "Proposed Condition", InternalName: "ProposedCondition", TypeAsString: "Choice", Required: false, Choices: ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'] },
-                    { Title: "Returned Asset Condition", InternalName: "ReturnedAssetCondition", TypeAsString: "Choice", Required: false, Choices: ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'] },
-                    { Title: "Condition", InternalName: "Condition", TypeAsString: "Choice", Required: false, Choices: ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'] },
+                    { Title: "Proposed Condition", InternalName: "ProposedCondition", TypeAsString: "Choice", Required: false, Choices: DropdownConstants_1.ASSET_CONDITION_VALUES },
+                    { Title: "Returned Asset Condition", InternalName: "ReturnedAssetCondition", TypeAsString: "Choice", Required: false, Choices: DropdownConstants_1.ASSET_CONDITION_VALUES },
+                    { Title: "Condition", InternalName: "Condition", TypeAsString: "Choice", Required: false, Choices: DropdownConstants_1.ASSET_CONDITION_VALUES },
                     { Title: "Status", InternalName: "Status", TypeAsString: "Choice", Required: true, Choices: ['Pending', 'Approved', 'Rejected', 'Returned', 'Completed'] },
                     { Title: "Return Status", InternalName: "ReturnStatus", TypeAsString: "Choice", Required: true, Choices: ['Pending', 'Approved', 'Rejected', 'Returned', 'Completed'] },
                     { Title: "Manager Status", InternalName: "ManagerStatus", TypeAsString: "Choice", Required: false, Choices: ['Pending', 'Approved', 'Rejected'] },
@@ -82,9 +83,8 @@ class SharePointBaseService {
                 const isConditionField = internalName.toLowerCase().includes("condition") ||
                     displayName.toLowerCase().includes("condition");
                 if (isConditionField) {
-                    const standardConditions = ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'];
                     const newChoices = [...choices];
-                    for (const cond of standardConditions) {
+                    for (const cond of DropdownConstants_1.ASSET_CONDITION_VALUES) {
                         if (!newChoices.some(c => c.toLowerCase() === cond.toLowerCase())) {
                             newChoices.push(cond);
                         }
@@ -93,7 +93,7 @@ class SharePointBaseService {
                 }
             }
             else if (choices === undefined && (internalName.toLowerCase().includes("condition") || displayName.toLowerCase().includes("condition"))) {
-                choices = ['New', 'Excellent', 'Good', 'Fair', 'Poor', 'Damaged'];
+                choices = [...DropdownConstants_1.ASSET_CONDITION_VALUES];
             }
             return {
                 displayName: displayName,

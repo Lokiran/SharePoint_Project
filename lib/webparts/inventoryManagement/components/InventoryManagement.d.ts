@@ -19,6 +19,7 @@ export interface IWorkflowPopupConfig {
     details?: IWorkflowPopupDetails;
 }
 export interface IInventoryManagementState {
+    languageVersion: number;
     items: IInventoryItem[];
     employees: IEmployee[];
     requests: IRequest[];
@@ -65,18 +66,6 @@ export interface IInventoryManagementState {
     reportsAssetTypeFilter: string;
     reportsStatusFilter: string;
     configSelectedTab: string;
-    connectionStatuses: {
-        [listTitle: string]: 'connected' | 'error' | 'testing';
-    };
-    connectionErrorMessages: {
-        [listTitle: string]: string;
-    };
-    groupUsersList: {
-        [groupName: string]: string[];
-    };
-    loadingGroupUsers: {
-        [groupName: string]: boolean;
-    };
     workflowPopup: IWorkflowPopupConfig;
     lastMockEmail?: {
         to: string[];
@@ -90,6 +79,7 @@ export interface IInventoryManagementState {
     mockEmailSendSuccess: boolean;
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
+    private _getRoleDisplayLabel;
     private _isRequestOwnedByCurrentUser;
     private _isAssetAssignedToCurrentUser;
     private _getNotifications;
@@ -99,8 +89,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _clearAllNotifications;
     private _handleNotificationAction;
     constructor(props: IInventoryManagementProps);
+    private _unsubscribeLanguageChange?;
+    private _onLanguageChanged;
     componentDidMount(): Promise<void>;
     componentWillUnmount(): void;
+    private _onLanguageSelect;
     private _handleMockEmailSent;
     private _handleEmailSendFailed;
     private _onSendMockEmail;
@@ -123,15 +116,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     private _exportWarrantyReportToPDF;
     private _exportDetailedReportToExcel;
     private _exportDetailedReportToPDF;
-    private _testListConnection;
-    private _loadGroupUsers;
-    private _renderRequestAnalysis;
-    private _renderAssetAnalysis;
-    private _renderNotificationDetailsPanel;
     private _onAdminAssetChange;
     private _handleAdminAssignAndApprove;
     private _handleAdminReject;
-    private _renderAdminAssignmentPanel;
     render(): React.ReactElement<IInventoryManagementProps>;
 }
 //# sourceMappingURL=InventoryManagement.d.ts.map

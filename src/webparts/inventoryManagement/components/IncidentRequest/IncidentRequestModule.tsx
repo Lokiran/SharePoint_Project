@@ -18,7 +18,8 @@ import styles from './IncidentRequestModule.module.scss';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
 import { IInventoryItem } from '../../models/IInventoryItem';
-import { INCIDENT_TYPE_OPTIONS, INCIDENT_PRIORITY_OPTIONS } from '../../constants/DropdownConstants';
+import { INCIDENT_TYPE_OPTIONS, INCIDENT_PRIORITY_OPTIONS, INCIDENT_RAISED_TO_OPTIONS } from '../../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
 
 interface IIncidentRequestModuleProps extends IInventoryManagementProps {
   employeeId?: string;
@@ -49,9 +50,7 @@ interface IIncidentForm {
 const incidentTypeOptions = INCIDENT_TYPE_OPTIONS;
 const priorityOptions = INCIDENT_PRIORITY_OPTIONS;
 
-const raisedToOptions: IDropdownOption[] = [
-  { key: 'Admin', text: 'Admin' }
-];
+const raisedToOptions: IDropdownOption[] = INCIDENT_RAISED_TO_OPTIONS;
 
 export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (props) => {
   const [formData, setFormData] = useState<IIncidentForm>({
@@ -151,7 +150,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
   const handleSubmit = async () => {
     try {
       if (!formData.incidentType || !formData.description) {
-        setMessage({ type: MessageBarType.error, text: 'Please fill in all required fields.' });
+        setMessage({ type: MessageBarType.error, text: strings.IncidentRequestModule.ValidationRequiredFields });
         return;
       }
 
@@ -209,8 +208,8 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
       }
     } catch (error) {
       console.error('Error submitting incident:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Failed to report incident. Please try again.';
-      setMessage({ type: MessageBarType.error, text: `Error: ${errorMessage}` });
+      const errorMessage = error instanceof Error ? error.message : strings.IncidentRequestModule.GenericSubmitError;
+      setMessage({ type: MessageBarType.error, text: `${strings.IncidentRequestModule.ErrorPrefix} ${errorMessage}` });
     } finally {
       setIsSubmitting(false);
     }
@@ -251,7 +250,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
       type={PanelType.custom}
       customWidth="100%"
       styles={{ main: { maxWidth: '450px' } }}
-      headerText={isReplacementMode ? "Request Asset Replacement" : "Raise Incident"}
+      headerText={isReplacementMode ? strings.IncidentRequestModule.HeaderReplacement : strings.IncidentRequestModule.HeaderIncident}
       closeButtonAriaLabel="Close"
     >
       <div className={styles.incidentRequestModule}>
@@ -264,23 +263,23 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           {!isLoadingAssets && assignedAssets.length === 0 && (
             <MessageBar messageBarType={MessageBarType.info}>
-              {isReplacementMode 
-                ? "You currently have no assets assigned to request a replacement for." 
-                : "You currently have no assets assigned. You can still raise generic incidents."}
+              {isReplacementMode
+                ? strings.IncidentRequestModule.NoAssetsReplacementInfo
+                : strings.IncidentRequestModule.NoAssetsIncidentInfo}
             </MessageBar>
           )}
 
-          <TextField 
-            label="Employee Name" 
-            value={formData.employeeName} 
+          <TextField
+            label={strings.IncidentRequestModule.LabelEmployeeName}
+            value={formData.employeeName}
             onChange={(ev, val) => handleInputChange('employeeName', val || '')}
             required
           />
 
           {!props.preselectedAsset && (
             <Dropdown
-              label="Select Assigned Asset"
-              placeholder={isLoadingAssets ? "Loading assets..." : "Choose one of your assigned assets"}
+              label={strings.IncidentRequestModule.LabelSelectAsset}
+              placeholder={isLoadingAssets ? strings.IncidentRequestModule.PlaceholderLoadingAssets : strings.IncidentRequestModule.PlaceholderChooseAsset}
               options={assetOptions}
               selectedKey={selectedAssetKey}
               onChange={(ev, option) => {
@@ -301,7 +300,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           {formData.assetName && (
             <TextField
-              label="Asset Name"
+              label={strings.IncidentRequestModule.LabelAssetName}
               value={formData.assetName}
               disabled
             />
@@ -309,7 +308,7 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           {formData.serialNo && (
             <TextField
-              label="Serial NO"
+              label={strings.IncidentRequestModule.LabelSerialNo}
               value={formData.serialNo}
               disabled
             />
@@ -317,60 +316,60 @@ export const IncidentRequestModule: React.FC<IIncidentRequestModuleProps> = (pro
 
           {!isReplacementMode && (
             <Dropdown
-              label="Issue Type"
+              label={strings.IncidentRequestModule.LabelIssueType}
               options={incidentTypeOptions}
               selectedKey={formData.incidentType}
               onChange={(ev, option) => handleInputChange('incidentType', option?.key)}
               required
-              placeholder="Select Issue Type"
+              placeholder={strings.IncidentRequestModule.PlaceholderIssueType}
             />
           )}
 
           <Dropdown
-            label="Priority"
+            label={strings.IncidentRequestModule.LabelPriority}
             options={priorityOptions}
             selectedKey={formData.priority}
             onChange={(ev, option) => handleInputChange('priority', option?.key)}
           />
 
           <TextField
-            label={isReplacementMode ? "Reason for Replacement" : "Description"}
+            label={isReplacementMode ? strings.IncidentRequestModule.LabelReasonForReplacement : strings.IncidentRequestModule.LabelDescription}
             multiline
             rows={5}
-            placeholder={isReplacementMode ? "Describe the reason for replacement..." : "Describe the issue..."}
+            placeholder={isReplacementMode ? strings.IncidentRequestModule.PlaceholderReasonForReplacement : strings.IncidentRequestModule.PlaceholderDescribeIssue}
             value={formData.description}
             onChange={(ev, newValue) => handleInputChange('description', newValue)}
             required
           />
 
           <Dropdown
-            label="Raised To"
+            label={strings.IncidentRequestModule.LabelRaisedTo}
             options={raisedToOptions}
             selectedKey={formData.raisedTo}
             onChange={(ev, option) => handleInputChange('raisedTo', option?.key)}
-            placeholder="Select Team"
+            placeholder={strings.IncidentRequestModule.PlaceholderSelectTeam}
           />
 
           <TextField
-            label="Raised Date"
+            label={strings.IncidentRequestModule.LabelRaisedDate}
             value={formData.raisedDate}
             readOnly
           />
 
           <TextField
-            label="Status"
+            label={strings.IncidentRequestModule.LabelStatus}
             value={formData.status}
             readOnly
           />
 
           <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: 20 }}>
             <PrimaryButton
-              text={isReplacementMode ? "Request Replacement" : "Report Incident"}
+              text={isReplacementMode ? strings.IncidentRequestModule.RequestReplacement : strings.IncidentRequestModule.ReportIncident}
               onClick={handleSubmit}
               disabled={isSubmitting}
             />
             <DefaultButton
-              text="Cancel"
+              text={strings.IncidentRequestModule.Cancel}
               onClick={handleCancel}
             />
           </Stack>

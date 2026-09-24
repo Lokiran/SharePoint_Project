@@ -11,6 +11,8 @@ import { RoleUtils, UserRole } from '../utils/RoleUtils';
 import styles from './InventoryManagement.module.scss';
 import { EventFilters } from './EventFilters';
 import { InventoryService } from '../services/InventoryService';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
 
 export interface IEventStreamProps {
   logs: IEventLog[]; // preserved for backwards compatibility but we load internally
@@ -130,7 +132,7 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
   const columns: IColumn[] = [
     {
       key: 'column_action',
-      name: 'Action',
+      name: strings.EventStream.ColumnAction,
       fieldName: 'action',
       minWidth: 120,
       maxWidth: 220,
@@ -145,63 +147,63 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
         if (normalizedAction === 'created' || normalizedAction === 'create') {
           backgroundColor = '#dbeafe'; // Light blue
           textColor = '#1e40af';      // Dark blue
-          displayText = 'created';
+          displayText = strings.EventStream.ActionCreated;
         } else if (normalizedAction === 'manager approved') {
           backgroundColor = '#dcfce7'; // Light green
           textColor = '#166534';      // Dark green
-          displayText = 'manager approved';
+          displayText = strings.EventStream.ActionManagerApproved;
         } else if (normalizedAction === 'manager rejected') {
           backgroundColor = '#fee2e2'; // Light red
           textColor = '#991b1b';      // Dark red
-          displayText = 'manager rejected';
+          displayText = strings.EventStream.ActionManagerRejected;
         } else if (normalizedAction === 'admin assigned') {
           backgroundColor = '#f3e8ff'; // Light purple
           textColor = '#6b21a8';      // Dark purple
-          displayText = 'admin assigned';
+          displayText = strings.EventStream.ActionAdminAssigned;
         } else if (normalizedAction === 'status updated to in progress') {
           backgroundColor = '#ffedd5'; // Light orange/yellow
           textColor = '#9a3412';      // Dark orange
-          displayText = 'status updated to in progress';
+          displayText = strings.EventStream.ActionInProgress;
         } else if (normalizedAction === 'status updated to resolved') {
           backgroundColor = '#ccfbf1'; // Light teal
           textColor = '#115e59';      // Dark teal
-          displayText = 'status updated to resolved';
+          displayText = strings.EventStream.ActionResolved;
         } else if (normalizedAction === 'deleted' || normalizedAction === 'delete') {
           backgroundColor = '#fee2e2'; // Light red
           textColor = '#991b1b';      // Dark red
-          displayText = 'deleted';
+          displayText = strings.EventStream.ActionDeleted;
         } else if (normalizedAction === 'return requested') {
           backgroundColor = '#ffedd5'; // Light orange
           textColor = '#9a3412';      // Dark orange
-          displayText = 'return requested';
+          displayText = strings.EventStream.ActionReturnRequested;
         } else if (normalizedAction === 'return approved') {
           backgroundColor = '#dcfce7'; // Light green
           textColor = '#166534';      // Dark green
-          displayText = 'return approved';
+          displayText = strings.EventStream.ActionReturnApproved;
         } else if (normalizedAction === 'return completed') {
           backgroundColor = '#ccfbf1'; // Light teal
           textColor = '#115e59';      // Dark teal
-          displayText = 'return completed';
+          displayText = strings.EventStream.ActionReturnCompleted;
         } else if (normalizedAction === 'return rejected') {
           backgroundColor = '#fee2e2'; // Light red
           textColor = '#991b1b';      // Dark red
-          displayText = 'return rejected';
+          displayText = strings.EventStream.ActionReturnRejected;
         } else if (normalizedAction === 'activated') {
           backgroundColor = '#dcfce7'; // Light green
           textColor = '#166534';      // Dark green
-          displayText = 'activated';
+          displayText = strings.EventStream.ActionActivated;
         } else if (normalizedAction === 'inactivated') {
           backgroundColor = '#fef3c7'; // Light amber
           textColor = '#92400e';      // Dark amber
-          displayText = 'inactivated';
+          displayText = strings.EventStream.ActionInactivated;
         } else if (normalizedAction === 'deactivated') {
           backgroundColor = '#fee2e2'; // Light red
           textColor = '#991b1b';      // Dark red
-          displayText = 'deactivated';
+          displayText = strings.EventStream.ActionDeactivated;
         } else if (normalizedAction === 'update') {
           backgroundColor = '#ffedd5'; // Light orange/yellow
           textColor = '#9a3412';
-          displayText = 'updated';
+          displayText = strings.EventStream.ActionUpdated;
         }
 
         return (
@@ -220,15 +222,15 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
         );
       }
     },
-    { key: 'column_type', name: 'Type', fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
-    { key: 'column_title', name: 'Title', fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
-    { key: 'column_assetName', name: 'Asset Name', fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
+    { key: 'column_type', name: strings.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
+    { key: 'column_title', name: strings.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
+    { key: 'column_assetName', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
     ...(RoleUtils.canViewAuditLogs(props.currentUserRole) ? [
-      { key: 'column_user', name: 'User', fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
+      { key: 'column_user', name: strings.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
     ] : []),
-    { key: 'column_timestamp', name: 'Timestamp', fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
+    { key: 'column_timestamp', name: strings.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
     ...(RoleUtils.canViewAuditLogs(props.currentUserRole) ? [
-      { key: 'column_details', name: 'Details', fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
+      { key: 'column_details', name: strings.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
     ] : [])
   ];
 
@@ -346,7 +348,7 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
     <div style={{ marginTop: '20px' }}>
       {props.errorMessage && (
         <div style={{ color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' }}>
-          <strong>Notice:</strong> {props.errorMessage}
+          <strong>{strings.EventStream.NoticeLabel}</strong> {props.errorMessage}
         </div>
       )}
 
@@ -361,11 +363,11 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
       />
 
       {loading ? (
-        <p>Loading audit logs...</p>
+        <p>{strings.EventStream.LoadingAuditLogs}</p>
       ) : roleBasedFilteredLogs.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No audit events {isEmployee ? 'for you' : ''} recorded yet.</p>
+        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>{isEmployee ? strings.EventStream.NoEventsForYou : strings.EventStream.NoEventsRecorded}</p>
       ) : filteredLogs.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>No audit events match your active filters.</p>
+        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>{strings.EventStream.NoEventsMatchFilters}</p>
       ) : (
         <>
           <DetailsList
@@ -379,14 +381,14 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
           {totalPages > 1 && (
             <div className={styles.paginationContainer}>
               <div className={styles.paginationInfo}>
-                Showing <strong>{startIndex + 1}</strong> to <strong>{Math.min(startIndex + pageSize, totalItems)}</strong> of <strong>{totalItems}</strong> entries
+                {formatString(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + pageSize, totalItems), totalItems)}
               </div>
               <div className={styles.paginationControls}>
                 <button
                   className={styles.paginationButton}
                   disabled={activePage === 1}
                   onClick={() => setCurrentPage(1)}
-                  title="First Page"
+                  title={strings.Pagination.FirstPage}
                 >
                   &laquo;
                 </button>
@@ -394,7 +396,7 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
                   className={styles.paginationButton}
                   disabled={activePage === 1}
                   onClick={() => setCurrentPage(prev => prev - 1)}
-                  title="Previous Page"
+                  title={strings.Pagination.PreviousPage}
                 >
                   &lsaquo;
                 </button>
@@ -418,7 +420,7 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
                   className={styles.paginationButton}
                   disabled={activePage === totalPages}
                   onClick={() => setCurrentPage(prev => prev + 1)}
-                  title="Next Page"
+                  title={strings.Pagination.NextPage}
                 >
                   &rsaquo;
                 </button>
@@ -426,7 +428,7 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
                   className={styles.paginationButton}
                   disabled={activePage === totalPages}
                   onClick={() => setCurrentPage(totalPages)}
-                  title="Last Page"
+                  title={strings.Pagination.LastPage}
                 >
                   &raquo;
                 </button>

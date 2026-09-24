@@ -6,6 +6,8 @@ const React = tslib_1.__importStar(require("react"));
 const Dashboard_module_scss_1 = tslib_1.__importDefault(require("./Dashboard.module.scss"));
 const MessageBar_1 = require("@fluentui/react/lib/MessageBar");
 const Icon_1 = require("@fluentui/react/lib/Icon");
+const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const chart_js_1 = require("chart.js");
 const react_chartjs_2_1 = require("react-chartjs-2");
 chart_js_1.Chart.register(chart_js_1.CategoryScale, chart_js_1.LinearScale, chart_js_1.BarElement, chart_js_1.Title, chart_js_1.Tooltip, chart_js_1.Legend, chart_js_1.ArcElement);
@@ -78,10 +80,10 @@ const Dashboard = (props) => {
             acc[status] = (acc[status] || 0) + 1;
             return acc;
         }, {});
-    const primaryPieLabel = isManagerView ? 'Requests in approval queue' : 'Assets by Status';
-    const primaryPieTitle = isManagerView ? 'Approvals Queue Status' : 'Asset Status Distribution';
-    const primaryPieSubtitle = isManagerView ? 'Requests categorized by manager approval state' : 'Current condition and status of registered assets';
-    const statusLabels = Object.keys(statusCounts).length ? Object.keys(statusCounts) : ['No data'];
+    const primaryPieLabel = isManagerView ? strings.Dashboard.RequestsInApprovalQueueLabel : strings.Dashboard.AssetsByStatusLabel;
+    const primaryPieTitle = isManagerView ? strings.Dashboard.ApprovalsQueueStatusTitle : strings.Dashboard.AssetStatusDistributionTitle;
+    const primaryPieSubtitle = isManagerView ? strings.Dashboard.ApprovalsQueueStatusSubtitle : strings.Dashboard.AssetStatusDistributionSubtitle;
+    const statusLabels = Object.keys(statusCounts).length ? Object.keys(statusCounts) : [strings.Dashboard.NoDataLabel];
     const statusDataValues = Object.keys(statusCounts).length
         ? Object.keys(statusCounts).map(k => statusCounts[k])
         : [1];
@@ -106,10 +108,10 @@ const Dashboard = (props) => {
     const assetTypeLabels = Object.keys(typeCounts);
     const assetTypeDataValues = Object.keys(typeCounts).map(k => typeCounts[k]);
     const assetTypeData = {
-        labels: assetTypeLabels.length ? assetTypeLabels : ['No assets'],
+        labels: assetTypeLabels.length ? assetTypeLabels : [strings.Dashboard.NoAssetsLabel],
         datasets: [
             {
-                label: 'Number of Assets',
+                label: strings.Dashboard.NumberOfAssetsLabel,
                 data: assetTypeDataValues.length ? assetTypeDataValues : [0],
                 backgroundColor: 'rgba(0, 120, 212, 0.7)',
                 borderColor: 'rgba(0, 120, 212, 1)',
@@ -137,8 +139,8 @@ const Dashboard = (props) => {
     const doughnutLabels = Object.keys(requestStatusCounts).length
         ? Object.keys(requestStatusCounts)
         : isManagerView
-            ? ['No approved requests yet']
-            : ['No data'];
+            ? [strings.Dashboard.NoApprovedRequestsYetLabel]
+            : [strings.Dashboard.NoDataLabel];
     const doughnutDataValues = Object.keys(requestStatusCounts).length
         ? Object.keys(requestStatusCounts).map(k => requestStatusCounts[k])
         : [1];
@@ -146,7 +148,7 @@ const Dashboard = (props) => {
         labels: doughnutLabels,
         datasets: [
             {
-                label: isManagerView ? 'Assignment status (approved requests)' : 'Requests by Status',
+                label: isManagerView ? strings.Dashboard.AssignmentStatusApprovedLabel : strings.Dashboard.RequestsByStatusLabel,
                 data: doughnutDataValues,
                 backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.75)),
                 borderColor: doughnutLabels.map(label => getFluentColor(label, 1.0)),
@@ -301,8 +303,8 @@ const Dashboard = (props) => {
     const recentEmployeeRequests = sortRequestsNewToOld(requests).slice(0, 5);
     const sortedEmployeeItems = sortItemsNewToOld(items).slice(0, 5);
     // --- Role label for header ---
-    const roleLabel = isAdmin ? 'Administrator' : isManagerView ? 'Inventory Manager' : 'Employee';
-    const dashboardTitle = isAdmin ? 'Administrator Dashboard' : isManagerView ? 'Manager Dashboard' : 'My Dashboard';
+    const roleLabel = isAdmin ? strings.Dashboard.RoleAdministrator : isManagerView ? strings.Dashboard.RoleManager : strings.Dashboard.RoleEmployee;
+    const dashboardTitle = isAdmin ? strings.Dashboard.AdminTitle : isManagerView ? strings.Dashboard.ManagerTitle : strings.Dashboard.EmployeeTitle;
     // --- Quick action handler ---
     const navigateTo = (key) => {
         if (onNavigate) {
@@ -316,95 +318,95 @@ const Dashboard = (props) => {
                 React.createElement("p", { className: Dashboard_module_scss_1.default.headerSubtitle },
                     React.createElement(Icon_1.Icon, { iconName: "ContactInfo", style: { fontSize: 13, color: '#0078d4' } }),
                     roleLabel,
-                    " Overview",
+                    " ",
+                    strings.Dashboard.OverviewSuffix,
                     React.createElement("span", { style: { color: '#c8c6c4' } }, "\u2022"),
-                    "Real-time analytics"),
+                    strings.Dashboard.RealTimeAnalytics),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.headerDate },
                     React.createElement(Icon_1.Icon, { iconName: "Calendar" }),
                     React.createElement("span", null, getCurrentDate())))),
         onNavigate && (React.createElement("div", { className: Dashboard_module_scss_1.default.quickActions },
             isAdmin && (React.createElement(React.Fragment, null,
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Inventory'), "aria-label": "View Inventory" },
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Inventory'), "aria-label": strings.Dashboard.ActionViewInventory },
                     React.createElement(Icon_1.Icon, { iconName: "List" }),
-                    React.createElement("span", null, "View Inventory")),
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('AssetAssignmentQueue'), "aria-label": "Assignment Queue" },
+                    React.createElement("span", null, strings.Dashboard.ActionViewInventory)),
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('AssetAssignmentQueue'), "aria-label": strings.Dashboard.ActionAssignmentQueue },
                     React.createElement(Icon_1.Icon, { iconName: "Send" }),
-                    React.createElement("span", null, "Assignment Queue")),
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Reports'), "aria-label": "View Reports" },
+                    React.createElement("span", null, strings.Dashboard.ActionAssignmentQueue)),
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Reports'), "aria-label": strings.Dashboard.ActionReports },
                     React.createElement(Icon_1.Icon, { iconName: "ReportDocument" }),
-                    React.createElement("span", null, "Reports")),
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('EventStream'), "aria-label": "Event Stream" },
+                    React.createElement("span", null, strings.Dashboard.ActionReports)),
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('EventStream'), "aria-label": strings.Dashboard.ActionEventStream },
                     React.createElement(Icon_1.Icon, { iconName: "ActivityFeed" }),
-                    React.createElement("span", null, "Event Stream")))),
+                    React.createElement("span", null, strings.Dashboard.ActionEventStream)))),
             isManagerView && (React.createElement(React.Fragment, null,
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Approvals'), "aria-label": "Review Approvals" },
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Approvals'), "aria-label": strings.Dashboard.ActionReviewApprovals },
                     React.createElement(Icon_1.Icon, { iconName: "DoubleChevronRight12" }),
-                    React.createElement("span", null, "Review Approvals")),
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('AssetReturns'), "aria-label": "Asset Returns" },
+                    React.createElement("span", null, strings.Dashboard.ActionReviewApprovals)),
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('AssetReturns'), "aria-label": strings.Dashboard.ActionAssetReturns },
                     React.createElement(Icon_1.Icon, { iconName: "ReturnToSession" }),
-                    React.createElement("span", null, "Asset Returns")))),
+                    React.createElement("span", null, strings.Dashboard.ActionAssetReturns)))),
             !isAdmin && !isManagerView && (React.createElement(React.Fragment, null,
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('MyWorkspace'), "aria-label": "My Workspace" },
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('MyWorkspace'), "aria-label": strings.Dashboard.ActionMyWorkspace },
                     React.createElement(Icon_1.Icon, { iconName: "Briefcase" }),
-                    React.createElement("span", null, "My Workspace")),
-                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Notifications'), "aria-label": "View Notifications" },
+                    React.createElement("span", null, strings.Dashboard.ActionMyWorkspace)),
+                React.createElement("button", { className: Dashboard_module_scss_1.default.quickActionBtn, onClick: () => navigateTo('Notifications'), "aria-label": strings.Dashboard.ActionNotifications },
                     React.createElement(Icon_1.Icon, { iconName: "Ringer" }),
-                    React.createElement("span", null, "Notifications")))))),
+                    React.createElement("span", null, strings.Dashboard.ActionNotifications)))))),
         isManagerView && (React.createElement("div", { className: Dashboard_module_scss_1.default.dashboardIntro },
             React.createElement(MessageBar_1.MessageBar, { messageBarType: MessageBar_1.MessageBarType.info },
-                React.createElement("strong", null, "Inventory Manager Dashboard"),
-                " \u2014 Visual metrics and approval queues are aggregated from request lists. Full data resides in the ",
-                React.createElement("strong", null, "Approvals"),
-                " registry."))),
+                React.createElement("strong", null, strings.Dashboard.ManagerBannerTitle),
+                " ",
+                strings.Dashboard.ManagerBannerTextBefore,
+                React.createElement("strong", null, strings.Nav.Approvals),
+                strings.Dashboard.ManagerBannerTextAfter))),
         isAdmin && (React.createElement("div", { className: Dashboard_module_scss_1.default.dashboardIntro },
             React.createElement(MessageBar_1.MessageBar, { messageBarType: MessageBar_1.MessageBarType.success },
-                React.createElement("strong", null, "Administrator Dashboard"),
-                " \u2014 Analytics are derived directly from the physical inventory items. Assignment metrics display admin-approved items."))),
+                React.createElement("strong", null, strings.Dashboard.AdminBannerTitle),
+                " ",
+                strings.Dashboard.AdminBannerText))),
         !isAdmin && !isInventoryManager && (React.createElement("div", { className: Dashboard_module_scss_1.default.dashboardIntro },
             React.createElement(MessageBar_1.MessageBar, { messageBarType: MessageBar_1.MessageBarType.info },
-                React.createElement("strong", null, "Personal Asset Hub"),
-                " \u2014 Real-time telemetry tracking your assigned devices and ongoing request status."))),
-        React.createElement("div", { className: Dashboard_module_scss_1.default.summaryGrid, role: "region", "aria-label": "Key performance indicators" },
-            React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardBlue}`, role: "status", "aria-label": `${isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'}: ${totalAssets}` },
+                React.createElement("strong", null, strings.Dashboard.EmployeeBannerTitle),
+                " ",
+                strings.Dashboard.EmployeeBannerText))),
+        React.createElement("div", { className: Dashboard_module_scss_1.default.summaryGrid, role: "region", "aria-label": strings.Dashboard.KpiRegionAriaLabel },
+            React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardBlue}`, role: "status", "aria-label": `${isAdmin ? strings.Dashboard.TotalAssets : !isInventoryManager ? strings.Dashboard.MyDevices : strings.Dashboard.TotalAssets}: ${totalAssets}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Package" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summaryValue }, totalAssets),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isAdmin ? 'Total Assets' : !isInventoryManager ? 'My Devices' : 'Total Assets'),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isAdmin ? strings.Dashboard.TotalAssets : !isInventoryManager ? strings.Dashboard.MyDevices : strings.Dashboard.TotalAssets),
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, isAdmin
-                        ? `Allocation rate: ${allocationRate}% allocated`
+                        ? (0, LocalizationUtils_1.formatString)(strings.Dashboard.AllocationRateSubtitle, allocationRate)
                         : !isInventoryManager
-                            ? `${totalAssets} assigned hardware item${totalAssets === 1 ? '' : 's'}`
-                            : `${totalAssets} items in catalog`))),
-            (isAdmin || isInventoryManager) && (React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGreen}`, role: "status", "aria-label": `Available Assets: ${availableAssets}` },
+                            ? (0, LocalizationUtils_1.formatString)(strings.Dashboard.AssignedHardwareSubtitle, totalAssets)
+                            : (0, LocalizationUtils_1.formatString)(strings.Dashboard.ItemsInCatalogSubtitle, totalAssets)))),
+            (isAdmin || isInventoryManager) && (React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGreen}`, role: "status", "aria-label": `${strings.Dashboard.AvailableAssets}: ${availableAssets}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Accept" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summaryValue }, availableAssets),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, "Available Assets"),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle },
-                        availableAssets,
-                        " in stock (",
-                        stockPercentage,
-                        "% of total)")))),
-            React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardPurple}`, role: "status", "aria-label": `${isManagerView ? 'Requests in Queue' : 'Total Requests'}: ${totalRequests}` },
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, strings.Dashboard.AvailableAssets),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, (0, LocalizationUtils_1.formatString)(strings.Dashboard.InStockSubtitle, availableAssets, stockPercentage))))),
+            React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardPurple}`, role: "status", "aria-label": `${isManagerView ? strings.Dashboard.RequestsInQueue : strings.Dashboard.TotalRequests}: ${totalRequests}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Send" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summaryValue }, totalRequests),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? 'Requests in Queue' : !isAdmin ? 'My Requests' : 'Total Requests'),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? strings.Dashboard.RequestsInQueue : !isAdmin ? strings.Dashboard.MyRequests : strings.Dashboard.TotalRequests),
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, isAdmin
-                        ? `${totalRequests} queue requests`
-                        : `Approval success: ${approvalSuccessRate}%`))),
-            (isAdmin || isInventoryManager) && (React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGold}`, role: "status", "aria-label": `${isManagerView ? 'Awaiting Approval' : 'Pending Requests'}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
+                        ? (0, LocalizationUtils_1.formatString)(strings.Dashboard.QueueRequestsSubtitle, totalRequests)
+                        : (0, LocalizationUtils_1.formatString)(strings.Dashboard.ApprovalSuccessSubtitle, approvalSuccessRate)))),
+            (isAdmin || isInventoryManager) && (React.createElement("div", { className: `${Dashboard_module_scss_1.default.summaryCard} ${Dashboard_module_scss_1.default.cardGold}`, role: "status", "aria-label": `${isManagerView ? strings.Dashboard.AwaitingApproval : strings.Dashboard.PendingRequests}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.iconContainer },
                     React.createElement(Icon_1.Icon, { iconName: "Clock" })),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.cardInfo },
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summaryValue }, isManagerView ? awaitingManagerDecision : pendingRequests),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? 'Awaiting Approval' : 'Pending Requests'),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.summaryLabel }, isManagerView ? strings.Dashboard.AwaitingApproval : strings.Dashboard.PendingRequests),
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, isManagerView
-                        ? `${awaitingManagerDecision} requires review`
-                        : `${pendingRequests} under assignment review`))))),
+                        ? (0, LocalizationUtils_1.formatString)(strings.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
+                        : (0, LocalizationUtils_1.formatString)(strings.Dashboard.UnderReviewSubtitle, pendingRequests)))))),
         (isAdmin || isInventoryManager) && (React.createElement("div", { className: Dashboard_module_scss_1.default.chartsGrid },
             React.createElement("div", { className: Dashboard_module_scss_1.default.chartCard },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartHeader },
@@ -420,8 +422,8 @@ const Dashboard = (props) => {
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartIcon },
                         React.createElement(Icon_1.Icon, { iconName: "BarChart4" })),
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartTitleBlock },
-                        React.createElement("h3", null, "Assets by Type"),
-                        React.createElement("span", { className: Dashboard_module_scss_1.default.chartSubtitle }, "Categorized distribution of equipment"))),
+                        React.createElement("h3", null, strings.Dashboard.AssetsByTypeTitle),
+                        React.createElement("span", { className: Dashboard_module_scss_1.default.chartSubtitle }, strings.Dashboard.AssetsByTypeSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartContainer },
                     React.createElement(react_chartjs_2_1.Bar, { data: assetTypeData, options: assetTypeOptions }))),
             React.createElement("div", { className: Dashboard_module_scss_1.default.chartCard },
@@ -429,10 +431,10 @@ const Dashboard = (props) => {
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartIcon },
                         React.createElement(Icon_1.Icon, { iconName: "PieDouble" })),
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartTitleBlock },
-                        React.createElement("h3", null, isManagerView ? 'Post-Approval Assignment Status' : 'Request Fulfillment Status'),
+                        React.createElement("h3", null, isManagerView ? strings.Dashboard.PostApprovalAssignmentTitle : strings.Dashboard.RequestFulfillmentTitle),
                         React.createElement("span", { className: Dashboard_module_scss_1.default.chartSubtitle }, isManagerView
-                            ? 'Status of asset handouts for manager-approved requests'
-                            : 'Current status across all request pipelines'))),
+                            ? strings.Dashboard.PostApprovalAssignmentSubtitle
+                            : strings.Dashboard.RequestFulfillmentSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartContainer },
                     React.createElement(react_chartjs_2_1.Doughnut, { data: requestStatusData, options: doughnutOptions }))))),
         isAdmin && (React.createElement("div", { className: Dashboard_module_scss_1.default.actionCenter },
@@ -440,16 +442,16 @@ const Dashboard = (props) => {
                 React.createElement("div", null,
                     React.createElement("h3", null,
                         React.createElement(Icon_1.Icon, { iconName: "ReviewRequestMirrored" }),
-                        "Asset Assignment Action Center"),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, "Recent manager-approved requests awaiting physical hardware handout by administrators"))),
+                        strings.Dashboard.AdminActionCenterTitle),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, strings.Dashboard.AdminActionCenterSubtitle))),
             React.createElement("div", { className: Dashboard_module_scss_1.default.tableWrapper }, recentAssignments.length > 0 ? (React.createElement("table", { className: Dashboard_module_scss_1.default.actionTable },
                 React.createElement("thead", null,
                     React.createElement("tr", null,
-                        React.createElement("th", null, "Requester"),
-                        React.createElement("th", null, "Asset Requested"),
-                        React.createElement("th", null, "Qty"),
-                        React.createElement("th", null, "Date Approved"),
-                        React.createElement("th", null, "Status Action"))),
+                        React.createElement("th", null, strings.Dashboard.ColRequester),
+                        React.createElement("th", null, strings.Dashboard.ColAssetRequested),
+                        React.createElement("th", null, strings.Dashboard.ColQty),
+                        React.createElement("th", null, strings.Dashboard.ColDateApproved),
+                        React.createElement("th", null, strings.Dashboard.ColStatusAction))),
                 React.createElement("tbody", null, recentAssignments.map(req => (React.createElement("tr", { key: req.id },
                     React.createElement("td", null,
                         React.createElement("strong", null, req.requesterName)),
@@ -457,74 +459,74 @@ const Dashboard = (props) => {
                     React.createElement("td", null, req.quantity),
                     React.createElement("td", null, formatDate(req.requestDate)),
                     React.createElement("td", null,
-                        React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${Dashboard_module_scss_1.default.badgePending}` }, "Awaiting Handoff")))))))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
+                        React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${Dashboard_module_scss_1.default.badgePending}` }, strings.Dashboard.BadgeAwaitingHandoff)))))))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
                 React.createElement(Icon_1.Icon, { iconName: "CompletedSolid" }),
-                React.createElement("span", null, "All assignments caught up! No pending physical handouts."),
-                React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, "Check the Assignment Queue for historical data")))))),
+                React.createElement("span", null, strings.Dashboard.AdminEmptyState),
+                React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, strings.Dashboard.AdminEmptyStateHint)))))),
         isManagerView && (React.createElement("div", { className: Dashboard_module_scss_1.default.actionCenter },
             React.createElement("div", { className: Dashboard_module_scss_1.default.sectionHeader },
                 React.createElement("div", null,
                     React.createElement("h3", null,
                         React.createElement(Icon_1.Icon, { iconName: "ReviewRequest" }),
-                        "Pending Manager Decisions"),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, "Recent employee requests awaiting your approval or decline"))),
+                        strings.Dashboard.ManagerActionCenterTitle),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, strings.Dashboard.ManagerActionCenterSubtitle))),
             React.createElement("div", { className: Dashboard_module_scss_1.default.tableWrapper }, recentApprovals.length > 0 ? (React.createElement("table", { className: Dashboard_module_scss_1.default.actionTable },
                 React.createElement("thead", null,
                     React.createElement("tr", null,
-                        React.createElement("th", null, "Requester"),
-                        React.createElement("th", null, "Asset Requested"),
-                        React.createElement("th", null, "Qty"),
-                        React.createElement("th", null, "Date Requested"),
-                        React.createElement("th", null, "Reason / Justification"),
-                        React.createElement("th", null, "Action State"))),
+                        React.createElement("th", null, strings.Dashboard.ColRequester),
+                        React.createElement("th", null, strings.Dashboard.ColAssetRequested),
+                        React.createElement("th", null, strings.Dashboard.ColQty),
+                        React.createElement("th", null, strings.Dashboard.ColDateRequested),
+                        React.createElement("th", null, strings.Dashboard.ColReason),
+                        React.createElement("th", null, strings.Dashboard.ColActionState))),
                 React.createElement("tbody", null, recentApprovals.map(req => (React.createElement("tr", { key: req.id },
                     React.createElement("td", null,
                         React.createElement("strong", null, req.requesterName)),
                     React.createElement("td", null, req.assetTitle),
                     React.createElement("td", null, req.quantity),
                     React.createElement("td", null, formatDate(req.requestDate)),
-                    React.createElement("td", { className: Dashboard_module_scss_1.default.tableCellJustification }, req.reason || 'No justification specified'),
+                    React.createElement("td", { className: Dashboard_module_scss_1.default.tableCellJustification }, req.reason || strings.Dashboard.NoJustificationSpecified),
                     React.createElement("td", null,
-                        React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${Dashboard_module_scss_1.default.badgePending}` }, "Awaiting Approval")))))))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
+                        React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${Dashboard_module_scss_1.default.badgePending}` }, strings.Dashboard.BadgeAwaitingApproval)))))))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
                 React.createElement(Icon_1.Icon, { iconName: "CheckMark" }),
-                React.createElement("span", null, "Zero pending requests! Your approvals queue is clear."),
-                React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, "New requests will appear here automatically")))))),
+                React.createElement("span", null, strings.Dashboard.ManagerEmptyState),
+                React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, strings.Dashboard.ManagerEmptyStateHint)))))),
         !isAdmin && !isInventoryManager && (React.createElement("div", { className: Dashboard_module_scss_1.default.splitLayout },
             React.createElement("div", { className: Dashboard_module_scss_1.default.actionCenter },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.sectionHeader },
                     React.createElement("div", null,
                         React.createElement("h3", null,
                             React.createElement(Icon_1.Icon, { iconName: "Send" }),
-                            "Active Requests Status"),
-                        React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, "Recent hardware requests in the verification pipeline"))),
+                            strings.Dashboard.EmployeeActionCenterTitle),
+                        React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, strings.Dashboard.EmployeeActionCenterSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.tableWrapper }, recentEmployeeRequests.length > 0 ? (React.createElement("table", { className: Dashboard_module_scss_1.default.actionTable },
                     React.createElement("thead", null,
                         React.createElement("tr", null,
-                            React.createElement("th", null, "Asset"),
-                            React.createElement("th", null, "Manager Name"),
-                            React.createElement("th", null, "Qty"),
-                            React.createElement("th", null, "Requested Date"),
-                            React.createElement("th", null, "Manager Comment"),
-                            React.createElement("th", null, "Fulfillment State"))),
+                            React.createElement("th", null, strings.Dashboard.ColAsset),
+                            React.createElement("th", null, strings.Dashboard.ColManagerName),
+                            React.createElement("th", null, strings.Dashboard.ColQty),
+                            React.createElement("th", null, strings.Dashboard.ColDateRequested),
+                            React.createElement("th", null, strings.Dashboard.ColManagerComment),
+                            React.createElement("th", null, strings.Dashboard.ColFulfillmentState))),
                     React.createElement("tbody", null, recentEmployeeRequests.map(req => {
                         const isApproved = (req.status || '').toLowerCase() === 'approved';
                         const isDeclined = (req.status || '').toLowerCase() === 'declined' || (req.status || '').toLowerCase() === 'rejected';
                         const isAssetAssigned = (req.assetStatus || '').toLowerCase() === 'approved';
                         let badgeClass = Dashboard_module_scss_1.default.badgePending;
-                        let badgeText = 'Awaiting Review';
+                        let badgeText = strings.Dashboard.BadgeAwaitingReview;
                         if (isApproved) {
                             if (isAssetAssigned) {
                                 badgeClass = Dashboard_module_scss_1.default.badgeApproved;
-                                badgeText = 'Completed & Assigned';
+                                badgeText = strings.Dashboard.BadgeCompletedAssigned;
                             }
                             else {
                                 badgeClass = Dashboard_module_scss_1.default.badgePending;
-                                badgeText = 'Approved, Awaiting Handoff';
+                                badgeText = strings.Dashboard.BadgeApprovedAwaitingHandoff;
                             }
                         }
                         else if (isDeclined) {
                             badgeClass = Dashboard_module_scss_1.default.badgeDeclined;
-                            badgeText = 'Declined';
+                            badgeText = strings.Dashboard.BadgeDeclined;
                         }
                         return (React.createElement("tr", { key: req.id },
                             React.createElement("td", null,
@@ -537,32 +539,32 @@ const Dashboard = (props) => {
                                 React.createElement("span", { className: `${Dashboard_module_scss_1.default.statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
                     React.createElement(Icon_1.Icon, { iconName: "Info" }),
-                    React.createElement("span", null, "No active requests placed recently."),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, "Use \"Request Asset\" to submit a new request"))))),
+                    React.createElement("span", null, strings.Dashboard.EmployeeEmptyState),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, strings.Dashboard.EmployeeEmptyStateHint))))),
             React.createElement("div", { className: Dashboard_module_scss_1.default.actionCenter },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.sectionHeader },
                     React.createElement("div", null,
                         React.createElement("h3", null,
                             React.createElement(Icon_1.Icon, { iconName: "Devices3" }),
-                            "My Assigned Equipment"),
-                        React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, "Hardware currently registered and assigned to you"))),
+                            strings.Dashboard.MyEquipmentTitle),
+                        React.createElement("span", { className: Dashboard_module_scss_1.default.sectionSubtitle }, strings.Dashboard.MyEquipmentSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.tableWrapper }, sortedEmployeeItems.length > 0 ? (React.createElement("table", { className: Dashboard_module_scss_1.default.actionTable },
                     React.createElement("thead", null,
                         React.createElement("tr", null,
-                            React.createElement("th", null, "Device Name"),
-                            React.createElement("th", null, "Category"),
-                            React.createElement("th", null, "Serial Number"),
-                            React.createElement("th", null, "Assigned Date"))),
+                            React.createElement("th", null, strings.Dashboard.ColDeviceName),
+                            React.createElement("th", null, strings.Dashboard.ColCategory),
+                            React.createElement("th", null, strings.Dashboard.ColSerialNumber),
+                            React.createElement("th", null, strings.Dashboard.ColAssignedDate))),
                     React.createElement("tbody", null, sortedEmployeeItems.map(item => (React.createElement("tr", { key: item.id },
                         React.createElement("td", null,
                             React.createElement("strong", null, item.title)),
                         React.createElement("td", null, item.assetType),
                         React.createElement("td", null,
-                            React.createElement("code", null, item.serialNumber || 'N/A')),
+                            React.createElement("code", null, item.serialNumber || strings.Common.NotAvailable)),
                         React.createElement("td", null, formatDate(item.assignedDate || '')))))))) : (React.createElement("div", { className: Dashboard_module_scss_1.default.noDataMessage },
                     React.createElement(Icon_1.Icon, { iconName: "Devices3" }),
-                    React.createElement("span", null, "No equipment currently assigned to you."),
-                    React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, "Assigned devices will appear here after handoff")))))))));
+                    React.createElement("span", null, strings.Dashboard.MyEquipmentEmptyState),
+                    React.createElement("span", { className: Dashboard_module_scss_1.default.emptyStateHint }, strings.Dashboard.MyEquipmentEmptyStateHint)))))))));
 };
 exports.Dashboard = Dashboard;
 //# sourceMappingURL=Dashboard.js.map

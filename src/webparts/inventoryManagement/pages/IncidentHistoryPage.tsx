@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IncidentHistory } from '../components/IncidentHistory/IncidentHistory';
 import { IIncidentHistoryPageProps } from '../types/IncidentHistory.types';
 import styles from '../components/InventoryManagement.module.scss';
+import * as strings from 'InventoryManagementWebPartStrings';
 
 export const IncidentHistoryPage: React.FC<IIncidentHistoryPageProps> = (props) => {
   const { state, actions, ...rest } = props;
@@ -9,7 +10,7 @@ export const IncidentHistoryPage: React.FC<IIncidentHistoryPageProps> = (props) 
   return (
     <div>
       <div className={styles.cardHeader}>
-        <h3>Incident History</h3>
+        <h3>{strings.IncidentHistoryPage.Title}</h3>
       </div>
       <IncidentHistory
         {...rest}

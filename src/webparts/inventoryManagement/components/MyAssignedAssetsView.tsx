@@ -18,6 +18,8 @@ import {
 } from '@fluentui/react';
 import styles from './InventoryManagement.module.scss';
 import { ASSET_CONDITION_OPTIONS, WARRANTY_STATUS_OPTIONS } from '../constants/DropdownConstants';
+import * as strings from 'InventoryManagementWebPartStrings';
+import { formatString } from '../utils/LocalizationUtils';
 
 export interface IMyAssignedAssetsViewProps {
   items: IInventoryItem[];
@@ -55,21 +57,21 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
 
   // Helper: Evaluate Warranty Coverage
   const evaluateWarranty = (expiryStr: string | undefined) => {
-    if (!expiryStr) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'No warranty registered' };
-    
+    if (!expiryStr) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: strings.AssetHealth.WarrantyNoneRegistered };
+
     const expiryDate = new Date(expiryStr);
-    if (isNaN(expiryDate.getTime())) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: 'Invalid Date' };
-    
+    if (isNaN(expiryDate.getTime())) return { status: 'Unknown', isExpired: false, isExpiringSoon: false, text: strings.AssetHealth.WarrantyInvalidDate };
+
     const now = new Date();
     const diffTime = expiryDate.getTime() - now.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     if (diffDays < 0) {
-      return { status: 'Expired', isExpired: true, isExpiringSoon: false, text: 'Expired' };
+      return { status: 'Expired', isExpired: true, isExpiringSoon: false, text: strings.Dropdowns.WarrantyStatus.Expired };
     } else if (diffDays <= 30) {
-      return { status: 'Expiring Soon', isExpired: false, isExpiringSoon: true, text: `Expiring Soon (${diffDays} days)` };
+      return { status: 'Expiring Soon', isExpired: false, isExpiringSoon: true, text: formatString(strings.AssetHealth.WarrantyExpiringSoonDays, diffDays) };
     } else {
-      return { status: 'Active', isExpired: false, isExpiringSoon: false, text: 'Active' };
+      return { status: 'Active', isExpired: false, isExpiringSoon: false, text: strings.AssetHealth.WarrantyActive };
     }
   };
 
@@ -132,7 +134,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
       if (item.assetType) types.add(item.assetType);
     });
     const options: IDropdownOption[] = [
-      { key: 'All', text: 'All Types' }
+      { key: 'All', text: strings.AssetHealth.AllTypesOption }
     ];
     types.forEach(t => {
       options.push({ key: t, text: t });
@@ -189,74 +191,74 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
     const isCritical = condition === 'Poor' || condition === 'Damaged';
 
     let conditionColor = '#166534';
-    let healthRating = 'Excellent';
+    let healthRating = strings.AssetHealth.HealthExcellent;
     let healthIcon = 'Heart';
 
     if (condition === 'Fair') {
       conditionColor = '#d97706';
-      healthRating = 'Satisfactory';
+      healthRating = strings.AssetHealth.HealthSatisfactory;
       healthIcon = 'HeartBroken';
     } else if (condition === 'Poor') {
       conditionColor = '#ea580c';
-      healthRating = 'Degraded';
+      healthRating = strings.AssetHealth.HealthDegraded;
       healthIcon = 'ShieldAlert';
     } else if (condition === 'Damaged') {
       conditionColor = '#dc2626';
-      healthRating = 'Unusable / Broken';
+      healthRating = strings.AssetHealth.HealthUnusable;
       healthIcon = 'Warning';
     }
 
     return (
       <Stack tokens={{ childrenGap: 15 }} style={{ marginTop: '20px' }}>
         <h4 style={{ margin: '0 0 5px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '8px', color: '#1e293b' }}>
-          Lifecycle & Health Report
+          {strings.AssetHealth.LifecycleReportTitle}
         </h4>
-        
+
         {/* Age Evaluation */}
         <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
           <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>
-            Asset Lifecycle Age
+            {strings.AssetHealth.LifecycleAgeLabel}
           </span>
           {age !== null ? (
             <span style={{ fontSize: '0.9rem', color: '#334155' }}>
-              This asset is <strong>{age}</strong> month(s) old ({Math.round(age / 12 * 10) / 10} years). Standard enterprise deprecation lifecycle is 36 months. 
+              {formatString(strings.AssetHealth.LifecycleAgeText, age, Math.round(age / 12 * 10) / 10)}
               {age >= 36 ? (
                 <span style={{ color: '#b45309', display: 'block', marginTop: '6px', fontWeight: 'bold' }}>
-                  ⚠️ Asset has reached/passed its standard 3-year lifecycle. Eligible for refresh replacement.
+                  {strings.AssetHealth.LifecycleRefreshWarning}
                 </span>
               ) : (
                 <span style={{ color: '#166534', display: 'block', marginTop: '6px' }}>
-                  ✓ Asset is within standard usage lifecycle ({36 - age} months remaining).
+                  {formatString(strings.AssetHealth.LifecycleWithinLifecycle, 36 - age)}
                 </span>
               )}
             </span>
           ) : (
-            <span style={{ fontSize: '0.9rem', color: '#64748b' }}>Purchase date is not registered. Age cannot be calculated.</span>
+            <span style={{ fontSize: '0.9rem', color: '#64748b' }}>{strings.AssetHealth.LifecycleUnknownPurchaseDate}</span>
           )}
         </div>
 
         {/* Warranty Evaluation */}
         <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
           <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 }}>
-            Warranty Coverage
+            {strings.AssetHealth.WarrantyCoverageLabel}
           </span>
           {asset.warrantyExpiry ? (
             w.isExpired ? (
               <MessageBar messageBarType={MessageBarType.error} styles={{ root: { borderRadius: '6px' } }}>
-                <strong>Warranty Expired:</strong> Coverage ended on {asset.warrantyExpiry}. Future repairs will be billed to the departmental cost center.
+                {formatString(strings.AssetHealth.WarrantyExpiredMessage, asset.warrantyExpiry)}
               </MessageBar>
             ) : w.isExpiringSoon ? (
               <MessageBar messageBarType={MessageBarType.warning} styles={{ root: { borderRadius: '6px' } }}>
-                <strong>Warranty Expiring Soon:</strong> Expires on {asset.warrantyExpiry}. Please plan hardware checks before expiry.
+                {formatString(strings.AssetHealth.WarrantyExpiringSoonMessage, asset.warrantyExpiry)}
               </MessageBar>
             ) : (
               <MessageBar messageBarType={MessageBarType.success} styles={{ root: { borderRadius: '6px' } }}>
-                <strong>Warranty Active:</strong> Fully protected until {asset.warrantyExpiry}.
+                {formatString(strings.AssetHealth.WarrantyActiveMessage, asset.warrantyExpiry)}
               </MessageBar>
             )
           ) : (
             <MessageBar messageBarType={MessageBarType.info} styles={{ root: { borderRadius: '6px' } }}>
-              <strong>Warranty Unknown:</strong> No warranty expiration record exists for this item.
+              {strings.AssetHealth.WarrantyUnknownMessage}
             </MessageBar>
           )}
         </div>
@@ -264,19 +266,19 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         {/* Condition Check */}
         <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
           <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 }}>
-            Physical Condition
+            {strings.AssetHealth.PhysicalConditionLabel}
           </span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#334155' }}>
             <Icon iconName={healthIcon} style={{ fontSize: '18px', color: conditionColor }} />
-            <span>Health Rating: <strong style={{ color: conditionColor }}>{healthRating} ({condition})</strong></span>
+            <span>{strings.AssetHealth.HealthRatingLabel} <strong style={{ color: conditionColor }}>{healthRating} ({condition})</strong></span>
           </div>
           {isCritical && (
             <div style={{ marginTop: '10px', padding: '8px', backgroundColor: '#fef2f2', borderRadius: '4px', borderLeft: '3px solid #dc2626' }}>
               <span style={{ fontSize: '0.82rem', color: '#991b1b', fontWeight: 'bold', display: 'block' }}>
-                Recommendation: RETIRE ASSET
+                {strings.AssetHealth.RetireRecommendationTitle}
               </span>
               <span style={{ fontSize: '0.8rem', color: '#991b1b' }}>
-                Since this asset is in {condition.toLowerCase()} condition, it is recommended to return the asset and raise a replacement request.
+                {formatString(strings.AssetHealth.RetireRecommendationText, condition.toLowerCase())}
               </span>
             </div>
           )}
@@ -286,7 +288,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         {asset.specifications && (
           <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
             <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '6px', fontWeight: 600 }}>
-              System Specifications
+              {strings.AssetHealth.SystemSpecificationsLabel}
             </span>
             <pre style={{ margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'monospace', fontSize: '0.82rem', color: '#334155' }}>
               {asset.specifications}
@@ -303,22 +305,22 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
       {/* 1. Minimalist Summary Metrics Row */}
       <div className={styles.metricsRow}>
         <div className={styles.metricItem}>
-          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Assigned Assets</span>
+          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.AssetHealth.MetricAssignedAssets}</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-main)' }}>{metrics.total}</span>
         </div>
         <div className={styles.metricDivider} />
         <div className={styles.metricItem}>
-          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Under Warranty</span>
+          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.AssetHealth.MetricUnderWarranty}</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: '#16a34a' }}>{metrics.activeWarranties}</span>
         </div>
         <div className={styles.metricDivider} />
         <div className={styles.metricItem}>
-          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Warranty Action</span>
+          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.AssetHealth.MetricWarrantyAction}</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.expiredOrExpiringWarranties > 0 ? '#d97706' : 'var(--text-muted)' }}>{metrics.expiredOrExpiringWarranties}</span>
         </div>
         <div className={styles.metricDivider} />
         <div className={styles.metricItem}>
-          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>Critical Alerts</span>
+          <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '2px' }}>{strings.AssetHealth.MetricCriticalAlerts}</span>
           <span style={{ fontSize: '1.4rem', fontWeight: 600, color: metrics.actionNeeded > 0 ? '#dc2626' : 'var(--text-muted)' }}>{metrics.actionNeeded}</span>
         </div>
       </div>
@@ -327,7 +329,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
       <div className={styles.filtersRow}>
         <div className={styles.searchField}>
           <TextField
-            placeholder="Search by asset name, type, serial number..."
+            placeholder={strings.AssetHealth.SearchPlaceholder}
             value={searchQuery}
             onChange={(e, val) => setSearchQuery(val || '')}
             iconProps={{ iconName: 'Search' }}
@@ -345,7 +347,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         <div className={styles.filterDropdown}>
           <Dropdown
             options={[
-              { key: 'All', text: 'All Conditions' },
+              { key: 'All', text: strings.AssetHealth.AllConditionsOption },
               ...ASSET_CONDITION_OPTIONS
             ]}
             selectedKey={selectedCondition}
@@ -356,7 +358,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         <div className={styles.filterDropdown}>
           <Dropdown
             options={[
-              { key: 'All', text: 'All Coverage' },
+              { key: 'All', text: strings.AssetHealth.AllCoverageOption },
               ...WARRANTY_STATUS_OPTIONS
             ]}
             selectedKey={selectedWarranty}
@@ -366,7 +368,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         </div>
         <div>
           <DefaultButton
-            text="Reset"
+            text={strings.Common.Reset}
             iconProps={{ iconName: 'ClearFilter' }}
             onClick={() => {
               setSearchQuery('');
@@ -485,7 +487,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                         fontWeight: 600,
                         border: '1px solid #fca5a5'
                       }}>
-                        Issue Active
+                        {strings.AssetHealth.BadgeIssueActive}
                       </span>
                     )}
                     {activeReplacement && (
@@ -498,7 +500,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                         fontWeight: 600,
                         border: '1px solid #fde047'
                       }}>
-                        Replacement Requested
+                        {strings.AssetHealth.BadgeReplacementRequested}
                       </span>
                     )}
                     <span style={{
@@ -542,14 +544,14 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                     paddingTop: '6px',
                     color: 'var(--text-main)'
                   }}>
-                    <span>S/N: <strong>{item.serialNumber || 'N/A'}</strong></span>
-                    <span>Purchased: <strong>{item.purchaseDate ? new Date(item.purchaseDate).toLocaleDateString() : 'N/A'}</strong></span>
+                    <span>{strings.AssetHealth.SerialNumberPrefix} <strong>{item.serialNumber || strings.Common.NotAvailable}</strong></span>
+                    <span>{strings.AssetHealth.PurchasedPrefix} <strong>{item.purchaseDate ? new Date(item.purchaseDate).toLocaleDateString() : strings.Common.NotAvailable}</strong></span>
                   </div>
 
                   {/* Age */}
                   {age !== null && (
                     <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                      Age: <strong>{age}</strong> month(s) {age >= 36 && <span style={{ color: '#d97706', fontWeight: 500 }}>(Refresh Eligible ⚠️)</span>}
+                      {strings.AssetHealth.AgePrefix} <strong>{age}</strong> {strings.AssetHealth.AgeSuffix} {age >= 36 && <span style={{ color: '#d97706', fontWeight: 500 }}>{strings.AssetHealth.RefreshEligible}</span>}
                     </span>
                   )}
 
@@ -568,14 +570,14 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                     }}>
                       <Icon iconName={w.isExpired ? "ShieldAlert" : "Warning"} style={{ fontSize: '10px' }} />
                       <span>
-                        <strong>Warranty {w.isExpired ? 'Expired' : 'Expiring'}:</strong> {w.text}
+                        <strong>{w.isExpired ? strings.AssetHealth.WarrantyExpiredStrip : strings.AssetHealth.WarrantyExpiringStrip}</strong> {w.text}
                       </span>
                     </div>
                   )}
                   {item.warrantyExpiry && !w.isExpired && !w.isExpiringSoon && (
                     <div style={{ fontSize: '0.72rem', color: '#137333', display: 'flex', alignItems: 'center', gap: '3px', marginTop: 'auto' }}>
                       <Icon iconName="VerifiedBrand" style={{ fontSize: '10px' }} />
-                      <span>Warranty Active (Expires: {new Date(item.warrantyExpiry).toLocaleDateString()})</span>
+                      <span>{formatString(strings.AssetHealth.WarrantyActiveStrip, new Date(item.warrantyExpiry).toLocaleDateString())}</span>
                     </div>
                   )}
 
@@ -591,7 +593,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                   alignItems: 'center'
                 }}>
                   <DefaultButton
-                    text="Details"
+                    text={strings.AssetHealth.ButtonDetails}
                     onClick={() => {
                       setSelectedAsset(item);
                       setIsPanelOpen(true);
@@ -599,13 +601,13 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                     style={{ height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' }}
                   />
                   <DefaultButton
-                    text="Report Issue"
+                    text={strings.AssetHealth.ButtonReportIssue}
                     onClick={() => onRaiseIncident(item)}
                     style={{ height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' }}
                   />
                   {onAssetReplacement && (
                     <DefaultButton
-                      text="Asset Replacement"
+                      text={strings.AssetHealth.ButtonAssetReplacement}
                       iconProps={{ iconName: 'Sync' }}
                       onClick={() => onAssetReplacement(item)}
                       style={{ height: '24px', padding: '0 6px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', minWidth: 'auto' }}
@@ -622,7 +624,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                       borderRadius: '4px',
                       marginLeft: 'auto'
                     }}>
-                      Pending Return
+                      {strings.AssetHealth.ButtonPendingReturn}
                     </span>
                   ) : isReturnApproved ? (
                     <span style={{
@@ -634,11 +636,11 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                       borderRadius: '4px',
                       marginLeft: 'auto'
                     }}>
-                      Approved
+                      {strings.AssetHealth.ButtonApprovedBadge}
                     </span>
                   ) : (
                     <DefaultButton
-                      text="Return"
+                      text={strings.AssetHealth.ButtonReturn}
                       onClick={() => onReturnAsset(item)}
                       style={{
                         height: '24px',
@@ -667,10 +669,10 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
         }}>
           <Icon iconName="DatabaseNoData" style={{ fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' }} />
           <Text variant="medium" block style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>
-            No Assigned Assets Found
+            {strings.AssetHealth.EmptyStateTitle}
           </Text>
           <Text variant="small" style={{ color: 'var(--text-muted)' }}>
-            Try adjusting your search query or filters.
+            {strings.AssetHealth.EmptyStateHint}
           </Text>
         </div>
       )}
@@ -705,28 +707,28 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
               setSelectedAsset(null);
             }}
             type={PanelType.medium}
-            headerText={`Asset Details: ${selectedAsset.assetName || selectedAsset.title}`}
-            closeButtonAriaLabel="Close"
+            headerText={formatString(strings.AssetHealth.DetailsHeaderPrefix, selectedAsset.assetName || selectedAsset.title)}
+            closeButtonAriaLabel={strings.Common.Close}
           >
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              
+
               <div className={styles.responsiveGrid} style={{
                 backgroundColor: '#f1f5f9',
                 padding: '15px',
                 borderRadius: '8px',
                 fontSize: '0.88rem'
               }}>
-                <div><span style={{ color: '#64748b', display: 'block' }}>Asset Type:</span> <strong>{selectedAsset.assetType}</strong></div>
-                <div><span style={{ color: '#64748b', display: 'block' }}>Vendor/Brand:</span> <strong>{selectedAsset.vendor || 'Unknown'}</strong></div>
-                <div><span style={{ color: '#64748b', display: 'block' }}>Serial Number:</span> <strong>{selectedAsset.serialNumber || 'N/A'}</strong></div>
+                <div><span style={{ color: '#64748b', display: 'block' }}>{strings.AssetHealth.LabelAssetType}</span> <strong>{selectedAsset.assetType}</strong></div>
+                <div><span style={{ color: '#64748b', display: 'block' }}>{strings.AssetHealth.LabelVendorBrand}</span> <strong>{selectedAsset.vendor || strings.Common.Unknown}</strong></div>
+                <div><span style={{ color: '#64748b', display: 'block' }}>{strings.AssetHealth.LabelSerialNumber}</span> <strong>{selectedAsset.serialNumber || strings.Common.NotAvailable}</strong></div>
                 <div>
-                  <span style={{ color: '#64748b', display: 'block' }}>Asset Status:</span> 
+                  <span style={{ color: '#64748b', display: 'block' }}>{strings.AssetHealth.LabelAssetStatus}</span>
                   <strong>
-                    {isSelectedPendingReturn ? 'Pending Return' : isSelectedReturnApproved ? 'Return Approved' : selectedAsset.status}
+                    {isSelectedPendingReturn ? strings.AssetHealth.ButtonPendingReturn : isSelectedReturnApproved ? strings.AssetHealth.ButtonApprovedBadge : selectedAsset.status}
                   </strong>
                 </div>
                 <div style={{ gridColumn: 'span 2' }}>
-                  <span style={{ color: '#64748b', display: 'block' }}>Title Description:</span> <strong>{selectedAsset.title}</strong>
+                  <span style={{ color: '#64748b', display: 'block' }}>{strings.AssetHealth.LabelTitleDescription}</span> <strong>{selectedAsset.title}</strong>
                 </div>
               </div>
 
@@ -734,7 +736,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
 
               <Stack horizontal tokens={{ childrenGap: 10 }} style={{ marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' }}>
                 <PrimaryButton
-                  text="Report Incident"
+                  text={strings.AssetHealth.ButtonReportIncident}
                   onClick={() => {
                     setIsPanelOpen(false);
                     onRaiseIncident(selectedAsset);
@@ -744,7 +746,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                 />
                 {!isSelectedPendingReturn && !isSelectedReturnApproved && onAssetReplacement && (
                   <DefaultButton
-                    text="Asset Replacement"
+                    text={strings.AssetHealth.ButtonAssetReplacement}
                     onClick={() => {
                       setIsPanelOpen(false);
                       onAssetReplacement(selectedAsset);
@@ -755,7 +757,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                 )}
                 {!isSelectedPendingReturn && !isSelectedReturnApproved && (
                   <DefaultButton
-                    text="Request Return"
+                    text={strings.AssetHealth.ButtonRequestReturn}
                     onClick={() => {
                       setIsPanelOpen(false);
                       onReturnAsset(selectedAsset);
@@ -765,7 +767,7 @@ export const MyAssignedAssetsView: React.FC<IMyAssignedAssetsViewProps> = (props
                   />
                 )}
                 <DefaultButton
-                  text="Close"
+                  text={strings.Common.Close}
                   onClick={() => {
                     setIsPanelOpen(false);
                     setSelectedAsset(null);
