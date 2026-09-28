@@ -5,6 +5,8 @@ export interface IEventLog {
   entityType: 'Asset' | 'Request';
   entityId: string;
   assetName?: string;
+  /** Asset type of the source inventory item or request; undefined when it cannot be resolved. */
+  assetType?: string;
   details: string;
   user: string;
   timestamp: string;

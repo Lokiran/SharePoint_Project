@@ -400,6 +400,12 @@ class InventoryItemService {
             if (statusKey && assetStatus === 'Approved') {
                 updatePayload[statusKey] = 'Asset Assigned';
             }
+            // SLA: record when the asset was assigned (column is auto-created on request
+            // submission/approval; skipped if it does not exist yet).
+            const assignedDateField = fields.find(field => (field.InternalName || '').toString().toLowerCase() === SharePointBaseService_1.SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME.toLowerCase());
+            if (assignedDateField && assetStatus === 'Approved') {
+                updatePayload[assignedDateField.InternalName] = new Date().toISOString();
+            }
             if (comment) {
                 const managerCommentKey = findKey("managercomment") || findKey("comment") || findKey("response") || SharePointBaseService_1.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME;
                 if (managerCommentKey) {

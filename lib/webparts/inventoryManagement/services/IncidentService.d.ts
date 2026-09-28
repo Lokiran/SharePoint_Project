@@ -5,10 +5,10 @@ import '@pnp/sp/items';
 import '@pnp/sp/fields';
 export declare class IncidentService {
     private sp;
-    private readonly incidentListName;
-    private readonly employeeListName;
-    private readonly mappingListName;
-    private readonly replacementListName;
+    private get incidentListName();
+    private get employeeListName();
+    private get mappingListName();
+    private get replacementListName();
     private static _replacementListFieldsEnsured;
     getReplacementList(): Promise<any>;
     private _ensureReplacementListFields;

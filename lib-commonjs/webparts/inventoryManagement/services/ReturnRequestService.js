@@ -14,6 +14,7 @@ class ReturnRequestService {
         }
         // Try all known name variants in order of preference
         const namesToTry = [
+            SharePointBaseService_1.SharePointBaseService.RETURN_REQUEST_LIST_NAME,
             "Asset Return Request List",
             "Return Requests List",
             "ReturnRequestList",

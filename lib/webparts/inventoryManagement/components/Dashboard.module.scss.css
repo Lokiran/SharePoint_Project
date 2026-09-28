@@ -677,6 +677,53 @@
   border: 1px solid rgba(216, 59, 1, 0.2);
   border-bottom: 2px solid rgba(160, 40, 1, 0.25);
 }
+.dashboard .actionCenter .slaStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.dashboard .actionCenter .slaStat {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-left: 4px solid #0078d4;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.dashboard .actionCenter .slaStat.slaStatWarn {
+  border-left-color: #d83b01;
+}
+.dashboard .actionCenter .slaStat.slaStatGood {
+  border-left-color: #107c10;
+}
+.dashboard .actionCenter .slaStat .slaStatValue {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #242424;
+  line-height: 1.2;
+}
+.dashboard .actionCenter .slaStat .slaStatLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: #8a8886;
+  margin-top: 2px;
+}
+.dashboard .actionCenter .headerAction {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.78rem;
+  color: #0078d4;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dashboard .actionCenter .headerAction:hover {
+  background-color: rgba(0, 120, 212, 0.06);
+}
 .dashboard .actionCenter .noDataMessage {
   padding: 48px 24px;
   text-align: center;

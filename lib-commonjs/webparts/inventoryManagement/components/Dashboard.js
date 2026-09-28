@@ -10,6 +10,21 @@ const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const chart_js_1 = require("chart.js");
 const react_chartjs_2_1 = require("react-chartjs-2");
+const ChartPlugins_1 = require("../utils/ChartPlugins");
+const LowStockPanel_1 = require("./dashboard/LowStockPanel");
+const RequestSlaPanel_1 = require("./dashboard/RequestSlaPanel");
+// Gaps between slices in the card's background colour (follows dark mode), and a small pop-out on hover.
+const cardBackground = (ctx) => {
+    try {
+        return window.getComputedStyle(ctx.chart.canvas).getPropertyValue('--surface-bg').trim() || '#ffffff';
+    }
+    catch {
+        return '#ffffff';
+    }
+};
+const ARC_STYLE = { borderColor: cardBackground, borderWidth: 2, hoverOffset: 6 };
+/** 'Assigned' -> 'Assigned (16)' for legend entries; placeholder labels (no data) are left as-is. */
+const withCounts = (labels, counts) => labels.map(label => (counts[label] !== undefined ? `${label} (${counts[label]})` : label));
 chart_js_1.Chart.register(chart_js_1.CategoryScale, chart_js_1.LinearScale, chart_js_1.BarElement, chart_js_1.Title, chart_js_1.Tooltip, chart_js_1.Legend, chart_js_1.ArcElement);
 const Dashboard = (props) => {
     const { items, requests, isAdmin, isInventoryManager, onNavigate } = props;
@@ -87,15 +102,16 @@ const Dashboard = (props) => {
     const statusDataValues = Object.keys(statusCounts).length
         ? Object.keys(statusCounts).map(k => statusCounts[k])
         : [1];
+    const statusTotal = Object.keys(statusCounts).reduce((sum, k) => sum + statusCounts[k], 0);
     const assetStatusData = {
-        labels: statusLabels,
+        labels: withCounts(statusLabels, statusCounts),
         datasets: [
             {
                 label: primaryPieLabel,
                 data: statusDataValues,
-                backgroundColor: statusLabels.map(label => getFluentColor(label, 0.75)),
-                borderColor: statusLabels.map(label => getFluentColor(label, 1.0)),
-                borderWidth: 1.5,
+                // Colours are keyed on the raw status, not the display label with its count.
+                backgroundColor: statusLabels.map(label => getFluentColor(label, 0.85)),
+                ...ARC_STYLE,
             },
         ],
     };
@@ -105,8 +121,9 @@ const Dashboard = (props) => {
         acc[type] = (acc[type] || 0) + 1;
         return acc;
     }, {});
-    const assetTypeLabels = Object.keys(typeCounts);
-    const assetTypeDataValues = Object.keys(typeCounts).map(k => typeCounts[k]);
+    // Largest category first so the chart reads left to right by volume.
+    const assetTypeLabels = Object.keys(typeCounts).sort((a, b) => typeCounts[b] - typeCounts[a] || a.localeCompare(b));
+    const assetTypeDataValues = assetTypeLabels.map(k => typeCounts[k]);
     const assetTypeData = {
         labels: assetTypeLabels.length ? assetTypeLabels : [strings.Dashboard.NoAssetsLabel],
         datasets: [
@@ -119,6 +136,7 @@ const Dashboard = (props) => {
                 hoverBackgroundColor: 'rgba(0, 90, 158, 0.85)',
                 hoverBorderColor: 'rgba(0, 90, 158, 1)',
                 borderRadius: 6,
+                maxBarThickness: 56,
             },
         ],
     };
@@ -144,15 +162,15 @@ const Dashboard = (props) => {
     const doughnutDataValues = Object.keys(requestStatusCounts).length
         ? Object.keys(requestStatusCounts).map(k => requestStatusCounts[k])
         : [1];
+    const requestStatusTotal = Object.keys(requestStatusCounts).reduce((sum, k) => sum + requestStatusCounts[k], 0);
     const requestStatusData = {
-        labels: doughnutLabels,
+        labels: withCounts(doughnutLabels, requestStatusCounts),
         datasets: [
             {
                 label: isManagerView ? strings.Dashboard.AssignmentStatusApprovedLabel : strings.Dashboard.RequestsByStatusLabel,
                 data: doughnutDataValues,
-                backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.75)),
-                borderColor: doughnutLabels.map(label => getFluentColor(label, 1.0)),
-                borderWidth: 1.5,
+                backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.85)),
+                ...ARC_STYLE,
             },
         ],
     };
@@ -194,25 +212,40 @@ const Dashboard = (props) => {
             },
         },
     };
-    const pieOptions = {
+    // Tooltip: 'Assigned (16)' as title, '16 · 76%' as body.
+    const arcTooltip = {
+        ...chartPlugins.tooltip,
+        callbacks: {
+            label: (ctx) => {
+                const values = ctx.dataset.data || [];
+                const total = values.reduce((sum, v) => sum + (Number(v) || 0), 0);
+                const pct = total > 0 ? Math.round((Number(ctx.raw) / total) * 100) : 0;
+                return ` ${ctx.raw} · ${pct}%`;
+            },
+        },
+    };
+    const statusDoughnutOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: chartPlugins,
+        cutout: '62%',
+        plugins: { ...chartPlugins, tooltip: arcTooltip, centerTotal: { value: statusTotal } },
     };
     const doughnutOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: chartPlugins,
-        cutout: '65%',
+        cutout: '62%',
+        plugins: { ...chartPlugins, tooltip: arcTooltip, centerTotal: { value: requestStatusTotal } },
     };
     const assetTypeOptions = {
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: { top: 18 } }, // room for the value labels above the tallest bar
         plugins: {
             legend: {
                 display: false,
             },
             tooltip: chartPlugins.tooltip,
+            barValueLabels: { enabled: assetTypeLabels.length > 0 },
         },
         scales: {
             x: {
@@ -407,6 +440,7 @@ const Dashboard = (props) => {
                     React.createElement("span", { className: Dashboard_module_scss_1.default.summarySubtitle }, isManagerView
                         ? (0, LocalizationUtils_1.formatString)(strings.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
                         : (0, LocalizationUtils_1.formatString)(strings.Dashboard.UnderReviewSubtitle, pendingRequests)))))),
+        (isAdmin || isInventoryManager) && (React.createElement(LowStockPanel_1.LowStockPanel, { items: items, onManageThresholds: isAdmin && onNavigate ? () => onNavigate('Config') : undefined })),
         (isAdmin || isInventoryManager) && (React.createElement("div", { className: Dashboard_module_scss_1.default.chartsGrid },
             React.createElement("div", { className: Dashboard_module_scss_1.default.chartCard },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartHeader },
@@ -416,7 +450,7 @@ const Dashboard = (props) => {
                         React.createElement("h3", null, primaryPieTitle),
                         React.createElement("span", { className: Dashboard_module_scss_1.default.chartSubtitle }, primaryPieSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartContainer },
-                    React.createElement(react_chartjs_2_1.Pie, { data: assetStatusData, options: pieOptions }))),
+                    React.createElement(react_chartjs_2_1.Doughnut, { data: assetStatusData, options: statusDoughnutOptions, plugins: [ChartPlugins_1.centerTotalPlugin] }))),
             React.createElement("div", { className: Dashboard_module_scss_1.default.chartCard },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartHeader },
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartIcon },
@@ -425,7 +459,7 @@ const Dashboard = (props) => {
                         React.createElement("h3", null, strings.Dashboard.AssetsByTypeTitle),
                         React.createElement("span", { className: Dashboard_module_scss_1.default.chartSubtitle }, strings.Dashboard.AssetsByTypeSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartContainer },
-                    React.createElement(react_chartjs_2_1.Bar, { data: assetTypeData, options: assetTypeOptions }))),
+                    React.createElement(react_chartjs_2_1.Bar, { data: assetTypeData, options: assetTypeOptions, plugins: [ChartPlugins_1.barValueLabelsPlugin] }))),
             React.createElement("div", { className: Dashboard_module_scss_1.default.chartCard },
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartHeader },
                     React.createElement("div", { className: Dashboard_module_scss_1.default.chartIcon },
@@ -436,7 +470,8 @@ const Dashboard = (props) => {
                             ? strings.Dashboard.PostApprovalAssignmentSubtitle
                             : strings.Dashboard.RequestFulfillmentSubtitle))),
                 React.createElement("div", { className: Dashboard_module_scss_1.default.chartContainer },
-                    React.createElement(react_chartjs_2_1.Doughnut, { data: requestStatusData, options: doughnutOptions }))))),
+                    React.createElement(react_chartjs_2_1.Doughnut, { data: requestStatusData, options: doughnutOptions, plugins: [ChartPlugins_1.centerTotalPlugin] }))))),
+        (isAdmin || isInventoryManager) && (React.createElement(RequestSlaPanel_1.RequestSlaPanel, { requests: requests, queueKey: isAdmin ? 'AssetAssignmentQueue' : 'Approvals', onNavigate: onNavigate })),
         isAdmin && (React.createElement("div", { className: Dashboard_module_scss_1.default.actionCenter },
             React.createElement("div", { className: Dashboard_module_scss_1.default.sectionHeader },
                 React.createElement("div", null,

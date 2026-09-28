@@ -29,19 +29,25 @@ export class RequestCreationService {
 
     let requesterId: number | null = null;
 
-    try {
-      const user: any = await sp.web.ensureUser(
-        request.requesterName
-      );
+    // Resolve the requester: display name first (existing behaviour), then email
+    // (needed when the request is raised on someone's behalf, e.g. an onboarding kit).
+    const requesterCandidates = [request.requesterName, request.requesterEmail]
+      .filter((v, i, all): v is string => !!v && all.indexOf(v) === i);
 
-      requesterId = user.data
-        ? user.data.Id
-        : user.Id;
-    } catch (e) {
-      console.warn(
-        "Could not resolve requester in SharePoint",
-        e
-      );
+    for (const candidate of requesterCandidates) {
+      try {
+        const user: any = await sp.web.ensureUser(candidate);
+
+        requesterId = user.data
+          ? user.data.Id
+          : user.Id;
+        break;
+      } catch (e) {
+        console.warn(
+          `Could not resolve requester "${candidate}" in SharePoint`,
+          e
+        );
+      }
     }
 
     /*

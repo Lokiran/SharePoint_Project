@@ -9,13 +9,17 @@ const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../co
 const ConfigPage_module_scss_1 = tslib_1.__importDefault(require("./ConfigPage.module.scss"));
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
-const CORE_LISTS = ListHealthService_1.LIST_DEFINITIONS.filter(d => !d.optional);
-const OPTIONAL_LISTS = ListHealthService_1.LIST_DEFINITIONS.filter(d => d.optional);
-const ROLE_GROUPS = [
-    { group: 'MSFT Owners', role: () => strings.ConfigPage.RoleLabel_Owners, desc: () => strings.ConfigPage.RoleDesc_Owners },
-    { group: 'MSFT Members', role: () => strings.ConfigPage.RoleLabel_Members, desc: () => strings.ConfigPage.RoleDesc_Members },
-    { group: 'MSFT Visitors', role: () => strings.ConfigPage.RoleLabel_Visitors, desc: () => strings.ConfigPage.RoleDesc_Visitors }
-];
+const AppConfig_1 = require("../config/AppConfig");
+const StockThresholdsTab_1 = require("./config/StockThresholdsTab");
+// Group names come from the web part's property pane (defaults: MSFT Owners / Members / Visitors).
+const getRoleGroups = () => {
+    const g = (0, AppConfig_1.getAppConfig)().roleGroups;
+    return [
+        { group: g.admin, role: () => strings.ConfigPage.RoleLabel_Owners, desc: () => strings.ConfigPage.RoleDesc_Owners },
+        { group: g.manager, role: () => strings.ConfigPage.RoleLabel_Members, desc: () => strings.ConfigPage.RoleDesc_Members },
+        { group: g.employee, role: () => strings.ConfigPage.RoleLabel_Visitors, desc: () => strings.ConfigPage.RoleDesc_Visitors }
+    ];
+};
 // Resolved on every render so the runtime language switcher takes effect immediately.
 const getListText = (key) => {
     const s = strings.ConfigPage;
@@ -28,6 +32,8 @@ const getListText = (key) => {
         case 'incident': return { title: s.ListTitle_IncidentList, desc: s.ListDesc_IncidentList };
         case 'employee': return { title: s.ListTitle_EmployeeList, desc: s.ListDesc_EmployeeList };
         case 'replacement': return { title: s.ListTitle_ReplacementList, desc: s.ListDesc_ReplacementList };
+        case 'stockThresholds': return { title: s.ListTitle_StockThresholdsList, desc: s.ListDesc_StockThresholdsList };
+        case 'assetKits': return { title: s.ListTitle_AssetKitsList, desc: s.ListDesc_AssetKitsList };
         default: return { title: key, desc: '' };
     }
 };
@@ -67,7 +73,7 @@ const StatusPill = ({ status, testing }) => {
 const collectIssues = (results) => {
     const s = strings.ConfigPage;
     const issues = [];
-    ListHealthService_1.LIST_DEFINITIONS.forEach(def => {
+    (0, ListHealthService_1.getListDefinitions)().forEach(def => {
         const r = results[def.key];
         if (!r)
             return;
@@ -98,6 +104,11 @@ const collectIssues = (results) => {
 const ConfigPage = (props) => {
     const { state, actions } = props;
     const s = strings.ConfigPage;
+    // Read per render so property-pane changes to list titles and role groups show immediately.
+    const LIST_DEFINITIONS = (0, ListHealthService_1.getListDefinitions)();
+    const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
+    const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
+    const ROLE_GROUPS = getRoleGroups();
     const cached = ListHealthService_1.ListHealthService.lastReport;
     const [results, setResults] = React.useState(() => {
         const map = {};
@@ -167,7 +178,7 @@ const ConfigPage = (props) => {
         const payload = {
             checkedAt,
             environment,
-            lists: ListHealthService_1.LIST_DEFINITIONS.map(def => ({
+            lists: LIST_DEFINITIONS.map(def => ({
                 name: getListText(def.key).title,
                 expectedTitles: def.candidates,
                 optional: !!def.optional,
@@ -452,11 +463,13 @@ const ConfigPage = (props) => {
                 React.createElement(react_1.PivotItem, { headerText: s.TabListConnections, itemKey: "connections", itemIcon: "Database", itemCount: issues.length > 0 ? issues.length : undefined }),
                 React.createElement(react_1.PivotItem, { headerText: s.TabSchemaGuides, itemKey: "schema", itemIcon: "TableGroup" }),
                 React.createElement(react_1.PivotItem, { headerText: s.TabRbacGroups, itemKey: "rbac", itemIcon: "Permissions" }),
+                React.createElement(react_1.PivotItem, { headerText: strings.Features.StockTabName, itemKey: "stock", itemIcon: "ProductWarning" }),
                 React.createElement(react_1.PivotItem, { headerText: s.TabSyncOperations, itemKey: "operations", itemIcon: "Sync" }))),
         tab === 'overview' && renderOverview(),
         tab === 'connections' && renderConnections(),
         tab === 'schema' && renderSchema(),
         tab === 'rbac' && renderRbac(),
+        tab === 'stock' && React.createElement(StockThresholdsTab_1.StockThresholdsTab, null),
         tab === 'operations' && renderOperations()));
 };
 exports.ConfigPage = ConfigPage;

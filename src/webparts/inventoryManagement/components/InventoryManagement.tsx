@@ -6,6 +6,8 @@ import { IInventoryItem } from '../models/IInventoryItem';
 import { IRequest } from '../models/IRequest';
 import { IEventLog } from '../models/IEventLog';
 import { getSP } from '../pnpjsConfig';
+import { getAppConfig, resolveRoleFromGroups } from '../config/AppConfig';
+import { StockThresholdService } from '../services/StockThresholdService';
 import { AssetForm } from './AssetForm';
 import { RequestForm } from './RequestForm';
 import { IReturnRequest } from '../models/IReturnRequest';
@@ -39,7 +41,7 @@ import { EMPLOYEES } from '../data/mockData';
 import { IEmployee } from '../models/IEmployee';
 import { InventoryService } from '../services/InventoryService';
 import { EmailService } from '../services/EmailService';
-import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage, InventoryPage, ReplacementHistoryPage, NotificationsPage, NotificationDetailsPanel, AssetReturnsPage, EventStreamPage, AssetAssignmentQueuePage, MyWorkspacePage, AdminAssignmentPanel, ApprovalsPage, UsersPage } from '../pages';
+import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage, InventoryPage, ReplacementHistoryPage, NotificationsPage, NotificationDetailsPanel, AssetReturnsPage, EventStreamPage, AssetAssignmentQueuePage, MyWorkspacePage, AdminAssignmentPanel, ApprovalsPage, UsersPage, OnboardingPage } from '../pages';
 import { INotification } from '../models/INotification';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
 import { IncidentHistory } from './IncidentHistory/IncidentHistory';
@@ -418,21 +420,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     try {
       const sp = getSP();
       const groups = await sp.web.currentUser.groups();
-      const groupNames = groups.map((group: any) => (group.Title || '').toLowerCase().trim());
-
-      const isAdmin = groupNames.some((name: string) => name === 'msft owners' || name.indexOf('msft owners') >= 0);
-      const isInventoryManager = groupNames.some((name: string) => name === 'msft members' || name.indexOf('msft members') >= 0);
-      const isInventoryEmployee = groupNames.some((name: string) => name === 'msft visitors' || name.indexOf('msft visitors') >= 0);
-
-      let userRole: 'Admin' | 'Inventory Manager' | 'Inventory Employee' = 'Inventory Employee';
-
-      if (isAdmin) {
-        userRole = 'Admin';
-      } else if (isInventoryManager) {
-        userRole = 'Inventory Manager';
-      } else if (isInventoryEmployee) {
-        userRole = 'Inventory Employee';
-      }
+      // Group names come from the property pane (defaults: MSFT Owners / Members / Visitors).
+      const roleGroupNames = getAppConfig().roleGroups;
+      const userRole = resolveRoleFromGroups(groups.map((group: any) => group.Title || ''), roleGroupNames);
 
       // Load employees from groups dynamically
       const loadedEmployees: IEmployee[] = [];
@@ -445,7 +435,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           const nameLower = name.toLowerCase();
 
           // Skip system/group users
-          if (nameLower === 'msft owners' || nameLower === 'system account' || !name) {
+          if (nameLower === roleGroupNames.admin.toLowerCase() || nameLower === 'system account' || !name) {
             return;
           }
 
@@ -462,25 +452,18 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         });
       };
 
-      try {
-        const owners = await sp.web.siteGroups.getByName("MSFT Owners").users();
-        addUsers(owners, 'Admin', 'Management');
-      } catch (e) {
-        console.warn("Could not load users from group 'MSFT Owners':", e);
-      }
-
-      try {
-        const members = await sp.web.siteGroups.getByName("MSFT Members").users();
-        addUsers(members, 'Inventory Manager', 'Operations');
-      } catch (e) {
-        console.warn("Could not load users from group 'MSFT Members':", e);
-      }
-
-      try {
-        const visitors = await sp.web.siteGroups.getByName("MSFT Visitors").users();
-        addUsers(visitors, 'Inventory Employee', 'Operations');
-      } catch (e) {
-        console.warn("Could not load users from group 'MSFT Visitors':", e);
+      const groupLoads: [string, 'Admin' | 'Inventory Manager' | 'Inventory Employee', string][] = [
+        [roleGroupNames.admin, 'Admin', 'Management'],
+        [roleGroupNames.manager, 'Inventory Manager', 'Operations'],
+        [roleGroupNames.employee, 'Inventory Employee', 'Operations']
+      ];
+      for (const [groupName, jobTitle, department] of groupLoads) {
+        try {
+          const users = await sp.web.siteGroups.getByName(groupName).users();
+          addUsers(users, jobTitle, department);
+        } catch (e) {
+          console.warn(`Could not load users from group '${groupName}':`, e);
+        }
       }
 
       const finalEmployees = loadedEmployees.length > 0 ? loadedEmployees : EMPLOYEES;
@@ -509,6 +492,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       const items = await InventoryService.getItems();
       if (items && items.length > 0) {
         this.setState({ items, loading: false });
+        // Low-stock alerts: runs after every inventory reload (assignments, edits, deletes).
+        // Admin only, because it writes alert state and sends the email. Fire-and-forget.
+        if (this.state.userRole === 'Admin') {
+          StockThresholdService.checkAndNotify(items).catch(() => undefined);
+        }
       } else {
         // List is empty
         this.setState({
@@ -1218,7 +1206,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             return r.status === 'Pending';
           }).length || undefined,
           badgeColor: '#ea580c'
-        }
+        },
+        { key: 'Onboarding', text: strings.Features.NavOnboarding, icon: 'People' }
       ] : []),
       ...(isAdmin ? [
         { key: 'EventStream', text: strings.Nav.EventStream, icon: 'ActivityFeed', group: strings.Nav.GroupSystem },
@@ -1538,6 +1527,25 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         }}
                         actions={{
                           onUpdateStatus: this._onUpdateReturnRequestStatus
+                        }}
+                      />
+                    ) : null;
+                  case 'Onboarding':
+                    return isAdmin || isManager ? (
+                      <OnboardingPage
+                        state={{
+                          items: this.state.items,
+                          returnRequests: this.state.returnRequests,
+                          currentUserName: activeUserDisplayName,
+                          currentUserRole: effectiveRole,
+                          isAdmin
+                        }}
+                        actions={{
+                          onDataChanged: () => {
+                            this._loadRequests().catch(() => undefined);
+                            this._loadReturnRequests().catch(() => undefined);
+                            this._loadAuditLogs().catch(() => undefined);
+                          }
                         }}
                       />
                     ) : null;

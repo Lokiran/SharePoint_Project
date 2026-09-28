@@ -14,7 +14,7 @@ import {
 import { IConfigPageProps } from '../types/Config.types';
 import {
   ListHealthService,
-  LIST_DEFINITIONS,
+  getListDefinitions,
   IListDefinition,
   IListHealthResult,
   IEnvironmentInfo,
@@ -26,15 +26,18 @@ import styles from '../components/InventoryManagement.module.scss';
 import css from './ConfigPage.module.scss';
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
+import { getAppConfig } from '../config/AppConfig';
+import { StockThresholdsTab } from './config/StockThresholdsTab';
 
-const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
-const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
-
-const ROLE_GROUPS = [
-  { group: 'MSFT Owners', role: () => strings.ConfigPage.RoleLabel_Owners, desc: () => strings.ConfigPage.RoleDesc_Owners },
-  { group: 'MSFT Members', role: () => strings.ConfigPage.RoleLabel_Members, desc: () => strings.ConfigPage.RoleDesc_Members },
-  { group: 'MSFT Visitors', role: () => strings.ConfigPage.RoleLabel_Visitors, desc: () => strings.ConfigPage.RoleDesc_Visitors }
-];
+// Group names come from the web part's property pane (defaults: MSFT Owners / Members / Visitors).
+const getRoleGroups = (): { group: string; role: () => string; desc: () => string }[] => {
+  const g = getAppConfig().roleGroups;
+  return [
+    { group: g.admin, role: () => strings.ConfigPage.RoleLabel_Owners, desc: () => strings.ConfigPage.RoleDesc_Owners },
+    { group: g.manager, role: () => strings.ConfigPage.RoleLabel_Members, desc: () => strings.ConfigPage.RoleDesc_Members },
+    { group: g.employee, role: () => strings.ConfigPage.RoleLabel_Visitors, desc: () => strings.ConfigPage.RoleDesc_Visitors }
+  ];
+};
 
 interface IListText { title: string; desc: string; tag?: string }
 
@@ -50,6 +53,8 @@ const getListText = (key: ListKey): IListText => {
     case 'incident': return { title: s.ListTitle_IncidentList, desc: s.ListDesc_IncidentList };
     case 'employee': return { title: s.ListTitle_EmployeeList, desc: s.ListDesc_EmployeeList };
     case 'replacement': return { title: s.ListTitle_ReplacementList, desc: s.ListDesc_ReplacementList };
+    case 'stockThresholds': return { title: s.ListTitle_StockThresholdsList, desc: s.ListDesc_StockThresholdsList };
+    case 'assetKits': return { title: s.ListTitle_AssetKitsList, desc: s.ListDesc_AssetKitsList };
     default: return { title: key, desc: '' };
   }
 };
@@ -78,7 +83,7 @@ interface IIssue { severity: 'bad' | 'warn'; text: string; listKey: ListKey }
 const collectIssues = (results: Partial<Record<ListKey, IListHealthResult>>): IIssue[] => {
   const s = strings.ConfigPage;
   const issues: IIssue[] = [];
-  LIST_DEFINITIONS.forEach(def => {
+  getListDefinitions().forEach(def => {
     const r = results[def.key];
     if (!r) return;
     const title = getListText(def.key).title;
@@ -106,6 +111,12 @@ const collectIssues = (results: Partial<Record<ListKey, IListHealthResult>>): II
 export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
   const { state, actions } = props;
   const s = strings.ConfigPage;
+
+  // Read per render so property-pane changes to list titles and role groups show immediately.
+  const LIST_DEFINITIONS = getListDefinitions();
+  const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
+  const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
+  const ROLE_GROUPS = getRoleGroups();
 
   const cached = ListHealthService.lastReport;
   const [results, setResults] = React.useState<Partial<Record<ListKey, IListHealthResult>>>(() => {
@@ -631,6 +642,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
           />
           <PivotItem headerText={s.TabSchemaGuides} itemKey="schema" itemIcon="TableGroup" />
           <PivotItem headerText={s.TabRbacGroups} itemKey="rbac" itemIcon="Permissions" />
+          <PivotItem headerText={strings.Features.StockTabName} itemKey="stock" itemIcon="ProductWarning" />
           <PivotItem headerText={s.TabSyncOperations} itemKey="operations" itemIcon="Sync" />
         </Pivot>
       </div>
@@ -639,6 +651,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
       {tab === 'connections' && renderConnections()}
       {tab === 'schema' && renderSchema()}
       {tab === 'rbac' && renderRbac()}
+      {tab === 'stock' && <StockThresholdsTab />}
       {tab === 'operations' && renderOperations()}
     </div>
   );

@@ -3,7 +3,9 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   type IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  type IPropertyPaneField,
+  PropertyPaneTextField,
+  PropertyPaneLabel
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart, WebPartContext } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -12,9 +14,11 @@ import * as strings from 'InventoryManagementWebPartStrings';
 import InventoryManagement from './components/InventoryManagement';
 import { IInventoryManagementProps } from './models/IInventoryManagementProps';
 import { getSP } from './pnpjsConfig';
+import { buildAppConfig, setAppConfig, DEFAULT_APP_CONFIG, IAppConfigProperties, parseNonNegativeNumber } from './config/AppConfig';
+import { formatString } from './utils/LocalizationUtils';
 
 
-export interface IInventoryManagementWebPartProps {
+export interface IInventoryManagementWebPartProps extends IAppConfigProperties {
   description: string;
 }
 
@@ -24,6 +28,9 @@ export default class InventoryManagementWebPart extends BaseClientSideWebPart<II
   private _environmentMessage: string = '';
 
   public render(): void {
+    // Property-pane settings -> runtime config read by services (blank fields keep the defaults).
+    setAppConfig(buildAppConfig(this.properties));
+
     const element: React.ReactElement<IInventoryManagementProps> = React.createElement(
       InventoryManagement,
       {
@@ -42,6 +49,7 @@ export default class InventoryManagementWebPart extends BaseClientSideWebPart<II
 
   protected onInit(): Promise<void> {
     getSP(this.context);
+    setAppConfig(buildAppConfig(this.properties));
     return this._getEnvironmentMessage().then(message => {
       this._environmentMessage = message;
     });
@@ -103,6 +111,17 @@ export default class InventoryManagementWebPart extends BaseClientSideWebPart<II
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+    const p = strings.PropertyPaneConfig;
+    const d = DEFAULT_APP_CONFIG;
+    const textField = (key: keyof IInventoryManagementWebPartProps, label: string, defaultValue: string): IPropertyPaneField<unknown> =>
+      PropertyPaneTextField(key, { label, placeholder: formatString(p.DefaultPlaceholder, defaultValue) });
+    const numberField = (key: keyof IInventoryManagementWebPartProps, label: string, defaultValue: number): IPropertyPaneField<unknown> =>
+      PropertyPaneTextField(key, {
+        label,
+        placeholder: formatString(p.DefaultPlaceholder, defaultValue),
+        onGetErrorMessage: (value: string) => parseNonNegativeNumber(value, -1) < 0 && (value || '').trim() !== '' ? p.NumberError : ''
+      });
+
     return {
       pages: [
         {
@@ -116,6 +135,58 @@ export default class InventoryManagementWebPart extends BaseClientSideWebPart<II
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
                 })
+              ]
+            },
+            {
+              groupName: p.GroupRoles,
+              groupFields: [
+                PropertyPaneLabel('rolesNote', { text: p.RolesNote }),
+                textField('adminGroupName', p.AdminGroupLabel, d.roleGroups.admin),
+                textField('managerGroupName', p.ManagerGroupLabel, d.roleGroups.manager),
+                textField('employeeGroupName', p.EmployeeGroupLabel, d.roleGroups.employee)
+              ]
+            }
+          ]
+        },
+        {
+          header: {
+            description: p.ListsPageDescription
+          },
+          groups: [
+            {
+              groupName: p.GroupLists,
+              groupFields: [
+                PropertyPaneLabel('listsNote', { text: p.ReloadNote }),
+                textField('inventoryListTitle', p.InventoryListLabel, d.lists.inventory),
+                textField('requestListTitle', p.RequestListLabel, d.lists.request),
+                textField('returnRequestListTitle', p.ReturnRequestListLabel, d.lists.returnRequest),
+                textField('mappingListTitle', p.MappingListLabel, d.lists.mapping),
+                textField('eventLogListTitle', p.EventLogListLabel, d.lists.eventLog),
+                textField('incidentListTitle', p.IncidentListLabel, d.lists.incident),
+                textField('employeeListTitle', p.EmployeeListLabel, d.lists.employee),
+                textField('replacementListTitle', p.ReplacementListLabel, d.lists.replacement),
+                textField('stockThresholdsListTitle', p.StockThresholdsListLabel, d.lists.stockThresholds),
+                textField('assetKitsListTitle', p.AssetKitsListLabel, d.lists.assetKits)
+              ]
+            }
+          ]
+        },
+        {
+          header: {
+            description: p.AlertsPageDescription
+          },
+          groups: [
+            {
+              groupName: p.GroupSla,
+              groupFields: [
+                numberField('approvalSlaHours', p.ApprovalSlaLabel, d.sla.approvalHours),
+                numberField('assignmentSlaHours', p.AssignmentSlaLabel, d.sla.assignmentHours)
+              ]
+            },
+            {
+              groupName: p.GroupStock,
+              groupFields: [
+                numberField('defaultMinimumStock', p.DefaultMinimumLabel, d.stock.defaultMinimum)
               ]
             }
           ]

@@ -9,7 +9,13 @@ require("@pnp/sp/fields");
 const logging_1 = require("@pnp/logging");
 const mockData_1 = require("../data/mockData");
 const InventoryService_1 = require("./InventoryService");
+const AppConfig_1 = require("../config/AppConfig");
 class IncidentService {
+    // List titles come from the property pane (config/AppConfig.ts).
+    get incidentListName() { return (0, AppConfig_1.getAppConfig)().lists.incident; }
+    get employeeListName() { return (0, AppConfig_1.getAppConfig)().lists.employee; }
+    get mappingListName() { return (0, AppConfig_1.getAppConfig)().lists.mapping; }
+    get replacementListName() { return (0, AppConfig_1.getAppConfig)().lists.replacement; }
     async getReplacementList() {
         try {
             const list = this.sp.web.lists.getByTitle(this.replacementListName);
@@ -121,10 +127,6 @@ class IncidentService {
         }
     }
     constructor(spContext) {
-        this.incidentListName = 'Incident List';
-        this.employeeListName = 'EmployeeList';
-        this.mappingListName = 'Mapping List';
-        this.replacementListName = 'Asset Replacements';
         if (!spContext) {
             throw new Error('SPFx context is required. Ensure the web part is loaded in SharePoint.');
         }

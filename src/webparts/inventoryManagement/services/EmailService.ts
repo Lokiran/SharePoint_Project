@@ -2,6 +2,7 @@ import { WebPartContext } from "@microsoft/sp-webpart-base";
 import { MSGraphClientV3 } from "@microsoft/sp-http";
 import { getSP, getContext } from "../pnpjsConfig";
 import { EMPLOYEES } from "../data/mockData";
+import { getAppConfig } from "../config/AppConfig";
 
 export interface IApprovalRequestParams {
   requestKey: string;
@@ -436,7 +437,7 @@ export class EmailService {
 
       // 2. Try to query the EmployeeList first
       try {
-        const employeeList = sp.web.lists.getByTitle("EmployeeList");
+        const employeeList = sp.web.lists.getByTitle(getAppConfig().lists.employee);
         const fields = await employeeList.fields.select("InternalName", "Title")();
         
         const getFieldName = (candidates: string[]) => {

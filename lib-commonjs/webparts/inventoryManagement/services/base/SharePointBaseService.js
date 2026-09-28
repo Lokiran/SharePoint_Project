@@ -3,7 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SharePointBaseService = void 0;
 const pnpjsConfig_1 = require("../../pnpjsConfig");
 const DropdownConstants_1 = require("../../constants/DropdownConstants");
+const AppConfig_1 = require("../../config/AppConfig");
 class SharePointBaseService {
+    // List titles come from the web part's property pane (see config/AppConfig.ts);
+    // the defaults are the titles the app always used.
+    static get LIST_NAME() { return (0, AppConfig_1.getAppConfig)().lists.inventory; }
+    static get EVENT_LOG_LIST() { return (0, AppConfig_1.getAppConfig)().lists.eventLog; }
+    static get REQUEST_LIST_NAME() { return (0, AppConfig_1.getAppConfig)().lists.request; }
+    static get RETURN_REQUEST_LIST_NAME() { return (0, AppConfig_1.getAppConfig)().lists.returnRequest; }
+    static get MAPPING_LIST_NAME() { return (0, AppConfig_1.getAppConfig)().lists.mapping; }
     static async getSafeListFields(list) {
         try {
             return await list.fields.select("Title", "InternalName", "TypeAsString", "Required", "Choices")();
@@ -385,13 +393,11 @@ class SharePointBaseService {
     }
 }
 exports.SharePointBaseService = SharePointBaseService;
-SharePointBaseService.LIST_NAME = "InventoryList";
-SharePointBaseService.EVENT_LOG_LIST = "EventLogList";
-SharePointBaseService.REQUEST_LIST_NAME = "RequestList";
-SharePointBaseService.RETURN_REQUEST_LIST_NAME = "Asset Return Request List";
 SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
 SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
 SharePointBaseService.REQUEST_KEY_INTERNAL_NAME = "RequestKey";
 SharePointBaseService.ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
-SharePointBaseService.MAPPING_LIST_NAME = "Mapping List";
+/** Request list columns that record SLA milestones (auto-created). */
+SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME = "ManagerDecisionDate";
+SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME = "AssetAssignedDate";
 //# sourceMappingURL=SharePointBaseService.js.map

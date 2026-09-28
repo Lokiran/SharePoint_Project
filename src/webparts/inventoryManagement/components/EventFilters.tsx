@@ -2,6 +2,9 @@ import * as React from 'react';
 import {
   Dropdown,
   IDropdownOption,
+  ComboBox,
+  IComboBoxOption,
+  SelectableOptionMenuItemType,
   DatePicker,
   SearchBox,
   DefaultButton,
@@ -14,10 +17,12 @@ import {
   AUDIT_LOG_DATE_RANGE_OPTIONS,
   AUDIT_LOG_MODULE_OPTIONS,
   AUDIT_LOG_STATUS_OPTIONS,
-  AUDIT_LOG_SORT_OPTIONS
+  AUDIT_LOG_SORT_OPTIONS,
+  DEFAULT_ASSET_TYPE_OPTIONS
 } from '../constants/DropdownConstants';
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
+import { IUserOption, MY_ACTIVITY_KEY } from '../utils/EventLogUtils';
 
 export interface IEventFiltersProps {
   filters: IAuditLogFilters;
@@ -25,11 +30,14 @@ export interface IEventFiltersProps {
   onClear: () => void;
   actionsList: string[];
   assetTypesList: string[];
-  usersList: string[];
+  /** Users with their event counts under the current server-side filters. */
+  userOptions: IUserOption[];
+  /** Enables the "My Activity" shortcut when set. */
+  currentUserName?: string;
 }
 
 export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
-  const { filters, onChange, onClear, actionsList, assetTypesList, usersList } = props;
+  const { filters, onChange, onClear, actionsList, assetTypesList, userOptions, currentUserName } = props;
 
   const dateOptions = AUDIT_LOG_DATE_RANGE_OPTIONS;
   const moduleOptions = AUDIT_LOG_MODULE_OPTIONS;
@@ -44,21 +52,34 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
     }))
   ];
 
+  // Standard types show their localized label; custom types from SharePoint show as stored.
+  const getAssetTypeText = (type: string): string => {
+    const standard = DEFAULT_ASSET_TYPE_OPTIONS.find(o => String(o.key).toLowerCase() === type.toLowerCase());
+    return standard ? standard.text : type;
+  };
+
   const assetTypeOptions: IDropdownOption[] = [
     { key: 'All', text: strings.EventFilters.AllAssetsOption },
     ...assetTypesList.map(type => ({
       key: type,
-      text: type
+      text: getAssetTypeText(type)
     }))
   ];
 
-  const userOptions: IDropdownOption[] = [
+  // Searchable: type part of a name to jump to it. Counts reflect the current date/action/module filters.
+  const userComboOptions: IComboBoxOption[] = [
     { key: 'All', text: strings.EventFilters.AllUsersOption },
-    ...usersList.map(user => ({
-      key: user,
-      text: user
+    ...(currentUserName ? [{ key: MY_ACTIVITY_KEY, text: strings.EventFilters.MyActivityOption }] : []),
+    { key: 'divider', text: '-', itemType: SelectableOptionMenuItemType.Divider },
+    ...userOptions.map(u => ({
+      key: u.name,
+      text: u.name,
+      ariaLabel: `${u.name} (${u.count})`,
+      data: { count: u.count }
     }))
   ];
+
+  const getUserLabel = (user: string): string => user === MY_ACTIVITY_KEY ? strings.EventFilters.MyActivityOption : user;
 
   // Helper to check if any filter is active (excluding default search/sort)
   const hasActiveFilters = 
@@ -153,11 +174,21 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
         />
 
         {/* User Filter */}
-        <Dropdown
+        <ComboBox
           label={strings.EventFilters.LabelUser}
           selectedKey={filters.user}
-          options={userOptions}
+          options={userComboOptions}
+          autoComplete="on"
+          allowFreeform={false}
+          placeholder={strings.EventFilters.UserSearchPlaceholder}
+          onRenderOption={(option) => option ? (
+            <span style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', width: '100%' }}>
+              <span>{option.text}</span>
+              {option.data && <span style={{ color: 'var(--text-muted, #6b7280)', fontSize: '0.75rem' }}>{option.data.count}</span>}
+            </span>
+          ) : null}
           onChange={(_, option) => option && onChange({ ...filters, user: option.key as string })}
+          useComboBoxAsMenuWidth
         />
 
         {/* Status Filter */}
@@ -250,7 +281,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* Asset Type Chip */}
           {filters.assetType !== 'All' && (
             <span style={chipStyle}>
-              {formatString(strings.EventFilters.ChipAsset, filters.assetType)}
+              {formatString(strings.EventFilters.ChipAsset, getAssetTypeText(filters.assetType))}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, assetType: 'All' })}
@@ -262,7 +293,7 @@ export const EventFilters: React.FC<IEventFiltersProps> = (props) => {
           {/* User Chip */}
           {filters.user !== 'All' && (
             <span style={chipStyle}>
-              {formatString(strings.EventFilters.ChipUser, filters.user)}
+              {formatString(strings.EventFilters.ChipUser, getUserLabel(filters.user))}
               <IconButton
                 iconProps={{ iconName: 'Cancel' }}
                 onClick={() => onChange({ ...filters, user: 'All' })}

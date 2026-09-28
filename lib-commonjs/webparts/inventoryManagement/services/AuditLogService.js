@@ -3,8 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuditLogService = void 0;
 const pnpjsConfig_1 = require("../pnpjsConfig");
 const SharePointBaseService_1 = require("./base/SharePointBaseService");
+const AssetTypeLookupService_1 = require("./AssetTypeLookupService");
+const EventLogUtils_1 = require("../utils/EventLogUtils");
+const SharePointItemUtils_1 = require("../utils/SharePointItemUtils");
 class AuditLogService {
     static async addAuditLog(log) {
+        // Every asset/request change is audited here, so the type lookup may now be stale.
+        AssetTypeLookupService_1.AssetTypeLookupService.invalidate();
         const sp = (0, pnpjsConfig_1.getSP)();
         try {
             await sp.web.lists.getByTitle(SharePointBaseService_1.SharePointBaseService.EVENT_LOG_LIST).items.add({
@@ -281,32 +286,14 @@ class AuditLogService {
             const requestItems = await SharePointBaseService_1.SharePointBaseService._fetchItemsWithExpandedUsers(reqList);
             requestItems.forEach((item) => {
                 const keys = Object.keys(item);
-                const findKey = (searchStr) => {
-                    const nonIdMatch = keys.find(k => {
-                        const kl = k.toLowerCase().replace(/_x0020_/g, '');
-                        return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
-                    });
-                    if (nonIdMatch)
-                        return nonIdMatch;
-                    return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
-                };
+                const findKey = (searchStr) => (0, SharePointItemUtils_1.findItemKey)(item, searchStr);
                 const employeeKey = findKey("requester") || findKey("employee") || "Employee";
                 const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
                 const statusKey = keys.find(key => SharePointBaseService_1.SharePointBaseService._isBusinessStatusKey(key)) || "RequestStatus";
                 const assetStatusKey = findKey("assetstatus") || "AssetStatus";
                 const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
-                const rawEmp = item[employeeKey] || item.Employee || item.Author;
-                const reqUser = (() => {
-                    if (!rawEmp)
-                        return item.Title || "System";
-                    if (typeof rawEmp === 'string')
-                        return rawEmp;
-                    if (Array.isArray(rawEmp))
-                        return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
-                    if (typeof rawEmp === 'object')
-                        return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
-                    return rawEmp.toString();
-                })();
+                // Resolve a display name; skips OData link annotations ("Web/Lists(guid...)/Items(n)/Employee").
+                const reqUser = (0, SharePointItemUtils_1.firstPersonName)([item[employeeKey], item.Employee, item.Author], item.Title || "System");
                 const itemCreated = formatTimestamp(item.Created);
                 const itemModified = formatTimestamp(item.Modified);
                 const requestStatus = item[statusKey] || "";
@@ -394,6 +381,8 @@ class AuditLogService {
         return logs;
     }
     static async getFilteredAuditLogs(filters) {
+        // Started first so it loads in parallel with the list queries below.
+        const assetTypeLookupPromise = AssetTypeLookupService_1.AssetTypeLookupService.getLookup();
         const logs = [];
         const processedEventLogIds = new Set();
         const formatTimestamp = (isoString) => {
@@ -514,7 +503,7 @@ class AuditLogService {
                 }
                 // Server-side user filter
                 if (filters.user && filters.user !== 'All') {
-                    filterParts.push(`User eq '${filters.user}'`);
+                    filterParts.push(`User eq '${filters.user.replace(/'/g, "''")}'`);
                 }
                 let eventQuery = eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created");
                 if (filterParts.length > 0) {
@@ -696,7 +685,7 @@ class AuditLogService {
                     invFilters.push(`(Created ge '${startIso}' or Modified ge '${startIso}')`);
                 }
                 if (filters.user && filters.user !== 'All') {
-                    invFilters.push(`(Author/Title eq '${filters.user}' or Editor/Title eq '${filters.user}')`);
+                    invFilters.push(`(Author/Title eq '${filters.user.replace(/'/g, "''")}' or Editor/Title eq '${filters.user.replace(/'/g, "''")}')`);
                 }
                 let invQuery = list.items.select("ID", "Title", assetNameKey, statusKey, "Created", "Modified", "Author/Title", "Editor/Title").expand("Author", "Editor");
                 if (invFilters.length > 0) {
@@ -781,37 +770,19 @@ class AuditLogService {
                     reqFilters.push(`(Created ge '${startIso}' or Modified ge '${startIso}')`);
                 }
                 if (filters.user && filters.user !== 'All') {
-                    reqFilters.push(`(Author/Title eq '${filters.user}' or Editor/Title eq '${filters.user}')`);
+                    reqFilters.push(`(Author/Title eq '${filters.user.replace(/'/g, "''")}' or Editor/Title eq '${filters.user.replace(/'/g, "''")}')`);
                 }
                 const requestItems = await SharePointBaseService_1.SharePointBaseService._fetchItemsWithExpandedUsers(reqList, reqFilters.length > 0 ? reqFilters.join(' and ') : undefined);
                 requestItems.forEach((item) => {
                     const keys = Object.keys(item);
-                    const findKey = (searchStr) => {
-                        const nonIdMatch = keys.find(k => {
-                            const kl = k.toLowerCase().replace(/_x0020_/g, '');
-                            return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
-                        });
-                        if (nonIdMatch)
-                            return nonIdMatch;
-                        return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
-                    };
+                    const findKey = (searchStr) => (0, SharePointItemUtils_1.findItemKey)(item, searchStr);
                     const employeeKey = findKey("requester") || findKey("employee") || "Employee";
                     const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
                     const statusKey = keys.find(key => SharePointBaseService_1.SharePointBaseService._isBusinessStatusKey(key)) || "RequestStatus";
                     const assetStatusKey = findKey("assetstatus") || "AssetStatus";
                     const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
-                    const rawEmp = item[employeeKey] || item.Employee || item.Author;
-                    const reqUser = (() => {
-                        if (!rawEmp)
-                            return item.Title || "System";
-                        if (typeof rawEmp === 'string')
-                            return rawEmp;
-                        if (Array.isArray(rawEmp))
-                            return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
-                        if (typeof rawEmp === 'object')
-                            return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
-                        return rawEmp.toString();
-                    })();
+                    // Resolve a display name; skips OData link annotations ("Web/Lists(guid...)/Items(n)/Employee").
+                    const reqUser = (0, SharePointItemUtils_1.firstPersonName)([item[employeeKey], item.Employee, item.Author], item.Title || "System");
                     const itemCreated = formatTimestamp(item.Created);
                     const itemModified = formatTimestamp(item.Modified);
                     const requestStatus = item[statusKey] || "";
@@ -895,6 +866,11 @@ class AuditLogService {
                 console.warn("Could not fetch RequestList for audit logs", err);
             }
         }
+        // Tag each event with the asset type of its source item (used by the Asset Type filter)
+        const assetTypeLookup = await assetTypeLookupPromise;
+        logs.forEach(log => {
+            log.assetType = (0, EventLogUtils_1.resolveEventAssetType)(log, assetTypeLookup);
+        });
         // Sort logs initially by timestamp descending
         logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
         return logs;

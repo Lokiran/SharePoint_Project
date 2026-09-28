@@ -699,6 +699,62 @@ $transition-normal: 0.25s $ease-standard;
       }
     }
 
+    // ---- SLA STAT TILES ----
+    .slaStats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .slaStat {
+      border: 1px solid $border-color;
+      border-left: 4px solid $color-blue;
+      border-radius: $radius-sm;
+      padding: 10px 14px;
+
+      &.slaStatWarn {
+        border-left-color: #d83b01;
+      }
+
+      &.slaStatGood {
+        border-left-color: #107c10;
+      }
+
+      .slaStatValue {
+        display: block;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: $text-primary;
+        line-height: 1.2;
+      }
+
+      .slaStatLabel {
+        display: block;
+        font-size: 0.75rem;
+        color: $text-tertiary;
+        margin-top: 2px;
+      }
+    }
+
+    .headerAction {
+      background: none;
+      border: 1px solid $border-color;
+      border-radius: $radius-sm;
+      padding: 6px 12px;
+      font: inherit;
+      font-size: 0.78rem;
+      color: $color-blue;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      &:hover {
+        background-color: rgba(0, 120, 212, 0.06);
+      }
+    }
+
     // ---- EMPTY STATE ----
     .noDataMessage {
       padding: 48px 24px;

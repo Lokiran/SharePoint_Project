@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailService = void 0;
 const pnpjsConfig_1 = require("../pnpjsConfig");
 const mockData_1 = require("../data/mockData");
+const AppConfig_1 = require("../config/AppConfig");
 /**
  * EmailService
  * -------------------------------------------------------------------------
@@ -386,7 +387,7 @@ class EmailService {
             }
             // 2. Try to query the EmployeeList first
             try {
-                const employeeList = sp.web.lists.getByTitle("EmployeeList");
+                const employeeList = sp.web.lists.getByTitle((0, AppConfig_1.getAppConfig)().lists.employee);
                 const fields = await employeeList.fields.select("InternalName", "Title")();
                 const getFieldName = (candidates) => {
                     const found = fields.find(f => candidates.some(c => f.Title.toLowerCase() === c.toLowerCase() || f.InternalName.toLowerCase() === c.toLowerCase()));

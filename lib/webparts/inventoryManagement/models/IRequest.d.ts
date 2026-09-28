@@ -15,5 +15,9 @@ export interface IRequest {
     managerName?: string;
     requestDate: string;
     reason?: string;
+    /** SLA milestones (ISO timestamps). `createdAt` is the item's Created time. */
+    createdAt?: string;
+    managerDecisionAt?: string;
+    assignedAt?: string;
 }
 //# sourceMappingURL=IRequest.d.ts.map

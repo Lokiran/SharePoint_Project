@@ -7,13 +7,15 @@ import '@pnp/sp/fields';
 import { LogLevel, PnPLogging } from '@pnp/logging';
 import { EMPLOYEES } from '../data/mockData';
 import { InventoryService } from './InventoryService';
+import { getAppConfig } from '../config/AppConfig';
 
 export class IncidentService {
   private sp: SPFI;
-  private readonly incidentListName = 'Incident List';
-  private readonly employeeListName = 'EmployeeList';
-  private readonly mappingListName = 'Mapping List';
-  private readonly replacementListName = 'Asset Replacements';
+  // List titles come from the property pane (config/AppConfig.ts).
+  private get incidentListName(): string { return getAppConfig().lists.incident; }
+  private get employeeListName(): string { return getAppConfig().lists.employee; }
+  private get mappingListName(): string { return getAppConfig().lists.mapping; }
+  private get replacementListName(): string { return getAppConfig().lists.replacement; }
   private static _replacementListFieldsEnsured = false;
 
   public async getReplacementList(): Promise<any> {

@@ -7,8 +7,9 @@ const react_1 = require("@fluentui/react");
 const DropdownConstants_1 = require("../constants/DropdownConstants");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
+const EventLogUtils_1 = require("../utils/EventLogUtils");
 const EventFilters = (props) => {
-    const { filters, onChange, onClear, actionsList, assetTypesList, usersList } = props;
+    const { filters, onChange, onClear, actionsList, assetTypesList, userOptions, currentUserName } = props;
     const dateOptions = DropdownConstants_1.AUDIT_LOG_DATE_RANGE_OPTIONS;
     const moduleOptions = DropdownConstants_1.AUDIT_LOG_MODULE_OPTIONS;
     const statusOptions = DropdownConstants_1.AUDIT_LOG_STATUS_OPTIONS;
@@ -20,20 +21,31 @@ const EventFilters = (props) => {
             text: action.charAt(0).toUpperCase() + action.slice(1)
         }))
     ];
+    // Standard types show their localized label; custom types from SharePoint show as stored.
+    const getAssetTypeText = (type) => {
+        const standard = DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS.find(o => String(o.key).toLowerCase() === type.toLowerCase());
+        return standard ? standard.text : type;
+    };
     const assetTypeOptions = [
         { key: 'All', text: strings.EventFilters.AllAssetsOption },
         ...assetTypesList.map(type => ({
             key: type,
-            text: type
+            text: getAssetTypeText(type)
         }))
     ];
-    const userOptions = [
+    // Searchable: type part of a name to jump to it. Counts reflect the current date/action/module filters.
+    const userComboOptions = [
         { key: 'All', text: strings.EventFilters.AllUsersOption },
-        ...usersList.map(user => ({
-            key: user,
-            text: user
+        ...(currentUserName ? [{ key: EventLogUtils_1.MY_ACTIVITY_KEY, text: strings.EventFilters.MyActivityOption }] : []),
+        { key: 'divider', text: '-', itemType: react_1.SelectableOptionMenuItemType.Divider },
+        ...userOptions.map(u => ({
+            key: u.name,
+            text: u.name,
+            ariaLabel: `${u.name} (${u.count})`,
+            data: { count: u.count }
         }))
     ];
+    const getUserLabel = (user) => user === EventLogUtils_1.MY_ACTIVITY_KEY ? strings.EventFilters.MyActivityOption : user;
     // Helper to check if any filter is active (excluding default search/sort)
     const hasActiveFilters = filters.dateRangeType !== 'All' ||
         filters.action !== 'All' ||
@@ -76,7 +88,9 @@ const EventFilters = (props) => {
             React.createElement(react_1.Dropdown, { label: strings.EventFilters.LabelAction, selectedKey: filters.action, options: actionOptions, onChange: (_, option) => option && onChange({ ...filters, action: option.key }) }),
             React.createElement(react_1.Dropdown, { label: strings.EventFilters.LabelModule, selectedKey: filters.module, options: moduleOptions, onChange: (_, option) => option && onChange({ ...filters, module: option.key }) }),
             React.createElement(react_1.Dropdown, { label: strings.EventFilters.LabelAssetType, selectedKey: filters.assetType, options: assetTypeOptions, onChange: (_, option) => option && onChange({ ...filters, assetType: option.key }) }),
-            React.createElement(react_1.Dropdown, { label: strings.EventFilters.LabelUser, selectedKey: filters.user, options: userOptions, onChange: (_, option) => option && onChange({ ...filters, user: option.key }) }),
+            React.createElement(react_1.ComboBox, { label: strings.EventFilters.LabelUser, selectedKey: filters.user, options: userComboOptions, autoComplete: "on", allowFreeform: false, placeholder: strings.EventFilters.UserSearchPlaceholder, onRenderOption: (option) => option ? (React.createElement("span", { style: { display: 'flex', justifyContent: 'space-between', gap: '12px', width: '100%' } },
+                    React.createElement("span", null, option.text),
+                    option.data && React.createElement("span", { style: { color: 'var(--text-muted, #6b7280)', fontSize: '0.75rem' } }, option.data.count))) : null, onChange: (_, option) => option && onChange({ ...filters, user: option.key }), useComboBoxAsMenuWidth: true }),
             React.createElement(react_1.Dropdown, { label: strings.EventFilters.LabelStatus, selectedKey: filters.status, options: statusOptions, onChange: (_, option) => option && onChange({ ...filters, status: option.key }) }),
             React.createElement(react_1.Dropdown, { label: strings.EventFilters.LabelSortOrder, selectedKey: filters.sortOrder, options: sortOptions, onChange: (_, option) => option && onChange({ ...filters, sortOrder: option.key }) })),
         filters.dateRangeType === 'Custom' && (React.createElement(react_1.Stack, { horizontal: true, wrap: true, tokens: { childrenGap: 16 }, style: { alignItems: 'flex-end', backgroundColor: '#f3f2f1', padding: '12px', borderRadius: '4px' } },
@@ -97,10 +111,10 @@ const EventFilters = (props) => {
                 (0, LocalizationUtils_1.formatString)(strings.EventFilters.ChipModule, filters.module),
                 React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, module: 'All' }), styles: chipButtonStyles }))),
             filters.assetType !== 'All' && (React.createElement("span", { style: chipStyle },
-                (0, LocalizationUtils_1.formatString)(strings.EventFilters.ChipAsset, filters.assetType),
+                (0, LocalizationUtils_1.formatString)(strings.EventFilters.ChipAsset, getAssetTypeText(filters.assetType)),
                 React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, assetType: 'All' }), styles: chipButtonStyles }))),
             filters.user !== 'All' && (React.createElement("span", { style: chipStyle },
-                (0, LocalizationUtils_1.formatString)(strings.EventFilters.ChipUser, filters.user),
+                (0, LocalizationUtils_1.formatString)(strings.EventFilters.ChipUser, getUserLabel(filters.user)),
                 React.createElement(react_1.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, user: 'All' }), styles: chipButtonStyles }))),
             filters.status !== 'All' && (React.createElement("span", { style: chipStyle },
                 (0, LocalizationUtils_1.formatString)(strings.EventFilters.ChipStatus, filters.status),

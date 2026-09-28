@@ -256,6 +256,29 @@ export class RequestListSchemaService {
         }
       }
 
+      // SLA milestone columns (Date and Time), filled when a manager decides
+      // and when an admin assigns the asset.
+      for (const dateFieldName of [
+        SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME,
+        SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME
+      ]) {
+        const exists = fields.some(field =>
+          (field.InternalName || "").toString().toLowerCase() === dateFieldName.toLowerCase()
+        );
+
+        if (!exists) {
+          try {
+            // DisplayFormat 1 = DateTime (keep the time, not just the date).
+            await list.fields.addDateTime(dateFieldName, { DisplayFormat: 1 } as any);
+          } catch (err) {
+            console.warn(
+              `Could not auto-create ${dateFieldName} field. Continuing.`,
+              err
+            );
+          }
+        }
+      }
+
       // eslint-disable-next-line require-atomic-updates
       RequestListSchemaService._requestWorkflowFieldsEnsured = true;
     } catch (error) {

@@ -55,6 +55,8 @@ export interface IExportStyles {
 
   'filtersRow': string;
 
+  'headerAction': string;
+
   'headerDate': string;
 
   'headerLeft': string;
@@ -134,6 +136,18 @@ export interface IExportStyles {
   'skeletonChart': string;
 
   'skeletonLine': string;
+
+  'slaStat': string;
+
+  'slaStatGood': string;
+
+  'slaStatLabel': string;
+
+  'slaStatValue': string;
+
+  'slaStatWarn': string;
+
+  'slaStats': string;
 
   'splitLayout': string;
 

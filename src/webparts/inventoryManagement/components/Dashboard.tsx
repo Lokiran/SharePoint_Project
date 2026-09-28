@@ -17,7 +17,24 @@ import {
   Legend,
   ArcElement,
 } from 'chart.js';
-import { Bar, Pie, Doughnut } from 'react-chartjs-2';
+import { Bar, Doughnut } from 'react-chartjs-2';
+import { centerTotalPlugin, barValueLabelsPlugin } from '../utils/ChartPlugins';
+import { LowStockPanel } from './dashboard/LowStockPanel';
+import { RequestSlaPanel } from './dashboard/RequestSlaPanel';
+
+// Gaps between slices in the card's background colour (follows dark mode), and a small pop-out on hover.
+const cardBackground = (ctx: { chart: { canvas: HTMLCanvasElement } }): string => {
+  try {
+    return window.getComputedStyle(ctx.chart.canvas).getPropertyValue('--surface-bg').trim() || '#ffffff';
+  } catch {
+    return '#ffffff';
+  }
+};
+const ARC_STYLE = { borderColor: cardBackground, borderWidth: 2, hoverOffset: 6 };
+
+/** 'Assigned' -> 'Assigned (16)' for legend entries; placeholder labels (no data) are left as-is. */
+const withCounts = (labels: string[], counts: Record<string, number>): string[] =>
+  labels.map(label => (counts[label] !== undefined ? `${label} (${counts[label]})` : label));
 
 ChartJS.register(
   CategoryScale,
@@ -121,15 +138,17 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     ? Object.keys(statusCounts).map(k => statusCounts[k])
     : [1];
 
+  const statusTotal = Object.keys(statusCounts).reduce((sum, k) => sum + statusCounts[k], 0);
+
   const assetStatusData = {
-    labels: statusLabels,
+    labels: withCounts(statusLabels, statusCounts),
     datasets: [
       {
         label: primaryPieLabel,
         data: statusDataValues,
-        backgroundColor: statusLabels.map(label => getFluentColor(label, 0.75)),
-        borderColor: statusLabels.map(label => getFluentColor(label, 1.0)),
-        borderWidth: 1.5,
+        // Colours are keyed on the raw status, not the display label with its count.
+        backgroundColor: statusLabels.map(label => getFluentColor(label, 0.85)),
+        ...ARC_STYLE,
       },
     ],
   };
@@ -141,8 +160,9 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     return acc;
   }, {} as Record<string, number>);
 
-  const assetTypeLabels = Object.keys(typeCounts);
-  const assetTypeDataValues = Object.keys(typeCounts).map(k => typeCounts[k]);
+  // Largest category first so the chart reads left to right by volume.
+  const assetTypeLabels = Object.keys(typeCounts).sort((a, b) => typeCounts[b] - typeCounts[a] || a.localeCompare(b));
+  const assetTypeDataValues = assetTypeLabels.map(k => typeCounts[k]);
 
   const assetTypeData = {
     labels: assetTypeLabels.length ? assetTypeLabels : [strings.Dashboard.NoAssetsLabel],
@@ -156,6 +176,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         hoverBackgroundColor: 'rgba(0, 90, 158, 0.85)',
         hoverBorderColor: 'rgba(0, 90, 158, 1)',
         borderRadius: 6,
+        maxBarThickness: 56,
       },
     ],
   };
@@ -184,15 +205,16 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     ? Object.keys(requestStatusCounts).map(k => requestStatusCounts[k])
     : [1];
 
+  const requestStatusTotal = Object.keys(requestStatusCounts).reduce((sum, k) => sum + requestStatusCounts[k], 0);
+
   const requestStatusData = {
-    labels: doughnutLabels,
+    labels: withCounts(doughnutLabels, requestStatusCounts),
     datasets: [
       {
         label: isManagerView ? strings.Dashboard.AssignmentStatusApprovedLabel : strings.Dashboard.RequestsByStatusLabel,
         data: doughnutDataValues,
-        backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.75)),
-        borderColor: doughnutLabels.map(label => getFluentColor(label, 1.0)),
-        borderWidth: 1.5,
+        backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.85)),
+        ...ARC_STYLE,
       },
     ],
   };
@@ -236,27 +258,43 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     },
   };
 
-  const pieOptions = {
+  // Tooltip: 'Assigned (16)' as title, '16 · 76%' as body.
+  const arcTooltip = {
+    ...chartPlugins.tooltip,
+    callbacks: {
+      label: (ctx: any): string => {
+        const values: number[] = ctx.dataset.data || [];
+        const total = values.reduce((sum: number, v: number) => sum + (Number(v) || 0), 0);
+        const pct = total > 0 ? Math.round((Number(ctx.raw) / total) * 100) : 0;
+        return ` ${ctx.raw} · ${pct}%`;
+      },
+    },
+  };
+
+  const statusDoughnutOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: chartPlugins,
+    cutout: '62%',
+    plugins: { ...chartPlugins, tooltip: arcTooltip, centerTotal: { value: statusTotal } },
   };
 
   const doughnutOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: chartPlugins,
-    cutout: '65%',
+    cutout: '62%',
+    plugins: { ...chartPlugins, tooltip: arcTooltip, centerTotal: { value: requestStatusTotal } },
   };
 
   const assetTypeOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    layout: { padding: { top: 18 } }, // room for the value labels above the tallest bar
     plugins: {
       legend: {
         display: false,
       },
       tooltip: chartPlugins.tooltip,
+      barValueLabels: { enabled: assetTypeLabels.length > 0 },
     },
     scales: {
       x: {
@@ -592,10 +630,18 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         )}
       </div>
 
+      {/* ===== LOW-STOCK WARNING (Admin & Manager; hidden when stock is healthy) ===== */}
+      {(isAdmin || isInventoryManager) && (
+        <LowStockPanel
+          items={items}
+          onManageThresholds={isAdmin && onNavigate ? () => onNavigate('Config') : undefined}
+        />
+      )}
+
       {/* ===== CHART CARDS (Admin & Manager only) ===== */}
       {(isAdmin || isInventoryManager) && (
         <div className={styles.chartsGrid}>
-          {/* Chart 1: Primary Status (Pie) */}
+          {/* Chart 1: Primary Status (Doughnut with total) */}
           <div className={styles.chartCard}>
             <div className={styles.chartHeader}>
               <div className={styles.chartIcon}>
@@ -607,7 +653,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               </div>
             </div>
             <div className={styles.chartContainer}>
-              <Pie data={assetStatusData} options={pieOptions} />
+              <Doughnut data={assetStatusData} options={statusDoughnutOptions as any} plugins={[centerTotalPlugin]} />
             </div>
           </div>
 
@@ -623,7 +669,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               </div>
             </div>
             <div className={styles.chartContainer}>
-              <Bar data={assetTypeData} options={assetTypeOptions} />
+              <Bar data={assetTypeData} options={assetTypeOptions as any} plugins={[barValueLabelsPlugin]} />
             </div>
           </div>
 
@@ -645,10 +691,19 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               </div>
             </div>
             <div className={styles.chartContainer}>
-              <Doughnut data={requestStatusData} options={doughnutOptions} />
+              <Doughnut data={requestStatusData} options={doughnutOptions as any} plugins={[centerTotalPlugin]} />
             </div>
           </div>
         </div>
+      )}
+
+      {/* ===== REQUEST SLA (Admin & Manager) ===== */}
+      {(isAdmin || isInventoryManager) && (
+        <RequestSlaPanel
+          requests={requests}
+          queueKey={isAdmin ? 'AssetAssignmentQueue' : 'Approvals'}
+          onNavigate={onNavigate}
+        />
       )}
 
       {/* ===== ACTION CENTER — ADMIN ===== */}

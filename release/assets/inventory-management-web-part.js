@@ -16,88 +16,95 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".m-0_38e8fe2c{margin:0!important}.mt-1_38e8fe2c{margin-top:4px!important}.mt-2_38e8fe2c{margin-top:8px!important}.mt-3_38e8fe2c{margin-top:12px!important}.mt-4_38e8fe2c{margin-top:16px!important}.mt-5_38e8fe2c{margin-top:20px!important}.mb-1_38e8fe2c{margin-bottom:4px!important}.mb-2_38e8fe2c{margin-bottom:8px!important}.mb-3_38e8fe2c{margin-bottom:12px!important}.mb-4_38e8fe2c{margin-bottom:16px!important}.mb-5_38e8fe2c{margin-bottom:20px!important}.p-0_38e8fe2c{padding:0!important}.p-1_38e8fe2c{padding:4px!important}.p-2_38e8fe2c{padding:8px!important}.p-3_38e8fe2c{padding:12px!important}.p-4_38e8fe2c{padding:16px!important}.p-5_38e8fe2c{padding:20px!important}.tableWrapper_38e8fe2c{-webkit-overflow-scrolling:touch;margin-bottom:15px;overflow-x:auto!important;width:100%!important}@container (max-width: 600px){.hide-on-mobile_38e8fe2c{display:none!important}}@container (min-width: 1025px){.show-only-on-mobile_38e8fe2c{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.show-only-on-mobile_38e8fe2c{display:none!important}}.metricsRow_38e8fe2c{border-bottom:1px solid rgba(0,0,0,.06)!important;display:flex!important;flex-wrap:wrap!important;gap:24px!important;padding:0 4px 16px!important}.metricsRow_38e8fe2c .metricItem_38e8fe2c{flex:1 1 auto!important;min-width:110px!important}.metricsRow_38e8fe2c .metricDivider_38e8fe2c{align-self:stretch!important;background-color:#e2e8f0!important;width:1px!important}@container (max-width: 600px){.metricsRow_38e8fe2c .metricDivider_38e8fe2c{display:none!important}}.filtersRow_38e8fe2c{align-items:flex-end!important;display:flex!important;flex-wrap:wrap!important;gap:12px!important;padding:0 0 10px!important;width:100%!important}.filtersRow_38e8fe2c .searchField_38e8fe2c{flex:1 1 200px!important}.filtersRow_38e8fe2c .filterDropdown_38e8fe2c{width:130px!important}@container (max-width: 600px){.filtersRow_38e8fe2c .filterDropdown_38e8fe2c{flex-grow:1!important;width:100%!important}}@keyframes fadeInUp_38e8fe2c{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_38e8fe2c{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_38e8fe2c{0%,to{opacity:1}50%{opacity:.6}}.dashboard_38e8fe2c{animation:fadeInUp_38e8fe2c .4s cubic-bezier(0,0,.2,1);container-type:inline-size;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c .headerLeft_38e8fe2c{flex:1;min-width:200px}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c .headerLeft_38e8fe2c .headerTitle_38e8fe2c{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c .headerLeft_38e8fe2c .headerSubtitle_38e8fe2c{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c .headerLeft_38e8fe2c .headerDate_38e8fe2c{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c .headerLeft_38e8fe2c .headerDate_38e8fe2c i{color:#8a8886;font-size:12px}.dashboard_38e8fe2c .dashboardHeader_38e8fe2c .headerRight_38e8fe2c{align-items:center;display:flex;gap:8px}.dashboard_38e8fe2c .quickActions_38e8fe2c{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_38e8fe2c .quickActions_38e8fe2c .quickActionBtn_38e8fe2c{align-items:center;background:linear-gradient(180deg,#fff,#f3f2f1);border:1px solid rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.28);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.8),0 2px 4px rgba(0,0,0,.05);color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:600;gap:7px;padding:8px 16px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background-color .15s ease,box-shadow .1s ease;white-space:nowrap}.dashboard_38e8fe2c .quickActions_38e8fe2c .quickActionBtn_38e8fe2c i{color:#0078d4;font-size:14px}.dashboard_38e8fe2c .quickActions_38e8fe2c .quickActionBtn_38e8fe2c:hover{background:linear-gradient(180deg,#fff,#eaeaea);border-color:rgba(0,0,0,.18);border-bottom:3px solid rgba(0,0,0,.32);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.9),0 4px 8px rgba(0,0,0,.08);color:#005a9e;transform:translateY(-2px)}.dashboard_38e8fe2c .quickActions_38e8fe2c .quickActionBtn_38e8fe2c:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04);transform:translateY(2px)}.dashboard_38e8fe2c .quickActions_38e8fe2c .quickActionBtn_38e8fe2c:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_38e8fe2c .dashboardIntro_38e8fe2c{animation:fadeInUp_38e8fe2c .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@container (max-width: 1024px){.dashboard_38e8fe2c .summaryGrid_38e8fe2c{grid-template-columns:repeat(2,1fr)}}@container (max-width: 600px){.dashboard_38e8fe2c .summaryGrid_38e8fe2c{grid-template-columns:1fr}}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c{align-items:center;animation:fadeInUp_38e8fe2c .4s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:before{background-color:transparent;border-radius:0 4px 4px 0;bottom:12px;box-shadow:0 0 8px rgba(0,0,0,.05);content:\"\";left:0;position:absolute;top:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);width:5px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-5px)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:hover:before{transform:scaleY(1.15)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:hover .iconContainer_38e8fe2c{transform:scale(1.05) translateZ(0)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:first-child{animation-delay:0s}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:nth-child(2){animation-delay:.06s}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:nth-child(3){animation-delay:.12s}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c:nth-child(4){animation-delay:.18s}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardBlue_38e8fe2c:before{background-color:#0078d4;box-shadow:0 0 10px rgba(0,120,212,.45)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardBlue_38e8fe2c .iconContainer_38e8fe2c{background-color:rgba(0,120,212,.08);border-color:rgba(0,120,212,.15);color:#0078d4}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardGreen_38e8fe2c:before{background-color:#107c10;box-shadow:0 0 10px rgba(16,124,16,.45)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardGreen_38e8fe2c .iconContainer_38e8fe2c{background-color:rgba(16,124,16,.08);border-color:rgba(16,124,16,.15);color:#107c10}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardPurple_38e8fe2c:before{background-color:#8764b8;box-shadow:0 0 10px rgba(135,100,184,.45)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardPurple_38e8fe2c .iconContainer_38e8fe2c{background-color:rgba(135,100,184,.08);border-color:rgba(135,100,184,.15);color:#8764b8}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardGold_38e8fe2c:before{background-color:#ffb900;box-shadow:0 0 10px rgba(255,185,0,.45)}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c.cardGold_38e8fe2c .iconContainer_38e8fe2c{background-color:rgba(255,185,0,.12);border-color:rgba(255,185,0,.2);color:#b37d00}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .iconContainer_38e8fe2c{align-items:center;border:1px solid rgba(0,0,0,.05);border-radius:12px;box-shadow:inset 1px 2px 4px rgba(0,0,0,.06),inset -1px -1px 2px hsla(0,0%,100%,.7);display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summaryValue_38e8fe2c{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summaryLabel_38e8fe2c{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summarySubtitle_38e8fe2c{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summarySubtitle_38e8fe2c .trendUp_38e8fe2c{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summarySubtitle_38e8fe2c .trendUp_38e8fe2c i{font-size:10px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summarySubtitle_38e8fe2c .trendDown_38e8fe2c{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_38e8fe2c .summaryGrid_38e8fe2c .summaryCard_38e8fe2c .cardInfo_38e8fe2c .summarySubtitle_38e8fe2c .trendDown_38e8fe2c i{font-size:10px}.dashboard_38e8fe2c .chartsGrid_38e8fe2c{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@container (max-width: 600px){.dashboard_38e8fe2c .chartsGrid_38e8fe2c{grid-template-columns:1fr}}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c{align-items:flex-start;animation:fadeInUp_38e8fe2c .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c:first-child{animation-delay:.1s}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c:nth-child(2){animation-delay:.16s}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c:nth-child(3){animation-delay:.22s}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c .chartHeader_38e8fe2c{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c .chartHeader_38e8fe2c .chartIcon_38e8fe2c{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c .chartHeader_38e8fe2c .chartTitleBlock_38e8fe2c{flex:1;min-width:0}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c .chartHeader_38e8fe2c .chartTitleBlock_38e8fe2c h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c .chartHeader_38e8fe2c .chartTitleBlock_38e8fe2c .chartSubtitle_38e8fe2c{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_38e8fe2c .chartsGrid_38e8fe2c .chartCard_38e8fe2c .chartContainer_38e8fe2c{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_38e8fe2c .actionCenter_38e8fe2c{animation:fadeInUp_38e8fe2c .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);margin-bottom:20px;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_38e8fe2c .actionCenter_38e8fe2c:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_38e8fe2c .actionCenter_38e8fe2c .sectionHeader_38e8fe2c{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_38e8fe2c .actionCenter_38e8fe2c .sectionHeader_38e8fe2c h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_38e8fe2c .actionCenter_38e8fe2c .sectionHeader_38e8fe2c h3 i{color:#0078d4;font-size:16px}.dashboard_38e8fe2c .actionCenter_38e8fe2c .sectionHeader_38e8fe2c .sectionSubtitle_38e8fe2c{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_38e8fe2c .actionCenter_38e8fe2c .tableWrapper_38e8fe2c{border-radius:8px;overflow-x:auto;width:100%}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c th:first-child{border-radius:8px 0 0 0}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c th:last-child{border-radius:0 8px 0 0}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c tbody tr:last-child td{border-bottom:none}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_38e8fe2c .actionCenter_38e8fe2c .actionTable_38e8fe2c code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c{align-items:center;border-radius:100px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 1px 2px rgba(0,0,0,.05);display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.45),0 2px 4px rgba(0,0,0,.08);transform:translateY(-.5px)}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c.badgePending_38e8fe2c{background:linear-gradient(180deg,#fff7dc,#fff4ce);border:1px solid rgba(255,185,0,.3);border-bottom:2px solid rgba(213,155,0,.4);color:#7a5200}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c.badgeApproved_38e8fe2c{background:linear-gradient(180deg,#e8f9e6,#dff6dd);border:1px solid rgba(16,124,16,.25);border-bottom:2px solid rgba(11,88,11,.3);color:#0e700e}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c.badgeDeclined_38e8fe2c{background:linear-gradient(180deg,#ffeef0,#fde7e9);border:1px solid rgba(216,59,1,.25);border-bottom:2px solid rgba(160,40,1,.3);color:#a80000}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c.badgeAssigned_38e8fe2c{background:linear-gradient(180deg,#f0f5ff,#e8f0fe);border:1px solid rgba(0,120,212,.25);border-bottom:2px solid rgba(0,90,158,.3);color:#1a56db}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c.badgeReturned_38e8fe2c{background:linear-gradient(180deg,#edfaf8,#e6f7f5);border:1px solid rgba(0,130,114,.25);border-bottom:2px solid rgba(0,90,78,.3);color:#006d62}.dashboard_38e8fe2c .actionCenter_38e8fe2c .statusBadge_38e8fe2c.badgeMaintenance_38e8fe2c{background:linear-gradient(180deg,#fff5eb,#fff0e0);border:1px solid rgba(216,59,1,.2);border-bottom:2px solid rgba(160,40,1,.25);color:#9a3412}.dashboard_38e8fe2c .actionCenter_38e8fe2c .noDataMessage_38e8fe2c{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_38e8fe2c .actionCenter_38e8fe2c .noDataMessage_38e8fe2c i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_38e8fe2c .actionCenter_38e8fe2c .noDataMessage_38e8fe2c span{line-height:1.5;max-width:320px}.dashboard_38e8fe2c .actionCenter_38e8fe2c .noDataMessage_38e8fe2c .emptyStateHint_38e8fe2c{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_38e8fe2c .splitLayout_38e8fe2c{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@container (max-width: 1024px){.dashboard_38e8fe2c .splitLayout_38e8fe2c{grid-template-columns:1fr}}.dashboard_38e8fe2c .splitLayout_38e8fe2c .actionCenter_38e8fe2c{margin-bottom:0}.dashboard_38e8fe2c .skeletonCard_38e8fe2c,.dashboard_38e8fe2c .skeletonChart_38e8fe2c,.dashboard_38e8fe2c .skeletonLine_38e8fe2c,.dashboard_38e8fe2c .skeleton_38e8fe2c{animation:shimmer_38e8fe2c 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_38e8fe2c .skeletonCard_38e8fe2c{border-radius:14px;height:100px}.dashboard_38e8fe2c .skeletonChart_38e8fe2c{border-radius:14px;height:260px}.dashboard_38e8fe2c .skeletonLine_38e8fe2c{height:14px;margin-bottom:10px}.dashboard_38e8fe2c .skeletonLine_38e8fe2c:last-child{width:60%}.dashboard_38e8fe2c .tableCellJustification_38e8fe2c{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@container (max-width: 600px){.dashboard_38e8fe2c .tableCellJustification_38e8fe2c{max-width:120px!important}}@media (prefers-reduced-motion:reduce){.dashboard_38e8fe2c{animation:none!important}.dashboard_38e8fe2c .actionCenter_38e8fe2c,.dashboard_38e8fe2c .chartCard_38e8fe2c,.dashboard_38e8fe2c .summaryCard_38e8fe2c{animation:none!important;transition:none!important}.dashboard_38e8fe2c .skeletonCard_38e8fe2c,.dashboard_38e8fe2c .skeletonChart_38e8fe2c,.dashboard_38e8fe2c .skeletonLine_38e8fe2c,.dashboard_38e8fe2c .skeleton_38e8fe2c{animation:none!important}}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".m-0_e40316c8{margin:0!important}.mt-1_e40316c8{margin-top:4px!important}.mt-2_e40316c8{margin-top:8px!important}.mt-3_e40316c8{margin-top:12px!important}.mt-4_e40316c8{margin-top:16px!important}.mt-5_e40316c8{margin-top:20px!important}.mb-1_e40316c8{margin-bottom:4px!important}.mb-2_e40316c8{margin-bottom:8px!important}.mb-3_e40316c8{margin-bottom:12px!important}.mb-4_e40316c8{margin-bottom:16px!important}.mb-5_e40316c8{margin-bottom:20px!important}.p-0_e40316c8{padding:0!important}.p-1_e40316c8{padding:4px!important}.p-2_e40316c8{padding:8px!important}.p-3_e40316c8{padding:12px!important}.p-4_e40316c8{padding:16px!important}.p-5_e40316c8{padding:20px!important}.tableWrapper_e40316c8{-webkit-overflow-scrolling:touch;margin-bottom:15px;overflow-x:auto!important;width:100%!important}@container (max-width: 600px){.hide-on-mobile_e40316c8{display:none!important}}@container (min-width: 1025px){.show-only-on-mobile_e40316c8{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.show-only-on-mobile_e40316c8{display:none!important}}.metricsRow_e40316c8{border-bottom:1px solid rgba(0,0,0,.06)!important;display:flex!important;flex-wrap:wrap!important;gap:24px!important;padding:0 4px 16px!important}.metricsRow_e40316c8 .metricItem_e40316c8{flex:1 1 auto!important;min-width:110px!important}.metricsRow_e40316c8 .metricDivider_e40316c8{align-self:stretch!important;background-color:#e2e8f0!important;width:1px!important}@container (max-width: 600px){.metricsRow_e40316c8 .metricDivider_e40316c8{display:none!important}}.filtersRow_e40316c8{align-items:flex-end!important;display:flex!important;flex-wrap:wrap!important;gap:12px!important;padding:0 0 10px!important;width:100%!important}.filtersRow_e40316c8 .searchField_e40316c8{flex:1 1 200px!important}.filtersRow_e40316c8 .filterDropdown_e40316c8{width:130px!important}@container (max-width: 600px){.filtersRow_e40316c8 .filterDropdown_e40316c8{flex-grow:1!important;width:100%!important}}@keyframes fadeInUp_e40316c8{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_e40316c8{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_e40316c8{0%,to{opacity:1}50%{opacity:.6}}.dashboard_e40316c8{animation:fadeInUp_e40316c8 .4s cubic-bezier(0,0,.2,1);container-type:inline-size;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_e40316c8 .dashboardHeader_e40316c8{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8{flex:1;min-width:200px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerTitle_e40316c8{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerSubtitle_e40316c8{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerDate_e40316c8{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerDate_e40316c8 i{color:#8a8886;font-size:12px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerRight_e40316c8{align-items:center;display:flex;gap:8px}.dashboard_e40316c8 .quickActions_e40316c8{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8{align-items:center;background:linear-gradient(180deg,#fff,#f3f2f1);border:1px solid rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.28);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.8),0 2px 4px rgba(0,0,0,.05);color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:600;gap:7px;padding:8px 16px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background-color .15s ease,box-shadow .1s ease;white-space:nowrap}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8 i{color:#0078d4;font-size:14px}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8:hover{background:linear-gradient(180deg,#fff,#eaeaea);border-color:rgba(0,0,0,.18);border-bottom:3px solid rgba(0,0,0,.32);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.9),0 4px 8px rgba(0,0,0,.08);color:#005a9e;transform:translateY(-2px)}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04);transform:translateY(2px)}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_e40316c8 .dashboardIntro_e40316c8{animation:fadeInUp_e40316c8 .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_e40316c8 .summaryGrid_e40316c8{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@container (max-width: 1024px){.dashboard_e40316c8 .summaryGrid_e40316c8{grid-template-columns:repeat(2,1fr)}}@container (max-width: 600px){.dashboard_e40316c8 .summaryGrid_e40316c8{grid-template-columns:1fr}}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8{align-items:center;animation:fadeInUp_e40316c8 .4s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:before{background-color:transparent;border-radius:0 4px 4px 0;bottom:12px;box-shadow:0 0 8px rgba(0,0,0,.05);content:\"\";left:0;position:absolute;top:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);width:5px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-5px)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:hover:before{transform:scaleY(1.15)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:hover .iconContainer_e40316c8{transform:scale(1.05) translateZ(0)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:first-child{animation-delay:0s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:nth-child(2){animation-delay:.06s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:nth-child(3){animation-delay:.12s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:nth-child(4){animation-delay:.18s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardBlue_e40316c8:before{background-color:#0078d4;box-shadow:0 0 10px rgba(0,120,212,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardBlue_e40316c8 .iconContainer_e40316c8{background-color:rgba(0,120,212,.08);border-color:rgba(0,120,212,.15);color:#0078d4}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGreen_e40316c8:before{background-color:#107c10;box-shadow:0 0 10px rgba(16,124,16,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGreen_e40316c8 .iconContainer_e40316c8{background-color:rgba(16,124,16,.08);border-color:rgba(16,124,16,.15);color:#107c10}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardPurple_e40316c8:before{background-color:#8764b8;box-shadow:0 0 10px rgba(135,100,184,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardPurple_e40316c8 .iconContainer_e40316c8{background-color:rgba(135,100,184,.08);border-color:rgba(135,100,184,.15);color:#8764b8}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGold_e40316c8:before{background-color:#ffb900;box-shadow:0 0 10px rgba(255,185,0,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGold_e40316c8 .iconContainer_e40316c8{background-color:rgba(255,185,0,.12);border-color:rgba(255,185,0,.2);color:#b37d00}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .iconContainer_e40316c8{align-items:center;border:1px solid rgba(0,0,0,.05);border-radius:12px;box-shadow:inset 1px 2px 4px rgba(0,0,0,.06),inset -1px -1px 2px hsla(0,0%,100%,.7);display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summaryValue_e40316c8{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summaryLabel_e40316c8{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendUp_e40316c8{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendUp_e40316c8 i{font-size:10px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendDown_e40316c8{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendDown_e40316c8 i{font-size:10px}.dashboard_e40316c8 .chartsGrid_e40316c8{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@container (max-width: 600px){.dashboard_e40316c8 .chartsGrid_e40316c8{grid-template-columns:1fr}}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8{align-items:flex-start;animation:fadeInUp_e40316c8 .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:first-child{animation-delay:.1s}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:nth-child(2){animation-delay:.16s}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:nth-child(3){animation-delay:.22s}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartIcon_e40316c8{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartTitleBlock_e40316c8{flex:1;min-width:0}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartTitleBlock_e40316c8 h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartTitleBlock_e40316c8 .chartSubtitle_e40316c8{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartContainer_e40316c8{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_e40316c8 .actionCenter_e40316c8{animation:fadeInUp_e40316c8 .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);margin-bottom:20px;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_e40316c8 .actionCenter_e40316c8:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8 h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8 h3 i{color:#0078d4;font-size:16px}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8 .sectionSubtitle_e40316c8{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_e40316c8 .actionCenter_e40316c8 .tableWrapper_e40316c8{border-radius:8px;overflow-x:auto;width:100%}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 th:first-child{border-radius:8px 0 0 0}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 th:last-child{border-radius:0 8px 0 0}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 tbody tr:last-child td{border-bottom:none}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8{align-items:center;border-radius:100px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 1px 2px rgba(0,0,0,.05);display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.45),0 2px 4px rgba(0,0,0,.08);transform:translateY(-.5px)}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgePending_e40316c8{background:linear-gradient(180deg,#fff7dc,#fff4ce);border:1px solid rgba(255,185,0,.3);border-bottom:2px solid rgba(213,155,0,.4);color:#7a5200}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeApproved_e40316c8{background:linear-gradient(180deg,#e8f9e6,#dff6dd);border:1px solid rgba(16,124,16,.25);border-bottom:2px solid rgba(11,88,11,.3);color:#0e700e}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeDeclined_e40316c8{background:linear-gradient(180deg,#ffeef0,#fde7e9);border:1px solid rgba(216,59,1,.25);border-bottom:2px solid rgba(160,40,1,.3);color:#a80000}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeAssigned_e40316c8{background:linear-gradient(180deg,#f0f5ff,#e8f0fe);border:1px solid rgba(0,120,212,.25);border-bottom:2px solid rgba(0,90,158,.3);color:#1a56db}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeReturned_e40316c8{background:linear-gradient(180deg,#edfaf8,#e6f7f5);border:1px solid rgba(0,130,114,.25);border-bottom:2px solid rgba(0,90,78,.3);color:#006d62}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeMaintenance_e40316c8{background:linear-gradient(180deg,#fff5eb,#fff0e0);border:1px solid rgba(216,59,1,.2);border-bottom:2px solid rgba(160,40,1,.25);color:#9a3412}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStats_e40316c8{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8{border:1px solid rgba(0,0,0,.07);border-left:4px solid #0078d4;border-radius:8px;padding:10px 14px}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8.slaStatWarn_e40316c8{border-left-color:#d83b01}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8.slaStatGood_e40316c8{border-left-color:#107c10}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8 .slaStatValue_e40316c8{color:#242424;display:block;font-size:1.35rem;font-weight:700;line-height:1.2}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8 .slaStatLabel_e40316c8{color:#8a8886;display:block;font-size:.75rem;margin-top:2px}.dashboard_e40316c8 .actionCenter_e40316c8 .headerAction_e40316c8{align-items:center;background:none;border:1px solid rgba(0,0,0,.07);border-radius:8px;color:#0078d4;cursor:pointer;display:inline-flex;font:inherit;font-size:.78rem;gap:6px;padding:6px 12px}.dashboard_e40316c8 .actionCenter_e40316c8 .headerAction_e40316c8:hover{background-color:rgba(0,120,212,.06)}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8 i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8 span{line-height:1.5;max-width:320px}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8 .emptyStateHint_e40316c8{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_e40316c8 .splitLayout_e40316c8{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@container (max-width: 1024px){.dashboard_e40316c8 .splitLayout_e40316c8{grid-template-columns:1fr}}.dashboard_e40316c8 .splitLayout_e40316c8 .actionCenter_e40316c8{margin-bottom:0}.dashboard_e40316c8 .skeletonCard_e40316c8,.dashboard_e40316c8 .skeletonChart_e40316c8,.dashboard_e40316c8 .skeletonLine_e40316c8,.dashboard_e40316c8 .skeleton_e40316c8{animation:shimmer_e40316c8 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_e40316c8 .skeletonCard_e40316c8{border-radius:14px;height:100px}.dashboard_e40316c8 .skeletonChart_e40316c8{border-radius:14px;height:260px}.dashboard_e40316c8 .skeletonLine_e40316c8{height:14px;margin-bottom:10px}.dashboard_e40316c8 .skeletonLine_e40316c8:last-child{width:60%}.dashboard_e40316c8 .tableCellJustification_e40316c8{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@container (max-width: 600px){.dashboard_e40316c8 .tableCellJustification_e40316c8{max-width:120px!important}}@media (prefers-reduced-motion:reduce){.dashboard_e40316c8{animation:none!important}.dashboard_e40316c8 .actionCenter_e40316c8,.dashboard_e40316c8 .chartCard_e40316c8,.dashboard_e40316c8 .summaryCard_e40316c8{animation:none!important;transition:none!important}.dashboard_e40316c8 .skeletonCard_e40316c8,.dashboard_e40316c8 .skeletonChart_e40316c8,.dashboard_e40316c8 .skeletonLine_e40316c8,.dashboard_e40316c8 .skeleton_e40316c8{animation:none!important}}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  "m-0": "m-0_38e8fe2c",
-  "mt-1": "mt-1_38e8fe2c",
-  "mt-2": "mt-2_38e8fe2c",
-  "mt-3": "mt-3_38e8fe2c",
-  "mt-4": "mt-4_38e8fe2c",
-  "mt-5": "mt-5_38e8fe2c",
-  "mb-1": "mb-1_38e8fe2c",
-  "mb-2": "mb-2_38e8fe2c",
-  "mb-3": "mb-3_38e8fe2c",
-  "mb-4": "mb-4_38e8fe2c",
-  "mb-5": "mb-5_38e8fe2c",
-  "p-0": "p-0_38e8fe2c",
-  "p-1": "p-1_38e8fe2c",
-  "p-2": "p-2_38e8fe2c",
-  "p-3": "p-3_38e8fe2c",
-  "p-4": "p-4_38e8fe2c",
-  "p-5": "p-5_38e8fe2c",
-  tableWrapper: "tableWrapper_38e8fe2c",
-  "hide-on-mobile": "hide-on-mobile_38e8fe2c",
-  "show-only-on-mobile": "show-only-on-mobile_38e8fe2c",
-  metricsRow: "metricsRow_38e8fe2c",
-  metricItem: "metricItem_38e8fe2c",
-  metricDivider: "metricDivider_38e8fe2c",
-  filtersRow: "filtersRow_38e8fe2c",
-  searchField: "searchField_38e8fe2c",
-  filterDropdown: "filterDropdown_38e8fe2c",
-  dashboard: "dashboard_38e8fe2c",
-  fadeInUp: "fadeInUp_38e8fe2c",
-  dashboardHeader: "dashboardHeader_38e8fe2c",
-  headerLeft: "headerLeft_38e8fe2c",
-  headerTitle: "headerTitle_38e8fe2c",
-  headerSubtitle: "headerSubtitle_38e8fe2c",
-  headerDate: "headerDate_38e8fe2c",
-  headerRight: "headerRight_38e8fe2c",
-  quickActions: "quickActions_38e8fe2c",
-  quickActionBtn: "quickActionBtn_38e8fe2c",
-  dashboardIntro: "dashboardIntro_38e8fe2c",
-  summaryGrid: "summaryGrid_38e8fe2c",
-  summaryCard: "summaryCard_38e8fe2c",
-  iconContainer: "iconContainer_38e8fe2c",
-  cardBlue: "cardBlue_38e8fe2c",
-  cardGreen: "cardGreen_38e8fe2c",
-  cardPurple: "cardPurple_38e8fe2c",
-  cardGold: "cardGold_38e8fe2c",
-  cardInfo: "cardInfo_38e8fe2c",
-  summaryValue: "summaryValue_38e8fe2c",
-  summaryLabel: "summaryLabel_38e8fe2c",
-  summarySubtitle: "summarySubtitle_38e8fe2c",
-  trendUp: "trendUp_38e8fe2c",
-  trendDown: "trendDown_38e8fe2c",
-  chartsGrid: "chartsGrid_38e8fe2c",
-  chartCard: "chartCard_38e8fe2c",
-  chartHeader: "chartHeader_38e8fe2c",
-  chartIcon: "chartIcon_38e8fe2c",
-  chartTitleBlock: "chartTitleBlock_38e8fe2c",
-  chartSubtitle: "chartSubtitle_38e8fe2c",
-  chartContainer: "chartContainer_38e8fe2c",
-  actionCenter: "actionCenter_38e8fe2c",
-  sectionHeader: "sectionHeader_38e8fe2c",
-  sectionSubtitle: "sectionSubtitle_38e8fe2c",
-  actionTable: "actionTable_38e8fe2c",
-  statusBadge: "statusBadge_38e8fe2c",
-  badgePending: "badgePending_38e8fe2c",
-  badgeApproved: "badgeApproved_38e8fe2c",
-  badgeDeclined: "badgeDeclined_38e8fe2c",
-  badgeAssigned: "badgeAssigned_38e8fe2c",
-  badgeReturned: "badgeReturned_38e8fe2c",
-  badgeMaintenance: "badgeMaintenance_38e8fe2c",
-  noDataMessage: "noDataMessage_38e8fe2c",
-  emptyStateHint: "emptyStateHint_38e8fe2c",
-  splitLayout: "splitLayout_38e8fe2c",
-  skeleton: "skeleton_38e8fe2c",
-  skeletonLine: "skeletonLine_38e8fe2c",
-  skeletonChart: "skeletonChart_38e8fe2c",
-  skeletonCard: "skeletonCard_38e8fe2c",
-  shimmer: "shimmer_38e8fe2c",
-  tableCellJustification: "tableCellJustification_38e8fe2c",
-  pulse: "pulse_38e8fe2c"
+  "m-0": "m-0_e40316c8",
+  "mt-1": "mt-1_e40316c8",
+  "mt-2": "mt-2_e40316c8",
+  "mt-3": "mt-3_e40316c8",
+  "mt-4": "mt-4_e40316c8",
+  "mt-5": "mt-5_e40316c8",
+  "mb-1": "mb-1_e40316c8",
+  "mb-2": "mb-2_e40316c8",
+  "mb-3": "mb-3_e40316c8",
+  "mb-4": "mb-4_e40316c8",
+  "mb-5": "mb-5_e40316c8",
+  "p-0": "p-0_e40316c8",
+  "p-1": "p-1_e40316c8",
+  "p-2": "p-2_e40316c8",
+  "p-3": "p-3_e40316c8",
+  "p-4": "p-4_e40316c8",
+  "p-5": "p-5_e40316c8",
+  tableWrapper: "tableWrapper_e40316c8",
+  "hide-on-mobile": "hide-on-mobile_e40316c8",
+  "show-only-on-mobile": "show-only-on-mobile_e40316c8",
+  metricsRow: "metricsRow_e40316c8",
+  metricItem: "metricItem_e40316c8",
+  metricDivider: "metricDivider_e40316c8",
+  filtersRow: "filtersRow_e40316c8",
+  searchField: "searchField_e40316c8",
+  filterDropdown: "filterDropdown_e40316c8",
+  dashboard: "dashboard_e40316c8",
+  fadeInUp: "fadeInUp_e40316c8",
+  dashboardHeader: "dashboardHeader_e40316c8",
+  headerLeft: "headerLeft_e40316c8",
+  headerTitle: "headerTitle_e40316c8",
+  headerSubtitle: "headerSubtitle_e40316c8",
+  headerDate: "headerDate_e40316c8",
+  headerRight: "headerRight_e40316c8",
+  quickActions: "quickActions_e40316c8",
+  quickActionBtn: "quickActionBtn_e40316c8",
+  dashboardIntro: "dashboardIntro_e40316c8",
+  summaryGrid: "summaryGrid_e40316c8",
+  summaryCard: "summaryCard_e40316c8",
+  iconContainer: "iconContainer_e40316c8",
+  cardBlue: "cardBlue_e40316c8",
+  cardGreen: "cardGreen_e40316c8",
+  cardPurple: "cardPurple_e40316c8",
+  cardGold: "cardGold_e40316c8",
+  cardInfo: "cardInfo_e40316c8",
+  summaryValue: "summaryValue_e40316c8",
+  summaryLabel: "summaryLabel_e40316c8",
+  summarySubtitle: "summarySubtitle_e40316c8",
+  trendUp: "trendUp_e40316c8",
+  trendDown: "trendDown_e40316c8",
+  chartsGrid: "chartsGrid_e40316c8",
+  chartCard: "chartCard_e40316c8",
+  chartHeader: "chartHeader_e40316c8",
+  chartIcon: "chartIcon_e40316c8",
+  chartTitleBlock: "chartTitleBlock_e40316c8",
+  chartSubtitle: "chartSubtitle_e40316c8",
+  chartContainer: "chartContainer_e40316c8",
+  actionCenter: "actionCenter_e40316c8",
+  sectionHeader: "sectionHeader_e40316c8",
+  sectionSubtitle: "sectionSubtitle_e40316c8",
+  actionTable: "actionTable_e40316c8",
+  statusBadge: "statusBadge_e40316c8",
+  badgePending: "badgePending_e40316c8",
+  badgeApproved: "badgeApproved_e40316c8",
+  badgeDeclined: "badgeDeclined_e40316c8",
+  badgeAssigned: "badgeAssigned_e40316c8",
+  badgeReturned: "badgeReturned_e40316c8",
+  badgeMaintenance: "badgeMaintenance_e40316c8",
+  slaStats: "slaStats_e40316c8",
+  slaStat: "slaStat_e40316c8",
+  slaStatWarn: "slaStatWarn_e40316c8",
+  slaStatGood: "slaStatGood_e40316c8",
+  slaStatValue: "slaStatValue_e40316c8",
+  slaStatLabel: "slaStatLabel_e40316c8",
+  headerAction: "headerAction_e40316c8",
+  noDataMessage: "noDataMessage_e40316c8",
+  emptyStateHint: "emptyStateHint_e40316c8",
+  splitLayout: "splitLayout_e40316c8",
+  skeleton: "skeleton_e40316c8",
+  skeletonLine: "skeletonLine_e40316c8",
+  skeletonChart: "skeletonChart_e40316c8",
+  skeletonCard: "skeletonCard_e40316c8",
+  shimmer: "shimmer_e40316c8",
+  tableCellJustification: "tableCellJustification_e40316c8",
+  pulse: "pulse_e40316c8"
 });
 
 
@@ -250,7 +257,7 @@ _node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_
 
 /***/ }),
 
-/***/ 947:
+/***/ 35947:
 /*!***************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/ConfigPage.module.scss.css ***!
   \***************************************************************************/
@@ -265,65 +272,66 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".configTabs_3a757d71.configTabs_3a757d71 .ms-Pivot{grid-template-columns:repeat(5,minmax(0,1fr))!important}@media (max-width:1100px){.configTabs_3a757d71.configTabs_3a757d71 .ms-Pivot{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}}.configTabs_3a757d71.configTabs_3a757d71 .ms-Pivot-link{min-width:0!important;padding:0 10px!important}.configTabs_3a757d71.configTabs_3a757d71 .ms-Pivot-count,.configTabs_3a757d71.configTabs_3a757d71 .ms-Pivot-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.banner_3a757d71{align-items:center;border:1px solid transparent;border-radius:8px;display:flex;gap:14px;margin-bottom:16px;padding:14px 16px}.banner_3a757d71 .bannerIcon_3a757d71{font-size:1.6rem;line-height:1}.banner_3a757d71 .bannerText_3a757d71{flex:1 1 auto;min-width:0}.banner_3a757d71 .bannerText_3a757d71 strong{display:block;font-size:.95rem}.bannerGood_3a757d71{background-color:rgba(34,197,94,.1);border-color:rgba(34,197,94,.35)}.bannerGood_3a757d71 .bannerIcon_3a757d71{color:#16a34a}.bannerWarn_3a757d71{background-color:rgba(245,158,11,.1);border-color:rgba(245,158,11,.4)}.bannerWarn_3a757d71 .bannerIcon_3a757d71{color:#d97706}.bannerBad_3a757d71{background-color:rgba(239,68,68,.08);border-color:rgba(239,68,68,.35)}.bannerBad_3a757d71 .bannerIcon_3a757d71{color:#dc2626}.bannerNeutral_3a757d71{background-color:hsla(0,0%,50%,.07);border-color:hsla(0,0%,50%,.2)}.bannerNeutral_3a757d71 .bannerIcon_3a757d71{color:var(--text-muted,#6b7280)}.panel_3a757d71{background-color:var(--surface-bg,#fff);border:1px solid hsla(0,0%,50%,.15);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.04);color:var(--text-main,#111827);margin-bottom:16px;padding:20px}.panelHeader_3a757d71{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px}.panelHeader_3a757d71 h4{color:var(--text-main,#111827);font-size:1rem;margin:0 0 4px}.panelHeader_3a757d71 p{color:var(--text-muted,#6b7280);font-size:.85rem;margin:0}.actions_3a757d71{align-items:center;display:flex;flex-wrap:wrap;gap:8px}.muted_3a757d71{color:var(--text-muted,#6b7280);font-size:.8rem}.tiles_3a757d71{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:16px}.tile_3a757d71{border:1px solid hsla(0,0%,50%,.15);border-left-width:4px;border-radius:8px;padding:14px 16px}.tile_3a757d71 .tileHead_3a757d71{align-items:center;color:var(--text-muted,#6b7280);display:flex;font-size:.78rem;gap:6px;margin-bottom:6px}.tile_3a757d71 .tileHead_3a757d71 i{font-size:.95rem}.tile_3a757d71 .tileValue_3a757d71{font-size:1.6rem;font-weight:700;line-height:1.2}.tile_3a757d71 .tileLabel_3a757d71{color:var(--text-muted,#6b7280);font-size:.8rem}.issueButton_3a757d71{align-items:flex-start;background:none;border:none;border-radius:6px;color:inherit;cursor:pointer;display:flex;font:inherit;font-size:.85rem;gap:10px;margin:0 -6px;padding:10px 6px;text-align:left;width:100%}.issueButton_3a757d71:focus-visible,.issueButton_3a757d71:hover{background-color:hsla(0,0%,50%,.08)}.issueButton_3a757d71 .issueText_3a757d71{flex:1 1 auto}.issueButton_3a757d71 .issueChevron_3a757d71{color:var(--text-muted,#6b7280);margin-top:3px}.toneGood_3a757d71{border-left-color:#16a34a}.toneWarn_3a757d71{border-left-color:#d97706}.toneBad_3a757d71{border-left-color:#dc2626}.toneNeutral_3a757d71{border-left-color:#6b7280}.twoCol_3a757d71{display:grid;gap:16px;grid-template-columns:minmax(0,2fr) minmax(0,1fr)}@media (max-width:900px){.twoCol_3a757d71{grid-template-columns:minmax(0,1fr)}}.issueList_3a757d71{list-style:none;margin:0;padding:0}.issueList_3a757d71 li{align-items:flex-start;border-bottom:1px solid hsla(0,0%,50%,.12);display:flex;font-size:.85rem;gap:10px;padding:4px 0}.issueList_3a757d71 li:last-child{border-bottom:none}.issueIconBad_3a757d71{color:#dc2626;margin-top:2px}.issueIconWarn_3a757d71{color:#d97706;margin-top:2px}.issueIconGood_3a757d71{color:#16a34a;margin-top:2px}.envTable_3a757d71{border-collapse:collapse;font-size:.82rem;width:100%}.envTable_3a757d71 td,.envTable_3a757d71 th{border-bottom:1px solid hsla(0,0%,50%,.12);padding:6px 0;text-align:left;vertical-align:top}.envTable_3a757d71 th{color:var(--text-muted,#6b7280);font-weight:500;padding-right:8px;width:45%}.envTable_3a757d71 td{word-break:break-word}.pill_3a757d71{align-items:center;border-radius:9999px;display:inline-flex;font-size:.75rem;font-weight:600;gap:4px;padding:3px 10px;white-space:nowrap}.pillGood_3a757d71{background-color:rgba(34,197,94,.18);color:#166534}.pillWarn_3a757d71{background-color:rgba(245,158,11,.2);color:#92400e}.pillBad_3a757d71{background-color:rgba(239,68,68,.16);color:#b91c1c}.pillNeutral_3a757d71{background-color:hsla(0,0%,50%,.14);color:var(--text-muted,#4b5563)}.pillInfo_3a757d71{background-color:rgba(14,165,233,.16);color:#0369a1}.spin_3a757d71{animation:configSpin_3a757d71 1.2s linear infinite}@keyframes configSpin_3a757d71{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.groupHeading_3a757d71{color:var(--text-muted,#6b7280);font-size:.75rem;font-weight:600;letter-spacing:.05em;margin:20px 0 8px;text-transform:uppercase}.groupHeading_3a757d71:first-child{margin-top:0}.listCard_3a757d71{border:1px solid hsla(0,0%,50%,.15);border-radius:8px;margin-bottom:10px;padding:14px 16px}.listCardTop_3a757d71{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}.listTitle_3a757d71{align-items:center;display:flex;flex-wrap:wrap;font-size:.95rem;font-weight:600;gap:6px;margin:0 0 2px}.listTitle_3a757d71 .internal_3a757d71{color:var(--text-muted,#6b7280);font-size:.78rem;font-weight:400}.badge_3a757d71{background-color:hsla(0,0%,50%,.14);border-radius:4px;color:var(--text-muted,#4b5563);font-size:.68rem;font-weight:600;padding:1px 6px}.metrics_3a757d71{display:flex;flex-wrap:wrap;font-size:.8rem;gap:6px 20px;margin-top:10px}.metrics_3a757d71 span{color:var(--text-muted,#6b7280)}.metrics_3a757d71 strong{color:var(--text-main,#111827);font-weight:600;margin-left:4px}.details_3a757d71{background-color:hsla(0,0%,50%,.07);border-radius:6px;font-size:.8rem;margin-top:12px;padding:10px 12px}.details_3a757d71 div+div{margin-top:8px}.errorBox_3a757d71{background-color:rgba(239,68,68,.1);border-radius:4px;color:#b91c1c;font-size:.78rem;margin-top:10px;padding:8px 10px;word-break:break-word}.chips_3a757d71{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.chip_3a757d71{align-items:center;background-color:hsla(0,0%,50%,.06);border:1px solid hsla(0,0%,50%,.2);border-radius:4px;display:inline-flex;font-size:.75rem;gap:4px;padding:3px 9px}.chipGood_3a757d71{background-color:rgba(34,197,94,.1);border-color:rgba(34,197,94,.45)}.chipBad_3a757d71{background-color:rgba(239,68,68,.1);border-color:rgba(239,68,68,.45);color:#b91c1c}.chipSelf_3a757d71{border-color:#2b7cd4;font-weight:600}.schemaBlock_3a757d71{border-bottom:1px solid hsla(0,0%,50%,.12);padding:12px 0}.schemaBlock_3a757d71:last-child{border-bottom:none}.schemaBlock_3a757d71 h5{align-items:center;display:flex;flex-wrap:wrap;font-size:.9rem;gap:8px;margin:0}.roleTag_3a757d71{background-color:rgba(0,120,212,.12);border-radius:4px;color:#0078d4;font-size:.75rem;font-weight:600;padding:2px 8px}.diagnosticLog_3a757d71{background-color:hsla(0,0%,50%,.08);border:1px solid hsla(0,0%,50%,.2);border-radius:4px;box-sizing:border-box;color:var(--text-main,#323130);font-family:monospace;font-size:.82rem;padding:10px;resize:vertical;width:100%}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".configTabs_4be88e6f.configTabs_4be88e6f .ms-Pivot{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))!important}.configTabs_4be88e6f.configTabs_4be88e6f .ms-Pivot-link{min-width:0!important;padding:0 10px!important}.configTabs_4be88e6f.configTabs_4be88e6f .ms-Pivot-count,.configTabs_4be88e6f.configTabs_4be88e6f .ms-Pivot-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.banner_4be88e6f{align-items:center;border:1px solid transparent;border-radius:8px;display:flex;gap:14px;margin-bottom:16px;padding:14px 16px}.banner_4be88e6f .bannerIcon_4be88e6f{font-size:1.6rem;line-height:1}.banner_4be88e6f .bannerText_4be88e6f{flex:1 1 auto;min-width:0}.banner_4be88e6f .bannerText_4be88e6f strong{display:block;font-size:.95rem}.bannerGood_4be88e6f{background-color:rgba(34,197,94,.1);border-color:rgba(34,197,94,.35)}.bannerGood_4be88e6f .bannerIcon_4be88e6f{color:#16a34a}.bannerWarn_4be88e6f{background-color:rgba(245,158,11,.1);border-color:rgba(245,158,11,.4)}.bannerWarn_4be88e6f .bannerIcon_4be88e6f{color:#d97706}.bannerBad_4be88e6f{background-color:rgba(239,68,68,.08);border-color:rgba(239,68,68,.35)}.bannerBad_4be88e6f .bannerIcon_4be88e6f{color:#dc2626}.bannerNeutral_4be88e6f{background-color:hsla(0,0%,50%,.07);border-color:hsla(0,0%,50%,.2)}.bannerNeutral_4be88e6f .bannerIcon_4be88e6f{color:var(--text-muted,#6b7280)}.panel_4be88e6f{background-color:var(--surface-bg,#fff);border:1px solid hsla(0,0%,50%,.15);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.04);color:var(--text-main,#111827);margin-bottom:16px;padding:20px}.panelHeader_4be88e6f{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px}.panelHeader_4be88e6f h4{color:var(--text-main,#111827);font-size:1rem;margin:0 0 4px}.panelHeader_4be88e6f p{color:var(--text-muted,#6b7280);font-size:.85rem;margin:0}.actions_4be88e6f{align-items:center;display:flex;flex-wrap:wrap;gap:8px}.muted_4be88e6f{color:var(--text-muted,#6b7280);font-size:.8rem}.tiles_4be88e6f{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:16px}.tile_4be88e6f{border:1px solid hsla(0,0%,50%,.15);border-left-width:4px;border-radius:8px;padding:14px 16px}.tile_4be88e6f .tileHead_4be88e6f{align-items:center;color:var(--text-muted,#6b7280);display:flex;font-size:.78rem;gap:6px;margin-bottom:6px}.tile_4be88e6f .tileHead_4be88e6f i{font-size:.95rem}.tile_4be88e6f .tileValue_4be88e6f{font-size:1.6rem;font-weight:700;line-height:1.2}.tile_4be88e6f .tileLabel_4be88e6f{color:var(--text-muted,#6b7280);font-size:.8rem}.issueButton_4be88e6f{align-items:flex-start;background:none;border:none;border-radius:6px;color:inherit;cursor:pointer;display:flex;font:inherit;font-size:.85rem;gap:10px;margin:0 -6px;padding:10px 6px;text-align:left;width:100%}.issueButton_4be88e6f:focus-visible,.issueButton_4be88e6f:hover{background-color:hsla(0,0%,50%,.08)}.issueButton_4be88e6f .issueText_4be88e6f{flex:1 1 auto}.issueButton_4be88e6f .issueChevron_4be88e6f{color:var(--text-muted,#6b7280);margin-top:3px}.toneGood_4be88e6f{border-left-color:#16a34a}.toneWarn_4be88e6f{border-left-color:#d97706}.toneBad_4be88e6f{border-left-color:#dc2626}.toneNeutral_4be88e6f{border-left-color:#6b7280}.twoCol_4be88e6f{display:grid;gap:16px;grid-template-columns:minmax(0,2fr) minmax(0,1fr)}@media (max-width:900px){.twoCol_4be88e6f{grid-template-columns:minmax(0,1fr)}}.issueList_4be88e6f{list-style:none;margin:0;padding:0}.issueList_4be88e6f li{align-items:flex-start;border-bottom:1px solid hsla(0,0%,50%,.12);display:flex;font-size:.85rem;gap:10px;padding:4px 0}.issueList_4be88e6f li:last-child{border-bottom:none}.issueIconBad_4be88e6f{color:#dc2626;margin-top:2px}.issueIconWarn_4be88e6f{color:#d97706;margin-top:2px}.issueIconGood_4be88e6f{color:#16a34a;margin-top:2px}.envTable_4be88e6f{border-collapse:collapse;font-size:.82rem;width:100%}.envTable_4be88e6f td,.envTable_4be88e6f th{border-bottom:1px solid hsla(0,0%,50%,.12);padding:6px 0;text-align:left;vertical-align:top}.envTable_4be88e6f th{color:var(--text-muted,#6b7280);font-weight:500;padding-right:8px;width:45%}.envTable_4be88e6f td{word-break:break-word}.pill_4be88e6f{align-items:center;border-radius:9999px;display:inline-flex;font-size:.75rem;font-weight:600;gap:4px;padding:3px 10px;white-space:nowrap}.pillGood_4be88e6f{background-color:rgba(34,197,94,.18);color:#166534}.pillWarn_4be88e6f{background-color:rgba(245,158,11,.2);color:#92400e}.pillBad_4be88e6f{background-color:rgba(239,68,68,.16);color:#b91c1c}.pillNeutral_4be88e6f{background-color:hsla(0,0%,50%,.14);color:var(--text-muted,#4b5563)}.pillInfo_4be88e6f{background-color:rgba(14,165,233,.16);color:#0369a1}.spin_4be88e6f{animation:configSpin_4be88e6f 1.2s linear infinite}@keyframes configSpin_4be88e6f{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.groupHeading_4be88e6f{color:var(--text-muted,#6b7280);font-size:.75rem;font-weight:600;letter-spacing:.05em;margin:20px 0 8px;text-transform:uppercase}.groupHeading_4be88e6f:first-child{margin-top:0}.listCard_4be88e6f{border:1px solid hsla(0,0%,50%,.15);border-radius:8px;margin-bottom:10px;padding:14px 16px}.listCardTop_4be88e6f{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}.listTitle_4be88e6f{align-items:center;display:flex;flex-wrap:wrap;font-size:.95rem;font-weight:600;gap:6px;margin:0 0 2px}.listTitle_4be88e6f .internal_4be88e6f{color:var(--text-muted,#6b7280);font-size:.78rem;font-weight:400}.badge_4be88e6f{background-color:hsla(0,0%,50%,.14);border-radius:4px;color:var(--text-muted,#4b5563);font-size:.68rem;font-weight:600;padding:1px 6px}.metrics_4be88e6f{display:flex;flex-wrap:wrap;font-size:.8rem;gap:6px 20px;margin-top:10px}.metrics_4be88e6f span{color:var(--text-muted,#6b7280)}.metrics_4be88e6f strong{color:var(--text-main,#111827);font-weight:600;margin-left:4px}.details_4be88e6f{background-color:hsla(0,0%,50%,.07);border-radius:6px;font-size:.8rem;margin-top:12px;padding:10px 12px}.details_4be88e6f div+div{margin-top:8px}.errorBox_4be88e6f{background-color:rgba(239,68,68,.1);border-radius:4px;color:#b91c1c;font-size:.78rem;margin-top:10px;padding:8px 10px;word-break:break-word}.chips_4be88e6f{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.chip_4be88e6f{align-items:center;background-color:hsla(0,0%,50%,.06);border:1px solid hsla(0,0%,50%,.2);border-radius:4px;display:inline-flex;font-size:.75rem;gap:4px;padding:3px 9px}.chipGood_4be88e6f{background-color:rgba(34,197,94,.1);border-color:rgba(34,197,94,.45)}.chipBad_4be88e6f{background-color:rgba(239,68,68,.1);border-color:rgba(239,68,68,.45);color:#b91c1c}.chipSelf_4be88e6f{border-color:#2b7cd4;font-weight:600}.schemaBlock_4be88e6f{border-bottom:1px solid hsla(0,0%,50%,.12);padding:12px 0}.schemaBlock_4be88e6f:last-child{border-bottom:none}.schemaBlock_4be88e6f h5{align-items:center;display:flex;flex-wrap:wrap;font-size:.9rem;gap:8px;margin:0}.roleTag_4be88e6f{background-color:rgba(0,120,212,.12);border-radius:4px;color:#0078d4;font-size:.75rem;font-weight:600;padding:2px 8px}.dataTable_4be88e6f{border-collapse:collapse;font-size:.84rem;width:100%}.dataTable_4be88e6f th{border-bottom:2px solid hsla(0,0%,50%,.2);color:var(--text-muted,#6b7280);font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:8px 10px;text-align:left;text-transform:uppercase}.dataTable_4be88e6f td{border-bottom:1px solid hsla(0,0%,50%,.12);padding:8px 10px;vertical-align:middle}.diagnosticLog_4be88e6f{background-color:hsla(0,0%,50%,.08);border:1px solid hsla(0,0%,50%,.2);border-radius:4px;box-sizing:border-box;color:var(--text-main,#323130);font-family:monospace;font-size:.82rem;padding:10px;resize:vertical;width:100%}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  configTabs: "configTabs_3a757d71",
-  banner: "banner_3a757d71",
-  bannerIcon: "bannerIcon_3a757d71",
-  bannerText: "bannerText_3a757d71",
-  bannerGood: "bannerGood_3a757d71",
-  bannerWarn: "bannerWarn_3a757d71",
-  bannerBad: "bannerBad_3a757d71",
-  bannerNeutral: "bannerNeutral_3a757d71",
-  panel: "panel_3a757d71",
-  panelHeader: "panelHeader_3a757d71",
-  actions: "actions_3a757d71",
-  muted: "muted_3a757d71",
-  tiles: "tiles_3a757d71",
-  tile: "tile_3a757d71",
-  tileHead: "tileHead_3a757d71",
-  tileValue: "tileValue_3a757d71",
-  tileLabel: "tileLabel_3a757d71",
-  issueButton: "issueButton_3a757d71",
-  issueText: "issueText_3a757d71",
-  issueChevron: "issueChevron_3a757d71",
-  toneGood: "toneGood_3a757d71",
-  toneWarn: "toneWarn_3a757d71",
-  toneBad: "toneBad_3a757d71",
-  toneNeutral: "toneNeutral_3a757d71",
-  twoCol: "twoCol_3a757d71",
-  issueList: "issueList_3a757d71",
-  issueIconBad: "issueIconBad_3a757d71",
-  issueIconWarn: "issueIconWarn_3a757d71",
-  issueIconGood: "issueIconGood_3a757d71",
-  envTable: "envTable_3a757d71",
-  pill: "pill_3a757d71",
-  pillGood: "pillGood_3a757d71",
-  pillWarn: "pillWarn_3a757d71",
-  pillBad: "pillBad_3a757d71",
-  pillNeutral: "pillNeutral_3a757d71",
-  pillInfo: "pillInfo_3a757d71",
-  spin: "spin_3a757d71",
-  configSpin: "configSpin_3a757d71",
-  groupHeading: "groupHeading_3a757d71",
-  listCard: "listCard_3a757d71",
-  listCardTop: "listCardTop_3a757d71",
-  listTitle: "listTitle_3a757d71",
-  internal: "internal_3a757d71",
-  badge: "badge_3a757d71",
-  metrics: "metrics_3a757d71",
-  details: "details_3a757d71",
-  errorBox: "errorBox_3a757d71",
-  chips: "chips_3a757d71",
-  chip: "chip_3a757d71",
-  chipGood: "chipGood_3a757d71",
-  chipBad: "chipBad_3a757d71",
-  chipSelf: "chipSelf_3a757d71",
-  schemaBlock: "schemaBlock_3a757d71",
-  roleTag: "roleTag_3a757d71",
-  diagnosticLog: "diagnosticLog_3a757d71"
+  configTabs: "configTabs_4be88e6f",
+  banner: "banner_4be88e6f",
+  bannerIcon: "bannerIcon_4be88e6f",
+  bannerText: "bannerText_4be88e6f",
+  bannerGood: "bannerGood_4be88e6f",
+  bannerWarn: "bannerWarn_4be88e6f",
+  bannerBad: "bannerBad_4be88e6f",
+  bannerNeutral: "bannerNeutral_4be88e6f",
+  panel: "panel_4be88e6f",
+  panelHeader: "panelHeader_4be88e6f",
+  actions: "actions_4be88e6f",
+  muted: "muted_4be88e6f",
+  tiles: "tiles_4be88e6f",
+  tile: "tile_4be88e6f",
+  tileHead: "tileHead_4be88e6f",
+  tileValue: "tileValue_4be88e6f",
+  tileLabel: "tileLabel_4be88e6f",
+  issueButton: "issueButton_4be88e6f",
+  issueText: "issueText_4be88e6f",
+  issueChevron: "issueChevron_4be88e6f",
+  toneGood: "toneGood_4be88e6f",
+  toneWarn: "toneWarn_4be88e6f",
+  toneBad: "toneBad_4be88e6f",
+  toneNeutral: "toneNeutral_4be88e6f",
+  twoCol: "twoCol_4be88e6f",
+  issueList: "issueList_4be88e6f",
+  issueIconBad: "issueIconBad_4be88e6f",
+  issueIconWarn: "issueIconWarn_4be88e6f",
+  issueIconGood: "issueIconGood_4be88e6f",
+  envTable: "envTable_4be88e6f",
+  pill: "pill_4be88e6f",
+  pillGood: "pillGood_4be88e6f",
+  pillWarn: "pillWarn_4be88e6f",
+  pillBad: "pillBad_4be88e6f",
+  pillNeutral: "pillNeutral_4be88e6f",
+  pillInfo: "pillInfo_4be88e6f",
+  spin: "spin_4be88e6f",
+  configSpin: "configSpin_4be88e6f",
+  groupHeading: "groupHeading_4be88e6f",
+  listCard: "listCard_4be88e6f",
+  listCardTop: "listCardTop_4be88e6f",
+  listTitle: "listTitle_4be88e6f",
+  internal: "internal_4be88e6f",
+  badge: "badge_4be88e6f",
+  metrics: "metrics_4be88e6f",
+  details: "details_4be88e6f",
+  errorBox: "errorBox_4be88e6f",
+  chips: "chips_4be88e6f",
+  chip: "chip_4be88e6f",
+  chipGood: "chipGood_4be88e6f",
+  chipBad: "chipBad_4be88e6f",
+  chipSelf: "chipSelf_4be88e6f",
+  schemaBlock: "schemaBlock_4be88e6f",
+  roleTag: "roleTag_4be88e6f",
+  dataTable: "dataTable_4be88e6f",
+  diagnosticLog: "diagnosticLog_4be88e6f"
 });
 
 
@@ -354,6 +362,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_InventoryManagement__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/InventoryManagement */ 50513);
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pnpjsConfig */ 17694);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./config/AppConfig */ 60393);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/LocalizationUtils */ 25997);
+
+
 
 
 
@@ -369,6 +381,8 @@ class InventoryManagementWebPart extends _microsoft_sp_webpart_base__WEBPACK_IMP
         this._environmentMessage = '';
     }
     render() {
+        // Property-pane settings -> runtime config read by services (blank fields keep the defaults).
+        (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.setAppConfig)((0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.buildAppConfig)(this.properties));
         const element = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InventoryManagement__WEBPACK_IMPORTED_MODULE_6__["default"], {
             description: this.properties.description,
             isDarkTheme: this._isDarkTheme,
@@ -382,6 +396,7 @@ class InventoryManagementWebPart extends _microsoft_sp_webpart_base__WEBPACK_IMP
     }
     onInit() {
         (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_7__.getSP)(this.context);
+        (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.setAppConfig)((0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.buildAppConfig)(this.properties));
         return this._getEnvironmentMessage().then(message => {
             this._environmentMessage = message;
         });
@@ -429,6 +444,14 @@ class InventoryManagementWebPart extends _microsoft_sp_webpart_base__WEBPACK_IMP
         return _microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_2__.Version.parse('1.0');
     }
     getPropertyPaneConfiguration() {
+        const p = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.PropertyPaneConfig;
+        const d = _config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.DEFAULT_APP_CONFIG;
+        const textField = (key, label, defaultValue) => (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_3__.PropertyPaneTextField)(key, { label, placeholder: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(p.DefaultPlaceholder, defaultValue) });
+        const numberField = (key, label, defaultValue) => (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_3__.PropertyPaneTextField)(key, {
+            label,
+            placeholder: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(p.DefaultPlaceholder, defaultValue),
+            onGetErrorMessage: (value) => (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.parseNonNegativeNumber)(value, -1) < 0 && (value || '').trim() !== '' ? p.NumberError : ''
+        });
         return {
             pages: [
                 {
@@ -442,6 +465,58 @@ class InventoryManagementWebPart extends _microsoft_sp_webpart_base__WEBPACK_IMP
                                 (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_3__.PropertyPaneTextField)('description', {
                                     label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.DescriptionFieldLabel
                                 })
+                            ]
+                        },
+                        {
+                            groupName: p.GroupRoles,
+                            groupFields: [
+                                (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_3__.PropertyPaneLabel)('rolesNote', { text: p.RolesNote }),
+                                textField('adminGroupName', p.AdminGroupLabel, d.roleGroups.admin),
+                                textField('managerGroupName', p.ManagerGroupLabel, d.roleGroups.manager),
+                                textField('employeeGroupName', p.EmployeeGroupLabel, d.roleGroups.employee)
+                            ]
+                        }
+                    ]
+                },
+                {
+                    header: {
+                        description: p.ListsPageDescription
+                    },
+                    groups: [
+                        {
+                            groupName: p.GroupLists,
+                            groupFields: [
+                                (0,_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_3__.PropertyPaneLabel)('listsNote', { text: p.ReloadNote }),
+                                textField('inventoryListTitle', p.InventoryListLabel, d.lists.inventory),
+                                textField('requestListTitle', p.RequestListLabel, d.lists.request),
+                                textField('returnRequestListTitle', p.ReturnRequestListLabel, d.lists.returnRequest),
+                                textField('mappingListTitle', p.MappingListLabel, d.lists.mapping),
+                                textField('eventLogListTitle', p.EventLogListLabel, d.lists.eventLog),
+                                textField('incidentListTitle', p.IncidentListLabel, d.lists.incident),
+                                textField('employeeListTitle', p.EmployeeListLabel, d.lists.employee),
+                                textField('replacementListTitle', p.ReplacementListLabel, d.lists.replacement),
+                                textField('stockThresholdsListTitle', p.StockThresholdsListLabel, d.lists.stockThresholds),
+                                textField('assetKitsListTitle', p.AssetKitsListLabel, d.lists.assetKits)
+                            ]
+                        }
+                    ]
+                },
+                {
+                    header: {
+                        description: p.AlertsPageDescription
+                    },
+                    groups: [
+                        {
+                            groupName: p.GroupSla,
+                            groupFields: [
+                                numberField('approvalSlaHours', p.ApprovalSlaLabel, d.sla.approvalHours),
+                                numberField('assignmentSlaHours', p.AssignmentSlaLabel, d.sla.assignmentHours)
+                            ]
+                        },
+                        {
+                            groupName: p.GroupStock,
+                            groupFields: [
+                                numberField('defaultMinimumStock', p.DefaultMinimumLabel, d.stock.defaultMinimum)
                             ]
                         }
                     ]
@@ -841,14 +916,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.module.scss */ 38674);
-/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
-/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
-/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! chart.js */ 55277);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var _utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ChartPlugins */ 34927);
+/* harmony import */ var _dashboard_LowStockPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard/LowStockPanel */ 27655);
+/* harmony import */ var _dashboard_RequestSlaPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard/RequestSlaPanel */ 78948);
 
 
 
@@ -857,7 +935,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-chart_js__WEBPACK_IMPORTED_MODULE_3__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_3__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_3__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_3__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_3__.Title, chart_js__WEBPACK_IMPORTED_MODULE_3__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_3__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_3__.ArcElement);
+
+
+
+// Gaps between slices in the card's background colour (follows dark mode), and a small pop-out on hover.
+const cardBackground = (ctx) => {
+    try {
+        return window.getComputedStyle(ctx.chart.canvas).getPropertyValue('--surface-bg').trim() || '#ffffff';
+    }
+    catch {
+        return '#ffffff';
+    }
+};
+const ARC_STYLE = { borderColor: cardBackground, borderWidth: 2, hoverOffset: 6 };
+/** 'Assigned' -> 'Assigned (16)' for legend entries; placeholder labels (no data) are left as-is. */
+const withCounts = (labels, counts) => labels.map(label => (counts[label] !== undefined ? `${label} (${counts[label]})` : label));
+chart_js__WEBPACK_IMPORTED_MODULE_6__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_6__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_6__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_6__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_6__.Title, chart_js__WEBPACK_IMPORTED_MODULE_6__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_6__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_6__.ArcElement);
 const Dashboard = (props) => {
     const { items, requests, isAdmin, isInventoryManager, onNavigate } = props;
     const isManagerView = !!isInventoryManager && !isAdmin;
@@ -934,15 +1027,16 @@ const Dashboard = (props) => {
     const statusDataValues = Object.keys(statusCounts).length
         ? Object.keys(statusCounts).map(k => statusCounts[k])
         : [1];
+    const statusTotal = Object.keys(statusCounts).reduce((sum, k) => sum + statusCounts[k], 0);
     const assetStatusData = {
-        labels: statusLabels,
+        labels: withCounts(statusLabels, statusCounts),
         datasets: [
             {
                 label: primaryPieLabel,
                 data: statusDataValues,
-                backgroundColor: statusLabels.map(label => getFluentColor(label, 0.75)),
-                borderColor: statusLabels.map(label => getFluentColor(label, 1.0)),
-                borderWidth: 1.5,
+                // Colours are keyed on the raw status, not the display label with its count.
+                backgroundColor: statusLabels.map(label => getFluentColor(label, 0.85)),
+                ...ARC_STYLE,
             },
         ],
     };
@@ -952,8 +1046,9 @@ const Dashboard = (props) => {
         acc[type] = (acc[type] || 0) + 1;
         return acc;
     }, {});
-    const assetTypeLabels = Object.keys(typeCounts);
-    const assetTypeDataValues = Object.keys(typeCounts).map(k => typeCounts[k]);
+    // Largest category first so the chart reads left to right by volume.
+    const assetTypeLabels = Object.keys(typeCounts).sort((a, b) => typeCounts[b] - typeCounts[a] || a.localeCompare(b));
+    const assetTypeDataValues = assetTypeLabels.map(k => typeCounts[k]);
     const assetTypeData = {
         labels: assetTypeLabels.length ? assetTypeLabels : [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.NoAssetsLabel],
         datasets: [
@@ -966,6 +1061,7 @@ const Dashboard = (props) => {
                 hoverBackgroundColor: 'rgba(0, 90, 158, 0.85)',
                 hoverBorderColor: 'rgba(0, 90, 158, 1)',
                 borderRadius: 6,
+                maxBarThickness: 56,
             },
         ],
     };
@@ -991,15 +1087,15 @@ const Dashboard = (props) => {
     const doughnutDataValues = Object.keys(requestStatusCounts).length
         ? Object.keys(requestStatusCounts).map(k => requestStatusCounts[k])
         : [1];
+    const requestStatusTotal = Object.keys(requestStatusCounts).reduce((sum, k) => sum + requestStatusCounts[k], 0);
     const requestStatusData = {
-        labels: doughnutLabels,
+        labels: withCounts(doughnutLabels, requestStatusCounts),
         datasets: [
             {
                 label: isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssignmentStatusApprovedLabel : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestsByStatusLabel,
                 data: doughnutDataValues,
-                backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.75)),
-                borderColor: doughnutLabels.map(label => getFluentColor(label, 1.0)),
-                borderWidth: 1.5,
+                backgroundColor: doughnutLabels.map(label => getFluentColor(label, 0.85)),
+                ...ARC_STYLE,
             },
         ],
     };
@@ -1041,25 +1137,40 @@ const Dashboard = (props) => {
             },
         },
     };
-    const pieOptions = {
+    // Tooltip: 'Assigned (16)' as title, '16 · 76%' as body.
+    const arcTooltip = {
+        ...chartPlugins.tooltip,
+        callbacks: {
+            label: (ctx) => {
+                const values = ctx.dataset.data || [];
+                const total = values.reduce((sum, v) => sum + (Number(v) || 0), 0);
+                const pct = total > 0 ? Math.round((Number(ctx.raw) / total) * 100) : 0;
+                return ` ${ctx.raw} · ${pct}%`;
+            },
+        },
+    };
+    const statusDoughnutOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: chartPlugins,
+        cutout: '62%',
+        plugins: { ...chartPlugins, tooltip: arcTooltip, centerTotal: { value: statusTotal } },
     };
     const doughnutOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: chartPlugins,
-        cutout: '65%',
+        cutout: '62%',
+        plugins: { ...chartPlugins, tooltip: arcTooltip, centerTotal: { value: requestStatusTotal } },
     };
     const assetTypeOptions = {
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: { top: 18 } }, // room for the value labels above the tallest bar
         plugins: {
             legend: {
                 display: false,
             },
             tooltip: chartPlugins.tooltip,
+            barValueLabels: { enabled: assetTypeLabels.length > 0 },
         },
         scales: {
             x: {
@@ -1163,132 +1274,134 @@ const Dashboard = (props) => {
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerLeft },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerTitle }, dashboardTitle),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerSubtitle },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "ContactInfo", style: { fontSize: 13, color: '#0078d4' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ContactInfo", style: { fontSize: 13, color: '#0078d4' } }),
                     roleLabel,
                     " ",
                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.OverviewSuffix,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#c8c6c4' } }, "\u2022"),
                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RealTimeAnalytics),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerDate },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Calendar" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Calendar" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, getCurrentDate())))),
         onNavigate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActions },
             isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Inventory'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionViewInventory },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "List" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "List" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionViewInventory)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('AssetAssignmentQueue'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssignmentQueue },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Send" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Send" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssignmentQueue)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Reports'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReports },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "ReportDocument" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReportDocument" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReports)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('EventStream'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionEventStream },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "ActivityFeed" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ActivityFeed" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionEventStream)))),
             isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Approvals'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReviewApprovals },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "DoubleChevronRight12" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "DoubleChevronRight12" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReviewApprovals)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('AssetReturns'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssetReturns },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "ReturnToSession" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReturnToSession" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssetReturns)))),
             !isAdmin && !isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('MyWorkspace'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionMyWorkspace },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Briefcase" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Briefcase" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionMyWorkspace)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Notifications'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionNotifications },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Ringer" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Ringer" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionNotifications)))))),
         isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.info },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__.MessageBarType.info },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerBannerTitle),
                 " ",
                 InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerBannerTextBefore,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Nav.Approvals),
                 InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerBannerTextAfter))),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.success },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__.MessageBarType.success },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminBannerTitle),
                 " ",
                 InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminBannerText))),
         !isAdmin && !isInventoryManager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.info },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__.MessageBarType.info },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeBannerTitle),
                 " ",
                 InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeBannerText))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryGrid, role: "region", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.KpiRegionAriaLabel },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue}`, role: "status", "aria-label": `${isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets : !isInventoryManager ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyDevices : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets}: ${totalAssets}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Package" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Package" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalAssets),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets : !isInventoryManager ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyDevices : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
-                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AllocationRateSubtitle, allocationRate)
+                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AllocationRateSubtitle, allocationRate)
                         : !isInventoryManager
-                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssignedHardwareSubtitle, totalAssets)
-                            : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ItemsInCatalogSubtitle, totalAssets)))),
+                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssignedHardwareSubtitle, totalAssets)
+                            : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ItemsInCatalogSubtitle, totalAssets)))),
             (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AvailableAssets}: ${availableAssets}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Accept" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Accept" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, availableAssets),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AvailableAssets),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.InStockSubtitle, availableAssets, stockPercentage))))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.InStockSubtitle, availableAssets, stockPercentage))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple}`, role: "status", "aria-label": `${isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestsInQueue : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalRequests}: ${totalRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Send" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Send" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalRequests),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestsInQueue : !isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyRequests : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalRequests),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
-                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.QueueRequestsSubtitle, totalRequests)
-                        : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ApprovalSuccessSubtitle, approvalSuccessRate)))),
+                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.QueueRequestsSubtitle, totalRequests)
+                        : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ApprovalSuccessSubtitle, approvalSuccessRate)))),
             (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AwaitingApproval : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PendingRequests}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Clock" })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Clock" })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, isManagerView ? awaitingManagerDecision : pendingRequests),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AwaitingApproval : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PendingRequests),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isManagerView
-                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
-                        : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.UnderReviewSubtitle, pendingRequests)))))),
+                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
+                        : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.UnderReviewSubtitle, pendingRequests)))))),
+        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_dashboard_LowStockPanel__WEBPACK_IMPORTED_MODULE_4__.LowStockPanel, { items: items, onManageThresholds: isAdmin && onNavigate ? () => onNavigate('Config') : undefined })),
         (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "DonutChart" })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "DonutChart" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, primaryPieTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, primaryPieSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_8__.Pie, { data: assetStatusData, options: pieOptions }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Doughnut, { data: assetStatusData, options: statusDoughnutOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.centerTotalPlugin] }))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "BarChart4" })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "BarChart4" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssetsByTypeTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssetsByTypeSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_8__.Bar, { data: assetTypeData, options: assetTypeOptions }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Bar, { data: assetTypeData, options: assetTypeOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.barValueLabelsPlugin] }))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "PieDouble" })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "PieDouble" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PostApprovalAssignmentTitle : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestFulfillmentTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, isManagerView
                             ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PostApprovalAssignmentSubtitle
                             : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestFulfillmentSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_8__.Doughnut, { data: requestStatusData, options: doughnutOptions }))))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Doughnut, { data: requestStatusData, options: doughnutOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.centerTotalPlugin] }))))),
+        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_dashboard_RequestSlaPanel__WEBPACK_IMPORTED_MODULE_5__.RequestSlaPanel, { requests: requests, queueKey: isAdmin ? 'AssetAssignmentQueue' : 'Approvals', onNavigate: onNavigate })),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "ReviewRequestMirrored" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReviewRequestMirrored" }),
                         InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminActionCenterTitle),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminActionCenterSubtitle))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentAssignments.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1307,14 +1420,14 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeAwaitingHandoff)))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "CompletedSolid" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CompletedSolid" }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminEmptyState),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminEmptyStateHint)))))),
         isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "ReviewRequest" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReviewRequest" }),
                         InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerActionCenterTitle),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerActionCenterSubtitle))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentApprovals.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1335,7 +1448,7 @@ const Dashboard = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableCellJustification }, req.reason || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.NoJustificationSpecified),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeAwaitingApproval)))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "CheckMark" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CheckMark" }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerEmptyState),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerEmptyStateHint)))))),
         !isAdmin && !isInventoryManager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].splitLayout },
@@ -1343,7 +1456,7 @@ const Dashboard = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Send" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Send" }),
                             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeActionCenterTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeActionCenterSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentEmployeeRequests.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1385,14 +1498,14 @@ const Dashboard = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Info" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Info" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeEmptyState),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeEmptyStateHint))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Devices3" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Devices3" }),
                             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, sortedEmployeeItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
@@ -1409,9 +1522,74 @@ const Dashboard = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, item.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.NotAvailable)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(item.assignedDate || '')))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Devices3" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Devices3" }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentEmptyState),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentEmptyStateHint)))))))));
+};
+
+
+/***/ }),
+
+/***/ 1773:
+/*!*************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/EventActionBadge.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EventActionBadge: () => (/* binding */ EventActionBadge)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const BLUE = { bg: '#dbeafe', fg: '#1e40af' };
+const GREEN = { bg: '#dcfce7', fg: '#166534' };
+const RED = { bg: '#fee2e2', fg: '#991b1b' };
+const PURPLE = { bg: '#f3e8ff', fg: '#6b21a8' };
+const ORANGE = { bg: '#ffedd5', fg: '#9a3412' };
+const TEAL = { bg: '#ccfbf1', fg: '#115e59' };
+const AMBER = { bg: '#fef3c7', fg: '#92400e' };
+const NEUTRAL = { bg: '#f3f4f6', fg: '#374151' };
+// Keyed by the normalized (lower-case, trimmed) action text produced by AuditLogService.
+// Labels are functions so the runtime language switcher is picked up on re-render.
+const ACTION_BADGES = {
+    'created': { ...BLUE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionCreated },
+    'create': { ...BLUE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionCreated },
+    'manager approved': { ...GREEN, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionManagerApproved },
+    'manager rejected': { ...RED, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionManagerRejected },
+    'admin assigned': { ...PURPLE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionAdminAssigned },
+    'status updated to in progress': { ...ORANGE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionInProgress },
+    'status updated to resolved': { ...TEAL, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionResolved },
+    'deleted': { ...RED, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionDeleted },
+    'delete': { ...RED, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionDeleted },
+    'return requested': { ...ORANGE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionReturnRequested },
+    'return approved': { ...GREEN, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionReturnApproved },
+    'return completed': { ...TEAL, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionReturnCompleted },
+    'return rejected': { ...RED, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionReturnRejected },
+    'activated': { ...GREEN, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionActivated },
+    'inactivated': { ...AMBER, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionInactivated },
+    'deactivated': { ...RED, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionDeactivated },
+    'update': { ...ORANGE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionUpdated }
+};
+const EventActionBadge = ({ action }) => {
+    const raw = action || '';
+    const badge = ACTION_BADGES[raw.toLowerCase().trim()];
+    const colors = badge || NEUTRAL;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
+            backgroundColor: colors.bg,
+            color: colors.fg,
+            padding: '4px 12px',
+            borderRadius: '9999px',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            display: 'inline-block',
+            textTransform: 'lowercase'
+        } }, badge ? badge.label() : raw));
 };
 
 
@@ -1430,24 +1608,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 21262);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46412);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 44533);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 60099);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 73898);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 46412);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 44533);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/EventLogUtils */ 46964);
+
 
 
 
 
 
 const EventFilters = (props) => {
-    const { filters, onChange, onClear, actionsList, assetTypesList, usersList } = props;
+    const { filters, onChange, onClear, actionsList, assetTypesList, userOptions, currentUserName } = props;
     const dateOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.AUDIT_LOG_DATE_RANGE_OPTIONS;
     const moduleOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.AUDIT_LOG_MODULE_OPTIONS;
     const statusOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.AUDIT_LOG_STATUS_OPTIONS;
@@ -1459,20 +1641,31 @@ const EventFilters = (props) => {
             text: action.charAt(0).toUpperCase() + action.slice(1)
         }))
     ];
+    // Standard types show their localized label; custom types from SharePoint show as stored.
+    const getAssetTypeText = (type) => {
+        const standard = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS.find(o => String(o.key).toLowerCase() === type.toLowerCase());
+        return standard ? standard.text : type;
+    };
     const assetTypeOptions = [
         { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.AllAssetsOption },
         ...assetTypesList.map(type => ({
             key: type,
-            text: type
+            text: getAssetTypeText(type)
         }))
     ];
-    const userOptions = [
+    // Searchable: type part of a name to jump to it. Counts reflect the current date/action/module filters.
+    const userComboOptions = [
         { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.AllUsersOption },
-        ...usersList.map(user => ({
-            key: user,
-            text: user
+        ...(currentUserName ? [{ key: _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.MY_ACTIVITY_KEY, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.MyActivityOption }] : []),
+        { key: 'divider', text: '-', itemType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.SelectableOptionMenuItemType.Divider },
+        ...userOptions.map(u => ({
+            key: u.name,
+            text: u.name,
+            ariaLabel: `${u.name} (${u.count})`,
+            data: { count: u.count }
         }))
     ];
+    const getUserLabel = (user) => user === _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.MY_ACTIVITY_KEY ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.MyActivityOption : user;
     // Helper to check if any filter is active (excluding default search/sort)
     const hasActiveFilters = filters.dateRangeType !== 'All' ||
         filters.action !== 'All' ||
@@ -1504,47 +1697,49 @@ const EventFilters = (props) => {
         new Date(filters.startDate) > new Date(filters.endDate);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '20px' } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.SearchBox, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.SearchPlaceholder, value: filters.searchQuery, onChange: (_, newValue) => onChange({ ...filters, searchQuery: newValue || '' }), onClear: () => onChange({ ...filters, searchQuery: '' }), styles: { root: { flexGrow: 1, minWidth: '300px' } } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.ClearFilters, iconProps: { iconName: 'ClearFilter' }, onClick: onClear, disabled: !hasActiveFilters && !filters.searchQuery })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.SearchBox, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.SearchPlaceholder, value: filters.searchQuery, onChange: (_, newValue) => onChange({ ...filters, searchQuery: newValue || '' }), onClear: () => onChange({ ...filters, searchQuery: '' }), styles: { root: { flexGrow: 1, minWidth: '300px' } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.ClearFilters, iconProps: { iconName: 'ClearFilter' }, onClick: onClear, disabled: !hasActiveFilters && !filters.searchQuery })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                 gap: '12px'
             } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelDateRange, selectedKey: filters.dateRangeType, options: dateOptions, onChange: (_, option) => option && handleDateChange(option.key) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAction, selectedKey: filters.action, options: actionOptions, onChange: (_, option) => option && onChange({ ...filters, action: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelModule, selectedKey: filters.module, options: moduleOptions, onChange: (_, option) => option && onChange({ ...filters, module: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAssetType, selectedKey: filters.assetType, options: assetTypeOptions, onChange: (_, option) => option && onChange({ ...filters, assetType: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelUser, selectedKey: filters.user, options: userOptions, onChange: (_, option) => option && onChange({ ...filters, user: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStatus, selectedKey: filters.status, options: statusOptions, onChange: (_, option) => option && onChange({ ...filters, status: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelSortOrder, selectedKey: filters.sortOrder, options: sortOptions, onChange: (_, option) => option && onChange({ ...filters, sortOrder: option.key }) })),
-        filters.dateRangeType === 'Custom' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, wrap: true, tokens: { childrenGap: 16 }, style: { alignItems: 'flex-end', backgroundColor: '#f3f2f1', padding: '12px', borderRadius: '4px' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelDateRange, selectedKey: filters.dateRangeType, options: dateOptions, onChange: (_, option) => option && handleDateChange(option.key) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAction, selectedKey: filters.action, options: actionOptions, onChange: (_, option) => option && onChange({ ...filters, action: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelModule, selectedKey: filters.module, options: moduleOptions, onChange: (_, option) => option && onChange({ ...filters, module: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAssetType, selectedKey: filters.assetType, options: assetTypeOptions, onChange: (_, option) => option && onChange({ ...filters, assetType: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.ComboBox, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelUser, selectedKey: filters.user, options: userComboOptions, autoComplete: "on", allowFreeform: false, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.UserSearchPlaceholder, onRenderOption: (option) => option ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'flex', justifyContent: 'space-between', gap: '12px', width: '100%' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, option.text),
+                    option.data && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #6b7280)', fontSize: '0.75rem' } }, option.data.count))) : null, onChange: (_, option) => option && onChange({ ...filters, user: option.key }), useComboBoxAsMenuWidth: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStatus, selectedKey: filters.status, options: statusOptions, onChange: (_, option) => option && onChange({ ...filters, status: option.key }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelSortOrder, selectedKey: filters.sortOrder, options: sortOptions, onChange: (_, option) => option && onChange({ ...filters, sortOrder: option.key }) })),
+        filters.dateRangeType === 'Custom' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Stack, { horizontal: true, wrap: true, tokens: { childrenGap: 16 }, style: { alignItems: 'flex-end', backgroundColor: '#f3f2f1', padding: '12px', borderRadius: '4px' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStartDate, value: filters.startDate, onSelectDate: (date) => date && onChange({ ...filters, startDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.StartDatePlaceholder })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStartDate, value: filters.startDate, onSelectDate: (date) => date && onChange({ ...filters, startDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.StartDatePlaceholder })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelEndDate, value: filters.endDate, onSelectDate: (date) => date && onChange({ ...filters, endDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.EndDatePlaceholder })),
-            isDateRangeInvalid && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { style: { color: '#a80000', alignSelf: 'center', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.DateRangeWarning)))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelEndDate, value: filters.endDate, onSelectDate: (date) => date && onChange({ ...filters, endDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.EndDatePlaceholder })),
+            isDateRangeInvalid && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Text, { style: { color: '#a80000', alignSelf: 'center', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.DateRangeWarning)))),
         hasActiveFilters && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center', marginTop: '4px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Text, { variant: "smallPlus", style: { color: 'var(--text-muted)', marginRight: '4px', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ActiveFilters),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Text, { variant: "smallPlus", style: { color: 'var(--text-muted)', marginRight: '4px', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ActiveFilters),
             filters.dateRangeType !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
                 getDateLabel(),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => handleDateChange('All'), styles: chipButtonStyles }))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => handleDateChange('All'), styles: chipButtonStyles }))),
             filters.action !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAction, filters.action),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, action: 'All' }), styles: chipButtonStyles }))),
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAction, filters.action),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, action: 'All' }), styles: chipButtonStyles }))),
             filters.module !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipModule, filters.module),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, module: 'All' }), styles: chipButtonStyles }))),
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipModule, filters.module),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, module: 'All' }), styles: chipButtonStyles }))),
             filters.assetType !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAsset, filters.assetType),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, assetType: 'All' }), styles: chipButtonStyles }))),
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAsset, getAssetTypeText(filters.assetType)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, assetType: 'All' }), styles: chipButtonStyles }))),
             filters.user !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipUser, filters.user),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, user: 'All' }), styles: chipButtonStyles }))),
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipUser, getUserLabel(filters.user)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, user: 'All' }), styles: chipButtonStyles }))),
             filters.status !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipStatus, filters.status),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, status: 'All' }), styles: chipButtonStyles }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ClearAll, onClick: onClear, styles: { root: { height: 26, minWidth: 0, padding: '0 8px', fontSize: '0.8rem' } } })))));
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipStatus, filters.status),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, status: 'All' }), styles: chipButtonStyles }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ClearAll, onClick: onClear, styles: { root: { height: 26, minWidth: 0, padding: '0 8px', fontSize: '0.8rem' } } })))));
 };
 const chipStyle = {
     display: 'inline-flex',
@@ -1578,16 +1773,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
 /* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
 /* harmony import */ var _EventFilters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EventFilters */ 46615);
-/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _EventActionBadge__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EventActionBadge */ 1773);
+/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
+/* harmony import */ var _services_AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/AssetTypeLookupService */ 72145);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
+/* harmony import */ var _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/EventLogUtils */ 46964);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 
 
 
@@ -1597,65 +1796,63 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+const PAGE_SIZE = 10;
+const DEFAULT_FILTERS = {
+    searchQuery: '',
+    dateRangeType: 'All',
+    action: 'All',
+    module: 'All',
+    assetType: 'All',
+    user: 'All',
+    status: 'All',
+    sortOrder: 'NewestFirst'
+};
+const STANDARD_ASSET_TYPES = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_7__.DEFAULT_ASSET_TYPE_OPTIONS.map(o => String(o.key));
 const EventStream = (props) => {
-    const [filters, setFilters] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-        searchQuery: '',
-        dateRangeType: 'All',
-        action: 'All',
-        module: 'All',
-        assetType: 'All',
-        user: 'All',
-        status: 'All',
-        sortOrder: 'NewestFirst'
-    });
+    const [filters, setFilters] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(DEFAULT_FILTERS);
     const [logs, setLogs] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
     const [currentPage, setCurrentPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
-    const pageSize = 10;
     // Filter option lists
     const [actionsList, setActionsList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [assetTypesList, setAssetTypesList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [usersList, setUsersList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [baseAssetTypes, setBaseAssetTypes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(STANDARD_ASSET_TYPES);
+    const [knownUsers, setKnownUsers] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const isEmployee = props.currentUserRole === 'Inventory Employee';
-    // Load filter lists from the recent logs to populate dropdown options dynamically
+    // Load filter option lists: actions/users from the last 90 days of logs,
+    // asset types from the standard types plus every type used in Inventory/Requests.
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         const loadFilterMetadata = async () => {
             try {
-                // Fetch last 90 days of logs as a baseline for filter options
-                const initLogs = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__.InventoryService.getFilteredAuditLogs({
-                    searchQuery: '',
-                    dateRangeType: 'Last90',
-                    action: 'All',
-                    module: 'All',
-                    assetType: 'All',
-                    user: 'All',
-                    status: 'All',
-                    sortOrder: 'NewestFirst'
-                });
-                // Extract unique options
+                const [initLogs, lookup] = await Promise.all([
+                    _services_InventoryService__WEBPACK_IMPORTED_MODULE_5__.InventoryService.getFilteredAuditLogs({ ...DEFAULT_FILTERS, dateRangeType: 'Last90' }),
+                    _services_AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_6__.AssetTypeLookupService.getLookup()
+                ]);
                 const actions = Array.from(new Set(initLogs.map(l => l.action).filter(Boolean)));
                 const users = Array.from(new Set(initLogs.map(l => l.user).filter(Boolean)));
-                const defaultAssetTypes = ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset', 'Dock', 'Printer'];
-                const foundAssetTypes = initLogs.map(l => l.assetName).filter(Boolean);
-                const uniqueAssetTypes = Array.from(new Set([...defaultAssetTypes, ...foundAssetTypes]));
                 setActionsList(actions.sort());
-                setUsersList(users.sort());
-                setAssetTypesList(uniqueAssetTypes.sort());
+                setKnownUsers(users);
+                setBaseAssetTypes((0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.mergeAssetTypes)(STANDARD_ASSET_TYPES, lookup.knownTypes, initLogs.map(l => l.assetType)));
             }
             catch (err) {
                 console.warn("Failed to load filter metadata:", err);
             }
         };
-        loadFilterMetadata();
+        loadFilterMetadata().catch(() => undefined);
     }, []);
     // Fetch logs whenever server-side filters or refresh trigger change
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         const fetchLogs = async () => {
             setLoading(true);
             try {
-                const fetched = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_4__.InventoryService.getFilteredAuditLogs({
+                // Search and User are filtered client-side, against the names actually displayed.
+                const fetched = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_5__.InventoryService.getFilteredAuditLogs({
                     ...filters,
-                    searchQuery: ''
+                    searchQuery: '',
+                    user: 'All'
                 });
                 setLogs(fetched);
             }
@@ -1666,7 +1863,7 @@ const EventStream = (props) => {
                 setLoading(false);
             }
         };
-        fetchLogs();
+        fetchLogs().catch(() => undefined);
         setCurrentPage(1); // Reset page to 1 when filters change
     }, [
         filters.dateRangeType,
@@ -1674,247 +1871,88 @@ const EventStream = (props) => {
         filters.endDate,
         filters.action,
         filters.module,
-        filters.user,
         props.refreshTrigger
     ]);
     // Reset to page 1 when client-side filters change
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         setCurrentPage(1);
-    }, [filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
+    }, [filters.searchQuery, filters.assetType, filters.user, filters.status, filters.sortOrder]);
     const handleClearFilters = () => {
         setFilters(prev => ({
-            searchQuery: prev.searchQuery, // Preserve search text
-            dateRangeType: 'All',
-            startDate: undefined,
-            endDate: undefined,
-            action: 'All',
-            module: 'All',
-            assetType: 'All',
-            user: 'All',
-            status: 'All',
-            sortOrder: 'NewestFirst'
+            ...DEFAULT_FILTERS,
+            searchQuery: prev.searchQuery // Preserve search text
         }));
     };
+    // Include types seen in the currently loaded logs so a newly used type is selectable immediately.
+    const assetTypesList = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.mergeAssetTypes)(baseAssetTypes, logs.map(l => l.assetType)), [baseAssetTypes, logs]);
+    const canViewAuditDetails = _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__.RoleUtils.canViewAuditLogs(props.currentUserRole);
     const columns = [
         {
             key: 'column_action',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ColumnAction,
+            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnAction,
             fieldName: 'action',
             minWidth: 120,
             maxWidth: 220,
             isResizable: true,
-            onRender: (item) => {
-                let backgroundColor = '#f3f4f6';
-                let textColor = '#374151';
-                let displayText = item.action || '';
-                const normalizedAction = displayText.toLowerCase().trim();
-                if (normalizedAction === 'created' || normalizedAction === 'create') {
-                    backgroundColor = '#dbeafe'; // Light blue
-                    textColor = '#1e40af'; // Dark blue
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionCreated;
-                }
-                else if (normalizedAction === 'manager approved') {
-                    backgroundColor = '#dcfce7'; // Light green
-                    textColor = '#166534'; // Dark green
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionManagerApproved;
-                }
-                else if (normalizedAction === 'manager rejected') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionManagerRejected;
-                }
-                else if (normalizedAction === 'admin assigned') {
-                    backgroundColor = '#f3e8ff'; // Light purple
-                    textColor = '#6b21a8'; // Dark purple
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionAdminAssigned;
-                }
-                else if (normalizedAction === 'status updated to in progress') {
-                    backgroundColor = '#ffedd5'; // Light orange/yellow
-                    textColor = '#9a3412'; // Dark orange
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionInProgress;
-                }
-                else if (normalizedAction === 'status updated to resolved') {
-                    backgroundColor = '#ccfbf1'; // Light teal
-                    textColor = '#115e59'; // Dark teal
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionResolved;
-                }
-                else if (normalizedAction === 'deleted' || normalizedAction === 'delete') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionDeleted;
-                }
-                else if (normalizedAction === 'return requested') {
-                    backgroundColor = '#ffedd5'; // Light orange
-                    textColor = '#9a3412'; // Dark orange
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionReturnRequested;
-                }
-                else if (normalizedAction === 'return approved') {
-                    backgroundColor = '#dcfce7'; // Light green
-                    textColor = '#166534'; // Dark green
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionReturnApproved;
-                }
-                else if (normalizedAction === 'return completed') {
-                    backgroundColor = '#ccfbf1'; // Light teal
-                    textColor = '#115e59'; // Dark teal
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionReturnCompleted;
-                }
-                else if (normalizedAction === 'return rejected') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionReturnRejected;
-                }
-                else if (normalizedAction === 'activated') {
-                    backgroundColor = '#dcfce7'; // Light green
-                    textColor = '#166534'; // Dark green
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionActivated;
-                }
-                else if (normalizedAction === 'inactivated') {
-                    backgroundColor = '#fef3c7'; // Light amber
-                    textColor = '#92400e'; // Dark amber
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionInactivated;
-                }
-                else if (normalizedAction === 'deactivated') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionDeactivated;
-                }
-                else if (normalizedAction === 'update') {
-                    backgroundColor = '#ffedd5'; // Light orange/yellow
-                    textColor = '#9a3412';
-                    displayText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ActionUpdated;
-                }
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                        backgroundColor,
-                        color: textColor,
-                        padding: '4px 12px',
-                        borderRadius: '9999px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        display: 'inline-block',
-                        textTransform: 'lowercase'
-                    } }, displayText));
-            }
+            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventActionBadge__WEBPACK_IMPORTED_MODULE_4__.EventActionBadge, { action: item.action })
         },
-        { key: 'column_type', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
-        { key: 'column_title', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
-        { key: 'column_assetName', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        ...(_utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__.RoleUtils.canViewAuditLogs(props.currentUserRole) ? [
-            { key: 'column_user', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
+        { key: 'column_type', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
+        { key: 'column_title', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
+        { key: 'column_assetName', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
+        ...(canViewAuditDetails ? [
+            { key: 'column_user', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
         ] : []),
-        { key: 'column_timestamp', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
-        ...(_utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__.RoleUtils.canViewAuditLogs(props.currentUserRole) ? [
-            { key: 'column_details', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
+        { key: 'column_timestamp', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
+        ...(canViewAuditDetails ? [
+            { key: 'column_details', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
         ] : [])
     ];
     // 1. Apply role-based visibility filtering client-side
     const roleBasedFilteredLogs = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
         if (isEmployee) {
-            return logs.filter(log => (log.user || '').toLowerCase().includes(props.currentUserName.toLowerCase()) ||
-                (log.details || '').toLowerCase().includes(props.currentUserName.toLowerCase()));
+            const me = props.currentUserName.toLowerCase();
+            return logs.filter(log => (log.user || '').toLowerCase().includes(me) ||
+                (log.details || '').toLowerCase().includes(me));
         }
         return logs;
     }, [logs, isEmployee, props.currentUserName]);
-    // 2. Apply client-side search, assetType, status filters, and sorting
+    // User options with event counts under the current server-side filters. Users seen in the
+    // last 90 days (and the current selection) are kept with a 0 count so the list stays stable.
+    const userOptions = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+        const extra = filters.user !== 'All' && filters.user !== _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.MY_ACTIVITY_KEY ? knownUsers.concat([filters.user]) : knownUsers;
+        return (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.buildUserOptions)(roleBasedFilteredLogs, extra);
+    }, [roleBasedFilteredLogs, knownUsers, filters.user]);
+    // 2. Apply client-side search, asset type, user, status filters, and sorting
     const filteredLogs = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        let result = [...roleBasedFilteredLogs];
-        // Search query filtering
-        if (filters.searchQuery) {
-            const lowerQuery = filters.searchQuery.toLowerCase();
-            result = result.filter(log => log.title?.toLowerCase().includes(lowerQuery) ||
-                log.assetName?.toLowerCase().includes(lowerQuery) ||
-                log.details?.toLowerCase().includes(lowerQuery) ||
-                log.user?.toLowerCase().includes(lowerQuery) ||
-                log.action?.toLowerCase().includes(lowerQuery) ||
-                log.entityType?.toLowerCase().includes(lowerQuery) ||
-                log.entityId?.toLowerCase().includes(lowerQuery));
-        }
-        // Asset type filtering
-        if (filters.assetType && filters.assetType !== 'All') {
-            const lowerAssetType = filters.assetType.toLowerCase();
-            result = result.filter(log => (log.assetName || '').toLowerCase().includes(lowerAssetType) ||
-                (log.title || '').toLowerCase().includes(lowerAssetType));
-        }
-        // Status filtering
-        if (filters.status && filters.status !== 'All') {
-            const lowerStatus = filters.status.toLowerCase();
-            result = result.filter(log => (log.details || '').toLowerCase().includes(lowerStatus) ||
-                (log.action || '').toLowerCase().includes(lowerStatus) ||
-                (log.title || '').toLowerCase().includes(lowerStatus));
-        }
-        // Sorting
-        if (filters.sortOrder) {
-            result.sort((a, b) => {
-                switch (filters.sortOrder) {
-                    case 'NewestFirst':
-                        return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-                    case 'OldestFirst':
-                        return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
-                    case 'AssetNameAZ':
-                        return (a.assetName || '').localeCompare(b.assetName || '');
-                    case 'AssetNameZA':
-                        return (b.assetName || '').localeCompare(a.assetName || '');
-                    case 'UserAZ':
-                        return (a.user || '').localeCompare(b.user || '');
-                    case 'UserZA':
-                        return (b.user || '').localeCompare(a.user || '');
-                    default:
-                        return 0;
-                }
-            });
-        }
-        return result;
-    }, [roleBasedFilteredLogs, filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
+        const userFilter = filters.user === _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.MY_ACTIVITY_KEY ? props.currentUserName : filters.user;
+        return (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.applyClientFilters)(roleBasedFilteredLogs, { ...filters, user: userFilter });
+    }, [roleBasedFilteredLogs, filters.searchQuery, filters.assetType, filters.user, filters.status, filters.sortOrder, props.currentUserName]);
     const totalItems = filteredLogs.length;
-    const totalPages = Math.ceil(totalItems / pageSize);
+    const totalPages = Math.ceil(totalItems / PAGE_SIZE);
     const activePage = Math.min(currentPage, Math.max(1, totalPages));
-    const startIndex = (activePage - 1) * pageSize;
-    const paginatedLogs = filteredLogs.slice(startIndex, startIndex + pageSize);
-    const getPageNumbers = () => {
-        const pages = [];
-        const maxVisiblePages = 5;
-        if (totalPages <= maxVisiblePages) {
-            for (let i = 1; i <= totalPages; i++) {
-                pages.push(i);
-            }
-        }
-        else {
-            pages.push(1);
-            const start = Math.max(2, activePage - 1);
-            const end = Math.min(totalPages - 1, activePage + 1);
-            if (start > 2) {
-                pages.push('...');
-            }
-            for (let i = start; i <= end; i++) {
-                pages.push(i);
-            }
-            if (end < totalPages - 1) {
-                pages.push('...');
-            }
-            pages.push(totalPages);
-        }
-        return pages;
-    };
+    const startIndex = (activePage - 1) * PAGE_SIZE;
+    const paginatedLogs = filteredLogs.slice(startIndex, startIndex + PAGE_SIZE);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
         props.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.NoticeLabel),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoticeLabel),
             " ",
             props.errorMessage)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventFilters__WEBPACK_IMPORTED_MODULE_3__.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, usersList: usersList }),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.LoadingAuditLogs)) : roleBasedFilteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, isEmployee ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.NoEventsForYou : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.NoEventsRecorded)) : filteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.EventStream.NoEventsMatchFilters)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.SelectionMode.none }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventFilters__WEBPACK_IMPORTED_MODULE_3__.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, userOptions: userOptions, currentUserName: props.currentUserName }),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.LoadingAuditLogs)) : roleBasedFilteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, isEmployee ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsForYou : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsRecorded)) : filteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsMatchFilters)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_11__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_12__.SelectionMode.none }),
             totalPages > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationContainer },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationInfo }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + pageSize, totalItems), totalItems)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationInfo }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + PAGE_SIZE, totalItems), totalItems)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationControls },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Pagination.FirstPage }, "\u00AB"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Pagination.PreviousPage }, "\u2039"),
-                    getPageNumbers().map((page, idx) => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.FirstPage }, "\u00AB"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.PreviousPage }, "\u2039"),
+                    (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.getPageNumbers)(activePage, totalPages).map((page, idx) => {
                         if (page === '...') {
                             return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: `ellipsis-${idx}`, style: { padding: '0 8px', color: 'var(--text-muted)' } }, "...");
                         }
                         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: page, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton} ${activePage === page ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].active : ''}`, onClick: () => setCurrentPage(page) }, page));
                     }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Pagination.NextPage }, "\u203A"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Pagination.LastPage }, "\u00BB"))))))));
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.NextPage }, "\u203A"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.LastPage }, "\u00BB"))))))));
 };
 
 
@@ -2921,37 +2959,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @microsoft/sp-lodash-subset */ 50529);
 /* harmony import */ var _microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
-/* harmony import */ var _AssetForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AssetForm */ 5652);
-/* harmony import */ var _RequestForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RequestForm */ 28333);
-/* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
-/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! chart.js */ 55277);
-/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
-/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
-/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../data/mockData */ 27962);
-/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/EmailService */ 86407);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../pages */ 56330);
-/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
-/* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-/* harmony import */ var _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/LanguageSwitcherService */ 69898);
-/* harmony import */ var _utils_getNotifications__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../utils/getNotifications */ 7327);
-/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../utils/ReportExportUtils */ 61238);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/StockThresholdService */ 34378);
+/* harmony import */ var _AssetForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AssetForm */ 5652);
+/* harmony import */ var _RequestForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RequestForm */ 28333);
+/* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! chart.js */ 55277);
+/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
+/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
+/* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../data/mockData */ 27962);
+/* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
+/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/EmailService */ 86407);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../pages */ 56330);
+/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
+/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/LanguageSwitcherService */ 69898);
+/* harmony import */ var _utils_getNotifications__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../utils/getNotifications */ 7327);
+/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../utils/ReportExportUtils */ 61238);
 
 
 
@@ -2962,7 +3002,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-chart_js__WEBPACK_IMPORTED_MODULE_7__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_7__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_7__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_7__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_7__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_7__.Title, chart_js__WEBPACK_IMPORTED_MODULE_7__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_7__.Legend);
+
+
+chart_js__WEBPACK_IMPORTED_MODULE_9__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_9__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_9__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_9__.ArcElement, chart_js__WEBPACK_IMPORTED_MODULE_9__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_9__.Title, chart_js__WEBPACK_IMPORTED_MODULE_9__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_9__.Legend);
 
 
 
@@ -2983,11 +3025,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._getRoleDisplayLabel = (role) => {
             switch (role) {
                 case 'Admin':
-                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Roles.Admin;
+                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Roles.Admin;
                 case 'Inventory Manager':
-                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Roles.InventoryManager;
+                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Roles.InventoryManager;
                 case 'Inventory Employee':
-                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Roles.InventoryEmployee;
+                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Roles.InventoryEmployee;
                 default:
                     return role;
             }
@@ -3042,7 +3084,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             return !!(isAssigned || isNoted || isStatus);
         };
         this._getNotifications = () => {
-            return (0,_utils_getNotifications__WEBPACK_IMPORTED_MODULE_20__.getNotifications)({
+            return (0,_utils_getNotifications__WEBPACK_IMPORTED_MODULE_22__.getNotifications)({
                 items: this.state.items,
                 requests: this.state.requests,
                 returnRequests: this.state.returnRequests,
@@ -3098,7 +3140,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             this.setState(prev => ({ languageVersion: prev.languageVersion + 1 }));
         };
         this._onLanguageSelect = (languageCode) => {
-            (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_18__.setLanguage)(languageCode);
+            (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.setLanguage)(languageCode);
         };
         this._handleMockEmailSent = (ev) => {
             this.setState({
@@ -3113,7 +3155,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._handleEmailSendFailed = (ev) => {
             this.setState({
                 syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
-                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.warning
+                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.warning
             });
         };
         this._onSendMockEmail = async () => {
@@ -3123,7 +3165,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
             try {
                 const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
-                await _services_EmailService__WEBPACK_IMPORTED_MODULE_12__.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
+                await _services_EmailService__WEBPACK_IMPORTED_MODULE_14__.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
                 this.setState({
                     isSendingMockEmail: false,
                     mockEmailSendSuccess: true
@@ -3144,20 +3186,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             try {
                 const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_3__.getSP)();
                 const groups = await sp.web.currentUser.groups();
-                const groupNames = groups.map((group) => (group.Title || '').toLowerCase().trim());
-                const isAdmin = groupNames.some((name) => name === 'msft owners' || name.indexOf('msft owners') >= 0);
-                const isInventoryManager = groupNames.some((name) => name === 'msft members' || name.indexOf('msft members') >= 0);
-                const isInventoryEmployee = groupNames.some((name) => name === 'msft visitors' || name.indexOf('msft visitors') >= 0);
-                let userRole = 'Inventory Employee';
-                if (isAdmin) {
-                    userRole = 'Admin';
-                }
-                else if (isInventoryManager) {
-                    userRole = 'Inventory Manager';
-                }
-                else if (isInventoryEmployee) {
-                    userRole = 'Inventory Employee';
-                }
+                // Group names come from the property pane (defaults: MSFT Owners / Members / Visitors).
+                const roleGroupNames = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_4__.getAppConfig)().roleGroups;
+                const userRole = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_4__.resolveRoleFromGroups)(groups.map((group) => group.Title || ''), roleGroupNames);
                 // Load employees from groups dynamically
                 const loadedEmployees = [];
                 const seenEmails = new Set();
@@ -3167,7 +3198,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         const name = (u.Title || '').trim();
                         const nameLower = name.toLowerCase();
                         // Skip system/group users
-                        if (nameLower === 'msft owners' || nameLower === 'system account' || !name) {
+                        if (nameLower === roleGroupNames.admin.toLowerCase() || nameLower === 'system account' || !name) {
                             return;
                         }
                         if (email && !seenEmails.has(email)) {
@@ -3182,28 +3213,21 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         }
                     });
                 };
-                try {
-                    const owners = await sp.web.siteGroups.getByName("MSFT Owners").users();
-                    addUsers(owners, 'Admin', 'Management');
+                const groupLoads = [
+                    [roleGroupNames.admin, 'Admin', 'Management'],
+                    [roleGroupNames.manager, 'Inventory Manager', 'Operations'],
+                    [roleGroupNames.employee, 'Inventory Employee', 'Operations']
+                ];
+                for (const [groupName, jobTitle, department] of groupLoads) {
+                    try {
+                        const users = await sp.web.siteGroups.getByName(groupName).users();
+                        addUsers(users, jobTitle, department);
+                    }
+                    catch (e) {
+                        console.warn(`Could not load users from group '${groupName}':`, e);
+                    }
                 }
-                catch (e) {
-                    console.warn("Could not load users from group 'MSFT Owners':", e);
-                }
-                try {
-                    const members = await sp.web.siteGroups.getByName("MSFT Members").users();
-                    addUsers(members, 'Inventory Manager', 'Operations');
-                }
-                catch (e) {
-                    console.warn("Could not load users from group 'MSFT Members':", e);
-                }
-                try {
-                    const visitors = await sp.web.siteGroups.getByName("MSFT Visitors").users();
-                    addUsers(visitors, 'Inventory Employee', 'Operations');
-                }
-                catch (e) {
-                    console.warn("Could not load users from group 'MSFT Visitors':", e);
-                }
-                const finalEmployees = loadedEmployees.length > 0 ? loadedEmployees : _data_mockData__WEBPACK_IMPORTED_MODULE_10__.EMPLOYEES;
+                const finalEmployees = loadedEmployees.length > 0 ? loadedEmployees : _data_mockData__WEBPACK_IMPORTED_MODULE_12__.EMPLOYEES;
                 this.setState({
                     userRole,
                     roleGroups: groups.map((group) => group.Title || ''),
@@ -3216,7 +3240,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     userRole: 'Inventory Employee',
                     roleGroups: [],
-                    employees: _data_mockData__WEBPACK_IMPORTED_MODULE_10__.EMPLOYEES,
+                    employees: _data_mockData__WEBPACK_IMPORTED_MODULE_12__.EMPLOYEES,
                     roleLoading: false
                 });
             }
@@ -3224,9 +3248,14 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._loadInventory = async () => {
             try {
                 this.setState({ loading: true, errorMessage: undefined });
-                const items = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.getItems();
+                const items = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.getItems();
                 if (items && items.length > 0) {
                     this.setState({ items, loading: false });
+                    // Low-stock alerts: runs after every inventory reload (assignments, edits, deletes).
+                    // Admin only, because it writes alert state and sends the email. Fire-and-forget.
+                    if (this.state.userRole === 'Admin') {
+                        _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_5__.StockThresholdService.checkAndNotify(items).catch(() => undefined);
+                    }
                 }
                 else {
                     // List is empty
@@ -3249,7 +3278,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         };
         this._loadRequests = async () => {
             try {
-                const requests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.getRequests();
+                const requests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.getRequests();
                 this.setState({ requests });
             }
             catch (error) {
@@ -3267,7 +3296,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._loadReturnRequests = async () => {
             try {
                 this.setState({ returnRequestsLoading: true });
-                const returnRequests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.getReturnRequests();
+                const returnRequests = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.getReturnRequests();
                 this.setState({ returnRequests, returnRequestsLoading: false });
             }
             catch (error) {
@@ -3293,7 +3322,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     returnReason: reason,
                     proposedCondition: condition
                 };
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.addReturnRequest(reqPayload, this.state.activeUserDisplayName);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.addReturnRequest(reqPayload, this.state.activeUserDisplayName);
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
@@ -3302,7 +3331,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     selectedAssetForReturn: undefined,
                     returnRequestsLoading: false,
                     syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.success,
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success,
                     workflowPopup: {
                         isOpen: true,
                         title: 'Asset Return Request Submitted',
@@ -3333,7 +3362,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._onUpdateReturnRequestStatus = async (requestId, status, comment, finalCondition, adminComments, managerStatus, adminStatus) => {
             try {
                 this.setState({ returnRequestsLoading: true });
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition, adminComments, managerStatus, adminStatus);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.updateReturnRequestStatus(requestId, status, comment, this.state.activeUserDisplayName, finalCondition, adminComments, managerStatus, adminStatus);
                 await this._loadInventory();
                 await this._loadReturnRequests();
                 await this._loadAuditLogs();
@@ -3374,7 +3403,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     ...newAssetData,
                     status: 'In Stock'
                 };
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.addItem(newAsset, this.state.activeUserDisplayName);
                 await this._loadInventory(); // Refresh list
                 await this._loadAuditLogs(); // Refresh audit logs
                 this.setState({
@@ -3445,7 +3474,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 }));
                 const effectiveRole = this.state.previewRole || this.state.userRole;
                 const isEmpUI = effectiveRole !== 'Admin';
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.addRequest({
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.addRequest({
                     ...requestData,
                     status: initialStatus
                 }, this.state.activeUserDisplayName, effectiveRole, isEmpUI);
@@ -3461,7 +3490,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             }
         };
         this._onApproveRequest = async (request, comment = '') => {
-            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_22__.getAvailableStock)(this.state.items, request);
+            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_24__.getAvailableStock)(this.state.items, request);
             const requestedQuantity = Number(request.quantity || 0);
             if (availableStock < requestedQuantity) {
                 this.setState({
@@ -3487,7 +3516,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName, comment);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName, comment);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -3527,7 +3556,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', this.state.activeUserDisplayName, reason);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', this.state.activeUserDisplayName, reason);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -3568,7 +3597,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }));
                 }
                 else {
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', this.state.activeUserDisplayName);
                     await this._loadRequests();
                     await this._loadAuditLogs();
                 }
@@ -3603,7 +3632,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({ isTrackingActionInProgress: true, errorMessage: undefined });
                 const employee = this.state.employees.find(e => e.name.toLowerCase() === employeeName.toLowerCase());
                 const employeeId = employee ? employee.id : "";
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.assignAssetsToEmployee(assetIds, employeeName, employeeEmail, this.state.activeUserDisplayName, employeeId);
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.assignAssetsToEmployee(assetIds, employeeName, employeeEmail, this.state.activeUserDisplayName, employeeId);
                 await this._loadInventory();
                 await this._loadAuditLogs();
             }
@@ -3621,13 +3650,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.info
                 });
-                const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+                const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3637,7 +3666,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.error
                 });
             }
         };
@@ -3646,35 +3675,35 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.info
                 });
-                const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.diagnoseMappingListFields();
+                const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.error
                 });
             }
         };
         this._exportWarrantyReportToExcel = () => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_19__.exportWarrantyReportToExcel)(this.state.items);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportWarrantyReportToExcel)(this.state.items);
         };
         this._exportWarrantyReportToPDF = () => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_19__.exportWarrantyReportToPDF)(this.state.items);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportWarrantyReportToPDF)(this.state.items);
         };
         this._exportDetailedReportToExcel = (filteredItems) => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_19__.exportDetailedReportToExcel)(filteredItems);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportDetailedReportToExcel)(filteredItems);
         };
         this._exportDetailedReportToPDF = (filteredItems) => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_19__.exportDetailedReportToPDF)(filteredItems);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportDetailedReportToPDF)(filteredItems);
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3695,11 +3724,11 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     const employeeEmail = employee ? employee.email : "";
                     const employeeId = employee ? employee.id : "";
                     // Assign the asset to the employee and approve the request
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.assignAssetsToEmployee([adminSelectedAssetId], request.requesterName, employeeEmail, approverName, employeeId, adminComment);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.assignAssetsToEmployee([adminSelectedAssetId], request.requesterName, employeeEmail, approverName, employeeId, adminComment);
                 }
                 else {
                     // No asset selected, just approve the asset request status
-                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', approverName, adminComment);
+                    await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.updateAssetStatus(parseInt(request.id, 10), 'Approved', approverName, adminComment);
                 }
                 // Close panel and refresh data
                 this.setState({
@@ -3745,7 +3774,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 const { adminComment } = this.state;
                 const approverName = this.state.activeUserDisplayName;
                 // Rejecting from the Admin side will set the main status of the request to 'Declined'
-                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', approverName, adminComment || 'Rejected by Admin during assignment');
+                await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.updateRequestStatus(parseInt(request.id, 10), 'Declined', approverName, adminComment || 'Rejected by Admin during assignment');
                 // Close panel and refresh data
                 this.setState({
                     isAdminPanelOpen: false,
@@ -3782,7 +3811,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this.state = {
             languageVersion: 0,
             items: [],
-            employees: _data_mockData__WEBPACK_IMPORTED_MODULE_10__.EMPLOYEES,
+            employees: _data_mockData__WEBPACK_IMPORTED_MODULE_12__.EMPLOYEES,
             requests: [],
             auditLogs: [],
             userRole: 'Inventory Employee',
@@ -3837,12 +3866,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         };
     }
     async componentDidMount() {
-        this._unsubscribeLanguageChange = (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_18__.onLanguageChange)(this._onLanguageChanged);
+        this._unsubscribeLanguageChange = (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.onLanguageChange)(this._onLanguageChanged);
         await this._resolveUserRole();
         await this._loadReturnRequests();
         // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
         try {
-            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.cleanupReturnApprovedAssets();
+            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.cleanupReturnApprovedAssets();
         }
         catch (e) {
             console.warn("Failed to run Return Approved assets self-healing cleanup:", e);
@@ -3852,7 +3881,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         await this._loadAuditLogs();
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
-            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_11__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
+            await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
             await this._loadInventory();
         }
         catch (e) {
@@ -3893,30 +3922,30 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         const visibleManagerRequests = filterRequests(managerQueueRequests);
         const notifications = this._getNotifications();
         const navItems = [
-            { key: 'Dashboard', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Dashboard, icon: 'BarChart4', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.GroupMain },
-            { key: 'MyWorkspace', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.MyWorkspace, icon: 'Briefcase' },
+            { key: 'Dashboard', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Dashboard, icon: 'BarChart4', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupMain },
+            { key: 'MyWorkspace', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.MyWorkspace, icon: 'Briefcase' },
             {
                 key: 'Notifications',
-                text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Notifications,
+                text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Notifications,
                 icon: 'Ringer',
                 badge: notifications.filter(n => !n.isRead).length || undefined,
                 badgeColor: '#0078d4'
             },
-            { key: 'IncidentHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.IncidentHistory, icon: 'History' },
-            { key: 'ReplacementHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.ReplacementHistory, icon: 'Sync' },
+            { key: 'IncidentHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.IncidentHistory, icon: 'History' },
+            { key: 'ReplacementHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.ReplacementHistory, icon: 'Sync' },
             ...(isAdmin || isManager ? [
-                { key: 'Inventory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Inventory, icon: 'List', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.GroupManagement }
+                { key: 'Inventory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Inventory, icon: 'List', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupManagement }
             ] : []),
             ...(isManager ? [
-                { key: 'Approvals', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Approvals, icon: 'DoubleChevronRight12', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.GroupManagement }
+                { key: 'Approvals', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Approvals, icon: 'DoubleChevronRight12', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupManagement }
             ] : []),
             ...(isAdmin ? [
-                { key: 'AssetAssignmentQueue', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.AssetAssignmentQueue, icon: 'Send', ...(isManager ? {} : { group: undefined }) }
+                { key: 'AssetAssignmentQueue', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.AssetAssignmentQueue, icon: 'Send', ...(isManager ? {} : { group: undefined }) }
             ] : []),
             ...(isAdmin || isManager ? [
                 {
                     key: 'AssetReturns',
-                    text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.AssetReturns,
+                    text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.AssetReturns,
                     icon: 'ReturnToSession',
                     badge: this.state.returnRequests.filter(r => {
                         if (isAdmin)
@@ -3926,13 +3955,14 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         return r.status === 'Pending';
                     }).length || undefined,
                     badgeColor: '#ea580c'
-                }
+                },
+                { key: 'Onboarding', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Features.NavOnboarding, icon: 'People' }
             ] : []),
             ...(isAdmin ? [
-                { key: 'EventStream', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.EventStream, icon: 'ActivityFeed', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.GroupSystem },
-                { key: 'Users', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Users, icon: 'People' },
-                { key: 'Reports', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Reports, icon: 'ReportDocument' },
-                { key: 'Config', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Config, icon: 'Settings' }
+                { key: 'EventStream', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.EventStream, icon: 'ActivityFeed', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupSystem },
+                { key: 'Users', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Users, icon: 'People' },
+                { key: 'Reports', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Reports, icon: 'ReportDocument' },
+                { key: 'Config', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Config, icon: 'Settings' }
             ] : [])
         ];
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].inventoryManagement} ${hasTeamsContext ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].teams : ''} ${isDarkTheme ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dark : ''}` },
@@ -3940,34 +3970,34 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heroSection },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heroText },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Hero.Title),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_23__.Dropdown, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Common.LanguageLabel, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Common.LanguageLabel, selectedKey: (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_18__.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_18__.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.Title),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Dropdown, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.LanguageLabel, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.LanguageLabel, selectedKey: (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
                                     root: { minWidth: 130 },
                                     title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
                                     caretDown: { color: '#ffffff' }
                                 } })),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_24__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Hero.WelcomeBack, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(activeUserDisplayName))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.WelcomeBack, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(activeUserDisplayName))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText },
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Hero.RoleLabel.split('{0}')[0],
+                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.RoleLabel.split('{0}')[0],
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, this._getRoleDisplayLabel(effectiveRole))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText },
                             environmentMessage,
                             " \u2022 ",
-                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_24__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Hero.LocationLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(description))),
-                        isAdmin && roleGroups.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_24__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Hero.SharePointGroupsLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', ')))))),
+                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.LocationLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(description))),
+                        isAdmin && roleGroups.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.SharePointGroupsLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', ')))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_15__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_17__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Common.ErrorLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.ErrorLabel),
                     " ",
                     this.state.errorMessage,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Common.DismissError }, "\u00D7"))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.DismissError }, "\u00D7"))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].appLayoutContainer },
                     !this.state.sidebarCollapsed && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarOverlay, onClick: () => this.setState({ sidebarCollapsed: true }), role: "presentation" })),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.MainNavigation },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.MainNavigation },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navHeader },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Header),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_24__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Header),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
                         navItems.map((nav, index) => {
                             const isActive = this.state.selectedTabKey === nav.key;
                             const showGroupLabel = nav.group && (index === 0 || navItems[index - 1]?.group !== nav.group);
@@ -3979,23 +4009,23 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
                         }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Collapse, onKeyDown: (e) => {
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Collapse, onKeyDown: (e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
                                     e.preventDefault();
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.Collapse))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Collapse))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Nav.ToggleNavigation },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Icon, { iconName: "GlobalNavButton" })),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Hero.Title)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.ToggleNavigation },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "GlobalNavButton" })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.Title)),
                         (() => {
                             const dashboardState = {
                                 items: isAdmin || isManager ? items : myAssets,
@@ -4041,9 +4071,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             };
                             switch (this.state.selectedTabKey) {
                                 case 'Dashboard':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
                                 case 'MyWorkspace':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.MyWorkspacePage, { state: {
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.MyWorkspacePage, { state: {
                                             myAssets,
                                             myRequests,
                                             myReturnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || ''))
@@ -4054,7 +4084,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })
                                         } }));
                                 case 'Notifications':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.NotificationsPage, { state: {
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.NotificationsPage, { state: {
                                             notifications,
                                             isAllNotificationsCleared: this.state.isAllNotificationsCleared
                                         }, actions: {
@@ -4065,9 +4095,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onNotificationAction: this._handleNotificationAction
                                         } }));
                                 case 'IncidentHistory':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.ReplacementHistoryPage, { ...this.props, state: {
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ReplacementHistoryPage, { ...this.props, state: {
                                             userDisplayName: activeUserDisplayName,
                                             userEmail: activeUserEmail,
                                             userRole: effectiveRole
@@ -4075,9 +4105,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             setIsLoading: (loading) => this.setState({ loading })
                                         } }));
                                 case 'Inventory':
-                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
+                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
                                 case 'Approvals':
-                                    return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.ApprovalsPage, { state: {
+                                    return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ApprovalsPage, { state: {
                                             requestSearchId,
                                             managerQueueRequests,
                                             visibleManagerRequests,
@@ -4089,7 +4119,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onRejectRequest: this._onRejectRequest
                                         } })) : null;
                                 case 'AssetAssignmentQueue':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.AssetAssignmentQueuePage, { state: {
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.AssetAssignmentQueuePage, { state: {
                                             requestSearchId,
                                             visibleAdminRequests,
                                             items: this.state.items,
@@ -4099,7 +4129,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })
                                         } })) : null;
                                 case 'AssetReturns':
-                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.AssetReturnsPage, { state: {
+                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.AssetReturnsPage, { state: {
                                             returnRequests: this.state.returnRequests,
                                             returnRequestsLoading: this.state.returnRequestsLoading,
                                             isAdmin,
@@ -4107,8 +4137,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         }, actions: {
                                             onUpdateStatus: this._onUpdateReturnRequestStatus
                                         } })) : null;
+                                case 'Onboarding':
+                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.OnboardingPage, { state: {
+                                            items: this.state.items,
+                                            returnRequests: this.state.returnRequests,
+                                            currentUserName: activeUserDisplayName,
+                                            currentUserRole: effectiveRole,
+                                            isAdmin
+                                        }, actions: {
+                                            onDataChanged: () => {
+                                                this._loadRequests().catch(() => undefined);
+                                                this._loadReturnRequests().catch(() => undefined);
+                                                this._loadAuditLogs().catch(() => undefined);
+                                            }
+                                        } })) : null;
                                 case 'EventStream':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.EventStreamPage, { state: {
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.EventStreamPage, { state: {
                                             auditLogs,
                                             auditLogsLoading,
                                             effectiveRole,
@@ -4116,7 +4160,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             auditLogsRefreshTrigger: this.state.auditLogsRefreshTrigger
                                         } })) : null;
                                 case 'Users':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.UsersPage, { state: {
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.UsersPage, { state: {
                                             employees: this.state.employees,
                                             items,
                                             activeUserDisplayName,
@@ -4128,7 +4172,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             isAssetAssignedToCurrentUser: this._isAssetAssignedToCurrentUser
                                         } })) : null;
                                 case 'Reports':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
                                 case 'Config': {
                                     const configState = {
                                         configSelectedTab: this.state.configSelectedTab,
@@ -4143,32 +4187,32 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
                                         onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
                                     };
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.ConfigPage, { state: configState, actions: configActions })) : null;
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ConfigPage, { state: configState, actions: configActions })) : null;
                                 }
                                 default:
                                     return null;
                             }
                         })()))),
-            (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_4__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_5__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_14__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
+            (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_6__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_7__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_16__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
                     this.setState({
                         workflowPopup: {
                             isOpen: true,
-                            title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.IncidentSuccessPopup.Title,
-                            stage: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.IncidentSuccessPopup.Stage,
+                            title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.Title,
+                            stage: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.Stage,
                             type: 'warning',
-                            message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_24__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
+                            message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
                             details: {
                                 assetTitle: details.assetName,
                                 requesterName: details.requesterName,
-                                status: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.IncidentSuccessPopup.StatusOpenTicket,
+                                status: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.StatusOpenTicket,
                                 date: new Date().toISOString().split('T')[0]
                             }
                         }
                     });
                 } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.NotificationDetailsPanel, { state: {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.NotificationDetailsPanel, { state: {
                     selectedNotification: this.state.selectedNotification,
                     isNotificationDetailsOpen: this.state.isNotificationDetailsOpen,
                     items: this.state.items,
@@ -4176,7 +4220,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 }, actions: {
                     onDismiss: () => this.setState({ isNotificationDetailsOpen: false })
                 } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_13__.AdminAssignmentPanel, { state: {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.AdminAssignmentPanel, { state: {
                     selectedAdminRequest: this.state.selectedAdminRequest,
                     isAdminPanelOpen: this.state.isAdminPanelOpen,
                     items: this.state.items,
@@ -4191,22 +4235,22 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     onAssignAndApprove: this._handleAdminAssignAndApprove,
                     onReject: this._handleAdminReject
                 } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_6__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_16__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_26__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_27__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.Common.Close, onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.PrimaryButton, { text: this.state.isSendingMockEmail ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.ButtonSending : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.ButtonSendEmail, onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.ButtonClose, onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.InfoText),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.LabelRecipients, value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.LabelSubject, value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
-                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.success }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.SuccessText)),
-                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBarType.error },
-                    InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.ErrorPrefix,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_8__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_18__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_29__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.Close, onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PrimaryButton, { text: this.state.isSendingMockEmail ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ButtonSending : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ButtonSendEmail, onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ButtonClose, onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.InfoText),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.LabelRecipients, value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.LabelSubject, value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
+                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.SuccessText)),
+                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.error },
+                    InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ErrorPrefix,
                     " ",
                     this.state.mockEmailSendError)),
-                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.ProgressIndicator, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.ProgressLabel })),
+                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.ProgressIndicator, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ProgressLabel })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_17__.MockEmailPanel.PreviewLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.PreviewLabel),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
     }
 }
@@ -7081,6 +7125,296 @@ const WorkflowPopup = (props) => {
 
 /***/ }),
 
+/***/ 27655:
+/*!********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/dashboard/LowStockPanel.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LowStockPanel: () => (/* binding */ LowStockPanel)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Dashboard.module.scss */ 38674);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/StockUtils */ 19256);
+/* harmony import */ var _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/StockThresholdService */ 34378);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+
+
+
+
+
+
+
+
+/** Warning listing asset types below their minimum stock. Renders nothing when stock is healthy. */
+const LowStockPanel = ({ items, onManageThresholds }) => {
+    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Features;
+    const [thresholds, setThresholds] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        let active = true;
+        _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.getThresholds()
+            .then(t => { if (active)
+            setThresholds(t); })
+            .catch(err => console.warn('[LowStockPanel] Could not load stock thresholds:', err));
+        return () => { active = false; };
+    }, [items]);
+    const lowLevels = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__.evaluateStockLevels)(items, thresholds, (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().stock.defaultMinimum).filter(l => l.isLow), [items, thresholds]);
+    if (lowLevels.length === 0)
+        return null;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter, role: "alert" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "Warning", style: { color: '#d83b01' } }),
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(f.LowStockTitle, lowLevels.length)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, f.LowStockSubtitle)),
+            onManageThresholds && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerAction, onClick: onManageThresholds },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "Settings" }),
+                " ",
+                f.LowStockManage))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColType),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColAvailable),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColMinimum),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColTotal))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, lowLevels.map(level => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: level.assetType },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, level.assetType)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${level.available === 0 ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgeDeclined : _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, level.available)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        level.minimum,
+                        level.hasCustomMinimum ? '' : ` (${f.StockDefaultTag})`),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, level.total)))))))));
+};
+
+
+/***/ }),
+
+/***/ 78948:
+/*!**********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/dashboard/RequestSlaPanel.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   RequestSlaPanel: () => (/* binding */ RequestSlaPanel),
+/* harmony export */   formatHours: () => (/* binding */ formatHours)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Dashboard.module.scss */ 38674);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+
+
+
+
+
+
+
+const MAX_ROWS = 8;
+const formatHours = (hours) => {
+    if (hours === undefined)
+        return '—';
+    const d = (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_4__.splitDuration)(hours);
+    return (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(d.unit === 'h' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Features.DurationHours : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Features.DurationDays, d.value);
+};
+/** Time-to-approve / time-to-assign against the SLA targets set in the property pane, with overdue requests. */
+const RequestSlaPanel = ({ requests, queueKey, onNavigate }) => {
+    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Features;
+    const targets = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().sla;
+    const summary = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_4__.summarizeSla)(requests, targets), [requests, targets.approvalHours, targets.assignmentHours]);
+    const overdueTotal = summary.overdueApprovals + summary.overdueAssignments;
+    const stageLabel = (item) => item.stage === 'awaitingApproval' ? f.SlaStageAwaitingApproval : f.SlaStageAwaitingAssignment;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "Timer" }),
+                    f.SlaTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(f.SlaSubtitle, targets.approvalHours, targets.assignmentHours))),
+            onNavigate && queueKey && overdueTotal > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerAction, onClick: () => onNavigate(queueKey) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "OpenInNewWindow" }),
+                " ",
+                f.SlaOpenQueue))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStats },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStat },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatValue }, formatHours(summary.averageApprovalHours)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatLabel }, f.SlaAvgApprove)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStat },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatValue }, formatHours(summary.averageAssignmentHours)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatLabel }, f.SlaAvgAssign)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStat} ${summary.approvalOnTimePercent !== undefined && summary.approvalOnTimePercent >= 80 ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatGood : ''}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatValue }, summary.approvalOnTimePercent === undefined ? '—' : `${summary.approvalOnTimePercent}%`),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatLabel }, f.SlaApprovedOnTime)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStat} ${overdueTotal > 0 ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatWarn : _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatGood}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatValue }, overdueTotal),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].slaStatLabel }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(f.SlaOverdueBreakdown, summary.overdueApprovals, summary.overdueAssignments)))),
+        summary.overdueItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "CompletedSolid" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, f.SlaNoOverdue))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.SlaColRequest),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Dashboard.ColRequester),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.SlaColAsset),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.SlaColStage),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.SlaColWaiting),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.SlaColOverBy))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, summary.overdueItems.slice(0, MAX_ROWS).map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.request.id },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, item.request.requestKey || item.request.id)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.request.requesterName)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, item.request.assetTitle),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${item.stage === 'awaitingApproval' ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending : _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgeAssigned}` }, stageLabel(item))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { title: item.estimated ? f.SlaEstimatedHint : undefined },
+                        item.estimated ? '~' : '',
+                        formatHours(item.openHours)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgeDeclined}` },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "Warning" }),
+                            " ",
+                            formatHours(item.overdueByHours)))))))),
+            summary.overdueItems.length > MAX_ROWS && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(f.SlaMoreOverdue, summary.overdueItems.length - MAX_ROWS)))))));
+};
+
+
+/***/ }),
+
+/***/ 60393:
+/*!**************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/config/AppConfig.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_APP_CONFIG: () => (/* binding */ DEFAULT_APP_CONFIG),
+/* harmony export */   buildAppConfig: () => (/* binding */ buildAppConfig),
+/* harmony export */   getAppConfig: () => (/* binding */ getAppConfig),
+/* harmony export */   parseNonNegativeNumber: () => (/* binding */ parseNonNegativeNumber),
+/* harmony export */   resolveRoleFromGroups: () => (/* binding */ resolveRoleFromGroups),
+/* harmony export */   setAppConfig: () => (/* binding */ setAppConfig)
+/* harmony export */ });
+// Runtime configuration for the web part, fed from the property pane.
+//
+// Every setting has a default equal to the value the app used before it became
+// configurable, so a web part with an empty property pane behaves exactly as before.
+// Pure module (no SharePoint / localization imports) so it is safe to import anywhere,
+// including from services and unit tests.
+const DEFAULT_APP_CONFIG = {
+    roleGroups: {
+        admin: 'MSFT Owners',
+        manager: 'MSFT Members',
+        employee: 'MSFT Visitors'
+    },
+    lists: {
+        inventory: 'InventoryList',
+        request: 'RequestList',
+        returnRequest: 'Asset Return Request List',
+        mapping: 'Mapping List',
+        eventLog: 'EventLogList',
+        incident: 'Incident List',
+        employee: 'EmployeeList',
+        replacement: 'Asset Replacements',
+        stockThresholds: 'Stock Thresholds',
+        assetKits: 'Asset Kits'
+    },
+    sla: {
+        approvalHours: 48,
+        assignmentHours: 72
+    },
+    stock: {
+        defaultMinimum: 1
+    }
+};
+const text = (value, fallback) => {
+    const trimmed = (value || '').trim();
+    return trimmed || fallback;
+};
+/** Parses a non-negative number; blank or invalid input falls back to the default. */
+const parseNonNegativeNumber = (value, fallback) => {
+    if (value === undefined || value === null || String(value).trim() === '')
+        return fallback;
+    const n = Number(value);
+    return isFinite(n) && n >= 0 ? n : fallback;
+};
+const buildAppConfig = (props = {}) => {
+    const d = DEFAULT_APP_CONFIG;
+    return {
+        roleGroups: {
+            admin: text(props.adminGroupName, d.roleGroups.admin),
+            manager: text(props.managerGroupName, d.roleGroups.manager),
+            employee: text(props.employeeGroupName, d.roleGroups.employee)
+        },
+        lists: {
+            inventory: text(props.inventoryListTitle, d.lists.inventory),
+            request: text(props.requestListTitle, d.lists.request),
+            returnRequest: text(props.returnRequestListTitle, d.lists.returnRequest),
+            mapping: text(props.mappingListTitle, d.lists.mapping),
+            eventLog: text(props.eventLogListTitle, d.lists.eventLog),
+            incident: text(props.incidentListTitle, d.lists.incident),
+            employee: text(props.employeeListTitle, d.lists.employee),
+            replacement: text(props.replacementListTitle, d.lists.replacement),
+            stockThresholds: text(props.stockThresholdsListTitle, d.lists.stockThresholds),
+            assetKits: text(props.assetKitsListTitle, d.lists.assetKits)
+        },
+        sla: {
+            approvalHours: parseNonNegativeNumber(props.approvalSlaHours, d.sla.approvalHours),
+            assignmentHours: parseNonNegativeNumber(props.assignmentSlaHours, d.sla.assignmentHours)
+        },
+        stock: {
+            defaultMinimum: Math.floor(parseNonNegativeNumber(props.defaultMinimumStock, d.stock.defaultMinimum))
+        }
+    };
+};
+let current = DEFAULT_APP_CONFIG;
+const getAppConfig = () => current;
+const setAppConfig = (config) => {
+    current = config;
+};
+/**
+ * Highest role granted by the given SharePoint group titles. A group matches when its
+ * title equals or contains the configured name (case-insensitive), as before.
+ */
+const resolveRoleFromGroups = (groupTitles, groups) => {
+    const titles = groupTitles.map(t => (t || '').toLowerCase().trim());
+    const inGroup = (name) => {
+        const wanted = name.toLowerCase().trim();
+        return !!wanted && titles.some(t => t === wanted || t.indexOf(wanted) >= 0);
+    };
+    if (inGroup(groups.admin))
+        return 'Admin';
+    if (inGroup(groups.manager))
+        return 'Inventory Manager';
+    return 'Inventory Employee';
+};
+
+
+/***/ }),
+
 /***/ 82889:
 /*!*************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/constants/DropdownConstants.js ***!
@@ -7249,6 +7583,130 @@ const AUDIT_LOG_SORT_OPTIONS = [
 const INCIDENT_RAISED_TO_OPTIONS = [
     { key: 'Admin', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Dropdowns.IncidentRaisedTo.Admin }
 ];
+
+
+/***/ }),
+
+/***/ 39781:
+/*!***********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/constants/ListDefinitions.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getListDefinition: () => (/* binding */ getListDefinition),
+/* harmony export */   getListDefinitions: () => (/* binding */ getListDefinitions)
+/* harmony export */ });
+/* harmony import */ var _services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/base/SharePointBaseService */ 93535);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+
+
+/** Configured title first, then the legacy fallbacks the services also try (case-insensitive de-dupe). */
+const names = (configured, ...fallbacks) => {
+    const seen = [];
+    [configured].concat(fallbacks).forEach(n => {
+        if (n && seen.every(s => s.toLowerCase() !== n.toLowerCase()))
+            seen.push(n);
+    });
+    return seen;
+};
+/** Built on each call so it reflects the current property-pane configuration. */
+const getListDefinitions = () => {
+    const lists = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_1__.getAppConfig)().lists;
+    return [
+        {
+            key: 'inventory',
+            candidates: names(lists.inventory, "InventoryList", "Inventory List"),
+            requiredColumns: [
+                { name: 'Title' },
+                { name: 'AssetName' },
+                { name: 'AssetType' },
+                { name: 'SerialNumber' },
+                { name: 'PurchaseDate' },
+                { name: 'Status', aliases: ['AssetStatus'] },
+                { name: 'Specifications' },
+                { name: 'AssignedTo' }
+            ]
+        },
+        {
+            key: 'request',
+            candidates: names(lists.request, "RequestList", "Request List"),
+            requiredColumns: [
+                { name: 'Title' },
+                { name: 'Employee' },
+                { name: 'AssetType' },
+                { name: 'Quantity' },
+                { name: 'ReasonforRequest', aliases: ['Reason'] },
+                { name: _services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME },
+                { name: _services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.REQUEST_KEY_INTERNAL_NAME },
+                { name: _services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME },
+                // SLA milestones; created automatically on the next request submission or approval.
+                { name: _services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME },
+                { name: _services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME }
+            ]
+        },
+        {
+            key: 'returnRequest',
+            candidates: names(lists.returnRequest, "Asset Return Request List", "Return Requests List", "ReturnRequestList", "Return Request List", "ReturnRequests", "Return Requests"),
+            requiredColumns: [
+                { name: 'Title' },
+                { name: 'AssetID' },
+                { name: 'AssetName' },
+                { name: 'SerialNumber' },
+                { name: 'Employee', aliases: ['RequesterName', 'Requester'] },
+                { name: 'ReasonforReturn', aliases: ['ReturnReason'] },
+                { name: 'ProposedCondition' },
+                { name: 'RequestStatus', aliases: ['ReturnStatus', 'Status'] },
+                { name: 'ManagerComments', aliases: ['ManagerComment'] }
+            ]
+        },
+        {
+            key: 'mapping',
+            candidates: names(lists.mapping, "Mapping List", "MappingList"),
+            autoCreated: true,
+            requiredColumns: [
+                { name: 'Title' },
+                { name: 'SerialNumber' },
+                { name: 'Employee', aliases: ['Employe', 'EmployeeName'] },
+                { name: 'EmployeeID' },
+                { name: 'AssetName' },
+                { name: 'AssignmentID' }
+            ]
+        },
+        {
+            key: 'eventLog',
+            candidates: names(lists.eventLog),
+            requiredColumns: [
+                { name: 'Title' },
+                { name: 'Action' },
+                { name: 'EntityType' },
+                { name: 'EntityId' },
+                { name: 'Details' },
+                { name: 'User' }
+            ]
+        },
+        { key: 'incident', candidates: names(lists.incident), optional: true, requiredColumns: [] },
+        { key: 'employee', candidates: names(lists.employee), optional: true, requiredColumns: [] },
+        { key: 'replacement', candidates: names(lists.replacement), optional: true, autoCreated: true, requiredColumns: [] },
+        {
+            key: 'stockThresholds',
+            candidates: names(lists.stockThresholds),
+            optional: true,
+            autoCreated: true,
+            requiredColumns: [{ name: 'Title' }, { name: 'MinimumStock' }, { name: 'LastAlertSent' }]
+        },
+        {
+            key: 'assetKits',
+            candidates: names(lists.assetKits),
+            optional: true,
+            autoCreated: true,
+            requiredColumns: [{ name: 'Title' }, { name: 'KitItems' }, { name: 'KitDescription' }]
+        }
+    ];
+};
+const getListDefinition = (key) => getListDefinitions().find(d => d.key === key);
 
 
 /***/ }),
@@ -7826,6 +8284,10 @@ const en_us = {
         "ListDesc_EmployeeList": "Employee directory used for notifications and incident lookups.",
         "ListTitle_ReplacementList": "Asset Replacements",
         "ListDesc_ReplacementList": "Tracks replacement assets issued after incidents.",
+        "ListTitle_StockThresholdsList": "Stock Thresholds",
+        "ListDesc_StockThresholdsList": "Minimum available stock per asset type for low-stock alerts. Created when thresholds are first saved.",
+        "ListTitle_AssetKitsList": "Asset Kits",
+        "ListDesc_AssetKitsList": "Standard bundles for onboarding new starters. Created when a kit is first saved.",
         "SchemaUnchecked": "Run a health check to validate these columns against the live SharePoint lists.",
         "SchemaAliasesHint": "Also accepted: {0}",
         "SchemaAuditTrail": "(Audit Trail)",
@@ -8173,12 +8635,14 @@ const en_us = {
         "ClearAll": "Clear All",
         "ChipAction": "Action: {0}",
         "ChipModule": "Module: {0}",
-        "ChipAsset": "Asset: {0}",
+        "ChipAsset": "Asset Type: {0}",
         "ChipUser": "User: {0}",
         "ChipStatus": "Status: {0}",
         "AllActionsOption": "All Actions",
-        "AllAssetsOption": "All Assets",
-        "AllUsersOption": "All Users"
+        "AllAssetsOption": "All Asset Types",
+        "AllUsersOption": "All Users",
+        "MyActivityOption": "My Activity",
+        "UserSearchPlaceholder": "Type to search users..."
     },
     "RequestList": {
         "StatusPendingManagerApproval": "Pending Manager Approval",
@@ -8426,6 +8890,135 @@ const en_us = {
         "PdfNoDescription": "No description provided.",
         "PdfNoReason": "No reason provided.",
         "PdfResolutionSummaryTitle": "RESOLUTION SUMMARY"
+    },
+    "PropertyPaneConfig": {
+        "DefaultPlaceholder": "Default: {0}",
+        "NumberError": "Enter a number of 0 or more.",
+        "GroupRoles": "Role groups",
+        "RolesNote": "SharePoint groups that grant each role. A user gets the highest role of the groups they belong to. Leave blank to use the default.",
+        "AdminGroupLabel": "Admin group",
+        "ManagerGroupLabel": "Inventory Manager group",
+        "EmployeeGroupLabel": "Inventory Employee group",
+        "ListsPageDescription": "SharePoint lists used by the app",
+        "GroupLists": "List titles",
+        "ReloadNote": "Leave blank to use the default title. Reload the page after changing a title.",
+        "InventoryListLabel": "Inventory list",
+        "RequestListLabel": "Request list",
+        "ReturnRequestListLabel": "Asset return request list",
+        "MappingListLabel": "Mapping list",
+        "EventLogListLabel": "Event log list",
+        "IncidentListLabel": "Incident list",
+        "EmployeeListLabel": "Employee list",
+        "ReplacementListLabel": "Asset replacements list",
+        "StockThresholdsListLabel": "Stock thresholds list",
+        "AssetKitsListLabel": "Asset kits list",
+        "AlertsPageDescription": "Service targets and stock alerts",
+        "GroupSla": "Request SLA",
+        "ApprovalSlaLabel": "Hours to approve (target)",
+        "AssignmentSlaLabel": "Hours to assign after approval (target)",
+        "GroupStock": "Low-stock alerts",
+        "DefaultMinimumLabel": "Default minimum stock per asset type (0 = off)"
+    },
+    "Features": {
+        "NavOnboarding": "Onboarding & Offboarding",
+        "Working": "Working...",
+        "Cancel": "Cancel",
+        "DurationHours": "{0} h",
+        "DurationDays": "{0} d",
+        "BatchPartial": "{0} succeeded, {1} failed: {2}",
+        "SlaTitle": "Request SLA",
+        "SlaSubtitle": "Targets: approve within {0} h, assign within {1} h of approval",
+        "SlaOpenQueue": "Open queue",
+        "SlaAvgApprove": "Average time to approve",
+        "SlaAvgAssign": "Average time to assign",
+        "SlaApprovedOnTime": "Approved within target",
+        "SlaOverdueBreakdown": "Overdue ({0} approval, {1} assignment)",
+        "SlaNoOverdue": "No requests are past their target.",
+        "SlaColRequest": "Request",
+        "SlaColAsset": "Asset",
+        "SlaColStage": "Stage",
+        "SlaColWaiting": "Waiting",
+        "SlaColOverBy": "Over target by",
+        "SlaStageAwaitingApproval": "Awaiting approval",
+        "SlaStageAwaitingAssignment": "Awaiting assignment",
+        "SlaEstimatedHint": "Approved before decision dates were recorded; measured from submission.",
+        "SlaMoreOverdue": "+{0} more overdue",
+        "LowStockTitle": "Low stock ({0})",
+        "LowStockSubtitle": "Asset types below their minimum available stock",
+        "LowStockManage": "Manage thresholds",
+        "StockColType": "Asset type",
+        "StockColAvailable": "Available",
+        "StockColMinimum": "Minimum",
+        "StockColTotal": "Total",
+        "StockColStatus": "Status",
+        "StockDefaultTag": "default",
+        "StockTabName": "Stock Alerts",
+        "StockTabTitle": "Low-stock thresholds",
+        "StockTabDesc": "Set the minimum available units per asset type. Blank uses the default ({0}); 0 turns monitoring off for that type. Admins get one email when a type drops below its minimum, and again only after it recovers and drops again.",
+        "StockSave": "Save thresholds",
+        "StockCheckNow": "Check now",
+        "StockSaved": "Thresholds saved.",
+        "StockSaveFailed": "Could not save thresholds: {0}",
+        "StockCheckFailed": "The stock check failed. See the browser console for details.",
+        "StockAlertSent": "Alert email sent for: {0}",
+        "StockNoNewAlerts": "No new low-stock alerts. Types already alerted are not emailed again until stock recovers.",
+        "StockDefaultPlaceholder": "Default ({0})",
+        "StockInvalid": "Enter 0 or more",
+        "StockMinimumAria": "Minimum stock for {0}",
+        "StockNotMonitored": "Not monitored",
+        "StockLow": "Low",
+        "StockOk": "OK",
+        "StockAlertedAt": "Alerted {0}",
+        "OnboardingPageTitle": "Onboarding & Offboarding",
+        "OnboardingPageSubtitle": "Request a standard kit for a new starter, or recover every asset from someone who is leaving.",
+        "TabOnboarding": "Onboarding",
+        "TabOffboarding": "Offboarding",
+        "TabKits": "Kits",
+        "OnboardTitle": "Request a starter kit",
+        "OnboardDesc": "Creates one asset request per item in the kit for the new starter. Each request goes through the normal manager approval and assignment steps.",
+        "OnboardEmployee": "New starter",
+        "OnboardEmployeePlaceholder": "Search by name or email...",
+        "OnboardNoPeople": "No people found",
+        "OnboardEmployeeId": "Employee ID (optional)",
+        "OnboardStartDate": "Start date",
+        "OnboardStartDatePlaceholder": "Select a date...",
+        "OnboardKit": "Kit",
+        "KitOption": "{0} ({1} items)",
+        "OnboardWillCreate": "{0} request(s) will be created.",
+        "OnboardNotes": "Notes for approvers (optional)",
+        "OnboardSubmit": "Request kit",
+        "KitRequested": "{0} request(s) created. They now appear in the approval queue.",
+        "OffboardTitle": "Offboarding checklist",
+        "OffboardDesc": "Pick the person leaving to see every asset they hold. Raise returns in one step, then track each one until it is back in stock.",
+        "OffboardEmployee": "Employee leaving",
+        "OffboardEmployeePlaceholder": "Select a person...",
+        "OffboardNoHolders": "Nobody currently holds assets",
+        "OffboardHolderOption": "{0} ({1} assets)",
+        "OffboardLastDay": "Last working day",
+        "OffboardProgress": "{0} of {1} assets returned",
+        "OffboardColSerial": "Serial number",
+        "OffboardStateHeld": "Still held",
+        "OffboardStateInProgress": "Return in progress",
+        "OffboardStateReturned": "Returned",
+        "OffboardRaise": "Raise returns for {0} held asset(s)",
+        "OffboardRaised": "{0} return request(s) raised. They follow the normal return approval steps.",
+        "OffboardNothingToRaise": "Every held asset already has a return in progress.",
+        "KitsTitle": "Starter kits",
+        "KitsDesc": "Kits are stored in the Asset Kits list.",
+        "KitsBuiltInNote": "Showing built-in kits. Saving any kit creates the Asset Kits list; from then on only kits in the list are offered.",
+        "KitsCopyBuiltIn": "Save built-in kits to list",
+        "KitsNew": "New kit",
+        "KitName": "Kit name",
+        "KitDescriptionLabel": "Description",
+        "KitItemsLabel": "Items",
+        "KitItemsHelp": "One asset type per line. Add a quantity like \"Monitor x2\".",
+        "KitSave": "Save kit",
+        "KitSaved": "Kit saved.",
+        "KitSaveFailed": "Could not save: {0}",
+        "KitEdit": "Edit",
+        "KitDelete": "Delete",
+        "KitDeleteConfirm": "Delete the kit \"{0}\"?",
+        "KitDeleted": "Kit deleted."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (en_us);
@@ -8976,6 +9569,10 @@ const pl_pl = {
         "ListDesc_EmployeeList": "Katalog pracowników używany do powiadomień i wyszukiwania incydentów.",
         "ListTitle_ReplacementList": "Wymiany zasobów",
         "ListDesc_ReplacementList": "Śledzi zasoby zastępcze wydane po incydentach.",
+        "ListTitle_StockThresholdsList": "Progi zapasów",
+        "ListDesc_StockThresholdsList": "Minimalny dostępny stan na typ zasobu dla alertów. Tworzona przy pierwszym zapisie progów.",
+        "ListTitle_AssetKitsList": "Zestawy zasobów",
+        "ListDesc_AssetKitsList": "Standardowe zestawy dla nowych pracowników. Tworzona przy pierwszym zapisie zestawu.",
         "SchemaUnchecked": "Uruchom sprawdzenie, aby zweryfikować te kolumny na listach SharePoint.",
         "SchemaAliasesHint": "Akceptowane również: {0}",
         "SchemaAuditTrail": "(Ścieżka audytu)",
@@ -9323,12 +9920,14 @@ const pl_pl = {
         "ClearAll": "Wyczyść wszystko",
         "ChipAction": "Akcja: {0}",
         "ChipModule": "Moduł: {0}",
-        "ChipAsset": "Zasób: {0}",
+        "ChipAsset": "Typ zasobu: {0}",
         "ChipUser": "Użytkownik: {0}",
         "ChipStatus": "Status: {0}",
         "AllActionsOption": "Wszystkie akcje",
-        "AllAssetsOption": "Wszystkie zasoby",
-        "AllUsersOption": "Wszyscy użytkownicy"
+        "AllAssetsOption": "Wszystkie typy zasobów",
+        "AllUsersOption": "Wszyscy użytkownicy",
+        "MyActivityOption": "Moja aktywność",
+        "UserSearchPlaceholder": "Wpisz, aby wyszukać użytkowników..."
     },
     "RequestList": {
         "StatusPendingManagerApproval": "Oczekuje na zatwierdzenie przez kierownika",
@@ -9576,6 +10175,135 @@ const pl_pl = {
         "PdfNoDescription": "Nie podano opisu.",
         "PdfNoReason": "Nie podano powodu.",
         "PdfResolutionSummaryTitle": "PODSUMOWANIE ROZWIĄZANIA"
+    },
+    "PropertyPaneConfig": {
+        "DefaultPlaceholder": "Domyślnie: {0}",
+        "NumberError": "Wprowadź liczbę równą 0 lub większą.",
+        "GroupRoles": "Grupy ról",
+        "RolesNote": "Grupy SharePoint nadające poszczególne role. Użytkownik otrzymuje najwyższą rolę spośród swoich grup. Pozostaw puste, aby użyć wartości domyślnej.",
+        "AdminGroupLabel": "Grupa administratorów",
+        "ManagerGroupLabel": "Grupa kierowników inwentarza",
+        "EmployeeGroupLabel": "Grupa pracowników",
+        "ListsPageDescription": "Listy SharePoint używane przez aplikację",
+        "GroupLists": "Tytuły list",
+        "ReloadNote": "Pozostaw puste, aby użyć domyślnego tytułu. Po zmianie tytułu odśwież stronę.",
+        "InventoryListLabel": "Lista inwentarza",
+        "RequestListLabel": "Lista wniosków",
+        "ReturnRequestListLabel": "Lista wniosków o zwrot",
+        "MappingListLabel": "Lista przypisań",
+        "EventLogListLabel": "Lista dziennika zdarzeń",
+        "IncidentListLabel": "Lista incydentów",
+        "EmployeeListLabel": "Lista pracowników",
+        "ReplacementListLabel": "Lista wymian zasobów",
+        "StockThresholdsListLabel": "Lista progów zapasów",
+        "AssetKitsListLabel": "Lista zestawów zasobów",
+        "AlertsPageDescription": "Cele obsługi i alerty zapasów",
+        "GroupSla": "SLA wniosków",
+        "ApprovalSlaLabel": "Godziny na zatwierdzenie (cel)",
+        "AssignmentSlaLabel": "Godziny na przypisanie po zatwierdzeniu (cel)",
+        "GroupStock": "Alerty niskiego stanu",
+        "DefaultMinimumLabel": "Domyślny minimalny stan na typ zasobu (0 = wył.)"
+    },
+    "Features": {
+        "NavOnboarding": "Wdrażanie i odejścia",
+        "Working": "Przetwarzanie...",
+        "Cancel": "Anuluj",
+        "DurationHours": "{0} godz.",
+        "DurationDays": "{0} dni",
+        "BatchPartial": "{0} powiodło się, {1} nie powiodło się: {2}",
+        "SlaTitle": "SLA wniosków",
+        "SlaSubtitle": "Cele: zatwierdzenie w {0} godz., przypisanie w {1} godz. od zatwierdzenia",
+        "SlaOpenQueue": "Otwórz kolejkę",
+        "SlaAvgApprove": "Średni czas zatwierdzenia",
+        "SlaAvgAssign": "Średni czas przypisania",
+        "SlaApprovedOnTime": "Zatwierdzone w terminie",
+        "SlaOverdueBreakdown": "Po terminie ({0} zatw., {1} przyp.)",
+        "SlaNoOverdue": "Żaden wniosek nie przekroczył terminu.",
+        "SlaColRequest": "Wniosek",
+        "SlaColAsset": "Zasób",
+        "SlaColStage": "Etap",
+        "SlaColWaiting": "Oczekuje",
+        "SlaColOverBy": "Przekroczenie o",
+        "SlaStageAwaitingApproval": "Oczekuje na zatwierdzenie",
+        "SlaStageAwaitingAssignment": "Oczekuje na przypisanie",
+        "SlaEstimatedHint": "Zatwierdzono przed rejestrowaniem dat decyzji; liczone od złożenia.",
+        "SlaMoreOverdue": "+{0} więcej po terminie",
+        "LowStockTitle": "Niski stan ({0})",
+        "LowStockSubtitle": "Typy zasobów poniżej minimalnego dostępnego stanu",
+        "LowStockManage": "Zarządzaj progami",
+        "StockColType": "Typ zasobu",
+        "StockColAvailable": "Dostępne",
+        "StockColMinimum": "Minimum",
+        "StockColTotal": "Łącznie",
+        "StockColStatus": "Stan",
+        "StockDefaultTag": "domyślne",
+        "StockTabName": "Alerty zapasów",
+        "StockTabTitle": "Progi niskiego stanu",
+        "StockTabDesc": "Ustaw minimalną liczbę dostępnych sztuk na typ. Puste = domyślnie ({0}); 0 wyłącza monitorowanie. Administratorzy dostają jeden e-mail, gdy typ spadnie poniżej minimum, i kolejny dopiero po odbudowie i ponownym spadku.",
+        "StockSave": "Zapisz progi",
+        "StockCheckNow": "Sprawdź teraz",
+        "StockSaved": "Progi zapisane.",
+        "StockSaveFailed": "Nie można zapisać progów: {0}",
+        "StockCheckFailed": "Sprawdzenie stanu nie powiodło się. Szczegóły w konsoli przeglądarki.",
+        "StockAlertSent": "Wysłano alert dla: {0}",
+        "StockNoNewAlerts": "Brak nowych alertów. Typy już zgłoszone nie są ponownie wysyłane do czasu odbudowy stanu.",
+        "StockDefaultPlaceholder": "Domyślnie ({0})",
+        "StockInvalid": "Wpisz 0 lub więcej",
+        "StockMinimumAria": "Minimalny stan dla {0}",
+        "StockNotMonitored": "Niemonitorowany",
+        "StockLow": "Niski",
+        "StockOk": "OK",
+        "StockAlertedAt": "Alert wysłany {0}",
+        "OnboardingPageTitle": "Wdrażanie i odejścia",
+        "OnboardingPageSubtitle": "Zamów standardowy zestaw dla nowej osoby lub odzyskaj wszystkie zasoby od osoby odchodzącej.",
+        "TabOnboarding": "Wdrażanie",
+        "TabOffboarding": "Odejście",
+        "TabKits": "Zestawy",
+        "OnboardTitle": "Zamów zestaw startowy",
+        "OnboardDesc": "Tworzy jeden wniosek na każdą pozycję zestawu. Każdy wniosek przechodzi zwykłe zatwierdzenie i przypisanie.",
+        "OnboardEmployee": "Nowy pracownik",
+        "OnboardEmployeePlaceholder": "Szukaj po nazwisku lub e-mailu...",
+        "OnboardNoPeople": "Nie znaleziono osób",
+        "OnboardEmployeeId": "ID pracownika (opcjonalnie)",
+        "OnboardStartDate": "Data rozpoczęcia",
+        "OnboardStartDatePlaceholder": "Wybierz datę...",
+        "OnboardKit": "Zestaw",
+        "KitOption": "{0} ({1} szt.)",
+        "OnboardWillCreate": "Zostanie utworzonych wniosków: {0}.",
+        "OnboardNotes": "Uwagi dla zatwierdzających (opcjonalnie)",
+        "OnboardSubmit": "Zamów zestaw",
+        "KitRequested": "Utworzono wniosków: {0}. Są teraz w kolejce do zatwierdzenia.",
+        "OffboardTitle": "Lista kontrolna odejścia",
+        "OffboardDesc": "Wybierz osobę odchodzącą, aby zobaczyć jej zasoby. Zgłoś zwroty jednym krokiem i śledź każdy do powrotu na stan.",
+        "OffboardEmployee": "Odchodzący pracownik",
+        "OffboardEmployeePlaceholder": "Wybierz osobę...",
+        "OffboardNoHolders": "Nikt obecnie nie ma zasobów",
+        "OffboardHolderOption": "{0} ({1} zasobów)",
+        "OffboardLastDay": "Ostatni dzień pracy",
+        "OffboardProgress": "Zwrócono {0} z {1} zasobów",
+        "OffboardColSerial": "Numer seryjny",
+        "OffboardStateHeld": "Nadal u pracownika",
+        "OffboardStateInProgress": "Zwrot w toku",
+        "OffboardStateReturned": "Zwrócono",
+        "OffboardRaise": "Zgłoś zwroty dla {0} zasobów",
+        "OffboardRaised": "Zgłoszono zwrotów: {0}. Przechodzą zwykłe zatwierdzenie zwrotu.",
+        "OffboardNothingToRaise": "Każdy zasób ma już zwrot w toku.",
+        "KitsTitle": "Zestawy startowe",
+        "KitsDesc": "Zestawy są przechowywane na liście Zestawy zasobów.",
+        "KitsBuiltInNote": "Wyświetlane są zestawy wbudowane. Zapisanie zestawu tworzy listę Zestawy zasobów; od tej chwili oferowane są tylko zestawy z listy.",
+        "KitsCopyBuiltIn": "Zapisz wbudowane zestawy na liście",
+        "KitsNew": "Nowy zestaw",
+        "KitName": "Nazwa zestawu",
+        "KitDescriptionLabel": "Opis",
+        "KitItemsLabel": "Pozycje",
+        "KitItemsHelp": "Jeden typ zasobu w wierszu. Ilość np. \"Monitor x2\".",
+        "KitSave": "Zapisz zestaw",
+        "KitSaved": "Zestaw zapisany.",
+        "KitSaveFailed": "Nie można zapisać: {0}",
+        "KitEdit": "Edytuj",
+        "KitDelete": "Usuń",
+        "KitDeleteConfirm": "Usunąć zestaw \"{0}\"?",
+        "KitDeleted": "Zestaw usunięty."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pl_pl);
@@ -10126,6 +10854,10 @@ const pt_pt = {
         "ListDesc_EmployeeList": "Diretório de colaboradores usado para notificações e pesquisa de incidentes.",
         "ListTitle_ReplacementList": "Substituições de Ativos",
         "ListDesc_ReplacementList": "Regista ativos de substituição entregues após incidentes.",
+        "ListTitle_StockThresholdsList": "Limiares de Stock",
+        "ListDesc_StockThresholdsList": "Stock mínimo disponível por tipo de ativo para alertas. Criada ao guardar os limiares pela primeira vez.",
+        "ListTitle_AssetKitsList": "Kits de Ativos",
+        "ListDesc_AssetKitsList": "Pacotes padrão para novos colaboradores. Criada ao guardar um kit pela primeira vez.",
         "SchemaUnchecked": "Execute uma verificação para validar estas colunas nas listas SharePoint.",
         "SchemaAliasesHint": "Também aceite: {0}",
         "SchemaAuditTrail": "(Registo de Auditoria)",
@@ -10473,12 +11205,14 @@ const pt_pt = {
         "ClearAll": "Limpar tudo",
         "ChipAction": "Ação: {0}",
         "ChipModule": "Módulo: {0}",
-        "ChipAsset": "Ativo: {0}",
+        "ChipAsset": "Tipo de ativo: {0}",
         "ChipUser": "Utilizador: {0}",
         "ChipStatus": "Estado: {0}",
         "AllActionsOption": "Todas as ações",
-        "AllAssetsOption": "Todos os ativos",
-        "AllUsersOption": "Todos os utilizadores"
+        "AllAssetsOption": "Todos os tipos de ativo",
+        "AllUsersOption": "Todos os utilizadores",
+        "MyActivityOption": "A Minha Atividade",
+        "UserSearchPlaceholder": "Escreva para pesquisar utilizadores..."
     },
     "RequestList": {
         "StatusPendingManagerApproval": "Pendente de aprovação do gestor",
@@ -10726,6 +11460,135 @@ const pt_pt = {
         "PdfNoDescription": "Nenhuma descrição fornecida.",
         "PdfNoReason": "Nenhum motivo fornecido.",
         "PdfResolutionSummaryTitle": "RESUMO DA RESOLUÇÃO"
+    },
+    "PropertyPaneConfig": {
+        "DefaultPlaceholder": "Predefinição: {0}",
+        "NumberError": "Introduza um número igual ou superior a 0.",
+        "GroupRoles": "Grupos de funções",
+        "RolesNote": "Grupos do SharePoint que atribuem cada função. O utilizador recebe a função mais elevada dos seus grupos. Deixe em branco para usar a predefinição.",
+        "AdminGroupLabel": "Grupo de administradores",
+        "ManagerGroupLabel": "Grupo de gestores de inventário",
+        "EmployeeGroupLabel": "Grupo de colaboradores",
+        "ListsPageDescription": "Listas do SharePoint usadas pela aplicação",
+        "GroupLists": "Títulos das listas",
+        "ReloadNote": "Deixe em branco para usar o título predefinido. Recarregue a página depois de alterar um título.",
+        "InventoryListLabel": "Lista de inventário",
+        "RequestListLabel": "Lista de pedidos",
+        "ReturnRequestListLabel": "Lista de pedidos de devolução",
+        "MappingListLabel": "Lista de mapeamento",
+        "EventLogListLabel": "Lista de registo de eventos",
+        "IncidentListLabel": "Lista de incidentes",
+        "EmployeeListLabel": "Lista de colaboradores",
+        "ReplacementListLabel": "Lista de substituições",
+        "StockThresholdsListLabel": "Lista de limiares de stock",
+        "AssetKitsListLabel": "Lista de kits de ativos",
+        "AlertsPageDescription": "Metas de serviço e alertas de stock",
+        "GroupSla": "SLA dos pedidos",
+        "ApprovalSlaLabel": "Horas para aprovar (meta)",
+        "AssignmentSlaLabel": "Horas para atribuir após aprovação (meta)",
+        "GroupStock": "Alertas de stock baixo",
+        "DefaultMinimumLabel": "Stock mínimo predefinido por tipo de ativo (0 = desligado)"
+    },
+    "Features": {
+        "NavOnboarding": "Integração & Saída",
+        "Working": "A processar...",
+        "Cancel": "Cancelar",
+        "DurationHours": "{0} h",
+        "DurationDays": "{0} d",
+        "BatchPartial": "{0} com sucesso, {1} falharam: {2}",
+        "SlaTitle": "SLA dos Pedidos",
+        "SlaSubtitle": "Metas: aprovar em {0} h, atribuir em {1} h após aprovação",
+        "SlaOpenQueue": "Abrir fila",
+        "SlaAvgApprove": "Tempo médio para aprovar",
+        "SlaAvgAssign": "Tempo médio para atribuir",
+        "SlaApprovedOnTime": "Aprovados dentro da meta",
+        "SlaOverdueBreakdown": "Em atraso ({0} aprovação, {1} atribuição)",
+        "SlaNoOverdue": "Nenhum pedido ultrapassou a meta.",
+        "SlaColRequest": "Pedido",
+        "SlaColAsset": "Ativo",
+        "SlaColStage": "Fase",
+        "SlaColWaiting": "Em espera",
+        "SlaColOverBy": "Acima da meta em",
+        "SlaStageAwaitingApproval": "A aguardar aprovação",
+        "SlaStageAwaitingAssignment": "A aguardar atribuição",
+        "SlaEstimatedHint": "Aprovado antes do registo das datas de decisão; medido desde a submissão.",
+        "SlaMoreOverdue": "+{0} mais em atraso",
+        "LowStockTitle": "Stock baixo ({0})",
+        "LowStockSubtitle": "Tipos de ativo abaixo do stock mínimo disponível",
+        "LowStockManage": "Gerir limiares",
+        "StockColType": "Tipo de ativo",
+        "StockColAvailable": "Disponíveis",
+        "StockColMinimum": "Mínimo",
+        "StockColTotal": "Total",
+        "StockColStatus": "Estado",
+        "StockDefaultTag": "predefinido",
+        "StockTabName": "Alertas de Stock",
+        "StockTabTitle": "Limiares de stock baixo",
+        "StockTabDesc": "Defina o mínimo de unidades disponíveis por tipo. Em branco usa a predefinição ({0}); 0 desliga a monitorização. Os administradores recebem um e-mail quando um tipo desce abaixo do mínimo, e outro só depois de recuperar e voltar a descer.",
+        "StockSave": "Guardar limiares",
+        "StockCheckNow": "Verificar agora",
+        "StockSaved": "Limiares guardados.",
+        "StockSaveFailed": "Não foi possível guardar os limiares: {0}",
+        "StockCheckFailed": "A verificação de stock falhou. Veja a consola do navegador.",
+        "StockAlertSent": "E-mail de alerta enviado para: {0}",
+        "StockNoNewAlerts": "Sem novos alertas. Tipos já alertados não voltam a ser enviados até o stock recuperar.",
+        "StockDefaultPlaceholder": "Predefinido ({0})",
+        "StockInvalid": "Introduza 0 ou mais",
+        "StockMinimumAria": "Stock mínimo para {0}",
+        "StockNotMonitored": "Não monitorizado",
+        "StockLow": "Baixo",
+        "StockOk": "OK",
+        "StockAlertedAt": "Alertado {0}",
+        "OnboardingPageTitle": "Integração & Saída",
+        "OnboardingPageSubtitle": "Peça um kit padrão para um novo colaborador ou recupere todos os ativos de quem sai.",
+        "TabOnboarding": "Integração",
+        "TabOffboarding": "Saída",
+        "TabKits": "Kits",
+        "OnboardTitle": "Pedir um kit inicial",
+        "OnboardDesc": "Cria um pedido por item do kit. Cada pedido segue a aprovação e atribuição habituais.",
+        "OnboardEmployee": "Novo colaborador",
+        "OnboardEmployeePlaceholder": "Pesquisar por nome ou e-mail...",
+        "OnboardNoPeople": "Nenhuma pessoa encontrada",
+        "OnboardEmployeeId": "ID do colaborador (opcional)",
+        "OnboardStartDate": "Data de início",
+        "OnboardStartDatePlaceholder": "Selecione uma data...",
+        "OnboardKit": "Kit",
+        "KitOption": "{0} ({1} itens)",
+        "OnboardWillCreate": "Serão criados {0} pedido(s).",
+        "OnboardNotes": "Notas para aprovadores (opcional)",
+        "OnboardSubmit": "Pedir kit",
+        "KitRequested": "{0} pedido(s) criado(s). Já estão na fila de aprovação.",
+        "OffboardTitle": "Lista de verificação de saída",
+        "OffboardDesc": "Escolha quem sai para ver todos os ativos. Crie as devoluções de uma vez e acompanhe cada uma até voltar ao stock.",
+        "OffboardEmployee": "Colaborador que sai",
+        "OffboardEmployeePlaceholder": "Selecione uma pessoa...",
+        "OffboardNoHolders": "Ninguém tem ativos atualmente",
+        "OffboardHolderOption": "{0} ({1} ativos)",
+        "OffboardLastDay": "Último dia de trabalho",
+        "OffboardProgress": "{0} de {1} ativos devolvidos",
+        "OffboardColSerial": "Número de série",
+        "OffboardStateHeld": "Ainda em posse",
+        "OffboardStateInProgress": "Devolução em curso",
+        "OffboardStateReturned": "Devolvido",
+        "OffboardRaise": "Criar devoluções para {0} ativo(s)",
+        "OffboardRaised": "{0} pedido(s) de devolução criado(s). Seguem a aprovação habitual.",
+        "OffboardNothingToRaise": "Todos os ativos já têm devolução em curso.",
+        "KitsTitle": "Kits iniciais",
+        "KitsDesc": "Os kits são guardados na lista Kits de Ativos.",
+        "KitsBuiltInNote": "A mostrar kits incorporados. Guardar um kit cria a lista Kits de Ativos; a partir daí só são oferecidos os kits da lista.",
+        "KitsCopyBuiltIn": "Guardar kits incorporados na lista",
+        "KitsNew": "Novo kit",
+        "KitName": "Nome do kit",
+        "KitDescriptionLabel": "Descrição",
+        "KitItemsLabel": "Itens",
+        "KitItemsHelp": "Um tipo de ativo por linha. Quantidade como \"Monitor x2\".",
+        "KitSave": "Guardar kit",
+        "KitSaved": "Kit guardado.",
+        "KitSaveFailed": "Não foi possível guardar: {0}",
+        "KitEdit": "Editar",
+        "KitDelete": "Eliminar",
+        "KitDeleteConfirm": "Eliminar o kit \"{0}\"?",
+        "KitDeleted": "Kit eliminado."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pt_pt);
@@ -11276,6 +12139,10 @@ const sv_se = {
         "ListDesc_EmployeeList": "Personalkatalog som används för aviseringar och incidentuppslag.",
         "ListTitle_ReplacementList": "Tillgångsersättningar",
         "ListDesc_ReplacementList": "Spårar ersättningstillgångar som lämnats ut efter incidenter.",
+        "ListTitle_StockThresholdsList": "Lagertrösklar",
+        "ListDesc_StockThresholdsList": "Minsta tillgängliga lager per tillgångstyp för varningar. Skapas när trösklar sparas första gången.",
+        "ListTitle_AssetKitsList": "Utrustningspaket",
+        "ListDesc_AssetKitsList": "Standardpaket för nyanställda. Skapas när ett paket sparas första gången.",
         "SchemaUnchecked": "Kör en hälsokontroll för att validera kolumnerna mot SharePoint-listorna.",
         "SchemaAliasesHint": "Godkänns även: {0}",
         "SchemaAuditTrail": "(Granskningslogg)",
@@ -11623,12 +12490,14 @@ const sv_se = {
         "ClearAll": "Rensa allt",
         "ChipAction": "Åtgärd: {0}",
         "ChipModule": "Modul: {0}",
-        "ChipAsset": "Tillgång: {0}",
+        "ChipAsset": "Tillgångstyp: {0}",
         "ChipUser": "Användare: {0}",
         "ChipStatus": "Status: {0}",
         "AllActionsOption": "Alla åtgärder",
-        "AllAssetsOption": "Alla tillgångar",
-        "AllUsersOption": "Alla användare"
+        "AllAssetsOption": "Alla tillgångstyper",
+        "AllUsersOption": "Alla användare",
+        "MyActivityOption": "Min aktivitet",
+        "UserSearchPlaceholder": "Skriv för att söka användare..."
     },
     "RequestList": {
         "StatusPendingManagerApproval": "Väntar på chefsgodkännande",
@@ -11876,6 +12745,135 @@ const sv_se = {
         "PdfNoDescription": "Ingen beskrivning tillhandahållen.",
         "PdfNoReason": "Ingen anledning angiven.",
         "PdfResolutionSummaryTitle": "LÖSNINGSSAMMANFATTNING"
+    },
+    "PropertyPaneConfig": {
+        "DefaultPlaceholder": "Standard: {0}",
+        "NumberError": "Ange ett tal som är 0 eller större.",
+        "GroupRoles": "Rollgrupper",
+        "RolesNote": "SharePoint-grupper som ger varje roll. En användare får den högsta rollen bland sina grupper. Lämna tomt för standardvärdet.",
+        "AdminGroupLabel": "Administratörsgrupp",
+        "ManagerGroupLabel": "Grupp för lagerchefer",
+        "EmployeeGroupLabel": "Grupp för anställda",
+        "ListsPageDescription": "SharePoint-listor som appen använder",
+        "GroupLists": "Listrubriker",
+        "ReloadNote": "Lämna tomt för standardrubriken. Läs in sidan igen efter att du ändrat en rubrik.",
+        "InventoryListLabel": "Inventarielista",
+        "RequestListLabel": "Begäranlista",
+        "ReturnRequestListLabel": "Lista för returbegäranden",
+        "MappingListLabel": "Mappningslista",
+        "EventLogListLabel": "Händelseloggslista",
+        "IncidentListLabel": "Incidentlista",
+        "EmployeeListLabel": "Personallista",
+        "ReplacementListLabel": "Lista för ersättningar",
+        "StockThresholdsListLabel": "Lista för lagertrösklar",
+        "AssetKitsListLabel": "Lista för utrustningspaket",
+        "AlertsPageDescription": "Servicemål och lagervarningar",
+        "GroupSla": "SLA för begäranden",
+        "ApprovalSlaLabel": "Timmar till godkännande (mål)",
+        "AssignmentSlaLabel": "Timmar till tilldelning efter godkännande (mål)",
+        "GroupStock": "Varningar för lågt lager",
+        "DefaultMinimumLabel": "Standardminimum per tillgångstyp (0 = av)"
+    },
+    "Features": {
+        "NavOnboarding": "Introduktion & avslut",
+        "Working": "Arbetar...",
+        "Cancel": "Avbryt",
+        "DurationHours": "{0} h",
+        "DurationDays": "{0} d",
+        "BatchPartial": "{0} lyckades, {1} misslyckades: {2}",
+        "SlaTitle": "SLA för begäranden",
+        "SlaSubtitle": "Mål: godkänn inom {0} h, tilldela inom {1} h efter godkännande",
+        "SlaOpenQueue": "Öppna kön",
+        "SlaAvgApprove": "Genomsnittlig tid till godkännande",
+        "SlaAvgAssign": "Genomsnittlig tid till tilldelning",
+        "SlaApprovedOnTime": "Godkända inom mål",
+        "SlaOverdueBreakdown": "Försenade ({0} godkänn., {1} tilldeln.)",
+        "SlaNoOverdue": "Inga begäranden har passerat sitt mål.",
+        "SlaColRequest": "Begäran",
+        "SlaColAsset": "Tillgång",
+        "SlaColStage": "Steg",
+        "SlaColWaiting": "Väntar",
+        "SlaColOverBy": "Över mål med",
+        "SlaStageAwaitingApproval": "Väntar på godkännande",
+        "SlaStageAwaitingAssignment": "Väntar på tilldelning",
+        "SlaEstimatedHint": "Godkänd innan beslutsdatum registrerades; mätt från inskickning.",
+        "SlaMoreOverdue": "+{0} fler försenade",
+        "LowStockTitle": "Lågt lager ({0})",
+        "LowStockSubtitle": "Tillgångstyper under sitt minsta tillgängliga lager",
+        "LowStockManage": "Hantera trösklar",
+        "StockColType": "Tillgångstyp",
+        "StockColAvailable": "Tillgängliga",
+        "StockColMinimum": "Minimum",
+        "StockColTotal": "Totalt",
+        "StockColStatus": "Status",
+        "StockDefaultTag": "standard",
+        "StockTabName": "Lagervarningar",
+        "StockTabTitle": "Trösklar för lågt lager",
+        "StockTabDesc": "Ange minsta antal tillgängliga enheter per typ. Tomt = standard ({0}); 0 stänger av bevakningen. Administratörer får ett mejl när en typ går under minimum, och igen först när den återhämtat sig och sjunker igen.",
+        "StockSave": "Spara trösklar",
+        "StockCheckNow": "Kontrollera nu",
+        "StockSaved": "Trösklarna har sparats.",
+        "StockSaveFailed": "Det gick inte att spara trösklarna: {0}",
+        "StockCheckFailed": "Lagerkontrollen misslyckades. Se webbläsarkonsolen.",
+        "StockAlertSent": "Varningsmejl skickat för: {0}",
+        "StockNoNewAlerts": "Inga nya varningar. Redan varnade typer mejlas inte igen förrän lagret återhämtat sig.",
+        "StockDefaultPlaceholder": "Standard ({0})",
+        "StockInvalid": "Ange 0 eller mer",
+        "StockMinimumAria": "Minsta lager för {0}",
+        "StockNotMonitored": "Bevakas inte",
+        "StockLow": "Lågt",
+        "StockOk": "OK",
+        "StockAlertedAt": "Varnad {0}",
+        "OnboardingPageTitle": "Introduktion & avslut",
+        "OnboardingPageSubtitle": "Beställ ett standardpaket för en nyanställd eller återta alla tillgångar från någon som slutar.",
+        "TabOnboarding": "Introduktion",
+        "TabOffboarding": "Avslut",
+        "TabKits": "Paket",
+        "OnboardTitle": "Beställ ett startpaket",
+        "OnboardDesc": "Skapar en begäran per artikel i paketet. Varje begäran går igenom vanligt godkännande och tilldelning.",
+        "OnboardEmployee": "Nyanställd",
+        "OnboardEmployeePlaceholder": "Sök på namn eller e-post...",
+        "OnboardNoPeople": "Inga personer hittades",
+        "OnboardEmployeeId": "Anställnings-ID (valfritt)",
+        "OnboardStartDate": "Startdatum",
+        "OnboardStartDatePlaceholder": "Välj ett datum...",
+        "OnboardKit": "Paket",
+        "KitOption": "{0} ({1} artiklar)",
+        "OnboardWillCreate": "{0} begäran(den) skapas.",
+        "OnboardNotes": "Anteckningar till godkännare (valfritt)",
+        "OnboardSubmit": "Beställ paket",
+        "KitRequested": "{0} begäran(den) skapade. De finns nu i godkännandekön.",
+        "OffboardTitle": "Checklista för avslut",
+        "OffboardDesc": "Välj personen som slutar för att se alla tillgångar. Skapa returer i ett steg och följ varje tills den är tillbaka i lager.",
+        "OffboardEmployee": "Anställd som slutar",
+        "OffboardEmployeePlaceholder": "Välj en person...",
+        "OffboardNoHolders": "Ingen har tillgångar just nu",
+        "OffboardHolderOption": "{0} ({1} tillgångar)",
+        "OffboardLastDay": "Sista arbetsdag",
+        "OffboardProgress": "{0} av {1} tillgångar returnerade",
+        "OffboardColSerial": "Serienummer",
+        "OffboardStateHeld": "Innehas fortfarande",
+        "OffboardStateInProgress": "Retur pågår",
+        "OffboardStateReturned": "Returnerad",
+        "OffboardRaise": "Skapa returer för {0} tillgång(ar)",
+        "OffboardRaised": "{0} returbegäran(den) skapade. De följer vanligt returgodkännande.",
+        "OffboardNothingToRaise": "Alla tillgångar har redan en retur på gång.",
+        "KitsTitle": "Startpaket",
+        "KitsDesc": "Paketen lagras i listan Utrustningspaket.",
+        "KitsBuiltInNote": "Inbyggda paket visas. När ett paket sparas skapas listan Utrustningspaket; därefter erbjuds bara paket i listan.",
+        "KitsCopyBuiltIn": "Spara inbyggda paket i listan",
+        "KitsNew": "Nytt paket",
+        "KitName": "Paketnamn",
+        "KitDescriptionLabel": "Beskrivning",
+        "KitItemsLabel": "Artiklar",
+        "KitItemsHelp": "En tillgångstyp per rad. Ange antal som \"Monitor x2\".",
+        "KitSave": "Spara paket",
+        "KitSaved": "Paketet sparades.",
+        "KitSaveFailed": "Det gick inte att spara: {0}",
+        "KitEdit": "Redigera",
+        "KitDelete": "Ta bort",
+        "KitDeleteConfirm": "Ta bort paketet \"{0}\"?",
+        "KitDeleted": "Paketet togs bort."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sv_se);
@@ -12335,22 +13333,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 80539);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/ListHealthService */ 563);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/ListHealthService */ 20563);
 /* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-/* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ConfigPage.module.scss */ 947);
+/* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ConfigPage.module.scss */ 35947);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _config_StockThresholdsTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./config/StockThresholdsTab */ 63440);
 
 
 
@@ -12358,13 +13358,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const CORE_LISTS = _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.LIST_DEFINITIONS.filter(d => !d.optional);
-const OPTIONAL_LISTS = _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.LIST_DEFINITIONS.filter(d => d.optional);
-const ROLE_GROUPS = [
-    { group: 'MSFT Owners', role: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleLabel_Owners, desc: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleDesc_Owners },
-    { group: 'MSFT Members', role: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleLabel_Members, desc: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleDesc_Members },
-    { group: 'MSFT Visitors', role: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleLabel_Visitors, desc: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleDesc_Visitors }
-];
+
+
+// Group names come from the web part's property pane (defaults: MSFT Owners / Members / Visitors).
+const getRoleGroups = () => {
+    const g = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_5__.getAppConfig)().roleGroups;
+    return [
+        { group: g.admin, role: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleLabel_Owners, desc: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleDesc_Owners },
+        { group: g.manager, role: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleLabel_Members, desc: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleDesc_Members },
+        { group: g.employee, role: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleLabel_Visitors, desc: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.RoleDesc_Visitors }
+    ];
+};
 // Resolved on every render so the runtime language switcher takes effect immediately.
 const getListText = (key) => {
     const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage;
@@ -12377,6 +13381,8 @@ const getListText = (key) => {
         case 'incident': return { title: s.ListTitle_IncidentList, desc: s.ListDesc_IncidentList };
         case 'employee': return { title: s.ListTitle_EmployeeList, desc: s.ListDesc_EmployeeList };
         case 'replacement': return { title: s.ListTitle_ReplacementList, desc: s.ListDesc_ReplacementList };
+        case 'stockThresholds': return { title: s.ListTitle_StockThresholdsList, desc: s.ListDesc_StockThresholdsList };
+        case 'assetKits': return { title: s.ListTitle_AssetKitsList, desc: s.ListDesc_AssetKitsList };
         default: return { title: key, desc: '' };
     }
 };
@@ -12389,25 +13395,25 @@ const formatDate = (iso) => {
 const StatusPill = ({ status, testing }) => {
     if (testing) {
         return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillInfo}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ProgressLoopOuter", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].spin }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ProgressLoopOuter", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].spin }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusVerifying);
     }
     switch (status) {
         case 'healthy': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillGood}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Completed" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Completed" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusConnected);
         case 'warning': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillWarn}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Warning" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Warning" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusWarning);
         case 'missing': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillBad}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Blocked2" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Blocked2" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusMissing);
         case 'error': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillBad}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ErrorBadge" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ErrorBadge" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusFailed);
         default: return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillNeutral}` }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusNotVerified);
@@ -12416,29 +13422,29 @@ const StatusPill = ({ status, testing }) => {
 const collectIssues = (results) => {
     const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage;
     const issues = [];
-    _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.LIST_DEFINITIONS.forEach(def => {
+    (0,_services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.getListDefinitions)().forEach(def => {
         const r = results[def.key];
         if (!r)
             return;
         const title = getListText(def.key).title;
         const add = (severity, text) => issues.push({ severity, text, listKey: def.key });
         if (r.status === 'error') {
-            add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.Issue_Error, title, r.error || ''));
+            add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Error, title, r.error || ''));
         }
         else if (!r.resolvedTitle) {
             if (def.autoCreated) {
-                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.Issue_AutoCreated, title));
+                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_AutoCreated, title));
             }
             else {
-                add(def.optional ? 'warn' : 'bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.Issue_Missing, title, def.candidates[0]));
+                add(def.optional ? 'warn' : 'bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Missing, title, def.candidates[0]));
             }
         }
         else {
             if (r.missingColumns.length > 0) {
-                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
+                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
             }
             if (!r.canWrite) {
-                add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.Issue_Write, title));
+                add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Write, title));
             }
         }
     });
@@ -12447,6 +13453,11 @@ const collectIssues = (results) => {
 const ConfigPage = (props) => {
     const { state, actions } = props;
     const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage;
+    // Read per render so property-pane changes to list titles and role groups show immediately.
+    const LIST_DEFINITIONS = (0,_services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.getListDefinitions)();
+    const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
+    const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
+    const ROLE_GROUPS = getRoleGroups();
     const cached = _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.ListHealthService.lastReport;
     const [results, setResults] = react__WEBPACK_IMPORTED_MODULE_0__.useState(() => {
         const map = {};
@@ -12516,7 +13527,7 @@ const ConfigPage = (props) => {
         const payload = {
             checkedAt,
             environment,
-            lists: _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.LIST_DEFINITIONS.map(def => ({
+            lists: LIST_DEFINITIONS.map(def => ({
                 name: getListText(def.key).title,
                 expectedTitles: def.candidates,
                 optional: !!def.optional,
@@ -12561,25 +13572,25 @@ const ConfigPage = (props) => {
     };
     const toneFor = (ok, bad) => !hasResults ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneNeutral : ok ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneGood : bad ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneWarn;
     const checkButtons = (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: runningAll ? s.RunningHealthCheck : s.RunHealthCheckButton, iconProps: { iconName: 'Health' }, onClick: () => { runHealthCheck().catch(() => undefined); }, disabled: runningAll }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: s.ExportReportButton, iconProps: { iconName: 'Download' }, onClick: exportReport, disabled: !hasResults || runningAll })));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: runningAll ? s.RunningHealthCheck : s.RunHealthCheckButton, iconProps: { iconName: 'Health' }, onClick: () => { runHealthCheck().catch(() => undefined); }, disabled: runningAll }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: s.ExportReportButton, iconProps: { iconName: 'Download' }, onClick: exportReport, disabled: !hasResults || runningAll })));
     const renderOverview = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.OverviewTitle),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, checkedAt ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.LastChecked, formatDate(checkedAt)) : s.NeverChecked)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, checkedAt ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.LastChecked, formatDate(checkedAt)) : s.NeverChecked)),
                 checkButtons),
-            runError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.MessageBarType.error, onDismiss: () => setRunError(undefined), styles: { root: { marginBottom: 12 } } }, runError)),
-            runningAll ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.ProgressIndicator, { label: s.RunningHealthCheck, styles: { root: { marginBottom: 16 } } })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].banner} ${!hasResults ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerNeutral : criticalCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerBad : warningCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerWarn : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerGood}` },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerIcon, iconName: !hasResults ? 'Info' : criticalCount > 0 ? 'StatusErrorFull' : warningCount > 0 ? 'WarningSolid' : 'CompletedSolid' }),
+            runError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBarType.error, onDismiss: () => setRunError(undefined), styles: { root: { marginBottom: 12 } } }, runError)),
+            runningAll ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ProgressIndicator, { label: s.RunningHealthCheck, styles: { root: { marginBottom: 16 } } })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].banner} ${!hasResults ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerNeutral : criticalCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerBad : warningCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerWarn : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerGood}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerIcon, iconName: !hasResults ? 'Info' : criticalCount > 0 ? 'StatusErrorFull' : warningCount > 0 ? 'WarningSolid' : 'CompletedSolid' }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerText },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, !hasResults
                         ? s.NeverChecked
                         : criticalCount > 0
-                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.OverallCritical, criticalCount)
+                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.OverallCritical, criticalCount)
                             : warningCount > 0
-                                ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.OverallWarning, warningCount)
+                                ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.OverallWarning, warningCount)
                                 : s.OverallHealthy),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, hasResults && issues.length > 0 ? s.OverallHint : s.OverviewSubtitle)))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tiles }, [
@@ -12589,7 +13600,7 @@ const ConfigPage = (props) => {
                 { icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }
             ].map(tile => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: tile.icon, className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tile} ${tile.tone}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tileHead },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: tile.icon }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: tile.icon }),
                     " ",
                     tile.label),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tileValue }, hasResults ? tile.value : '—')))))),
@@ -12598,16 +13609,16 @@ const ConfigPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.IssuesTitle)),
-                    issues.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: 'Database' }, text: s.ViewDetails, onClick: () => actions.onTabChange('connections') }))),
+                    issues.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: 'Database' }, text: s.ViewDetails, onClick: () => actions.onTabChange('connections') }))),
                 !hasResults ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, runningAll ? s.RunningHealthCheck : s.NeverChecked)) : issues.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueList },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "CompletedSolid", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconGood }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CompletedSolid", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconGood }),
                         " ",
                         s.NoIssues))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueList }, issues.map((issue, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: i },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueButton, onClick: () => openIssue(issue.listKey) },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: issue.severity === 'bad' ? 'StatusErrorFull' : 'WarningSolid', className: issue.severity === 'bad' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconWarn }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: issue.severity === 'bad' ? 'StatusErrorFull' : 'WarningSolid', className: issue.severity === 'bad' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconWarn }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueText }, issue.text),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ChevronRight", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueChevron })))))))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ChevronRight", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueChevron })))))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -12655,7 +13666,7 @@ const ConfigPage = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, text.desc)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(StatusPill, { status: r ? r.status : undefined, testing: isTesting }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: s.TestLiveButton, iconProps: { iconName: 'PlugConnected' }, onClick: () => { testList(def).catch(() => undefined); }, disabled: isTesting || runningAll }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: s.TestLiveButton, iconProps: { iconName: 'PlugConnected' }, onClick: () => { testList(def).catch(() => undefined); }, disabled: isTesting || runningAll }))),
             r && r.resolvedTitle && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].metrics },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.Items,
@@ -12668,7 +13679,7 @@ const ConfigPage = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, access)),
                 def.requiredColumns.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.Columns,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.ColumnsSummary, r.presentColumns.length, def.requiredColumns.length)))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.ColumnsSummary, r.presentColumns.length, def.requiredColumns.length)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.ResponseTime,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
@@ -12679,8 +13690,8 @@ const ConfigPage = (props) => {
                 " ",
                 r.error)),
             r && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions, style: { marginTop: 6 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: isExpanded ? 'ChevronUp' : 'ChevronDown' }, text: s.ViewDetails, onClick: () => setExpanded(prev => ({ ...prev, [def.key]: !isExpanded })) }),
-                r.url && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: 'OpenInNewWindow' }, text: s.OpenList, href: r.url, target: "_blank" })))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: isExpanded ? 'ChevronUp' : 'ChevronDown' }, text: s.ViewDetails, onClick: () => setExpanded(prev => ({ ...prev, [def.key]: !isExpanded })) }),
+                r.url && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: 'OpenInNewWindow' }, text: s.OpenList, href: r.url, target: "_blank" })))),
             r && isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].details },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
@@ -12694,7 +13705,7 @@ const ConfigPage = (props) => {
                         ":"),
                     ' ',
                     r.suggestions.length > 0 ? r.suggestions.map(x => `"${x}"`).join(', ') : '—',
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.RenameHint, def.candidates[0])))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.RenameHint, def.candidates[0])))),
                 r.resolvedTitle && r.missingColumns.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
                         s.MissingColumnsLabel,
@@ -12718,7 +13729,7 @@ const ConfigPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.SchemaTitle),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, s.SchemaDesc)),
             checkButtons),
-        !hasResults && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.MessageBarType.info, styles: { root: { marginBottom: 12 } } }, s.SchemaUnchecked)),
+        !hasResults && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBarType.info, styles: { root: { marginBottom: 12 } } }, s.SchemaUnchecked)),
         CORE_LISTS.map(def => {
             const r = results[def.key];
             const text = getListText(def.key);
@@ -12731,10 +13742,10 @@ const ConfigPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chips }, def.requiredColumns.map(col => {
                     const present = !!r && validated && r.presentColumns.indexOf(col.name) >= 0;
                     const missing = !!r && validated && r.missingColumns.indexOf(col.name) >= 0;
-                    const hint = col.aliases && col.aliases.length > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.SchemaAliasesHint, col.aliases.join(', ')) : undefined;
+                    const hint = col.aliases && col.aliases.length > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.SchemaAliasesHint, col.aliases.join(', ')) : undefined;
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col.name, title: hint, className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chip} ${present ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chipGood : ''} ${missing ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chipBad : ''}` },
-                        present && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "CheckMark" }),
-                        missing && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Cancel" }),
+                        present && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CheckMark" }),
+                        missing && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Cancel" }),
                         col.name));
                 }))));
         })));
@@ -12749,8 +13760,8 @@ const ConfigPage = (props) => {
                         " ",
                         s.RbacRoleRule)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.TextField, { placeholder: s.FilterMembersPlaceholder, value: memberFilter, onChange: (_, v) => setMemberFilter(v || ''), iconProps: { iconName: 'Filter' }, styles: { root: { width: 220 } } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: s.LoadAllGroupsButton, iconProps: { iconName: 'Refresh' }, onClick: loadAllGroups }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { placeholder: s.FilterMembersPlaceholder, value: memberFilter, onChange: (_, v) => setMemberFilter(v || ''), iconProps: { iconName: 'Filter' }, styles: { root: { width: 220 } } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: s.LoadAllGroupsButton, iconProps: { iconName: 'Refresh' }, onClick: loadAllGroups }))),
             ROLE_GROUPS.map(item => {
                 const isLoading = !!loadingGroups[item.group];
                 const info = groups[item.group];
@@ -12761,14 +13772,14 @@ const ConfigPage = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].listTitle },
                                 item.group,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].roleTag }, item.role()),
-                                info && info.exists && !info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillNeutral}` }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.MemberCount, info.members.length)),
+                                info && info.exists && !info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillNeutral}` }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.MemberCount, info.members.length)),
                                 info && info.currentUserIsMember && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillInfo}` }, s.YouAreMember)),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, item.desc())),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: isLoading ? s.LoadingButton : s.ViewMembersButton, iconProps: { iconName: 'People' }, onClick: () => { loadGroup(item.group).catch(() => undefined); }, disabled: isLoading })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: isLoading ? s.LoadingButton : s.ViewMembersButton, iconProps: { iconName: 'People' }, onClick: () => { loadGroup(item.group).catch(() => undefined); }, disabled: isLoading })),
                     info && !info.exists && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].errorBox }, s.GroupNotFound),
-                    info && info.exists && info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].errorBox }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.GroupLoadError, info.error)),
+                    info && info.exists && info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].errorBox }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.GroupLoadError, info.error)),
                     info && info.exists && !info.error && (info.members.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted, style: { marginTop: 10, fontStyle: 'italic' } }, s.NoMembersFound)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chips, style: { marginTop: 10 } }, members.map((m, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: idx, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chip, title: m.email },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Contact" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Contact" }),
                         " ",
                         m.name))))))));
             })));
@@ -12784,9 +13795,9 @@ const ConfigPage = (props) => {
                     ". ",
                     s.OperationsDescAfter))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions, style: { marginBottom: 15 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: state.syncInProgress ? s.SyncButtonProcessing : s.SyncButtonDefault, iconProps: { iconName: 'Sync' }, onClick: actions.onSyncAssignedAssets, disabled: state.syncInProgress }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: state.syncInProgress ? s.DiagnosticsButtonChecking : s.DiagnosticsButtonDefault, iconProps: { iconName: 'Database' }, onClick: actions.onRunDiagnostics, disabled: state.syncInProgress })),
-        state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: state.syncMessageType, onDismiss: actions.onDismissSyncMessage, styles: { root: { marginBottom: 15, borderRadius: 6 } } }, state.syncMessage)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: state.syncInProgress ? s.SyncButtonProcessing : s.SyncButtonDefault, iconProps: { iconName: 'Sync' }, onClick: actions.onSyncAssignedAssets, disabled: state.syncInProgress }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: state.syncInProgress ? s.DiagnosticsButtonChecking : s.DiagnosticsButtonDefault, iconProps: { iconName: 'Database' }, onClick: actions.onRunDiagnostics, disabled: state.syncInProgress })),
+        state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: state.syncMessageType, onDismiss: actions.onDismissSyncMessage, styles: { root: { marginBottom: 15, borderRadius: 6 } } }, state.syncMessage)),
         state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: 15 } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: 6 } }, s.DiagnosticLogLabel),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: state.diagnosticInfo, rows: 10, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].diagnosticLog })))));
@@ -12796,16 +13807,18 @@ const ConfigPage = (props) => {
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, s.HeaderTitle),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, s.HeaderSubtitle)),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].configTabs },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Pivot, { selectedKey: tab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'overview' : 'overview'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { headerText: s.TabOverview, itemKey: "overview", itemIcon: "Health" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { headerText: s.TabListConnections, itemKey: "connections", itemIcon: "Database", itemCount: issues.length > 0 ? issues.length : undefined }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { headerText: s.TabSchemaGuides, itemKey: "schema", itemIcon: "TableGroup" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { headerText: s.TabRbacGroups, itemKey: "rbac", itemIcon: "Permissions" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { headerText: s.TabSyncOperations, itemKey: "operations", itemIcon: "Sync" }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Pivot, { selectedKey: tab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'overview' : 'overview'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabOverview, itemKey: "overview", itemIcon: "Health" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabListConnections, itemKey: "connections", itemIcon: "Database", itemCount: issues.length > 0 ? issues.length : undefined }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabSchemaGuides, itemKey: "schema", itemIcon: "TableGroup" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabRbacGroups, itemKey: "rbac", itemIcon: "Permissions" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Features.StockTabName, itemKey: "stock", itemIcon: "ProductWarning" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabSyncOperations, itemKey: "operations", itemIcon: "Sync" }))),
         tab === 'overview' && renderOverview(),
         tab === 'connections' && renderConnections(),
         tab === 'schema' && renderSchema(),
         tab === 'rbac' && renderRbac(),
+        tab === 'stock' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_config_StockThresholdsTab__WEBPACK_IMPORTED_MODULE_6__.StockThresholdsTab, null),
         tab === 'operations' && renderOperations()));
 };
 
@@ -13075,6 +14088,283 @@ __webpack_require__.r(__webpack_exports__);
 const NotificationsPage = (props) => {
     const { state, actions } = props;
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NotificationCenter__WEBPACK_IMPORTED_MODULE_1__.NotificationCenter, { notifications: state.notifications, onMarkAsRead: actions.onMarkAsRead, onMarkAllAsRead: actions.onMarkAllAsRead, onClearNotification: actions.onClearNotification, onClearAllNotifications: actions.onClearAllNotifications, onNotificationAction: actions.onNotificationAction, isAllCleared: state.isAllNotificationsCleared }));
+};
+
+
+/***/ }),
+
+/***/ 98146:
+/*!******************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/OnboardingPage.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   OnboardingPage: () => (/* binding */ OnboardingPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 67038);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 46412);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ConfigPage.module.scss */ 35947);
+/* harmony import */ var _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/AssetKitService */ 57661);
+/* harmony import */ var _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/PeopleSearchService */ 57204);
+/* harmony import */ var _utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/KitUtils */ 93962);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+
+
+
+
+
+
+
+
+
+const kitSummary = (kit) => kit.lines.map(l => (l.quantity > 1 ? `${l.assetType} ×${l.quantity}` : l.assetType)).join(', ');
+const batchMessage = (result, okText) => {
+    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.Features;
+    if (result.failed.length === 0)
+        return { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(okText, result.succeeded.length) };
+    const failures = result.failed.map(x => `${x.label}: ${x.error}`).join(' | ');
+    return {
+        type: result.succeeded.length > 0 ? _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning : _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error,
+        text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.BatchPartial, result.succeeded.length, result.failed.length, failures)
+    };
+};
+const OnboardingPage = ({ state, actions }) => {
+    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.Features;
+    const [tab, setTab] = react__WEBPACK_IMPORTED_MODULE_0__.useState('onboarding');
+    const [kits, setKits] = react__WEBPACK_IMPORTED_MODULE_0__.useState(_utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.DEFAULT_KITS);
+    const [kitsFromList, setKitsFromList] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const loadKits = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async () => {
+        try {
+            const result = await _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__.AssetKitService.getKits();
+            setKits(result.kits);
+            setKitsFromList(result.fromList);
+        }
+        catch (e) {
+            console.warn('[OnboardingPage] Could not load kits:', e);
+        }
+    }, []);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => { loadKits().catch(() => undefined); }, [loadKits]);
+    // ---------------- Onboarding ----------------
+    const [person, setPerson] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [employeeId, setEmployeeId] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [startDate, setStartDate] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [kitIndex, setKitIndex] = react__WEBPACK_IMPORTED_MODULE_0__.useState(0);
+    const [notes, setNotes] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [onboardBusy, setOnboardBusy] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [onboardMsg, setOnboardMsg] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const selectedKit = kits[Math.min(kitIndex, kits.length - 1)];
+    const resolveSuggestions = async (filter) => {
+        const people = await _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_4__.PeopleSearchService.search(filter);
+        return people.map(p => ({ text: p.displayName, secondaryText: p.email || p.jobTitle, key: p.loginName, data: p }));
+    };
+    const submitKit = async () => {
+        if (!person || !selectedKit)
+            return;
+        setOnboardBusy(true);
+        setOnboardMsg(undefined);
+        try {
+            const result = await _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__.AssetKitService.requestKit(selectedKit, { displayName: person.displayName, email: person.email, employeeId: employeeId.trim() || undefined }, { startDate: startDate ? startDate.toISOString() : undefined, notes }, state.currentUserName, state.currentUserRole);
+            setOnboardMsg(batchMessage(result, f.KitRequested));
+            if (result.succeeded.length > 0) {
+                setPerson(undefined);
+                setEmployeeId('');
+                setStartDate(undefined);
+                setNotes('');
+                actions.onDataChanged();
+            }
+        }
+        finally {
+            setOnboardBusy(false);
+        }
+    };
+    const renderOnboarding = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].panel },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].panelHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, f.OnboardTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, f.OnboardDesc))),
+        onboardMsg && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: onboardMsg.type, onDismiss: () => setOnboardMsg(undefined), styles: { root: { marginBottom: 12 } } }, onboardMsg.text)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { className: "ms-Label", style: { fontWeight: 600, fontSize: 14, display: 'block', padding: '5px 0' } }, f.OnboardEmployee),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.NormalPeoplePicker, { onResolveSuggestions: (filter) => resolveSuggestions(filter), selectedItems: person ? [{ text: person.displayName, secondaryText: person.email, key: person.loginName }] : [], onChange: (items) => setPerson(items && items.length > 0 ? items[0].data || undefined : undefined), itemLimit: 1, resolveDelay: 300, inputProps: { placeholder: f.OnboardEmployeePlaceholder, 'aria-label': f.OnboardEmployee }, pickerSuggestionsProps: { noResultsFoundText: f.OnboardNoPeople, loadingText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.ConfigPage.LoadingButton } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: f.OnboardEmployeeId, value: employeeId, onChange: (_, v) => setEmployeeId(v || '') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DatePicker, { label: f.OnboardStartDate, value: startDate, onSelectDate: (d) => setStartDate(d || undefined), placeholder: f.OnboardStartDatePlaceholder }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: f.OnboardKit, selectedKey: kitIndex, options: kits.map((k, i) => ({ key: i, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.KitOption, k.name, (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.kitUnitCount)(k)) })), onChange: (_, o) => o && setKitIndex(o.key) })),
+        selectedKit && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].details, style: { marginTop: 12 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, selectedKit.name),
+            selectedKit.description ? ` — ${selectedKit.description}` : '',
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].chips }, selectedKit.lines.map(l => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: l.assetType, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].chip },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Devices3" }),
+                " ",
+                l.assetType,
+                l.quantity > 1 ? ` ×${l.quantity}` : '')))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].muted, style: { marginTop: 6 } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.OnboardWillCreate, selectedKit.lines.length)))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: f.OnboardNotes, multiline: true, rows: 2, value: notes, onChange: (_, v) => setNotes(v || ''), styles: { root: { marginTop: 12 } } }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].actions, style: { marginTop: 16 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: onboardBusy ? f.Working : f.OnboardSubmit, iconProps: { iconName: 'AddFriend' }, disabled: !person || !selectedKit || onboardBusy, onClick: () => { submitKit().catch(() => undefined); } }))));
+    // ---------------- Offboarding ----------------
+    const holders = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.listAssetHolders)(state.items), [state.items]);
+    const [holderKey, setHolderKey] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [lastDay, setLastDay] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [offboardBusy, setOffboardBusy] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [offboardMsg, setOffboardMsg] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const holder = holders.find(h => (h.email || h.name) === holderKey);
+    const checklist = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => (holder ? (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.buildOffboardingChecklist)(state.items, state.returnRequests, holder.name, holder.email) : []), [holder, state.items, state.returnRequests]);
+    const heldCount = checklist.filter(r => r.state === 'held').length;
+    const returnedCount = checklist.filter(r => r.state === 'returned').length;
+    const raiseReturns = async () => {
+        if (!holder)
+            return;
+        setOffboardBusy(true);
+        setOffboardMsg(undefined);
+        try {
+            const result = await _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__.AssetKitService.raiseOffboardingReturns(checklist, { name: holder.name, email: holder.email }, lastDay ? lastDay.toISOString() : undefined, state.currentUserName);
+            setOffboardMsg(batchMessage(result, f.OffboardRaised));
+            actions.onDataChanged();
+        }
+        finally {
+            setOffboardBusy(false);
+        }
+    };
+    const statePill = (s, returnStatus) => {
+        if (s === 'returned')
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].pillGood}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Completed" }),
+                " ",
+                f.OffboardStateReturned);
+        if (s === 'returnInProgress')
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].pillInfo}`, title: returnStatus },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Sync" }),
+                " ",
+                f.OffboardStateInProgress);
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].pillWarn}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Warning" }),
+            " ",
+            f.OffboardStateHeld);
+    };
+    const renderOffboarding = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].panel },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].panelHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, f.OffboardTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, f.OffboardDesc))),
+        offboardMsg && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: offboardMsg.type, onDismiss: () => setOffboardMsg(undefined), styles: { root: { marginBottom: 12 } } }, offboardMsg.text)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: f.OffboardEmployee, placeholder: holders.length ? f.OffboardEmployeePlaceholder : f.OffboardNoHolders, selectedKey: holderKey || null, options: holders.map(h => ({ key: h.email || h.name, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.OffboardHolderOption, h.name, h.count) })), onChange: (_, o) => { if (o) {
+                    setHolderKey(o.key);
+                    setOffboardMsg(undefined);
+                } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DatePicker, { label: f.OffboardLastDay, value: lastDay, onSelectDate: (d) => setLastDay(d || undefined), placeholder: f.OnboardStartDatePlaceholder })),
+        holder && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.ProgressIndicator, { label: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.OffboardProgress, returnedCount, checklist.length), percentComplete: checklist.length ? returnedCount / checklist.length : 0, styles: { root: { margin: '16px 0 8px' } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].dataTable },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.SlaColAsset),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColType),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.OffboardColSerial),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColStatus))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, checklist.map(row => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: `${row.assetId}-${row.serialNumber}-${row.state}` },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, row.assetName)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, row.assetType),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, row.serialNumber),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, statePill(row.state, row.returnStatus))))))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].actions, style: { marginTop: 16 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: offboardBusy ? f.Working : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.OffboardRaise, heldCount), iconProps: { iconName: 'ReturnToSession' }, disabled: heldCount === 0 || offboardBusy, onClick: () => { raiseReturns().catch(() => undefined); } }),
+                heldCount === 0 && checklist.length > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].muted }, f.OffboardNothingToRaise))))));
+    // ---------------- Kits (admin) ----------------
+    const [editing, setEditing] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [kitBusy, setKitBusy] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [kitMsg, setKitMsg] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const runKitAction = async (action, okText) => {
+        setKitBusy(true);
+        setKitMsg(undefined);
+        try {
+            await action();
+            setKitMsg({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success, text: okText });
+            setEditing(undefined);
+            await loadKits();
+        }
+        catch (e) {
+            setKitMsg({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.KitSaveFailed, e && e.message ? e.message : String(e)) });
+        }
+        finally {
+            setKitBusy(false);
+        }
+    };
+    const editingLines = editing ? (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.parseKitItems)(editing.items) : [];
+    const renderKits = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].panel },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].panelHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, f.KitsTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, kitsFromList ? f.KitsDesc : f.KitsBuiltInNote)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].actions },
+                !kitsFromList && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.DefaultButton, { text: f.KitsCopyBuiltIn, iconProps: { iconName: 'Copy' }, disabled: kitBusy, onClick: () => { runKitAction(async () => { for (const k of _utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.DEFAULT_KITS)
+                        await _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__.AssetKitService.saveKit(k); }, f.KitSaved).catch(() => undefined); } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: f.KitsNew, iconProps: { iconName: 'Add' }, disabled: kitBusy, onClick: () => setEditing({ name: '', description: '', items: '' }) }))),
+        kitMsg && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: kitMsg.type, onDismiss: () => setKitMsg(undefined), styles: { root: { marginBottom: 12 } } }, kitMsg.text)),
+        editing && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].listCard },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: f.KitName, required: true, value: editing.name, onChange: (_, v) => setEditing({ ...editing, name: v || '' }) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: f.KitDescriptionLabel, value: editing.description, onChange: (_, v) => setEditing({ ...editing, description: v || '' }) })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { label: f.KitItemsLabel, description: f.KitItemsHelp, multiline: true, rows: 5, value: editing.items, onChange: (_, v) => setEditing({ ...editing, items: v || '' }), styles: { root: { marginTop: 8 } } }),
+            editingLines.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].chips, style: { marginTop: 8 } }, editingLines.map(l => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: l.assetType, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].chip },
+                l.assetType,
+                l.quantity > 1 ? ` ×${l.quantity}` : '')))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].actions, style: { marginTop: 12 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: f.KitSave, iconProps: { iconName: 'Save' }, disabled: kitBusy || !editing.name.trim() || editingLines.length === 0, onClick: () => {
+                        runKitAction(() => _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__.AssetKitService.saveKit({ id: editing.id, name: editing.name, description: editing.description, lines: editingLines }), f.KitSaved).catch(() => undefined);
+                    } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.DefaultButton, { text: f.Cancel, onClick: () => setEditing(undefined), disabled: kitBusy })))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].dataTable },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.KitName),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.KitItemsLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.KitDescriptionLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, kits.map(k => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: `${k.id || 'builtin'}-${k.name}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, k.name)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, kitSummary(k)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].muted }, k.description),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { whiteSpace: 'nowrap' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.DefaultButton, { text: f.KitEdit, iconProps: { iconName: 'Edit' }, disabled: kitBusy, onClick: () => setEditing({ id: k.id, name: k.name, description: k.description, items: (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_5__.formatKitItems)(k.lines) }) }),
+                    k.id && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.DefaultButton, { text: f.KitDelete, iconProps: { iconName: 'Delete' }, disabled: kitBusy, styles: { root: { marginLeft: 8 } }, onClick: () => {
+                            if (window.confirm((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(f.KitDeleteConfirm, k.name))) {
+                                runKitAction(() => _services_AssetKitService__WEBPACK_IMPORTED_MODULE_3__.AssetKitService.deleteKit(k.id), f.KitDeleted).catch(() => undefined);
+                            }
+                        } }))))))))));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, f.OnboardingPageTitle),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, f.OnboardingPageSubtitle)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].configTabs },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.Pivot, { selectedKey: tab, onLinkClick: (item) => item && setTab(item.props.itemKey), styles: { root: { marginBottom: 20 } } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.PivotItem, { headerText: f.TabOnboarding, itemKey: "onboarding", itemIcon: "AddFriend" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.PivotItem, { headerText: f.TabOffboarding, itemKey: "offboarding", itemIcon: "UserRemove" }),
+                state.isAdmin && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.PivotItem, { headerText: f.TabKits, itemKey: "kits", itemIcon: "Package" }))),
+        tab === 'onboarding' && renderOnboarding(),
+        tab === 'offboarding' && renderOffboarding(),
+        tab === 'kits' && state.isAdmin && renderKits()));
 };
 
 
@@ -13636,6 +14926,156 @@ const UsersPage = (props) => {
 
 /***/ }),
 
+/***/ 63440:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/config/StockThresholdsTab.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   StockThresholdsTab: () => (/* binding */ StockThresholdsTab)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ConfigPage.module.scss */ 35947);
+/* harmony import */ var _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/InventoryItemService */ 32974);
+/* harmony import */ var _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/StockThresholdService */ 34378);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/StockUtils */ 19256);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+
+
+
+
+
+
+
+
+
+
+/** Config → Stock Alerts: per-asset-type minimum stock, saved to the Stock Thresholds list. */
+const StockThresholdsTab = () => {
+    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.Features;
+    const defaultMinimum = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_4__.getAppConfig)().stock.defaultMinimum;
+    const [items, setItems] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
+    const [thresholds, setThresholds] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
+    const [edits, setEdits] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const [loading, setLoading] = react__WEBPACK_IMPORTED_MODULE_0__.useState(true);
+    const [busy, setBusy] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [message, setMessage] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const load = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async () => {
+        setLoading(true);
+        try {
+            const [loadedItems, loadedThresholds] = await Promise.all([
+                _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_2__.InventoryItemService.getItems(),
+                _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.getThresholds()
+            ]);
+            setItems(loadedItems);
+            setThresholds(loadedThresholds);
+            setEdits({});
+        }
+        catch (e) {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: e && e.message ? e.message : String(e) });
+        }
+        finally {
+            setLoading(false);
+        }
+    }, []);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => { load().catch(() => undefined); }, [load]);
+    // Standard types are listed even when there are no items of that type yet.
+    const levels = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        const placeholderRows = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_5__.DEFAULT_ASSET_TYPE_OPTIONS
+            .map(o => String(o.key))
+            .filter(type => type !== 'Other' && !thresholds.some(t => t.assetType.toLowerCase() === type.toLowerCase()))
+            .map(type => ({ assetType: type }));
+        return (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_8__.evaluateStockLevels)(items, thresholds.concat(placeholderRows), defaultMinimum);
+    }, [items, thresholds, defaultMinimum]);
+    const valueFor = (level) => edits[level.assetType] !== undefined ? edits[level.assetType] : level.hasCustomMinimum ? String(level.minimum) : '';
+    const invalid = Object.keys(edits).some(k => edits[k].trim() !== '' && !(Number(edits[k]) >= 0));
+    const dirty = Object.keys(edits).length > 0;
+    const save = async () => {
+        setBusy(true);
+        setMessage(undefined);
+        try {
+            await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.saveThresholds(Object.keys(edits).map(type => ({
+                assetType: type,
+                minimumStock: edits[type].trim() === '' ? undefined : Number(edits[type])
+            })));
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success, text: f.StockSaved });
+            await load();
+        }
+        catch (e) {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockSaveFailed, e && e.message ? e.message : String(e)) });
+        }
+        finally {
+            setBusy(false);
+        }
+    };
+    const checkNow = async () => {
+        setBusy(true);
+        setMessage(undefined);
+        const result = await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.checkAndNotify(items);
+        setBusy(false);
+        if (!result) {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: f.StockCheckFailed });
+        }
+        else if (result.alerted.length > 0) {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockAlertSent, result.alerted.join(', ')) });
+        }
+        else {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.info, text: f.StockNoNewAlerts });
+        }
+        await load();
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panel },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panelHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, f.StockTabTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockTabDesc, defaultMinimum))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actions },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: f.StockSave, iconProps: { iconName: 'Save' }, onClick: () => { save().catch(() => undefined); }, disabled: !dirty || invalid || busy }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: f.StockCheckNow, iconProps: { iconName: 'Mail' }, onClick: () => { checkNow().catch(() => undefined); }, disabled: busy || loading }))),
+        message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBar, { messageBarType: message.type, onDismiss: () => setMessage(undefined), styles: { root: { marginBottom: 12 } } }, message.text)),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.ConfigPage.LoadingButton)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dataTable },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColType),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColAvailable),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColTotal),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColMinimum),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColStatus))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, levels.map(level => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: level.assetType },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, level.assetType)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, level.available),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, level.total),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { width: 170 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.TextField, { value: valueFor(level), placeholder: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockDefaultPlaceholder, defaultMinimum), onChange: (_, v) => setEdits(prev => ({ ...prev, [level.assetType]: v || '' })), errorMessage: valueFor(level).trim() !== '' && !(Number(valueFor(level)) >= 0) ? f.StockInvalid : undefined, ariaLabel: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockMinimumAria, level.assetType), type: "number", min: 0 })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                    level.minimum === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillNeutral}` }, f.StockNotMonitored)) : level.isLow ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillBad}` },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Warning" }),
+                        " ",
+                        f.StockLow)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillGood}` },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Completed" }),
+                        " ",
+                        f.StockOk)),
+                    level.threshold && level.threshold.lastAlertSent && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted, style: { marginTop: 4 } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockAlertedAt, new Date(level.threshold.lastAlertSent).toLocaleString()))))))))))));
+};
+
+
+/***/ }),
+
 /***/ 56330:
 /*!*********************************************************!*\
   !*** ./lib/webparts/inventoryManagement/pages/index.js ***!
@@ -13658,6 +15098,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   MyWorkspacePage: () => (/* reexport safe */ _MyWorkspacePage__WEBPACK_IMPORTED_MODULE_13__.MyWorkspacePage),
 /* harmony export */   NotificationDetailsPanel: () => (/* reexport safe */ _NotificationDetailsPanel__WEBPACK_IMPORTED_MODULE_9__.NotificationDetailsPanel),
 /* harmony export */   NotificationsPage: () => (/* reexport safe */ _NotificationsPage__WEBPACK_IMPORTED_MODULE_6__.NotificationsPage),
+/* harmony export */   OnboardingPage: () => (/* reexport safe */ _OnboardingPage__WEBPACK_IMPORTED_MODULE_17__.OnboardingPage),
 /* harmony export */   ReplacementHistoryPage: () => (/* reexport safe */ _ReplacementHistoryPage__WEBPACK_IMPORTED_MODULE_5__.ReplacementHistoryPage),
 /* harmony export */   ReportsPage: () => (/* reexport safe */ _ReportsPage__WEBPACK_IMPORTED_MODULE_2__.ReportsPage),
 /* harmony export */   RequestAnalysisPanel: () => (/* reexport safe */ _RequestAnalysisPanel__WEBPACK_IMPORTED_MODULE_7__.RequestAnalysisPanel),
@@ -13680,6 +15121,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AdminAssignmentPanel__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./AdminAssignmentPanel */ 26908);
 /* harmony import */ var _ApprovalsPage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./ApprovalsPage */ 31245);
 /* harmony import */ var _UsersPage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./UsersPage */ 50909);
+/* harmony import */ var _OnboardingPage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./OnboardingPage */ 98146);
+
 
 
 
@@ -14487,6 +15930,303 @@ AssetAssignmentService._mappingListFieldsEnsured = false;
 
 /***/ }),
 
+/***/ 57661:
+/*!**********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/AssetKitService.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetKitService: () => (/* binding */ AssetKitService)
+/* harmony export */ });
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _utils_KitUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/KitUtils */ 93962);
+/* harmony import */ var _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base/ListProvisioningService */ 4262);
+/* harmony import */ var _RequestService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RequestService */ 50764);
+/* harmony import */ var _ReturnRequestService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ReturnRequestService */ 86382);
+/* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+
+
+
+
+
+
+const KIT_FIELDS = [
+    { name: "KitItems", type: "Note" },
+    { name: "KitDescription", type: "Note" }
+];
+/**
+ * Onboarding kits (Asset Kits list: Title, KitItems, KitDescription) and the
+ * offboarding "raise all returns" action. Kit requests go through the normal
+ * request → manager approval → assignment workflow, one request per asset type.
+ */
+class AssetKitService {
+    static get listTitle() {
+        return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_0__.getAppConfig)().lists.assetKits;
+    }
+    /** Kits from the list; the built-in kits when the list does not exist or is empty. */
+    static async getKits() {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_2__.ListProvisioningService.tryGetList(AssetKitService.listTitle);
+        if (!list)
+            return { kits: _utils_KitUtils__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_KITS, fromList: false };
+        const items = await list.items.select("ID", "Title", "KitItems", "KitDescription").top(500)();
+        const kits = items
+            .map(i => ({
+            id: i.ID,
+            name: (i.Title || "").trim(),
+            description: i.KitDescription || "",
+            lines: (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_1__.parseKitItems)(i.KitItems || "")
+        }))
+            .filter(k => k.name && k.lines.length > 0);
+        return kits.length > 0 ? { kits, fromList: true } : { kits: _utils_KitUtils__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_KITS, fromList: false };
+    }
+    /** Creates or updates a kit (creates the Asset Kits list on first save). */
+    static async saveKit(kit) {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_2__.ListProvisioningService.ensureList(AssetKitService.listTitle, "Standard asset bundles for onboarding new starters (managed from the Inventory app).", KIT_FIELDS);
+        const payload = { Title: kit.name.trim(), KitItems: (0,_utils_KitUtils__WEBPACK_IMPORTED_MODULE_1__.formatKitItems)(kit.lines), KitDescription: kit.description || "" };
+        if (kit.id) {
+            await list.items.getById(kit.id).update(payload);
+        }
+        else {
+            await list.items.add(payload);
+        }
+    }
+    static async deleteKit(id) {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_2__.ListProvisioningService.tryGetList(AssetKitService.listTitle);
+        if (list)
+            await list.items.getById(id).delete();
+    }
+    /** Raises one asset request per kit line for the new starter. Continues past failures and reports them. */
+    static async requestKit(kit, recipient, options, currentUserName, currentUserRole) {
+        const result = { succeeded: [], failed: [] };
+        const startText = options.startDate ? `, starting ${new Date(options.startDate).toLocaleDateString()}` : "";
+        const reason = `Onboarding kit "${kit.name}" for new starter ${recipient.displayName}${startText}.` +
+            (options.notes ? ` ${options.notes.trim()}` : "");
+        for (const line of kit.lines) {
+            try {
+                await _RequestService__WEBPACK_IMPORTED_MODULE_3__.RequestService.addRequest({
+                    requesterName: recipient.displayName,
+                    requesterEmail: recipient.email,
+                    employeeId: recipient.employeeId,
+                    assetId: "",
+                    assetTitle: line.assetType,
+                    quantity: line.quantity,
+                    priority: "High",
+                    reason,
+                    managerName: options.managerName,
+                    requestDate: new Date().toISOString()
+                }, currentUserName, currentUserRole, false);
+                result.succeeded.push(line.assetType);
+            }
+            catch (e) {
+                result.failed.push({ label: line.assetType, error: e && e.message ? e.message : String(e) });
+            }
+        }
+        await _AuditLogService__WEBPACK_IMPORTED_MODULE_5__.AuditLogService.addAuditLog({
+            title: `Onboarding kit requested: ${kit.name} for ${recipient.displayName}`,
+            action: "Create",
+            entityType: "Request",
+            entityId: `KIT-${Date.now()}`,
+            details: JSON.stringify({
+                lifecycle: "OnboardingKitRequested",
+                kit: kit.name,
+                employee: recipient.displayName,
+                startDate: options.startDate || "",
+                requested: result.succeeded,
+                failed: result.failed.map(f => f.label)
+            }),
+            user: currentUserName
+        });
+        return result;
+    }
+    /** Raises a return request for every held asset that has no return in progress. */
+    static async raiseOffboardingReturns(rows, employee, lastDay, currentUserName) {
+        const result = { succeeded: [], failed: [] };
+        const dayText = lastDay ? ` Last working day: ${new Date(lastDay).toLocaleDateString()}.` : "";
+        for (const row of rows.filter(r => r.state === "held")) {
+            const label = `${row.assetName}${row.serialNumber ? ` (${row.serialNumber})` : ""}`;
+            try {
+                await _ReturnRequestService__WEBPACK_IMPORTED_MODULE_4__.ReturnRequestService.addReturnRequest({
+                    title: `Offboarding return: ${row.assetName}`,
+                    assetId: row.assetId,
+                    assetName: row.assetName,
+                    assetType: row.assetType,
+                    serialNumber: row.serialNumber,
+                    requesterName: employee.name,
+                    requesterEmail: employee.email,
+                    requestDate: new Date().toISOString(),
+                    returnReason: `Offboarding: employee leaving.${dayText} Raised by ${currentUserName}.`,
+                    proposedCondition: (row.item && row.item.condition) || "Good"
+                }, currentUserName);
+                result.succeeded.push(label);
+            }
+            catch (e) {
+                result.failed.push({ label, error: e && e.message ? e.message : String(e) });
+            }
+        }
+        return result;
+    }
+}
+
+
+/***/ }),
+
+/***/ 72145:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/AssetTypeLookupService.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetTypeLookupService: () => (/* binding */ AssetTypeLookupService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/ListDefinitions */ 39781);
+/* harmony import */ var _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/EventLogUtils */ 46964);
+
+
+
+
+const CACHE_TTL_MS = 60 * 1000;
+const MAX_ITEMS = 5000;
+/**
+ * Builds the tables that map audit events to asset types, from the Inventory
+ * list (ID/name -> AssetType) and the Request list (ID/RequestKey -> AssetType).
+ *
+ * The result is cached briefly and in-flight loads are shared, because the
+ * Event Stream refetches logs on every server-side filter change.
+ */
+class AssetTypeLookupService {
+    static getLookup() {
+        const now = Date.now();
+        if (!AssetTypeLookupService._cache || AssetTypeLookupService._cache.expires < now) {
+            const promise = AssetTypeLookupService._load().catch(err => {
+                console.warn("[AssetTypeLookupService] Could not build asset type lookup:", err);
+                AssetTypeLookupService._cache = undefined;
+                return _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.EMPTY_ASSET_TYPE_LOOKUP;
+            });
+            AssetTypeLookupService._cache = { expires: now + CACHE_TTL_MS, promise };
+        }
+        return AssetTypeLookupService._cache.promise;
+    }
+    /** Drop the cache, e.g. after an asset's type was edited. */
+    static invalidate() {
+        AssetTypeLookupService._cache = undefined;
+    }
+    static async _load() {
+        const siteLists = await (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.lists.select("Title").filter("Hidden eq false")();
+        const [inventory, requests] = await Promise.all([
+            AssetTypeLookupService._loadInventory(AssetTypeLookupService._resolveTitle('inventory', siteLists)),
+            AssetTypeLookupService._loadRequests(AssetTypeLookupService._resolveTitle('request', siteLists))
+        ]);
+        return {
+            byInventoryId: inventory.byId,
+            byAssetName: inventory.byName,
+            byRequestId: requests.byId,
+            knownTypes: (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.mergeAssetTypes)(inventory.types, requests.types)
+        };
+    }
+    static _resolveTitle(key, siteLists) {
+        const def = (0,_constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_2__.getListDefinition)(key);
+        if (!def)
+            return undefined;
+        for (const candidate of def.candidates) {
+            const match = siteLists.find(l => l.Title.toLowerCase() === candidate.toLowerCase());
+            if (match)
+                return match.Title;
+        }
+        return undefined;
+    }
+    static async _getFieldMetadata(list) {
+        const fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+        return fields.map(f => ({ internalName: f.InternalName || '', displayName: f.Title || '', fieldType: f.TypeAsString || '', required: false }));
+    }
+    static async _loadInventory(title) {
+        const byId = new Map();
+        const byName = new Map();
+        const types = [];
+        if (!title)
+            return { byId, byName, types };
+        try {
+            const list = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.lists.getByTitle(title);
+            const fields = await AssetTypeLookupService._getFieldMetadata(list);
+            const typeKey = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(fields, ["AssetType"]);
+            if (!typeKey)
+                return { byId, byName, types };
+            const nameKey = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(fields, ["AssetName"]);
+            const select = ["ID", "Title", typeKey].concat(nameKey ? [nameKey] : []);
+            const items = await list.items.select(...select).top(MAX_ITEMS)();
+            items.forEach(item => {
+                const type = AssetTypeLookupService._text(item[typeKey]);
+                if (!type)
+                    return;
+                types.push(type);
+                byId.set(String(item.ID), type);
+                [nameKey ? item[nameKey] : undefined, item.Title].forEach(name => {
+                    const key = (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.normalizeKey)(AssetTypeLookupService._text(name));
+                    if (key && !byName.has(key))
+                        byName.set(key, type);
+                });
+            });
+        }
+        catch (err) {
+            console.warn("[AssetTypeLookupService] Inventory lookup failed:", err);
+        }
+        return { byId, byName, types };
+    }
+    static async _loadRequests(title) {
+        const byId = new Map();
+        const types = [];
+        if (!title)
+            return { byId, types };
+        try {
+            const list = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.lists.getByTitle(title);
+            const fields = await AssetTypeLookupService._getFieldMetadata(list);
+            // Same column preference as the Event Stream's request-log builder.
+            const typeKey = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(fields, ["AssetType", "SelectAsset"]);
+            if (!typeKey)
+                return { byId, types };
+            const requestKey = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._resolveFieldInternalName(fields, [_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_KEY_INTERNAL_NAME]);
+            const select = ["ID", typeKey].concat(requestKey ? [requestKey] : []);
+            const items = await list.items.select(...select).top(MAX_ITEMS)();
+            items.forEach(item => {
+                const type = AssetTypeLookupService._text(item[typeKey]);
+                if (!type)
+                    return;
+                types.push(type);
+                byId.set(String(item.ID), type);
+                const key = requestKey ? AssetTypeLookupService._text(item[requestKey]) : '';
+                if (key)
+                    byId.set(key, type);
+            });
+        }
+        catch (err) {
+            console.warn("[AssetTypeLookupService] Request lookup failed:", err);
+        }
+        return { byId, types };
+    }
+    /** Choice/lookup columns can come back as objects or arrays; reduce to plain text. */
+    static _text(value) {
+        if (value === undefined || value === null)
+            return '';
+        if (typeof value === 'string')
+            return value.trim();
+        if (Array.isArray(value))
+            return value.length > 0 ? AssetTypeLookupService._text(value[0]) : '';
+        if (typeof value === 'object')
+            return AssetTypeLookupService._text(value.Title || value.Label || value.Value);
+        return String(value).trim();
+    }
+}
+
+
+/***/ }),
+
 /***/ 43584:
 /*!**********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/AuditLogService.js ***!
@@ -14500,10 +16240,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AssetTypeLookupService */ 72145);
+/* harmony import */ var _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/EventLogUtils */ 46964);
+/* harmony import */ var _utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/SharePointItemUtils */ 19330);
+
+
+
 
 
 class AuditLogService {
     static async addAuditLog(log) {
+        // Every asset/request change is audited here, so the type lookup may now be stale.
+        _AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_2__.AssetTypeLookupService.invalidate();
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         try {
             await sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST).items.add({
@@ -14780,32 +16528,14 @@ class AuditLogService {
             const requestItems = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._fetchItemsWithExpandedUsers(reqList);
             requestItems.forEach((item) => {
                 const keys = Object.keys(item);
-                const findKey = (searchStr) => {
-                    const nonIdMatch = keys.find(k => {
-                        const kl = k.toLowerCase().replace(/_x0020_/g, '');
-                        return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
-                    });
-                    if (nonIdMatch)
-                        return nonIdMatch;
-                    return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
-                };
+                const findKey = (searchStr) => (0,_utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_4__.findItemKey)(item, searchStr);
                 const employeeKey = findKey("requester") || findKey("employee") || "Employee";
                 const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
                 const statusKey = keys.find(key => _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._isBusinessStatusKey(key)) || "RequestStatus";
                 const assetStatusKey = findKey("assetstatus") || "AssetStatus";
                 const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
-                const rawEmp = item[employeeKey] || item.Employee || item.Author;
-                const reqUser = (() => {
-                    if (!rawEmp)
-                        return item.Title || "System";
-                    if (typeof rawEmp === 'string')
-                        return rawEmp;
-                    if (Array.isArray(rawEmp))
-                        return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
-                    if (typeof rawEmp === 'object')
-                        return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
-                    return rawEmp.toString();
-                })();
+                // Resolve a display name; skips OData link annotations ("Web/Lists(guid...)/Items(n)/Employee").
+                const reqUser = (0,_utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_4__.firstPersonName)([item[employeeKey], item.Employee, item.Author], item.Title || "System");
                 const itemCreated = formatTimestamp(item.Created);
                 const itemModified = formatTimestamp(item.Modified);
                 const requestStatus = item[statusKey] || "";
@@ -14893,6 +16623,8 @@ class AuditLogService {
         return logs;
     }
     static async getFilteredAuditLogs(filters) {
+        // Started first so it loads in parallel with the list queries below.
+        const assetTypeLookupPromise = _AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_2__.AssetTypeLookupService.getLookup();
         const logs = [];
         const processedEventLogIds = new Set();
         const formatTimestamp = (isoString) => {
@@ -15013,7 +16745,7 @@ class AuditLogService {
                 }
                 // Server-side user filter
                 if (filters.user && filters.user !== 'All') {
-                    filterParts.push(`User eq '${filters.user}'`);
+                    filterParts.push(`User eq '${filters.user.replace(/'/g, "''")}'`);
                 }
                 let eventQuery = eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created");
                 if (filterParts.length > 0) {
@@ -15195,7 +16927,7 @@ class AuditLogService {
                     invFilters.push(`(Created ge '${startIso}' or Modified ge '${startIso}')`);
                 }
                 if (filters.user && filters.user !== 'All') {
-                    invFilters.push(`(Author/Title eq '${filters.user}' or Editor/Title eq '${filters.user}')`);
+                    invFilters.push(`(Author/Title eq '${filters.user.replace(/'/g, "''")}' or Editor/Title eq '${filters.user.replace(/'/g, "''")}')`);
                 }
                 let invQuery = list.items.select("ID", "Title", assetNameKey, statusKey, "Created", "Modified", "Author/Title", "Editor/Title").expand("Author", "Editor");
                 if (invFilters.length > 0) {
@@ -15280,37 +17012,19 @@ class AuditLogService {
                     reqFilters.push(`(Created ge '${startIso}' or Modified ge '${startIso}')`);
                 }
                 if (filters.user && filters.user !== 'All') {
-                    reqFilters.push(`(Author/Title eq '${filters.user}' or Editor/Title eq '${filters.user}')`);
+                    reqFilters.push(`(Author/Title eq '${filters.user.replace(/'/g, "''")}' or Editor/Title eq '${filters.user.replace(/'/g, "''")}')`);
                 }
                 const requestItems = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._fetchItemsWithExpandedUsers(reqList, reqFilters.length > 0 ? reqFilters.join(' and ') : undefined);
                 requestItems.forEach((item) => {
                     const keys = Object.keys(item);
-                    const findKey = (searchStr) => {
-                        const nonIdMatch = keys.find(k => {
-                            const kl = k.toLowerCase().replace(/_x0020_/g, '');
-                            return kl.indexOf(searchStr) >= 0 && !kl.endsWith("id");
-                        });
-                        if (nonIdMatch)
-                            return nonIdMatch;
-                        return keys.find(k => k.toLowerCase().replace(/_x0020_/g, '').indexOf(searchStr) >= 0);
-                    };
+                    const findKey = (searchStr) => (0,_utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_4__.findItemKey)(item, searchStr);
                     const employeeKey = findKey("requester") || findKey("employee") || "Employee";
                     const selectAssetKey = findKey("assettype") || findKey("selectasset") || findKey("type") || "SelectAsset";
                     const statusKey = keys.find(key => _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService._isBusinessStatusKey(key)) || "RequestStatus";
                     const assetStatusKey = findKey("assetstatus") || "AssetStatus";
                     const reqAssetName = item[selectAssetKey] || item.Title || "Unknown Asset";
-                    const rawEmp = item[employeeKey] || item.Employee || item.Author;
-                    const reqUser = (() => {
-                        if (!rawEmp)
-                            return item.Title || "System";
-                        if (typeof rawEmp === 'string')
-                            return rawEmp;
-                        if (Array.isArray(rawEmp))
-                            return rawEmp.map((a) => a.Title || a.Name || "").join(', ');
-                        if (typeof rawEmp === 'object')
-                            return rawEmp.Title || rawEmp.Name || JSON.stringify(rawEmp);
-                        return rawEmp.toString();
-                    })();
+                    // Resolve a display name; skips OData link annotations ("Web/Lists(guid...)/Items(n)/Employee").
+                    const reqUser = (0,_utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_4__.firstPersonName)([item[employeeKey], item.Employee, item.Author], item.Title || "System");
                     const itemCreated = formatTimestamp(item.Created);
                     const itemModified = formatTimestamp(item.Modified);
                     const requestStatus = item[statusKey] || "";
@@ -15394,6 +17108,11 @@ class AuditLogService {
                 console.warn("Could not fetch RequestList for audit logs", err);
             }
         }
+        // Tag each event with the asset type of its source item (used by the Asset Type filter)
+        const assetTypeLookup = await assetTypeLookupPromise;
+        logs.forEach(log => {
+            log.assetType = (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.resolveEventAssetType)(log, assetTypeLookup);
+        });
         // Sort logs initially by timestamp descending
         logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
         return logs;
@@ -15416,6 +17135,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/mockData */ 27962);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+
 
 
 /**
@@ -15768,7 +17489,7 @@ class EmailService {
             }
             // 2. Try to query the EmployeeList first
             try {
-                const employeeList = sp.web.lists.getByTitle("EmployeeList");
+                const employeeList = sp.web.lists.getByTitle((0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.employee);
                 const fields = await employeeList.fields.select("InternalName", "Title")();
                 const getFieldName = (candidates) => {
                     const found = fields.find(f => candidates.some(c => f.Title.toLowerCase() === c.toLowerCase() || f.InternalName.toLowerCase() === c.toLowerCase()));
@@ -15907,6 +17628,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pnp_logging__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pnp/logging */ 60133);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _InventoryService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./InventoryService */ 29619);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+
 
 
 
@@ -15916,6 +17639,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class IncidentService {
+    // List titles come from the property pane (config/AppConfig.ts).
+    get incidentListName() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.getAppConfig)().lists.incident; }
+    get employeeListName() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.getAppConfig)().lists.employee; }
+    get mappingListName() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.getAppConfig)().lists.mapping; }
+    get replacementListName() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_8__.getAppConfig)().lists.replacement; }
     async getReplacementList() {
         try {
             const list = this.sp.web.lists.getByTitle(this.replacementListName);
@@ -16027,10 +17755,6 @@ class IncidentService {
         }
     }
     constructor(spContext) {
-        this.incidentListName = 'Incident List';
-        this.employeeListName = 'EmployeeList';
-        this.mappingListName = 'Mapping List';
-        this.replacementListName = 'Asset Replacements';
         if (!spContext) {
             throw new Error('SPFx context is required. Ensure the web part is loaded in SharePoint.');
         }
@@ -17125,6 +18849,12 @@ class InventoryItemService {
             if (statusKey && assetStatus === 'Approved') {
                 updatePayload[statusKey] = 'Asset Assigned';
             }
+            // SLA: record when the asset was assigned (column is auto-created on request
+            // submission/approval; skipped if it does not exist yet).
+            const assignedDateField = fields.find(field => (field.InternalName || '').toString().toLowerCase() === _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME.toLowerCase());
+            if (assignedDateField && assetStatus === 'Approved') {
+                updatePayload[assignedDateField.InternalName] = new Date().toISOString();
+            }
             if (comment) {
                 const managerCommentKey = findKey("managercomment") || findKey("comment") || findKey("response") || _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME;
                 if (managerCommentKey) {
@@ -17404,7 +19134,7 @@ if (stored && stored !== currentLanguage) {
 
 /***/ }),
 
-/***/ 563:
+/***/ 20563:
 /*!************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/ListHealthService.js ***!
   \************************************************************************/
@@ -17413,97 +19143,21 @@ if (stored && stored !== currentLanguage) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   LIST_DEFINITIONS: () => (/* binding */ LIST_DEFINITIONS),
-/* harmony export */   ListHealthService: () => (/* binding */ ListHealthService)
+/* harmony export */   ListHealthService: () => (/* binding */ ListHealthService),
+/* harmony export */   getListDefinitions: () => (/* reexport safe */ _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_4__.getListDefinitions)
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/ListDefinitions */ 39781);
 
 
 
 
-const LIST_DEFINITIONS = [
-    {
-        key: 'inventory',
-        candidates: [_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.LIST_NAME, "Inventory List"],
-        requiredColumns: [
-            { name: 'Title' },
-            { name: 'AssetName' },
-            { name: 'AssetType' },
-            { name: 'SerialNumber' },
-            { name: 'PurchaseDate' },
-            { name: 'Status', aliases: ['AssetStatus'] },
-            { name: 'Specifications' },
-            { name: 'AssignedTo' }
-        ]
-    },
-    {
-        key: 'request',
-        candidates: [_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.REQUEST_LIST_NAME, "Request List"],
-        requiredColumns: [
-            { name: 'Title' },
-            { name: 'Employee' },
-            { name: 'AssetType' },
-            { name: 'Quantity' },
-            { name: 'ReasonforRequest', aliases: ['Reason'] },
-            { name: _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME },
-            { name: _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.REQUEST_KEY_INTERNAL_NAME },
-            { name: _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.ASSET_STATUS_INTERNAL_NAME }
-        ]
-    },
-    {
-        key: 'returnRequest',
-        candidates: [
-            _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.RETURN_REQUEST_LIST_NAME,
-            "Return Requests List",
-            "ReturnRequestList",
-            "Return Request List",
-            "ReturnRequests",
-            "Return Requests"
-        ],
-        requiredColumns: [
-            { name: 'Title' },
-            { name: 'AssetID' },
-            { name: 'AssetName' },
-            { name: 'SerialNumber' },
-            { name: 'Employee', aliases: ['RequesterName', 'Requester'] },
-            { name: 'ReasonforReturn', aliases: ['ReturnReason'] },
-            { name: 'ProposedCondition' },
-            { name: 'RequestStatus', aliases: ['ReturnStatus', 'Status'] },
-            { name: 'ManagerComments', aliases: ['ManagerComment'] }
-        ]
-    },
-    {
-        key: 'mapping',
-        candidates: [_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.MAPPING_LIST_NAME, "MappingList"],
-        autoCreated: true,
-        requiredColumns: [
-            { name: 'Title' },
-            { name: 'SerialNumber' },
-            { name: 'Employee', aliases: ['Employe', 'EmployeeName'] },
-            { name: 'EmployeeID' },
-            { name: 'AssetName' },
-            { name: 'AssignmentID' }
-        ]
-    },
-    {
-        key: 'eventLog',
-        candidates: [_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService.EVENT_LOG_LIST],
-        requiredColumns: [
-            { name: 'Title' },
-            { name: 'Action' },
-            { name: 'EntityType' },
-            { name: 'EntityId' },
-            { name: 'Details' },
-            { name: 'User' }
-        ]
-    },
-    { key: 'incident', candidates: ['Incident List'], optional: true, requiredColumns: [] },
-    { key: 'employee', candidates: ['EmployeeList'], optional: true, requiredColumns: [] },
-    { key: 'replacement', candidates: ['Asset Replacements'], optional: true, autoCreated: true, requiredColumns: [] }
-];
+
+// Re-exported so existing imports of the registry from this service keep working.
+
 // SharePoint PermissionKind values (1-based bit positions in EffectiveBasePermissions).
 const PERM_VIEW_LIST_ITEMS = 1;
 const PERM_ADD_LIST_ITEMS = 2;
@@ -17522,7 +19176,7 @@ class ListHealthService {
         const siteLists = await sp.web.lists.select("Title").filter("Hidden eq false")();
         const [environment, results] = await Promise.all([
             ListHealthService._getEnvironment(siteLists.length),
-            Promise.all(LIST_DEFINITIONS.map(def => ListHealthService.checkList(def, siteLists)))
+            Promise.all((0,_constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_4__.getListDefinitions)().map(def => ListHealthService.checkList(def, siteLists)))
         ]);
         const report = { checkedAt: new Date().toISOString(), environment, results };
         // eslint-disable-next-line require-atomic-updates
@@ -17633,6 +19287,58 @@ class ListHealthService {
         const words = (s) => s.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 2 && stop.indexOf(w) < 0);
         const titleWords = words(title);
         return candidates.some(c => words(c).some(w => titleWords.indexOf(w) >= 0));
+    }
+}
+
+
+/***/ }),
+
+/***/ 57204:
+/*!**************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/PeopleSearchService.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PeopleSearchService: () => (/* binding */ PeopleSearchService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _pnp_sp_profiles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/profiles */ 39878);
+
+
+/**
+ * Tenant-wide people search (the same source as SharePoint's own people picker),
+ * so new starters can be found before they have ever visited the site.
+ */
+class PeopleSearchService {
+    static async search(query, max = 8) {
+        const text = (query || '').trim();
+        if (text.length < 2)
+            return [];
+        try {
+            const results = await (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().profiles.clientPeoplePickerSearchUser({
+                QueryString: text,
+                MaximumEntitySuggestions: max,
+                AllowEmailAddresses: true,
+                AllowMultipleEntities: false,
+                PrincipalSource: 15, // All sources
+                PrincipalType: 1 // Users only
+            });
+            return results
+                .map(r => ({
+                displayName: r.DisplayText || '',
+                email: (r.EntityData && (r.EntityData.Email || r.EntityData.SIPAddress)) || '',
+                loginName: r.Key || '',
+                jobTitle: r.EntityData ? r.EntityData.Title : undefined
+            }))
+                .filter(p => p.displayName && (p.email || p.loginName));
+        }
+        catch (err) {
+            console.warn("[PeopleSearchService] People search failed:", err);
+            return [];
+        }
     }
 }
 
@@ -17763,6 +19469,12 @@ class RequestApprovalService {
                             "Rejected by manager"
                         : `Approved by ${approverName}`;
             }
+            // SLA: record when the manager decided (column is auto-created; skip if absent).
+            const decisionDateField = fields.find(field => (field.InternalName || "").toString().toLowerCase() ===
+                _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME.toLowerCase());
+            if (decisionDateField) {
+                basePayload[decisionDateField.InternalName] = new Date().toISOString();
+            }
             await list.items
                 .getById(requestId)
                 .update(basePayload);
@@ -17881,14 +19593,21 @@ class RequestCreationService {
         const initialStatus = request.status || "Pending";
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         let requesterId = null;
-        try {
-            const user = await sp.web.ensureUser(request.requesterName);
-            requesterId = user.data
-                ? user.data.Id
-                : user.Id;
-        }
-        catch (e) {
-            console.warn("Could not resolve requester in SharePoint", e);
+        // Resolve the requester: display name first (existing behaviour), then email
+        // (needed when the request is raised on someone's behalf, e.g. an onboarding kit).
+        const requesterCandidates = [request.requesterName, request.requesterEmail]
+            .filter((v, i, all) => !!v && all.indexOf(v) === i);
+        for (const candidate of requesterCandidates) {
+            try {
+                const user = await sp.web.ensureUser(candidate);
+                requesterId = user.data
+                    ? user.data.Id
+                    : user.Id;
+                break;
+            }
+            catch (e) {
+                console.warn(`Could not resolve requester "${candidate}" in SharePoint`, e);
+            }
         }
         /*
          * Build ONE payload from the actual RequestList schema.
@@ -18555,6 +20274,23 @@ class RequestListSchemaService {
                     console.warn("Could not auto-create Priority field. Continuing.", err);
                 }
             }
+            // SLA milestone columns (Date and Time), filled when a manager decides
+            // and when an admin assigns the asset.
+            for (const dateFieldName of [
+                _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME,
+                _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME
+            ]) {
+                const exists = fields.some(field => (field.InternalName || "").toString().toLowerCase() === dateFieldName.toLowerCase());
+                if (!exists) {
+                    try {
+                        // DisplayFormat 1 = DateTime (keep the time, not just the date).
+                        await list.fields.addDateTime(dateFieldName, { DisplayFormat: 1 });
+                    }
+                    catch (err) {
+                        console.warn(`Could not auto-create ${dateFieldName} field. Continuing.`, err);
+                    }
+                }
+            }
             // eslint-disable-next-line require-atomic-updates
             RequestListSchemaService._requestWorkflowFieldsEnsured = true;
         }
@@ -18712,7 +20448,11 @@ class RequestQueryService {
                             : new Date()
                                 .toISOString()
                                 .split("T")[0],
-                    reason: item[reasonKey] || ""
+                    reason: item[reasonKey] || "",
+                    // SLA milestones (undefined for requests decided before the columns existed)
+                    createdAt: item.Created || undefined,
+                    managerDecisionAt: item[_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME] || undefined,
+                    assignedAt: item[_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME] || undefined
                 };
             });
             const itemsToUpdate = items.filter((item) => !item[resolvedKeyName] &&
@@ -18908,6 +20648,7 @@ class ReturnRequestService {
         }
         // Try all known name variants in order of preference
         const namesToTry = [
+            _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.RETURN_REQUEST_LIST_NAME,
             "Asset Return Request List",
             "Return Requests List",
             "ReturnRequestList",
@@ -19623,6 +21364,260 @@ ReturnRequestService._resolvedReturnListName = null;
 
 /***/ }),
 
+/***/ 34378:
+/*!****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/StockThresholdService.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   StockThresholdService: () => (/* binding */ StockThresholdService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
+/* harmony import */ var _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base/ListProvisioningService */ 4262);
+/* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EmailService */ 86407);
+
+
+
+
+
+
+const THRESHOLD_FIELDS = [
+    { name: "MinimumStock", type: "Number" },
+    { name: "LastAlertSent", type: "DateTime" }
+];
+const escapeHtml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/**
+ * Low-stock thresholds and alerts.
+ *
+ * Thresholds live in the "Stock Thresholds" list (Title = asset type, MinimumStock,
+ * LastAlertSent). A type without a row uses the default minimum from the property pane.
+ * The list is created the first time an admin saves thresholds or an alert is sent.
+ */
+class StockThresholdService {
+    static get listTitle() {
+        return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.stockThresholds;
+    }
+    static async getThresholds() {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__.ListProvisioningService.tryGetList(StockThresholdService.listTitle);
+        if (!list)
+            return [];
+        const items = await list.items.select("ID", "Title", "MinimumStock", "LastAlertSent").top(5000)();
+        return items
+            .filter(i => (i.Title || "").trim())
+            .map(i => ({
+            id: i.ID,
+            assetType: (i.Title || "").trim(),
+            minimumStock: i.MinimumStock === null || i.MinimumStock === undefined ? undefined : Number(i.MinimumStock),
+            lastAlertSent: i.LastAlertSent || undefined
+        }));
+    }
+    static async _ensureList() {
+        return _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__.ListProvisioningService.ensureList(StockThresholdService.listTitle, "Minimum available stock per asset type, used for low-stock alerts (managed from the Inventory app).", THRESHOLD_FIELDS);
+    }
+    /**
+     * Saves per-type minimums. `undefined` minimum = use the default (the row is kept so
+     * alert state survives). Rows are matched by asset type, case-insensitively.
+     */
+    static async saveThresholds(rows) {
+        const list = await StockThresholdService._ensureList();
+        const existing = await StockThresholdService.getThresholds();
+        for (const row of rows) {
+            const type = (row.assetType || "").trim();
+            if (!type)
+                continue;
+            const current = existing.find(t => t.assetType.toLowerCase() === type.toLowerCase());
+            const minimum = row.minimumStock === undefined ? null : Math.max(0, Math.floor(row.minimumStock));
+            if (current && current.id) {
+                if ((current.minimumStock ?? null) !== minimum) {
+                    await list.items.getById(current.id).update({ MinimumStock: minimum });
+                }
+            }
+            else if (minimum !== null) {
+                await list.items.add({ Title: type, MinimumStock: minimum });
+            }
+        }
+    }
+    /**
+     * Checks stock against thresholds; emails the admin group once per low-stock episode
+     * (per type) and clears the flag once stock recovers. Safe to call often: concurrent
+     * calls share one run, and nothing is sent when no type newly dropped below its minimum.
+     */
+    static checkAndNotify(items) {
+        if (!StockThresholdService._checkInFlight) {
+            StockThresholdService._checkInFlight = StockThresholdService._check(items)
+                .catch(err => {
+                console.warn("[StockThresholdService] Low-stock check failed:", err);
+                return undefined;
+            })
+                .then(result => {
+                StockThresholdService._checkInFlight = undefined;
+                return result;
+            });
+        }
+        return StockThresholdService._checkInFlight;
+    }
+    static async _check(items) {
+        const config = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)();
+        const thresholds = await StockThresholdService.getThresholds();
+        const levels = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__.evaluateStockLevels)(items, thresholds, config.stock.defaultMinimum);
+        const { toAlert, toReset } = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__.planStockAlerts)(levels);
+        const result = { levels, alerted: [], reset: [] };
+        if (toReset.length > 0) {
+            const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__.ListProvisioningService.tryGetList(StockThresholdService.listTitle);
+            if (list) {
+                for (const level of toReset) {
+                    if (level.threshold && level.threshold.id) {
+                        await list.items.getById(level.threshold.id).update({ LastAlertSent: null });
+                        result.reset.push(level.assetType);
+                    }
+                }
+            }
+        }
+        if (toAlert.length === 0)
+            return result;
+        const recipients = await StockThresholdService._getAdminEmails();
+        if (recipients.length === 0) {
+            console.warn("[StockThresholdService] Low stock detected but the admin group has no members with an email address.");
+            return result;
+        }
+        await _EmailService__WEBPACK_IMPORTED_MODULE_4__.EmailService.sendMail(recipients, StockThresholdService._subject(toAlert), StockThresholdService._body(toAlert));
+        // Record the alert so the same drop is not reported again.
+        const list = await StockThresholdService._ensureList();
+        const now = new Date().toISOString();
+        for (const level of toAlert) {
+            if (level.threshold && level.threshold.id) {
+                await list.items.getById(level.threshold.id).update({ LastAlertSent: now });
+            }
+            else {
+                // Type on the default minimum: add a row (MinimumStock left blank = default) to hold the alert flag.
+                await list.items.add({ Title: level.assetType, LastAlertSent: now });
+            }
+            result.alerted.push(level.assetType);
+        }
+        return result;
+    }
+    static async _getAdminEmails() {
+        try {
+            const users = await (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.siteGroups.getByName((0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().roleGroups.admin).users();
+            return users.map(u => (u.Email || "").trim()).filter(e => e.indexOf("@") > 0);
+        }
+        catch (err) {
+            console.warn("[StockThresholdService] Could not read admin group members:", err);
+            return [];
+        }
+    }
+    static _subject(levels) {
+        return `Low stock: ${levels.map(l => l.assetType).join(", ")}`;
+    }
+    static _body(levels) {
+        const rows = levels
+            .map(l => `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee">${escapeHtml(l.assetType)}</td>` +
+            `<td style="padding:6px 12px;border-bottom:1px solid #eee;text-align:right">${l.available}</td>` +
+            `<td style="padding:6px 12px;border-bottom:1px solid #eee;text-align:right">${l.minimum}</td></tr>`)
+            .join("");
+        const link = typeof window !== "undefined" ? window.location.href.split("#")[0] : "";
+        return `
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:14px;color:#242424">
+        <p>The following asset types have dropped below their minimum available stock:</p>
+        <table style="border-collapse:collapse;margin:8px 0 16px">
+          <thead><tr>
+            <th style="text-align:left;padding:6px 12px;border-bottom:2px solid #ccc">Asset type</th>
+            <th style="text-align:right;padding:6px 12px;border-bottom:2px solid #ccc">Available</th>
+            <th style="text-align:right;padding:6px 12px;border-bottom:2px solid #ccc">Minimum</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <p>You will not be alerted again for these types until stock is back at or above the minimum.</p>
+        ${link ? `<p><a href="${escapeHtml(link)}">Open the Inventory app</a></p>` : ""}
+      </div>`;
+    }
+}
+
+
+/***/ }),
+
+/***/ 4262:
+/*!***********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/base/ListProvisioningService.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ListProvisioningService: () => (/* binding */ ListProvisioningService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pnpjsConfig */ 17694);
+/* harmony import */ var _pnp_sp_views__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/views */ 95250);
+
+
+/**
+ * Creates app-owned lists on first use (the same approach the Mapping List and
+ * Asset Replacements lists already use). Idempotent: existing lists and columns are left alone.
+ */
+class ListProvisioningService {
+    /** The list if it exists, otherwise undefined (never creates). */
+    static async tryGetList(title) {
+        try {
+            const list = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.lists.getByTitle(title);
+            await list.select("Title")();
+            return list;
+        }
+        catch {
+            return undefined;
+        }
+    }
+    /** Returns the list, creating it and any missing columns first. Requires Manage Lists permission. */
+    static async ensureList(title, description, fields) {
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        const key = title.toLowerCase();
+        if (ListProvisioningService._ensured.has(key)) {
+            return sp.web.lists.getByTitle(title);
+        }
+        const result = await sp.web.lists.ensure(title, description, 100);
+        const list = result.list || sp.web.lists.getByTitle(title);
+        const existing = await list.fields.select("InternalName")();
+        const has = (name) => existing.some(f => (f.InternalName || '').toLowerCase() === name.toLowerCase());
+        for (const field of fields) {
+            if (has(field.name))
+                continue;
+            switch (field.type) {
+                case 'Number':
+                    await list.fields.addNumber(field.name);
+                    break;
+                case 'DateTime':
+                    // DisplayFormat 1 = Date and Time
+                    await list.fields.addDateTime(field.name, { DisplayFormat: 1 });
+                    break;
+                case 'Note':
+                    await list.fields.addMultilineText(field.name, { RichText: false, NumberOfLines: 6 });
+                    break;
+                default:
+                    await list.fields.addText(field.name);
+            }
+            // Show the new column in the list's default view so admins can see and edit it.
+            try {
+                await list.defaultView.fields.add(field.name);
+            }
+            catch {
+                // View update is cosmetic; ignore failures.
+            }
+        }
+        ListProvisioningService._ensured.add(key);
+        return list;
+    }
+}
+ListProvisioningService._ensured = new Set();
+
+
+/***/ }),
+
 /***/ 93535:
 /*!*********************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/base/SharePointBaseService.js ***!
@@ -19636,9 +21631,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pnpjsConfig */ 17694);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+
 
 
 class SharePointBaseService {
+    // List titles come from the web part's property pane (see config/AppConfig.ts);
+    // the defaults are the titles the app always used.
+    static get LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.inventory; }
+    static get EVENT_LOG_LIST() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.eventLog; }
+    static get REQUEST_LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.request; }
+    static get RETURN_REQUEST_LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.returnRequest; }
+    static get MAPPING_LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.mapping; }
     static async getSafeListFields(list) {
         try {
             return await list.fields.select("Title", "InternalName", "TypeAsString", "Required", "Choices")();
@@ -20019,15 +22023,391 @@ class SharePointBaseService {
         return !isSystemKey && !isModeration && looksLikeStatus;
     }
 }
-SharePointBaseService.LIST_NAME = "InventoryList";
-SharePointBaseService.EVENT_LOG_LIST = "EventLogList";
-SharePointBaseService.REQUEST_LIST_NAME = "RequestList";
-SharePointBaseService.RETURN_REQUEST_LIST_NAME = "Asset Return Request List";
 SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
 SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
 SharePointBaseService.REQUEST_KEY_INTERNAL_NAME = "RequestKey";
 SharePointBaseService.ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
-SharePointBaseService.MAPPING_LIST_NAME = "Mapping List";
+/** Request list columns that record SLA milestones (auto-created). */
+SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME = "ManagerDecisionDate";
+SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME = "AssetAssignedDate";
+
+
+/***/ }),
+
+/***/ 34927:
+/*!****************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/ChartPlugins.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   barValueLabelsPlugin: () => (/* binding */ barValueLabelsPlugin),
+/* harmony export */   centerTotalPlugin: () => (/* binding */ centerTotalPlugin)
+/* harmony export */ });
+const FONT_FAMILY = "'Segoe UI', -apple-system, sans-serif";
+/** Text colour inherited from the chart's container, so labels follow light/dark theme. */
+const inheritedColor = (chart, fallback) => {
+    try {
+        return window.getComputedStyle(chart.canvas).color || fallback;
+    }
+    catch {
+        return fallback;
+    }
+};
+/** Draws a total in the centre of a doughnut chart. Configure via `options.plugins.centerTotal`. */
+const centerTotalPlugin = {
+    id: 'centerTotal',
+    afterDraw(chart, _args, options) {
+        if (options === undefined || options.value === undefined)
+            return;
+        const { ctx, chartArea } = chart;
+        if (!chartArea)
+            return;
+        const x = (chartArea.left + chartArea.right) / 2;
+        const y = (chartArea.top + chartArea.bottom) / 2;
+        const size = Math.max(16, Math.min(chartArea.width, chartArea.height) / 7);
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = inheritedColor(chart, '#242424');
+        ctx.font = `600 ${size}px ${FONT_FAMILY}`;
+        ctx.fillText(String(options.value), x, y);
+        ctx.restore();
+    }
+};
+/** Writes each bar's value just above it. Enable via `options.plugins.barValueLabels: { enabled: true }`. */
+const barValueLabelsPlugin = {
+    id: 'barValueLabels',
+    afterDatasetsDraw(chart, _args, options) {
+        if (!options || !options.enabled)
+            return;
+        const { ctx } = chart;
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillStyle = inheritedColor(chart, '#616161');
+        ctx.font = `600 11px ${FONT_FAMILY}`;
+        chart.data.datasets.forEach((dataset, di) => {
+            const meta = chart.getDatasetMeta(di);
+            if (meta.hidden)
+                return;
+            meta.data.forEach((bar, i) => {
+                const value = dataset.data[i];
+                if (typeof value !== 'number' || value <= 0)
+                    return;
+                ctx.fillText(String(value), bar.x, bar.y - 4);
+            });
+        });
+        ctx.restore();
+    }
+};
+
+
+/***/ }),
+
+/***/ 46964:
+/*!*****************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/EventLogUtils.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EMPTY_ASSET_TYPE_LOOKUP: () => (/* binding */ EMPTY_ASSET_TYPE_LOOKUP),
+/* harmony export */   MY_ACTIVITY_KEY: () => (/* binding */ MY_ACTIVITY_KEY),
+/* harmony export */   applyClientFilters: () => (/* binding */ applyClientFilters),
+/* harmony export */   buildUserOptions: () => (/* binding */ buildUserOptions),
+/* harmony export */   getPageNumbers: () => (/* binding */ getPageNumbers),
+/* harmony export */   matchesAssetType: () => (/* binding */ matchesAssetType),
+/* harmony export */   matchesUser: () => (/* binding */ matchesUser),
+/* harmony export */   mergeAssetTypes: () => (/* binding */ mergeAssetTypes),
+/* harmony export */   normalizeKey: () => (/* binding */ normalizeKey),
+/* harmony export */   resolveEventAssetType: () => (/* binding */ resolveEventAssetType)
+/* harmony export */ });
+/* harmony import */ var _SharePointItemUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SharePointItemUtils */ 19330);
+
+const EMPTY_ASSET_TYPE_LOOKUP = {
+    byInventoryId: new Map(),
+    byRequestId: new Map(),
+    byAssetName: new Map(),
+    knownTypes: []
+};
+const normalizeKey = (value) => (value || '').trim().toLowerCase();
+/**
+ * Resolves the asset type an event refers to, most reliable source first:
+ * the source item's own AssetType column, then the asset name, then the
+ * name itself when it already is a type (request events store the requested type).
+ */
+const resolveEventAssetType = (log, lookup) => {
+    const entityId = (log.entityId || '').trim();
+    if (entityId) {
+        const byId = log.entityType === 'Request' ? lookup.byRequestId.get(entityId) : lookup.byInventoryId.get(entityId);
+        if (byId)
+            return byId;
+    }
+    const name = normalizeKey(log.assetName);
+    if (name) {
+        const byName = lookup.byAssetName.get(name);
+        if (byName)
+            return byName;
+        const asType = lookup.knownTypes.find(t => normalizeKey(t) === name);
+        if (asType)
+            return asType;
+    }
+    return undefined;
+};
+/** Merges type lists case-insensitively, keeping the first spelling seen, sorted A-Z. */
+const mergeAssetTypes = (...sources) => {
+    const seen = new Map();
+    sources.forEach(source => source.forEach(type => {
+        const key = normalizeKey(type);
+        if (key && !seen.has(key))
+            seen.set(key, type.trim());
+    }));
+    return Array.from(seen.values()).sort((a, b) => a.localeCompare(b));
+};
+const matchesAssetType = (log, selectedType) => {
+    if (!selectedType || selectedType === 'All')
+        return true;
+    const wanted = normalizeKey(selectedType);
+    if (log.assetType) {
+        return normalizeKey(log.assetType) === wanted;
+    }
+    // Type could not be resolved (e.g. the asset was deleted): fall back to the
+    // original text match so such events stay reachable through the filter.
+    return normalizeKey(log.assetName).indexOf(wanted) >= 0 || normalizeKey(log.title).indexOf(wanted) >= 0;
+};
+/** Special User filter key meaning "the signed-in user"; resolved to a name before filtering. */
+const MY_ACTIVITY_KEY = '__me__';
+/**
+ * True when the event's user is `selectedUser`. Multi-person events are stored
+ * as "A, B", so a match on any one part also counts.
+ */
+const matchesUser = (log, selectedUser) => {
+    if (!selectedUser || selectedUser === 'All')
+        return true;
+    const wanted = normalizeKey(selectedUser);
+    const user = normalizeKey(log.user);
+    return user === wanted || user.split(',').some(part => part.trim() === wanted);
+};
+/**
+ * Distinct users with their event counts, sorted by name. `extraNames` (e.g. users seen
+ * in a wider date range) are included with a count of 0 so the list stays stable
+ * while other filters narrow the data. REST reference strings are never offered.
+ */
+const buildUserOptions = (logs, extraNames = []) => {
+    const byKey = new Map();
+    const add = (name, count) => {
+        const trimmed = (name || '').trim();
+        const key = normalizeKey(trimmed);
+        if (!key || (0,_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_0__.looksLikeODataReference)(trimmed))
+            return;
+        const existing = byKey.get(key);
+        if (existing)
+            existing.count += count;
+        else
+            byKey.set(key, { name: trimmed, count });
+    };
+    logs.forEach(log => add(log.user, 1));
+    extraNames.forEach(name => add(name, 0));
+    return Array.from(byKey.values()).sort((a, b) => a.name.localeCompare(b.name));
+};
+const matchesSearch = (log, query) => {
+    const q = normalizeKey(query);
+    if (!q)
+        return true;
+    return [log.title, log.assetName, log.assetType, log.details, log.user, log.action, log.entityType, log.entityId]
+        .some(v => normalizeKey(v).indexOf(q) >= 0);
+};
+const matchesStatus = (log, status) => {
+    if (!status || status === 'All')
+        return true;
+    const s = normalizeKey(status);
+    return [log.details, log.action, log.title].some(v => normalizeKey(v).indexOf(s) >= 0);
+};
+const compareBySortOrder = (sortOrder) => (a, b) => {
+    switch (sortOrder) {
+        case 'NewestFirst': return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+        case 'OldestFirst': return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+        case 'AssetNameAZ': return (a.assetName || '').localeCompare(b.assetName || '');
+        case 'AssetNameZA': return (b.assetName || '').localeCompare(a.assetName || '');
+        case 'UserAZ': return (a.user || '').localeCompare(b.user || '');
+        case 'UserZA': return (b.user || '').localeCompare(a.user || '');
+        default: return 0;
+    }
+};
+/**
+ * Applies the filters that run in the browser (search, asset type, user, status) and sorting.
+ * `filters.user` must already be a name (resolve MY_ACTIVITY_KEY first).
+ */
+const applyClientFilters = (logs, filters) => {
+    const result = logs.filter(log => matchesSearch(log, filters.searchQuery) &&
+        matchesAssetType(log, filters.assetType) &&
+        matchesUser(log, filters.user) &&
+        matchesStatus(log, filters.status));
+    if (filters.sortOrder) {
+        result.sort(compareBySortOrder(filters.sortOrder));
+    }
+    return result;
+};
+/** Page buttons with ellipses, e.g. [1, '...', 4, 5, 6, '...', 13]. */
+const getPageNumbers = (activePage, totalPages, maxVisiblePages = 5) => {
+    if (totalPages <= maxVisiblePages) {
+        return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    const pages = [1];
+    const start = Math.max(2, activePage - 1);
+    const end = Math.min(totalPages - 1, activePage + 1);
+    if (start > 2)
+        pages.push('...');
+    for (let i = start; i <= end; i++)
+        pages.push(i);
+    if (end < totalPages - 1)
+        pages.push('...');
+    pages.push(totalPages);
+    return pages;
+};
+
+
+/***/ }),
+
+/***/ 93962:
+/*!************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/KitUtils.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_KITS: () => (/* binding */ DEFAULT_KITS),
+/* harmony export */   buildOffboardingChecklist: () => (/* binding */ buildOffboardingChecklist),
+/* harmony export */   formatKitItems: () => (/* binding */ formatKitItems),
+/* harmony export */   isHeldBy: () => (/* binding */ isHeldBy),
+/* harmony export */   kitUnitCount: () => (/* binding */ kitUnitCount),
+/* harmony export */   listAssetHolders: () => (/* binding */ listAssetHolders),
+/* harmony export */   parseKitItems: () => (/* binding */ parseKitItems)
+/* harmony export */ });
+/** Used until an admin saves kits to the Asset Kits list. */
+const DEFAULT_KITS = [
+    {
+        name: 'Standard starter',
+        description: 'Laptop with a desk setup for office-based staff.',
+        lines: [
+            { assetType: 'Laptop', quantity: 1 },
+            { assetType: 'Monitor', quantity: 1 },
+            { assetType: 'Keyboard', quantity: 1 },
+            { assetType: 'Mouse', quantity: 1 },
+            { assetType: 'Headset', quantity: 1 }
+        ]
+    },
+    {
+        name: 'Remote starter',
+        description: 'Laptop and headset for remote staff.',
+        lines: [
+            { assetType: 'Laptop', quantity: 1 },
+            { assetType: 'Headset', quantity: 1 }
+        ]
+    }
+];
+/**
+ * Parses the KitItems column: one asset type per line (or separated by ";"),
+ * with an optional quantity written "Monitor x2", "2 x Monitor" or "Monitor, 2".
+ * Repeated types are merged.
+ */
+const parseKitItems = (text) => {
+    const merged = new Map();
+    (text || '')
+        .split(/[\r\n;]+/)
+        .map(part => part.trim())
+        .filter(Boolean)
+        .forEach(part => {
+        let type = part;
+        let quantity = 1;
+        const suffix = /^(.*?)\s*(?:[x×*]|,)\s*(\d+)$/i.exec(part);
+        const prefix = /^(\d+)\s*[x×*]?\s+(.+)$/i.exec(part);
+        if (suffix && suffix[1].trim()) {
+            type = suffix[1].trim();
+            quantity = parseInt(suffix[2], 10);
+        }
+        else if (prefix) {
+            quantity = parseInt(prefix[1], 10);
+            type = prefix[2].trim();
+        }
+        if (!type || !(quantity > 0))
+            return;
+        const key = type.toLowerCase();
+        const existing = merged.get(key);
+        if (existing)
+            existing.quantity += quantity;
+        else
+            merged.set(key, { assetType: type, quantity });
+    });
+    return Array.from(merged.values());
+};
+/** Inverse of parseKitItems: one line per type, "Type x N" when N > 1. */
+const formatKitItems = (lines) => lines.map(l => (l.quantity > 1 ? `${l.assetType} x${l.quantity}` : l.assetType)).join('\n');
+const kitUnitCount = (kit) => kit.lines.reduce((sum, l) => sum + l.quantity, 0);
+const norm = (v) => (v || '').trim().toLowerCase();
+/** True when the item is assigned to this person (matched on email when both are known, else on name). */
+const isHeldBy = (item, name, email) => {
+    if (email && item.assignedToEmail)
+        return norm(item.assignedToEmail) === norm(email);
+    return !!norm(item.assignedTo) && norm(item.assignedTo) === norm(name);
+};
+const isClosedReturn = (r) => r.status === 'Completed' || r.status === 'Returned';
+const isActiveReturn = (r) => !isClosedReturn(r) && r.status !== 'Rejected';
+const sameAsset = (r, assetId, serial) => (!!assetId && norm(r.assetId) === norm(assetId)) || (!!serial && norm(r.serialNumber) === norm(serial));
+/**
+ * Offboarding checklist for one person: every asset they hold now (with any return in
+ * progress) plus assets they have already returned, so progress reads "returned / total".
+ */
+const buildOffboardingChecklist = (items, returns, name, email) => {
+    const held = items.filter(i => isHeldBy(i, name, email));
+    const rows = held.map(item => {
+        const active = returns.find(r => isActiveReturn(r) && sameAsset(r, item.id, item.serialNumber));
+        return {
+            assetId: item.id,
+            assetName: item.assetName || item.title,
+            assetType: item.assetType,
+            serialNumber: item.serialNumber,
+            state: active ? 'returnInProgress' : 'held',
+            returnStatus: active ? active.status : undefined,
+            item
+        };
+    });
+    returns
+        .filter(r => isClosedReturn(r) && norm(r.requesterName) === norm(name))
+        .filter(r => !rows.some(row => sameAsset(r, row.assetId, row.serialNumber)))
+        .forEach(r => rows.push({
+        assetId: r.assetId,
+        assetName: r.assetName,
+        assetType: r.assetType || '',
+        serialNumber: r.serialNumber,
+        state: 'returned',
+        returnStatus: r.status
+    }));
+    return rows;
+};
+/** People who currently hold at least one asset, for the offboarding picker. */
+const listAssetHolders = (items) => {
+    const byKey = new Map();
+    items.forEach(i => {
+        const name = (i.assignedTo || '').trim();
+        if (!name)
+            return;
+        const key = norm(i.assignedToEmail) || norm(name);
+        const existing = byKey.get(key);
+        if (existing)
+            existing.count++;
+        else
+            byKey.set(key, { name, email: i.assignedToEmail || undefined, count: 1 });
+    });
+    return Array.from(byKey.values()).sort((a, b) => a.name.localeCompare(b.name));
+};
 
 
 /***/ }),
@@ -20255,6 +22635,100 @@ function exportDetailedReportToPDF(filteredItems) {
 
 /***/ }),
 
+/***/ 61065:
+/*!*******************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/RequestSlaUtils.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   evaluateRequestSla: () => (/* binding */ evaluateRequestSla),
+/* harmony export */   getSlaStage: () => (/* binding */ getSlaStage),
+/* harmony export */   splitDuration: () => (/* binding */ splitDuration),
+/* harmony export */   summarizeSla: () => (/* binding */ summarizeSla)
+/* harmony export */ });
+const HOUR_MS = 60 * 60 * 1000;
+const toTime = (iso) => {
+    if (!iso)
+        return undefined;
+    const t = new Date(iso).getTime();
+    return isNaN(t) ? undefined : t;
+};
+const hoursBetween = (from, to) => from !== undefined && to !== undefined && to >= from ? (to - from) / HOUR_MS : undefined;
+const getSlaStage = (request) => {
+    // "Asset Assigned" is mapped to status 'Pending' by the query service, so check assetStatus first.
+    if ((request.assetStatus || '').toString().toLowerCase() === 'approved')
+        return 'assigned';
+    const status = (request.status || '').toString().toLowerCase();
+    if (status.indexOf('declin') >= 0 || status.indexOf('reject') >= 0)
+        return 'rejected';
+    if (status.indexOf('approv') >= 0)
+        return 'awaitingAssignment';
+    return 'awaitingApproval';
+};
+const evaluateRequestSla = (request, targets, now) => {
+    const stage = getSlaStage(request);
+    const created = toTime(request.createdAt) ?? toTime(request.requestDate);
+    const decided = toTime(request.managerDecisionAt);
+    const assigned = toTime(request.assignedAt);
+    const result = {
+        request,
+        stage,
+        approvalHours: hoursBetween(created, decided),
+        assignmentHours: hoursBetween(decided, assigned),
+        overdue: false,
+        overdueByHours: 0,
+        estimated: false
+    };
+    let stageStart;
+    let target = 0;
+    if (stage === 'awaitingApproval') {
+        stageStart = created;
+        target = targets.approvalHours;
+    }
+    else if (stage === 'awaitingAssignment') {
+        // Approved before the decision date was recorded: measure from submission (conservative).
+        stageStart = decided ?? created;
+        result.estimated = decided === undefined;
+        target = targets.assignmentHours;
+    }
+    if (stageStart !== undefined) {
+        result.openHours = hoursBetween(stageStart, now);
+        if (target > 0 && result.openHours !== undefined && result.openHours > target) {
+            result.overdue = true;
+            result.overdueByHours = result.openHours - target;
+        }
+    }
+    return result;
+};
+const average = (values) => values.length ? values.reduce((a, b) => a + b, 0) / values.length : undefined;
+const percentWithin = (values, target) => values.length && target > 0 ? Math.round((values.filter(v => v <= target).length / values.length) * 100) : undefined;
+const summarizeSla = (requests, targets, now = Date.now()) => {
+    const items = requests.map(r => evaluateRequestSla(r, targets, now));
+    const approvals = items.map(i => i.approvalHours).filter((h) => h !== undefined);
+    const assignments = items.map(i => i.assignmentHours).filter((h) => h !== undefined);
+    const overdueItems = items.filter(i => i.overdue).sort((a, b) => b.overdueByHours - a.overdueByHours);
+    return {
+        items,
+        averageApprovalHours: average(approvals),
+        averageAssignmentHours: average(assignments),
+        approvalOnTimePercent: percentWithin(approvals, targets.approvalHours),
+        assignmentOnTimePercent: percentWithin(assignments, targets.assignmentHours),
+        overdueApprovals: overdueItems.filter(i => i.stage === 'awaitingApproval').length,
+        overdueAssignments: overdueItems.filter(i => i.stage === 'awaitingAssignment').length,
+        overdueItems
+    };
+};
+/** Compact duration: under 48 hours in hours ("5 h"), otherwise days with one decimal ("3.5 d"). */
+const splitDuration = (hours) => hours < 48
+    ? { value: Math.round(hours), unit: 'h' }
+    : { value: Math.round((hours / 24) * 10) / 10, unit: 'd' };
+
+
+/***/ }),
+
 /***/ 88899:
 /*!**********************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/utils/RequestStatusUtils.js ***!
@@ -20368,6 +22842,82 @@ const RoleUtils = {
 
 /***/ }),
 
+/***/ 19330:
+/*!***********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/SharePointItemUtils.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   findItemKey: () => (/* binding */ findItemKey),
+/* harmony export */   firstPersonName: () => (/* binding */ firstPersonName),
+/* harmony export */   getPersonDisplayName: () => (/* binding */ getPersonDisplayName),
+/* harmony export */   isODataAnnotationKey: () => (/* binding */ isODataAnnotationKey),
+/* harmony export */   looksLikeODataReference: () => (/* binding */ looksLikeODataReference)
+/* harmony export */ });
+// Pure helpers for reading raw SharePoint REST items whose column names are
+// not known up front. No SharePoint or localization imports (unit-testable).
+/**
+ * OData metadata keys that sit alongside real columns, e.g.
+ * "Employee@odata.navigationLinkUrl" (value: "Web/Lists(guid'…')/Items(4)/Employee"),
+ * "odata.type", "odata.etag" or verbose-mode "__metadata".
+ */
+const isODataAnnotationKey = (key) => key.indexOf('@') >= 0 || key.toLowerCase().indexOf('odata.') === 0 || key.indexOf('__') === 0;
+/** True for REST references such as "Web/Lists(guid'…')/Items(4)/Employee" that must never be shown as a name. */
+const looksLikeODataReference = (value) => /lists\(guid'/i.test(value) || /^web\//i.test(value) || /\/_api\//i.test(value);
+const normalizeColumnKey = (key) => key.toLowerCase().replace(/_x0020_/g, '');
+/**
+ * Finds the item key whose name contains `searchStr` (lower-case, "_x0020_" ignored),
+ * preferring keys that do not end in "id" (so "Employee" wins over "EmployeeId").
+ * OData annotation keys are never returned.
+ */
+const findItemKey = (item, searchStr) => {
+    const keys = Object.keys(item || {}).filter(k => !isODataAnnotationKey(k));
+    const nonIdMatch = keys.find(k => {
+        const kl = normalizeColumnKey(k);
+        return kl.indexOf(searchStr) >= 0 && !kl.endsWith('id');
+    });
+    return nonIdMatch || keys.find(k => normalizeColumnKey(k).indexOf(searchStr) >= 0);
+};
+/**
+ * Reduces a Person/Group column value to a display name. Handles plain strings,
+ * expanded user objects ({ Title }), multi-person arrays and verbose
+ * `{ results: [...] }` wrappers. Returns '' for anything that is not a name
+ * (unexpanded `__deferred` links, bare IDs, REST reference URLs).
+ */
+const getPersonDisplayName = (value) => {
+    if (value === undefined || value === null)
+        return '';
+    if (typeof value === 'string') {
+        const trimmed = value.trim();
+        return looksLikeODataReference(trimmed) ? '' : trimmed;
+    }
+    if (Array.isArray(value)) {
+        return value.map(getPersonDisplayName).filter(Boolean).join(', ');
+    }
+    if (typeof value === 'object') {
+        const obj = value;
+        if (Array.isArray(obj.results))
+            return getPersonDisplayName(obj.results);
+        return getPersonDisplayName(obj.Title || obj.Name || obj.DisplayName || obj.EMail || obj.Email);
+    }
+    return '';
+};
+/** First candidate that yields a usable display name, else `fallback`. */
+const firstPersonName = (candidates, fallback) => {
+    for (const candidate of candidates) {
+        const name = getPersonDisplayName(candidate);
+        if (name)
+            return name;
+    }
+    return fallback;
+};
+
+
+/***/ }),
+
 /***/ 19256:
 /*!**************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/utils/StockUtils.js ***!
@@ -20377,8 +22927,16 @@ const RoleUtils = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getAvailableStock: () => (/* binding */ getAvailableStock)
+/* harmony export */   evaluateStockLevels: () => (/* binding */ evaluateStockLevels),
+/* harmony export */   getAvailableStock: () => (/* binding */ getAvailableStock),
+/* harmony export */   isAvailableStatus: () => (/* binding */ isAvailableStatus),
+/* harmony export */   planStockAlerts: () => (/* binding */ planStockAlerts)
 /* harmony export */ });
+/** Statuses that mean an item is in stock and can be assigned. */
+const isAvailableStatus = (status) => {
+    const s = (status || '').toLowerCase().trim();
+    return s === 'in stock' || s === 'instock' || s === 'available' || s === 'yes';
+};
 function getAvailableStock(items = [], request) {
     if (!items || items.length === 0)
         return 0;
@@ -20391,12 +22949,55 @@ function getAvailableStock(items = [], request) {
         const itemTitle = (item.title || item.assetName || item.assetType || '').toLowerCase().trim();
         const itemType = (item.assetType || '').toLowerCase().trim();
         const matchesTitle = itemTitle === reqAssetTitle || itemType === reqAssetTitle;
-        const statusLower = (item.status || '').toLowerCase().trim();
-        const isAvailable = statusLower === 'in stock' || statusLower === 'instock' || statusLower === 'available' || statusLower === 'yes';
-        return matchesTitle && isAvailable;
+        return matchesTitle && isAvailableStatus(item.status);
     });
     return inStockItems.length;
 }
+const typeKey = (type) => (type || '').trim().toLowerCase();
+/**
+ * Stock level per asset type. Covers every type in the inventory plus any type that
+ * only has a threshold row (so a type with zero items still shows as low).
+ */
+const evaluateStockLevels = (items, thresholds, defaultMinimum) => {
+    const levels = new Map();
+    const ensure = (type) => {
+        const key = typeKey(type);
+        let level = levels.get(key);
+        if (!level) {
+            level = { assetType: type.trim(), available: 0, total: 0, minimum: 0, hasCustomMinimum: false, isLow: false };
+            levels.set(key, level);
+        }
+        return level;
+    };
+    items.forEach(item => {
+        if (!typeKey(item.assetType))
+            return;
+        const level = ensure(item.assetType);
+        level.total++;
+        if (isAvailableStatus(item.status))
+            level.available++;
+    });
+    thresholds.forEach(t => {
+        if (typeKey(t.assetType))
+            ensure(t.assetType).threshold = t;
+    });
+    levels.forEach(level => {
+        const customMinimum = level.threshold ? level.threshold.minimumStock : undefined;
+        const custom = customMinimum !== undefined && customMinimum !== null && !isNaN(Number(customMinimum));
+        level.hasCustomMinimum = custom;
+        level.minimum = custom ? Math.max(0, Number(customMinimum)) : Math.max(0, defaultMinimum);
+        level.isLow = level.minimum > 0 && level.available < level.minimum;
+    });
+    return Array.from(levels.values()).sort((a, b) => a.assetType.localeCompare(b.assetType));
+};
+/**
+ * Which types need an alert now (low, not yet alerted this episode) and which alert
+ * flags to clear (stock back at or above the minimum). One email per drop, no repeats.
+ */
+const planStockAlerts = (levels) => ({
+    toAlert: levels.filter(l => l.isLow && !(l.threshold && l.threshold.lastAlertSent)),
+    toReset: levels.filter(l => !l.isLow && !!(l.threshold && l.threshold.lastAlertSent))
+});
 
 
 /***/ }),
@@ -21795,6 +24396,43 @@ var getActiveElement = function (doc) {
     }
     return ae;
 };
+
+
+/***/ }),
+
+/***/ 28377:
+/*!*****************************************************************!*\
+  !*** ./node_modules/@fluentui/dom-utilities/lib/getChildren.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getChildren: () => (/* binding */ getChildren)
+/* harmony export */ });
+/* harmony import */ var _isVirtualElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isVirtualElement */ 26441);
+
+/**
+ * Gets the elements which are child elements of the given element.
+ * If `allowVirtualChildren` is `true`, this method enumerates virtual child elements
+ * after the original children.
+ * @param parent - The element to get the children of.
+ * @param allowVirtualChildren - true if the method should enumerate virtual child elements.
+ */
+function getChildren(parent, allowVirtualChildren) {
+    if (allowVirtualChildren === void 0) { allowVirtualChildren = true; }
+    var children = [];
+    if (parent) {
+        for (var i = 0; i < parent.children.length; i++) {
+            children.push(parent.children.item(i));
+        }
+        if (allowVirtualChildren && (0,_isVirtualElement__WEBPACK_IMPORTED_MODULE_0__.isVirtualElement)(parent)) {
+            children.push.apply(children, parent._virtual.children);
+        }
+    }
+    return children;
+}
 
 
 /***/ }),
@@ -25851,6 +28489,464 @@ var DirectionalHint = {
      */
     rightBottomEdge: 13,
 };
+
+
+/***/ }),
+
+/***/ 82731:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Announced/Announced.base.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AnnouncedBase: () => (/* binding */ AnnouncedBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Utilities */ 32021);
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+/**
+ * {@docCategory Announced}
+ */
+var AnnouncedBase = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(AnnouncedBase, _super);
+    function AnnouncedBase() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    AnnouncedBase.prototype.render = function () {
+        var _a = this.props, message = _a.message, styles = _a.styles, _b = _a.as, Root = _b === void 0 ? 'div' : _b, className = _a.className;
+        var classNames = getClassNames(styles, { className: className });
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ role: "status", className: classNames.root }, (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.getNativeProps)(this.props, _Utilities__WEBPACK_IMPORTED_MODULE_3__.divProperties, ['className'])),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Utilities__WEBPACK_IMPORTED_MODULE_4__.DelayedRender, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.screenReaderText }, message))));
+    };
+    AnnouncedBase.defaultProps = {
+        'aria-live': 'polite',
+    };
+    return AnnouncedBase;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+
+
+/***/ }),
+
+/***/ 97094:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Announced/Announced.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Announced: () => (/* binding */ Announced)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _Announced_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Announced.base */ 82731);
+/* harmony import */ var _Announced_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Announced.styles */ 98432);
+
+
+
+var Announced = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Announced_base__WEBPACK_IMPORTED_MODULE_1__.AnnouncedBase, _Announced_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'Announced' });
+
+
+/***/ }),
+
+/***/ 98432:
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Announced/Announced.styles.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Styling */ 38455);
+
+var getStyles = function (props) {
+    return {
+        root: props.className,
+        screenReaderText: _Styling__WEBPACK_IMPORTED_MODULE_0__.hiddenContentStyle,
+    };
+};
+
+
+/***/ }),
+
+/***/ 40472:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Autofill/Autofill.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Autofill: () => (/* binding */ Autofill)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Utilities */ 32553);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities */ 79524);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Utilities */ 52477);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Utilities */ 23211);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Utilities */ 80481);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react-window-provider */ 26130);
+
+
+
+
+var SELECTION_FORWARD = 'forward';
+var SELECTION_BACKWARD = 'backward';
+/**
+ * {@docCategory Autofill}
+ */
+var Autofill = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(Autofill, _super);
+    function Autofill(props) {
+        var _this = _super.call(this, props) || this;
+        _this._inputElement = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this._autoFillEnabled = true;
+        // Composition events are used when the character/text requires several keystrokes to be completed.
+        // Some examples of this are mobile text input and languages like Japanese or Arabic.
+        // Find out more at https://developer.mozilla.org/en-US/docs/Web/Events/compositionstart
+        _this._onCompositionStart = function (ev) {
+            _this.setState({ isComposing: true });
+            _this._autoFillEnabled = false;
+        };
+        // Composition events are used when the character/text requires several keystrokes to be completed.
+        // Some examples of this are mobile text input and languages like Japanese or Arabic.
+        // Find out more at https://developer.mozilla.org/en-US/docs/Web/Events/compositionstart
+        _this._onCompositionUpdate = function () {
+            if ((0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.isIE11)()) {
+                _this._updateValue(_this._getCurrentInputValue(), true);
+            }
+        };
+        // Composition events are used when the character/text requires several keystrokes to be completed.
+        // Some examples of this are mobile text input and languages like Japanese or Arabic.
+        // Find out more at https://developer.mozilla.org/en-US/docs/Web/Events/compositionstart
+        _this._onCompositionEnd = function (ev) {
+            var inputValue = _this._getCurrentInputValue();
+            _this._tryEnableAutofill(inputValue, _this.value, false, true);
+            _this.setState({ isComposing: false });
+            // Due to timing, this needs to be async, otherwise no text will be selected.
+            _this._async.setTimeout(function () {
+                // it's technically possible that the value of isComposing is reset during this timeout,
+                // so explicitly trigger this with composing=true here, since it is supposed to be the
+                // update for composition end
+                _this._updateValue(_this._getCurrentInputValue(), false);
+            }, 0);
+        };
+        _this._onClick = function () {
+            if (_this.value && _this.value !== '' && _this._autoFillEnabled) {
+                _this._autoFillEnabled = false;
+            }
+        };
+        _this._onKeyDown = function (ev) {
+            if (_this.props.onKeyDown) {
+                _this.props.onKeyDown(ev);
+            }
+            // If the event is actively being composed, then don't alert autofill.
+            // Right now typing does not have isComposing, once that has been fixed any should be removed.
+            if (!ev.nativeEvent.isComposing) {
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
+                switch (ev.which) {
+                    case _Utilities__WEBPACK_IMPORTED_MODULE_3__.KeyCodes.backspace:
+                        _this._autoFillEnabled = false;
+                        break;
+                    case _Utilities__WEBPACK_IMPORTED_MODULE_3__.KeyCodes.left:
+                    case _Utilities__WEBPACK_IMPORTED_MODULE_3__.KeyCodes.right:
+                        if (_this._autoFillEnabled) {
+                            _this.setState(function (prev) { return ({
+                                inputValue: _this.props.suggestedDisplayValue || prev.inputValue,
+                            }); });
+                            _this._autoFillEnabled = false;
+                        }
+                        break;
+                    default:
+                        if (!_this._autoFillEnabled) {
+                            // eslint-disable-next-line @typescript-eslint/no-deprecated
+                            if (_this.props.enableAutofillOnKeyPress.indexOf(ev.which) !== -1) {
+                                _this._autoFillEnabled = true;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        _this._onInputChanged = function (ev) {
+            var value = _this._getCurrentInputValue(ev);
+            if (!_this.state.isComposing) {
+                _this._tryEnableAutofill(value, _this.value, ev.nativeEvent.isComposing);
+            }
+            // If it is not IE11 and currently composing, update the value
+            if (!((0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.isIE11)() && _this.state.isComposing)) {
+                var nativeEventComposing = ev.nativeEvent.isComposing;
+                var isComposing = nativeEventComposing === undefined ? _this.state.isComposing : nativeEventComposing;
+                _this._updateValue(value, isComposing);
+            }
+        };
+        _this._onChanged = function () {
+            // Swallow this event, we don't care about it
+            // We must provide it because React PropTypes marks it as required, but onInput serves the correct purpose
+            return;
+        };
+        /**
+         * Updates the current input value as well as getting a new display value.
+         * @param newValue - The new value from the input
+         */
+        _this._updateValue = function (newValue, composing) {
+            // Only proceed if the value is nonempty and is different from the old value
+            // This is to work around the fact that, in IE 11, inputs with a placeholder fire an onInput event on focus
+            if (!newValue && newValue === _this.value) {
+                return;
+            }
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            var _a = _this.props, onInputChange = _a.onInputChange, onInputValueChange = _a.onInputValueChange;
+            if (onInputChange) {
+                newValue = (onInputChange === null || onInputChange === void 0 ? void 0 : onInputChange(newValue, composing)) || '';
+            }
+            _this.setState({ inputValue: newValue }, function () { return onInputValueChange === null || onInputValueChange === void 0 ? void 0 : onInputValueChange(newValue, composing); });
+        };
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_4__.initializeComponentRef)(_this);
+        _this._async = new _Utilities__WEBPACK_IMPORTED_MODULE_5__.Async(_this);
+        _this.state = {
+            inputValue: props.defaultVisibleValue || '',
+            isComposing: false,
+        };
+        return _this;
+    }
+    Autofill.getDerivedStateFromProps = function (props, state) {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        if (props.updateValueInWillReceiveProps) {
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            var updatedInputValue = props.updateValueInWillReceiveProps();
+            // Don't update if we have a null value or the value isn't changing
+            // the value should still update if an empty string is passed in
+            if (updatedInputValue !== null && updatedInputValue !== state.inputValue && !state.isComposing) {
+                return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, state), { inputValue: updatedInputValue });
+            }
+        }
+        return null;
+    };
+    Object.defineProperty(Autofill.prototype, "cursorLocation", {
+        get: function () {
+            if (this._inputElement.current) {
+                var inputElement = this._inputElement.current;
+                if (inputElement.selectionDirection !== SELECTION_FORWARD) {
+                    return inputElement.selectionEnd;
+                }
+                else {
+                    return inputElement.selectionStart;
+                }
+            }
+            else {
+                return -1;
+            }
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Autofill.prototype, "isValueSelected", {
+        get: function () {
+            return Boolean(this.inputElement && this.inputElement.selectionStart !== this.inputElement.selectionEnd);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Autofill.prototype, "value", {
+        get: function () {
+            return this._getControlledValue() || this.state.inputValue || '';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Autofill.prototype, "selectionStart", {
+        get: function () {
+            return this._inputElement.current ? this._inputElement.current.selectionStart : -1;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Autofill.prototype, "selectionEnd", {
+        get: function () {
+            return this._inputElement.current ? this._inputElement.current.selectionEnd : -1;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Autofill.prototype, "inputElement", {
+        get: function () {
+            return this._inputElement.current;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Autofill.prototype.componentDidUpdate = function (_, _1, cursor) {
+        var _a;
+        var _b = this.props, suggestedDisplayValue = _b.suggestedDisplayValue, shouldSelectFullInputValueInComponentDidUpdate = _b.shouldSelectFullInputValueInComponentDidUpdate, preventValueSelection = _b.preventValueSelection;
+        var differenceIndex = 0;
+        if (preventValueSelection) {
+            return;
+        }
+        var document = ((_a = this.context) === null || _a === void 0 ? void 0 : _a.window.document) || (0,_Utilities__WEBPACK_IMPORTED_MODULE_6__.getDocument)(this._inputElement.current);
+        var isFocused = this._inputElement.current && this._inputElement.current === (document === null || document === void 0 ? void 0 : document.activeElement);
+        if (isFocused &&
+            this._autoFillEnabled &&
+            this.value &&
+            suggestedDisplayValue &&
+            _doesTextStartWith(suggestedDisplayValue, this.value)) {
+            var shouldSelectFullRange = false;
+            if (shouldSelectFullInputValueInComponentDidUpdate) {
+                shouldSelectFullRange = shouldSelectFullInputValueInComponentDidUpdate();
+            }
+            if (shouldSelectFullRange) {
+                this._inputElement.current.setSelectionRange(0, suggestedDisplayValue.length, SELECTION_BACKWARD);
+            }
+            else {
+                while (differenceIndex < this.value.length &&
+                    this.value[differenceIndex].toLocaleLowerCase() === suggestedDisplayValue[differenceIndex].toLocaleLowerCase()) {
+                    differenceIndex++;
+                }
+                if (differenceIndex > 0) {
+                    this._inputElement.current.setSelectionRange(differenceIndex, suggestedDisplayValue.length, SELECTION_BACKWARD);
+                }
+            }
+        }
+        else if (this._inputElement.current) {
+            if (cursor !== null && !this._autoFillEnabled && !this.state.isComposing) {
+                this._inputElement.current.setSelectionRange(cursor.start, cursor.end, cursor.dir);
+            }
+        }
+    };
+    Autofill.prototype.componentWillUnmount = function () {
+        this._async.dispose();
+    };
+    Autofill.prototype.render = function () {
+        var nativeProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_7__.getNativeProps)(this.props, _Utilities__WEBPACK_IMPORTED_MODULE_7__.inputProperties);
+        var style = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, this.props.style), { fontFamily: 'inherit' });
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ autoCapitalize: "off", autoComplete: "off", "aria-autocomplete": 'both' }, nativeProps, { style: style, ref: this._inputElement, value: this._getDisplayValue(), onCompositionStart: this._onCompositionStart, onCompositionUpdate: this._onCompositionUpdate, onCompositionEnd: this._onCompositionEnd, 
+            // TODO (Fabric 8?) - switch to calling only onChange. See notes in TextField._onInputChange.
+            onChange: this._onChanged, onInput: this._onInputChanged, onKeyDown: this._onKeyDown, onClick: this.props.onClick ? this.props.onClick : this._onClick, "data-lpignore": true })));
+    };
+    Autofill.prototype.focus = function () {
+        this._inputElement.current && this._inputElement.current.focus();
+    };
+    Autofill.prototype.clear = function () {
+        this._autoFillEnabled = true;
+        this._updateValue('', false);
+        this._inputElement.current && this._inputElement.current.setSelectionRange(0, 0);
+    };
+    Autofill.prototype.getSnapshotBeforeUpdate = function () {
+        var _a, _b;
+        var inel = this._inputElement.current;
+        if (inel && inel.selectionStart !== this.value.length) {
+            return {
+                start: (_a = inel.selectionStart) !== null && _a !== void 0 ? _a : inel.value.length,
+                end: (_b = inel.selectionEnd) !== null && _b !== void 0 ? _b : inel.value.length,
+                dir: inel.selectionDirection || 'backward' || 0,
+            };
+        }
+        return null;
+    };
+    Autofill.prototype._getCurrentInputValue = function (ev) {
+        if (ev && ev.target && ev.target.value) {
+            return ev.target.value;
+        }
+        else if (this.inputElement && this.inputElement.value) {
+            return this.inputElement.value;
+        }
+        else {
+            return '';
+        }
+    };
+    /**
+     * Attempts to enable autofill. Whether or not autofill is enabled depends on the input value,
+     * whether or not any text is selected, and only if the new input value is longer than the old input value.
+     * Autofill should never be set to true if the value is composing. Once compositionEnd is called, then
+     * it should be completed.
+     * See https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent for more information on composition.
+     * @param newValue - new input value
+     * @param oldValue - old input value
+     * @param isComposing - if true then the text is actively being composed and it has not completed.
+     * @param isComposed - if the text is a composed text value.
+     */
+    Autofill.prototype._tryEnableAutofill = function (newValue, oldValue, isComposing, isComposed) {
+        if (!isComposing &&
+            newValue &&
+            this._inputElement.current &&
+            this._inputElement.current.selectionStart === newValue.length &&
+            !this._autoFillEnabled &&
+            (newValue.length > oldValue.length || isComposed)) {
+            this._autoFillEnabled = true;
+        }
+    };
+    Autofill.prototype._getDisplayValue = function () {
+        if (this._autoFillEnabled) {
+            return _getDisplayValue(this.value, this.props.suggestedDisplayValue);
+        }
+        return this.value;
+    };
+    Autofill.prototype._getControlledValue = function () {
+        var value = this.props.value;
+        if (value === undefined || typeof value === 'string') {
+            return value;
+        }
+        // eslint-disable-next-line no-console
+        console.warn("props.value of Autofill should be a string, but it is ".concat(value, " with type of ").concat(typeof value));
+        return value.toString();
+    };
+    Autofill.defaultProps = {
+        enableAutofillOnKeyPress: [_Utilities__WEBPACK_IMPORTED_MODULE_3__.KeyCodes.down, _Utilities__WEBPACK_IMPORTED_MODULE_3__.KeyCodes.up],
+    };
+    // need to check WindowContext to get the provided document
+    Autofill.contextType = _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_8__.WindowContext;
+    return Autofill;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+/**
+ * Returns a string that should be used as the display value.
+ * It evaluates this based on whether or not the suggested value starts with the input value
+ * and whether or not autofill is enabled.
+ * @param inputValue - the value that the input currently has.
+ * @param suggestedDisplayValue - the possible full value
+ */
+function _getDisplayValue(inputValue, suggestedDisplayValue) {
+    var displayValue = inputValue;
+    if (suggestedDisplayValue && inputValue && _doesTextStartWith(suggestedDisplayValue, displayValue)) {
+        displayValue = suggestedDisplayValue;
+    }
+    return displayValue;
+}
+function _doesTextStartWith(text, startWith) {
+    if (!text || !startWith) {
+        return false;
+    }
+    if (true) {
+        for (var _i = 0, _a = [text, startWith]; _i < _a.length; _i++) {
+            var val = _a[_i];
+            if (typeof val !== 'string') {
+                throw new Error("".concat(Autofill.name
+                // eslint-disable-next-line @fluentui/max-len
+                , " received non-string value \"").concat(val, "\" of type ").concat(typeof val, " from either input's value or suggestedDisplayValue"));
+            }
+        }
+    }
+    return text.toLocaleLowerCase().indexOf(startWith.toLocaleLowerCase()) === 0;
+}
 
 
 /***/ }),
@@ -31395,6 +34491,2449 @@ var getStyles = function (props) {
         ],
     };
 };
+
+
+/***/ }),
+
+/***/ 53270:
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ComboBox/ComboBox.classNames.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getClassNames: () => (/* binding */ getClassNames),
+/* harmony export */   getComboBoxOptionClassNames: () => (/* binding */ getComboBoxOptionClassNames)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 15659);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Styling */ 38455);
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function (styles, className, isOpen, disabled, required, focused, allowFreeForm, hasErrorMessage) {
+    // const mergeStyles = mergeStylesShadow(styles.__shadowConfig__);
+    return {
+        container: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-container', className, styles.container),
+        label: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, styles.label, disabled && styles.labelDisabled),
+        root: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox', hasErrorMessage ? styles.rootError : isOpen && 'is-open', required && 'is-required', styles.root, !allowFreeForm && styles.rootDisallowFreeForm, hasErrorMessage && !focused ? styles.rootError : !disabled && focused && styles.rootFocused, !disabled && {
+            selectors: {
+                ':hover': hasErrorMessage ? styles.rootError : !isOpen && !focused && styles.rootHovered,
+                ':active': hasErrorMessage ? styles.rootError : styles.rootPressed,
+                ':focus': hasErrorMessage ? styles.rootError : styles.rootFocused,
+            },
+        }, disabled && ['is-disabled', styles.rootDisabled]),
+        input: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-Input', styles.input, disabled && styles.inputDisabled),
+        errorMessage: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, styles.errorMessage),
+        callout: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-callout', styles.callout),
+        optionsContainerWrapper: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-optionsContainerWrapper', styles.optionsContainerWrapper),
+        optionsContainer: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-optionsContainer', styles.optionsContainer),
+        header: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-header', styles.header),
+        divider: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-divider', styles.divider),
+        screenReaderText: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, styles.screenReaderText),
+    };
+});
+var getComboBoxOptionClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function (styles) {
+    return {
+        optionText: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-optionText', styles.optionText),
+        root: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, 'ms-ComboBox-option', styles.root, {
+            selectors: {
+                ':hover': styles.rootHovered,
+                ':focus': styles.rootFocused,
+                ':active': styles.rootPressed,
+            },
+        }),
+        optionTextWrapper: (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.mergeStyles)(styles.__shadowConfig__, styles.optionTextWrapper),
+    };
+});
+
+
+/***/ }),
+
+/***/ 73898:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ComboBox/ComboBox.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ComboBox: () => (/* binding */ ComboBox)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Autofill__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Autofill */ 40472);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Utilities */ 76924);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities */ 34751);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Utilities */ 53703);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Utilities */ 55486);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Utilities */ 26463);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../Utilities */ 38972);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../Utilities */ 79524);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../Utilities */ 86859);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../Utilities */ 47459);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../Utilities */ 52477);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../Utilities */ 23211);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../Utilities */ 91424);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../Utilities */ 65285);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../Utilities */ 88370);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../Utilities */ 5004);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../Utilities */ 77158);
+/* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Callout */ 26650);
+/* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Callout */ 19861);
+/* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../Checkbox */ 48650);
+/* harmony import */ var _ComboBox_styles__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./ComboBox.styles */ 34604);
+/* harmony import */ var _ComboBox_classNames__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./ComboBox.classNames */ 53270);
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Label */ 23166);
+/* harmony import */ var _SelectableOption__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../SelectableOption */ 60099);
+/* harmony import */ var _SelectableOption__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../SelectableOption */ 62552);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Button */ 44533);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../Button */ 68293);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react-hooks */ 10544);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/utilities */ 28377);
+/* harmony import */ var _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react-window-provider */ 26130);
+/* harmony import */ var _utilities_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../utilities/dom */ 4707);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var SearchDirection;
+(function (SearchDirection) {
+    SearchDirection[SearchDirection["backward"] = -1] = "backward";
+    SearchDirection[SearchDirection["none"] = 0] = "none";
+    SearchDirection[SearchDirection["forward"] = 1] = "forward";
+})(SearchDirection || (SearchDirection = {}));
+var HoverStatus;
+(function (HoverStatus) {
+    /** Used when the user was hovering and has since moused out of the menu items */
+    HoverStatus[HoverStatus["clearAll"] = -2] = "clearAll";
+    /** Default "normal" state, when no hover has happened or a hover is in progress */
+    HoverStatus[HoverStatus["default"] = -1] = "default";
+})(HoverStatus || (HoverStatus = {}));
+var ScrollIdleDelay = 250; /* ms */
+var TouchIdleDelay = 500; /* ms */
+/**
+ * This is used to clear any pending autocomplete text (used when autocomplete is true and
+ * allowFreeform is false)
+ */
+var ReadOnlyPendingAutoCompleteTimeout = 1000; /* ms */
+/**
+ * Internal component that is used to wrap all ComboBox options.
+ * This is used to customize when we want to re-render components,
+ * so we don't re-render every option every time render is executed.
+ */
+var ComboBoxOptionWrapper = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
+    var render = _a.render;
+    return render();
+}, function (_a, _b) {
+    var oldRender = _a.render, oldProps = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__rest)(_a, ["render"]);
+    var newRender = _b.render, newProps = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__rest)(_b, ["render"]);
+    // The render function will always be different, so we ignore that prop
+    return (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.shallowCompare)(oldProps, newProps);
+});
+var COMPONENT_NAME = 'ComboBox';
+var DEFAULT_PROPS = {
+    options: [],
+    allowFreeform: false,
+    allowParentArrowNavigation: false,
+    autoComplete: 'on',
+    buttonIconProps: { iconName: 'ChevronDown' },
+};
+function useOptionsState(_a) {
+    var options = _a.options, defaultSelectedKey = _a.defaultSelectedKey, selectedKey = _a.selectedKey;
+    /** The currently selected indices */
+    var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(function () {
+        return getSelectedIndices(options, buildDefaultSelectedKeys(defaultSelectedKey, selectedKey));
+    }), selectedIndices = _b[0], setSelectedIndices = _b[1];
+    /** The options currently available for the callout */
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(options), currentOptions = _c[0], setCurrentOptions = _c[1];
+    /** This value is used for the autocomplete hint value */
+    var _d = react__WEBPACK_IMPORTED_MODULE_0__.useState(), suggestedDisplayValue = _d[0], setSuggestedDisplayValue = _d[1];
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (selectedKey !== undefined) {
+            var selectedKeys = buildSelectedKeys(selectedKey);
+            var indices = getSelectedIndices(options, selectedKeys);
+            setSelectedIndices(indices);
+        }
+        setCurrentOptions(options);
+    }, [options, selectedKey]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (selectedKey === null) {
+            setSuggestedDisplayValue(undefined);
+        }
+    }, [selectedKey]);
+    return [
+        selectedIndices,
+        setSelectedIndices,
+        currentOptions,
+        setCurrentOptions,
+        suggestedDisplayValue,
+        setSuggestedDisplayValue,
+    ];
+}
+var ComboBox = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (propsWithoutDefaults, forwardedRef) {
+    var _a = (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.getPropsWithDefaults)(DEFAULT_PROPS, propsWithoutDefaults), ref = _a.ref, props = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__rest)(_a, ["ref"]);
+    var rootRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var mergedRootRef = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__.useMergedRefs)(rootRef, forwardedRef);
+    var _b = useOptionsState(props), selectedIndices = _b[0], setSelectedIndices = _b[1], currentOptions = _b[2], setCurrentOptions = _b[3], suggestedDisplayValue = _b[4], setSuggestedDisplayValue = _b[5];
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(ComboBoxInternal, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, props, { hoisted: {
+            mergedRootRef: mergedRootRef,
+            rootRef: rootRef,
+            selectedIndices: selectedIndices,
+            setSelectedIndices: setSelectedIndices,
+            currentOptions: currentOptions,
+            setCurrentOptions: setCurrentOptions,
+            suggestedDisplayValue: suggestedDisplayValue,
+            setSuggestedDisplayValue: setSuggestedDisplayValue,
+        } })));
+});
+ComboBox.displayName = COMPONENT_NAME;
+/**
+ * Depth-first search to find the first descendant element where the match function returns true.
+ * @param element - element to start searching at
+ * @param match - the function that determines if the element is a match
+ * @returns the matched element or null no match was found
+ */
+function findFirstDescendant(element, match) {
+    var children = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_5__.getChildren)(element);
+    // For loop is used because forEach cannot be stopped.
+    for (var index = 0; index < children.length; index++) {
+        var child = children[index];
+        if (match(child)) {
+            return child;
+        }
+        var candidate = findFirstDescendant(child, match);
+        if (candidate) {
+            return candidate;
+        }
+    }
+    return null;
+}
+var ComboBoxInternal = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(ComboBoxInternal, _super);
+    function ComboBoxInternal(props) {
+        var _this = _super.call(this, props) || this;
+        /** The input aspect of the combo box */
+        _this._autofill = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        /** The wrapping div of the input and button */
+        _this._comboBoxWrapper = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        /** The callout element */
+        _this._comboBoxMenu = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        /** The menu item element that is currently selected */
+        _this._selectedElement = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        // props to prevent dismiss on scroll/resize immediately after opening
+        _this._overrideScrollDismiss = false;
+        /**
+         * {@inheritdoc}
+         */
+        _this.focus = function (shouldOpenOnFocus, useFocusAsync) {
+            if (_this.props.disabled) {
+                return;
+            }
+            if (_this._autofill.current) {
+                if (useFocusAsync) {
+                    (0,_Utilities__WEBPACK_IMPORTED_MODULE_6__.focusAsync)(_this._autofill.current);
+                }
+                else {
+                    _this._autofill.current.focus();
+                }
+                if (shouldOpenOnFocus) {
+                    _this.setState({
+                        isOpen: true,
+                    });
+                }
+            }
+            // Programmatically setting focus means that there is nothing else that needs to be done
+            // Focus is now contained
+            if (!_this._hasFocus()) {
+                _this.setState({ focusState: 'focused' });
+            }
+        };
+        /**
+         * Close menu callout if it is open
+         */
+        _this.dismissMenu = function () {
+            var isOpen = _this.state.isOpen;
+            isOpen && _this.setState({ isOpen: false });
+        };
+        /**
+         * componentWillReceiveProps handler for the auto fill component
+         * Checks/updates the input value to set, if needed
+         * @param defaultVisibleValue - the defaultVisibleValue that got passed
+         *  in to the auto fill's componentWillReceiveProps
+         * @returns - the updated value to set, if needed
+         */
+        _this._onUpdateValueInAutofillWillReceiveProps = function () {
+            var comboBox = _this._autofill.current;
+            if (!comboBox) {
+                return null;
+            }
+            if (comboBox.value === null || comboBox.value === undefined) {
+                return null;
+            }
+            return normalizeToString(_this._currentVisibleValue);
+        };
+        _this._renderComboBoxWrapper = function (multiselectAccessibleText, errorMessageId) {
+            var _a = _this.props, label = _a.label, disabled = _a.disabled, ariaLabel = _a.ariaLabel, _b = _a.ariaDescribedBy, ariaDescribedBy = _b === void 0 ? _this.props['aria-describedby'] : _b, required = _a.required, errorMessage = _a.errorMessage, buttonIconProps = _a.buttonIconProps, isButtonAriaHidden = _a.isButtonAriaHidden, title = _a.title, placeholderProp = _a.placeholder, tabIndex = _a.tabIndex, autofill = _a.autofill, iconButtonProps = _a.iconButtonProps, suggestedDisplayValue = _a.hoisted.suggestedDisplayValue;
+            var _c = _this.state, ariaActiveDescendantValue = _c.ariaActiveDescendantValue, isOpen = _c.isOpen;
+            // If the combo box has focus, is multiselect, and has a display string, then use that placeholder
+            // so that the selected items don't appear to vanish. This is not ideal but it's the only reasonable way
+            // to correct the behavior where the input is cleared so the user can type. If a full refactor is done, then this
+            // should be removed and the multiselect combo box should behave like a picker.
+            var placeholder = _this._hasFocus() && _this.props.multiSelect && multiselectAccessibleText
+                ? multiselectAccessibleText
+                : placeholderProp;
+            var labelledBy = [_this.props['aria-labelledby'], label && _this._id + '-label'].join(' ').trim();
+            var labelProps = {
+                'aria-labelledby': labelledBy ? labelledBy : undefined,
+                'aria-label': ariaLabel && !label ? ariaLabel : undefined,
+            };
+            var hasErrorMessage = errorMessage && errorMessage.length > 0 ? true : false;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { "data-ktp-target": true, ref: _this._comboBoxWrapper, id: _this._id + 'wrapper', className: _this._classNames.root, "aria-owns": isOpen ? _this._id + '-list' : undefined },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Autofill__WEBPACK_IMPORTED_MODULE_7__.Autofill, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ "data-ktp-execute-target": true, "data-is-interactable": !disabled, componentRef: _this._autofill, id: _this._id + '-input', className: _this._classNames.input, type: "text", onFocus: _this._onFocus, onBlur: _this._onBlur, onKeyDown: _this._onInputKeyDown, onKeyUp: _this._onInputKeyUp, onClick: _this._onAutofillClick, onTouchStart: _this._onTouchStart, onInputValueChange: _this._onInputChange, "aria-expanded": isOpen, "aria-autocomplete": _this._getAriaAutoCompleteValue(), role: "combobox", readOnly: disabled }, labelProps, { "aria-describedby": errorMessage !== undefined ? (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.mergeAriaAttributeValues)(ariaDescribedBy, errorMessageId) : ariaDescribedBy, "aria-activedescendant": ariaActiveDescendantValue, "aria-required": required, "aria-disabled": disabled, "aria-invalid": hasErrorMessage, "aria-controls": isOpen ? _this._id + '-list' : undefined, spellCheck: false, defaultVisibleValue: _this._currentVisibleValue, suggestedDisplayValue: suggestedDisplayValue, 
+                    // eslint-disable-next-line @typescript-eslint/no-deprecated
+                    updateValueInWillReceiveProps: _this._onUpdateValueInAutofillWillReceiveProps, shouldSelectFullInputValueInComponentDidUpdate: _this._onShouldSelectFullInputValueInAutofillComponentDidUpdate, title: title, preventValueSelection: !_this._hasFocus(), placeholder: placeholder, tabIndex: disabled ? -1 : tabIndex }, autofill)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_9__.IconButton, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ className: 'ms-ComboBox-CaretDown-button', styles: _this._getCaretButtonStyles(), role: isButtonAriaHidden ? 'presentation' : undefined, "aria-hidden": isButtonAriaHidden }, (!isButtonAriaHidden ? labelProps : undefined), { "data-is-focusable": false, tabIndex: -1, onClick: _this._onComboBoxClick, onBlur: _this._onBlur, iconProps: buttonIconProps, disabled: disabled, checked: isOpen }, iconButtonProps))));
+        };
+        /**
+         * componentDidUpdate handler for the auto fill component
+         *
+         * @param defaultVisibleValue - the current defaultVisibleValue in the auto fill's componentDidUpdate
+         * @param suggestedDisplayValue - the current suggestedDisplayValue in the auto fill's componentDidUpdate
+         * @returns - should the full value of the input be selected?
+         * True if the defaultVisibleValue equals the suggestedDisplayValue, false otherwise
+         */
+        _this._onShouldSelectFullInputValueInAutofillComponentDidUpdate = function () {
+            return _this._currentVisibleValue === _this.props.hoisted.suggestedDisplayValue;
+        };
+        /**
+         * Get the correct value to pass to the input
+         * to show to the user based off of the current props and state
+         * @returns the value to pass to the input
+         */
+        _this._getVisibleValue = function () {
+            var _a = _this.props, text = _a.text, allowFreeform = _a.allowFreeform, allowFreeInput = _a.allowFreeInput, autoComplete = _a.autoComplete, _b = _a.hoisted, suggestedDisplayValue = _b.suggestedDisplayValue, selectedIndices = _b.selectedIndices, currentOptions = _b.currentOptions;
+            var _c = _this.state, currentPendingValueValidIndex = _c.currentPendingValueValidIndex, currentPendingValue = _c.currentPendingValue, isOpen = _c.isOpen;
+            var currentPendingIndexValid = indexWithinBounds(currentOptions, currentPendingValueValidIndex);
+            // If the user passed is a value prop, use that
+            // unless we are open and have a valid current pending index
+            if (!(isOpen && currentPendingIndexValid) &&
+                (text || text === '') &&
+                (currentPendingValue === null || currentPendingValue === undefined)) {
+                return text;
+            }
+            if (_this.props.multiSelect) {
+                // Multi-select
+                if (_this._hasFocus()) {
+                    var index = -1;
+                    if (autoComplete === 'on' && currentPendingIndexValid) {
+                        index = currentPendingValueValidIndex;
+                    }
+                    return _this._getPendingString(currentPendingValue, currentOptions, index);
+                }
+                else {
+                    return _this._getMultiselectDisplayString(selectedIndices, currentOptions, suggestedDisplayValue);
+                }
+            }
+            else {
+                // Single-select
+                var index = _this._getFirstSelectedIndex();
+                if (allowFreeform || allowFreeInput) {
+                    // If we are allowing freeform/free input and autocomplete is also true
+                    // and we've got a pending value that matches an option, remember
+                    // the matched option's index
+                    if (autoComplete === 'on' && currentPendingIndexValid) {
+                        index = currentPendingValueValidIndex;
+                    }
+                    // Since we are allowing freeform, if there is currently a pending value, use that
+                    // otherwise use the index determined above (falling back to '' if we did not get a valid index)
+                    return _this._getPendingString(currentPendingValue, currentOptions, index);
+                }
+                else {
+                    // If we are not allowing freeform and have a valid index that matches the pending value,
+                    // we know we will need some version of the pending value
+                    if (currentPendingIndexValid && autoComplete === 'on') {
+                        // If autoComplete is on, return the raw pending value, otherwise remember
+                        // the matched option's index
+                        index = currentPendingValueValidIndex;
+                        return normalizeToString(currentPendingValue);
+                    }
+                    else if (!_this.state.isOpen && currentPendingValue) {
+                        return indexWithinBounds(currentOptions, index)
+                            ? currentPendingValue
+                            : normalizeToString(suggestedDisplayValue);
+                    }
+                    else {
+                        return indexWithinBounds(currentOptions, index)
+                            ? getPreviewText(currentOptions[index])
+                            : normalizeToString(suggestedDisplayValue);
+                    }
+                }
+            }
+        };
+        /**
+         * Handler for typing changes on the input
+         * @param updatedValue - the newly changed value
+         */
+        _this._onInputChange = function (updatedValue) {
+            if (_this.props.disabled) {
+                _this._handleInputWhenDisabled(null /* event */);
+                return;
+            }
+            if (_this.props.onInputValueChange) {
+                _this.props.onInputValueChange(updatedValue);
+            }
+            _this.props.allowFreeform || _this.props.allowFreeInput
+                ? _this._processInputChangeWithFreeform(updatedValue)
+                : _this._processInputChangeWithoutFreeform(updatedValue);
+        };
+        /**
+         * Focus (and select) the content of the input
+         * and set the focused state
+         */
+        _this._onFocus = function () {
+            var _a, _b;
+            (_b = (_a = _this._autofill.current) === null || _a === void 0 ? void 0 : _a.inputElement) === null || _b === void 0 ? void 0 : _b.select();
+            if (!_this._hasFocus()) {
+                _this.setState({ focusState: 'focusing' });
+            }
+        };
+        /**
+         * Callback issued when the options should be resolved, if they have been updated or
+         * if they need to be passed in the first time. This only does work if an onResolveOptions
+         * callback was passed in
+         */
+        _this._onResolveOptions = function () {
+            if (_this.props.onResolveOptions) {
+                // get the options
+                var newOptions_1 = _this.props.onResolveOptions((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__spreadArray)([], _this.props.hoisted.currentOptions, true));
+                // Check to see if the returned value is an array, if it is update the state
+                // If the returned value is not an array then check to see if it's a promise or PromiseLike.
+                // If it is then resolve it asynchronously.
+                if (Array.isArray(newOptions_1)) {
+                    _this.props.hoisted.setCurrentOptions(newOptions_1);
+                }
+                else if (newOptions_1 && newOptions_1.then) {
+                    // Ensure that the promise will only use the callback if it was the most recent one
+                    // and update the state when the promise returns
+                    _this._currentPromise = newOptions_1;
+                    newOptions_1.then(function (newOptionsFromPromise) {
+                        if (newOptions_1 === _this._currentPromise) {
+                            _this.props.hoisted.setCurrentOptions(newOptionsFromPromise);
+                        }
+                    });
+                }
+            }
+        };
+        /**
+         * OnBlur handler. Set the focused state to false
+         * and submit any pending value
+         */
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        _this._onBlur = function (event) {
+            var _a, _b;
+            var doc = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_10__.getDocumentEx)(_this.context);
+            // Do nothing if the blur is coming from something
+            // inside the comboBox root or the comboBox menu since
+            // it we are not really blurring from the whole comboBox
+            var relatedTarget = event.relatedTarget;
+            if (event.relatedTarget === null) {
+                // In IE11, due to lack of support, event.relatedTarget is always
+                // null making every onBlur call to be "outside" of the ComboBox
+                // even when it's not. Using document.activeElement is another way
+                // for us to be able to get what the relatedTarget without relying
+                // on the event
+                relatedTarget = doc === null || doc === void 0 ? void 0 : doc.activeElement;
+            }
+            if (relatedTarget) {
+                var isBlurFromComboBoxTitle = (_a = _this.props.hoisted.rootRef.current) === null || _a === void 0 ? void 0 : _a.contains(relatedTarget);
+                var isBlurFromComboBoxMenu = (_b = _this._comboBoxMenu.current) === null || _b === void 0 ? void 0 : _b.contains(relatedTarget);
+                var isBlurFromComboBoxMenuAncestor = _this._comboBoxMenu.current &&
+                    (0,_Utilities__WEBPACK_IMPORTED_MODULE_11__.findElementRecursive)(_this._comboBoxMenu.current, function (element) { return element === relatedTarget; }, doc);
+                if (isBlurFromComboBoxTitle || isBlurFromComboBoxMenu || isBlurFromComboBoxMenuAncestor) {
+                    if (isBlurFromComboBoxMenuAncestor &&
+                        _this._hasFocus() &&
+                        (!_this.props.multiSelect || _this.props.allowFreeform)) {
+                        _this._submitPendingValue(event);
+                    }
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return;
+                }
+            }
+            if (_this._hasFocus()) {
+                _this.setState({ focusState: 'none' });
+                if (!_this.props.multiSelect || _this.props.allowFreeform) {
+                    _this._submitPendingValue(event);
+                }
+            }
+        };
+        // Render Callout container and pass in list
+        _this._onRenderContainer = function (props, defaultRender) {
+            var onRenderList = props.onRenderList, calloutProps = props.calloutProps, dropdownWidth = props.dropdownWidth, dropdownMaxWidth = props.dropdownMaxWidth, _a = props.onRenderUpperContent, onRenderUpperContent = _a === void 0 ? _this._onRenderUpperContent : _a, _b = props.onRenderLowerContent, onRenderLowerContent = _b === void 0 ? _this._onRenderLowerContent : _b, useComboBoxAsMenuWidth = props.useComboBoxAsMenuWidth, persistMenu = props.persistMenu, _c = props.shouldRestoreFocus, shouldRestoreFocus = _c === void 0 ? true : _c;
+            var isOpen = _this.state.isOpen;
+            var id = _this._id;
+            var comboBoxMenuWidth = useComboBoxAsMenuWidth && _this._comboBoxWrapper.current
+                ? _this._comboBoxWrapper.current.clientWidth + 2
+                : undefined;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Callout__WEBPACK_IMPORTED_MODULE_12__.Callout, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ isBeakVisible: false, gapSpace: 0, doNotLayer: false, directionalHint: _Callout__WEBPACK_IMPORTED_MODULE_13__.DirectionalHint.bottomLeftEdge, directionalHintFixed: false }, calloutProps, { onLayerMounted: _this._onLayerMounted, className: (0,_Utilities__WEBPACK_IMPORTED_MODULE_14__.css)(_this._classNames.callout, calloutProps === null || calloutProps === void 0 ? void 0 : calloutProps.className), target: _this._comboBoxWrapper.current, onDismiss: _this._onDismiss, onMouseDown: _this._onCalloutMouseDown, onScroll: _this._onScroll, setInitialFocus: false, calloutWidth: useComboBoxAsMenuWidth && _this._comboBoxWrapper.current
+                    ? comboBoxMenuWidth && comboBoxMenuWidth
+                    : dropdownWidth, calloutMaxWidth: dropdownMaxWidth ? dropdownMaxWidth : comboBoxMenuWidth, hidden: persistMenu ? !isOpen : undefined, 
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
+                shouldRestoreFocus: shouldRestoreFocus, 
+                // eslint-disable-next-line react/jsx-no-bind
+                preventDismissOnEvent: function (ev) { return _this._preventDismissOnScrollOrResize(ev); } }),
+                onRenderUpperContent(_this.props, _this._onRenderUpperContent),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _this._classNames.optionsContainerWrapper, ref: _this._comboBoxMenu }, onRenderList === null || onRenderList === void 0 ? void 0 : onRenderList((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, props), { id: id }), _this._onRenderList)),
+                onRenderLowerContent(_this.props, _this._onRenderLowerContent)));
+        };
+        _this._onLayerMounted = function () {
+            _this._onCalloutLayerMounted();
+            // need to call this again here to get the correct scroll parent dimensions
+            // when the callout is first opened
+            _this._async.setTimeout(function () {
+                _this._scrollIntoView();
+            }, 0);
+            if (_this.props.calloutProps && _this.props.calloutProps.onLayerMounted) {
+                _this.props.calloutProps.onLayerMounted();
+            }
+        };
+        _this._onRenderLabel = function (onRenderLabelProps) {
+            var _a = onRenderLabelProps.props, label = _a.label, disabled = _a.disabled, required = _a.required;
+            if (label) {
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Label__WEBPACK_IMPORTED_MODULE_15__.Label, { id: _this._id + '-label', disabled: disabled, required: required, className: _this._classNames.label },
+                    label,
+                    onRenderLabelProps.multiselectAccessibleText && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _this._classNames.screenReaderText }, onRenderLabelProps.multiselectAccessibleText))));
+            }
+            return null;
+        };
+        // Render List of items
+        _this._onRenderList = function (props) {
+            var _a = props.onRenderItem, onRenderItem = _a === void 0 ? _this._onRenderItem : _a, label = props.label, ariaLabel = props.ariaLabel, multiSelect = props.multiSelect;
+            var queue = { items: [] };
+            var renderedList = [];
+            var emptyQueue = function () {
+                var newGroup = queue.id
+                    ? [
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { role: "group", key: queue.id, "aria-labelledby": queue.id }, queue.items),
+                    ]
+                    : queue.items;
+                renderedList = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__spreadArray)([], renderedList, true), newGroup, true);
+                // Flush items and id
+                queue = { items: [] };
+            };
+            var placeRenderedOptionIntoQueue = function (item, index) {
+                /*
+                  Case Header
+                    empty queue if it's not already empty
+                    ensure unique ID for header and set queue ID
+                    push header into queue
+                  Case Divider
+                    push divider into queue if not first item
+                    empty queue if not already empty
+                  Default
+                    push item into queue
+                */
+                switch (item.itemType) {
+                    case _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Header:
+                        queue.items.length > 0 && emptyQueue();
+                        var id_1 = _this._id + item.key;
+                        queue.items.push(onRenderItem((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ id: id_1 }, item), { index: index }), _this._onRenderItem));
+                        queue.id = id_1;
+                        break;
+                    case _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Divider:
+                        index > 0 && queue.items.push(onRenderItem((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index }), _this._onRenderItem));
+                        queue.items.length > 0 && emptyQueue();
+                        break;
+                    default:
+                        queue.items.push(onRenderItem((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index }), _this._onRenderItem));
+                }
+            };
+            // Place options into the queue. Queue will be emptied anytime a Header or Divider is encountered
+            props.options.forEach(function (item, index) {
+                placeRenderedOptionIntoQueue(item, index);
+            });
+            // Push remaining items into all renderedList
+            queue.items.length > 0 && emptyQueue();
+            var id = _this._id;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: id + '-list', className: _this._classNames.optionsContainer, "aria-labelledby": label && id + '-label', "aria-label": ariaLabel && !label ? ariaLabel : undefined, "aria-multiselectable": multiSelect ? 'true' : undefined, role: "listbox" }, renderedList));
+        };
+        // Render items
+        _this._onRenderItem = function (item) {
+            switch (item.itemType) {
+                case _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Divider:
+                    return _this._renderSeparator(item);
+                case _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Header:
+                    return _this._renderHeader(item);
+                default:
+                    return _this._renderOption(item);
+            }
+        };
+        // Default _onRenderLowerContent function returns nothing
+        _this._onRenderLowerContent = function () {
+            return null;
+        };
+        // Default _onRenderUpperContent function returns nothing
+        _this._onRenderUpperContent = function () {
+            return null;
+        };
+        _this._renderOption = function (item) {
+            var _a;
+            var _b = _this.props.onRenderOption, onRenderOption = _b === void 0 ? _this._onRenderOptionContent : _b;
+            var id = (_a = item.id) !== null && _a !== void 0 ? _a : _this._id + '-list' + item.index;
+            var isSelected = _this._isOptionSelected(item.index);
+            var isChecked = _this._isOptionChecked(item.index);
+            var isIndeterminate = _this._isOptionIndeterminate(item.index);
+            var optionStyles = _this._getCurrentOptionStyles(item);
+            var optionClassNames = (0,_ComboBox_classNames__WEBPACK_IMPORTED_MODULE_17__.getComboBoxOptionClassNames)(optionStyles);
+            var title = item.title;
+            var getOptionComponent = function () {
+                return !_this.props.multiSelect ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_18__.CommandButton, { id: id, key: item.key, "data-index": item.index, styles: optionStyles, checked: isSelected, className: 'ms-ComboBox-option', onClick: _this._onItemClick(item), 
+                    // eslint-disable-next-line react/jsx-no-bind
+                    onMouseEnter: _this._onOptionMouseEnter.bind(_this, item.index), 
+                    // eslint-disable-next-line react/jsx-no-bind
+                    onMouseMove: _this._onOptionMouseMove.bind(_this, item.index), onMouseLeave: _this._onOptionMouseLeave, role: "option", "aria-selected": isSelected ? 'true' : 'false', ariaLabel: item.ariaLabel, disabled: item.disabled, title: title }, react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: optionClassNames.optionTextWrapper, ref: isSelected ? _this._selectedElement : undefined }, onRenderOption(item, _this._onRenderOptionContent)))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_19__.Checkbox, { id: id, ariaLabel: item.ariaLabel, ariaLabelledBy: item.ariaLabel ? undefined : id + '-label', key: item.key, styles: optionStyles, className: 'ms-ComboBox-option', onChange: _this._onItemClick(item), label: item.text, checked: isChecked, indeterminate: isIndeterminate, title: title, disabled: item.disabled, 
+                    // eslint-disable-next-line react/jsx-no-bind
+                    onRenderLabel: _this._renderCheckboxLabel.bind(_this, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { id: id + '-label' })), inputProps: (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ 
+                        // aria-selected should only be applied to checked items, not hovered items
+                        'aria-selected': isChecked ? 'true' : 'false', role: 'option' }, {
+                        'data-index': item.index,
+                        'data-is-focusable': true,
+                    }) }));
+            };
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(ComboBoxOptionWrapper, { key: item.key, index: item.index, disabled: item.disabled, isSelected: isSelected, isChecked: isChecked, isIndeterminate: isIndeterminate, text: item.text, 
+                // eslint-disable-next-line react/jsx-no-bind
+                render: getOptionComponent, data: item.data }));
+        };
+        /**
+         * Mouse clicks to headers, dividers and scrollbar should not make input lose focus
+         */
+        _this._onCalloutMouseDown = function (ev) {
+            ev.preventDefault();
+        };
+        /**
+         * Scroll handler for the callout to make sure the mouse events
+         * for updating focus are not interacting during scroll
+         */
+        _this._onScroll = function () {
+            var _a;
+            if (!_this._isScrollIdle && _this._scrollIdleTimeoutId !== undefined) {
+                _this._async.clearTimeout(_this._scrollIdleTimeoutId);
+                _this._scrollIdleTimeoutId = undefined;
+            }
+            else {
+                _this._isScrollIdle = false;
+            }
+            if ((_a = _this.props.calloutProps) === null || _a === void 0 ? void 0 : _a.onScroll) {
+                _this.props.calloutProps.onScroll();
+            }
+            _this._scrollIdleTimeoutId = _this._async.setTimeout(function () {
+                _this._isScrollIdle = true;
+            }, ScrollIdleDelay);
+        };
+        _this._onRenderOptionContent = function (item) {
+            var optionClassNames = (0,_ComboBox_classNames__WEBPACK_IMPORTED_MODULE_17__.getComboBoxOptionClassNames)(_this._getCurrentOptionStyles(item));
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: optionClassNames.optionText }, item.text);
+        };
+        /*
+         * Render content of a multiselect item label.
+         * Text within the label is aria-hidden, to prevent duplicate input/label exposure
+         */
+        _this._onRenderMultiselectOptionContent = function (item) {
+            var optionClassNames = (0,_ComboBox_classNames__WEBPACK_IMPORTED_MODULE_17__.getComboBoxOptionClassNames)(_this._getCurrentOptionStyles(item));
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { id: item.id, "aria-hidden": "true", className: optionClassNames.optionText }, item.text));
+        };
+        /**
+         * Handles dismissing (cancelling) the menu
+         */
+        _this._onDismiss = function () {
+            var onMenuDismiss = _this.props.onMenuDismiss;
+            if (onMenuDismiss) {
+                onMenuDismiss();
+            }
+            // In persistMode we need to simulate callout layer mount
+            // since that only happens once. We do it on dismiss since
+            // it works either way.
+            if (_this.props.persistMenu) {
+                _this._onCalloutLayerMounted();
+            }
+            // close the menu
+            _this._setOpenStateAndFocusOnClose(false /* isOpen */, false /* focusInputAfterClose */);
+            // reset the selected index
+            // to the last value state
+            _this._resetSelectedIndex();
+        };
+        _this._onAfterClearPendingInfo = function () {
+            _this._processingClearPendingInfo = false;
+        };
+        /**
+         * Handle keydown on the input
+         * @param ev - The keyboard event that was fired
+         */
+        _this._onInputKeyDown = function (ev) {
+            var _a = _this.props, disabled = _a.disabled, allowFreeform = _a.allowFreeform, allowFreeInput = _a.allowFreeInput, allowParentArrowNavigation = _a.allowParentArrowNavigation, autoComplete = _a.autoComplete, currentOptions = _a.hoisted.currentOptions;
+            var _b = _this.state, isOpen = _b.isOpen, currentPendingValueValidIndexOnHover = _b.currentPendingValueValidIndexOnHover;
+            // Take note if we are processing an alt (option) or meta (command) keydown.
+            // See comment in _onInputKeyUp for reasoning.
+            _this._lastKeyDownWasAltOrMeta = isAltOrMeta(ev);
+            if (disabled) {
+                _this._handleInputWhenDisabled(ev);
+                return;
+            }
+            var index = _this._getPendingSelectedIndex(false /* includeCurrentPendingValue */);
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            switch (ev.which) {
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.enter:
+                    if (_this._autofill.current && _this._autofill.current.inputElement) {
+                        _this._autofill.current.inputElement.select();
+                    }
+                    _this._submitPendingValue(ev);
+                    if (_this.props.multiSelect && isOpen) {
+                        _this.setState({
+                            currentPendingValueValidIndex: index,
+                        });
+                    }
+                    else {
+                        // On enter submit the pending value
+                        if (isOpen ||
+                            ((!allowFreeform ||
+                                _this.state.currentPendingValue === undefined ||
+                                _this.state.currentPendingValue === null ||
+                                _this.state.currentPendingValue.length <= 0) &&
+                                _this.state.currentPendingValueValidIndex < 0)) {
+                            // if we are open or
+                            // if we are not allowing freeform or
+                            // our we have no pending value
+                            // and no valid pending index
+                            // flip the open state
+                            _this.setState({
+                                isOpen: !isOpen,
+                            });
+                        }
+                    }
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.tab:
+                    // On enter submit the pending value
+                    if (!_this.props.multiSelect) {
+                        _this._submitPendingValue(ev);
+                    }
+                    // If we are not allowing freeform
+                    // or the combo box is open, flip the open state
+                    if (isOpen) {
+                        _this._setOpenStateAndFocusOnClose(!isOpen, false /* focusInputAfterClose */);
+                    }
+                    // Allow TAB to propagate
+                    return;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.escape:
+                    // reset the selected index
+                    _this._resetSelectedIndex();
+                    // Close the menu if opened
+                    if (isOpen) {
+                        _this.setState({
+                            isOpen: false,
+                        });
+                    }
+                    else {
+                        return;
+                    }
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.up:
+                    // if we are in clearAll state (e.g. the user as hovering
+                    // and has since mousedOut of the menu items),
+                    // go to the last index
+                    if (currentPendingValueValidIndexOnHover === HoverStatus.clearAll) {
+                        index = _this.props.hoisted.currentOptions.length;
+                    }
+                    if (ev.altKey || ev.metaKey) {
+                        // Close the menu if it is open and break so
+                        // that the event get stopPropagation and prevent default.
+                        // Otherwise, we need to let the event continue to propagate
+                        if (isOpen) {
+                            _this._setOpenStateAndFocusOnClose(!isOpen, true /* focusInputAfterClose */);
+                            break;
+                        }
+                        return;
+                    }
+                    // do not scroll page
+                    ev.preventDefault();
+                    // Go to the previous option
+                    _this._setPendingInfoFromIndexAndDirection(index, SearchDirection.backward);
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.down:
+                    // Expand the combo box on ALT + DownArrow
+                    if (ev.altKey || ev.metaKey) {
+                        _this._setOpenStateAndFocusOnClose(true /* isOpen */, true /* focusInputAfterClose */);
+                    }
+                    else {
+                        // if we are in clearAll state (e.g. the user as hovering
+                        // and has since mousedOut of the menu items),
+                        // go to the first index
+                        if (currentPendingValueValidIndexOnHover === HoverStatus.clearAll) {
+                            index = -1;
+                        }
+                        // do not scroll page
+                        ev.preventDefault();
+                        // Got to the next option
+                        _this._setPendingInfoFromIndexAndDirection(index, SearchDirection.forward);
+                    }
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.home:
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.end:
+                    if (allowFreeform || allowFreeInput) {
+                        return;
+                    }
+                    // Set the initial values to respond to HOME
+                    // which goes to the first selectable option
+                    index = -1;
+                    var directionToSearch = SearchDirection.forward;
+                    // If end, update the values to respond to END
+                    // which goes to the last selectable option
+                    // eslint-disable-next-line @typescript-eslint/no-deprecated
+                    if (ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.end) {
+                        index = currentOptions.length;
+                        directionToSearch = SearchDirection.backward;
+                    }
+                    _this._setPendingInfoFromIndexAndDirection(index, directionToSearch);
+                    break;
+                /* eslint-disable no-fallthrough */
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.space:
+                    // event handled in _onComboBoxKeyUp
+                    if (!allowFreeform && !allowFreeInput && autoComplete === 'off') {
+                        break;
+                    }
+                default:
+                    /* eslint-enable no-fallthrough */
+                    // are we processing a function key? if so bail out
+                    // eslint-disable-next-line @typescript-eslint/no-deprecated
+                    if (ev.which >= 112 /* F1 */ && ev.which <= 123 /* F12 */) {
+                        return;
+                    }
+                    // If we get here and we got either and ALT key
+                    // or meta key, let the event propagate
+                    // eslint-disable-next-line @typescript-eslint/no-deprecated
+                    if (ev.keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.alt || ev.key === 'Meta' /* && isOpen */) {
+                        return;
+                    }
+                    // eslint-disable-next-line @typescript-eslint/no-deprecated
+                    if (allowParentArrowNavigation && (ev.keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.left || ev.keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.right)) {
+                        return;
+                    }
+                    // If we are not allowing freeform or free input and
+                    // allowing autoComplete, handle the input here
+                    if (!allowFreeform && !allowFreeInput && autoComplete === 'on') {
+                        _this._onInputChange(ev.key);
+                        break;
+                    }
+                    // allow the key to propagate by default
+                    return;
+            }
+            ev.stopPropagation();
+            ev.preventDefault();
+        };
+        /**
+         * Handle keyup on the input
+         * @param ev - the keyboard event that was fired
+         */
+        _this._onInputKeyUp = function (ev) {
+            var _a = _this.props, disabled = _a.disabled, allowFreeform = _a.allowFreeform, allowFreeInput = _a.allowFreeInput, autoComplete = _a.autoComplete;
+            var isOpen = _this.state.isOpen;
+            // We close the menu on key up only if ALL of the following are true:
+            // - Most recent key down was alt or meta (command)
+            // - The alt/meta key down was NOT followed by some other key (such as down/up arrow to
+            //   expand/collapse the menu)
+            // - We're not on a Mac (or iOS)
+            // This is because on Windows, pressing alt moves focus to the application menu bar or similar,
+            // closing any open context menus. There is not a similar behavior on Macs.
+            var keyPressIsAltOrMetaAlone = _this._lastKeyDownWasAltOrMeta && isAltOrMeta(ev);
+            _this._lastKeyDownWasAltOrMeta = false;
+            var shouldHandleKey = keyPressIsAltOrMetaAlone && !((0,_Utilities__WEBPACK_IMPORTED_MODULE_21__.isMac)() || (0,_Utilities__WEBPACK_IMPORTED_MODULE_22__.isIOS)());
+            if (disabled) {
+                _this._handleInputWhenDisabled(ev);
+                return;
+            }
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            switch (ev.which) {
+                case _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.space:
+                    // If we are not allowing freeform or free input, and autoComplete is off
+                    // make space expand/collapse the combo box
+                    // and allow the event to propagate
+                    if (!allowFreeform && !allowFreeInput && autoComplete === 'off') {
+                        _this._setOpenStateAndFocusOnClose(!isOpen, !!isOpen);
+                    }
+                    return;
+                default:
+                    if (shouldHandleKey && isOpen) {
+                        _this._setOpenStateAndFocusOnClose(!isOpen, true /* focusInputAfterClose */);
+                    }
+                    else {
+                        if (_this.state.focusState === 'focusing' && _this.props.openOnKeyboardFocus) {
+                            _this.setState({ isOpen: true });
+                        }
+                        if (_this.state.focusState !== 'focused') {
+                            _this.setState({ focusState: 'focused' });
+                        }
+                    }
+                    return;
+            }
+        };
+        _this._onOptionMouseLeave = function () {
+            if (_this._shouldIgnoreMouseEvent()) {
+                return;
+            }
+            // Ignore the event in persistMenu mode if the callout has
+            // closed. This is to avoid clearing the visuals on item click.
+            if (_this.props.persistMenu && !_this.state.isOpen) {
+                return;
+            }
+            _this.setState({
+                currentPendingValueValidIndexOnHover: HoverStatus.clearAll,
+            });
+        };
+        /**
+         * Click handler for the button of the combo box and the input when not allowing freeform.
+         * This toggles the expand/collapse state of the combo box (if enabled).
+         */
+        _this._onComboBoxClick = function () {
+            var disabled = _this.props.disabled;
+            var isOpen = _this.state.isOpen;
+            if (!disabled) {
+                _this._setOpenStateAndFocusOnClose(!isOpen, false /* focusInputAfterClose */);
+                _this.setState({ focusState: 'focused' });
+            }
+        };
+        /**
+         * Click handler for the autofill.
+         */
+        _this._onAutofillClick = function () {
+            var _a = _this.props, disabled = _a.disabled, allowFreeform = _a.allowFreeform;
+            if (allowFreeform && !disabled) {
+                _this.focus(_this.state.isOpen || _this._processingTouch);
+            }
+            else {
+                _this._onComboBoxClick();
+            }
+        };
+        _this._onTouchStart = function () {
+            if (_this._comboBoxWrapper.current && !('onpointerdown' in _this._comboBoxWrapper)) {
+                _this._handleTouchAndPointerEvent();
+            }
+        };
+        _this._onPointerDown = function (ev) {
+            if (ev.pointerType === 'touch') {
+                _this._handleTouchAndPointerEvent();
+                ev.preventDefault();
+                ev.stopImmediatePropagation();
+            }
+        };
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_23__.initializeComponentRef)(_this);
+        _this._async = new _Utilities__WEBPACK_IMPORTED_MODULE_24__.Async(_this);
+        _this._events = new _Utilities__WEBPACK_IMPORTED_MODULE_25__.EventGroup(_this);
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_26__.warnMutuallyExclusive)(COMPONENT_NAME, props, {
+            defaultSelectedKey: 'selectedKey',
+            text: 'defaultSelectedKey',
+            selectedKey: 'value',
+            dropdownWidth: 'useComboBoxAsMenuWidth',
+            ariaLabel: 'label',
+        });
+        _this._id = props.id || (0,_Utilities__WEBPACK_IMPORTED_MODULE_27__.getId)('ComboBox');
+        _this._isScrollIdle = true;
+        _this._processingTouch = false;
+        _this._gotMouseMove = false;
+        _this._processingClearPendingInfo = false;
+        _this.state = {
+            isOpen: false,
+            focusState: 'none',
+            currentPendingValueValidIndex: -1,
+            currentPendingValue: undefined,
+            currentPendingValueValidIndexOnHover: HoverStatus.default,
+        };
+        return _this;
+    }
+    Object.defineProperty(ComboBoxInternal.prototype, "selectedOptions", {
+        /**
+         * All selected options
+         */
+        get: function () {
+            var _a = this.props.hoisted, currentOptions = _a.currentOptions, selectedIndices = _a.selectedIndices;
+            return (0,_SelectableOption__WEBPACK_IMPORTED_MODULE_28__.getAllSelectedOptions)(currentOptions, selectedIndices);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ComboBoxInternal.prototype.componentDidMount = function () {
+        if (this._comboBoxWrapper.current && !this.props.disabled) {
+            // hook up resolving the options if needed on focus
+            this._events.on(this._comboBoxWrapper.current, 'focus', this._onResolveOptions, true);
+            if ('onpointerdown' in this._comboBoxWrapper.current) {
+                // For ComboBoxes, touching anywhere in the combo box should drop the dropdown, including the input element.
+                // This gives more hit target space for touch environments. We're setting the onpointerdown here, because React
+                // does not support Pointer events yet.
+                this._events.on(this._comboBoxWrapper.current, 'pointerdown', this._onPointerDown, true);
+            }
+        }
+    };
+    ComboBoxInternal.prototype.componentDidUpdate = function (prevProps, prevState) {
+        var _this = this;
+        var _a, _b, _c;
+        var _d = this.props, allowFreeform = _d.allowFreeform, allowFreeInput = _d.allowFreeInput, text = _d.text, onMenuOpen = _d.onMenuOpen, onMenuDismissed = _d.onMenuDismissed, _e = _d.hoisted, currentOptions = _e.currentOptions, selectedIndices = _e.selectedIndices;
+        var _f = this.state, currentPendingValue = _f.currentPendingValue, currentPendingValueValidIndex = _f.currentPendingValueValidIndex, isOpen = _f.isOpen;
+        // If we are newly open or are open and the pending valid index changed,
+        // make sure the currently selected/pending option is scrolled into view
+        if (isOpen && (!prevState.isOpen || prevState.currentPendingValueValidIndex !== currentPendingValueValidIndex)) {
+            // Need this timeout so that the selectedElement ref is correctly updated
+            this._async.setTimeout(function () { return _this._scrollIntoView(); }, 0);
+        }
+        var doc = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_10__.getDocumentEx)(this.context);
+        // if an action is taken that put focus in the ComboBox
+        // and If we are open or we are just closed, shouldFocusAfterClose is set,
+        // but we are not the activeElement set focus on the input
+        if (this._hasFocus() &&
+            (isOpen ||
+                (prevState.isOpen &&
+                    !isOpen &&
+                    this._focusInputAfterClose &&
+                    this._autofill.current &&
+                    (doc === null || doc === void 0 ? void 0 : doc.activeElement) !== this._autofill.current.inputElement))) {
+            this.focus(undefined /*shouldOpenOnFocus*/, true /*useFocusAsync*/);
+        }
+        // If we should focusAfterClose AND
+        //   just opened/closed the menu OR
+        //   are focused AND
+        //     updated the selectedIndex with the menu closed OR
+        //     are not allowing freeform or free input OR
+        //     the value changed
+        // we need to set selection
+        if (this._focusInputAfterClose &&
+            ((prevState.isOpen && !isOpen) ||
+                (this._hasFocus() &&
+                    ((!isOpen &&
+                        !this.props.multiSelect &&
+                        prevProps.hoisted.selectedIndices &&
+                        selectedIndices &&
+                        prevProps.hoisted.selectedIndices[0] !== selectedIndices[0]) ||
+                        (!allowFreeform && !allowFreeInput) ||
+                        text !== prevProps.text)))) {
+            this._onFocus();
+        }
+        this._notifyPendingValueChanged(prevState);
+        if (isOpen && !prevState.isOpen) {
+            // handle dismiss buffer after suggestions are opened
+            this._overrideScrollDismiss = true;
+            this._async.clearTimeout(this._overrideScrollDimissTimeout);
+            this._overrideScrollDimissTimeout = this._async.setTimeout(function () {
+                _this._overrideScrollDismiss = false;
+            }, 100);
+            onMenuOpen === null || onMenuOpen === void 0 ? void 0 : onMenuOpen();
+        }
+        if (!isOpen && prevState.isOpen && onMenuDismissed) {
+            onMenuDismissed();
+        }
+        var newCurrentPendingValueValidIndex = currentPendingValueValidIndex;
+        var options = currentOptions.map(function (item, index) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index })); });
+        // If currentOptions differs from the previous currentOptions we need to update the currentPendingValueValidIndex
+        // otherwise, it will be out of sync with the currentOptions. This can happen when the options are filtered.
+        if (!(0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.shallowCompare)(prevProps.hoisted.currentOptions, currentOptions) && currentPendingValue) {
+            newCurrentPendingValueValidIndex =
+                this.props.allowFreeform || this.props.allowFreeInput
+                    ? this._processInputChangeWithFreeform(currentPendingValue)
+                    : this._updateAutocompleteIndexWithoutFreeform(currentPendingValue);
+        }
+        var descendantText = undefined;
+        if (isOpen && this._hasFocus() && newCurrentPendingValueValidIndex !== -1) {
+            descendantText =
+                (_a = options[newCurrentPendingValueValidIndex].id) !== null && _a !== void 0 ? _a : this._id + '-list' + newCurrentPendingValueValidIndex;
+        }
+        else if (isOpen && selectedIndices.length) {
+            descendantText = (_c = (_b = options[selectedIndices[0]]) === null || _b === void 0 ? void 0 : _b.id) !== null && _c !== void 0 ? _c : this._id + '-list' + selectedIndices[0];
+        }
+        if (descendantText !== this.state.ariaActiveDescendantValue) {
+            this.setState({
+                ariaActiveDescendantValue: descendantText,
+            });
+        }
+    };
+    ComboBoxInternal.prototype.componentWillUnmount = function () {
+        this._async.dispose();
+        this._events.dispose();
+    };
+    // Primary Render
+    ComboBoxInternal.prototype.render = function () {
+        var id = this._id;
+        var errorMessageId = id + '-error';
+        var _a = this.props, className = _a.className, disabled = _a.disabled, required = _a.required, errorMessage = _a.errorMessage, _b = _a.onRenderContainer, onRenderContainer = _b === void 0 ? this._onRenderContainer : _b, _c = _a.onRenderLabel, onRenderLabel = _c === void 0 ? this._onRenderLabel : _c, _d = _a.onRenderList, onRenderList = _d === void 0 ? this._onRenderList : _d, _e = _a.onRenderItem, onRenderItem = _e === void 0 ? this._onRenderItem : _e, _f = _a.onRenderOption, onRenderOption = _f === void 0 ? this._onRenderOptionContent : _f, allowFreeform = _a.allowFreeform, customStyles = _a.styles, theme = _a.theme, persistMenu = _a.persistMenu, multiSelect = _a.multiSelect, _g = _a.hoisted, suggestedDisplayValue = _g.suggestedDisplayValue, selectedIndices = _g.selectedIndices, currentOptions = _g.currentOptions;
+        var isOpen = this.state.isOpen;
+        this._currentVisibleValue = this._getVisibleValue();
+        // Single select is already accessible since the whole text is selected
+        // when focus enters the input. Since multiselect appears to clear the input
+        // it needs special accessible text
+        var multiselectAccessibleText = multiSelect
+            ? this._getMultiselectDisplayString(selectedIndices, currentOptions, suggestedDisplayValue)
+            : undefined;
+        var divProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_29__.getNativeProps)(this.props, _Utilities__WEBPACK_IMPORTED_MODULE_29__.divProperties, [
+            'onChange',
+            'value',
+            'aria-describedby',
+            'aria-labelledby',
+        ]);
+        var hasErrorMessage = errorMessage && errorMessage.length > 0 ? true : false;
+        this._classNames = this.props.getClassNames
+            ? this.props.getClassNames(theme, !!isOpen, !!disabled, !!required, !!this._hasFocus(), !!allowFreeform, !!hasErrorMessage, className)
+            : (0,_ComboBox_classNames__WEBPACK_IMPORTED_MODULE_17__.getClassNames)((0,_ComboBox_styles__WEBPACK_IMPORTED_MODULE_30__.getStyles)(theme, customStyles), className, !!isOpen, !!disabled, !!required, !!this._hasFocus(), !!allowFreeform, !!hasErrorMessage);
+        var comboBoxWrapper = this._renderComboBoxWrapper(multiselectAccessibleText, errorMessageId);
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, divProps, { ref: this.props.hoisted.mergedRootRef, className: this._classNames.container }),
+            onRenderLabel({ props: this.props, multiselectAccessibleText: multiselectAccessibleText }, this._onRenderLabel),
+            comboBoxWrapper,
+            (persistMenu || isOpen) &&
+                onRenderContainer((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, this.props), { onRenderList: onRenderList, onRenderItem: onRenderItem, onRenderOption: onRenderOption, options: currentOptions.map(function (item, index) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index })); }), onDismiss: this._onDismiss }), this._onRenderContainer),
+            hasErrorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { role: "alert", id: errorMessageId, className: this._classNames.errorMessage }, errorMessage))));
+    };
+    ComboBoxInternal.prototype._getPendingString = function (currentPendingValue, currentOptions, index) {
+        return currentPendingValue !== null && currentPendingValue !== undefined
+            ? currentPendingValue
+            : indexWithinBounds(currentOptions, index)
+                ? getPreviewText(currentOptions[index])
+                : '';
+    };
+    /**
+     * Returns a string that concatenates all of the selected values
+     * for multiselect combo box.
+     */
+    ComboBoxInternal.prototype._getMultiselectDisplayString = function (selectedIndices, currentOptions, suggestedDisplayValue) {
+        var displayValues = [];
+        for (var idx = 0; selectedIndices && idx < selectedIndices.length; idx++) {
+            var index = selectedIndices[idx];
+            if (currentOptions[index].itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll) {
+                displayValues.push(indexWithinBounds(currentOptions, index)
+                    ? currentOptions[index].text
+                    : normalizeToString(suggestedDisplayValue));
+            }
+        }
+        var _a = this.props.multiSelectDelimiter, multiSelectDelimiter = _a === void 0 ? ', ' : _a;
+        return displayValues.join(multiSelectDelimiter);
+    };
+    /**
+     * Do not dismiss if the window resizes or scrolls within 100ms of opening
+     * This prevents the Android issue where pickers immediately dismiss on open, because the keyboard appears
+     * @param ev - the event triggering the dismiss check
+     * @returns a boolean indicating whether the callout dismissal should be prevented
+     */
+    ComboBoxInternal.prototype._preventDismissOnScrollOrResize = function (ev) {
+        // default to passed-in preventDismiss
+        var calloutProps = this.props.calloutProps;
+        if (calloutProps === null || calloutProps === void 0 ? void 0 : calloutProps.preventDismissOnEvent) {
+            return calloutProps.preventDismissOnEvent(ev);
+        }
+        if (this._overrideScrollDismiss && (ev.type === 'scroll' || ev.type === 'resize')) {
+            return true;
+        }
+        return false;
+    };
+    /**
+     * Process the new input's new value when the combo box allows freeform entry
+     * @param updatedValue - the input's newly changed value
+     * @returns the index of the matched option, -1 if no match was found
+     */
+    ComboBoxInternal.prototype._processInputChangeWithFreeform = function (updatedValue) {
+        var _this = this;
+        var currentOptions = this.props.hoisted.currentOptions;
+        var newCurrentPendingValueValidIndex = -1;
+        // if the new value is empty, see if we have an exact match and then set the pending info
+        if (updatedValue === '') {
+            var items = currentOptions
+                .map(function (item, index) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index })); })
+                .filter(function (option) { return isNormalOption(option) && !option.disabled && getPreviewText(option) === updatedValue; });
+            // if we found a match remember the index
+            if (items.length === 1) {
+                newCurrentPendingValueValidIndex = items[0].index;
+            }
+            this._setPendingInfo(updatedValue, newCurrentPendingValueValidIndex, updatedValue);
+            return newCurrentPendingValueValidIndex;
+        }
+        // Remember the original value and then make the value lowercase for comparison
+        var originalUpdatedValue = updatedValue;
+        // Make the value lowercase for comparison if caseSensitive is false
+        updatedValue = this._adjustForCaseSensitivity(updatedValue);
+        var newSuggestedDisplayValue = '';
+        // If autoComplete is on, attempt to find a match from the available options
+        if (this.props.autoComplete === 'on') {
+            // If autoComplete is on, attempt to find a match where the text of an option starts with the updated value
+            var items = currentOptions
+                .map(function (item, index) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index })); })
+                .filter(function (option) {
+                return isNormalOption(option) &&
+                    !option.disabled &&
+                    _this._adjustForCaseSensitivity(getPreviewText(option)).indexOf(updatedValue) === 0;
+            });
+            if (items.length > 0) {
+                // use ariaLabel as the value when the option is set
+                var text = getPreviewText(items[0]);
+                // If the user typed out the complete option text, we don't need any suggested display text anymore
+                newSuggestedDisplayValue = this._adjustForCaseSensitivity(text) !== updatedValue ? text : '';
+                // remember the index of the match we found
+                newCurrentPendingValueValidIndex = items[0].index;
+            }
+        }
+        else {
+            // If autoComplete is off, attempt to find a match only when the value is exactly equal to the text of an option
+            var items = currentOptions
+                .map(function (item, index) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: index })); })
+                .filter(function (option) {
+                return isNormalOption(option) &&
+                    !option.disabled &&
+                    _this._adjustForCaseSensitivity(getPreviewText(option)) === updatedValue;
+            });
+            // if we found a match remember the index
+            if (items.length === 1) {
+                newCurrentPendingValueValidIndex = items[0].index;
+            }
+        }
+        // Set the updated state
+        this._setPendingInfo(originalUpdatedValue, newCurrentPendingValueValidIndex, newSuggestedDisplayValue);
+        return newCurrentPendingValueValidIndex;
+    };
+    /**
+     * Process the new input's new value when the combo box does not allow freeform entry
+     * @param updatedValue - the input's newly changed value
+     * @returns the index of the matched option
+     */
+    ComboBoxInternal.prototype._processInputChangeWithoutFreeform = function (updatedValue) {
+        var _this = this;
+        var _a = this.state, currentPendingValue = _a.currentPendingValue, currentPendingValueValidIndex = _a.currentPendingValueValidIndex;
+        if (this.props.autoComplete === 'on') {
+            // If autoComplete is on while allow freeform is off,
+            // we will remember the key press and build up a string to attempt to match
+            // as long as characters are typed within a the timeout span of each other,
+            // otherwise we will clear the string and start building a new one on the next keypress.
+            // Also, only do this processing if we have a non-empty value
+            if (updatedValue !== '') {
+                // If we have a pending autocomplete clearing task,
+                // we know that the user is typing with key press happening
+                // within the timeout of each other so remove the clearing task
+                // and continue building the pending value with the updated value
+                if (this._autoCompleteTimeout) {
+                    this._async.clearTimeout(this._autoCompleteTimeout);
+                    this._autoCompleteTimeout = undefined;
+                    updatedValue = normalizeToString(currentPendingValue) + updatedValue;
+                }
+                var matchingIndex = this._updateAutocompleteIndexWithoutFreeform(updatedValue);
+                // Schedule a timeout to clear the pending value after the timeout span
+                this._autoCompleteTimeout = this._async.setTimeout(function () {
+                    _this._autoCompleteTimeout = undefined;
+                }, ReadOnlyPendingAutoCompleteTimeout);
+                return matchingIndex;
+            }
+        }
+        // If we get here, autoComplete is off.
+        // Remember we are not allowing freeform, so at this point, if we have a pending valid value index
+        // use that; otherwise use the selectedIndex
+        var index = currentPendingValueValidIndex >= 0 ? currentPendingValueValidIndex : this._getFirstSelectedIndex();
+        // Since we are not allowing freeform, we need to
+        // set both the pending and suggested values/index
+        // to allow us to select all content in the input to
+        // give the illusion that we are readonly (e.g. freeform off)
+        this._setPendingInfoFromIndex(index);
+        return index;
+    };
+    ComboBoxInternal.prototype._updateAutocompleteIndexWithoutFreeform = function (updatedValue) {
+        var _this = this;
+        var currentOptions = this.props.hoisted.currentOptions;
+        var originalUpdatedValue = updatedValue;
+        updatedValue = this._adjustForCaseSensitivity(updatedValue);
+        // If autoComplete is on, attempt to find a match where the text of an option starts with the updated value
+        var items = currentOptions
+            .map(function (item, i) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, item), { index: i })); })
+            .filter(function (option) {
+            return isNormalOption(option) &&
+                !option.disabled &&
+                _this._adjustForCaseSensitivity(option.text).indexOf(updatedValue) === 0;
+        });
+        // If we found a match, update the state
+        if (items.length > 0) {
+            this._setPendingInfo(originalUpdatedValue, items[0].index, getPreviewText(items[0]));
+            return items[0].index;
+        }
+        return -1;
+    };
+    ComboBoxInternal.prototype._getFirstSelectedIndex = function () {
+        var selectedIndices = this.props.hoisted.selectedIndices;
+        return (selectedIndices === null || selectedIndices === void 0 ? void 0 : selectedIndices.length) ? selectedIndices[0] : -1;
+    };
+    /**
+     * Walk along the options starting at the index, stepping by the delta (positive or negative)
+     * looking for the next valid selectable index (e.g. skipping headings and dividers)
+     * @param index - the index to get the next selectable index from
+     * @param delta - optional delta to step by when finding the next index, defaults to 0
+     * @returns - the next valid selectable index. If the new index is outside of the bounds,
+     * it will snap to the edge of the options array. If delta == 0 and the given index is not selectable
+     */
+    ComboBoxInternal.prototype._getNextSelectableIndex = function (index, searchDirection) {
+        var currentOptions = this.props.hoisted.currentOptions;
+        var newIndex = index + searchDirection;
+        newIndex = Math.max(0, Math.min(currentOptions.length - 1, newIndex));
+        if (!indexWithinBounds(currentOptions, newIndex)) {
+            return -1;
+        }
+        var option = currentOptions[newIndex];
+        if (!isSelectableOption(option) || option.hidden === true) {
+            // Should we continue looking for an index to select?
+            if (searchDirection !== SearchDirection.none &&
+                ((newIndex > 0 && searchDirection < SearchDirection.none) ||
+                    (newIndex >= 0 && newIndex < currentOptions.length && searchDirection > SearchDirection.none))) {
+                newIndex = this._getNextSelectableIndex(newIndex, searchDirection);
+            }
+            else {
+                // If we cannot perform a useful search just return the index we were given
+                return index;
+            }
+        }
+        // We have the next valid selectable index, return it
+        return newIndex;
+    };
+    /**
+     * Set the selected index. Note, this is
+     * the "real" selected index, not the pending selected index
+     * @param index - the index to set (or the index to set from if a search direction is provided)
+     * @param searchDirection - the direction to search along the options from the given index
+     */
+    ComboBoxInternal.prototype._setSelectedIndex = function (index, submitPendingValueEvent, searchDirection) {
+        if (searchDirection === void 0) { searchDirection = SearchDirection.none; }
+        var _a = this.props, onChange = _a.onChange, onPendingValueChanged = _a.onPendingValueChanged, _b = _a.hoisted, initialIndices = _b.selectedIndices, currentOptions = _b.currentOptions;
+        // Clone currentOptions and selectedIndices so we don't mutate state
+        var selectedIndices = initialIndices ? initialIndices.slice() : [];
+        var changedOptions = currentOptions.slice();
+        // Find the next selectable index, if searchDirection is none
+        // we will get our starting index back
+        index = this._getNextSelectableIndex(index, searchDirection);
+        if (!indexWithinBounds(currentOptions, index)) {
+            return;
+        }
+        // Are we at a new index? If so, update the state, otherwise
+        // there is nothing to do
+        if (this.props.multiSelect ||
+            selectedIndices.length < 1 ||
+            (selectedIndices.length === 1 && selectedIndices[0] !== index)) {
+            var option = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, currentOptions[index]);
+            // if option doesn't existing, or option is disabled, we noop
+            if (!option || option.disabled) {
+                return;
+            }
+            if (this.props.multiSelect) {
+                // Setting the initial state of option.selected in Multi-select combo box by checking the
+                // selectedIndices array and overriding the undefined issue
+                option.selected = option.selected !== undefined ? !option.selected : selectedIndices.indexOf(index) < 0;
+                // handle changing all options if SelectAll is changed
+                if (option.itemType === _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll) {
+                    selectedIndices = [];
+                    // if select all is set to checked, push all selectable option indices
+                    if (option.selected) {
+                        currentOptions.forEach(function (currentOption, i) {
+                            if (!currentOption.disabled && isSelectableOption(currentOption)) {
+                                selectedIndices.push(i);
+                                changedOptions[i] = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, currentOption), { selected: true });
+                            }
+                        });
+                    }
+                    // otherwise un-check all options
+                    else {
+                        changedOptions = currentOptions.map(function (currentOption) { return ((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, currentOption), { selected: false })); });
+                    }
+                }
+                // otherwise update the individual option
+                else {
+                    if (option.selected && selectedIndices.indexOf(index) < 0) {
+                        selectedIndices.push(index);
+                    }
+                    else if (!option.selected && selectedIndices.indexOf(index) >= 0) {
+                        selectedIndices = selectedIndices.filter(function (value) { return value !== index; });
+                    }
+                    changedOptions[index] = option;
+                    // If SelectAll exists and another option was toggled, update the SelectAll option's state
+                    var selectAllOption = changedOptions.filter(function (o) { return o.itemType === _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll; })[0];
+                    if (selectAllOption) {
+                        var selectAllState = this._isSelectAllChecked(selectedIndices);
+                        var selectAllIndex_1 = changedOptions.indexOf(selectAllOption);
+                        if (selectAllState) {
+                            selectedIndices.push(selectAllIndex_1);
+                            changedOptions[selectAllIndex_1] = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, selectAllOption), { selected: true });
+                        }
+                        else {
+                            selectedIndices = selectedIndices.filter(function (value) { return value !== selectAllIndex_1; });
+                            changedOptions[selectAllIndex_1] = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, selectAllOption), { selected: false });
+                        }
+                    }
+                }
+            }
+            else {
+                selectedIndices[0] = index;
+            }
+            submitPendingValueEvent.persist();
+            // Only setState if combo box is uncontrolled.
+            if (this.props.selectedKey || this.props.selectedKey === null) {
+                // If combo box value is changed, revert preview first
+                if (this._hasPendingValue && onPendingValueChanged) {
+                    onPendingValueChanged();
+                    this._hasPendingValue = false;
+                }
+            }
+            else {
+                this.props.hoisted.setSelectedIndices(selectedIndices);
+                this.props.hoisted.setCurrentOptions(changedOptions);
+                // If ComboBox value is changed, revert preview first
+                if (this._hasPendingValue && onPendingValueChanged) {
+                    onPendingValueChanged();
+                    this._hasPendingValue = false;
+                }
+            }
+            // Call onChange after state is updated
+            if (onChange) {
+                onChange(submitPendingValueEvent, option, index, getPreviewText(option));
+            }
+        }
+        if (this.props.multiSelect && this.state.isOpen) {
+            return;
+        }
+        // clear all of the pending info
+        this._clearPendingInfo();
+    };
+    /**
+     * Submit a pending value if there is one
+     */
+    ComboBoxInternal.prototype._submitPendingValue = function (submitPendingValueEvent) {
+        var _a;
+        var _b = this.props, onChange = _b.onChange, allowFreeform = _b.allowFreeform, autoComplete = _b.autoComplete, multiSelect = _b.multiSelect, hoisted = _b.hoisted;
+        var currentOptions = hoisted.currentOptions;
+        var _c = this.state, currentPendingValue = _c.currentPendingValue, currentPendingValueValidIndex = _c.currentPendingValueValidIndex, currentPendingValueValidIndexOnHover = _c.currentPendingValueValidIndexOnHover;
+        var selectedIndices = this.props.hoisted.selectedIndices;
+        // Do not submit any pending value if we
+        // have already initiated clearing the pending info
+        if (this._processingClearPendingInfo) {
+            return;
+        }
+        // If we allow freeform we need to handle that
+        if (allowFreeform) {
+            // if currentPendingValue is null or undefined the user did not submit anything
+            // (not even empty because we would have stored that as the pending value)
+            if (currentPendingValue === null || currentPendingValue === undefined) {
+                // if a user did not type anything they may just hovered over an item
+                if (currentPendingValueValidIndexOnHover >= 0) {
+                    this._setSelectedIndex(currentPendingValueValidIndexOnHover, submitPendingValueEvent);
+                    this._clearPendingInfo();
+                }
+                return;
+            }
+            // Check to see if the user typed an exact match
+            if (indexWithinBounds(currentOptions, currentPendingValueValidIndex)) {
+                var pendingOptionText = this._adjustForCaseSensitivity(getPreviewText(currentOptions[currentPendingValueValidIndex]));
+                var autofill = this._autofill.current;
+                // By exact match, that means: our pending value is the same as the pending option text OR
+                // the pending option starts with the pending value and we have an "autoComplete" selection
+                // where the total length is equal to pending option length OR
+                // the live value in the underlying input matches the pending option; update the state
+                var adjustedCurrentPendingValue = this._adjustForCaseSensitivity(currentPendingValue);
+                if (adjustedCurrentPendingValue === pendingOptionText ||
+                    (autoComplete &&
+                        pendingOptionText.indexOf(adjustedCurrentPendingValue) === 0 &&
+                        (autofill === null || autofill === void 0 ? void 0 : autofill.isValueSelected) &&
+                        currentPendingValue.length + (autofill.selectionEnd - autofill.selectionStart) ===
+                            pendingOptionText.length) ||
+                    (((_a = autofill === null || autofill === void 0 ? void 0 : autofill.inputElement) === null || _a === void 0 ? void 0 : _a.value) !== undefined &&
+                        this._adjustForCaseSensitivity(autofill.inputElement.value) === pendingOptionText)) {
+                    this._setSelectedIndex(currentPendingValueValidIndex, submitPendingValueEvent);
+                    if (multiSelect && this.state.isOpen) {
+                        return;
+                    }
+                    this._clearPendingInfo();
+                    return;
+                }
+            }
+            if (onChange) {
+                if (onChange) {
+                    // trigger onChange to clear value
+                    onChange(submitPendingValueEvent, undefined, undefined, currentPendingValue);
+                }
+            }
+            else {
+                // If we are not controlled, create a new selected option
+                var newOption = {
+                    key: currentPendingValue || (0,_Utilities__WEBPACK_IMPORTED_MODULE_27__.getId)(),
+                    text: normalizeToString(currentPendingValue),
+                };
+                // If it's multiselect, set selected state to true
+                if (multiSelect) {
+                    newOption.selected = true;
+                }
+                var newOptions = currentOptions.concat([newOption]);
+                if (selectedIndices) {
+                    if (!multiSelect) {
+                        selectedIndices = [];
+                    }
+                    selectedIndices.push(newOptions.length - 1);
+                }
+                hoisted.setCurrentOptions(newOptions);
+                hoisted.setSelectedIndices(selectedIndices);
+            }
+        }
+        else if (currentPendingValueValidIndex >= 0) {
+            // Since we are not allowing freeform, we must have a matching
+            // to be able to update state
+            this._setSelectedIndex(currentPendingValueValidIndex, submitPendingValueEvent);
+        }
+        else if (currentPendingValueValidIndexOnHover >= 0) {
+            // If all else failed and we were hovering over an item, select it
+            this._setSelectedIndex(currentPendingValueValidIndexOnHover, submitPendingValueEvent);
+        }
+        // Finally, clear the pending info
+        this._clearPendingInfo();
+    };
+    ComboBoxInternal.prototype._onCalloutLayerMounted = function () {
+        // In persistMenu mode _onLayerMounted is only called once for the lifetime
+        // of the component. Any functionality required for callout "on mount" can
+        // go here so that we can also call it again during callout dismissal to reset
+        // object state.
+        this._gotMouseMove = false;
+    };
+    // Render separator
+    ComboBoxInternal.prototype._renderSeparator = function (item) {
+        var index = item.index, key = item.key;
+        if (index && index > 0) {
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { role: "presentation", key: key, className: this._classNames.divider });
+        }
+        return null;
+    };
+    ComboBoxInternal.prototype._renderHeader = function (item) {
+        var _a = this.props.onRenderOption, onRenderOption = _a === void 0 ? this._onRenderOptionContent : _a;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: item.id, key: item.key, className: this._classNames.header }, onRenderOption(item, this._onRenderOptionContent)));
+    };
+    ComboBoxInternal.prototype._renderCheckboxLabel = function (item) {
+        var _a = this.props.onRenderOption, onRenderOption = _a === void 0 ? this._onRenderMultiselectOptionContent : _a;
+        return onRenderOption(item, this._onRenderMultiselectOptionContent);
+    };
+    /**
+     * If we are coming from a mouseOut:
+     * there is no visible selected option.
+     *
+     * Else if We are hovering over an item:
+     * that gets the selected look.
+     *
+     * Else:
+     * Use the current valid pending index if it exists OR
+     * we do not have a valid index and we currently have a pending input value,
+     * otherwise use the selected index
+     * */
+    ComboBoxInternal.prototype._isOptionHighlighted = function (index) {
+        var currentPendingValueValidIndexOnHover = this.state.currentPendingValueValidIndexOnHover;
+        // If the hover state is set to clearAll, don't show a selected index.
+        // Note, this happens when the user moused out of the menu items
+        if (currentPendingValueValidIndexOnHover === HoverStatus.clearAll) {
+            return false;
+        }
+        return currentPendingValueValidIndexOnHover >= 0
+            ? currentPendingValueValidIndexOnHover === index
+            : this._isOptionSelected(index);
+    };
+    ComboBoxInternal.prototype._isOptionSelected = function (index) {
+        return this._getPendingSelectedIndex(true /* includePendingValue */) === index;
+    };
+    ComboBoxInternal.prototype._isOptionChecked = function (index) {
+        if (this.props.multiSelect && index !== undefined && this.props.hoisted.selectedIndices) {
+            var idxOfSelectedIndex = -1;
+            idxOfSelectedIndex = this.props.hoisted.selectedIndices.indexOf(index);
+            return idxOfSelectedIndex >= 0;
+        }
+        return false;
+    };
+    ComboBoxInternal.prototype._isOptionIndeterminate = function (index) {
+        var _a = this.props, multiSelect = _a.multiSelect, hoisted = _a.hoisted;
+        if (multiSelect && index !== undefined && hoisted.selectedIndices && hoisted.currentOptions) {
+            var option = hoisted.currentOptions[index];
+            if (option && option.itemType === _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll) {
+                return hoisted.selectedIndices.length > 0 && !this._isSelectAllChecked();
+            }
+        }
+        return false;
+    };
+    ComboBoxInternal.prototype._isSelectAllChecked = function (testIndices) {
+        var _a = this.props, multiSelect = _a.multiSelect, hoisted = _a.hoisted;
+        var selectAllOption = hoisted.currentOptions.find(function (option) { return option.itemType === _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll; });
+        var selectedIndices = testIndices || hoisted.selectedIndices;
+        if (!multiSelect || !selectedIndices || !selectAllOption) {
+            return false;
+        }
+        // start by not including the select all option itself
+        var selectAllIndex = hoisted.currentOptions.indexOf(selectAllOption);
+        var compareSelectedIndices = selectedIndices.filter(function (value) { return value !== selectAllIndex; });
+        // get array of selectable options, excluding disabled options, headers, and dividers
+        var selectableOptions = hoisted.currentOptions.filter(function (option) {
+            return !option.disabled && option.itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll && isSelectableOption(option);
+        });
+        return compareSelectedIndices.length === selectableOptions.length;
+    };
+    /**
+     * Gets the pending selected index taking into account valueValidIndex and selectedIndex
+     * @param includeCurrentPendingValue - Should we include the currentPendingValue when
+     * finding the index
+     */
+    ComboBoxInternal.prototype._getPendingSelectedIndex = function (includeCurrentPendingValue) {
+        var _a = this.state, currentPendingValueValidIndex = _a.currentPendingValueValidIndex, currentPendingValue = _a.currentPendingValue;
+        return currentPendingValueValidIndex >= 0 ||
+            (includeCurrentPendingValue && currentPendingValue !== null && currentPendingValue !== undefined)
+            ? currentPendingValueValidIndex
+            : this.props.multiSelect
+                ? -1
+                : this._getFirstSelectedIndex();
+    };
+    /**
+     * Scroll the selected element into view
+     */
+    ComboBoxInternal.prototype._scrollIntoView = function () {
+        var _a = this.props, onScrollToItem = _a.onScrollToItem, scrollSelectedToTop = _a.scrollSelectedToTop;
+        var currentPendingSelectedIndex = this._getPendingSelectedIndex(true);
+        if (onScrollToItem) {
+            // Use the custom scroll handler
+            onScrollToItem(currentPendingSelectedIndex >= 0 ? currentPendingSelectedIndex : this._getFirstSelectedIndex());
+            return;
+        }
+        var scrollToElement = this._selectedElement.current;
+        // in multi-select there are multiple selected elements, so we use the pending select index
+        // to locate the option to scroll to.
+        if (this.props.multiSelect && this._comboBoxMenu.current) {
+            scrollToElement = findFirstDescendant(this._comboBoxMenu.current, function (element) {
+                var _a;
+                return ((_a = element.dataset) === null || _a === void 0 ? void 0 : _a.index) === currentPendingSelectedIndex.toString();
+            });
+        }
+        if (scrollToElement && scrollToElement.offsetParent) {
+            var alignToTop = true;
+            // We are using refs, scroll the ref into view
+            if (this._comboBoxMenu.current && this._comboBoxMenu.current.offsetParent) {
+                var scrollableParent = this._comboBoxMenu.current.offsetParent;
+                var selectedElement = scrollToElement.offsetParent;
+                var _b = selectedElement, offsetHeight = _b.offsetHeight, offsetTop = _b.offsetTop;
+                var _c = scrollableParent, parentOffsetHeight = _c.offsetHeight, scrollTop = _c.scrollTop;
+                var isAbove = offsetTop < scrollTop;
+                var isBelow = offsetTop + offsetHeight > scrollTop + parentOffsetHeight;
+                if (isAbove || scrollSelectedToTop) {
+                    alignToTop = false;
+                    scrollableParent.scrollTo(0, offsetTop);
+                }
+                else if (isBelow) {
+                    scrollableParent.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
+                }
+            }
+            // if _comboboxMenu doesn't exist, fall back to scrollIntoView
+            else {
+                scrollToElement.offsetParent.scrollIntoView(alignToTop);
+            }
+        }
+    };
+    /**
+     * Click handler for the menu items
+     * to select the item and also close the menu
+     * @param index - the index of the item that was clicked
+     */
+    ComboBoxInternal.prototype._onItemClick = function (item) {
+        var _this = this;
+        var onItemClick = this.props.onItemClick;
+        var index = item.index;
+        return function (ev) {
+            // only close the callout when it's in single-select mode
+            if (!_this.props.multiSelect) {
+                // ensure that focus returns to the input, not the button
+                _this._autofill.current && _this._autofill.current.focus();
+                _this.setState({
+                    isOpen: false,
+                });
+            }
+            // Continue processing the click only after
+            // performing menu close / control focus(inner working)
+            onItemClick && onItemClick(ev, item, index);
+            _this._setSelectedIndex(index, ev);
+        };
+    };
+    /**
+     * Reset the selected index by clearing the
+     * input (of any pending text), clearing the pending state,
+     * and setting the suggested display value to the last
+     * selected state text
+     */
+    ComboBoxInternal.prototype._resetSelectedIndex = function () {
+        var currentOptions = this.props.hoisted.currentOptions;
+        this._clearPendingInfo();
+        var selectedIndex = this._getFirstSelectedIndex();
+        if (selectedIndex > 0 && selectedIndex < currentOptions.length) {
+            this.props.hoisted.setSuggestedDisplayValue(currentOptions[selectedIndex].text);
+        }
+        else if (this.props.text) {
+            // If we had a value initially, restore it
+            this.props.hoisted.setSuggestedDisplayValue(this.props.text);
+        }
+    };
+    /**
+     * Clears the pending info state
+     */
+    ComboBoxInternal.prototype._clearPendingInfo = function () {
+        this._processingClearPendingInfo = true;
+        this.props.hoisted.setSuggestedDisplayValue(undefined);
+        this.setState({
+            currentPendingValue: undefined,
+            currentPendingValueValidIndex: -1,
+            currentPendingValueValidIndexOnHover: HoverStatus.default,
+        }, this._onAfterClearPendingInfo);
+    };
+    /**
+     * Set the pending info
+     * @param currentPendingValue - new pending value to set
+     * @param currentPendingValueValidIndex - new pending value index to set
+     * @param suggestedDisplayValue - new suggest display value to set
+     */
+    ComboBoxInternal.prototype._setPendingInfo = function (currentPendingValue, currentPendingValueValidIndex, suggestedDisplayValue) {
+        if (currentPendingValueValidIndex === void 0) { currentPendingValueValidIndex = -1; }
+        if (this._processingClearPendingInfo) {
+            return;
+        }
+        this.props.hoisted.setSuggestedDisplayValue(suggestedDisplayValue);
+        this.setState({
+            currentPendingValue: normalizeToString(currentPendingValue),
+            currentPendingValueValidIndex: currentPendingValueValidIndex,
+            currentPendingValueValidIndexOnHover: HoverStatus.default,
+        });
+    };
+    /**
+     * Set the pending info from the given index
+     * @param index - the index to set the pending info from
+     */
+    ComboBoxInternal.prototype._setPendingInfoFromIndex = function (index) {
+        var currentOptions = this.props.hoisted.currentOptions;
+        if (index >= 0 && index < currentOptions.length) {
+            var option = currentOptions[index];
+            this._setPendingInfo(getPreviewText(option), index, getPreviewText(option));
+        }
+        else {
+            this._clearPendingInfo();
+        }
+    };
+    /**
+     * Sets the pending info for the combo box
+     * @param index - the index to search from
+     * @param searchDirection - the direction to search
+     */
+    ComboBoxInternal.prototype._setPendingInfoFromIndexAndDirection = function (index, searchDirection) {
+        var currentOptions = this.props.hoisted.currentOptions;
+        // update index to allow content to wrap
+        if (searchDirection === SearchDirection.forward && index >= currentOptions.length - 1) {
+            index = -1;
+        }
+        else if (searchDirection === SearchDirection.backward && index <= 0) {
+            index = currentOptions.length;
+        }
+        // get the next "valid" index
+        var indexUpdate = this._getNextSelectableIndex(index, searchDirection);
+        // if the two indices are equal we didn't move and
+        // we should attempt to get  get the first/last "valid" index to use
+        // (Note, this takes care of the potential cases where the first/last
+        // item is not focusable), otherwise use the updated index
+        if (index === indexUpdate) {
+            if (searchDirection === SearchDirection.forward) {
+                index = this._getNextSelectableIndex(-1, searchDirection);
+            }
+            else if (searchDirection === SearchDirection.backward) {
+                index = this._getNextSelectableIndex(currentOptions.length, searchDirection);
+            }
+        }
+        else {
+            index = indexUpdate;
+        }
+        if (indexWithinBounds(currentOptions, index)) {
+            this._setPendingInfoFromIndex(index);
+        }
+    };
+    ComboBoxInternal.prototype._notifyPendingValueChanged = function (prevState) {
+        var onPendingValueChanged = this.props.onPendingValueChanged;
+        if (!onPendingValueChanged) {
+            return;
+        }
+        var currentOptions = this.props.hoisted.currentOptions;
+        var _a = this.state, currentPendingValue = _a.currentPendingValue, currentPendingValueValidIndex = _a.currentPendingValueValidIndex, currentPendingValueValidIndexOnHover = _a.currentPendingValueValidIndexOnHover;
+        var newPendingIndex = undefined;
+        var newPendingValue = undefined;
+        if (currentPendingValueValidIndexOnHover !== prevState.currentPendingValueValidIndexOnHover &&
+            indexWithinBounds(currentOptions, currentPendingValueValidIndexOnHover)) {
+            // Set new pending index if hover index was changed
+            newPendingIndex = currentPendingValueValidIndexOnHover;
+        }
+        else if (currentPendingValueValidIndex !== prevState.currentPendingValueValidIndex &&
+            indexWithinBounds(currentOptions, currentPendingValueValidIndex)) {
+            // Set new pending index if currentPendingValueValidIndex was changed
+            newPendingIndex = currentPendingValueValidIndex;
+        }
+        else if (currentPendingValue !== prevState.currentPendingValue) {
+            // Set pendingValue in the case it was changed and no index was changed
+            newPendingValue = currentPendingValue;
+        }
+        // Notify when there is a new pending index/value. Also, if there is a pending value, it needs to send undefined.
+        if (newPendingIndex !== undefined || newPendingValue !== undefined || this._hasPendingValue) {
+            onPendingValueChanged(newPendingIndex !== undefined ? currentOptions[newPendingIndex] : undefined, newPendingIndex, newPendingValue);
+            this._hasPendingValue = newPendingIndex !== undefined || newPendingValue !== undefined;
+        }
+    };
+    /**
+     * Sets the isOpen state and updates focusInputAfterClose
+     */
+    ComboBoxInternal.prototype._setOpenStateAndFocusOnClose = function (isOpen, focusInputAfterClose) {
+        this._focusInputAfterClose = focusInputAfterClose;
+        this.setState({ isOpen: isOpen });
+    };
+    ComboBoxInternal.prototype._onOptionMouseEnter = function (index) {
+        if (this._shouldIgnoreMouseEvent()) {
+            return;
+        }
+        this.setState({
+            currentPendingValueValidIndexOnHover: index,
+        });
+    };
+    ComboBoxInternal.prototype._onOptionMouseMove = function (index) {
+        this._gotMouseMove = true;
+        if (!this._isScrollIdle || this.state.currentPendingValueValidIndexOnHover === index) {
+            return;
+        }
+        this.setState({
+            currentPendingValueValidIndexOnHover: index,
+        });
+    };
+    ComboBoxInternal.prototype._shouldIgnoreMouseEvent = function () {
+        return !this._isScrollIdle || !this._gotMouseMove;
+    };
+    /**
+     * Handle dismissing the menu and eating the required key event when disabled
+     * @param ev - the keyboard event that was fired
+     */
+    ComboBoxInternal.prototype._handleInputWhenDisabled = function (ev) {
+        // If we are disabled, close the menu (if needed)
+        // and eat all keystrokes other than TAB or ESC
+        if (this.props.disabled) {
+            if (this.state.isOpen) {
+                this.setState({ isOpen: false });
+            }
+            // When disabled stop propagation and prevent default
+            // of the event unless we have a tab, escape, or function key
+            if (ev !== null &&
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
+                ev.which !== _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.tab &&
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
+                ev.which !== _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.escape &&
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
+                (ev.which < 112 /* F1 */ || ev.which > 123) /* F12 */) {
+                ev.stopPropagation();
+                ev.preventDefault();
+            }
+        }
+    };
+    ComboBoxInternal.prototype._handleTouchAndPointerEvent = function () {
+        var _this = this;
+        // If we already have an existing timeout from a previous touch and pointer event
+        // cancel that timeout so we can set a nwe one.
+        if (this._lastTouchTimeoutId !== undefined) {
+            this._async.clearTimeout(this._lastTouchTimeoutId);
+            this._lastTouchTimeoutId = undefined;
+        }
+        this._processingTouch = true;
+        this._lastTouchTimeoutId = this._async.setTimeout(function () {
+            _this._processingTouch = false;
+            _this._lastTouchTimeoutId = undefined;
+        }, TouchIdleDelay);
+    };
+    /**
+     * Get the styles for the current option.
+     * @param item - Item props for the current option
+     */
+    ComboBoxInternal.prototype._getCaretButtonStyles = function () {
+        var customCaretDownButtonStyles = this.props.caretDownButtonStyles;
+        return (0,_ComboBox_styles__WEBPACK_IMPORTED_MODULE_30__.getCaretDownButtonStyles)(this.props.theme, customCaretDownButtonStyles);
+    };
+    /**
+     * Get the styles for the current option.
+     * @param item - Item props for the current option
+     */
+    ComboBoxInternal.prototype._getCurrentOptionStyles = function (item) {
+        var _a;
+        var customStylesForAllOptions = this.props.comboBoxOptionStyles;
+        var customStylesForCurrentOption = item.styles;
+        var optionStyles = (0,_ComboBox_styles__WEBPACK_IMPORTED_MODULE_30__.getOptionStyles)(this.props.theme, customStylesForAllOptions, customStylesForCurrentOption, this._isPendingOption(item), item.hidden, this._isOptionHighlighted(item.index));
+        // TODO: fix this for multi-window scenarios
+        optionStyles.__shadowConfig__ = (_a = this.props.styles) === null || _a === void 0 ? void 0 : _a.__shadowConfig__;
+        return optionStyles;
+    };
+    /**
+     * Get the aria autocomplete value for the combo box
+     * @returns 'inline' if auto-complete automatically dynamic, 'both' if we have a list of possible values to pick from
+     * and can dynamically populate input, and 'list' if auto-complete is not enabled as selection is the only option.
+     * Ideally, this should be 'none' if auto-complete is not enabled, but there is a known bug in Edge
+     * where the callout may appear over the combo box if this attribute is set to 'none'
+     */
+    ComboBoxInternal.prototype._getAriaAutoCompleteValue = function () {
+        var autoComplete = !this.props.disabled && this.props.autoComplete === 'on';
+        return autoComplete ? (this.props.allowFreeform ? 'inline' : 'both') : 'list';
+    };
+    ComboBoxInternal.prototype._isPendingOption = function (item) {
+        return item && item.index === this.state.currentPendingValueValidIndex;
+    };
+    /**
+     * Returns true if the component has some kind of focus. If it's either focusing or if it's focused
+     */
+    ComboBoxInternal.prototype._hasFocus = function () {
+        return this.state.focusState !== 'none';
+    };
+    ComboBoxInternal.prototype._adjustForCaseSensitivity = function (text) {
+        return this.props.caseSensitive ? text : text.toLowerCase();
+    };
+    ComboBoxInternal.contextType = _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_31__.WindowContext;
+    ComboBoxInternal = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_32__.customizable)('ComboBox', ['theme', 'styles'], true)
+    ], ComboBoxInternal);
+    return ComboBoxInternal;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+/**
+ * Get the indices of the options that are marked as selected
+ * @param options - the combo box options
+ * @param selectedKeys - the known selected keys to find
+ * @returns - an array of the indices of the selected options, empty array if nothing is selected
+ */
+function getSelectedIndices(options, selectedKeys) {
+    if (!options || !selectedKeys) {
+        return [];
+    }
+    var selectedIndices = {};
+    options.forEach(function (option, index) {
+        if (option.selected) {
+            selectedIndices[index] = true;
+        }
+    });
+    var _loop_1 = function (selectedKey) {
+        var index = (0,_Utilities__WEBPACK_IMPORTED_MODULE_33__.findIndex)(options, function (option) { return option.key === selectedKey; });
+        if (index > -1) {
+            selectedIndices[index] = true;
+        }
+    };
+    for (var _i = 0, selectedKeys_1 = selectedKeys; _i < selectedKeys_1.length; _i++) {
+        var selectedKey = selectedKeys_1[_i];
+        _loop_1(selectedKey);
+    }
+    return Object.keys(selectedIndices).map(Number).sort();
+}
+/**
+ * Given default selected key(s) and selected key(s), return the selected keys(s).
+ * When default selected key(s) are available, they take precedence and return them instead of selected key(s).
+ *
+ * @returns No matter what specific types the input parameters are, always return an array of
+ *  either strings or numbers instead of primitive type.  This normalization makes caller's logic easier.
+ */
+function buildDefaultSelectedKeys(defaultSelectedKey, selectedKey) {
+    var selectedKeys = buildSelectedKeys(defaultSelectedKey);
+    if (selectedKeys.length) {
+        return selectedKeys;
+    }
+    return buildSelectedKeys(selectedKey);
+}
+function buildSelectedKeys(selectedKey) {
+    if (selectedKey === undefined) {
+        return [];
+    }
+    // need to cast here so typescript does not complain
+    return (selectedKey instanceof Array ? selectedKey : [selectedKey]);
+}
+function normalizeToString(value) {
+    return value || '';
+}
+/**
+ * Is the index within the bounds of the array?
+ * @param options - options to check if the index is valid for
+ * @param index - the index to check
+ * @returns - true if the index is valid for the given options, false otherwise
+ */
+function indexWithinBounds(options, index) {
+    return !!options && index >= 0 && index < options.length;
+}
+/** Whether this is a normal option, not a header or divider or select all. */
+function isNormalOption(option) {
+    return (option.itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Header &&
+        option.itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Divider &&
+        option.itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.SelectAll);
+}
+/** Whether this is a selectable option, not a header or divider. */
+function isSelectableOption(option) {
+    return (option.itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Header && option.itemType !== _SelectableOption__WEBPACK_IMPORTED_MODULE_16__.SelectableOptionMenuItemType.Divider);
+}
+/**
+ * For scenarios where the option's `text` prop contains embedded styles, we use the option's
+ * `ariaLabel` value as the text in the input and for autocomplete matching. We know to use this
+ * when the `useAriaLabelAsText` prop is set to true.
+ */
+function getPreviewText(item) {
+    return item.useAriaLabelAsText && item.ariaLabel ? item.ariaLabel : item.text;
+}
+/**
+ * Returns true if the key for the event is alt (Mac option) or meta (Mac command).
+ */
+function isAltOrMeta(ev) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    return ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_20__.KeyCodes.alt || ev.key === 'Meta';
+}
+
+
+/***/ }),
+
+/***/ 34604:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ComboBox/ComboBox.styles.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCaretDownButtonStyles: () => (/* binding */ getCaretDownButtonStyles),
+/* harmony export */   getOptionStyles: () => (/* binding */ getOptionStyles),
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Styling */ 38455);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 15659);
+var _a, _b;
+
+
+
+var ComboBoxHeight = 32;
+var ComboBoxLineHeight = 30;
+var ComboBoxCaretDownWidth = 32;
+var ComboBoxOptionHeight = 36;
+var getDisabledStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function (theme) {
+    var _a;
+    var semanticColors = theme.semanticColors;
+    return {
+        backgroundColor: semanticColors.disabledBackground,
+        color: semanticColors.disabledText,
+        cursor: 'default',
+        selectors: (_a = {
+                ':after': {
+                    borderColor: semanticColors.disabledBackground,
+                }
+            },
+            _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                color: 'GrayText',
+                selectors: {
+                    ':after': {
+                        borderColor: 'GrayText',
+                    },
+                },
+            },
+            _a),
+    };
+});
+var listOptionHighContrastStyles = {
+    selectors: (_a = {},
+        _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ backgroundColor: 'Highlight', borderColor: 'Highlight', color: 'HighlightText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+        _a),
+};
+var inputHighContrastStyles = {
+    selectors: (_b = {},
+        _b[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'WindowText', backgroundColor: 'Window' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+        _b),
+};
+var getOptionStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function (theme, customStylesForAllOptions, customOptionStylesForCurrentOption, isPending, isHidden, isSelected) {
+    var _a;
+    var palette = theme.palette, semanticColors = theme.semanticColors;
+    var option = {
+        textHoveredColor: semanticColors.menuItemTextHovered,
+        textSelectedColor: palette.neutralDark,
+        textDisabledColor: semanticColors.disabledText,
+        backgroundHoveredColor: semanticColors.menuItemBackgroundHovered,
+        backgroundPressedColor: semanticColors.menuItemBackgroundPressed,
+    };
+    var optionStyles = {
+        root: [
+            theme.fonts.medium,
+            {
+                backgroundColor: isPending ? option.backgroundHoveredColor : 'transparent',
+                boxSizing: 'border-box',
+                cursor: 'pointer',
+                display: isHidden ? 'none' : 'block',
+                width: '100%',
+                height: 'auto',
+                minHeight: ComboBoxOptionHeight,
+                lineHeight: '20px',
+                padding: '0 8px',
+                position: 'relative',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'transparent',
+                borderRadius: 0,
+                wordWrap: 'break-word',
+                overflowWrap: 'break-word',
+                textAlign: 'left',
+                selectors: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((_a = {}, _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                    border: 'none',
+                    borderColor: 'Background',
+                }, _a), (!isHidden && {
+                    '&.ms-Checkbox': {
+                        display: 'flex',
+                        alignItems: 'center',
+                    },
+                })), { '&.ms-Button--command:hover:active': {
+                        backgroundColor: option.backgroundPressedColor,
+                    }, '.ms-Checkbox-label': {
+                        width: '100%',
+                    } }),
+            },
+            isSelected
+                ? [
+                    {
+                        backgroundColor: 'transparent',
+                        color: option.textSelectedColor,
+                        selectors: {
+                            ':hover': [
+                                {
+                                    backgroundColor: option.backgroundHoveredColor,
+                                },
+                                listOptionHighContrastStyles,
+                            ],
+                        },
+                    },
+                    (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getFocusStyle)(theme, { inset: -1, isFocusedOnly: false }),
+                    listOptionHighContrastStyles,
+                ]
+                : [],
+        ],
+        rootHovered: {
+            backgroundColor: option.backgroundHoveredColor,
+            color: option.textHoveredColor,
+        },
+        rootFocused: {
+            backgroundColor: option.backgroundHoveredColor,
+        },
+        rootDisabled: {
+            color: option.textDisabledColor,
+            cursor: 'default',
+        },
+        optionText: {
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+            minWidth: '0px',
+            maxWidth: '100%',
+            wordWrap: 'break-word',
+            overflowWrap: 'break-word',
+            display: 'inline-block',
+        },
+        optionTextWrapper: {
+            maxWidth: '100%',
+            display: 'flex',
+            alignItems: 'center',
+        },
+    };
+    return (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.concatStyleSets)(optionStyles, customStylesForAllOptions, customOptionStylesForCurrentOption);
+});
+var getCaretDownButtonStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function (theme, customStyles) {
+    var _a, _b;
+    var semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var caret = {
+        buttonTextColor: semanticColors.bodySubtext,
+        buttonTextHoveredCheckedColor: semanticColors.buttonTextChecked,
+        buttonBackgroundHoveredColor: semanticColors.listItemBackgroundHovered,
+        buttonBackgroundCheckedColor: semanticColors.listItemBackgroundChecked,
+        buttonBackgroundCheckedHoveredColor: semanticColors.listItemBackgroundCheckedHovered,
+    };
+    var buttonHighContrastStyles = {
+        selectors: (_a = {},
+            _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ backgroundColor: 'Highlight', borderColor: 'Highlight', color: 'HighlightText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+            _a),
+    };
+    var styles = {
+        root: {
+            color: caret.buttonTextColor,
+            fontSize: fonts.small.fontSize,
+            position: 'absolute',
+            top: 0,
+            height: '100%',
+            lineHeight: ComboBoxLineHeight,
+            width: ComboBoxCaretDownWidth,
+            textAlign: 'center',
+            cursor: 'default',
+            selectors: (_b = {},
+                _b[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ backgroundColor: 'ButtonFace', borderColor: 'ButtonText', color: 'ButtonText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+                _b),
+        },
+        icon: {
+            fontSize: fonts.small.fontSize,
+        },
+        rootHovered: [
+            {
+                backgroundColor: caret.buttonBackgroundHoveredColor,
+                color: caret.buttonTextHoveredCheckedColor,
+                cursor: 'pointer',
+            },
+            buttonHighContrastStyles,
+        ],
+        rootPressed: [
+            {
+                backgroundColor: caret.buttonBackgroundCheckedColor,
+                color: caret.buttonTextHoveredCheckedColor,
+            },
+            buttonHighContrastStyles,
+        ],
+        rootChecked: [
+            {
+                backgroundColor: caret.buttonBackgroundCheckedColor,
+                color: caret.buttonTextHoveredCheckedColor,
+            },
+            buttonHighContrastStyles,
+        ],
+        rootCheckedHovered: [
+            {
+                backgroundColor: caret.buttonBackgroundCheckedHoveredColor,
+                color: caret.buttonTextHoveredCheckedColor,
+            },
+            buttonHighContrastStyles,
+        ],
+        rootDisabled: [
+            getDisabledStyles(theme),
+            {
+                position: 'absolute',
+            },
+        ],
+    };
+    return (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.concatStyleSets)(styles, customStyles);
+});
+var getStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function (theme, customStyles, comboBoxOptionWidth) {
+    var _a, _b, _c, _d, _e, _f;
+    var semanticColors = theme.semanticColors, fonts = theme.fonts, effects = theme.effects;
+    var root = {
+        textColor: semanticColors.inputText,
+        borderColor: semanticColors.inputBorder,
+        borderHoveredColor: semanticColors.inputBorderHovered,
+        borderPressedColor: semanticColors.inputFocusBorderAlt,
+        borderFocusedColor: semanticColors.inputFocusBorderAlt,
+        backgroundColor: semanticColors.inputBackground,
+        erroredColor: semanticColors.errorText,
+    };
+    var option = {
+        headerTextColor: semanticColors.menuHeader,
+        dividerBorderColor: semanticColors.bodyDivider,
+    };
+    // placeholder style variables
+    var placeholderHighContrastStyles = {
+        selectors: (_a = {},
+            _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                color: 'GrayText',
+            },
+            _a),
+    };
+    var placeholderStyles = [
+        {
+            color: semanticColors.inputPlaceholderText,
+        },
+        placeholderHighContrastStyles,
+    ];
+    var placeholderStylesHovered = [
+        {
+            color: semanticColors.inputTextHovered,
+        },
+        placeholderHighContrastStyles,
+    ];
+    var disabledPlaceholderStyles = [
+        {
+            color: semanticColors.disabledText,
+        },
+        placeholderHighContrastStyles,
+    ];
+    var ComboBoxRootHighContrastFocused = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'HighlightText', backgroundColor: 'Window' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()), { selectors: {
+            ':after': {
+                borderColor: 'Highlight',
+            },
+        } });
+    var focusBorderStyles = (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getInputFocusStyle)(root.borderPressedColor, effects.roundedCorner2, 'border', 0);
+    var styles = {
+        container: {},
+        label: {},
+        labelDisabled: {},
+        root: [
+            theme.fonts.medium,
+            {
+                boxShadow: 'none',
+                marginLeft: '0',
+                paddingRight: ComboBoxCaretDownWidth,
+                paddingLeft: 9,
+                color: root.textColor,
+                position: 'relative',
+                outline: '0',
+                userSelect: 'none',
+                backgroundColor: root.backgroundColor,
+                cursor: 'text',
+                display: 'block',
+                height: ComboBoxHeight,
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis',
+                boxSizing: 'border-box', // Border-box matches Dropdown and TextField
+                selectors: {
+                    '.ms-Label': {
+                        display: 'inline-block',
+                        marginBottom: '8px',
+                    },
+                    '&.is-open': {
+                        selectors: (_b = {},
+                            _b[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = ComboBoxRootHighContrastFocused,
+                            _b),
+                    },
+                    // setting border using pseudo-element here in order to
+                    // prevent chevron button to overlap ComboBox border under certain resolutions
+                    ':after': {
+                        pointerEvents: 'none',
+                        content: "''",
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        right: 0,
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        borderColor: root.borderColor,
+                        borderRadius: effects.roundedCorner2,
+                    },
+                },
+            },
+        ],
+        rootHovered: {
+            selectors: (_c = {
+                    ':after': {
+                        borderColor: root.borderHoveredColor,
+                    },
+                    '.ms-ComboBox-Input': [
+                        {
+                            color: semanticColors.inputTextHovered,
+                        },
+                        (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getPlaceholderStyles)(placeholderStylesHovered),
+                        inputHighContrastStyles,
+                    ]
+                },
+                _c[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'HighlightText', backgroundColor: 'Window' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()), { selectors: {
+                        ':after': {
+                            borderColor: 'Highlight',
+                        },
+                    } }),
+                _c),
+        },
+        rootPressed: [
+            {
+                position: 'relative',
+                selectors: (_d = {},
+                    _d[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = ComboBoxRootHighContrastFocused,
+                    _d),
+            },
+        ],
+        rootFocused: [
+            {
+                selectors: (_e = {
+                        '.ms-ComboBox-Input': [
+                            {
+                                color: semanticColors.inputTextHovered,
+                            },
+                            inputHighContrastStyles,
+                        ]
+                    },
+                    _e[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = ComboBoxRootHighContrastFocused,
+                    _e),
+            },
+            focusBorderStyles,
+        ],
+        rootDisabled: getDisabledStyles(theme),
+        rootError: {
+            selectors: {
+                ':after': {
+                    borderColor: root.erroredColor,
+                },
+                ':hover:after': {
+                    borderColor: semanticColors.inputBorderHovered,
+                },
+            },
+        },
+        rootDisallowFreeForm: {},
+        input: [
+            (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getPlaceholderStyles)(placeholderStyles),
+            {
+                backgroundColor: root.backgroundColor,
+                color: root.textColor,
+                boxSizing: 'border-box',
+                width: '100%',
+                height: '100%',
+                borderStyle: 'none',
+                outline: 'none',
+                font: 'inherit',
+                textOverflow: 'ellipsis',
+                padding: '0',
+                selectors: {
+                    '::-ms-clear': {
+                        display: 'none',
+                    },
+                },
+            },
+            inputHighContrastStyles,
+        ],
+        inputDisabled: [getDisabledStyles(theme), (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getPlaceholderStyles)(disabledPlaceholderStyles)],
+        errorMessage: [
+            theme.fonts.small,
+            {
+                color: root.erroredColor,
+                marginTop: '5px',
+            },
+        ],
+        callout: {
+            boxShadow: effects.elevation8,
+        },
+        optionsContainerWrapper: {
+            width: comboBoxOptionWidth,
+        },
+        optionsContainer: {
+            display: 'block',
+        },
+        screenReaderText: _Styling__WEBPACK_IMPORTED_MODULE_1__.hiddenContentStyle,
+        header: [
+            fonts.medium,
+            {
+                fontWeight: _Styling__WEBPACK_IMPORTED_MODULE_1__.FontWeights.semibold,
+                color: option.headerTextColor,
+                backgroundColor: 'none',
+                borderStyle: 'none',
+                height: ComboBoxOptionHeight,
+                lineHeight: ComboBoxOptionHeight,
+                cursor: 'default',
+                padding: '0 8px',
+                userSelect: 'none',
+                textAlign: 'left',
+                selectors: (_f = {},
+                    _f[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'GrayText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+                    _f),
+            },
+        ],
+        divider: {
+            height: 1,
+            backgroundColor: option.dividerBorderColor,
+        },
+    };
+    return (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.concatStyleSets)(styles, customStyles);
+});
 
 
 /***/ }),
@@ -46750,6 +52289,1566 @@ var PanelType;
 
 /***/ }),
 
+/***/ 71519:
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/Persona.base.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PersonaBase: () => (/* binding */ PersonaBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Utilities */ 34751);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Tooltip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Tooltip */ 11880);
+/* harmony import */ var _Tooltip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Tooltip */ 52179);
+/* harmony import */ var _PersonaCoin_PersonaCoin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./PersonaCoin/PersonaCoin */ 85609);
+/* harmony import */ var _Persona_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Persona.types */ 47909);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react-hooks */ 72295);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 10544);
+/* harmony import */ var _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../common/DirectionalHint */ 19861);
+
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var DEFAULT_PROPS = {
+    size: _Persona_types__WEBPACK_IMPORTED_MODULE_2__.PersonaSize.size48,
+    presence: _Persona_types__WEBPACK_IMPORTED_MODULE_2__.PersonaPresence.none,
+    imageAlt: '',
+    showOverflowTooltip: true,
+};
+function useDebugWarnings(props) {
+    if (true) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks -- build-time conditional
+        (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_3__.useWarnings)({
+            name: 'Persona',
+            props: props,
+            deprecations: { primaryText: 'text' },
+        });
+    }
+}
+/**
+ * Persona with no default styles.
+ * [Use the `styles` API to add your own styles.](https://github.com/microsoft/fluentui/wiki/Styling)
+ */
+var PersonaBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (propsWithoutDefaults, forwardedRef) {
+    var props = (0,_Utilities__WEBPACK_IMPORTED_MODULE_4__.getPropsWithDefaults)(DEFAULT_PROPS, propsWithoutDefaults);
+    useDebugWarnings(props);
+    var rootRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var mergedRootRef = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useMergedRefs)(forwardedRef, rootRef);
+    /**
+     * Deprecation helper for getting text.
+     */
+    var getText = function () {
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        return props.text || props.primaryText || '';
+    };
+    /**
+     * Renders various types of Text (primaryText, secondaryText, etc)
+     * based on the classNames passed
+     * @param elementClassNames - element className
+     * @param renderFunction - render function
+     * @param defaultRenderFunction - default render function
+     */
+    var renderElement = function (elementClassNames, renderFunction, defaultRenderFunction) {
+        var content = renderFunction && renderFunction(props, defaultRenderFunction);
+        return content ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { dir: "auto", className: elementClassNames }, content)) : undefined;
+    };
+    /**
+     * using closure to wrap the default render behavior
+     * to make it independent of the type of text passed
+     * @param text - text to render
+     */
+    var onRenderText = function (text, tooltip) {
+        if (tooltip === void 0) { tooltip = true; }
+        // return default render behavior for valid text or undefined
+        return text
+            ? tooltip
+                ? function () {
+                    // default onRender behavior
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tooltip__WEBPACK_IMPORTED_MODULE_6__.TooltipHost, { content: text, overflowMode: _Tooltip__WEBPACK_IMPORTED_MODULE_7__.TooltipOverflowMode.Parent, directionalHint: _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_8__.DirectionalHint.topLeftEdge }, text));
+                }
+                : function () { return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, text); }
+            : undefined;
+    };
+    var onInternalRenderPersonaCoin = function (providedCoinProps) {
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PersonaCoin_PersonaCoin__WEBPACK_IMPORTED_MODULE_9__.PersonaCoin, (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({}, providedCoinProps));
+    };
+    // wrapping default render behavior based on various props properties
+    var onInternalRenderPrimaryText = onRenderText(getText(), props.showOverflowTooltip);
+    var onInternalRenderSecondaryText = onRenderText(props.secondaryText, props.showOverflowTooltip);
+    var onInternalRenderTertiaryText = onRenderText(props.tertiaryText, props.showOverflowTooltip);
+    var onInternalRenderOptionalText = onRenderText(props.optionalText, props.showOverflowTooltip);
+    var hidePersonaDetails = props.hidePersonaDetails, _a = props.onRenderOptionalText, onRenderOptionalText = _a === void 0 ? onInternalRenderOptionalText : _a, _b = props.onRenderPrimaryText, onRenderPrimaryText = _b === void 0 ? onInternalRenderPrimaryText : _b, _c = props.onRenderSecondaryText, onRenderSecondaryText = _c === void 0 ? onInternalRenderSecondaryText : _c, _d = props.onRenderTertiaryText, onRenderTertiaryText = _d === void 0 ? onInternalRenderTertiaryText : _d, _e = props.onRenderPersonaCoin, onRenderPersonaCoin = _e === void 0 ? onInternalRenderPersonaCoin : _e;
+    var size = props.size;
+    // These properties are to be explicitly passed into PersonaCoin because they are the only props directly used
+    var allowPhoneInitials = props.allowPhoneInitials, className = props.className, coinProps = props.coinProps, showUnknownPersonaCoin = props.showUnknownPersonaCoin, coinSize = props.coinSize, styles = props.styles, imageAlt = props.imageAlt, imageInitials = props.imageInitials, imageShouldFadeIn = props.imageShouldFadeIn, imageShouldStartVisible = props.imageShouldStartVisible, imageUrl = props.imageUrl, initialsColor = props.initialsColor, initialsTextColor = props.initialsTextColor, isOutOfOffice = props.isOutOfOffice, onPhotoLoadingStateChange = props.onPhotoLoadingStateChange, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    onRenderCoin = props.onRenderCoin, onRenderInitials = props.onRenderInitials, presence = props.presence, presenceTitle = props.presenceTitle, presenceColors = props.presenceColors, showInitialsUntilImageLoads = props.showInitialsUntilImageLoads, showSecondaryText = props.showSecondaryText, theme = props.theme;
+    var personaCoinProps = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({ allowPhoneInitials: allowPhoneInitials, showUnknownPersonaCoin: showUnknownPersonaCoin, coinSize: coinSize, imageAlt: imageAlt, imageInitials: imageInitials, imageShouldFadeIn: imageShouldFadeIn, imageShouldStartVisible: imageShouldStartVisible, imageUrl: imageUrl, initialsColor: initialsColor, initialsTextColor: initialsTextColor, onPhotoLoadingStateChange: onPhotoLoadingStateChange, 
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        onRenderCoin: onRenderCoin, onRenderInitials: onRenderInitials, presence: presence, presenceTitle: presenceTitle, showInitialsUntilImageLoads: showInitialsUntilImageLoads, size: size, text: getText(), isOutOfOffice: isOutOfOffice, presenceColors: presenceColors }, coinProps);
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        showSecondaryText: showSecondaryText,
+        presence: presence,
+        size: size,
+    });
+    var divProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_11__.getNativeProps)(props, _Utilities__WEBPACK_IMPORTED_MODULE_11__.divProperties);
+    var personaDetails = (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.details },
+        renderElement(classNames.primaryText, onRenderPrimaryText, onInternalRenderPrimaryText),
+        renderElement(classNames.secondaryText, onRenderSecondaryText, onInternalRenderSecondaryText),
+        renderElement(classNames.tertiaryText, onRenderTertiaryText, onInternalRenderTertiaryText),
+        renderElement(classNames.optionalText, onRenderOptionalText, onInternalRenderOptionalText),
+        props.children));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({}, divProps, { ref: mergedRootRef, className: classNames.root, style: coinSize ? { height: coinSize, minWidth: coinSize } : undefined }),
+        onRenderPersonaCoin(personaCoinProps, onRenderPersonaCoin),
+        /* eslint-disable @typescript-eslint/no-deprecated */
+        (!hidePersonaDetails ||
+            size === _Persona_types__WEBPACK_IMPORTED_MODULE_2__.PersonaSize.size8 ||
+            size === _Persona_types__WEBPACK_IMPORTED_MODULE_2__.PersonaSize.size10 ||
+            size === _Persona_types__WEBPACK_IMPORTED_MODULE_2__.PersonaSize.tiny) &&
+            personaDetails
+    /* eslint-enable @typescript-eslint/no-deprecated */
+    ));
+});
+PersonaBase.displayName = 'PersonaBase';
+
+
+/***/ }),
+
+/***/ 42242:
+/*!************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/Persona.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Persona: () => (/* binding */ Persona)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _Persona_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Persona.base */ 71519);
+/* harmony import */ var _Persona_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Persona.styles */ 70404);
+
+
+
+/**
+ * Personas are used for rendering an individual's avatar, presence and details.
+ * They are used within the PeoplePicker components.
+ */
+var Persona = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Persona_base__WEBPACK_IMPORTED_MODULE_1__.PersonaBase, _Persona_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'Persona',
+});
+
+
+/***/ }),
+
+/***/ 70404:
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/Persona.styles.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Styling */ 38455);
+/* harmony import */ var _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PersonaConsts */ 42882);
+
+
+var GlobalClassNames = {
+    root: 'ms-Persona',
+    size8: 'ms-Persona--size8',
+    size10: 'ms-Persona--size10',
+    size16: 'ms-Persona--size16',
+    size24: 'ms-Persona--size24',
+    size28: 'ms-Persona--size28',
+    size32: 'ms-Persona--size32',
+    size40: 'ms-Persona--size40',
+    size48: 'ms-Persona--size48',
+    size56: 'ms-Persona--size56',
+    size72: 'ms-Persona--size72',
+    size100: 'ms-Persona--size100',
+    size120: 'ms-Persona--size120',
+    available: 'ms-Persona--online',
+    away: 'ms-Persona--away',
+    blocked: 'ms-Persona--blocked',
+    busy: 'ms-Persona--busy',
+    doNotDisturb: 'ms-Persona--donotdisturb',
+    offline: 'ms-Persona--offline',
+    details: 'ms-Persona-details',
+    primaryText: 'ms-Persona-primaryText',
+    secondaryText: 'ms-Persona-secondaryText',
+    tertiaryText: 'ms-Persona-tertiaryText',
+    optionalText: 'ms-Persona-optionalText',
+    textContent: 'ms-Persona-textContent',
+};
+var getStyles = function (props) {
+    var className = props.className, showSecondaryText = props.showSecondaryText, theme = props.theme;
+    var semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var size = (0,_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.sizeBoolean)(props.size);
+    var presence = (0,_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.presenceBoolean)(props.presence);
+    var showSecondaryTextDefaultHeight = '16px';
+    var sharedTextStyles = {
+        color: semanticColors.bodySubtext,
+        fontWeight: _Styling__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+        fontSize: fonts.small.fontSize,
+    };
+    return {
+        root: [
+            classNames.root,
+            theme.fonts.medium,
+            _Styling__WEBPACK_IMPORTED_MODULE_0__.normalize,
+            {
+                color: semanticColors.bodyText,
+                position: 'relative',
+                height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size48,
+                minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size48,
+                display: 'flex',
+                alignItems: 'center',
+                selectors: {
+                    '.contextualHost': {
+                        display: 'none',
+                    },
+                },
+            },
+            size.isSize8 && [
+                classNames.size8,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size8,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size8,
+                },
+            ],
+            // TODO: Deprecated size and needs to be removed in a future major release.
+            size.isSize10 && [
+                classNames.size10,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size10,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size10,
+                },
+            ],
+            // TODO: Deprecated size and needs to be removed in a future major release.
+            size.isSize16 && [
+                classNames.size16,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size16,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size16,
+                },
+            ],
+            size.isSize24 && [
+                classNames.size24,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size24,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size24,
+                },
+            ],
+            size.isSize24 &&
+                showSecondaryText && {
+                height: '36px',
+            },
+            // TODO: Deprecated size and needs to be removed in a future major release.
+            size.isSize28 && [
+                classNames.size28,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size28,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size28,
+                },
+            ],
+            size.isSize28 &&
+                showSecondaryText && {
+                height: '32px',
+            },
+            size.isSize32 && [
+                classNames.size32,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size32,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size32,
+                },
+            ],
+            size.isSize40 && [
+                classNames.size40,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size40,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size40,
+                },
+            ],
+            size.isSize48 && classNames.size48,
+            size.isSize56 && [
+                classNames.size56,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size56,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size56,
+                },
+            ],
+            size.isSize72 && [
+                classNames.size72,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size72,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size72,
+                },
+            ],
+            size.isSize100 && [
+                classNames.size100,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size100,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size100,
+                },
+            ],
+            size.isSize120 && [
+                classNames.size120,
+                {
+                    height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size120,
+                    minWidth: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size120,
+                },
+            ],
+            /**
+             * Modifiers: presence
+             */
+            presence.isAvailable && classNames.available,
+            presence.isAway && classNames.away,
+            presence.isBlocked && classNames.blocked,
+            presence.isBusy && classNames.busy,
+            presence.isDoNotDisturb && classNames.doNotDisturb,
+            presence.isOffline && classNames.offline,
+            className,
+        ],
+        details: [
+            classNames.details,
+            {
+                padding: '0 24px 0 16px',
+                minWidth: 0,
+                width: '100%',
+                textAlign: 'left',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-around',
+            },
+            (size.isSize8 || size.isSize10) && {
+                paddingLeft: 17, // increased padding because we don't render a coin at this size
+            },
+            (size.isSize24 || size.isSize28 || size.isSize32) && {
+                padding: '0 8px',
+            },
+            (size.isSize40 || size.isSize48) && {
+                padding: '0 12px',
+            },
+        ],
+        primaryText: [
+            classNames.primaryText,
+            _Styling__WEBPACK_IMPORTED_MODULE_0__.noWrap,
+            {
+                color: semanticColors.bodyText,
+                fontWeight: _Styling__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+                fontSize: fonts.medium.fontSize,
+                selectors: {
+                    ':hover': {
+                        color: semanticColors.inputTextHovered,
+                    },
+                },
+            },
+            showSecondaryText && {
+                height: showSecondaryTextDefaultHeight,
+                lineHeight: showSecondaryTextDefaultHeight,
+                overflowX: 'hidden',
+            },
+            (size.isSize8 || size.isSize10) && {
+                fontSize: fonts.small.fontSize,
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size8,
+            },
+            size.isSize16 && {
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaSize.size28,
+            },
+            (size.isSize24 || size.isSize28 || size.isSize32 || size.isSize40 || size.isSize48) &&
+                showSecondaryText && {
+                height: 18,
+            },
+            (size.isSize56 || size.isSize72 || size.isSize100 || size.isSize120) && {
+                fontSize: fonts.xLarge.fontSize,
+            },
+            (size.isSize56 || size.isSize72 || size.isSize100 || size.isSize120) &&
+                showSecondaryText && {
+                height: 22,
+            },
+        ],
+        secondaryText: [
+            classNames.secondaryText,
+            _Styling__WEBPACK_IMPORTED_MODULE_0__.noWrap,
+            sharedTextStyles,
+            (size.isSize8 || size.isSize10 || size.isSize16 || size.isSize24 || size.isSize28 || size.isSize32) && {
+                display: 'none',
+            },
+            showSecondaryText && {
+                display: 'block',
+                height: showSecondaryTextDefaultHeight,
+                lineHeight: showSecondaryTextDefaultHeight,
+                overflowX: 'hidden',
+            },
+            size.isSize24 &&
+                showSecondaryText && {
+                height: 18,
+            },
+            (size.isSize56 || size.isSize72 || size.isSize100 || size.isSize120) && {
+                fontSize: fonts.medium.fontSize,
+            },
+            (size.isSize56 || size.isSize72 || size.isSize100 || size.isSize120) &&
+                showSecondaryText && {
+                height: 18,
+            },
+        ],
+        tertiaryText: [
+            classNames.tertiaryText,
+            _Styling__WEBPACK_IMPORTED_MODULE_0__.noWrap,
+            sharedTextStyles,
+            {
+                display: 'none',
+                fontSize: fonts.medium.fontSize,
+            },
+            (size.isSize72 || size.isSize100 || size.isSize120) && {
+                display: 'block',
+            },
+        ],
+        optionalText: [
+            classNames.optionalText,
+            _Styling__WEBPACK_IMPORTED_MODULE_0__.noWrap,
+            sharedTextStyles,
+            {
+                display: 'none',
+                fontSize: fonts.medium.fontSize,
+            },
+            (size.isSize100 || size.isSize120) && {
+                display: 'block',
+            },
+        ],
+        textContent: [classNames.textContent, _Styling__WEBPACK_IMPORTED_MODULE_0__.noWrap],
+    };
+};
+
+
+/***/ }),
+
+/***/ 47909:
+/*!******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/Persona.types.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PersonaInitialsColor: () => (/* binding */ PersonaInitialsColor),
+/* harmony export */   PersonaPresence: () => (/* binding */ PersonaPresence),
+/* harmony export */   PersonaSize: () => (/* binding */ PersonaSize)
+/* harmony export */ });
+/**
+ * {@docCategory Persona}
+ */
+var PersonaSize;
+(function (PersonaSize) {
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size8` instead.
+     */
+    PersonaSize[PersonaSize["tiny"] = 0] = "tiny";
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size24` instead.
+     */
+    PersonaSize[PersonaSize["extraExtraSmall"] = 1] = "extraExtraSmall";
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size32` instead.
+     */
+    PersonaSize[PersonaSize["extraSmall"] = 2] = "extraSmall";
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size40` instead.
+     */
+    PersonaSize[PersonaSize["small"] = 3] = "small";
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size48` instead.
+     */
+    PersonaSize[PersonaSize["regular"] = 4] = "regular";
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size72` instead.
+     */
+    PersonaSize[PersonaSize["large"] = 5] = "large";
+    /**
+     * Deprecated in favor of standardized numeric sizing.
+     * @deprecated Use `size100` instead.
+     */
+    PersonaSize[PersonaSize["extraLarge"] = 6] = "extraLarge";
+    /**
+     * No `PersonaCoin` is rendered.
+     */
+    PersonaSize[PersonaSize["size8"] = 17] = "size8";
+    /**
+     * No `PersonaCoin` is rendered. Deprecated to align with design specifications.
+     * @deprecated Use `size8` instead.
+     */
+    PersonaSize[PersonaSize["size10"] = 9] = "size10";
+    /**
+     * Renders a 16px `PersonaCoin`.
+     * @deprecated Deprecated due to not being in the design specification.
+     */
+    PersonaSize[PersonaSize["size16"] = 8] = "size16";
+    /**
+     * Renders a 24px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size24"] = 10] = "size24";
+    /**
+     * Renders a 28px `PersonaCoin`.
+     * @deprecated Deprecated due to not being in the design specification.
+     */
+    PersonaSize[PersonaSize["size28"] = 7] = "size28";
+    /**
+     * Renders a 32px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size32"] = 11] = "size32";
+    /**
+     * Renders a 40px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size40"] = 12] = "size40";
+    /**
+     * Renders a 48px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size48"] = 13] = "size48";
+    /**
+     * Renders a 56px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size56"] = 16] = "size56";
+    /**
+     * Renders a 72px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size72"] = 14] = "size72";
+    /**
+     * Renders a 100px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size100"] = 15] = "size100";
+    /**
+     * Renders a 120px `PersonaCoin`.
+     */
+    PersonaSize[PersonaSize["size120"] = 18] = "size120";
+})(PersonaSize || (PersonaSize = {}));
+/**
+ * {@docCategory Persona}
+ */
+var PersonaPresence;
+(function (PersonaPresence) {
+    PersonaPresence[PersonaPresence["none"] = 0] = "none";
+    PersonaPresence[PersonaPresence["offline"] = 1] = "offline";
+    PersonaPresence[PersonaPresence["online"] = 2] = "online";
+    PersonaPresence[PersonaPresence["away"] = 3] = "away";
+    PersonaPresence[PersonaPresence["dnd"] = 4] = "dnd";
+    PersonaPresence[PersonaPresence["blocked"] = 5] = "blocked";
+    PersonaPresence[PersonaPresence["busy"] = 6] = "busy";
+})(PersonaPresence || (PersonaPresence = {}));
+/**
+ * {@docCategory Persona}
+ */
+var PersonaInitialsColor;
+(function (PersonaInitialsColor) {
+    PersonaInitialsColor[PersonaInitialsColor["lightBlue"] = 0] = "lightBlue";
+    PersonaInitialsColor[PersonaInitialsColor["blue"] = 1] = "blue";
+    PersonaInitialsColor[PersonaInitialsColor["darkBlue"] = 2] = "darkBlue";
+    PersonaInitialsColor[PersonaInitialsColor["teal"] = 3] = "teal";
+    PersonaInitialsColor[PersonaInitialsColor["lightGreen"] = 4] = "lightGreen";
+    PersonaInitialsColor[PersonaInitialsColor["green"] = 5] = "green";
+    PersonaInitialsColor[PersonaInitialsColor["darkGreen"] = 6] = "darkGreen";
+    PersonaInitialsColor[PersonaInitialsColor["lightPink"] = 7] = "lightPink";
+    PersonaInitialsColor[PersonaInitialsColor["pink"] = 8] = "pink";
+    PersonaInitialsColor[PersonaInitialsColor["magenta"] = 9] = "magenta";
+    PersonaInitialsColor[PersonaInitialsColor["purple"] = 10] = "purple";
+    /**
+     * @deprecated `black` is a color that can result in offensive persona coins with some initials combinations,
+     * so it can only be set with overrides. Will be removed in a future major release.
+     */
+    PersonaInitialsColor[PersonaInitialsColor["black"] = 11] = "black";
+    PersonaInitialsColor[PersonaInitialsColor["orange"] = 12] = "orange";
+    /**
+     * @deprecated `red` is a color that often has a special meaning, so it is considered a reserved color and
+     * can only be set with overrides. Will be removed in a future major release.
+     */
+    PersonaInitialsColor[PersonaInitialsColor["red"] = 13] = "red";
+    PersonaInitialsColor[PersonaInitialsColor["darkRed"] = 14] = "darkRed";
+    /**
+     * Transparent is not intended to be used with typical initials due to accessibility issues.
+     * Its primary use is for overflow buttons, so it is considered a reserved color and can only be set with overrides.
+     */
+    PersonaInitialsColor[PersonaInitialsColor["transparent"] = 15] = "transparent";
+    PersonaInitialsColor[PersonaInitialsColor["violet"] = 16] = "violet";
+    PersonaInitialsColor[PersonaInitialsColor["lightRed"] = 17] = "lightRed";
+    PersonaInitialsColor[PersonaInitialsColor["gold"] = 18] = "gold";
+    PersonaInitialsColor[PersonaInitialsColor["burgundy"] = 19] = "burgundy";
+    PersonaInitialsColor[PersonaInitialsColor["warmGray"] = 20] = "warmGray";
+    PersonaInitialsColor[PersonaInitialsColor["coolGray"] = 21] = "coolGray";
+    /**
+     * `gray` is a color that can result in offensive persona coins with some initials combinations,
+     * so it can only be set with overrides.
+     */
+    PersonaInitialsColor[PersonaInitialsColor["gray"] = 22] = "gray";
+    PersonaInitialsColor[PersonaInitialsColor["cyan"] = 23] = "cyan";
+    PersonaInitialsColor[PersonaInitialsColor["rust"] = 24] = "rust";
+})(PersonaInitialsColor || (PersonaInitialsColor = {}));
+
+
+/***/ }),
+
+/***/ 44718:
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaCoin/PersonaCoin.base.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PersonaCoinBase: () => (/* binding */ PersonaCoinBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilities */ 15659);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Utilities */ 34751);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../Utilities */ 46657);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../Utilities */ 96606);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Styling */ 38455);
+/* harmony import */ var _PersonaPresence_index__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../PersonaPresence/index */ 82805);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../Icon */ 52394);
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Image */ 7729);
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../Image */ 92342);
+/* harmony import */ var _Persona_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Persona.types */ 47909);
+/* harmony import */ var _PersonaInitialsColor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../PersonaInitialsColor */ 416);
+/* harmony import */ var _PersonaConsts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../PersonaConsts */ 42882);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react-hooks */ 72295);
+
+
+
+
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)({
+    // There can be many PersonaCoin rendered with different sizes.
+    // Therefore setting a larger cache size.
+    cacheSize: 100,
+});
+var getInitialsStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.memoizeFunction)(function (className, initialsColor, initialsTextColor, text, primaryText, showUnknownPersonaCoin) {
+    return (0,_Styling__WEBPACK_IMPORTED_MODULE_3__.mergeStyles)(className, !showUnknownPersonaCoin && {
+        backgroundColor: (0,_PersonaInitialsColor__WEBPACK_IMPORTED_MODULE_4__.getPersonaInitialsColor)({ text: text, initialsColor: initialsColor, primaryText: primaryText }),
+        color: initialsTextColor,
+    });
+});
+var DEFAULT_PROPS = {
+    size: _Persona_types__WEBPACK_IMPORTED_MODULE_5__.PersonaSize.size48,
+    presence: _Persona_types__WEBPACK_IMPORTED_MODULE_5__.PersonaPresence.none,
+    imageAlt: '',
+};
+function useDebugWarnings(props) {
+    if (true) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks -- build-time conditional
+        (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__.useWarnings)({
+            name: 'PersonaCoin',
+            props: props,
+            deprecations: { primaryText: 'text' },
+        });
+    }
+}
+function useImageLoadState(_a) {
+    var onPhotoLoadingStateChange = _a.onPhotoLoadingStateChange, imageUrl = _a.imageUrl;
+    var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(_Image__WEBPACK_IMPORTED_MODULE_7__.ImageLoadState.notLoaded), imageLoadState = _b[0], setImageLoadstate = _b[1];
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        setImageLoadstate(_Image__WEBPACK_IMPORTED_MODULE_7__.ImageLoadState.notLoaded);
+    }, [imageUrl]);
+    var onLoadingStateChange = function (loadState) {
+        setImageLoadstate(loadState);
+        onPhotoLoadingStateChange === null || onPhotoLoadingStateChange === void 0 ? void 0 : onPhotoLoadingStateChange(loadState);
+    };
+    return [imageLoadState, onLoadingStateChange];
+}
+/**
+ * PersonaCoin with no default styles.
+ * [Use the `getStyles` API to add your own styles.](https://github.com/microsoft/fluentui/wiki/Styling)
+ */
+var PersonaCoinBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (propsWithoutDefaults, forwardedRef) {
+    var props = (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.getPropsWithDefaults)(DEFAULT_PROPS, propsWithoutDefaults);
+    useDebugWarnings(props);
+    var _a = useImageLoadState(props), imageLoadState = _a[0], onLoadingStateChange = _a[1];
+    var renderCoin = getCoinRenderer(onLoadingStateChange);
+    var className = props.className, coinProps = props.coinProps, showUnknownPersonaCoin = props.showUnknownPersonaCoin, coinSize = props.coinSize, styles = props.styles, imageUrl = props.imageUrl, initialsColor = props.initialsColor, initialsTextColor = props.initialsTextColor, isOutOfOffice = props.isOutOfOffice, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    _b = props.onRenderCoin, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    onRenderCoin = _b === void 0 ? renderCoin : _b, _c = props.onRenderPersonaCoin, onRenderPersonaCoin = _c === void 0 ? onRenderCoin : _c, _d = props.onRenderInitials, onRenderInitials = _d === void 0 ? renderPersonaCoinInitials : _d, presence = props.presence, presenceTitle = props.presenceTitle, presenceColors = props.presenceColors, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    primaryText = props.primaryText, showInitialsUntilImageLoads = props.showInitialsUntilImageLoads, text = props.text, theme = props.theme, size = props.size;
+    var divProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_9__.getNativeProps)(props, _Utilities__WEBPACK_IMPORTED_MODULE_9__.divProperties);
+    var divCoinProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_9__.getNativeProps)(coinProps || {}, _Utilities__WEBPACK_IMPORTED_MODULE_9__.divProperties);
+    var coinSizeStyle = coinSize ? { width: coinSize, height: coinSize } : undefined;
+    var hideImage = showUnknownPersonaCoin;
+    var personaPresenceProps = {
+        coinSize: coinSize,
+        isOutOfOffice: isOutOfOffice,
+        presence: presence,
+        presenceTitle: presenceTitle,
+        presenceColors: presenceColors,
+        size: size,
+        theme: theme,
+    };
+    // Use getStyles from props, or fall back to getStyles from styles file.
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: coinProps && coinProps.className ? coinProps.className : className,
+        size: size,
+        coinSize: coinSize,
+        showUnknownPersonaCoin: showUnknownPersonaCoin,
+    });
+    var shouldRenderInitials = Boolean(imageLoadState !== _Image__WEBPACK_IMPORTED_MODULE_7__.ImageLoadState.loaded &&
+        ((showInitialsUntilImageLoads && imageUrl) || !imageUrl || imageLoadState === _Image__WEBPACK_IMPORTED_MODULE_7__.ImageLoadState.error || hideImage));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({ role: "presentation" }, divProps, { className: classNames.coin, ref: forwardedRef }),
+        // Render PersonaCoin if size is not size8. size10 and tiny need to removed after a deprecation cleanup.
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        size !== _Persona_types__WEBPACK_IMPORTED_MODULE_5__.PersonaSize.size8 && size !== _Persona_types__WEBPACK_IMPORTED_MODULE_5__.PersonaSize.size10 && size !== _Persona_types__WEBPACK_IMPORTED_MODULE_5__.PersonaSize.tiny ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({ role: "presentation" }, divCoinProps, { className: classNames.imageArea, style: coinSizeStyle }),
+            shouldRenderInitials && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: getInitialsStyles(classNames.initials, initialsColor, initialsTextColor, text, primaryText, showUnknownPersonaCoin), style: coinSizeStyle, "aria-hidden": "true" }, onRenderInitials(props, renderPersonaCoinInitials))),
+            !hideImage && onRenderPersonaCoin(props, renderCoin),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PersonaPresence_index__WEBPACK_IMPORTED_MODULE_11__.PersonaPresence, (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({}, personaPresenceProps)))) : // Otherwise, render just PersonaPresence.
+            props.presence ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PersonaPresence_index__WEBPACK_IMPORTED_MODULE_11__.PersonaPresence, (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({}, personaPresenceProps))) : (
+            // Just render Contact Icon if there isn't a Presence prop.
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Contact", className: classNames.size10WithoutPresenceIcon })),
+        props.children));
+});
+PersonaCoinBase.displayName = 'PersonaCoinBase';
+var getCoinRenderer = function (onLoadingStateChange) {
+    return function (_a) {
+        var coinSize = _a.coinSize, styles = _a.styles, imageUrl = _a.imageUrl, imageAlt = _a.imageAlt, imageShouldFadeIn = _a.imageShouldFadeIn, imageShouldStartVisible = _a.imageShouldStartVisible, theme = _a.theme, showUnknownPersonaCoin = _a.showUnknownPersonaCoin, _b = _a.size, size = _b === void 0 ? DEFAULT_PROPS.size : _b;
+        // Render the Image component only if an image URL is provided
+        if (!imageUrl) {
+            return null;
+        }
+        var classNames = getClassNames(styles, {
+            theme: theme,
+            size: size,
+            showUnknownPersonaCoin: showUnknownPersonaCoin,
+        });
+        var dimension = coinSize || _PersonaConsts__WEBPACK_IMPORTED_MODULE_13__.sizeToPixels[size];
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Image__WEBPACK_IMPORTED_MODULE_14__.Image, { className: classNames.image, imageFit: _Image__WEBPACK_IMPORTED_MODULE_7__.ImageFit.cover, src: imageUrl, width: dimension, height: dimension, alt: imageAlt, shouldFadeIn: imageShouldFadeIn, shouldStartVisible: imageShouldStartVisible, onLoadingStateChange: onLoadingStateChange }));
+    };
+};
+var renderPersonaCoinInitials = function (_a) {
+    var imageInitials = _a.imageInitials, allowPhoneInitials = _a.allowPhoneInitials, showUnknownPersonaCoin = _a.showUnknownPersonaCoin, text = _a.text, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    primaryText = _a.primaryText, theme = _a.theme;
+    if (showUnknownPersonaCoin) {
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Help" });
+    }
+    var isRTL = (0,_Utilities__WEBPACK_IMPORTED_MODULE_15__.getRTL)(theme);
+    imageInitials = imageInitials || (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.getInitials)(text || primaryText || '', isRTL, allowPhoneInitials);
+    return imageInitials !== '' ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, imageInitials) : react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Contact" });
+};
+
+
+/***/ }),
+
+/***/ 85609:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaCoin/PersonaCoin.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PersonaCoin: () => (/* binding */ PersonaCoin)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _PersonaCoin_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PersonaCoin.base */ 44718);
+/* harmony import */ var _PersonaCoin_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PersonaCoin.styles */ 79613);
+
+
+
+/**
+ * PersonaCoin is used to render an individual's avatar and presence.
+ */
+var PersonaCoin = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_PersonaCoin_base__WEBPACK_IMPORTED_MODULE_1__.PersonaCoinBase, _PersonaCoin_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'PersonaCoin',
+});
+
+
+/***/ }),
+
+/***/ 79613:
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaCoin/PersonaCoin.styles.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Styling */ 38455);
+/* harmony import */ var _PersonaConsts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../PersonaConsts */ 42882);
+
+
+
+var GlobalClassNames = {
+    coin: 'ms-Persona-coin',
+    imageArea: 'ms-Persona-imageArea',
+    image: 'ms-Persona-image',
+    initials: 'ms-Persona-initials',
+    size8: 'ms-Persona--size8',
+    size10: 'ms-Persona--size10',
+    size16: 'ms-Persona--size16',
+    size24: 'ms-Persona--size24',
+    size28: 'ms-Persona--size28',
+    size32: 'ms-Persona--size32',
+    size40: 'ms-Persona--size40',
+    size48: 'ms-Persona--size48',
+    size56: 'ms-Persona--size56',
+    size72: 'ms-Persona--size72',
+    size100: 'ms-Persona--size100',
+    size120: 'ms-Persona--size120',
+};
+var getStyles = function (props) {
+    var _a;
+    var className = props.className, theme = props.theme, coinSize = props.coinSize;
+    var palette = theme.palette, fonts = theme.fonts;
+    var size = (0,_PersonaConsts__WEBPACK_IMPORTED_MODULE_0__.sizeBoolean)(props.size);
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getGlobalClassNames)(GlobalClassNames, theme);
+    // Static colors used when displaying 'unknown persona' coin
+    var unknownPersonaBackgroundColor = 'rgb(234, 234, 234)';
+    var unknownPersonaFontColor = 'rgb(168, 0, 0)';
+    var dimension = coinSize || (props.size && _PersonaConsts__WEBPACK_IMPORTED_MODULE_0__.sizeToPixels[props.size]) || 48;
+    return {
+        coin: [
+            classNames.coin,
+            fonts.medium,
+            size.isSize8 && classNames.size8,
+            size.isSize10 && classNames.size10,
+            size.isSize16 && classNames.size16,
+            size.isSize24 && classNames.size24,
+            size.isSize28 && classNames.size28,
+            size.isSize32 && classNames.size32,
+            size.isSize40 && classNames.size40,
+            size.isSize48 && classNames.size48,
+            size.isSize56 && classNames.size56,
+            size.isSize72 && classNames.size72,
+            size.isSize100 && classNames.size100,
+            size.isSize120 && classNames.size120,
+            className,
+        ],
+        size10WithoutPresenceIcon: {
+            fontSize: fonts.xSmall.fontSize,
+            position: 'absolute',
+            top: '5px',
+            right: 'auto',
+            left: 0,
+        },
+        imageArea: [
+            classNames.imageArea,
+            {
+                position: 'relative',
+                textAlign: 'center',
+                flex: '0 0 auto',
+                height: dimension,
+                width: dimension,
+            },
+            dimension <= 10 && {
+                overflow: 'visible',
+                background: 'transparent',
+                height: 0,
+                width: 0,
+            },
+        ],
+        image: [
+            classNames.image,
+            {
+                marginRight: '10px',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+                borderRadius: '50%',
+                perspective: '1px',
+            },
+            dimension <= 10 && {
+                overflow: 'visible',
+                background: 'transparent',
+                height: 0,
+                width: 0,
+            },
+            dimension > 10 && {
+                height: dimension,
+                width: dimension,
+            },
+        ],
+        initials: [
+            classNames.initials,
+            {
+                borderRadius: '50%',
+                color: props.showUnknownPersonaCoin ? unknownPersonaFontColor : palette.white,
+                fontSize: fonts.large.fontSize,
+                fontWeight: _Styling__WEBPACK_IMPORTED_MODULE_1__.FontWeights.semibold,
+                // copying the logic for the dimensions; defaulted to 46 for size48
+                lineHeight: dimension === 48 ? 46 : dimension,
+                height: dimension,
+                selectors: (_a = {},
+                    _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ border: '1px solid WindowText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()), { color: 'WindowText', boxSizing: 'border-box', backgroundColor: 'Window !important' }),
+                    _a.i = {
+                        fontWeight: _Styling__WEBPACK_IMPORTED_MODULE_1__.FontWeights.semibold,
+                    },
+                    _a),
+            },
+            props.showUnknownPersonaCoin && {
+                backgroundColor: unknownPersonaBackgroundColor,
+            },
+            dimension < 32 && {
+                fontSize: fonts.xSmall.fontSize,
+            },
+            dimension >= 32 &&
+                dimension < 40 && {
+                fontSize: fonts.medium.fontSize,
+            },
+            dimension >= 40 &&
+                dimension < 56 && {
+                fontSize: fonts.mediumPlus.fontSize,
+            },
+            dimension >= 56 &&
+                dimension < 72 && {
+                fontSize: fonts.xLarge.fontSize,
+            },
+            dimension >= 72 &&
+                dimension < 100 && {
+                fontSize: fonts.xxLarge.fontSize,
+            },
+            dimension >= 100 && {
+                fontSize: fonts.superLarge.fontSize,
+            },
+        ],
+    };
+};
+
+
+/***/ }),
+
+/***/ 42882:
+/*!******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaConsts.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   personaPresenceSize: () => (/* binding */ personaPresenceSize),
+/* harmony export */   personaSize: () => (/* binding */ personaSize),
+/* harmony export */   presenceBoolean: () => (/* binding */ presenceBoolean),
+/* harmony export */   sizeBoolean: () => (/* binding */ sizeBoolean),
+/* harmony export */   sizeToPixels: () => (/* binding */ sizeToPixels)
+/* harmony export */ });
+/* harmony import */ var _Persona_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Persona.types */ 47909);
+var _a;
+
+// Persona Sizes
+var personaSize;
+(function (personaSize) {
+    personaSize.size8 = '20px';
+    // TODO: remove in a future major release as it's deprecated.
+    personaSize.size10 = '20px';
+    // TODO: remove in a future major release as it's deprecated.
+    personaSize.size16 = '16px';
+    personaSize.size24 = '24px';
+    // TODO: remove in a future major release as it's deprecated.
+    personaSize.size28 = '28px';
+    personaSize.size32 = '32px';
+    personaSize.size40 = '40px';
+    personaSize.size48 = '48px';
+    personaSize.size56 = '56px';
+    personaSize.size72 = '72px';
+    personaSize.size100 = '100px';
+    personaSize.size120 = '120px';
+})(personaSize || (personaSize = {}));
+// Persona Presence Sizes
+var personaPresenceSize;
+(function (personaPresenceSize) {
+    personaPresenceSize.size6 = '6px';
+    personaPresenceSize.size8 = '8px';
+    personaPresenceSize.size12 = '12px';
+    personaPresenceSize.size16 = '16px';
+    personaPresenceSize.size20 = '20px';
+    personaPresenceSize.size28 = '28px';
+    personaPresenceSize.size32 = '32px';
+    /**
+     * @deprecated This is now unused
+     */
+    personaPresenceSize.border = '2px';
+})(personaPresenceSize || (personaPresenceSize = {}));
+// TODO: remove the deprecated parts in a future major release.
+var sizeBoolean = function (size) { return ({
+    isSize8: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size8,
+    /* eslint-disable @typescript-eslint/no-deprecated */
+    isSize10: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size10 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.tiny,
+    isSize16: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size16,
+    isSize24: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size24 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.extraExtraSmall,
+    isSize28: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size28 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.extraSmall,
+    isSize32: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size32,
+    isSize40: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size40 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.small,
+    isSize48: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size48 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.regular,
+    isSize56: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size56,
+    isSize72: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size72 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.large,
+    isSize100: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size100 || size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.extraLarge,
+    isSize120: size === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size120,
+}); };
+var sizeToPixels = (_a = {},
+    // Old deprecated sizes
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.tiny] = 10,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.extraExtraSmall] = 24,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.extraSmall] = 28,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.small] = 40,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.regular] = 48,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.large] = 72,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.extraLarge] = 100,
+    // New sizes
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size8] = 8,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size10] = 10, // TODO: deprecated (not in the design specs)
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size16] = 16, // TODO: deprecated (not in the design specs)
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size24] = 24,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size28] = 28, // TODO: deprecated (not in the design specs)
+    /* eslint-enable @typescript-eslint/no-deprecated */
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size32] = 32,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size40] = 40,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size48] = 48,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size56] = 56,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size72] = 72,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size100] = 100,
+    _a[_Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaSize.size120] = 120,
+    _a);
+var presenceBoolean = function (presence) { return ({
+    isAvailable: presence === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaPresence.online,
+    isAway: presence === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaPresence.away,
+    isBlocked: presence === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaPresence.blocked,
+    isBusy: presence === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaPresence.busy,
+    isDoNotDisturb: presence === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaPresence.dnd,
+    isOffline: presence === _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaPresence.offline,
+}); };
+
+
+/***/ }),
+
+/***/ 416:
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaInitialsColor.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getPersonaInitialsColor: () => (/* binding */ getPersonaInitialsColor),
+/* harmony export */   initialsColorPropToColorCode: () => (/* binding */ initialsColorPropToColorCode)
+/* harmony export */ });
+/* harmony import */ var _Persona_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Persona.types */ 47909);
+
+/**
+ * Following colors are considered reserved and can only be set with overrides, so they are excluded from this set:
+ * - `gray` and `black` can result in offensive persona coins with some initials combinations
+ * - `red` often has a special meaning
+ * - `transparent` is not intended to be used with typical initials due to accessibility issues;
+ *   its primary use is for Facepile overflow buttons.
+ */
+var COLOR_SWATCHES_LOOKUP = [
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightBlue,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.blue,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.darkBlue,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.teal,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.green,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.darkGreen,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightPink,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.pink,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.magenta,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.purple,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.orange,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightRed,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.darkRed,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.violet,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.gold,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.burgundy,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.warmGray,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.cyan,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.rust,
+    _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.coolGray,
+];
+var COLOR_SWATCHES_NUM_ENTRIES = COLOR_SWATCHES_LOOKUP.length;
+function getInitialsColorFromName(displayName) {
+    var color = _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.blue;
+    if (!displayName) {
+        return color;
+    }
+    var hashCode = 0;
+    for (var iLen = displayName.length - 1; iLen >= 0; iLen--) {
+        var ch = displayName.charCodeAt(iLen);
+        var shift = iLen % 8;
+        // eslint-disable-next-line no-bitwise
+        hashCode ^= (ch << shift) + (ch >> (8 - shift));
+    }
+    color = COLOR_SWATCHES_LOOKUP[hashCode % COLOR_SWATCHES_NUM_ENTRIES];
+    return color;
+}
+function personaInitialsColorToHexCode(personaInitialsColor) {
+    switch (personaInitialsColor) {
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightBlue:
+            return '#4F6BED';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.blue:
+            return '#0078D4';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.darkBlue:
+            return '#004E8C';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.teal:
+            return '#038387';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightGreen:
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.green:
+            return '#498205';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.darkGreen:
+            return '#0B6A0B';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightPink:
+            return '#C239B3';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.pink:
+            return '#E3008C';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.magenta:
+            return '#881798';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.purple:
+            return '#5C2E91';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.orange:
+            return '#CA5010';
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.red:
+            return '#EE1111';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.lightRed:
+            return '#D13438';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.darkRed:
+            return '#A4262C';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.transparent:
+            return 'transparent';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.violet:
+            return '#8764B8';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.gold:
+            return '#986F0B';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.burgundy:
+            return '#750B1C';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.warmGray:
+            return '#7A7574';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.cyan:
+            return '#005B70';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.rust:
+            return '#8E562E';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.coolGray:
+            return '#69797E';
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.black:
+            return '#1D1D1D';
+        case _Persona_types__WEBPACK_IMPORTED_MODULE_0__.PersonaInitialsColor.gray:
+            return '#393939';
+    }
+}
+/** @deprecated Use `getPersonaInitialsColor` */
+function initialsColorPropToColorCode(props) {
+    return getPersonaInitialsColor(props);
+}
+/**
+ * Gets the hex color string (prefixed with #) for the given persona props.
+ * This is the logic used internally by the Persona control.
+ * @param props - Current persona props
+ * @returns Hex color string prefixed with #
+ */
+function getPersonaInitialsColor(props) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var primaryText = props.primaryText, text = props.text;
+    var initialsColor = props.initialsColor;
+    var initialsColorCode;
+    if (typeof initialsColor === 'string') {
+        initialsColorCode = initialsColor;
+    }
+    else {
+        initialsColor = initialsColor !== undefined ? initialsColor : getInitialsColorFromName(text || primaryText);
+        initialsColorCode = personaInitialsColorToHexCode(initialsColor);
+    }
+    return initialsColorCode;
+}
+
+
+/***/ }),
+
+/***/ 71106:
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaPresence/PersonaPresence.base.js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PersonaPresenceBase: () => (/* binding */ PersonaPresenceBase)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Icon */ 52394);
+/* harmony import */ var _Persona_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Persona.types */ 47909);
+/* harmony import */ var _PersonaConsts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../PersonaConsts */ 42882);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react-hooks */ 10544);
+
+
+
+
+
+
+var coinSizeFontScaleFactor = 6;
+var coinSizePresenceScaleFactor = 3;
+var presenceMaxSize = 40;
+var presenceFontMaxSize = 20;
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)({
+    // There can be many PersonaPresence rendered with different sizes.
+    // Therefore setting a larger cache size.
+    cacheSize: 100,
+});
+/**
+ * PersonaPresence with no default styles.
+ * [Use the `getStyles` API to add your own styles.](https://github.com/microsoft/fluentui/wiki/Styling)
+ */
+var PersonaPresenceBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, forwardedRef) {
+    var coinSize = props.coinSize, isOutOfOffice = props.isOutOfOffice, styles = props.styles, // Use getStyles from props.
+    presence = props.presence, theme = props.theme, presenceTitle = props.presenceTitle, presenceColors = props.presenceColors;
+    var rootRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var mergedRootRef = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__.useMergedRefs)(forwardedRef, rootRef);
+    var size = (0,_PersonaConsts__WEBPACK_IMPORTED_MODULE_3__.sizeBoolean)(props.size);
+    // Render Presence Icon if Persona is above size 32.
+    var renderIcon = !(size.isSize8 || size.isSize10 || size.isSize16 || size.isSize24 || size.isSize28 || size.isSize32) &&
+        (coinSize ? coinSize > 32 : true);
+    var presenceHeightWidth = coinSize
+        ? coinSize / coinSizePresenceScaleFactor < presenceMaxSize
+            ? coinSize / coinSizePresenceScaleFactor + 'px'
+            : presenceMaxSize + 'px'
+        : '';
+    var presenceFontSize = coinSize
+        ? coinSize / coinSizeFontScaleFactor < presenceFontMaxSize
+            ? coinSize / coinSizeFontScaleFactor + 'px'
+            : presenceFontMaxSize + 'px'
+        : '';
+    var coinSizeWithPresenceIconStyle = coinSize
+        ? { fontSize: presenceFontSize, lineHeight: presenceHeightWidth }
+        : undefined;
+    var coinSizeWithPresenceStyle = coinSize ? { width: presenceHeightWidth, height: presenceHeightWidth } : undefined;
+    // Use getStyles from props, or fall back to getStyles from styles file.
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        presence: presence,
+        size: props.size,
+        isOutOfOffice: isOutOfOffice,
+        presenceColors: presenceColors,
+    });
+    if (presence === _Persona_types__WEBPACK_IMPORTED_MODULE_4__.PersonaPresence.none) {
+        return null;
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { role: "presentation", className: classNames.presence, style: coinSizeWithPresenceStyle, title: presenceTitle, ref: mergedRootRef }, renderIcon && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { className: classNames.presenceIcon, iconName: determineIcon(props.presence, props.isOutOfOffice), style: coinSizeWithPresenceIconStyle }))));
+});
+PersonaPresenceBase.displayName = 'PersonaPresenceBase';
+function determineIcon(presence, isOutOfOffice) {
+    if (!presence) {
+        return undefined;
+    }
+    var oofIcon = 'SkypeArrow';
+    switch (_Persona_types__WEBPACK_IMPORTED_MODULE_4__.PersonaPresence[presence]) {
+        case 'online':
+            return 'SkypeCheck';
+        case 'away':
+            return isOutOfOffice ? oofIcon : 'SkypeClock';
+        case 'dnd':
+            return 'SkypeMinus';
+        case 'offline':
+            return isOutOfOffice ? oofIcon : '';
+    }
+    return '';
+}
+
+
+/***/ }),
+
+/***/ 82805:
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaPresence/PersonaPresence.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PersonaPresence: () => (/* binding */ PersonaPresence)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _PersonaPresence_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PersonaPresence.base */ 71106);
+/* harmony import */ var _PersonaPresence_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PersonaPresence.styles */ 81025);
+
+
+
+/**
+ * PersonaPresence is used to render an individual's presence.
+ */
+var PersonaPresence = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_PersonaPresence_base__WEBPACK_IMPORTED_MODULE_1__.PersonaPresenceBase, _PersonaPresence_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'PersonaPresence' });
+
+
+/***/ }),
+
+/***/ 81025:
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Persona/PersonaPresence/PersonaPresence.styles.js ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+/* harmony import */ var _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../PersonaConsts */ 42882);
+
+
+
+var GlobalClassNames = {
+    presence: 'ms-Persona-presence',
+    presenceIcon: 'ms-Persona-presenceIcon',
+};
+var getStyles = function (props) {
+    var _a, _b, _c, _d, _e, _f;
+    var theme = props.theme, presenceColors = props.presenceColors;
+    var semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var size = (0,_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.sizeBoolean)(props.size);
+    var presence = (0,_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.presenceBoolean)(props.presence);
+    // Presence colors
+    var presenceColorAvailable = (presenceColors && presenceColors.available) || '#6BB700';
+    var presenceColorAway = (presenceColors && presenceColors.away) || '#FFAA44';
+    var presenceColorBusy = (presenceColors && presenceColors.busy) || '#C43148';
+    var presenceColorDnd = (presenceColors && presenceColors.dnd) || '#C50F1F';
+    var presenceColorOffline = (presenceColors && presenceColors.offline) || '#8A8886';
+    var presenceColorOof = (presenceColors && presenceColors.oof) || '#B4009E';
+    var presenceColorBackground = (presenceColors && presenceColors.background) || semanticColors.bodyBackground;
+    var isOpenCirclePresence = presence.isOffline ||
+        (props.isOutOfOffice && (presence.isAvailable || presence.isBusy || presence.isAway || presence.isDoNotDisturb));
+    var borderSizeForSmallPersonas = '1px';
+    var borderSizeForLargePersonas = '2px';
+    var borderSize = size.isSize72 || size.isSize100 ? borderSizeForLargePersonas : borderSizeForSmallPersonas;
+    return {
+        presence: [
+            classNames.presence,
+            (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ position: 'absolute', height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size12, width: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size12, borderRadius: '50%', top: 'auto', right: '-2px', bottom: '-2px', border: "2px solid ".concat(presenceColorBackground), textAlign: 'center', boxSizing: 'content-box', backgroundClip: 'border-box' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()), { selectors: (_a = {},
+                    _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        borderColor: 'Window',
+                        backgroundColor: 'WindowText',
+                    },
+                    _a) }),
+            (size.isSize8 || size.isSize10) && {
+                right: 'auto',
+                top: '7px',
+                left: 0,
+                border: 0,
+                selectors: (_b = {},
+                    _b[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        top: '9px',
+                        border: '1px solid WindowText',
+                    },
+                    _b),
+            },
+            (size.isSize8 || size.isSize10 || size.isSize24 || size.isSize28 || size.isSize32) &&
+                makeSizeStyle(_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size8),
+            (size.isSize40 || size.isSize48) && makeSizeStyle(_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size12),
+            size.isSize16 && {
+                height: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size6,
+                width: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size6,
+                borderWidth: '1.5px',
+            },
+            size.isSize56 && makeSizeStyle(_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size16),
+            size.isSize72 && makeSizeStyle(_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size20),
+            size.isSize100 && makeSizeStyle(_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size28),
+            size.isSize120 && makeSizeStyle(_PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size32),
+            presence.isAvailable && {
+                backgroundColor: presenceColorAvailable,
+                selectors: (_c = {},
+                    _c[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = backgroundColor('Highlight'),
+                    _c),
+            },
+            presence.isAway && backgroundColor(presenceColorAway),
+            presence.isBlocked && [
+                {
+                    selectors: (_d = {
+                            // Only show :after at larger sizes
+                            ':after': size.isSize40 || size.isSize48 || size.isSize72 || size.isSize100
+                                ? {
+                                    content: '""',
+                                    width: '100%',
+                                    height: borderSize,
+                                    backgroundColor: presenceColorBusy,
+                                    transform: 'translateY(-50%) rotate(-45deg)',
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: 0,
+                                }
+                                : undefined
+                        },
+                        _d[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            selectors: {
+                                ':after': {
+                                    width: "calc(100% - 4px)",
+                                    left: '2px',
+                                    backgroundColor: 'Window',
+                                },
+                            },
+                        },
+                        _d),
+                },
+            ],
+            presence.isBusy && backgroundColor(presenceColorBusy),
+            presence.isDoNotDisturb && backgroundColor(presenceColorDnd),
+            presence.isOffline && backgroundColor(presenceColorOffline),
+            (isOpenCirclePresence || presence.isBlocked) && [
+                {
+                    backgroundColor: presenceColorBackground,
+                    selectors: (_e = {
+                            ':before': {
+                                content: '""',
+                                width: '100%',
+                                height: '100%',
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                border: "".concat(borderSize, " solid ").concat(presenceColorBusy),
+                                borderRadius: '50%',
+                                boxSizing: 'border-box',
+                            }
+                        },
+                        _e[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            backgroundColor: 'WindowText',
+                            selectors: {
+                                ':before': {
+                                    width: "calc(100% - 2px)",
+                                    height: "calc(100% - 2px)",
+                                    top: '1px',
+                                    left: '1px',
+                                    borderColor: 'Window',
+                                },
+                            },
+                        },
+                        _e),
+                },
+            ],
+            isOpenCirclePresence && presence.isAvailable && makeBeforeBorderStyle(borderSize, presenceColorAvailable),
+            isOpenCirclePresence && presence.isBusy && makeBeforeBorderStyle(borderSize, presenceColorBusy),
+            isOpenCirclePresence && presence.isAway && makeBeforeBorderStyle(borderSize, presenceColorOof),
+            isOpenCirclePresence && presence.isDoNotDisturb && makeBeforeBorderStyle(borderSize, presenceColorDnd),
+            isOpenCirclePresence && presence.isOffline && makeBeforeBorderStyle(borderSize, presenceColorOffline),
+            isOpenCirclePresence &&
+                presence.isOffline &&
+                props.isOutOfOffice &&
+                makeBeforeBorderStyle(borderSize, presenceColorOof),
+        ],
+        presenceIcon: [
+            classNames.presenceIcon,
+            {
+                color: presenceColorBackground,
+                fontSize: '6px', // exception case where we don't have an available theme.fonts variable to match it.
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size12,
+                verticalAlign: 'top',
+                selectors: (_f = {},
+                    _f[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        color: 'Window',
+                    },
+                    _f),
+            },
+            size.isSize56 && {
+                fontSize: '8px', // exception case where we don't have an available theme.fonts variable to match it.
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size16,
+            },
+            size.isSize72 && {
+                fontSize: fonts.small.fontSize,
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size20,
+            },
+            size.isSize100 && {
+                fontSize: fonts.medium.fontSize,
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size28,
+            },
+            size.isSize120 && {
+                fontSize: fonts.medium.fontSize,
+                lineHeight: _PersonaConsts__WEBPACK_IMPORTED_MODULE_1__.personaPresenceSize.size32,
+            },
+            presence.isAway && {
+                position: 'relative',
+                left: isOpenCirclePresence ? undefined : '1px',
+            },
+            isOpenCirclePresence && presence.isAvailable && makeOpenCircleIconStyle(presenceColorAvailable),
+            isOpenCirclePresence && presence.isBusy && makeOpenCircleIconStyle(presenceColorBusy),
+            isOpenCirclePresence && presence.isAway && makeOpenCircleIconStyle(presenceColorOof),
+            isOpenCirclePresence && presence.isDoNotDisturb && makeOpenCircleIconStyle(presenceColorDnd),
+            isOpenCirclePresence && presence.isOffline && makeOpenCircleIconStyle(presenceColorOffline),
+            isOpenCirclePresence && presence.isOffline && props.isOutOfOffice && makeOpenCircleIconStyle(presenceColorOof),
+        ],
+    };
+};
+function makeOpenCircleIconStyle(color) {
+    return {
+        color: color,
+        borderColor: color,
+    };
+}
+function makeBeforeBorderStyle(borderSize, color) {
+    return {
+        selectors: {
+            ':before': {
+                border: "".concat(borderSize, " solid ").concat(color),
+            },
+        },
+    };
+}
+function makeSizeStyle(size) {
+    return {
+        height: size,
+        width: size,
+    };
+}
+function backgroundColor(color) {
+    return { backgroundColor: color };
+}
+
+
+/***/ }),
+
 /***/ 13515:
 /*!*************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Pivot/Pivot.base.js ***!
@@ -50021,6 +57120,3305 @@ var TextView = function (props) {
     });
     return (0,_fluentui_foundation_legacy__WEBPACK_IMPORTED_MODULE_1__.withSlots)(Slots.root, (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.getNativeProps)(rest, _Utilities__WEBPACK_IMPORTED_MODULE_2__.htmlElementProperties)));
 };
+
+
+/***/ }),
+
+/***/ 8479:
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/Tooltip.base.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TooltipBase: () => (/* binding */ TooltipBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Callout */ 26650);
+/* harmony import */ var _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../common/DirectionalHint */ 19861);
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var TooltipBase = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(TooltipBase, _super);
+    function TooltipBase() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._onRenderContent = function (props) {
+            if (typeof props.content === 'string') {
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _this._classNames.subText }, props.content);
+            }
+            else {
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _this._classNames.subText }, props.content);
+            }
+        };
+        return _this;
+    }
+    TooltipBase.prototype.render = function () {
+        var _a = this.props, className = _a.className, calloutProps = _a.calloutProps, directionalHint = _a.directionalHint, directionalHintForRTL = _a.directionalHintForRTL, styles = _a.styles, id = _a.id, maxWidth = _a.maxWidth, _b = _a.onRenderContent, onRenderContent = _b === void 0 ? this._onRenderContent : _b, targetElement = _a.targetElement, theme = _a.theme;
+        this._classNames = getClassNames(styles, {
+            theme: theme,
+            className: className || (calloutProps && calloutProps.className),
+            beakWidth: calloutProps && calloutProps.isBeakVisible ? calloutProps.beakWidth : 0,
+            gapSpace: calloutProps && calloutProps.gapSpace,
+            maxWidth: maxWidth,
+        });
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Callout__WEBPACK_IMPORTED_MODULE_3__.Callout, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ target: targetElement, directionalHint: directionalHint, directionalHintForRTL: directionalHintForRTL }, calloutProps, (0,_Utilities__WEBPACK_IMPORTED_MODULE_4__.getNativeProps)(this.props, _Utilities__WEBPACK_IMPORTED_MODULE_4__.divProperties, ['id']), { className: this._classNames.root }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: this._classNames.content, id: id, onFocus: this.props.onFocus, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave }, onRenderContent(this.props, this._onRenderContent))));
+    };
+    // Specify default props values
+    TooltipBase.defaultProps = {
+        directionalHint: _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_5__.DirectionalHint.topCenter,
+        maxWidth: '364px',
+        calloutProps: {
+            isBeakVisible: true,
+            beakWidth: 16,
+            gapSpace: 0,
+            setInitialFocus: true,
+            doNotLayer: false,
+        },
+    };
+    return TooltipBase;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+
+
+/***/ }),
+
+/***/ 24194:
+/*!************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/Tooltip.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Tooltip: () => (/* binding */ Tooltip)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _Tooltip_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tooltip.base */ 8479);
+/* harmony import */ var _Tooltip_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Tooltip.styles */ 19940);
+
+
+
+var Tooltip = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Tooltip_base__WEBPACK_IMPORTED_MODULE_1__.TooltipBase, _Tooltip_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'Tooltip',
+});
+
+
+/***/ }),
+
+/***/ 19940:
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/Tooltip.styles.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Styling */ 38455);
+
+var getStyles = function (props) {
+    var className = props.className, _a = props.beakWidth, beakWidth = _a === void 0 ? 16 : _a, _b = props.gapSpace, gapSpace = _b === void 0 ? 0 : _b, maxWidth = props.maxWidth, theme = props.theme;
+    var semanticColors = theme.semanticColors, fonts = theme.fonts, effects = theme.effects;
+    // The math here is done to account for the 45 degree rotation of the beak
+    // and sub-pixel rounding that differs across browsers, which is more noticeable when
+    // the device pixel ratio is larger
+    var tooltipGapSpace = -(Math.sqrt((beakWidth * beakWidth) / 2) + gapSpace) +
+        1 /
+            // There isn't really a great way to pass in a `window` reference here so disabling the line rule
+            // eslint-disable-next-line no-restricted-globals
+            window.devicePixelRatio;
+    return {
+        root: [
+            'ms-Tooltip',
+            theme.fonts.medium,
+            _Styling__WEBPACK_IMPORTED_MODULE_0__.AnimationClassNames.fadeIn200,
+            {
+                background: semanticColors.menuBackground,
+                boxShadow: effects.elevation8,
+                padding: '8px',
+                maxWidth: maxWidth,
+                selectors: {
+                    ':after': {
+                        content: "''",
+                        position: 'absolute',
+                        bottom: tooltipGapSpace,
+                        left: tooltipGapSpace,
+                        right: tooltipGapSpace,
+                        top: tooltipGapSpace,
+                        zIndex: 0,
+                    },
+                },
+            },
+            className,
+        ],
+        content: [
+            'ms-Tooltip-content',
+            fonts.small,
+            {
+                position: 'relative',
+                zIndex: 1,
+                color: semanticColors.menuItemText,
+                wordWrap: 'break-word',
+                overflowWrap: 'break-word',
+                overflow: 'hidden',
+            },
+        ],
+        subText: [
+            'ms-Tooltip-subtext',
+            {
+                // Using inherit here to avoid unintentional global overrides of the <p> tag.
+                fontSize: 'inherit',
+                fontWeight: 'inherit',
+                color: 'inherit',
+                margin: 0,
+            },
+        ],
+    };
+};
+
+
+/***/ }),
+
+/***/ 57637:
+/*!******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/Tooltip.types.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TooltipDelay: () => (/* binding */ TooltipDelay)
+/* harmony export */ });
+/**
+ * {@docCategory Tooltip}
+ */
+var TooltipDelay;
+(function (TooltipDelay) {
+    TooltipDelay[TooltipDelay["zero"] = 0] = "zero";
+    /** 300 ms delay before showing the tooltip */
+    TooltipDelay[TooltipDelay["medium"] = 1] = "medium";
+    /** 500 ms delay before showing the tooltip */
+    TooltipDelay[TooltipDelay["long"] = 2] = "long";
+})(TooltipDelay || (TooltipDelay = {}));
+
+
+/***/ }),
+
+/***/ 21253:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/TooltipHost.base.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TooltipHostBase: () => (/* binding */ TooltipHostBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../Styling */ 38455);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities */ 88370);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Utilities */ 4233);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Utilities */ 99983);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Utilities */ 79524);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Utilities */ 52477);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Utilities */ 76924);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Utilities */ 23211);
+/* harmony import */ var _TooltipHost_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TooltipHost.types */ 52179);
+/* harmony import */ var _Tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Tooltip */ 24194);
+/* harmony import */ var _Tooltip_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Tooltip.types */ 57637);
+/* harmony import */ var _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react-window-provider */ 26130);
+/* harmony import */ var _utilities_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utilities/dom */ 4707);
+
+
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var TooltipHostBase = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(TooltipHostBase, _super);
+    // Constructor
+    function TooltipHostBase(props) {
+        var _this = _super.call(this, props) || this;
+        // The wrapping div that gets the hover events
+        _this._tooltipHost = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this._defaultTooltipId = (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.getId)('tooltip');
+        _this.show = function () {
+            _this._toggleTooltip(true);
+        };
+        _this.dismiss = function () {
+            _this._hideTooltip();
+        };
+        _this._getTargetElement = function () {
+            if (!_this._tooltipHost.current) {
+                return undefined;
+            }
+            var overflowMode = _this.props.overflowMode;
+            // Select target element based on overflow mode. For parent mode, you want to position the tooltip relative
+            // to the parent element, otherwise it might look off.
+            if (overflowMode !== undefined) {
+                switch (overflowMode) {
+                    case _TooltipHost_types__WEBPACK_IMPORTED_MODULE_4__.TooltipOverflowMode.Parent:
+                        return _this._tooltipHost.current.parentElement;
+                    case _TooltipHost_types__WEBPACK_IMPORTED_MODULE_4__.TooltipOverflowMode.Self:
+                        return _this._tooltipHost.current;
+                }
+            }
+            return _this._tooltipHost.current;
+        };
+        _this._onTooltipFocus = function (ev) {
+            if (_this._ignoreNextFocusEvent) {
+                _this._ignoreNextFocusEvent = false;
+                return;
+            }
+            _this._onTooltipMouseEnter(ev);
+        };
+        _this._onTooltipContentFocus = function (ev) {
+            if (TooltipHostBase._currentVisibleTooltip && TooltipHostBase._currentVisibleTooltip !== _this) {
+                TooltipHostBase._currentVisibleTooltip.dismiss();
+            }
+            TooltipHostBase._currentVisibleTooltip = _this;
+            _this._clearDismissTimer();
+            _this._clearOpenTimer();
+        };
+        _this._onTooltipBlur = function (ev) {
+            var _a;
+            // The focused element gets a blur event when the document loses focus
+            // (e.g. switching tabs in the browser), but we don't want to show the
+            // tooltip again when the document gets focus back. Handle this case by
+            // checking if the blurred element is still the document's activeElement,
+            // and ignoring when it next gets focus back.
+            // See https://github.com/microsoft/fluentui/issues/13541
+            _this._ignoreNextFocusEvent = ((_a = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_5__.getDocumentEx)(_this.context)) === null || _a === void 0 ? void 0 : _a.activeElement) === ev.target;
+            _this._dismissTimerId = _this._async.setTimeout(function () {
+                _this._hideTooltip();
+            }, 0);
+        };
+        // Show Tooltip
+        _this._onTooltipMouseEnter = function (ev) {
+            var _a = _this.props, overflowMode = _a.overflowMode, delay = _a.delay;
+            var doc = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_5__.getDocumentEx)(_this.context);
+            if (TooltipHostBase._currentVisibleTooltip && TooltipHostBase._currentVisibleTooltip !== _this) {
+                TooltipHostBase._currentVisibleTooltip.dismiss();
+            }
+            TooltipHostBase._currentVisibleTooltip = _this;
+            if (overflowMode !== undefined) {
+                var overflowElement = _this._getTargetElement();
+                if (overflowElement && !(0,_Utilities__WEBPACK_IMPORTED_MODULE_6__.hasOverflow)(overflowElement)) {
+                    return;
+                }
+            }
+            if (ev.target && (0,_Utilities__WEBPACK_IMPORTED_MODULE_7__.portalContainsElement)(ev.target, _this._getTargetElement(), doc)) {
+                // Do not show tooltip when target is inside a portal relative to TooltipHost.
+                return;
+            }
+            _this._clearDismissTimer();
+            _this._clearOpenTimer();
+            if (delay !== _Tooltip_types__WEBPACK_IMPORTED_MODULE_8__.TooltipDelay.zero) {
+                var delayTime = _this._getDelayTime(delay); // non-null assertion because we set it in `defaultProps`
+                _this._openTimerId = _this._async.setTimeout(function () {
+                    _this._toggleTooltip(true);
+                }, delayTime);
+            }
+            else {
+                _this._toggleTooltip(true);
+            }
+        };
+        // Hide Tooltip
+        _this._onTooltipMouseLeave = function (ev) {
+            var closeDelay = _this.props.closeDelay;
+            _this._clearDismissTimer();
+            _this._clearOpenTimer();
+            if (closeDelay) {
+                _this._dismissTimerId = _this._async.setTimeout(function () {
+                    _this._toggleTooltip(false);
+                }, closeDelay);
+            }
+            else {
+                _this._toggleTooltip(false);
+            }
+            if (TooltipHostBase._currentVisibleTooltip === _this) {
+                TooltipHostBase._currentVisibleTooltip = undefined;
+            }
+        };
+        _this._onTooltipKeyDown = function (ev) {
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            if ((ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_9__.KeyCodes.escape || ev.ctrlKey) && _this.state.isTooltipVisible) {
+                _this._hideTooltip();
+                ev.stopPropagation();
+            }
+        };
+        _this._clearDismissTimer = function () {
+            _this._async.clearTimeout(_this._dismissTimerId);
+        };
+        _this._clearOpenTimer = function () {
+            _this._async.clearTimeout(_this._openTimerId);
+        };
+        // Hide Tooltip
+        _this._hideTooltip = function () {
+            _this._clearOpenTimer();
+            _this._clearDismissTimer();
+            _this._toggleTooltip(false);
+        };
+        _this._toggleTooltip = function (isTooltipVisible) {
+            if (_this.state.isTooltipVisible !== isTooltipVisible) {
+                _this.setState({ isTooltipVisible: isTooltipVisible }, function () { return _this.props.onTooltipToggle && _this.props.onTooltipToggle(isTooltipVisible); });
+            }
+        };
+        _this._getDelayTime = function (delay) {
+            switch (delay) {
+                case _Tooltip_types__WEBPACK_IMPORTED_MODULE_8__.TooltipDelay.medium:
+                    return 300;
+                case _Tooltip_types__WEBPACK_IMPORTED_MODULE_8__.TooltipDelay.long:
+                    return 500;
+                default:
+                    return 0;
+            }
+        };
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.initializeComponentRef)(_this);
+        _this.state = {
+            isAriaPlaceholderRendered: false,
+            isTooltipVisible: false,
+        };
+        return _this;
+    }
+    // Render
+    TooltipHostBase.prototype.render = function () {
+        var _a = this.props, calloutProps = _a.calloutProps, children = _a.children, content = _a.content, directionalHint = _a.directionalHint, directionalHintForRTL = _a.directionalHintForRTL, className = _a.hostClassName, id = _a.id, 
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        _b = _a.setAriaDescribedBy, 
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        setAriaDescribedBy = _b === void 0 ? true : _b, tooltipProps = _a.tooltipProps, styles = _a.styles, theme = _a.theme;
+        this._classNames = getClassNames(styles, {
+            theme: theme,
+            className: className,
+        });
+        var isTooltipVisible = this.state.isTooltipVisible;
+        var tooltipId = id || this._defaultTooltipId;
+        var tooltipRenderProps = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ id: "".concat(tooltipId, "--tooltip"), content: content, targetElement: this._getTargetElement(), directionalHint: directionalHint, directionalHintForRTL: directionalHintForRTL, calloutProps: (0,_Utilities__WEBPACK_IMPORTED_MODULE_11__.assign)({}, calloutProps, {
+                onDismiss: this._hideTooltip,
+                onFocus: this._onTooltipContentFocus,
+                onMouseEnter: this._onTooltipMouseEnter,
+                onMouseLeave: this._onTooltipMouseLeave,
+            }), onMouseEnter: this._onTooltipMouseEnter, onMouseLeave: this._onTooltipMouseLeave }, (0,_Utilities__WEBPACK_IMPORTED_MODULE_12__.getNativeProps)(this.props, _Utilities__WEBPACK_IMPORTED_MODULE_12__.divProperties, ['id'])), tooltipProps);
+        // Get the content of the tooltip for use in the hidden div used for screen readers
+        var tooltipContent = (tooltipProps === null || tooltipProps === void 0 ? void 0 : tooltipProps.onRenderContent)
+            ? tooltipProps.onRenderContent(tooltipRenderProps, function (props) { return ((props === null || props === void 0 ? void 0 : props.content) ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, props.content) : null); })
+            : content;
+        var showTooltip = isTooltipVisible && !!tooltipContent;
+        var ariaDescribedBy = setAriaDescribedBy && isTooltipVisible && !!tooltipContent ? tooltipId : undefined;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: this._classNames.root, ref: this._tooltipHost, onFocusCapture: this._onTooltipFocus, onBlurCapture: this._onTooltipBlur, onMouseEnter: this._onTooltipMouseEnter, onMouseLeave: this._onTooltipMouseLeave, onKeyDown: this._onTooltipKeyDown, role: "none", "aria-describedby": ariaDescribedBy },
+            children,
+            showTooltip && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tooltip__WEBPACK_IMPORTED_MODULE_13__.Tooltip, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, tooltipRenderProps)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { hidden: true, id: tooltipId, style: _Styling__WEBPACK_IMPORTED_MODULE_14__.hiddenContentStyle }, tooltipContent)));
+    };
+    TooltipHostBase.prototype.componentDidMount = function () {
+        this._async = new _Utilities__WEBPACK_IMPORTED_MODULE_15__.Async(this);
+    };
+    TooltipHostBase.prototype.componentWillUnmount = function () {
+        if (TooltipHostBase._currentVisibleTooltip && TooltipHostBase._currentVisibleTooltip === this) {
+            TooltipHostBase._currentVisibleTooltip = undefined;
+        }
+        this._async.dispose();
+    };
+    TooltipHostBase.defaultProps = {
+        delay: _Tooltip_types__WEBPACK_IMPORTED_MODULE_8__.TooltipDelay.medium,
+    };
+    TooltipHostBase.contextType = _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_16__.WindowContext;
+    return TooltipHostBase;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+
+
+/***/ }),
+
+/***/ 11880:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/TooltipHost.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TooltipHost: () => (/* binding */ TooltipHost)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _TooltipHost_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TooltipHost.base */ 21253);
+/* harmony import */ var _TooltipHost_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TooltipHost.styles */ 68658);
+
+
+
+var TooltipHost = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_TooltipHost_base__WEBPACK_IMPORTED_MODULE_1__.TooltipHostBase, _TooltipHost_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'TooltipHost',
+});
+
+
+/***/ }),
+
+/***/ 68658:
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/TooltipHost.styles.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-TooltipHost',
+    ariaPlaceholder: 'ms-TooltipHost-aria-placeholder',
+};
+var getStyles = function (props) {
+    var className = props.className, theme = props.theme;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    return {
+        root: [
+            classNames.root,
+            {
+                display: 'inline',
+            },
+            className,
+        ],
+    };
+};
+
+
+/***/ }),
+
+/***/ 52179:
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Tooltip/TooltipHost.types.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   TooltipOverflowMode: () => (/* binding */ TooltipOverflowMode)
+/* harmony export */ });
+/**
+ * {@docCategory Tooltip}
+ */
+var TooltipOverflowMode;
+(function (TooltipOverflowMode) {
+    /** Only show tooltip if parent DOM element is overflowing */
+    TooltipOverflowMode[TooltipOverflowMode["Parent"] = 0] = "Parent";
+    /**
+     * Only show tooltip if tooltip host's content is overflowing.
+     * Note that this does not check the children for overflow, only the TooltipHost root.
+     */
+    TooltipOverflowMode[TooltipOverflowMode["Self"] = 1] = "Self";
+})(TooltipOverflowMode || (TooltipOverflowMode = {}));
+
+
+/***/ }),
+
+/***/ 10710:
+/*!***************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/BasePicker.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BasePicker: () => (/* binding */ BasePicker),
+/* harmony export */   BasePickerListBelow: () => (/* binding */ BasePickerListBelow)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Utilities */ 79524);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Utilities */ 82419);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Utilities */ 52477);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Utilities */ 88370);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Utilities */ 23211);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../Utilities */ 38972);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../Utilities */ 87578);
+/* harmony import */ var _Callout__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../Callout */ 26650);
+/* harmony import */ var _utilities_selection_index__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../utilities/selection/index */ 40084);
+/* harmony import */ var _utilities_selection_index__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../utilities/selection/index */ 29694);
+/* harmony import */ var _utilities_selection_index__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../utilities/selection/index */ 74423);
+/* harmony import */ var _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../common/DirectionalHint */ 19861);
+/* harmony import */ var _Suggestions_Suggestions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Suggestions/Suggestions */ 80174);
+/* harmony import */ var _Suggestions_Suggestions_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Suggestions/Suggestions.styles */ 49672);
+/* harmony import */ var _Suggestions_SuggestionsController__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Suggestions/SuggestionsController */ 93514);
+/* harmony import */ var _BasePicker_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./BasePicker.types */ 99665);
+/* harmony import */ var _Autofill_index__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../Autofill/index */ 40472);
+/* harmony import */ var _BasePicker_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BasePicker.scss */ 46166);
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../Label */ 23166);
+/* harmony import */ var _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react-window-provider */ 26130);
+/* harmony import */ var _utilities_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utilities/dom */ 4707);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var legacyStyles = _BasePicker_scss__WEBPACK_IMPORTED_MODULE_1__;
+var EXTENDED_LOAD_TIME = 3000;
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.classNamesFunction)();
+/**
+ * Should be removed once new picker without inheritance is created
+ */
+function getStyledSuggestions(suggestionsType) {
+    return (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.styled)(suggestionsType, _Suggestions_Suggestions_styles__WEBPACK_IMPORTED_MODULE_4__.getStyles, undefined, {
+        scope: 'Suggestions',
+    });
+}
+/**
+ * {@docCategory Pickers}
+ */
+var BasePicker = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__extends)(BasePicker, _super);
+    function BasePicker(basePickerProps) {
+        var _this = _super.call(this, basePickerProps) || this;
+        // Refs
+        _this.root = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this.input = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this.suggestionElement = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        /**
+         * @deprecated this is no longer necessary as typescript now supports generic elements
+         */
+        _this.SuggestionOfProperType = _Suggestions_Suggestions__WEBPACK_IMPORTED_MODULE_6__.Suggestions;
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        _this._styledSuggestions = getStyledSuggestions(_this.SuggestionOfProperType);
+        _this._isMounted = false;
+        _this._overrideScrollDismiss = false;
+        _this.dismissSuggestions = function (ev) {
+            var selectItemFunction = function () {
+                var addItemOnDismiss = true;
+                if (_this.props.onDismiss) {
+                    addItemOnDismiss = _this.props.onDismiss(ev, _this.suggestionStore.currentSuggestion ? _this.suggestionStore.currentSuggestion.item : undefined);
+                }
+                if (!ev || (ev && !ev.defaultPrevented)) {
+                    // Select the first suggestion if one is available and permitted by onDismiss when user leaves.
+                    if (addItemOnDismiss !== false &&
+                        _this.canAddItems() &&
+                        _this.suggestionStore.hasSelectedSuggestion() &&
+                        _this.state.suggestedDisplayValue) {
+                        _this.addItemByIndex(0);
+                    }
+                }
+            };
+            if (_this.currentPromise) {
+                _this.currentPromise.then(function () { return selectItemFunction(); });
+            }
+            else {
+                selectItemFunction();
+            }
+            _this.setState({ suggestionsVisible: false });
+        };
+        _this.refocusSuggestions = function (keyCode) {
+            _this.resetFocus();
+            if (_this.suggestionStore.suggestions && _this.suggestionStore.suggestions.length > 0) {
+                if (keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.up) {
+                    _this.suggestionStore.setSelectedSuggestion(_this.suggestionStore.suggestions.length - 1);
+                }
+                else if (keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.down) {
+                    _this.suggestionStore.setSelectedSuggestion(0);
+                }
+            }
+        };
+        _this._getDescribedBy = function (items, hasError) {
+            var describedBy = '';
+            if (items.length > 0) {
+                describedBy += _this._ariaMap.selectedItems + ' ';
+            }
+            if (hasError) {
+                describedBy += _this._ariaMap.error;
+            }
+            return describedBy;
+        };
+        _this.onInputChange = function (value) {
+            _this.updateValue(value);
+            _this.setState({
+                moreSuggestionsAvailable: true,
+                isMostRecentlyUsedVisible: false,
+            });
+        };
+        _this.onSuggestionClick = function (ev, item, index) {
+            _this.addItemByIndex(index);
+        };
+        _this.onSuggestionRemove = function (ev, item, index) {
+            if (_this.props.onRemoveSuggestion) {
+                _this.props.onRemoveSuggestion(item);
+            }
+            _this.suggestionStore.removeSuggestion(index);
+        };
+        _this.onInputFocus = function (ev) {
+            _this.selection.setAllSelected(false);
+            // Only trigger all of the focus if this component isn't already focused.
+            // For example when an item is selected or removed from the selected list it should be treated
+            // as though the input is still focused.
+            if (!_this.state.isFocused) {
+                _this._userTriggeredSuggestions();
+                if (_this.props.inputProps && _this.props.inputProps.onFocus) {
+                    _this.props.inputProps.onFocus(ev);
+                }
+            }
+        };
+        _this.onInputBlur = function (ev) {
+            if (_this.props.inputProps && _this.props.inputProps.onBlur) {
+                _this.props.inputProps.onBlur(ev);
+            }
+        };
+        _this.onBlur = function (ev) {
+            if (_this.state.isFocused) {
+                // Only blur the entire component if an unrelated element gets focus.
+                // Otherwise treat it as though it still has focus.
+                // Do nothing if the blur is coming from something
+                // inside the comboBox root or the comboBox menu since
+                // it we are not really bluring from the whole comboBox
+                var relatedTarget = ev.relatedTarget;
+                if (ev.relatedTarget === null) {
+                    // In IE11, due to lack of support, event.relatedTarget is always
+                    // null making every onBlur call to be "outside" of the ComboBox
+                    // even when it's not. Using document.activeElement is another way
+                    // for us to be able to get what the relatedTarget without relying
+                    // on the event
+                    relatedTarget = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_8__.getDocumentEx)(_this.context).activeElement;
+                }
+                if (relatedTarget && !(0,_Utilities__WEBPACK_IMPORTED_MODULE_9__.elementContains)(_this.root.current, relatedTarget)) {
+                    _this.setState({ isFocused: false });
+                    if (_this.props.onBlur) {
+                        _this.props.onBlur(ev);
+                    }
+                }
+            }
+        };
+        /**
+         * Resets focus to last element in wrapper div if clicking back into Picker that has hit item limit
+         */
+        _this.onWrapperClick = function (ev) {
+            if (_this.state.items.length && !_this.canAddItems()) {
+                _this.resetFocus(_this.state.items.length - 1);
+            }
+        };
+        /**
+         * Reveals suggestions any time the user clicks on the input element
+         * without shifting focus.
+         */
+        _this.onClick = function (ev) {
+            if (_this.props.inputProps !== undefined && _this.props.inputProps.onClick !== undefined) {
+                _this.props.inputProps.onClick(ev);
+            }
+            // Only primary (left) clicks show suggestions.
+            if (ev.button === 0) {
+                _this._userTriggeredSuggestions();
+            }
+        };
+        _this.onFocus = function () {
+            if (!_this.state.isFocused) {
+                _this.setState({ isFocused: true });
+            }
+        };
+        _this.onKeyDown = function (ev) {
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            var keyCode = ev.which;
+            switch (keyCode) {
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.escape:
+                    if (_this.state.suggestionsVisible) {
+                        _this.setState({ suggestionsVisible: false });
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                    }
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.tab:
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.enter:
+                    if (_this.suggestionElement.current && _this.suggestionElement.current.hasSuggestedActionSelected()) {
+                        _this.suggestionElement.current.executeSelectedAction();
+                    }
+                    else if (!ev.shiftKey && _this.suggestionStore.hasSelectedSuggestion() && _this.state.suggestionsVisible) {
+                        _this.completeSuggestion();
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                    }
+                    else {
+                        _this._completeGenericSuggestion();
+                    }
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.backspace:
+                    if (!_this.props.disabled) {
+                        _this.onBackspace(ev);
+                    }
+                    ev.stopPropagation();
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.del:
+                    if (!_this.props.disabled) {
+                        if (_this.input.current &&
+                            ev.target === _this.input.current.inputElement &&
+                            _this.state.suggestionsVisible &&
+                            _this.suggestionStore.currentIndex !== -1) {
+                            if (_this.props.onRemoveSuggestion) {
+                                _this.props.onRemoveSuggestion(_this.suggestionStore.currentSuggestion.item);
+                            }
+                            _this.suggestionStore.removeSuggestion(_this.suggestionStore.currentIndex);
+                            _this.forceUpdate();
+                        }
+                        else {
+                            _this.onBackspace(ev);
+                        }
+                    }
+                    ev.stopPropagation();
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.up:
+                    if (_this.input.current && ev.target === _this.input.current.inputElement && _this.state.suggestionsVisible) {
+                        if (_this.suggestionElement.current &&
+                            _this.suggestionElement.current.tryHandleKeyDown(keyCode, _this.suggestionStore.currentIndex)) {
+                            ev.preventDefault();
+                            ev.stopPropagation();
+                            _this.forceUpdate();
+                        }
+                        else {
+                            if (_this.suggestionElement.current &&
+                                _this.suggestionElement.current.hasSuggestedAction() &&
+                                _this.suggestionStore.currentIndex === 0) {
+                                ev.preventDefault();
+                                ev.stopPropagation();
+                                _this.suggestionElement.current.focusAboveSuggestions();
+                                _this.suggestionStore.deselectAllSuggestions();
+                                _this.forceUpdate();
+                            }
+                            else {
+                                if (_this.suggestionStore.previousSuggestion()) {
+                                    ev.preventDefault();
+                                    ev.stopPropagation();
+                                    _this.onSuggestionSelect();
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.down:
+                    if (_this.input.current && ev.target === _this.input.current.inputElement && _this.state.suggestionsVisible) {
+                        if (_this.suggestionElement.current &&
+                            _this.suggestionElement.current.tryHandleKeyDown(keyCode, _this.suggestionStore.currentIndex)) {
+                            ev.preventDefault();
+                            ev.stopPropagation();
+                            _this.forceUpdate();
+                        }
+                        else {
+                            if (_this.suggestionElement.current &&
+                                _this.suggestionElement.current.hasSuggestedAction() &&
+                                _this.suggestionStore.currentIndex + 1 === _this.suggestionStore.suggestions.length) {
+                                ev.preventDefault();
+                                ev.stopPropagation();
+                                _this.suggestionElement.current.focusBelowSuggestions();
+                                _this.suggestionStore.deselectAllSuggestions();
+                                _this.forceUpdate();
+                            }
+                            else {
+                                if (_this.suggestionStore.nextSuggestion()) {
+                                    ev.preventDefault();
+                                    ev.stopPropagation();
+                                    _this.onSuggestionSelect();
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }
+        };
+        _this.onItemChange = function (changedItem, index) {
+            var items = _this.state.items;
+            if (index >= 0) {
+                var newItems = items;
+                newItems[index] = changedItem;
+                _this._updateSelectedItems(newItems);
+            }
+        };
+        _this.onGetMoreResults = function () {
+            _this.setState({
+                isSearching: true,
+            }, function () {
+                if (_this.props.onGetMoreResults && _this.input.current) {
+                    var suggestions = _this.props.onGetMoreResults(_this.input.current.value, _this.state.items);
+                    var suggestionsArray = suggestions;
+                    var suggestionsPromiseLike = suggestions;
+                    if (Array.isArray(suggestionsArray)) {
+                        _this.updateSuggestions(suggestionsArray);
+                        _this.setState({ isSearching: false });
+                    }
+                    else if (suggestionsPromiseLike.then) {
+                        suggestionsPromiseLike.then(function (newSuggestions) {
+                            _this.updateSuggestions(newSuggestions);
+                            _this.setState({ isSearching: false });
+                        });
+                    }
+                }
+                else {
+                    _this.setState({ isSearching: false });
+                }
+                if (_this.input.current) {
+                    _this.input.current.focus();
+                }
+                _this.setState({
+                    moreSuggestionsAvailable: false,
+                    isResultsFooterVisible: true,
+                });
+            });
+        };
+        _this.completeSelection = function (item) {
+            _this.addItem(item);
+            _this.updateValue('');
+            if (_this.input.current) {
+                _this.input.current.clear();
+            }
+            _this.setState({ suggestionsVisible: false });
+        };
+        _this.addItemByIndex = function (index) {
+            _this.completeSelection(_this.suggestionStore.getSuggestionAtIndex(index).item);
+        };
+        _this.addItem = function (item) {
+            var processedItem = _this.props.onItemSelected
+                ? _this.props.onItemSelected(item)
+                : item;
+            if (processedItem === null) {
+                return;
+            }
+            var processedItemObject = processedItem;
+            var processedItemPromiseLike = processedItem;
+            if (processedItemPromiseLike && processedItemPromiseLike.then) {
+                processedItemPromiseLike.then(function (resolvedProcessedItem) {
+                    var newItems = _this.state.items.concat([resolvedProcessedItem]);
+                    _this._updateSelectedItems(newItems);
+                });
+            }
+            else {
+                var newItems = _this.state.items.concat([processedItemObject]);
+                _this._updateSelectedItems(newItems);
+            }
+            _this.setState({ suggestedDisplayValue: '', selectionRemoved: undefined });
+        };
+        _this.removeItem = function (item) {
+            var items = _this.state.items;
+            var index = items.indexOf(item);
+            if (index >= 0) {
+                var newItems = items.slice(0, index).concat(items.slice(index + 1));
+                _this.setState({ selectionRemoved: item });
+                _this._updateSelectedItems(newItems);
+                // reset selection removed text after a timeout so it isn't reached by screen reader virtual cursor.
+                // the exact timing isn't important, the live region will fully read even if the text is removed.
+                _this._async.setTimeout(function () {
+                    _this.setState({ selectionRemoved: undefined });
+                }, 1000);
+            }
+        };
+        _this.removeItems = function (itemsToRemove) {
+            var items = _this.state.items;
+            var newItems = items.filter(function (item) { return itemsToRemove.indexOf(item) === -1; });
+            _this._updateSelectedItems(newItems);
+        };
+        /**
+         * @deprecated this is no longer necessary as focuszone has been removed
+         */
+        _this._shouldFocusZoneEnterInnerZone = function (ev) {
+            // If suggestions are shown const up/down keys control them, otherwise allow them through to control the focusZone.
+            if (_this.state.suggestionsVisible) {
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
+                switch (ev.which) {
+                    case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.up:
+                    case _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.down:
+                        return true;
+                }
+            }
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            if (ev.which === _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.enter) {
+                return true;
+            }
+            return false;
+        };
+        _this._onResolveSuggestions = function (updatedValue) {
+            var suggestions = _this.props.onResolveSuggestions(updatedValue, _this.state.items);
+            if (suggestions !== null) {
+                _this.updateSuggestionsList(suggestions, updatedValue);
+            }
+        };
+        _this._completeGenericSuggestion = function () {
+            if (_this.props.onValidateInput &&
+                _this.input.current &&
+                _this.props.onValidateInput(_this.input.current.value) !== _BasePicker_types__WEBPACK_IMPORTED_MODULE_10__.ValidationState.invalid &&
+                _this.props.createGenericItem) {
+                var itemToConvert = _this.props.createGenericItem(_this.input.current.value, _this.props.onValidateInput(_this.input.current.value));
+                _this.suggestionStore.createGenericSuggestion(itemToConvert);
+                _this.completeSuggestion();
+            }
+        };
+        /**
+         * This should be called when the user does something other than use text entry to trigger suggestions.
+         *
+         */
+        _this._userTriggeredSuggestions = function () {
+            if (!_this.state.suggestionsVisible) {
+                var input = _this.input.current ? _this.input.current.value : '';
+                if (!input) {
+                    _this.onEmptyInputFocus();
+                }
+                else {
+                    if (_this.suggestionStore.suggestions.length === 0) {
+                        _this._onResolveSuggestionsDebounced(input);
+                    }
+                    else {
+                        _this.setState({
+                            isMostRecentlyUsedVisible: false,
+                            suggestionsVisible: true,
+                        });
+                    }
+                }
+            }
+        };
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_11__.initializeComponentRef)(_this);
+        var items = basePickerProps.selectedItems || basePickerProps.defaultSelectedItems || [];
+        _this._id = (0,_Utilities__WEBPACK_IMPORTED_MODULE_12__.getId)();
+        _this._ariaMap = {
+            selectedItems: "selected-items-".concat(_this._id),
+            selectedSuggestionAlert: "selected-suggestion-alert-".concat(_this._id),
+            suggestionList: "suggestion-list-".concat(_this._id),
+            combobox: "combobox-".concat(_this._id),
+            error: "error-".concat(_this._id),
+        };
+        _this.suggestionStore = new _Suggestions_SuggestionsController__WEBPACK_IMPORTED_MODULE_13__.SuggestionsController();
+        _this.selection = new _utilities_selection_index__WEBPACK_IMPORTED_MODULE_14__.Selection({ onSelectionChanged: function () { return _this.onSelectionChange(); } });
+        _this.selection.setItems(items);
+        _this.state = {
+            items: items,
+            suggestedDisplayValue: '',
+            isMostRecentlyUsedVisible: false,
+            moreSuggestionsAvailable: false,
+            isFocused: false,
+            isSearching: false,
+            selectedIndices: [],
+            selectionRemoved: undefined,
+        };
+        return _this;
+    }
+    BasePicker.getDerivedStateFromProps = function (newProps) {
+        if (newProps.selectedItems) {
+            return { items: newProps.selectedItems };
+        }
+        return null;
+    };
+    Object.defineProperty(BasePicker.prototype, "items", {
+        get: function () {
+            return this.state.items;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    BasePicker.prototype.componentDidMount = function () {
+        this._isMounted = true;
+        this._async = new _Utilities__WEBPACK_IMPORTED_MODULE_15__.Async(this);
+        this._updateErrorMessage(this.state.items);
+        this.selection.setItems(this.state.items);
+        this._onResolveSuggestionsDebounced = this._async.debounce(this._onResolveSuggestions, this.props.resolveDelay);
+    };
+    BasePicker.prototype.componentDidUpdate = function (oldProps, oldState) {
+        var _this = this;
+        if (this.state.items && this.state.items !== oldState.items) {
+            var currentSelectedIndex = this.selection.getSelectedIndices()[0];
+            this.selection.setItems(this.state.items);
+            if (this.state.isFocused) {
+                // Reset focus and selection so that selected item stays in sync if something
+                // has been removed
+                if (this.state.items.length < oldState.items.length) {
+                    this.selection.setIndexSelected(currentSelectedIndex, false, true);
+                    this.resetFocus(currentSelectedIndex);
+                }
+                // Reset focus to last item if the input is removed
+                else if (this.state.items.length > oldState.items.length && !this.canAddItems()) {
+                    this.resetFocus(this.state.items.length - 1);
+                }
+            }
+        }
+        this._updateErrorMessage(this.state.items);
+        // handle dismiss buffer after suggestions are opened
+        if (this.state.suggestionsVisible && !oldState.suggestionsVisible) {
+            this._overrideScrollDismiss = true;
+            this._async.clearTimeout(this._overrideScrollDimissTimeout);
+            this._overrideScrollDimissTimeout = this._async.setTimeout(function () {
+                _this._overrideScrollDismiss = false;
+            }, 100);
+        }
+    };
+    BasePicker.prototype.componentWillUnmount = function () {
+        this._isMounted = false;
+        if (this.currentPromise) {
+            this.currentPromise = undefined;
+        }
+        this._async.dispose();
+    };
+    BasePicker.prototype.focus = function () {
+        if (this.input.current) {
+            this.input.current.focus();
+        }
+    };
+    BasePicker.prototype.focusInput = function () {
+        if (this.input.current) {
+            this.input.current.focus();
+        }
+    };
+    BasePicker.prototype.completeSuggestion = function (forceComplete) {
+        if (this.suggestionStore.hasSelectedSuggestion() && this.input.current) {
+            this.completeSelection(this.suggestionStore.currentSuggestion.item);
+        }
+        else if (forceComplete) {
+            this._completeGenericSuggestion();
+        }
+    };
+    BasePicker.prototype.render = function () {
+        var _a, _b, _c, _d;
+        var _e = this.state, suggestedDisplayValue = _e.suggestedDisplayValue, isFocused = _e.isFocused, items = _e.items;
+        var _f = this.props, className = _f.className, inputProps = _f.inputProps, disabled = _f.disabled, selectionAriaLabel = _f.selectionAriaLabel, _g = _f.selectionRole, selectionRole = _g === void 0 ? 'list' : _g, theme = _f.theme, styles = _f.styles;
+        var suggestionsVisible = !!this.state.suggestionsVisible;
+        var suggestionsAvailable = suggestionsVisible ? this._ariaMap.suggestionList : undefined;
+        var hasError = !!((_a = this.state.errorMessage) !== null && _a !== void 0 ? _a : this.props.errorMessage);
+        // TODO
+        // Clean this up by leaving only the first part after removing support for SASS.
+        // Currently we can not remove the SASS styles from BasePicker class because it
+        // might be used by consumers who created custom pickers from extending from
+        // this base class and have not used the new 'styles' prop.
+        // We check for 'styles' prop which is going to be injected by the 'styled' HOC
+        // for every other already existing picker variant (PeoplePicker, TagPicker)
+        // so that we can use the CSS-in-JS styles. If the check fails (ex: custom picker),
+        // then we just use the old SASS styles instead.
+        var classNames = styles
+            ? getClassNames(styles, {
+                theme: theme,
+                className: className,
+                isFocused: isFocused,
+                disabled: disabled,
+                hasErrorMessage: hasError,
+                inputClassName: inputProps && inputProps.className,
+            })
+            : {
+                root: (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.css)('ms-BasePicker', className ? className : ''),
+                error: 'ms-BasePicker-error',
+                text: (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.css)('ms-BasePicker-text', legacyStyles.pickerText, this.state.isFocused && legacyStyles.inputFocused),
+                itemsWrapper: legacyStyles.pickerItems,
+                input: (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.css)('ms-BasePicker-input', legacyStyles.pickerInput, inputProps && inputProps.className),
+                screenReaderText: legacyStyles.screenReaderOnly,
+            };
+        var comboLabel = this.props['aria-label'] || (inputProps === null || inputProps === void 0 ? void 0 : inputProps['aria-label']);
+        var inputId = (_b = inputProps === null || inputProps === void 0 ? void 0 : inputProps.id) !== null && _b !== void 0 ? _b : this._ariaMap.combobox;
+        // selectionAriaLabel is contained in a separate <span> rather than an aria-label on the items list
+        // because if the items list has an aria-label, the aria-describedby on the input will only read
+        // that label instead of all the selected items. Using aria-labelledby instead fixes this, since
+        // aria-describedby and aria-labelledby will not follow a second aria-labelledby
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { ref: this.root, className: classNames.root, onKeyDown: this.onKeyDown, onFocus: this.onFocus, onBlur: this.onBlur, onClick: this.onWrapperClick },
+            this.renderLabel(inputId, (_c = classNames.subComponentStyles) === null || _c === void 0 ? void 0 : _c.label),
+            this.renderCustomAlert(classNames.screenReaderText),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { id: "".concat(this._ariaMap.selectedItems, "-label"), hidden: true }, selectionAriaLabel || comboLabel),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utilities_selection_index__WEBPACK_IMPORTED_MODULE_17__.SelectionZone, { selection: this.selection, selectionMode: _utilities_selection_index__WEBPACK_IMPORTED_MODULE_18__.SelectionMode.multiple },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.text, "aria-owns": suggestionsAvailable },
+                    items.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { id: this._ariaMap.selectedItems, className: classNames.itemsWrapper, role: selectionRole, "aria-labelledby": "".concat(this._ariaMap.selectedItems, "-label") }, this.renderItems())),
+                    this.canAddItems() && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Autofill_index__WEBPACK_IMPORTED_MODULE_19__.Autofill, (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__assign)({ spellCheck: false }, inputProps, { className: classNames.input, componentRef: this.input, id: inputId, onClick: this.onClick, onFocus: this.onInputFocus, onBlur: this.onInputBlur, onInputValueChange: this.onInputChange, suggestedDisplayValue: suggestedDisplayValue, "aria-activedescendant": suggestionsVisible ? this.getActiveDescendant() : undefined, "aria-controls": suggestionsAvailable, "aria-describedby": this._getDescribedBy(items, hasError), "aria-expanded": suggestionsVisible, "aria-haspopup": "listbox", "aria-label": comboLabel, role: "combobox", disabled: disabled, 
+                        // eslint-disable-next-line @typescript-eslint/no-deprecated
+                        onInputChange: this.props.onInputChange }))))),
+            this.renderError(classNames.error),
+            this.renderSuggestions((_d = classNames.subComponentStyles) === null || _d === void 0 ? void 0 : _d.callout)));
+    };
+    BasePicker.prototype.canAddItems = function () {
+        var items = this.state.items;
+        var itemLimit = this.props.itemLimit;
+        return itemLimit === undefined || items.length < itemLimit;
+    };
+    BasePicker.prototype.renderLabel = function (inputId, styles) {
+        var _a = this.props, label = _a.label, disabled = _a.disabled, required = _a.required;
+        if (!label) {
+            return null;
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Label__WEBPACK_IMPORTED_MODULE_20__.Label, { className: "ms-BasePicker-label", styles: styles, disabled: disabled, required: required, htmlFor: inputId }, label));
+    };
+    BasePicker.prototype.renderError = function (className) {
+        var _a = this.props.errorMessage, errorMessage = _a === void 0 ? this.state.errorMessage : _a;
+        if (!errorMessage) {
+            return null;
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { role: "alert", id: this._ariaMap.error, className: className }, errorMessage));
+    };
+    BasePicker.prototype.renderSuggestions = function (styles) {
+        var _this = this;
+        var StyledTypedSuggestions = this._styledSuggestions;
+        return this.state.suggestionsVisible && this.input ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Callout__WEBPACK_IMPORTED_MODULE_21__.Callout, (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__assign)({ isBeakVisible: false, gapSpace: 5, target: this.input.current ? this.input.current.inputElement : undefined, onDismiss: this.dismissSuggestions, directionalHint: _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_22__.DirectionalHint.bottomLeftEdge, directionalHintForRTL: _common_DirectionalHint__WEBPACK_IMPORTED_MODULE_22__.DirectionalHint.bottomRightEdge, 
+            // eslint-disable-next-line react/jsx-no-bind
+            preventDismissOnEvent: function (ev) { return _this._preventDismissOnScrollOrResize(ev); }, styles: styles }, this.props.pickerCalloutProps),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledTypedSuggestions
+            // Assumed to set in derived component's defaultProps
+            , (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__assign)({ 
+                // Assumed to set in derived component's defaultProps
+                onRenderSuggestion: this.props.onRenderSuggestionsItem, onSuggestionClick: this.onSuggestionClick, onSuggestionRemove: this.onSuggestionRemove, suggestions: this.suggestionStore.getSuggestions(), componentRef: this.suggestionElement, onGetMoreResults: this.onGetMoreResults, moreSuggestionsAvailable: this.state.moreSuggestionsAvailable, isLoading: this.state.suggestionsLoading, isExtendedLoading: this.state.suggestionsExtendedLoading, isSearching: this.state.isSearching, isMostRecentlyUsedVisible: this.state.isMostRecentlyUsedVisible, isResultsFooterVisible: this.state.isResultsFooterVisible, refocusSuggestions: this.refocusSuggestions, removeSuggestionAriaLabel: this.props.removeButtonAriaLabel, suggestionsListId: this._ariaMap.suggestionList, createGenericItem: this._completeGenericSuggestion }, this.props.pickerSuggestionsProps)))) : null;
+    };
+    BasePicker.prototype.renderItems = function () {
+        var _this = this;
+        var _a = this.props, disabled = _a.disabled, removeButtonAriaLabel = _a.removeButtonAriaLabel, removeButtonIconProps = _a.removeButtonIconProps;
+        var onRenderItem = this.props.onRenderItem;
+        var _b = this.state, items = _b.items, selectedIndices = _b.selectedIndices;
+        return items.map(function (item, index) {
+            return onRenderItem({
+                item: item,
+                index: index,
+                key: item.key ? item.key : index,
+                selected: selectedIndices.indexOf(index) !== -1,
+                onRemoveItem: function () { return _this.removeItem(item); },
+                disabled: disabled,
+                onItemChange: _this.onItemChange,
+                removeButtonAriaLabel: removeButtonAriaLabel,
+                removeButtonIconProps: removeButtonIconProps,
+            });
+        });
+    };
+    BasePicker.prototype.resetFocus = function (index) {
+        var items = this.state.items;
+        if (items.length) {
+            // default to focusing the last item
+            index = index !== null && index !== void 0 ? index : items.length - 1;
+            var newEl = this.root.current &&
+                this.root.current.querySelectorAll('[data-selection-index] > button')[Math.min(index, items.length - 1)];
+            if (newEl) {
+                newEl.focus();
+            }
+        }
+        else {
+            if (this.input.current) {
+                this.input.current.focus();
+            }
+        }
+    };
+    BasePicker.prototype.onSuggestionSelect = function () {
+        if (this.suggestionStore.currentSuggestion) {
+            var currentValue = this.input.current ? this.input.current.value : '';
+            var itemValue = this._getTextFromItem(this.suggestionStore.currentSuggestion.item, currentValue);
+            this.setState({ suggestedDisplayValue: itemValue });
+        }
+    };
+    BasePicker.prototype.onSelectionChange = function () {
+        this.setState({
+            selectedIndices: this.selection.getSelectedIndices(),
+        });
+    };
+    BasePicker.prototype.updateSuggestions = function (suggestions) {
+        var _a;
+        var maxSuggestionsCount = (_a = this.props.pickerSuggestionsProps) === null || _a === void 0 ? void 0 : _a.resultsMaximumNumber;
+        this.suggestionStore.updateSuggestions(suggestions, 0, maxSuggestionsCount);
+        this.forceUpdate();
+    };
+    /**
+     * Only to be called when there is nothing in the input. Checks to see if the consumer has
+     * provided a function to resolve suggestions
+     */
+    BasePicker.prototype.onEmptyInputFocus = function () {
+        var emptyResolveSuggestions = this.props.onEmptyResolveSuggestions
+            ? this.props.onEmptyResolveSuggestions
+            : // eslint-disable-next-line @typescript-eslint/no-deprecated
+                this.props.onEmptyInputFocus;
+        // Only attempt to resolve suggestions if it exists
+        if (emptyResolveSuggestions) {
+            var suggestions = emptyResolveSuggestions(this.state.items);
+            this.updateSuggestionsList(suggestions);
+            this.setState({
+                isMostRecentlyUsedVisible: true,
+                suggestionsVisible: true,
+                moreSuggestionsAvailable: false,
+            });
+        }
+    };
+    BasePicker.prototype.updateValue = function (updatedValue) {
+        this._onResolveSuggestionsDebounced(updatedValue);
+    };
+    BasePicker.prototype.updateSuggestionsList = function (suggestions, updatedValue) {
+        var _this = this;
+        var _a;
+        // Check to see if the returned value is an array, if it is then just pass it into the next function .
+        // If the returned value is not an array then check to see if it's a promise or PromiseLike.
+        // If it is then resolve it asynchronously.
+        if (Array.isArray(suggestions)) {
+            this._updateAndResolveValue(updatedValue, suggestions);
+        }
+        else if (suggestions && suggestions.then) {
+            this.setState({
+                suggestionsLoading: true,
+            });
+            this._startLoadTimer();
+            // Clear suggestions
+            this.suggestionStore.updateSuggestions([]);
+            if (updatedValue !== undefined) {
+                this.setState({
+                    suggestionsVisible: this._getShowSuggestions(),
+                });
+            }
+            else {
+                this.setState({
+                    suggestionsVisible: this.input.current && this.input.current.inputElement === ((_a = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_8__.getDocumentEx)(this.context)) === null || _a === void 0 ? void 0 : _a.activeElement),
+                });
+            }
+            // Ensure that the promise will only use the callback if it was the most recent one.
+            this.currentPromise = suggestions;
+            suggestions.then(function (newSuggestions) {
+                if (suggestions === _this.currentPromise) {
+                    _this._updateAndResolveValue(updatedValue, newSuggestions);
+                }
+            });
+        }
+    };
+    BasePicker.prototype.resolveNewValue = function (updatedValue, suggestions) {
+        var _this = this;
+        this.updateSuggestions(suggestions);
+        var itemValue = undefined;
+        if (this.suggestionStore.currentSuggestion) {
+            itemValue = this._getTextFromItem(this.suggestionStore.currentSuggestion.item, updatedValue);
+        }
+        // Only set suggestionloading to false after there has been time for the new suggestions to flow
+        // to the suggestions list. This is to ensure that the suggestions are available before aria-activedescendant
+        // is set so that screen readers will read out the first selected option.
+        this.setState({
+            suggestedDisplayValue: itemValue,
+            suggestionsVisible: this._getShowSuggestions(),
+        }, function () { return _this.setState({ suggestionsLoading: false, suggestionsExtendedLoading: false }); });
+    };
+    BasePicker.prototype.onChange = function (items) {
+        if (this.props.onChange) {
+            this.props.onChange(items);
+        }
+    };
+    // This is protected because we may expect the backspace key to work differently in a different kind of picker.
+    // This lets the subclass override it and provide it's own onBackspace. For an example see the BasePickerListBelow
+    BasePicker.prototype.onBackspace = function (ev) {
+        if ((this.state.items.length && !this.input.current) ||
+            (this.input.current && !this.input.current.isValueSelected && this.input.current.cursorLocation === 0)) {
+            if (this.selection.getSelectedCount() > 0) {
+                this.removeItems(this.selection.getSelection());
+            }
+            else {
+                this.removeItem(this.state.items[this.state.items.length - 1]);
+            }
+        }
+    };
+    BasePicker.prototype.getActiveDescendant = function () {
+        var _a;
+        if (this.state.suggestionsLoading) {
+            return undefined;
+        }
+        var currentIndex = this.suggestionStore.currentIndex;
+        if (currentIndex < 0) {
+            // if the suggestions element has actions and the currentIndex does not point to a suggestion,
+            // return the action id
+            if ((_a = this.suggestionElement.current) === null || _a === void 0 ? void 0 : _a.hasSuggestedAction()) {
+                return 'sug-selectedAction';
+            }
+            // If there are no suggestions and no action suggested, then return the ID for the no results found.
+            if (this.suggestionStore.suggestions.length === 0) {
+                return 'sug-noResultsFound';
+            }
+            return undefined;
+        }
+        else {
+            return "sug-".concat(currentIndex);
+        }
+    };
+    /** @deprecated use renderCustomAlert instead */
+    BasePicker.prototype.getSuggestionsAlert = function (suggestionAlertClassName) {
+        if (suggestionAlertClassName === void 0) { suggestionAlertClassName = legacyStyles.screenReaderOnly; }
+        var currentIndex = this.suggestionStore.currentIndex;
+        if (this.props.enableSelectedSuggestionAlert) {
+            var selectedSuggestion = currentIndex > -1 ? this.suggestionStore.getSuggestionAtIndex(this.suggestionStore.currentIndex) : undefined;
+            var selectedSuggestionAlertText = selectedSuggestion ? selectedSuggestion.ariaLabel : undefined;
+            // keeping the id/className here for legacy support
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: this._ariaMap.selectedSuggestionAlert, className: suggestionAlertClassName }, "".concat(selectedSuggestionAlertText, " ")));
+        }
+    };
+    BasePicker.prototype.renderCustomAlert = function (alertClassName) {
+        if (alertClassName === void 0) { alertClassName = legacyStyles.screenReaderOnly; }
+        var _a = this.props.suggestionRemovedText, suggestionRemovedText = _a === void 0 ? 'removed {0}' : _a;
+        var removedItemText = '';
+        if (this.state.selectionRemoved) {
+            var itemName = this._getTextFromItem(this.state.selectionRemoved, '');
+            removedItemText = (0,_Utilities__WEBPACK_IMPORTED_MODULE_23__.format)(suggestionRemovedText, itemName);
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: alertClassName, id: this._ariaMap.selectedSuggestionAlert, "aria-live": "assertive" },
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            this.getSuggestionsAlert(alertClassName),
+            removedItemText));
+    };
+    // do not dismiss if the window resizes or scrolls within 100ms of opening
+    // this prevents the Android issue where pickers immediately dismiss on open, because the keyboard appears
+    BasePicker.prototype._preventDismissOnScrollOrResize = function (ev) {
+        if (this._overrideScrollDismiss && (ev.type === 'scroll' || ev.type === 'resize')) {
+            return true;
+        }
+        return false;
+    };
+    /** If suggestions are still loading after a predefined amount of time, set state to show user alert */
+    BasePicker.prototype._startLoadTimer = function () {
+        var _this = this;
+        this._async.setTimeout(function () {
+            if (_this.state.suggestionsLoading) {
+                _this.setState({ suggestionsExtendedLoading: true });
+            }
+        }, EXTENDED_LOAD_TIME);
+    };
+    /**
+     * Takes in the current updated value and either resolves it with the new suggestions
+     * or if updated value is undefined then it clears out currently suggested items
+     */
+    BasePicker.prototype._updateAndResolveValue = function (updatedValue, newSuggestions) {
+        var _a;
+        if (updatedValue !== undefined) {
+            this.resolveNewValue(updatedValue, newSuggestions);
+        }
+        else {
+            var maxSuggestionsCount = (_a = this.props.pickerSuggestionsProps) === null || _a === void 0 ? void 0 : _a.resultsMaximumNumber;
+            this.suggestionStore.updateSuggestions(newSuggestions, -1, maxSuggestionsCount);
+            if (this.state.suggestionsLoading) {
+                this.setState({
+                    suggestionsLoading: false,
+                    suggestionsExtendedLoading: false,
+                });
+            }
+        }
+    };
+    BasePicker.prototype._getErrorMessage = function (items) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function () {
+            var errorMessage, err_1;
+            return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__generator)(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (this.props.errorMessage) {
+                            return [2 /*return*/, this.props.errorMessage];
+                        }
+                        if (!this.props.onGetErrorMessage) return [3 /*break*/, 8];
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 7, , 8]);
+                        errorMessage = this.props.onGetErrorMessage(items);
+                        if (!errorMessage) return [3 /*break*/, 5];
+                        if (!errorMessage.then) return [3 /*break*/, 3];
+                        return [4 /*yield*/, errorMessage];
+                    case 2: return [2 /*return*/, _a.sent()];
+                    case 3: return [2 /*return*/, errorMessage];
+                    case 4: return [3 /*break*/, 6];
+                    case 5: return [2 /*return*/, undefined];
+                    case 6: return [3 /*break*/, 8];
+                    case 7:
+                        err_1 = _a.sent();
+                        return [3 /*break*/, 8];
+                    case 8: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    BasePicker.prototype._updateErrorMessage = function (items) {
+        var _this = this;
+        var newErrorMessage;
+        this._getErrorMessage(items)
+            .then(function (errorMessage) {
+            newErrorMessage = errorMessage;
+        })
+            .catch(function () {
+            /* NO-OP */
+        })
+            .finally(function () {
+            if (_this._isMounted && newErrorMessage !== _this.state.errorMessage) {
+                _this.setState({ errorMessage: newErrorMessage });
+            }
+        });
+    };
+    /**
+     * Controls what happens whenever there is an action that impacts the selected items.
+     * If `selectedItems` is provided, this will act as a controlled component and it will not update its own state.
+     */
+    BasePicker.prototype._updateSelectedItems = function (items) {
+        var _this = this;
+        if (this.props.selectedItems) {
+            // If the component is a controlled component then the controlling component will need to add or remove the items.
+            this.onChange(items);
+        }
+        else {
+            this.setState({ items: items }, function () {
+                _this._updateErrorMessage(items);
+                _this._onSelectedItemsUpdated(items);
+            });
+        }
+    };
+    BasePicker.prototype._onSelectedItemsUpdated = function (items) {
+        this.onChange(items);
+    };
+    /**
+     * Suggestions are normally shown after the user updates text and the text
+     * is non-empty, but also when the user clicks on the input element.
+     * @returns True if suggestions should be shown.
+     */
+    BasePicker.prototype._getShowSuggestions = function () {
+        var _a;
+        var areSuggestionsVisible = this.input.current !== undefined &&
+            this.input.current !== null &&
+            this.input.current.inputElement === ((_a = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_8__.getDocumentEx)(this.context)) === null || _a === void 0 ? void 0 : _a.activeElement) &&
+            this.input.current.value !== '';
+        return areSuggestionsVisible;
+    };
+    BasePicker.prototype._getTextFromItem = function (item, currentValue) {
+        if (this.props.getTextFromItem) {
+            return this.props.getTextFromItem(item, currentValue);
+        }
+        else {
+            return '';
+        }
+    };
+    BasePicker.contextType = _fluentui_react_window_provider__WEBPACK_IMPORTED_MODULE_24__.WindowContext;
+    return BasePicker;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+var BasePickerListBelow = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__extends)(BasePickerListBelow, _super);
+    function BasePickerListBelow() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    BasePickerListBelow.prototype.render = function () {
+        var _a, _b, _c, _d;
+        var _e = this.state, suggestedDisplayValue = _e.suggestedDisplayValue, isFocused = _e.isFocused, items = _e.items;
+        var _f = this.props, className = _f.className, inputProps = _f.inputProps, disabled = _f.disabled, selectionAriaLabel = _f.selectionAriaLabel, _g = _f.selectionRole, selectionRole = _g === void 0 ? 'list' : _g, theme = _f.theme, styles = _f.styles;
+        var suggestionsVisible = !!this.state.suggestionsVisible;
+        var suggestionsAvailable = suggestionsVisible ? this._ariaMap.suggestionList : undefined;
+        var hasError = !!((_a = this.state.errorMessage) !== null && _a !== void 0 ? _a : this.props.errorMessage);
+        // TODO
+        // Clean this up by leaving only the first part after removing support for SASS.
+        // Currently we can not remove the SASS styles from BasePicker class because it
+        // might be used by consumers who created custom pickers from extending from
+        // this base class and have not used the new 'styles' prop.
+        // We check for 'styles' prop which is going to be injected by the 'styled' HOC
+        // for every other already existing picker variant (PeoplePicker, TagPicker)
+        // so that we can use the CSS-in-JS styles. If the check fails (ex: custom picker),
+        // then we just use the old SASS styles instead.
+        var classNames = styles
+            ? getClassNames(styles, {
+                theme: theme,
+                className: className,
+                isFocused: isFocused,
+                disabled: disabled,
+                hasErrorMessage: hasError,
+                inputClassName: inputProps && inputProps.className,
+            })
+            : {
+                root: (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.css)('ms-BasePicker', legacyStyles.picker, className ? className : ''),
+                error: 'ms-BasePicker-error',
+                text: (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.css)('ms-BasePicker-text', legacyStyles.pickerText, this.state.isFocused && legacyStyles.inputFocused, disabled && legacyStyles.inputDisabled),
+                itemsWrapper: legacyStyles.pickerItems,
+                input: (0,_Utilities__WEBPACK_IMPORTED_MODULE_16__.css)('ms-BasePicker-input', legacyStyles.pickerInput, inputProps && inputProps.className),
+                screenReaderText: legacyStyles.screenReaderOnly,
+            };
+        var comboLabel = this.props['aria-label'] || (inputProps === null || inputProps === void 0 ? void 0 : inputProps['aria-label']);
+        var inputId = (_b = inputProps === null || inputProps === void 0 ? void 0 : inputProps.id) !== null && _b !== void 0 ? _b : this._ariaMap.combobox;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { ref: this.root, onBlur: this.onBlur, onFocus: this.onFocus },
+            this.renderLabel(inputId, (_c = classNames.subComponentStyles) === null || _c === void 0 ? void 0 : _c.label),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root, onKeyDown: this.onKeyDown },
+                this.renderCustomAlert(classNames.screenReaderText),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { id: "".concat(this._ariaMap.selectedItems, "-label"), hidden: true }, selectionAriaLabel || comboLabel),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.text, "aria-owns": suggestionsAvailable },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Autofill_index__WEBPACK_IMPORTED_MODULE_19__.Autofill, (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__assign)({}, inputProps, { className: classNames.input, componentRef: this.input, onFocus: this.onInputFocus, onBlur: this.onInputBlur, onClick: this.onClick, onInputValueChange: this.onInputChange, suggestedDisplayValue: suggestedDisplayValue, "aria-activedescendant": suggestionsVisible ? this.getActiveDescendant() : undefined, "aria-controls": suggestionsAvailable, "aria-expanded": suggestionsVisible, "aria-haspopup": "listbox", "aria-label": comboLabel, "aria-describedby": this._getDescribedBy(items, hasError), role: "combobox", id: inputId, disabled: disabled, 
+                        // eslint-disable-next-line @typescript-eslint/no-deprecated
+                        onInputChange: this.props.onInputChange })))),
+            this.renderSuggestions((_d = classNames.subComponentStyles) === null || _d === void 0 ? void 0 : _d.callout),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utilities_selection_index__WEBPACK_IMPORTED_MODULE_17__.SelectionZone, { selection: this.selection, selectionMode: _utilities_selection_index__WEBPACK_IMPORTED_MODULE_18__.SelectionMode.single },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: this._ariaMap.selectedItems, className: "ms-BasePicker-selectedItems" // just a className hook without any styles applied to it.
+                    , role: selectionRole, "aria-labelledby": "".concat(this._ariaMap.selectedItems, "-label") }, this.renderItems())),
+            this.renderError(classNames.error)));
+    };
+    BasePickerListBelow.prototype.onBackspace = function (ev) {
+        // override the existing backspace method to not do anything because the list items appear below.
+    };
+    return BasePickerListBelow;
+}(BasePicker));
+
+
+
+/***/ }),
+
+/***/ 46166:
+/*!********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/BasePicker.scss.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   inputDisabled: () => (/* binding */ inputDisabled),
+/* harmony export */   inputFocused: () => (/* binding */ inputFocused),
+/* harmony export */   picker: () => (/* binding */ picker),
+/* harmony export */   pickerInput: () => (/* binding */ pickerInput),
+/* harmony export */   pickerItems: () => (/* binding */ pickerItems),
+/* harmony export */   pickerText: () => (/* binding */ pickerText),
+/* harmony export */   screenReaderOnly: () => (/* binding */ screenReaderOnly)
+/* harmony export */ });
+/* harmony import */ var _microsoft_load_themed_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @microsoft/load-themed-styles */ 28619);
+/* eslint-disable */
+
+(0,_microsoft_load_themed_styles__WEBPACK_IMPORTED_MODULE_0__.loadStyles)([{ "rawString": ".picker_94f06b16{position:relative}.pickerText_94f06b16{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid " }, { "theme": "neutralTertiary", "defaultValue": "#a19f9d" }, { "rawString": ";min-width:180px;min-height:30px}.pickerText_94f06b16:hover{border-color:" }, { "theme": "inputBorderHovered", "defaultValue": "#323130" }, { "rawString": "}.pickerText_94f06b16.inputFocused_94f06b16{position:relative;border-color:" }, { "theme": "inputFocusBorderAlt", "defaultValue": "#0078d4" }, { "rawString": "}.pickerText_94f06b16.inputFocused_94f06b16:after{pointer-events:none;content:\"\";position:absolute;left:-1px;top:-1px;bottom:-1px;right:-1px;border:2px solid " }, { "theme": "inputFocusBorderAlt", "defaultValue": "#0078d4" }, { "rawString": "}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.pickerText_94f06b16.inputDisabled_94f06b16{position:relative;border-color:GrayText}.pickerText_94f06b16.inputDisabled_94f06b16:after{pointer-events:none;content:\"\";position:absolute;left:0;top:0;bottom:0;right:0;background-color:Window}}.pickerInput_94f06b16{height:34px;border:none;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;outline:0;padding:0 6px 0;-ms-flex-item-align:end;align-self:flex-end}.pickerItems_94f06b16{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:100%}.screenReaderOnly_94f06b16{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}" }]);
+var picker = "picker_94f06b16";
+var pickerText = "pickerText_94f06b16";
+var inputFocused = "inputFocused_94f06b16";
+var inputDisabled = "inputDisabled_94f06b16";
+var pickerInput = "pickerInput_94f06b16";
+var pickerItems = "pickerItems_94f06b16";
+var screenReaderOnly = "screenReaderOnly_94f06b16";
+
+
+/***/ }),
+
+/***/ 58896:
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/BasePicker.styles.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-BasePicker',
+    label: 'ms-BasePicker-label',
+    text: 'ms-BasePicker-text',
+    itemsWrapper: 'ms-BasePicker-itemsWrapper',
+    input: 'ms-BasePicker-input',
+    error: 'ms-BasePicker-error',
+};
+function getStyles(props) {
+    var _a, _b, _c;
+    var className = props.className, theme = props.theme, isFocused = props.isFocused, inputClassName = props.inputClassName, disabled = props.disabled, hasErrorMessage = props.hasErrorMessage;
+    if (!theme) {
+        throw new Error('theme is undefined or null in base BasePicker getStyles function.');
+    }
+    var semanticColors = theme.semanticColors, effects = theme.effects, fonts = theme.fonts;
+    var inputBorder = semanticColors.inputBorder, inputBorderHovered = semanticColors.inputBorderHovered, inputFocusBorderAlt = semanticColors.inputFocusBorderAlt;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    // placeholder style constants
+    var placeholderStyles = [
+        fonts.medium,
+        {
+            color: semanticColors.inputPlaceholderText,
+            opacity: 1,
+            selectors: (_a = {},
+                _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                    color: 'GrayText',
+                },
+                _a),
+        },
+    ];
+    var disabledPlaceholderStyles = {
+        color: semanticColors.disabledText,
+        selectors: (_b = {},
+            _b[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                color: 'GrayText',
+            },
+            _b),
+    };
+    // The following lines are to create a semi-transparent color overlay for the disabled state with designer's approval.
+    // @todo: investigate the performance cost of the calculation below and apply if negligible.
+    //   Replacing with a static color for now.
+    // const rgbColor: IRGB | undefined = cssColor(palette.neutralQuaternaryAlt);
+    // const disabledOverlayColor = rgbColor ? `rgba(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}, 0.29)` : 'transparent';
+    var disabledOverlayColor = 'rgba(218, 218, 218, 0.29)';
+    var focusColor = isFocused && !disabled && (hasErrorMessage ? semanticColors.errorText : inputFocusBorderAlt);
+    return {
+        root: [classNames.root, className, { position: 'relative' }],
+        error: [
+            classNames.error,
+            {
+                fontSize: 12,
+                fontWeight: 400,
+                color: semanticColors.errorText,
+                margin: 0,
+                paddingTop: 5,
+                display: hasErrorMessage ? 'flex' : 'none',
+                alignItems: 'center',
+            },
+        ],
+        text: [
+            classNames.text,
+            {
+                display: 'flex',
+                position: 'relative',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                boxSizing: 'border-box',
+                minWidth: 180,
+                minHeight: 30,
+                border: "1px solid ".concat(inputBorder),
+                borderRadius: effects.roundedCorner2,
+            },
+            !isFocused &&
+                !disabled && {
+                selectors: {
+                    ':hover': {
+                        borderColor: inputBorderHovered,
+                    },
+                },
+            },
+            focusColor && (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getInputFocusStyle)(focusColor, effects.roundedCorner2),
+            disabled && {
+                borderColor: disabledOverlayColor,
+                selectors: (_c = {
+                        ':after': {
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0,
+                            background: disabledOverlayColor,
+                        }
+                    },
+                    _c[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        borderColor: 'GrayText',
+                        selectors: {
+                            ':after': {
+                                background: 'none',
+                            },
+                        },
+                    },
+                    _c),
+            },
+            hasErrorMessage && {
+                borderColor: semanticColors.errorText,
+                selectors: {
+                    ':hover': {
+                        borderColor: semanticColors.errorText,
+                    },
+                },
+            },
+        ],
+        itemsWrapper: [
+            classNames.itemsWrapper,
+            {
+                display: 'flex',
+                flexWrap: 'wrap',
+                maxWidth: '100%',
+            },
+        ],
+        input: [
+            classNames.input,
+            fonts.medium,
+            {
+                height: 30,
+                border: 'none',
+                flexGrow: 1,
+                outline: 'none',
+                padding: '0 6px 0',
+                alignSelf: 'flex-end',
+                borderRadius: effects.roundedCorner2,
+                backgroundColor: 'transparent',
+                color: semanticColors.inputText,
+                selectors: {
+                    '::-ms-clear': {
+                        display: 'none',
+                    },
+                    '&:placeholder-shown': {
+                        textOverflow: 'ellipsis',
+                    },
+                },
+            },
+            (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getPlaceholderStyles)(placeholderStyles),
+            disabled && (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getPlaceholderStyles)(disabledPlaceholderStyles),
+            inputClassName,
+        ],
+        screenReaderText: _Styling__WEBPACK_IMPORTED_MODULE_0__.hiddenContentStyle,
+        subComponentStyles: {
+            label: {},
+            callout: {
+                // Picker suggestions already manage overflow and scrolling items into view
+                // for this to work at all screen sizes, we need Callout to not also have overflow
+                calloutMain: {
+                    overflow: 'unset',
+                    maxHeight: '100%',
+                },
+            },
+        },
+    };
+}
+
+
+/***/ }),
+
+/***/ 99665:
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/BasePicker.types.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ValidationState: () => (/* binding */ ValidationState)
+/* harmony export */ });
+/**
+ * Validation state of the user's input.
+ * {@docCategory Pickers}
+ */
+var ValidationState;
+(function (ValidationState) {
+    /** User input is valid. */
+    ValidationState[ValidationState["valid"] = 0] = "valid";
+    /** User input could be valid or invalid, its state is not known yet. */
+    ValidationState[ValidationState["warning"] = 1] = "warning";
+    /** User input is invalid. */
+    ValidationState[ValidationState["invalid"] = 2] = "invalid";
+})(ValidationState || (ValidationState = {}));
+
+
+/***/ }),
+
+/***/ 67038:
+/*!******************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/PeoplePicker/PeoplePicker.js ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BasePeoplePicker: () => (/* binding */ BasePeoplePicker),
+/* harmony export */   CompactPeoplePicker: () => (/* binding */ CompactPeoplePicker),
+/* harmony export */   CompactPeoplePickerBase: () => (/* binding */ CompactPeoplePickerBase),
+/* harmony export */   ListPeoplePicker: () => (/* binding */ ListPeoplePicker),
+/* harmony export */   ListPeoplePickerBase: () => (/* binding */ ListPeoplePickerBase),
+/* harmony export */   MemberListPeoplePicker: () => (/* binding */ MemberListPeoplePicker),
+/* harmony export */   NormalPeoplePicker: () => (/* binding */ NormalPeoplePicker),
+/* harmony export */   NormalPeoplePickerBase: () => (/* binding */ NormalPeoplePickerBase),
+/* harmony export */   createGenericItem: () => (/* binding */ createGenericItem)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Utilities */ 96606);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Utilities */ 46657);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _BasePicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../BasePicker */ 10710);
+/* harmony import */ var _BasePicker_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../BasePicker.types */ 99665);
+/* harmony import */ var _PeoplePickerItems_PeoplePickerItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PeoplePickerItems/PeoplePickerItem */ 41845);
+/* harmony import */ var _PeoplePickerItems_PeoplePickerItemSuggestion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PeoplePickerItems/PeoplePickerItemSuggestion */ 8289);
+/* harmony import */ var _BasePicker_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../BasePicker.styles */ 58896);
+
+
+
+
+
+
+
+
+/**
+ * {@docCategory PeoplePicker}
+ */
+var BasePeoplePicker = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(BasePeoplePicker, _super);
+    function BasePeoplePicker() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return BasePeoplePicker;
+}(_BasePicker__WEBPACK_IMPORTED_MODULE_2__.BasePicker));
+
+/**
+ * {@docCategory PeoplePicker}
+ */
+var MemberListPeoplePicker = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(MemberListPeoplePicker, _super);
+    function MemberListPeoplePicker() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return MemberListPeoplePicker;
+}(_BasePicker__WEBPACK_IMPORTED_MODULE_2__.BasePickerListBelow));
+
+/**
+ * Standard People Picker.
+ * {@docCategory PeoplePicker}
+ */
+var NormalPeoplePickerBase = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(NormalPeoplePickerBase, _super);
+    function NormalPeoplePickerBase() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /** Default props for NormalPeoplePicker. */
+    NormalPeoplePickerBase.defaultProps = {
+        onRenderItem: function (props) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PeoplePickerItems_PeoplePickerItem__WEBPACK_IMPORTED_MODULE_3__.PeoplePickerItem, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, props)); },
+        onRenderSuggestionsItem: function (personaProps, suggestionsProps) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PeoplePickerItems_PeoplePickerItemSuggestion__WEBPACK_IMPORTED_MODULE_4__.PeoplePickerItemSuggestion, { personaProps: personaProps, suggestionsProps: suggestionsProps }); },
+        createGenericItem: createGenericItem,
+    };
+    return NormalPeoplePickerBase;
+}(BasePeoplePicker));
+
+/**
+ * Compact layout. It uses personas without secondary text when displaying search results.
+ * {@docCategory PeoplePicker}
+ */
+var CompactPeoplePickerBase = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(CompactPeoplePickerBase, _super);
+    function CompactPeoplePickerBase() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /** Default props for CompactPeoplePicker. */
+    CompactPeoplePickerBase.defaultProps = {
+        onRenderItem: function (props) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PeoplePickerItems_PeoplePickerItem__WEBPACK_IMPORTED_MODULE_3__.PeoplePickerItem, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, props)); },
+        onRenderSuggestionsItem: function (personaProps, suggestionsProps) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PeoplePickerItems_PeoplePickerItemSuggestion__WEBPACK_IMPORTED_MODULE_4__.PeoplePickerItemSuggestion, { personaProps: personaProps, suggestionsProps: suggestionsProps, compact: true })); },
+        createGenericItem: createGenericItem,
+    };
+    return CompactPeoplePickerBase;
+}(BasePeoplePicker));
+
+/**
+ * MemberList layout. The selected people show up below the search box.
+ * {@docCategory PeoplePicker}
+ */
+var ListPeoplePickerBase = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(ListPeoplePickerBase, _super);
+    function ListPeoplePickerBase() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /** Default props for ListPeoplePicker. */
+    ListPeoplePickerBase.defaultProps = {
+        onRenderItem: function (props) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PeoplePickerItems_PeoplePickerItem__WEBPACK_IMPORTED_MODULE_3__.PeoplePickerItem, (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({}, props)); },
+        onRenderSuggestionsItem: function (personaProps, suggestionsProps) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PeoplePickerItems_PeoplePickerItemSuggestion__WEBPACK_IMPORTED_MODULE_4__.PeoplePickerItemSuggestion, { personaProps: personaProps, suggestionsProps: suggestionsProps }); },
+        createGenericItem: createGenericItem,
+    };
+    return ListPeoplePickerBase;
+}(MemberListPeoplePicker));
+
+/**
+ * {@docCategory PeoplePicker}
+ */
+function createGenericItem(name, currentValidationState) {
+    var personaToConvert = {
+        key: name,
+        primaryText: name,
+        imageInitials: '!',
+        ValidationState: currentValidationState,
+    };
+    if (currentValidationState !== _BasePicker_types__WEBPACK_IMPORTED_MODULE_5__.ValidationState.warning) {
+        personaToConvert.imageInitials = (0,_Utilities__WEBPACK_IMPORTED_MODULE_6__.getInitials)(name, (0,_Utilities__WEBPACK_IMPORTED_MODULE_7__.getRTL)());
+    }
+    return personaToConvert;
+}
+var NormalPeoplePicker = (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.styled)(NormalPeoplePickerBase, _BasePicker_styles__WEBPACK_IMPORTED_MODULE_9__.getStyles, undefined, {
+    scope: 'NormalPeoplePicker',
+});
+var CompactPeoplePicker = (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.styled)(CompactPeoplePickerBase, _BasePicker_styles__WEBPACK_IMPORTED_MODULE_9__.getStyles, undefined, {
+    scope: 'CompactPeoplePicker',
+});
+var ListPeoplePicker = (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.styled)(ListPeoplePickerBase, _BasePicker_styles__WEBPACK_IMPORTED_MODULE_9__.getStyles, undefined, {
+    scope: 'ListPeoplePickerBase',
+});
+
+
+/***/ }),
+
+/***/ 41845:
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/PeoplePicker/PeoplePickerItems/PeoplePickerItem.js ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PeoplePickerItem: () => (/* binding */ PeoplePickerItem),
+/* harmony export */   PeoplePickerItemBase: () => (/* binding */ PeoplePickerItemBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../Utilities */ 88370);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../Utilities */ 55336);
+/* harmony import */ var _Persona__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../Persona */ 42242);
+/* harmony import */ var _Persona__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../Persona */ 47909);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../Button */ 44533);
+/* harmony import */ var _BasePicker_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../BasePicker.types */ 99665);
+/* harmony import */ var _PeoplePickerItem_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./PeoplePickerItem.styles */ 71937);
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var PeoplePickerItemBase = function (props) {
+    var item = props.item, onRemoveItem = props.onRemoveItem, index = props.index, selected = props.selected, removeButtonAriaLabel = props.removeButtonAriaLabel, styles = props.styles, theme = props.theme, className = props.className, disabled = props.disabled, removeButtonIconProps = props.removeButtonIconProps;
+    var buttonRef = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+    var handleClick = function () {
+        var _a;
+        (_a = buttonRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+    };
+    var itemId = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.getId)();
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        selected: selected,
+        disabled: disabled,
+        invalid: item.ValidationState === _BasePicker_types__WEBPACK_IMPORTED_MODULE_3__.ValidationState.warning,
+    });
+    var personaStyles = classNames.subComponentStyles
+        ? classNames.subComponentStyles.persona
+        : undefined;
+    var personaCoinStyles = classNames.subComponentStyles
+        ? classNames.subComponentStyles.personaCoin
+        : undefined;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { "data-selection-index": index, className: classNames.root, role: 'listitem', key: index, onClick: handleClick },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.itemContent, id: 'selectedItemPersona-' + itemId },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Persona__WEBPACK_IMPORTED_MODULE_4__.Persona, (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__assign)({ size: _Persona__WEBPACK_IMPORTED_MODULE_6__.PersonaSize.size24, styles: personaStyles, coinProps: { styles: personaCoinStyles } }, item))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_7__.IconButton, { componentRef: buttonRef, id: itemId, onClick: onRemoveItem, disabled: disabled, iconProps: removeButtonIconProps !== null && removeButtonIconProps !== void 0 ? removeButtonIconProps : { iconName: 'Cancel' }, styles: { icon: { fontSize: '12px' } }, className: classNames.removeButton, ariaLabel: removeButtonAriaLabel, "aria-labelledby": "".concat(itemId, " selectedItemPersona-").concat(itemId) })));
+};
+var PeoplePickerItem = (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.styled)(PeoplePickerItemBase, _PeoplePickerItem_styles__WEBPACK_IMPORTED_MODULE_9__.getStyles, undefined, { scope: 'PeoplePickerItem' });
+
+
+/***/ }),
+
+/***/ 71937:
+/*!***********************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/PeoplePicker/PeoplePickerItems/PeoplePickerItem.styles.js ***!
+  \***********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../Styling */ 38455);
+/* harmony import */ var _Button_BaseButton_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Button/BaseButton.classNames */ 16707);
+
+
+
+var GlobalClassNames = {
+    root: 'ms-PickerPersona-container',
+    itemContent: 'ms-PickerItem-content',
+    removeButton: 'ms-PickerItem-removeButton',
+    isSelected: 'is-selected',
+    isInvalid: 'is-invalid',
+};
+var REMOVE_BUTTON_SIZE = 24;
+var PICKER_PERSONA_RADIUS = 15;
+function getStyles(props) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    var className = props.className, theme = props.theme, selected = props.selected, invalid = props.invalid, disabled = props.disabled;
+    var palette = theme.palette, semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var personaRootStyles = {
+        color: 'inherit',
+    };
+    // set text color to inherit to allow focus styles to control persona text colors
+    var personaPrimaryTextStyles = [
+        selected &&
+            !invalid &&
+            !disabled && {
+            color: 'inherit',
+            selectors: (_a = {
+                    ':hover': {
+                        color: 'inherit',
+                    }
+                },
+                _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                    color: 'HighlightText',
+                },
+                _a),
+        },
+        ((invalid && !selected) || (invalid && selected && disabled)) && {
+            color: 'inherit',
+            borderBottom: "2px dotted currentColor",
+            selectors: (_b = {},
+                _b[".".concat(classNames.root, ":hover &")] = {
+                    // override Persona root:hover selector
+                    color: 'inherit',
+                },
+                _b),
+        },
+        invalid &&
+            selected &&
+            !disabled && {
+            color: 'inherit',
+            borderBottom: "2px dotted currentColor",
+            selectors: {
+                ':hover': {
+                    color: 'inherit',
+                },
+            },
+        },
+        disabled && {
+            selectors: (_c = {},
+                _c[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                    color: 'GrayText',
+                },
+                _c),
+        },
+    ];
+    var personaSecondaryTextStyles = [
+        selected &&
+            !invalid &&
+            !disabled && {
+            color: 'inherit',
+            selectors: (_d = {
+                    ':hover': {
+                        color: 'inherit',
+                    }
+                },
+                _d[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                    color: 'HighlightText',
+                },
+                _d),
+        },
+    ];
+    var personaCoinInitialsStyles = [
+        invalid && {
+            fontSize: fonts.xLarge.fontSize,
+        },
+    ];
+    return {
+        root: [
+            classNames.root,
+            (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -2 }),
+            {
+                borderRadius: PICKER_PERSONA_RADIUS,
+                display: 'inline-flex',
+                alignItems: 'center',
+                background: palette.neutralLighter,
+                margin: '1px 2px',
+                cursor: 'default',
+                userSelect: 'none',
+                maxWidth: 300,
+                verticalAlign: 'middle',
+                minWidth: 0,
+                selectors: (_e = {
+                        ':hover': {
+                            background: !selected && !disabled ? palette.neutralLight : '',
+                        }
+                    },
+                    _e[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = [{ border: '1px solid WindowText' }, disabled && { borderColor: 'GrayText' }],
+                    _e),
+            },
+            selected &&
+                !disabled && [
+                classNames.isSelected,
+                {
+                    selectors: (_f = {
+                            ':focus-within': (_g = {
+                                    background: palette.themePrimary,
+                                    color: palette.white
+                                },
+                                _g[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                    color: 'HighLightText',
+                                    background: 'Highlight',
+                                },
+                                _g)
+                        },
+                        _f[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ borderColor: 'HighLight', background: 'Highlight' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                        _f),
+                },
+            ],
+            invalid && [classNames.isInvalid],
+            invalid &&
+                selected &&
+                !disabled && {
+                ':focus-within': {
+                    background: palette.redDark,
+                    color: palette.white,
+                },
+            },
+            ((invalid && !selected) || (invalid && selected && disabled)) && {
+                color: palette.redDark,
+            },
+            className,
+        ],
+        itemContent: [
+            classNames.itemContent,
+            {
+                flex: '0 1 auto',
+                minWidth: 0,
+                // CSS below is needed for IE 11 to properly truncate long persona names in the picker
+                // and to clip the presence indicator (in all browsers)
+                maxWidth: '100%',
+                overflow: 'hidden',
+            },
+        ],
+        removeButton: [
+            classNames.removeButton,
+            {
+                borderRadius: PICKER_PERSONA_RADIUS,
+                color: palette.neutralPrimary,
+                flex: '0 0 auto',
+                width: REMOVE_BUTTON_SIZE,
+                height: REMOVE_BUTTON_SIZE,
+                selectors: {
+                    ':hover': {
+                        background: palette.neutralTertiaryAlt,
+                        color: palette.neutralDark,
+                    },
+                },
+            },
+            selected && [
+                (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, {
+                    inset: 2,
+                    borderColor: 'transparent',
+                    highContrastStyle: { inset: 2, left: 1, top: 1, bottom: 1, right: 1, outlineColor: 'HighlightText' },
+                    outlineColor: palette.white,
+                    borderRadius: PICKER_PERSONA_RADIUS,
+                }),
+                {
+                    selectors: (_h = {
+                            ':hover': {
+                                color: palette.white,
+                                background: palette.themeDark,
+                            },
+                            ':active': {
+                                color: palette.white,
+                                background: palette.themeDarker,
+                            },
+                            ':focus': (_j = {
+                                    color: palette.white
+                                },
+                                _j[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                    color: 'HighlightText',
+                                },
+                                _j)
+                        },
+                        _h[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            color: 'HighlightText',
+                        },
+                        _h),
+                },
+                invalid && {
+                    selectors: {
+                        ':hover': {
+                            color: palette.white,
+                            background: palette.red,
+                        },
+                        ':active': {
+                            color: palette.white,
+                            background: palette.redDark,
+                        },
+                    },
+                },
+            ],
+            disabled && {
+                selectors: (_k = {},
+                    _k[".".concat(_Button_BaseButton_classNames__WEBPACK_IMPORTED_MODULE_2__.ButtonGlobalClassNames.msButtonIcon)] = {
+                        color: semanticColors.buttonText,
+                    },
+                    _k),
+            },
+        ],
+        subComponentStyles: {
+            persona: {
+                root: personaRootStyles,
+                primaryText: personaPrimaryTextStyles,
+                secondaryText: personaSecondaryTextStyles,
+            },
+            personaCoin: {
+                initials: personaCoinInitialsStyles,
+            },
+        },
+    };
+}
+
+
+/***/ }),
+
+/***/ 8289:
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/PeoplePicker/PeoplePickerItems/PeoplePickerItemSuggestion.js ***!
+  \**************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PeoplePickerItemSuggestion: () => (/* binding */ PeoplePickerItemSuggestion),
+/* harmony export */   PeoplePickerItemSuggestionBase: () => (/* binding */ PeoplePickerItemSuggestionBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../Utilities */ 55336);
+/* harmony import */ var _Persona__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../Persona */ 42242);
+/* harmony import */ var _Persona__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../Persona */ 47909);
+/* harmony import */ var _PeoplePickerItemSuggestion_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PeoplePickerItemSuggestion.styles */ 85077);
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var PeoplePickerItemSuggestionBase = function (props) {
+    var personaProps = props.personaProps, suggestionsProps = props.suggestionsProps, compact = props.compact, styles = props.styles, theme = props.theme, className = props.className;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: (suggestionsProps && suggestionsProps.suggestionsItemClassName) || className,
+    });
+    var personaStyles = classNames.subComponentStyles && classNames.subComponentStyles.persona
+        ? classNames.subComponentStyles.persona
+        : undefined;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Persona__WEBPACK_IMPORTED_MODULE_2__.Persona, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ size: _Persona__WEBPACK_IMPORTED_MODULE_4__.PersonaSize.size24, styles: personaStyles, className: classNames.personaWrapper, showSecondaryText: !compact, showOverflowTooltip: false }, personaProps))));
+};
+var PeoplePickerItemSuggestion = (0,_Utilities__WEBPACK_IMPORTED_MODULE_5__.styled)(PeoplePickerItemSuggestionBase, _PeoplePickerItemSuggestion_styles__WEBPACK_IMPORTED_MODULE_6__.getStyles, undefined, { scope: 'PeoplePickerItemSuggestion' });
+
+
+/***/ }),
+
+/***/ 85077:
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/PeoplePicker/PeoplePickerItems/PeoplePickerItemSuggestion.styles.js ***!
+  \*********************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../Styling */ 38455);
+/* harmony import */ var _Suggestions_SuggestionsItem_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Suggestions/SuggestionsItem.styles */ 12101);
+
+
+var GlobalClassNames = {
+    root: 'ms-PeoplePicker-personaContent',
+    personaWrapper: 'ms-PeoplePicker-Persona',
+};
+function getStyles(props) {
+    var _a, _b, _c;
+    var className = props.className, theme = props.theme;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var textSelectorsStyles = {
+        selectors: (_a = {},
+            _a[".".concat(_Suggestions_SuggestionsItem_styles__WEBPACK_IMPORTED_MODULE_1__.SuggestionsItemGlobalClassNames.isSuggested, " &")] = {
+                selectors: (_b = {},
+                    _b[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        color: 'HighlightText',
+                    },
+                    _b),
+            },
+            _a[".".concat(classNames.root, ":hover &")] = {
+                selectors: (_c = {},
+                    _c[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        color: 'HighlightText',
+                    },
+                    _c),
+            },
+            _a),
+    };
+    return {
+        root: [
+            classNames.root,
+            {
+                width: '100%',
+                padding: '4px 12px',
+            },
+            className,
+        ],
+        personaWrapper: [
+            classNames.personaWrapper,
+            {
+                width: 180,
+            },
+        ],
+        subComponentStyles: {
+            persona: {
+                primaryText: textSelectorsStyles,
+                secondaryText: textSelectorsStyles,
+            },
+        },
+    };
+}
+
+
+/***/ }),
+
+/***/ 80174:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/Suggestions.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Suggestions: () => (/* binding */ Suggestions)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Utilities */ 79524);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Utilities */ 52477);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../Utilities */ 38972);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../Button */ 68293);
+/* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../Spinner */ 80954);
+/* harmony import */ var _Announced__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../Announced */ 97094);
+/* harmony import */ var _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Suggestions.types */ 32681);
+/* harmony import */ var _SuggestionsItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SuggestionsItem */ 68849);
+/* harmony import */ var _SuggestionsItem_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SuggestionsItem.styles */ 12101);
+/* harmony import */ var _Suggestions_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Suggestions.scss */ 96110);
+
+
+
+
+
+
+
+
+
+
+var legacyStyles = _Suggestions_scss__WEBPACK_IMPORTED_MODULE_1__;
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.classNamesFunction)();
+var StyledSuggestionsItem = (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.styled)(_SuggestionsItem__WEBPACK_IMPORTED_MODULE_4__.SuggestionsItem, _SuggestionsItem_styles__WEBPACK_IMPORTED_MODULE_5__.getStyles, undefined, {
+    scope: 'SuggestionItem',
+});
+/**
+ * {@docCategory Pickers}
+ */
+var Suggestions = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__extends)(Suggestions, _super);
+    function Suggestions(suggestionsProps) {
+        var _this = _super.call(this, suggestionsProps) || this;
+        _this._forceResolveButton = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this._searchForMoreButton = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this._selectedElement = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        _this._scrollContainer = react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        /**
+         * Returns true if the event was handled, false otherwise
+         */
+        _this.tryHandleKeyDown = function (keyCode, currentSuggestionIndex) {
+            var isEventHandled = false;
+            var newSelectedActionType = null;
+            var currentSelectedAction = _this.state.selectedActionType;
+            var suggestionLength = _this.props.suggestions.length;
+            if (keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.down) {
+                switch (currentSelectedAction) {
+                    case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve:
+                        if (suggestionLength > 0) {
+                            _this._refocusOnSuggestions(keyCode);
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none;
+                        }
+                        else if (_this._searchForMoreButton.current) {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore;
+                        }
+                        else {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve;
+                        }
+                        break;
+                    case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore:
+                        if (_this._forceResolveButton.current) {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve;
+                        }
+                        else if (suggestionLength > 0) {
+                            _this._refocusOnSuggestions(keyCode);
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none;
+                        }
+                        else {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore;
+                        }
+                        break;
+                    case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none:
+                        if (currentSuggestionIndex === -1 && _this._forceResolveButton.current) {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve;
+                        }
+                        break;
+                }
+            }
+            else if (keyCode === _Utilities__WEBPACK_IMPORTED_MODULE_7__.KeyCodes.up) {
+                switch (currentSelectedAction) {
+                    case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve:
+                        if (_this._searchForMoreButton.current) {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore;
+                        }
+                        else if (suggestionLength > 0) {
+                            _this._refocusOnSuggestions(keyCode);
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none;
+                        }
+                        break;
+                    case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore:
+                        if (suggestionLength > 0) {
+                            _this._refocusOnSuggestions(keyCode);
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none;
+                        }
+                        else if (_this._forceResolveButton.current) {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve;
+                        }
+                        break;
+                    case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none:
+                        if (currentSuggestionIndex === -1 && _this._searchForMoreButton.current) {
+                            newSelectedActionType = _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore;
+                        }
+                        break;
+                }
+            }
+            if (newSelectedActionType !== null) {
+                _this.setState({ selectedActionType: newSelectedActionType });
+                isEventHandled = true;
+            }
+            return isEventHandled;
+        };
+        _this._getAlertText = function () {
+            var _a = _this.props, isLoading = _a.isLoading, isSearching = _a.isSearching, suggestions = _a.suggestions, suggestionsAvailableAlertText = _a.suggestionsAvailableAlertText, noResultsFoundText = _a.noResultsFoundText, isExtendedLoading = _a.isExtendedLoading, loadingText = _a.loadingText;
+            if (!isLoading && !isSearching) {
+                if (suggestions.length > 0) {
+                    return suggestionsAvailableAlertText || '';
+                }
+                if (noResultsFoundText) {
+                    return noResultsFoundText;
+                }
+            }
+            else if (isLoading && isExtendedLoading) {
+                return loadingText || '';
+            }
+            return '';
+        };
+        _this._getMoreResults = function () {
+            if (_this.props.onGetMoreResults) {
+                _this.props.onGetMoreResults();
+                // Reset selected action type as it will be of type SuggestionActionType.none after more results are gotten
+                _this.setState({ selectedActionType: _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none });
+            }
+        };
+        _this._forceResolve = function () {
+            if (_this.props.createGenericItem) {
+                _this.props.createGenericItem();
+            }
+        };
+        _this._shouldShowForceResolve = function () {
+            return _this.props.showForceResolve ? _this.props.showForceResolve() : false;
+        };
+        _this._onClickTypedSuggestionsItem = function (item, index) {
+            return function (ev) {
+                _this.props.onSuggestionClick(ev, item, index);
+            };
+        };
+        _this._refocusOnSuggestions = function (keyCode) {
+            if (typeof _this.props.refocusSuggestions === 'function') {
+                _this.props.refocusSuggestions(keyCode);
+            }
+        };
+        _this._onRemoveTypedSuggestionsItem = function (item, index) {
+            return function (ev) {
+                var onSuggestionRemove = _this.props.onSuggestionRemove;
+                onSuggestionRemove(ev, item, index);
+                ev.stopPropagation();
+            };
+        };
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_9__.initializeComponentRef)(_this);
+        _this.state = {
+            selectedActionType: _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none,
+        };
+        return _this;
+    }
+    Suggestions.prototype.componentDidMount = function () {
+        this.scrollSelected();
+        this.activeSelectedElement = this._selectedElement ? this._selectedElement.current : null;
+    };
+    Suggestions.prototype.componentDidUpdate = function () {
+        // Only scroll to selected element if the selected element has changed. Otherwise do nothing.
+        // This prevents some odd behavior where scrolling the active element out of view and clicking on a selected element
+        // will trigger a focus event and not give the clicked element the click.
+        if (this._selectedElement.current && this.activeSelectedElement !== this._selectedElement.current) {
+            this.scrollSelected();
+            this.activeSelectedElement = this._selectedElement.current;
+        }
+    };
+    Suggestions.prototype.render = function () {
+        var _a, _b;
+        var _this = this;
+        var _c = this.props, forceResolveText = _c.forceResolveText, mostRecentlyUsedHeaderText = _c.mostRecentlyUsedHeaderText, searchForMoreIcon = _c.searchForMoreIcon, searchForMoreText = _c.searchForMoreText, className = _c.className, moreSuggestionsAvailable = _c.moreSuggestionsAvailable, noResultsFoundText = _c.noResultsFoundText, suggestions = _c.suggestions, isLoading = _c.isLoading, isSearching = _c.isSearching, loadingText = _c.loadingText, onRenderNoResultFound = _c.onRenderNoResultFound, searchingText = _c.searchingText, isMostRecentlyUsedVisible = _c.isMostRecentlyUsedVisible, resultsMaximumNumber = _c.resultsMaximumNumber, resultsFooterFull = _c.resultsFooterFull, resultsFooter = _c.resultsFooter, _d = _c.isResultsFooterVisible, isResultsFooterVisible = _d === void 0 ? true : _d, suggestionsHeaderText = _c.suggestionsHeaderText, suggestionsClassName = _c.suggestionsClassName, theme = _c.theme, styles = _c.styles, suggestionsListId = _c.suggestionsListId, suggestionsContainerAriaLabel = _c.suggestionsContainerAriaLabel;
+        // TODO
+        // Clean this up by leaving only the first part after removing support for SASS.
+        // Currently we can not remove the SASS styles from Suggestions class because it
+        // might be used by consumers separately from pickers extending from BasePicker
+        // and have not used the new 'styles' prop. Because it's expecting a type parameter,
+        // we can not use the 'styled' function without adding some helpers which can break
+        // downstream consumers who did not use the new helpers.
+        // We check for 'styles' prop which is going to be injected by the 'styled' HOC
+        // in BasePicker when the typed Suggestions class is ready to be rendered. If the check
+        // passes we can use the CSS-in-JS styles. If the check fails (ex: custom picker),
+        // then we just use the old SASS styles instead.
+        this._classNames = styles
+            ? getClassNames(styles, {
+                theme: theme,
+                className: className,
+                suggestionsClassName: suggestionsClassName,
+                forceResolveButtonSelected: this.state.selectedActionType === _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve,
+                searchForMoreButtonSelected: this.state.selectedActionType === _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore,
+            })
+            : {
+                root: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-Suggestions', className, legacyStyles.root),
+                title: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-Suggestions-title', legacyStyles.suggestionsTitle),
+                searchForMoreButton: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-SearchMore-button', legacyStyles.actionButton, (_a = {},
+                    _a['is-selected ' + legacyStyles.buttonSelected] = this.state.selectedActionType === _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore,
+                    _a)),
+                forceResolveButton: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-forceResolve-button', legacyStyles.actionButton, (_b = {},
+                    _b['is-selected ' + legacyStyles.buttonSelected] = this.state.selectedActionType === _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve,
+                    _b)),
+                suggestionsAvailable: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-Suggestions-suggestionsAvailable', legacyStyles.suggestionsAvailable),
+                suggestionsContainer: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-Suggestions-container', legacyStyles.suggestionsContainer, suggestionsClassName),
+                noSuggestions: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-Suggestions-none', legacyStyles.suggestionsNone),
+            };
+        var spinnerStyles = this._classNames.subComponentStyles
+            ? this._classNames.subComponentStyles.spinner
+            : undefined;
+        // TODO: cleanup after refactor of pickers to composition pattern and remove SASS support.
+        var spinnerClassNameOrStyles = styles
+            ? { styles: spinnerStyles }
+            : {
+                className: (0,_Utilities__WEBPACK_IMPORTED_MODULE_10__.css)('ms-Suggestions-spinner', legacyStyles.suggestionsSpinner),
+            };
+        var noResults = function () {
+            var defaultRender = function () {
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _this._classNames.noSuggestions }, noResultsFoundText);
+            };
+            return (
+            // This ID can be used by the parent to set aria-activedescendant to this
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "sug-noResultsFound", role: "option" }, onRenderNoResultFound ? onRenderNoResultFound(undefined, defaultRender) : defaultRender()));
+        };
+        // MostRecently Used text should supercede the header text if it's there and available.
+        var headerText = suggestionsHeaderText;
+        if (isMostRecentlyUsedVisible && mostRecentlyUsedHeaderText) {
+            headerText = mostRecentlyUsedHeaderText;
+        }
+        var footerTitle = undefined;
+        if (isResultsFooterVisible) {
+            footerTitle = suggestions.length >= resultsMaximumNumber ? resultsFooterFull : resultsFooter;
+        }
+        var hasNoSuggestions = (!suggestions || !suggestions.length) && !isLoading;
+        var forceResolveId = this.state.selectedActionType === _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve ? 'sug-selectedAction' : undefined;
+        var searchForMoreId = this.state.selectedActionType === _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore ? 'sug-selectedAction' : undefined;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: this._classNames.root, "aria-label": suggestionsContainerAriaLabel || headerText, id: suggestionsListId, role: "listbox" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Announced__WEBPACK_IMPORTED_MODULE_11__.Announced, { message: this._getAlertText(), "aria-live": "polite" }),
+            headerText ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: this._classNames.title }, headerText) : null,
+            forceResolveText && this._shouldShowForceResolve() && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_12__.CommandButton, { componentRef: this._forceResolveButton, className: this._classNames.forceResolveButton, id: forceResolveId, onClick: this._forceResolve, "data-automationid": 'sug-forceResolve' }, forceResolveText)),
+            isLoading && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Spinner__WEBPACK_IMPORTED_MODULE_13__.Spinner, (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__assign)({}, spinnerClassNameOrStyles, { ariaLabel: loadingText, label: loadingText })),
+            hasNoSuggestions ? noResults() : this._renderSuggestions(),
+            searchForMoreText && moreSuggestionsAvailable && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_12__.CommandButton, { componentRef: this._searchForMoreButton, className: this._classNames.searchForMoreButton, iconProps: searchForMoreIcon || { iconName: 'Search' }, id: searchForMoreId, onClick: this._getMoreResults, "data-automationid": 'sug-searchForMore', role: 'option' }, searchForMoreText)),
+            isSearching ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Spinner__WEBPACK_IMPORTED_MODULE_13__.Spinner, (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__assign)({}, spinnerClassNameOrStyles, { ariaLabel: searchingText, label: searchingText })) : null,
+            footerTitle && !moreSuggestionsAvailable && !isMostRecentlyUsedVisible && !isSearching ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: this._classNames.title }, footerTitle(this.props))) : null));
+    };
+    Suggestions.prototype.hasSuggestedAction = function () {
+        return !!this._searchForMoreButton.current || !!this._forceResolveButton.current;
+    };
+    Suggestions.prototype.hasSuggestedActionSelected = function () {
+        return this.state.selectedActionType !== _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.none;
+    };
+    Suggestions.prototype.executeSelectedAction = function () {
+        switch (this.state.selectedActionType) {
+            case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve:
+                this._forceResolve();
+                break;
+            case _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore:
+                this._getMoreResults();
+                break;
+        }
+    };
+    Suggestions.prototype.focusAboveSuggestions = function () {
+        if (this._forceResolveButton.current) {
+            this.setState({ selectedActionType: _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve });
+        }
+        else if (this._searchForMoreButton.current) {
+            this.setState({ selectedActionType: _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore });
+        }
+    };
+    Suggestions.prototype.focusBelowSuggestions = function () {
+        if (this._searchForMoreButton.current) {
+            this.setState({ selectedActionType: _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.searchMore });
+        }
+        else if (this._forceResolveButton.current) {
+            this.setState({ selectedActionType: _Suggestions_types__WEBPACK_IMPORTED_MODULE_8__.SuggestionActionType.forceResolve });
+        }
+    };
+    Suggestions.prototype.focusSearchForMoreButton = function () {
+        if (this._searchForMoreButton.current) {
+            this._searchForMoreButton.current.focus();
+        }
+    };
+    Suggestions.prototype.scrollSelected = function () {
+        if (this._selectedElement.current &&
+            this._scrollContainer.current &&
+            this._scrollContainer.current.scrollTo !== undefined) {
+            var _a = this._selectedElement.current, offsetHeight = _a.offsetHeight, offsetTop = _a.offsetTop;
+            var _b = this._scrollContainer.current, parentOffsetHeight = _b.offsetHeight, scrollTop = _b.scrollTop;
+            var isAbove = offsetTop < scrollTop;
+            var isBelow = offsetTop + offsetHeight > scrollTop + parentOffsetHeight;
+            if (isAbove) {
+                this._scrollContainer.current.scrollTo(0, offsetTop);
+            }
+            else if (isBelow) {
+                this._scrollContainer.current.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
+            }
+        }
+    };
+    Suggestions.prototype._renderSuggestions = function () {
+        var _this = this;
+        var _a = this.props, onRenderSuggestion = _a.onRenderSuggestion, removeSuggestionAriaLabel = _a.removeSuggestionAriaLabel, suggestionsItemClassName = _a.suggestionsItemClassName, resultsMaximumNumber = _a.resultsMaximumNumber, showRemoveButtons = _a.showRemoveButtons, removeButtonIconProps = _a.removeButtonIconProps;
+        var suggestions = this.props.suggestions;
+        var StyledTypedSuggestionsItem = StyledSuggestionsItem;
+        var selectedIndex = -1;
+        suggestions.some(function (element, index) {
+            if (element.selected) {
+                selectedIndex = index;
+                return true;
+            }
+            return false;
+        });
+        if (resultsMaximumNumber) {
+            suggestions =
+                selectedIndex >= resultsMaximumNumber
+                    ? suggestions.slice(selectedIndex - resultsMaximumNumber + 1, selectedIndex + 1)
+                    : suggestions.slice(0, resultsMaximumNumber);
+        }
+        if (suggestions.length === 0) {
+            return null;
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: this._classNames.suggestionsContainer, ref: this._scrollContainer, role: "presentation" }, suggestions.map(function (suggestion, index) { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { ref: suggestion.selected ? _this._selectedElement : undefined, key: suggestion.item.key ? suggestion.item.key : index, role: "presentation" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledTypedSuggestionsItem, { suggestionModel: suggestion, RenderSuggestion: onRenderSuggestion, onClick: _this._onClickTypedSuggestionsItem(suggestion.item, index), className: suggestionsItemClassName, showRemoveButton: showRemoveButtons, removeButtonAriaLabel: removeSuggestionAriaLabel, onRemoveItem: _this._onRemoveTypedSuggestionsItem(suggestion.item, index), id: 'sug-' + index, removeButtonIconProps: removeButtonIconProps }))); })));
+    };
+    return Suggestions;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+
+
+/***/ }),
+
+/***/ 96110:
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/Suggestions.scss.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   actionButton: () => (/* binding */ actionButton),
+/* harmony export */   buttonSelected: () => (/* binding */ buttonSelected),
+/* harmony export */   closeButton: () => (/* binding */ closeButton),
+/* harmony export */   itemButton: () => (/* binding */ itemButton),
+/* harmony export */   root: () => (/* binding */ root),
+/* harmony export */   suggestionsAvailable: () => (/* binding */ suggestionsAvailable),
+/* harmony export */   suggestionsContainer: () => (/* binding */ suggestionsContainer),
+/* harmony export */   suggestionsItem: () => (/* binding */ suggestionsItem),
+/* harmony export */   suggestionsItemIsSuggested: () => (/* binding */ suggestionsItemIsSuggested),
+/* harmony export */   suggestionsNone: () => (/* binding */ suggestionsNone),
+/* harmony export */   suggestionsSpinner: () => (/* binding */ suggestionsSpinner),
+/* harmony export */   suggestionsTitle: () => (/* binding */ suggestionsTitle)
+/* harmony export */ });
+/* harmony import */ var _microsoft_load_themed_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @microsoft/load-themed-styles */ 28619);
+/* eslint-disable */
+
+(0,_microsoft_load_themed_styles__WEBPACK_IMPORTED_MODULE_0__.loadStyles)([{ "rawString": ".root_8c91000a{min-width:260px}.suggestionsItem_8c91000a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;position:relative;overflow:hidden}.suggestionsItem_8c91000a:hover{background:" }, { "theme": "neutralLighter", "defaultValue": "#f3f2f1" }, { "rawString": "}.suggestionsItem_8c91000a:hover .closeButton_8c91000a{display:block}.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a{background:" }, { "theme": "neutralLight", "defaultValue": "#edebe9" }, { "rawString": "}.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a:hover{background:" }, { "theme": "neutralTertiaryAlt", "defaultValue": "#c8c6c4" }, { "rawString": "}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a:hover{background:Highlight;color:HighlightText}}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a{background:Highlight;color:HighlightText;-ms-high-contrast-adjust:none}}.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a .closeButton_8c91000a:hover{background:" }, { "theme": "neutralTertiary", "defaultValue": "#a19f9d" }, { "rawString": ";color:" }, { "theme": "neutralPrimary", "defaultValue": "#323130" }, { "rawString": "}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a .itemButton_8c91000a{color:HighlightText}}.suggestionsItem_8c91000a .closeButton_8c91000a{display:none;color:" }, { "theme": "neutralSecondary", "defaultValue": "#605e5c" }, { "rawString": "}.suggestionsItem_8c91000a .closeButton_8c91000a:hover{background:" }, { "theme": "neutralLight", "defaultValue": "#edebe9" }, { "rawString": "}.actionButton_8c91000a{background-color:transparent;border:0;cursor:pointer;margin:0;position:relative;border-top:1px solid " }, { "theme": "neutralLight", "defaultValue": "#edebe9" }, { "rawString": ";height:40px;width:100%;font-size:12px}[dir=ltr] .actionButton_8c91000a{padding-left:8px}[dir=rtl] .actionButton_8c91000a{padding-right:8px}html[dir=ltr] .actionButton_8c91000a{text-align:left}html[dir=rtl] .actionButton_8c91000a{text-align:right}.actionButton_8c91000a:hover{background-color:" }, { "theme": "neutralLight", "defaultValue": "#edebe9" }, { "rawString": ";cursor:pointer}.actionButton_8c91000a:active,.actionButton_8c91000a:focus{background-color:" }, { "theme": "themeLight", "defaultValue": "#c7e0f4" }, { "rawString": "}.actionButton_8c91000a .ms-Button-icon{font-size:16px;width:25px}.actionButton_8c91000a .ms-Button-label{margin:0 4px 0 9px}html[dir=rtl] .actionButton_8c91000a .ms-Button-label{margin:0 9px 0 4px}.buttonSelected_8c91000a{background-color:" }, { "theme": "themeLight", "defaultValue": "#c7e0f4" }, { "rawString": "}.suggestionsTitle_8c91000a{padding:0 12px;color:" }, { "theme": "themePrimary", "defaultValue": "#0078d4" }, { "rawString": ";font-size:12px;line-height:40px;border-bottom:1px solid " }, { "theme": "neutralLight", "defaultValue": "#edebe9" }, { "rawString": "}.suggestionsContainer_8c91000a{overflow-y:auto;overflow-x:hidden;max-height:300px;border-bottom:1px solid " }, { "theme": "neutralLight", "defaultValue": "#edebe9" }, { "rawString": "}.suggestionsNone_8c91000a{text-align:center;color:#797775;font-size:12px;line-height:30px}.suggestionsSpinner_8c91000a{margin:5px 0;white-space:nowrap;line-height:20px;font-size:12px}html[dir=ltr] .suggestionsSpinner_8c91000a{padding-left:14px}html[dir=rtl] .suggestionsSpinner_8c91000a{padding-right:14px}html[dir=ltr] .suggestionsSpinner_8c91000a{text-align:left}html[dir=rtl] .suggestionsSpinner_8c91000a{text-align:right}.suggestionsSpinner_8c91000a .ms-Spinner-circle{display:inline-block;vertical-align:middle}.suggestionsSpinner_8c91000a .ms-Spinner-label{display:inline-block;margin:0 10px 0 16px;vertical-align:middle}html[dir=rtl] .suggestionsSpinner_8c91000a .ms-Spinner-label{margin:0 16px 0 10px}.itemButton_8c91000a.itemButton_8c91000a{width:100%;padding:0;min-width:0;height:100%}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.itemButton_8c91000a.itemButton_8c91000a{color:WindowText}}.itemButton_8c91000a.itemButton_8c91000a:hover{color:" }, { "theme": "neutralDark", "defaultValue": "#201f1e" }, { "rawString": "}.closeButton_8c91000a.closeButton_8c91000a{padding:0 4px;height:auto;width:32px}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.closeButton_8c91000a.closeButton_8c91000a{color:WindowText}}.closeButton_8c91000a.closeButton_8c91000a:hover{background:" }, { "theme": "neutralTertiaryAlt", "defaultValue": "#c8c6c4" }, { "rawString": ";color:" }, { "theme": "neutralDark", "defaultValue": "#201f1e" }, { "rawString": "}.suggestionsAvailable_8c91000a{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}" }]);
+var root = "root_8c91000a";
+var suggestionsItem = "suggestionsItem_8c91000a";
+var closeButton = "closeButton_8c91000a";
+var suggestionsItemIsSuggested = "suggestionsItemIsSuggested_8c91000a";
+var itemButton = "itemButton_8c91000a";
+var actionButton = "actionButton_8c91000a";
+var buttonSelected = "buttonSelected_8c91000a";
+var suggestionsTitle = "suggestionsTitle_8c91000a";
+var suggestionsContainer = "suggestionsContainer_8c91000a";
+var suggestionsNone = "suggestionsNone_8c91000a";
+var suggestionsSpinner = "suggestionsSpinner_8c91000a";
+var suggestionsAvailable = "suggestionsAvailable_8c91000a";
+
+
+/***/ }),
+
+/***/ 49672:
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/Suggestions.styles.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+
+
+var GlobalClassNames = {
+    root: 'ms-Suggestions',
+    suggestionsContainer: 'ms-Suggestions-container',
+    title: 'ms-Suggestions-title',
+    forceResolveButton: 'ms-forceResolve-button',
+    searchForMoreButton: 'ms-SearchMore-button',
+    spinner: 'ms-Suggestions-spinner',
+    noSuggestions: 'ms-Suggestions-none',
+    suggestionsAvailable: 'ms-Suggestions-suggestionsAvailable',
+    isSelected: 'is-selected',
+};
+function getStyles(props) {
+    var _a;
+    var className = props.className, suggestionsClassName = props.suggestionsClassName, theme = props.theme, forceResolveButtonSelected = props.forceResolveButtonSelected, searchForMoreButtonSelected = props.searchForMoreButtonSelected;
+    var palette = theme.palette, semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var actionButtonStyles = {
+        backgroundColor: 'transparent',
+        border: 0,
+        cursor: 'pointer',
+        margin: 0,
+        paddingLeft: 8,
+        position: 'relative',
+        borderTop: "1px solid ".concat(palette.neutralLight),
+        height: 40,
+        textAlign: 'left',
+        width: '100%',
+        fontSize: fonts.small.fontSize,
+        selectors: {
+            ':hover': {
+                backgroundColor: semanticColors.menuItemBackgroundPressed,
+                cursor: 'pointer',
+            },
+            ':focus, :active': {
+                backgroundColor: palette.themeLight,
+            },
+            '.ms-Button-icon': {
+                fontSize: fonts.mediumPlus.fontSize,
+                width: 25,
+            },
+            '.ms-Button-label': {
+                margin: '0 4px 0 9px',
+            },
+        },
+    };
+    var actionButtonSelectedStyles = {
+        backgroundColor: palette.themeLight,
+        selectors: (_a = {},
+            _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ backgroundColor: 'Highlight', borderColor: 'Highlight', color: 'HighlightText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+            _a[':after'] = {
+                pointerEvents: 'none',
+                content: '""',
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                bottom: 0,
+                right: 0,
+                border: "1px solid ".concat(theme.semanticColors.focusBorder),
+            },
+            _a),
+    };
+    return {
+        root: [
+            classNames.root,
+            {
+                display: 'flex',
+                flexDirection: 'column',
+                minWidth: 260,
+                maxHeight: '100%',
+            },
+            className,
+        ],
+        suggestionsContainer: [
+            classNames.suggestionsContainer,
+            {
+                overflowY: 'auto',
+                overflowX: 'hidden',
+                maxHeight: 300,
+                transform: 'translate3d(0,0,0)',
+            },
+            suggestionsClassName,
+        ],
+        title: [
+            classNames.title,
+            {
+                padding: '0 12px',
+                fontSize: fonts.small.fontSize,
+                color: palette.themePrimary,
+                lineHeight: 40,
+                borderBottom: "1px solid ".concat(semanticColors.menuItemBackgroundPressed),
+            },
+        ],
+        forceResolveButton: [
+            classNames.forceResolveButton,
+            actionButtonStyles,
+            forceResolveButtonSelected && [classNames.isSelected, actionButtonSelectedStyles],
+        ],
+        searchForMoreButton: [
+            classNames.searchForMoreButton,
+            actionButtonStyles,
+            searchForMoreButtonSelected && [classNames.isSelected, actionButtonSelectedStyles],
+        ],
+        noSuggestions: [
+            classNames.noSuggestions,
+            {
+                textAlign: 'center',
+                color: palette.neutralSecondary,
+                fontSize: fonts.small.fontSize,
+                lineHeight: 30,
+            },
+        ],
+        suggestionsAvailable: [classNames.suggestionsAvailable, _Styling__WEBPACK_IMPORTED_MODULE_0__.hiddenContentStyle],
+        subComponentStyles: {
+            spinner: {
+                root: [
+                    classNames.spinner,
+                    {
+                        margin: '5px 0',
+                        paddingLeft: 14,
+                        textAlign: 'left',
+                        whiteSpace: 'nowrap',
+                        lineHeight: 20,
+                        fontSize: fonts.small.fontSize,
+                    },
+                ],
+                circle: {
+                    display: 'inline-block',
+                    verticalAlign: 'middle',
+                },
+                label: {
+                    display: 'inline-block',
+                    verticalAlign: 'middle',
+                    margin: '0 10px 0 16px',
+                },
+            },
+        },
+    };
+}
+
+
+/***/ }),
+
+/***/ 32681:
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/Suggestions.types.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SuggestionActionType: () => (/* binding */ SuggestionActionType)
+/* harmony export */ });
+/**
+ * Enum to help identify which suggestions action button is selected.
+ * {@docCategory Pickers}
+ */
+var SuggestionActionType;
+(function (SuggestionActionType) {
+    /** None of the actions is selected. */
+    SuggestionActionType[SuggestionActionType["none"] = 0] = "none";
+    /** ForceResolve action is selected. */
+    SuggestionActionType[SuggestionActionType["forceResolve"] = 1] = "forceResolve";
+    /** SearchMore action is selected. */
+    SuggestionActionType[SuggestionActionType["searchMore"] = 2] = "searchMore";
+})(SuggestionActionType || (SuggestionActionType = {}));
+
+
+/***/ }),
+
+/***/ 93514:
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/SuggestionsController.js ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SuggestionsController: () => (/* binding */ SuggestionsController)
+/* harmony export */ });
+/**
+ * {@docCategory Pickers}
+ */
+var SuggestionsController = /** @class */ (function () {
+    function SuggestionsController() {
+        var _this = this;
+        this._isSuggestionModel = function (value) {
+            return value.item !== undefined;
+        };
+        this._ensureSuggestionModel = function (suggestion) {
+            if (_this._isSuggestionModel(suggestion)) {
+                return suggestion;
+            }
+            else {
+                return {
+                    item: suggestion,
+                    selected: false,
+                    ariaLabel: suggestion.ariaLabel,
+                };
+            }
+        };
+        this.suggestions = [];
+        this.currentIndex = -1;
+    }
+    SuggestionsController.prototype.updateSuggestions = function (newSuggestions, selectedIndex, maxCount) {
+        if (newSuggestions && newSuggestions.length > 0) {
+            if (maxCount && newSuggestions.length > maxCount) {
+                var startIndex = selectedIndex && selectedIndex > maxCount ? selectedIndex + 1 - maxCount : 0;
+                newSuggestions = newSuggestions.slice(startIndex, startIndex + maxCount - 1);
+            }
+            this.suggestions = this.convertSuggestionsToSuggestionItems(newSuggestions);
+            this.currentIndex = selectedIndex ? selectedIndex : 0;
+            if (selectedIndex === -1) {
+                this.currentSuggestion = undefined;
+            }
+            else if (selectedIndex !== undefined) {
+                this.suggestions[selectedIndex].selected = true;
+                this.currentSuggestion = this.suggestions[selectedIndex];
+            }
+        }
+        else {
+            this.suggestions = [];
+            this.currentIndex = -1;
+            this.currentSuggestion = undefined;
+        }
+    };
+    /**
+     * Increments the suggestion index and gets the next suggestion in the list.
+     */
+    SuggestionsController.prototype.nextSuggestion = function () {
+        if (this.suggestions && this.suggestions.length) {
+            if (this.currentIndex < this.suggestions.length - 1) {
+                this.setSelectedSuggestion(this.currentIndex + 1);
+                return true;
+            }
+            else if (this.currentIndex === this.suggestions.length - 1) {
+                this.setSelectedSuggestion(0);
+                return true;
+            }
+        }
+        return false;
+    };
+    /**
+     * Decrements the suggestion index and gets the previous suggestion in the list.
+     */
+    SuggestionsController.prototype.previousSuggestion = function () {
+        if (this.suggestions && this.suggestions.length) {
+            if (this.currentIndex > 0) {
+                this.setSelectedSuggestion(this.currentIndex - 1);
+                return true;
+            }
+            else if (this.currentIndex === 0) {
+                this.setSelectedSuggestion(this.suggestions.length - 1);
+                return true;
+            }
+        }
+        return false;
+    };
+    SuggestionsController.prototype.getSuggestions = function () {
+        return this.suggestions;
+    };
+    SuggestionsController.prototype.getCurrentItem = function () {
+        return this.currentSuggestion;
+    };
+    SuggestionsController.prototype.getSuggestionAtIndex = function (index) {
+        return this.suggestions[index];
+    };
+    SuggestionsController.prototype.hasSelectedSuggestion = function () {
+        return this.currentSuggestion ? true : false;
+    };
+    SuggestionsController.prototype.removeSuggestion = function (index) {
+        this.suggestions.splice(index, 1);
+    };
+    SuggestionsController.prototype.createGenericSuggestion = function (itemToConvert) {
+        var itemToAdd = this.convertSuggestionsToSuggestionItems([itemToConvert])[0];
+        this.currentSuggestion = itemToAdd;
+    };
+    SuggestionsController.prototype.convertSuggestionsToSuggestionItems = function (suggestions) {
+        return Array.isArray(suggestions) ? suggestions.map(this._ensureSuggestionModel) : [];
+    };
+    SuggestionsController.prototype.deselectAllSuggestions = function () {
+        if (this.currentIndex > -1) {
+            this.suggestions[this.currentIndex].selected = false;
+            this.currentIndex = -1;
+        }
+    };
+    SuggestionsController.prototype.setSelectedSuggestion = function (index) {
+        if (index > this.suggestions.length - 1 || index < 0) {
+            this.currentIndex = 0;
+            this.currentSuggestion.selected = false;
+            this.currentSuggestion = this.suggestions[0];
+            this.currentSuggestion.selected = true;
+        }
+        else {
+            if (this.currentIndex > -1) {
+                this.suggestions[this.currentIndex].selected = false;
+            }
+            this.suggestions[index].selected = true;
+            this.currentIndex = index;
+            this.currentSuggestion = this.suggestions[index];
+        }
+    };
+    return SuggestionsController;
+}());
+
+
+
+/***/ }),
+
+/***/ 68849:
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/SuggestionsItem.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SuggestionsItem: () => (/* binding */ SuggestionsItem)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Utilities */ 52477);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Utilities */ 38972);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Button */ 68293);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Button */ 44533);
+/* harmony import */ var _Suggestions_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Suggestions.scss */ 96110);
+
+
+
+
+
+var legacyStyles = _Suggestions_scss__WEBPACK_IMPORTED_MODULE_1__;
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.classNamesFunction)();
+/**
+ * {@docCategory Pickers}
+ */
+var SuggestionsItem = /** @class */ (function (_super) {
+    (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__extends)(SuggestionsItem, _super);
+    function SuggestionsItem(props) {
+        var _this = _super.call(this, props) || this;
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_4__.initializeComponentRef)(_this);
+        return _this;
+    }
+    SuggestionsItem.prototype.render = function () {
+        var _a;
+        var _b = this.props, suggestionModel = _b.suggestionModel, RenderSuggestion = _b.RenderSuggestion, onClick = _b.onClick, className = _b.className, id = _b.id, onRemoveItem = _b.onRemoveItem, isSelectedOverride = _b.isSelectedOverride, removeButtonAriaLabel = _b.removeButtonAriaLabel, styles = _b.styles, theme = _b.theme, removeButtonIconProps = _b.removeButtonIconProps;
+        // TODO
+        // Clean this up by leaving only the first part after removing support for SASS.
+        // Currently we can not remove the SASS styles from SuggestionsItem class because it
+        // might be used by consumers separately from pickers extending from BasePicker
+        // and have not used the new 'styles' prop. Because it's expecting a type parameter,
+        // we can not use the 'styled' function without adding some helpers which can break
+        // downstream consumers who did not use the new helpers.
+        // We check for 'styles' prop which is going to be injected by the 'styled' HOC
+        // in Suggestions when the typed SuggestionsItem class is ready to be rendered. If the
+        // check passes we can use the CSS-in-JS styles. If the check fails (ex: custom picker),
+        // then we just use the old SASS styles instead.
+        var classNames = styles
+            ? getClassNames(styles, {
+                theme: theme,
+                className: className,
+                suggested: suggestionModel.selected || isSelectedOverride,
+            })
+            : {
+                root: (0,_Utilities__WEBPACK_IMPORTED_MODULE_5__.css)('ms-Suggestions-item', legacyStyles.suggestionsItem, (_a = {},
+                    _a['is-suggested ' + legacyStyles.suggestionsItemIsSuggested] = suggestionModel.selected || isSelectedOverride,
+                    _a), className),
+                itemButton: (0,_Utilities__WEBPACK_IMPORTED_MODULE_5__.css)('ms-Suggestions-itemButton', legacyStyles.itemButton),
+                closeButton: (0,_Utilities__WEBPACK_IMPORTED_MODULE_5__.css)('ms-Suggestions-closeButton', legacyStyles.closeButton),
+            };
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root, role: "presentation" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_6__.CommandButton, { onClick: onClick, className: classNames.itemButton, id: id, "aria-selected": suggestionModel.selected, role: "option", "aria-label": suggestionModel.ariaLabel }, RenderSuggestion(suggestionModel.item, this.props)),
+            this.props.showRemoveButton ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: removeButtonIconProps !== null && removeButtonIconProps !== void 0 ? removeButtonIconProps : { iconName: 'Cancel' }, styles: { icon: { fontSize: '12px' } }, title: removeButtonAriaLabel, ariaLabel: removeButtonAriaLabel, onClick: onRemoveItem, className: classNames.closeButton })) : null));
+    };
+    return SuggestionsItem;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+
+
+/***/ }),
+
+/***/ 12101:
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/pickers/Suggestions/SuggestionsItem.styles.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SuggestionsItemGlobalClassNames: () => (/* binding */ SuggestionsItemGlobalClassNames),
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 27291);
+
+
+
+var SuggestionsItemGlobalClassNames = {
+    root: 'ms-Suggestions-item',
+    itemButton: 'ms-Suggestions-itemButton',
+    closeButton: 'ms-Suggestions-closeButton',
+    isSuggested: 'is-suggested',
+};
+function getStyles(props) {
+    var _a, _b, _c, _d, _e, _f;
+    var className = props.className, theme = props.theme, suggested = props.suggested;
+    var palette = theme.palette, semanticColors = theme.semanticColors;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(SuggestionsItemGlobalClassNames, theme);
+    return {
+        root: [
+            classNames.root,
+            {
+                display: 'flex',
+                alignItems: 'stretch',
+                boxSizing: 'border-box',
+                width: '100%',
+                position: 'relative',
+                selectors: {
+                    '&:hover': {
+                        background: semanticColors.menuItemBackgroundHovered,
+                    },
+                    '&:hover .ms-Suggestions-closeButton': {
+                        display: 'block',
+                    },
+                },
+            },
+            suggested && {
+                selectors: (_a = {},
+                    _a[".".concat(_Utilities__WEBPACK_IMPORTED_MODULE_1__.IsFocusVisibleClassName, " &, :host(.").concat(_Utilities__WEBPACK_IMPORTED_MODULE_1__.IsFocusVisibleClassName, ") &")] = {
+                        selectors: (_b = {},
+                            _b[".".concat(classNames.closeButton)] = {
+                                display: 'block',
+                                background: semanticColors.menuItemBackgroundPressed,
+                            },
+                            _b),
+                    },
+                    _a[':after'] = {
+                        pointerEvents: 'none',
+                        content: '""',
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        right: 0,
+                        border: "1px solid ".concat(theme.semanticColors.focusBorder),
+                    },
+                    _a),
+            },
+            className,
+        ],
+        itemButton: [
+            classNames.itemButton,
+            {
+                justifyContent: 'flex-start',
+                width: '100%',
+                padding: 0,
+                border: 'none',
+                height: '100%',
+                // Force the item button to be collapsible so it can always shrink
+                // to accommodate the close button as a peer in its flex container.
+                minWidth: 0,
+                // Required for IE11 to truncate the component.
+                overflow: 'hidden',
+                selectors: (_c = {},
+                    _c[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        color: 'WindowText',
+                        selectors: {
+                            ':hover': (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'Highlight', color: 'HighlightText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                        },
+                    },
+                    _c[':hover'] = {
+                        color: semanticColors.menuItemTextHovered,
+                    },
+                    _c['.ms-Button-flexContainer'] = {
+                        width: '100%',
+                    },
+                    _c),
+            },
+            suggested && [
+                classNames.isSuggested,
+                {
+                    background: semanticColors.menuItemBackgroundPressed,
+                    selectors: (_d = {
+                            ':hover': {
+                                background: semanticColors.menuDivider,
+                            }
+                        },
+                        _d[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ background: 'Highlight', color: 'HighlightText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                        _d),
+                },
+            ],
+        ],
+        closeButton: [
+            classNames.closeButton,
+            {
+                display: 'none',
+                color: palette.neutralSecondary,
+                padding: '0 4px',
+                height: 'auto',
+                width: 32,
+                selectors: (_e = {
+                        ':hover, :active': {
+                            background: palette.neutralTertiaryAlt,
+                            color: palette.neutralDark,
+                        }
+                    },
+                    _e[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        color: 'WindowText',
+                    },
+                    _e),
+            },
+            suggested && (_f = {},
+                _f[".".concat(_Utilities__WEBPACK_IMPORTED_MODULE_1__.IsFocusVisibleClassName, " &, :host(.").concat(_Utilities__WEBPACK_IMPORTED_MODULE_1__.IsFocusVisibleClassName, ") &")] = {
+                    selectors: {
+                        ':hover, :active': {
+                            background: palette.neutralTertiary,
+                        },
+                    },
+                },
+                _f.selectors = {
+                    ':hover, :active': {
+                        background: palette.neutralTertiary,
+                        color: palette.neutralPrimary,
+                    },
+                },
+                _f),
+        ],
+    };
+}
 
 
 /***/ }),
@@ -58956,6 +69354,94 @@ function _setComponentRef(componentRef, value) {
 
 /***/ }),
 
+/***/ 96606:
+/*!**********************************************************!*\
+  !*** ./node_modules/@fluentui/utilities/lib/initials.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getInitials: () => (/* binding */ getInitials)
+/* harmony export */ });
+/**
+ * Regular expressions matching characters to ignore when calculating the initials.
+ */
+/**
+ * Regular expression matching characters within various types of enclosures, including the enclosures themselves
+ *  so for example, (xyz) [xyz] {xyz} <xyz> all would be ignored
+ */
+var UNWANTED_ENCLOSURES_REGEX = /[\(\[\{\<][^\)\]\}\>]*[\)\]\}\>]/g;
+/**
+ * Regular expression matching special ASCII characters except space, plus some unicode special characters.
+ * Applies after unwanted enclosures have been removed
+ */
+var UNWANTED_CHARS_REGEX = /[\0-\u001F\!-/:-@\[-`\{-\u00BF\u0250-\u036F\uD800-\uFFFF]/g;
+/**
+ * Regular expression matching phone numbers. Applied after chars matching UNWANTED_CHARS_REGEX have been removed
+ * and number has been trimmed for whitespaces
+ */
+var PHONENUMBER_REGEX = /^\d+[\d\s]*(:?ext|x|)\s*\d+$/i;
+/** Regular expression matching one or more spaces. */
+var MULTIPLE_WHITESPACES_REGEX = /\s+/g;
+/**
+ * Regular expression matching languages for which we currently don't support initials.
+ * Arabic:   Arabic, Arabic Supplement, Arabic Extended-A.
+ * Korean:   Hangul Jamo, Hangul Compatibility Jamo, Hangul Jamo Extended-A, Hangul Syllables, Hangul Jamo Extended-B.
+ * Japanese: Hiragana, Katakana.
+ * CJK:      CJK Unified Ideographs Extension A, CJK Unified Ideographs, CJK Compatibility Ideographs,
+ *             CJK Unified Ideographs Extension B
+ */
+var UNSUPPORTED_TEXT_REGEX = 
+// eslint-disable-next-line @fluentui/max-len
+/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\u1100-\u11FF\u3130-\u318F\uA960-\uA97F\uAC00-\uD7AF\uD7B0-\uD7FF\u3040-\u309F\u30A0-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]|[\uD840-\uD869][\uDC00-\uDED6]/;
+function getInitialsLatin(displayName, isRtl) {
+    var initials = '';
+    var splits = displayName.split(' ');
+    if (splits.length === 2) {
+        initials += splits[0].charAt(0).toUpperCase();
+        initials += splits[1].charAt(0).toUpperCase();
+    }
+    else if (splits.length === 3) {
+        initials += splits[0].charAt(0).toUpperCase();
+        initials += splits[2].charAt(0).toUpperCase();
+    }
+    else if (splits.length !== 0) {
+        initials += splits[0].charAt(0).toUpperCase();
+    }
+    if (isRtl && initials.length > 1) {
+        return initials.charAt(1) + initials.charAt(0);
+    }
+    return initials;
+}
+function cleanupDisplayName(displayName) {
+    displayName = displayName.replace(UNWANTED_ENCLOSURES_REGEX, '');
+    displayName = displayName.replace(UNWANTED_CHARS_REGEX, '');
+    displayName = displayName.replace(MULTIPLE_WHITESPACES_REGEX, ' ');
+    displayName = displayName.trim();
+    return displayName;
+}
+/**
+ * Get (up to 2 characters) initials based on display name of the persona.
+ *
+ * @public
+ */
+function getInitials(displayName, isRtl, allowPhoneInitials) {
+    if (!displayName) {
+        return '';
+    }
+    displayName = cleanupDisplayName(displayName);
+    // For names containing CJK characters, and phone numbers, we don't display initials
+    if (UNSUPPORTED_TEXT_REGEX.test(displayName) || (!allowPhoneInitials && PHONENUMBER_REGEX.test(displayName))) {
+        return '';
+    }
+    return getInitialsLatin(displayName, isRtl);
+}
+
+
+/***/ }),
+
 /***/ 26166:
 /*!**********************************************************!*\
   !*** ./node_modules/@fluentui/utilities/lib/keyboard.js ***!
@@ -59634,6 +70120,53 @@ function isMac(reset) {
         isMacResult = !!userAgent && userAgent.indexOf('Macintosh') !== -1;
     }
     return !!isMacResult;
+}
+
+
+/***/ }),
+
+/***/ 4233:
+/*!**********************************************************!*\
+  !*** ./node_modules/@fluentui/utilities/lib/overflow.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hasHorizontalOverflow: () => (/* binding */ hasHorizontalOverflow),
+/* harmony export */   hasOverflow: () => (/* binding */ hasOverflow),
+/* harmony export */   hasVerticalOverflow: () => (/* binding */ hasVerticalOverflow)
+/* harmony export */ });
+/**
+ * Detects whether an element's content has horizontal overflow
+ *
+ * @public
+ * @param element - Element to check for overflow
+ * @returns True if element's content overflows
+ */
+function hasHorizontalOverflow(element) {
+    return element.clientWidth < element.scrollWidth;
+}
+/**
+ * Detects whether an element's content has vertical overflow
+ *
+ * @public
+ * @param element - Element to check for overflow
+ * @returns True if element's content overflows
+ */
+function hasVerticalOverflow(element) {
+    return element.clientHeight < element.scrollHeight;
+}
+/**
+ * Detects whether an element's content has overflow in any direction
+ *
+ * @public
+ * @param element - Element to check for overflow
+ * @returns True if element's content overflows
+ */
+function hasOverflow(element) {
+    return hasHorizontalOverflow(element) || hasVerticalOverflow(element);
 }
 
 
@@ -87823,6 +98356,204 @@ function toResourcePath(url) {
 
 /***/ }),
 
+/***/ 95250:
+/*!*********************************************!*\
+  !*** ./node_modules/@pnp/sp/views/index.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   View: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.View),
+/* harmony export */   ViewFields: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.ViewFields),
+/* harmony export */   ViewScope: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.ViewScope),
+/* harmony export */   Views: () => (/* reexport safe */ _types_js__WEBPACK_IMPORTED_MODULE_1__.Views)
+/* harmony export */ });
+/* harmony import */ var _list_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./list.js */ 65840);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types.js */ 87375);
+
+
+
+
+/***/ }),
+
+/***/ 65840:
+/*!********************************************!*\
+  !*** ./node_modules/@pnp/sp/views/list.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _pnp_queryable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/queryable */ 2464);
+/* harmony import */ var _lists_types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lists/types.js */ 71528);
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./types.js */ 87375);
+
+
+
+(0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.addProp)(_lists_types_js__WEBPACK_IMPORTED_MODULE_1__._List, "views", _types_js__WEBPACK_IMPORTED_MODULE_2__.Views);
+(0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.addProp)(_lists_types_js__WEBPACK_IMPORTED_MODULE_1__._List, "defaultView", _types_js__WEBPACK_IMPORTED_MODULE_2__.View);
+_lists_types_js__WEBPACK_IMPORTED_MODULE_1__._List.prototype.getView = function (viewId) {
+    return (0,_types_js__WEBPACK_IMPORTED_MODULE_2__.View)(this, `getView('${viewId}')`);
+};
+
+
+/***/ }),
+
+/***/ 87375:
+/*!*********************************************!*\
+  !*** ./node_modules/@pnp/sp/views/types.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   View: () => (/* binding */ View),
+/* harmony export */   ViewFields: () => (/* binding */ ViewFields),
+/* harmony export */   ViewScope: () => (/* binding */ ViewScope),
+/* harmony export */   Views: () => (/* binding */ Views),
+/* harmony export */   _View: () => (/* binding */ _View),
+/* harmony export */   _ViewFields: () => (/* binding */ _ViewFields),
+/* harmony export */   _Views: () => (/* binding */ _Views)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 13759);
+/* harmony import */ var _pnp_queryable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/queryable */ 2464);
+/* harmony import */ var _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../spqueryable.js */ 96290);
+/* harmony import */ var _decorators_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../decorators.js */ 43445);
+/* harmony import */ var _utils_encode_path_str_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/encode-path-str.js */ 6181);
+
+
+
+
+
+let _Views = class _Views extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__._SPCollection {
+    /**
+     * Adds a new view to the collection
+     *
+     * @param title The new views's title
+     * @param personalView True if this is a personal view, otherwise false, default = false
+     * @param additionalSettings Will be passed as part of the view creation body
+     */
+    async add(Title, PersonalView = false, additionalSettings = {}) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(this, (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.body)({
+            PersonalView,
+            Title,
+            ...additionalSettings,
+        }));
+    }
+    /**
+     * Gets a view by guid id
+     *
+     * @param id The GUID id of the view
+     */
+    getById(id) {
+        return View(this).concat(`('${id}')`);
+    }
+    /**
+     * Gets a view by title (case-sensitive)
+     *
+     * @param title The case-sensitive title of the view
+     */
+    getByTitle(title) {
+        return View(this, `getByTitle('${(0,_utils_encode_path_str_js__WEBPACK_IMPORTED_MODULE_2__.encodePath)(title)}')`);
+    }
+};
+_Views = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_decorators_js__WEBPACK_IMPORTED_MODULE_4__.defaultPath)("views")
+], _Views);
+
+const Views = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spInvokableFactory)(_Views);
+class _View extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__._SPInstance {
+    constructor() {
+        super(...arguments);
+        this.delete = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.deleteable)();
+    }
+    get fields() {
+        return ViewFields(this);
+    }
+    /**
+     * Updates this view intance with the supplied properties
+     *
+     * @param properties A plain object hash of values to update for the view
+     */
+    async update(props) {
+        return await (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPostMerge)(this, (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.body)(props));
+    }
+    // : any = this._update<IViewUpdateResult, ITypedHash<any>>("SP.View", data => ({ data, view: <any>this }));
+    /**
+     * Returns the list view as HTML.
+     *
+     */
+    renderAsHtml() {
+        return View(this, "renderashtml")();
+    }
+    /**
+     * Sets the view schema
+     *
+     * @param viewXml The view XML to set
+     */
+    setViewXml(viewXml) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(View(this, "SetViewXml"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.body)({ viewXml }));
+    }
+}
+const View = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spInvokableFactory)(_View);
+let _ViewFields = class _ViewFields extends _spqueryable_js__WEBPACK_IMPORTED_MODULE_1__._SPCollection {
+    /**
+     * Gets a value that specifies the XML schema that represents the collection.
+     */
+    getSchemaXml() {
+        return ViewFields(this, "schemaxml")();
+    }
+    /**
+     * Adds the field with the specified field internal name or display name to the collection.
+     *
+     * @param fieldTitleOrInternalName The case-sensitive internal name or display name of the field to add.
+     */
+    add(fieldTitleOrInternalName) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(ViewFields(this, `addviewfield('${(0,_utils_encode_path_str_js__WEBPACK_IMPORTED_MODULE_2__.encodePath)(fieldTitleOrInternalName)}')`));
+    }
+    /**
+     * Moves the field with the specified field internal name to the specified position in the collection.
+     *
+     * @param field The case-sensitive internal name of the field to move.
+     * @param index The zero-based index of the new position for the field.
+     */
+    move(field, index) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(ViewFields(this, "moveviewfieldto"), (0,_pnp_queryable__WEBPACK_IMPORTED_MODULE_0__.body)({ field, index }));
+    }
+    /**
+     * Removes all the fields from the collection.
+     */
+    removeAll() {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(ViewFields(this, "removeallviewfields"));
+    }
+    /**
+     * Removes the field with the specified field internal name from the collection.
+     *
+     * @param fieldInternalName The case-sensitive internal name of the field to remove from the view.
+     */
+    remove(fieldInternalName) {
+        return (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spPost)(ViewFields(this, `removeviewfield('${(0,_utils_encode_path_str_js__WEBPACK_IMPORTED_MODULE_2__.encodePath)(fieldInternalName)}')`));
+    }
+};
+_ViewFields = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_decorators_js__WEBPACK_IMPORTED_MODULE_4__.defaultPath)("viewfields")
+], _ViewFields);
+
+const ViewFields = (0,_spqueryable_js__WEBPACK_IMPORTED_MODULE_1__.spInvokableFactory)(_ViewFields);
+var ViewScope;
+(function (ViewScope) {
+    ViewScope[ViewScope["DefaultValue"] = 0] = "DefaultValue";
+    ViewScope[ViewScope["Recursive"] = 1] = "Recursive";
+    ViewScope[ViewScope["RecursiveAll"] = 2] = "RecursiveAll";
+    ViewScope[ViewScope["FilesOnly"] = 3] = "FilesOnly";
+})(ViewScope || (ViewScope = {}));
+
+
+/***/ }),
+
 /***/ 47339:
 /*!********************************************!*\
   !*** ./node_modules/@pnp/sp/webs/index.js ***!
@@ -103021,7 +113752,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("abb74c2cbd53361ad627")
+/******/ 		__webpack_require__.h = () => ("bd583d9b6fcc017c4bcd")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

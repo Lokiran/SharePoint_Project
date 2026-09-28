@@ -15,3 +15,4 @@ export * from './MyWorkspacePage';
 export * from './AdminAssignmentPanel';
 export * from './ApprovalsPage';
 export * from './UsersPage';
+export * from './OnboardingPage';

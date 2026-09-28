@@ -240,6 +240,15 @@ export class RequestApprovalService {
             : `Approved by ${approverName}`;
       }
 
+      // SLA: record when the manager decided (column is auto-created; skip if absent).
+      const decisionDateField = fields.find(field =>
+        (field.InternalName || "").toString().toLowerCase() ===
+        SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME.toLowerCase()
+      );
+      if (decisionDateField) {
+        basePayload[decisionDateField.InternalName] = new Date().toISOString();
+      }
+
       await list.items
         .getById(requestId)
         .update(basePayload);

@@ -2,112 +2,10 @@ import { getSP, getContext } from "../pnpjsConfig";
 import "@pnp/sp/site-users/web";
 import "@pnp/sp/site-groups/web";
 import { SharePointBaseService, IFieldMetadata } from "./base/SharePointBaseService";
+import { getListDefinitions, IListDefinition, ListKey } from "../constants/ListDefinitions";
 
-/**
- * Single registry of every SharePoint list the web part depends on.
- * `candidates` MUST mirror the name fallbacks used by the owning service
- * (e.g. InventoryItemService.getInventoryList) so that the Config page
- * checks exactly the list the app will actually read and write.
- */
-export type ListKey = 'inventory' | 'request' | 'returnRequest' | 'mapping' | 'eventLog' | 'incident' | 'employee' | 'replacement';
-
-export interface IRequiredColumn {
-  /** Name shown in the schema guide. */
-  name: string;
-  /** Additional internal/display names the services accept for this column. */
-  aliases?: string[];
-}
-
-export interface IListDefinition {
-  key: ListKey;
-  candidates: string[];
-  requiredColumns: IRequiredColumn[];
-  /** Core lists block the app; optional lists only disable a feature. */
-  optional?: boolean;
-  /** The owning service creates the list on first use if it is missing. */
-  autoCreated?: boolean;
-}
-
-export const LIST_DEFINITIONS: IListDefinition[] = [
-  {
-    key: 'inventory',
-    candidates: [SharePointBaseService.LIST_NAME, "Inventory List"],
-    requiredColumns: [
-      { name: 'Title' },
-      { name: 'AssetName' },
-      { name: 'AssetType' },
-      { name: 'SerialNumber' },
-      { name: 'PurchaseDate' },
-      { name: 'Status', aliases: ['AssetStatus'] },
-      { name: 'Specifications' },
-      { name: 'AssignedTo' }
-    ]
-  },
-  {
-    key: 'request',
-    candidates: [SharePointBaseService.REQUEST_LIST_NAME, "Request List"],
-    requiredColumns: [
-      { name: 'Title' },
-      { name: 'Employee' },
-      { name: 'AssetType' },
-      { name: 'Quantity' },
-      { name: 'ReasonforRequest', aliases: ['Reason'] },
-      { name: SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME },
-      { name: SharePointBaseService.REQUEST_KEY_INTERNAL_NAME },
-      { name: SharePointBaseService.ASSET_STATUS_INTERNAL_NAME }
-    ]
-  },
-  {
-    key: 'returnRequest',
-    candidates: [
-      SharePointBaseService.RETURN_REQUEST_LIST_NAME,
-      "Return Requests List",
-      "ReturnRequestList",
-      "Return Request List",
-      "ReturnRequests",
-      "Return Requests"
-    ],
-    requiredColumns: [
-      { name: 'Title' },
-      { name: 'AssetID' },
-      { name: 'AssetName' },
-      { name: 'SerialNumber' },
-      { name: 'Employee', aliases: ['RequesterName', 'Requester'] },
-      { name: 'ReasonforReturn', aliases: ['ReturnReason'] },
-      { name: 'ProposedCondition' },
-      { name: 'RequestStatus', aliases: ['ReturnStatus', 'Status'] },
-      { name: 'ManagerComments', aliases: ['ManagerComment'] }
-    ]
-  },
-  {
-    key: 'mapping',
-    candidates: [SharePointBaseService.MAPPING_LIST_NAME, "MappingList"],
-    autoCreated: true,
-    requiredColumns: [
-      { name: 'Title' },
-      { name: 'SerialNumber' },
-      { name: 'Employee', aliases: ['Employe', 'EmployeeName'] },
-      { name: 'EmployeeID' },
-      { name: 'AssetName' },
-      { name: 'AssignmentID' }
-    ]
-  },
-  {
-    key: 'eventLog',
-    candidates: [SharePointBaseService.EVENT_LOG_LIST],
-    requiredColumns: [
-      { name: 'Title' },
-      { name: 'Action' },
-      { name: 'EntityType' },
-      { name: 'EntityId' },
-      { name: 'Details' },
-      { name: 'User' }
-    ]
-  },
-  { key: 'incident', candidates: ['Incident List'], optional: true, requiredColumns: [] },
-  { key: 'employee', candidates: ['EmployeeList'], optional: true, requiredColumns: [] },
-  { key: 'replacement', candidates: ['Asset Replacements'], optional: true, autoCreated: true, requiredColumns: [] }
-];
+// Re-exported so existing imports of the registry from this service keep working.
+export { getListDefinitions, IListDefinition, IRequiredColumn, ListKey } from "../constants/ListDefinitions";
 
 export type ListHealthStatus = 'healthy' | 'warning' | 'missing' | 'error';
 
@@ -176,7 +74,7 @@ export class ListHealthService {
 
     const [environment, results] = await Promise.all([
       ListHealthService._getEnvironment(siteLists.length),
-      Promise.all(LIST_DEFINITIONS.map(def => ListHealthService.checkList(def, siteLists)))
+      Promise.all(getListDefinitions().map(def => ListHealthService.checkList(def, siteLists)))
     ]);
 
     const report: IHealthReport = { checkedAt: new Date().toISOString(), environment, results };

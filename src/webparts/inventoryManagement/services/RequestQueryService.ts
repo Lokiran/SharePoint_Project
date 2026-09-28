@@ -317,7 +317,17 @@ export class RequestQueryService {
                       .split("T")[0],
 
             reason:
-              item[reasonKey] || ""
+              item[reasonKey] || "",
+
+            // SLA milestones (undefined for requests decided before the columns existed)
+            createdAt:
+              item.Created || undefined,
+
+            managerDecisionAt:
+              item[SharePointBaseService.MANAGER_DECISION_DATE_INTERNAL_NAME] || undefined,
+
+            assignedAt:
+              item[SharePointBaseService.ASSET_ASSIGNED_DATE_INTERNAL_NAME] || undefined
           };
         }
       );

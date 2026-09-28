@@ -2,7 +2,8 @@ import { Version } from '@microsoft/sp-core-library';
 import { type IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
-export interface IInventoryManagementWebPartProps {
+import { IAppConfigProperties } from './config/AppConfig';
+export interface IInventoryManagementWebPartProps extends IAppConfigProperties {
     description: string;
 }
 export default class InventoryManagementWebPart extends BaseClientSideWebPart<IInventoryManagementWebPartProps> {

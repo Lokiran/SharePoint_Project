@@ -1,5 +1,6 @@
 import { getSP } from "../../pnpjsConfig";
 import { ASSET_CONDITION_VALUES } from "../../constants/DropdownConstants";
+import { getAppConfig } from "../../config/AppConfig";
 
 export interface IFieldMetadata {
   displayName: string;
@@ -10,15 +11,20 @@ export interface IFieldMetadata {
 }
 
 export class SharePointBaseService {
-  public static readonly LIST_NAME = "InventoryList";
-  public static readonly EVENT_LOG_LIST = "EventLogList";
-  public static readonly REQUEST_LIST_NAME = "RequestList";
-  public static readonly RETURN_REQUEST_LIST_NAME = "Asset Return Request List";
+  // List titles come from the web part's property pane (see config/AppConfig.ts);
+  // the defaults are the titles the app always used.
+  public static get LIST_NAME(): string { return getAppConfig().lists.inventory; }
+  public static get EVENT_LOG_LIST(): string { return getAppConfig().lists.eventLog; }
+  public static get REQUEST_LIST_NAME(): string { return getAppConfig().lists.request; }
+  public static get RETURN_REQUEST_LIST_NAME(): string { return getAppConfig().lists.returnRequest; }
+  public static get MAPPING_LIST_NAME(): string { return getAppConfig().lists.mapping; }
   public static readonly REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
   public static readonly REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
   public static readonly REQUEST_KEY_INTERNAL_NAME = "RequestKey";
   public static readonly ASSET_STATUS_INTERNAL_NAME = "AssetStatus";
-  public static readonly MAPPING_LIST_NAME = "Mapping List";
+  /** Request list columns that record SLA milestones (auto-created). */
+  public static readonly MANAGER_DECISION_DATE_INTERNAL_NAME = "ManagerDecisionDate";
+  public static readonly ASSET_ASSIGNED_DATE_INTERNAL_NAME = "AssetAssignedDate";
 
   public static async getSafeListFields(list: any): Promise<any[]> {
     try {

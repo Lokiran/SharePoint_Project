@@ -8,68 +8,66 @@ const DetailsList_1 = require("@fluentui/react/lib/DetailsList");
 const RoleUtils_1 = require("../utils/RoleUtils");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const EventFilters_1 = require("./EventFilters");
+const EventActionBadge_1 = require("./EventActionBadge");
 const InventoryService_1 = require("../services/InventoryService");
+const AssetTypeLookupService_1 = require("../services/AssetTypeLookupService");
+const DropdownConstants_1 = require("../constants/DropdownConstants");
+const EventLogUtils_1 = require("../utils/EventLogUtils");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
+const PAGE_SIZE = 10;
+const DEFAULT_FILTERS = {
+    searchQuery: '',
+    dateRangeType: 'All',
+    action: 'All',
+    module: 'All',
+    assetType: 'All',
+    user: 'All',
+    status: 'All',
+    sortOrder: 'NewestFirst'
+};
+const STANDARD_ASSET_TYPES = DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS.map(o => String(o.key));
 const EventStream = (props) => {
-    const [filters, setFilters] = (0, react_1.useState)({
-        searchQuery: '',
-        dateRangeType: 'All',
-        action: 'All',
-        module: 'All',
-        assetType: 'All',
-        user: 'All',
-        status: 'All',
-        sortOrder: 'NewestFirst'
-    });
+    const [filters, setFilters] = (0, react_1.useState)(DEFAULT_FILTERS);
     const [logs, setLogs] = (0, react_1.useState)([]);
     const [loading, setLoading] = (0, react_1.useState)(true);
     const [currentPage, setCurrentPage] = (0, react_1.useState)(1);
-    const pageSize = 10;
     // Filter option lists
     const [actionsList, setActionsList] = (0, react_1.useState)([]);
-    const [assetTypesList, setAssetTypesList] = (0, react_1.useState)([]);
-    const [usersList, setUsersList] = (0, react_1.useState)([]);
+    const [baseAssetTypes, setBaseAssetTypes] = (0, react_1.useState)(STANDARD_ASSET_TYPES);
+    const [knownUsers, setKnownUsers] = (0, react_1.useState)([]);
     const isEmployee = props.currentUserRole === 'Inventory Employee';
-    // Load filter lists from the recent logs to populate dropdown options dynamically
+    // Load filter option lists: actions/users from the last 90 days of logs,
+    // asset types from the standard types plus every type used in Inventory/Requests.
     (0, react_1.useEffect)(() => {
         const loadFilterMetadata = async () => {
             try {
-                // Fetch last 90 days of logs as a baseline for filter options
-                const initLogs = await InventoryService_1.InventoryService.getFilteredAuditLogs({
-                    searchQuery: '',
-                    dateRangeType: 'Last90',
-                    action: 'All',
-                    module: 'All',
-                    assetType: 'All',
-                    user: 'All',
-                    status: 'All',
-                    sortOrder: 'NewestFirst'
-                });
-                // Extract unique options
+                const [initLogs, lookup] = await Promise.all([
+                    InventoryService_1.InventoryService.getFilteredAuditLogs({ ...DEFAULT_FILTERS, dateRangeType: 'Last90' }),
+                    AssetTypeLookupService_1.AssetTypeLookupService.getLookup()
+                ]);
                 const actions = Array.from(new Set(initLogs.map(l => l.action).filter(Boolean)));
                 const users = Array.from(new Set(initLogs.map(l => l.user).filter(Boolean)));
-                const defaultAssetTypes = ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset', 'Dock', 'Printer'];
-                const foundAssetTypes = initLogs.map(l => l.assetName).filter(Boolean);
-                const uniqueAssetTypes = Array.from(new Set([...defaultAssetTypes, ...foundAssetTypes]));
                 setActionsList(actions.sort());
-                setUsersList(users.sort());
-                setAssetTypesList(uniqueAssetTypes.sort());
+                setKnownUsers(users);
+                setBaseAssetTypes((0, EventLogUtils_1.mergeAssetTypes)(STANDARD_ASSET_TYPES, lookup.knownTypes, initLogs.map(l => l.assetType)));
             }
             catch (err) {
                 console.warn("Failed to load filter metadata:", err);
             }
         };
-        loadFilterMetadata();
+        loadFilterMetadata().catch(() => undefined);
     }, []);
     // Fetch logs whenever server-side filters or refresh trigger change
     (0, react_1.useEffect)(() => {
         const fetchLogs = async () => {
             setLoading(true);
             try {
+                // Search and User are filtered client-side, against the names actually displayed.
                 const fetched = await InventoryService_1.InventoryService.getFilteredAuditLogs({
                     ...filters,
-                    searchQuery: ''
+                    searchQuery: '',
+                    user: 'All'
                 });
                 setLogs(fetched);
             }
@@ -80,7 +78,7 @@ const EventStream = (props) => {
                 setLoading(false);
             }
         };
-        fetchLogs();
+        fetchLogs().catch(() => undefined);
         setCurrentPage(1); // Reset page to 1 when filters change
     }, [
         filters.dateRangeType,
@@ -88,27 +86,21 @@ const EventStream = (props) => {
         filters.endDate,
         filters.action,
         filters.module,
-        filters.user,
         props.refreshTrigger
     ]);
     // Reset to page 1 when client-side filters change
     (0, react_1.useEffect)(() => {
         setCurrentPage(1);
-    }, [filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
+    }, [filters.searchQuery, filters.assetType, filters.user, filters.status, filters.sortOrder]);
     const handleClearFilters = () => {
         setFilters(prev => ({
-            searchQuery: prev.searchQuery, // Preserve search text
-            dateRangeType: 'All',
-            startDate: undefined,
-            endDate: undefined,
-            action: 'All',
-            module: 'All',
-            assetType: 'All',
-            user: 'All',
-            status: 'All',
-            sortOrder: 'NewestFirst'
+            ...DEFAULT_FILTERS,
+            searchQuery: prev.searchQuery // Preserve search text
         }));
     };
+    // Include types seen in the currently loaded logs so a newly used type is selectable immediately.
+    const assetTypesList = (0, react_1.useMemo)(() => (0, EventLogUtils_1.mergeAssetTypes)(baseAssetTypes, logs.map(l => l.assetType)), [baseAssetTypes, logs]);
+    const canViewAuditDetails = RoleUtils_1.RoleUtils.canViewAuditLogs(props.currentUserRole);
     const columns = [
         {
             key: 'column_action',
@@ -117,211 +109,58 @@ const EventStream = (props) => {
             minWidth: 120,
             maxWidth: 220,
             isResizable: true,
-            onRender: (item) => {
-                let backgroundColor = '#f3f4f6';
-                let textColor = '#374151';
-                let displayText = item.action || '';
-                const normalizedAction = displayText.toLowerCase().trim();
-                if (normalizedAction === 'created' || normalizedAction === 'create') {
-                    backgroundColor = '#dbeafe'; // Light blue
-                    textColor = '#1e40af'; // Dark blue
-                    displayText = strings.EventStream.ActionCreated;
-                }
-                else if (normalizedAction === 'manager approved') {
-                    backgroundColor = '#dcfce7'; // Light green
-                    textColor = '#166534'; // Dark green
-                    displayText = strings.EventStream.ActionManagerApproved;
-                }
-                else if (normalizedAction === 'manager rejected') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = strings.EventStream.ActionManagerRejected;
-                }
-                else if (normalizedAction === 'admin assigned') {
-                    backgroundColor = '#f3e8ff'; // Light purple
-                    textColor = '#6b21a8'; // Dark purple
-                    displayText = strings.EventStream.ActionAdminAssigned;
-                }
-                else if (normalizedAction === 'status updated to in progress') {
-                    backgroundColor = '#ffedd5'; // Light orange/yellow
-                    textColor = '#9a3412'; // Dark orange
-                    displayText = strings.EventStream.ActionInProgress;
-                }
-                else if (normalizedAction === 'status updated to resolved') {
-                    backgroundColor = '#ccfbf1'; // Light teal
-                    textColor = '#115e59'; // Dark teal
-                    displayText = strings.EventStream.ActionResolved;
-                }
-                else if (normalizedAction === 'deleted' || normalizedAction === 'delete') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = strings.EventStream.ActionDeleted;
-                }
-                else if (normalizedAction === 'return requested') {
-                    backgroundColor = '#ffedd5'; // Light orange
-                    textColor = '#9a3412'; // Dark orange
-                    displayText = strings.EventStream.ActionReturnRequested;
-                }
-                else if (normalizedAction === 'return approved') {
-                    backgroundColor = '#dcfce7'; // Light green
-                    textColor = '#166534'; // Dark green
-                    displayText = strings.EventStream.ActionReturnApproved;
-                }
-                else if (normalizedAction === 'return completed') {
-                    backgroundColor = '#ccfbf1'; // Light teal
-                    textColor = '#115e59'; // Dark teal
-                    displayText = strings.EventStream.ActionReturnCompleted;
-                }
-                else if (normalizedAction === 'return rejected') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = strings.EventStream.ActionReturnRejected;
-                }
-                else if (normalizedAction === 'activated') {
-                    backgroundColor = '#dcfce7'; // Light green
-                    textColor = '#166534'; // Dark green
-                    displayText = strings.EventStream.ActionActivated;
-                }
-                else if (normalizedAction === 'inactivated') {
-                    backgroundColor = '#fef3c7'; // Light amber
-                    textColor = '#92400e'; // Dark amber
-                    displayText = strings.EventStream.ActionInactivated;
-                }
-                else if (normalizedAction === 'deactivated') {
-                    backgroundColor = '#fee2e2'; // Light red
-                    textColor = '#991b1b'; // Dark red
-                    displayText = strings.EventStream.ActionDeactivated;
-                }
-                else if (normalizedAction === 'update') {
-                    backgroundColor = '#ffedd5'; // Light orange/yellow
-                    textColor = '#9a3412';
-                    displayText = strings.EventStream.ActionUpdated;
-                }
-                return (React.createElement("span", { style: {
-                        backgroundColor,
-                        color: textColor,
-                        padding: '4px 12px',
-                        borderRadius: '9999px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        display: 'inline-block',
-                        textTransform: 'lowercase'
-                    } }, displayText));
-            }
+            onRender: (item) => React.createElement(EventActionBadge_1.EventActionBadge, { action: item.action })
         },
         { key: 'column_type', name: strings.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
         { key: 'column_title', name: strings.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
         { key: 'column_assetName', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        ...(RoleUtils_1.RoleUtils.canViewAuditLogs(props.currentUserRole) ? [
+        ...(canViewAuditDetails ? [
             { key: 'column_user', name: strings.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
         ] : []),
         { key: 'column_timestamp', name: strings.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
-        ...(RoleUtils_1.RoleUtils.canViewAuditLogs(props.currentUserRole) ? [
+        ...(canViewAuditDetails ? [
             { key: 'column_details', name: strings.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
         ] : [])
     ];
     // 1. Apply role-based visibility filtering client-side
     const roleBasedFilteredLogs = (0, react_1.useMemo)(() => {
         if (isEmployee) {
-            return logs.filter(log => (log.user || '').toLowerCase().includes(props.currentUserName.toLowerCase()) ||
-                (log.details || '').toLowerCase().includes(props.currentUserName.toLowerCase()));
+            const me = props.currentUserName.toLowerCase();
+            return logs.filter(log => (log.user || '').toLowerCase().includes(me) ||
+                (log.details || '').toLowerCase().includes(me));
         }
         return logs;
     }, [logs, isEmployee, props.currentUserName]);
-    // 2. Apply client-side search, assetType, status filters, and sorting
+    // User options with event counts under the current server-side filters. Users seen in the
+    // last 90 days (and the current selection) are kept with a 0 count so the list stays stable.
+    const userOptions = (0, react_1.useMemo)(() => {
+        const extra = filters.user !== 'All' && filters.user !== EventLogUtils_1.MY_ACTIVITY_KEY ? knownUsers.concat([filters.user]) : knownUsers;
+        return (0, EventLogUtils_1.buildUserOptions)(roleBasedFilteredLogs, extra);
+    }, [roleBasedFilteredLogs, knownUsers, filters.user]);
+    // 2. Apply client-side search, asset type, user, status filters, and sorting
     const filteredLogs = (0, react_1.useMemo)(() => {
-        let result = [...roleBasedFilteredLogs];
-        // Search query filtering
-        if (filters.searchQuery) {
-            const lowerQuery = filters.searchQuery.toLowerCase();
-            result = result.filter(log => log.title?.toLowerCase().includes(lowerQuery) ||
-                log.assetName?.toLowerCase().includes(lowerQuery) ||
-                log.details?.toLowerCase().includes(lowerQuery) ||
-                log.user?.toLowerCase().includes(lowerQuery) ||
-                log.action?.toLowerCase().includes(lowerQuery) ||
-                log.entityType?.toLowerCase().includes(lowerQuery) ||
-                log.entityId?.toLowerCase().includes(lowerQuery));
-        }
-        // Asset type filtering
-        if (filters.assetType && filters.assetType !== 'All') {
-            const lowerAssetType = filters.assetType.toLowerCase();
-            result = result.filter(log => (log.assetName || '').toLowerCase().includes(lowerAssetType) ||
-                (log.title || '').toLowerCase().includes(lowerAssetType));
-        }
-        // Status filtering
-        if (filters.status && filters.status !== 'All') {
-            const lowerStatus = filters.status.toLowerCase();
-            result = result.filter(log => (log.details || '').toLowerCase().includes(lowerStatus) ||
-                (log.action || '').toLowerCase().includes(lowerStatus) ||
-                (log.title || '').toLowerCase().includes(lowerStatus));
-        }
-        // Sorting
-        if (filters.sortOrder) {
-            result.sort((a, b) => {
-                switch (filters.sortOrder) {
-                    case 'NewestFirst':
-                        return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-                    case 'OldestFirst':
-                        return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
-                    case 'AssetNameAZ':
-                        return (a.assetName || '').localeCompare(b.assetName || '');
-                    case 'AssetNameZA':
-                        return (b.assetName || '').localeCompare(a.assetName || '');
-                    case 'UserAZ':
-                        return (a.user || '').localeCompare(b.user || '');
-                    case 'UserZA':
-                        return (b.user || '').localeCompare(a.user || '');
-                    default:
-                        return 0;
-                }
-            });
-        }
-        return result;
-    }, [roleBasedFilteredLogs, filters.searchQuery, filters.assetType, filters.status, filters.sortOrder]);
+        const userFilter = filters.user === EventLogUtils_1.MY_ACTIVITY_KEY ? props.currentUserName : filters.user;
+        return (0, EventLogUtils_1.applyClientFilters)(roleBasedFilteredLogs, { ...filters, user: userFilter });
+    }, [roleBasedFilteredLogs, filters.searchQuery, filters.assetType, filters.user, filters.status, filters.sortOrder, props.currentUserName]);
     const totalItems = filteredLogs.length;
-    const totalPages = Math.ceil(totalItems / pageSize);
+    const totalPages = Math.ceil(totalItems / PAGE_SIZE);
     const activePage = Math.min(currentPage, Math.max(1, totalPages));
-    const startIndex = (activePage - 1) * pageSize;
-    const paginatedLogs = filteredLogs.slice(startIndex, startIndex + pageSize);
-    const getPageNumbers = () => {
-        const pages = [];
-        const maxVisiblePages = 5;
-        if (totalPages <= maxVisiblePages) {
-            for (let i = 1; i <= totalPages; i++) {
-                pages.push(i);
-            }
-        }
-        else {
-            pages.push(1);
-            const start = Math.max(2, activePage - 1);
-            const end = Math.min(totalPages - 1, activePage + 1);
-            if (start > 2) {
-                pages.push('...');
-            }
-            for (let i = start; i <= end; i++) {
-                pages.push(i);
-            }
-            if (end < totalPages - 1) {
-                pages.push('...');
-            }
-            pages.push(totalPages);
-        }
-        return pages;
-    };
+    const startIndex = (activePage - 1) * PAGE_SIZE;
+    const paginatedLogs = filteredLogs.slice(startIndex, startIndex + PAGE_SIZE);
     return (React.createElement("div", { style: { marginTop: '20px' } },
         props.errorMessage && (React.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' } },
             React.createElement("strong", null, strings.EventStream.NoticeLabel),
             " ",
             props.errorMessage)),
-        React.createElement(EventFilters_1.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, usersList: usersList }),
+        React.createElement(EventFilters_1.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, userOptions: userOptions, currentUserName: props.currentUserName }),
         loading ? (React.createElement("p", null, strings.EventStream.LoadingAuditLogs)) : roleBasedFilteredLogs.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, isEmployee ? strings.EventStream.NoEventsForYou : strings.EventStream.NoEventsRecorded)) : filteredLogs.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, strings.EventStream.NoEventsMatchFilters)) : (React.createElement(React.Fragment, null,
             React.createElement(DetailsList_1.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }),
             totalPages > 1 && (React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationContainer },
-                React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationInfo }, (0, LocalizationUtils_1.formatString)(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + pageSize, totalItems), totalItems)),
+                React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationInfo }, (0, LocalizationUtils_1.formatString)(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + PAGE_SIZE, totalItems), totalItems)),
                 React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationControls },
                     React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: strings.Pagination.FirstPage }, "\u00AB"),
                     React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: strings.Pagination.PreviousPage }, "\u2039"),
-                    getPageNumbers().map((page, idx) => {
+                    (0, EventLogUtils_1.getPageNumbers)(activePage, totalPages).map((page, idx) => {
                         if (page === '...') {
                             return React.createElement("span", { key: `ellipsis-${idx}`, style: { padding: '0 8px', color: 'var(--text-muted)' } }, "...");
                         }

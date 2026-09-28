@@ -5,6 +5,8 @@ const React = tslib_1.__importStar(require("react"));
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const sp_lodash_subset_1 = require("@microsoft/sp-lodash-subset");
 const pnpjsConfig_1 = require("../pnpjsConfig");
+const AppConfig_1 = require("../config/AppConfig");
+const StockThresholdService_1 = require("../services/StockThresholdService");
 const AssetForm_1 = require("./AssetForm");
 const RequestForm_1 = require("./RequestForm");
 const ReturnAssetForm_1 = require("./ReturnAssetForm");
@@ -193,20 +195,9 @@ class InventoryManagement extends React.Component {
             try {
                 const sp = (0, pnpjsConfig_1.getSP)();
                 const groups = await sp.web.currentUser.groups();
-                const groupNames = groups.map((group) => (group.Title || '').toLowerCase().trim());
-                const isAdmin = groupNames.some((name) => name === 'msft owners' || name.indexOf('msft owners') >= 0);
-                const isInventoryManager = groupNames.some((name) => name === 'msft members' || name.indexOf('msft members') >= 0);
-                const isInventoryEmployee = groupNames.some((name) => name === 'msft visitors' || name.indexOf('msft visitors') >= 0);
-                let userRole = 'Inventory Employee';
-                if (isAdmin) {
-                    userRole = 'Admin';
-                }
-                else if (isInventoryManager) {
-                    userRole = 'Inventory Manager';
-                }
-                else if (isInventoryEmployee) {
-                    userRole = 'Inventory Employee';
-                }
+                // Group names come from the property pane (defaults: MSFT Owners / Members / Visitors).
+                const roleGroupNames = (0, AppConfig_1.getAppConfig)().roleGroups;
+                const userRole = (0, AppConfig_1.resolveRoleFromGroups)(groups.map((group) => group.Title || ''), roleGroupNames);
                 // Load employees from groups dynamically
                 const loadedEmployees = [];
                 const seenEmails = new Set();
@@ -216,7 +207,7 @@ class InventoryManagement extends React.Component {
                         const name = (u.Title || '').trim();
                         const nameLower = name.toLowerCase();
                         // Skip system/group users
-                        if (nameLower === 'msft owners' || nameLower === 'system account' || !name) {
+                        if (nameLower === roleGroupNames.admin.toLowerCase() || nameLower === 'system account' || !name) {
                             return;
                         }
                         if (email && !seenEmails.has(email)) {
@@ -231,26 +222,19 @@ class InventoryManagement extends React.Component {
                         }
                     });
                 };
-                try {
-                    const owners = await sp.web.siteGroups.getByName("MSFT Owners").users();
-                    addUsers(owners, 'Admin', 'Management');
-                }
-                catch (e) {
-                    console.warn("Could not load users from group 'MSFT Owners':", e);
-                }
-                try {
-                    const members = await sp.web.siteGroups.getByName("MSFT Members").users();
-                    addUsers(members, 'Inventory Manager', 'Operations');
-                }
-                catch (e) {
-                    console.warn("Could not load users from group 'MSFT Members':", e);
-                }
-                try {
-                    const visitors = await sp.web.siteGroups.getByName("MSFT Visitors").users();
-                    addUsers(visitors, 'Inventory Employee', 'Operations');
-                }
-                catch (e) {
-                    console.warn("Could not load users from group 'MSFT Visitors':", e);
+                const groupLoads = [
+                    [roleGroupNames.admin, 'Admin', 'Management'],
+                    [roleGroupNames.manager, 'Inventory Manager', 'Operations'],
+                    [roleGroupNames.employee, 'Inventory Employee', 'Operations']
+                ];
+                for (const [groupName, jobTitle, department] of groupLoads) {
+                    try {
+                        const users = await sp.web.siteGroups.getByName(groupName).users();
+                        addUsers(users, jobTitle, department);
+                    }
+                    catch (e) {
+                        console.warn(`Could not load users from group '${groupName}':`, e);
+                    }
                 }
                 const finalEmployees = loadedEmployees.length > 0 ? loadedEmployees : mockData_1.EMPLOYEES;
                 this.setState({
@@ -276,6 +260,11 @@ class InventoryManagement extends React.Component {
                 const items = await InventoryService_1.InventoryService.getItems();
                 if (items && items.length > 0) {
                     this.setState({ items, loading: false });
+                    // Low-stock alerts: runs after every inventory reload (assignments, edits, deletes).
+                    // Admin only, because it writes alert state and sends the email. Fire-and-forget.
+                    if (this.state.userRole === 'Admin') {
+                        StockThresholdService_1.StockThresholdService.checkAndNotify(items).catch(() => undefined);
+                    }
                 }
                 else {
                     // List is empty
@@ -975,7 +964,8 @@ class InventoryManagement extends React.Component {
                         return r.status === 'Pending';
                     }).length || undefined,
                     badgeColor: '#ea580c'
-                }
+                },
+                { key: 'Onboarding', text: strings.Features.NavOnboarding, icon: 'People' }
             ] : []),
             ...(isAdmin ? [
                 { key: 'EventStream', text: strings.Nav.EventStream, icon: 'ActivityFeed', group: strings.Nav.GroupSystem },
@@ -1155,6 +1145,20 @@ class InventoryManagement extends React.Component {
                                             isManager
                                         }, actions: {
                                             onUpdateStatus: this._onUpdateReturnRequestStatus
+                                        } })) : null;
+                                case 'Onboarding':
+                                    return isAdmin || isManager ? (React.createElement(pages_1.OnboardingPage, { state: {
+                                            items: this.state.items,
+                                            returnRequests: this.state.returnRequests,
+                                            currentUserName: activeUserDisplayName,
+                                            currentUserRole: effectiveRole,
+                                            isAdmin
+                                        }, actions: {
+                                            onDataChanged: () => {
+                                                this._loadRequests().catch(() => undefined);
+                                                this._loadReturnRequests().catch(() => undefined);
+                                                this._loadAuditLogs().catch(() => undefined);
+                                            }
                                         } })) : null;
                                 case 'EventStream':
                                     return isAdmin ? (React.createElement(pages_1.EventStreamPage, { state: {
