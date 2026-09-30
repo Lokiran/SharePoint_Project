@@ -10,14 +10,59 @@ import {
   Stack,
   IStackTokens,
   MessageBar,
-  MessageBarType
+  MessageBarType,
+  Label,
+  NormalPeoplePicker,
+  IPersonaProps,
+  Persona,
+  PersonaSize,
+  ValidationState,
+  Icon
 } from '@fluentui/react';
+import { mergeStyleSets } from '@fluentui/react/lib/Styling';
 import { IInventoryItem } from '../models/IInventoryItem';
 import { IRequest } from '../models/IRequest';
 import { IEmployee } from '../models/IEmployee';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
 import { DEFAULT_ASSET_TYPE_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS } from '../constants/DropdownConstants';
+import { PeopleSearchService, IPersonResult } from '../services/PeopleSearchService';
+import { getAppConfig } from '../config/AppConfig';
+import { formatString } from '../utils/LocalizationUtils';
 import * as strings from 'InventoryManagementWebPartStrings';
+
+/** The manager picked in the form. `email` is empty when the name was typed rather than found. */
+interface IManagerChoice {
+  displayName: string;
+  email: string;
+  jobTitle?: string;
+  department?: string;
+}
+
+/** A picker suggestion carrying the full person record. */
+type IManagerPersona = IPersonaProps & { data?: IManagerChoice };
+
+const pickerCss = mergeStyleSets({
+  suggestion: { display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', textAlign: 'left', minWidth: 0 },
+  suggestionText: { minWidth: 0, display: 'flex', flexDirection: 'column', lineHeight: '18px' },
+  suggestionName: { fontSize: 14, fontWeight: 600, color: '#242424', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+  suggestionMeta: { fontSize: 12, color: '#616161', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+  card: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: 12,
+    marginTop: 8,
+    padding: '10px 12px',
+    borderRadius: 6,
+    border: '1px solid #e0e0e0',
+    background: '#fafafa'
+  },
+  cardLine: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#616161', lineHeight: '18px' },
+  cardWarn: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#8a3707', lineHeight: '18px' },
+  error: { color: '#a4262c', fontSize: 12, marginTop: 4 }
+});
+
+const detailsLine = (jobTitle?: string, department?: string): string =>
+  [jobTitle, department].filter(v => !!(v && v.trim())).join(' · ');
 
 export interface IRequestFormProps {
   isOpen: boolean;
@@ -35,7 +80,9 @@ const stackTokens: IStackTokens = { childrenGap: 15 };
 export const RequestForm: React.FC<IRequestFormProps> = (props) => {
   const [selectedRequesterId, setSelectedRequesterId] = React.useState<string | undefined>(undefined);
   const [employeeId, setEmployeeId] = React.useState('');
-  const [managerName, setManagerName] = React.useState('');
+  const [manager, setManager] = React.useState<IManagerChoice | undefined>(undefined);
+  const managerName = manager ? manager.displayName : '';
+  const [managersError, setManagersError] = React.useState<string | undefined>(undefined);
   const [selectedAssetType, setSelectedAssetType] = React.useState<string | undefined>(undefined);
   const [priority, setPriority] = React.useState<'High' | 'Medium' | 'Low'>('Medium');
   const [quantity, setQuantity] = React.useState<number>(1);
@@ -93,7 +140,62 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
     ? dynamicAssetTypeOptions
     : DEFAULT_ASSET_TYPE_OPTIONS;
 
-  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0 && !!reason.trim();
+  // Only approvers can be picked: members of the manager role group (property pane,
+  // default MSFT Owners/Members/Visitors -> MSFT Members). The requester is left out,
+  // since nobody approves their own request.
+  const managerGroup = getAppConfig().roleGroups.manager;
+  const toPersona = (p: IManagerChoice): IManagerPersona => ({
+    key: p.email.toLowerCase(),
+    text: p.displayName,
+    secondaryText: detailsLine(p.jobTitle, p.department),
+    tertiaryText: p.email,
+    data: p
+  });
+
+  const loadManagers = async (): Promise<IManagerChoice[]> => {
+    const self = (props.currentUserEmail || '').toLowerCase();
+    try {
+      const members = await PeopleSearchService.getGroupMembers(managerGroup);
+      setManagersError(undefined);
+      return members
+        .filter(m => m.email.toLowerCase() !== self)
+        .map(m => ({ displayName: m.displayName, email: m.email }))
+        .sort((a, b) => a.displayName.localeCompare(b.displayName));
+    } catch (err: any) {
+      setManagersError(err && err.message ? err.message : String(err));
+      return [];
+    }
+  };
+
+  // Match the text against the manager group, then add job title and department from the directory.
+  const resolveManagerSuggestions = async (filter: string): Promise<IManagerPersona[]> => {
+    const text = filter.trim().toLowerCase();
+    const managers = (await loadManagers()).filter(m =>
+      m.displayName.toLowerCase().indexOf(text) >= 0 || m.email.toLowerCase().indexOf(text) >= 0);
+    if (managers.length === 0) return [];
+    const directory: IPersonResult[] = await PeopleSearchService.search(filter, 20);
+    return managers.slice(0, 10).map(m => {
+      const match = directory.find(d => (d.email || '').toLowerCase() === m.email.toLowerCase());
+      return toPersona(match ? { ...m, jobTitle: match.jobTitle, department: match.department } : m);
+    });
+  };
+
+  // Clicking into the empty field lists every manager.
+  const listAllManagers = async (): Promise<IManagerPersona[]> => (await loadManagers()).slice(0, 25).map(toPersona);
+
+  const renderManagerSuggestion = (persona: IPersonaProps): JSX.Element => (
+    <div className={pickerCss.suggestion}>
+      <Persona text={persona.text} size={PersonaSize.size40} hidePersonaDetails />
+      <div className={pickerCss.suggestionText}>
+        <span className={pickerCss.suggestionName}>{persona.text}</span>
+        {persona.secondaryText && <span className={pickerCss.suggestionMeta}>{persona.secondaryText}</span>}
+        {persona.tertiaryText && <span className={pickerCss.suggestionMeta}>{persona.tertiaryText}</span>}
+      </div>
+    </div>
+  );
+
+  // A manager counts only when picked from the list, which always carries an email.
+  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && quantity > 0 && !!reason.trim();
 
   const onSave = () => {
     const employee = activeEmployee;
@@ -113,6 +215,8 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
         requesterEmail: employee.email,
         employeeId: employeeId,
         managerName: managerName.trim(),
+        // Lets the approval email go to the manager picked here instead of a name lookup.
+        managerEmail: manager && manager.email ? manager.email : undefined,
         assetId: matchingAsset ? matchingAsset.id : '1',
         assetTitle: selectedAssetType,
         priority: priority,
@@ -123,7 +227,7 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
 
       setSelectedRequesterId(undefined);
       setEmployeeId('');
-      setManagerName('');
+      setManager(undefined);
       setSelectedAssetType(undefined);
       setPriority('Medium');
       setQuantity(1);
@@ -163,18 +267,53 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
           required
           disabled={activeEmployee.id !== 'current-user'}
         />
-        <TextField
-          label={strings.RequestForm.LabelManagerName}
-          value={managerName}
-          onChange={(_, val) => {
-            setManagerName(val || '');
-            setManagerNameTouched(true);
-          }}
-          onBlur={() => setManagerNameTouched(true)}
-          placeholder={strings.RequestForm.ManagerNamePlaceholder}
-          required
-          errorMessage={managerNameTouched && !managerName.trim() ? strings.RequestForm.ManagerNameRequired : undefined}
-        />
+        <div>
+          <Label required>{strings.RequestForm.LabelManagerName}</Label>
+          <NormalPeoplePicker
+            onResolveSuggestions={(filter) => resolveManagerSuggestions(filter)}
+            onEmptyResolveSuggestions={() => listAllManagers()}
+            onRenderSuggestionsItem={(persona) => renderManagerSuggestion(persona)}
+            selectedItems={manager ? [{ key: manager.email || manager.displayName, text: manager.displayName, secondaryText: manager.email }] : []}
+            onChange={(items) => {
+              const picked = items && items.length > 0 ? (items[0] as IManagerPersona).data : undefined;
+              setManager(picked);
+              setManagerNameTouched(true);
+            }}
+            // Typed text that isn't a picked manager is never accepted.
+            onValidateInput={() => ValidationState.invalid}
+            onBlur={() => setManagerNameTouched(true)}
+            itemLimit={1}
+            resolveDelay={300}
+            inputProps={{
+              placeholder: strings.RequestForm.ManagerSearchPlaceholder,
+              'aria-label': strings.RequestForm.LabelManagerName
+            }}
+            pickerSuggestionsProps={{
+              suggestionsHeaderText: formatString(strings.RequestForm.ManagerSuggestionsHeader, managerGroup),
+              noResultsFoundText: formatString(strings.RequestForm.ManagerNoResults, managerGroup),
+              loadingText: strings.RequestForm.ManagerSearching
+            }}
+          />
+          {manager && (
+            <div className={pickerCss.card}>
+              <Persona text={manager.displayName} size={PersonaSize.size32} hidePersonaDetails />
+              <div style={{ minWidth: 0 }}>
+                {detailsLine(manager.jobTitle, manager.department) && (
+                  <div className={pickerCss.cardLine}><Icon iconName="Contact" /> {detailsLine(manager.jobTitle, manager.department)}</div>
+                )}
+                <div className={pickerCss.cardLine}><Icon iconName="Mail" /> {manager.email}</div>
+              </div>
+            </div>
+          )}
+          {managersError && (
+            <div className={pickerCss.cardWarn} role="alert" style={{ marginTop: 6 }}>
+              <Icon iconName="Warning" /> {formatString(strings.RequestForm.ManagerGroupUnavailable, managerGroup)}
+            </div>
+          )}
+          {managerNameTouched && !managerName.trim() && (
+            <div className={pickerCss.error} role="alert">{strings.RequestForm.ManagerNameRequired}</div>
+          )}
+        </div>
         <TextField
           label={strings.RequestForm.LabelRequestedDate}
           type="date"

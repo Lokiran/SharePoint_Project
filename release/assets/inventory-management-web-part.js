@@ -16,95 +16,104 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 
-_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".m-0_e40316c8{margin:0!important}.mt-1_e40316c8{margin-top:4px!important}.mt-2_e40316c8{margin-top:8px!important}.mt-3_e40316c8{margin-top:12px!important}.mt-4_e40316c8{margin-top:16px!important}.mt-5_e40316c8{margin-top:20px!important}.mb-1_e40316c8{margin-bottom:4px!important}.mb-2_e40316c8{margin-bottom:8px!important}.mb-3_e40316c8{margin-bottom:12px!important}.mb-4_e40316c8{margin-bottom:16px!important}.mb-5_e40316c8{margin-bottom:20px!important}.p-0_e40316c8{padding:0!important}.p-1_e40316c8{padding:4px!important}.p-2_e40316c8{padding:8px!important}.p-3_e40316c8{padding:12px!important}.p-4_e40316c8{padding:16px!important}.p-5_e40316c8{padding:20px!important}.tableWrapper_e40316c8{-webkit-overflow-scrolling:touch;margin-bottom:15px;overflow-x:auto!important;width:100%!important}@container (max-width: 600px){.hide-on-mobile_e40316c8{display:none!important}}@container (min-width: 1025px){.show-only-on-mobile_e40316c8{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.show-only-on-mobile_e40316c8{display:none!important}}.metricsRow_e40316c8{border-bottom:1px solid rgba(0,0,0,.06)!important;display:flex!important;flex-wrap:wrap!important;gap:24px!important;padding:0 4px 16px!important}.metricsRow_e40316c8 .metricItem_e40316c8{flex:1 1 auto!important;min-width:110px!important}.metricsRow_e40316c8 .metricDivider_e40316c8{align-self:stretch!important;background-color:#e2e8f0!important;width:1px!important}@container (max-width: 600px){.metricsRow_e40316c8 .metricDivider_e40316c8{display:none!important}}.filtersRow_e40316c8{align-items:flex-end!important;display:flex!important;flex-wrap:wrap!important;gap:12px!important;padding:0 0 10px!important;width:100%!important}.filtersRow_e40316c8 .searchField_e40316c8{flex:1 1 200px!important}.filtersRow_e40316c8 .filterDropdown_e40316c8{width:130px!important}@container (max-width: 600px){.filtersRow_e40316c8 .filterDropdown_e40316c8{flex-grow:1!important;width:100%!important}}@keyframes fadeInUp_e40316c8{0%{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes shimmer_e40316c8{0%{background-position:-200% 0}to{background-position:200% 0}}@keyframes pulse_e40316c8{0%,to{opacity:1}50%{opacity:.6}}.dashboard_e40316c8{animation:fadeInUp_e40316c8 .4s cubic-bezier(0,0,.2,1);container-type:inline-size;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;padding:0}.dashboard_e40316c8 .dashboardHeader_e40316c8{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:28px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8{flex:1;min-width:200px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerTitle_e40316c8{color:#242424;font-size:1.5rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerSubtitle_e40316c8{align-items:center;color:#616161;display:flex;flex-wrap:wrap;font-size:.85rem;gap:6px;margin:0}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerDate_e40316c8{align-items:center;color:#8a8886;display:flex;font-size:.8rem;gap:5px;margin-top:4px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerLeft_e40316c8 .headerDate_e40316c8 i{color:#8a8886;font-size:12px}.dashboard_e40316c8 .dashboardHeader_e40316c8 .headerRight_e40316c8{align-items:center;display:flex;gap:8px}.dashboard_e40316c8 .quickActions_e40316c8{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8{align-items:center;background:linear-gradient(180deg,#fff,#f3f2f1);border:1px solid rgba(0,0,0,.15);border-bottom:3px solid rgba(0,0,0,.28);border-radius:8px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.8),0 2px 4px rgba(0,0,0,.05);color:#242424;cursor:pointer;display:inline-flex;font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;font-size:.82rem;font-weight:600;gap:7px;padding:8px 16px;transform:translateY(-1px);transition:transform .1s ease,border-bottom-width .1s ease,background-color .15s ease,box-shadow .1s ease;white-space:nowrap}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8 i{color:#0078d4;font-size:14px}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8:hover{background:linear-gradient(180deg,#fff,#eaeaea);border-color:rgba(0,0,0,.18);border-bottom:3px solid rgba(0,0,0,.32);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.9),0 4px 8px rgba(0,0,0,.08);color:#005a9e;transform:translateY(-2px)}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8:active{border-bottom-width:1px;box-shadow:inset 0 2px 4px rgba(0,0,0,.08),0 1px 1px rgba(0,0,0,.04);transform:translateY(2px)}.dashboard_e40316c8 .quickActions_e40316c8 .quickActionBtn_e40316c8:focus-visible{outline:2px solid #0078d4;outline-offset:2px}.dashboard_e40316c8 .dashboardIntro_e40316c8{animation:fadeInUp_e40316c8 .35s cubic-bezier(0,0,.2,1);margin-bottom:20px}.dashboard_e40316c8 .summaryGrid_e40316c8{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin-bottom:28px}@container (max-width: 1024px){.dashboard_e40316c8 .summaryGrid_e40316c8{grid-template-columns:repeat(2,1fr)}}@container (max-width: 600px){.dashboard_e40316c8 .summaryGrid_e40316c8{grid-template-columns:1fr}}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8{align-items:center;animation:fadeInUp_e40316c8 .4s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:row;gap:16px;overflow:hidden;padding:20px 22px;position:relative;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:before{background-color:transparent;border-radius:0 4px 4px 0;bottom:12px;box-shadow:0 0 8px rgba(0,0,0,.05);content:\"\";left:0;position:absolute;top:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);width:5px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-5px)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:hover:before{transform:scaleY(1.15)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:hover .iconContainer_e40316c8{transform:scale(1.05) translateZ(0)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:first-child{animation-delay:0s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:nth-child(2){animation-delay:.06s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:nth-child(3){animation-delay:.12s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8:nth-child(4){animation-delay:.18s}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardBlue_e40316c8:before{background-color:#0078d4;box-shadow:0 0 10px rgba(0,120,212,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardBlue_e40316c8 .iconContainer_e40316c8{background-color:rgba(0,120,212,.08);border-color:rgba(0,120,212,.15);color:#0078d4}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGreen_e40316c8:before{background-color:#107c10;box-shadow:0 0 10px rgba(16,124,16,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGreen_e40316c8 .iconContainer_e40316c8{background-color:rgba(16,124,16,.08);border-color:rgba(16,124,16,.15);color:#107c10}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardPurple_e40316c8:before{background-color:#8764b8;box-shadow:0 0 10px rgba(135,100,184,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardPurple_e40316c8 .iconContainer_e40316c8{background-color:rgba(135,100,184,.08);border-color:rgba(135,100,184,.15);color:#8764b8}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGold_e40316c8:before{background-color:#ffb900;box-shadow:0 0 10px rgba(255,185,0,.45)}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8.cardGold_e40316c8 .iconContainer_e40316c8{background-color:rgba(255,185,0,.12);border-color:rgba(255,185,0,.2);color:#b37d00}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .iconContainer_e40316c8{align-items:center;border:1px solid rgba(0,0,0,.05);border-radius:12px;box-shadow:inset 1px 2px 4px rgba(0,0,0,.06),inset -1px -1px 2px hsla(0,0%,100%,.7);display:flex;flex-shrink:0;font-size:20px;height:48px;justify-content:center;transition:transform .15s cubic-bezier(.4,0,.2,1);width:48px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8{display:flex;flex-direction:column;flex-grow:1;justify-content:center;min-width:0}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summaryValue_e40316c8{color:#242424;font-size:1.85rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:2px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summaryLabel_e40316c8{color:#616161;font-size:.82rem;font-weight:600;letter-spacing:.01em;margin-bottom:3px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8{align-items:center;color:#8a8886;display:flex;font-size:.72rem;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendUp_e40316c8{align-items:center;color:#107c10;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendUp_e40316c8 i{font-size:10px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendDown_e40316c8{align-items:center;color:#d83b01;display:inline-flex;font-size:.7rem;font-weight:600;gap:2px}.dashboard_e40316c8 .summaryGrid_e40316c8 .summaryCard_e40316c8 .cardInfo_e40316c8 .summarySubtitle_e40316c8 .trendDown_e40316c8 i{font-size:10px}.dashboard_e40316c8 .chartsGrid_e40316c8{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:28px}@container (max-width: 600px){.dashboard_e40316c8 .chartsGrid_e40316c8{grid-template-columns:1fr}}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8{align-items:flex-start;animation:fadeInUp_e40316c8 .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);display:flex;flex-direction:column;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:first-child{animation-delay:.1s}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:nth-child(2){animation-delay:.16s}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:nth-child(3){animation-delay:.22s}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;gap:10px;margin-bottom:20px;padding-bottom:14px;width:100%}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartIcon_e40316c8{align-items:center;background-color:rgba(0,120,212,.08);border-radius:8px;color:#0078d4;display:flex;flex-shrink:0;font-size:15px;height:32px;justify-content:center;width:32px}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartTitleBlock_e40316c8{flex:1;min-width:0}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartTitleBlock_e40316c8 h3{color:#242424;font-size:.95rem;font-weight:600;line-height:1.3;margin:0}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartHeader_e40316c8 .chartTitleBlock_e40316c8 .chartSubtitle_e40316c8{color:#8a8886;font-size:.78rem;line-height:1.35;margin:3px 0 0}.dashboard_e40316c8 .chartsGrid_e40316c8 .chartCard_e40316c8 .chartContainer_e40316c8{align-items:center;display:flex;height:260px;justify-content:center;position:relative;width:100%}.dashboard_e40316c8 .actionCenter_e40316c8{animation:fadeInUp_e40316c8 .45s cubic-bezier(0,0,.2,1) both;background:linear-gradient(145deg,#fff,#fafafa);border:1px solid rgba(0,0,0,.06);border-bottom:3px solid rgba(0,0,0,.08);border-radius:14px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.55),0 4px 6px -1px rgba(0,0,0,.04),0 10px 20px -3px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);margin-bottom:20px;padding:24px;transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1),border-color .25s cubic-bezier(.4,0,.2,1)}.dashboard_e40316c8 .actionCenter_e40316c8:hover{border-color:rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.12);box-shadow:inset 0 1px 0 hsla(0,0%,100%,.7),0 12px 20px -4px rgba(0,0,0,.08),0 20px 32px -4px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);transform:translateY(-4px)}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8{align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.07);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:16px;padding-bottom:14px}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8 h3{align-items:center;color:#242424;display:flex;font-size:.95rem;font-weight:600;gap:8px;line-height:1.3;margin:0}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8 h3 i{color:#0078d4;font-size:16px}.dashboard_e40316c8 .actionCenter_e40316c8 .sectionHeader_e40316c8 .sectionSubtitle_e40316c8{color:#8a8886;font-size:.78rem;line-height:1.4;margin:4px 0 0}.dashboard_e40316c8 .actionCenter_e40316c8 .tableWrapper_e40316c8{border-radius:8px;overflow-x:auto;width:100%}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8{border-collapse:separate;border-spacing:0;text-align:left;width:100%}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 th{background-color:#fafafa;border-bottom:2px solid rgba(0,0,0,.12);color:#8a8886;font-size:.73rem;font-weight:600;letter-spacing:.05em;padding:10px 14px;position:sticky;text-transform:uppercase;top:0;white-space:nowrap;z-index:1}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 th:first-child{border-radius:8px 0 0 0}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 th:last-child{border-radius:0 8px 0 0}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 td{border-bottom:1px solid rgba(0,0,0,.04);color:#242424;font-size:.84rem;padding:12px 14px;transition:background-color .15s cubic-bezier(.4,0,.2,1);vertical-align:middle}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 tbody tr:nth-child(2n) td{background-color:rgba(0,0,0,.015)}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 tbody tr:last-child td{border-bottom:none}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 tbody tr:hover td{background-color:rgba(0,120,212,.03)}.dashboard_e40316c8 .actionCenter_e40316c8 .actionTable_e40316c8 code{background-color:rgba(0,0,0,.04);border-radius:4px;color:#616161;font-family:Cascadia Code,Consolas,Monaco,monospace;font-size:.78rem;padding:2px 6px}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8{align-items:center;border-radius:100px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.35),0 1px 2px rgba(0,0,0,.05);display:inline-flex;font-size:.72rem;font-weight:600;gap:5px;justify-content:center;letter-spacing:.01em;padding:4px 12px;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8:hover{box-shadow:inset 0 1px 0 hsla(0,0%,100%,.45),0 2px 4px rgba(0,0,0,.08);transform:translateY(-.5px)}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgePending_e40316c8{background:linear-gradient(180deg,#fff7dc,#fff4ce);border:1px solid rgba(255,185,0,.3);border-bottom:2px solid rgba(213,155,0,.4);color:#7a5200}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeApproved_e40316c8{background:linear-gradient(180deg,#e8f9e6,#dff6dd);border:1px solid rgba(16,124,16,.25);border-bottom:2px solid rgba(11,88,11,.3);color:#0e700e}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeDeclined_e40316c8{background:linear-gradient(180deg,#ffeef0,#fde7e9);border:1px solid rgba(216,59,1,.25);border-bottom:2px solid rgba(160,40,1,.3);color:#a80000}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeAssigned_e40316c8{background:linear-gradient(180deg,#f0f5ff,#e8f0fe);border:1px solid rgba(0,120,212,.25);border-bottom:2px solid rgba(0,90,158,.3);color:#1a56db}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeReturned_e40316c8{background:linear-gradient(180deg,#edfaf8,#e6f7f5);border:1px solid rgba(0,130,114,.25);border-bottom:2px solid rgba(0,90,78,.3);color:#006d62}.dashboard_e40316c8 .actionCenter_e40316c8 .statusBadge_e40316c8.badgeMaintenance_e40316c8{background:linear-gradient(180deg,#fff5eb,#fff0e0);border:1px solid rgba(216,59,1,.2);border-bottom:2px solid rgba(160,40,1,.25);color:#9a3412}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStats_e40316c8{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8{border:1px solid rgba(0,0,0,.07);border-left:4px solid #0078d4;border-radius:8px;padding:10px 14px}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8.slaStatWarn_e40316c8{border-left-color:#d83b01}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8.slaStatGood_e40316c8{border-left-color:#107c10}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8 .slaStatValue_e40316c8{color:#242424;display:block;font-size:1.35rem;font-weight:700;line-height:1.2}.dashboard_e40316c8 .actionCenter_e40316c8 .slaStat_e40316c8 .slaStatLabel_e40316c8{color:#8a8886;display:block;font-size:.75rem;margin-top:2px}.dashboard_e40316c8 .actionCenter_e40316c8 .headerAction_e40316c8{align-items:center;background:none;border:1px solid rgba(0,0,0,.07);border-radius:8px;color:#0078d4;cursor:pointer;display:inline-flex;font:inherit;font-size:.78rem;gap:6px;padding:6px 12px}.dashboard_e40316c8 .actionCenter_e40316c8 .headerAction_e40316c8:hover{background-color:rgba(0,120,212,.06)}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8{align-items:center;background-color:#fafafa;border:1px dashed rgba(0,0,0,.08);border-radius:12px;color:#8a8886;display:flex;flex-direction:column;font-size:.88rem;gap:12px;justify-content:center;padding:48px 24px;text-align:center}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8 i{color:#8a8886;font-size:36px;opacity:.6}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8 span{line-height:1.5;max-width:320px}.dashboard_e40316c8 .actionCenter_e40316c8 .noDataMessage_e40316c8 .emptyStateHint_e40316c8{color:#8a8886;font-size:.78rem;margin-top:2px;opacity:.7}.dashboard_e40316c8 .splitLayout_e40316c8{display:grid;gap:20px;grid-template-columns:repeat(2,1fr);margin-bottom:20px}@container (max-width: 1024px){.dashboard_e40316c8 .splitLayout_e40316c8{grid-template-columns:1fr}}.dashboard_e40316c8 .splitLayout_e40316c8 .actionCenter_e40316c8{margin-bottom:0}.dashboard_e40316c8 .skeletonCard_e40316c8,.dashboard_e40316c8 .skeletonChart_e40316c8,.dashboard_e40316c8 .skeletonLine_e40316c8,.dashboard_e40316c8 .skeleton_e40316c8{animation:shimmer_e40316c8 1.8s linear infinite;background:linear-gradient(90deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.04) 75%);background-size:200% 100%;border-radius:8px}.dashboard_e40316c8 .skeletonCard_e40316c8{border-radius:14px;height:100px}.dashboard_e40316c8 .skeletonChart_e40316c8{border-radius:14px;height:260px}.dashboard_e40316c8 .skeletonLine_e40316c8{height:14px;margin-bottom:10px}.dashboard_e40316c8 .skeletonLine_e40316c8:last-child{width:60%}.dashboard_e40316c8 .tableCellJustification_e40316c8{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@container (max-width: 600px){.dashboard_e40316c8 .tableCellJustification_e40316c8{max-width:120px!important}}@media (prefers-reduced-motion:reduce){.dashboard_e40316c8{animation:none!important}.dashboard_e40316c8 .actionCenter_e40316c8,.dashboard_e40316c8 .chartCard_e40316c8,.dashboard_e40316c8 .summaryCard_e40316c8{animation:none!important;transition:none!important}.dashboard_e40316c8 .skeletonCard_e40316c8,.dashboard_e40316c8 .skeletonChart_e40316c8,.dashboard_e40316c8 .skeletonLine_e40316c8,.dashboard_e40316c8 .skeleton_e40316c8{animation:none!important}}", true);
+_node_modules_microsoft_sp_css_loader_node_modules_microsoft_load_themed_styles_lib_es6_index_js__WEBPACK_IMPORTED_MODULE_0__.loadStyles(".m-0_d1839bff{margin:0!important}.mt-1_d1839bff{margin-top:4px!important}.mt-2_d1839bff{margin-top:8px!important}.mt-3_d1839bff{margin-top:12px!important}.mt-4_d1839bff{margin-top:16px!important}.mt-5_d1839bff{margin-top:20px!important}.mb-1_d1839bff{margin-bottom:4px!important}.mb-2_d1839bff{margin-bottom:8px!important}.mb-3_d1839bff{margin-bottom:12px!important}.mb-4_d1839bff{margin-bottom:16px!important}.mb-5_d1839bff{margin-bottom:20px!important}.p-0_d1839bff{padding:0!important}.p-1_d1839bff{padding:4px!important}.p-2_d1839bff{padding:8px!important}.p-3_d1839bff{padding:12px!important}.p-4_d1839bff{padding:16px!important}.p-5_d1839bff{padding:20px!important}.tableWrapper_d1839bff{-webkit-overflow-scrolling:touch;margin-bottom:15px;overflow-x:auto!important;width:100%!important}@container (max-width: 600px){.hide-on-mobile_d1839bff{display:none!important}}@container (min-width: 1025px){.show-only-on-mobile_d1839bff{display:none!important}}@container (min-width: 601px) and (max-width: 1024px){.show-only-on-mobile_d1839bff{display:none!important}}.metricsRow_d1839bff{border-bottom:1px solid rgba(0,0,0,.06)!important;display:flex!important;flex-wrap:wrap!important;gap:24px!important;padding:0 4px 16px!important}.metricsRow_d1839bff .metricItem_d1839bff{flex:1 1 auto!important;min-width:110px!important}.metricsRow_d1839bff .metricDivider_d1839bff{align-self:stretch!important;background-color:#e2e8f0!important;width:1px!important}@container (max-width: 600px){.metricsRow_d1839bff .metricDivider_d1839bff{display:none!important}}.filtersRow_d1839bff{align-items:flex-end!important;display:flex!important;flex-wrap:wrap!important;gap:12px!important;padding:0 0 10px!important;width:100%!important}.filtersRow_d1839bff .searchField_d1839bff{flex:1 1 200px!important}.filtersRow_d1839bff .filterDropdown_d1839bff{width:130px!important}@container (max-width: 600px){.filtersRow_d1839bff .filterDropdown_d1839bff{flex-grow:1!important;width:100%!important}}@keyframes dashFadeIn_d1839bff{0%{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.dashboard_d1839bff{--dash-text:var(--text-main,#242424);--dash-muted:var(--text-muted,#616161);--dash-card:var(--surface-bg,#fff);--dash-border:color-mix(in srgb,var(--dash-text) 12%,transparent);--dash-border-soft:color-mix(in srgb,var(--dash-text) 7%,transparent);--dash-tint:color-mix(in srgb,var(--dash-text) 3.5%,transparent);--dash-hover:color-mix(in srgb,var(--dash-text) 6%,transparent);--dash-shadow:0 1px 2px rgba(0,0,0,.06),0 1px 1px rgba(0,0,0,.03);--dash-shadow-hover:0 6px 16px rgba(0,0,0,.09),0 1px 3px rgba(0,0,0,.05);animation:dashFadeIn_d1839bff .3s cubic-bezier(.33,0,.1,1) both;color:var(--dash-text);container-type:inline-size;font-family:Segoe UI,\"Segoe UI Web (West European)\",-apple-system,BlinkMacSystemFont,Roboto,sans-serif}.dashboard_d1839bff,.dashboard_d1839bff.roleAdmin_d1839bff{--role-accent:#0f6cbd}.dashboard_d1839bff.roleManager_d1839bff{--role-accent:#8764b8}.dashboard_d1839bff.roleEmployee_d1839bff{--role-accent:#038387}.dashboard_d1839bff .dashboardHeader_d1839bff{align-items:flex-end;border-bottom:1px solid var(--dash-border-soft);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;margin-bottom:18px;padding-bottom:18px;position:relative}.dashboard_d1839bff .dashboardHeader_d1839bff:after{background:var(--role-accent);border-radius:3px;bottom:-1px;content:\"\";height:3px;left:0;position:absolute;width:56px}.dashboard_d1839bff .headerLeft_d1839bff{flex:1 1 320px;min-width:0}.dashboard_d1839bff .headerEyebrow_d1839bff{align-items:center;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}.dashboard_d1839bff .roleChip_d1839bff{align-items:center;background:color-mix(in srgb,var(--role-accent) 10%,transparent);border:1px solid color-mix(in srgb,var(--role-accent) 22%,transparent);border-radius:999px;color:var(--role-accent);display:inline-flex;font-size:12px;font-weight:600;gap:6px;line-height:20px;padding:2px 10px 2px 8px}.dashboard_d1839bff .roleChip_d1839bff i{font-size:12px}.dashboard_d1839bff .headerDate_d1839bff{align-items:center;color:var(--dash-muted);display:inline-flex;font-size:12px;gap:6px}.dashboard_d1839bff .headerDate_d1839bff i{font-size:12px}.dashboard_d1839bff .headerTitle_d1839bff{color:var(--dash-text);font-size:24px;font-weight:600;letter-spacing:-.01em;line-height:32px;margin:0}.dashboard_d1839bff .headerSubtitle_d1839bff{color:var(--dash-muted);font-size:14px;line-height:20px;margin:4px 0 0;max-width:720px}.dashboard_d1839bff .attentionBar_d1839bff{align-items:center;background:var(--dash-tint);border:1px solid var(--dash-border-soft);border-radius:10px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;padding:10px 12px}.dashboard_d1839bff .attentionTitle_d1839bff{color:var(--dash-muted);font-size:12px;font-weight:600;letter-spacing:.05em;margin-right:4px;text-transform:uppercase}.dashboard_d1839bff .attentionChip_d1839bff{--chip:#0f6cbd;align-items:center;background:color-mix(in srgb,var(--chip) 9%,var(--dash-card));border:1px solid color-mix(in srgb,var(--chip) 28%,transparent);border-radius:999px;color:var(--chip);cursor:pointer;display:inline-flex;font:inherit;font-size:13px;font-weight:600;gap:8px;line-height:18px;padding:5px 8px 5px 12px;transition:background-color .15s cubic-bezier(.33,0,.1,1),border-color .15s cubic-bezier(.33,0,.1,1)}.dashboard_d1839bff .attentionChip_d1839bff i{font-size:13px}.dashboard_d1839bff .attentionChip_d1839bff:hover:not(:disabled){background:color-mix(in srgb,var(--chip) 15%,var(--dash-card));border-color:color-mix(in srgb,var(--chip) 45%,transparent)}.dashboard_d1839bff .attentionChip_d1839bff:focus-visible{outline:2px solid var(--chip);outline-offset:2px}.dashboard_d1839bff .attentionChip_d1839bff:disabled{cursor:default}.dashboard_d1839bff .attentionChip_d1839bff.attentionWarn_d1839bff{--chip:#bc4b09}.dashboard_d1839bff .attentionChip_d1839bff.attentionBad_d1839bff{--chip:#c50f1f}.dashboard_d1839bff .attentionChip_d1839bff.attentionInfo_d1839bff{--chip:#0f6cbd}.dashboard_d1839bff .attentionChip_d1839bff.attentionGood_d1839bff{--chip:#107c10;cursor:default;padding-right:12px}.dashboard_d1839bff .attentionArrow_d1839bff{font-size:10px!important;opacity:.7}.dashboard_d1839bff .summaryGrid_d1839bff{display:grid;gap:10px;grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}@container (max-width: 640px){.dashboard_d1839bff .summaryGrid_d1839bff{grid-template-columns:repeat(2,minmax(0,1fr))}}@container (max-width: 360px){.dashboard_d1839bff .summaryGrid_d1839bff{grid-template-columns:minmax(0,1fr)}}.dashboard_d1839bff .summaryCard_d1839bff{--tone:#0f6cbd;background:var(--dash-card);border:1px solid var(--dash-border-soft);border-radius:12px;border-top:3px solid var(--tone);box-shadow:var(--dash-shadow);color:inherit;display:flex;flex-direction:column;font:inherit;gap:6px;min-width:0;padding:10px 12px 12px;text-align:left;transition:box-shadow .2s cubic-bezier(.33,0,.1,1),transform .2s cubic-bezier(.33,0,.1,1),border-color .2s cubic-bezier(.33,0,.1,1);width:100%}.dashboard_d1839bff .summaryCard_d1839bff.cardBlue_d1839bff{--tone:#0f6cbd}.dashboard_d1839bff .summaryCard_d1839bff.cardGreen_d1839bff{--tone:#107c10}.dashboard_d1839bff .summaryCard_d1839bff.cardPurple_d1839bff{--tone:#8764b8}.dashboard_d1839bff .summaryCard_d1839bff.cardGold_d1839bff{--tone:#b77f00}.dashboard_d1839bff .summaryCard_d1839bff[type=button]{cursor:pointer}.dashboard_d1839bff .summaryCard_d1839bff[type=button]:hover{border-color:var(--dash-border);border-top-color:var(--tone);box-shadow:var(--dash-shadow-hover);transform:translateY(-2px)}.dashboard_d1839bff .summaryCard_d1839bff[type=button]:hover .cardArrow_d1839bff{opacity:1;transform:translateX(2px)}.dashboard_d1839bff .summaryCard_d1839bff[type=button]:focus-visible{outline:2px solid var(--tone);outline-offset:2px}.dashboard_d1839bff .cardTop_d1839bff{align-items:center;display:flex;gap:8px;min-width:0}.dashboard_d1839bff .iconContainer_d1839bff{align-items:center;background:color-mix(in srgb,var(--tone) 11%,transparent);border-radius:6px;color:var(--tone);display:flex;flex-shrink:0;font-size:14px;height:28px;justify-content:center;width:28px}.dashboard_d1839bff .cardArrow_d1839bff{color:var(--dash-muted);flex-shrink:0;font-size:10px;margin-left:auto;opacity:.55;transition:opacity .2s cubic-bezier(.33,0,.1,1),transform .2s cubic-bezier(.33,0,.1,1)}.dashboard_d1839bff .cardInfo_d1839bff{align-items:flex-start;display:flex;flex-direction:column;min-width:0}.dashboard_d1839bff .summaryValue_d1839bff{color:var(--dash-text);font-size:24px;font-variant-numeric:tabular-nums;font-weight:600;letter-spacing:-.02em;line-height:30px}.dashboard_d1839bff .summaryLabel_d1839bff{color:var(--dash-text);flex:1;font-size:13px;font-weight:600;line-height:18px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_d1839bff .meter_d1839bff{background:color-mix(in srgb,var(--tone) 14%,transparent);border-radius:2px;display:block;height:3px;margin:6px 0 4px;overflow:hidden;width:100%}.dashboard_d1839bff .meterFill_d1839bff{background:var(--tone);border-radius:2px;display:block;height:100%;transition:width .6s cubic-bezier(.33,0,.1,1)}.dashboard_d1839bff .summarySubtitle_d1839bff{color:var(--dash-muted);font-size:11.5px;line-height:16px;margin-top:2px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dashboard_d1839bff .meter_d1839bff+.summarySubtitle_d1839bff{margin-top:0}.dashboard_d1839bff .chartsGrid_d1839bff{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:18px}@container (max-width: 600px){.dashboard_d1839bff .chartsGrid_d1839bff{grid-template-columns:minmax(0,1fr)}}.dashboard_d1839bff .chartCard_d1839bff{background:var(--dash-card);border:1px solid var(--dash-border-soft);border-radius:12px;box-shadow:var(--dash-shadow);display:flex;flex-direction:column;min-width:0;padding:16px 16px 12px}.dashboard_d1839bff .chartCard_d1839bff.chartWide_d1839bff{grid-column:1/-1}.dashboard_d1839bff .chartHeader_d1839bff{align-items:flex-start;display:flex;gap:10px;margin-bottom:8px}.dashboard_d1839bff .chartIcon_d1839bff{align-items:center;background:color-mix(in srgb,var(--role-accent) 10%,transparent);border-radius:6px;color:var(--role-accent);display:flex;flex-shrink:0;font-size:14px;height:28px;justify-content:center;width:28px}.dashboard_d1839bff .chartTitleBlock_d1839bff{flex:1;min-width:0}.dashboard_d1839bff .chartTitleBlock_d1839bff h3{color:var(--dash-text);font-size:14px;font-weight:600;line-height:20px;margin:0}.dashboard_d1839bff .chartSubtitle_d1839bff{color:var(--dash-muted);display:block;font-size:12px;line-height:16px}.dashboard_d1839bff .chartContainer_d1839bff{height:250px;position:relative;width:100%}.dashboard_d1839bff .chartWide_d1839bff .chartContainer_d1839bff{height:220px}.dashboard_d1839bff .actionCenter_d1839bff{background:var(--dash-card);border:1px solid var(--dash-border-soft);border-radius:12px;box-shadow:var(--dash-shadow);margin-bottom:18px;min-width:0;padding:16px}.dashboard_d1839bff .sectionHeader_d1839bff{align-items:flex-start;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-bottom:12px}.dashboard_d1839bff .sectionHeader_d1839bff h3{align-items:center;color:var(--dash-text);display:flex;font-size:15px;font-weight:600;gap:8px;line-height:22px;margin:0}.dashboard_d1839bff .sectionHeader_d1839bff h3 i{color:var(--role-accent);font-size:15px}.dashboard_d1839bff .sectionSubtitle_d1839bff{color:var(--dash-muted);display:block;font-size:12px;line-height:16px;margin-top:2px}.dashboard_d1839bff .headerAction_d1839bff{align-items:center;background:transparent;border:1px solid var(--dash-border-soft);border-radius:6px;color:var(--role-accent);cursor:pointer;display:inline-flex;font:inherit;font-size:13px;font-weight:600;gap:6px;padding:5px 10px;transition:background-color .15s cubic-bezier(.33,0,.1,1);white-space:nowrap}.dashboard_d1839bff .headerAction_d1839bff:hover{background:color-mix(in srgb,var(--role-accent) 8%,transparent)}.dashboard_d1839bff .headerAction_d1839bff:focus-visible{outline:2px solid var(--role-accent);outline-offset:2px}.dashboard_d1839bff .tableWrapper_d1839bff{border:1px solid var(--dash-border-soft);border-radius:10px;overflow-x:auto;width:100%}.dashboard_d1839bff .actionTable_d1839bff{border-collapse:collapse;text-align:left;width:100%}.dashboard_d1839bff .actionTable_d1839bff th{background:var(--dash-tint);border-bottom:1px solid var(--dash-border-soft);color:var(--dash-muted);font-size:11px;font-weight:600;letter-spacing:.05em;padding:9px 14px;text-transform:uppercase;white-space:nowrap}.dashboard_d1839bff .actionTable_d1839bff td{border-bottom:1px solid var(--dash-border-soft);color:var(--dash-text);font-size:13px;line-height:20px;padding:10px 14px;vertical-align:middle}.dashboard_d1839bff .actionTable_d1839bff tbody tr:last-child td{border-bottom:none}.dashboard_d1839bff .actionTable_d1839bff tbody tr{transition:background-color .12s cubic-bezier(.33,0,.1,1)}.dashboard_d1839bff .actionTable_d1839bff tbody tr:hover td{background:var(--dash-hover)}.dashboard_d1839bff .actionTable_d1839bff strong{font-weight:600}.dashboard_d1839bff .actionTable_d1839bff code{background:var(--dash-hover);border-radius:4px;color:var(--dash-text);font-family:Cascadia Code,Consolas,Courier New,monospace;font-size:12px;padding:1px 6px}.dashboard_d1839bff .clickableRow_d1839bff{cursor:pointer}.dashboard_d1839bff .clickableRow_d1839bff:focus-visible td{background:color-mix(in srgb,var(--role-accent) 8%,transparent)}.dashboard_d1839bff .clickableRow_d1839bff:focus-visible{outline:2px solid var(--role-accent);outline-offset:-2px}.dashboard_d1839bff .person_d1839bff{align-items:center;display:inline-flex;gap:10px;min-width:0}.dashboard_d1839bff .personCoin_d1839bff{align-items:center;background:var(--role-accent);border-radius:50%;color:#fff;display:inline-flex;flex-shrink:0;font-size:11px;font-weight:600;height:28px;justify-content:center;letter-spacing:.02em;width:28px}.dashboard_d1839bff .tableCellJustification_d1839bff{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@container (max-width: 600px){.dashboard_d1839bff .tableCellJustification_d1839bff{max-width:120px}}.dashboard_d1839bff .statusBadge_d1839bff{--badge:#616161;align-items:center;background:color-mix(in srgb,var(--badge) 11%,transparent);border-radius:999px;color:var(--badge);display:inline-flex;font-size:12px;font-weight:600;gap:4px;line-height:20px;padding:1px 10px;white-space:nowrap}.dashboard_d1839bff .statusBadge_d1839bff.badgePending_d1839bff{--badge:#8a5a00}.dashboard_d1839bff .statusBadge_d1839bff.badgeApproved_d1839bff{--badge:#0e700e}.dashboard_d1839bff .statusBadge_d1839bff.badgeDeclined_d1839bff{--badge:#b10e1c}.dashboard_d1839bff .statusBadge_d1839bff.badgeAssigned_d1839bff{--badge:#0f6cbd}.dashboard_d1839bff .statusBadge_d1839bff.badgeReturned_d1839bff{--badge:#00726b}.dashboard_d1839bff .statusBadge_d1839bff.badgeMaintenance_d1839bff{--badge:#9a3412}.dashboard_d1839bff .slaStats_d1839bff{display:grid;gap:10px;grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:14px}@container (max-width: 1024px){.dashboard_d1839bff .slaStats_d1839bff{grid-template-columns:repeat(2,minmax(0,1fr))}}.dashboard_d1839bff .slaStat_d1839bff{--sla:#0f6cbd;background:var(--dash-tint);border:1px solid var(--dash-border-soft);border-left:3px solid var(--sla);border-radius:6px;padding:10px 12px}.dashboard_d1839bff .slaStat_d1839bff.slaStatWarn_d1839bff{--sla:#c50f1f}.dashboard_d1839bff .slaStat_d1839bff.slaStatGood_d1839bff{--sla:#107c10}.dashboard_d1839bff .slaStatValue_d1839bff{color:var(--dash-text);display:block;font-size:20px;font-variant-numeric:tabular-nums;font-weight:600;line-height:28px}.dashboard_d1839bff .slaStatLabel_d1839bff{color:var(--dash-muted);display:block;font-size:12px;line-height:16px}.dashboard_d1839bff .noDataMessage_d1839bff{align-items:center;color:var(--dash-muted);display:flex;flex-direction:column;font-size:14px;gap:6px;justify-content:center;padding:32px 16px;text-align:center}.dashboard_d1839bff .noDataMessage_d1839bff i{color:var(--role-accent);font-size:28px;margin-bottom:4px;opacity:.8}.dashboard_d1839bff .noDataMessage_d1839bff span{line-height:20px;max-width:360px}.dashboard_d1839bff .emptyStateHint_d1839bff{font-size:12px;line-height:16px!important}.dashboard_d1839bff .splitLayout_d1839bff{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:18px}@container (max-width: 1024px){.dashboard_d1839bff .splitLayout_d1839bff{grid-template-columns:minmax(0,1fr)}}.dashboard_d1839bff .splitLayout_d1839bff .actionCenter_d1839bff{margin-bottom:0}@media (prefers-reduced-motion:reduce){.dashboard_d1839bff,.dashboard_d1839bff .cardArrow_d1839bff,.dashboard_d1839bff .meterFill_d1839bff,.dashboard_d1839bff .summaryCard_d1839bff{animation:none!important;transition:none!important}}", true);
 
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  "m-0": "m-0_e40316c8",
-  "mt-1": "mt-1_e40316c8",
-  "mt-2": "mt-2_e40316c8",
-  "mt-3": "mt-3_e40316c8",
-  "mt-4": "mt-4_e40316c8",
-  "mt-5": "mt-5_e40316c8",
-  "mb-1": "mb-1_e40316c8",
-  "mb-2": "mb-2_e40316c8",
-  "mb-3": "mb-3_e40316c8",
-  "mb-4": "mb-4_e40316c8",
-  "mb-5": "mb-5_e40316c8",
-  "p-0": "p-0_e40316c8",
-  "p-1": "p-1_e40316c8",
-  "p-2": "p-2_e40316c8",
-  "p-3": "p-3_e40316c8",
-  "p-4": "p-4_e40316c8",
-  "p-5": "p-5_e40316c8",
-  tableWrapper: "tableWrapper_e40316c8",
-  "hide-on-mobile": "hide-on-mobile_e40316c8",
-  "show-only-on-mobile": "show-only-on-mobile_e40316c8",
-  metricsRow: "metricsRow_e40316c8",
-  metricItem: "metricItem_e40316c8",
-  metricDivider: "metricDivider_e40316c8",
-  filtersRow: "filtersRow_e40316c8",
-  searchField: "searchField_e40316c8",
-  filterDropdown: "filterDropdown_e40316c8",
-  dashboard: "dashboard_e40316c8",
-  fadeInUp: "fadeInUp_e40316c8",
-  dashboardHeader: "dashboardHeader_e40316c8",
-  headerLeft: "headerLeft_e40316c8",
-  headerTitle: "headerTitle_e40316c8",
-  headerSubtitle: "headerSubtitle_e40316c8",
-  headerDate: "headerDate_e40316c8",
-  headerRight: "headerRight_e40316c8",
-  quickActions: "quickActions_e40316c8",
-  quickActionBtn: "quickActionBtn_e40316c8",
-  dashboardIntro: "dashboardIntro_e40316c8",
-  summaryGrid: "summaryGrid_e40316c8",
-  summaryCard: "summaryCard_e40316c8",
-  iconContainer: "iconContainer_e40316c8",
-  cardBlue: "cardBlue_e40316c8",
-  cardGreen: "cardGreen_e40316c8",
-  cardPurple: "cardPurple_e40316c8",
-  cardGold: "cardGold_e40316c8",
-  cardInfo: "cardInfo_e40316c8",
-  summaryValue: "summaryValue_e40316c8",
-  summaryLabel: "summaryLabel_e40316c8",
-  summarySubtitle: "summarySubtitle_e40316c8",
-  trendUp: "trendUp_e40316c8",
-  trendDown: "trendDown_e40316c8",
-  chartsGrid: "chartsGrid_e40316c8",
-  chartCard: "chartCard_e40316c8",
-  chartHeader: "chartHeader_e40316c8",
-  chartIcon: "chartIcon_e40316c8",
-  chartTitleBlock: "chartTitleBlock_e40316c8",
-  chartSubtitle: "chartSubtitle_e40316c8",
-  chartContainer: "chartContainer_e40316c8",
-  actionCenter: "actionCenter_e40316c8",
-  sectionHeader: "sectionHeader_e40316c8",
-  sectionSubtitle: "sectionSubtitle_e40316c8",
-  actionTable: "actionTable_e40316c8",
-  statusBadge: "statusBadge_e40316c8",
-  badgePending: "badgePending_e40316c8",
-  badgeApproved: "badgeApproved_e40316c8",
-  badgeDeclined: "badgeDeclined_e40316c8",
-  badgeAssigned: "badgeAssigned_e40316c8",
-  badgeReturned: "badgeReturned_e40316c8",
-  badgeMaintenance: "badgeMaintenance_e40316c8",
-  slaStats: "slaStats_e40316c8",
-  slaStat: "slaStat_e40316c8",
-  slaStatWarn: "slaStatWarn_e40316c8",
-  slaStatGood: "slaStatGood_e40316c8",
-  slaStatValue: "slaStatValue_e40316c8",
-  slaStatLabel: "slaStatLabel_e40316c8",
-  headerAction: "headerAction_e40316c8",
-  noDataMessage: "noDataMessage_e40316c8",
-  emptyStateHint: "emptyStateHint_e40316c8",
-  splitLayout: "splitLayout_e40316c8",
-  skeleton: "skeleton_e40316c8",
-  skeletonLine: "skeletonLine_e40316c8",
-  skeletonChart: "skeletonChart_e40316c8",
-  skeletonCard: "skeletonCard_e40316c8",
-  shimmer: "shimmer_e40316c8",
-  tableCellJustification: "tableCellJustification_e40316c8",
-  pulse: "pulse_e40316c8"
+  "m-0": "m-0_d1839bff",
+  "mt-1": "mt-1_d1839bff",
+  "mt-2": "mt-2_d1839bff",
+  "mt-3": "mt-3_d1839bff",
+  "mt-4": "mt-4_d1839bff",
+  "mt-5": "mt-5_d1839bff",
+  "mb-1": "mb-1_d1839bff",
+  "mb-2": "mb-2_d1839bff",
+  "mb-3": "mb-3_d1839bff",
+  "mb-4": "mb-4_d1839bff",
+  "mb-5": "mb-5_d1839bff",
+  "p-0": "p-0_d1839bff",
+  "p-1": "p-1_d1839bff",
+  "p-2": "p-2_d1839bff",
+  "p-3": "p-3_d1839bff",
+  "p-4": "p-4_d1839bff",
+  "p-5": "p-5_d1839bff",
+  tableWrapper: "tableWrapper_d1839bff",
+  "hide-on-mobile": "hide-on-mobile_d1839bff",
+  "show-only-on-mobile": "show-only-on-mobile_d1839bff",
+  metricsRow: "metricsRow_d1839bff",
+  metricItem: "metricItem_d1839bff",
+  metricDivider: "metricDivider_d1839bff",
+  filtersRow: "filtersRow_d1839bff",
+  searchField: "searchField_d1839bff",
+  filterDropdown: "filterDropdown_d1839bff",
+  dashboard: "dashboard_d1839bff",
+  dashFadeIn: "dashFadeIn_d1839bff",
+  roleAdmin: "roleAdmin_d1839bff",
+  roleManager: "roleManager_d1839bff",
+  roleEmployee: "roleEmployee_d1839bff",
+  dashboardHeader: "dashboardHeader_d1839bff",
+  headerLeft: "headerLeft_d1839bff",
+  headerEyebrow: "headerEyebrow_d1839bff",
+  roleChip: "roleChip_d1839bff",
+  headerDate: "headerDate_d1839bff",
+  headerTitle: "headerTitle_d1839bff",
+  headerSubtitle: "headerSubtitle_d1839bff",
+  attentionBar: "attentionBar_d1839bff",
+  attentionTitle: "attentionTitle_d1839bff",
+  attentionChip: "attentionChip_d1839bff",
+  attentionWarn: "attentionWarn_d1839bff",
+  attentionBad: "attentionBad_d1839bff",
+  attentionInfo: "attentionInfo_d1839bff",
+  attentionGood: "attentionGood_d1839bff",
+  attentionArrow: "attentionArrow_d1839bff",
+  summaryGrid: "summaryGrid_d1839bff",
+  summaryCard: "summaryCard_d1839bff",
+  cardBlue: "cardBlue_d1839bff",
+  cardGreen: "cardGreen_d1839bff",
+  cardPurple: "cardPurple_d1839bff",
+  cardGold: "cardGold_d1839bff",
+  cardArrow: "cardArrow_d1839bff",
+  cardTop: "cardTop_d1839bff",
+  iconContainer: "iconContainer_d1839bff",
+  cardInfo: "cardInfo_d1839bff",
+  summaryValue: "summaryValue_d1839bff",
+  summaryLabel: "summaryLabel_d1839bff",
+  meter: "meter_d1839bff",
+  meterFill: "meterFill_d1839bff",
+  summarySubtitle: "summarySubtitle_d1839bff",
+  chartsGrid: "chartsGrid_d1839bff",
+  chartCard: "chartCard_d1839bff",
+  chartWide: "chartWide_d1839bff",
+  chartHeader: "chartHeader_d1839bff",
+  chartIcon: "chartIcon_d1839bff",
+  chartTitleBlock: "chartTitleBlock_d1839bff",
+  chartSubtitle: "chartSubtitle_d1839bff",
+  chartContainer: "chartContainer_d1839bff",
+  actionCenter: "actionCenter_d1839bff",
+  sectionHeader: "sectionHeader_d1839bff",
+  sectionSubtitle: "sectionSubtitle_d1839bff",
+  headerAction: "headerAction_d1839bff",
+  actionTable: "actionTable_d1839bff",
+  clickableRow: "clickableRow_d1839bff",
+  person: "person_d1839bff",
+  personCoin: "personCoin_d1839bff",
+  tableCellJustification: "tableCellJustification_d1839bff",
+  statusBadge: "statusBadge_d1839bff",
+  badgePending: "badgePending_d1839bff",
+  badgeApproved: "badgeApproved_d1839bff",
+  badgeDeclined: "badgeDeclined_d1839bff",
+  badgeAssigned: "badgeAssigned_d1839bff",
+  badgeReturned: "badgeReturned_d1839bff",
+  badgeMaintenance: "badgeMaintenance_d1839bff",
+  slaStats: "slaStats_d1839bff",
+  slaStat: "slaStat_d1839bff",
+  slaStatWarn: "slaStatWarn_d1839bff",
+  slaStatGood: "slaStatGood_d1839bff",
+  slaStatValue: "slaStatValue_d1839bff",
+  slaStatLabel: "slaStatLabel_d1839bff",
+  noDataMessage: "noDataMessage_d1839bff",
+  emptyStateHint: "emptyStateHint_d1839bff",
+  splitLayout: "splitLayout_d1839bff"
 });
 
 
@@ -496,7 +505,8 @@ class InventoryManagementWebPart extends _microsoft_sp_webpart_base__WEBPACK_IMP
                                 textField('employeeListTitle', p.EmployeeListLabel, d.lists.employee),
                                 textField('replacementListTitle', p.ReplacementListLabel, d.lists.replacement),
                                 textField('stockThresholdsListTitle', p.StockThresholdsListLabel, d.lists.stockThresholds),
-                                textField('assetKitsListTitle', p.AssetKitsListLabel, d.lists.assetKits)
+                                textField('assetKitsListTitle', p.AssetKitsListLabel, d.lists.assetKits),
+                                textField('appSettingsListTitle', p.AppSettingsListLabel, d.lists.appSettings)
                             ]
                         }
                     ]
@@ -525,6 +535,31 @@ class InventoryManagementWebPart extends _microsoft_sp_webpart_base__WEBPACK_IMP
         };
     }
 }
+
+
+/***/ }),
+
+/***/ 7344:
+/*!**************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/assets/NexerLogo.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NEXER_LOGO_ASPECT: () => (/* binding */ NEXER_LOGO_ASPECT),
+/* harmony export */   NEXER_LOGO_BLACK_PNG: () => (/* binding */ NEXER_LOGO_BLACK_PNG),
+/* harmony export */   NEXER_LOGO_WHITE_PNG: () => (/* binding */ NEXER_LOGO_WHITE_PNG)
+/* harmony export */ });
+// Nexer wordmark, extracted from the supplied logo artwork (transparent PNG).
+// Generated file: regenerate from the artwork rather than editing by hand.
+/** Width / height of the wordmark images, for sizing without distortion. */
+const NEXER_LOGO_ASPECT = 4.0733;
+/** White letters on transparent: for dark backgrounds. */
+const NEXER_LOGO_WHITE_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwoAAAC/CAYAAABe1yt6AAAvXElEQVR42u2d979VxfWw75+BiqBAFLFrLFGMihoVxF4QjBoNmtiNEUuMGDsSC4jEGo2IJZaIvcYudooodkCaCAiKgrS73lnZw6vyvRdvOWetPbOf9fk8v/ALZ+7ZZ888M2vWahCRBgAAAAAAgB/DHwEAAAAAABAFAAAAAABAFAAAAAAAoAaisF3gkgw4LbBxxb7MToHz6/x3vSDQu87jOCGTZ7CqHNmC77hz4BzHz3h2oIvR73It52f6vEB3Jru6s5vjd/y3wCEt/Jz6+7yI91Sy/L4Oz27XwMC4foCWo/PImYEzAicGjgn0C/QJ9MxpDbr6P/xR8ojZURaqNFH9KvB1nf+u3wX+XudxvCFEyvFIC77jtQNjAsudPuO3gb8a/S47BIYGvnca6+LAtSzk68qWgacCjU7f8axA/xZ+1ocdf3dE++O/gfVq/PzuERgbWAqtQueRbwILA3MCnwc+CowLvBR4NDA6vn91Y+yIwE5x/kMUShDLAqMQBUSBKKUoKDsGpjl+zimBvY1+m9vEhaRH6OJ1egtPeqBtInhFFDKPWBIY3orPiyggCqvzm8Bb/GnrFisCXwU+CbwWeChwXVxv/wpR8I3XAzsjCogCUUpRUE523IXVeFKKNCiL3+dvA1OdxqkLwxcCm7GwrzmHSnGC7SWBOs91QxQQBUQhqfg+buC8GXgwcG7g14iCfcwL/BlRQBSI0oqC8h/Hz6q7sYPF7q7C3x1TkPSIfAQL+5qidz9ecXx+F0mRD92AKCAKiEKysTIwNzApzocntFL+EYV2/vFHpZgPhigQFRKF7o47shpfit3Jo6YgPe64+/xp4Hcs8GvGVVKkuXrFFW34zIgCooAoSKnT5ufEk4YhUtx/QhTqHPrw74koIApEaUVBOdr5M79m+DvVsX4mfrmyTwe2YJHfbvpKcUrjFePb+LkRBUQBUZAkNroXxXsNegdp0yqKwgKxO5odhCggCkSpRUG5R3wvmw0x/K0OE78UpO9aefkVmmaS4/OqFVd2QBQQBUQh+2iMc4VWVLo00LFKojAqGpPV/7U+ooAoEKUWBU1BmuksCz2NfqtbBZ51HOvUeLLBgr9tXO98Cf+idnx2RAFRQBQk2epJn8Yyq5UQhf3irohFTJDWX/hCFBAFwlYUVlUG8lzEvG/4ex3oXB72iSgsLPxbx17iX82vAVFAFBCFSseDlheevUThF1Jc1hCjY9pBiAKiQJReFLQm/W1id9rY1I7NVYa/2RvEr/7+UuN0qxxYK6YAeMVXNSihiCggCohCHjEndoLOWhRONfyD3hXYAFFAFIhSi8KqykDvOX5+vT/VW+w6+r4UBcUjPmtFR18QuUV8667Xops4ooAoIAp5xchAp1xFoXNceFrEh4F9EAVEgSi9KCjHBRaK36nC2DpMxmsa6+eOOe+PkILUIvo5nv40xuaAXRAFRAFRIJqYs/TO2/Y5ikJDzJO1+kOehSggCkQSorB+3L1dKn6NrCxTkG4y3DSRJlKQLkEE1shGgXcdZW5aDe/ZIQqIAqKQpyyMj2WbsxOFIw3/kPfHFz6igCgQ5RYFZRexu8fUVOgu/yFGv91NAq86piBNs8p1TZSbpeji7SWtg2s4FkQBUUAUJNveCx/EdXVWorCOFJ1RrSb+PogCokAkIQrKieLXtXlZPM7dxOj3qxWfvnD83p6kEVuz1anmOE78Y2r8DCIKiAKiIFn3XdBU+2NyEgVltOEf8FxEAVEgkhGFroEbxW83d4FxCtJIx0WcitHliMFP2E6KcqReJz2TAwfUeEyIAqKAKOQvC5NrKQtlEIWDDMshPhbogSggCkQSoqD0kiItxys+FrsGNxs4p1vNjO9jJKEo1XtLTP3xktQL6jAuRAFRQBSkEmlIemfh8FxEobMU3eYsYq7YlT5EFBAFRKE2nBaYIX477Y8Htjb6HR8Y+Mbx+3shsCGiICcEpovfxcT/BDZDFAhEgWjHe+QVKZpEJi8KynWGf7wLEAVEgUhKFLQK0q3iV55Sd3evMPwtX+n4/S03TrcqIzsFXnRMOZoUOLROY0MUEAVEoTqh/VceCvwyB1HoY/jyejHTHTNEgchVFJRdpcgX9ypR+VFggNFvWZvnvOb4HerJ68EVlQQtsHF94Fvx675cz3K1iAKigChUKzR9cnh7npuyiIJeWhxn9H9/m2n6EaJA5CwK3ilIy+PYrFKQ9ha/pnMaEwMdhZQjMU4VGFPne3SIAqKAKFQv5sQqgkmLgjLE8I82BFFAFIjkREEvmN4hflWQdJPhYsPf9AXiexnu1opJws5SnDivdPqbvyf1v0yOKCAKiEI1Y2J8xyUtCr+J+VQWMUGKvGdEAVEg0hGFhtimfoLj+KaIXVpOl8BzjmPV3/thFZEEPT0ZYTgHSRP3YCw2sBAFRAFRqGbo7/42KQoIJSsKem/gJcM/WB9EAVEgkhOFVSlIX4rfTrtWQdrc6Hetk/h8x+/zk4qkIB0rfo3VNOXomTosABEFRAFRIFZfw/VPWRQaYqt6qxiJKCAKRJKioDwoRelSr4WdZfW0vzrvQo3OXBL03fmy+F2U/yywn9FYEQVEAVGodugaq1vKorCH2DW40QtrayEKlRSFeYG7pTiGg9pyutHzvnFgquPLdl68cGwx1u5xx9krFho2nbNmrVgOVhwrklxjOF4LUdA0qkd5F9aFs6Q+p5YWovBuJt/Bv+JG1WOxT8EUKVIWV8bNhkYpf5ySsihsJMWxvlUciChUUhTeykwSq8ofnZuTPR0X8RZj3TfwhdM4deJ7X/IsK93fsbrUiniS0ZCZKLwb7xLxjkoDK1G4IvO/Y5d4Mjg4SsSMWABjWQnl4eP4eZMUBeUcw6oToxEFRAGS5j+OVWo0zjcc64WOl20Xx520nJ6dXzr3q9CFxJ6IAiAK2aIbPDcFPognbSukPHFmyqKgx/mzjD7H/IwWjIgColBFNgh8Lr4pSFaLva3iiauXGM0MDJR8Uo6ucXxuljgtnBAFQBTs6RTX11p+ebbz5taq0FPitVMVBW0284DhH+soRAFRgKQ5xrGTrsQSpl2MxtpPisuv4lTx6TXDpnP1TjnyTFt7xWnciAIgCv7z1QtSdGH3jqNTFQXl7MBSo8/yGKKAKEDyjHbepbnQcKyXGfzWZQ2Xb29M/FnZwrnKi5Zh3RVRAEShsuj64yIpmqB5piO9kLIo9ImXLcSo22pnRAFRgKTpHl+6XvGVYRWkX8YytMsdm84dn/CzMtLxOVlqXFoXUQBEobzsETerFzm9j5a15IS4rKKg1TXuMvxjnYooIAqQPAPEtznZ62LTNGvVWD8UvxQk3YnaMcFn5AjHSVniHZMGRAEQBZAfqn3+Q4r7bh5xZaqioAyKC1OLGIsoIAqQBdc5pyANMxzrUCkqaYhTCpLuzK+b0LOxSVzEiuNJzE6IAiAKsBodA5cHvnR4L32Ssij0FrtUgiUxbxVRQBQg/fzzseLbnOxQsauC9KRjCtJUSSsFabT4Vjn6cwn+BogCIArlZN34N1rg0CenZ6qisH7gDsOj9AsEUUAUIAeOiBdGxak52RuGzckGxB0hr7E+/3OTjJSnOd8SR1G4V4oSiYgCIArQHL+IfRes++VckqooNMSGEAuMJrxxiAKiANlUlLha/KpJ6IXV6w3He7Vjd+HvYrpVpxI/D3ry8pGjJHzoWOUIUQBEIS30t/OE8TvqjZRFYU/DMnY60e6CKCAKkAXbBv7ruNM+07BHS4/YyGe5Y4fho0v8LNznKI3flaxYBqIAiEL5OTLwqeF7asGa7puVXRTWMkw/+j7uzCEKiALkwW/Frsv76qEL01eluEBrMdaDopx4idHLUc7K9gz8SXwbG90e6IooAKKAKLQC7Zg8wnDzR9My901VFBriBbC5RpPdJEQBUYCsUpCudNxN1h4tNxiO9yrDSnHSRLrVtYF1SvT9bxff6V5VsPT/3r1kvwlEARCFNNCF+wSx66dwUcqisGusT24RWppqP0QBUYBs0N/Fs4477VoZ6PdGY10nPtteC2M9vj68RN/9A1FgxCnl6LQS/h4QBUAU0uFao1MF3Ux7MGVRWFXWrtHo+OVGRAFRgKw4VvxSkFbG+wNbGHb69DpV0BgvxZ0J7+/8bKea5PKjlKNfCKIAiAKi0Hb6Bz422tT6IHVROD0w2/C4uAOigChAdjszKxxr6N9gXAVJHE9RRjh/1zsZHtk3N4f0LunvAFEARCEdugXGGL23ZsfGb8mKwvaG6Uez4iVIRAFRgLxKzv3X6GRSmmlOdqzheD90XChrvuv+jt/1PfEzeIS+gweV+HeAKACikBaXGZ0Sz23ud5uKKCh3GuVq6e7fbYgCogDZoV2EP3dcQD8d2NporD2dU5AmS9E00/o7/rPh6fPqsTymyXZDFBAFRAFRkNpV7/vE6I7ZQamLwgliV/7vHbHrrIooIApgx/WOC+glxiWYL3fsrSCxw6jld9sr8Jr4pVxp086+JX/+EQVAFNJiGynKT9c7vgmclLoobBZ40yh1YGbcfUQUEAXIrwrSi473FT41bMSmvOIoCvo3PsxonNoZ+lbxq3I0L/DXBJ5/RAEQhfQYY1TOe3DqoqCMkqIxmhg0X7sdUUAUIEv+6JyC9HjcJbIY6+6OFZ9WiZHF6ezpjilHOl/cK+VOOUIUAFFIl9sMNrcWN3finZooHGM46emC9ZeIAqIAWXJT3EERpxSkIYbP4PlxEvCKO6T+JWHHil/52wkJpBwhCoAopMsVMTWo3hseN+cgCl0Db4tN+pEKyamIAqIAWbKVFGk5Xjn8UwIDjMbaJfCooyjoBDSwjmO7RfyqHGmlkPMSeu4RBUAU0uPc+K6pZyxtLpMmNVFoiJPCYqMSf6MQBUQBskVPKL+QalRB6iM2lTOkmYu+79XphPYkx+9QBej+QGdEAVFAFBAFSTu1cmksLZ2FKBwSmGP0ObV3w86IAqIA2XKD0b2n5haaQw3Hqjvfi5zGujSWDq3leHYx7K8jTaQcTY5pTw2IAqKAKCAKdeTEwAyDzfEHchEF7Zo83ij96Esp6nIjCogC5MnGYpfOKM1UWDvMcKwPOJ6gzIs7Y7UYS+d4urzcsbHaWQk+74gCIArpcbJBewAVhftyEQVlhNEu4IqYs7UWooAoQLb0E7+LzRovBXoYjfXAuBMuTuVS36nRKe0JUTzEqbHamETfIYgCIArpcabUP5Om2VPfVEXhN7GLnEW8Gf8/RAFRgHwZ7igKupNzjeFYB0v9K2jIGkrw3dnO39+v4mLUK6bFz9CAKCAKiAKiIDaV6+ZL/VNhb81JFBoM048WRptDFBAFyJd1peisK45pOQcYjXVTKVKQvNKtZrczpfNOx4Z5jfE0owFRQBQQBUTBiGsNivgsidk6WYnC5UaTRWOsfrQeooAoQNbs6dxvQDc/OhqN9eDAJPG7CPxaYLc2fO7jxe9CtsSUowZEAVFAFBAFQ+422NjR9d0luYnC1jGnymoC740oIAqQPZc7LkJXxEZwVmO9yOCdsaZjbr3/tY607jL2NMfvR8uwboAoIAqIAqJgyPqBJwy+n0XNnfSmLAoNsVqJ1aR2JqKAKEAlUpDedFyM6vHvQUZj7R54yDEFSS/nndHKRW6j43dzVAbPN6IAiEJ63884ozT7ATmKwjmGk8SdNfzciAKiAOVlj/isi2PJVKuxHip+VZAaYx+E3aVlKUcrHL+TezN5thEFQBTS4lSpf7M1iffkdstRFDob7jB9IEV3U0QBUYD8ucBx91r/37sMx/p3xypIjbEfwpruZnQT3/K1nwc2RBQQBUQBUXDgRinudVmc8HbPURSUF8TuAt6ZiAKiAJVAF6fPO8qC/tb6G421a+Apxx17Lft30ho+33OOkqD34H6b0XONKACikA47BV4Wu7LPDbmKwvGGk4Z2rdsIUUAUoBL0leICq9dO+2TDdEdNQfrYUYzGBnZt4nOd4dh9WcXptkAHRAFRQBQQBQfOMGosuTJuyGQrCmsZHptPlfKmHyEKiALUpzLQYseLzbcZjvVq5xSkf0iRTrrq82wXmOV4mqAL3m0ze54RBUAU0mATKcoxi1G3+WE5i0JDbB5kFWcjCogCVIYtAk8a5YhKMyU5jzUaa5fAs447+JqCdNyPPs+jjp/lq8DADJ9nRAEQhTQ4RYp7A2JU2fOo3EWhv+FE/kigB6KAKEBlOCzwmfg1J3s99o2xGOt+gSmOKUhvxKpT5wUWiN+9hJulqF+OKCAKiAKiYM12cYPKKhbFE4ysRaFTYIbhDl9vRAFRgMrQIXas9GpOtihWvuhg2HRuifjFI/F97iUr2jV650yfZUQBEIVys3b8W1mW6P5oTZ8pF1FoiCX2rOJ8RAFRgEqxdVzAelUGmhbfzxZj7Rgvtnk2N/MKvRNxQsbPMaIAiEK5OS7eh7WMm6siCgcY5rM+31y9WUQBUYBsGRD7qYhTCtJLgZ6Gi4c5Uq1YEk9uuiAKiAKigCg4oOvYtx3efQdWRRS0Fvj7Rp//6xKmHyEKiALUnyscc+c1BWnkzzQnqyWDHS9xe8SrgV6ZP7+IAiAK5aR37JlgfZI77+c+W06isKq8n1VchiggClA5tgo8IX4pSFNj7xir8T5VEUmYHjitAs8vogCIQvk4RIpeMh7pnvdUTRT6GF7CeyeeYiAKiAJULwXpI/FLQXpOio6dFmP9tfj2MrAI7ZPxz8B6iAKigCggCsacFZjkeCesT9VEYUMpSgmKUT5rX0QBUYBKcqX4pSDp73B4YF2jsZ6ZeQpSzlWOEAVAFMrJ5oF/SVFJ0ys+bMlnzU0UlIsN/8jXIgqIAlSS7nFn3ysFaWbgGKOxdjJuamkZMyqScoQoAKJQHs4NTHQuQy0treCZoyjsHfjGaByfGV4sRBQQBSgXB0tRttQj9Jj6RSka81iMtafjWOt5Kjy6Ys8sogCIgg+65jhdiqyX+SV4/81v6Vo8R1HYOPCs0ThW/FxZKUQBUYCs0RSgb51e9MsC1xhuVpzieIJSj5hoKFqIAiAK1fz76ibLMCmqci6U8qRxjmzpGHIUBeU8wz/27YgCogBS5S6abzu+/PU3f7jRWLV4w78zkYS5cXevAVFAFBAFRKGGrBv7IYyIvwV9Ry8tWQNL/UxbVl0U9o61YS1iAaKQnCh8Ejg6sD+0iz5Msv9jr8BXji99rcC2mdFYdxH7rqH1OIkZU9Fn1UIUNEVtEO/HdrNfZqJwmxTlpVNHK87tGmWgvxRVi1QKHg98Hk9dG0ve2X5Ya56RXEVh4/hCtIojEIWkRIHIS5LLwDVxAeoVVxuO9U9xhyzF0Mn700APRIEoeSzNTBQIKU3PmC0FUfj/t8qt0gEeRhQQBUSh8owX314AB4ldxad7Er2v8HWc5xoQBQJRQBQqFsvi2rgBUSjYR+yOyBeXIOcdUSAQBV92NfgNrinGx0V8g9H7dXJiz6tuHN1f8WcUUUAUEIVqRmMs6d0DUfiBjQL3Gn4JJyEKiAKiUHmGOKcgWfZ2+Ytj07m2xBRDkUIUCESBKFPMChzalmckZ1FQzgl8bzSmlxEFRAFRgMBL4tsb4BCjcerO1N2J3FdYJHYN6hAFAlEgyhRawvtyKar0IQqr0VeK2rVilPvVA1FAFBCFytNLio6/XjEpsIHRWLU6ywQpd4UP/Wz/4rlEFBAFREGqeS/hocAWbX1GchcF/X/ukpK1w0YUEAVEIXvOi7v7XnGb4VgHS9GXoKyhIrMhzySigCggClK9ewlvtbeUee6isCr9aJHRuN5CFBAFRAECnY1LNDe1yDjWaKx6H+w+sUvzbE3Ml6LWOc8kooAoIApVi48DA9v7jFRBFHoHxhmN6xsp2nUjCogCogB7xhe1V7wfGwRZjHW/mPLUWLIqRyN4DhEFRAFRkGr2SzinFs9IFUShU2C00QS21GAhjSgQiEI6nBN/Nx6hC8I7Dcf6t8C8Ej2fr0orGwshCgSiQGQQXwQujetfRKGFnC3FEbQY5IONRxQQBUQB5IfmZPeKb+rNKUZj7RoXomWogvRlYADPH6KAKCAKFQu9LzY0sF6tnpGqiMIegTcNv6R9EAVEAVEA+aE52STxS7/R1MsdjMa6d+AT5xSkFfE91YFnD1FAFBCFCoWe6F4mxR25BkSh9dwZJ00xqGN+PaKAKCAKENEF6xWO35P+bkcajvcWKbrVe8UHgV147hAFRAFRkGqdJPylrb0SEIWCMwNzxCb9aFw9vixEgUAUkkTrVz8jvvmqR4hd+tFYKXb1xbG50HE8d4gCooAoSDVKoGrX5aPr9YxUSRR2Erv0o1kOJfkQBQJRKCcXil/pUD3hvMlwrMOlqP7mHZrqtTXPHqKAKCAKmceEep+gVkkUlLuNdrqWGDc8QhQIRKGc9DY6yWxup+n9WuerroF+4n8/QX50N+NWnj9EAVFAFDIOrei5br2fkaqJwmmB2UZjfNt4nIgCgSiUC03DeUF87yYcYDRW7Xz8X6N7YNKK8rBH8hwiCogCoiD53UewSietnChsafiDmCG2ebKIAoEolIvBzt/PrYZjvUaKuwFli5mBDXgWEQVEAVGQ9O8iLAvcFehi+d6omigo98Q/tsWPfDSigCggCpVkd/HN1Z9iOFa9j/VhiZ/Tu3keEQVEAVFINFbGtZcWiTjQ471RRVE4Ll42tghd9G6FKCAKiEKl0JzR18W36k8fo7FuGng0gWf1KJ5LRAFRQBQSihVxjn0rps27vTeqKAobxvKljUbVj05FFBAFRKFSXOY8uVxnONZLA4sSeFZnxS7ZiAKigCggCmWO72PK5PNRENb1fm9UURSUUUblCpfF/wtRQBQQhWqwZ/ydeIVO+B2NxnpYYHJCz+sDPJ+IAqKAKEg5Tw+0q/K7UqTHaxGGtcry3qiqKAwQu5KFmoLQE1FAFBCF7OkUeMfx+9B32v5GY9088KCkl+t7MqKAKCAKiEJJ3kf6zh4fGBM4L7BjGd8bVRUFPcqZKDbpR/ognIEoIAqIQvZc47yoGGI41gskjZSj1WNqWSdjRIFAFKQKpwbvBZ4N3B44M9Cr7O+NqopCQ+xW+r3RwzEKUUAUEIWsOSSw0PG7eNYwB/+gwAeJPrPL40nI2ogCgSggCnX63ubHTYlxsb/MvwPXBgZJUblo05TeG1UWhb6Br8Su+tHuiEJpRGFuLF17C7SLaxGE/7GRFCmGXh2Jp8XFu1WVo4cTn8hV6M5GFOoWOq8+xPux3dyQmShoCeV768BDzhsXK+L/r0UkhkrRP+e0WGlNq89tIyW4kIwotB2r9KOv4hETolAOURgfFzwdoF0gCQUjA0ucJin9fy8xHOuFzpe1pUa5wXr8vweiUJfQC+69eT8m8461EoWbYvPDWrNpXF/NEj9ReDWwQ67vjaqLwtVGx7CNMf2oE6JQClF4q0wVBSBpfidFKTuv04THpOg4bzHWfeNxeg6hgnV/YD1EoeahlVu2592QDFaicEUdx9AlishS8UvDHYoo5CkKPQ13AjVXbW9EAVGAbNBmii875nx/GuhnNNZugWckr9AUxPMRBUQBUUheFJTdAq84vUsaY2pVf0QhP1FoiAt4MeqWOghRQBQgG26Iv2uPWCxFYzersV5iVPxBjFOQJkhxXw1RQBQQhbRFoSHeDZjp9D7RvlmPBLZAFPIThcGGD9LoOo4dUUAUwI7jpbhE7JVy9Ghga8OFxFyRbLugakWSrogCooAoJC8Kmt79L/FLQVpoXKYaURC7iiVWk/37UtyCRxQQBUgXrWLxnBSX2Dzio8ARhuPNvWSx1jb/C6KAKCAKyYtCQ+xL8Lr4piD1E0QhK1FQxopdDe8zEQVEAZLmOsfKP98ZTrgN8ffuJUSWk7umoO6DKCAKiELyotAQm9x6VkF6KKcUJESh4BTDh+jeeIqBKCAKkB6/lyLlyCueCGxmNNZdHI/wxeG+wugKpCAhClAFUVDudnx/aUrjRYhCXqLQwbByydQ6VT9CFBAFqC96J+Bpx8Xsp7GJj9V4p0i1ot4FJxAFQBTs2D72yhLHRpgHIgr5iEJDrEduFYMQBUQBkuNKKSpbiFPK0bXGTeQapXoxsc5lrBEFQBTs0FTvLx3fJ2OkaAiHKGQiCkcbToyav9YDUUAUIBn0/TBd/HJenwtsInaN1RY5Tq7fOPamkFg1pRuigCggCsmLgvIf8UtB0t/aeYhCPqLQMTDfaPxzAnshCogCJMG2gSfF76LtlCgqFmNdL/COFDn7XpKgFYhedDy90RSkUxEFRAFRyEIU9P092fGEdFrqhRIQhZ9yh+HDcx6igChA6ekQ62J7Llr/YTjeEY4VnfRvfEuUld/EMrCNjilIuyMKiAKikLwoKH+SoseBVzxUpyI2iIIDhxqWAnw20B1RQBSg1PQX35Sjl6X2aYrN0c+xq6nGm4GdfvR5zo8nDF4xSvKrgoQoQBVFQbnP8aR0ecq9WhCFn7K+FJVFxKiD316IAqIApWWrwFPil3I0I4qKxVj1wt0LjncDvgicIE0XmfCa3BcHTkMUEAVEIQtR2DyeUnrF9DqknCMKTow0fHAuRhQQBSgtQxwXznr5bpjhWIc5Hs0vCdzUzO59T/HtW6FdVndFFBAFRCF5UVAGOqZWSuyD0wVRSF8U9peiWYbVUXs3RAFRgNJxiPh19tR41TDt5WjDk9SmYmxgN1lzicNljp/v3ljsAlFAFBCFtEVBud3xXaLppH9DFNIXhQ0D4wyPtnsjCogClIoeMQ3HKxYE9hO7iiDPOJ6cTG9hhaEHHb8PPfH4M6KAKCAKWYjCxvEZ9YrZNVz3IQqODDV8aK5BFBAFKBXDnOv4DxG7ik5Xi1/K0eJY5Wj9FnzWXwY+c/xOpkiRBoUoIAqIQtqioBwpvoUS9MR4HUQhbVHoa/gQfRjLASIKiAL4c1hgnuME8rLhBKIpR5+I32Xtsa3M/z/BsXGSxIvtiAKigCikLwoNsey0V6ys4SYxouB4NPWi2JXN2h9RQBSgFFXPJjhOHtrwcQ+jsW4nxcW6FU5j1YpOp7fhBGSU4/ezLMX8YkQBEIVmq9q94fg++SpwAKKQrigoFxo+MLciCogCuPNPx1KcEvsGWKUc6aS9SPxSjnTBv3YbPvs2UnRZ9YovE6+ChCgAovADh0txJ8wr3g50RhTSFYW+hikIX7Rx0kQUEAWo3YSxyHHCeFpqk4LY0rFOc0w5eie+r9r6+Y+V4oKxOKaHIQqIAqKQvijoOuAqx3eJVti8HlFIVxS0AdHjhpNnf0QBUQAXOjuXB9Vd6l6Gx+1POp6c6KbIKe0cw7qBmx2/r8WGF84RBUAU6oueUr7i+D7RMtz9EIU0RUE5z/BhGYMoIArgwp3il6uvcZbhWC927EnwfexJUItx7BB4z/E7mxkXWIgCooAopC0KyhHil4K0Mq571kMU0hSFfaW4dGc1iSIKiALYl8n7WvziMcP34f7xwrRXfBoLRTTUsMvqEsfJfSyigCggClmIwtqxVLRX6NrqBkQhTVHYRGwb/fwBUUAUwIyusTxxo/g13tlTqtFETstNnyi1r1J1i+P3p2O6ElFAFBCF5EVB2VF8U5CmSvtT0BEFJ84Vu7SElxEFRAHMGO24I70spjZajfUixwlQ35/312lcuwXGO8rCJ4ZdtBEFQBTqi55SzhG/Qg/PBzZEFNITBZ0EPjI8zu6GKCAKUHeOjzv6XgvnhwKbGY21j/h1X161U9atjuM7xTGlakVsxNYFUUAUEIXkRUFTkEZIkQrudUo5DFFITxS6S3EBzyrORRQQBagrWwfedNyF1lz9g4zG+ot4UimOube/k/qnkP3TcXLXxkmXIQqIAqKQvCgov5YiTdOrMtxH8e4copDYD+kvUpTEE6NFLKKAKED90Lz2bx13jC4yHOtljpLQGNO7LMa5Z3x3eE3uWoHpYEQBUUAUkhcF5YTAdMf3ppaw3hJRSOuHtG98+VntwG2HKCAKUBf+EFNhxOlewhjDCaCvc0WnSVLflKPV+bP4p5NtgiggCohC8qKgKUg3Om8oXYEopPVD0vzTu41SFZa18QFBFBAF+PmqFi86phxNDhxmNNb1YnqVV8x3qOChKUi3G57+ShMpSBcjCogCopC8KCg7SZG26dVjRyvy/RZRSC/9aKHRsdM7iAKiADWlY2BkYJHjwtkyj32EoyRo+s91Tt/znvH37ZWC9G7JU5AQBUAUWs6Jhr20mloLPirFnTpEIRH2DowzXFTshSggClDTKkdTxC/l6JHA5kZj7R9/q17xamBTx+96kPimID0gdhWtEAVAFOpHB/G/03ap93oFUWhdztrdRjtVS+LuJ6KAKED76Rl4zjHl6EPDlKONDTc0mgqtQX648/fdOXCX+KUgLQicjyjw7kEUkhcFZdvAa44pSJ8Yzh+IQg04JzDX6Oj+nSgniAKiAO1bNF7ruCP0lfEEeUs8wfCI5SXqVLxzYKJjCpLeRzkAUQBEIXlRUH4f+FL8UpAe9zylRBRaR6/A20Z/o9mttEhEAVGApl/wMxxTjp6WoheL1Vi9uopqPCMlyKf9EaeLXyO2lXFRvjGiAIhC8qKwahPme8d+NBcjCulwj8GLVmL60a2IAqIAbWb7WLXCK+VomuGu8hbxt+N1PD7DocpRS9BmmUud/ibfljAFCVEARKFt9JCi5HOj4zt2P0QhDc4MfGF03PRWK/5WiAKiAD+tcjTccQdIqysNNRzvPx1z8pfHsa5V0i7cUxwn98+l9YUpEAVAFMrJ4Y5zSmPsGP0LRKH8bGeYfjQzcCyigChAmyr/zHesfPNKYB2xayI33XEx/HQbm0Ra8UfHUwX9Tp6Soq8FogCIQvrcIn6h77EhiEIa/FtsLgzqQ3EHooAoQKvYxFDmpZmqN7sa7pi/4nhpV3fMj0rgmXjI8XnQueI8RAEQhSz+XlpkZqrj++Sb2C8GUSg5J4tdne43Wlh/HVFAFKBguOPCeaVxY7Vb4n0mrwXwVYk8E+tLUYHKK/Td/GtEARCFbP5mKx3fJxMQhTQutUwQu/SjkxEFRAFaxL6O5UFXLZKsxnqC+FV0kljlaNuEno0jxDfeRBQAUciG65zfJ1chCmlUP1pqlO88GlFAFKBFu8aTHV/cepl4G7G7K/W841g15Whgou/tRse/24WIAiAKWaBriPcc3yW6NtwFUSg3x4hdzXLtCrgDooAowBq50fGlvdx4EThC/KpvLG5D5/iy0FWKKkheod/ZjogCIApZ0FeKCnde8SGiIKXv+GpVU1fLsf4JUUAUoFkOcewhoPGS2DaRm+a4i/Vfw5OTenCk8+T+DqIAiEI2XC2+6a7DEYVy8y+jXT29NDMKUUAUoNld4k8cX9Ra2GBno7H+KpYjFadSn1MTTTlqqu/Ecsdn5gpEARCFLNgo8Krju2RRvRt7Igrt42Cxq6TxeqAXooAowP/hdseX9HeGpS/XjhfYPJvIXZ/JM7NVYJz4VkHaF1EARCELDjOshNnURrJ+fxsgCuXlPaP0o3lSdIVGFBAF+IHfOR77Nsb6/J2MxnqU+KUcLY/pVVtm9OzoPbO5jpP7aw5zIaIAiEJ9LjYPjfe3xOne2HWIQrlLZC0zWpTozum6iAKiAP9DF63vO+4KfxQnWasqR886CtGMKGU5PT/6Lr3BUTR1ch+GKACikM0p5dOOVdVmSXH/ClEoIbvHBbRFaLfZvRCFdsfHgQGBPlBzLOvq3+G4yNPumGeJXcrRNc4L2hGZTu47xs7WXqEC1j8zUZgai2/wPqw92yMKpe/V8pnjqe/LUVgQhRIySezyWgchCjVZ+OhO9ESoOVYLypMC8x132P8d2NBw8pklfikyYwPdM57cBzo2rtPJ/bnAZhmJwpJYXID3Ye3RTuzrIAqlZZ2YgrTIcQNrJKJQTi4zfBBGxyoviAJRxnjE4Pe2kxQlJlc4dl/ex+jdsrn4VtRYIEXRhpwn985SpJB+73ixebjkIwpE/UJLE6+HKJQaPVV/0jEFaWosoY0oSPly06wWLZPiESSiQFRRFNaKsux1aWxh4FyxvQPlubC7uiKT+86BF8TvhOozozsgiAKigCjYFNn4WPxOKZ+tZZoaolA73jH62y1pJv0IUSCqIApniF8ZulUpRz2M3in9xC+9SuNNsavoVAZODEx3nNyfNmhkhyggCohC/ekgxb0yzxSk4YhC+Rhk+BDcI/83ZxhRIHIXhV6xn4hXytHEeje2+RFdpEhxEseJplfFqr9oFaSbxC8F6Zu4uEAUCEQhfbYOPOOYgjRFihLQiEKJWF/sqpLoA9AbUSAqJAprx07oS5zGpY0Vzzd8n9zqKEQaF1a0VOSvxbcK0qeBoxEFAlHIgqPjxX6P0PnjKalBChKiUFueNXwAzkIUiAqJwunim3J0v+F76xDxu4MhscTe2hWuK39aYKbj5P6E1C8FCVFAFBAFW7QK0bdOz8uSWqzZEIXacpzhA/Cg/DRXGlEgchWFXeMub6NjlaP9jd4hHcWvFKrE9JddaEL1v+aWXilI39fxPYsoIAqIgi09YuW6RsdeLQMQhXLV0LVqvjY3sCeiQGQuClrl6EYp6vmLU5WjSw3fIQ84f39/QRL+xzaxwaVXzGzv5I4oIAqIQqlSkGY4PjdPtacRG6JQe+4z/PLPRRSIzEXhj1GKxanZ2ONS1Nm3mkyWOH53z8S7VojCDylIsx2/jyfjhUhEgUAU0udW8UspbWzPhheiUHsGGB4xaTm9jRAFIlNR2NWx2Zj+hj8QuypHG8Za+l7H07PjggFB+Cn3OKYgqahegigQiEIWdAuMdzwd/1KK+2+IgpSj+pFVjvGiH03uiAKRkyho/f5/OC6cNeVoiOF74+7AUvG78PZXpKDZZpoTHSf3WTXujI0oIAqIgu9G8hzn52cLRKEc3Cz2ZQwRBSInURgofs3Glsc0HKtmY38Qv/SqFfE724RJvFlODswT3xSkLQRRIBCFHLjRsJS+1CIFCVGoX3lDqwdhbGADRIHISBR2is+114tU6173FbtLs+Mcd6w/EruKTqmnIC13TEG6FFEgEIUs6Bzf+V4xt7UptYhC/fKN3xe7Unp7x8UVokCkLgodY91pr5QjrXd9kdF7okPgNsNKadJEetVgJu4WsZnhO72p0HSFgxAFRAFRyAJdqC9wfI5elJ+W10cUnBhm+KVfKUWpVESBSF0UjoldkL12bp+KJVkt3hEnBaaLX3rVf6R2KS1V4HeOjZM0XghsjCggCohCNmvElY4n50MRBX8ONJxU3gv0QxSIxEVhW6MJS9bQmKaX0fthZynSq7wmCt0dP5TJuk0lDsVxcv87ooAoIApZ0NGxqp/EO4AHIgq+6OXA1wx3By8xSGFAFIh6isLNjilHK1brS1LvHNWbHXendYK4mIm6TejcNcHx9zWvnSlIiAKigCiUh33EtwrSm4EuiIIvlxl+4eMNJgBEgaiXKPxeipx5r3hMbKvofO40Ti2yMEaKnHsm6rZxuNT/9PbnJveuiAKigChkwcVxo8orRiIKvuxvmG9tUYMdUSDqIQqaJz/Z8TNPj1XDLN4J2kTuZfFNOTqYybndDBffFKSbEAVEAVHI5pTyScdn6uu4+YEoiF+ljGcyekkhCkQ9ROE+x8+rOzmnGb0P1otN5L5zTDm6jIm5JmwaeN3xuf0m8FtEAVFAFLKgj2NhC413A90RBT/+higgCohCs5wYWOz4ee8PrGP0Ljhe7Lq2SxP3mJ6MPVeYmGvDYeJb4nByLMWNKCAKiEL6nO/429T/93ZEwbde7ixBFBAFRKGpE7eZjp/108AORu+BnlJUuGh0HOu+TMY1Z6j4noaNRhQQBUQhmwI4D4tvI7aBiIJf+tHDgiggCojC6jzmuHDWxdIfjN4BnQIjxOYekTSTg0rKUX3YUor+BuJYBWkgooAoIApZsF9gmvj1ERofhQVREJ8jJUQBUUAUfuCMwCLHz3lHHSbc5jha/FJUdNf5JSm6QDMR14dD44JdnC42T5KWN2JDFBAFRKHcDHb8jS4JjPo5UTg27j7Vm64V++L3jZdFvk6c2VL/+uvPZfB3qjL/bsF3vHH8PSx0+owTAzuK3Ynii45j/UyKSktMwPUvcej1m/tSir4cLfmcd0ep4V2VJg/HE0pEIe8slHudnq+F8e7TkWsSBQAAAAAAAEQBAAAAAAAQBQAAAAAAQBQAAAAAAKAt/D+qPftwtFWaywAAAABJRU5ErkJggg==';
+/** Black letters on transparent: for light backgrounds. */
+const NEXER_LOGO_BLACK_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwoAAAC/CAYAAABe1yt6AAAvdklEQVR42u2d99tWxbWG15+BiqBAFLFrLFGMihoVxF4QjBINmtiNEUuMGDsSC4rEGo2IJZaIvcYudkBR7IA0EREUBWkfZ1b2cDSeD85X3r3Wntn3c13Pz++ed8+emXtmzVoiCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCjdc2wRdm4JODN6zZu+sUfE7J/+u5wb1LbsexmfTBuvrwFrzjzsFnOj7jGcFdjL7LNZz79NnB3ZnaStcuju/4L8EHtfA59fs8n3EqWf+2hL7bNXhQXD/gllvnkdOCTw0+LvjI4H7BfYJ75rwG/X3wigw8K8JCnfSL4K9L/l+/C/5rye14LZM+WFc/1IJ3vGbwmOClTs/4bfCfjb7LDsHDgr93auvC4KtZx5eqzYOfCG5yesczg/u38FkfdPzucPv97+B1Gtx/dwseG7wYt8o6j3wTPD94dvBnwR8Gjwt+Ifjh4NFx/NWNscOCd4jzH6BQAS8JHgUoAAq4kqCg2j54quNzTg7e0+jb3CouJD3aqYvXaS086UFtA8FLI5B5vN9FwVe14nkBBUDhp/pV8Bv8t6V5WfBXwR8HvxL8QPA1cb39C0DB168G7wgoAAq4kqCgOsFxF1b9uBRhUBb6dfAUp3bqwvC54E1Y1zdcB0txgu0FgTrPdQMUAAVAISl/HzdwXg++P/is4F8CCvb+MviPgAKggCsLCqp/OT6r7sYOEbu7Cn91DEHSI/IRrOsbKr378ZJj/10gRTy0AAqAAqCQrJcHzwmeGOfDY1sJ/4BCO//8UTnEgwEKOGNQ6O64I6v+wvDkUUOQHnXcff4k+Des7xumy6UIc/Xqu5e24ZkBBUABUKh22PzseNIwVIr7T4BCydbOvzugACjgyoKCaqDzM79i+J1qWz8Vv1jZJ4M3Y43fbvWNpzRefXZ8G58bUAAUAIU0NroXxHsNegdp4zqCwjzDo9nBgAKggCsNCqq7xPey2VDDb3W4+IUgfdfKy6+oeU107K+acWU7QAFQABSyd1OcKzSj0kXBHesECqMiMVn91rqAAqCAKw0KGoI0wxkWehp9q1sEP+3Y1inxZAO1Tdc6X8I/vx3PDigACoBCutmTPolpVmsBCvvEXRGL35ogrb/wBSgACtgWFCRmBvJcxLxn+L0Ock4P+1gEFtQ67SH+2fwEUAAUAIVa+37PC89WoPAzKS5rWB3TDgYUAAVceVDQnPS3GJ42Nrdjc7nhN3ud+OXfX2wcbpWD1oghAF7f1lcNSKEIKAAKgEIenh0rQWcNCicZ/qF3BK8HKAAKuNKgIDEz0LuOz6/3p3qLXUXfFyKgeLT101ZU9EUiNznnXW9ENXFAAVAAFPLyyOBOuYJC57jwtPi9D4L3AhQABVx5UFAdHTzf8VRhbAmT8era+pljzPtDhCC1SP0cT3+aYnHALoACoAAo4GbmLL3ztm2OoCAxTtbqjzwdUAAUcBKgsG7cvV0sfoWsLEOQbjDcNGkuBOlCOGC12iD4HUeYm9rAe3aAAqAAKOQJC+Nj2ubsQOFwwz/y3jjgAwqAAq42KKh2Ert7TM1Zd/kPMvp2Nwp+2TEEaapXrGsiulGKKt5e0DqkgW0BFAAFQCHf2gvvx3V1VqCwlhSVUa0m/j6AAqCAkwAF1XHiV7V5STzO3cjo+9WMT587vrfHKcQmq8pONdtx4h/T4D4IKAAKgELedRc01P7InEBBNdrwDzwLUAAUcDKg0DX4esfd3HnGIUgjHRdxCkaXwAX/pW2kSEfqddIzKXi/BrcJUAAUAIX8YWFSmbDgAQoHGKZDfCS4B6AAKOAkQEHVS4qwHK/2fCR2BW7Wcw63mhHHY1Sk6r0phv54Qeq5JbQLUAAUAIV6hCHpnYVDcwGFzrHanMXvzhG71IeAAqAAKDRGJwdPd9xpfzR4S6PveP/gbxzf33PB68MJcmzwNPG7mPiv4E0ABQwo4HaMIy9JUSQyeVBQXWP4550rgAKggFMCBc2CdLP4pafU3d1LDb/lyxzf31LjcKsqaofg5x1DjiYGH1xS2wAFQAFQqI+1/soDwT/PART6GA5ez2e6YwYo4FxBQbWzFPHiXikqPwweYPQta/GcVxzfoZ68HlhTSNAEG9cGfyt+1ZfLTFcLKAAKgEK9rOGTVzWy33iBgl5aHGf0299mGn4EKOCcQUGcQ5CWxrZZhSDtKX5F59RvB3cUQo6sQwXGlHyPDlAAFACF+nl2zCKYNCiohhr+aUMBBUABJwcKesH0NvHLgqSbDBcYftPniu9luJtrBgk7xhPn5U7/+btS/mVyQAFQABTq6bfjGJc0KPwqxlNZ/P4EKeKeAQVAAacDChLL1E9wbN9ksQvL6RL8jGNb9Xs/pCaQoKcnIwznoObuwVhsYAEKgAKgUE/rd3+LFAmEkgUFvTfwguEf1gdQABRwcqAgMQTpC/HbadcsSJsafdc6ic91fJ8f1yQE6SjHwmoacvRUCQtAQAFQABTwT9dw/VMGBYml6q3+sJGAAqCAkwQF1f1SpC71Wtida/ht/9l5F2p05pCgY+eL4ndR/tPgfYzaCigACoBCva1rrG4pg8JuYlfgRi+srQEo1BIUvgy+Mx7D4cb6FKP+vmHwFMfB9st44dhC3eOOs1db5xsWnbPWGjEdrGdGkisN22sBChpG9TBjYSk+vaRTSwtQeCeTd/CPuFH1SKxTMDmGLC6Pmw1NCcDCiSmDwgZSHOtb/Vn7Awq1BIU3MoPEuur3zsXJnoyLeAvtHfy5Uzt14ntP8kwr3d8xu9SyeJIhmYHCO/EuEUpDVqBwaeb/Y5d4MjgkQsT0mABjSQXh4aP4vEmCgupMw6wTowEFQAElrX85ZqlRn2PY1vMcL9sujDtpOennzvUqdCGxO6CAAIVspRs8NwS/L8VJ27IKwcJpKYOCHufPNHqOuRktGAEFQKGOWi/4M/ENQbJa7G0hxYmrFxjNCB4k+YQcXenYbxY5LZwABQQo2KtTXF9r+uVZzptbK62nxGumCgpabOY+wz/rCEABUEBJ60jxq6S7IqYw7WLU1n5SXH71yvj0imHROSk55MgzbO0lp3YDCghQ8J+vnpOiCrs3LAxMFRRUZwQvNnqWRwAFQAElr9HOuzTnGbb1YoNvfXWXb69PvK9s5pzlRdOw7gwoIEChttL1x/lSFEHzDEd6LmVQ6BMvW1hVW+0sgAKggFJW9zjoeg24XxlmQfp5TEO71LHo3DEJ95WRjv1ksXFqXUABAQrV1W5xs3qB03i0pC0nxFUBBc2ucYfhn3USoAAooOQ1QHyLk70qNkWzVrb1A/ELQdKdqO0T7COHOU7KK+IdEwEUEKCA5Idsn3+T4r6bx5h0WaqgoBocF6YWzzMWUAAUUBa6xjkEabhhW4dJkUnDKwRJd+bXTqhvbBQXsSscT2J2ABQQoIB+oo7BlwR/4TAufZwyKPQWu1CCRTFuFVAAFJAkH38+1rk42cFilwXpcccQpCmSVgjSaOcsR3+swH8AKCBAoZpaO/5H8xzq5PRMFRTWDb7N8Cj9XEABUEBZ6LB4YdSrONlrhsXJBsQdIa+2PtvaSUb8ivMtcgSFu6VIkQgoIEABrUo/i3UXrOvlXJgqKEgsCDHPaMIbBygACkhyyShxhfhlk9ALq9catvcKx+rC38Vwq04V7g968vKhIyR84JjlCFBAgEJa0m/nMeMx6rWUQWF3wzR2OtHuBCgACigLbR38b8ed9hmGNVp6xEI+Sx0rDA+scF+4xxEav6tYsgxAAQEK1dfhwZ8YjlPzWnPfrGqgsIZh+NH3cWcOUAAUUB76tdhVef+pdWH6shQXaC10QIQTLzB6McJZ1fQH8S1sdGtwV0ABAQqAQiukFZNHGG7+aFjm3qmCgsQLYHOMJruJgAKggCSnEKTLHHeTtUbLdYbtvdwwU1xz4VZXB69Vofe/TRzTvbJg6W/vWrFvAlBAgEIa0oX7BLGrp3B+yqCwc8xPbvFcmppqH0ABUEDZSL+Lpx132qcE/9aorWvFvu21MNbj60Mr9O7viwDjFXJ0cgW/B0ABAQrp6GqjUwXdTLs/ZVCQmNauSWyOX64HFAAFlJWOEr8QpOXx/sBmhpU+v3MMtRkvxZ0Jb53hlJP8xyFHPxNAAQEKgELb1T/4I6NNrfdTB4VTgmcZHhd3ABQABZTdzswyxxz61xlnQVrheIoywvld72B4ZL+qOaR3Rb8DQAEBCumoW/AYo3FrViz8liwobGsYfjQzXoIEFAAFJFmlnPu30cnkqoqTHWXY3g8cF8oa77qv47u+Kz6DR9t1DB5c4e8AUECAQlq62OiUeE5Lv9uqgoLqdqNYLd39uwVQABRQdtIqwp85LqCfDN7SqK09nUOQJklRNNNafzQ8ff6pl8Yw2W6AAqAAKAAK0rjsfR8b3TE7IHVQOFbs0v+9JXaVVQEFQAHZ6VrHBfQi4xTMlzjWVlgRK4xaqlfwK+IXcqVFO/tWvP8DCghQSEtbSZF+uuz3803w8amDwibBrxuFDsyIu4+AAqCAJLssSM873lf4xLAQm+olR1DQ//gQo3ZqZeibxS/L0ZfBf06g/wMKCFBIT2OM0nkPSR0UVKOkKIxmUXztVkABUEBZ6vfOIUiPxl0iC+3qmPFpJRhZnM6e4hhypPPF3VLtkCNAAQEK6eoWg82thdLCE++qg8KRhpOeLlh/DigACihL3RB3ULxCkIYa9sFz4iTgBQu3SfkpYceKX/rbCQmEHAEKCFBIV5fG0KCyNzxuzAEUuga/KTbhRwokJwEKgALKUltIEZbjFcM/OXiAUVu7BD/sCAo6AQ0qsW03iV+WI80UcnZC/R5QQIBCejorjjVlvp/FLY2kqTooSJwUFhql+BsFKAAKKFvpCeXnNcmC1EdsMmes6qLvu1LOCe3xju9QAeje4M6AAqAAKAAKknZo5eKYWjoLUDgoeLbRc2rthh0BBUABZavrjO49rWqhOcywrbrzvcCprYtj6tBGaifD+jrNhRxNimFPAigACoACoFCijgueLuVvjt+XCyho1eTxRuFHX0iRlxtQABRQntpQ7MIZV5Vh7RDDtt7neILyZdwZa4Q6x9PlpY6F1U5PsL8DCghQSE8nGJQHUFC4JxdQUI0w2gVcFmO21gAUAAWUrfqJ38Vm9QvBPYzaur8UO+Fe6VLfatAp7bERPLwKq41JdAwBFBCgkJ5Ok/IjaVp86psKKPwqVpGzeNbX4+8BCoACyldXOYKC7uRcadjWIQYZNFaXgu/2dn5/v4iLUa/3NTU+gwAKgAKgACiITea6uVJ+KOzNOYGCGIYfzY80BygACihfrS1FZV3PsJz9jNq6sRQhSF7hVrPaGdJ5u2PBvKZ4miGAAqAAKAAKRrraIInPohitkxUoXGI0WTTF7EfrAAqAAspauzvXG9DNj45GbT0weKL4XQR+JXiXNjz3MeJ3IXtFDDkSQAFQABQABUPdabCxo+u7C3MDhS1jTJXVBN4bUAAUUPa6xHERuiwWgrPS+QZjxuqOufX+11rSusvYUx3fj6ZhXQ9QABQABUDBUOsGP2bwfha09KQ3JVCQmK3EalI7DVAAFJDUIQTpdcfFqB7/HmDU1u7BDziGIOnlvFNbuchtcnw3R2TQvwEFBCik937GGYXZD8gRFM40nCRub+BzAwqAAqqudot9fYVjylQrHSx+WZCaYh2EXaVlIUfLHN/J3Zn0bUABAQpp6SQpv9jayntyu+QICp0Nd5jel6K6KaAAKKD8da7j7rX+7h2Gbf2rYxakplgPYXV3M7qJb/raz4LXBxQABUABUHDQ9VLc67I44e2eIyionjO8gHcaoAAooFpIF6fPOsKCfmv9jdraNfgJ8dux17R/x6/m+Z5xhAS9B/frjPo1oIAAhXS0Q/CLYpf2WXIFhWMMJw2tWrcBoAAooFqorxQXWL122icZhjtqCNJHjmA0NnjnZp7rVMfqywpOtwR3ABQABUABUHDQqUaFJZfHDZlsQWENw2PzKVLd8CNAAVBAUkpmoIWOF5tvMWzrFc4hSH+TIpx0pbYJnul4mqAL3q0z68+AAgIU0tBGUqRjtqo2PzxnUJBYPMhq8jgDUAAUUG20WfDjRjGiq0rJeZRRW7sEP+24g68hSEf/6HkednyWr4IHZdifAQUEKKShE6W4N2CV2fOI3EGhv+FE/lBwD0ABUEC10SHBnzoWJ3s11o2x0D7Bk8UvBOm1mHXq7OB5jvcSbpQifzmgACgACoCCtbaJG1RWY96CeIKRNSh0Cp5uuMPXG1AAFFBt1CFWrPQqTrYgZr7oYFh0bpFjyM9DcTz3ghWtGr1jpn0ZUECAQrW1ZvyvLFN0f9iaB0wVFCSm2LP6U88BFAAFVCttGRewXpmBpsbx2UId48U2z+JmXtY7Ecdm3I8BBQQoVFtHx/uwluPejXUBhf0M41mflRbmmwUUAAWUjQbEeipeIUgvBPc0XDzMrhkkLIonN10ABUABUAAUHKTr2Dcdxr796wIKmgv8PaPn/7qC4UeAAqCAyteljrHzGoI0UlZfnKyRGuJ4idvDLwf3yrz/AgoIUKimeseaCdYnuV+29kFTBgWJ6f2s/tyLAQVAAdVOWwQ/Jn4hSFOkqB1jpSdqAgnTgk+uQf8FFBCgUD0dJEUtGY9wz7vqBgp9DC/hvSXFKQagACggqV0I0ofiF4L0TKzYaaFfim8tAwtrnYy/B68DKAAKgAKgYKzTgyc63gnrUzdQWF+KVIJW8ax9AQVAAdVSl4lfCJJ+h1cFr23U1tMyD0HKOcsRoIAAhWpq0+B/SJFJ02vs+6AtD546KKguMPyTrwYUAAVUS3WPO/teIUgzgo80amsn46KWlp5ek5AjQAEBCtXRWcFvi28a6jZn8MwBFPYM/saoHZ8aXiwEFAAFVC0dKEXaUo8BXo+pn5eiMI+Fejq2tcxT4dE167OAAgIUfKRrjlOkiHqZW4Hxb25b1+I5gMKGwU8btWNZa9NKAQqAAspKGgL0rdNAvyT4SsPNihMdT1DK8NuGoAUoIEChntJNluFSZOWcL9UJ4xzZ1gblAAqqsw3/7FsBBUABSZ2raL7pOPjrN3+oUVs1ecM/M4GEOXF3TwAFQAFQABQaqLVjPYQR8VvQMXqxVKuApT7T5nUHhT1jbliLtswDFJIDhY+DBwbvi9vlPsyx/9EewV85DvqagW0To7buJPZVQ8s4iRlT075qAQoaojaY8bHd3iczULhFivTSqVszzu0cYaC/FFmLFAoeDf5MilPXpopXth/eng6TCyhsGAdEqz/9MEAhKVDAeUFyFXRlXIB6vYsrDNv6h7hDlmKf1cn7k+AegAKuuBdnBgq4OjVjNhdAQVbeKrcKB3gQUAAUAIXaa7z41gI4QOwyPt2V6H2Fr+M8J4ACBhQAhZp5SVwbC6BQaC/DI/KFFYh5BxQwoOCrnQ2+wdV5fFzEi9H4Oimx/qobR/fWvI8CCoACoFBPN8WU3j0AhR+0QfDdhi/heEABUAAUaq+hziFIlrVd/uRYdK4tnmwIUoACBhRwlTwz+OBGdJicQEF1ZvD3Rm16EVAAFAAFFPSC+NYGOMionbozdWci9xUWiF2BOkABAwq4StYU3pdIkaUPUPiJ+kqRu9Yq9qsHoAAoAAq1Vy8pKv56vZeJwesZtVWzs0yQamf40Gf7B90SUAAUAAWp572EB4I3a1SHyQ0U9HfukIqXwwYUAAVAITudHXf3vd7NLYZtHSJFXYKq9lMFmfXpkoACoAAoSP3uJbzR6FTmuYGCxPCjBUbtegNQABQABRTU2ThFc3OLjKOM2qr3we4RuzDP1niuFLnOEaAAKAAKdfNHwYMa3WFyBIXeweOM2vWNFOW6AQVAAVBAu8eB2uv9vBcLBFlonxjy1FSxLEcj6IaAAqAAKEg96yWcWUaHyREUOgWPNprAFhsspAEFDCikozPjd+PxfnRBeLthW/8S/GWF+ufL0s7CQoACBhRwgv48+KK4/gUUWqgz4hG0RTzYeEABUAAUkPxQnOxu8Q29OdGorV3jQrQKWZC+CB5A9wMUAAVAoWbW+2LDgtcpq8PkCgq7Bb9u+JL2AhQABUAByQ/FySaKX/iNhl5uZ9TWPYM/dg5BWhbHqQ50PUABUAAUamQ90b1YijtyAii0XrfHSdMij/m1gAKgACigKF2wXur4nvS7HWnY3pukqFbv1d73g3ei2wEKgAKgULOThD81qlZCXUHhtODZYhN+NM7iZQEKGFBIQpq/+inxjVc9TOzCj8bGXX3P4kJH0+0ABUABUJB6pEDVqssDrQaRnEFhB7ELP5rpkJIPUMCAQjV1nvilDtUTzhsM23qVFNnfvPumhnptSdcDFAAFQCFzT7A+Qc0ZFFR3Gu10LTIueAQoYEChmuptdJK5qp2m98qOV/2R+on//YQf3824me4HKAAKgELG1oyea1sPIrmDwsnBs4za+KZxOwEFDChUSxqG85z43k3Yz6itWvn430b3wFqTHvZwuiGgACgACpLffYTDvAaR3EFhc8MPYrrYxskCChhQqJaGOL8fyx31K6W4G1C1PjojeD26IqAAKAAKkv5dhCXBdwR38RxEcgcF1V3xz7b4yEcDCoACoFBL7Sq+sfqTDduq97E+qHA/vZPuCCgACoBCol4e116aJGL/KgwidQCFo+NlY4t26qJ3C0ABUAAUaiWNGX1VfLP+9DFq68bBDyfQV4+gWwIKgAKgkJCXxTn2jRg2XxnVARTWj+lLm4yyH50EKAAKgEKtdLHz5HKNYVsvCl6QQF+dGatkAwqAAqAAKFTZ38eQyWcjIKxdtUGkDqCgGmWUrnBJ/C1AAVAAFOqh3eN34vVOdMLvaNTWQ4InJdRf76N7AgqAAqBQ0dMDrar8jhTh8ZqEYY2qDiJ1AYUBYpeyUEMQegIKgAKgkL06Bb/l+D50TNvXqK2bBt8v6cX6ngAoAAqAAqBQkfFIx+zxwWOCzw7ePoVBpC6goEc5b4tN+JF2hFMBBUABUMheVzovKoYatvVcSSPk6KeekspkDCgACoBClqcG7wY/HXxr8GnBvVIbROoCChKrlX5v1DlGAQqAAqCQtQ4Knu/4Lp42jME/IPj9RPvs0ngSsiaggAEFQKGk9zY3bkqMi/Vl/hl8dfBgKTIXbZzyIFInUOgb/JVh9qNdAYXKgMKcmLr2JtwuXw0f/EcbSBFi6FWReGpcvItRlqMHE5/IFejOABRKs86rDzA+ttvXZQYKmkL57hL8gPPGxbL4+5pEYpgU9XNOjpnWNPvcVlLBC8mAQstlFX70VTxiAhSqAQrj44KnA26XUaGRwYucJin93QsN23qe82XtRsUG6/H/boBCKdYL7r0ZH5MZY61A4YZY/LDR3jiur2aKHyi8HLxdXQaRuoHCFUbHsE0x/KgToFAJUHijyhkFUFL6jRSp7LxOEx6RouK8hfaW4jg9h/AABax7g9cBFBpuzdyyLUNDMrIChUtLbEOXCCKLxS8MdxigkCco9DTcCdRYtT0BBUABZSMtpviiY8z3J8H9jNraLfipzGKJNQTxHEABUAAUkgcF1S7BLzmNJU0xtKo/oJAfKEhcwFtVSx0MKAAKKBtdF79rj4lpoRSF3ax0oVHyB+sQpAlS3FcDFAAFQCFtUJB4N2CG03iidbMeCt4MUMgPFIYYdqTRJbYdUAAUkJ2OkeISsVfI0cPBWxouJOZIvlVQNSNJV0ABUAAUkgcFDe/+h/iFIM03TlMNKIhdxhKryf49KW7BAwqAAkpXmsXiGSkusXlMRh8GH2bY3txTFmtu8z8BCoACoJA8KEisS/Cq+IYg9RNAIStQUI01zOF9GqAAKKCkdY1j5p/vDCdcid/7ssxBoSmGoO4FKAAKgELyoCCxyK1nFqQHcg5BqisonGjYie6OpxiAAqCA0tNvpQg58lrUPha8iVFbdxK/I3yP+wqjaxCCBCigOoCC6k7H8UtDGs8HFPIChQ6GmUumSDnZjwAFQAGVK70T8KTjYvaTWMTHSpNrVlG17IQTgAICFOy0bayVtcKxEOb+gEI+oCAxH7lVBxoMKAAKKDldJkVmC6+Qo6uNi8g11QwUVsSFxZ4CKAAKgELqoCAx1PsLx/FkjBQF4QCFTEBhoOHEqPFrPQAFQAElIx0fpolfzKtent5I7AqrLXCcXL9xrE2xImZN6QYoAAqAQvKgoPqX+IUg6bd2NqCQDyh0DJ5r1P7ZwXsACoACSkJbBz/ueNF2cgQVC60T/JYUMftekKAZiJ4Xv9MbDUE6CVAAFACFLEBBx+9JjiekU3NLlFBnUFDdZth5zgYUAAVUeXWIebE9F61/M2zvCMeMTvof3xRh5VcxDWyTYwjSroACoAAoJA8Kqj9IUePA65TygZKS2AAKDjpY7FIBPh3cHVAAFFCl1V98Q45elMaHKa5K/RyrmqpfD97hR89zjhQnDF7PM0ryy4IEKKA6goLqHvE7KV2aU62WuoPCulJkFrGq4LcHoAAooMpqi+AnHEOOpkdQsZBeuHvO8W7A58HHSvNJJrwm94XBJwMKgAKgkAUobCrFKaXXxsO0EkLOAQUnjTTsOBcACoACqqyGOi6c9fLdcMO2Dnc8ml8UfIM0v3vfU3zrVmiV1Z0BBUABUEgeFFSDHEMrV9bB6QIopA8K+0pRLMPqqL0boAAooMrpIPGr7Kl+2TDsZaDYnaQ257HBu8jqUxwucXy+u2OyC0ABUAAU0gYF1a2OY4mGk/4FUEgfFNYPHmd4tN0bUAAUUKXUI4bheE0m84L3EbuMIE85npxMa2GGofsd34eeePwRUAAUAIUsQGHD2Ee9xpNZDVz3AQqOGmbYaa4EFAAFVCkNd87jP1TsMjpdIX4hRwtjlqN1W/CsPw/+1PGdTI5hUIACoAAopA0KqsPFN1GCnhivBSikDQp9DTvRBzEdIKAAKCB/HRL8peME8qLhBDIw+GPxu6w9tpXx/8c6Fk5aES+2AwqAAqCQPihITDvtNZYsb+AmMaAgfkdTzxumzdoXUAAUkFQh69kEx8lDCz7uZtTWbaS4WLfMqa2a0ekUaf0JyCjH97Mkg/hiQAEBCvK/We1ecxxPvgreD1BIFxRU5xl2mJsBBUABuevvjqk4V8S6AWIUcqST9gLxCznSBf+abXj2raSosur1jr6QtLMgAQoIUPhBh0pxJ8xrPHkzuDOgkC4o9DUMQfi8jZMmoAAooMZNGAscJ4wnpTEhiC1t61THkKO34njVVh0lxQVjz/AwQAFQABTSBwVdB1zuOJZohs1rAYV0QUELED1qOHn2BxQABeSizs7pQXWXupfYHbc/Ln4nJ7opcmI727B28I2O72uh4YVzQAEBCuVKTylfchxPNA13P0AhTVBQnW3YWcYACoACctHt4herrz7dsK0XONYk+D7WJGiEtgt+1/GdzYgLLEABUAAU0gYF1WHiF4K0PK571gEU0gSFvaW4dGc1iQIKgAIS8zR5XzsuOB8xHA/3jRemvdr6SUwUIQ2ssrrIcXIfCygACoBCFqCwZkwV7TU26trqOkAhTVDYSGwL/fwOUAAUkJm6xvTETeJXeGd3qUcROU03fZw0PkvVTY7vT9t0GaAAKAAKyYOCanvxDUGaIu0PQQcUnHSW2IUlvAgoAArITKPFb0d6SQxttNL5jhOgjp/3ltSuXYLHO8LCx4ZVtAEFBCiUKz2lnO2Y6OHZ4PUBhfRAQSeBDw2Ps7sBCoACKl3HSLGj77VwfiB4E6O29hG/6ssrd8q6ldi+Ex1DqpbFQmxdAAVAAVBIHhQ0BGmEFKHgXqeUwwGF9EChuxQX8Kw6ylmAAqCAStWWwa877kJrrP4BRm39WTyp9Iy9/Y2UH0L2d8fJXQsnXQwoAAqAQvKgoPqlFGGaXpnhPox35wCFxD6kP0mREm+F0SIWUAAUUHnSuPZvHXeMzjds68WOkNAUw7sstHscO7wmd83AdCCgACgACsmDgurY4GmO46amsN4cUEhLe8fBz2oHbhtAAVBApeh3MRTG617CGMMJoK9zRqeJUm7I0U/1R/EPJ9sIUAAUAIXkQUFDkK533lC6FFBISxp/eqdRqMKSNnYQQAFQQPL/ZrV43jHkaFLwIUZtXUeK8CovSJjrkMFDQ5BuFbvT3+ZCkC4AFAAFQCF5UFDtIEXYpleNHc3I92tAQZILP5pvdOz0FqAAKKCGqmPwyOAFjgtnyzj2EY6QoOE/1zi9593j9+0VgvROxUOQAAUEKLRcxxnW0mpuLfiwFHfqAIVEtGfwOMNFxR6AAqCApJFZjiY7hhw9FLypUVv7x2/VCxReDt7Y8V0PFt8QpPvELqMVoIAAhfLUQfzvtF1UtfUKoCCrjVm702inalHc/QQUAAXUfvUMfsYx5OgDw5CjDQ03NJqz5iA/1Pl9dw6+Q/xCkOYFnwMoIEAheVBQbR38imMI0seG8weg0ACdGTxHbI7u34pwAigACqh9i8arHXeEvjKeIG+KJxgebV1aoUrFOwa/7RiCpPdR9gMUEKCQPCiofhv8hWMI0qNSoVNKQGH16hX8ptF/NKuVFAkoAAqo+QF+umPI0ZNS1GKxautsx9OEp6Ra8bSniF8htuVxUb4hoIAAheRBYeUmzPeO9WguABTS0V0GA+3K8KObAQVAAbVZ28asFV4hR1PFbld5s/jteB2PT3fIctQSabHMxU7/ybcVDEECFBCg0Db1kCLlc5PjGLsPoJCGTgv+XGyOm95oxX8FKAAKSP4ry9FVjjtAml1pmGF7/+4Yk780tnWNilbhnuw4uX8mrU9MASggQKGaOtRxTmmKFaN/BihUX9sYhh/NCD4KUAAUkLQl889cx8w3LwWvJXZF5KY5LoafbGORSMt5bbHj5P6EFHUtAAUEKKSvmxzDO3UcGwoopKF/is2FQe0UtwEKgAJqlTYyhPlVZb3ZWex2zF9yvLSrO+ZHJNAnHnDsDzpXnA0oIEAhC2mSmSmO48k3sV4MoFBxnSB2ebpfa2H+dUABUECFrnJcOC83Lqx2U7zP5LUAvjyRPrGuFBmovCZ3HZt/CSggQCGb/2y543gyAVCQJC61TDAMPzoBUAAUUIu0t2N60JWLJCsdK34ZnVZmOdo6ob5xmON/pX4dUECAQja6xnk8uRxQkCSyHy02inceDSgACkhasms8yXHg1svEW4ndXalnHduqIUeDEh23mxz/t/MABQQoZCFdQ7zrOJbo2nAnQKHaOlLscpZrVcDtAAVAAa1W1zsO2kuNF4EjxC/7xsI2VI6virpKkQXJq5/oO9seUECAQhbqK0WGO6/x5ANAQSpf8dUqp66mY/0DoAAooFXqIMcaAuoXxLaI3FTHXax/i93JSRk63HlyfwtQQIBCNrpCfMNdrwIUqq1/GO3q6aWZUYACoIBWuUv8seNArYkNdjRq6y9iOlKvVJ9TJM2QI2mm7sRSxz5zKaCAAIUstEHwy45jyQLDwp6AQht0oNhl0ng1uBegACig/6NbHQfp7wxTX64ZL7B5FpG7NpM+s0XwOOcsSHsDCghQyEKHGGbCbG4jWd/feoBCdfWuUfjRl1JUhQYUAAX0g34jfse+TTE/fyejth7hGHK0NIZXbZ5R39F7ZnMcJ/dXHOZCQAEBClLKxeZh8f6W172xawAFqXSKrCVGixLdOV0bUAAU0H+ki9b3HHeFP4yTrBhlOXraEYimRyjLSTqWXucImjq5DwcUEKAguZxSPumYVW2mFPevAIUKate4gLb437Ta7B6AQrv9UfCA4D644bbMq3+b4yJPq2OeLnYhR1c6L2hHZDq5bx8rW3vBpgJY/8xAYYoUyTcYDxvvbQEFqXqtlk/F79T3xQgsgEIFNdEwrnUwoNCQhY/uRL+NG26rBeXxwXMdd9j/Gby+4eQz0zFEZmxw94wn90GOhet0cn8meJOMQGFRTC7AeNh4ayX2tQCFymqtGIK0wHEDaySgUE1dbNgRRscsL4ACrqIfMvjedpAixeQyx+rLexmNLZuKb0aNeVIkbchZnWMI6feOF5uvyggUcHnW1MTrAAqVlp6qP+4YgjQlptAGFKR6sWlWi5aJ8QgSUMB1BIU1Iix7XRqbH3yW2N6B8lzYXVGTyV3T2z7neEL1qdEdEEABUAAUxCTJxkeOp5RPl3lPCFBou94y+u8WrSL8CFDAdQCFU8UvDd3KkKMeRmNKP/ELr1K/LnYZnaqg44KnOU7uTxoUsgMUAAVAoXx1kOJemWcI0lWAQvU02LAT3CX/N2YYUMC5g0KvWE/EK+TobcPCNl2kCHFa4TjR9JJ6SbMg3SB+IUjfxMUFoIABhfS1ZfBTjiFIk6VIAQ0oVEjril1WEu0AvQEFXCNQWDNWQl/k1C4trHiO4XhysyMQqc+TeuqX4psF6ZPggYACBhSy0MB4sd+jr+j88YSUEIIEKLRPTxt2gNMBBVwjUDhFfEOO7jUctw4SvzsYK2KKvTWlvjo5eIbj5P6YlBeCBCgACoCCrTQL0bdO/WVRGWs2QKF9OtqwA9wv/x0rDSjgXEFh57jL2+SY5WhfozGko/ilQl0Z/rKToFsdQ5C+L3GcBRQABUDBVj1i5romx1otAwAFqVQOXavia3OCdwcUcOagoFmOrpcin79XlqOLDMeQ+5zf359ghP9oq1jg0us9zGj05A4oAAqAgniGIE137DdPNLIQG6DQft1j+PLPAhRw5qDw+wjFXsXGHpUiz77VZLLI8d09Fe9aIfnfEKRZju/j8XghElDAgEL6utkxpLSpkRtegEL7NcDwiEnT6W0AKOBMQWFnx2Jj+g2/L3ZZjtaPufS9jqdnxQUD+m/d5RiCpKB6IaCAAYUs1C14vOPp+BdS3H8DFKQa2Y+sYowX/GhyBxRwTqCg+fv/5rhw1pCjoYbjxp3Bix0vvP0ZJpBVFdN823Fyn9ngytiAAqAAKPhuJM927j+bAQrV0I1in8YQUMA5gcIg8Ss2tjSG4VgVG/ud+IVXLYvvbCPm8FXqhOAvxTcEaTMBFDCgkIOuN0ylX0oIEqAgDUtvaNURxgavByjgjEBhh9ivvQZSzXvdV+wuzY5z3LH+UOwyOkniIUhLHUOQLgIUMKCQhTrHMd+rD81pb0gtoCANizd+zzCV3p5xcQUo4NRBoWPMO+0VcqT5rs83Gic6BN9imCmtufCqIczbLdImhmN6c9ZwhQMABUABUMhCulCf59iPnpf/Tq8PKDhpuOFLv0yKVKmAAk4dFI6MVZC9dm6fiClZLXR88DTH8Kp/SeNCWuqg3zgWTlI/F7whoAAoAArZrBGXO56cDwMU/LW/4aTybnA/QAEnDgpbG01YqytM08tofNhRivAqr4lCd8cPZq6WtqQ4XOE4uf8VUAAUAIUs1NExq9+KeAdwf0DBV3o58BXD3cELDUIYAAVcJijc6BhytOwndUmk5BjVGx13p3WCuIB5uk3SuWuC4/f1ZTtDkAAFQAFQqI72Et8sSK8HdwEUfHWx4QsfbzABAAq4LFD4rRQx817P/YjYZtH5zKmdmmRhjBQx96htOlTKP739/yb3roACoAAoZKEL4kaVV58aCSj4al/DeGuLHOyAAi4DFDROfpLjM0+LWcMspEXkXhTfkKMDmZvbraucQ5BuABQABUAhm1PKxx371Ndx8wNQEL9MGU9lNEgBCrgMULjH8Xl1J+dko/FgnVhE7jvHkKOLmZcboo2DX3Xst98E/xpQABQAhSzUxzGxhfqd4O6Agp/+AigACoDCKnVc8ELH5703eC2jseAYsava3tw9psdjzRXUGB0ivikOJ8VU3IACoAAopK9zHL9N/d1bAQVxzZc7UwAFQAFQaO7EbYbjs34SvJ3RONBTigwXTY5t3Zu5uOEa5nwaNhpQABQABcklAc6D4luIbRCgIG7hRw8KoAAoAAo/1SOOC2ddLP3OaAzoFDxCbO4RrSoGlZCjcrS5FPUNPLMgDRJAAVAAFHLQPsFTxa+O0PgILICC05ESoAAoAAo/6NTgBY7PeVsJE+6qNFD8QlR01/kFKapAo3J0cFywe11snigtL8QGKAAKgEK1NcTxG10UPOr/e8Cj4u5T2e5asxe/d7ws8nXiniXl519/JoP/qc7+Zwve8Ybxe5jv9IxvB29veKL4vGNbP5Ui0xKS0lMcen1zX0hRl6MlujNCDWNVmn4wnlACCpJ1FMrdTv1rfrz7dDivASGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCjdb/AOOiATgH9HF0AAAAAElFTkSuQmCC';
 
 
 /***/ }),
@@ -916,17 +951,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.module.scss */ 38674);
-/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
-/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
-/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! chart.js */ 55277);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! chart.js */ 55277);
 /* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
 /* harmony import */ var _utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/ChartPlugins */ 34927);
 /* harmony import */ var _dashboard_LowStockPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard/LowStockPanel */ 27655);
 /* harmony import */ var _dashboard_RequestSlaPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard/RequestSlaPanel */ 78948);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+
 
 
 
@@ -950,7 +986,7 @@ const cardBackground = (ctx) => {
 const ARC_STYLE = { borderColor: cardBackground, borderWidth: 2, hoverOffset: 6 };
 /** 'Assigned' -> 'Assigned (16)' for legend entries; placeholder labels (no data) are left as-is. */
 const withCounts = (labels, counts) => labels.map(label => (counts[label] !== undefined ? `${label} (${counts[label]})` : label));
-chart_js__WEBPACK_IMPORTED_MODULE_6__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_6__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_6__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_6__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_6__.Title, chart_js__WEBPACK_IMPORTED_MODULE_6__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_6__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_6__.ArcElement);
+chart_js__WEBPACK_IMPORTED_MODULE_7__.Chart.register(chart_js__WEBPACK_IMPORTED_MODULE_7__.CategoryScale, chart_js__WEBPACK_IMPORTED_MODULE_7__.LinearScale, chart_js__WEBPACK_IMPORTED_MODULE_7__.BarElement, chart_js__WEBPACK_IMPORTED_MODULE_7__.Title, chart_js__WEBPACK_IMPORTED_MODULE_7__.Tooltip, chart_js__WEBPACK_IMPORTED_MODULE_7__.Legend, chart_js__WEBPACK_IMPORTED_MODULE_7__.ArcElement);
 const Dashboard = (props) => {
     const { items, requests, isAdmin, isInventoryManager, onNavigate } = props;
     const isManagerView = !!isInventoryManager && !isAdmin;
@@ -1203,10 +1239,6 @@ const Dashboard = (props) => {
     // --- Quick Summaries & Subtitle metrics ---
     const totalAssets = items.length;
     const totalRequests = requests.length;
-    const pendingRequests = requests.filter(r => {
-        const status = isAdmin ? (r.assetStatus || 'Pending') : (r.status || 'Pending');
-        return status === 'Pending';
-    }).length;
     const availableAssets = items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length;
     const awaitingManagerDecision = isManagerView
         ? requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
@@ -1263,114 +1295,112 @@ const Dashboard = (props) => {
     // --- Role label for header ---
     const roleLabel = isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RoleAdministrator : isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RoleManager : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RoleEmployee;
     const dashboardTitle = isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminTitle : isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerTitle : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeTitle;
+    const isEmployeeView = !isAdmin && !isInventoryManager;
+    const d = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard;
     // --- Quick action handler ---
     const navigateTo = (key) => {
         if (onNavigate) {
             onNavigate(key);
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboard },
+    // --- "Needs attention": the few things each role should act on now ---
+    const slaSummary = !isEmployeeView ? (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_8__.summarizeSla)(requests, (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_6__.getAppConfig)().sla) : undefined;
+    const overdueForRole = slaSummary
+        ? slaSummary.overdueItems.filter(i => (isAdmin ? i.stage === 'awaitingAssignment' : i.stage === 'awaitingApproval')).length
+        : 0;
+    const employeeInReview = requests.filter(r => (r.status || 'Pending').toLowerCase().indexOf('pending') >= 0).length;
+    const employeeAwaitingHandoff = requests.filter(r => (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || '').toLowerCase() !== 'approved').length;
+    const attentionAll = isAdmin ? [
+        { key: 'assign', icon: 'Send', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AttentionWaitingAssignment, pendingAssignments.length), tone: 'warn', target: 'AssetAssignmentQueue', count: pendingAssignments.length },
+        { key: 'overdue', icon: 'Clock', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AttentionOverdue, overdueForRole), tone: 'bad', target: 'AssetAssignmentQueue', count: overdueForRole }
+    ] : isManagerView ? [
+        { key: 'decide', icon: 'DoubleChevronRight12', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AttentionAwaitingDecision, awaitingManagerDecision), tone: 'warn', target: 'Approvals', count: awaitingManagerDecision },
+        { key: 'overdue', icon: 'Clock', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AttentionOverdue, overdueForRole), tone: 'bad', target: 'Approvals', count: overdueForRole }
+    ] : [
+        { key: 'review', icon: 'Clock', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AttentionInReview, employeeInReview), tone: 'info', target: 'MyWorkspace', count: employeeInReview },
+        { key: 'handoff', icon: 'Package', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AttentionReadySoon, employeeAwaitingHandoff), tone: 'warn', target: 'MyWorkspace', count: employeeAwaitingHandoff }
+    ];
+    const attention = attentionAll.filter(a => a.count > 0);
+    const pct = (part, whole) => (whole > 0 ? Math.round((part / whole) * 100) : 0);
+    const kpis = isAdmin ? [
+        { key: 'assets', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue, icon: 'Package', value: totalAssets, label: d.TotalAssets, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AllocationRateSubtitle, allocationRate), percent: Number(allocationRate), target: 'Inventory' },
+        { key: 'available', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen, icon: 'Accept', value: availableAssets, label: d.AvailableAssets, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.InStockSubtitle, availableAssets, stockPercentage), percent: Number(stockPercentage), target: 'Inventory' },
+        { key: 'requests', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple, icon: 'Send', value: totalRequests, label: d.TotalRequests, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.QueueRequestsSubtitle, totalRequests), target: 'AssetAssignmentQueue' },
+        { key: 'pending', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold, icon: 'Clock', value: pendingAssignments.length, label: d.PendingRequests, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.UnderReviewSubtitle, pendingAssignments.length), percent: pct(pendingAssignments.length, totalRequests), target: 'AssetAssignmentQueue' }
+    ] : isManagerView ? [
+        { key: 'assets', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue, icon: 'Package', value: totalAssets, label: d.TotalAssets, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.ItemsInCatalogSubtitle, totalAssets), target: 'Inventory' },
+        { key: 'available', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen, icon: 'Accept', value: availableAssets, label: d.AvailableAssets, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.InStockSubtitle, availableAssets, stockPercentage), percent: Number(stockPercentage), target: 'Inventory' },
+        { key: 'requests', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple, icon: 'Send', value: totalRequests, label: d.RequestsInQueue, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.ApprovalSuccessSubtitle, approvalSuccessRate), percent: Number(approvalSuccessRate), target: 'Approvals' },
+        { key: 'awaiting', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold, icon: 'Clock', value: awaitingManagerDecision, label: d.AwaitingApproval, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.RequiresReviewSubtitle, awaitingManagerDecision), percent: pct(awaitingManagerDecision, totalRequests), target: 'Approvals' }
+    ] : [
+        { key: 'devices', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue, icon: 'Devices3', value: totalAssets, label: d.MyDevices, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.AssignedHardwareSubtitle, totalAssets), target: 'MyWorkspace' },
+        { key: 'requests', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple, icon: 'Send', value: totalRequests, label: d.MyRequests, subtitle: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.ApprovalSuccessSubtitle, approvalSuccessRate), percent: totalDecidedRequests > 0 ? Number(approvalSuccessRate) : undefined, target: 'MyWorkspace' },
+        { key: 'review', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold, icon: 'Clock', value: employeeInReview, label: d.KpiInReview, subtitle: d.KpiInReviewSubtitle, target: 'MyWorkspace' },
+        { key: 'handoff', tone: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen, icon: 'Package', value: employeeAwaitingHandoff, label: d.KpiAwaitingHandoff, subtitle: d.KpiAwaitingHandoffSubtitle, target: 'MyWorkspace' }
+    ];
+    const bannerText = (isAdmin
+        ? d.AdminBannerText
+        : isManagerView
+            ? `${d.ManagerBannerTextBefore}${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Nav.Approvals}${d.ManagerBannerTextAfter}`
+            : d.EmployeeBannerText).replace(/^\s*[—–-]\s*/, '');
+    const initialsOf = (name) => (name || '').split(/[\s.@_-]+/).filter(Boolean).slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+    /** A table row that opens a page, by click or Enter / Space. */
+    const rowLink = (target) => onNavigate ? {
+        className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].clickableRow,
+        onClick: () => navigateTo(target),
+        onKeyDown: (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navigateTo(target);
+            }
+        },
+        tabIndex: 0,
+        role: 'link'
+    } : {};
+    const viewAll = (target, count) => onNavigate && count > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerAction, onClick: () => navigateTo(target) },
+        (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(d.ViewAll, count),
+        " ",
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "ChevronRight", style: { fontSize: 10 } }))) : null;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboard} ${isAdmin ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].roleAdmin : isManagerView ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].roleManager : _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].roleEmployee}` },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardHeader },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerLeft },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerEyebrow },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].roleChip },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "ContactInfo" }),
+                        roleLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerDate },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "Calendar" }),
+                        getCurrentDate())),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerTitle }, dashboardTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerSubtitle },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ContactInfo", style: { fontSize: 13, color: '#0078d4' } }),
-                    roleLabel,
-                    " ",
-                    InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.OverviewSuffix,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#c8c6c4' } }, "\u2022"),
-                    InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RealTimeAnalytics),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerDate },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Calendar" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, getCurrentDate())))),
-        onNavigate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActions },
-            isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Inventory'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionViewInventory },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "List" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionViewInventory)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('AssetAssignmentQueue'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssignmentQueue },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Send" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssignmentQueue)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Reports'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReports },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReportDocument" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReports)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('EventStream'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionEventStream },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ActivityFeed" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionEventStream)))),
-            isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Approvals'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReviewApprovals },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "DoubleChevronRight12" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionReviewApprovals)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('AssetReturns'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssetReturns },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReturnToSession" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionAssetReturns)))),
-            !isAdmin && !isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('MyWorkspace'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionMyWorkspace },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Briefcase" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionMyWorkspace)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].quickActionBtn, onClick: () => navigateTo('Notifications'), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionNotifications },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Ringer" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ActionNotifications)))))),
-        isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__.MessageBarType.info },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerBannerTitle),
-                " ",
-                InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerBannerTextBefore,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Nav.Approvals),
-                InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerBannerTextAfter))),
-        isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__.MessageBarType.success },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminBannerTitle),
-                " ",
-                InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminBannerText))),
-        !isAdmin && !isInventoryManager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dashboardIntro },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_8__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_9__.MessageBarType.info },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeBannerTitle),
-                " ",
-                InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeBannerText))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryGrid, role: "region", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.KpiRegionAriaLabel },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardBlue}`, role: "status", "aria-label": `${isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets : !isInventoryManager ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyDevices : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets}: ${totalAssets}` },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Package" })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].headerSubtitle }, bannerText))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionBar, role: "region", "aria-label": d.AttentionTitle },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionTitle }, d.AttentionTitle),
+            attention.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionChip} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionGood}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "CompletedSolid" }),
+                d.AttentionAllClear)) : attention.map(a => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: a.key, type: "button", className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionChip} ${a.tone === 'bad' ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionBad : a.tone === 'warn' ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionWarn : _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionInfo}`, onClick: () => navigateTo(a.target), disabled: !onNavigate },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: a.icon }),
+                a.text,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "ChevronRight", className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].attentionArrow }))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryGrid, role: "region", "aria-label": d.KpiRegionAriaLabel }, kpis.map(k => {
+            const body = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardTop },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: k.icon })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, k.label),
+                    k.target && onNavigate && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "ChevronRight", className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardArrow })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalAssets),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets : !isInventoryManager ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyDevices : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalAssets),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
-                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AllocationRateSubtitle, allocationRate)
-                        : !isInventoryManager
-                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssignedHardwareSubtitle, totalAssets)
-                            : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ItemsInCatalogSubtitle, totalAssets)))),
-            (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGreen}`, role: "status", "aria-label": `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AvailableAssets}: ${availableAssets}` },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Accept" })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, availableAssets),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AvailableAssets),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.InStockSubtitle, availableAssets, stockPercentage))))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardPurple}`, role: "status", "aria-label": `${isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestsInQueue : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalRequests}: ${totalRequests}` },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Send" })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, totalRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestsInQueue : !isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyRequests : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.TotalRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isAdmin
-                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.QueueRequestsSubtitle, totalRequests)
-                        : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ApprovalSuccessSubtitle, approvalSuccessRate)))),
-            (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardGold}`, role: "status", "aria-label": `${isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AwaitingApproval : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PendingRequests}: ${isManagerView ? awaitingManagerDecision : pendingRequests}` },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].iconContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Clock" })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardInfo },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, isManagerView ? awaitingManagerDecision : pendingRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryLabel }, isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AwaitingApproval : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PendingRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, isManagerView
-                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
-                        : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.UnderReviewSubtitle, pendingRequests)))))),
-        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_dashboard_LowStockPanel__WEBPACK_IMPORTED_MODULE_4__.LowStockPanel, { items: items, onManageThresholds: isAdmin && onNavigate ? () => onNavigate('Config') : undefined })),
-        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryValue }, k.value),
+                    k.percent !== undefined && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].meter, "aria-hidden": "true" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].meterFill, style: { width: `${Math.max(0, Math.min(100, k.percent))}%` } }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summarySubtitle }, k.subtitle))));
+            return k.target && onNavigate ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: k.key, type: "button", className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${k.tone}`, onClick: () => navigateTo(k.target), "aria-label": `${k.label}: ${k.value}. ${k.subtitle}` }, body)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: k.key, className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].summaryCard} ${k.tone}`, role: "status", "aria-label": `${k.label}: ${k.value}` }, body));
+        })),
+        !isEmployeeView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_dashboard_LowStockPanel__WEBPACK_IMPORTED_MODULE_4__.LowStockPanel, { items: items, onManageThresholds: isAdmin && onNavigate ? () => onNavigate('Config') : undefined })),
+        !isEmployeeView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartsGrid },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "DonutChart" })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "DonutChart" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, primaryPieTitle),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, primaryPieSubtitle))),
@@ -1379,152 +1409,468 @@ const Dashboard = (props) => {
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "BarChart4" })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "PieDouble" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssetsByTypeTitle),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AssetsByTypeSubtitle))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, isManagerView ? d.PostApprovalAssignmentTitle : d.RequestFulfillmentTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, isManagerView ? d.PostApprovalAssignmentSubtitle : d.RequestFulfillmentSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Bar, { data: assetTypeData, options: assetTypeOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.barValueLabelsPlugin] }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Doughnut, { data: requestStatusData, options: doughnutOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.centerTotalPlugin] }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartCard} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartWide}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartIcon },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "PieDouble" })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "BarChart4" })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartTitleBlock },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, isManagerView ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PostApprovalAssignmentTitle : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestFulfillmentTitle),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, isManagerView
-                            ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.PostApprovalAssignmentSubtitle
-                            : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.RequestFulfillmentSubtitle))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, d.AssetsByTypeTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartSubtitle }, d.AssetsByTypeSubtitle))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].chartContainer },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Doughnut, { data: requestStatusData, options: doughnutOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.centerTotalPlugin] }))))),
-        (isAdmin || isInventoryManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_dashboard_RequestSlaPanel__WEBPACK_IMPORTED_MODULE_5__.RequestSlaPanel, { requests: requests, queueKey: isAdmin ? 'AssetAssignmentQueue' : 'Approvals', onNavigate: onNavigate })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_11__.Bar, { data: assetTypeData, options: assetTypeOptions, plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_3__.barValueLabelsPlugin] }))))),
+        !isEmployeeView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_dashboard_RequestSlaPanel__WEBPACK_IMPORTED_MODULE_5__.RequestSlaPanel, { requests: requests, queueKey: isAdmin ? 'AssetAssignmentQueue' : 'Approvals', onNavigate: onNavigate })),
         isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReviewRequestMirrored" }),
-                        InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminActionCenterTitle),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminActionCenterSubtitle))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "ReviewRequestMirrored" }),
+                        d.AdminActionCenterTitle),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, d.AdminActionCenterSubtitle)),
+                viewAll('AssetAssignmentQueue', pendingAssignments.length)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentAssignments.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColRequester),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColAssetRequested),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColQty),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColDateApproved),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColStatusAction))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentAssignments.map(req => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColRequester),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColAssetRequested),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColQty),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColDateApproved),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColStatusAction))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentAssignments.map(req => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id, ...rowLink('AssetAssignmentQueue') },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.requesterName)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].person },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].personCoin, "aria-hidden": "true" }, initialsOf(req.requesterName)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.requesterName))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.assetTitle),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.quantity),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.managerDecisionAt || req.requestDate)),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeAwaitingHandoff)))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CompletedSolid" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminEmptyState),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.AdminEmptyStateHint)))))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, d.BadgeAwaitingHandoff)))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "CompletedSolid" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, d.AdminEmptyState),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, d.AdminEmptyStateHint)))))),
         isManagerView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ReviewRequest" }),
-                        InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerActionCenterTitle),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerActionCenterSubtitle))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "ReviewRequest" }),
+                        d.ManagerActionCenterTitle),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, d.ManagerActionCenterSubtitle)),
+                viewAll('Approvals', pendingApprovals.length)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentApprovals.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColRequester),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColAssetRequested),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColQty),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColDateRequested),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColReason),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColActionState))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentApprovals.map(req => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColRequester),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColAssetRequested),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColQty),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColDateRequested),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColReason),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColActionState))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentApprovals.map(req => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id, ...rowLink('Approvals') },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.requesterName)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].person },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].personCoin, "aria-hidden": "true" }, initialsOf(req.requesterName)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.requesterName))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.assetTitle),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.quantity),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableCellJustification }, req.reason || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.NoJustificationSpecified),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableCellJustification }, req.reason || d.NoJustificationSpecified),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeAwaitingApproval)))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CheckMark" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerEmptyState),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ManagerEmptyStateHint)))))),
-        !isAdmin && !isInventoryManager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].splitLayout },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending}` }, d.BadgeAwaitingApproval)))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "CheckMark" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, d.ManagerEmptyState),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, d.ManagerEmptyStateHint)))))),
+        isEmployeeView && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].splitLayout },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Send" }),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeActionCenterTitle),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeActionCenterSubtitle))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "Send" }),
+                            d.EmployeeActionCenterTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, d.EmployeeActionCenterSubtitle)),
+                    viewAll('MyWorkspace', requests.length)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, recentEmployeeRequests.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColAsset),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColManagerName),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColQty),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColDateRequested),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColManagerComment),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColFulfillmentState))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColAsset),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColManagerName),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColQty),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColDateRequested),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColManagerComment),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColFulfillmentState))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, recentEmployeeRequests.map(req => {
                         const isApproved = (req.status || '').toLowerCase() === 'approved';
                         const isDeclined = (req.status || '').toLowerCase() === 'declined' || (req.status || '').toLowerCase() === 'rejected';
                         const isAssetAssigned = (req.assetStatus || '').toLowerCase() === 'approved';
                         let badgeClass = _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending;
-                        let badgeText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeAwaitingReview;
+                        let badgeText = d.BadgeAwaitingReview;
                         if (isApproved) {
-                            if (isAssetAssigned) {
-                                badgeClass = _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgeApproved;
-                                badgeText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeCompletedAssigned;
-                            }
-                            else {
-                                badgeClass = _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending;
-                                badgeText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeApprovedAwaitingHandoff;
-                            }
+                            badgeClass = isAssetAssigned ? _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgeApproved : _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgePending;
+                            badgeText = isAssetAssigned ? d.BadgeCompletedAssigned : d.BadgeApprovedAwaitingHandoff;
                         }
                         else if (isDeclined) {
                             badgeClass = _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].badgeDeclined;
-                            badgeText = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.BadgeDeclined;
+                            badgeText = d.BadgeDeclined;
                         }
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id },
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: req.id, ...rowLink('MyWorkspace') },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, req.assetTitle)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.managerName || '-'),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.managerName || '—'),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, req.quantity),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(req.requestDate)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { color: isDeclined ? '#991b1b' : 'inherit' } }, req.managerResponse || '-'),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableCellJustification, style: { color: isDeclined ? '#a4262c' : undefined } }, req.managerResponse || '—'),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].statusBadge} ${badgeClass}` }, badgeText))));
                     })))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Info" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeEmptyState),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.EmployeeEmptyStateHint))))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "Info" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, d.EmployeeEmptyState),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, d.EmployeeEmptyStateHint))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionCenter },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Devices3" }),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentTitle),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentSubtitle))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "Devices3" }),
+                            d.MyEquipmentTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, d.MyEquipmentSubtitle)),
+                    viewAll('MyWorkspace', items.length)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper }, sortedEmployeeItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actionTable },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColDeviceName),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColCategory),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColSerialNumber),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.ColAssignedDate))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, sortedEmployeeItems.map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.id },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColDeviceName),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColCategory),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColSerialNumber),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, d.ColAssignedDate))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, sortedEmployeeItems.map(item => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: item.id, ...rowLink('MyWorkspace') },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.title)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, item.assetName || item.title)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, item.assetType),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, item.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.NotAvailable)),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, formatDate(item.assignedDate || '')))))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noDataMessage },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Devices3" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentEmptyState),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dashboard.MyEquipmentEmptyStateHint)))))))));
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_10__.Icon, { iconName: "Devices3" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, d.MyEquipmentEmptyState),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].emptyStateHint }, d.MyEquipmentEmptyStateHint)))))))));
+};
+
+
+/***/ }),
+
+/***/ 35097:
+/*!*************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/EmailCenterPanel.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EmailCenterPanel: () => (/* binding */ EmailCenterPanel)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 16264);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 51330);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/EmailService */ 86407);
+/* harmony import */ var _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/EmailOutbox */ 4779);
+/* harmony import */ var _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/EmailSettingsService */ 85324);
+
+
+
+
+
+
+
+
+
+const STATUS_STYLE = {
+    sent: { icon: 'CheckMark', color: '#107c10', soft: '#dff6dd' },
+    failed: { icon: 'ErrorBadge', color: '#c50f1f', soft: '#fde7e9' },
+    skipped: { icon: 'Blocked2', color: '#616161', soft: '#f0f0f0' }
+};
+const statusLabel = (status) => status === 'sent' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EmailCenter.StatusSent
+    : status === 'failed' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EmailCenter.StatusFailed
+        : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EmailCenter.StatusSkipped;
+const formatTime = (iso) => {
+    const d = new Date(iso);
+    return isNaN(d.getTime()) ? iso : d.toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+};
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_6__.mergeStyleSets)({
+    banner: { marginBottom: 12 },
+    toolbar: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '4px 0 8px' },
+    muted: { color: '#616161', fontSize: 12 },
+    empty: {
+        textAlign: 'center',
+        padding: '40px 16px',
+        color: '#616161',
+        border: '1px dashed #d1d1d1',
+        borderRadius: 8,
+        fontSize: 14
+    },
+    emptyIcon: { fontSize: 28, color: '#8a8886', display: 'block', marginBottom: 8 },
+    list: { listStyle: 'none', margin: 0, padding: 0, border: '1px solid #e0e0e0', borderRadius: 8, overflow: 'hidden' },
+    row: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12,
+        width: '100%',
+        padding: '12px 14px',
+        border: 'none',
+        background: '#ffffff',
+        textAlign: 'left',
+        cursor: 'pointer',
+        font: 'inherit',
+        selectors: {
+            ':hover': { background: '#f5f5f5' },
+            ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 }
+        }
+    },
+    rowDivider: { borderTop: '1px solid #ebebeb' },
+    statusDot: {
+        width: 32,
+        height: 32,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        fontSize: 14
+    },
+    rowText: { flex: 1, minWidth: 0 },
+    rowSubject: { display: 'block', fontWeight: 600, color: '#242424', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    rowMeta: { display: 'block', fontSize: 12, color: '#616161', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    pill: { fontSize: 12, fontWeight: 600, padding: '2px 8px', borderRadius: 999, flexShrink: 0 },
+    detail: { display: 'flex', flexDirection: 'column', gap: 14 },
+    previewLabel: { fontSize: 14, fontWeight: 600, display: 'block', marginBottom: 6 },
+    preview: {
+        border: '1px solid #e0e0e0',
+        borderRadius: 8,
+        padding: 16,
+        overflow: 'auto',
+        background: '#ffffff',
+        maxHeight: 420
+    },
+    section: { border: '1px solid #e0e0e0', borderRadius: 8, padding: '16px 16px 4px', marginBottom: 16 },
+    sectionTitle: { margin: '0 0 2px', fontSize: 16, fontWeight: 600, color: '#242424' },
+    sectionDesc: { margin: '0 0 14px', fontSize: 12, color: '#616161' },
+    fieldHint: { margin: '-6px 0 14px', fontSize: 12, color: '#616161', lineHeight: '18px' },
+    footer: { display: 'flex', gap: 8 }
+});
+const EmailCenterPanel = (props) => {
+    const { isOpen, isAdmin, entryId, onDismiss } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EmailCenter;
+    const m = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.MockEmailPanel;
+    const [entries, setEntries] = react__WEBPACK_IMPORTED_MODULE_0__.useState(_services_EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.getAll());
+    const [tab, setTab] = react__WEBPACK_IMPORTED_MODULE_0__.useState('outbox');
+    const [selectedId, setSelectedId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(entryId);
+    // Outbox detail editor
+    const [editTo, setEditTo] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [editSubject, setEditSubject] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [sending, setSending] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [sendError, setSendError] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    // Settings
+    const [settings, setSettings] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [draft, setDraft] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [adminRecipientsText, setAdminRecipientsText] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [savingSettings, setSavingSettings] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [settingsMessage, setSettingsMessage] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [previewMode, setPreviewMode] = react__WEBPACK_IMPORTED_MODULE_0__.useState(_services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.getPreviewMode());
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.subscribe(() => setEntries(_services_EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.getAll())), []);
+    // Every time the panel opens: jump to the requested email (or the list) and re-read the settings.
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        if (!isOpen)
+            return;
+        setTab('outbox');
+        setSelectedId(entryId);
+        setSettingsMessage(undefined);
+        _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.refresh()
+            .then(loaded => {
+            setSettings(loaded);
+            setDraft(loaded);
+            setAdminRecipientsText(loaded.testAdminRecipients.join(', '));
+        })
+            .catch(() => undefined);
+    }, [isOpen, entryId]);
+    const selected = selectedId ? entries.find(e => e.id === selectedId) : undefined;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        if (selected) {
+            setEditTo(selected.to.join(', '));
+            setEditSubject(selected.subject);
+            setSendError(undefined);
+        }
+    }, [selected?.id]);
+    const send = async () => {
+        if (!selected)
+            return;
+        const current = await _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.get();
+        if (!current.enabled) {
+            setSendError(s.SendBlockedOff);
+            return;
+        }
+        const recipients = (0,_services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.parseRecipients)(editTo);
+        if (recipients.length === 0) {
+            setSendError(s.RecipientsRequired);
+            return;
+        }
+        setSending(true);
+        setSendError(undefined);
+        try {
+            await _services_EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.sendMail(recipients, editSubject, selected.body);
+        }
+        catch (e) {
+            setSendError(e && e.message ? e.message : String(e));
+        }
+        finally {
+            setSending(false);
+            // The attempt is now the newest outbox entry; show it so its result is visible.
+            const newest = _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.getAll()[0];
+            if (newest && newest.id !== selected.id)
+                setSelectedId(newest.id);
+        }
+    };
+    const adminRecipients = (0,_services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.parseRecipients)(adminRecipientsText);
+    const managerRecipientValid = !!draft && (0,_services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.parseRecipients)(draft.testManagerRecipient).length === 1;
+    const settingsInvalid = !!draft && draft.testMode && (adminRecipients.length === 0 || !managerRecipientValid);
+    const settingsDirty = !!draft && !!settings && (draft.enabled !== settings.enabled ||
+        draft.testMode !== settings.testMode ||
+        draft.testManagerRecipient.trim() !== settings.testManagerRecipient ||
+        adminRecipients.join(',') !== settings.testAdminRecipients.join(','));
+    const saveSettings = async () => {
+        if (!draft)
+            return;
+        setSavingSettings(true);
+        setSettingsMessage(undefined);
+        try {
+            const saved = await _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.save({ ...draft, testAdminRecipients: adminRecipients });
+            setSettings(saved);
+            setDraft(saved);
+            setAdminRecipientsText(saved.testAdminRecipients.join(', '));
+            setSettingsMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success, text: s.SettingsSaved });
+        }
+        catch (e) {
+            setSettingsMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.SettingsSaveFailed, e && e.message ? e.message : String(e)) });
+        }
+        finally {
+            setSavingSettings(false);
+        }
+    };
+    const previewOptions = [
+        { key: 'never', text: s.PreviewModeNever },
+        { key: 'failure', text: s.PreviewModeFailure },
+        { key: 'always', text: s.PreviewModeAlways }
+    ];
+    const renderStatusBanners = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        settings && !settings.enabled && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, className: css.banner }, s.StatusOff)),
+        settings && settings.enabled && settings.testMode && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.info, className: css.banner }, s.StatusTestMode))));
+    const renderOutboxList = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.muted }, s.OutboxSessionNote),
+            entries.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.ActionButton, { iconProps: { iconName: 'Clear' }, text: s.ClearOutbox, onClick: () => _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.clear() }))),
+        entries.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "Mail", className: css.emptyIcon }),
+            s.OutboxEmpty)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.list }, entries.map((entry, index) => {
+            const st = STATUS_STYLE[entry.status];
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: entry.id, className: index > 0 ? css.rowDivider : undefined },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: css.row, onClick: () => setSelectedId(entry.id) },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.statusDot, style: { backgroundColor: st.soft, color: st.color } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: st.icon })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.rowText },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.rowSubject }, entry.subject),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.rowMeta },
+                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.ToLabel, entry.to.join(', ')),
+                            " \u00B7 ",
+                            formatTime(entry.timestamp))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.pill, style: { backgroundColor: st.soft, color: st.color } }, statusLabel(entry.status)))));
+        })))));
+    const renderDetail = (entry) => {
+        const time = formatTime(entry.timestamp);
+        let banner;
+        if (entry.status === 'failed') {
+            banner = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.DetailFailed, time, entry.error || ''));
+        }
+        else if (entry.status === 'skipped') {
+            banner = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.DetailSkipped, time));
+        }
+        else if (entry.method === 'spUtility') {
+            banner = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.DetailSentFallback, time));
+        }
+        else {
+            banner = react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.DetailSent, time));
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.detail },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.ActionButton, { iconProps: { iconName: 'Back' }, text: s.BackToOutbox, onClick: () => setSelectedId(undefined), disabled: sending })),
+            banner,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.TextField, { label: m.LabelRecipients, value: editTo, onChange: (_, v) => setEditTo(v || ''), required: true, disabled: sending, iconProps: { iconName: 'Mail' } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.TextField, { label: m.LabelSubject, value: editSubject, onChange: (_, v) => setEditSubject(v || ''), required: true, disabled: sending }),
+            sendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error },
+                m.ErrorPrefix,
+                " ",
+                sendError)),
+            sending && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ProgressIndicator, { label: m.ProgressLabel }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.previewLabel }, m.PreviewLabel),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.preview, dangerouslySetInnerHTML: { __html: entry.body } }))));
+    };
+    const renderSettings = () => {
+        if (!draft)
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ProgressIndicator, { label: s.SettingsLoading });
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            settingsMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.MessageBar, { messageBarType: settingsMessage.type, onDismiss: () => setSettingsMessage(undefined), className: css.banner }, settingsMessage.text)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { className: css.section },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.sectionTitle }, s.SectionDelivery),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.sectionDesc }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.SectionDeliveryDesc, (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.appSettings)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Toggle, { label: s.ToggleEnabled, checked: draft.enabled, onText: s.ToggleOn, offText: s.ToggleOff, onChange: (_, checked) => setDraft({ ...draft, enabled: !!checked }), disabled: savingSettings }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Toggle, { label: s.ToggleTestMode, checked: draft.testMode, onText: s.ToggleOn, offText: s.ToggleOff, onChange: (_, checked) => setDraft({ ...draft, testMode: !!checked }), disabled: savingSettings }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.fieldHint }, s.TestModeDesc),
+                draft.testMode && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.TextField, { label: s.LabelTestAdminRecipients, value: adminRecipientsText, placeholder: s.RecipientsPlaceholder, onChange: (_, v) => setAdminRecipientsText(v || ''), errorMessage: adminRecipients.length === 0 ? s.RecipientsRequired : undefined, disabled: savingSettings, required: true }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.TextField, { label: s.LabelTestManagerRecipient, value: draft.testManagerRecipient, placeholder: "name@company.com", onChange: (_, v) => setDraft({ ...draft, testManagerRecipient: v || '' }), errorMessage: !managerRecipientValid ? s.RecipientsRequired : undefined, disabled: savingSettings, required: true, styles: { root: { marginTop: 8, marginBottom: 12 } } }))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: 12 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: s.SaveSettings, iconProps: { iconName: 'Save' }, onClick: () => { saveSettings().catch(() => undefined); }, disabled: !settingsDirty || settingsInvalid || savingSettings })),
+                savingSettings && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ProgressIndicator, null)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { className: css.section },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.sectionTitle }, s.SectionBrowser),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.ChoiceGroup, { label: s.PreviewModeLabel, selectedKey: previewMode, options: previewOptions, onChange: (_, option) => {
+                        if (!option)
+                            return;
+                        const mode = option.key;
+                        setPreviewMode(mode);
+                        _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.setPreviewMode(mode);
+                    }, styles: { root: { marginBottom: 12 } } }))));
+    };
+    const showingDetail = tab === 'outbox' && !!selected;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.Panel, { isOpen: isOpen, onDismiss: onDismiss, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PanelType.medium, headerText: s.Title, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Close, isFooterAtBottom: true, onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.footer },
+            showingDetail && selected && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: sending ? m.ButtonSending : selected.status === 'sent' ? s.SendAgain : s.SendNow, iconProps: { iconName: 'Send' }, onClick: () => { send().catch(() => undefined); }, disabled: sending || !editTo.trim() || !editSubject.trim() })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.DefaultButton, { text: m.ButtonClose, onClick: onDismiss, disabled: sending }))) },
+        renderStatusBanners(),
+        isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_20__.Pivot, { selectedKey: tab, onLinkClick: item => item && setTab(item.props.itemKey), styles: { root: { marginBottom: 12 } } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.PivotItem, { headerText: s.TabOutbox, itemKey: "outbox", itemIcon: "Mail", itemCount: entries.length || undefined }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.PivotItem, { headerText: s.TabSettings, itemKey: "settings", itemIcon: "Settings" }))),
+        tab === 'settings' && isAdmin
+            ? renderSettings()
+            : selected ? renderDetail(selected) : renderOutboxList()));
 };
 
 
@@ -1983,7 +2329,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 27006);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
+/* harmony import */ var _utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/NexerPdfReport */ 3279);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../InventoryManagement.module.scss */ 99623);
@@ -2008,9 +2354,9 @@ const IncidentHistory = (props) => {
     const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     const [toastNotification, setToastNotification] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const triggerToast = (message, title = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastIncidentUpdatedTitle) => {
-        setToastNotification({ message, title });
-        setTimeout(() => setToastNotification(null), 4000);
+    const triggerToast = (message, title = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastIncidentUpdatedTitle, isError = false) => {
+        setToastNotification({ message, title, isError });
+        setTimeout(() => setToastNotification(null), isError ? 8000 : 4000);
     };
     const getPriorityBadgeStyle = (priority) => {
         const p = priority || 'Medium';
@@ -2142,111 +2488,41 @@ const IncidentHistory = (props) => {
     };
     const handleDownloadReport = (incident) => {
         try {
-            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.jsPDF();
-            // Top header banner
-            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-            doc.rect(0, 0, 210, 25, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(16);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfCompanyHeader, 14, 16);
-            // Document Title
-            doc.setTextColor(51, 65, 85); // Slate 700
-            doc.setFontSize(14);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfIncidentReportTitle, 14, 38);
-            // Metadata
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9);
-            doc.text((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
-            // Separator line
-            doc.setDrawColor(226, 232, 240); // Slate 200
-            doc.line(14, 48, 196, 48);
-            // Specifications Section Title
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfIncidentSpecs, 14, 58);
-            // Render Specifications Key-Value grid
-            let y = 68;
-            const printField = (label, value) => {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(9);
-                doc.setTextColor(100, 116, 139); // Slate 500
-                doc.text(label, 14, y);
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(15, 23, 42); // Slate 900
-                doc.text(value, 55, y);
-                y += 8;
-            };
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfIncidentIdLabel, incident.incidentId);
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfAssetNameLabel, incident.assetName);
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfIssueTypeLabel, incident.issueType);
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfPriorityLabel, incident.priority || "Medium");
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfCurrentStatusLabel, incident.status || "Open");
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfReportedDateLabel, new Date(incident.reportedDate).toLocaleString());
-            if (incident.assignedTo) {
-                printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfAssignedToLabel, incident.assignedTo);
-            }
-            if (incident.resolvedDate) {
-                printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfResolvedDateLabel, new Date(incident.resolvedDate).toLocaleString());
-            }
-            // Issue Description Title
-            y += 4;
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.setTextColor(51, 65, 85);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfIssueDescriptionTitle, 14, y);
-            y += 6;
-            // Issue Description Box
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9.5);
-            doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(incident.issueDescription || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfNoDescription, 170);
-            const descHeight = splitDesc.length * 6 + 10;
-            // Draw background box
-            doc.setFillColor(248, 250, 252); // slate 50
-            doc.setDrawColor(226, 232, 240); // slate 200
-            doc.rect(14, y, 182, descHeight, 'FD');
-            // Draw left accent bar
-            doc.setFillColor(100, 116, 139); // slate 500
-            doc.rect(14, y, 3, descHeight, 'F');
-            // Draw text
-            let textY = y + 8;
-            splitDesc.forEach((line) => {
-                doc.text(line, 22, textY);
-                textY += 6;
+            const h = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory;
+            const fields = [
+                { label: h.PdfIncidentIdLabel, value: incident.incidentId },
+                { label: h.PdfCurrentStatusLabel, value: incident.status || 'Open' },
+                { label: h.PdfAssetNameLabel, value: (incident.assetName || '').trim() },
+                { label: h.PdfPriorityLabel, value: incident.priority || 'Medium' },
+                { label: h.PdfIssueTypeLabel, value: incident.issueType },
+                { label: h.PdfReportedDateLabel, value: (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(incident.reportedDate) }
+            ];
+            if (incident.assignedTo)
+                fields.push({ label: h.PdfAssignedToLabel, value: incident.assignedTo });
+            if (incident.resolvedDate)
+                fields.push({ label: h.PdfResolvedDateLabel, value: (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(incident.resolvedDate) });
+            const sections = [
+                { title: h.PdfIssueDescriptionTitle, text: incident.issueDescription || h.PdfNoDescription }
+            ];
+            if (incident.resolution)
+                sections.push({ title: h.PdfResolutionSummaryTitle, text: incident.resolution, tone: 'positive' });
+            (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.saveNexerReport)({
+                documentType: h.PdfIncidentReportTitle,
+                reference: incident.incidentId || incident.id,
+                heading: (incident.assetName || '').trim() || incident.incidentId,
+                subheading: [incident.issueType, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(incident.reportedDate, false)].filter(Boolean).join('  ·  '),
+                status: incident.status || 'Open',
+                fieldsTitle: h.PdfIncidentSpecs,
+                fields,
+                sections,
+                productName: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Hero.Title,
+                generatedText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(h.PdfGeneratedOn, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || ''),
+                fileName: `incident-${incident.incidentId || incident.id}.pdf`
             });
-            y += descHeight + 10;
-            // Resolution Details (if resolved/closed)
-            if (incident.resolution) {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(11);
-                doc.setTextColor(51, 65, 85);
-                doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
-                y += 6;
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(22, 101, 52); // green 800
-                const splitRes = doc.splitTextToSize(incident.resolution, 170);
-                const resHeight = splitRes.length * 6 + 10;
-                // Draw green background box
-                doc.setFillColor(240, 253, 244); // green 50
-                doc.setDrawColor(220, 252, 231); // green 200
-                doc.rect(14, y, 182, resHeight, 'FD');
-                // Draw green left accent bar
-                doc.setFillColor(22, 101, 52); // green 800
-                doc.rect(14, y, 3, resHeight, 'F');
-                // Draw resolution text
-                let resTextY = y + 8;
-                splitRes.forEach((line) => {
-                    doc.text(line, 22, resTextY);
-                    resTextY += 6;
-                });
-            }
-            doc.save(`incident-${incident.incidentId}.pdf`);
         }
         catch (error) {
             console.error('Error generating PDF report:', error);
+            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfDownloadFailed, incident.incidentId || incident.id), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfDownloadFailedTitle, true);
         }
     };
     const columns = [
@@ -2257,7 +2533,9 @@ const IncidentHistory = (props) => {
             minWidth: 90,
             maxWidth: 120,
             isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.incidentId),
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.incidentId),
+                item.isLocalOnly && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LocalOnlyTooltip, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LocalOnlyTooltip, style: { display: 'inline-block', marginTop: 2, padding: '0 6px', borderRadius: 999, fontSize: 11, fontWeight: 600, lineHeight: '18px', color: '#8a3707', background: '#fff4ce' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LocalOnlyTag)))),
         },
         {
             key: 'assetName',
@@ -2423,7 +2701,7 @@ const IncidentHistory = (props) => {
                 padding: '14px 18px',
                 borderRadius: '12px',
                 boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06)',
-                borderLeft: '5px solid #10b981',
+                borderLeft: `5px solid ${toastNotification.isError ? '#c50f1f' : '#10b981'}`,
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px',
@@ -2434,13 +2712,13 @@ const IncidentHistory = (props) => {
                     width: '32px',
                     height: '32px',
                     borderRadius: '50%',
-                    backgroundColor: '#dcfce7',
+                    backgroundColor: toastNotification.isError ? '#fde7e9' : '#dcfce7',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0
                 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "Accept", style: { color: '#166534', fontSize: '15px', fontWeight: 'bold' } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: toastNotification.isError ? 'ErrorBadge' : 'Accept', style: { color: toastNotification.isError ? '#c50f1f' : '#166534', fontSize: '15px', fontWeight: 'bold' } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' } }, toastNotification.title || 'Success'),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' } }, toastNotification.message)),
@@ -2964,34 +3242,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AssetForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AssetForm */ 5652);
 /* harmony import */ var _RequestForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RequestForm */ 28333);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
-/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 52394);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! chart.js */ 55277);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
-/* harmony import */ var _services_EmailService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/EmailService */ 86407);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../pages */ 56330);
-/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
-/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
-/* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-/* harmony import */ var _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/LanguageSwitcherService */ 69898);
-/* harmony import */ var _utils_getNotifications__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../utils/getNotifications */ 7327);
-/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../utils/ReportExportUtils */ 61238);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../pages */ 56330);
+/* harmony import */ var _IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./IncidentRequest/IncidentRequestModule */ 19581);
+/* harmony import */ var _AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./AssetLifecycleDiagram */ 29643);
+/* harmony import */ var _WorkflowPopup__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./WorkflowPopup */ 48235);
+/* harmony import */ var _EmailCenterPanel__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./EmailCenterPanel */ 35097);
+/* harmony import */ var _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/EmailOutbox */ 4779);
+/* harmony import */ var _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/EmailSettingsService */ 85324);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../services/LanguageSwitcherService */ 69898);
+/* harmony import */ var _utils_getNotifications__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../utils/getNotifications */ 7327);
+/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../utils/ReportExportUtils */ 61238);
 
 
 
@@ -3019,17 +3292,35 @@ chart_js__WEBPACK_IMPORTED_MODULE_9__.Chart.register(chart_js__WEBPACK_IMPORTED_
 
 
 
+
+
+// Translucent buttons in the blue header (Notifications, Email), matching the language picker.
+const HERO_BUTTON_STYLES = {
+    root: { minWidth: 0, height: 32, padding: '0 12px', backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
+    rootHovered: { backgroundColor: 'rgba(255,255,255,0.25)', color: '#ffffff' },
+    rootPressed: { backgroundColor: 'rgba(255,255,255,0.3)', color: '#ffffff' },
+    icon: { color: '#ffffff' },
+    iconHovered: { color: '#ffffff' },
+    iconPressed: { color: '#ffffff' },
+    label: { fontWeight: 600 }
+};
+const HERO_BADGE_STYLE = {
+    marginLeft: 8, minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, color: '#ffffff',
+    fontSize: 11, fontWeight: 700, lineHeight: '18px', textAlign: 'center', boxSizing: 'border-box',
+    boxShadow: '0 0 0 1px rgba(255,255,255,0.6)'
+};
+const formatBadgeCount = (count) => (count > 99 ? '99+' : String(count));
 class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     constructor(props) {
         super(props);
         this._getRoleDisplayLabel = (role) => {
             switch (role) {
                 case 'Admin':
-                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Roles.Admin;
+                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Roles.Admin;
                 case 'Inventory Manager':
-                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Roles.InventoryManager;
+                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Roles.InventoryManager;
                 case 'Inventory Employee':
-                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Roles.InventoryEmployee;
+                    return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Roles.InventoryEmployee;
                 default:
                     return role;
             }
@@ -3084,7 +3375,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             return !!(isAssigned || isNoted || isStatus);
         };
         this._getNotifications = () => {
-            return (0,_utils_getNotifications__WEBPACK_IMPORTED_MODULE_22__.getNotifications)({
+            return (0,_utils_getNotifications__WEBPACK_IMPORTED_MODULE_24__.getNotifications)({
                 items: this.state.items,
                 requests: this.state.requests,
                 returnRequests: this.state.returnRequests,
@@ -3095,10 +3386,56 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 clearedNotificationIds: this.state.clearedNotificationIds
             });
         };
+        this._saveNotificationIds = (key, ids) => {
+            try {
+                localStorage.setItem(key, JSON.stringify(ids));
+            }
+            catch {
+                // Storage unavailable (private window, blocked site data): the change lasts until reload.
+            }
+        };
         this._markNotificationAsRead = (id) => {
+            if (this.state.readNotificationIds.indexOf(id) >= 0)
+                return;
             const readNotificationIds = [...this.state.readNotificationIds, id];
             this.setState({ readNotificationIds });
-            localStorage.setItem('inventory_read_notifications', JSON.stringify(readNotificationIds));
+            this._saveNotificationIds('inventory_read_notifications', readNotificationIds);
+        };
+        this._markNotificationAsUnread = (id) => {
+            const readNotificationIds = this.state.readNotificationIds.filter(x => x !== id);
+            this.setState({ readNotificationIds });
+            this._saveNotificationIds('inventory_read_notifications', readNotificationIds);
+        };
+        this._clearNotifications = (ids) => {
+            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...ids]));
+            this.setState({ clearedNotificationIds });
+            this._saveNotificationIds('inventory_cleared_notifications', clearedNotificationIds);
+        };
+        this._restoreNotifications = (ids) => {
+            const restore = new Set(ids);
+            const clearedNotificationIds = this.state.clearedNotificationIds.filter(x => !restore.has(x));
+            this.setState({ clearedNotificationIds });
+            this._saveNotificationIds('inventory_cleared_notifications', clearedNotificationIds);
+        };
+        this._openPage = (pageKey) => {
+            this.setState({ selectedTabKey: pageKey });
+        };
+        /**
+         * "Clear" on the All tab used to set a permanent flag that hid every notification,
+         * including ones that arrived later. Convert it once into dismissing the notifications
+         * that exist now, so new ones show up again.
+         */
+        this._migrateClearedAllFlag = () => {
+            if (!this.state.isAllNotificationsCleared)
+                return;
+            this._clearNotifications(this._getNotifications().map(x => x.id));
+            this.setState({ isAllNotificationsCleared: false });
+            try {
+                localStorage.removeItem('inventory_cleared_all_tab');
+            }
+            catch {
+                // ignore
+            }
         };
         this._markAllNotificationsAsRead = () => {
             const notifications = this._getNotifications();
@@ -3140,47 +3477,27 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             this.setState(prev => ({ languageVersion: prev.languageVersion + 1 }));
         };
         this._onLanguageSelect = (languageCode) => {
-            (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.setLanguage)(languageCode);
+            (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.setLanguage)(languageCode);
         };
+        // Every email attempt lands here. Whether the Email Center opens by itself is the
+        // viewer's choice (Email Center > Settings > On this browser).
         this._handleMockEmailSent = (ev) => {
-            this.setState({
-                lastMockEmail: ev.detail,
-                editMockEmailTo: ev.detail.to.join(', '),
-                editMockEmailSubject: ev.detail.subject,
-                isSendingMockEmail: false,
-                mockEmailSendError: undefined,
-                mockEmailSendSuccess: false
-            });
+            if (this.state.emailCenterOpen)
+                return; // Already open: don't pull the user away from what they're viewing.
+            const mode = _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_20__.EmailSettingsService.getPreviewMode();
+            const status = ev.detail && ev.detail.status;
+            if (mode === 'always' || (mode === 'failure' && status === 'failed')) {
+                this.setState({ emailCenterOpen: true, emailCenterEntryId: ev.detail.outboxId });
+            }
+        };
+        this._openEmailCenter = () => {
+            this.setState({ emailCenterOpen: true, emailCenterEntryId: undefined });
         };
         this._handleEmailSendFailed = (ev) => {
             this.setState({
                 syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
-                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.warning
+                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.warning
             });
-        };
-        this._onSendMockEmail = async () => {
-            const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
-            if (!lastMockEmail)
-                return;
-            this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
-            try {
-                const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
-                await _services_EmailService__WEBPACK_IMPORTED_MODULE_14__.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
-                this.setState({
-                    isSendingMockEmail: false,
-                    mockEmailSendSuccess: true
-                });
-                setTimeout(() => {
-                    this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
-                }, 2000);
-            }
-            catch (e) {
-                console.error("Failed to send email from panel:", e);
-                this.setState({
-                    isSendingMockEmail: false,
-                    mockEmailSendError: e.message || JSON.stringify(e)
-                });
-            }
         };
         this._resolveUserRole = async () => {
             try {
@@ -3331,7 +3648,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     selectedAssetForReturn: undefined,
                     returnRequestsLoading: false,
                     syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success,
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success,
                     workflowPopup: {
                         isOpen: true,
                         title: 'Asset Return Request Submitted',
@@ -3414,9 +3731,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         title: 'New Inventory Asset Created',
                         stage: 'Catalog Management',
                         type: 'success',
-                        message: `Asset "${newAssetData.title || newAssetData.assetName}" was successfully added to stock inventory.`,
+                        message: `Asset "${newAssetData.assetName || newAssetData.title}" was successfully added to stock inventory.`,
                         details: {
-                            assetTitle: newAssetData.title || newAssetData.assetName,
+                            assetTitle: newAssetData.assetName || newAssetData.title,
                             status: 'In Stock',
                             date: newAssetData.purchaseDate || new Date().toISOString().split('T')[0]
                         }
@@ -3490,7 +3807,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             }
         };
         this._onApproveRequest = async (request, comment = '') => {
-            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_24__.getAvailableStock)(this.state.items, request);
+            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_26__.getAvailableStock)(this.state.items, request);
             const requestedQuantity = Number(request.quantity || 0);
             if (availableStock < requestedQuantity) {
                 this.setState({
@@ -3650,13 +3967,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
                 });
                 const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3666,7 +3983,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
                 });
             }
         };
@@ -3675,35 +3992,35 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
                 });
                 const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
                 });
             }
         };
         this._exportWarrantyReportToExcel = () => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportWarrantyReportToExcel)(this.state.items);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportWarrantyReportToExcel)(this.state.items);
         };
         this._exportWarrantyReportToPDF = () => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportWarrantyReportToPDF)(this.state.items);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportWarrantyReportToPDF)(this.state.items);
         };
         this._exportDetailedReportToExcel = (filteredItems) => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportDetailedReportToExcel)(filteredItems);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportDetailedReportToExcel)(filteredItems);
         };
         this._exportDetailedReportToPDF = (filteredItems) => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_21__.exportDetailedReportToPDF)(filteredItems);
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportDetailedReportToPDF)(filteredItems);
         };
         this._onAdminAssetChange = (event, option) => {
             if (option) {
@@ -3857,16 +4174,19 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 type: 'info',
                 message: ''
             },
-            lastMockEmail: undefined,
-            editMockEmailTo: '',
-            editMockEmailSubject: '',
-            isSendingMockEmail: false,
-            mockEmailSendError: undefined,
-            mockEmailSendSuccess: false
+            emailCenterOpen: false,
+            emailCenterEntryId: undefined,
+            emailFailedCount: _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_19__.EmailOutbox.getFailedCount()
         };
     }
     async componentDidMount() {
-        this._unsubscribeLanguageChange = (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.onLanguageChange)(this._onLanguageChanged);
+        this._unsubscribeLanguageChange = (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.onLanguageChange)(this._onLanguageChanged);
+        // Keeps the failed-email badge on the Email button current.
+        this._unsubscribeEmailOutbox = _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_19__.EmailOutbox.subscribe(() => {
+            const failed = _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_19__.EmailOutbox.getFailedCount();
+            if (failed !== this.state.emailFailedCount)
+                this.setState({ emailFailedCount: failed });
+        });
         await this._resolveUserRole();
         await this._loadReturnRequests();
         // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
@@ -3879,6 +4199,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         await this._loadInventory();
         await this._loadRequests();
         await this._loadAuditLogs();
+        this._migrateClearedAllFlag();
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
             await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
@@ -3899,6 +4220,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         }
         if (this._unsubscribeLanguageChange) {
             this._unsubscribeLanguageChange();
+        }
+        if (this._unsubscribeEmailOutbox) {
+            this._unsubscribeEmailOutbox();
         }
     }
     render() {
@@ -3921,31 +4245,32 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         const visibleAdminRequests = filterRequests(adminQueueRequests);
         const visibleManagerRequests = filterRequests(managerQueueRequests);
         const notifications = this._getNotifications();
+        const unreadNotificationCount = notifications.filter(n => !n.isRead).length;
         const navItems = [
-            { key: 'Dashboard', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Dashboard, icon: 'BarChart4', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupMain },
-            { key: 'MyWorkspace', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.MyWorkspace, icon: 'Briefcase' },
+            { key: 'Dashboard', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Dashboard, icon: 'BarChart4', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.GroupMain },
+            { key: 'MyWorkspace', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.MyWorkspace, icon: 'Briefcase' },
             {
                 key: 'Notifications',
-                text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Notifications,
+                text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications,
                 icon: 'Ringer',
-                badge: notifications.filter(n => !n.isRead).length || undefined,
+                badge: unreadNotificationCount || undefined,
                 badgeColor: '#0078d4'
             },
-            { key: 'IncidentHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.IncidentHistory, icon: 'History' },
-            { key: 'ReplacementHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.ReplacementHistory, icon: 'Sync' },
+            { key: 'IncidentHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.IncidentHistory, icon: 'History' },
+            { key: 'ReplacementHistory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.ReplacementHistory, icon: 'Sync' },
             ...(isAdmin || isManager ? [
-                { key: 'Inventory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Inventory, icon: 'List', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupManagement }
+                { key: 'Inventory', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Inventory, icon: 'List', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.GroupManagement }
             ] : []),
             ...(isManager ? [
-                { key: 'Approvals', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Approvals, icon: 'DoubleChevronRight12', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupManagement }
+                { key: 'Approvals', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Approvals, icon: 'DoubleChevronRight12', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.GroupManagement }
             ] : []),
             ...(isAdmin ? [
-                { key: 'AssetAssignmentQueue', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.AssetAssignmentQueue, icon: 'Send', ...(isManager ? {} : { group: undefined }) }
+                { key: 'AssetAssignmentQueue', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.AssetAssignmentQueue, icon: 'Send', ...(isManager ? {} : { group: undefined }) }
             ] : []),
             ...(isAdmin || isManager ? [
                 {
                     key: 'AssetReturns',
-                    text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.AssetReturns,
+                    text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.AssetReturns,
                     icon: 'ReturnToSession',
                     badge: this.state.returnRequests.filter(r => {
                         if (isAdmin)
@@ -3956,13 +4281,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     }).length || undefined,
                     badgeColor: '#ea580c'
                 },
-                { key: 'Onboarding', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Features.NavOnboarding, icon: 'People' }
+                { key: 'Onboarding', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Features.NavOnboarding, icon: 'People' }
             ] : []),
             ...(isAdmin ? [
-                { key: 'EventStream', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.EventStream, icon: 'ActivityFeed', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.GroupSystem },
-                { key: 'Users', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Users, icon: 'People' },
-                { key: 'Reports', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Reports, icon: 'ReportDocument' },
-                { key: 'Config', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Config, icon: 'Settings' }
+                { key: 'EventStream', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.EventStream, icon: 'ActivityFeed', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.GroupSystem },
+                { key: 'Users', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Users, icon: 'People' },
+                { key: 'Reports', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Reports, icon: 'ReportDocument' },
+                { key: 'Config', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Config, icon: 'Settings' }
             ] : [])
         ];
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].inventoryManagement} ${hasTeamsContext ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].teams : ''} ${isDarkTheme ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dark : ''}` },
@@ -3970,34 +4295,45 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heroSection },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heroText },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.Title),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_25__.Dropdown, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.LanguageLabel, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.LanguageLabel, selectedKey: (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_20__.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
-                                    root: { minWidth: 130 },
-                                    title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
-                                    caretDown: { color: '#ffffff' }
-                                } })),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.WelcomeBack, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(activeUserDisplayName))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.Title),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, iconProps: { iconName: 'Ringer' }, onClick: () => this.setState({ selectedTabKey: 'Notifications' }), ariaLabel: unreadNotificationCount > 0
+                                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Notifications.OpenButtonUnreadAria, unreadNotificationCount)
+                                        : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, onRenderText: (p, defaultRender) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                                        defaultRender ? defaultRender(p) : null,
+                                        unreadNotificationCount > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-hidden": "true", style: { ...HERO_BADGE_STYLE, backgroundColor: '#0f6cbd' } }, formatBadgeCount(unreadNotificationCount))))), styles: HERO_BUTTON_STYLES }),
+                                isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButton, iconProps: { iconName: 'Mail' }, onClick: this._openEmailCenter, ariaLabel: this.state.emailFailedCount > 0
+                                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonFailedAria, this.state.emailFailedCount)
+                                        : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonAria, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonAria, onRenderText: (p, defaultRender) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                                        defaultRender ? defaultRender(p) : null,
+                                        this.state.emailFailedCount > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-hidden": "true", style: { ...HERO_BADGE_STYLE, backgroundColor: '#c50f1f' } }, formatBadgeCount(this.state.emailFailedCount))))), styles: HERO_BUTTON_STYLES })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Dropdown, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.LanguageLabel, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.LanguageLabel, selectedKey: (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
+                                        root: { minWidth: 130 },
+                                        title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
+                                        caretDown: { color: '#ffffff' }
+                                    } }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.WelcomeBack, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(activeUserDisplayName))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText },
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.RoleLabel.split('{0}')[0],
+                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.RoleLabel.split('{0}')[0],
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, this._getRoleDisplayLabel(effectiveRole))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText },
                             environmentMessage,
                             " \u2022 ",
-                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.LocationLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(description))),
-                        isAdmin && roleGroups.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.SharePointGroupsLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', ')))))),
+                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.LocationLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(description))),
+                        isAdmin && roleGroups.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.SharePointGroupsLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', ')))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_17__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_16__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.ErrorLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.ErrorLabel),
                     " ",
                     this.state.errorMessage,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.DismissError }, "\u00D7"))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { onClick: () => this.setState({ errorMessage: undefined }), style: { position: 'absolute', right: '15px', top: '12px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.1rem', color: '#991b1b' }, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.DismissError }, "\u00D7"))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].appLayoutContainer },
                     !this.state.sidebarCollapsed && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarOverlay, onClick: () => this.setState({ sidebarCollapsed: true }), role: "presentation" })),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.MainNavigation },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.MainNavigation },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navHeader },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Header),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Header),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
                         navItems.map((nav, index) => {
                             const isActive = this.state.selectedTabKey === nav.key;
                             const showGroupLabel = nav.group && (index === 0 || navItems[index - 1]?.group !== nav.group);
@@ -4009,23 +4345,23 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
-                                    nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
+                                    nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, formatBadgeCount(nav.badge))))));
                         }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Collapse, onKeyDown: (e) => {
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Collapse, onKeyDown: (e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
                                     e.preventDefault();
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.Collapse))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Collapse))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Nav.ToggleNavigation },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.Icon, { iconName: "GlobalNavButton" })),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Hero.Title)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.ToggleNavigation },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: "GlobalNavButton" })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.Title)),
                         (() => {
                             const dashboardState = {
                                 items: isAdmin || isManager ? items : myAssets,
@@ -4064,16 +4400,19 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 items,
                                 loading,
                                 isAdmin,
-                                isInventoryManager: isManager
+                                isInventoryManager: isManager,
+                                auditLogs,
+                                returnRequests: this.state.returnRequests,
+                                spContext: this.props.spContext
                             };
                             const inventoryActions = {
                                 onOpenAssetForm: () => this.setState({ isAssetFormOpen: true })
                             };
                             switch (this.state.selectedTabKey) {
                                 case 'Dashboard':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.DashboardPage, { state: dashboardState, actions: dashboardActions }));
                                 case 'MyWorkspace':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.MyWorkspacePage, { state: {
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.MyWorkspacePage, { state: {
                                             myAssets,
                                             myRequests,
                                             myReturnRequests: this.state.returnRequests.filter(r => this._isRequestOwnedByCurrentUser(r.requesterName || '', activeUserDisplayName || ''))
@@ -4084,20 +4423,25 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onAssetReplacement: (item) => this.setState({ selectedAssetForIncident: item, isIncidentFormOpen: true, preselectedIncidentType: 'Replacement Request' })
                                         } }));
                                 case 'Notifications':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.NotificationsPage, { state: {
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.NotificationsPage, { state: {
                                             notifications,
-                                            isAllNotificationsCleared: this.state.isAllNotificationsCleared
+                                            isAllNotificationsCleared: this.state.isAllNotificationsCleared,
+                                            availablePages: navItems.map(nav => ({ key: nav.key, text: nav.text }))
                                         }, actions: {
                                             onMarkAsRead: this._markNotificationAsRead,
                                             onMarkAllAsRead: this._markAllNotificationsAsRead,
                                             onClearNotification: this._clearNotification,
                                             onClearAllNotifications: this._clearAllNotifications,
-                                            onNotificationAction: this._handleNotificationAction
+                                            onNotificationAction: this._handleNotificationAction,
+                                            onMarkAsUnread: this._markNotificationAsUnread,
+                                            onClearNotifications: this._clearNotifications,
+                                            onRestoreNotifications: this._restoreNotifications,
+                                            onOpenPage: this._openPage
                                         } }));
                                 case 'IncidentHistory':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
                                 case 'ReplacementHistory':
-                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ReplacementHistoryPage, { ...this.props, state: {
+                                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.ReplacementHistoryPage, { ...this.props, state: {
                                             userDisplayName: activeUserDisplayName,
                                             userEmail: activeUserEmail,
                                             userRole: effectiveRole
@@ -4105,9 +4449,9 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             setIsLoading: (loading) => this.setState({ loading })
                                         } }));
                                 case 'Inventory':
-                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
+                                    return (isAdmin || isManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.InventoryPage, { state: inventoryState, actions: inventoryActions })) : null;
                                 case 'Approvals':
-                                    return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ApprovalsPage, { state: {
+                                    return isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.ApprovalsPage, { state: {
                                             requestSearchId,
                                             managerQueueRequests,
                                             visibleManagerRequests,
@@ -4119,9 +4463,10 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onRejectRequest: this._onRejectRequest
                                         } })) : null;
                                 case 'AssetAssignmentQueue':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.AssetAssignmentQueuePage, { state: {
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.AssetAssignmentQueuePage, { state: {
                                             requestSearchId,
                                             visibleAdminRequests,
+                                            allAdminRequests: adminQueueRequests,
                                             items: this.state.items,
                                             requestActionInProgressId
                                         }, actions: {
@@ -4129,7 +4474,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onSelectRequestForAssignment: (request) => this.setState({ selectedAdminRequest: request, isAdminPanelOpen: true, adminSelectedAssetId: undefined, adminComment: '' })
                                         } })) : null;
                                 case 'AssetReturns':
-                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.AssetReturnsPage, { state: {
+                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.AssetReturnsPage, { state: {
                                             returnRequests: this.state.returnRequests,
                                             returnRequestsLoading: this.state.returnRequestsLoading,
                                             isAdmin,
@@ -4138,7 +4483,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             onUpdateStatus: this._onUpdateReturnRequestStatus
                                         } })) : null;
                                 case 'Onboarding':
-                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.OnboardingPage, { state: {
+                                    return isAdmin || isManager ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.OnboardingPage, { state: {
                                             items: this.state.items,
                                             returnRequests: this.state.returnRequests,
                                             currentUserName: activeUserDisplayName,
@@ -4152,7 +4497,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             }
                                         } })) : null;
                                 case 'EventStream':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.EventStreamPage, { state: {
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.EventStreamPage, { state: {
                                             auditLogs,
                                             auditLogsLoading,
                                             effectiveRole,
@@ -4160,7 +4505,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             auditLogsRefreshTrigger: this.state.auditLogsRefreshTrigger
                                         } })) : null;
                                 case 'Users':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.UsersPage, { state: {
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.UsersPage, { state: {
                                             employees: this.state.employees,
                                             items,
                                             activeUserDisplayName,
@@ -4172,7 +4517,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             isAssetAssignedToCurrentUser: this._isAssetAssignedToCurrentUser
                                         } })) : null;
                                 case 'Reports':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
                                 case 'Config': {
                                     const configState = {
                                         configSelectedTab: this.state.configSelectedTab,
@@ -4187,7 +4532,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                         onDismissSyncMessage: () => this.setState({ syncMessage: undefined }),
                                         onTabChange: (tabKey) => this.setState({ configSelectedTab: tabKey })
                                     };
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.ConfigPage, { state: configState, actions: configActions })) : null;
+                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.ConfigPage, { state: configState, actions: configActions })) : null;
                                 }
                                 default:
                                     return null;
@@ -4195,32 +4540,36 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_6__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
             (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_7__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_16__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_15__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
                     this.setState({
                         workflowPopup: {
                             isOpen: true,
-                            title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.Title,
-                            stage: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.Stage,
+                            title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Title,
+                            stage: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Stage,
                             type: 'warning',
-                            message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
+                            message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
                             details: {
                                 assetTitle: details.assetName,
                                 requesterName: details.requesterName,
-                                status: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.IncidentSuccessPopup.StatusOpenTicket,
+                                status: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.StatusOpenTicket,
                                 date: new Date().toISOString().split('T')[0]
                             }
                         }
                     });
                 } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.NotificationDetailsPanel, { state: {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.NotificationDetailsPanel, { state: {
                     selectedNotification: this.state.selectedNotification,
                     isNotificationDetailsOpen: this.state.isNotificationDetailsOpen,
                     items: this.state.items,
-                    requests: this.state.requests
+                    requests: this.state.requests,
+                    availablePages: navItems.map(nav => ({ key: nav.key, text: nav.text }))
                 }, actions: {
-                    onDismiss: () => this.setState({ isNotificationDetailsOpen: false })
+                    onDismiss: () => this.setState({ isNotificationDetailsOpen: false }),
+                    onOpenPage: this._openPage,
+                    onMarkAsUnread: this._markNotificationAsUnread,
+                    onDismissNotification: this._clearNotification
                 } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_15__.AdminAssignmentPanel, { state: {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.AdminAssignmentPanel, { state: {
                     selectedAdminRequest: this.state.selectedAdminRequest,
                     isAdminPanelOpen: this.state.isAdminPanelOpen,
                     items: this.state.items,
@@ -4236,22 +4585,8 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     onReject: this._handleAdminReject
                 } }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReturnAssetForm__WEBPACK_IMPORTED_MODULE_8__.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_18__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_28__.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_29__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.Common.Close, onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.PrimaryButton, { text: this.state.isSendingMockEmail ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ButtonSending : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ButtonSendEmail, onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_32__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ButtonClose, onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.InfoText),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.LabelRecipients, value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_34__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.LabelSubject, value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
-                this.state.mockEmailSendSuccess && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.success }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.SuccessText)),
-                this.state.mockEmailSendError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_33__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_23__.MessageBarType.error },
-                    InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ErrorPrefix,
-                    " ",
-                    this.state.mockEmailSendError)),
-                this.state.isSendingMockEmail && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_35__.ProgressIndicator, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.ProgressLabel })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_19__.MockEmailPanel.PreviewLabel),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_WorkflowPopup__WEBPACK_IMPORTED_MODULE_17__.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EmailCenterPanel__WEBPACK_IMPORTED_MODULE_18__.EmailCenterPanel, { isOpen: this.state.emailCenterOpen, isAdmin: isAdmin, entryId: this.state.emailCenterEntryId, onDismiss: () => this.setState({ emailCenterOpen: false, emailCenterEntryId: undefined }) })));
     }
 }
 
@@ -4814,22 +5149,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 21314);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 /* harmony import */ var _utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/RequestStatusUtils */ 88899);
+/* harmony import */ var _RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RejectionReasonCard */ 94735);
 
 
 
@@ -4838,6 +5174,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const isDeclinedStatus = (status) => status === 'Declined' || status === 'Rejected';
 const MyRequestsView = (props) => {
     const { requests, returnRequests = [] } = props;
     // Search and Filter States (Asset Requests)
@@ -4991,8 +5329,8 @@ const MyRequestsView = (props) => {
         }
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Pivot, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.PivotAriaLabel },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.TabAssetRequests, itemIcon: "Send", itemCount: metrics.total },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Pivot, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.PivotAriaLabel },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.TabAssetRequests, itemIcon: "Send", itemCount: metrics.total },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricsRow },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem },
@@ -5012,19 +5350,19 @@ const MyRequestsView = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: metrics.declined > 0 ? '#dc2626' : 'var(--text-muted)' } }, metrics.declined))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filtersRow },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].searchField },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.SearchAssetRequestsPlaceholder, value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.SearchAssetRequestsPlaceholder, value: searchQuery, onChange: (e, val) => setSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { options: [
                                     { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Dropdowns.AuditLogStatus.All },
                                     ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: selectedStatus, onChange: (e, option) => setSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { options: [
                                     { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.AllPrioritiesOption },
                                     ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.ASSET_REQUEST_PRIORITY_OPTIONS
                                 ], selectedKey: selectedPriority, onChange: (e, option) => setSelectedPriority(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Reset, iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Reset, iconProps: { iconName: 'ClearFilter' }, onClick: () => {
                                     setSearchQuery('');
                                     setSelectedStatus('All');
                                     setSelectedPriority('All');
@@ -5096,7 +5434,7 @@ const MyRequestsView = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '14px 14px 6px 14px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.requestKey || `REQ-${item.id.substring(0, 6)}`),
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.RequestedPrefix, item.requestDate))),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.RequestedPrefix, item.requestDate))),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: statusBg, color: statusText, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600 } }, displayStatus)),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.82rem', color: 'var(--text-main)' } },
@@ -5112,8 +5450,9 @@ const MyRequestsView = (props) => {
                                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ManagerLabel,
                                     " ",
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main)' } }, item.managerName))),
-                                item.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ReasonPrefix, item.reason))),
-                                item.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                item.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ReasonPrefix, item.reason))),
+                                item.managerResponse && isDeclinedStatus(status) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__.RejectionReasonCard, { reason: item.managerResponse, compact: true })),
+                                item.managerResponse && !isDeclinedStatus(status) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                                         backgroundColor: status === 'Declined' ? '#fef2f2' : '#f8fafc',
                                         borderRadius: '4px',
                                         padding: '4px 8px',
@@ -5128,12 +5467,12 @@ const MyRequestsView = (props) => {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: adminAllocationColor, fontWeight: 500 } }, adminAllocationText),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: priorityBg, color: priorityColor, padding: '2px 6px', borderRadius: '3px', fontSize: '0.68rem', fontWeight: 500 } }, priority))),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.ViewDetails, onClick: () => { setSelectedRequest(item); setIsPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.ViewDetails, onClick: () => { setSelectedRequest(item); setIsPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
                     }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyAssetRequestsTitle),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyFilterHint))))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.TabReturnRequests, itemIcon: "ReturnToSession", itemCount: returnMetrics.total },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "DatabaseNoData", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyAssetRequestsTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyFilterHint))))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.TabReturnRequests, itemIcon: "ReturnToSession", itemCount: returnMetrics.total },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricsRow },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].metricItem, style: { minWidth: '90px' } },
@@ -5157,14 +5496,14 @@ const MyRequestsView = (props) => {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.4rem', fontWeight: 600, color: returnMetrics.rejected > 0 ? '#dc2626' : 'var(--text-muted)' } }, returnMetrics.rejected))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filtersRow },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].searchField },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.TextField, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.SearchReturnRequestsPlaceholder, value: returnSearchQuery, onChange: (e, val) => setReturnSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.TextField, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.SearchReturnRequestsPlaceholder, value: returnSearchQuery, onChange: (e, val) => setReturnSearchQuery(val || ''), iconProps: { iconName: 'Search' }, underlined: true })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].filterDropdown, style: { width: '150px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { options: [
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { options: [
                                     { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Dropdowns.AuditLogStatus.All },
                                     ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_2__.RETURN_REQUEST_STATUS_OPTIONS
                                 ], selectedKey: returnSelectedStatus, onChange: (e, option) => setReturnSelectedStatus(option ? option.key : 'All'), styles: { root: { selectors: { '.ms-Dropdown-title': { border: 'none', borderBottom: '1px solid #a1a1a1', background: 'transparent', paddingLeft: 0 } } } } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Reset, iconProps: { iconName: 'ClearFilter' }, onClick: () => {
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Reset, iconProps: { iconName: 'ClearFilter' }, onClick: () => {
                                     setReturnSearchQuery('');
                                     setReturnSelectedStatus('All');
                                 }, style: { height: '30px', border: 'none', background: 'transparent' } }))),
@@ -5204,15 +5543,15 @@ const MyRequestsView = (props) => {
                             }, className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].assetCardHover },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '14px 14px 6px 14px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'flex-start' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "ReturnToSession", style: { fontSize: '14px', color: 'var(--text-muted)', marginTop: '2px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ReturnToSession", style: { fontSize: '14px', color: 'var(--text-muted)', marginTop: '2px' } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)' } }, item.assetName),
-                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.SubmittedPrefix, item.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.NotAvailable, item.requestDate)))),
+                                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.72rem', color: 'var(--text-muted)' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.SubmittedPrefix, item.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.NotAvailable, item.requestDate)))),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { backgroundColor: statusBg, color: statusColor, padding: '2px 8px', borderRadius: '4px', fontSize: '0.68rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: statusIcon, style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: statusIcon, style: { fontSize: '10px' } }),
                                     displayReturnStatus)),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '4px 14px 12px 14px', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' } },
-                                item.returnReason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ReasonPrefix, item.returnReason))),
+                                item.returnReason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ReasonPrefix, item.returnReason))),
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', borderTop: '1px solid rgba(0, 0, 0, 0.04)', paddingTop: '6px' } },
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                                         InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelProposedCondition,
@@ -5232,20 +5571,20 @@ const MyRequestsView = (props) => {
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', marginBottom: '2px', color: 'var(--text-main)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ManagerNotesLabel),
                                     item.managerComment)),
                                 item.status === 'Pending' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#b06000' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "Clock", style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Clock", style: { fontSize: '10px' } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.AwaitingManagerReview))),
                                 item.status === 'Approved' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.72rem', color: '#1558d6' } },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "Info", style: { fontSize: '10px' } }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Info", style: { fontSize: '10px' } }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.HandoverToItTeam)))),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '8px 14px 10px 14px', display: 'flex', gap: '6px', borderTop: '1px solid rgba(0, 0, 0, 0.04)', alignItems: 'center' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.ViewDetails, onClick: () => { setSelectedReturnRequest(item); setIsReturnPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.ViewDetails, onClick: () => { setSelectedReturnRequest(item); setIsReturnPanelOpen(true); }, style: { height: '24px', padding: '0 8px', fontSize: '0.72rem', borderRadius: '4px', border: '1px solid #e0e0e0', width: '100%' } }))));
                     }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { textAlign: 'center', padding: '30px 10px', backgroundColor: 'var(--surface-bg)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.08)' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "ReturnToSession", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyReturnRequestsTitle),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, returnRequests.length === 0
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "ReturnToSession", style: { fontSize: '32px', color: 'var(--text-muted)', marginBottom: '8px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Text, { variant: "medium", block: true, style: { fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyReturnRequestsTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Text, { variant: "small", style: { color: 'var(--text-muted)' } }, returnRequests.length === 0
                             ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyReturnRequestsHint
                             : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.EmptyFilterHint)))))),
-        selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: isPanelOpen, onDismiss: () => { setIsPanelOpen(false); setSelectedRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.DetailsHeaderPrefix, selectedRequest.requestKey || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.FallbackAssetRequest), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close },
+        selectedRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Panel, { isOpen: isPanelOpen, onDismiss: () => { setIsPanelOpen(false); setSelectedRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.DetailsHeaderPrefix, selectedRequest.requestKey || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.FallbackAssetRequest), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGrid, style: { backgroundColor: '#f1f5f9', padding: '15px', borderRadius: '8px', fontSize: '0.88rem' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -5283,16 +5622,18 @@ const MyRequestsView = (props) => {
                                 color: selectedRequest.status === 'Approved' ? '#137333' : selectedRequest.status === 'Declined' ? '#c5221f' : '#b06000',
                                 padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600
                             } }, (0,_utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_4__.getAssetRequestStatusDisplayText)(selectedRequest.status)),
-                        selectedRequest.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: '#475569' } },
+                        selectedRequest.managerResponse && !isDeclinedStatus(selectedRequest.status) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: '#475569' } },
                             "- \u201C",
                             selectedRequest.managerResponse,
-                            "\u201D")))),
+                            "\u201D"))),
+                    isDeclinedStatus(selectedRequest.status) && selectedRequest.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: 12 } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__.RejectionReasonCard, { reason: selectedRequest.managerResponse, managerName: selectedRequest.managerName, decidedAt: selectedRequest.managerDecisionAt })))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.AdminAllocationStatusTitle),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } }, selectedRequest.status === 'Approved' ? ((selectedRequest.assetStatus || '').toLowerCase().includes('approv') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#137333', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.RequestList.AllocationAllocated)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b06000', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.RequestList.AllocationPendingAdmin))) : selectedRequest.status === 'Declined' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#c5221f' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.RequestList.AllocationNotApplicable)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', fontStyle: 'italic' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.RequestList.AllocationPendingManager)))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close, onClick: () => { setIsPanelOpen(false); setSelectedRequest(null); } }))))),
-        selectedReturnRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Panel, { isOpen: isReturnPanelOpen, onDismiss: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ReturnRequestDetailsPrefix, selectedReturnRequest.assetName), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '25px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close, onClick: () => { setIsPanelOpen(false); setSelectedRequest(null); } }))))),
+        selectedReturnRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Panel, { isOpen: isReturnPanelOpen, onDismiss: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.ReturnRequestDetailsPrefix, selectedReturnRequest.assetName), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' } },
                 (() => {
                     const { bg, color } = getReturnStatusStyle(selectedReturnRequest.status);
@@ -5306,7 +5647,7 @@ const MyRequestsView = (props) => {
                         'Completed': InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.MyRequests.StatusCompletedMsg
                     };
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: bg, padding: '12px 15px', borderRadius: '8px', display: 'flex', gap: '10px', alignItems: 'flex-start' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: icon, style: { fontSize: '20px', color, marginTop: '2px' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: icon, style: { fontSize: '20px', color, marginTop: '2px' } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color, display: 'block', marginBottom: '2px' } }, (0,_utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_4__.getReturnRequestStatusDisplayText)(selectedReturnRequest.status)),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color } }, statusMessages[selectedReturnRequest.status] || ''))));
@@ -5353,10 +5694,10 @@ const MyRequestsView = (props) => {
                                 width: '20px', height: '20px', borderRadius: '50%', flexShrink: 0,
                                 backgroundColor: step.done ? '#16a34a' : '#e2e8f0',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center'
-                            } }, step.done && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "CheckMark", style: { fontSize: '10px', color: '#ffffff' } })),
+                            } }, step.done && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { fontSize: '10px', color: '#ffffff' } })),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: step.done ? '#166534' : '#94a3b8', fontWeight: step.done ? 600 : 400 } }, step.label))))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '10px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close, onClick: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); } })))))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { marginTop: '10px', borderTop: '1px solid #e2e8f0', paddingTop: '15px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close, onClick: () => { setIsReturnPanelOpen(false); setSelectedReturnRequest(null); } })))))));
 };
 
 
@@ -5377,174 +5718,561 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 44533);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 18008);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 44533);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/NotificationUtils */ 43087);
 
 
 
 
+
+
+const PAGE_SIZE = 25;
+const GROUP_ORDER = ['today', 'yesterday', 'week', 'older'];
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_3__.mergeStyleSets)({
+    root: { marginTop: 8, color: 'var(--text-main, #242424)' },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, flexWrap: 'wrap', marginBottom: 16 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    headerActions: { display: 'flex', gap: 4, flexWrap: 'wrap' },
+    toolbar: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 16 },
+    chips: { display: 'flex', gap: 8, flexWrap: 'wrap' },
+    chip: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 6,
+        height: 32,
+        padding: '0 12px',
+        borderRadius: 16,
+        border: '1px solid rgba(0, 0, 0, 0.14)',
+        background: 'var(--surface-bg, #ffffff)',
+        color: 'var(--text-main, #242424)',
+        font: 'inherit',
+        fontSize: 13,
+        fontWeight: 600,
+        cursor: 'pointer',
+        selectors: {
+            ':hover': { borderColor: 'rgba(0, 0, 0, 0.3)' },
+            ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: 2 }
+        }
+    },
+    chipActive: {
+        background: '#0f6cbd',
+        borderColor: '#0f6cbd',
+        color: '#ffffff',
+        selectors: { ':hover': { borderColor: '#0f6cbd' } }
+    },
+    chipCount: {
+        minWidth: 20,
+        height: 20,
+        padding: '0 6px',
+        borderRadius: 10,
+        fontSize: 11,
+        lineHeight: '20px',
+        textAlign: 'center',
+        boxSizing: 'border-box',
+        background: 'rgba(0, 0, 0, 0.06)'
+    },
+    chipCountActive: { background: 'rgba(255, 255, 255, 0.25)' },
+    search: { width: 260, maxWidth: '100%' },
+    card: {
+        background: 'var(--surface-bg, #ffffff)',
+        border: '1px solid rgba(0, 0, 0, 0.1)',
+        borderRadius: 12,
+        overflow: 'hidden',
+        boxShadow: 'var(--card-shadow, 0 1px 2px rgba(0, 0, 0, 0.06))'
+    },
+    groupLabel: {
+        margin: 0,
+        padding: '10px 20px',
+        fontSize: 12,
+        fontWeight: 600,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+        color: 'var(--text-muted, #616161)',
+        background: 'rgba(0, 0, 0, 0.025)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.06)'
+    },
+    list: { listStyle: 'none', margin: 0, padding: 0 },
+    row: {
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: 14,
+        padding: '14px 12px 14px 20px',
+        cursor: 'pointer',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
+        selectors: {
+            ':hover': { background: 'rgba(0, 0, 0, 0.03)' },
+            ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 },
+            ':hover .notif-actions, :focus-within .notif-actions': { opacity: 1 }
+        }
+    },
+    rowUnread: { background: 'rgba(15, 108, 189, 0.05)' },
+    unreadDot: { position: 'absolute', left: 7, top: 26, width: 8, height: 8, borderRadius: '50%', background: '#0f6cbd' },
+    iconWrap: {
+        width: 36,
+        height: 36,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        fontSize: 16
+    },
+    body: { flex: 1, minWidth: 0 },
+    titleLine: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
+    rowTitle: { fontSize: 14, lineHeight: '20px' },
+    pill: {
+        fontSize: 11,
+        fontWeight: 600,
+        padding: '1px 8px',
+        borderRadius: 999,
+        color: 'var(--text-muted, #616161)',
+        border: '1px solid rgba(0, 0, 0, 0.12)'
+    },
+    message: {
+        margin: '2px 0 0',
+        fontSize: 13,
+        lineHeight: '20px',
+        color: 'var(--text-muted, #424242)',
+        display: '-webkit-box',
+        WebkitLineClamp: 2,
+        WebkitBoxOrient: 'vertical',
+        overflow: 'hidden'
+    },
+    openLink: { display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 6, fontSize: 13, fontWeight: 600 },
+    side: { display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2, flexShrink: 0 },
+    time: { fontSize: 12, color: 'var(--text-muted, #616161)', whiteSpace: 'nowrap', paddingRight: 8, lineHeight: '20px' },
+    actions: { display: 'flex', opacity: 0.55, transition: 'opacity 0.15s ease' },
+    showMore: { display: 'flex', justifyContent: 'center', padding: 8 },
+    empty: { textAlign: 'center', padding: '56px 24px' },
+    emptyIcon: {
+        width: 56,
+        height: 56,
+        margin: '0 auto 14px',
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 24,
+        color: '#0f6cbd',
+        background: 'rgba(15, 108, 189, 0.1)'
+    },
+    emptyTitle: { margin: '0 0 4px', fontSize: 16, fontWeight: 600 },
+    emptyText: { margin: 0, fontSize: 14, color: 'var(--text-muted, #616161)' },
+    undo: { marginBottom: 12 }
+});
 const NotificationCenter = (props) => {
+    const n = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications;
     const [filter, setFilter] = react__WEBPACK_IMPORTED_MODULE_0__.useState('All');
-    const containerStackTokens = { childrenGap: 15 };
-    const itemStackTokens = { childrenGap: 10 };
-    const getFilterCategoryLabel = (filterKey) => {
-        switch (filterKey) {
-            case 'Request':
-                return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.CategoryRequests;
-            case 'Assignment':
-                return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.CategoryAssignments;
-            case 'Audit':
-                return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.CategoryAudits;
-            case 'All':
-            default:
-                return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.CategoryAll;
-        }
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [limit, setLimit] = react__WEBPACK_IMPORTED_MODULE_0__.useState(PAGE_SIZE);
+    const [undo, setUndo] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const undoTimer = react__WEBPACK_IMPORTED_MODULE_0__.useRef();
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => () => window.clearTimeout(undoTimer.current), []);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setLimit(PAGE_SIZE), [filter, search]);
+    const all = props.isAllCleared ? [] : props.notifications;
+    const counts = {
+        All: all.length,
+        Unread: all.filter(x => !x.isRead).length,
+        Request: all.filter(x => x.category === 'Request').length,
+        Assignment: all.filter(x => x.category === 'Assignment').length,
+        Audit: all.filter(x => x.category === 'Audit').length
     };
-    const handleFilterClick = (item) => {
-        if (item) {
-            setFilter(item.props.itemKey || 'All');
-        }
-    };
-    const filteredNotifications = props.notifications.filter(n => {
-        if (filter === 'All')
-            return !props.isAllCleared;
-        if (filter === 'Request' && n.category === 'Request')
-            return true;
-        if (filter === 'Assignment' && n.category === 'Assignment')
-            return true;
-        if (filter === 'Audit' && n.category === 'Audit')
-            return true;
-        return false;
+    const query = search.trim().toLowerCase();
+    const filtered = all.filter(x => {
+        if (filter === 'Unread' && x.isRead)
+            return false;
+        if ((filter === 'Request' || filter === 'Assignment' || filter === 'Audit') && x.category !== filter)
+            return false;
+        return !query || `${x.title} ${x.message}`.toLowerCase().indexOf(query) >= 0;
     });
-    const unreadCount = filteredNotifications.filter(n => !n.isRead).length;
-    const getTypeStyles = (type) => {
-        switch (type) {
-            case 'success':
-                return {
-                    backgroundColor: '#f0fdf4',
-                    borderColor: '#22c55e',
-                    iconName: 'StatusCircleCheckmark',
-                    iconColor: '#16a34a'
-                };
-            case 'warning':
-                return {
-                    backgroundColor: '#fff7ed',
-                    borderColor: '#f97316',
-                    iconName: 'Warning',
-                    iconColor: '#ea580c'
-                };
-            case 'error':
-                return {
-                    backgroundColor: '#fef2f2',
-                    borderColor: '#ef4444',
-                    iconName: 'ErrorBadge',
-                    iconColor: '#dc2626'
-                };
-            case 'info':
-            default:
-                return {
-                    backgroundColor: '#eff6ff',
-                    borderColor: '#3b82f6',
-                    iconName: 'Info',
-                    iconColor: '#2563eb'
-                };
+    const shown = filtered.slice(0, limit);
+    const now = new Date();
+    const groups = GROUP_ORDER
+        .map(group => ({ group, items: shown.filter(x => (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.getDateGroup)(x.timestamp, now) === group) }))
+        .filter(g => g.items.length > 0);
+    const showUndo = (ids) => {
+        if (!props.onRestoreNotifications)
+            return;
+        setUndo({ ids });
+        window.clearTimeout(undoTimer.current);
+        undoTimer.current = window.setTimeout(() => setUndo(undefined), 8000);
+    };
+    const dismiss = (id) => {
+        props.onClearNotification(id);
+        showUndo([id]);
+    };
+    const dismissShown = () => {
+        const ids = filtered.map(x => x.id);
+        if (ids.length === 0)
+            return;
+        if (props.onClearNotifications) {
+            props.onClearNotifications(ids);
+            showUndo(ids);
+        }
+        else {
+            props.onClearAllNotifications(filter === 'Unread' ? 'All' : filter);
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: containerStackTokens, style: { marginTop: '20px', padding: '5px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, horizontalAlign: "space-between", verticalAlign: "center", styles: { root: { flexWrap: 'wrap', gap: '10px' } } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Pivot, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.FilterAriaLabel, selectedKey: filter, onLinkClick: handleFilterClick, styles: { root: { marginBottom: 0 } } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.TabAll, itemKey: "All" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.TabRequests, itemKey: "Request" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.TabAssignments, itemKey: "Assignment" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.TabSystemAlerts, itemKey: "Audit" })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                unreadCount > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { iconProps: { iconName: 'CheckMark' }, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.MarkAllAsRead, onClick: props.onMarkAllAsRead, styles: { root: { borderRadius: '6px' } } })),
-                filteredNotifications.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { iconProps: { iconName: 'Clear' }, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.ClearFiltered, onClick: () => props.onClearAllNotifications(filter), styles: { root: { borderRadius: '6px', color: '#b91c1c' } } })))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { tokens: itemStackTokens }, filteredNotifications.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '50px 20px',
-                backgroundColor: 'var(--surface-color, #ffffff)',
-                borderRadius: '8px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                border: '1px solid #e5e7eb',
-                textAlign: 'center'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "Ringer", style: { fontSize: '48px', color: '#9ca3af', marginBottom: '15px' } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 5px 0', color: '#1f2937' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.AllCaughtUpTitle),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, color: '#6b7280', fontSize: '0.85rem' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.EmptyStateMessage, getFilterCategoryLabel(filter))))) : (filteredNotifications.map((notif) => {
-            const styles = getTypeStyles(notif.type);
-            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: notif.id, style: {
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    padding: '16px',
-                    backgroundColor: notif.isRead ? 'var(--surface-color, #ffffff)' : styles.backgroundColor,
-                    borderLeft: `4px solid ${styles.borderColor}`,
-                    borderRadius: '6px',
-                    boxShadow: notif.isRead ? '0 1px 2px rgba(0,0,0,0.05)' : '0 2px 4px rgba(0,0,0,0.08)',
-                    borderTop: '1px solid #f3f4f6',
-                    borderRight: '1px solid #f3f4f6',
-                    borderBottom: '1px solid #f3f4f6',
-                    transition: 'all 0.2s ease',
-                    position: 'relative',
-                    gap: '12px'
-                } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: styles.iconName, style: {
-                        fontSize: '20px',
-                        color: styles.iconColor,
-                        marginTop: '2px'
-                    } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flexGrow: 1 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827', fontSize: '0.95rem' } }, notif.title),
-                            !notif.isRead && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                    width: '8px',
-                                    height: '8px',
-                                    backgroundColor: '#ef4444',
-                                    borderRadius: '50%',
-                                    display: 'inline-block',
-                                    boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)'
-                                } }))),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.75rem', color: '#6b7280', whiteSpace: 'nowrap' } }, notif.timestamp)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '0 0 10px 0', color: '#4b5563', fontSize: '0.88rem', lineHeight: '1.4' } }, notif.message),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_2__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.ViewDetails, onClick: () => props.onNotificationAction(notif.actionLink, notif.id), styles: {
-                                root: {
-                                    height: '28px',
-                                    borderRadius: '4px',
-                                    fontSize: '0.75rem',
-                                    padding: '0 12px'
-                                }
-                            } }),
-                        !notif.isRead && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.MarkAsRead, onClick: () => props.onMarkAsRead(notif.id), styles: {
-                                root: {
-                                    height: '28px',
-                                    borderRadius: '4px',
-                                    fontSize: '0.75rem',
-                                    padding: '0 12px'
-                                }
-                            } })))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.IconButton, { iconProps: { iconName: 'Cancel' }, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.DismissNotification, ariaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications.DismissNotification, onClick: () => props.onClearNotification(notif.id), styles: {
-                        root: {
-                            color: '#9ca3af',
-                            marginTop: '-8px',
-                            marginRight: '-8px'
-                        },
-                        rootHovered: {
-                            color: '#4b5563',
-                            backgroundColor: 'rgba(0,0,0,0.03)'
-                        }
-                    } })));
-        })))));
+    const open = (x) => props.onNotificationAction(x.actionLink, x.id);
+    const filters = [
+        { key: 'All', label: n.TabAll },
+        { key: 'Unread', label: n.FilterUnread },
+        { key: 'Request', label: n.TabRequests },
+        { key: 'Assignment', label: n.TabAssignments },
+        { key: 'Audit', label: n.TabSystemAlerts }
+    ];
+    const subtitle = counts.Unread === 0
+        ? n.NoUnreadSummary
+        : counts.Unread === 1 ? n.UnreadSummaryOne : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(n.UnreadSummary, counts.Unread);
+    const renderEmpty = () => {
+        let title = n.AllCaughtUpTitle;
+        let text = (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(n.EmptyStateMessage, filters.filter(f => f.key === filter)[0].label);
+        if (query) {
+            title = n.NoSearchResultsTitle;
+            text = (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(n.NoSearchResults, search.trim());
+        }
+        else if (filter === 'Unread') {
+            text = n.EmptyUnread;
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.emptyIcon },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: query ? 'Search' : 'Ringer' })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.emptyTitle }, title),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.emptyText }, text)));
+    };
+    const renderRow = (x) => {
+        const tone = (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.getNotificationTone)(x.type);
+        const page = (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.getNotificationPage)(x, props.availablePages);
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: x.id, className: `${css.row} ${x.isRead ? '' : css.rowUnread}`, onClick: () => open(x), onKeyDown: e => {
+                if (e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    open(x);
+                }
+            }, tabIndex: 0, role: "button", "aria-label": `${x.isRead ? '' : n.FilterUnread + ': '}${x.title}. ${x.message}` },
+            !x.isRead && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.unreadDot, "aria-hidden": "true" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.iconWrap, style: { backgroundColor: tone.soft, color: tone.color }, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: tone.icon })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.body },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.titleLine },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.rowTitle, style: { fontWeight: x.isRead ? 400 : 600 } }, x.title),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.pill }, (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.getCategoryLabel)(x.category))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.message }, x.message),
+                page && props.onOpenPage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Link, { className: css.openLink, onClick: e => {
+                        e.stopPropagation();
+                        props.onMarkAsRead(x.id);
+                        props.onOpenPage(page.key);
+                    } },
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(n.OpenPage, page.text),
+                    " ",
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "ChevronRight", style: { fontSize: 10 } })))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.side },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.time, title: (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.formatFullTime)(x.timestamp) }, (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.formatRelativeTime)(x.timestamp, now)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${css.actions} notif-actions`, onClick: e => e.stopPropagation() },
+                    x.isRead ? (props.onMarkAsUnread && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Mail' }, title: n.MarkAsUnread, ariaLabel: n.MarkAsUnread, onClick: () => props.onMarkAsUnread(x.id) }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Read' }, title: n.MarkAsRead, ariaLabel: n.MarkAsRead, onClick: () => props.onMarkAsRead(x.id) })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, title: n.DismissNotification, ariaLabel: n.DismissNotification, onClick: () => dismiss(x.id) })))));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.title }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Nav.Notifications),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.subtitle }, subtitle)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.headerActions },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.ActionButton, { iconProps: { iconName: 'CheckMark' }, text: n.MarkAllAsRead, onClick: props.onMarkAllAsRead, disabled: counts.Unread === 0 }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.ActionButton, { iconProps: { iconName: 'Clear' }, text: n.DismissShown, onClick: dismissShown, disabled: filtered.length === 0 }))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.chips, role: "group", "aria-label": n.FilterAriaLabel }, filters.map(f => {
+                const active = f.key === filter;
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: f.key, type: "button", className: `${css.chip} ${active ? css.chipActive : ''}`, "aria-pressed": active, onClick: () => setFilter(f.key) },
+                    f.label,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${css.chipCount} ${active ? css.chipCountActive : ''}` }, counts[f.key])));
+            })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.SearchBox, { className: css.search, placeholder: n.SearchPlaceholder, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') })),
+        undo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.MessageBar, { className: css.undo, messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBarType.info, onDismiss: () => setUndo(undefined), dismissButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Close, actions: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.ActionButton, { iconProps: { iconName: 'Undo' }, text: n.Undo, onClick: () => {
+                    if (props.onRestoreNotifications)
+                        props.onRestoreNotifications(undo.ids);
+                    setUndo(undefined);
+                } }), isMultiline: false }, undo.ids.length === 1 ? n.DismissedOne : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(n.DismissedMany, undo.ids.length))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.card }, filtered.length === 0 ? renderEmpty() : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            groups.map(g => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { key: g.group, "aria-label": (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.getDateGroupLabel)(g.group) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.groupLabel }, (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_2__.getDateGroupLabel)(g.group)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.list }, g.items.map(renderRow))))),
+            filtered.length > shown.length && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.showMore },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.ActionButton, { iconProps: { iconName: 'ChevronDown' }, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(n.ShowMore, filtered.length - shown.length), onClick: () => setLimit(limit + PAGE_SIZE) }))))))));
+};
+
+
+/***/ }),
+
+/***/ 19342:
+/*!****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/RejectRequestDialog.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   RejectRequestDialog: () => (/* binding */ RejectRequestDialog)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Modal */ 76702);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 44533);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Utilities */ 88370);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+
+
+
+
+
+
+
+
+
+
+const MAX_LENGTH = 500;
+const RED = '#c50f1f';
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__.mergeStyleSets)({
+    main: {
+        width: 'min(520px, calc(100vw - 32px))',
+        maxWidth: 'none',
+        minHeight: 0,
+        borderRadius: 12,
+        overflow: 'hidden',
+        boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.04)'
+    },
+    scrollable: { overflowY: 'auto', maxHeight: 'calc(100vh - 48px)' },
+    accent: { height: 4, background: RED },
+    header: { display: 'flex', alignItems: 'flex-start', gap: 16, padding: '20px 16px 0 24px' },
+    iconWrap: {
+        width: 44,
+        height: 44,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        fontSize: 20,
+        color: RED,
+        background: '#fde7e9'
+    },
+    heading: { flex: 1, minWidth: 0, paddingTop: 2 },
+    stage: { display: 'block', fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: RED, marginBottom: 4 },
+    title: { margin: 0, fontSize: 20, fontWeight: 600, lineHeight: '28px', color: '#242424' },
+    body: { padding: '16px 24px 0', display: 'flex', flexDirection: 'column', gap: 16 },
+    summary: { margin: 0, padding: '4px 16px', borderRadius: 8, border: '1px solid #e0e0e0', background: '#fafafa' },
+    row: {
+        display: 'grid',
+        gridTemplateColumns: 'minmax(96px, 34%) 1fr',
+        gap: 16,
+        padding: '8px 0',
+        fontSize: 13,
+        selectors: { ':not(:last-child)': { borderBottom: '1px solid #ebebeb' } }
+    },
+    label: { margin: 0, color: '#616161' },
+    value: { margin: 0, color: '#242424', fontWeight: 600, wordBreak: 'break-word' },
+    quote: { margin: 0, color: '#424242', fontWeight: 400, fontStyle: 'italic', wordBreak: 'break-word' },
+    note: { display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 12, color: '#616161', lineHeight: '18px' },
+    error: { fontSize: 13, color: RED },
+    footer: { display: 'flex', justifyContent: 'flex-end', gap: 8, padding: 24 }
+});
+/** Structured replacement for the old browser prompt: a reason category plus a message to the employee. */
+const RejectRequestDialog = (props) => {
+    const { request, onConfirm, onDismiss } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RejectDialog;
+    const [titleId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(() => (0,_fluentui_react_lib_Utilities__WEBPACK_IMPORTED_MODULE_3__.getId)('rejectDialogTitle'));
+    const [category, setCategory] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
+    const [details, setDetails] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [touched, setTouched] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [submitting, setSubmitting] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    // Fresh form for every request opened.
+    const requestId = request ? request.id : undefined;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        setCategory(undefined);
+        setDetails('');
+        setTouched(false);
+        setSubmitting(false);
+    }, [requestId]);
+    if (!request)
+        return null;
+    const categories = [
+        { key: 'notJustified', text: s.CategoryNotJustified },
+        { key: 'budget', text: s.CategoryBudget },
+        { key: 'duplicate', text: s.CategoryDuplicate },
+        { key: 'alreadyHas', text: s.CategoryAlreadyHas },
+        { key: 'unavailable', text: s.CategoryUnavailable },
+        { key: 'other', text: s.CategoryOther }
+    ];
+    const categoryText = category ? (categories.find(c => c.key === category) || { text: '' }).text : '';
+    const message = details.trim();
+    const valid = !!category && message.length > 0;
+    const submit = async () => {
+        setTouched(true);
+        if (!valid || submitting)
+            return;
+        setSubmitting(true);
+        try {
+            // Stored in the request's manager comment column, which the employee and managers already see.
+            await onConfirm(request, `${categoryText}: ${message}`);
+        }
+        finally {
+            setSubmitting(false);
+        }
+    };
+    const assetLine = request.quantity && request.quantity > 1 ? `${request.assetTitle} × ${request.quantity}` : request.assetTitle;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Modal__WEBPACK_IMPORTED_MODULE_4__.Modal, { isOpen: true, onDismiss: submitting ? undefined : onDismiss, isBlocking: true, titleAriaId: titleId, containerClassName: css.main, scrollableContentClassName: css.scrollable },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.accent }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.iconWrap, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Blocked2" })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.heading },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.stage }, s.Stage),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { id: titleId, className: css.title }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.Title, request.requestKey || `#${request.id}`))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__.IconButton, { iconProps: { iconName: 'Cancel' }, ariaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Close, onClick: onDismiss, disabled: submitting })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.body },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("dl", { className: css.summary },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.row },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: css.label }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelRequester),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: css.value }, request.requesterName)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.row },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: css.label }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelAsset),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: css.value }, assetLine)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.row },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: css.label }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.LabelRequestDate),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: css.value }, request.requestDate)),
+                request.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.row },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: css.label }, s.LabelEmployeeReason),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: css.quote },
+                        "\u201C",
+                        request.reason,
+                        "\u201D")))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: s.LabelCategory, placeholder: s.CategoryPlaceholder, options: categories, selectedKey: category, onChange: (_, option) => option && setCategory(option.key), errorMessage: touched && !category ? s.CategoryRequired : undefined, disabled: submitting, required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: s.LabelMessage, placeholder: s.MessagePlaceholder, multiline: true, rows: 4, maxLength: MAX_LENGTH, value: details, onChange: (_, v) => setDetails(v || ''), onBlur: () => setTouched(true), description: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.CharacterCount, details.length, MAX_LENGTH), errorMessage: touched && !message ? s.MessageRequired : undefined, disabled: submitting, required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.note },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Info", style: { marginTop: 2 } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, s.VisibilityNote))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.footer },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Cancel, onClick: onDismiss, disabled: submitting }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_11__.PrimaryButton, { text: submitting ? s.Rejecting : s.ConfirmButton, iconProps: { iconName: 'Blocked2' }, onClick: () => { submit().catch(() => undefined); }, disabled: submitting || (touched && !valid), styles: {
+                    root: { background: RED, borderColor: RED, borderRadius: 6 },
+                    rootHovered: { background: '#a4262c', borderColor: '#a4262c' },
+                    rootPressed: { background: '#8e1b22', borderColor: '#8e1b22' }
+                } }))));
+};
+
+
+/***/ }),
+
+/***/ 94735:
+/*!****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/RejectionReasonCard.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   RejectionReasonCard: () => (/* binding */ RejectionReasonCard)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+
+
+
+
+
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__.mergeStyleSets)({
+    card: {
+        border: '1px solid #f1bbbc',
+        borderLeft: '4px solid #c50f1f',
+        borderRadius: 8,
+        background: '#fdf3f4',
+        padding: '12px 14px',
+        color: '#242424'
+    },
+    compact: { padding: '6px 10px', borderRadius: 6 },
+    head: { display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontWeight: 600, color: '#a4262c' },
+    meta: { margin: '2px 0 0 22px', fontSize: 12, color: '#616161' },
+    tag: {
+        display: 'inline-block',
+        margin: '8px 0 0',
+        padding: '1px 8px',
+        borderRadius: 999,
+        fontSize: 11,
+        fontWeight: 600,
+        color: '#a4262c',
+        background: '#fde7e9'
+    },
+    text: { margin: '6px 0 0', fontSize: 13, lineHeight: '20px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' },
+    compactText: { margin: '2px 0 0', fontSize: 12, lineHeight: '18px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }
+});
+const categoryLabels = () => {
+    const d = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RejectDialog;
+    return [d.CategoryNotJustified, d.CategoryBudget, d.CategoryDuplicate, d.CategoryAlreadyHas, d.CategoryUnavailable, d.CategoryOther];
+};
+/** Splits "Budget not approved: message" into its category and message when the prefix is a known category. */
+const splitReason = (reason) => {
+    const at = reason.indexOf(': ');
+    if (at > 0) {
+        const prefix = reason.substring(0, at).trim();
+        if (categoryLabels().some(label => label.toLowerCase() === prefix.toLowerCase())) {
+            return { category: prefix, message: reason.substring(at + 2).trim() };
+        }
+    }
+    return { message: reason.trim() };
+};
+const formatDecisionDate = (iso) => {
+    if (!iso)
+        return undefined;
+    const d = new Date(iso);
+    return isNaN(d.getTime()) ? undefined : d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+};
+const RejectionReasonCard = ({ reason, managerName, decidedAt, compact }) => {
+    const r = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RejectDialog;
+    const { category, message } = splitReason(reason || '');
+    const date = formatDecisionDate(decidedAt);
+    const meta = managerName && date ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(r.RejectedByOn, managerName, date)
+        : managerName ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(r.RejectedBy, managerName)
+            : undefined;
+    if (compact) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${css.card} ${css.compact}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.head, style: { fontSize: 12 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Blocked2" }),
+                " ",
+                category ? `${r.ReasonTitle} · ${category}` : r.ReasonTitle),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.compactText }, message)));
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.card, role: "note", "aria-label": r.ReasonTitle },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.head },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: "Blocked2" }),
+            " ",
+            r.ReasonTitle),
+        meta && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.meta }, meta),
+        category && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tag }, category),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.text }, message)));
 };
 
 
@@ -5575,7 +6303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 27006);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jspdf */ 28339);
+/* harmony import */ var _utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/NexerPdfReport */ 3279);
 /* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
@@ -5726,108 +6454,37 @@ const ReplacementHistory = (props) => {
     };
     const handleDownloadReport = (rep) => {
         try {
-            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.jsPDF();
-            // Top header banner
-            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-            doc.rect(0, 0, 210, 25, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(16);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfCompanyHeader, 14, 16);
-            // Document Title
-            doc.setTextColor(51, 65, 85); // Slate 700
-            doc.setFontSize(14);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfReplacementReportTitle, 14, 38);
-            // Metadata
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9);
-            doc.text((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
-            // Separator line
-            doc.setDrawColor(226, 232, 240); // Slate 200
-            doc.line(14, 48, 196, 48);
-            // Specifications Section Title
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfReplacementSpecs, 14, 58);
-            // Render Specifications Key-Value grid
-            let y = 68;
-            const printField = (label, value) => {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(9);
-                doc.setTextColor(100, 116, 139); // Slate 500
-                doc.text(label, 14, y);
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(15, 23, 42); // Slate 900
-                doc.text(value, 55, y);
-                y += 8;
-            };
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfReplacementIdLabel, rep.incidentId);
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfAssetNameLabel, rep.assetName);
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfTypeLabel, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ReplacementRequestType);
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfPriorityLabel, rep.priority || "Medium");
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfCurrentStatusLabel, rep.status || "Open");
-            printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfReportedDateLabel, new Date(rep.reportedDate).toLocaleString());
-            if (rep.assignedTo) {
-                printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfAssignedToLabel, rep.assignedTo);
-            }
-            if (rep.resolvedDate) {
-                printField(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfResolvedDateLabel, new Date(rep.resolvedDate).toLocaleString());
-            }
-            // Reason Title
-            y += 4;
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.setTextColor(51, 65, 85);
-            doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfReplacementReasonTitle, 14, y);
-            y += 6;
-            // Reason Box
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9.5);
-            doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(rep.issueDescription || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfNoReason, 170);
-            const descHeight = splitDesc.length * 6 + 10;
-            // Draw background box
-            doc.setFillColor(248, 250, 252); // slate 50
-            doc.setDrawColor(226, 232, 240); // slate 200
-            doc.rect(14, y, 182, descHeight, 'FD');
-            // Draw left accent bar
-            doc.setFillColor(100, 116, 139); // slate 500
-            doc.rect(14, y, 3, descHeight, 'F');
-            // Draw text
-            let textY = y + 8;
-            splitDesc.forEach((line) => {
-                doc.text(line, 22, textY);
-                textY += 6;
+            const h = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory;
+            const fields = [
+                { label: h.PdfReplacementIdLabel, value: rep.incidentId },
+                { label: h.PdfCurrentStatusLabel, value: rep.status || 'Open' },
+                { label: h.PdfAssetNameLabel, value: (rep.assetName || '').trim() },
+                { label: h.PdfPriorityLabel, value: rep.priority || 'Medium' },
+                { label: h.PdfTypeLabel, value: h.ReplacementRequestType },
+                { label: h.PdfReportedDateLabel, value: (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(rep.reportedDate) }
+            ];
+            if (rep.assignedTo)
+                fields.push({ label: h.PdfAssignedToLabel, value: rep.assignedTo });
+            if (rep.resolvedDate)
+                fields.push({ label: h.PdfResolvedDateLabel, value: (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(rep.resolvedDate) });
+            const sections = [
+                { title: h.PdfReplacementReasonTitle, text: rep.issueDescription || h.PdfNoReason }
+            ];
+            if (rep.resolution)
+                sections.push({ title: h.PdfResolutionSummaryTitle, text: rep.resolution, tone: 'positive' });
+            (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.saveNexerReport)({
+                documentType: h.PdfReplacementReportTitle,
+                reference: rep.incidentId || rep.id,
+                heading: (rep.assetName || '').trim() || rep.incidentId,
+                subheading: [h.ReplacementRequestType, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(rep.reportedDate, false)].filter(Boolean).join('  ·  '),
+                status: rep.status || 'Open',
+                fieldsTitle: h.PdfReplacementSpecs,
+                fields,
+                sections,
+                productName: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Hero.Title,
+                generatedText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(h.PdfGeneratedOn, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || ''),
+                fileName: `replacement-${rep.incidentId || rep.id}.pdf`
             });
-            y += descHeight + 10;
-            // Resolution Details (if resolved/closed)
-            if (rep.resolution) {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(11);
-                doc.setTextColor(51, 65, 85);
-                doc.text(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
-                y += 6;
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(22, 101, 52); // green 800
-                const splitRes = doc.splitTextToSize(rep.resolution, 170);
-                const resHeight = splitRes.length * 6 + 10;
-                // Draw green background box
-                doc.setFillColor(240, 253, 244); // green 50
-                doc.setDrawColor(220, 252, 231); // green 200
-                doc.rect(14, y, 182, resHeight, 'FD');
-                // Draw green left accent bar
-                doc.setFillColor(22, 101, 52); // green 800
-                doc.rect(14, y, 3, resHeight, 'F');
-                // Draw resolution text
-                let resTextY = y + 8;
-                splitRes.forEach((line) => {
-                    doc.text(line, 22, resTextY);
-                    resTextY += 6;
-                });
-            }
-            doc.save(`replacement-${rep.incidentId}.pdf`);
         }
         catch (error) {
             console.error('Error generating PDF report:', error);
@@ -6015,27 +6672,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 42242);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 47909);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 23166);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 67038);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 99665);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/PeopleSearchService */ 57204);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
+
+
+
+
+const pickerCss = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__.mergeStyleSets)({
+    suggestion: { display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', textAlign: 'left', minWidth: 0 },
+    suggestionText: { minWidth: 0, display: 'flex', flexDirection: 'column', lineHeight: '18px' },
+    suggestionName: { fontSize: 14, fontWeight: 600, color: '#242424', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    suggestionMeta: { fontSize: 12, color: '#616161', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    card: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: 12,
+        marginTop: 8,
+        padding: '10px 12px',
+        borderRadius: 6,
+        border: '1px solid #e0e0e0',
+        background: '#fafafa'
+    },
+    cardLine: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#616161', lineHeight: '18px' },
+    cardWarn: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#8a3707', lineHeight: '18px' },
+    error: { color: '#a4262c', fontSize: 12, marginTop: 4 }
+});
+const detailsLine = (jobTitle, department) => [jobTitle, department].filter(v => !!(v && v.trim())).join(' · ');
 const stackTokens = { childrenGap: 15 };
 const RequestForm = (props) => {
     const [selectedRequesterId, setSelectedRequesterId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [employeeId, setEmployeeId] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
-    const [managerName, setManagerName] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [manager, setManager] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
+    const managerName = manager ? manager.displayName : '';
+    const [managersError, setManagersError] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [selectedAssetType, setSelectedAssetType] = react__WEBPACK_IMPORTED_MODULE_0__.useState(undefined);
     const [priority, setPriority] = react__WEBPACK_IMPORTED_MODULE_0__.useState('Medium');
     const [quantity, setQuantity] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
@@ -6081,7 +6774,54 @@ const RequestForm = (props) => {
     const assetTypeOptions = dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
         : _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS;
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!managerName.trim() && !!selectedAssetType && quantity > 0 && !!reason.trim();
+    // Only approvers can be picked: members of the manager role group (property pane,
+    // default MSFT Owners/Members/Visitors -> MSFT Members). The requester is left out,
+    // since nobody approves their own request.
+    const managerGroup = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_3__.getAppConfig)().roleGroups.manager;
+    const toPersona = (p) => ({
+        key: p.email.toLowerCase(),
+        text: p.displayName,
+        secondaryText: detailsLine(p.jobTitle, p.department),
+        tertiaryText: p.email,
+        data: p
+    });
+    const loadManagers = async () => {
+        const self = (props.currentUserEmail || '').toLowerCase();
+        try {
+            const members = await _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_2__.PeopleSearchService.getGroupMembers(managerGroup);
+            setManagersError(undefined);
+            return members
+                .filter(m => m.email.toLowerCase() !== self)
+                .map(m => ({ displayName: m.displayName, email: m.email }))
+                .sort((a, b) => a.displayName.localeCompare(b.displayName));
+        }
+        catch (err) {
+            setManagersError(err && err.message ? err.message : String(err));
+            return [];
+        }
+    };
+    // Match the text against the manager group, then add job title and department from the directory.
+    const resolveManagerSuggestions = async (filter) => {
+        const text = filter.trim().toLowerCase();
+        const managers = (await loadManagers()).filter(m => m.displayName.toLowerCase().indexOf(text) >= 0 || m.email.toLowerCase().indexOf(text) >= 0);
+        if (managers.length === 0)
+            return [];
+        const directory = await _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_2__.PeopleSearchService.search(filter, 20);
+        return managers.slice(0, 10).map(m => {
+            const match = directory.find(d => (d.email || '').toLowerCase() === m.email.toLowerCase());
+            return toPersona(match ? { ...m, jobTitle: match.jobTitle, department: match.department } : m);
+        });
+    };
+    // Clicking into the empty field lists every manager.
+    const listAllManagers = async () => (await loadManagers()).slice(0, 25).map(toPersona);
+    const renderManagerSuggestion = (persona) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.suggestion },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Persona, { text: persona.text, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PersonaSize.size40, hidePersonaDetails: true }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.suggestionText },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.suggestionName }, persona.text),
+            persona.secondaryText && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.suggestionMeta }, persona.secondaryText),
+            persona.tertiaryText && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.suggestionMeta }, persona.tertiaryText))));
+    // A manager counts only when picked from the list, which always carries an email.
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && quantity > 0 && !!reason.trim();
     const onSave = () => {
         const employee = activeEmployee;
         // Find a real asset ID to satisfy SharePoint backend lookups
@@ -6096,6 +6836,8 @@ const RequestForm = (props) => {
                 requesterEmail: employee.email,
                 employeeId: employeeId,
                 managerName: managerName.trim(),
+                // Lets the approval email go to the manager picked here instead of a name lookup.
+                managerEmail: manager && manager.email ? manager.email : undefined,
                 assetId: matchingAsset ? matchingAsset.id : '1',
                 assetTitle: selectedAssetType,
                 priority: priority,
@@ -6105,7 +6847,7 @@ const RequestForm = (props) => {
             });
             setSelectedRequesterId(undefined);
             setEmployeeId('');
-            setManagerName('');
+            setManager(undefined);
             setSelectedAssetType(undefined);
             setPriority('Medium');
             setQuantity(1);
@@ -6116,28 +6858,56 @@ const RequestForm = (props) => {
             props.onClose();
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: stackTokens },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.OnBehalfHint),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelRequester, selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelEmployeeId, value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelManagerName, value: managerName, onChange: (_, val) => {
-                    setManagerName(val || '');
-                    setManagerNameTouched(true);
-                }, onBlur: () => setManagerNameTouched(true), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.ManagerNamePlaceholder, required: true, errorMessage: managerNameTouched && !managerName.trim() ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.ManagerNameRequired : undefined }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelRequestedDate, type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelAssetType, selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Common.Close },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Stack, { tokens: stackTokens },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.OnBehalfHint),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelRequester, selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelEmployeeId, value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Label, { required: true }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelManagerName),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.NormalPeoplePicker, { onResolveSuggestions: (filter) => resolveManagerSuggestions(filter), onEmptyResolveSuggestions: () => listAllManagers(), onRenderSuggestionsItem: (persona) => renderManagerSuggestion(persona), selectedItems: manager ? [{ key: manager.email || manager.displayName, text: manager.displayName, secondaryText: manager.email }] : [], onChange: (items) => {
+                        const picked = items && items.length > 0 ? items[0].data : undefined;
+                        setManager(picked);
+                        setManagerNameTouched(true);
+                    }, 
+                    // Typed text that isn't a picked manager is never accepted.
+                    onValidateInput: () => _fluentui_react__WEBPACK_IMPORTED_MODULE_17__.ValidationState.invalid, onBlur: () => setManagerNameTouched(true), itemLimit: 1, resolveDelay: 300, inputProps: {
+                        placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSearchPlaceholder,
+                        'aria-label': InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelManagerName
+                    }, pickerSuggestionsProps: {
+                        suggestionsHeaderText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSuggestionsHeader, managerGroup),
+                        noResultsFoundText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerNoResults, managerGroup),
+                        loadingText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSearching
+                    } }),
+                manager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.card },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Persona, { text: manager.displayName, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PersonaSize.size32, hidePersonaDetails: true }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: 0 } },
+                        detailsLine(manager.jobTitle, manager.department) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.cardLine },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.Icon, { iconName: "Contact" }),
+                            " ",
+                            detailsLine(manager.jobTitle, manager.department))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.cardLine },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.Icon, { iconName: "Mail" }),
+                            " ",
+                            manager.email)))),
+                managersError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.cardWarn, role: "alert", style: { marginTop: 6 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.Icon, { iconName: "Warning" }),
+                    " ",
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerGroupUnavailable, managerGroup))),
+                managerNameTouched && !managerName.trim() && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.error, role: "alert" }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerNameRequired))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelRequestedDate, type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelAssetType, selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
                 }, required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelPriority, selectedKey: priority, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelQuantity, type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelReason, multiline: true, rows: 3, value: reason, onChange: (_, val) => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelPriority, selectedKey: priority, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelQuantity, type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelReason, multiline: true, rows: 3, value: reason, onChange: (_, val) => {
                     setReason(val || '');
                     setReasonTouched(true);
-                }, onBlur: () => setReasonTouched(true), required: true, errorMessage: reasonTouched && !reason.trim() ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.ReasonRequired : undefined }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.SubmitRequest, onClick: onSave, disabled: !isFormValid }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Cancel, onClick: props.onClose })))));
+                }, onBlur: () => setReasonTouched(true), required: true, errorMessage: reasonTouched && !reason.trim() ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ReasonRequired : undefined }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_20__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.SubmitRequest, onClick: onSave, disabled: !isFormValid }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Common.Cancel, onClick: props.onClose })))));
 };
 
 
@@ -6156,18 +6926,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 /* harmony import */ var _utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/RequestStatusUtils */ 88899);
+/* harmony import */ var _RejectRequestDialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RejectRequestDialog */ 19342);
+/* harmony import */ var _RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RejectionReasonCard */ 94735);
+
+
 
 
 
@@ -6179,6 +6953,19 @@ __webpack_require__.r(__webpack_exports__);
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const [rejectTarget, setRejectTarget] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+    const isDeclined = (r) => r.status === 'Declined' || r.status === 'Rejected';
+    // Saves the rejection, then closes the form and, if it was opened from there, the details panel.
+    const confirmReject = async (request, reason) => {
+        if (!props.onRejectRequest)
+            return;
+        await props.onRejectRequest(request, reason).catch(err => console.error(err));
+        setRejectTarget(undefined);
+        if (selectedRequestForDetails && selectedRequestForDetails.id === request.id) {
+            setIsDetailsPanelOpen(false);
+            setSelectedRequestForDetails(null);
+        }
+    };
     const sortedItems = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
         return [...props.items].sort((a, b) => {
             const dateA = a.requestDate || '';
@@ -6332,7 +7119,7 @@ const RequestList = (props) => {
                                 fontWeight: 600,
                                 display: 'inline-block'
                             } }, displayValue),
-                        !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.ButtonReviewAssign, onClick: () => {
+                        !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.ButtonReviewAssign, onClick: () => {
                                 if (props.onSelectRequestForAssignment) {
                                     props.onSelectRequestForAssignment(item);
                                 }
@@ -6379,17 +7166,8 @@ const RequestList = (props) => {
                         return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.NoAction);
                     }
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Approve, onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reject, onClick: () => {
-                                if (!props.onRejectRequest) {
-                                    return;
-                                }
-                                const rejectionReason = window.prompt(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.RejectionPrompt);
-                                if (!rejectionReason || !rejectionReason.trim()) {
-                                    return;
-                                }
-                                props.onRejectRequest(item, rejectionReason.trim()).catch(err => console.error(err));
-                            }, disabled: isBusy, styles: {
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Approve, onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reject, onClick: () => props.onRejectRequest && setRejectTarget(item), disabled: isBusy, styles: {
                                 root: { backgroundColor: '#991b1b', borderColor: '#991b1b' },
                                 rootHovered: { backgroundColor: '#7f1d1d', borderColor: '#7f1d1d' }
                             } })));
@@ -6401,7 +7179,7 @@ const RequestList = (props) => {
             minWidth: 70,
             maxWidth: 90,
             isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.View, onClick: () => {
+            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.View, onClick: () => {
                     setSelectedRequestForDetails(item);
                     setIsDetailsPanelOpen(true);
                 }, styles: {
@@ -6411,11 +7189,11 @@ const RequestList = (props) => {
     ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
         sortedItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.EmptyState)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_7__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.SelectionMode.none }))),
-        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none }))),
+        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
                 setIsDetailsPanelOpen(false);
                 setSelectedRequestForDetails(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_11__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.DetailsHeaderPrefix, selectedRequestForDetails.requestKey || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.DetailsHeaderFallback), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close },
+            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.DetailsHeaderPrefix, selectedRequestForDetails.requestKey || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.DetailsHeaderFallback), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
@@ -6484,10 +7262,12 @@ const RequestList = (props) => {
                                 fontSize: '0.75rem',
                                 fontWeight: 600
                             } }, getStatusDisplayText(selectedRequestForDetails.status)),
-                        selectedRequestForDetails.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
+                        selectedRequestForDetails.managerResponse && !isDeclined(selectedRequestForDetails) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
                             "- \u201C",
                             selectedRequestForDetails.managerResponse,
-                            "\u201D")))),
+                            "\u201D"))),
+                    isDeclined(selectedRequestForDetails) && selectedRequestForDetails.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: 12 } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__.RejectionReasonCard, { reason: selectedRequestForDetails.managerResponse, managerName: selectedRequestForDetails.managerName, decidedAt: selectedRequestForDetails.managerDecisionAt })))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -6504,7 +7284,7 @@ const RequestList = (props) => {
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Processing : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Approve, onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Processing : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Approve, onClick: () => {
                             if (props.onApproveRequest) {
                                 props.onApproveRequest(selectedRequestForDetails)
                                     .then(() => {
@@ -6514,19 +7294,7 @@ const RequestList = (props) => {
                                     .catch(err => console.error(err));
                             }
                         }, disabled: props.actionInProgressId === selectedRequestForDetails.id }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reject, onClick: () => {
-                            if (!props.onRejectRequest)
-                                return;
-                            const rejectionReason = window.prompt(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.RejectionPrompt);
-                            if (!rejectionReason || !rejectionReason.trim())
-                                return;
-                            props.onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
-                                .then(() => {
-                                setIsDetailsPanelOpen(false);
-                                setSelectedRequestForDetails(null);
-                            })
-                                .catch(err => console.error(err));
-                        }, disabled: props.actionInProgressId === selectedRequestForDetails.id, styles: {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reject, onClick: () => props.onRejectRequest && setRejectTarget(selectedRequestForDetails), disabled: props.actionInProgressId === selectedRequestForDetails.id, styles: {
                             root: { color: '#dc2626', borderColor: '#dc2626' },
                             rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                         } }))),
@@ -6537,7 +7305,7 @@ const RequestList = (props) => {
                         borderTop: '1px solid rgba(128, 128, 128, 0.15)',
                         paddingTop: '15px'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.ButtonReviewAssign, onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.ButtonReviewAssign, onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
                             if (props.onSelectRequestForAssignment) {
@@ -6545,10 +7313,11 @@ const RequestList = (props) => {
                             }
                         }, iconProps: { iconName: 'CompletedSolid' } }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', marginTop: '10px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close, onClick: () => {
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close, onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
-                        } })))))));
+                        } }))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectRequestDialog__WEBPACK_IMPORTED_MODULE_4__.RejectRequestDialog, { request: rejectTarget, onConfirm: confirmReject, onDismiss: () => setRejectTarget(undefined) })));
 };
 
 
@@ -6955,11 +7724,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Modal */ 76702);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 44533);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Utilities */ 88370);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
 
@@ -6967,159 +7737,666 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+const TONES = {
+    success: { icon: 'CheckMark', accent: '#107c10', soft: '#dff6dd', text: '#0e5c0e' },
+    error: { icon: 'ErrorBadge', accent: '#c50f1f', soft: '#fde7e9', text: '#a4262c' },
+    warning: { icon: 'Clock', accent: '#bc4b09', soft: '#fff4ce', text: '#8a3707' },
+    info: { icon: 'Info', accent: '#0f6cbd', soft: '#ebf3fc', text: '#0c3b5e' }
+};
+// Same precedence as before: a rejected/declined or pending status overrides the popup type.
+const getTone = (type, status) => {
+    const s = (status || '').toLowerCase();
+    if (type === 'error' || s.includes('reject') || s.includes('declin'))
+        return TONES.error;
+    if (type === 'warning' || s.includes('pending'))
+        return TONES.warning;
+    if (type === 'info')
+        return TONES.info;
+    return TONES.success;
+};
+// "2026-09-28" or an ISO timestamp -> "28 Sept 2026". Anything else is shown as given.
+const formatDate = (value) => {
+    const match = /^(\d{4})-(\d{2})-(\d{2})(T.*)?$/.exec(value.trim());
+    if (!match)
+        return value;
+    const date = match[4] ? new Date(value) : new Date(Date.UTC(+match[1], +match[2] - 1, +match[3]));
+    if (isNaN(date.getTime()))
+        return value;
+    return date.toLocaleDateString(undefined, {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        timeZone: match[4] ? undefined : 'UTC'
+    });
+};
+const classes = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__.mergeStyleSets)({
+    main: {
+        width: 'min(480px, calc(100vw - 32px))',
+        maxWidth: 'none',
+        minHeight: 0,
+        borderRadius: 12,
+        overflow: 'hidden',
+        boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.04)',
+        fontFamily: '"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, sans-serif'
+    },
+    scrollable: { overflowY: 'auto', maxHeight: 'calc(100vh - 48px)' },
+    accent: { height: 4 },
+    header: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: 16,
+        padding: '20px 16px 0 24px'
+    },
+    iconWrap: {
+        width: 44,
+        height: 44,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0
+    },
+    icon: { fontSize: 20, fontWeight: 600 },
+    heading: { flex: 1, minWidth: 0, paddingTop: 2 },
+    stage: {
+        display: 'block',
+        fontSize: 11,
+        fontWeight: 600,
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        marginBottom: 4
+    },
+    title: {
+        margin: 0,
+        fontSize: 20,
+        fontWeight: 600,
+        lineHeight: '28px',
+        color: '#242424',
+        wordBreak: 'break-word'
+    },
+    close: { marginTop: -4, color: '#616161' },
+    body: { padding: '12px 24px 0' },
+    message: { margin: 0, fontSize: 14, lineHeight: '22px', color: '#424242' },
+    details: {
+        margin: '20px 0 0',
+        padding: '4px 16px',
+        borderRadius: 8,
+        border: '1px solid #e0e0e0',
+        backgroundColor: '#fafafa'
+    },
+    row: {
+        display: 'grid',
+        gridTemplateColumns: 'minmax(96px, 38%) 1fr',
+        alignItems: 'center',
+        gap: 16,
+        padding: '10px 0',
+        fontSize: 14,
+        selectors: { ':not(:last-child)': { borderBottom: '1px solid #ebebeb' } }
+    },
+    label: { margin: 0, color: '#616161' },
+    value: { margin: 0, color: '#242424', fontWeight: 600, textAlign: 'right', wordBreak: 'break-word' },
+    pill: {
+        display: 'inline-block',
+        padding: '2px 10px',
+        borderRadius: 999,
+        fontSize: 12,
+        fontWeight: 600,
+        lineHeight: '20px'
+    },
+    comment: { marginTop: 16 },
+    commentLabel: { display: 'block', fontSize: 12, fontWeight: 600, color: '#616161', marginBottom: 6 },
+    commentText: {
+        margin: 0,
+        padding: '10px 14px',
+        borderLeft: '3px solid',
+        borderRadius: 4,
+        backgroundColor: '#f5f5f5',
+        color: '#424242',
+        fontSize: 14,
+        lineHeight: '20px',
+        whiteSpace: 'pre-wrap',
+        wordBreak: 'break-word'
+    },
+    footer: { display: 'flex', justifyContent: 'flex-end', padding: '24px' }
+});
 const WorkflowPopup = (props) => {
     const { isOpen, title, stage, type, message, details, onDismiss } = props;
+    const [titleId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(() => (0,_fluentui_react_lib_Utilities__WEBPACK_IMPORTED_MODULE_3__.getId)('workflowPopupTitle'));
+    const [messageId] = react__WEBPACK_IMPORTED_MODULE_0__.useState(() => (0,_fluentui_react_lib_Utilities__WEBPACK_IMPORTED_MODULE_3__.getId)('workflowPopupMessage'));
     if (!isOpen)
         return null;
-    let iconName = 'CheckMark';
-    let iconColor = '#15803d';
-    let badgeBg = '#dcfce7';
-    let badgeTextColor = '#166534';
-    let borderColor = '#22c55e';
-    let iconBg = '#f0fdf4';
-    if (type === 'error' || (details?.status || '').toLowerCase().includes('reject') || (details?.status || '').toLowerCase().includes('declin')) {
-        iconName = 'ErrorBadge';
-        iconColor = '#b91c1c';
-        badgeBg = '#fee2e2';
-        badgeTextColor = '#991b1b';
-        borderColor = '#ef4444';
-        iconBg = '#fef2f2';
+    const tone = getTone(type, details?.status);
+    const rows = [];
+    if (details) {
+        if (details.requestId)
+            rows.push({ label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelRequestId, value: details.requestId });
+        if (details.incidentId) {
+            rows.push({
+                label: details.incidentId.startsWith('REP-') ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelReplacementId : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelIncidentId,
+                value: details.incidentId
+            });
+        }
+        if (details.assetTitle) {
+            rows.push({
+                label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelAsset,
+                value: details.quantity ? `${details.assetTitle} (Qty: ${details.quantity})` : details.assetTitle
+            });
+        }
+        if (details.requesterName)
+            rows.push({ label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelRequester, value: details.requesterName });
+        if (details.managerName)
+            rows.push({ label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelManagerName, value: details.managerName });
+        if (details.status) {
+            rows.push({
+                label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelWorkflowStatus,
+                value: react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: classes.pill, style: { backgroundColor: tone.soft, color: tone.text } }, details.status)
+            });
+        }
+        if (details.date)
+            rows.push({ label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelDate, value: formatDate(details.date) });
+        if (details.condition)
+            rows.push({ label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelCondition, value: details.condition });
     }
-    else if (type === 'warning' || (details?.status || '').toLowerCase().includes('pending')) {
-        iconName = 'Clock';
-        iconColor = '#b45309';
-        badgeBg = '#fef3c7';
-        badgeTextColor = '#92400e';
-        borderColor = '#f59e0b';
-        iconBg = '#fffbeb';
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Modal__WEBPACK_IMPORTED_MODULE_4__.Modal, { isOpen: isOpen, onDismiss: onDismiss, isBlocking: true, titleAriaId: titleId, subtitleAriaId: messageId, containerClassName: classes.main, scrollableContentClassName: classes.scrollable },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.accent, style: { backgroundColor: tone.accent } }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.iconWrap, style: { backgroundColor: tone.soft } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: tone.icon, className: classes.icon, style: { color: tone.accent } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.heading },
+                stage && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: classes.stage, style: { color: tone.accent } }, stage),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { id: titleId, className: classes.title }, title)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__.IconButton, { className: classes.close, iconProps: { iconName: 'Cancel' }, ariaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Close, onClick: onDismiss })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.body },
+            message && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { id: messageId, className: classes.message }, message),
+            rows.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("dl", { className: classes.details }, rows.map(row => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: row.label, className: classes.row },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: classes.label }, row.label),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: classes.value }, row.value)))))),
+            details?.comment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.comment },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: classes.commentLabel }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelManagerAdminNotes),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: classes.commentText, style: { borderLeftColor: tone.accent } }, details.comment)))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classes.footer },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.GotIt, onClick: onDismiss, styles: { root: { borderRadius: 6, minWidth: 96, height: 36 } } }))));
+};
+
+
+/***/ }),
+
+/***/ 89202:
+/*!***********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/assignment/AssignmentQueue.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssignmentQueue: () => (/* binding */ AssignmentQueue)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 18008);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/Pager */ 42589);
+
+
+
+
+
+
+
+
+
+
+const GROUP_STORAGE_KEY = 'assignmentQueue_groupBy';
+const PAGE_SIZE = 10;
+const PRIORITY_RANK = { high: 0, medium: 1, low: 2 };
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { marginBottom: 16 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    tiles: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12, marginBottom: 16 },
+    tile: {
+        textAlign: 'left',
+        padding: '12px 14px',
+        borderRadius: 10,
+        border: '1px solid rgba(0, 0, 0, 0.1)',
+        background: 'var(--surface-bg, #ffffff)',
+        cursor: 'pointer',
+        font: 'inherit',
+        color: 'inherit',
+        selectors: { ':hover': { borderColor: 'rgba(0, 0, 0, 0.25)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: 2 } }
+    },
+    tileActive: { borderColor: '#0f6cbd', boxShadow: 'inset 0 0 0 1px #0f6cbd', background: 'rgba(15, 108, 189, 0.05)' },
+    tileLabel: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 600, color: 'var(--text-muted, #616161)' },
+    dot: { width: 8, height: 8, borderRadius: '50%', flexShrink: 0 },
+    tileValue: { fontSize: 24, fontWeight: 600, lineHeight: '32px', marginTop: 4 },
+    tileHint: { fontSize: 12, color: 'var(--text-muted, #616161)' },
+    toolbar: { display: 'flex', alignItems: 'flex-end', gap: 12, flexWrap: 'wrap', marginBottom: 12 },
+    search: { flex: '1 1 260px', minWidth: 200 },
+    resultLine: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--text-muted, #616161)', margin: '4px 0 8px' },
+    card: { border: '1px solid rgba(0, 0, 0, 0.1)', borderRadius: 12, overflow: 'hidden', background: 'var(--surface-bg, #ffffff)' },
+    groupHeader: {
+        display: 'flex', alignItems: 'center', gap: 10, width: '100%', padding: '10px 16px', border: 'none',
+        borderTop: '1px solid rgba(0, 0, 0, 0.06)', background: 'rgba(0, 0, 0, 0.025)', cursor: 'pointer',
+        font: 'inherit', color: 'inherit', textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(0, 0, 0, 0.05)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 } }
+    },
+    groupName: { fontSize: 14, fontWeight: 600 },
+    count: { fontSize: 12, fontWeight: 600, padding: '0 8px', borderRadius: 999, background: 'rgba(0, 0, 0, 0.07)', lineHeight: '20px' },
+    groupMeta: { marginLeft: 'auto', fontSize: 12, color: 'var(--text-muted, #616161)', display: 'flex', gap: 12, flexWrap: 'wrap' },
+    crumb: { display: 'inline-flex', alignItems: 'center', gap: 5 },
+    two: { minWidth: 0 },
+    strong: { fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block', color: 'var(--text-main, #242424)' },
+    meta: { fontSize: 12, color: 'var(--text-muted, #616161)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' },
+    person: { display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 },
+    coin: { width: 28, height: 28, borderRadius: '50%', background: '#0f6cbd', color: '#fff', fontSize: 11, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    typeCell: { display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 },
+    typeIcon: { width: 28, height: 28, borderRadius: 8, background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, flexShrink: 0 },
+    pill: { fontSize: 12, fontWeight: 600, padding: '2px 10px', borderRadius: 999, lineHeight: '18px', whiteSpace: 'nowrap' },
+    row: { cursor: 'pointer' },
+    rowStatic: { cursor: 'default' },
+    empty: { padding: '48px 16px', textAlign: 'center', color: 'var(--text-muted, #616161)' }
+});
+const Pill = ({ tone, text }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.pill, style: { background: tone.bg, color: tone.fg } }, text));
+const priorityTone = (p) => {
+    const v = (p || 'Medium').toLowerCase();
+    return v === 'high' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red : v === 'low' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.blue : _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.grey;
+};
+/** 5 h, 2 d 4 h, 12 d. */
+const formatHours = (hours) => {
+    if (hours === undefined)
+        return '—';
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue;
+    if (hours < 1)
+        return s.DurationUnderHour;
+    if (hours < 24)
+        return (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.DurationHours, Math.floor(hours));
+    const days = Math.floor(hours / 24);
+    const rest = Math.floor(hours % 24);
+    return days < 7 && rest ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.DurationDaysHours, days, rest) : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.DurationDays, days);
+};
+/** The approver: the recorded manager name, else "Approved by X" in the comment, else the comment itself. */
+const approverOf = (r) => {
+    if (r.managerName)
+        return r.managerName;
+    const m = /approved by\s+(.+)/i.exec(r.managerResponse || '');
+    return m ? m[1].trim() : (r.managerResponse || '').trim();
+};
+const readGroupBy = () => {
+    try {
+        const v = window.localStorage.getItem(GROUP_STORAGE_KEY);
+        if (v === 'type' || v === 'employee' || v === 'priority' || v === 'none')
+            return v;
     }
-    else if (type === 'info') {
-        iconName = 'Info';
-        iconColor = '#1d4ed8';
-        badgeBg = '#dbeafe';
-        badgeTextColor = '#1e40af';
-        borderColor = '#3b82f6';
-        iconBg = '#eff6ff';
+    catch {
+        // Storage unavailable: use the default.
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_2__.Dialog, { hidden: !isOpen, onDismiss: onDismiss, dialogContentProps: {
-            type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_3__.DialogType.normal,
-            title: '',
-        }, modalProps: {
-            isBlocking: true,
-            styles: {
-                main: {
-                    maxWidth: '520px',
-                    minWidth: '340px',
-                    borderRadius: '16px',
-                    padding: '24px 28px',
-                    borderTop: `5px solid ${borderColor}`,
-                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
-                    backgroundColor: '#ffffff'
-                }
-            }
-        } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '18px', fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', gap: '14px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        width: '46px',
-                        height: '46px',
-                        borderRadius: '12px',
-                        backgroundColor: iconBg,
-                        border: `1px solid ${borderColor}33`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0,
-                        boxShadow: `0 4px 12px ${borderColor}22`
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: iconName, style: { fontSize: '22px', color: iconColor, fontWeight: 'bold' } })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                display: 'inline-block',
-                                backgroundColor: badgeBg,
-                                color: badgeTextColor,
-                                padding: '3px 10px',
-                                borderRadius: '9999px',
-                                fontSize: '0.7rem',
-                                fontWeight: 700,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.06em'
-                            } }, stage)),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { style: { margin: 0, fontSize: '1.15rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.3 } }, title))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 } }, message),
-            details && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                    backgroundColor: '#f8fafc',
-                    borderRadius: '12px',
-                    padding: '16px',
-                    border: '1px solid #e2e8f0',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                    gap: '12px',
-                    fontSize: '0.82rem'
-                } },
-                details.requestId && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelRequestId),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requestId))),
-                details.incidentId && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, details.incidentId.startsWith('REP-') ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelReplacementId : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelIncidentId),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.incidentId))),
-                details.assetTitle && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelAsset),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } },
-                        details.assetTitle,
-                        " ",
-                        details.quantity ? `(Qty: ${details.quantity})` : ''))),
-                details.requesterName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelRequester),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requesterName))),
-                details.managerName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelManagerName),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.managerName))),
-                details.status && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelWorkflowStatus),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                            backgroundColor: badgeBg,
-                            color: badgeTextColor,
-                            padding: '3px 9px',
-                            borderRadius: '6px',
-                            fontWeight: 600,
-                            fontSize: '0.75rem',
-                            display: 'inline-block'
-                        } }, details.status))),
-                details.date && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelDate),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.date))),
-                details.condition && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelCondition),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.condition))),
-                details.comment && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: '1 / -1', marginTop: '4px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.LabelManagerAdminNotes),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                            backgroundColor: '#ffffff',
-                            padding: '10px 12px',
-                            borderRadius: '8px',
-                            border: '1px solid #cbd5e1',
-                            color: '#334155',
-                            fontStyle: 'italic',
-                            lineHeight: 1.4
-                        } },
-                        "\u201C",
-                        details.comment,
-                        "\u201D")))))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_5__.DialogFooter, { styles: { actionsRight: { marginTop: '20px' } } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.WorkflowPopup.GotIt, onClick: onDismiss, iconProps: { iconName: 'Accept' }, styles: {
-                    root: {
-                        borderRadius: '8px',
-                        padding: '0 20px',
-                        height: '36px',
-                        backgroundColor: '#005a9e',
-                        border: 'none'
-                    },
-                    rootHovered: {
-                        backgroundColor: '#004578'
-                    }
-                } }))));
+    return 'type';
+};
+const AssignmentQueue = (props) => {
+    const { requests, items, actionInProgressId, onAssign } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue;
+    const [view, setView] = react__WEBPACK_IMPORTED_MODULE_0__.useState('waiting');
+    const [quick, setQuick] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [typeFilter, setTypeFilter] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [groupBy, setGroupByState] = react__WEBPACK_IMPORTED_MODULE_0__.useState(readGroupBy);
+    const [collapsed, setCollapsed] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const [sort, setSort] = react__WEBPACK_IMPORTED_MODULE_0__.useState({ key: 'waiting', desc: true });
+    const [page, setPage] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
+    // Back to the first page whenever what's listed changes.
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setPage(1), [search, view, quick, typeFilter, groupBy, sort.key, sort.desc]);
+    const setGroupBy = (value) => {
+        setGroupByState(value);
+        setCollapsed({});
+        try {
+            window.localStorage.setItem(GROUP_STORAGE_KEY, value);
+        }
+        catch { /* not persisted */ }
+    };
+    const now = Date.now();
+    const targets = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().sla;
+    const allRows = requests.map(r => {
+        const assigned = (r.assetStatus || '').toLowerCase().indexOf('approv') >= 0 || (r.status || '') === 'Asset Assigned';
+        return {
+            request: r,
+            assigned,
+            sla: (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__.evaluateRequestSla)(r, targets, now),
+            stock: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.assignableOfType)(items, r.assetTitle).length,
+            quantity: Math.max(1, r.quantity || 1)
+        };
+    });
+    const waiting = allRows.filter(r => !r.assigned);
+    const counts = {
+        waiting: waiting.length,
+        ready: waiting.filter(r => r.stock >= r.quantity).length,
+        noStock: waiting.filter(r => r.stock < r.quantity).length,
+        overdue: waiting.filter(r => r.sla.overdue).length,
+        assigned: allRows.length - waiting.length
+    };
+    const types = Array.from(new Set(allRows.map(r => (r.request.assetTitle || '').trim()).filter(Boolean))).sort();
+    const query = search.trim().toLowerCase();
+    const filtered = allRows.filter(r => {
+        if (view === 'waiting' && r.assigned)
+            return false;
+        if (view === 'assigned' && !r.assigned)
+            return false;
+        if (quick === 'ready' && (r.assigned || r.stock < r.quantity))
+            return false;
+        if (quick === 'noStock' && (r.assigned || r.stock >= r.quantity))
+            return false;
+        if (quick === 'overdue' && (r.assigned || !r.sla.overdue))
+            return false;
+        if (typeFilter !== 'all' && (r.request.assetTitle || '').trim() !== typeFilter)
+            return false;
+        if (!query)
+            return true;
+        const q = r.request;
+        return [q.requestKey, q.id, q.requesterName, q.employeeId, q.assetTitle, q.managerName, q.managerResponse, q.reason]
+            .some(v => (v || '').toLowerCase().indexOf(query) >= 0);
+    });
+    const sortValue = (r) => {
+        switch (sort.key) {
+            case 'request': return parseInt((r.request.requestKey || r.request.id || '').replace(/\D/g, ''), 10) || 0;
+            case 'employee': return (r.request.requesterName || '').toLowerCase();
+            case 'type': return (r.request.assetTitle || '').toLowerCase();
+            case 'priority': return PRIORITY_RANK[(r.request.priority || 'medium').toLowerCase()] ?? 1;
+            default: return r.assigned ? -1 : (r.sla.openHours || 0);
+        }
+    };
+    const sorted = filtered.slice().sort((a, b) => {
+        const va = sortValue(a), vb = sortValue(b);
+        const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+        return sort.desc ? -cmp : cmp;
+    });
+    const groupKeyOf = (r) => groupBy === 'type' ? ((r.request.assetTitle || '').trim() || s.Unspecified)
+        : groupBy === 'employee' ? (r.request.requesterName || s.Unspecified)
+            : (r.request.priority || 'Medium');
+    let rows = sorted;
+    const byKey = {};
+    if (groupBy !== 'none') {
+        sorted.forEach(r => { const k = groupKeyOf(r); (byKey[k] = byKey[k] || []).push(r); });
+        const keys = Object.keys(byKey).sort((a, b) => groupBy === 'priority'
+            ? (PRIORITY_RANK[a.toLowerCase()] ?? 1) - (PRIORITY_RANK[b.toLowerCase()] ?? 1)
+            : a.localeCompare(b));
+        rows = keys.reduce((all, k) => all.concat(byKey[k]), []);
+    }
+    // 10 rows per page, grouped or not (a group crossing a page boundary shows on both pages).
+    const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+    const activePage = Math.min(page, totalPages);
+    const visible = rows.slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE);
+    const groups = groupBy !== 'none' ? (0,_common_Pager__WEBPACK_IMPORTED_MODULE_4__.buildPageGroups)(visible, groupKeyOf, byKey, collapsed) : undefined;
+    const sortable = (key) => ({
+        isSorted: sort.key === key,
+        isSortedDescending: sort.key === key && sort.desc,
+        onColumnClick: () => setSort(prev => ({ key, desc: prev.key === key ? !prev.desc : key === 'waiting' }))
+    });
+    const stockPill = (r) => {
+        if (r.assigned)
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta }, "\u2014");
+        if (r.stock === 0)
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red, text: s.OutOfStock });
+        if (r.stock < r.quantity)
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.amber, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.PartialStock, r.stock, r.quantity) });
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.InStockCount, r.stock) });
+    };
+    const columns = [
+        {
+            key: 'request', name: s.ColRequest, minWidth: 120, maxWidth: 150, isResizable: true, ...sortable('request'),
+            onRender: (r) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.two },
+                r.assigned
+                    ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.strong }, r.request.requestKey || `#${r.request.id}`)
+                    : react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Link, { className: css.strong, onClick: (e) => { e.stopPropagation(); onAssign(r.request); } }, r.request.requestKey || `#${r.request.id}`),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.RequestedOn, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.formatDay)(r.request.requestDate)))))
+        },
+        {
+            key: 'employee', name: s.ColEmployee, minWidth: 150, maxWidth: 220, isResizable: true, ...sortable('employee'),
+            onRender: (r) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.person },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.coin, "aria-hidden": "true" }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.initials)(r.request.requesterName)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.two },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.strong }, r.request.requesterName || '—'),
+                    r.request.employeeId && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.EmployeeId, r.request.employeeId)))))
+        },
+        ...(groupBy !== 'type' ? [{
+                key: 'type', name: s.ColAsset, minWidth: 110, maxWidth: 160, isResizable: true, ...sortable('type'),
+                onRender: (r) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.typeCell },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.typeIcon, "aria-hidden": "true" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.assetTypeIcon)(r.request.assetTitle) })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.strong, style: { fontWeight: 400 } }, r.quantity > 1 ? `${r.request.assetTitle} × ${r.quantity}` : r.request.assetTitle)))
+            }] : [{
+                key: 'qty', name: s.ColQuantity, minWidth: 50, maxWidth: 60,
+                onRender: (r) => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, r.quantity)
+            }]),
+        ...(groupBy !== 'priority' ? [{
+                key: 'priority', name: s.ColPriority, minWidth: 80, maxWidth: 100, isResizable: true, ...sortable('priority'),
+                onRender: (r) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: priorityTone(r.request.priority), text: r.request.priority || 'Medium' })
+            }] : []),
+        {
+            key: 'stock', name: s.ColStock, minWidth: 110, maxWidth: 140, isResizable: true,
+            onRender: (r) => stockPill(r)
+        },
+        {
+            key: 'approver', name: s.ColApprovedBy, minWidth: 130, maxWidth: 200, isResizable: true,
+            onRender: (r) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.two },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.strong, style: { fontWeight: 400 } }, approverOf(r.request) || '—'),
+                r.request.managerDecisionAt && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.formatDay)(r.request.managerDecisionAt))))
+        },
+        {
+            key: 'waiting', name: s.ColWaiting, minWidth: 110, maxWidth: 140, isResizable: true, ...sortable('waiting'),
+            onRender: (r) => r.assigned ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.two },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green, text: s.StatusAssigned }),
+                r.request.assignedAt && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta, style: { marginTop: 2 } }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.formatDay)(r.request.assignedAt)))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.two },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.strong, style: { color: r.sla.overdue ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red.fg : undefined } }, formatHours(r.sla.openHours)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta, style: { color: r.sla.overdue ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red.fg : undefined } }, r.sla.overdue ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.OverdueBy, formatHours(r.sla.overdueByHours)) : targets.assignmentHours > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.TargetHours, targets.assignmentHours) : '')))
+        },
+        {
+            key: 'action', name: '', minWidth: 90, maxWidth: 100,
+            onRender: (r) => r.assigned ? null : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: actionInProgressId === r.request.id ? s.Working : s.Assign, iconProps: { iconName: 'Send' }, disabled: actionInProgressId === r.request.id, onClick: (e) => { e.stopPropagation(); onAssign(r.request); }, styles: { root: { height: 30, minWidth: 0, padding: '0 12px', borderRadius: 6 } } }))
+        }
+    ];
+    const renderGroupHeader = (headerProps) => {
+        if (!headerProps || !headerProps.group)
+            return null;
+        const group = headerProps.group;
+        const paged = group.data;
+        const members = paged ? paged.members : [];
+        const partial = !!paged && group.count < members.length;
+        const waitingHere = members.filter(m => !m.assigned);
+        const stock = groupBy === 'type' ? (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.assignableOfType)(items, group.name).length : undefined;
+        const overdue = waitingHere.filter(m => m.sla.overdue).length;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: css.groupHeader, "aria-expanded": !group.isCollapsed, onClick: () => setCollapsed(prev => ({ ...prev, [group.key]: !prev[group.key] })) },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: group.isCollapsed ? 'ChevronRight' : 'ChevronDown', style: { fontSize: 12 } }),
+            groupBy === 'type' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.assetTypeIcon)(group.name) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.groupName }, group.name),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.count }, members.length),
+            partial && paged && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta, style: { display: 'inline' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer.GroupPartial, paged.first, paged.last, members.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.groupMeta },
+                waitingHere.length > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.crumb },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dot, style: { background: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.amber.fg } }),
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.GroupWaiting, waitingHere.length)),
+                overdue > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.crumb },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dot, style: { background: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red.fg } }),
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.GroupOverdue, overdue)),
+                stock !== undefined && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.crumb },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dot, style: { background: stock > 0 ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green.fg : _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red.fg } }),
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.GroupStock, stock)))));
+    };
+    const tiles = [
+        { key: 'all', label: s.TileWaiting, value: counts.waiting, hint: s.TileWaitingHint, dot: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.amber.fg },
+        { key: 'ready', label: s.TileReady, value: counts.ready, hint: s.TileReadyHint, dot: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green.fg },
+        { key: 'noStock', label: s.TileNoStock, value: counts.noStock, hint: s.TileNoStockHint, dot: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red.fg },
+        { key: 'overdue', label: s.TileOverdue, value: counts.overdue, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.TileOverdueHint, targets.assignmentHours), dot: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red.fg },
+        { key: 'assigned', label: s.TileAssigned, value: counts.assigned, hint: s.TileAssignedHint, dot: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.blue.fg }
+    ];
+    const tileActive = (key) => key === 'assigned' ? view === 'assigned' : view === 'waiting' && quick === key;
+    const onTile = (key) => {
+        if (key === 'assigned') {
+            setQuick('all');
+            setView(view === 'assigned' ? 'waiting' : 'assigned');
+        }
+        else {
+            setView('waiting');
+            setQuick(quick === key && key !== 'all' ? 'all' : key);
+        }
+    };
+    const viewOptions = [
+        { key: 'waiting', text: s.ViewWaiting },
+        { key: 'assigned', text: s.ViewAssigned },
+        { key: 'all', text: s.ViewAll }
+    ];
+    const typeOptions = [{ key: 'all', text: s.AllTypes }].concat(types.map(t => ({ key: t, text: t })));
+    const groupOptions = [
+        { key: 'type', text: s.GroupByType },
+        { key: 'employee', text: s.GroupByEmployee },
+        { key: 'priority', text: s.GroupByPriority },
+        { key: 'none', text: s.GroupByNone }
+    ];
+    const hasFilters = quick !== 'all' || typeFilter !== 'all' || !!query || view !== 'waiting';
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.title }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetAssignmentQueuePage.Title),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.subtitle }, s.Subtitle)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tiles, role: "group", "aria-label": s.TilesAria }, tiles.map(t => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: t.key, type: "button", className: `${css.tile} ${tileActive(t.key) ? css.tileActive : ''}`, "aria-pressed": tileActive(t.key), onClick: () => onTile(t.key) },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tileLabel },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dot, style: { background: t.dot } }),
+                t.label),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tileValue }, t.value),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tileHint }, t.hint))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SearchBox, { className: css.search, placeholder: s.SearchPlaceholder, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Dropdown, { label: s.FilterShow, options: viewOptions, selectedKey: view, onChange: (_, o) => { if (o) {
+                    setView(o.key);
+                    setQuick('all');
+                } }, styles: { root: { width: 170 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Dropdown, { label: s.FilterType, options: typeOptions, selectedKey: typeFilter, onChange: (_, o) => o && setTypeFilter(String(o.key)), styles: { root: { width: 160 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Dropdown, { label: s.GroupByLabel, options: groupOptions, selectedKey: groupBy, onChange: (_, o) => o && setGroupBy(o.key), styles: { root: { width: 160 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.ResultCount, filtered.length, allRows.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                groups && groups.length > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ActionButton, { iconProps: { iconName: groups.every(g => g.isCollapsed) ? 'ExploreContent' : 'CollapseContent' }, text: groups.every(g => g.isCollapsed) ? s.ExpandAll : s.CollapseAll, onClick: () => {
+                        const collapse = !groups.every(g => g.isCollapsed);
+                        const next = {};
+                        groups.forEach(g => { next[g.key] = collapse; });
+                        setCollapsed(next);
+                    } })),
+                hasFilters && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: s.ClearFilters, onClick: () => { setQuick('all'); setTypeFilter('all'); setSearch(''); setView('waiting'); } })))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.card },
+            filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: view === 'waiting' && !hasFilters ? 'CompletedSolid' : 'Search', style: { fontSize: 28, display: 'block', marginBottom: 8, color: view === 'waiting' && !hasFilters ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green.fg : undefined } }),
+                view === 'waiting' && !hasFilters ? s.EmptyAllDone : s.EmptyFiltered)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_14__.DetailsList, { items: visible, columns: columns, groups: groups, groupProps: { onRenderHeader: renderGroupHeader, showEmptyGroups: false }, setKey: "assignmentQueue", getKey: (r) => r.request.id, layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_15__.DetailsListLayoutMode.justified, constrainMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_15__.ConstrainMode.unconstrained, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_16__.SelectionMode.none, onItemInvoked: (r) => { if (!r.assigned)
+                    onAssign(r.request); }, onRenderRow: (rowProps, defaultRender) => {
+                    if (!rowProps || !defaultRender)
+                        return null;
+                    const r = rowProps.item;
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: r.assigned ? css.rowStatic : css.row, onClick: () => { if (!r.assigned)
+                            onAssign(r.request); } }, defaultRender(rowProps)));
+                }, ariaLabelForGrid: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetAssignmentQueuePage.Title })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_4__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: rows.length, onChange: setPage }))));
+};
+
+
+/***/ }),
+
+/***/ 42589:
+/*!*********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/common/Pager.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Pager: () => (/* binding */ Pager),
+/* harmony export */   buildPageGroups: () => (/* binding */ buildPageGroups)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+
+
+
+
+/** Page numbers with gaps: 1 … 4 5 6 … 12. */
+const pageNumbers = (active, total) => {
+    if (total <= 7)
+        return Array.from({ length: total }, (_, i) => i + 1);
+    const pages = [1];
+    const start = Math.max(2, active - 1);
+    const end = Math.min(total - 1, active + 1);
+    if (start > 2)
+        pages.push('…');
+    for (let i = start; i <= end; i++)
+        pages.push(i);
+    if (end < total - 1)
+        pages.push('…');
+    pages.push(total);
+    return pages;
+};
+/** The app's standard pager (same look as the original inventory list). Hidden when everything fits on one page. */
+const Pager = ({ page, pageSize, totalItems, onChange }) => {
+    const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+    if (totalPages <= 1)
+        return null;
+    const active = Math.min(Math.max(1, page), totalPages);
+    const first = (active - 1) * pageSize + 1;
+    const last = Math.min(active * pageSize, totalItems);
+    const p = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Pagination;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationContainer, style: { padding: '10px 16px', margin: 0, borderTop: '1px solid rgba(0, 0, 0, 0.06)' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationInfo }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(p.ShowingEntries, first, last, totalItems)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationControls, "aria-label": (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer.PageOf, active, totalPages) },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: active === 1, onClick: () => onChange(1), title: p.FirstPage, "aria-label": p.FirstPage }, "\u00AB"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: active === 1, onClick: () => onChange(active - 1), title: p.PreviousPage, "aria-label": p.PreviousPage }, "\u2039"),
+            pageNumbers(active, totalPages).map((n, i) => n === '…' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: `gap-${i}`, style: { padding: '0 6px', color: 'var(--text-muted)' }, "aria-hidden": "true" }, "\u2026")) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: n, type: "button", className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton} ${n === active ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].active : ''}`, "aria-current": n === active ? 'page' : undefined, onClick: () => onChange(n) }, n))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: active === totalPages, onClick: () => onChange(active + 1), title: p.NextPage, "aria-label": p.NextPage }, "\u203A"),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: active === totalPages, onClick: () => onChange(totalPages), title: p.LastPage, "aria-label": p.LastPage }, "\u00BB"))));
+};
+/**
+ * Groups for one page of an already group-ordered list. A group that runs across a page
+ * boundary appears on both pages; its header keeps the full count and knows which part is shown.
+ */
+const buildPageGroups = (pageRows, keyOf, membersByKey, collapsed) => {
+    const groups = [];
+    pageRows.forEach((row, index) => {
+        const key = keyOf(row);
+        const last = groups[groups.length - 1];
+        if (last && last.key === key) {
+            last.count++;
+            last.data.last++;
+        }
+        else {
+            const members = membersByKey[key] || [row];
+            const position = members.indexOf(row) + 1;
+            groups.push({
+                key,
+                name: key,
+                startIndex: index,
+                count: 1,
+                isCollapsed: !!collapsed[key],
+                data: { members, first: position, last: position }
+            });
+        }
+    });
+    return groups;
 };
 
 
@@ -7302,6 +8579,813 @@ const RequestSlaPanel = ({ requests, queueKey, onNavigate }) => {
 
 /***/ }),
 
+/***/ 19505:
+/*!************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/inventory/AssetDetailsPanel.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetDetailsPanel: () => (/* binding */ AssetDetailsPanel)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 25666);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 18008);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _EventActionBadge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../EventActionBadge */ 1773);
+/* harmony import */ var _services_AssetHistoryService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/AssetHistoryService */ 15085);
+/* harmony import */ var _inventoryUi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./inventoryUi */ 69024);
+
+
+
+
+
+
+
+
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__.mergeStyleSets)({
+    header: { display: 'flex', gap: 14, alignItems: 'flex-start', margin: '4px 0 16px' },
+    typeIcon: {
+        width: 48,
+        height: 48,
+        borderRadius: 12,
+        background: '#f0f0f0',
+        color: '#242424',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 22,
+        flexShrink: 0
+    },
+    headText: { flex: 1, minWidth: 0 },
+    sub: { fontSize: 13, color: '#616161', marginTop: 2 },
+    pills: { display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 8 },
+    pill: { fontSize: 12, fontWeight: 600, padding: '2px 10px', borderRadius: 999, lineHeight: '18px' },
+    stats: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 8, marginBottom: 16 },
+    stat: { border: '1px solid #e0e0e0', borderRadius: 8, padding: '10px 12px', background: '#fafafa' },
+    statLabel: { fontSize: 11, fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#616161' },
+    statValue: { fontSize: 15, fontWeight: 600, color: '#242424', marginTop: 4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' },
+    section: { marginTop: 16 },
+    sectionTitle: { margin: '0 0 8px', fontSize: 13, fontWeight: 600, color: '#242424' },
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', columnGap: 24, border: '1px solid #e0e0e0', borderRadius: 8, padding: '4px 16px' },
+    row: { display: 'flex', justifyContent: 'space-between', gap: 12, padding: '9px 0', borderBottom: '1px solid #f0f0f0', fontSize: 13 },
+    label: { color: '#616161', flexShrink: 0 },
+    value: { color: '#242424', fontWeight: 600, textAlign: 'right', wordBreak: 'break-word' },
+    textBlock: { margin: 0, padding: '10px 14px', borderRadius: 8, background: '#f5f5f5', fontSize: 13, lineHeight: '20px', color: '#424242', whiteSpace: 'pre-wrap', wordBreak: 'break-word' },
+    meter: { height: 8, borderRadius: 4, background: '#ebebeb', overflow: 'hidden', margin: '8px 0 4px' },
+    meterFill: { height: '100%', borderRadius: 4 },
+    meterText: { display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#616161' },
+    holder: { display: 'flex', alignItems: 'center', gap: 12, padding: 12, borderRadius: 8, border: '1px solid #c7e0f4', background: '#f3f9fd' },
+    coin: {
+        width: 36,
+        height: 36,
+        borderRadius: '50%',
+        background: '#0f6cbd',
+        color: '#ffffff',
+        fontSize: 13,
+        fontWeight: 600,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0
+    },
+    timeline: { listStyle: 'none', margin: 0, padding: 0 },
+    tlItem: { position: 'relative', padding: '0 0 16px 28px', selectors: { ':last-child': { paddingBottom: 0 } } },
+    tlLine: { position: 'absolute', left: 9, top: 20, bottom: 0, width: 2, background: '#ebebeb' },
+    tlDot: { position: 'absolute', left: 0, top: 2, width: 20, height: 20, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 },
+    tlTitle: { fontSize: 13, fontWeight: 600, color: '#242424' },
+    tlMeta: { fontSize: 12, color: '#616161', marginTop: 2 },
+    tlBody: { fontSize: 13, color: '#424242', marginTop: 4, lineHeight: '18px' },
+    empty: { padding: '24px 12px', textAlign: 'center', color: '#616161', fontSize: 13, border: '1px dashed #d1d1d1', borderRadius: 8 },
+    record: { border: '1px solid #e0e0e0', borderRadius: 8, padding: '10px 12px', marginBottom: 8 },
+    recordHead: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 },
+    mono: { fontFamily: 'Consolas, "Courier New", monospace', fontSize: 12 }
+});
+const Pill = ({ tone, text }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.pill, style: { background: tone.bg, color: tone.fg } }, text));
+const same = (a, b) => !!a && !!b && a.trim().toLowerCase() === b.trim().toLowerCase();
+const AssetDetailsPanel = (props) => {
+    const { asset, onDismiss, auditLogs, returnRequests, spContext } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer;
+    const [tab, setTab] = react__WEBPACK_IMPORTED_MODULE_0__.useState('overview');
+    const [assignments, setAssignments] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [service, setService] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [technical, setTechnical] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const assetId = asset ? asset.id : undefined;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        if (!asset)
+            return;
+        let current = true;
+        setTab('overview');
+        setAssignments(undefined);
+        setService(undefined);
+        setTechnical(undefined);
+        _services_AssetHistoryService__WEBPACK_IMPORTED_MODULE_3__.AssetHistoryService.getAssignments(asset).then(r => { if (current)
+            setAssignments(r); }).catch(() => current && setAssignments([]));
+        _services_AssetHistoryService__WEBPACK_IMPORTED_MODULE_3__.AssetHistoryService.getServiceRecords(asset, spContext).then(r => { if (current)
+            setService(r); }).catch(() => current && setService([]));
+        _services_AssetHistoryService__WEBPACK_IMPORTED_MODULE_3__.AssetHistoryService.getTechnicalInfo(asset).then(r => { if (current)
+            setTechnical(r); }).catch(() => current && setTechnical({ itemId: asset.id }));
+        return () => { current = false; };
+    }, [assetId]);
+    if (!asset)
+        return null;
+    const warranty = (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.warrantyInfo)(asset.warrantyExpiry);
+    const age = (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.ageText)(asset.purchaseDate);
+    const life = (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.lifecyclePercent)(asset.purchaseDate);
+    const status = (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusTone)(asset.status);
+    const returns = returnRequests.filter(r => r.assetId === asset.id || (asset.serialNumber ? same(r.serialNumber, asset.serialNumber) : same(r.assetName, asset.assetName)));
+    const activity = auditLogs
+        .filter(e => (e.entityType === 'Asset' && e.entityId === asset.id) || (!!asset.assetName && same(e.assetName, asset.assetName)))
+        .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    const custody = (assignments || []).map((a, i) => ({
+        key: `a-${i}`,
+        date: a.assignedDate,
+        kind: 'assigned',
+        name: a.employeeName,
+        meta: [(0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.CustodyAssigned, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDay)(a.assignedDate)), a.employeeId ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.CustodyEmployeeId, a.employeeId) : '', a.assignmentId || '']
+            .filter(Boolean).join('  ·  ')
+    })).concat(returns.map((r, i) => ({
+        key: `r-${i}`,
+        date: r.completedDate || r.requestDate,
+        kind: 'return',
+        name: r.requesterName,
+        meta: [(0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.CustodyReturn, r.status), (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDay)(r.completedDate || r.requestDate), r.proposedCondition ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.CustodyCondition, r.proposedCondition) : '']
+            .filter(Boolean).join('  ·  '),
+        body: r.returnReason
+    }))).sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
+    const holders = assignments ? new Set(assignments.map(a => a.employeeName.toLowerCase())).size : undefined;
+    const openIssues = service ? service.filter(r => !/resolv|closed|complet/i.test(r.status)).length : undefined;
+    const detail = (label, value) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.row },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.label }, label),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.value }, value || '—')));
+    const loading = (lines = 3) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, Array.from({ length: lines }).map((_, i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Shimmer, { key: i, styles: { root: { marginBottom: 10 } } }))));
+    const renderOverview = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionDetails),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.grid },
+                detail(s.FieldCategory, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.categoryOf)(asset)),
+                detail(s.FieldType, asset.assetType),
+                detail(s.FieldSerial, react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.mono }, asset.serialNumber)),
+                detail(s.FieldVendor, asset.vendor),
+                detail(s.FieldStatus, react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: status, text: asset.status || '—' })),
+                detail(s.FieldCondition, asset.condition ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.conditionTone)(asset.condition), text: asset.condition }) : undefined),
+                detail(s.FieldPurchased, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDay)(asset.purchaseDate)),
+                detail(s.FieldWarranty, react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: warranty.tone.fg } }, warranty.text)),
+                detail(s.FieldAssignedTo, asset.assignedTo),
+                detail(s.FieldAssetId, asset.id))),
+        life !== undefined && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionLifecycle),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.meter, role: "progressbar", "aria-valuemin": 0, "aria-valuemax": 100, "aria-valuenow": Math.round(life) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.meterFill, style: { width: `${life}%`, background: life >= 100 ? '#c50f1f' : life >= 75 ? '#bc4b09' : '#0f6cbd' } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.meterText },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.LifecycleAge, age || '—')),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.LifecyclePlan, _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.LIFECYCLE_YEARS))))),
+        asset.specifications && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionSpecifications),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.textBlock }, asset.specifications))),
+        asset.note && asset.note !== asset.specifications && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionNotes),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.textBlock }, asset.note)))));
+    const renderPeople = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionCurrentHolder),
+            asset.assignedTo ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.holder },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.coin, "aria-hidden": "true" }, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.initials)(asset.assignedTo)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlTitle }, asset.assignedTo),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlMeta }, asset.status)))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty }, s.NoCurrentHolder))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionCustody),
+            !assignments ? loading() : custody.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty }, s.NoCustody)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.timeline }, custody.map((c, i) => {
+                const tone = c.kind === 'assigned' ? _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.blue : _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.green;
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: c.key, className: css.tlItem },
+                    i < custody.length - 1 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tlLine, "aria-hidden": "true" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tlDot, style: { background: tone.bg, color: tone.fg }, "aria-hidden": "true" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: c.kind === 'assigned' ? 'Contact' : 'ReturnToSession' })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlTitle }, c.name),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlMeta }, c.meta),
+                    c.body && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlBody }, c.body)));
+            }))))));
+    const renderActivity = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section }, activity.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty }, s.NoActivity)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.timeline }, activity.slice(0, 50).map((e, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: e.id, className: css.tlItem },
+            i < Math.min(activity.length, 50) - 1 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tlLine, "aria-hidden": "true" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tlDot, style: { background: '#f0f0f0', color: '#424242' }, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "History" })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventActionBadge__WEBPACK_IMPORTED_MODULE_2__.EventActionBadge, { action: e.action }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tlMeta, style: { marginTop: 0 } },
+                    (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDateTime)(e.timestamp),
+                    "  \u00B7  ",
+                    e.user)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlBody }, e.details || e.title))))),
+        activity.length > 50 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.tlMeta }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.ActivityLimited, 50, activity.length))))));
+    const renderService = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section }, !service ? loading() : service.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty }, s.NoServiceRecords)) : service.map(r => {
+        const tone = /resolv|complet/i.test(r.status) ? _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.green : /closed/i.test(r.status) ? _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.grey : /progress/i.test(r.status) ? _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.amber : _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.red;
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: `${r.kind}-${r.reference}`, className: css.record },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.recordHead },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tlTitle },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: r.kind === 'replacement' ? 'Sync' : 'IncidentTriangle', style: { marginRight: 6, color: '#616161' } }),
+                    r.reference,
+                    "  \u00B7  ",
+                    r.type),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: tone, text: r.status })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlMeta }, [(0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDay)(r.date), r.priority ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.ServicePriority, r.priority) : ''].filter(Boolean).join('  ·  ')),
+            r.description && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tlBody }, r.description)));
+    })));
+    const renderTechnical = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionSharePoint),
+            !technical ? loading(4) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.grid },
+                detail(s.TechItemId, react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.mono }, technical.itemId)),
+                detail(s.TechList, technical.listTitle),
+                detail(s.TechCreated, technical.created ? `${(0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDateTime)(technical.created)}${technical.createdBy ? ` · ${technical.createdBy}` : ''}` : undefined),
+                detail(s.TechModified, technical.modified ? `${(0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDateTime)(technical.modified)}${technical.modifiedBy ? ` · ${technical.modifiedBy}` : ''}` : undefined),
+                detail(s.TechVersion, technical.version),
+                detail(s.TechLink, technical.itemUrl ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Link, { href: technical.itemUrl, target: "_blank", rel: "noopener noreferrer" }, s.OpenInSharePoint) : undefined)))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, s.SectionStoredValues),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.grid }, Object.keys(asset).filter(k => asset[k] !== undefined && asset[k] !== '').map(k => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: k, className: css.row },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.label },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.mono }, k)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.value, style: { fontWeight: 400 } }, String(asset[k])))))))));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Panel, { isOpen: true, onDismiss: onDismiss, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PanelType.medium, headerText: asset.assetName || asset.title, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Close, isLightDismiss: true },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.typeIcon, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.assetTypeIcon)(asset.assetType) })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.headText },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.sub }, [asset.assetType, asset.serialNumber, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.IdLabel, asset.id)].filter(Boolean).join('  ·  ')),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.pills },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: status, text: asset.status || '—' }),
+                    asset.condition && react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.conditionTone)(asset.condition), text: asset.condition }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { tone: warranty.tone, text: warranty.text })))),
+        returns.some(r => r.status !== 'Completed' && r.status !== 'Rejected') && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_13__.MessageBarType.warning, styles: { root: { marginBottom: 12, borderRadius: 6 } } }, s.ReturnInProgress)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.stats },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.stat },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statLabel }, s.StatAge),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statValue }, age || '—')),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.stat },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statLabel }, s.StatWarranty),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statValue, style: { color: warranty.tone.fg } }, warranty.days === undefined ? '—' : warranty.days < 0 ? s.WarrantyExpiredShort : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(s.StatDays, warranty.days))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.stat },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statLabel }, s.StatHolders),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statValue }, holders === undefined ? '…' : holders)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.stat },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statLabel }, s.StatOpenIssues),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.statValue, style: { color: openIssues ? _inventoryUi__WEBPACK_IMPORTED_MODULE_4__.TONES.red.fg : undefined } }, openIssues === undefined ? '…' : openIssues))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Pivot, { selectedKey: tab, onLinkClick: item => item && setTab(item.props.itemKey || 'overview'), headersOnly: true },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { itemKey: "overview", headerText: s.TabOverview, itemIcon: "Info" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { itemKey: "people", headerText: s.TabPeople, itemIcon: "People", itemCount: assignments ? custody.length : undefined }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { itemKey: "activity", headerText: s.TabActivity, itemIcon: "History", itemCount: activity.length || undefined }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { itemKey: "service", headerText: s.TabService, itemIcon: "Repair", itemCount: service ? service.length || undefined : undefined }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PivotItem, { itemKey: "technical", headerText: s.TabTechnical, itemIcon: "Code" })),
+        tab === 'overview' && renderOverview(),
+        tab === 'people' && renderPeople(),
+        tab === 'activity' && renderActivity(),
+        tab === 'service' && renderService(),
+        tab === 'technical' && renderTechnical()));
+};
+
+
+/***/ }),
+
+/***/ 86289:
+/*!************************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/inventory/InventoryExplorer.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   InventoryExplorer: () => (/* binding */ InventoryExplorer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 18008);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _AssetDetailsPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AssetDetailsPanel */ 19505);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/Pager */ 42589);
+/* harmony import */ var _inventoryUi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./inventoryUi */ 69024);
+
+
+
+
+
+
+
+
+
+const PAGE_SIZE = 10;
+const GROUP_STORAGE_KEY = 'inventory_groupBy';
+const STATUS_ORDER = ['inStock', 'assigned', 'pendingReturn', 'maintenance', 'retired', 'other'];
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, flexWrap: 'wrap', marginBottom: 16 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    tiles: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 16 },
+    tile: {
+        textAlign: 'left',
+        padding: '12px 14px',
+        borderRadius: 10,
+        border: '1px solid rgba(0, 0, 0, 0.1)',
+        background: 'var(--surface-bg, #ffffff)',
+        cursor: 'pointer',
+        font: 'inherit',
+        color: 'inherit',
+        selectors: {
+            ':hover': { borderColor: 'rgba(0, 0, 0, 0.25)' },
+            ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: 2 }
+        }
+    },
+    tileActive: { borderColor: '#0f6cbd', boxShadow: 'inset 0 0 0 1px #0f6cbd', background: 'rgba(15, 108, 189, 0.05)' },
+    tileLabel: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 600, color: 'var(--text-muted, #616161)' },
+    tileDot: { width: 8, height: 8, borderRadius: '50%' },
+    tileValue: { fontSize: 24, fontWeight: 600, lineHeight: '32px', marginTop: 4 },
+    toolbar: { display: 'flex', alignItems: 'flex-end', gap: 12, flexWrap: 'wrap', marginBottom: 12 },
+    search: { flex: '1 1 260px', minWidth: 200 },
+    resultLine: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--text-muted, #616161)', margin: '4px 0 8px' },
+    card: { border: '1px solid rgba(0, 0, 0, 0.1)', borderRadius: 12, overflow: 'hidden', background: 'var(--surface-bg, #ffffff)' },
+    groupHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        width: '100%',
+        padding: '10px 16px',
+        border: 'none',
+        borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+        background: 'rgba(0, 0, 0, 0.025)',
+        cursor: 'pointer',
+        font: 'inherit',
+        color: 'inherit',
+        textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(0, 0, 0, 0.05)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 } }
+    },
+    groupName: { fontSize: 14, fontWeight: 600 },
+    count: { fontSize: 12, fontWeight: 600, padding: '0 8px', borderRadius: 999, background: 'rgba(0, 0, 0, 0.07)', lineHeight: '20px' },
+    breakdown: { display: 'flex', gap: 12, marginLeft: 'auto', fontSize: 12, color: 'var(--text-muted, #616161)', flexWrap: 'wrap' },
+    crumb: { display: 'inline-flex', alignItems: 'center', gap: 5 },
+    assetCell: { display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 },
+    typeIcon: { width: 32, height: 32, borderRadius: 8, background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, flexShrink: 0, color: '#242424' },
+    assetName: { fontSize: 13, fontWeight: 600, color: 'var(--text-main, #242424)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' },
+    assetMeta: { fontSize: 12, color: 'var(--text-muted, #616161)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' },
+    pill: { fontSize: 12, fontWeight: 600, padding: '2px 10px', borderRadius: 999, lineHeight: '18px', whiteSpace: 'nowrap' },
+    person: { display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 },
+    coin: { width: 24, height: 24, borderRadius: '50%', background: '#0f6cbd', color: '#fff', fontSize: 10, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    cellText: { fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    muted: { color: 'var(--text-muted, #616161)' },
+    row: { cursor: 'pointer' },
+    empty: { padding: '48px 16px', textAlign: 'center', color: 'var(--text-muted, #616161)' },
+    pager: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 16px', borderTop: '1px solid rgba(0, 0, 0, 0.06)', fontSize: 13 }
+});
+const readGroupBy = () => {
+    try {
+        const v = window.localStorage.getItem(GROUP_STORAGE_KEY);
+        if (v === 'type' || v === 'category' || v === 'status' || v === 'none')
+            return v;
+    }
+    catch {
+        // Storage unavailable: use the default.
+    }
+    return 'type';
+};
+const Pill = ({ status, text, condition }) => {
+    const tone = condition ? (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.conditionTone)(status) : (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusTone)(status);
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.pill, style: { background: tone.bg, color: tone.fg } }, text);
+};
+const InventoryExplorer = (props) => {
+    const { items, addLabel, onAdd, auditLogs, returnRequests, spContext } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer;
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [quick, setQuick] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [typeFilter, setTypeFilter] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [groupBy, setGroupByState] = react__WEBPACK_IMPORTED_MODULE_0__.useState(readGroupBy);
+    const [collapsed, setCollapsed] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const [sort, setSort] = react__WEBPACK_IMPORTED_MODULE_0__.useState({ key: 'purchased', desc: true });
+    const [page, setPage] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
+    const [selected, setSelected] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const setGroupBy = (value) => {
+        setGroupByState(value);
+        setCollapsed({});
+        try {
+            window.localStorage.setItem(GROUP_STORAGE_KEY, value);
+        }
+        catch { /* not persisted */ }
+    };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setPage(1), [search, quick, typeFilter, groupBy, sort.key, sort.desc]);
+    // Keep the open panel on the latest copy of its asset after a reload.
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        if (selected) {
+            const fresh = items.find(i => i.id === selected.id);
+            if (fresh && fresh !== selected)
+                setSelected(fresh);
+        }
+    }, [items]);
+    const types = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => Array.from(new Set(items.map(i => (i.assetType || '').trim()).filter(Boolean))).sort(), [items]);
+    const counts = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => ({
+        total: items.length,
+        inStock: items.filter(i => (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(i.status) === 'inStock').length,
+        assigned: items.filter(i => (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(i.status) === 'assigned').length,
+        maintenance: items.filter(i => (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(i.status) === 'maintenance').length,
+        warrantySoon: items.filter(i => (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.warrantyInfo)(i.warrantyExpiry).state === 'soon').length
+    }), [items]);
+    const query = search.trim().toLowerCase();
+    const filtered = items.filter(i => {
+        if (quick === 'warrantySoon' && (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.warrantyInfo)(i.warrantyExpiry).state !== 'soon')
+            return false;
+        if (quick !== 'all' && quick !== 'warrantySoon' && (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(i.status) !== quick)
+            return false;
+        if (typeFilter !== 'all' && (i.assetType || '').trim() !== typeFilter)
+            return false;
+        if (!query)
+            return true;
+        return [i.assetName, i.serialNumber, i.vendor, i.assignedTo, i.assetType, i.title, i.id, i.specifications]
+            .some(v => (v || '').toLowerCase().indexOf(query) >= 0);
+    });
+    const sortValue = (i) => {
+        switch (sort.key) {
+            case 'name': return (i.assetName || i.title || '').toLowerCase();
+            case 'type': return (i.assetType || '').toLowerCase();
+            case 'status': return STATUS_ORDER.indexOf((0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(i.status));
+            case 'assignedTo': return (i.assignedTo || '￿').toLowerCase();
+            case 'warranty': return i.warrantyExpiry ? new Date(i.warrantyExpiry).getTime() || 0 : Number.MAX_SAFE_INTEGER;
+            default: return i.purchaseDate ? new Date(i.purchaseDate).getTime() || 0 : 0;
+        }
+    };
+    const sorted = filtered.slice().sort((a, b) => {
+        const va = sortValue(a), vb = sortValue(b);
+        const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+        return sort.desc ? -cmp : cmp;
+    });
+    const groupKeyOf = (i) => groupBy === 'type' ? ((i.assetType || '').trim() || s.Uncategorised)
+        : groupBy === 'category' ? (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.categoryOf)(i)
+            : (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucketLabel)((0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(i.status));
+    // Items ordered group by group (DetailsList groups are contiguous ranges).
+    let rows = sorted;
+    const byKey = {};
+    if (groupBy !== 'none') {
+        sorted.forEach(i => { const k = groupKeyOf(i); (byKey[k] = byKey[k] || []).push(i); });
+        const keys = Object.keys(byKey).sort((a, b) => {
+            if (groupBy === 'status') {
+                return STATUS_ORDER.indexOf((0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(byKey[a][0].status)) - STATUS_ORDER.indexOf((0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(byKey[b][0].status));
+            }
+            return a.localeCompare(b);
+        });
+        rows = keys.reduce((all, k) => all.concat(byKey[k]), []);
+    }
+    // 10 rows per page in every view. When grouped, the page is cut from the group-ordered list and
+    // its groups rebuilt, so a group that crosses a page boundary shows on both pages with its full count.
+    const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+    const activePage = Math.min(page, totalPages);
+    const visible = rows.slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE);
+    const groups = groupBy !== 'none' ? (0,_common_Pager__WEBPACK_IMPORTED_MODULE_3__.buildPageGroups)(visible, groupKeyOf, byKey, collapsed) : undefined;
+    const sortable = (key) => ({
+        isSorted: sort.key === key,
+        isSortedDescending: sort.key === key && sort.desc,
+        onColumnClick: () => setSort(prev => ({ key, desc: prev.key === key ? !prev.desc : key === 'purchased' }))
+    });
+    const columns = [
+        {
+            key: 'asset', name: s.ColAsset, minWidth: 220, maxWidth: 340, isResizable: true, ...sortable('name'),
+            onRender: (i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.assetCell },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.typeIcon, "aria-hidden": "true" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.assetTypeIcon)(i.assetType) })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { minWidth: 0 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Link, { className: css.assetName, onClick: (e) => { e.stopPropagation(); setSelected(i); } }, i.assetName || i.title || s.Unnamed),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.assetMeta }, [i.serialNumber, `#${i.id}`].filter(Boolean).join('  ·  ')))))
+        },
+        ...(groupBy !== 'type' ? [{
+                key: 'type', name: s.ColType, minWidth: 80, maxWidth: 120, isResizable: true, ...sortable('type'),
+                onRender: (i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.cellText }, i.assetType || '—')
+            }] : []),
+        ...(groupBy !== 'category' ? [{
+                key: 'category', name: s.ColCategory, minWidth: 100, maxWidth: 140, isResizable: true,
+                onRender: (i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${css.cellText} ${css.muted}` }, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.categoryOf)(i))
+            }] : []),
+        {
+            key: 'status', name: s.ColStatus, minWidth: 100, maxWidth: 140, isResizable: true, ...sortable('status'),
+            onRender: (i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { status: i.status, text: i.status || '—' })
+        },
+        {
+            key: 'assignedTo', name: s.ColAssignedTo, minWidth: 130, maxWidth: 200, isResizable: true, ...sortable('assignedTo'),
+            onRender: (i) => i.assignedTo ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.person },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.coin, "aria-hidden": "true" }, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.initials)(i.assignedTo)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.cellText }, i.assignedTo))) : react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.muted }, "\u2014")
+        },
+        {
+            key: 'condition', name: s.ColCondition, minWidth: 80, maxWidth: 110, isResizable: true,
+            onRender: (i) => i.condition ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(Pill, { status: i.condition, text: i.condition, condition: true }) : react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.muted }, "\u2014")
+        },
+        {
+            key: 'warranty', name: s.ColWarranty, minWidth: 110, maxWidth: 150, isResizable: true, ...sortable('warranty'),
+            onRender: (i) => {
+                const w = (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.warrantyInfo)(i.warrantyExpiry);
+                const text = w.state === 'active' ? (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDay)(i.warrantyExpiry) : w.state === 'expired' ? s.WarrantyExpiredShort : w.state === 'none' ? '—' : w.text;
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.cellText, style: { color: w.state === 'active' || w.state === 'none' ? undefined : w.tone.fg, fontWeight: w.state === 'soon' || w.state === 'expired' ? 600 : 400 } }, text);
+            }
+        },
+        {
+            key: 'purchased', name: s.ColPurchased, minWidth: 100, maxWidth: 130, isResizable: true, ...sortable('purchased'),
+            onRender: (i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { minWidth: 0 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.cellText, style: { display: 'block' } }, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.formatDay)(i.purchaseDate)),
+                (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.ageText)(i.purchaseDate) && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.assetMeta }, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.ageText)(i.purchaseDate))))
+        },
+        {
+            key: 'vendor', name: s.ColVendor, minWidth: 80, maxWidth: 130, isResizable: true,
+            onRender: (i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.cellText }, i.vendor || '—')
+        },
+        {
+            key: 'open', name: '', minWidth: 24, maxWidth: 24,
+            onRender: () => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "ChevronRight", style: { color: '#8a8886' }, "aria-hidden": "true" })
+        }
+    ];
+    const renderGroupHeader = (headerProps) => {
+        if (!headerProps || !headerProps.group)
+            return null;
+        const group = headerProps.group;
+        const paged = group.data;
+        const members = paged ? paged.members : [];
+        const partial = !!paged && group.count < members.length;
+        const breakdown = STATUS_ORDER
+            .map(b => ({ b, n: members.filter(m => (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(m.status) === b).length }))
+            .filter(x => x.n > 0 && !(groupBy === 'status'));
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: css.groupHeader, "aria-expanded": !group.isCollapsed, onClick: () => setCollapsed(prev => ({ ...prev, [group.key]: !prev[group.key] })) },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: group.isCollapsed ? 'ChevronRight' : 'ChevronDown', style: { fontSize: 12 } }),
+            groupBy === 'type' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.assetTypeIcon)(group.name) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.groupName }, group.name),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.count }, members.length),
+            partial && paged && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.muted, style: { fontSize: 12 } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.GroupPartial, paged.first, paged.last, members.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.breakdown }, breakdown.map(x => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: x.b, className: css.crumb },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tileDot, style: { background: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusTone)(members.filter(m => (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucket)(m.status) === x.b)[0].status).fg } }),
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.BreakdownItem, x.n, (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusBucketLabel)(x.b).toLowerCase())))))));
+    };
+    const tiles = [
+        { key: 'all', label: s.TileTotal, value: counts.total },
+        { key: 'inStock', label: s.TileInStock, value: counts.inStock, dot: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusTone)('In Stock').fg },
+        { key: 'assigned', label: s.TileAssigned, value: counts.assigned, dot: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusTone)('Assigned').fg },
+        { key: 'maintenance', label: s.TileMaintenance, value: counts.maintenance, dot: (0,_inventoryUi__WEBPACK_IMPORTED_MODULE_4__.statusTone)('Under Maintenance').fg },
+        { key: 'warrantySoon', label: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.TileWarrantySoon, 90), value: counts.warrantySoon, dot: '#bc4b09' }
+    ];
+    const typeOptions = [{ key: 'all', text: s.AllTypes }].concat(types.map(t => ({ key: t, text: t })));
+    const groupOptions = [
+        { key: 'type', text: s.GroupByType },
+        { key: 'category', text: s.GroupByCategory },
+        { key: 'status', text: s.GroupByStatus },
+        { key: 'none', text: s.GroupByNone }
+    ];
+    const hasFilters = quick !== 'all' || typeFilter !== 'all' || !!query;
+    const clearFilters = () => { setQuick('all'); setTypeFilter('all'); setSearch(''); };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.title }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryPage.Title),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.subtitle }, s.Subtitle)),
+            onAdd && addLabel && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: addLabel, iconProps: { iconName: 'Add' }, onClick: onAdd })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tiles, role: "group", "aria-label": s.TilesAria }, tiles.map(t => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: t.key, type: "button", className: `${css.tile} ${quick === t.key ? css.tileActive : ''}`, "aria-pressed": quick === t.key, onClick: () => setQuick(quick === t.key ? 'all' : t.key) },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tileLabel },
+                t.dot && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.tileDot, style: { background: t.dot } }),
+                t.label),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tileValue }, t.value))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SearchBox, { className: css.search, placeholder: s.SearchPlaceholder, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { label: s.FilterType, options: typeOptions, selectedKey: typeFilter, onChange: (_, o) => o && setTypeFilter(String(o.key)), styles: { root: { width: 170 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { label: s.GroupByLabel, options: groupOptions, selectedKey: groupBy, onChange: (_, o) => o && setGroupBy(o.key), styles: { root: { width: 170 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.ResultCount, filtered.length, items.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                groups && groups.length > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: groups.every(g => g.isCollapsed) ? 'ExploreContent' : 'CollapseContent' }, text: groups.every(g => g.isCollapsed) ? s.ExpandAll : s.CollapseAll, onClick: () => {
+                        const collapse = !groups.every(g => g.isCollapsed);
+                        const next = {};
+                        groups.forEach(g => { next[g.key] = collapse; });
+                        setCollapsed(next);
+                    } })),
+                hasFilters && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: s.ClearFilters, onClick: clearFilters }))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.card },
+            filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Icon, { iconName: "Search", style: { fontSize: 28, display: 'block', marginBottom: 8 } }),
+                items.length === 0 ? s.EmptyInventory : s.EmptyFiltered)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_13__.DetailsList, { items: visible, columns: columns, groups: groups, groupProps: { onRenderHeader: renderGroupHeader, showEmptyGroups: false }, setKey: "inventory", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_14__.DetailsListLayoutMode.justified, constrainMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_14__.ConstrainMode.unconstrained, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_15__.SelectionMode.none, onItemInvoked: (i) => setSelected(i), onRenderRow: (rowProps, defaultRender) => rowProps && defaultRender ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.row, onClick: () => setSelected(rowProps.item) }, defaultRender(rowProps))) : null, ariaLabelForGrid: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryPage.Title })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_3__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: rows.length, onChange: setPage })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetDetailsPanel__WEBPACK_IMPORTED_MODULE_2__.AssetDetailsPanel, { asset: selected, onDismiss: () => setSelected(undefined), auditLogs: auditLogs, returnRequests: returnRequests, spContext: spContext })));
+};
+
+
+/***/ }),
+
+/***/ 69024:
+/*!******************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/inventory/inventoryUi.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LIFECYCLE_YEARS: () => (/* binding */ LIFECYCLE_YEARS),
+/* harmony export */   TONES: () => (/* binding */ TONES),
+/* harmony export */   WARRANTY_SOON_DAYS: () => (/* binding */ WARRANTY_SOON_DAYS),
+/* harmony export */   ageText: () => (/* binding */ ageText),
+/* harmony export */   assetTypeIcon: () => (/* binding */ assetTypeIcon),
+/* harmony export */   assignableOfType: () => (/* binding */ assignableOfType),
+/* harmony export */   categoryOf: () => (/* binding */ categoryOf),
+/* harmony export */   conditionTone: () => (/* binding */ conditionTone),
+/* harmony export */   formatDateTime: () => (/* binding */ formatDateTime),
+/* harmony export */   formatDay: () => (/* binding */ formatDay),
+/* harmony export */   initials: () => (/* binding */ initials),
+/* harmony export */   isAssignable: () => (/* binding */ isAssignable),
+/* harmony export */   lifecyclePercent: () => (/* binding */ lifecyclePercent),
+/* harmony export */   statusBucket: () => (/* binding */ statusBucket),
+/* harmony export */   statusBucketLabel: () => (/* binding */ statusBucketLabel),
+/* harmony export */   statusTone: () => (/* binding */ statusTone),
+/* harmony export */   warrantyInfo: () => (/* binding */ warrantyInfo)
+/* harmony export */ });
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+// Display helpers shared by the Inventory explorer and the asset details panel.
+
+
+const TONES = {
+    green: { bg: '#dff6dd', fg: '#0e5c0e' },
+    blue: { bg: '#ebf3fc', fg: '#0f548c' },
+    amber: { bg: '#fff4ce', fg: '#8a3707' },
+    orange: { bg: '#fde8d8', fg: '#8e3b0a' },
+    red: { bg: '#fde7e9', fg: '#a4262c' },
+    grey: { bg: '#f0f0f0', fg: '#424242' }
+};
+/** Fluent MDL2 icon for an asset type (falls back to a generic device). */
+const assetTypeIcon = (type) => {
+    const t = (type || '').toLowerCase();
+    if (t.indexOf('laptop') >= 0 || t.indexOf('notebook') >= 0)
+        return 'System';
+    if (t.indexOf('desktop') >= 0 || t.indexOf('pc') >= 0)
+        return 'ThisPC';
+    if (t.indexOf('monitor') >= 0 || t.indexOf('display') >= 0 || t.indexOf('screen') >= 0)
+        return 'TVMonitor';
+    if (t.indexOf('keyboard') >= 0)
+        return 'KeyboardClassic';
+    if (t.indexOf('headset') >= 0 || t.indexOf('headphone') >= 0)
+        return 'Headset';
+    if (t.indexOf('phone') >= 0 || t.indexOf('mobile') >= 0)
+        return 'CellPhone';
+    if (t.indexOf('tablet') >= 0 || t.indexOf('ipad') >= 0)
+        return 'Tablet';
+    if (t.indexOf('printer') >= 0)
+        return 'Print';
+    return 'Devices3';
+};
+/** Groups the free-text Status column into the buckets the page filters and colours by. */
+const statusBucket = (status) => {
+    const s = (status || '').toLowerCase().trim();
+    if (s === 'in stock' || s === 'instock' || s === 'yes' || s === 'available' || s === 'return approved')
+        return 'inStock';
+    if (s.indexOf('assigned') === 0)
+        return 'assigned';
+    if (s.indexOf('maintenance') >= 0 || s.indexOf('repair') >= 0)
+        return 'maintenance';
+    if (s.indexOf('pending return') >= 0)
+        return 'pendingReturn';
+    if (s.indexOf('retired') >= 0 || s.indexOf('disposed') >= 0 || s.indexOf('lost') >= 0)
+        return 'retired';
+    return 'other';
+};
+/**
+ * In stock and free to hand out: the rule the assignment panel has always used
+ * ('Return approved' items still count as held until the return is completed).
+ */
+const isAssignable = (item) => {
+    const s = (item.status || '').toLowerCase().trim();
+    return s === 'in stock' || s === 'yes';
+};
+/** Assignable items of a requested asset type (case-insensitive). */
+const assignableOfType = (items, assetType) => {
+    const type = (assetType || '').trim().toLowerCase();
+    return items.filter(i => isAssignable(i) && (i.assetType || '').trim().toLowerCase() === type);
+};
+const statusTone = (status) => {
+    switch (statusBucket(status)) {
+        case 'inStock': return TONES.green;
+        case 'assigned': return TONES.blue;
+        case 'maintenance': return TONES.amber;
+        case 'pendingReturn': return TONES.orange;
+        case 'retired': return TONES.red;
+        default: return TONES.grey;
+    }
+};
+const statusBucketLabel = (bucket) => {
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.InventoryExplorer;
+    switch (bucket) {
+        case 'inStock': return s.StatusInStock;
+        case 'assigned': return s.StatusAssigned;
+        case 'maintenance': return s.StatusMaintenance;
+        case 'pendingReturn': return s.StatusPendingReturn;
+        case 'retired': return s.StatusRetired;
+        default: return s.StatusOther;
+    }
+};
+const conditionTone = (condition) => {
+    const c = (condition || '').toLowerCase();
+    if (c === 'new' || c === 'excellent' || c === 'good')
+        return TONES.green;
+    if (c === 'fair')
+        return TONES.amber;
+    if (c === 'poor' || c === 'damaged')
+        return TONES.red;
+    return TONES.grey;
+};
+const toDate = (raw) => {
+    if (!raw)
+        return undefined;
+    const d = new Date(raw);
+    return isNaN(d.getTime()) ? undefined : d;
+};
+/** "28 Sept 2026"; the raw text when it isn't a date; "—" when empty. */
+const formatDay = (raw) => {
+    const d = toDate(raw);
+    return d ? d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }) : (raw || '—');
+};
+const formatDateTime = (raw) => {
+    const d = toDate(raw);
+    return d ? d.toLocaleString(undefined, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : (raw || '—');
+};
+/** Age since purchase: "Under 1 month", "5 mo", "2 yr", "1 yr 4 mo". */
+const ageText = (purchaseDate, now = new Date()) => {
+    const d = toDate(purchaseDate);
+    if (!d || d > now)
+        return undefined;
+    const months = (now.getFullYear() - d.getFullYear()) * 12 + (now.getMonth() - d.getMonth()) - (now.getDate() < d.getDate() ? 1 : 0);
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.InventoryExplorer;
+    if (months < 1)
+        return s.AgeUnderMonth;
+    if (months < 12)
+        return (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(s.AgeMonths, months);
+    const years = Math.floor(months / 12);
+    const rest = months % 12;
+    return rest ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(s.AgeYearsMonths, years, rest) : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(s.AgeYears, years);
+};
+/** Assets are planned for replacement after 4 years (the rule used by the asset analysis panel). */
+const LIFECYCLE_YEARS = 4;
+const lifecyclePercent = (purchaseDate, now = new Date()) => {
+    const d = toDate(purchaseDate);
+    if (!d)
+        return undefined;
+    const end = new Date(d);
+    end.setFullYear(end.getFullYear() + LIFECYCLE_YEARS);
+    const pct = ((now.getTime() - d.getTime()) / (end.getTime() - d.getTime())) * 100;
+    return Math.max(0, Math.min(100, pct));
+};
+const WARRANTY_SOON_DAYS = 90;
+const warrantyInfo = (warrantyExpiry, now = new Date()) => {
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.InventoryExplorer;
+    const d = toDate(warrantyExpiry);
+    if (!d)
+        return { state: 'none', tone: TONES.grey, text: s.WarrantyNone };
+    const days = Math.ceil((d.getTime() - now.getTime()) / 86400000);
+    if (days < 0)
+        return { state: 'expired', tone: TONES.red, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(s.WarrantyExpiredOn, formatDay(warrantyExpiry)), days };
+    if (days <= WARRANTY_SOON_DAYS)
+        return { state: 'soon', tone: TONES.amber, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(s.WarrantyEndsInDays, days), days };
+    return { state: 'active', tone: TONES.green, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(s.WarrantyUntil, formatDay(warrantyExpiry)), days };
+};
+const initials = (name) => (name || '').split(/[\s.@_-]+/).filter(Boolean).slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+/** Category (Title) cleaned the same way the old grouped list did. */
+const categoryOf = (item) => {
+    const t = (item.title || '').trim();
+    if (!t)
+        return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.InventoryExplorer.Uncategorised;
+    if (/^company\s*assets?$/i.test(t))
+        return 'Company Assets';
+    if (/^leased\s*assets?$/i.test(t))
+        return 'Leased Assets';
+    return t;
+};
+
+
+/***/ }),
+
 /***/ 60393:
 /*!**************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/config/AppConfig.js ***!
@@ -7340,7 +9424,8 @@ const DEFAULT_APP_CONFIG = {
         employee: 'EmployeeList',
         replacement: 'Asset Replacements',
         stockThresholds: 'Stock Thresholds',
-        assetKits: 'Asset Kits'
+        assetKits: 'Asset Kits',
+        appSettings: 'Inventory App Settings'
     },
     sla: {
         approvalHours: 48,
@@ -7379,7 +9464,8 @@ const buildAppConfig = (props = {}) => {
             employee: text(props.employeeListTitle, d.lists.employee),
             replacement: text(props.replacementListTitle, d.lists.replacement),
             stockThresholds: text(props.stockThresholdsListTitle, d.lists.stockThresholds),
-            assetKits: text(props.assetKitsListTitle, d.lists.assetKits)
+            assetKits: text(props.assetKitsListTitle, d.lists.assetKits),
+            appSettings: text(props.appSettingsListTitle, d.lists.appSettings)
         },
         sla: {
             approvalHours: parseNonNegativeNumber(props.approvalSlaHours, d.sla.approvalHours),
@@ -7596,6 +9682,7 @@ const INCIDENT_RAISED_TO_OPTIONS = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getConfigListDefinitions: () => (/* binding */ getConfigListDefinitions),
 /* harmony export */   getListDefinition: () => (/* binding */ getListDefinition),
 /* harmony export */   getListDefinitions: () => (/* binding */ getListDefinitions)
 /* harmony export */ });
@@ -7688,13 +9775,14 @@ const getListDefinitions = () => {
             ]
         },
         { key: 'incident', candidates: names(lists.incident), optional: true, requiredColumns: [] },
-        { key: 'employee', candidates: names(lists.employee), optional: true, requiredColumns: [] },
+        { key: 'employee', candidates: names(lists.employee), optional: true, internal: true, requiredColumns: [] },
         { key: 'replacement', candidates: names(lists.replacement), optional: true, autoCreated: true, requiredColumns: [] },
         {
             key: 'stockThresholds',
             candidates: names(lists.stockThresholds),
             optional: true,
             autoCreated: true,
+            internal: true,
             requiredColumns: [{ name: 'Title' }, { name: 'MinimumStock' }, { name: 'LastAlertSent' }]
         },
         {
@@ -7702,10 +9790,21 @@ const getListDefinitions = () => {
             candidates: names(lists.assetKits),
             optional: true,
             autoCreated: true,
+            internal: true,
             requiredColumns: [{ name: 'Title' }, { name: 'KitItems' }, { name: 'KitDescription' }]
+        },
+        {
+            key: 'appSettings',
+            candidates: names(lists.appSettings),
+            optional: true,
+            autoCreated: true,
+            internal: true,
+            requiredColumns: [{ name: 'Title' }, { name: 'SettingValue' }]
         }
     ];
 };
+/** The lists shown and health-checked on the Config page (excludes the app's internal settings lists). */
+const getConfigListDefinitions = () => getListDefinitions().filter(d => !d.internal);
 const getListDefinition = (key) => getListDefinitions().find(d => d.key === key);
 
 
@@ -8057,7 +10156,19 @@ const en_us = {
         "ColSerialNumber": "Serial Number",
         "ColAssignedDate": "Assigned Date",
         "MyEquipmentEmptyState": "No equipment currently assigned to you.",
-        "MyEquipmentEmptyStateHint": "Assigned devices will appear here after handoff"
+        "MyEquipmentEmptyStateHint": "Assigned devices will appear here after handoff",
+        "AttentionTitle": "Needs attention",
+        "AttentionAllClear": "All clear, nothing waiting on you",
+        "AttentionWaitingAssignment": "{0} waiting for an asset",
+        "AttentionAwaitingDecision": "{0} awaiting your decision",
+        "AttentionOverdue": "{0} overdue",
+        "AttentionInReview": "{0} in review",
+        "AttentionReadySoon": "{0} approved, asset on its way",
+        "KpiInReview": "In review",
+        "KpiInReviewSubtitle": "Waiting for your manager",
+        "KpiAwaitingHandoff": "Awaiting handoff",
+        "KpiAwaitingHandoffSubtitle": "Approved, asset being prepared",
+        "ViewAll": "View all ({0})"
     },
     "WorkflowPopup": {
         "GotIt": "Got it",
@@ -8088,7 +10199,31 @@ const en_us = {
         "CategoryAudits": "Audits",
         "ViewDetails": "View details",
         "MarkAsRead": "Mark as read",
-        "DismissNotification": "Dismiss notification"
+        "DismissNotification": "Dismiss notification",
+        "FilterUnread": "Unread",
+        "SearchPlaceholder": "Search notifications",
+        "GroupToday": "Today",
+        "GroupYesterday": "Yesterday",
+        "GroupThisWeek": "Earlier this week",
+        "GroupOlder": "Older",
+        "TimeJustNow": "Just now",
+        "TimeMinutesAgo": "{0} min ago",
+        "TimeHoursAgo": "{0} h ago",
+        "TimeYesterday": "Yesterday",
+        "UnreadSummary": "You have {0} unread notifications.",
+        "UnreadSummaryOne": "You have 1 unread notification.",
+        "NoUnreadSummary": "You're all caught up.",
+        "MarkAsUnread": "Mark as unread",
+        "DismissShown": "Dismiss shown",
+        "DismissedOne": "Notification dismissed.",
+        "DismissedMany": "{0} notifications dismissed.",
+        "Undo": "Undo",
+        "ShowMore": "Show more ({0} remaining)",
+        "OpenPage": "Open {0}",
+        "NoSearchResultsTitle": "No matches",
+        "NoSearchResults": "No notifications match \"{0}\".",
+        "EmptyUnread": "You have no unread notifications.",
+        "OpenButtonUnreadAria": "Notifications, {0} unread"
     },
     "AssetForm": {
         "HeaderAdmin": "Add New Asset",
@@ -8115,6 +10250,11 @@ const en_us = {
         "LabelManagerName": "Manager's Name",
         "ManagerNamePlaceholder": "Enter manager's name",
         "ManagerNameRequired": "Manager's name is required",
+        "ManagerSearchPlaceholder": "Search managers by name or email",
+        "ManagerSuggestionsHeader": "Managers in {0}",
+        "ManagerNoResults": "No manager matches. Only members of {0} can approve requests.",
+        "ManagerSearching": "Searching...",
+        "ManagerGroupUnavailable": "Couldn't load the managers in {0}. Refresh the page, or ask an admin to check the group.",
         "LabelRequestedDate": "Requested Date",
         "LabelAssetType": "Asset Type",
         "LabelPriority": "Priority",
@@ -8288,6 +10428,17 @@ const en_us = {
         "ListDesc_StockThresholdsList": "Minimum available stock per asset type for low-stock alerts. Created when thresholds are first saved.",
         "ListTitle_AssetKitsList": "Asset Kits",
         "ListDesc_AssetKitsList": "Standard bundles for onboarding new starters. Created when a kit is first saved.",
+        "ListTitle_AppSettingsList": "Inventory App Settings",
+        "ListDesc_AppSettingsList": "Site-wide app settings, such as email notifications. Created when the settings are first saved.",
+        "AccessUnknown": "Read (write not verified)",
+        "ChecksLabel": "What was tested",
+        "CheckOptional": "optional",
+        "Check_Find": "Find the list by its title",
+        "Check_Columns": "Read the list's columns",
+        "Check_Items": "Read items",
+        "Check_Permissions": "Read your permissions on the list",
+        "Check_Details": "Read list details (item count, last modified, link)",
+        "Note_PermissionsFromSite": "Your permissions on this list couldn't be read directly, so the site's permissions were used. ({0})",
         "SchemaUnchecked": "Run a health check to validate these columns against the live SharePoint lists.",
         "SchemaAliasesHint": "Also accepted: {0}",
         "SchemaAuditTrail": "(Audit Trail)",
@@ -8888,6 +11039,10 @@ const en_us = {
         "PdfIssueDescriptionTitle": "ISSUE DESCRIPTION",
         "PdfReplacementReasonTitle": "REPLACEMENT REASON & DETAILS",
         "PdfNoDescription": "No description provided.",
+        "PdfDownloadFailed": "Couldn't create the PDF for {0}. Try again, or check the browser console for details.",
+        "PdfDownloadFailedTitle": "Download failed",
+        "LocalOnlyTag": "Not synced",
+        "LocalOnlyTooltip": "Saved only in this browser because SharePoint refused the save. Admins can't see this incident.",
         "PdfNoReason": "No reason provided.",
         "PdfResolutionSummaryTitle": "RESOLUTION SUMMARY"
     },
@@ -8912,6 +11067,7 @@ const en_us = {
         "ReplacementListLabel": "Asset replacements list",
         "StockThresholdsListLabel": "Stock thresholds list",
         "AssetKitsListLabel": "Asset kits list",
+        "AppSettingsListLabel": "App settings list",
         "AlertsPageDescription": "Service targets and stock alerts",
         "GroupSla": "Request SLA",
         "ApprovalSlaLabel": "Hours to approve (target)",
@@ -9019,6 +11175,238 @@ const en_us = {
         "KitDelete": "Delete",
         "KitDeleteConfirm": "Delete the kit \"{0}\"?",
         "KitDeleted": "Kit deleted."
+    },
+    "EmailCenter": {
+        "Title": "Email Center",
+        "OpenButton": "Email",
+        "OpenButtonAria": "Open the Email Center",
+        "OpenButtonFailedAria": "Open the Email Center. {0} email(s) failed.",
+        "TabOutbox": "Outbox",
+        "TabSettings": "Settings",
+        "StatusOff": "Email sending is turned off. Emails are listed here but not sent.",
+        "StatusTestMode": "Test mode is on. Request, approval, rejection and assignment emails go to the test recipients.",
+        "OutboxEmpty": "No emails yet in this session. Emails the app sends will appear here.",
+        "OutboxSessionNote": "Shows emails from this browser session only.",
+        "ClearOutbox": "Clear list",
+        "StatusSent": "Sent",
+        "StatusFailed": "Failed",
+        "StatusSkipped": "Not sent",
+        "BackToOutbox": "All emails",
+        "DetailSent": "Sent at {0}.",
+        "DetailSentFallback": "Sent at {0} through the SharePoint fallback. Delivery isn't guaranteed.",
+        "DetailFailed": "Failed at {0}: {1}",
+        "DetailSkipped": "Not sent at {0} because email sending is turned off.",
+        "SendNow": "Send now",
+        "SendAgain": "Send again",
+        "SendBlockedOff": "Email sending is turned off. Turn it on in Settings to send.",
+        "ToLabel": "To: {0}",
+        "SectionDelivery": "Delivery (applies to everyone)",
+        "SectionDeliveryDesc": "Saved to the \"{0}\" list on this site.",
+        "ToggleEnabled": "Send email notifications",
+        "ToggleOn": "On",
+        "ToggleOff": "Off",
+        "ToggleTestMode": "Test mode",
+        "TestModeDesc": "Sends request, approval, rejection and assignment emails to the test recipients instead of the real people. Low-stock alerts always go to the admin group.",
+        "LabelTestAdminRecipients": "Test recipients for admin and employee emails",
+        "LabelTestManagerRecipient": "Test recipient for manager emails",
+        "RecipientsPlaceholder": "name@company.com, name2@company.com",
+        "RecipientsRequired": "Enter at least one valid email address.",
+        "SaveSettings": "Save settings",
+        "SettingsSaved": "Email settings saved.",
+        "SettingsSaveFailed": "Could not save the settings: {0}",
+        "SettingsLoading": "Loading settings...",
+        "SectionBrowser": "On this browser",
+        "PreviewModeLabel": "Open the Email Center automatically",
+        "PreviewModeNever": "Never",
+        "PreviewModeFailure": "When an email fails",
+        "PreviewModeAlways": "After every email",
+        "StockAlertsHeld": "Low stock for {0}, but no alert was sent because email sending is turned off in the Email Center."
+    },
+    "RejectDialog": {
+        "Stage": "Manager review",
+        "Title": "Reject request {0}",
+        "LabelEmployeeReason": "Employee's reason",
+        "LabelCategory": "Reason for rejection",
+        "CategoryPlaceholder": "Choose a reason",
+        "CategoryRequired": "Choose a reason for the rejection.",
+        "CategoryNotJustified": "Business need not justified",
+        "CategoryBudget": "Budget not approved",
+        "CategoryDuplicate": "Duplicate request",
+        "CategoryAlreadyHas": "Employee already has this asset",
+        "CategoryUnavailable": "Asset not available, request an alternative",
+        "CategoryOther": "Other",
+        "LabelMessage": "Message to the employee",
+        "MessagePlaceholder": "Explain the decision and what the employee can do next.",
+        "MessageRequired": "Write a short message for the employee.",
+        "CharacterCount": "{0} / {1} characters",
+        "VisibilityNote": "The employee sees this reason in My Workspace → Requests. Managers see it in the request's details.",
+        "ConfirmButton": "Reject request",
+        "Rejecting": "Rejecting...",
+        "ReasonTitle": "Reason for rejection",
+        "RejectedBy": "Rejected by {0}",
+        "RejectedByOn": "Rejected by {0} on {1}"
+    },
+    "InventoryExplorer": {
+        "StatusInStock": "In stock",
+        "StatusAssigned": "Assigned",
+        "StatusMaintenance": "Under maintenance",
+        "StatusPendingReturn": "Pending return",
+        "StatusRetired": "Retired",
+        "StatusOther": "Other status",
+        "AgeUnderMonth": "Under 1 month",
+        "AgeMonths": "{0} mo",
+        "AgeYearsMonths": "{0} yr {1} mo",
+        "AgeYears": "{0} yr",
+        "WarrantyNone": "No warranty date",
+        "WarrantyExpiredOn": "Warranty expired {0}",
+        "WarrantyEndsInDays": "Warranty ends in {0} days",
+        "WarrantyUntil": "Warranty until {0}",
+        "WarrantyExpiredShort": "Expired",
+        "Uncategorised": "Uncategorised",
+        "CustodyAssigned": "Assigned {0}",
+        "CustodyEmployeeId": "Employee ID {0}",
+        "CustodyReturn": "Return: {0}",
+        "CustodyCondition": "Condition: {0}",
+        "SectionDetails": "Details",
+        "FieldCategory": "Category",
+        "FieldType": "Type",
+        "FieldSerial": "Serial number",
+        "FieldVendor": "Vendor",
+        "FieldStatus": "Status",
+        "FieldCondition": "Condition",
+        "FieldPurchased": "Purchased",
+        "FieldWarranty": "Warranty",
+        "FieldAssignedTo": "Assigned to",
+        "FieldAssetId": "Asset ID",
+        "SectionLifecycle": "Lifecycle",
+        "LifecycleAge": "In use for {0}",
+        "LifecyclePlan": "Planned replacement after {0} years",
+        "SectionSpecifications": "Specifications",
+        "SectionNotes": "Notes",
+        "SectionCurrentHolder": "Current holder",
+        "NoCurrentHolder": "Not assigned to anyone right now.",
+        "SectionCustody": "Custody history",
+        "NoCustody": "No assignments or returns recorded for this asset yet.",
+        "NoActivity": "No activity recorded for this asset yet.",
+        "ActivityLimited": "Showing the latest {0} of {1} events.",
+        "NoServiceRecords": "No incidents or replacement requests for this asset.",
+        "ServicePriority": "{0} priority",
+        "SectionSharePoint": "SharePoint item",
+        "TechItemId": "Item ID",
+        "TechList": "List",
+        "TechCreated": "Created",
+        "TechModified": "Last modified",
+        "TechVersion": "Version",
+        "TechLink": "Link",
+        "OpenInSharePoint": "Open in SharePoint",
+        "SectionStoredValues": "Stored values",
+        "IdLabel": "ID {0}",
+        "ReturnInProgress": "A return is in progress for this asset.",
+        "StatAge": "Age",
+        "StatWarranty": "Warranty left",
+        "StatDays": "{0} days",
+        "StatHolders": "Holders",
+        "StatOpenIssues": "Open issues",
+        "TabOverview": "Overview",
+        "TabPeople": "People",
+        "TabActivity": "Activity",
+        "TabService": "Service",
+        "TabTechnical": "Technical",
+        "ColAsset": "Asset",
+        "Unnamed": "Unnamed asset",
+        "ColType": "Type",
+        "ColCategory": "Category",
+        "ColStatus": "Status",
+        "ColAssignedTo": "Assigned to",
+        "ColCondition": "Condition",
+        "ColWarranty": "Warranty",
+        "ColPurchased": "Purchased",
+        "ColVendor": "Vendor",
+        "BreakdownItem": "{0} {1}",
+        "TileTotal": "All assets",
+        "TileInStock": "In stock",
+        "TileAssigned": "Assigned",
+        "TileMaintenance": "Under maintenance",
+        "TileWarrantySoon": "Warranty ending within {0} days",
+        "AllTypes": "All types",
+        "GroupByType": "Asset type",
+        "GroupByCategory": "Category",
+        "GroupByStatus": "Status",
+        "GroupByNone": "No grouping",
+        "Subtitle": "Every asset in the inventory. Select one to see its details, history and service records.",
+        "TilesAria": "Filter by status",
+        "SearchPlaceholder": "Search name, serial, vendor or person",
+        "FilterType": "Type",
+        "GroupByLabel": "Group by",
+        "ResultCount": "{0} of {1} assets",
+        "ExpandAll": "Expand all",
+        "CollapseAll": "Collapse all",
+        "ClearFilters": "Clear filters",
+        "EmptyInventory": "No assets yet. Add the first one to get started.",
+        "EmptyFiltered": "No assets match these filters.",
+        "PageOf": "Page {0} of {1}",
+        "GroupPartial": "rows {0}–{1} of {2}"
+    },
+    "AssignmentQueue": {
+        "Subtitle": "Manager-approved requests waiting for an asset. Pick one to choose the asset and assign it.",
+        "TilesAria": "Filter the queue",
+        "TileWaiting": "Waiting for an asset",
+        "TileWaitingHint": "Approved, not yet assigned",
+        "TileReady": "Ready to assign",
+        "TileReadyHint": "Enough stock right now",
+        "TileNoStock": "Not enough stock",
+        "TileNoStockHint": "Needs purchasing or a return",
+        "TileOverdue": "Overdue",
+        "TileOverdueHint": "Waiting over {0} h",
+        "TileAssigned": "Assigned",
+        "TileAssignedHint": "Already handed out",
+        "SearchPlaceholder": "Search request ID, employee, asset or manager",
+        "FilterShow": "Show",
+        "ViewWaiting": "Waiting",
+        "ViewAssigned": "Assigned",
+        "ViewAll": "All approved",
+        "FilterType": "Asset type",
+        "AllTypes": "All types",
+        "GroupByLabel": "Group by",
+        "GroupByType": "Asset type",
+        "GroupByEmployee": "Employee",
+        "GroupByPriority": "Priority",
+        "GroupByNone": "No grouping",
+        "ResultCount": "{0} of {1} approved requests",
+        "ExpandAll": "Expand all",
+        "CollapseAll": "Collapse all",
+        "ClearFilters": "Clear filters",
+        "EmptyAllDone": "Nothing is waiting. Every approved request has an asset.",
+        "EmptyFiltered": "No requests match these filters.",
+        "Unspecified": "Not specified",
+        "ColRequest": "Request",
+        "RequestedOn": "Requested {0}",
+        "ColEmployee": "Employee",
+        "EmployeeId": "ID {0}",
+        "ColAsset": "Asset",
+        "ColQuantity": "Qty",
+        "ColPriority": "Priority",
+        "ColStock": "Stock",
+        "InStockCount": "{0} in stock",
+        "PartialStock": "{0} of {1} in stock",
+        "OutOfStock": "Out of stock",
+        "ColApprovedBy": "Approved by",
+        "ColWaiting": "Waiting",
+        "StatusAssigned": "Assigned",
+        "OverdueBy": "Overdue by {0}",
+        "TargetHours": "Target {0} h",
+        "DurationUnderHour": "Under 1 h",
+        "DurationHours": "{0} h",
+        "DurationDaysHours": "{0} d {1} h",
+        "DurationDays": "{0} d",
+        "Assign": "Assign",
+        "Working": "Working...",
+        "GroupWaiting": "{0} waiting",
+        "GroupOverdue": "{0} overdue",
+        "GroupStock": "{0} in stock",
+        "PanelStockLine": "{0} {1} in stock for a request of {2}. Best match first.",
+        "PanelNoStock": "No {0} is in stock. You can still approve without choosing an asset, or reject the request.",
+        "Recommended": "Recommended"
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (en_us);
@@ -9342,7 +11730,19 @@ const pl_pl = {
         "ColSerialNumber": "Numer seryjny",
         "ColAssignedDate": "Data przydziału",
         "MyEquipmentEmptyState": "Obecnie nie masz przydzielonego żadnego sprzętu.",
-        "MyEquipmentEmptyStateHint": "Przydzielone urządzenia pojawią się tutaj po wydaniu"
+        "MyEquipmentEmptyStateHint": "Przydzielone urządzenia pojawią się tutaj po wydaniu",
+        "AttentionTitle": "Wymaga uwagi",
+        "AttentionAllClear": "Wszystko w porządku, nic na Ciebie nie czeka",
+        "AttentionWaitingAssignment": "Czekające na zasób: {0}",
+        "AttentionAwaitingDecision": "Czekające na Twoją decyzję: {0}",
+        "AttentionOverdue": "Po terminie: {0}",
+        "AttentionInReview": "W przeglądzie: {0}",
+        "AttentionReadySoon": "Zatwierdzone, zasób w drodze: {0}",
+        "KpiInReview": "W przeglądzie",
+        "KpiInReviewSubtitle": "Czeka na menedżera",
+        "KpiAwaitingHandoff": "Czeka na wydanie",
+        "KpiAwaitingHandoffSubtitle": "Zatwierdzone, zasób w przygotowaniu",
+        "ViewAll": "Pokaż wszystkie ({0})"
     },
     "WorkflowPopup": {
         "GotIt": "Rozumiem",
@@ -9373,7 +11773,31 @@ const pl_pl = {
         "CategoryAudits": "Audyty",
         "ViewDetails": "Zobacz szczegóły",
         "MarkAsRead": "Oznacz jako przeczytane",
-        "DismissNotification": "Odrzuć powiadomienie"
+        "DismissNotification": "Odrzuć powiadomienie",
+        "FilterUnread": "Nieprzeczytane",
+        "SearchPlaceholder": "Szukaj powiadomień",
+        "GroupToday": "Dzisiaj",
+        "GroupYesterday": "Wczoraj",
+        "GroupThisWeek": "Wcześniej w tym tygodniu",
+        "GroupOlder": "Starsze",
+        "TimeJustNow": "Przed chwilą",
+        "TimeMinutesAgo": "{0} min temu",
+        "TimeHoursAgo": "{0} godz. temu",
+        "TimeYesterday": "Wczoraj",
+        "UnreadSummary": "Masz nieprzeczytane powiadomienia: {0}.",
+        "UnreadSummaryOne": "Masz 1 nieprzeczytane powiadomienie.",
+        "NoUnreadSummary": "Wszystko przeczytane.",
+        "MarkAsUnread": "Oznacz jako nieprzeczytane",
+        "DismissShown": "Odrzuć widoczne",
+        "DismissedOne": "Powiadomienie odrzucone.",
+        "DismissedMany": "Odrzucone powiadomienia: {0}.",
+        "Undo": "Cofnij",
+        "ShowMore": "Pokaż więcej (pozostało: {0})",
+        "OpenPage": "Otwórz: {0}",
+        "NoSearchResultsTitle": "Brak wyników",
+        "NoSearchResults": "Żadne powiadomienie nie pasuje do \"{0}\".",
+        "EmptyUnread": "Nie masz nieprzeczytanych powiadomień.",
+        "OpenButtonUnreadAria": "Powiadomienia, nieprzeczytane: {0}"
     },
     "AssetForm": {
         "HeaderAdmin": "Dodaj nowy zasób",
@@ -9400,6 +11824,11 @@ const pl_pl = {
         "LabelManagerName": "Imię i nazwisko kierownika",
         "ManagerNamePlaceholder": "Wpisz imię i nazwisko kierownika",
         "ManagerNameRequired": "Imię i nazwisko kierownika jest wymagane",
+        "ManagerSearchPlaceholder": "Szukaj menedżerów po nazwisku lub adresie e-mail",
+        "ManagerSuggestionsHeader": "Menedżerowie w grupie {0}",
+        "ManagerNoResults": "Brak pasującego menedżera. Tylko członkowie grupy {0} mogą zatwierdzać wnioski.",
+        "ManagerSearching": "Wyszukiwanie...",
+        "ManagerGroupUnavailable": "Nie udało się wczytać menedżerów z grupy {0}. Odśwież stronę lub poproś administratora o sprawdzenie grupy.",
         "LabelRequestedDate": "Data wniosku",
         "LabelAssetType": "Typ zasobu",
         "LabelPriority": "Priorytet",
@@ -9573,6 +12002,17 @@ const pl_pl = {
         "ListDesc_StockThresholdsList": "Minimalny dostępny stan na typ zasobu dla alertów. Tworzona przy pierwszym zapisie progów.",
         "ListTitle_AssetKitsList": "Zestawy zasobów",
         "ListDesc_AssetKitsList": "Standardowe zestawy dla nowych pracowników. Tworzona przy pierwszym zapisie zestawu.",
+        "ListTitle_AppSettingsList": "Ustawienia aplikacji inwentarza",
+        "ListDesc_AppSettingsList": "Ustawienia aplikacji dla całej witryny, np. powiadomienia e-mail. Tworzona przy pierwszym zapisie ustawień.",
+        "AccessUnknown": "Odczyt (zapis niezweryfikowany)",
+        "ChecksLabel": "Co zostało sprawdzone",
+        "CheckOptional": "opcjonalne",
+        "Check_Find": "Znajdź listę po tytule",
+        "Check_Columns": "Odczytaj kolumny listy",
+        "Check_Items": "Odczytaj elementy",
+        "Check_Permissions": "Odczytaj Twoje uprawnienia do listy",
+        "Check_Details": "Odczytaj szczegóły listy (liczba elementów, ostatnia zmiana, link)",
+        "Note_PermissionsFromSite": "Nie udało się odczytać Twoich uprawnień do listy, więc użyto uprawnień witryny. ({0})",
         "SchemaUnchecked": "Uruchom sprawdzenie, aby zweryfikować te kolumny na listach SharePoint.",
         "SchemaAliasesHint": "Akceptowane również: {0}",
         "SchemaAuditTrail": "(Ścieżka audytu)",
@@ -10173,6 +12613,10 @@ const pl_pl = {
         "PdfIssueDescriptionTitle": "OPIS PROBLEMU",
         "PdfReplacementReasonTitle": "POWÓD I SZCZEGÓŁY WYMIANY",
         "PdfNoDescription": "Nie podano opisu.",
+        "PdfDownloadFailed": "Nie udało się utworzyć pliku PDF dla {0}. Spróbuj ponownie lub sprawdź konsolę przeglądarki.",
+        "PdfDownloadFailedTitle": "Pobieranie nie powiodło się",
+        "LocalOnlyTag": "Niezsynchronizowane",
+        "LocalOnlyTooltip": "Zapisano tylko w tej przeglądarce, ponieważ SharePoint odrzucił zapis. Administratorzy nie widzą tego zgłoszenia.",
         "PdfNoReason": "Nie podano powodu.",
         "PdfResolutionSummaryTitle": "PODSUMOWANIE ROZWIĄZANIA"
     },
@@ -10197,6 +12641,7 @@ const pl_pl = {
         "ReplacementListLabel": "Lista wymian zasobów",
         "StockThresholdsListLabel": "Lista progów zapasów",
         "AssetKitsListLabel": "Lista zestawów zasobów",
+        "AppSettingsListLabel": "Lista ustawień aplikacji",
         "AlertsPageDescription": "Cele obsługi i alerty zapasów",
         "GroupSla": "SLA wniosków",
         "ApprovalSlaLabel": "Godziny na zatwierdzenie (cel)",
@@ -10304,6 +12749,238 @@ const pl_pl = {
         "KitDelete": "Usuń",
         "KitDeleteConfirm": "Usunąć zestaw \"{0}\"?",
         "KitDeleted": "Zestaw usunięty."
+    },
+    "EmailCenter": {
+        "Title": "Centrum poczty",
+        "OpenButton": "E-mail",
+        "OpenButtonAria": "Otwórz Centrum poczty",
+        "OpenButtonFailedAria": "Otwórz Centrum poczty. Nieudane wiadomości: {0}.",
+        "TabOutbox": "Skrzynka nadawcza",
+        "TabSettings": "Ustawienia",
+        "StatusOff": "Wysyłanie e-maili jest wyłączone. Wiadomości są tu widoczne, ale nie są wysyłane.",
+        "StatusTestMode": "Tryb testowy jest włączony. E-maile o wnioskach, zatwierdzeniach, odrzuceniach i przydziałach trafiają do odbiorców testowych.",
+        "OutboxEmpty": "Brak wiadomości w tej sesji. E-maile wysyłane przez aplikację pojawią się tutaj.",
+        "OutboxSessionNote": "Pokazuje tylko wiadomości z tej sesji przeglądarki.",
+        "ClearOutbox": "Wyczyść listę",
+        "StatusSent": "Wysłano",
+        "StatusFailed": "Niepowodzenie",
+        "StatusSkipped": "Nie wysłano",
+        "BackToOutbox": "Wszystkie wiadomości",
+        "DetailSent": "Wysłano {0}.",
+        "DetailSentFallback": "Wysłano {0} kanałem zapasowym SharePoint. Dostarczenie nie jest gwarantowane.",
+        "DetailFailed": "Niepowodzenie {0}: {1}",
+        "DetailSkipped": "Nie wysłano {0}, ponieważ wysyłanie e-maili jest wyłączone.",
+        "SendNow": "Wyślij teraz",
+        "SendAgain": "Wyślij ponownie",
+        "SendBlockedOff": "Wysyłanie e-maili jest wyłączone. Włącz je w Ustawieniach, aby wysłać.",
+        "ToLabel": "Do: {0}",
+        "SectionDelivery": "Dostarczanie (dotyczy wszystkich)",
+        "SectionDeliveryDesc": "Zapisywane na liście \"{0}\" w tej witrynie.",
+        "ToggleEnabled": "Wysyłaj powiadomienia e-mail",
+        "ToggleOn": "Wł.",
+        "ToggleOff": "Wył.",
+        "ToggleTestMode": "Tryb testowy",
+        "TestModeDesc": "Wysyła e-maile o wnioskach, zatwierdzeniach, odrzuceniach i przydziałach do odbiorców testowych zamiast do właściwych osób. Alerty o niskim stanie zawsze trafiają do grupy administratorów.",
+        "LabelTestAdminRecipients": "Odbiorcy testowi e-maili do administratorów i pracowników",
+        "LabelTestManagerRecipient": "Odbiorca testowy e-maili do menedżerów",
+        "RecipientsPlaceholder": "imie@firma.pl, imie2@firma.pl",
+        "RecipientsRequired": "Wpisz co najmniej jeden prawidłowy adres e-mail.",
+        "SaveSettings": "Zapisz ustawienia",
+        "SettingsSaved": "Ustawienia poczty zapisane.",
+        "SettingsSaveFailed": "Nie udało się zapisać ustawień: {0}",
+        "SettingsLoading": "Wczytywanie ustawień...",
+        "SectionBrowser": "W tej przeglądarce",
+        "PreviewModeLabel": "Otwieraj Centrum poczty automatycznie",
+        "PreviewModeNever": "Nigdy",
+        "PreviewModeFailure": "Gdy wysyłka się nie powiedzie",
+        "PreviewModeAlways": "Po każdej wiadomości",
+        "StockAlertsHeld": "Niski stan dla {0}, ale alert nie został wysłany, ponieważ wysyłanie e-maili jest wyłączone w Centrum poczty."
+    },
+    "RejectDialog": {
+        "Stage": "Przegląd menedżera",
+        "Title": "Odrzuć wniosek {0}",
+        "LabelEmployeeReason": "Uzasadnienie pracownika",
+        "LabelCategory": "Powód odrzucenia",
+        "CategoryPlaceholder": "Wybierz powód",
+        "CategoryRequired": "Wybierz powód odrzucenia.",
+        "CategoryNotJustified": "Potrzeba biznesowa nieuzasadniona",
+        "CategoryBudget": "Budżet niezatwierdzony",
+        "CategoryDuplicate": "Zduplikowany wniosek",
+        "CategoryAlreadyHas": "Pracownik ma już ten zasób",
+        "CategoryUnavailable": "Zasób niedostępny, poproś o alternatywę",
+        "CategoryOther": "Inne",
+        "LabelMessage": "Wiadomość do pracownika",
+        "MessagePlaceholder": "Wyjaśnij decyzję i co pracownik może zrobić dalej.",
+        "MessageRequired": "Napisz krótką wiadomość do pracownika.",
+        "CharacterCount": "{0} / {1} znaków",
+        "VisibilityNote": "Pracownik zobaczy ten powód w Moja przestrzeń → Wnioski. Menedżerowie widzą go w szczegółach wniosku.",
+        "ConfirmButton": "Odrzuć wniosek",
+        "Rejecting": "Odrzucanie...",
+        "ReasonTitle": "Powód odrzucenia",
+        "RejectedBy": "Odrzucił(a): {0}",
+        "RejectedByOn": "Odrzucił(a): {0}, {1}"
+    },
+    "InventoryExplorer": {
+        "StatusInStock": "Na stanie",
+        "StatusAssigned": "Przydzielony",
+        "StatusMaintenance": "W serwisie",
+        "StatusPendingReturn": "Oczekuje na zwrot",
+        "StatusRetired": "Wycofany",
+        "StatusOther": "Inny status",
+        "AgeUnderMonth": "Poniżej 1 miesiąca",
+        "AgeMonths": "{0} mies.",
+        "AgeYearsMonths": "{0} l. {1} mies.",
+        "AgeYears": "{0} l.",
+        "WarrantyNone": "Brak daty gwarancji",
+        "WarrantyExpiredOn": "Gwarancja wygasła {0}",
+        "WarrantyEndsInDays": "Gwarancja kończy się za {0} dni",
+        "WarrantyUntil": "Gwarancja do {0}",
+        "WarrantyExpiredShort": "Wygasła",
+        "Uncategorised": "Bez kategorii",
+        "CustodyAssigned": "Przydzielono {0}",
+        "CustodyEmployeeId": "ID pracownika {0}",
+        "CustodyReturn": "Zwrot: {0}",
+        "CustodyCondition": "Stan: {0}",
+        "SectionDetails": "Szczegóły",
+        "FieldCategory": "Kategoria",
+        "FieldType": "Typ",
+        "FieldSerial": "Numer seryjny",
+        "FieldVendor": "Dostawca",
+        "FieldStatus": "Status",
+        "FieldCondition": "Stan",
+        "FieldPurchased": "Zakupiono",
+        "FieldWarranty": "Gwarancja",
+        "FieldAssignedTo": "Przydzielono do",
+        "FieldAssetId": "ID zasobu",
+        "SectionLifecycle": "Cykl życia",
+        "LifecycleAge": "W użyciu od {0}",
+        "LifecyclePlan": "Planowana wymiana po {0} latach",
+        "SectionSpecifications": "Specyfikacja",
+        "SectionNotes": "Notatki",
+        "SectionCurrentHolder": "Obecny użytkownik",
+        "NoCurrentHolder": "Obecnie nikomu nieprzydzielony.",
+        "SectionCustody": "Historia użytkowania",
+        "NoCustody": "Brak zarejestrowanych przydziałów lub zwrotów tego zasobu.",
+        "NoActivity": "Brak zarejestrowanej aktywności dla tego zasobu.",
+        "ActivityLimited": "Wyświetlono ostatnie {0} z {1} zdarzeń.",
+        "NoServiceRecords": "Brak zgłoszeń i wniosków o wymianę dla tego zasobu.",
+        "ServicePriority": "Priorytet: {0}",
+        "SectionSharePoint": "Element SharePoint",
+        "TechItemId": "ID elementu",
+        "TechList": "Lista",
+        "TechCreated": "Utworzono",
+        "TechModified": "Ostatnia zmiana",
+        "TechVersion": "Wersja",
+        "TechLink": "Link",
+        "OpenInSharePoint": "Otwórz w SharePoint",
+        "SectionStoredValues": "Zapisane wartości",
+        "IdLabel": "ID {0}",
+        "ReturnInProgress": "Trwa zwrot tego zasobu.",
+        "StatAge": "Wiek",
+        "StatWarranty": "Pozostała gwarancja",
+        "StatDays": "{0} dni",
+        "StatHolders": "Użytkownicy",
+        "StatOpenIssues": "Otwarte zgłoszenia",
+        "TabOverview": "Przegląd",
+        "TabPeople": "Osoby",
+        "TabActivity": "Aktywność",
+        "TabService": "Serwis",
+        "TabTechnical": "Techniczne",
+        "ColAsset": "Zasób",
+        "Unnamed": "Zasób bez nazwy",
+        "ColType": "Typ",
+        "ColCategory": "Kategoria",
+        "ColStatus": "Status",
+        "ColAssignedTo": "Przydzielono do",
+        "ColCondition": "Stan",
+        "ColWarranty": "Gwarancja",
+        "ColPurchased": "Zakupiono",
+        "ColVendor": "Dostawca",
+        "BreakdownItem": "{0} {1}",
+        "TileTotal": "Wszystkie zasoby",
+        "TileInStock": "Na stanie",
+        "TileAssigned": "Przydzielone",
+        "TileMaintenance": "W serwisie",
+        "TileWarrantySoon": "Gwarancja kończy się w ciągu {0} dni",
+        "AllTypes": "Wszystkie typy",
+        "GroupByType": "Typ zasobu",
+        "GroupByCategory": "Kategoria",
+        "GroupByStatus": "Status",
+        "GroupByNone": "Bez grupowania",
+        "Subtitle": "Wszystkie zasoby w inwentarzu. Wybierz zasób, aby zobaczyć szczegóły, historię i zgłoszenia serwisowe.",
+        "TilesAria": "Filtruj według statusu",
+        "SearchPlaceholder": "Szukaj nazwy, numeru seryjnego, dostawcy lub osoby",
+        "FilterType": "Typ",
+        "GroupByLabel": "Grupuj według",
+        "ResultCount": "{0} z {1} zasobów",
+        "ExpandAll": "Rozwiń wszystko",
+        "CollapseAll": "Zwiń wszystko",
+        "ClearFilters": "Wyczyść filtry",
+        "EmptyInventory": "Brak zasobów. Dodaj pierwszy, aby zacząć.",
+        "EmptyFiltered": "Żaden zasób nie pasuje do filtrów.",
+        "PageOf": "Strona {0} z {1}",
+        "GroupPartial": "wiersze {0}–{1} z {2}"
+    },
+    "AssignmentQueue": {
+        "Subtitle": "Wnioski zatwierdzone przez menedżera czekające na zasób. Wybierz wniosek, aby wybrać i przydzielić zasób.",
+        "TilesAria": "Filtruj kolejkę",
+        "TileWaiting": "Czekają na zasób",
+        "TileWaitingHint": "Zatwierdzone, jeszcze nieprzydzielone",
+        "TileReady": "Gotowe do przydzielenia",
+        "TileReadyHint": "Wystarczający stan",
+        "TileNoStock": "Za mały stan",
+        "TileNoStockHint": "Wymaga zakupu lub zwrotu",
+        "TileOverdue": "Po terminie",
+        "TileOverdueHint": "Czekają ponad {0} godz.",
+        "TileAssigned": "Przydzielone",
+        "TileAssignedHint": "Już wydane",
+        "SearchPlaceholder": "Szukaj ID wniosku, pracownika, zasobu lub menedżera",
+        "FilterShow": "Pokaż",
+        "ViewWaiting": "Oczekujące",
+        "ViewAssigned": "Przydzielone",
+        "ViewAll": "Wszystkie zatwierdzone",
+        "FilterType": "Typ zasobu",
+        "AllTypes": "Wszystkie typy",
+        "GroupByLabel": "Grupuj według",
+        "GroupByType": "Typ zasobu",
+        "GroupByEmployee": "Pracownik",
+        "GroupByPriority": "Priorytet",
+        "GroupByNone": "Bez grupowania",
+        "ResultCount": "{0} z {1} zatwierdzonych wniosków",
+        "ExpandAll": "Rozwiń wszystko",
+        "CollapseAll": "Zwiń wszystko",
+        "ClearFilters": "Wyczyść filtry",
+        "EmptyAllDone": "Nic nie czeka. Każdy zatwierdzony wniosek ma zasób.",
+        "EmptyFiltered": "Żaden wniosek nie pasuje do filtrów.",
+        "Unspecified": "Nie podano",
+        "ColRequest": "Wniosek",
+        "RequestedOn": "Złożono {0}",
+        "ColEmployee": "Pracownik",
+        "EmployeeId": "ID {0}",
+        "ColAsset": "Zasób",
+        "ColQuantity": "Ilość",
+        "ColPriority": "Priorytet",
+        "ColStock": "Stan",
+        "InStockCount": "{0} na stanie",
+        "PartialStock": "{0} z {1} na stanie",
+        "OutOfStock": "Brak na stanie",
+        "ColApprovedBy": "Zatwierdził(a)",
+        "ColWaiting": "Czeka",
+        "StatusAssigned": "Przydzielony",
+        "OverdueBy": "Po terminie o {0}",
+        "TargetHours": "Cel {0} godz.",
+        "DurationUnderHour": "Poniżej 1 godz.",
+        "DurationHours": "{0} godz.",
+        "DurationDaysHours": "{0} dn. {1} godz.",
+        "DurationDays": "{0} dn.",
+        "Assign": "Przydziel",
+        "Working": "Przetwarzanie...",
+        "GroupWaiting": "{0} oczekuje",
+        "GroupOverdue": "{0} po terminie",
+        "GroupStock": "{0} na stanie",
+        "PanelStockLine": "{0} × {1} na stanie dla wniosku o {2}. Najlepsze dopasowanie jako pierwsze.",
+        "PanelNoStock": "Brak zasobu {0} na stanie. Nadal możesz zatwierdzić bez wyboru zasobu lub odrzucić wniosek.",
+        "Recommended": "Zalecany"
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pl_pl);
@@ -10627,7 +13304,19 @@ const pt_pt = {
         "ColSerialNumber": "Número de série",
         "ColAssignedDate": "Data de atribuição",
         "MyEquipmentEmptyState": "Não tem atualmente equipamento atribuído.",
-        "MyEquipmentEmptyStateHint": "Os dispositivos atribuídos aparecerão aqui após a entrega"
+        "MyEquipmentEmptyStateHint": "Os dispositivos atribuídos aparecerão aqui após a entrega",
+        "AttentionTitle": "Requer atenção",
+        "AttentionAllClear": "Tudo em dia, nada à sua espera",
+        "AttentionWaitingAssignment": "{0} à espera de um ativo",
+        "AttentionAwaitingDecision": "{0} à espera da sua decisão",
+        "AttentionOverdue": "{0} em atraso",
+        "AttentionInReview": "{0} em revisão",
+        "AttentionReadySoon": "{0} aprovados, ativo a caminho",
+        "KpiInReview": "Em revisão",
+        "KpiInReviewSubtitle": "À espera do seu gestor",
+        "KpiAwaitingHandoff": "À espera de entrega",
+        "KpiAwaitingHandoffSubtitle": "Aprovado, ativo em preparação",
+        "ViewAll": "Ver todos ({0})"
     },
     "WorkflowPopup": {
         "GotIt": "Compreendi",
@@ -10658,7 +13347,31 @@ const pt_pt = {
         "CategoryAudits": "Auditorias",
         "ViewDetails": "Ver detalhes",
         "MarkAsRead": "Marcar como lido",
-        "DismissNotification": "Dispensar notificação"
+        "DismissNotification": "Dispensar notificação",
+        "FilterUnread": "Não lidas",
+        "SearchPlaceholder": "Pesquisar notificações",
+        "GroupToday": "Hoje",
+        "GroupYesterday": "Ontem",
+        "GroupThisWeek": "No início desta semana",
+        "GroupOlder": "Mais antigas",
+        "TimeJustNow": "Agora mesmo",
+        "TimeMinutesAgo": "há {0} min",
+        "TimeHoursAgo": "há {0} h",
+        "TimeYesterday": "Ontem",
+        "UnreadSummary": "Tem {0} notificações não lidas.",
+        "UnreadSummaryOne": "Tem 1 notificação não lida.",
+        "NoUnreadSummary": "Está tudo em dia.",
+        "MarkAsUnread": "Marcar como não lida",
+        "DismissShown": "Dispensar as mostradas",
+        "DismissedOne": "Notificação dispensada.",
+        "DismissedMany": "{0} notificações dispensadas.",
+        "Undo": "Anular",
+        "ShowMore": "Mostrar mais ({0} restantes)",
+        "OpenPage": "Abrir {0}",
+        "NoSearchResultsTitle": "Sem resultados",
+        "NoSearchResults": "Nenhuma notificação corresponde a \"{0}\".",
+        "EmptyUnread": "Não tem notificações não lidas.",
+        "OpenButtonUnreadAria": "Notificações, {0} não lidas"
     },
     "AssetForm": {
         "HeaderAdmin": "Adicionar novo ativo",
@@ -10685,6 +13398,11 @@ const pt_pt = {
         "LabelManagerName": "Nome do gestor",
         "ManagerNamePlaceholder": "Introduza o nome do gestor",
         "ManagerNameRequired": "O nome do gestor é obrigatório",
+        "ManagerSearchPlaceholder": "Pesquisar gestores por nome ou e-mail",
+        "ManagerSuggestionsHeader": "Gestores em {0}",
+        "ManagerNoResults": "Nenhum gestor corresponde. Só os membros de {0} podem aprovar pedidos.",
+        "ManagerSearching": "A pesquisar...",
+        "ManagerGroupUnavailable": "Não foi possível carregar os gestores de {0}. Atualize a página ou peça a um administrador para verificar o grupo.",
         "LabelRequestedDate": "Data do pedido",
         "LabelAssetType": "Tipo de ativo",
         "LabelPriority": "Prioridade",
@@ -10858,6 +13576,17 @@ const pt_pt = {
         "ListDesc_StockThresholdsList": "Stock mínimo disponível por tipo de ativo para alertas. Criada ao guardar os limiares pela primeira vez.",
         "ListTitle_AssetKitsList": "Kits de Ativos",
         "ListDesc_AssetKitsList": "Pacotes padrão para novos colaboradores. Criada ao guardar um kit pela primeira vez.",
+        "ListTitle_AppSettingsList": "Definições da aplicação de inventário",
+        "ListDesc_AppSettingsList": "Definições da aplicação para todo o site, como notificações por e-mail. Criada ao guardar as definições pela primeira vez.",
+        "AccessUnknown": "Leitura (escrita não verificada)",
+        "ChecksLabel": "O que foi testado",
+        "CheckOptional": "opcional",
+        "Check_Find": "Encontrar a lista pelo título",
+        "Check_Columns": "Ler as colunas da lista",
+        "Check_Items": "Ler itens",
+        "Check_Permissions": "Ler as suas permissões na lista",
+        "Check_Details": "Ler detalhes da lista (número de itens, última alteração, ligação)",
+        "Note_PermissionsFromSite": "Não foi possível ler as suas permissões nesta lista, por isso foram usadas as permissões do site. ({0})",
         "SchemaUnchecked": "Execute uma verificação para validar estas colunas nas listas SharePoint.",
         "SchemaAliasesHint": "Também aceite: {0}",
         "SchemaAuditTrail": "(Registo de Auditoria)",
@@ -11458,6 +14187,10 @@ const pt_pt = {
         "PdfIssueDescriptionTitle": "DESCRIÇÃO DO PROBLEMA",
         "PdfReplacementReasonTitle": "MOTIVO E DETALHES DA SUBSTITUIÇÃO",
         "PdfNoDescription": "Nenhuma descrição fornecida.",
+        "PdfDownloadFailed": "Não foi possível criar o PDF de {0}. Tente novamente ou consulte a consola do browser.",
+        "PdfDownloadFailedTitle": "Falha na transferência",
+        "LocalOnlyTag": "Não sincronizado",
+        "LocalOnlyTooltip": "Guardado apenas neste browser porque o SharePoint recusou a gravação. Os administradores não veem este incidente.",
         "PdfNoReason": "Nenhum motivo fornecido.",
         "PdfResolutionSummaryTitle": "RESUMO DA RESOLUÇÃO"
     },
@@ -11482,6 +14215,7 @@ const pt_pt = {
         "ReplacementListLabel": "Lista de substituições",
         "StockThresholdsListLabel": "Lista de limiares de stock",
         "AssetKitsListLabel": "Lista de kits de ativos",
+        "AppSettingsListLabel": "Lista de definições da aplicação",
         "AlertsPageDescription": "Metas de serviço e alertas de stock",
         "GroupSla": "SLA dos pedidos",
         "ApprovalSlaLabel": "Horas para aprovar (meta)",
@@ -11589,6 +14323,238 @@ const pt_pt = {
         "KitDelete": "Eliminar",
         "KitDeleteConfirm": "Eliminar o kit \"{0}\"?",
         "KitDeleted": "Kit eliminado."
+    },
+    "EmailCenter": {
+        "Title": "Centro de E-mail",
+        "OpenButton": "E-mail",
+        "OpenButtonAria": "Abrir o Centro de E-mail",
+        "OpenButtonFailedAria": "Abrir o Centro de E-mail. {0} e-mail(s) falharam.",
+        "TabOutbox": "Caixa de saída",
+        "TabSettings": "Definições",
+        "StatusOff": "O envio de e-mails está desativado. Os e-mails aparecem aqui, mas não são enviados.",
+        "StatusTestMode": "O modo de teste está ativo. Os e-mails de pedidos, aprovações, rejeições e atribuições vão para os destinatários de teste.",
+        "OutboxEmpty": "Ainda não há e-mails nesta sessão. Os e-mails enviados pela aplicação aparecem aqui.",
+        "OutboxSessionNote": "Mostra apenas os e-mails desta sessão do browser.",
+        "ClearOutbox": "Limpar lista",
+        "StatusSent": "Enviado",
+        "StatusFailed": "Falhou",
+        "StatusSkipped": "Não enviado",
+        "BackToOutbox": "Todos os e-mails",
+        "DetailSent": "Enviado às {0}.",
+        "DetailSentFallback": "Enviado às {0} pelo canal alternativo do SharePoint. A entrega não é garantida.",
+        "DetailFailed": "Falhou às {0}: {1}",
+        "DetailSkipped": "Não enviado às {0} porque o envio de e-mails está desativado.",
+        "SendNow": "Enviar agora",
+        "SendAgain": "Enviar novamente",
+        "SendBlockedOff": "O envio de e-mails está desativado. Ative-o nas Definições para enviar.",
+        "ToLabel": "Para: {0}",
+        "SectionDelivery": "Entrega (aplica-se a todos)",
+        "SectionDeliveryDesc": "Guardado na lista \"{0}\" deste site.",
+        "ToggleEnabled": "Enviar notificações por e-mail",
+        "ToggleOn": "Ativado",
+        "ToggleOff": "Desativado",
+        "ToggleTestMode": "Modo de teste",
+        "TestModeDesc": "Envia os e-mails de pedidos, aprovações, rejeições e atribuições para os destinatários de teste em vez das pessoas reais. Os alertas de stock baixo vão sempre para o grupo de administradores.",
+        "LabelTestAdminRecipients": "Destinatários de teste para e-mails de administradores e colaboradores",
+        "LabelTestManagerRecipient": "Destinatário de teste para e-mails de gestores",
+        "RecipientsPlaceholder": "nome@empresa.pt, nome2@empresa.pt",
+        "RecipientsRequired": "Introduza pelo menos um endereço de e-mail válido.",
+        "SaveSettings": "Guardar definições",
+        "SettingsSaved": "Definições de e-mail guardadas.",
+        "SettingsSaveFailed": "Não foi possível guardar as definições: {0}",
+        "SettingsLoading": "A carregar definições...",
+        "SectionBrowser": "Neste browser",
+        "PreviewModeLabel": "Abrir o Centro de E-mail automaticamente",
+        "PreviewModeNever": "Nunca",
+        "PreviewModeFailure": "Quando um e-mail falha",
+        "PreviewModeAlways": "Após cada e-mail",
+        "StockAlertsHeld": "Stock baixo para {0}, mas não foi enviado nenhum alerta porque o envio de e-mails está desativado no Centro de E-mail."
+    },
+    "RejectDialog": {
+        "Stage": "Revisão do gestor",
+        "Title": "Rejeitar pedido {0}",
+        "LabelEmployeeReason": "Motivo do colaborador",
+        "LabelCategory": "Motivo da rejeição",
+        "CategoryPlaceholder": "Escolha um motivo",
+        "CategoryRequired": "Escolha um motivo para a rejeição.",
+        "CategoryNotJustified": "Necessidade de negócio não justificada",
+        "CategoryBudget": "Orçamento não aprovado",
+        "CategoryDuplicate": "Pedido duplicado",
+        "CategoryAlreadyHas": "O colaborador já tem este ativo",
+        "CategoryUnavailable": "Ativo indisponível, peça uma alternativa",
+        "CategoryOther": "Outro",
+        "LabelMessage": "Mensagem para o colaborador",
+        "MessagePlaceholder": "Explique a decisão e o que o colaborador pode fazer a seguir.",
+        "MessageRequired": "Escreva uma mensagem curta para o colaborador.",
+        "CharacterCount": "{0} / {1} caracteres",
+        "VisibilityNote": "O colaborador vê este motivo em O meu espaço → Pedidos. Os gestores veem-no nos detalhes do pedido.",
+        "ConfirmButton": "Rejeitar pedido",
+        "Rejecting": "A rejeitar...",
+        "ReasonTitle": "Motivo da rejeição",
+        "RejectedBy": "Rejeitado por {0}",
+        "RejectedByOn": "Rejeitado por {0} em {1}"
+    },
+    "InventoryExplorer": {
+        "StatusInStock": "Em stock",
+        "StatusAssigned": "Atribuído",
+        "StatusMaintenance": "Em manutenção",
+        "StatusPendingReturn": "Devolução pendente",
+        "StatusRetired": "Retirado",
+        "StatusOther": "Outro estado",
+        "AgeUnderMonth": "Menos de 1 mês",
+        "AgeMonths": "{0} meses",
+        "AgeYearsMonths": "{0} anos {1} meses",
+        "AgeYears": "{0} anos",
+        "WarrantyNone": "Sem data de garantia",
+        "WarrantyExpiredOn": "Garantia expirou em {0}",
+        "WarrantyEndsInDays": "A garantia termina em {0} dias",
+        "WarrantyUntil": "Garantia até {0}",
+        "WarrantyExpiredShort": "Expirada",
+        "Uncategorised": "Sem categoria",
+        "CustodyAssigned": "Atribuído em {0}",
+        "CustodyEmployeeId": "ID do colaborador {0}",
+        "CustodyReturn": "Devolução: {0}",
+        "CustodyCondition": "Estado: {0}",
+        "SectionDetails": "Detalhes",
+        "FieldCategory": "Categoria",
+        "FieldType": "Tipo",
+        "FieldSerial": "Número de série",
+        "FieldVendor": "Fornecedor",
+        "FieldStatus": "Estado",
+        "FieldCondition": "Condição",
+        "FieldPurchased": "Comprado",
+        "FieldWarranty": "Garantia",
+        "FieldAssignedTo": "Atribuído a",
+        "FieldAssetId": "ID do ativo",
+        "SectionLifecycle": "Ciclo de vida",
+        "LifecycleAge": "Em uso há {0}",
+        "LifecyclePlan": "Substituição prevista após {0} anos",
+        "SectionSpecifications": "Especificações",
+        "SectionNotes": "Notas",
+        "SectionCurrentHolder": "Titular atual",
+        "NoCurrentHolder": "Não está atribuído a ninguém neste momento.",
+        "SectionCustody": "Histórico de posse",
+        "NoCustody": "Ainda não há atribuições nem devoluções registadas para este ativo.",
+        "NoActivity": "Ainda não há atividade registada para este ativo.",
+        "ActivityLimited": "A mostrar os últimos {0} de {1} eventos.",
+        "NoServiceRecords": "Não há incidentes nem pedidos de substituição para este ativo.",
+        "ServicePriority": "Prioridade {0}",
+        "SectionSharePoint": "Item do SharePoint",
+        "TechItemId": "ID do item",
+        "TechList": "Lista",
+        "TechCreated": "Criado",
+        "TechModified": "Última alteração",
+        "TechVersion": "Versão",
+        "TechLink": "Ligação",
+        "OpenInSharePoint": "Abrir no SharePoint",
+        "SectionStoredValues": "Valores guardados",
+        "IdLabel": "ID {0}",
+        "ReturnInProgress": "Está em curso uma devolução deste ativo.",
+        "StatAge": "Idade",
+        "StatWarranty": "Garantia restante",
+        "StatDays": "{0} dias",
+        "StatHolders": "Titulares",
+        "StatOpenIssues": "Problemas abertos",
+        "TabOverview": "Visão geral",
+        "TabPeople": "Pessoas",
+        "TabActivity": "Atividade",
+        "TabService": "Assistência",
+        "TabTechnical": "Técnico",
+        "ColAsset": "Ativo",
+        "Unnamed": "Ativo sem nome",
+        "ColType": "Tipo",
+        "ColCategory": "Categoria",
+        "ColStatus": "Estado",
+        "ColAssignedTo": "Atribuído a",
+        "ColCondition": "Condição",
+        "ColWarranty": "Garantia",
+        "ColPurchased": "Comprado",
+        "ColVendor": "Fornecedor",
+        "BreakdownItem": "{0} {1}",
+        "TileTotal": "Todos os ativos",
+        "TileInStock": "Em stock",
+        "TileAssigned": "Atribuídos",
+        "TileMaintenance": "Em manutenção",
+        "TileWarrantySoon": "Garantia termina em {0} dias",
+        "AllTypes": "Todos os tipos",
+        "GroupByType": "Tipo de ativo",
+        "GroupByCategory": "Categoria",
+        "GroupByStatus": "Estado",
+        "GroupByNone": "Sem agrupamento",
+        "Subtitle": "Todos os ativos do inventário. Selecione um para ver os detalhes, o histórico e os registos de assistência.",
+        "TilesAria": "Filtrar por estado",
+        "SearchPlaceholder": "Pesquisar nome, número de série, fornecedor ou pessoa",
+        "FilterType": "Tipo",
+        "GroupByLabel": "Agrupar por",
+        "ResultCount": "{0} de {1} ativos",
+        "ExpandAll": "Expandir tudo",
+        "CollapseAll": "Recolher tudo",
+        "ClearFilters": "Limpar filtros",
+        "EmptyInventory": "Ainda não há ativos. Adicione o primeiro para começar.",
+        "EmptyFiltered": "Nenhum ativo corresponde a estes filtros.",
+        "PageOf": "Página {0} de {1}",
+        "GroupPartial": "linhas {0}–{1} de {2}"
+    },
+    "AssignmentQueue": {
+        "Subtitle": "Pedidos aprovados pelo gestor à espera de um ativo. Selecione um para escolher e atribuir o ativo.",
+        "TilesAria": "Filtrar a fila",
+        "TileWaiting": "À espera de ativo",
+        "TileWaitingHint": "Aprovados, ainda não atribuídos",
+        "TileReady": "Prontos a atribuir",
+        "TileReadyHint": "Stock suficiente agora",
+        "TileNoStock": "Stock insuficiente",
+        "TileNoStockHint": "Requer compra ou devolução",
+        "TileOverdue": "Em atraso",
+        "TileOverdueHint": "À espera há mais de {0} h",
+        "TileAssigned": "Atribuídos",
+        "TileAssignedHint": "Já entregues",
+        "SearchPlaceholder": "Pesquisar ID do pedido, colaborador, ativo ou gestor",
+        "FilterShow": "Mostrar",
+        "ViewWaiting": "À espera",
+        "ViewAssigned": "Atribuídos",
+        "ViewAll": "Todos os aprovados",
+        "FilterType": "Tipo de ativo",
+        "AllTypes": "Todos os tipos",
+        "GroupByLabel": "Agrupar por",
+        "GroupByType": "Tipo de ativo",
+        "GroupByEmployee": "Colaborador",
+        "GroupByPriority": "Prioridade",
+        "GroupByNone": "Sem agrupamento",
+        "ResultCount": "{0} de {1} pedidos aprovados",
+        "ExpandAll": "Expandir tudo",
+        "CollapseAll": "Recolher tudo",
+        "ClearFilters": "Limpar filtros",
+        "EmptyAllDone": "Nada em espera. Todos os pedidos aprovados têm um ativo.",
+        "EmptyFiltered": "Nenhum pedido corresponde a estes filtros.",
+        "Unspecified": "Não especificado",
+        "ColRequest": "Pedido",
+        "RequestedOn": "Pedido em {0}",
+        "ColEmployee": "Colaborador",
+        "EmployeeId": "ID {0}",
+        "ColAsset": "Ativo",
+        "ColQuantity": "Qtd.",
+        "ColPriority": "Prioridade",
+        "ColStock": "Stock",
+        "InStockCount": "{0} em stock",
+        "PartialStock": "{0} de {1} em stock",
+        "OutOfStock": "Sem stock",
+        "ColApprovedBy": "Aprovado por",
+        "ColWaiting": "À espera",
+        "StatusAssigned": "Atribuído",
+        "OverdueBy": "Em atraso há {0}",
+        "TargetHours": "Objetivo {0} h",
+        "DurationUnderHour": "Menos de 1 h",
+        "DurationHours": "{0} h",
+        "DurationDaysHours": "{0} d {1} h",
+        "DurationDays": "{0} d",
+        "Assign": "Atribuir",
+        "Working": "A processar...",
+        "GroupWaiting": "{0} à espera",
+        "GroupOverdue": "{0} em atraso",
+        "GroupStock": "{0} em stock",
+        "PanelStockLine": "{0} {1} em stock para um pedido de {2}. Melhor opção primeiro.",
+        "PanelNoStock": "Não há {0} em stock. Pode aprovar sem escolher um ativo ou rejeitar o pedido.",
+        "Recommended": "Recomendado"
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pt_pt);
@@ -11912,7 +14878,19 @@ const sv_se = {
         "ColSerialNumber": "Serienummer",
         "ColAssignedDate": "Tilldelningsdatum",
         "MyEquipmentEmptyState": "Ingen utrustning är för närvarande tilldelad dig.",
-        "MyEquipmentEmptyStateHint": "Tilldelade enheter visas här efter utlämning"
+        "MyEquipmentEmptyStateHint": "Tilldelade enheter visas här efter utlämning",
+        "AttentionTitle": "Kräver åtgärd",
+        "AttentionAllClear": "Allt klart, inget väntar på dig",
+        "AttentionWaitingAssignment": "{0} väntar på en tillgång",
+        "AttentionAwaitingDecision": "{0} väntar på ditt beslut",
+        "AttentionOverdue": "{0} försenade",
+        "AttentionInReview": "{0} under granskning",
+        "AttentionReadySoon": "{0} godkända, tillgången är på väg",
+        "KpiInReview": "Under granskning",
+        "KpiInReviewSubtitle": "Väntar på din chef",
+        "KpiAwaitingHandoff": "Väntar på utlämning",
+        "KpiAwaitingHandoffSubtitle": "Godkänd, tillgången förbereds",
+        "ViewAll": "Visa alla ({0})"
     },
     "WorkflowPopup": {
         "GotIt": "Uppfattat",
@@ -11943,7 +14921,31 @@ const sv_se = {
         "CategoryAudits": "Granskningar",
         "ViewDetails": "Visa detaljer",
         "MarkAsRead": "Markera som läst",
-        "DismissNotification": "Avfärda avisering"
+        "DismissNotification": "Avfärda avisering",
+        "FilterUnread": "Olästa",
+        "SearchPlaceholder": "Sök aviseringar",
+        "GroupToday": "I dag",
+        "GroupYesterday": "I går",
+        "GroupThisWeek": "Tidigare i veckan",
+        "GroupOlder": "Äldre",
+        "TimeJustNow": "Nyss",
+        "TimeMinutesAgo": "för {0} min sedan",
+        "TimeHoursAgo": "för {0} tim sedan",
+        "TimeYesterday": "I går",
+        "UnreadSummary": "Du har {0} olästa aviseringar.",
+        "UnreadSummaryOne": "Du har 1 oläst avisering.",
+        "NoUnreadSummary": "Du är helt i fas.",
+        "MarkAsUnread": "Markera som oläst",
+        "DismissShown": "Stäng visade",
+        "DismissedOne": "Aviseringen stängdes.",
+        "DismissedMany": "{0} aviseringar stängdes.",
+        "Undo": "Ångra",
+        "ShowMore": "Visa fler ({0} kvar)",
+        "OpenPage": "Öppna {0}",
+        "NoSearchResultsTitle": "Inga träffar",
+        "NoSearchResults": "Inga aviseringar matchar \"{0}\".",
+        "EmptyUnread": "Du har inga olästa aviseringar.",
+        "OpenButtonUnreadAria": "Aviseringar, {0} olästa"
     },
     "AssetForm": {
         "HeaderAdmin": "Lägg till ny tillgång",
@@ -11970,6 +14972,11 @@ const sv_se = {
         "LabelManagerName": "Chefens namn",
         "ManagerNamePlaceholder": "Ange chefens namn",
         "ManagerNameRequired": "Chefens namn krävs",
+        "ManagerSearchPlaceholder": "Sök chefer på namn eller e-post",
+        "ManagerSuggestionsHeader": "Chefer i {0}",
+        "ManagerNoResults": "Ingen chef matchar. Endast medlemmar i {0} kan godkänna förfrågningar.",
+        "ManagerSearching": "Söker...",
+        "ManagerGroupUnavailable": "Det gick inte att läsa in cheferna i {0}. Uppdatera sidan eller be en administratör kontrollera gruppen.",
         "LabelRequestedDate": "Begärt datum",
         "LabelAssetType": "Tillgångstyp",
         "LabelPriority": "Prioritet",
@@ -12143,6 +15150,17 @@ const sv_se = {
         "ListDesc_StockThresholdsList": "Minsta tillgängliga lager per tillgångstyp för varningar. Skapas när trösklar sparas första gången.",
         "ListTitle_AssetKitsList": "Utrustningspaket",
         "ListDesc_AssetKitsList": "Standardpaket för nyanställda. Skapas när ett paket sparas första gången.",
+        "ListTitle_AppSettingsList": "Inställningar för inventarieappen",
+        "ListDesc_AppSettingsList": "Webbplatsomfattande appinställningar, till exempel e-postaviseringar. Skapas när inställningarna sparas första gången.",
+        "AccessUnknown": "Läsa (skrivning inte verifierad)",
+        "ChecksLabel": "Vad som testades",
+        "CheckOptional": "valfritt",
+        "Check_Find": "Hitta listan via dess titel",
+        "Check_Columns": "Läsa listans kolumner",
+        "Check_Items": "Läsa objekt",
+        "Check_Permissions": "Läsa dina behörigheter för listan",
+        "Check_Details": "Läsa listinformation (antal objekt, senast ändrad, länk)",
+        "Note_PermissionsFromSite": "Dina behörigheter för listan kunde inte läsas direkt, så webbplatsens behörigheter användes. ({0})",
         "SchemaUnchecked": "Kör en hälsokontroll för att validera kolumnerna mot SharePoint-listorna.",
         "SchemaAliasesHint": "Godkänns även: {0}",
         "SchemaAuditTrail": "(Granskningslogg)",
@@ -12743,6 +15761,10 @@ const sv_se = {
         "PdfIssueDescriptionTitle": "PROBLEMBESKRIVNING",
         "PdfReplacementReasonTitle": "ANLEDNING TILL UTBYTE OCH DETALJER",
         "PdfNoDescription": "Ingen beskrivning tillhandahållen.",
+        "PdfDownloadFailed": "Det gick inte att skapa PDF-filen för {0}. Försök igen eller se webbläsarens konsol för detaljer.",
+        "PdfDownloadFailedTitle": "Nedladdningen misslyckades",
+        "LocalOnlyTag": "Inte synkad",
+        "LocalOnlyTooltip": "Sparad endast i den här webbläsaren eftersom SharePoint nekade sparandet. Administratörer kan inte se denna incident.",
         "PdfNoReason": "Ingen anledning angiven.",
         "PdfResolutionSummaryTitle": "LÖSNINGSSAMMANFATTNING"
     },
@@ -12767,6 +15789,7 @@ const sv_se = {
         "ReplacementListLabel": "Lista för ersättningar",
         "StockThresholdsListLabel": "Lista för lagertrösklar",
         "AssetKitsListLabel": "Lista för utrustningspaket",
+        "AppSettingsListLabel": "Lista för appinställningar",
         "AlertsPageDescription": "Servicemål och lagervarningar",
         "GroupSla": "SLA för begäranden",
         "ApprovalSlaLabel": "Timmar till godkännande (mål)",
@@ -12874,6 +15897,238 @@ const sv_se = {
         "KitDelete": "Ta bort",
         "KitDeleteConfirm": "Ta bort paketet \"{0}\"?",
         "KitDeleted": "Paketet togs bort."
+    },
+    "EmailCenter": {
+        "Title": "E-postcenter",
+        "OpenButton": "E-post",
+        "OpenButtonAria": "Öppna e-postcentret",
+        "OpenButtonFailedAria": "Öppna e-postcentret. {0} e-postmeddelande(n) misslyckades.",
+        "TabOutbox": "Utkorg",
+        "TabSettings": "Inställningar",
+        "StatusOff": "E-postutskick är avstängt. E-postmeddelanden visas här men skickas inte.",
+        "StatusTestMode": "Testläget är på. E-post om förfrågningar, godkännanden, avslag och tilldelningar går till testmottagarna.",
+        "OutboxEmpty": "Inga e-postmeddelanden än i den här sessionen. E-post som appen skickar visas här.",
+        "OutboxSessionNote": "Visar endast e-post från den här webbläsarsessionen.",
+        "ClearOutbox": "Rensa listan",
+        "StatusSent": "Skickat",
+        "StatusFailed": "Misslyckades",
+        "StatusSkipped": "Inte skickat",
+        "BackToOutbox": "All e-post",
+        "DetailSent": "Skickat {0}.",
+        "DetailSentFallback": "Skickat {0} via SharePoint-reservkanalen. Leverans garanteras inte.",
+        "DetailFailed": "Misslyckades {0}: {1}",
+        "DetailSkipped": "Inte skickat {0} eftersom e-postutskick är avstängt.",
+        "SendNow": "Skicka nu",
+        "SendAgain": "Skicka igen",
+        "SendBlockedOff": "E-postutskick är avstängt. Slå på det under Inställningar för att skicka.",
+        "ToLabel": "Till: {0}",
+        "SectionDelivery": "Leverans (gäller alla)",
+        "SectionDeliveryDesc": "Sparas i listan \"{0}\" på den här webbplatsen.",
+        "ToggleEnabled": "Skicka e-postaviseringar",
+        "ToggleOn": "På",
+        "ToggleOff": "Av",
+        "ToggleTestMode": "Testläge",
+        "TestModeDesc": "Skickar e-post om förfrågningar, godkännanden, avslag och tilldelningar till testmottagarna i stället för till de verkliga personerna. Aviseringar om lågt lager går alltid till administratörsgruppen.",
+        "LabelTestAdminRecipients": "Testmottagare för e-post till administratörer och anställda",
+        "LabelTestManagerRecipient": "Testmottagare för e-post till chefer",
+        "RecipientsPlaceholder": "namn@foretag.se, namn2@foretag.se",
+        "RecipientsRequired": "Ange minst en giltig e-postadress.",
+        "SaveSettings": "Spara inställningar",
+        "SettingsSaved": "E-postinställningarna har sparats.",
+        "SettingsSaveFailed": "Det gick inte att spara inställningarna: {0}",
+        "SettingsLoading": "Läser in inställningar...",
+        "SectionBrowser": "I den här webbläsaren",
+        "PreviewModeLabel": "Öppna e-postcentret automatiskt",
+        "PreviewModeNever": "Aldrig",
+        "PreviewModeFailure": "När ett e-postmeddelande misslyckas",
+        "PreviewModeAlways": "Efter varje e-postmeddelande",
+        "StockAlertsHeld": "Lågt lager för {0}, men ingen avisering skickades eftersom e-postutskick är avstängt i e-postcentret."
+    },
+    "RejectDialog": {
+        "Stage": "Chefsgranskning",
+        "Title": "Avslå förfrågan {0}",
+        "LabelEmployeeReason": "Den anställdas motivering",
+        "LabelCategory": "Orsak till avslag",
+        "CategoryPlaceholder": "Välj en orsak",
+        "CategoryRequired": "Välj en orsak till avslaget.",
+        "CategoryNotJustified": "Affärsbehovet är inte motiverat",
+        "CategoryBudget": "Budgeten är inte godkänd",
+        "CategoryDuplicate": "Dubblettförfrågan",
+        "CategoryAlreadyHas": "Den anställda har redan denna tillgång",
+        "CategoryUnavailable": "Tillgången är inte tillgänglig, begär ett alternativ",
+        "CategoryOther": "Annat",
+        "LabelMessage": "Meddelande till den anställda",
+        "MessagePlaceholder": "Förklara beslutet och vad den anställda kan göra härnäst.",
+        "MessageRequired": "Skriv ett kort meddelande till den anställda.",
+        "CharacterCount": "{0} / {1} tecken",
+        "VisibilityNote": "Den anställda ser orsaken i Min arbetsyta → Förfrågningar. Chefer ser den i förfrågans detaljer.",
+        "ConfirmButton": "Avslå förfrågan",
+        "Rejecting": "Avslår...",
+        "ReasonTitle": "Orsak till avslag",
+        "RejectedBy": "Avslogs av {0}",
+        "RejectedByOn": "Avslogs av {0} den {1}"
+    },
+    "InventoryExplorer": {
+        "StatusInStock": "I lager",
+        "StatusAssigned": "Tilldelad",
+        "StatusMaintenance": "Under underhåll",
+        "StatusPendingReturn": "Väntar på retur",
+        "StatusRetired": "Utrangerad",
+        "StatusOther": "Annan status",
+        "AgeUnderMonth": "Under 1 månad",
+        "AgeMonths": "{0} mån",
+        "AgeYearsMonths": "{0} år {1} mån",
+        "AgeYears": "{0} år",
+        "WarrantyNone": "Inget garantidatum",
+        "WarrantyExpiredOn": "Garantin gick ut {0}",
+        "WarrantyEndsInDays": "Garantin upphör om {0} dagar",
+        "WarrantyUntil": "Garanti till {0}",
+        "WarrantyExpiredShort": "Utgången",
+        "Uncategorised": "Okategoriserad",
+        "CustodyAssigned": "Tilldelad {0}",
+        "CustodyEmployeeId": "Anställnings-ID {0}",
+        "CustodyReturn": "Retur: {0}",
+        "CustodyCondition": "Skick: {0}",
+        "SectionDetails": "Detaljer",
+        "FieldCategory": "Kategori",
+        "FieldType": "Typ",
+        "FieldSerial": "Serienummer",
+        "FieldVendor": "Leverantör",
+        "FieldStatus": "Status",
+        "FieldCondition": "Skick",
+        "FieldPurchased": "Inköpt",
+        "FieldWarranty": "Garanti",
+        "FieldAssignedTo": "Tilldelad till",
+        "FieldAssetId": "Tillgångs-ID",
+        "SectionLifecycle": "Livscykel",
+        "LifecycleAge": "Använd i {0}",
+        "LifecyclePlan": "Planerat utbyte efter {0} år",
+        "SectionSpecifications": "Specifikationer",
+        "SectionNotes": "Anteckningar",
+        "SectionCurrentHolder": "Nuvarande innehavare",
+        "NoCurrentHolder": "Inte tilldelad någon just nu.",
+        "SectionCustody": "Innehavshistorik",
+        "NoCustody": "Inga tilldelningar eller returer registrerade för tillgången ännu.",
+        "NoActivity": "Ingen aktivitet registrerad för tillgången ännu.",
+        "ActivityLimited": "Visar de senaste {0} av {1} händelser.",
+        "NoServiceRecords": "Inga incidenter eller utbytesförfrågningar för tillgången.",
+        "ServicePriority": "Prioritet {0}",
+        "SectionSharePoint": "SharePoint-objekt",
+        "TechItemId": "Objekt-ID",
+        "TechList": "Lista",
+        "TechCreated": "Skapad",
+        "TechModified": "Senast ändrad",
+        "TechVersion": "Version",
+        "TechLink": "Länk",
+        "OpenInSharePoint": "Öppna i SharePoint",
+        "SectionStoredValues": "Lagrade värden",
+        "IdLabel": "ID {0}",
+        "ReturnInProgress": "En retur pågår för tillgången.",
+        "StatAge": "Ålder",
+        "StatWarranty": "Garanti kvar",
+        "StatDays": "{0} dagar",
+        "StatHolders": "Innehavare",
+        "StatOpenIssues": "Öppna ärenden",
+        "TabOverview": "Översikt",
+        "TabPeople": "Personer",
+        "TabActivity": "Aktivitet",
+        "TabService": "Service",
+        "TabTechnical": "Teknisk",
+        "ColAsset": "Tillgång",
+        "Unnamed": "Namnlös tillgång",
+        "ColType": "Typ",
+        "ColCategory": "Kategori",
+        "ColStatus": "Status",
+        "ColAssignedTo": "Tilldelad till",
+        "ColCondition": "Skick",
+        "ColWarranty": "Garanti",
+        "ColPurchased": "Inköpt",
+        "ColVendor": "Leverantör",
+        "BreakdownItem": "{0} {1}",
+        "TileTotal": "Alla tillgångar",
+        "TileInStock": "I lager",
+        "TileAssigned": "Tilldelade",
+        "TileMaintenance": "Under underhåll",
+        "TileWarrantySoon": "Garanti upphör inom {0} dagar",
+        "AllTypes": "Alla typer",
+        "GroupByType": "Tillgångstyp",
+        "GroupByCategory": "Kategori",
+        "GroupByStatus": "Status",
+        "GroupByNone": "Ingen gruppering",
+        "Subtitle": "Alla tillgångar i inventariet. Välj en för att se detaljer, historik och serviceärenden.",
+        "TilesAria": "Filtrera på status",
+        "SearchPlaceholder": "Sök namn, serienummer, leverantör eller person",
+        "FilterType": "Typ",
+        "GroupByLabel": "Gruppera efter",
+        "ResultCount": "{0} av {1} tillgångar",
+        "ExpandAll": "Visa alla",
+        "CollapseAll": "Dölj alla",
+        "ClearFilters": "Rensa filter",
+        "EmptyInventory": "Inga tillgångar än. Lägg till den första för att komma igång.",
+        "EmptyFiltered": "Inga tillgångar matchar filtren.",
+        "PageOf": "Sida {0} av {1}",
+        "GroupPartial": "rad {0}–{1} av {2}"
+    },
+    "AssignmentQueue": {
+        "Subtitle": "Chefsgodkända förfrågningar som väntar på en tillgång. Välj en för att välja tillgång och tilldela den.",
+        "TilesAria": "Filtrera kön",
+        "TileWaiting": "Väntar på tillgång",
+        "TileWaitingHint": "Godkända, ännu inte tilldelade",
+        "TileReady": "Redo att tilldela",
+        "TileReadyHint": "Tillräckligt i lager nu",
+        "TileNoStock": "Otillräckligt lager",
+        "TileNoStockHint": "Kräver inköp eller retur",
+        "TileOverdue": "Försenade",
+        "TileOverdueHint": "Väntat över {0} h",
+        "TileAssigned": "Tilldelade",
+        "TileAssignedHint": "Redan utlämnade",
+        "SearchPlaceholder": "Sök förfrågans ID, anställd, tillgång eller chef",
+        "FilterShow": "Visa",
+        "ViewWaiting": "Väntande",
+        "ViewAssigned": "Tilldelade",
+        "ViewAll": "Alla godkända",
+        "FilterType": "Tillgångstyp",
+        "AllTypes": "Alla typer",
+        "GroupByLabel": "Gruppera efter",
+        "GroupByType": "Tillgångstyp",
+        "GroupByEmployee": "Anställd",
+        "GroupByPriority": "Prioritet",
+        "GroupByNone": "Ingen gruppering",
+        "ResultCount": "{0} av {1} godkända förfrågningar",
+        "ExpandAll": "Visa alla",
+        "CollapseAll": "Dölj alla",
+        "ClearFilters": "Rensa filter",
+        "EmptyAllDone": "Inget väntar. Alla godkända förfrågningar har en tillgång.",
+        "EmptyFiltered": "Inga förfrågningar matchar filtren.",
+        "Unspecified": "Ej angiven",
+        "ColRequest": "Förfrågan",
+        "RequestedOn": "Begärd {0}",
+        "ColEmployee": "Anställd",
+        "EmployeeId": "ID {0}",
+        "ColAsset": "Tillgång",
+        "ColQuantity": "Antal",
+        "ColPriority": "Prioritet",
+        "ColStock": "Lager",
+        "InStockCount": "{0} i lager",
+        "PartialStock": "{0} av {1} i lager",
+        "OutOfStock": "Slut i lager",
+        "ColApprovedBy": "Godkänd av",
+        "ColWaiting": "Väntat",
+        "StatusAssigned": "Tilldelad",
+        "OverdueBy": "Försenad med {0}",
+        "TargetHours": "Mål {0} h",
+        "DurationUnderHour": "Under 1 h",
+        "DurationHours": "{0} h",
+        "DurationDaysHours": "{0} d {1} h",
+        "DurationDays": "{0} d",
+        "Assign": "Tilldela",
+        "Working": "Arbetar...",
+        "GroupWaiting": "{0} väntar",
+        "GroupOverdue": "{0} försenade",
+        "GroupStock": "{0} i lager",
+        "PanelStockLine": "{0} {1} i lager för en förfrågan om {2}. Bästa matchning först.",
+        "PanelNoStock": "Ingen {0} finns i lager. Du kan ändå godkänna utan att välja tillgång, eller avslå förfrågan.",
+        "Recommended": "Rekommenderad"
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sv_se);
@@ -12894,36 +16149,89 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/inventory/inventoryUi */ 69024);
 
 
 
 
+
+
+
+const CONDITION_RANK = { new: 0, excellent: 1, good: 2, fair: 3 };
+/** Best first: better condition, then the most warranty left, then the newest purchase. */
+const rankAssets = (assets) => assets.slice().sort((a, b) => {
+    const ca = CONDITION_RANK[(a.condition || '').toLowerCase()] ?? 4;
+    const cb = CONDITION_RANK[(b.condition || '').toLowerCase()] ?? 4;
+    if (ca !== cb)
+        return ca - cb;
+    const wa = (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.warrantyInfo)(a.warrantyExpiry).days ?? -Infinity;
+    const wb = (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.warrantyInfo)(b.warrantyExpiry).days ?? -Infinity;
+    if (wa !== wb)
+        return wb - wa;
+    return (new Date(b.purchaseDate || 0).getTime() || 0) - (new Date(a.purchaseDate || 0).getTime() || 0);
+});
+const pickerCss = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_4__.mergeStyleSets)({
+    list: { display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 360, overflowY: 'auto', paddingRight: 2 },
+    option: {
+        display: 'flex', alignItems: 'center', gap: 12, width: '100%', textAlign: 'left', padding: '10px 12px',
+        borderRadius: 8, border: '1px solid rgba(0, 0, 0, 0.14)', background: 'var(--surface-bg, #ffffff)',
+        cursor: 'pointer', font: 'inherit', color: 'inherit',
+        selectors: { ':hover': { borderColor: 'rgba(0, 0, 0, 0.3)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: 2 }, ':disabled': { cursor: 'default', opacity: 0.6 } }
+    },
+    optionSelected: { borderColor: '#0f6cbd', boxShadow: 'inset 0 0 0 1px #0f6cbd', background: 'rgba(15, 108, 189, 0.05)' },
+    radio: { width: 18, height: 18, borderRadius: '50%', border: '2px solid #8a8886', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' },
+    radioOn: { borderColor: '#0f6cbd' },
+    radioDot: { width: 8, height: 8, borderRadius: '50%', background: '#0f6cbd' },
+    icon: { width: 32, height: 32, borderRadius: 8, background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    body: { flex: 1, minWidth: 0 },
+    name: { fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
+    meta: { fontSize: 12, color: 'var(--text-muted, #616161)', marginTop: 2 },
+    tag: { fontSize: 11, fontWeight: 600, padding: '0 8px', borderRadius: 999, lineHeight: '18px' }
+});
 const AdminAssignmentPanel = (props) => {
     const { state, actions } = props;
     const request = state.selectedAdminRequest;
     if (!request || !state.isAdminPanelOpen)
         return null;
-    const requestedAssetTitle = request.assetTitle || "";
-    const matchingAssets = state.items.filter(item => (item.assetType || '').toLowerCase() === requestedAssetTitle.toLowerCase() &&
-        (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock'));
-    const matchingAssetOptions = matchingAssets.map(asset => ({
-        key: asset.id,
-        text: `${asset.assetName || asset.title} (SN: ${asset.serialNumber || 'N/A'})`
-    }));
-    const dropdownPlaceholder = matchingAssets.length > 0
-        ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.PlaceholderSelectAsset
-        : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.PlaceholderNoAssetsInStock;
+    const matchingAssets = rankAssets((0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.assignableOfType)(state.items, request.assetTitle));
+    const quantity = Math.max(1, request.quantity || 1);
     const isBusy = state.requestActionInProgressId === request.id;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Panel, { isOpen: state.isAdminPanelOpen, onDismiss: actions.onDismiss, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PanelType.medium, headerText: `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.RequestHeaderPrefix}${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
+    const q = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue;
+    const renderAssetPicker = () => {
+        if (matchingAssets.length === 0) {
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBarType.warning, styles: { root: { borderRadius: 6 } } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(q.PanelNoStock, request.assetTitle || '')));
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.list, role: "radiogroup", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.LabelAssignAssetOptional }, matchingAssets.map((asset, index) => {
+            const selected = state.adminSelectedAssetId === asset.id;
+            const warranty = (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.warrantyInfo)(asset.warrantyExpiry);
+            const cond = (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.conditionTone)(asset.condition);
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: asset.id, type: "button", role: "radio", "aria-checked": selected, disabled: isBusy, className: `${pickerCss.option} ${selected ? pickerCss.optionSelected : ''}`, onClick: () => actions.onAssetChange({}, { key: asset.id, text: asset.assetName || asset.title }) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${pickerCss.radio} ${selected ? pickerCss.radioOn : ''}`, "aria-hidden": "true" }, selected && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.radioDot })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.icon, "aria-hidden": "true" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.assetTypeIcon)(asset.assetType) })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.body },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.name },
+                        asset.assetName || asset.title,
+                        index === 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.tag, style: { background: _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.blue.bg, color: _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.blue.fg } }, q.Recommended),
+                        asset.condition && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.tag, style: { background: cond.bg, color: cond.fg } }, asset.condition)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.meta, style: { display: 'block' } }, [asset.serialNumber, `#${asset.id}`, asset.vendor, asset.purchaseDate ? `${(0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.formatDay)(asset.purchaseDate)}${(0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.ageText)(asset.purchaseDate) ? ` (${(0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.ageText)(asset.purchaseDate)})` : ''}` : ''].filter(Boolean).join('  ·  ')),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.meta, style: { display: 'block', color: warranty.state === 'active' || warranty.state === 'none' ? undefined : warranty.tone.fg } }, warranty.text))));
+        })));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: state.isAdminPanelOpen, onDismiss: actions.onDismiss, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.RequestHeaderPrefix}${request.requestKey || request.id}`, closeButtonAriaLabel: "Close" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', fontSize: '0.88rem', margin: '0 0 10px 0' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.SubHeader),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -13010,13 +16318,14 @@ const AdminAssignmentPanel = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.LabelAssignAssetOptional),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Dropdown, { placeholder: dropdownPlaceholder, options: matchingAssetOptions, selectedKey: state.adminSelectedAssetId, onChange: actions.onAssetChange, disabled: matchingAssets.length === 0 || isBusy, styles: { dropdown: { width: '100%' } } })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginBottom: '8px' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(q.PanelStockLine, matchingAssets.length, request.assetTitle || '', quantity)),
+                        renderAssetPicker()),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.LabelComment),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.TextField, { multiline: true, rows: 4, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.PlaceholderComment, value: state.adminComment, onChange: (_, value) => actions.onCommentChange(value || ''), disabled: isBusy })),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { multiline: true, rows: 4, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.PlaceholderComment, value: state.adminComment, onChange: (_, value) => actions.onCommentChange(value || ''), disabled: isBusy })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', marginTop: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: isBusy ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.ButtonProcessing : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.ButtonAssignApprove, onClick: actions.onAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.ButtonReject, onClick: actions.onReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PrimaryButton, { text: isBusy ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.ButtonProcessing : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.ButtonAssignApprove, onClick: actions.onAssignAndApprove, disabled: isBusy, iconProps: { iconName: 'CompletedSolid' } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AdminAssignmentPanel.ButtonReject, onClick: actions.onReject, disabled: isBusy, iconProps: { iconName: 'Cancel' }, styles: {
                                 root: { color: '#dc2626', borderColor: '#dc2626' },
                                 rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                             } })))))));
@@ -13264,24 +16573,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_RequestList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/RequestList */ 82867);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-
-
-
+/* harmony import */ var _components_assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/assignment/AssignmentQueue */ 89202);
 
 
 const AssetAssignmentQueuePage = (props) => {
     const { state, actions } = props;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetAssignmentQueuePage.Title)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetAssignmentQueuePage.Description),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.SearchLabel, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.SearchPlaceholder, value: state.requestSearchId, onChange: (_, value) => actions.onSearchChange(value || ''), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RequestList__WEBPACK_IMPORTED_MODULE_2__.RequestList, { items: state.visibleAdminRequests, inventoryItems: state.items, canApproveReject: false, canApproveAsset: true, hideStatusColumn: true, showResponseColumns: false, onSelectRequestForAssignment: actions.onSelectRequestForAssignment, actionInProgressId: state.requestActionInProgressId })));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue, { requests: state.allAdminRequests || state.visibleAdminRequests, items: state.items, actionInProgressId: state.requestActionInProgressId, onAssign: actions.onSelectRequestForAssignment }));
 };
 
 
@@ -13383,7 +16680,18 @@ const getListText = (key) => {
         case 'replacement': return { title: s.ListTitle_ReplacementList, desc: s.ListDesc_ReplacementList };
         case 'stockThresholds': return { title: s.ListTitle_StockThresholdsList, desc: s.ListDesc_StockThresholdsList };
         case 'assetKits': return { title: s.ListTitle_AssetKitsList, desc: s.ListDesc_AssetKitsList };
+        case 'appSettings': return { title: s.ListTitle_AppSettingsList, desc: s.ListDesc_AppSettingsList };
         default: return { title: key, desc: '' };
+    }
+};
+const getCheckLabel = (key) => {
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage;
+    switch (key) {
+        case 'find': return s.Check_Find;
+        case 'columns': return s.Check_Columns;
+        case 'items': return s.Check_Items;
+        case 'permissions': return s.Check_Permissions;
+        default: return s.Check_Details;
     }
 };
 const formatDate = (iso) => {
@@ -13422,7 +16730,7 @@ const StatusPill = ({ status, testing }) => {
 const collectIssues = (results) => {
     const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage;
     const issues = [];
-    (0,_services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.getListDefinitions)().forEach(def => {
+    (0,_services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.getConfigListDefinitions)().forEach(def => {
         const r = results[def.key];
         if (!r)
             return;
@@ -13443,7 +16751,7 @@ const collectIssues = (results) => {
             if (r.missingColumns.length > 0) {
                 add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
             }
-            if (!r.canWrite) {
+            if (r.canWrite === false) {
                 add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Write, title));
             }
         }
@@ -13454,7 +16762,7 @@ const ConfigPage = (props) => {
     const { state, actions } = props;
     const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage;
     // Read per render so property-pane changes to list titles and role groups show immediately.
-    const LIST_DEFINITIONS = (0,_services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.getListDefinitions)();
+    const LIST_DEFINITIONS = (0,_services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__.getConfigListDefinitions)();
     const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
     const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
     const ROLE_GROUPS = getRoleGroups();
@@ -13561,7 +16869,7 @@ const ConfigPage = (props) => {
     const coreResults = CORE_LISTS.map(d => results[d.key]).filter(Boolean);
     const coreReady = coreResults.filter(r => r.status === 'healthy').length;
     const missingColumnCount = coreResults.reduce((sum, r) => sum + (r.resolvedTitle ? r.missingColumns.length : 0), 0);
-    const writeIssues = coreResults.filter(r => r.resolvedTitle && !r.canWrite).length;
+    const writeIssues = coreResults.filter(r => r.resolvedTitle && r.canWrite === false).length;
     const optionalReady = OPTIONAL_LISTS.filter(d => { const r = results[d.key]; return r && r.resolvedTitle; }).length;
     const issues = collectIssues(results);
     const criticalCount = issues.filter(i => i.severity === 'bad').length;
@@ -13651,7 +16959,10 @@ const ConfigPage = (props) => {
         const r = results[def.key];
         const isTesting = !!testing[def.key] || (runningAll && !r);
         const isExpanded = !!expanded[def.key];
-        const access = !r || !r.resolvedTitle ? undefined : r.canWrite ? s.AccessReadWrite : r.canRead ? s.AccessReadOnly : s.AccessNone;
+        const access = !r || !r.resolvedTitle ? undefined
+            : r.canWrite ? s.AccessReadWrite
+                : r.canWrite === undefined ? (r.canRead ? s.AccessUnknown : s.AccessNone)
+                    : r.canRead ? s.AccessReadOnly : s.AccessNone;
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: def.key, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].listCard },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].listCardTop },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 300px', minWidth: 0 } },
@@ -13670,7 +16981,7 @@ const ConfigPage = (props) => {
             r && r.resolvedTitle && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].metrics },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.Items,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, r.itemCount)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, r.itemCount !== undefined ? r.itemCount : '—')),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.LastModified,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, formatDate(r.lastModified))),
@@ -13688,6 +16999,7 @@ const ConfigPage = (props) => {
             r && r.error && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].errorBox },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, s.ErrorLabel),
                 " ",
+                r.failedStep ? `${getCheckLabel(r.failedStep)} — ` : '',
                 r.error)),
             r && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions, style: { marginTop: 6 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: isExpanded ? 'ChevronUp' : 'ChevronDown' }, text: s.ViewDetails, onClick: () => setExpanded(prev => ({ ...prev, [def.key]: !isExpanded })) }),
@@ -13711,7 +17023,21 @@ const ConfigPage = (props) => {
                         s.MissingColumnsLabel,
                         ":"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chips }, r.missingColumns.map(c => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: c, className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chip} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chipBad}` }, c))))),
-                r.resolvedTitle && r.missingColumns.length === 0 && def.requiredColumns.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, s.AllColumnsPresent))))));
+                r.resolvedTitle && r.missingColumns.length === 0 && def.requiredColumns.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, s.AllColumnsPresent)),
+                r.checks && r.checks.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
+                        s.ChecksLabel,
+                        ":"),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { style: { listStyle: 'none', margin: '6px 0 0', padding: 0 } }, r.checks.map(check => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: check.key, style: { display: 'flex', gap: 8, alignItems: 'flex-start', padding: '3px 0' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: check.ok ? 'CompletedSolid' : check.required ? 'StatusErrorFull' : 'WarningSolid', style: { color: check.ok ? '#107c10' : check.required ? '#c50f1f' : '#bc4b09', marginTop: 2 } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            getCheckLabel(check.key),
+                            !check.required && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted },
+                                " (",
+                                s.CheckOptional,
+                                ")"),
+                            check.source === 'site' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Note_PermissionsFromSite, check.error || ''))),
+                            !check.ok && check.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, check.error))))))))))));
     };
     const renderConnections = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
@@ -13918,12 +17244,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _components_InventoryList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryList */ 4938);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 25666);
+/* harmony import */ var _components_inventory_InventoryExplorer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/inventory/InventoryExplorer */ 86289);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -13931,14 +17255,12 @@ __webpack_require__.r(__webpack_exports__);
 const InventoryPage = (props) => {
     const { state, actions } = props;
     const { items, loading, isAdmin, isInventoryManager } = state;
-    return (isAdmin || isInventoryManager) ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.InventoryPage.Title)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.InventoryPage.Description),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.InventoryPage.LoadingInventory)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PrimaryButton, { text: isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.InventoryPage.ButtonAddNewAsset : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.InventoryPage.ButtonAssignManageAssets, onClick: actions.onOpenAssetForm, iconProps: { iconName: 'Add' } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InventoryList__WEBPACK_IMPORTED_MODULE_1__.InventoryList, { items: items, isAdmin: isAdmin, enablePagination: true }))))) : null;
+    if (!isAdmin && !isInventoryManager)
+        return null;
+    if (loading && items.length === 0) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { "aria-busy": "true", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryPage.LoadingInventory }, Array.from({ length: 6 }).map((_, i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Shimmer, { key: i, styles: { root: { marginBottom: 14 } } }))));
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_inventory_InventoryExplorer__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer, { items: items, addLabel: isAdmin ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryPage.ButtonAddNewAsset : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryPage.ButtonAssignManageAssets, onAdd: actions.onOpenAssetForm, auditLogs: state.auditLogs, returnRequests: state.returnRequests, spContext: state.spContext }));
 };
 
 
@@ -14004,19 +17326,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _RequestAnalysisPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RequestAnalysisPanel */ 71043);
 /* harmony import */ var _AssetAnalysisPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AssetAnalysisPanel */ 1184);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/NotificationUtils */ 43087);
 
 
 
 
 
+
+
+
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__.mergeStyleSets)({
+    header: { display: 'flex', gap: 14, alignItems: 'flex-start', margin: '4px 0 20px' },
+    iconWrap: {
+        width: 44,
+        height: 44,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        fontSize: 20
+    },
+    meta: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontSize: 13, color: '#616161' },
+    pill: { fontSize: 11, fontWeight: 600, padding: '1px 8px', borderRadius: 999, border: '1px solid rgba(0, 0, 0, 0.12)' },
+    message: {
+        margin: '8px 0 0',
+        fontSize: 15,
+        lineHeight: '22px',
+        color: '#242424'
+    },
+    sectionTitle: {
+        margin: '0 0 12px',
+        paddingBottom: 8,
+        fontSize: 14,
+        fontWeight: 600,
+        color: '#242424',
+        borderBottom: '1px solid #e0e0e0'
+    },
+    footer: { display: 'flex', gap: 8, flexWrap: 'wrap' }
+});
 const NotificationDetailsPanel = (props) => {
     const { state, actions } = props;
     const { selectedNotification, isNotificationDetailsOpen, items, requests } = state;
@@ -14051,19 +17412,31 @@ const NotificationDetailsPanel = (props) => {
         const id = parts[0];
         associatedAsset = items.find(a => a.id === id);
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: actions.onDismiss, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: "Close" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.NotificationDetailsPanel.LabelReceived),
-                " ",
-                selectedNotification.timestamp),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5' } }, selectedNotification.message)),
-            associatedRequest && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestAnalysisPanel__WEBPACK_IMPORTED_MODULE_2__.RequestAnalysisPanel, { request: associatedRequest, items: items }),
-            associatedAsset && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetAnalysisPanel__WEBPACK_IMPORTED_MODULE_3__.AssetAnalysisPanel, { asset: associatedAsset }),
-            !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { color: '#111827', borderBottom: '1px solid #e5e7eb', paddingBottom: '8px', marginBottom: '12px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.NotificationDetailsPanel.SystemAlertTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.NotificationDetailsPanel.GeneralNotificationText))))));
+    const n = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Notifications;
+    const tone = (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__.getNotificationTone)(selectedNotification.type);
+    const page = (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__.getNotificationPage)(selectedNotification, state.availablePages);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Panel, { isOpen: isNotificationDetailsOpen, onDismiss: actions.onDismiss, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PanelType.medium, headerText: selectedNotification.title, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Close, isFooterAtBottom: true, onRenderFooterContent: () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.footer },
+            page && actions.onOpenPage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PrimaryButton, { text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(n.OpenPage, page.text), iconProps: { iconName: 'OpenInNewTab' }, onClick: () => { actions.onDismiss(); actions.onOpenPage(page.key); } })),
+            actions.onMarkAsUnread && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: n.MarkAsUnread, iconProps: { iconName: 'Mail' }, onClick: () => { actions.onMarkAsUnread(selectedNotification.id); actions.onDismiss(); } })),
+            actions.onDismissNotification && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: n.DismissNotification, iconProps: { iconName: 'Cancel' }, onClick: () => { actions.onDismissNotification(selectedNotification.id); actions.onDismiss(); } })))) },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.iconWrap, style: { backgroundColor: tone.soft, color: tone.color }, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: tone.icon })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.meta },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.pill }, (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__.getCategoryLabel)(selectedNotification.category)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { title: (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__.formatFullTime)(selectedNotification.timestamp) },
+                        InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.NotificationDetailsPanel.LabelReceived,
+                        " ",
+                        (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__.formatRelativeTime)(selectedNotification.timestamp),
+                        " \u00B7 ",
+                        (0,_utils_NotificationUtils__WEBPACK_IMPORTED_MODULE_4__.formatFullTime)(selectedNotification.timestamp))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.message }, selectedNotification.message))),
+        associatedRequest && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestAnalysisPanel__WEBPACK_IMPORTED_MODULE_2__.RequestAnalysisPanel, { request: associatedRequest, items: items }),
+        associatedAsset && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetAnalysisPanel__WEBPACK_IMPORTED_MODULE_3__.AssetAnalysisPanel, { asset: associatedAsset }),
+        !associatedRequest && !associatedAsset && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.sectionTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.NotificationDetailsPanel.SystemAlertTitle),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_13__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.NotificationDetailsPanel.GeneralNotificationText)))));
 };
 
 
@@ -14087,7 +17460,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const NotificationsPage = (props) => {
     const { state, actions } = props;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NotificationCenter__WEBPACK_IMPORTED_MODULE_1__.NotificationCenter, { notifications: state.notifications, onMarkAsRead: actions.onMarkAsRead, onMarkAllAsRead: actions.onMarkAllAsRead, onClearNotification: actions.onClearNotification, onClearAllNotifications: actions.onClearAllNotifications, onNotificationAction: actions.onNotificationAction, isAllCleared: state.isAllNotificationsCleared }));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NotificationCenter__WEBPACK_IMPORTED_MODULE_1__.NotificationCenter, { notifications: state.notifications, onMarkAsRead: actions.onMarkAsRead, onMarkAllAsRead: actions.onMarkAllAsRead, onClearNotification: actions.onClearNotification, onClearAllNotifications: actions.onClearAllNotifications, onNotificationAction: actions.onNotificationAction, isAllCleared: state.isAllNotificationsCleared, availablePages: state.availablePages, onMarkAsUnread: actions.onMarkAsUnread, onClearNotifications: actions.onClearNotifications, onRestoreNotifications: actions.onRestoreNotifications, onOpenPage: actions.onOpenPage }));
 };
 
 
@@ -15030,6 +18403,9 @@ const StockThresholdsTab = () => {
         if (!result) {
             setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: f.StockCheckFailed });
         }
+        else if (result.held && result.held.length > 0) {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.EmailCenter.StockAlertsHeld, result.held.join(', ')) });
+        }
         else if (result.alerted.length > 0) {
             setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockAlertSent, result.alerted.join(', ')) });
         }
@@ -15926,6 +19302,131 @@ class AssetAssignmentService {
 }
 AssetAssignmentService._resolvedMappingListName = null;
 AssetAssignmentService._mappingListFieldsEnsured = false;
+
+
+/***/ }),
+
+/***/ 15085:
+/*!**************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/AssetHistoryService.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetHistoryService: () => (/* binding */ AssetHistoryService)
+/* harmony export */ });
+/* harmony import */ var _pnp_sp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/sp */ 2011);
+/* harmony import */ var _InventoryItemService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryItemService */ 32974);
+/* harmony import */ var _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AssetAssignmentService */ 95576);
+/* harmony import */ var _IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IncidentService */ 76911);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/SharePointItemUtils */ 19330);
+
+
+
+
+
+
+const same = (a, b) => !!a && !!b && a.trim().toLowerCase() === b.trim().toLowerCase();
+/** Belongs to this asset: serial number first (unique), else the exact asset name. */
+const matchesAsset = (item, serial, name) => (item.serialNumber ? same(item.serialNumber, serial) : false) || (!serial && same(item.assetName, name));
+/**
+ * Per-asset history for the Inventory details panel. Every method is read-only and never
+ * throws: a missing list or column simply yields an empty result.
+ */
+class AssetHistoryService {
+    /** Everyone who has held the asset, newest first. */
+    static async getAssignments(item) {
+        try {
+            const list = await _AssetAssignmentService__WEBPACK_IMPORTED_MODULE_2__.AssetAssignmentService.getMappingList();
+            const schema = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_4__.SharePointBaseService.getListFieldsMetadata(list);
+            const field = (aliases) => _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_4__.SharePointBaseService._resolveFieldInternalName(schema, aliases);
+            const serialCol = field(["serialnumber", "serial number"]);
+            const assetCol = field(["assetname", "asset name"]);
+            const employeeCol = field(["employe", "employee", "employee name", "employeename"]) || "Title";
+            const employeeIdCol = field(["employeeid", "employee id", "employeid", "employe id"]);
+            const dateCol = field(["assigneddate", "assigned date"]);
+            const assignmentCol = field(["assignmentid", "assignment id"]);
+            const rows = await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_4__.SharePointBaseService._fetchItemsWithExpandedUsers(list);
+            return rows
+                .filter(r => {
+                const serial = serialCol ? String(r[serialCol] || '') : '';
+                const name = assetCol ? String(r[assetCol] || '') : '';
+                return item.serialNumber ? same(serial, item.serialNumber) : same(name, item.assetName);
+            })
+                .map(r => ({
+                employeeName: (0,_utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_5__.getPersonDisplayName)(r[employeeCol]) || (0,_utils_SharePointItemUtils__WEBPACK_IMPORTED_MODULE_5__.getPersonDisplayName)(r.Title) || '—',
+                employeeId: employeeIdCol ? String(r[employeeIdCol] || '') || undefined : undefined,
+                assignedDate: (dateCol && r[dateCol]) || r.Created,
+                assignmentId: assignmentCol ? String(r[assignmentCol] || '') || undefined : undefined
+            }))
+                .sort((a, b) => new Date(b.assignedDate || 0).getTime() - new Date(a.assignedDate || 0).getTime());
+        }
+        catch (err) {
+            console.warn("[AssetHistoryService] Could not read assignment history:", err);
+            return [];
+        }
+    }
+    /** Incidents and replacement requests raised against the asset, newest first. */
+    static async getServiceRecords(item, context) {
+        const service = new _IncidentService__WEBPACK_IMPORTED_MODULE_3__.IncidentService(context);
+        const [incidents, replacements] = await Promise.all([
+            service.getEmployeeIncidentHistory('', true).catch(() => []),
+            service.getEmployeeReplacementHistory('', true).catch(() => [])
+        ]);
+        const toRecord = (r, kind) => ({
+            kind,
+            reference: r.incidentId || r.id,
+            type: r.issueType || r.incidentType || (kind === 'replacement' ? 'Replacement Request' : 'Incident'),
+            status: r.status || 'Open',
+            priority: r.priority,
+            date: r.reportedDate || r.raisedDate || r.requestDate,
+            description: r.issueDescription || r.description
+        });
+        return incidents.filter(r => matchesAsset(item, r.serialNo, r.assetName)).map(r => toRecord(r, 'incident'))
+            .concat(replacements.filter(r => matchesAsset(item, r.serialNo, r.assetName)).map(r => toRecord(r, 'replacement')))
+            .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
+    }
+    /** SharePoint facts about the list item: who created and last changed it, its version and link. */
+    static async getTechnicalInfo(item) {
+        const info = { itemId: item.id };
+        try {
+            const list = await _InventoryItemService__WEBPACK_IMPORTED_MODULE_1__.InventoryItemService.getInventoryList();
+            try {
+                const raw = await list.items.getById(parseInt(item.id, 10))
+                    .select("ID", "Created", "Modified", "OData__UIVersionString", "Author/Title", "Editor/Title")
+                    .expand("Author", "Editor")();
+                info.created = raw.Created;
+                info.modified = raw.Modified;
+                info.createdBy = raw.Author ? raw.Author.Title : undefined;
+                info.modifiedBy = raw.Editor ? raw.Editor.Title : undefined;
+                info.version = raw.OData__UIVersionString;
+            }
+            catch (err) {
+                console.warn("[AssetHistoryService] Could not read item metadata:", err);
+            }
+            try {
+                const [meta, folder] = await Promise.all([
+                    list.select("Title")(),
+                    (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPQueryable)(list, "RootFolder").select("ServerRelativeUrl")()
+                ]);
+                info.listTitle = meta.Title;
+                if (folder && folder.ServerRelativeUrl) {
+                    info.itemUrl = `${window.location.origin}${folder.ServerRelativeUrl}/DispForm.aspx?ID=${item.id}`;
+                }
+            }
+            catch (err) {
+                console.warn("[AssetHistoryService] Could not read list details:", err);
+            }
+        }
+        catch (err) {
+            console.warn("[AssetHistoryService] Could not open the inventory list:", err);
+        }
+        return info;
+    }
+}
 
 
 /***/ }),
@@ -17122,6 +20623,71 @@ class AuditLogService {
 
 /***/ }),
 
+/***/ 4779:
+/*!******************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/EmailOutbox.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EmailOutbox: () => (/* binding */ EmailOutbox)
+/* harmony export */ });
+const MAX_ENTRIES = 50;
+/**
+ * In-memory log of every email the app tried to send in this browser session
+ * (newest first). Feeds the Email Center panel; nothing is persisted.
+ */
+class EmailOutbox {
+    static add(entry) {
+        const full = {
+            ...entry,
+            id: `mail-${Date.now()}-${++EmailOutbox._counter}`,
+            timestamp: new Date().toISOString()
+        };
+        EmailOutbox._entries = [full].concat(EmailOutbox._entries).slice(0, MAX_ENTRIES);
+        EmailOutbox._notify();
+        return full;
+    }
+    static getAll() {
+        return EmailOutbox._entries;
+    }
+    static get(id) {
+        return EmailOutbox._entries.find(e => e.id === id);
+    }
+    static getFailedCount() {
+        return EmailOutbox._entries.filter(e => e.status === 'failed').length;
+    }
+    static clear() {
+        EmailOutbox._entries = [];
+        EmailOutbox._notify();
+    }
+    /** Returns an unsubscribe function. */
+    static subscribe(listener) {
+        EmailOutbox._listeners.push(listener);
+        return () => {
+            EmailOutbox._listeners = EmailOutbox._listeners.filter(l => l !== listener);
+        };
+    }
+    static _notify() {
+        EmailOutbox._listeners.forEach(listener => {
+            try {
+                listener();
+            }
+            catch (err) {
+                console.warn('[EmailOutbox] Listener failed:', err);
+            }
+        });
+    }
+}
+EmailOutbox._entries = [];
+EmailOutbox._listeners = [];
+EmailOutbox._counter = 0;
+
+
+/***/ }),
+
 /***/ 86407:
 /*!*******************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/EmailService.js ***!
@@ -17136,6 +20702,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _data_mockData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/mockData */ 27962);
 /* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _EmailSettingsService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EmailSettingsService */ 85324);
+/* harmony import */ var _EmailOutbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EmailOutbox */ 4779);
+
+
 
 
 
@@ -17149,6 +20719,8 @@ __webpack_require__.r(__webpack_exports__);
  * code never triggered its own fallback).
  */
 class EmailService {
+    // Test mode (route workflow emails to test accounts) and its recipients are set in the
+    // Email Center; see EmailSettingsService for the defaults.
     constructor(context) {
         this.context = context;
     }
@@ -17237,19 +20809,23 @@ class EmailService {
      * Helper to get target emails for Admins
      */
     static async getAdminEmails(liveEmails) {
-        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS : liveEmails;
+        const settings = await _EmailSettingsService__WEBPACK_IMPORTED_MODULE_3__.EmailSettingsService.get();
+        return settings.testMode ? settings.testAdminRecipients : liveEmails;
     }
     /**
      * Helper to get target email for Manager
      */
     static async getManagerEmail(liveEmail) {
-        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_MANAGER_EMAIL : liveEmail;
+        const settings = await _EmailSettingsService__WEBPACK_IMPORTED_MODULE_3__.EmailSettingsService.get();
+        return settings.testMode ? settings.testManagerRecipient : liveEmail;
     }
     /**
      * Helper to get target email for Employee
      */
     static async getEmployeeEmail(liveEmail) {
-        return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS[0] : (liveEmail || this.MOCK_ADMIN_EMAILS[0]);
+        const settings = await _EmailSettingsService__WEBPACK_IMPORTED_MODULE_3__.EmailSettingsService.get();
+        const testRecipient = settings.testAdminRecipients[0] || "";
+        return settings.testMode ? testRecipient : (liveEmail || testRecipient);
     }
     /**
      * Send Approval Request Email to Manager (Diego / sanikommurohitha123@gmail.com)
@@ -17551,7 +21127,10 @@ class EmailService {
         return undefined;
     }
     /**
-     * Internal sender method using SharePoint sp.utility.sendEmail or developer console fallback.
+     * Single sending funnel for every app email. Records each attempt in the Email Center
+     * outbox, honours the "Send email notifications" switch, and raises the window events
+     * the UI listens to ('spfx_email_send_failed', 'spfx_mock_email_sent').
+     * Throws when sending fails; resolves without sending when email is switched off.
      */
     static async sendMail(to, subject, htmlBody) {
         const validEmails = to.filter(email => email && email.indexOf("@") > 0);
@@ -17559,6 +21138,14 @@ class EmailService {
             console.warn(`[EmailService] No valid recipient emails found:`, to);
             return;
         }
+        const settings = await _EmailSettingsService__WEBPACK_IMPORTED_MODULE_3__.EmailSettingsService.get();
+        if (!settings.enabled) {
+            console.info(`[EmailService] Email sending is turned off in the Email Center. Not sent: "${subject}"`);
+            const skipped = _EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.add({ to: validEmails, subject, body: htmlBody, status: 'skipped' });
+            EmailService._dispatchOutboxEvent(skipped);
+            return;
+        }
+        let entry;
         try {
             const context = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getContext)();
             if (!context) {
@@ -17573,38 +21160,197 @@ class EmailService {
             if (!result.success) {
                 throw new Error(result.error);
             }
+            entry = _EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.add({ to: validEmails, subject, body: htmlBody, status: 'sent', method: result.method, error: result.error });
         }
         catch (error) {
+            const errorMessage = error?.message || String(error);
+            entry = _EmailOutbox__WEBPACK_IMPORTED_MODULE_4__.EmailOutbox.add({ to: validEmails, subject, body: htmlBody, status: 'failed', error: errorMessage });
             // Dispatch error event with true error details
             if (typeof window !== 'undefined') {
                 window.dispatchEvent(new CustomEvent('spfx_email_send_failed', {
                     detail: {
                         to: validEmails,
                         subject,
-                        errorMessage: error?.message || error
+                        errorMessage
                     }
                 }));
             }
             throw error;
         }
         finally {
-            // Always write a beautiful colored log in the developer console to allow testing without live exchange configs.
-            console.log(`%c📬 [EMAIL NOTIFICATION OUTBOX]\nTo: ${validEmails.join(", ")}\nSubject: ${subject}\n\n[HTML RENDERED EMAIL BODY]:\n${htmlBody.trim()}`, "background: #1e3a8a; color: #ffffff; border-left: 5px solid #3b82f6; padding: 12px; font-family: monospace; font-size: 12px; line-height: 1.5; border-radius: 4px;");
-            // Dispatch event to allow the UI to render the email banner popup directly
-            if (typeof window !== 'undefined') {
-                window.dispatchEvent(new CustomEvent('spfx_mock_email_sent', {
-                    detail: { to: validEmails, subject, body: htmlBody }
-                }));
+            // Always write a colored log in the developer console to allow testing without live exchange configs.
+            console.log(`%c📬 [EMAIL NOTIFICATION OUTBOX]
+To: ${validEmails.join(", ")}
+Subject: ${subject}
+
+[HTML RENDERED EMAIL BODY]:
+${htmlBody.trim()}`, "background: #1e3a8a; color: #ffffff; border-left: 5px solid #3b82f6; padding: 12px; font-family: monospace; font-size: 12px; line-height: 1.5; border-radius: 4px;");
+            if (entry) {
+                EmailService._dispatchOutboxEvent(entry);
             }
         }
     }
+    /** Lets the UI decide whether to open the Email Center for this email. */
+    static _dispatchOutboxEvent(entry) {
+        if (typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('spfx_mock_email_sent', {
+                detail: { to: entry.to, subject: entry.subject, body: entry.body, status: entry.status, outboxId: entry.id }
+            }));
+        }
+    }
 }
-// Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
-EmailService.USE_MOCK_TEST_EMAILS = true;
-EmailService.MOCK_ADMIN_EMAILS = [
-    "Akhila.Dodla@3bh3kf.onmicrosoft.com"
-];
-EmailService.MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
+
+
+/***/ }),
+
+/***/ 85324:
+/*!***************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/EmailSettingsService.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DEFAULT_EMAIL_PREVIEW_MODE: () => (/* binding */ DEFAULT_EMAIL_PREVIEW_MODE),
+/* harmony export */   DEFAULT_EMAIL_SETTINGS: () => (/* binding */ DEFAULT_EMAIL_SETTINGS),
+/* harmony export */   EmailSettingsService: () => (/* binding */ EmailSettingsService),
+/* harmony export */   parseRecipients: () => (/* binding */ parseRecipients)
+/* harmony export */ });
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
+/* harmony import */ var _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/ListProvisioningService */ 4262);
+
+
+// Defaults equal the values that were hardcoded in EmailService, so a site without
+// the settings list behaves exactly as before.
+const DEFAULT_EMAIL_SETTINGS = {
+    enabled: true,
+    testMode: true,
+    testAdminRecipients: ["Akhila.Dodla@3bh3kf.onmicrosoft.com"],
+    testManagerRecipient: "DiegoS@3bh3kf.onmicrosoft.com"
+};
+// The Email Center opens only from the header's Email button unless a viewer opts in.
+const DEFAULT_EMAIL_PREVIEW_MODE = 'never';
+const SETTINGS_FIELDS = [{ name: "SettingValue", type: "Note" }];
+const KEYS = {
+    enabled: "Email.Enabled",
+    testMode: "Email.TestMode",
+    testAdminRecipients: "Email.TestAdminRecipients",
+    testManagerRecipient: "Email.TestManagerRecipient"
+};
+const PREVIEW_MODE_STORAGE_KEY = "inventoryManagement_emailPreviewMode";
+const parseRecipients = (value) => (value || "").split(/[,;]/).map(e => e.trim()).filter(e => e.indexOf("@") > 0);
+const parseBool = (value, fallback) => {
+    const v = (value || "").trim().toLowerCase();
+    if (v === "true")
+        return true;
+    if (v === "false")
+        return false;
+    return fallback;
+};
+/**
+ * Site-wide email settings, stored as key/value rows (Title = key, SettingValue = value)
+ * in the "Inventory App Settings" list. The list is created the first time an admin saves.
+ * Missing list, row or read error = default value, so email keeps working as before.
+ */
+class EmailSettingsService {
+    static get listTitle() {
+        return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_0__.getAppConfig)().lists.appSettings;
+    }
+    static get() {
+        if (EmailSettingsService._cache)
+            return Promise.resolve(EmailSettingsService._cache);
+        if (!EmailSettingsService._loading) {
+            EmailSettingsService._loading = EmailSettingsService._load()
+                .catch(err => {
+                console.warn("[EmailSettingsService] Could not read email settings, using defaults:", err);
+                return DEFAULT_EMAIL_SETTINGS;
+            })
+                .then(settings => {
+                EmailSettingsService._cache = settings;
+                EmailSettingsService._loading = undefined;
+                return settings;
+            });
+        }
+        return EmailSettingsService._loading;
+    }
+    /** Re-reads the list (another admin may have changed the settings). */
+    static refresh() {
+        EmailSettingsService._cache = undefined;
+        return EmailSettingsService.get();
+    }
+    static async save(settings) {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_1__.ListProvisioningService.ensureList(EmailSettingsService.listTitle, "Site-wide settings for the Inventory app (managed from the app's Email Center).", SETTINGS_FIELDS);
+        const rows = await EmailSettingsService._readRows(list);
+        const values = {
+            [KEYS.enabled]: String(settings.enabled),
+            [KEYS.testMode]: String(settings.testMode),
+            [KEYS.testAdminRecipients]: settings.testAdminRecipients.join(", "),
+            [KEYS.testManagerRecipient]: settings.testManagerRecipient.trim()
+        };
+        for (const key of Object.keys(values)) {
+            const existing = rows.find(r => (r.Title || "").trim().toLowerCase() === key.toLowerCase());
+            if (existing) {
+                if ((existing.SettingValue || "") !== values[key]) {
+                    await list.items.getById(existing.ID).update({ SettingValue: values[key] });
+                }
+            }
+            else {
+                await list.items.add({ Title: key, SettingValue: values[key] });
+            }
+        }
+        const saved = {
+            enabled: settings.enabled,
+            testMode: settings.testMode,
+            testAdminRecipients: settings.testAdminRecipients.slice(),
+            testManagerRecipient: settings.testManagerRecipient.trim()
+        };
+        // eslint-disable-next-line require-atomic-updates
+        EmailSettingsService._cache = saved;
+        return saved;
+    }
+    static getPreviewMode() {
+        try {
+            const stored = window.localStorage.getItem(PREVIEW_MODE_STORAGE_KEY);
+            if (stored === 'never' || stored === 'failure' || stored === 'always')
+                return stored;
+        }
+        catch {
+            // Storage unavailable (private window, blocked site data) - use the default.
+        }
+        return DEFAULT_EMAIL_PREVIEW_MODE;
+    }
+    static setPreviewMode(mode) {
+        try {
+            window.localStorage.setItem(PREVIEW_MODE_STORAGE_KEY, mode);
+        }
+        catch {
+            // Not persisted; the choice still applies until the page reloads via the caller's state.
+        }
+    }
+    static async _load() {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_1__.ListProvisioningService.tryGetList(EmailSettingsService.listTitle);
+        if (!list)
+            return DEFAULT_EMAIL_SETTINGS;
+        const rows = await EmailSettingsService._readRows(list);
+        const value = (key) => {
+            const row = rows.find(r => (r.Title || "").trim().toLowerCase() === key.toLowerCase());
+            return row ? (row.SettingValue || "") : undefined;
+        };
+        const d = DEFAULT_EMAIL_SETTINGS;
+        const admins = value(KEYS.testAdminRecipients);
+        const manager = value(KEYS.testManagerRecipient);
+        return {
+            enabled: parseBool(value(KEYS.enabled), d.enabled),
+            testMode: parseBool(value(KEYS.testMode), d.testMode),
+            testAdminRecipients: admins === undefined ? d.testAdminRecipients : parseRecipients(admins),
+            testManagerRecipient: manager === undefined ? d.testManagerRecipient : manager.trim()
+        };
+    }
+    static async _readRows(list) {
+        return list.items.select("ID", "Title", "SettingValue").top(500)();
+    }
+}
 
 
 /***/ }),
@@ -17868,8 +21614,14 @@ class IncidentService {
         }
     }
     getLocalItems(key) {
-        const data = localStorage.getItem(key);
-        return data ? JSON.parse(data) : [];
+        try {
+            const data = localStorage.getItem(key);
+            const items = data ? JSON.parse(data) : [];
+            return Array.isArray(items) ? items : [];
+        }
+        catch {
+            return [];
+        }
     }
     saveLocalItems(key, items) {
         localStorage.setItem(key, JSON.stringify(items));
@@ -18005,10 +21757,17 @@ class IncidentService {
             item.incidentId !== 'INC-166' &&
             item.incidentId !== 'INC-369' &&
             item.incidentId !== 'INC-859');
+        // Local fallback records only carry `incidentType`; the history views, search and PDF read
+        // `issueType`. `isLocalOnly` marks records that never reached the Incident List.
+        const normalizedLocalIncidents = filteredLocalIncidents.map(item => ({
+            ...item,
+            issueType: item.issueType || item.incidentType || 'Incident',
+            isLocalOnly: true
+        }));
         // Merge and sort chronologically (newest first)
         const combined = [
             ...incidentItems,
-            ...filteredLocalIncidents
+            ...normalizedLocalIncidents
         ];
         combined.sort((a, b) => {
             const dateA = new Date(a.reportedDate || a.raisedDate || 0).getTime();
@@ -18073,7 +21832,8 @@ class IncidentService {
             ...item,
             incidentType: 'Replacement Request',
             issueType: 'Replacement Request',
-            incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+            incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`,
+            isLocalOnly: true
         }));
         // Merge and sort chronologically (newest first)
         const combined = [
@@ -18348,6 +22108,7 @@ class IncidentService {
                     reportedDate: new Date().toISOString(),
                     raisedDate: new Date().toISOString(),
                     incidentType: incidentData.incidentType || (isReplacement ? 'Replacement Request' : 'Other'),
+                    issueType: incidentData.incidentType || (isReplacement ? 'Replacement Request' : 'Other'),
                     status: 'Open',
                     raisedTo: incidentData.raisedTo || 'Admin'
                 };
@@ -18580,6 +22341,9 @@ class InventoryItemService {
     }
     static async addItem(item, userDisplayName = "Unknown") {
         const list = await InventoryItemService.getInventoryList();
+        // Date columns reject "" - an optional date left blank must be sent as null.
+        const purchaseDate = item.purchaseDate || null;
+        const warrantyExpiry = item.warrantyExpiry || null;
         const payloads = [
             // 1. Standard modern field names with Specifications column (Priority)
             {
@@ -18587,10 +22351,10 @@ class InventoryItemService {
                 AssetName: item.assetName,
                 AssetType: item.assetType,
                 SerialNumber: item.serialNumber,
-                PurchaseDate: item.purchaseDate,
+                PurchaseDate: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Specifications: item.specifications || ""
             },
@@ -18600,10 +22364,10 @@ class InventoryItemService {
                 Asset_x0020_Name: item.assetName,
                 Asset_x0020_Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Specifications: item.specifications || ""
             },
@@ -18613,10 +22377,10 @@ class InventoryItemService {
                 Asset: item.assetName,
                 Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 AssetStatus: item.status,
                 Specifications: item.specifications || ""
             },
@@ -18626,10 +22390,10 @@ class InventoryItemService {
                 AssetName: item.assetName,
                 AssetType: item.assetType,
                 SerialNumber: item.serialNumber,
-                PurchaseDate: item.purchaseDate,
+                PurchaseDate: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Note: item.specifications || ""
             },
@@ -18639,10 +22403,10 @@ class InventoryItemService {
                 Asset_x0020_Name: item.assetName,
                 Asset_x0020_Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Note: item.specifications || ""
             },
@@ -18652,17 +22416,17 @@ class InventoryItemService {
                 Asset: item.assetName,
                 Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 AssetStatus: item.status,
                 Notes: item.specifications || ""
             }
         ];
         let addedItem;
         let success = false;
-        let lastError;
+        const attemptErrors = [];
         for (const payload of payloads) {
             try {
                 addedItem = await list.items.add(payload);
@@ -18670,12 +22434,15 @@ class InventoryItemService {
                 break; // Success, stop looping immediately!
             }
             catch (error) {
-                lastError = error;
+                attemptErrors.push(error);
             }
         }
         if (!success) {
-            console.error("Error adding item to SharePoint:", lastError);
-            throw new Error(`SharePoint rejected the save. The columns you created in InventoryList do not match the expected format. Error: ${lastError.message || JSON.stringify(lastError)}`);
+            console.error("Error adding item to SharePoint (one error per payload shape):", attemptErrors);
+            // Report the first attempt: it uses the standard column names, so its error is the real
+            // cause. Later attempts use fallback names and mostly fail on columns that don't exist.
+            const primaryError = attemptErrors[0];
+            throw new Error(primaryError?.message || JSON.stringify(primaryError));
         }
         // Safely perform post-save actions (audit logging) outside the creation loop
         try {
@@ -19144,13 +22911,17 @@ if (stored && stored !== currentLanguage) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ListHealthService: () => (/* binding */ ListHealthService),
-/* harmony export */   getListDefinitions: () => (/* reexport safe */ _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_4__.getListDefinitions)
+/* harmony export */   describeSharePointError: () => (/* binding */ describeSharePointError),
+/* harmony export */   getConfigListDefinitions: () => (/* reexport safe */ _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_5__.getConfigListDefinitions),
+/* harmony export */   getListDefinitions: () => (/* reexport safe */ _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_5__.getListDefinitions)
 /* harmony export */ });
-/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
-/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
-/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
-/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
-/* harmony import */ var _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/ListDefinitions */ 39781);
+/* harmony import */ var _pnp_sp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pnp/sp */ 2011);
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
+/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
+/* harmony import */ var _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./base/SharePointBaseService */ 93535);
+/* harmony import */ var _constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/ListDefinitions */ 39781);
+
 
 
 
@@ -19158,6 +22929,27 @@ __webpack_require__.r(__webpack_exports__);
 
 // Re-exported so existing imports of the registry from this service keep working.
 
+/** "Error making HttpClient request in queryable [403] ::> {json}" -> "HTTP 403: <message>". */
+const describeSharePointError = (e) => {
+    const raw = e && e.message ? e.message : String(e);
+    const statusMatch = /\[(\d{3})\]/.exec(raw);
+    const status = (e && (e.status || (e.response && e.response.status))) || (statusMatch ? Number(statusMatch[1]) : undefined);
+    let message = raw;
+    const jsonStart = raw.indexOf('{');
+    if (jsonStart >= 0) {
+        try {
+            const parsed = JSON.parse(raw.substring(jsonStart));
+            const odata = parsed['odata.error'] || parsed.error;
+            const value = odata && odata.message && (odata.message.value || odata.message);
+            if (typeof value === 'string' && value)
+                message = value;
+        }
+        catch {
+            // Not JSON; keep the raw text.
+        }
+    }
+    return status ? `HTTP ${status}: ${message}` : message;
+};
 // SharePoint PermissionKind values (1-based bit positions in EffectiveBasePermissions).
 const PERM_VIEW_LIST_ITEMS = 1;
 const PERM_ADD_LIST_ITEMS = 2;
@@ -19172,35 +22964,88 @@ const hasPermission = (perms, kind) => {
 const normalize = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 class ListHealthService {
     static async runHealthCheck() {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        const siteLists = await sp.web.lists.select("Title").filter("Hidden eq false")();
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__.getSP)();
+        let siteLists;
+        try {
+            siteLists = await sp.web.lists.select("Title").filter("Hidden eq false")();
+        }
+        catch {
+            siteLists = undefined; // Each list check then opens its candidates directly.
+        }
         const [environment, results] = await Promise.all([
-            ListHealthService._getEnvironment(siteLists.length),
-            Promise.all((0,_constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_4__.getListDefinitions)().map(def => ListHealthService.checkList(def, siteLists)))
+            ListHealthService._getEnvironment(siteLists ? siteLists.length : 0),
+            Promise.all((0,_constants_ListDefinitions__WEBPACK_IMPORTED_MODULE_5__.getConfigListDefinitions)().map(def => ListHealthService.checkList(def, siteLists)))
         ]);
         const report = { checkedAt: new Date().toISOString(), environment, results };
         // eslint-disable-next-line require-atomic-updates
         ListHealthService.lastReport = report;
         return report;
     }
+    /**
+     * Tests a list the way the app uses it, one step at a time:
+     *   1. find    - resolve the title (same candidates and matching as the services)   [required]
+     *   2. columns - read the field definitions (every service does this before writing) [required]
+     *   3. items   - read an item (what every page does)                                 [required]
+     *   4. permissions - can the current user add/edit items                            [optional]
+     *   5. details - item count, last modified, list URL                                [optional]
+     * Only a failed required step fails the list; optional steps add notes to the report.
+     */
+    // `result` is a local object only this function writes, so require-atomic-updates is a false positive here.
+    /* eslint-disable require-atomic-updates */
     static async checkList(def, siteLists) {
         const started = Date.now();
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        const result = { key: def.key, status: 'missing', presentColumns: [], missingColumns: [], suggestions: [], durationMs: 0 };
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__.getSP)();
+        const result = { key: def.key, status: 'missing', presentColumns: [], missingColumns: [], suggestions: [], checks: [], durationMs: 0 };
+        const checks = result.checks;
+        const fail = (key, e) => {
+            const error = describeSharePointError(e);
+            checks.push({ key, ok: false, required: true, error });
+            result.status = 'error';
+            result.failedStep = key;
+            result.error = error;
+            return result;
+        };
         try {
-            const lists = siteLists || await sp.web.lists.select("Title").filter("Hidden eq false")();
-            // Same matching rule as SharePoint's getByTitle: case-insensitive exact title.
+            // 1. Find the list.
             let resolvedTitle;
-            for (const candidate of def.candidates) {
-                const match = lists.find(l => l.Title.toLowerCase() === candidate.toLowerCase());
-                if (match) {
-                    resolvedTitle = match.Title;
-                    break;
+            let lists = siteLists;
+            if (!lists) {
+                try {
+                    lists = await sp.web.lists.select("Title").filter("Hidden eq false")();
+                }
+                catch {
+                    lists = undefined; // Enumerating lists isn't allowed; fall back to opening each candidate directly.
+                }
+            }
+            if (lists) {
+                // Same matching rule as SharePoint's getByTitle: case-insensitive exact title.
+                for (const candidate of def.candidates) {
+                    const match = lists.find(l => l.Title.toLowerCase() === candidate.toLowerCase());
+                    if (match) {
+                        resolvedTitle = match.Title;
+                        break;
+                    }
+                }
+            }
+            else {
+                let lastError;
+                for (const candidate of def.candidates) {
+                    try {
+                        const info = await sp.web.lists.getByTitle(candidate).select("Title")();
+                        resolvedTitle = info.Title || candidate;
+                        break;
+                    }
+                    catch (e) {
+                        lastError = e;
+                    }
+                }
+                if (!resolvedTitle && lastError && describeSharePointError(lastError).indexOf('HTTP 404') !== 0) {
+                    return fail('find', lastError);
                 }
             }
             if (!resolvedTitle) {
                 const keys = def.candidates.map(normalize);
-                result.suggestions = lists
+                result.suggestions = (lists || [])
                     .map(l => l.Title)
                     .filter(title => {
                     const n = normalize(title);
@@ -19209,20 +23054,21 @@ class ListHealthService {
                     .slice(0, 5);
                 result.status = def.optional || def.autoCreated ? 'warning' : 'missing';
                 result.missingColumns = def.requiredColumns.map(c => c.name);
+                checks.push({ key: 'find', ok: false, required: true });
                 return result;
             }
-            const list = sp.web.lists.getByTitle(resolvedTitle);
-            const [info, fields] = await Promise.all([
-                list.select("Title", "ItemCount", "LastItemModifiedDate", "EffectiveBasePermissions", "RootFolder/ServerRelativeUrl").expand("RootFolder")(),
-                list.fields.select("InternalName", "Title", "TypeAsString")()
-            ]);
-            const perms = info.EffectiveBasePermissions;
             result.resolvedTitle = resolvedTitle;
-            result.itemCount = info.ItemCount;
-            result.lastModified = info.LastItemModifiedDate;
-            result.url = info.RootFolder ? info.RootFolder.ServerRelativeUrl : undefined;
-            result.canRead = hasPermission(perms, PERM_VIEW_LIST_ITEMS);
-            result.canWrite = hasPermission(perms, PERM_ADD_LIST_ITEMS) && hasPermission(perms, PERM_EDIT_LIST_ITEMS);
+            checks.push({ key: 'find', ok: true, required: true });
+            const list = sp.web.lists.getByTitle(resolvedTitle);
+            // 2. Columns.
+            let fields;
+            try {
+                fields = await list.fields.select("InternalName", "Title", "TypeAsString")();
+            }
+            catch (e) {
+                return fail('columns', e);
+            }
+            checks.push({ key: 'columns', ok: true, required: true });
             const metadata = fields.map(f => ({
                 displayName: f.Title || '',
                 internalName: f.InternalName || '',
@@ -19230,23 +23076,66 @@ class ListHealthService {
                 required: false
             }));
             for (const col of def.requiredColumns) {
-                const found = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_3__.SharePointBaseService._resolveFieldInternalName(metadata, [col.name].concat(col.aliases || []));
+                const found = _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_4__.SharePointBaseService._resolveFieldInternalName(metadata, [col.name].concat(col.aliases || []));
                 (found ? result.presentColumns : result.missingColumns).push(col.name);
             }
-            result.status = result.missingColumns.length > 0 || !result.canWrite ? 'warning' : 'healthy';
+            // 3. Items.
+            try {
+                await list.items.select("ID").top(1)();
+            }
+            catch (e) {
+                return fail('items', e);
+            }
+            result.canRead = true;
+            checks.push({ key: 'items', ok: true, required: true });
+            // 4. Permissions (optional).
+            try {
+                const perms = await (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPQueryable)(list, "EffectiveBasePermissions")();
+                result.canWrite = hasPermission(perms, PERM_ADD_LIST_ITEMS) && hasPermission(perms, PERM_EDIT_LIST_ITEMS);
+                result.canRead = hasPermission(perms, PERM_VIEW_LIST_ITEMS) || result.canRead;
+                checks.push({ key: 'permissions', ok: true, required: false, source: 'list' });
+            }
+            catch (listPermError) {
+                try {
+                    // Lists normally inherit the site's permissions.
+                    const perms = await (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPQueryable)(sp.web, "EffectiveBasePermissions")();
+                    result.canWrite = hasPermission(perms, PERM_ADD_LIST_ITEMS) && hasPermission(perms, PERM_EDIT_LIST_ITEMS);
+                    checks.push({ key: 'permissions', ok: true, required: false, source: 'site', error: describeSharePointError(listPermError) });
+                }
+                catch {
+                    result.canWrite = undefined;
+                    checks.push({ key: 'permissions', ok: false, required: false, error: describeSharePointError(listPermError) });
+                }
+            }
+            // 5. Details (optional).
+            try {
+                const [info, folder] = await Promise.all([
+                    list.select("ItemCount", "LastItemModifiedDate")(),
+                    (0,_pnp_sp__WEBPACK_IMPORTED_MODULE_0__.SPQueryable)(list, "RootFolder").select("ServerRelativeUrl")()
+                ]);
+                result.itemCount = info.ItemCount;
+                result.lastModified = info.LastItemModifiedDate;
+                result.url = folder.ServerRelativeUrl;
+                checks.push({ key: 'details', ok: true, required: false });
+            }
+            catch (e) {
+                checks.push({ key: 'details', ok: false, required: false, error: describeSharePointError(e) });
+            }
+            result.status = result.missingColumns.length > 0 || result.canWrite === false ? 'warning' : 'healthy';
         }
         catch (e) {
             result.status = 'error';
-            result.error = e && e.message ? e.message : String(e);
+            result.error = describeSharePointError(e);
         }
         finally {
             result.durationMs = Date.now() - started;
         }
         return result;
     }
+    /* eslint-enable require-atomic-updates */
     static async loadGroup(groupName) {
-        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
-        const ctx = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__.getSP)();
+        const ctx = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__.getContext)();
         const currentEmail = ctx ? (ctx.pageContext.user.email || '').toLowerCase() : '';
         const currentLogin = ctx ? (ctx.pageContext.user.loginName || '').toLowerCase() : '';
         try {
@@ -19263,10 +23152,10 @@ class ListHealthService {
         }
     }
     static async _getEnvironment(totalSiteLists) {
-        const ctx = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+        const ctx = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__.getContext)();
         let isSiteAdmin = false;
         try {
-            const me = await (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.currentUser.select("IsSiteAdmin")();
+            const me = await (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_1__.getSP)().web.currentUser.select("IsSiteAdmin")();
             isSiteAdmin = !!me.IsSiteAdmin;
         }
         catch {
@@ -19306,6 +23195,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _pnp_sp_profiles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/profiles */ 39878);
+/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
+
 
 
 /**
@@ -19313,6 +23204,24 @@ __webpack_require__.r(__webpack_exports__);
  * so new starters can be found before they have ever visited the site.
  */
 class PeopleSearchService {
+    /**
+     * People (not groups or system accounts) in a SharePoint site group, cached for the page
+     * session. Throws when the group can't be read, so callers can tell "empty" from "failed".
+     */
+    static getGroupMembers(groupName) {
+        const key = (groupName || '').trim().toLowerCase();
+        if (!PeopleSearchService._groupCache[key]) {
+            PeopleSearchService._groupCache[key] = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)().web.siteGroups.getByName(groupName).users()
+                .then((users) => users
+                .filter(u => u.PrincipalType === 1 && (u.Email || '').indexOf('@') > 0)
+                .map(u => ({ displayName: u.Title || u.Email, email: u.Email, loginName: u.LoginName || '' })))
+                .catch(err => {
+                delete PeopleSearchService._groupCache[key];
+                throw err;
+            });
+        }
+        return PeopleSearchService._groupCache[key];
+    }
     static async search(query, max = 8) {
         const text = (query || '').trim();
         if (text.length < 2)
@@ -19331,7 +23240,8 @@ class PeopleSearchService {
                 displayName: r.DisplayText || '',
                 email: (r.EntityData && (r.EntityData.Email || r.EntityData.SIPAddress)) || '',
                 loginName: r.Key || '',
-                jobTitle: r.EntityData ? r.EntityData.Title : undefined
+                jobTitle: r.EntityData ? r.EntityData.Title : undefined,
+                department: r.EntityData ? r.EntityData.Department : undefined
             }))
                 .filter(p => p.displayName && (p.email || p.loginName));
         }
@@ -19341,6 +23251,7 @@ class PeopleSearchService {
         }
     }
 }
+PeopleSearchService._groupCache = {};
 
 
 /***/ }),
@@ -19980,16 +23891,19 @@ class RequestCreationService {
                 Promise.resolve()
                     .then(async () => {
                     try {
-                        let liveManagerEmail = "";
-                        try {
-                            const resolvedEmail = await _EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.resolveLiveManagerEmail(request.requesterName);
-                            if (resolvedEmail) {
-                                liveManagerEmail =
-                                    resolvedEmail;
+                        // The manager picked from the directory in the request form, when there is one.
+                        let liveManagerEmail = (request.managerEmail || "").trim();
+                        if (!liveManagerEmail) {
+                            try {
+                                const resolvedEmail = await _EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.resolveLiveManagerEmail(request.requesterName);
+                                if (resolvedEmail) {
+                                    liveManagerEmail =
+                                        resolvedEmail;
+                                }
                             }
-                        }
-                        catch (resolveErr) {
-                            console.warn("Failed to resolve live manager email:", resolveErr);
+                            catch (resolveErr) {
+                                console.warn("Failed to resolve live manager email:", resolveErr);
+                            }
                         }
                         await _EmailService__WEBPACK_IMPORTED_MODULE_3__.EmailService.sendApprovalRequestToManager({
                             requestKey,
@@ -21378,9 +25292,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
 /* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
-/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
 /* harmony import */ var _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base/ListProvisioningService */ 4262);
 /* harmony import */ var _EmailService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EmailService */ 86407);
+/* harmony import */ var _EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EmailSettingsService */ 85324);
+
 
 
 
@@ -21465,8 +25381,8 @@ class StockThresholdService {
     static async _check(items) {
         const config = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)();
         const thresholds = await StockThresholdService.getThresholds();
-        const levels = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__.evaluateStockLevels)(items, thresholds, config.stock.defaultMinimum);
-        const { toAlert, toReset } = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_5__.planStockAlerts)(levels);
+        const levels = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_6__.evaluateStockLevels)(items, thresholds, config.stock.defaultMinimum);
+        const { toAlert, toReset } = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_6__.planStockAlerts)(levels);
         const result = { levels, alerted: [], reset: [] };
         if (toReset.length > 0) {
             const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__.ListProvisioningService.tryGetList(StockThresholdService.listTitle);
@@ -21481,6 +25397,11 @@ class StockThresholdService {
         }
         if (toAlert.length === 0)
             return result;
+        // Email switched off: don't send and don't record the alert, so it goes out once email is back on.
+        if (!(await _EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.get()).enabled) {
+            result.held = toAlert.map(level => level.assetType);
+            return result;
+        }
         const recipients = await StockThresholdService._getAdminEmails();
         if (recipients.length === 0) {
             console.warn("[StockThresholdService] Low stock detected but the admin group has no members with an email address.");
@@ -22436,6 +26357,322 @@ function formatString(template, ...values) {
         return value === undefined || value === null ? match : String(value);
     });
 }
+
+
+/***/ }),
+
+/***/ 3279:
+/*!******************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/NexerPdfReport.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   formatReportDate: () => (/* binding */ formatReportDate),
+/* harmony export */   saveNexerReport: () => (/* binding */ saveNexerReport)
+/* harmony export */ });
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ 28339);
+/* harmony import */ var _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/NexerLogo */ 7344);
+// Nexer-branded single-record PDF (incident and replacement reports).
+// Pure layout: callers pass already-localised text. A4 portrait, millimetres.
+
+
+const PAGE_W = 210;
+const MARGIN = 16;
+const CONTENT_W = PAGE_W - MARGIN * 2;
+const FOOTER_TOP = 280;
+const INK = [17, 17, 17];
+const BODY = [38, 38, 38];
+const MUTED = [107, 107, 107];
+const RULE = [229, 229, 229];
+const PANEL = [245, 245, 245];
+const HEADER_MUTED = [179, 179, 179];
+/** Status tag colours; the same meanings as the Incident History page. */
+const statusColours = (status) => {
+    const s = (status || '').toLowerCase();
+    if (s.indexOf('resolv') >= 0 || s.indexOf('complet') >= 0 || s.indexOf('approv') >= 0)
+        return { fill: [223, 246, 221], text: [14, 92, 14] };
+    if (s.indexOf('progress') >= 0 || s.indexOf('pending') >= 0)
+        return { fill: [255, 244, 206], text: [138, 55, 7] };
+    if (s.indexOf('closed') >= 0)
+        return { fill: [237, 237, 237], text: [66, 66, 66] };
+    return { fill: [253, 231, 233], text: [164, 38, 44] }; // Open / Rejected / anything else
+};
+const asText = (raw) => raw === undefined || raw === null || String(raw).trim() === '' ? '—' : String(raw);
+/** Field labels in the app end with a colon ("Incident ID:"); the grid prints them without. */
+const cleanLabel = (label) => (label || '').replace(/\s*:\s*$/, '');
+const saveNexerReport = (o) => {
+    const doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__.jsPDF({ unit: 'mm', format: 'a4' });
+    const color = (c, kind) => {
+        if (kind === 'text')
+            doc.setTextColor(c[0], c[1], c[2]);
+        else if (kind === 'fill')
+            doc.setFillColor(c[0], c[1], c[2]);
+        else
+            doc.setDrawColor(c[0], c[1], c[2]);
+    };
+    const font = (style, size, c) => {
+        doc.setFont('helvetica', style);
+        doc.setFontSize(size);
+        color(c, 'text');
+    };
+    // ---------- Header: black band with the white wordmark ----------
+    const drawHeader = (compact) => {
+        const bandH = compact ? 16 : 40;
+        color([0, 0, 0], 'fill');
+        doc.rect(0, 0, PAGE_W, bandH, 'F');
+        const logoH = compact ? 5 : 8.5;
+        // A fixed alias embeds each logo once per file; 'FAST' deflates it (uncompressed it adds about 1 MB).
+        doc.addImage(_assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_WHITE_PNG, 'PNG', MARGIN, compact ? 5.5 : 12, logoH * _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_ASPECT, logoH, 'nexer-logo-white', 'FAST');
+        if (compact) {
+            font('bold', 9, [255, 255, 255]);
+            doc.text(o.reference, PAGE_W - MARGIN, 10, { align: 'right' });
+            return bandH + 10;
+        }
+        font('normal', 8, HEADER_MUTED);
+        doc.text(o.productName, MARGIN, 29);
+        doc.setCharSpace(0.6);
+        font('bold', 7.5, HEADER_MUTED);
+        doc.text(o.documentType.toUpperCase(), PAGE_W - MARGIN, 15.5, { align: 'right' });
+        doc.setCharSpace(0);
+        font('bold', 20, [255, 255, 255]);
+        doc.text(o.reference, PAGE_W - MARGIN, 27, { align: 'right' });
+        return bandH + 14;
+    };
+    let y = drawHeader(false);
+    const ensureSpace = (needed) => {
+        if (y + needed > FOOTER_TOP - 6) {
+            doc.addPage();
+            y = drawHeader(true);
+        }
+    };
+    // ---------- Title block: heading, subheading, status tag ----------
+    const tagW = o.status ? (() => { font('bold', 8, INK); return doc.getTextWidth(o.status.toUpperCase()) + 8 + 0.4 * o.status.length; })() : 0;
+    font('bold', 17, INK);
+    const headingLines = doc.splitTextToSize(asText(o.heading), CONTENT_W - (tagW ? tagW + 8 : 0)).slice(0, 2);
+    headingLines.forEach((line, i) => doc.text(line, MARGIN, y + i * 7.5));
+    if (o.status) {
+        const c = statusColours(o.status);
+        color(c.fill, 'fill');
+        doc.roundedRect(PAGE_W - MARGIN - tagW, y - 5.2, tagW, 7.4, 3.7, 3.7, 'F');
+        doc.setCharSpace(0.4);
+        font('bold', 8, c.text);
+        doc.text(o.status.toUpperCase(), PAGE_W - MARGIN - tagW / 2, y - 0.2, { align: 'center' });
+        doc.setCharSpace(0);
+    }
+    y += (headingLines.length - 1) * 7.5;
+    if (o.subheading) {
+        font('normal', 9.5, MUTED);
+        doc.text(o.subheading, MARGIN, y + 6.5);
+        y += 6.5;
+    }
+    y += 8;
+    color(RULE, 'draw');
+    doc.setLineWidth(0.3);
+    doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+    y += 10;
+    // ---------- Section label: small caps with a short black underline ----------
+    const sectionLabel = (title) => {
+        ensureSpace(20);
+        doc.setCharSpace(0.6);
+        font('bold', 8, MUTED);
+        doc.text(title.toUpperCase(), MARGIN, y);
+        doc.setCharSpace(0);
+        color(INK, 'fill');
+        doc.rect(MARGIN, y + 2, 10, 0.8, 'F');
+        y += 8;
+    };
+    // ---------- Field grid: two columns ----------
+    sectionLabel(o.fieldsTitle);
+    const colW = (CONTENT_W - 10) / 2;
+    for (let i = 0; i < o.fields.length; i += 2) {
+        const pair = o.fields.slice(i, i + 2);
+        font('normal', 10.5, INK);
+        const wrapped = pair.map(f => doc.splitTextToSize(asText(f.value), colW).slice(0, 2));
+        const rowH = 10 + (Math.max(...wrapped.map(w => w.length)) - 1) * 5;
+        ensureSpace(rowH + 2);
+        pair.forEach((f, j) => {
+            const x = MARGIN + j * (colW + 10);
+            font('normal', 8, MUTED);
+            doc.text(cleanLabel(f.label), x, y);
+            font('normal', 10.5, INK);
+            wrapped[j].forEach((line, k) => doc.text(line, x, y + 5.5 + k * 5));
+        });
+        y += rowH + 3;
+    }
+    y += 4;
+    // ---------- Text sections: panel with a coloured left edge, split across pages ----------
+    o.sections.forEach(section => {
+        sectionLabel(section.title);
+        font('normal', 10, BODY);
+        const lines = doc.splitTextToSize(asText(section.text), CONTENT_W - 14);
+        const edge = section.tone === 'positive' ? [16, 124, 16] : INK;
+        const lineH = 5.2;
+        let index = 0;
+        while (index < lines.length) {
+            ensureSpace(lineH + 12);
+            const room = Math.floor((FOOTER_TOP - 6 - y - 10) / lineH);
+            const chunk = lines.slice(index, index + Math.max(1, room));
+            const boxH = chunk.length * lineH + 9;
+            color(PANEL, 'fill');
+            doc.rect(MARGIN, y, CONTENT_W, boxH, 'F');
+            color(edge, 'fill');
+            doc.rect(MARGIN, y, 1.2, boxH, 'F');
+            font('normal', 10, BODY);
+            chunk.forEach((line, k) => doc.text(line, MARGIN + 7, y + 6.5 + k * lineH));
+            y += boxH;
+            index += chunk.length;
+            if (index < lines.length) {
+                doc.addPage();
+                y = drawHeader(true);
+            }
+        }
+        y += 10;
+    });
+    // ---------- Footer on every page ----------
+    const pages = doc.getNumberOfPages();
+    for (let p = 1; p <= pages; p++) {
+        doc.setPage(p);
+        color(RULE, 'draw');
+        doc.setLineWidth(0.3);
+        doc.line(MARGIN, FOOTER_TOP, PAGE_W - MARGIN, FOOTER_TOP);
+        const logoH = 3.2;
+        doc.addImage(_assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_BLACK_PNG, 'PNG', MARGIN, FOOTER_TOP + 5, logoH * _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_ASPECT, logoH, 'nexer-logo-black', 'FAST');
+        font('normal', 7.5, MUTED);
+        doc.text(o.productName, MARGIN + logoH * _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_ASPECT + 4, FOOTER_TOP + 7.7);
+        doc.text(`${o.generatedText}   ·   ${p} / ${pages}`, PAGE_W - MARGIN, FOOTER_TOP + 7.7, { align: 'right' });
+    }
+    doc.save(o.fileName);
+};
+/** "6 Aug 2026, 16:13" for a stored date, or the raw value when it isn't a date. */
+const formatReportDate = (raw, withTime = true) => {
+    if (!raw)
+        return undefined;
+    const d = new Date(raw);
+    if (isNaN(d.getTime()))
+        return raw;
+    return withTime
+        ? d.toLocaleString(undefined, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+        : d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+};
+
+
+/***/ }),
+
+/***/ 43087:
+/*!*********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/NotificationUtils.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   formatFullTime: () => (/* binding */ formatFullTime),
+/* harmony export */   formatRelativeTime: () => (/* binding */ formatRelativeTime),
+/* harmony export */   getCategoryLabel: () => (/* binding */ getCategoryLabel),
+/* harmony export */   getDateGroup: () => (/* binding */ getDateGroup),
+/* harmony export */   getDateGroupLabel: () => (/* binding */ getDateGroupLabel),
+/* harmony export */   getNotificationPage: () => (/* binding */ getNotificationPage),
+/* harmony export */   getNotificationTone: () => (/* binding */ getNotificationTone),
+/* harmony export */   parseNotificationTime: () => (/* binding */ parseNotificationTime)
+/* harmony export */ });
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LocalizationUtils */ 25997);
+
+
+/** Notification timestamps are local "YYYY-MM-DD HH:mm" strings (see getNotifications). */
+const parseNotificationTime = (timestamp) => {
+    if (!timestamp)
+        return undefined;
+    const d = new Date(timestamp.indexOf('T') > 0 ? timestamp : timestamp.replace(' ', 'T'));
+    return isNaN(d.getTime()) ? undefined : d;
+};
+const startOfDay = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+const DAY_MS = 24 * 60 * 60 * 1000;
+const getDateGroup = (timestamp, now = new Date()) => {
+    const d = parseNotificationTime(timestamp);
+    if (!d)
+        return 'older';
+    const days = Math.round((startOfDay(now) - startOfDay(d)) / DAY_MS);
+    if (days <= 0)
+        return 'today';
+    if (days === 1)
+        return 'yesterday';
+    if (days < 7)
+        return 'week';
+    return 'older';
+};
+const getDateGroupLabel = (group) => {
+    const n = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Notifications;
+    switch (group) {
+        case 'today': return n.GroupToday;
+        case 'yesterday': return n.GroupYesterday;
+        case 'week': return n.GroupThisWeek;
+        default: return n.GroupOlder;
+    }
+};
+/** "Just now", "5 min ago", "3 h ago", "Yesterday", then a short date. */
+const formatRelativeTime = (timestamp, now = new Date()) => {
+    const d = parseNotificationTime(timestamp);
+    if (!d)
+        return timestamp;
+    const n = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Notifications;
+    const minutes = Math.floor((now.getTime() - d.getTime()) / 60000);
+    const group = getDateGroup(timestamp, now);
+    if (minutes >= 0 && minutes < 1)
+        return n.TimeJustNow;
+    if (minutes >= 0 && minutes < 60)
+        return (0,_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(n.TimeMinutesAgo, minutes);
+    if (group === 'today' && minutes >= 0)
+        return (0,_LocalizationUtils__WEBPACK_IMPORTED_MODULE_1__.formatString)(n.TimeHoursAgo, Math.floor(minutes / 60));
+    if (group === 'yesterday')
+        return n.TimeYesterday;
+    return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: d.getFullYear() === now.getFullYear() ? undefined : 'numeric' });
+};
+const formatFullTime = (timestamp) => {
+    const d = parseNotificationTime(timestamp);
+    return d
+        ? d.toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+        : timestamp;
+};
+// actionLink values written by getNotifications -> navigation keys in InventoryManagement.
+const ACTION_LINK_TO_PAGE = {
+    'Approvals': 'Approvals',
+    'AssetAssignmentQueue': 'AssetAssignmentQueue',
+    'AssetReturns': 'AssetReturns',
+    'Inventory': 'Inventory',
+    'Asset Tracking': 'Inventory',
+    'My Requests': 'MyWorkspace',
+    'MyRequests': 'MyWorkspace',
+    'My Assets': 'MyWorkspace'
+};
+/** The page this notification relates to, if the current user can open it. */
+const getNotificationPage = (notification, availablePages) => {
+    if (!availablePages)
+        return undefined;
+    const key = ACTION_LINK_TO_PAGE[notification.actionLink];
+    return key ? availablePages.find(p => p.key === key) : undefined;
+};
+const getCategoryLabel = (category) => {
+    const n = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Notifications;
+    switch (category) {
+        case 'Request': return n.TabRequests;
+        case 'Assignment': return n.TabAssignments;
+        default: return n.TabSystemAlerts;
+    }
+};
+const getNotificationTone = (type) => {
+    switch (type) {
+        case 'success': return { icon: 'CheckMark', color: '#107c10', soft: 'rgba(16, 124, 16, 0.12)' };
+        case 'warning': return { icon: 'Warning', color: '#bc4b09', soft: 'rgba(188, 75, 9, 0.12)' };
+        case 'error': return { icon: 'ErrorBadge', color: '#c50f1f', soft: 'rgba(197, 15, 31, 0.12)' };
+        default: return { icon: 'Info', color: '#0f6cbd', soft: 'rgba(15, 108, 189, 0.12)' };
+    }
+};
 
 
 /***/ }),
@@ -34488,6 +38725,743 @@ var getStyles = function (props) {
                 : {
                     marginRight: 4,
                 },
+        ],
+    };
+};
+
+
+/***/ }),
+
+/***/ 22079:
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ChoiceGroup/ChoiceGroup.base.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ChoiceGroupBase: () => (/* binding */ ChoiceGroupBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Label */ 23166);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Utilities */ 77158);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities */ 27291);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Utilities */ 85123);
+/* harmony import */ var _ChoiceGroupOption_index__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ChoiceGroupOption/index */ 1351);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react-hooks */ 36228);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react-hooks */ 10544);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react-hooks */ 72295);
+/* harmony import */ var _utilities_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/dom */ 4707);
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var getOptionId = function (option, id) {
+    return "".concat(id, "-").concat(option.key);
+};
+var findOption = function (options, key) {
+    return key === undefined ? undefined : (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.find)(options, function (value) { return value.key === key; });
+};
+var focusSelectedOption = function (options, keyChecked, id, focusProviders, doc) {
+    var optionToFocus = findOption(options, keyChecked) || options.filter(function (option) { return !option.disabled; })[0];
+    var elementToFocus = optionToFocus && (doc === null || doc === void 0 ? void 0 : doc.getElementById(getOptionId(optionToFocus, id)));
+    if (elementToFocus) {
+        elementToFocus.focus();
+        (0,_Utilities__WEBPACK_IMPORTED_MODULE_3__.setFocusVisibility)(true, elementToFocus, focusProviders);
+    }
+};
+var focusFromFocusTrapZone = function (evt) {
+    return evt.relatedTarget instanceof HTMLElement && evt.relatedTarget.dataset.isFocusTrapZoneBumper === 'true';
+};
+var useComponentRef = function (options, keyChecked, id, componentRef, focusProviders) {
+    var doc = (0,_utilities_dom__WEBPACK_IMPORTED_MODULE_4__.useDocumentEx)();
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(componentRef, function () { return ({
+        get checkedOption() {
+            return findOption(options, keyChecked);
+        },
+        focus: function () {
+            focusSelectedOption(options, keyChecked, id, focusProviders, doc);
+        },
+    }); }, [options, keyChecked, id, focusProviders, doc]);
+};
+var COMPONENT_NAME = 'ChoiceGroup';
+var ChoiceGroupBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, forwardedRef) {
+    var className = props.className, theme = props.theme, styles = props.styles, _a = props.options, options = _a === void 0 ? [] : _a, label = props.label, required = props.required, disabled = props.disabled, name = props.name, defaultSelectedKey = props.defaultSelectedKey, componentRef = props.componentRef, onChange = props.onChange;
+    var id = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useId)('ChoiceGroup');
+    var labelId = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_5__.useId)('ChoiceGroupLabel');
+    var divProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_6__.getNativeProps)(props, _Utilities__WEBPACK_IMPORTED_MODULE_6__.divProperties, [
+        'onChange',
+        'className',
+        'required',
+    ]);
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        optionsContainIconOrImage: options.some(function (option) { return !!(option.iconProps || option.imageSrc); }),
+    });
+    var ariaLabelledBy = props.ariaLabelledBy || (label ? labelId : props['aria-labelledby']);
+    var _b = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_7__.useControllableValue)(props.selectedKey, defaultSelectedKey), keyChecked = _b[0], setKeyChecked = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(), keyFocused = _c[0], setKeyFocused = _c[1];
+    var rootRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    var mergedRootRefs = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_8__.useMergedRefs)(rootRef, forwardedRef);
+    var focusContext = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_Utilities__WEBPACK_IMPORTED_MODULE_9__.FocusRectsContext);
+    useDebugWarnings(props);
+    useComponentRef(options, keyChecked, id, componentRef, focusContext === null || focusContext === void 0 ? void 0 : focusContext.registeredProviders);
+    (0,_Utilities__WEBPACK_IMPORTED_MODULE_9__.useFocusRects)(rootRef);
+    var onFocus = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function (ev, option) {
+        var _a;
+        if (option) {
+            setKeyFocused(option.itemKey);
+            (_a = option.onFocus) === null || _a === void 0 ? void 0 : _a.call(option, ev);
+        }
+    }, []);
+    var onBlur = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function (ev, option) {
+        var _a;
+        setKeyFocused(undefined);
+        (_a = option === null || option === void 0 ? void 0 : option.onBlur) === null || _a === void 0 ? void 0 : _a.call(option, ev);
+    }, []);
+    var onOptionChange = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function (evt, option) {
+        var _a;
+        if (!option) {
+            return;
+        }
+        setKeyChecked(option.itemKey);
+        (_a = option.onChange) === null || _a === void 0 ? void 0 : _a.call(option, evt);
+        onChange === null || onChange === void 0 ? void 0 : onChange(evt, findOption(options, option.itemKey));
+    }, [onChange, options, setKeyChecked]);
+    var onRadioFocus = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function (evt) {
+        // Handles scenarios like this bug: https://github.com/microsoft/fluentui/issues/20173
+        if (focusFromFocusTrapZone(evt)) {
+            focusSelectedOption(options, keyChecked, id, focusContext === null || focusContext === void 0 ? void 0 : focusContext.registeredProviders);
+        }
+    }, [options, keyChecked, id, focusContext]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({ className: classNames.root }, divProps, { ref: mergedRootRefs }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({ role: "radiogroup" }, (ariaLabelledBy && { 'aria-labelledby': ariaLabelledBy }), { onFocus: onRadioFocus }),
+            label && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Label__WEBPACK_IMPORTED_MODULE_11__.Label, { className: classNames.label, required: required, id: labelId, disabled: disabled }, label)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.flexContainer }, options.map(function (option) {
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ChoiceGroupOption_index__WEBPACK_IMPORTED_MODULE_12__.ChoiceGroupOption, (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__assign)({ itemKey: option.key }, option, { key: option.key, onBlur: onBlur, onFocus: onFocus, onChange: onOptionChange, focused: option.key === keyFocused, checked: option.key === keyChecked, disabled: option.disabled || disabled, id: getOptionId(option, id), labelId: option.labelId || "".concat(labelId, "-").concat(option.key), name: name || id, required: required })));
+            })))));
+});
+ChoiceGroupBase.displayName = COMPONENT_NAME;
+function useDebugWarnings(props) {
+    if (true) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks -- build-time conditional
+        (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_13__.useWarnings)({
+            name: COMPONENT_NAME,
+            props: props,
+            mutuallyExclusive: {
+                selectedKey: 'defaultSelectedKey',
+            },
+        });
+    }
+}
+
+
+/***/ }),
+
+/***/ 51330:
+/*!********************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ChoiceGroup/ChoiceGroup.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ChoiceGroup: () => (/* binding */ ChoiceGroup)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _ChoiceGroup_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChoiceGroup.base */ 22079);
+/* harmony import */ var _ChoiceGroup_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ChoiceGroup.styles */ 35236);
+
+
+
+var ChoiceGroup = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_ChoiceGroup_base__WEBPACK_IMPORTED_MODULE_1__.ChoiceGroupBase, _ChoiceGroup_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'ChoiceGroup' });
+
+
+/***/ }),
+
+/***/ 35236:
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ChoiceGroup/ChoiceGroup.styles.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-ChoiceFieldGroup',
+    flexContainer: 'ms-ChoiceFieldGroup-flexContainer',
+};
+var getStyles = function (props) {
+    var className = props.className, optionsContainIconOrImage = props.optionsContainIconOrImage, theme = props.theme;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    return {
+        root: [
+            className,
+            classNames.root,
+            theme.fonts.medium,
+            {
+                display: 'block',
+            },
+        ],
+        flexContainer: [
+            classNames.flexContainer,
+            optionsContainIconOrImage && {
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+            },
+        ],
+    };
+};
+
+
+/***/ }),
+
+/***/ 99604:
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ChoiceGroup/ChoiceGroupOption/ChoiceGroupOption.base.js ***!
+  \*************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ChoiceGroupOptionBase: () => (/* binding */ ChoiceGroupOptionBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Image */ 92342);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Icon */ 52394);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilities */ 34751);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Utilities */ 33228);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Utilities */ 38972);
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var LARGE_IMAGE_SIZE = 71;
+var DEFAULT_PROPS = {
+    // This ensures default imageSize value doesn't mutate. Mutation can cause style re-calcuation.
+    imageSize: { width: 32, height: 32 },
+};
+var ChoiceGroupOptionBase = function (propsWithoutDefaults) {
+    // Mix the `key` prop back in since custom render functions may be expecting it
+    // (React uses `key` internally rather than passing it through to the component)
+    var props = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.getPropsWithDefaults)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, DEFAULT_PROPS), { key: propsWithoutDefaults.itemKey }), propsWithoutDefaults);
+    var ariaLabel = props.ariaLabel, focused = props.focused, required = props.required, theme = props.theme, iconProps = props.iconProps, imageSrc = props.imageSrc, imageSize = props.imageSize, disabled = props.disabled, checked = props.checked, id = props.id, styles = props.styles, name = props.name, rest = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__rest)(props, ["ariaLabel", "focused", "required", "theme", "iconProps", "imageSrc", "imageSize", "disabled", "checked", "id", "styles", "name"]);
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        hasIcon: !!iconProps,
+        hasImage: !!imageSrc,
+        checked: checked,
+        disabled: disabled,
+        imageIsLarge: !!imageSrc && (imageSize.width > LARGE_IMAGE_SIZE || imageSize.height > LARGE_IMAGE_SIZE),
+        imageSize: imageSize,
+        focused: focused,
+    });
+    var _a = (0,_Utilities__WEBPACK_IMPORTED_MODULE_4__.getNativeProps)(rest, _Utilities__WEBPACK_IMPORTED_MODULE_4__.inputProperties), className = _a.className, nativeProps = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__rest)(_a, ["className"]);
+    var defaultOnRenderLabel = function () {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { id: props.labelId, className: "ms-ChoiceFieldLabel" }, props.text));
+    };
+    var defaultOnRenderField = function () {
+        var _a = props.imageAlt, imageAlt = _a === void 0 ? '' : _a, selectedImageSrc = props.selectedImageSrc;
+        var onRenderLabel = props.onRenderLabel
+            ? (0,_Utilities__WEBPACK_IMPORTED_MODULE_5__.composeRenderFunction)(props.onRenderLabel, defaultOnRenderLabel)
+            : defaultOnRenderLabel;
+        var label = onRenderLabel((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props), { key: props.itemKey }));
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { htmlFor: id, className: classNames.field },
+            imageSrc && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.innerField },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.imageWrapper },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Image__WEBPACK_IMPORTED_MODULE_6__.Image, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ src: imageSrc, alt: imageAlt }, imageSize))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.selectedImageWrapper },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Image__WEBPACK_IMPORTED_MODULE_6__.Image, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ src: selectedImageSrc, alt: imageAlt }, imageSize))))),
+            iconProps && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.innerField },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.iconWrapper },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon__WEBPACK_IMPORTED_MODULE_7__.Icon, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, iconProps))))),
+            imageSrc || iconProps ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.labelWrapper }, label) : label));
+    };
+    var _b = props.onRenderField, onRenderField = _b === void 0 ? defaultOnRenderField : _b;
+    var onChange = function (evt) {
+        var _a;
+        (_a = props.onChange) === null || _a === void 0 ? void 0 : _a.call(props, evt, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props), { key: props.itemKey }));
+    };
+    var onBlur = function (evt) {
+        var _a;
+        (_a = props.onBlur) === null || _a === void 0 ? void 0 : _a.call(props, evt);
+    };
+    var onFocus = function (evt) {
+        var _a;
+        (_a = props.onFocus) === null || _a === void 0 ? void 0 : _a.call(props, evt, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props), { key: props.itemKey }));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.choiceFieldWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ "aria-label": ariaLabel, id: id, className: (0,_Utilities__WEBPACK_IMPORTED_MODULE_8__.css)(classNames.input, className), type: "radio", name: name, disabled: disabled, checked: checked, required: required }, nativeProps, { onChange: onChange, onFocus: onFocus, onBlur: onBlur })),
+            onRenderField((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, props), { key: props.itemKey }), defaultOnRenderField))));
+};
+ChoiceGroupOptionBase.displayName = 'ChoiceGroupOption';
+
+
+/***/ }),
+
+/***/ 1351:
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ChoiceGroup/ChoiceGroupOption/ChoiceGroupOption.js ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ChoiceGroupOption: () => (/* binding */ ChoiceGroupOption)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _ChoiceGroupOption_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChoiceGroupOption.base */ 99604);
+/* harmony import */ var _ChoiceGroupOption_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ChoiceGroupOption.styles */ 96843);
+
+
+
+var ChoiceGroupOption = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_ChoiceGroupOption_base__WEBPACK_IMPORTED_MODULE_1__.ChoiceGroupOptionBase, _ChoiceGroupOption_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'ChoiceGroupOption' });
+
+
+/***/ }),
+
+/***/ 96843:
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/ChoiceGroup/ChoiceGroupOption/ChoiceGroupOption.styles.js ***!
+  \***************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Styling */ 38455);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 27291);
+
+
+
+var GlobalClassNames = {
+    root: 'ms-ChoiceField',
+    choiceFieldWrapper: 'ms-ChoiceField-wrapper',
+    input: 'ms-ChoiceField-input',
+    field: 'ms-ChoiceField-field',
+    innerField: 'ms-ChoiceField-innerField',
+    imageWrapper: 'ms-ChoiceField-imageWrapper',
+    iconWrapper: 'ms-ChoiceField-iconWrapper',
+    labelWrapper: 'ms-ChoiceField-labelWrapper',
+    checked: 'is-checked',
+};
+var labelWrapperLineHeight = 15;
+var labelWrapperHeight = labelWrapperLineHeight * 2 + 2; // adding 2px height to ensure text doesn't get cutoff
+var iconSize = 32;
+var choiceFieldSize = 20;
+var choiceFieldTransitionDuration = '200ms';
+var choiceFieldTransitionTiming = 'cubic-bezier(.4, 0, .23, 1)';
+var radioButtonSpacing = 3;
+var radioButtonInnerSize = 5;
+function getChoiceGroupFocusStyle(focusBorderColor, hasIconOrImage) {
+    var _a, _b;
+    return [
+        'is-inFocus',
+        {
+            selectors: (_a = {},
+                _a[".".concat(_Utilities__WEBPACK_IMPORTED_MODULE_0__.IsFocusVisibleClassName, " &, :host(.").concat(_Utilities__WEBPACK_IMPORTED_MODULE_0__.IsFocusVisibleClassName, ") &")] = {
+                    position: 'relative',
+                    outline: 'transparent',
+                    selectors: {
+                        '::-moz-focus-inner': {
+                            border: 0,
+                        },
+                        ':after': {
+                            content: '""',
+                            top: -2,
+                            right: -2,
+                            bottom: -2,
+                            left: -2,
+                            pointerEvents: 'none',
+                            border: "1px solid ".concat(focusBorderColor),
+                            position: 'absolute',
+                            selectors: (_b = {},
+                                _b[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                                    borderColor: 'WindowText',
+                                    borderWidth: hasIconOrImage ? 1 : 2,
+                                },
+                                _b),
+                        },
+                    },
+                },
+                _a),
+        },
+    ];
+}
+function getImageWrapperStyle(isSelectedImageWrapper, className, checked) {
+    return [
+        className,
+        {
+            paddingBottom: 2,
+            transitionProperty: 'opacity',
+            transitionDuration: choiceFieldTransitionDuration,
+            transitionTimingFunction: 'ease',
+            selectors: {
+                '.ms-Image': {
+                    display: 'inline-block',
+                    borderStyle: 'none',
+                },
+            },
+        },
+        (checked ? !isSelectedImageWrapper : isSelectedImageWrapper) && [
+            'is-hidden',
+            {
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
+                opacity: 0,
+            },
+        ],
+    ];
+}
+var getStyles = function (props) {
+    var _a, _b, _c, _d, _e;
+    var theme = props.theme, hasIcon = props.hasIcon, hasImage = props.hasImage, checked = props.checked, disabled = props.disabled, imageIsLarge = props.imageIsLarge, focused = props.focused, imageSize = props.imageSize;
+    var palette = theme.palette, semanticColors = theme.semanticColors, fonts = theme.fonts;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getGlobalClassNames)(GlobalClassNames, theme);
+    // Tokens
+    // TODO: after updating the semanticColors slots mapping this needs to be semanticColors.smallInputBorder
+    var circleBorderColor = palette.neutralPrimary;
+    var circleHoveredBorderColor = semanticColors.inputBorderHovered;
+    var circleCheckedBorderColor = semanticColors.inputBackgroundChecked;
+    // TODO: after updating the semanticColors slots mapping this needs to be semanticColors.inputBackgroundCheckedHovered
+    var circleCheckedHoveredBorderColor = palette.themeDark;
+    var circleDisabledBorderColor = semanticColors.disabledBodySubtext;
+    var circleBackgroundColor = semanticColors.bodyBackground;
+    var dotUncheckedHoveredColor = palette.neutralSecondary;
+    var dotCheckedColor = semanticColors.inputBackgroundChecked;
+    // TODO: after updating the semanticColors slots mapping this needs to be semanticColors.inputBackgroundCheckedHovered
+    var dotCheckedHoveredColor = palette.themeDark;
+    var dotDisabledColor = semanticColors.disabledBodySubtext;
+    // TODO: after updating the semanticColors slots mapping this needs to be semanticColors.bodyTextChecked
+    var labelHoverFocusColor = palette.neutralDark;
+    var focusBorderColor = semanticColors.focusBorder;
+    var iconOrImageChoiceBorderUncheckedHoveredColor = semanticColors.inputBorderHovered;
+    // TODO: after updating the semanticColors slots mapping this needs to be semanticColors.inputBackgroundCheckedHovered
+    var iconOrImageChoiceBorderCheckedColor = semanticColors.inputBackgroundChecked;
+    var iconOrImageChoiceBorderCheckedHoveredColor = palette.themeDark;
+    var iconOrImageChoiceBackgroundColor = palette.neutralLighter;
+    var fieldHoverOrFocusProperties = {
+        selectors: {
+            '.ms-ChoiceFieldLabel': {
+                color: labelHoverFocusColor,
+            },
+            ':before': {
+                borderColor: checked ? circleCheckedHoveredBorderColor : circleHoveredBorderColor,
+            },
+            ':after': [
+                !hasIcon &&
+                    !hasImage &&
+                    !checked && {
+                    content: '""',
+                    transitionProperty: 'background-color',
+                    left: 5,
+                    top: 5,
+                    width: 10,
+                    height: 10,
+                    backgroundColor: dotUncheckedHoveredColor,
+                },
+                checked && {
+                    borderColor: dotCheckedHoveredColor,
+                    background: dotCheckedHoveredColor,
+                },
+            ],
+        },
+    };
+    var enabledFieldWithImageHoverOrFocusProperties = {
+        borderColor: checked ? iconOrImageChoiceBorderCheckedHoveredColor : iconOrImageChoiceBorderUncheckedHoveredColor,
+        selectors: {
+            ':before': {
+                opacity: 1,
+                borderColor: checked ? circleCheckedHoveredBorderColor : circleHoveredBorderColor,
+            },
+        },
+    };
+    var circleAreaProperties = [
+        {
+            content: '""',
+            display: 'inline-block',
+            backgroundColor: circleBackgroundColor,
+            borderWidth: 1,
+            borderStyle: 'solid',
+            borderColor: circleBorderColor,
+            width: choiceFieldSize,
+            height: choiceFieldSize,
+            fontWeight: 'normal',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            boxSizing: 'border-box',
+            transitionProperty: 'border-color',
+            transitionDuration: choiceFieldTransitionDuration,
+            transitionTimingFunction: choiceFieldTransitionTiming,
+            borderRadius: '50%',
+        },
+        disabled && {
+            borderColor: circleDisabledBorderColor,
+            selectors: (_a = {},
+                _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ borderColor: 'GrayText', background: 'Window' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+                _a),
+        },
+        checked && {
+            borderColor: disabled ? circleDisabledBorderColor : circleCheckedBorderColor,
+            selectors: (_b = {},
+                _b[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                    borderColor: 'Highlight',
+                    background: 'Window',
+                    forcedColorAdjust: 'none',
+                },
+                _b),
+        },
+        (hasIcon || hasImage) && {
+            top: radioButtonSpacing,
+            right: radioButtonSpacing,
+            left: 'auto', // To reset the value of 'left' to its default value, so that 'right' works
+            opacity: checked ? 1 : 0,
+        },
+    ];
+    var dotAreaProperties = [
+        {
+            content: '""',
+            width: 0,
+            height: 0,
+            borderRadius: '50%',
+            position: 'absolute',
+            left: choiceFieldSize / 2,
+            right: 0,
+            transitionProperty: 'border-width',
+            transitionDuration: choiceFieldTransitionDuration,
+            transitionTimingFunction: choiceFieldTransitionTiming,
+            boxSizing: 'border-box',
+        },
+        checked && {
+            borderWidth: 5,
+            borderStyle: 'solid',
+            borderColor: disabled ? dotDisabledColor : dotCheckedColor,
+            background: dotCheckedColor,
+            left: 5,
+            top: 5,
+            width: 10,
+            height: 10,
+            selectors: (_c = {},
+                _c[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                    borderColor: 'Highlight',
+                    forcedColorAdjust: 'none',
+                },
+                _c),
+        },
+        checked &&
+            (hasIcon || hasImage) && {
+            top: radioButtonSpacing + radioButtonInnerSize,
+            right: radioButtonSpacing + radioButtonInnerSize,
+            left: 'auto', // To reset the value of 'left' to its default value, so that 'right' works
+        },
+    ];
+    return {
+        root: [
+            classNames.root,
+            theme.fonts.medium,
+            {
+                display: 'flex',
+                alignItems: 'center',
+                boxSizing: 'border-box',
+                color: semanticColors.bodyText,
+                minHeight: 26,
+                border: 'none',
+                position: 'relative',
+                marginTop: 8,
+                selectors: {
+                    '.ms-ChoiceFieldLabel': {
+                        display: 'inline-block',
+                    },
+                },
+            },
+            !hasIcon &&
+                !hasImage && {
+                selectors: {
+                    '.ms-ChoiceFieldLabel': {
+                        paddingLeft: '26px',
+                    },
+                },
+            },
+            hasImage && 'ms-ChoiceField--image',
+            hasIcon && 'ms-ChoiceField--icon',
+            (hasIcon || hasImage) && {
+                display: 'inline-flex',
+                fontSize: 0,
+                margin: '0 4px 4px 0',
+                paddingLeft: 0,
+                backgroundColor: iconOrImageChoiceBackgroundColor,
+                height: '100%',
+            },
+        ],
+        choiceFieldWrapper: [
+            classNames.choiceFieldWrapper,
+            focused && getChoiceGroupFocusStyle(focusBorderColor, hasIcon || hasImage),
+        ],
+        // The hidden input
+        input: [
+            classNames.input,
+            {
+                position: 'absolute',
+                opacity: 0,
+                top: 0,
+                right: 0,
+                width: '100%',
+                height: '100%',
+                margin: 0,
+            },
+            disabled && 'is-disabled',
+        ],
+        field: [
+            classNames.field,
+            checked && classNames.checked,
+            {
+                display: 'inline-block',
+                cursor: 'pointer',
+                marginTop: 0,
+                position: 'relative',
+                verticalAlign: 'top',
+                userSelect: 'none',
+                minHeight: 20,
+                selectors: {
+                    ':hover': !disabled && fieldHoverOrFocusProperties,
+                    ':focus': !disabled && fieldHoverOrFocusProperties,
+                    // The circle
+                    ':before': circleAreaProperties,
+                    // The dot
+                    ':after': dotAreaProperties,
+                },
+            },
+            hasIcon && 'ms-ChoiceField--icon',
+            hasImage && 'ms-ChoiceField-field--image',
+            (hasIcon || hasImage) && {
+                boxSizing: 'content-box',
+                cursor: 'pointer',
+                paddingTop: 22,
+                margin: 0,
+                textAlign: 'center',
+                transitionProperty: 'all',
+                transitionDuration: choiceFieldTransitionDuration,
+                transitionTimingFunction: 'ease',
+                border: '1px solid transparent',
+                justifyContent: 'center',
+                alignItems: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+            },
+            checked && {
+                borderColor: iconOrImageChoiceBorderCheckedColor,
+            },
+            (hasIcon || hasImage) &&
+                !disabled && {
+                selectors: {
+                    ':hover': enabledFieldWithImageHoverOrFocusProperties,
+                    ':focus': enabledFieldWithImageHoverOrFocusProperties,
+                },
+            },
+            disabled && {
+                cursor: 'default',
+                selectors: {
+                    '.ms-ChoiceFieldLabel': {
+                        color: semanticColors.disabledBodyText,
+                        selectors: (_d = {},
+                            _d[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ color: 'GrayText' }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+                            _d),
+                    },
+                },
+            },
+            checked &&
+                disabled && {
+                borderColor: iconOrImageChoiceBackgroundColor,
+            },
+        ],
+        innerField: [
+            classNames.innerField,
+            hasImage && {
+                // using non-null assertion because we have a default in `ChoiceGroupOptionBase` class.
+                height: imageSize.height,
+                width: imageSize.width,
+            },
+            (hasIcon || hasImage) && {
+                position: 'relative',
+                display: 'inline-block',
+                paddingLeft: 30,
+                paddingRight: 30,
+            },
+            (hasIcon || hasImage) &&
+                imageIsLarge && {
+                paddingLeft: 24,
+                paddingRight: 24,
+            },
+            (hasIcon || hasImage) &&
+                disabled && {
+                opacity: 0.25,
+                selectors: (_e = {},
+                    _e[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = {
+                        color: 'GrayText',
+                        opacity: 1,
+                    },
+                    _e),
+            },
+        ],
+        imageWrapper: getImageWrapperStyle(false, classNames.imageWrapper, checked),
+        selectedImageWrapper: getImageWrapperStyle(true, classNames.imageWrapper, checked),
+        iconWrapper: [
+            classNames.iconWrapper,
+            {
+                fontSize: iconSize,
+                lineHeight: iconSize,
+                height: iconSize,
+            },
+        ],
+        labelWrapper: [
+            classNames.labelWrapper,
+            fonts.medium,
+            (hasIcon || hasImage) && {
+                display: 'block',
+                position: 'relative',
+                margin: '4px 8px 2px 8px',
+                height: labelWrapperHeight,
+                lineHeight: labelWrapperLineHeight,
+                // using non-null assertion because we have a default in `ChoiceGroupOptionBase` class.
+                maxWidth: imageSize.width * 2,
+                overflow: 'hidden',
+                whiteSpace: 'pre-wrap',
+            },
         ],
     };
 };
@@ -55294,6 +60268,884 @@ function getStyles(props) {
 
 /***/ }),
 
+/***/ 12831:
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/Shimmer.base.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerBase: () => (/* binding */ ShimmerBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Utilities */ 37974);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Utilities */ 32021);
+/* harmony import */ var _ShimmerElementsGroup_ShimmerElementsGroup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ShimmerElementsGroup/ShimmerElementsGroup */ 35850);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react-hooks */ 55559);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react-hooks */ 27461);
+
+
+
+
+
+var TRANSITION_ANIMATION_INTERVAL = 200; /* ms */
+var COMPONENT_NAME = 'Shimmer';
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+/**
+ * {@docCategory Shimmer}
+ */
+var ShimmerBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+    var styles = props.styles, shimmerElements = props.shimmerElements, children = props.children, width = props.width, className = props.className, customElementsGroup = props.customElementsGroup, theme = props.theme, ariaLabel = props.ariaLabel, shimmerColors = props.shimmerColors, _a = props.isDataLoaded, isDataLoaded = _a === void 0 ? false : _a, improveCSSPerformance = props.improveCSSPerformance;
+    var divProps = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.getNativeProps)(props, _Utilities__WEBPACK_IMPORTED_MODULE_2__.divProperties);
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        isDataLoaded: isDataLoaded,
+        className: className,
+        transitionAnimationInterval: TRANSITION_ANIMATION_INTERVAL,
+        shimmerColor: shimmerColors && shimmerColors.shimmer,
+        shimmerWaveColor: shimmerColors && shimmerColors.shimmerWave,
+        improveCSSPerformance: improveCSSPerformance || !customElementsGroup,
+    });
+    var internalState = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_3__.useConst)({
+        lastTimeoutId: 0,
+    });
+    var _b = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_4__.useSetTimeout)(), setTimeout = _b.setTimeout, clearTimeout = _b.clearTimeout;
+    /**
+     * Flag for knowing when to remove the shimmerWrapper from the DOM.
+     */
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__.useState(isDataLoaded), contentLoaded = _c[0], setContentLoaded = _c[1];
+    var divStyleProp = { width: width ? width : '100%' };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        if (isDataLoaded !== contentLoaded) {
+            if (isDataLoaded) {
+                internalState.lastTimeoutId = setTimeout(function () {
+                    setContentLoaded(true);
+                }, TRANSITION_ANIMATION_INTERVAL);
+                return function () { return clearTimeout(internalState.lastTimeoutId); };
+            }
+            else {
+                setContentLoaded(false);
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- Should only run when isDataLoaded changes.
+    }, [isDataLoaded]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__assign)({}, divProps, { className: classNames.root, ref: ref }),
+        !contentLoaded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: divStyleProp, className: classNames.shimmerWrapper },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.shimmerGradient }),
+            customElementsGroup ? (customElementsGroup) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShimmerElementsGroup_ShimmerElementsGroup__WEBPACK_IMPORTED_MODULE_6__.ShimmerElementsGroup, { shimmerElements: shimmerElements, backgroundColor: shimmerColors && shimmerColors.background })))),
+        children && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.dataWrapper }, children),
+        ariaLabel && !isDataLoaded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { role: "status", "aria-live": "polite" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Utilities__WEBPACK_IMPORTED_MODULE_7__.DelayedRender, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.screenReaderText }, ariaLabel))))));
+});
+ShimmerBase.displayName = COMPONENT_NAME;
+
+
+/***/ }),
+
+/***/ 25666:
+/*!************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/Shimmer.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Shimmer: () => (/* binding */ Shimmer)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 55336);
+/* harmony import */ var _Shimmer_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Shimmer.styles */ 7556);
+/* harmony import */ var _Shimmer_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Shimmer.base */ 12831);
+
+
+
+var Shimmer = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Shimmer_base__WEBPACK_IMPORTED_MODULE_1__.ShimmerBase, _Shimmer_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'Shimmer',
+});
+
+
+/***/ }),
+
+/***/ 7556:
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/Shimmer.styles.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Styling */ 38455);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Utilities */ 15659);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Utilities */ 46657);
+
+
+
+var GlobalClassNames = {
+    root: 'ms-Shimmer-container',
+    shimmerWrapper: 'ms-Shimmer-shimmerWrapper',
+    shimmerGradient: 'ms-Shimmer-shimmerGradient',
+    dataWrapper: 'ms-Shimmer-dataWrapper',
+};
+var BACKGROUND_OFF_SCREEN_POSITION = '100%';
+var shimmerAnimation = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function () {
+    return (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.keyframes)({
+        '0%': {
+            transform: "translateX(-".concat(BACKGROUND_OFF_SCREEN_POSITION, ")"),
+        },
+        '100%': {
+            transform: "translateX(".concat(BACKGROUND_OFF_SCREEN_POSITION, ")"),
+        },
+    });
+});
+var shimmerAnimationRTL = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.memoizeFunction)(function () {
+    return (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.keyframes)({
+        '100%': {
+            transform: "translateX(-".concat(BACKGROUND_OFF_SCREEN_POSITION, ")"),
+        },
+        '0%': {
+            transform: "translateX(".concat(BACKGROUND_OFF_SCREEN_POSITION, ")"),
+        },
+    });
+});
+function getStyles(props) {
+    var _a;
+    var isDataLoaded = props.isDataLoaded, className = props.className, theme = props.theme, transitionAnimationInterval = props.transitionAnimationInterval, shimmerColor = props.shimmerColor, shimmerWaveColor = props.shimmerWaveColor, improveCSSPerformance = props.improveCSSPerformance;
+    var semanticColors = theme.semanticColors;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getGlobalClassNames)(GlobalClassNames, theme);
+    var isRTL = (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.getRTL)(theme);
+    return {
+        root: [
+            classNames.root,
+            theme.fonts.medium,
+            {
+                position: 'relative',
+                height: 'auto',
+            },
+            className,
+        ],
+        shimmerWrapper: [
+            classNames.shimmerWrapper,
+            {
+                position: 'relative',
+                overflow: 'hidden',
+                transform: 'translateZ(0)',
+                backgroundColor: shimmerColor || semanticColors.disabledBackground,
+                transition: "opacity ".concat(transitionAnimationInterval, "ms"),
+                selectors: (_a = {},
+                    _a[_Styling__WEBPACK_IMPORTED_MODULE_1__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ background: "WindowText\n                        linear-gradient(\n                          to right,\n                          transparent 0%,\n                          Window 50%,\n                          transparent 100%)\n                        0 0 / 90% 100%\n                        no-repeat" }, (0,_Styling__WEBPACK_IMPORTED_MODULE_1__.getHighContrastNoAdjustStyle)()),
+                    _a),
+            },
+            isDataLoaded && {
+                opacity: '0',
+                position: 'absolute',
+                top: '0',
+                bottom: '0',
+                left: '0',
+                right: '0',
+            },
+            improveCSSPerformance
+                ? {
+                    selectors: {
+                        '> div:last-child': {
+                            transform: 'translateZ(0)',
+                        },
+                    },
+                }
+                : {
+                    selectors: {
+                        '> *': {
+                            transform: 'translateZ(0)',
+                        },
+                    },
+                },
+        ],
+        shimmerGradient: [
+            classNames.shimmerGradient,
+            {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: "".concat(shimmerColor || semanticColors.disabledBackground, "\n                      linear-gradient(\n                        to right,\n                        ").concat(shimmerColor || semanticColors.disabledBackground, " 0%,\n                        ").concat(shimmerWaveColor || semanticColors.bodyDivider, " 50%,\n                        ").concat(shimmerColor || semanticColors.disabledBackground, " 100%)\n                      0 0 / 90% 100%\n                      no-repeat"),
+                transform: "translateX(-".concat(BACKGROUND_OFF_SCREEN_POSITION, ")"),
+                animationDuration: '2s',
+                animationTimingFunction: 'ease-in-out',
+                animationDirection: 'normal',
+                animationIterationCount: 'infinite',
+                animationName: isRTL ? shimmerAnimationRTL() : shimmerAnimation(),
+            },
+        ],
+        dataWrapper: [
+            classNames.dataWrapper,
+            {
+                position: 'absolute',
+                top: '0',
+                bottom: '0',
+                left: '0',
+                right: '0',
+                opacity: '0',
+                background: 'none',
+                backgroundColor: 'transparent',
+                border: 'none',
+                transition: "opacity ".concat(transitionAnimationInterval, "ms"),
+            },
+            isDataLoaded && {
+                opacity: '1',
+                position: 'static',
+            },
+        ],
+        screenReaderText: _Styling__WEBPACK_IMPORTED_MODULE_1__.hiddenContentStyle,
+    };
+}
+
+
+/***/ }),
+
+/***/ 68965:
+/*!******************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/Shimmer.types.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerElementType: () => (/* binding */ ShimmerElementType),
+/* harmony export */   ShimmerElementsDefaultHeights: () => (/* binding */ ShimmerElementsDefaultHeights)
+/* harmony export */ });
+/**
+ * Describes the possible types for shimmer elements used.
+ * {@docCategory Shimmer}
+ */
+var ShimmerElementType;
+(function (ShimmerElementType) {
+    /**
+     * Line element type
+     */
+    ShimmerElementType[ShimmerElementType["line"] = 1] = "line";
+    /**
+     * Circle element type
+     */
+    ShimmerElementType[ShimmerElementType["circle"] = 2] = "circle";
+    /**
+     * Gap element type
+     */
+    ShimmerElementType[ShimmerElementType["gap"] = 3] = "gap";
+})(ShimmerElementType || (ShimmerElementType = {}));
+/**
+ * Describes the default heights for shimmer elements when omitted in implementation.
+ * {@docCategory Shimmer}
+ */
+var ShimmerElementsDefaultHeights;
+(function (ShimmerElementsDefaultHeights) {
+    /**
+     * Default height of the line element when not provided by user: 16px
+     */
+    ShimmerElementsDefaultHeights[ShimmerElementsDefaultHeights["line"] = 16] = "line";
+    /**
+     * Default height of the gap element when not provided by user: 16px
+     */
+    ShimmerElementsDefaultHeights[ShimmerElementsDefaultHeights["gap"] = 16] = "gap";
+    /**
+     * Default height of the circle element when not provided by user: 24px
+     */
+    ShimmerElementsDefaultHeights[ShimmerElementsDefaultHeights["circle"] = 24] = "circle";
+})(ShimmerElementsDefaultHeights || (ShimmerElementsDefaultHeights = {}));
+
+
+/***/ }),
+
+/***/ 66223:
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerCircle/ShimmerCircle.base.js ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerCircleBase: () => (/* binding */ ShimmerCircleBase)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var ShimmerCircleBase = function (props) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var height = props.height, styles = props.styles, borderStyle = props.borderStyle, theme = props.theme;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        height: height,
+        borderStyle: borderStyle,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { viewBox: "0 0 10 10", width: height, height: height, className: classNames.svg },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M0,0 L10,0 L10,10 L0,10 L0,0 Z M0,5 C0,7.76142375 2.23857625,10 5,10 C7.76142375,10 10,7.76142375 10,5 C10,2.23857625 7.76142375,2.22044605e-16 5,0 C2.23857625,-2.22044605e-16 0,2.23857625 0,5 L0,5 Z" }))));
+};
+
+
+/***/ }),
+
+/***/ 32690:
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerCircle/ShimmerCircle.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerCircle: () => (/* binding */ ShimmerCircle)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _ShimmerCircle_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ShimmerCircle.styles */ 90324);
+/* harmony import */ var _ShimmerCircle_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShimmerCircle.base */ 66223);
+
+
+
+var ShimmerCircle = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_ShimmerCircle_base__WEBPACK_IMPORTED_MODULE_1__.ShimmerCircleBase, _ShimmerCircle_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'ShimmerCircle' });
+
+
+/***/ }),
+
+/***/ 90324:
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerCircle/ShimmerCircle.styles.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-ShimmerCircle-root',
+    svg: 'ms-ShimmerCircle-svg',
+};
+function getStyles(props) {
+    var _a, _b;
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var height = props.height, borderStyle = props.borderStyle, theme = props.theme;
+    var semanticColors = theme.semanticColors;
+    var globalClassNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var borderStyles = borderStyle || {};
+    return {
+        root: [
+            globalClassNames.root,
+            theme.fonts.medium,
+            {
+                width: "".concat(height, "px"),
+                height: "".concat(height, "px"),
+                minWidth: "".concat(height, "px"), // Fix for IE11 flex items
+                boxSizing: 'content-box',
+                borderTopStyle: 'solid',
+                borderBottomStyle: 'solid',
+                borderColor: semanticColors.bodyBackground,
+                selectors: (_a = {},
+                    _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        borderColor: 'Window',
+                    },
+                    _a),
+            },
+            borderStyles,
+        ],
+        svg: [
+            globalClassNames.svg,
+            {
+                display: 'block',
+                fill: semanticColors.bodyBackground,
+                selectors: (_b = {},
+                    _b[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        fill: 'Window',
+                    },
+                    _b),
+            },
+        ],
+    };
+}
+
+
+/***/ }),
+
+/***/ 72052:
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerElementsGroup/ShimmerElementsGroup.base.js ***!
+  \***************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerElementsGroupBase: () => (/* binding */ ShimmerElementsGroupBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Utilities */ 15659);
+/* harmony import */ var _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shimmer.types */ 68965);
+/* harmony import */ var _ShimmerLine_ShimmerLine__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ShimmerLine/ShimmerLine */ 6286);
+/* harmony import */ var _ShimmerGap_ShimmerGap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ShimmerGap/ShimmerGap */ 21978);
+/* harmony import */ var _ShimmerCircle_ShimmerCircle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ShimmerCircle/ShimmerCircle */ 32690);
+
+
+
+
+
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+/**
+ * {@docCategory Shimmer}
+ */
+var ShimmerElementsGroupBase = function (props) {
+    var styles = props.styles, _a = props.width, width = _a === void 0 ? 'auto' : _a, shimmerElements = props.shimmerElements, _b = props.rowHeight, rowHeight = _b === void 0 ? findMaxElementHeight(shimmerElements || []) : _b, _c = props.flexWrap, flexWrap = _c === void 0 ? false : _c, theme = props.theme, backgroundColor = props.backgroundColor;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        flexWrap: flexWrap,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: width }, className: classNames.root }, getRenderedElements(shimmerElements, backgroundColor, rowHeight)));
+};
+function getRenderedElements(shimmerElements, backgroundColor, rowHeight) {
+    var renderedElements = shimmerElements ? (shimmerElements.map(
+    // false positive
+    // eslint-disable-next-line array-callback-return
+    function (element, index) {
+        var type = element.type, filteredElem = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__rest)(element, ["type"]);
+        var verticalAlign = filteredElem.verticalAlign, height = filteredElem.height;
+        var styles = getElementStyles(verticalAlign, type, height, backgroundColor, rowHeight);
+        switch (element.type) {
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.circle:
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShimmerCircle_ShimmerCircle__WEBPACK_IMPORTED_MODULE_4__.ShimmerCircle, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ key: index }, filteredElem, { styles: styles }));
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.gap:
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShimmerGap_ShimmerGap__WEBPACK_IMPORTED_MODULE_5__.ShimmerGap, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ key: index }, filteredElem, { styles: styles }));
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.line:
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShimmerLine_ShimmerLine__WEBPACK_IMPORTED_MODULE_6__.ShimmerLine, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ key: index }, filteredElem, { styles: styles }));
+        }
+    })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShimmerLine_ShimmerLine__WEBPACK_IMPORTED_MODULE_6__.ShimmerLine, { height: _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementsDefaultHeights.line }));
+    return renderedElements;
+}
+var getElementStyles = (0,_Utilities__WEBPACK_IMPORTED_MODULE_7__.memoizeFunction)(function (verticalAlign, elementType, elementHeight, backgroundColor, rowHeight) {
+    var dif = rowHeight && elementHeight ? rowHeight - elementHeight : 0;
+    var borderStyle;
+    if (!verticalAlign || verticalAlign === 'center') {
+        borderStyle = {
+            borderBottomWidth: "".concat(dif ? Math.floor(dif / 2) : 0, "px"),
+            borderTopWidth: "".concat(dif ? Math.ceil(dif / 2) : 0, "px"),
+        };
+    }
+    else if (verticalAlign && verticalAlign === 'top') {
+        borderStyle = {
+            borderBottomWidth: "".concat(dif, "px"),
+            borderTopWidth: "0px",
+        };
+    }
+    else if (verticalAlign && verticalAlign === 'bottom') {
+        borderStyle = {
+            borderBottomWidth: "0px",
+            borderTopWidth: "".concat(dif, "px"),
+        };
+    }
+    if (backgroundColor) {
+        switch (elementType) {
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.circle:
+                return {
+                    root: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, borderStyle), { borderColor: backgroundColor }),
+                    svg: { fill: backgroundColor },
+                };
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.gap:
+                return {
+                    root: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, borderStyle), { borderColor: backgroundColor, backgroundColor: backgroundColor }),
+                };
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.line:
+                return {
+                    root: (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, borderStyle), { borderColor: backgroundColor }),
+                    topLeftCorner: { fill: backgroundColor },
+                    topRightCorner: { fill: backgroundColor },
+                    bottomLeftCorner: { fill: backgroundColor },
+                    bottomRightCorner: { fill: backgroundColor },
+                };
+        }
+    }
+    return {
+        root: borderStyle,
+    };
+});
+/**
+ * User should not worry to provide which of the elements is the highest so we do the calculation for him.
+ * Plus if user forgot to specify the height we assign their defaults.
+ */
+function findMaxElementHeight(shimmerElements) {
+    var shimmerElementsDefaulted = shimmerElements.map(function (element) {
+        switch (element.type) {
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.circle:
+                if (!element.height) {
+                    element.height = _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementsDefaultHeights.circle;
+                }
+                break;
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.line:
+                if (!element.height) {
+                    element.height = _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementsDefaultHeights.line;
+                }
+                break;
+            case _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementType.gap:
+                if (!element.height) {
+                    element.height = _Shimmer_types__WEBPACK_IMPORTED_MODULE_3__.ShimmerElementsDefaultHeights.gap;
+                }
+                break;
+        }
+        return element;
+    });
+    var rowHeight = shimmerElementsDefaulted.reduce(function (acc, next) {
+        return next.height ? (next.height > acc ? next.height : acc) : acc;
+    }, 0);
+    return rowHeight;
+}
+
+
+/***/ }),
+
+/***/ 35850:
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerElementsGroup/ShimmerElementsGroup.js ***!
+  \**********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerElementsGroup: () => (/* binding */ ShimmerElementsGroup)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _ShimmerElementsGroup_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShimmerElementsGroup.base */ 72052);
+/* harmony import */ var _ShimmerElementsGroup_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ShimmerElementsGroup.styles */ 4716);
+
+
+
+var ShimmerElementsGroup = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_ShimmerElementsGroup_base__WEBPACK_IMPORTED_MODULE_1__.ShimmerElementsGroupBase, _ShimmerElementsGroup_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, { scope: 'ShimmerElementsGroup' });
+
+
+/***/ }),
+
+/***/ 4716:
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerElementsGroup/ShimmerElementsGroup.styles.js ***!
+  \*****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-ShimmerElementsGroup-root',
+};
+function getStyles(props) {
+    var flexWrap = props.flexWrap, theme = props.theme;
+    var classNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    return {
+        root: [
+            classNames.root,
+            theme.fonts.medium,
+            {
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: flexWrap ? 'wrap' : 'nowrap',
+                position: 'relative',
+            },
+        ],
+    };
+}
+
+
+/***/ }),
+
+/***/ 52087:
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerGap/ShimmerGap.base.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerGapBase: () => (/* binding */ ShimmerGapBase)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+/**
+ * {@docCategory Shimmer}
+ */
+var ShimmerGapBase = function (props) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var height = props.height, styles = props.styles, _a = props.width, width = _a === void 0 ? '10px' : _a, borderStyle = props.borderStyle, theme = props.theme;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        height: height,
+        borderStyle: borderStyle,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: width, minWidth: typeof width === 'number' ? "".concat(width, "px") : 'auto' }, className: classNames.root }));
+};
+
+
+/***/ }),
+
+/***/ 21978:
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerGap/ShimmerGap.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerGap: () => (/* binding */ ShimmerGap)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _ShimmerGap_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShimmerGap.base */ 52087);
+/* harmony import */ var _ShimmerGap_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ShimmerGap.styles */ 50268);
+
+
+
+var ShimmerGap = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_ShimmerGap_base__WEBPACK_IMPORTED_MODULE_1__.ShimmerGapBase, _ShimmerGap_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'ShimmerGap',
+});
+
+
+/***/ }),
+
+/***/ 50268:
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerGap/ShimmerGap.styles.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-ShimmerGap-root',
+};
+function getStyles(props) {
+    var _a;
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var height = props.height, borderStyle = props.borderStyle, theme = props.theme;
+    var semanticColors = theme.semanticColors;
+    var globalClassNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var borderStyles = borderStyle || {};
+    return {
+        root: [
+            globalClassNames.root,
+            theme.fonts.medium,
+            {
+                backgroundColor: semanticColors.bodyBackground,
+                height: "".concat(height, "px"),
+                boxSizing: 'content-box',
+                borderTopStyle: 'solid',
+                borderBottomStyle: 'solid',
+                borderColor: semanticColors.bodyBackground,
+                selectors: (_a = {},
+                    _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        backgroundColor: 'Window',
+                        borderColor: 'Window',
+                    },
+                    _a),
+            },
+            borderStyles,
+        ],
+    };
+}
+
+
+/***/ }),
+
+/***/ 64947:
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerLine/ShimmerLine.base.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerLineBase: () => (/* binding */ ShimmerLineBase)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Utilities */ 13583);
+
+
+var getClassNames = (0,_Utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+/**
+ * {@docCategory Shimmer}
+ */
+var ShimmerLineBase = function (props) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var height = props.height, styles = props.styles, _a = props.width, width = _a === void 0 ? '100%' : _a, borderStyle = props.borderStyle, theme = props.theme;
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        height: height,
+        borderStyle: borderStyle,
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { width: width, minWidth: typeof width === 'number' ? "".concat(width, "px") : 'auto' }, className: classNames.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { width: "2", height: "2", className: classNames.topLeftCorner },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M0 2 A 2 2, 0, 0, 1, 2 0 L 0 0 Z" })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { width: "2", height: "2", className: classNames.topRightCorner },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M0 0 A 2 2, 0, 0, 1, 2 2 L 2 0 Z" })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { width: "2", height: "2", className: classNames.bottomRightCorner },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M2 0 A 2 2, 0, 0, 1, 0 2 L 2 2 Z" })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { width: "2", height: "2", className: classNames.bottomLeftCorner },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M2 2 A 2 2, 0, 0, 1, 0 0 L 0 2 Z" }))));
+};
+
+
+/***/ }),
+
+/***/ 6286:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerLine/ShimmerLine.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ShimmerLine: () => (/* binding */ ShimmerLine)
+/* harmony export */ });
+/* harmony import */ var _Utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Utilities */ 55336);
+/* harmony import */ var _ShimmerLine_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShimmerLine.base */ 64947);
+/* harmony import */ var _ShimmerLine_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ShimmerLine.styles */ 42856);
+
+
+
+var ShimmerLine = (0,_Utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_ShimmerLine_base__WEBPACK_IMPORTED_MODULE_1__.ShimmerLineBase, _ShimmerLine_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'ShimmerLine',
+});
+
+
+/***/ }),
+
+/***/ 42856:
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Shimmer/ShimmerLine/ShimmerLine.styles.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var _Styling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Styling */ 38455);
+
+var GlobalClassNames = {
+    root: 'ms-ShimmerLine-root',
+    topLeftCorner: 'ms-ShimmerLine-topLeftCorner',
+    topRightCorner: 'ms-ShimmerLine-topRightCorner',
+    bottomLeftCorner: 'ms-ShimmerLine-bottomLeftCorner',
+    bottomRightCorner: 'ms-ShimmerLine-bottomRightCorner',
+};
+function getStyles(props) {
+    var _a;
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    var height = props.height, borderStyle = props.borderStyle, theme = props.theme;
+    var semanticColors = theme.semanticColors;
+    var globalClassNames = (0,_Styling__WEBPACK_IMPORTED_MODULE_0__.getGlobalClassNames)(GlobalClassNames, theme);
+    var borderStyles = borderStyle || {};
+    var sharedCornerStyles = {
+        position: 'absolute',
+        fill: semanticColors.bodyBackground,
+    };
+    return {
+        root: [
+            globalClassNames.root,
+            theme.fonts.medium,
+            {
+                height: "".concat(height, "px"),
+                boxSizing: 'content-box',
+                position: 'relative',
+                borderTopStyle: 'solid',
+                borderBottomStyle: 'solid',
+                borderColor: semanticColors.bodyBackground,
+                borderWidth: 0,
+                selectors: (_a = {},
+                    _a[_Styling__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        borderColor: 'Window',
+                        selectors: {
+                            '> *': {
+                                fill: 'Window',
+                            },
+                        },
+                    },
+                    _a),
+            },
+            borderStyles,
+        ],
+        topLeftCorner: [
+            globalClassNames.topLeftCorner,
+            {
+                top: '0',
+                left: '0',
+            },
+            sharedCornerStyles,
+        ],
+        topRightCorner: [
+            globalClassNames.topRightCorner,
+            {
+                top: '0',
+                right: '0',
+            },
+            sharedCornerStyles,
+        ],
+        bottomRightCorner: [
+            globalClassNames.bottomRightCorner,
+            {
+                bottom: '0',
+                right: '0',
+            },
+            sharedCornerStyles,
+        ],
+        bottomLeftCorner: [
+            globalClassNames.bottomLeftCorner,
+            {
+                bottom: '0',
+                left: '0',
+            },
+            sharedCornerStyles,
+        ],
+    };
+}
+
+
+/***/ }),
+
 /***/ 83927:
 /*!*****************************************************************************!*\
   !*** ./node_modules/@fluentui/react/lib/components/Spinner/Spinner.base.js ***!
@@ -57119,6 +62971,417 @@ var TextView = function (props) {
         root: RootType,
     });
     return (0,_fluentui_foundation_legacy__WEBPACK_IMPORTED_MODULE_1__.withSlots)(Slots.root, (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__assign)({}, (0,_Utilities__WEBPACK_IMPORTED_MODULE_2__.getNativeProps)(rest, _Utilities__WEBPACK_IMPORTED_MODULE_2__.htmlElementProperties)));
+};
+
+
+/***/ }),
+
+/***/ 869:
+/*!***************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Toggle/Toggle.base.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ToggleBase: () => (/* binding */ ToggleBase)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react-hooks */ 36228);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react-hooks */ 58555);
+/* harmony import */ var _fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react-hooks */ 72295);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fluentui/utilities */ 13583);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/utilities */ 37974);
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/utilities */ 85123);
+/* harmony import */ var _Label_Label__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Label/Label */ 23166);
+
+
+
+
+
+var getClassNames = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_1__.classNamesFunction)();
+var COMPONENT_NAME = 'Toggle';
+var ToggleBase = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, forwardedRef) {
+    var _a = props.as, RootType = _a === void 0 ? 'div' : _a, ariaLabel = props.ariaLabel, controlledChecked = props.checked, className = props.className, _b = props.defaultChecked, defaultChecked = _b === void 0 ? false : _b, disabled = props.disabled, inlineLabel = props.inlineLabel, label = props.label, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    offAriaLabel = props.offAriaLabel, offText = props.offText, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    onAriaLabel = props.onAriaLabel, onChange = props.onChange, 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    onChanged = props.onChanged, onToggleClick = props.onClick, onText = props.onText, role = props.role, styles = props.styles, theme = props.theme;
+    var _c = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_2__.useControllableValue)(controlledChecked, defaultChecked, react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function (ev, isChecked) {
+        onChange === null || onChange === void 0 ? void 0 : onChange(ev, isChecked);
+        onChanged === null || onChanged === void 0 ? void 0 : onChanged(isChecked);
+    }, [onChange, onChanged])), checked = _c[0], setChecked = _c[1];
+    var classNames = getClassNames(styles, {
+        theme: theme,
+        className: className,
+        disabled: disabled,
+        checked: checked,
+        inlineLabel: inlineLabel,
+        onOffMissing: !onText && !offText,
+    });
+    var badAriaLabel = checked ? onAriaLabel : offAriaLabel;
+    var id = (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_3__.useId)(COMPONENT_NAME, props.id);
+    var labelId = "".concat(id, "-label");
+    var stateTextId = "".concat(id, "-stateText");
+    var stateText = checked ? onText : offText;
+    var toggleNativeProps = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_4__.getNativeProps)(props, _fluentui_utilities__WEBPACK_IMPORTED_MODULE_4__.inputProperties, [
+        'defaultChecked',
+    ]);
+    // The following properties take priority for what Narrator should read:
+    // 1. ariaLabel
+    // 2. onAriaLabel (if checked) or offAriaLabel (if not checked)
+    // 3. label, if existent
+    var labelledById = undefined;
+    if (!ariaLabel && !badAriaLabel) {
+        if (label) {
+            labelledById = labelId;
+        }
+        if (stateText && !labelledById) {
+            labelledById = stateTextId;
+        }
+    }
+    var toggleButton = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+    (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_5__.useFocusRects)(toggleButton);
+    useComponentRef(props, checked, toggleButton);
+    if (true) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks -- build-time conditional
+        (0,_fluentui_react_hooks__WEBPACK_IMPORTED_MODULE_6__.useWarnings)({
+            name: COMPONENT_NAME,
+            props: props,
+            deprecations: {
+                offAriaLabel: undefined,
+                onAriaLabel: 'ariaLabel',
+                onChanged: 'onChange',
+            },
+            mutuallyExclusive: { checked: 'defaultChecked' },
+        });
+    }
+    var onClick = function (ev) {
+        if (!disabled) {
+            setChecked(!checked, ev);
+            if (onToggleClick) {
+                onToggleClick(ev);
+            }
+        }
+    };
+    var slotProps = {
+        root: {
+            className: classNames.root,
+            hidden: toggleNativeProps.hidden,
+        },
+        label: {
+            children: label,
+            className: classNames.label,
+            htmlFor: id,
+            id: labelId,
+        },
+        container: {
+            className: classNames.container,
+        },
+        pill: (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({}, toggleNativeProps), { 'aria-disabled': disabled, 'aria-checked': checked, 'aria-label': ariaLabel ? ariaLabel : badAriaLabel, 'aria-labelledby': labelledById, className: classNames.pill, 'data-is-focusable': true, 'data-ktp-target': true, disabled: disabled, id: id, onClick: onClick, ref: toggleButton, role: role ? role : 'switch', type: 'button' }),
+        thumb: {
+            className: classNames.thumb,
+        },
+        stateText: {
+            children: stateText,
+            className: classNames.text,
+            htmlFor: id,
+            id: stateTextId,
+        },
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(RootType, (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({ ref: forwardedRef }, slotProps.root),
+        label && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Label_Label__WEBPACK_IMPORTED_MODULE_8__.Label, (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({}, slotProps.label)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({}, slotProps.container),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({}, slotProps.pill),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({}, slotProps.thumb))),
+            ((checked && onText) || offText) && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Label_Label__WEBPACK_IMPORTED_MODULE_8__.Label, (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__assign)({}, slotProps.stateText)))));
+});
+ToggleBase.displayName = COMPONENT_NAME + 'Base';
+var useComponentRef = function (props, isChecked, toggleButtonRef) {
+    react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(props.componentRef, function () { return ({
+        get checked() {
+            return !!isChecked;
+        },
+        focus: function () {
+            if (toggleButtonRef.current) {
+                toggleButtonRef.current.focus();
+            }
+        },
+    }); }, [isChecked, toggleButtonRef]);
+};
+
+
+/***/ }),
+
+/***/ 16264:
+/*!**********************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Toggle/Toggle.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Toggle: () => (/* binding */ Toggle)
+/* harmony export */ });
+/* harmony import */ var _fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/utilities */ 55336);
+/* harmony import */ var _Toggle_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Toggle.base */ 869);
+/* harmony import */ var _Toggle_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Toggle.styles */ 79602);
+
+
+
+var Toggle = (0,_fluentui_utilities__WEBPACK_IMPORTED_MODULE_0__.styled)(_Toggle_base__WEBPACK_IMPORTED_MODULE_1__.ToggleBase, _Toggle_styles__WEBPACK_IMPORTED_MODULE_2__.getStyles, undefined, {
+    scope: 'Toggle',
+});
+
+
+/***/ }),
+
+/***/ 79602:
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@fluentui/react/lib/components/Toggle/Toggle.styles.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStyles: () => (/* binding */ getStyles)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 10196);
+/* harmony import */ var _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fluentui/style-utilities */ 38455);
+
+
+var DEFAULT_PILL_WIDTH = 40;
+var DEFAULT_PILL_HEIGHT = 20;
+var DEFAULT_THUMB_SIZE = 12;
+var getStyles = function (props) {
+    var _a, _b, _c, _d, _e, _f, _g;
+    var theme = props.theme, className = props.className, disabled = props.disabled, checked = props.checked, inlineLabel = props.inlineLabel, onOffMissing = props.onOffMissing;
+    var semanticColors = theme.semanticColors, palette = theme.palette;
+    // Tokens
+    var pillUncheckedBackground = semanticColors.bodyBackground;
+    var pillCheckedBackground = semanticColors.inputBackgroundChecked;
+    var pillCheckedHoveredBackground = semanticColors.inputBackgroundCheckedHovered;
+    var thumbUncheckedHoveredBackground = palette.neutralDark;
+    var pillCheckedDisabledBackground = semanticColors.disabledBodySubtext;
+    var thumbBackground = semanticColors.smallInputBorder;
+    var thumbCheckedBackground = semanticColors.inputForegroundChecked;
+    var thumbDisabledBackground = semanticColors.disabledBodySubtext;
+    var thumbCheckedDisabledBackground = semanticColors.disabledBackground;
+    var pillBorderColor = semanticColors.smallInputBorder;
+    var pillBorderHoveredColor = semanticColors.inputBorderHovered;
+    var pillBorderDisabledColor = semanticColors.disabledBodySubtext;
+    var textDisabledColor = semanticColors.disabledText;
+    return {
+        root: [
+            'ms-Toggle',
+            checked && 'is-checked',
+            !disabled && 'is-enabled',
+            disabled && 'is-disabled',
+            theme.fonts.medium,
+            {
+                marginBottom: '8px',
+            },
+            inlineLabel && {
+                display: 'flex',
+                alignItems: 'center',
+            },
+            className,
+        ],
+        label: [
+            'ms-Toggle-label',
+            { display: 'inline-block' },
+            disabled && {
+                color: textDisabledColor,
+                selectors: (_a = {},
+                    _a[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                        color: 'GrayText',
+                    },
+                    _a),
+            },
+            inlineLabel &&
+                !onOffMissing && {
+                marginRight: 16,
+            },
+            onOffMissing &&
+                inlineLabel && {
+                order: 1,
+                marginLeft: 16,
+            },
+            inlineLabel && { wordBreak: 'break-word' },
+        ],
+        container: [
+            'ms-Toggle-innerContainer',
+            {
+                display: 'flex',
+                position: 'relative',
+            },
+        ],
+        pill: [
+            'ms-Toggle-background',
+            (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getFocusStyle)(theme, { inset: -3 }),
+            {
+                fontSize: '20px',
+                boxSizing: 'border-box',
+                width: DEFAULT_PILL_WIDTH,
+                height: DEFAULT_PILL_HEIGHT,
+                borderRadius: DEFAULT_PILL_HEIGHT / 2,
+                transition: 'all 0.1s ease',
+                border: "1px solid ".concat(pillBorderColor),
+                background: pillUncheckedBackground,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0 3px',
+                overflow: 'visible',
+            },
+            !disabled && [
+                !checked && {
+                    selectors: {
+                        ':hover': [
+                            {
+                                borderColor: pillBorderHoveredColor,
+                            },
+                        ],
+                        ':hover .ms-Toggle-thumb': [
+                            {
+                                backgroundColor: thumbUncheckedHoveredBackground,
+                                selectors: (_b = {},
+                                    _b[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                        borderColor: 'Highlight',
+                                    },
+                                    _b),
+                            },
+                        ],
+                    },
+                },
+                checked && [
+                    {
+                        background: pillCheckedBackground,
+                        borderColor: 'transparent',
+                        justifyContent: 'flex-end',
+                    },
+                    {
+                        selectors: (_c = {
+                                ':hover': [
+                                    {
+                                        backgroundColor: pillCheckedHoveredBackground,
+                                        borderColor: 'transparent',
+                                        selectors: (_d = {},
+                                            _d[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                                backgroundColor: 'Highlight',
+                                            },
+                                            _d),
+                                    },
+                                ]
+                            },
+                            _c[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__assign)({ backgroundColor: 'Highlight' }, (0,_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.getHighContrastNoAdjustStyle)()),
+                            _c),
+                    },
+                ],
+            ],
+            disabled && [
+                {
+                    cursor: 'default',
+                },
+                !checked && [
+                    {
+                        borderColor: pillBorderDisabledColor,
+                    },
+                ],
+                checked && [
+                    {
+                        backgroundColor: pillCheckedDisabledBackground,
+                        borderColor: 'transparent',
+                        justifyContent: 'flex-end',
+                    },
+                ],
+            ],
+            !disabled && {
+                selectors: {
+                    '&:hover': {
+                        selectors: (_e = {},
+                            _e[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                borderColor: 'Highlight',
+                            },
+                            _e),
+                    },
+                },
+            },
+        ],
+        thumb: [
+            'ms-Toggle-thumb',
+            {
+                display: 'block',
+                width: DEFAULT_THUMB_SIZE,
+                height: DEFAULT_THUMB_SIZE,
+                borderRadius: '50%',
+                transition: 'all 0.1s ease',
+                backgroundColor: thumbBackground,
+                /* Border is added to handle high contrast mode for Firefox */
+                borderColor: 'transparent',
+                borderWidth: DEFAULT_THUMB_SIZE / 2,
+                borderStyle: 'solid',
+                boxSizing: 'border-box',
+            },
+            !disabled &&
+                checked && [
+                {
+                    backgroundColor: thumbCheckedBackground,
+                    selectors: (_f = {},
+                        _f[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                            backgroundColor: 'Window',
+                            borderColor: 'Window',
+                        },
+                        _f),
+                },
+            ],
+            disabled && [
+                !checked && [
+                    {
+                        backgroundColor: thumbDisabledBackground,
+                    },
+                ],
+                checked && [
+                    {
+                        backgroundColor: thumbCheckedDisabledBackground,
+                    },
+                ],
+            ],
+        ],
+        text: [
+            'ms-Toggle-stateText',
+            {
+                selectors: {
+                    // Workaround: make rules more specific than Label rules.
+                    '&&': {
+                        padding: '0',
+                        margin: '0 8px',
+                        userSelect: 'none',
+                        fontWeight: _fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.FontWeights.regular,
+                    },
+                },
+            },
+            disabled && {
+                selectors: {
+                    '&&': {
+                        color: textDisabledColor,
+                        selectors: (_g = {},
+                            _g[_fluentui_style_utilities__WEBPACK_IMPORTED_MODULE_0__.HighContrastSelector] = {
+                                color: 'GrayText',
+                            },
+                            _g),
+                    },
+                },
+            },
+        ],
+    };
 };
 
 
@@ -113752,7 +120015,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bd583d9b6fcc017c4bcd")
+/******/ 		__webpack_require__.h = () => ("b9edfa7f2b2f6d2b374b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

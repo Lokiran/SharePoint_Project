@@ -131,6 +131,9 @@ class InventoryItemService {
     }
     static async addItem(item, userDisplayName = "Unknown") {
         const list = await InventoryItemService.getInventoryList();
+        // Date columns reject "" - an optional date left blank must be sent as null.
+        const purchaseDate = item.purchaseDate || null;
+        const warrantyExpiry = item.warrantyExpiry || null;
         const payloads = [
             // 1. Standard modern field names with Specifications column (Priority)
             {
@@ -138,10 +141,10 @@ class InventoryItemService {
                 AssetName: item.assetName,
                 AssetType: item.assetType,
                 SerialNumber: item.serialNumber,
-                PurchaseDate: item.purchaseDate,
+                PurchaseDate: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Specifications: item.specifications || ""
             },
@@ -151,10 +154,10 @@ class InventoryItemService {
                 Asset_x0020_Name: item.assetName,
                 Asset_x0020_Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Specifications: item.specifications || ""
             },
@@ -164,10 +167,10 @@ class InventoryItemService {
                 Asset: item.assetName,
                 Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 AssetStatus: item.status,
                 Specifications: item.specifications || ""
             },
@@ -177,10 +180,10 @@ class InventoryItemService {
                 AssetName: item.assetName,
                 AssetType: item.assetType,
                 SerialNumber: item.serialNumber,
-                PurchaseDate: item.purchaseDate,
+                PurchaseDate: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Note: item.specifications || ""
             },
@@ -190,10 +193,10 @@ class InventoryItemService {
                 Asset_x0020_Name: item.assetName,
                 Asset_x0020_Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 Status: item.status,
                 Note: item.specifications || ""
             },
@@ -203,17 +206,17 @@ class InventoryItemService {
                 Asset: item.assetName,
                 Type: item.assetType,
                 Serial_x0020_Number: item.serialNumber,
-                Purchase_x0020_Date: item.purchaseDate,
+                Purchase_x0020_Date: purchaseDate,
                 Vendor: item.vendor || "",
                 Condition: item.condition || "",
-                WarrantyExpiry: item.warrantyExpiry || "",
+                WarrantyExpiry: warrantyExpiry,
                 AssetStatus: item.status,
                 Notes: item.specifications || ""
             }
         ];
         let addedItem;
         let success = false;
-        let lastError;
+        const attemptErrors = [];
         for (const payload of payloads) {
             try {
                 addedItem = await list.items.add(payload);
@@ -221,12 +224,15 @@ class InventoryItemService {
                 break; // Success, stop looping immediately!
             }
             catch (error) {
-                lastError = error;
+                attemptErrors.push(error);
             }
         }
         if (!success) {
-            console.error("Error adding item to SharePoint:", lastError);
-            throw new Error(`SharePoint rejected the save. The columns you created in InventoryList do not match the expected format. Error: ${lastError.message || JSON.stringify(lastError)}`);
+            console.error("Error adding item to SharePoint (one error per payload shape):", attemptErrors);
+            // Report the first attempt: it uses the standard column names, so its error is the real
+            // cause. Later attempts use fallback names and mostly fail on columns that don't exist.
+            const primaryError = attemptErrors[0];
+            throw new Error(primaryError?.message || JSON.stringify(primaryError));
         }
         // Safely perform post-save actions (audit logging) outside the creation loop
         try {

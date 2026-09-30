@@ -14,13 +14,14 @@ import {
 import { IConfigPageProps } from '../types/Config.types';
 import {
   ListHealthService,
-  getListDefinitions,
+  getConfigListDefinitions,
   IListDefinition,
   IListHealthResult,
   IEnvironmentInfo,
   IGroupInfo,
   ListKey,
-  ListHealthStatus
+  ListHealthStatus,
+  ListCheckKey
 } from '../services/ListHealthService';
 import styles from '../components/InventoryManagement.module.scss';
 import css from './ConfigPage.module.scss';
@@ -55,7 +56,19 @@ const getListText = (key: ListKey): IListText => {
     case 'replacement': return { title: s.ListTitle_ReplacementList, desc: s.ListDesc_ReplacementList };
     case 'stockThresholds': return { title: s.ListTitle_StockThresholdsList, desc: s.ListDesc_StockThresholdsList };
     case 'assetKits': return { title: s.ListTitle_AssetKitsList, desc: s.ListDesc_AssetKitsList };
+    case 'appSettings': return { title: s.ListTitle_AppSettingsList, desc: s.ListDesc_AppSettingsList };
     default: return { title: key, desc: '' };
+  }
+};
+
+const getCheckLabel = (key: ListCheckKey): string => {
+  const s = strings.ConfigPage;
+  switch (key) {
+    case 'find': return s.Check_Find;
+    case 'columns': return s.Check_Columns;
+    case 'items': return s.Check_Items;
+    case 'permissions': return s.Check_Permissions;
+    default: return s.Check_Details;
   }
 };
 
@@ -83,7 +96,7 @@ interface IIssue { severity: 'bad' | 'warn'; text: string; listKey: ListKey }
 const collectIssues = (results: Partial<Record<ListKey, IListHealthResult>>): IIssue[] => {
   const s = strings.ConfigPage;
   const issues: IIssue[] = [];
-  getListDefinitions().forEach(def => {
+  getConfigListDefinitions().forEach(def => {
     const r = results[def.key];
     if (!r) return;
     const title = getListText(def.key).title;
@@ -100,7 +113,7 @@ const collectIssues = (results: Partial<Record<ListKey, IListHealthResult>>): II
       if (r.missingColumns.length > 0) {
         add('warn', formatString(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
       }
-      if (!r.canWrite) {
+      if (r.canWrite === false) {
         add('bad', formatString(s.Issue_Write, title));
       }
     }
@@ -113,7 +126,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
   const s = strings.ConfigPage;
 
   // Read per render so property-pane changes to list titles and role groups show immediately.
-  const LIST_DEFINITIONS = getListDefinitions();
+  const LIST_DEFINITIONS = getConfigListDefinitions();
   const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
   const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
   const ROLE_GROUPS = getRoleGroups();
@@ -222,7 +235,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
   const coreResults = CORE_LISTS.map(d => results[d.key]).filter(Boolean) as IListHealthResult[];
   const coreReady = coreResults.filter(r => r.status === 'healthy').length;
   const missingColumnCount = coreResults.reduce((sum, r) => sum + (r.resolvedTitle ? r.missingColumns.length : 0), 0);
-  const writeIssues = coreResults.filter(r => r.resolvedTitle && !r.canWrite).length;
+  const writeIssues = coreResults.filter(r => r.resolvedTitle && r.canWrite === false).length;
   const optionalReady = OPTIONAL_LISTS.filter(d => { const r = results[d.key]; return r && r.resolvedTitle; }).length;
   const issues = collectIssues(results);
   const criticalCount = issues.filter(i => i.severity === 'bad').length;
@@ -361,7 +374,10 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
     const r = results[def.key];
     const isTesting = !!testing[def.key] || (runningAll && !r);
     const isExpanded = !!expanded[def.key];
-    const access = !r || !r.resolvedTitle ? undefined : r.canWrite ? s.AccessReadWrite : r.canRead ? s.AccessReadOnly : s.AccessNone;
+    const access = !r || !r.resolvedTitle ? undefined
+      : r.canWrite ? s.AccessReadWrite
+        : r.canWrite === undefined ? (r.canRead ? s.AccessUnknown : s.AccessNone)
+          : r.canRead ? s.AccessReadOnly : s.AccessNone;
 
     return (
       <div key={def.key} className={css.listCard}>
@@ -388,7 +404,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
 
         {r && r.resolvedTitle && (
           <div className={css.metrics}>
-            <span>{s.Items}<strong>{r.itemCount}</strong></span>
+            <span>{s.Items}<strong>{r.itemCount !== undefined ? r.itemCount : '—'}</strong></span>
             <span>{s.LastModified}<strong>{formatDate(r.lastModified)}</strong></span>
             <span>{s.Access}<strong>{access}</strong></span>
             {def.requiredColumns.length > 0 && (
@@ -399,7 +415,9 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
         )}
 
         {r && r.error && (
-          <div className={css.errorBox}><strong>{s.ErrorLabel}</strong> {r.error}</div>
+          <div className={css.errorBox}>
+            <strong>{s.ErrorLabel}</strong> {r.failedStep ? `${getCheckLabel(r.failedStep)} — ` : ''}{r.error}
+          </div>
         )}
 
         {r && (
@@ -437,6 +455,29 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
             )}
             {r.resolvedTitle && r.missingColumns.length === 0 && def.requiredColumns.length > 0 && (
               <div>{s.AllColumnsPresent}</div>
+            )}
+            {r.checks && r.checks.length > 0 && (
+              <div>
+                <strong>{s.ChecksLabel}:</strong>
+                <ul style={{ listStyle: 'none', margin: '6px 0 0', padding: 0 }}>
+                  {r.checks.map(check => (
+                    <li key={check.key} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '3px 0' }}>
+                      <Icon
+                        iconName={check.ok ? 'CompletedSolid' : check.required ? 'StatusErrorFull' : 'WarningSolid'}
+                        style={{ color: check.ok ? '#107c10' : check.required ? '#c50f1f' : '#bc4b09', marginTop: 2 }}
+                      />
+                      <span>
+                        {getCheckLabel(check.key)}
+                        {!check.required && <span className={css.muted}> ({s.CheckOptional})</span>}
+                        {check.source === 'site' && (
+                          <div className={css.muted}>{formatString(s.Note_PermissionsFromSite, check.error || '')}</div>
+                        )}
+                        {!check.ok && check.error && <div className={css.muted}>{check.error}</div>}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         )}

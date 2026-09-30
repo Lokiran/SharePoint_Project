@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from './Dashboard.module.scss';
 import { IInventoryItem } from '../models/IInventoryItem';
 import { IRequest } from '../models/IRequest';
-import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
 import { Icon } from '@fluentui/react/lib/Icon';
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
@@ -21,6 +20,8 @@ import { Bar, Doughnut } from 'react-chartjs-2';
 import { centerTotalPlugin, barValueLabelsPlugin } from '../utils/ChartPlugins';
 import { LowStockPanel } from './dashboard/LowStockPanel';
 import { RequestSlaPanel } from './dashboard/RequestSlaPanel';
+import { summarizeSla } from '../utils/RequestSlaUtils';
+import { getAppConfig } from '../config/AppConfig';
 
 // Gaps between slices in the card's background colour (follows dark mode), and a small pop-out on hover.
 const cardBackground = (ctx: { chart: { canvas: HTMLCanvasElement } }): string => {
@@ -328,10 +329,6 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   // --- Quick Summaries & Subtitle metrics ---
   const totalAssets = items.length;
   const totalRequests = requests.length;
-  const pendingRequests = requests.filter(r => {
-    const status = isAdmin ? (r.assetStatus || 'Pending') : (r.status || 'Pending');
-    return status === 'Pending';
-  }).length;
   const availableAssets = items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length;
   const awaitingManagerDecision = isManagerView
     ? requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
@@ -403,6 +400,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
   // --- Role label for header ---
   const roleLabel = isAdmin ? strings.Dashboard.RoleAdministrator : isManagerView ? strings.Dashboard.RoleManager : strings.Dashboard.RoleEmployee;
   const dashboardTitle = isAdmin ? strings.Dashboard.AdminTitle : isManagerView ? strings.Dashboard.ManagerTitle : strings.Dashboard.EmployeeTitle;
+  const isEmployeeView = !isAdmin && !isInventoryManager;
+  const d = strings.Dashboard;
 
   // --- Quick action handler ---
   const navigateTo = (key: string): void => {
@@ -411,227 +410,137 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
     }
   };
 
+  // --- "Needs attention": the few things each role should act on now ---
+  const slaSummary = !isEmployeeView ? summarizeSla(requests, getAppConfig().sla) : undefined;
+  const overdueForRole = slaSummary
+    ? slaSummary.overdueItems.filter(i => (isAdmin ? i.stage === 'awaitingAssignment' : i.stage === 'awaitingApproval')).length
+    : 0;
+  const employeeInReview = requests.filter(r => (r.status || 'Pending').toLowerCase().indexOf('pending') >= 0).length;
+  const employeeAwaitingHandoff = requests.filter(r =>
+    (r.status || '').toLowerCase() === 'approved' && (r.assetStatus || '').toLowerCase() !== 'approved').length;
+
+  interface IAttention { key: string; icon: string; text: string; tone: 'warn' | 'bad' | 'info'; target: string; count: number }
+  const attentionAll: IAttention[] = isAdmin ? [
+    { key: 'assign', icon: 'Send', text: formatString(d.AttentionWaitingAssignment, pendingAssignments.length), tone: 'warn', target: 'AssetAssignmentQueue', count: pendingAssignments.length },
+    { key: 'overdue', icon: 'Clock', text: formatString(d.AttentionOverdue, overdueForRole), tone: 'bad', target: 'AssetAssignmentQueue', count: overdueForRole }
+  ] : isManagerView ? [
+    { key: 'decide', icon: 'DoubleChevronRight12', text: formatString(d.AttentionAwaitingDecision, awaitingManagerDecision), tone: 'warn', target: 'Approvals', count: awaitingManagerDecision },
+    { key: 'overdue', icon: 'Clock', text: formatString(d.AttentionOverdue, overdueForRole), tone: 'bad', target: 'Approvals', count: overdueForRole }
+  ] : [
+    { key: 'review', icon: 'Clock', text: formatString(d.AttentionInReview, employeeInReview), tone: 'info', target: 'MyWorkspace', count: employeeInReview },
+    { key: 'handoff', icon: 'Package', text: formatString(d.AttentionReadySoon, employeeAwaitingHandoff), tone: 'warn', target: 'MyWorkspace', count: employeeAwaitingHandoff }
+  ];
+  const attention = attentionAll.filter(a => a.count > 0);
+
+  // --- KPI cards per role ---
+  interface IKpi { key: string; tone: string; icon: string; value: number; label: string; subtitle: string; percent?: number; target?: string }
+  const pct = (part: number, whole: number): number => (whole > 0 ? Math.round((part / whole) * 100) : 0);
+  const kpis: IKpi[] = isAdmin ? [
+    { key: 'assets', tone: styles.cardBlue, icon: 'Package', value: totalAssets, label: d.TotalAssets, subtitle: formatString(d.AllocationRateSubtitle, allocationRate), percent: Number(allocationRate), target: 'Inventory' },
+    { key: 'available', tone: styles.cardGreen, icon: 'Accept', value: availableAssets, label: d.AvailableAssets, subtitle: formatString(d.InStockSubtitle, availableAssets, stockPercentage), percent: Number(stockPercentage), target: 'Inventory' },
+    { key: 'requests', tone: styles.cardPurple, icon: 'Send', value: totalRequests, label: d.TotalRequests, subtitle: formatString(d.QueueRequestsSubtitle, totalRequests), target: 'AssetAssignmentQueue' },
+    { key: 'pending', tone: styles.cardGold, icon: 'Clock', value: pendingAssignments.length, label: d.PendingRequests, subtitle: formatString(d.UnderReviewSubtitle, pendingAssignments.length), percent: pct(pendingAssignments.length, totalRequests), target: 'AssetAssignmentQueue' }
+  ] : isManagerView ? [
+    { key: 'assets', tone: styles.cardBlue, icon: 'Package', value: totalAssets, label: d.TotalAssets, subtitle: formatString(d.ItemsInCatalogSubtitle, totalAssets), target: 'Inventory' },
+    { key: 'available', tone: styles.cardGreen, icon: 'Accept', value: availableAssets, label: d.AvailableAssets, subtitle: formatString(d.InStockSubtitle, availableAssets, stockPercentage), percent: Number(stockPercentage), target: 'Inventory' },
+    { key: 'requests', tone: styles.cardPurple, icon: 'Send', value: totalRequests, label: d.RequestsInQueue, subtitle: formatString(d.ApprovalSuccessSubtitle, approvalSuccessRate), percent: Number(approvalSuccessRate), target: 'Approvals' },
+    { key: 'awaiting', tone: styles.cardGold, icon: 'Clock', value: awaitingManagerDecision, label: d.AwaitingApproval, subtitle: formatString(d.RequiresReviewSubtitle, awaitingManagerDecision), percent: pct(awaitingManagerDecision, totalRequests), target: 'Approvals' }
+  ] : [
+    { key: 'devices', tone: styles.cardBlue, icon: 'Devices3', value: totalAssets, label: d.MyDevices, subtitle: formatString(d.AssignedHardwareSubtitle, totalAssets), target: 'MyWorkspace' },
+    { key: 'requests', tone: styles.cardPurple, icon: 'Send', value: totalRequests, label: d.MyRequests, subtitle: formatString(d.ApprovalSuccessSubtitle, approvalSuccessRate), percent: totalDecidedRequests > 0 ? Number(approvalSuccessRate) : undefined, target: 'MyWorkspace' },
+    { key: 'review', tone: styles.cardGold, icon: 'Clock', value: employeeInReview, label: d.KpiInReview, subtitle: d.KpiInReviewSubtitle, target: 'MyWorkspace' },
+    { key: 'handoff', tone: styles.cardGreen, icon: 'Package', value: employeeAwaitingHandoff, label: d.KpiAwaitingHandoff, subtitle: d.KpiAwaitingHandoffSubtitle, target: 'MyWorkspace' }
+  ];
+
+  const bannerText = (isAdmin
+    ? d.AdminBannerText
+    : isManagerView
+      ? `${d.ManagerBannerTextBefore}${strings.Nav.Approvals}${d.ManagerBannerTextAfter}`
+      : d.EmployeeBannerText).replace(/^\s*[—–-]\s*/, '');
+
+  const initialsOf = (name?: string): string =>
+    (name || '').split(/[\s.@_-]+/).filter(Boolean).slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+
+  /** A table row that opens a page, by click or Enter / Space. */
+  const rowLink = (target: string): React.HTMLAttributes<HTMLTableRowElement> => onNavigate ? {
+    className: styles.clickableRow,
+    onClick: () => navigateTo(target),
+    onKeyDown: (e: React.KeyboardEvent<HTMLTableRowElement>) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigateTo(target); }
+    },
+    tabIndex: 0,
+    role: 'link'
+  } : {};
+
+  const viewAll = (target: string, count: number): JSX.Element | null => onNavigate && count > 0 ? (
+    <button type="button" className={styles.headerAction} onClick={() => navigateTo(target)}>
+      {formatString(d.ViewAll, count)} <Icon iconName="ChevronRight" style={{ fontSize: 10 }} />
+    </button>
+  ) : null;
+
   return (
-    <div className={styles.dashboard}>
-      {/* ===== DASHBOARD HEADER ===== */}
+    <div className={`${styles.dashboard} ${isAdmin ? styles.roleAdmin : isManagerView ? styles.roleManager : styles.roleEmployee}`}>
+      {/* ===== HEADER: title, role, date, one-line guidance, quick actions ===== */}
       <div className={styles.dashboardHeader}>
         <div className={styles.headerLeft}>
-          <h2 className={styles.headerTitle}>{dashboardTitle}</h2>
-          <p className={styles.headerSubtitle}>
-            <Icon iconName="ContactInfo" style={{ fontSize: 13, color: '#0078d4' }} />
-            {roleLabel} {strings.Dashboard.OverviewSuffix}
-            <span style={{ color: '#c8c6c4' }}>•</span>
-            {strings.Dashboard.RealTimeAnalytics}
-          </p>
-          <div className={styles.headerDate}>
-            <Icon iconName="Calendar" />
-            <span>{getCurrentDate()}</span>
+          <div className={styles.headerEyebrow}>
+            <span className={styles.roleChip}><Icon iconName="ContactInfo" />{roleLabel}</span>
+            <span className={styles.headerDate}><Icon iconName="Calendar" />{getCurrentDate()}</span>
           </div>
+          <h2 className={styles.headerTitle}>{dashboardTitle}</h2>
+          <p className={styles.headerSubtitle}>{bannerText}</p>
         </div>
       </div>
 
-      {/* ===== QUICK ACTION BUTTONS ===== */}
-      {onNavigate && (
-        <div className={styles.quickActions}>
-          {isAdmin && (
-            <>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('Inventory')}
-                aria-label={strings.Dashboard.ActionViewInventory}
-              >
-                <Icon iconName="List" />
-                <span>{strings.Dashboard.ActionViewInventory}</span>
-              </button>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('AssetAssignmentQueue')}
-                aria-label={strings.Dashboard.ActionAssignmentQueue}
-              >
-                <Icon iconName="Send" />
-                <span>{strings.Dashboard.ActionAssignmentQueue}</span>
-              </button>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('Reports')}
-                aria-label={strings.Dashboard.ActionReports}
-              >
-                <Icon iconName="ReportDocument" />
-                <span>{strings.Dashboard.ActionReports}</span>
-              </button>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('EventStream')}
-                aria-label={strings.Dashboard.ActionEventStream}
-              >
-                <Icon iconName="ActivityFeed" />
-                <span>{strings.Dashboard.ActionEventStream}</span>
-              </button>
-            </>
-          )}
-          {isManagerView && (
-            <>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('Approvals')}
-                aria-label={strings.Dashboard.ActionReviewApprovals}
-              >
-                <Icon iconName="DoubleChevronRight12" />
-                <span>{strings.Dashboard.ActionReviewApprovals}</span>
-              </button>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('AssetReturns')}
-                aria-label={strings.Dashboard.ActionAssetReturns}
-              >
-                <Icon iconName="ReturnToSession" />
-                <span>{strings.Dashboard.ActionAssetReturns}</span>
-              </button>
-            </>
-          )}
-          {!isAdmin && !isManagerView && (
-            <>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('MyWorkspace')}
-                aria-label={strings.Dashboard.ActionMyWorkspace}
-              >
-                <Icon iconName="Briefcase" />
-                <span>{strings.Dashboard.ActionMyWorkspace}</span>
-              </button>
-              <button
-                className={styles.quickActionBtn}
-                onClick={() => navigateTo('Notifications')}
-                aria-label={strings.Dashboard.ActionNotifications}
-              >
-                <Icon iconName="Ringer" />
-                <span>{strings.Dashboard.ActionNotifications}</span>
-              </button>
-            </>
-          )}
-        </div>
-      )}
-
-      {/* ===== STATUS BANNERS ===== */}
-      {isManagerView && (
-        <div className={styles.dashboardIntro}>
-          <MessageBar messageBarType={MessageBarType.info}>
-            <strong>{strings.Dashboard.ManagerBannerTitle}</strong> {strings.Dashboard.ManagerBannerTextBefore}<strong>{strings.Nav.Approvals}</strong>{strings.Dashboard.ManagerBannerTextAfter}
-          </MessageBar>
-        </div>
-      )}
-      {isAdmin && (
-        <div className={styles.dashboardIntro}>
-          <MessageBar messageBarType={MessageBarType.success}>
-            <strong>{strings.Dashboard.AdminBannerTitle}</strong> {strings.Dashboard.AdminBannerText}
-          </MessageBar>
-        </div>
-      )}
-      {!isAdmin && !isInventoryManager && (
-        <div className={styles.dashboardIntro}>
-          <MessageBar messageBarType={MessageBarType.info}>
-            <strong>{strings.Dashboard.EmployeeBannerTitle}</strong> {strings.Dashboard.EmployeeBannerText}
-          </MessageBar>
-        </div>
-      )}
+      {/* ===== NEEDS ATTENTION ===== */}
+      <div className={styles.attentionBar} role="region" aria-label={d.AttentionTitle}>
+        <span className={styles.attentionTitle}>{d.AttentionTitle}</span>
+        {attention.length === 0 ? (
+          <span className={`${styles.attentionChip} ${styles.attentionGood}`}><Icon iconName="CompletedSolid" />{d.AttentionAllClear}</span>
+        ) : attention.map(a => (
+          <button
+            key={a.key}
+            type="button"
+            className={`${styles.attentionChip} ${a.tone === 'bad' ? styles.attentionBad : a.tone === 'warn' ? styles.attentionWarn : styles.attentionInfo}`}
+            onClick={() => navigateTo(a.target)}
+            disabled={!onNavigate}
+          >
+            <Icon iconName={a.icon} />{a.text}<Icon iconName="ChevronRight" className={styles.attentionArrow} />
+          </button>
+        ))}
+      </div>
 
       {/* ===== KPI SUMMARY CARDS ===== */}
-      <div className={styles.summaryGrid} role="region" aria-label={strings.Dashboard.KpiRegionAriaLabel}>
-        {/* Card 1: Total Assets / My Devices */}
-        <div
-          className={`${styles.summaryCard} ${styles.cardBlue}`}
-          role="status"
-          aria-label={`${isAdmin ? strings.Dashboard.TotalAssets : !isInventoryManager ? strings.Dashboard.MyDevices : strings.Dashboard.TotalAssets}: ${totalAssets}`}
-        >
-          <div className={styles.iconContainer}>
-            <Icon iconName="Package" />
-          </div>
-          <div className={styles.cardInfo}>
-            <span className={styles.summaryValue}>{totalAssets}</span>
-            <span className={styles.summaryLabel}>
-              {isAdmin ? strings.Dashboard.TotalAssets : !isInventoryManager ? strings.Dashboard.MyDevices : strings.Dashboard.TotalAssets}
-            </span>
-            <span className={styles.summarySubtitle}>
-              {isAdmin
-                ? formatString(strings.Dashboard.AllocationRateSubtitle, allocationRate)
-                : !isInventoryManager
-                  ? formatString(strings.Dashboard.AssignedHardwareSubtitle, totalAssets)
-                  : formatString(strings.Dashboard.ItemsInCatalogSubtitle, totalAssets)}
-            </span>
-          </div>
-        </div>
-
-        {/* Card 2: Available Assets (Admin / Manager only) */}
-        {(isAdmin || isInventoryManager) && (
-          <div
-            className={`${styles.summaryCard} ${styles.cardGreen}`}
-            role="status"
-            aria-label={`${strings.Dashboard.AvailableAssets}: ${availableAssets}`}
-          >
-            <div className={styles.iconContainer}>
-              <Icon iconName="Accept" />
-            </div>
-            <div className={styles.cardInfo}>
-              <span className={styles.summaryValue}>{availableAssets}</span>
-              <span className={styles.summaryLabel}>{strings.Dashboard.AvailableAssets}</span>
-              <span className={styles.summarySubtitle}>
-                {formatString(strings.Dashboard.InStockSubtitle, availableAssets, stockPercentage)}
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* Card 3: Requests in queue / My Requests */}
-        <div
-          className={`${styles.summaryCard} ${styles.cardPurple}`}
-          role="status"
-          aria-label={`${isManagerView ? strings.Dashboard.RequestsInQueue : strings.Dashboard.TotalRequests}: ${totalRequests}`}
-        >
-          <div className={styles.iconContainer}>
-            <Icon iconName="Send" />
-          </div>
-          <div className={styles.cardInfo}>
-            <span className={styles.summaryValue}>{totalRequests}</span>
-            <span className={styles.summaryLabel}>
-              {isManagerView ? strings.Dashboard.RequestsInQueue : !isAdmin ? strings.Dashboard.MyRequests : strings.Dashboard.TotalRequests}
-            </span>
-            <span className={styles.summarySubtitle}>
-              {isAdmin
-                ? formatString(strings.Dashboard.QueueRequestsSubtitle, totalRequests)
-                : formatString(strings.Dashboard.ApprovalSuccessSubtitle, approvalSuccessRate)}
-            </span>
-          </div>
-        </div>
-
-        {/* Card 4: Awaiting Approval / Pending Requests (Admin / Manager only) */}
-        {(isAdmin || isInventoryManager) && (
-          <div
-            className={`${styles.summaryCard} ${styles.cardGold}`}
-            role="status"
-            aria-label={`${isManagerView ? strings.Dashboard.AwaitingApproval : strings.Dashboard.PendingRequests}: ${isManagerView ? awaitingManagerDecision : pendingRequests}`}
-          >
-            <div className={styles.iconContainer}>
-              <Icon iconName="Clock" />
-            </div>
-            <div className={styles.cardInfo}>
-              <span className={styles.summaryValue}>
-                {isManagerView ? awaitingManagerDecision : pendingRequests}
-              </span>
-              <span className={styles.summaryLabel}>
-                {isManagerView ? strings.Dashboard.AwaitingApproval : strings.Dashboard.PendingRequests}
-              </span>
-              <span className={styles.summarySubtitle}>
-                {isManagerView
-                  ? formatString(strings.Dashboard.RequiresReviewSubtitle, awaitingManagerDecision)
-                  : formatString(strings.Dashboard.UnderReviewSubtitle, pendingRequests)}
-              </span>
-            </div>
-          </div>
-        )}
+      <div className={styles.summaryGrid} role="region" aria-label={d.KpiRegionAriaLabel}>
+        {kpis.map(k => {
+          const body = (
+            <>
+              <div className={styles.cardTop}>
+                <div className={styles.iconContainer}><Icon iconName={k.icon} /></div>
+                <span className={styles.summaryLabel}>{k.label}</span>
+                {k.target && onNavigate && <Icon iconName="ChevronRight" className={styles.cardArrow} />}
+              </div>
+              <div className={styles.cardInfo}>
+                <span className={styles.summaryValue}>{k.value}</span>
+                {k.percent !== undefined && (
+                  <span className={styles.meter} aria-hidden="true"><span className={styles.meterFill} style={{ width: `${Math.max(0, Math.min(100, k.percent))}%` }} /></span>
+                )}
+                <span className={styles.summarySubtitle}>{k.subtitle}</span>
+              </div>
+            </>
+          );
+          return k.target && onNavigate ? (
+            <button key={k.key} type="button" className={`${styles.summaryCard} ${k.tone}`} onClick={() => navigateTo(k.target!)} aria-label={`${k.label}: ${k.value}. ${k.subtitle}`}>
+              {body}
+            </button>
+          ) : (
+            <div key={k.key} className={`${styles.summaryCard} ${k.tone}`} role="status" aria-label={`${k.label}: ${k.value}`}>{body}</div>
+          );
+        })}
       </div>
 
       {/* ===== LOW-STOCK WARNING (Admin & Manager; hidden when stock is healthy) ===== */}
-      {(isAdmin || isInventoryManager) && (
+      {!isEmployeeView && (
         <LowStockPanel
           items={items}
           onManageThresholds={isAdmin && onNavigate ? () => onNavigate('Config') : undefined}
@@ -639,14 +548,11 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
       )}
 
       {/* ===== CHART CARDS (Admin & Manager only) ===== */}
-      {(isAdmin || isInventoryManager) && (
+      {!isEmployeeView && (
         <div className={styles.chartsGrid}>
-          {/* Chart 1: Primary Status (Doughnut with total) */}
           <div className={styles.chartCard}>
             <div className={styles.chartHeader}>
-              <div className={styles.chartIcon}>
-                <Icon iconName="DonutChart" />
-              </div>
+              <div className={styles.chartIcon}><Icon iconName="DonutChart" /></div>
               <div className={styles.chartTitleBlock}>
                 <h3>{primaryPieTitle}</h3>
                 <span className={styles.chartSubtitle}>{primaryPieSubtitle}</span>
@@ -657,48 +563,36 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             </div>
           </div>
 
-          {/* Chart 2: Types (Bar) */}
           <div className={styles.chartCard}>
             <div className={styles.chartHeader}>
-              <div className={styles.chartIcon}>
-                <Icon iconName="BarChart4" />
-              </div>
+              <div className={styles.chartIcon}><Icon iconName="PieDouble" /></div>
               <div className={styles.chartTitleBlock}>
-                <h3>{strings.Dashboard.AssetsByTypeTitle}</h3>
-                <span className={styles.chartSubtitle}>{strings.Dashboard.AssetsByTypeSubtitle}</span>
-              </div>
-            </div>
-            <div className={styles.chartContainer}>
-              <Bar data={assetTypeData} options={assetTypeOptions as any} plugins={[barValueLabelsPlugin]} />
-            </div>
-          </div>
-
-          {/* Chart 3: Doughnut (Request Status) */}
-          <div className={styles.chartCard}>
-            <div className={styles.chartHeader}>
-              <div className={styles.chartIcon}>
-                <Icon iconName="PieDouble" />
-              </div>
-              <div className={styles.chartTitleBlock}>
-                <h3>
-                  {isManagerView ? strings.Dashboard.PostApprovalAssignmentTitle : strings.Dashboard.RequestFulfillmentTitle}
-                </h3>
-                <span className={styles.chartSubtitle}>
-                  {isManagerView
-                    ? strings.Dashboard.PostApprovalAssignmentSubtitle
-                    : strings.Dashboard.RequestFulfillmentSubtitle}
-                </span>
+                <h3>{isManagerView ? d.PostApprovalAssignmentTitle : d.RequestFulfillmentTitle}</h3>
+                <span className={styles.chartSubtitle}>{isManagerView ? d.PostApprovalAssignmentSubtitle : d.RequestFulfillmentSubtitle}</span>
               </div>
             </div>
             <div className={styles.chartContainer}>
               <Doughnut data={requestStatusData} options={doughnutOptions as any} plugins={[centerTotalPlugin]} />
             </div>
           </div>
+
+          <div className={`${styles.chartCard} ${styles.chartWide}`}>
+            <div className={styles.chartHeader}>
+              <div className={styles.chartIcon}><Icon iconName="BarChart4" /></div>
+              <div className={styles.chartTitleBlock}>
+                <h3>{d.AssetsByTypeTitle}</h3>
+                <span className={styles.chartSubtitle}>{d.AssetsByTypeSubtitle}</span>
+              </div>
+            </div>
+            <div className={styles.chartContainer}>
+              <Bar data={assetTypeData} options={assetTypeOptions as any} plugins={[barValueLabelsPlugin]} />
+            </div>
+          </div>
         </div>
       )}
 
       {/* ===== REQUEST SLA (Admin & Manager) ===== */}
-      {(isAdmin || isInventoryManager) && (
+      {!isEmployeeView && (
         <RequestSlaPanel
           requests={requests}
           queueKey={isAdmin ? 'AssetAssignmentQueue' : 'Approvals'}
@@ -711,39 +605,36 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         <div className={styles.actionCenter}>
           <div className={styles.sectionHeader}>
             <div>
-              <h3>
-                <Icon iconName="ReviewRequestMirrored" />
-                {strings.Dashboard.AdminActionCenterTitle}
-              </h3>
-              <span className={styles.sectionSubtitle}>
-                {strings.Dashboard.AdminActionCenterSubtitle}
-              </span>
+              <h3><Icon iconName="ReviewRequestMirrored" />{d.AdminActionCenterTitle}</h3>
+              <span className={styles.sectionSubtitle}>{d.AdminActionCenterSubtitle}</span>
             </div>
+            {viewAll('AssetAssignmentQueue', pendingAssignments.length)}
           </div>
           <div className={styles.tableWrapper}>
             {recentAssignments.length > 0 ? (
               <table className={styles.actionTable}>
                 <thead>
                   <tr>
-                    <th>{strings.Dashboard.ColRequester}</th>
-                    <th>{strings.Dashboard.ColAssetRequested}</th>
-                    <th>{strings.Dashboard.ColQty}</th>
-                    <th>{strings.Dashboard.ColDateApproved}</th>
-                    <th>{strings.Dashboard.ColStatusAction}</th>
+                    <th>{d.ColRequester}</th>
+                    <th>{d.ColAssetRequested}</th>
+                    <th>{d.ColQty}</th>
+                    <th>{d.ColDateApproved}</th>
+                    <th>{d.ColStatusAction}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {recentAssignments.map(req => (
-                    <tr key={req.id}>
-                      <td><strong>{req.requesterName}</strong></td>
-                      <td>{req.assetTitle}</td>
-                      <td>{req.quantity}</td>
-                      <td>{formatDate(req.requestDate)}</td>
+                    <tr key={req.id} {...rowLink('AssetAssignmentQueue')}>
                       <td>
-                        <span className={`${styles.statusBadge} ${styles.badgePending}`}>
-                          {strings.Dashboard.BadgeAwaitingHandoff}
+                        <span className={styles.person}>
+                          <span className={styles.personCoin} aria-hidden="true">{initialsOf(req.requesterName)}</span>
+                          <strong>{req.requesterName}</strong>
                         </span>
                       </td>
+                      <td>{req.assetTitle}</td>
+                      <td>{req.quantity}</td>
+                      <td>{formatDate(req.managerDecisionAt || req.requestDate)}</td>
+                      <td><span className={`${styles.statusBadge} ${styles.badgePending}`}>{d.BadgeAwaitingHandoff}</span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -751,8 +642,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             ) : (
               <div className={styles.noDataMessage}>
                 <Icon iconName="CompletedSolid" />
-                <span>{strings.Dashboard.AdminEmptyState}</span>
-                <span className={styles.emptyStateHint}>{strings.Dashboard.AdminEmptyStateHint}</span>
+                <span>{d.AdminEmptyState}</span>
+                <span className={styles.emptyStateHint}>{d.AdminEmptyStateHint}</span>
               </div>
             )}
           </div>
@@ -764,43 +655,38 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
         <div className={styles.actionCenter}>
           <div className={styles.sectionHeader}>
             <div>
-              <h3>
-                <Icon iconName="ReviewRequest" />
-                {strings.Dashboard.ManagerActionCenterTitle}
-              </h3>
-              <span className={styles.sectionSubtitle}>
-                {strings.Dashboard.ManagerActionCenterSubtitle}
-              </span>
+              <h3><Icon iconName="ReviewRequest" />{d.ManagerActionCenterTitle}</h3>
+              <span className={styles.sectionSubtitle}>{d.ManagerActionCenterSubtitle}</span>
             </div>
+            {viewAll('Approvals', pendingApprovals.length)}
           </div>
           <div className={styles.tableWrapper}>
             {recentApprovals.length > 0 ? (
               <table className={styles.actionTable}>
                 <thead>
                   <tr>
-                    <th>{strings.Dashboard.ColRequester}</th>
-                    <th>{strings.Dashboard.ColAssetRequested}</th>
-                    <th>{strings.Dashboard.ColQty}</th>
-                    <th>{strings.Dashboard.ColDateRequested}</th>
-                    <th>{strings.Dashboard.ColReason}</th>
-                    <th>{strings.Dashboard.ColActionState}</th>
+                    <th>{d.ColRequester}</th>
+                    <th>{d.ColAssetRequested}</th>
+                    <th>{d.ColQty}</th>
+                    <th>{d.ColDateRequested}</th>
+                    <th>{d.ColReason}</th>
+                    <th>{d.ColActionState}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {recentApprovals.map(req => (
-                    <tr key={req.id}>
-                      <td><strong>{req.requesterName}</strong></td>
+                    <tr key={req.id} {...rowLink('Approvals')}>
+                      <td>
+                        <span className={styles.person}>
+                          <span className={styles.personCoin} aria-hidden="true">{initialsOf(req.requesterName)}</span>
+                          <strong>{req.requesterName}</strong>
+                        </span>
+                      </td>
                       <td>{req.assetTitle}</td>
                       <td>{req.quantity}</td>
                       <td>{formatDate(req.requestDate)}</td>
-                      <td className={styles.tableCellJustification}>
-                        {req.reason || strings.Dashboard.NoJustificationSpecified}
-                      </td>
-                      <td>
-                        <span className={`${styles.statusBadge} ${styles.badgePending}`}>
-                          {strings.Dashboard.BadgeAwaitingApproval}
-                        </span>
-                      </td>
+                      <td className={styles.tableCellJustification}>{req.reason || d.NoJustificationSpecified}</td>
+                      <td><span className={`${styles.statusBadge} ${styles.badgePending}`}>{d.BadgeAwaitingApproval}</span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -808,8 +694,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
             ) : (
               <div className={styles.noDataMessage}>
                 <Icon iconName="CheckMark" />
-                <span>{strings.Dashboard.ManagerEmptyState}</span>
-                <span className={styles.emptyStateHint}>{strings.Dashboard.ManagerEmptyStateHint}</span>
+                <span>{d.ManagerEmptyState}</span>
+                <span className={styles.emptyStateHint}>{d.ManagerEmptyStateHint}</span>
               </div>
             )}
           </div>
@@ -817,32 +703,27 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
       )}
 
       {/* ===== ACTION CENTER — EMPLOYEE ===== */}
-      {!isAdmin && !isInventoryManager && (
+      {isEmployeeView && (
         <div className={styles.splitLayout}>
-          {/* Active Requests Tracker */}
           <div className={styles.actionCenter}>
             <div className={styles.sectionHeader}>
               <div>
-                <h3>
-                  <Icon iconName="Send" />
-                  {strings.Dashboard.EmployeeActionCenterTitle}
-                </h3>
-                <span className={styles.sectionSubtitle}>
-                  {strings.Dashboard.EmployeeActionCenterSubtitle}
-                </span>
+                <h3><Icon iconName="Send" />{d.EmployeeActionCenterTitle}</h3>
+                <span className={styles.sectionSubtitle}>{d.EmployeeActionCenterSubtitle}</span>
               </div>
+              {viewAll('MyWorkspace', requests.length)}
             </div>
             <div className={styles.tableWrapper}>
               {recentEmployeeRequests.length > 0 ? (
                 <table className={styles.actionTable}>
                   <thead>
                     <tr>
-                      <th>{strings.Dashboard.ColAsset}</th>
-                      <th>{strings.Dashboard.ColManagerName}</th>
-                      <th>{strings.Dashboard.ColQty}</th>
-                      <th>{strings.Dashboard.ColDateRequested}</th>
-                      <th>{strings.Dashboard.ColManagerComment}</th>
-                      <th>{strings.Dashboard.ColFulfillmentState}</th>
+                      <th>{d.ColAsset}</th>
+                      <th>{d.ColManagerName}</th>
+                      <th>{d.ColQty}</th>
+                      <th>{d.ColDateRequested}</th>
+                      <th>{d.ColManagerComment}</th>
+                      <th>{d.ColFulfillmentState}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -852,35 +733,23 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
                       const isAssetAssigned = (req.assetStatus || '').toLowerCase() === 'approved';
 
                       let badgeClass = styles.badgePending;
-                      let badgeText = strings.Dashboard.BadgeAwaitingReview;
-
+                      let badgeText = d.BadgeAwaitingReview;
                       if (isApproved) {
-                        if (isAssetAssigned) {
-                          badgeClass = styles.badgeApproved;
-                          badgeText = strings.Dashboard.BadgeCompletedAssigned;
-                        } else {
-                          badgeClass = styles.badgePending;
-                          badgeText = strings.Dashboard.BadgeApprovedAwaitingHandoff;
-                        }
+                        badgeClass = isAssetAssigned ? styles.badgeApproved : styles.badgePending;
+                        badgeText = isAssetAssigned ? d.BadgeCompletedAssigned : d.BadgeApprovedAwaitingHandoff;
                       } else if (isDeclined) {
                         badgeClass = styles.badgeDeclined;
-                        badgeText = strings.Dashboard.BadgeDeclined;
+                        badgeText = d.BadgeDeclined;
                       }
 
                       return (
-                        <tr key={req.id}>
+                        <tr key={req.id} {...rowLink('MyWorkspace')}>
                           <td><strong>{req.assetTitle}</strong></td>
-                          <td>{req.managerName || '-'}</td>
+                          <td>{req.managerName || '—'}</td>
                           <td>{req.quantity}</td>
                           <td>{formatDate(req.requestDate)}</td>
-                          <td style={{ color: isDeclined ? '#991b1b' : 'inherit' }}>
-                            {req.managerResponse || '-'}
-                          </td>
-                          <td>
-                            <span className={`${styles.statusBadge} ${badgeClass}`}>
-                              {badgeText}
-                            </span>
-                          </td>
+                          <td className={styles.tableCellJustification} style={{ color: isDeclined ? '#a4262c' : undefined }}>{req.managerResponse || '—'}</td>
+                          <td><span className={`${styles.statusBadge} ${badgeClass}`}>{badgeText}</span></td>
                         </tr>
                       );
                     })}
@@ -889,41 +758,36 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               ) : (
                 <div className={styles.noDataMessage}>
                   <Icon iconName="Info" />
-                  <span>{strings.Dashboard.EmployeeEmptyState}</span>
-                  <span className={styles.emptyStateHint}>{strings.Dashboard.EmployeeEmptyStateHint}</span>
+                  <span>{d.EmployeeEmptyState}</span>
+                  <span className={styles.emptyStateHint}>{d.EmployeeEmptyStateHint}</span>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Assigned Devices */}
           <div className={styles.actionCenter}>
             <div className={styles.sectionHeader}>
               <div>
-                <h3>
-                  <Icon iconName="Devices3" />
-                  {strings.Dashboard.MyEquipmentTitle}
-                </h3>
-                <span className={styles.sectionSubtitle}>
-                  {strings.Dashboard.MyEquipmentSubtitle}
-                </span>
+                <h3><Icon iconName="Devices3" />{d.MyEquipmentTitle}</h3>
+                <span className={styles.sectionSubtitle}>{d.MyEquipmentSubtitle}</span>
               </div>
+              {viewAll('MyWorkspace', items.length)}
             </div>
             <div className={styles.tableWrapper}>
               {sortedEmployeeItems.length > 0 ? (
                 <table className={styles.actionTable}>
                   <thead>
                     <tr>
-                      <th>{strings.Dashboard.ColDeviceName}</th>
-                      <th>{strings.Dashboard.ColCategory}</th>
-                      <th>{strings.Dashboard.ColSerialNumber}</th>
-                      <th>{strings.Dashboard.ColAssignedDate}</th>
+                      <th>{d.ColDeviceName}</th>
+                      <th>{d.ColCategory}</th>
+                      <th>{d.ColSerialNumber}</th>
+                      <th>{d.ColAssignedDate}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {sortedEmployeeItems.map(item => (
-                      <tr key={item.id}>
-                        <td><strong>{item.title}</strong></td>
+                      <tr key={item.id} {...rowLink('MyWorkspace')}>
+                        <td><strong>{item.assetName || item.title}</strong></td>
                         <td>{item.assetType}</td>
                         <td><code>{item.serialNumber || strings.Common.NotAvailable}</code></td>
                         <td>{formatDate(item.assignedDate || '')}</td>
@@ -934,8 +798,8 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
               ) : (
                 <div className={styles.noDataMessage}>
                   <Icon iconName="Devices3" />
-                  <span>{strings.Dashboard.MyEquipmentEmptyState}</span>
-                  <span className={styles.emptyStateHint}>{strings.Dashboard.MyEquipmentEmptyStateHint}</span>
+                  <span>{d.MyEquipmentEmptyState}</span>
+                  <span className={styles.emptyStateHint}>{d.MyEquipmentEmptyStateHint}</span>
                 </div>
               )}
             </div>

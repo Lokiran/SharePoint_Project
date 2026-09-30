@@ -67,36 +67,42 @@ export interface IInventoryManagementState {
     reportsStatusFilter: string;
     configSelectedTab: string;
     workflowPopup: IWorkflowPopupConfig;
-    lastMockEmail?: {
-        to: string[];
-        subject: string;
-        body: string;
-    };
-    editMockEmailTo: string;
-    editMockEmailSubject: string;
-    isSendingMockEmail: boolean;
-    mockEmailSendError?: string;
-    mockEmailSendSuccess: boolean;
+    emailCenterOpen: boolean;
+    /** Email to show when the Email Center opens itself after a send. */
+    emailCenterEntryId?: string;
+    emailFailedCount: number;
 }
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
     private _getRoleDisplayLabel;
     private _isRequestOwnedByCurrentUser;
     private _isAssetAssignedToCurrentUser;
     private _getNotifications;
+    private _saveNotificationIds;
     private _markNotificationAsRead;
+    private _markNotificationAsUnread;
+    private _clearNotifications;
+    private _restoreNotifications;
+    private _openPage;
+    /**
+     * "Clear" on the All tab used to set a permanent flag that hid every notification,
+     * including ones that arrived later. Convert it once into dismissing the notifications
+     * that exist now, so new ones show up again.
+     */
+    private _migrateClearedAllFlag;
     private _markAllNotificationsAsRead;
     private _clearNotification;
     private _clearAllNotifications;
     private _handleNotificationAction;
     constructor(props: IInventoryManagementProps);
     private _unsubscribeLanguageChange?;
+    private _unsubscribeEmailOutbox?;
     private _onLanguageChanged;
     componentDidMount(): Promise<void>;
     componentWillUnmount(): void;
     private _onLanguageSelect;
     private _handleMockEmailSent;
+    private _openEmailCenter;
     private _handleEmailSendFailed;
-    private _onSendMockEmail;
     private _resolveUserRole;
     private _loadInventory;
     private _loadRequests;

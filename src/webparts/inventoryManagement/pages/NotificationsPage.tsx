@@ -14,6 +14,11 @@ export const NotificationsPage: React.FC<INotificationsPageProps> = (props) => {
       onClearAllNotifications={actions.onClearAllNotifications}
       onNotificationAction={actions.onNotificationAction}
       isAllCleared={state.isAllNotificationsCleared}
+      availablePages={state.availablePages}
+      onMarkAsUnread={actions.onMarkAsUnread}
+      onClearNotifications={actions.onClearNotifications}
+      onRestoreNotifications={actions.onRestoreNotifications}
+      onOpenPage={actions.onOpenPage}
     />
   );
 };

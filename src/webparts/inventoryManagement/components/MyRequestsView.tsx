@@ -19,6 +19,9 @@ import { ASSET_REQUEST_STATUS_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS, RETURN_RE
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
 import { getAssetRequestStatusDisplayText, getReturnRequestStatusDisplayText } from '../utils/RequestStatusUtils';
+import { RejectionReasonCard } from './RejectionReasonCard';
+
+const isDeclinedStatus = (status?: string): boolean => status === 'Declined' || status === 'Rejected';
 
 export interface IMyRequestsViewProps {
   requests: IRequest[];
@@ -364,7 +367,10 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                             {formatString(strings.MyRequests.ReasonPrefix, item.reason)}
                           </p>
                         )}
-                        {item.managerResponse && (
+                        {item.managerResponse && isDeclinedStatus(status) && (
+                          <RejectionReasonCard reason={item.managerResponse} compact />
+                        )}
+                        {item.managerResponse && !isDeclinedStatus(status) && (
                           <div style={{
                             backgroundColor: status === 'Declined' ? '#fef2f2' : '#f8fafc',
                             borderRadius: '4px',
@@ -645,12 +651,21 @@ export const MyRequestsView: React.FC<IMyRequestsViewProps> = (props) => {
                 }}>
                   {getAssetRequestStatusDisplayText(selectedRequest.status)}
                 </span>
-                {selectedRequest.managerResponse && (
+                {selectedRequest.managerResponse && !isDeclinedStatus(selectedRequest.status) && (
                   <span style={{ fontSize: '0.85rem', color: '#475569' }}>
                     - &ldquo;{selectedRequest.managerResponse}&rdquo;
                   </span>
                 )}
               </div>
+              {isDeclinedStatus(selectedRequest.status) && selectedRequest.managerResponse && (
+                <div style={{ marginTop: 12 }}>
+                  <RejectionReasonCard
+                    reason={selectedRequest.managerResponse}
+                    managerName={selectedRequest.managerName}
+                    decidedAt={selectedRequest.managerDecisionAt}
+                  />
+                </div>
+              )}
             </div>
 
             <div style={{ backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>

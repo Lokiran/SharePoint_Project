@@ -3,163 +3,191 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WorkflowPopup = void 0;
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
-const Dialog_1 = require("@fluentui/react/lib/Dialog");
+const Modal_1 = require("@fluentui/react/lib/Modal");
 const Button_1 = require("@fluentui/react/lib/Button");
 const Icon_1 = require("@fluentui/react/lib/Icon");
+const Styling_1 = require("@fluentui/react/lib/Styling");
+const Utilities_1 = require("@fluentui/react/lib/Utilities");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
+const TONES = {
+    success: { icon: 'CheckMark', accent: '#107c10', soft: '#dff6dd', text: '#0e5c0e' },
+    error: { icon: 'ErrorBadge', accent: '#c50f1f', soft: '#fde7e9', text: '#a4262c' },
+    warning: { icon: 'Clock', accent: '#bc4b09', soft: '#fff4ce', text: '#8a3707' },
+    info: { icon: 'Info', accent: '#0f6cbd', soft: '#ebf3fc', text: '#0c3b5e' }
+};
+// Same precedence as before: a rejected/declined or pending status overrides the popup type.
+const getTone = (type, status) => {
+    const s = (status || '').toLowerCase();
+    if (type === 'error' || s.includes('reject') || s.includes('declin'))
+        return TONES.error;
+    if (type === 'warning' || s.includes('pending'))
+        return TONES.warning;
+    if (type === 'info')
+        return TONES.info;
+    return TONES.success;
+};
+// "2026-09-28" or an ISO timestamp -> "28 Sept 2026". Anything else is shown as given.
+const formatDate = (value) => {
+    const match = /^(\d{4})-(\d{2})-(\d{2})(T.*)?$/.exec(value.trim());
+    if (!match)
+        return value;
+    const date = match[4] ? new Date(value) : new Date(Date.UTC(+match[1], +match[2] - 1, +match[3]));
+    if (isNaN(date.getTime()))
+        return value;
+    return date.toLocaleDateString(undefined, {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        timeZone: match[4] ? undefined : 'UTC'
+    });
+};
+const classes = (0, Styling_1.mergeStyleSets)({
+    main: {
+        width: 'min(480px, calc(100vw - 32px))',
+        maxWidth: 'none',
+        minHeight: 0,
+        borderRadius: 12,
+        overflow: 'hidden',
+        boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.04)',
+        fontFamily: '"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, sans-serif'
+    },
+    scrollable: { overflowY: 'auto', maxHeight: 'calc(100vh - 48px)' },
+    accent: { height: 4 },
+    header: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: 16,
+        padding: '20px 16px 0 24px'
+    },
+    iconWrap: {
+        width: 44,
+        height: 44,
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0
+    },
+    icon: { fontSize: 20, fontWeight: 600 },
+    heading: { flex: 1, minWidth: 0, paddingTop: 2 },
+    stage: {
+        display: 'block',
+        fontSize: 11,
+        fontWeight: 600,
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        marginBottom: 4
+    },
+    title: {
+        margin: 0,
+        fontSize: 20,
+        fontWeight: 600,
+        lineHeight: '28px',
+        color: '#242424',
+        wordBreak: 'break-word'
+    },
+    close: { marginTop: -4, color: '#616161' },
+    body: { padding: '12px 24px 0' },
+    message: { margin: 0, fontSize: 14, lineHeight: '22px', color: '#424242' },
+    details: {
+        margin: '20px 0 0',
+        padding: '4px 16px',
+        borderRadius: 8,
+        border: '1px solid #e0e0e0',
+        backgroundColor: '#fafafa'
+    },
+    row: {
+        display: 'grid',
+        gridTemplateColumns: 'minmax(96px, 38%) 1fr',
+        alignItems: 'center',
+        gap: 16,
+        padding: '10px 0',
+        fontSize: 14,
+        selectors: { ':not(:last-child)': { borderBottom: '1px solid #ebebeb' } }
+    },
+    label: { margin: 0, color: '#616161' },
+    value: { margin: 0, color: '#242424', fontWeight: 600, textAlign: 'right', wordBreak: 'break-word' },
+    pill: {
+        display: 'inline-block',
+        padding: '2px 10px',
+        borderRadius: 999,
+        fontSize: 12,
+        fontWeight: 600,
+        lineHeight: '20px'
+    },
+    comment: { marginTop: 16 },
+    commentLabel: { display: 'block', fontSize: 12, fontWeight: 600, color: '#616161', marginBottom: 6 },
+    commentText: {
+        margin: 0,
+        padding: '10px 14px',
+        borderLeft: '3px solid',
+        borderRadius: 4,
+        backgroundColor: '#f5f5f5',
+        color: '#424242',
+        fontSize: 14,
+        lineHeight: '20px',
+        whiteSpace: 'pre-wrap',
+        wordBreak: 'break-word'
+    },
+    footer: { display: 'flex', justifyContent: 'flex-end', padding: '24px' }
+});
 const WorkflowPopup = (props) => {
     const { isOpen, title, stage, type, message, details, onDismiss } = props;
+    const [titleId] = React.useState(() => (0, Utilities_1.getId)('workflowPopupTitle'));
+    const [messageId] = React.useState(() => (0, Utilities_1.getId)('workflowPopupMessage'));
     if (!isOpen)
         return null;
-    let iconName = 'CheckMark';
-    let iconColor = '#15803d';
-    let badgeBg = '#dcfce7';
-    let badgeTextColor = '#166534';
-    let borderColor = '#22c55e';
-    let iconBg = '#f0fdf4';
-    if (type === 'error' || (details?.status || '').toLowerCase().includes('reject') || (details?.status || '').toLowerCase().includes('declin')) {
-        iconName = 'ErrorBadge';
-        iconColor = '#b91c1c';
-        badgeBg = '#fee2e2';
-        badgeTextColor = '#991b1b';
-        borderColor = '#ef4444';
-        iconBg = '#fef2f2';
+    const tone = getTone(type, details?.status);
+    const rows = [];
+    if (details) {
+        if (details.requestId)
+            rows.push({ label: strings.WorkflowPopup.LabelRequestId, value: details.requestId });
+        if (details.incidentId) {
+            rows.push({
+                label: details.incidentId.startsWith('REP-') ? strings.WorkflowPopup.LabelReplacementId : strings.WorkflowPopup.LabelIncidentId,
+                value: details.incidentId
+            });
+        }
+        if (details.assetTitle) {
+            rows.push({
+                label: strings.WorkflowPopup.LabelAsset,
+                value: details.quantity ? `${details.assetTitle} (Qty: ${details.quantity})` : details.assetTitle
+            });
+        }
+        if (details.requesterName)
+            rows.push({ label: strings.WorkflowPopup.LabelRequester, value: details.requesterName });
+        if (details.managerName)
+            rows.push({ label: strings.WorkflowPopup.LabelManagerName, value: details.managerName });
+        if (details.status) {
+            rows.push({
+                label: strings.WorkflowPopup.LabelWorkflowStatus,
+                value: React.createElement("span", { className: classes.pill, style: { backgroundColor: tone.soft, color: tone.text } }, details.status)
+            });
+        }
+        if (details.date)
+            rows.push({ label: strings.WorkflowPopup.LabelDate, value: formatDate(details.date) });
+        if (details.condition)
+            rows.push({ label: strings.WorkflowPopup.LabelCondition, value: details.condition });
     }
-    else if (type === 'warning' || (details?.status || '').toLowerCase().includes('pending')) {
-        iconName = 'Clock';
-        iconColor = '#b45309';
-        badgeBg = '#fef3c7';
-        badgeTextColor = '#92400e';
-        borderColor = '#f59e0b';
-        iconBg = '#fffbeb';
-    }
-    else if (type === 'info') {
-        iconName = 'Info';
-        iconColor = '#1d4ed8';
-        badgeBg = '#dbeafe';
-        badgeTextColor = '#1e40af';
-        borderColor = '#3b82f6';
-        iconBg = '#eff6ff';
-    }
-    return (React.createElement(Dialog_1.Dialog, { hidden: !isOpen, onDismiss: onDismiss, dialogContentProps: {
-            type: Dialog_1.DialogType.normal,
-            title: '',
-        }, modalProps: {
-            isBlocking: true,
-            styles: {
-                main: {
-                    maxWidth: '520px',
-                    minWidth: '340px',
-                    borderRadius: '16px',
-                    padding: '24px 28px',
-                    borderTop: `5px solid ${borderColor}`,
-                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
-                    backgroundColor: '#ffffff'
-                }
-            }
-        } },
-        React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '18px', fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif' } },
-            React.createElement("div", { style: { display: 'flex', alignItems: 'flex-start', gap: '14px' } },
-                React.createElement("div", { style: {
-                        width: '46px',
-                        height: '46px',
-                        borderRadius: '12px',
-                        backgroundColor: iconBg,
-                        border: `1px solid ${borderColor}33`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0,
-                        boxShadow: `0 4px 12px ${borderColor}22`
-                    } },
-                    React.createElement(Icon_1.Icon, { iconName: iconName, style: { fontSize: '22px', color: iconColor, fontWeight: 'bold' } })),
-                React.createElement("div", { style: { flex: 1 } },
-                    React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' } },
-                        React.createElement("span", { style: {
-                                display: 'inline-block',
-                                backgroundColor: badgeBg,
-                                color: badgeTextColor,
-                                padding: '3px 10px',
-                                borderRadius: '9999px',
-                                fontSize: '0.7rem',
-                                fontWeight: 700,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.06em'
-                            } }, stage)),
-                    React.createElement("h3", { style: { margin: 0, fontSize: '1.15rem', fontWeight: 600, color: '#0f172a', lineHeight: 1.3 } }, title))),
-            React.createElement("p", { style: { margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.55 } }, message),
-            details && (React.createElement("div", { style: {
-                    backgroundColor: '#f8fafc',
-                    borderRadius: '12px',
-                    padding: '16px',
-                    border: '1px solid #e2e8f0',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                    gap: '12px',
-                    fontSize: '0.82rem'
-                } },
-                details.requestId && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelRequestId),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requestId))),
-                details.incidentId && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, details.incidentId.startsWith('REP-') ? strings.WorkflowPopup.LabelReplacementId : strings.WorkflowPopup.LabelIncidentId),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.incidentId))),
-                details.assetTitle && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelAsset),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } },
-                        details.assetTitle,
-                        " ",
-                        details.quantity ? `(Qty: ${details.quantity})` : ''))),
-                details.requesterName && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelRequester),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.requesterName))),
-                details.managerName && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelManagerName),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.managerName))),
-                details.status && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelWorkflowStatus),
-                    React.createElement("span", { style: {
-                            backgroundColor: badgeBg,
-                            color: badgeTextColor,
-                            padding: '3px 9px',
-                            borderRadius: '6px',
-                            fontWeight: 600,
-                            fontSize: '0.75rem',
-                            display: 'inline-block'
-                        } }, details.status))),
-                details.date && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelDate),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.date))),
-                details.condition && (React.createElement("div", null,
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '2px' } }, strings.WorkflowPopup.LabelCondition),
-                    React.createElement("strong", { style: { color: '#0f172a', fontSize: '0.88rem' } }, details.condition))),
-                details.comment && (React.createElement("div", { style: { gridColumn: '1 / -1', marginTop: '4px' } },
-                    React.createElement("span", { style: { color: '#64748b', display: 'block', fontSize: '0.75rem', fontWeight: 500, marginBottom: '4px' } }, strings.WorkflowPopup.LabelManagerAdminNotes),
-                    React.createElement("div", { style: {
-                            backgroundColor: '#ffffff',
-                            padding: '10px 12px',
-                            borderRadius: '8px',
-                            border: '1px solid #cbd5e1',
-                            color: '#334155',
-                            fontStyle: 'italic',
-                            lineHeight: 1.4
-                        } },
-                        "\u201C",
-                        details.comment,
-                        "\u201D")))))),
-        React.createElement(Dialog_1.DialogFooter, { styles: { actionsRight: { marginTop: '20px' } } },
-            React.createElement(Button_1.PrimaryButton, { text: strings.WorkflowPopup.GotIt, onClick: onDismiss, iconProps: { iconName: 'Accept' }, styles: {
-                    root: {
-                        borderRadius: '8px',
-                        padding: '0 20px',
-                        height: '36px',
-                        backgroundColor: '#005a9e',
-                        border: 'none'
-                    },
-                    rootHovered: {
-                        backgroundColor: '#004578'
-                    }
-                } }))));
+    return (React.createElement(Modal_1.Modal, { isOpen: isOpen, onDismiss: onDismiss, isBlocking: true, titleAriaId: titleId, subtitleAriaId: messageId, containerClassName: classes.main, scrollableContentClassName: classes.scrollable },
+        React.createElement("div", { className: classes.accent, style: { backgroundColor: tone.accent } }),
+        React.createElement("div", { className: classes.header },
+            React.createElement("div", { className: classes.iconWrap, style: { backgroundColor: tone.soft } },
+                React.createElement(Icon_1.Icon, { iconName: tone.icon, className: classes.icon, style: { color: tone.accent } })),
+            React.createElement("div", { className: classes.heading },
+                stage && React.createElement("span", { className: classes.stage, style: { color: tone.accent } }, stage),
+                React.createElement("h2", { id: titleId, className: classes.title }, title)),
+            React.createElement(Button_1.IconButton, { className: classes.close, iconProps: { iconName: 'Cancel' }, ariaLabel: strings.Common.Close, onClick: onDismiss })),
+        React.createElement("div", { className: classes.body },
+            message && React.createElement("p", { id: messageId, className: classes.message }, message),
+            rows.length > 0 && (React.createElement("dl", { className: classes.details }, rows.map(row => (React.createElement("div", { key: row.label, className: classes.row },
+                React.createElement("dt", { className: classes.label }, row.label),
+                React.createElement("dd", { className: classes.value }, row.value)))))),
+            details?.comment && (React.createElement("div", { className: classes.comment },
+                React.createElement("span", { className: classes.commentLabel }, strings.WorkflowPopup.LabelManagerAdminNotes),
+                React.createElement("p", { className: classes.commentText, style: { borderLeftColor: tone.accent } }, details.comment)))),
+        React.createElement("div", { className: classes.footer },
+            React.createElement(Button_1.PrimaryButton, { text: strings.WorkflowPopup.GotIt, onClick: onDismiss, styles: { root: { borderRadius: 6, minWidth: 96, height: 36 } } }))));
 };
 exports.WorkflowPopup = WorkflowPopup;
 //# sourceMappingURL=WorkflowPopup.js.map

@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@fluentui/react");
-const jspdf_1 = require("jspdf");
+const NexerPdfReport_1 = require("../../utils/NexerPdfReport");
 const ReplacementHistory_module_scss_1 = tslib_1.__importDefault(require("./ReplacementHistory.module.scss"));
 const IncidentService_1 = require("../../services/IncidentService");
 const DropdownConstants_1 = require("../../constants/DropdownConstants");
@@ -146,108 +146,37 @@ const ReplacementHistory = (props) => {
     };
     const handleDownloadReport = (rep) => {
         try {
-            const doc = new jspdf_1.jsPDF();
-            // Top header banner
-            doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-            doc.rect(0, 0, 210, 25, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(16);
-            doc.text(strings.IncidentHistory.PdfCompanyHeader, 14, 16);
-            // Document Title
-            doc.setTextColor(51, 65, 85); // Slate 700
-            doc.setFontSize(14);
-            doc.text(strings.IncidentHistory.PdfReplacementReportTitle, 14, 38);
-            // Metadata
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9);
-            doc.text((0, LocalizationUtils_1.formatString)(strings.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
-            // Separator line
-            doc.setDrawColor(226, 232, 240); // Slate 200
-            doc.line(14, 48, 196, 48);
-            // Specifications Section Title
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.text(strings.IncidentHistory.PdfReplacementSpecs, 14, 58);
-            // Render Specifications Key-Value grid
-            let y = 68;
-            const printField = (label, value) => {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(9);
-                doc.setTextColor(100, 116, 139); // Slate 500
-                doc.text(label, 14, y);
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(15, 23, 42); // Slate 900
-                doc.text(value, 55, y);
-                y += 8;
-            };
-            printField(strings.IncidentHistory.PdfReplacementIdLabel, rep.incidentId);
-            printField(strings.IncidentHistory.PdfAssetNameLabel, rep.assetName);
-            printField(strings.IncidentHistory.PdfTypeLabel, strings.IncidentHistory.ReplacementRequestType);
-            printField(strings.IncidentHistory.PdfPriorityLabel, rep.priority || "Medium");
-            printField(strings.IncidentHistory.PdfCurrentStatusLabel, rep.status || "Open");
-            printField(strings.IncidentHistory.PdfReportedDateLabel, new Date(rep.reportedDate).toLocaleString());
-            if (rep.assignedTo) {
-                printField(strings.IncidentHistory.PdfAssignedToLabel, rep.assignedTo);
-            }
-            if (rep.resolvedDate) {
-                printField(strings.IncidentHistory.PdfResolvedDateLabel, new Date(rep.resolvedDate).toLocaleString());
-            }
-            // Reason Title
-            y += 4;
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(11);
-            doc.setTextColor(51, 65, 85);
-            doc.text(strings.IncidentHistory.PdfReplacementReasonTitle, 14, y);
-            y += 6;
-            // Reason Box
-            doc.setFont("helvetica", "normal");
-            doc.setFontSize(9.5);
-            doc.setTextColor(51, 65, 85);
-            const splitDesc = doc.splitTextToSize(rep.issueDescription || strings.IncidentHistory.PdfNoReason, 170);
-            const descHeight = splitDesc.length * 6 + 10;
-            // Draw background box
-            doc.setFillColor(248, 250, 252); // slate 50
-            doc.setDrawColor(226, 232, 240); // slate 200
-            doc.rect(14, y, 182, descHeight, 'FD');
-            // Draw left accent bar
-            doc.setFillColor(100, 116, 139); // slate 500
-            doc.rect(14, y, 3, descHeight, 'F');
-            // Draw text
-            let textY = y + 8;
-            splitDesc.forEach((line) => {
-                doc.text(line, 22, textY);
-                textY += 6;
+            const h = strings.IncidentHistory;
+            const fields = [
+                { label: h.PdfReplacementIdLabel, value: rep.incidentId },
+                { label: h.PdfCurrentStatusLabel, value: rep.status || 'Open' },
+                { label: h.PdfAssetNameLabel, value: (rep.assetName || '').trim() },
+                { label: h.PdfPriorityLabel, value: rep.priority || 'Medium' },
+                { label: h.PdfTypeLabel, value: h.ReplacementRequestType },
+                { label: h.PdfReportedDateLabel, value: (0, NexerPdfReport_1.formatReportDate)(rep.reportedDate) }
+            ];
+            if (rep.assignedTo)
+                fields.push({ label: h.PdfAssignedToLabel, value: rep.assignedTo });
+            if (rep.resolvedDate)
+                fields.push({ label: h.PdfResolvedDateLabel, value: (0, NexerPdfReport_1.formatReportDate)(rep.resolvedDate) });
+            const sections = [
+                { title: h.PdfReplacementReasonTitle, text: rep.issueDescription || h.PdfNoReason }
+            ];
+            if (rep.resolution)
+                sections.push({ title: h.PdfResolutionSummaryTitle, text: rep.resolution, tone: 'positive' });
+            (0, NexerPdfReport_1.saveNexerReport)({
+                documentType: h.PdfReplacementReportTitle,
+                reference: rep.incidentId || rep.id,
+                heading: (rep.assetName || '').trim() || rep.incidentId,
+                subheading: [h.ReplacementRequestType, (0, NexerPdfReport_1.formatReportDate)(rep.reportedDate, false)].filter(Boolean).join('  ·  '),
+                status: rep.status || 'Open',
+                fieldsTitle: h.PdfReplacementSpecs,
+                fields,
+                sections,
+                productName: strings.Hero.Title,
+                generatedText: (0, LocalizationUtils_1.formatString)(h.PdfGeneratedOn, (0, NexerPdfReport_1.formatReportDate)(new Date().toISOString()) || ''),
+                fileName: `replacement-${rep.incidentId || rep.id}.pdf`
             });
-            y += descHeight + 10;
-            // Resolution Details (if resolved/closed)
-            if (rep.resolution) {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(11);
-                doc.setTextColor(51, 65, 85);
-                doc.text(strings.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
-                y += 6;
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9.5);
-                doc.setTextColor(22, 101, 52); // green 800
-                const splitRes = doc.splitTextToSize(rep.resolution, 170);
-                const resHeight = splitRes.length * 6 + 10;
-                // Draw green background box
-                doc.setFillColor(240, 253, 244); // green 50
-                doc.setDrawColor(220, 252, 231); // green 200
-                doc.rect(14, y, 182, resHeight, 'FD');
-                // Draw green left accent bar
-                doc.setFillColor(22, 101, 52); // green 800
-                doc.rect(14, y, 3, resHeight, 'F');
-                // Draw resolution text
-                let resTextY = y + 8;
-                splitRes.forEach((line) => {
-                    doc.text(line, 22, resTextY);
-                    resTextY += 6;
-                });
-            }
-            doc.save(`replacement-${rep.incidentId}.pdf`);
         }
         catch (error) {
             console.error('Error generating PDF report:', error);

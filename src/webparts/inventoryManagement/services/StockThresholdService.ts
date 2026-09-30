@@ -5,6 +5,7 @@ import { IInventoryItem } from "../models/IInventoryItem";
 import { IStockThreshold, IStockLevel, evaluateStockLevels, planStockAlerts } from "../utils/StockUtils";
 import { ListProvisioningService, IProvisionedField } from "./base/ListProvisioningService";
 import { EmailService } from "./EmailService";
+import { EmailSettingsService } from "./EmailSettingsService";
 
 const THRESHOLD_FIELDS: IProvisionedField[] = [
   { name: "MinimumStock", type: "Number" },
@@ -15,6 +16,8 @@ export interface IStockAlertResult {
   levels: IStockLevel[];
   alerted: string[];
   reset: string[];
+  /** Types that are low but were not alerted because email is switched off in the Email Center. */
+  held?: string[];
 }
 
 const escapeHtml = (s: string): string =>
@@ -118,6 +121,12 @@ export class StockThresholdService {
     }
 
     if (toAlert.length === 0) return result;
+
+    // Email switched off: don't send and don't record the alert, so it goes out once email is back on.
+    if (!(await EmailSettingsService.get()).enabled) {
+      result.held = toAlert.map(level => level.assetType);
+      return result;
+    }
 
     const recipients = await StockThresholdService._getAdminEmails();
     if (recipients.length === 0) {

@@ -13,7 +13,7 @@ import { RequestForm } from './RequestForm';
 import { IReturnRequest } from '../models/IReturnRequest';
 import { ReturnAssetForm } from './ReturnAssetForm';
 import { getAvailableStock } from '../utils/StockUtils';
-import { PrimaryButton, DefaultButton, TextField, Dropdown, IDropdownOption, Panel, PanelType, MessageBar, MessageBarType, ProgressIndicator, Icon, Stack } from '@fluentui/react';
+import { DefaultButton, Dropdown, IDropdownOption, MessageBarType, Icon, IButtonStyles } from '@fluentui/react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -40,13 +40,15 @@ import "@pnp/sp/site-groups/web";
 import { EMPLOYEES } from '../data/mockData';
 import { IEmployee } from '../models/IEmployee';
 import { InventoryService } from '../services/InventoryService';
-import { EmailService } from '../services/EmailService';
 import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage, InventoryPage, ReplacementHistoryPage, NotificationsPage, NotificationDetailsPanel, AssetReturnsPage, EventStreamPage, AssetAssignmentQueuePage, MyWorkspacePage, AdminAssignmentPanel, ApprovalsPage, UsersPage, OnboardingPage } from '../pages';
 import { INotification } from '../models/INotification';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
 import { IncidentHistory } from './IncidentHistory/IncidentHistory';
 import { AssetLifecycleDiagram } from './AssetLifecycleDiagram';
 import { WorkflowPopup, IWorkflowPopupDetails } from './WorkflowPopup';
+import { EmailCenterPanel } from './EmailCenterPanel';
+import { EmailOutbox, EmailOutboxStatus } from '../services/EmailOutbox';
+import { EmailSettingsService } from '../services/EmailSettingsService';
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
 import { SUPPORTED_LANGUAGES, getCurrentLanguage, setLanguage, onLanguageChange, SupportedLanguage } from '../services/LanguageSwitcherService';
@@ -111,13 +113,30 @@ export interface IInventoryManagementState {
   reportsStatusFilter: string;
   configSelectedTab: string;
   workflowPopup: IWorkflowPopupConfig;
-  lastMockEmail?: { to: string[]; subject: string; body: string };
-  editMockEmailTo: string;
-  editMockEmailSubject: string;
-  isSendingMockEmail: boolean;
-  mockEmailSendError?: string;
-  mockEmailSendSuccess: boolean;
+  emailCenterOpen: boolean;
+  /** Email to show when the Email Center opens itself after a send. */
+  emailCenterEntryId?: string;
+  emailFailedCount: number;
 }
+
+// Translucent buttons in the blue header (Notifications, Email), matching the language picker.
+const HERO_BUTTON_STYLES: IButtonStyles = {
+  root: { minWidth: 0, height: 32, padding: '0 12px', backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
+  rootHovered: { backgroundColor: 'rgba(255,255,255,0.25)', color: '#ffffff' },
+  rootPressed: { backgroundColor: 'rgba(255,255,255,0.3)', color: '#ffffff' },
+  icon: { color: '#ffffff' },
+  iconHovered: { color: '#ffffff' },
+  iconPressed: { color: '#ffffff' },
+  label: { fontWeight: 600 }
+};
+
+const HERO_BADGE_STYLE: React.CSSProperties = {
+  marginLeft: 8, minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, color: '#ffffff',
+  fontSize: 11, fontWeight: 700, lineHeight: '18px', textAlign: 'center', boxSizing: 'border-box',
+  boxShadow: '0 0 0 1px rgba(255,255,255,0.6)'
+};
+
+const formatBadgeCount = (count: number): string => (count > 99 ? '99+' : String(count));
 
 export default class InventoryManagement extends React.Component<IInventoryManagementProps, IInventoryManagementState> {
   private _getRoleDisplayLabel = (role: 'Admin' | 'Inventory Manager' | 'Inventory Employee'): string => {
@@ -203,10 +222,58 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   };
 
 
+  private _saveNotificationIds = (key: string, ids: string[]): void => {
+    try {
+      localStorage.setItem(key, JSON.stringify(ids));
+    } catch {
+      // Storage unavailable (private window, blocked site data): the change lasts until reload.
+    }
+  };
+
   private _markNotificationAsRead = (id: string): void => {
+    if (this.state.readNotificationIds.indexOf(id) >= 0) return;
     const readNotificationIds = [...this.state.readNotificationIds, id];
     this.setState({ readNotificationIds });
-    localStorage.setItem('inventory_read_notifications', JSON.stringify(readNotificationIds));
+    this._saveNotificationIds('inventory_read_notifications', readNotificationIds);
+  };
+
+  private _markNotificationAsUnread = (id: string): void => {
+    const readNotificationIds = this.state.readNotificationIds.filter(x => x !== id);
+    this.setState({ readNotificationIds });
+    this._saveNotificationIds('inventory_read_notifications', readNotificationIds);
+  };
+
+  private _clearNotifications = (ids: string[]): void => {
+    const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...ids]));
+    this.setState({ clearedNotificationIds });
+    this._saveNotificationIds('inventory_cleared_notifications', clearedNotificationIds);
+  };
+
+  private _restoreNotifications = (ids: string[]): void => {
+    const restore = new Set(ids);
+    const clearedNotificationIds = this.state.clearedNotificationIds.filter(x => !restore.has(x));
+    this.setState({ clearedNotificationIds });
+    this._saveNotificationIds('inventory_cleared_notifications', clearedNotificationIds);
+  };
+
+  private _openPage = (pageKey: string): void => {
+    this.setState({ selectedTabKey: pageKey });
+  };
+
+  /**
+   * "Clear" on the All tab used to set a permanent flag that hid every notification,
+   * including ones that arrived later. Convert it once into dismissing the notifications
+   * that exist now, so new ones show up again.
+   */
+  private _migrateClearedAllFlag = (): void => {
+    if (!this.state.isAllNotificationsCleared) return;
+    this._clearNotifications(this._getNotifications().map(x => x.id));
+    this.setState({ isAllNotificationsCleared: false });
+    try {
+      localStorage.removeItem('inventory_cleared_all_tab');
+    } catch {
+      // ignore
+    }
   };
 
   private _markAllNotificationsAsRead = (): void => {
@@ -314,16 +381,14 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         type: 'info',
         message: ''
       },
-      lastMockEmail: undefined,
-      editMockEmailTo: '',
-      editMockEmailSubject: '',
-      isSendingMockEmail: false,
-      mockEmailSendError: undefined,
-      mockEmailSendSuccess: false
+      emailCenterOpen: false,
+      emailCenterEntryId: undefined,
+      emailFailedCount: EmailOutbox.getFailedCount()
     };
   }
 
   private _unsubscribeLanguageChange?: () => void;
+  private _unsubscribeEmailOutbox?: () => void;
 
   private _onLanguageChanged = (): void => {
     this.setState(prev => ({ languageVersion: prev.languageVersion + 1 }));
@@ -331,6 +396,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
 
   public async componentDidMount(): Promise<void> {
     this._unsubscribeLanguageChange = onLanguageChange(this._onLanguageChanged);
+    // Keeps the failed-email badge on the Email button current.
+    this._unsubscribeEmailOutbox = EmailOutbox.subscribe(() => {
+      const failed = EmailOutbox.getFailedCount();
+      if (failed !== this.state.emailFailedCount) this.setState({ emailFailedCount: failed });
+    });
     await this._resolveUserRole();
     await this._loadReturnRequests();
 
@@ -344,6 +414,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     await this._loadInventory();
     await this._loadRequests();
     await this._loadAuditLogs();
+    this._migrateClearedAllFlag();
 
     // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
     try {
@@ -367,21 +438,28 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     if (this._unsubscribeLanguageChange) {
       this._unsubscribeLanguageChange();
     }
+    if (this._unsubscribeEmailOutbox) {
+      this._unsubscribeEmailOutbox();
+    }
   }
 
   private _onLanguageSelect = (languageCode: SupportedLanguage): void => {
     setLanguage(languageCode);
   };
 
-  private _handleMockEmailSent = (ev: CustomEvent<{ to: string[]; subject: string; body: string }>): void => {
-    this.setState({
-      lastMockEmail: ev.detail,
-      editMockEmailTo: ev.detail.to.join(', '),
-      editMockEmailSubject: ev.detail.subject,
-      isSendingMockEmail: false,
-      mockEmailSendError: undefined,
-      mockEmailSendSuccess: false
-    });
+  // Every email attempt lands here. Whether the Email Center opens by itself is the
+  // viewer's choice (Email Center > Settings > On this browser).
+  private _handleMockEmailSent = (ev: CustomEvent<{ status?: EmailOutboxStatus; outboxId?: string }>): void => {
+    if (this.state.emailCenterOpen) return; // Already open: don't pull the user away from what they're viewing.
+    const mode = EmailSettingsService.getPreviewMode();
+    const status = ev.detail && ev.detail.status;
+    if (mode === 'always' || (mode === 'failure' && status === 'failed')) {
+      this.setState({ emailCenterOpen: true, emailCenterEntryId: ev.detail.outboxId });
+    }
+  };
+
+  private _openEmailCenter = (): void => {
+    this.setState({ emailCenterOpen: true, emailCenterEntryId: undefined });
   };
 
   private _handleEmailSendFailed = (ev: CustomEvent<{ to: string[]; subject: string; errorMessage: string }>): void => {
@@ -389,31 +467,6 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
       syncMessageType: MessageBarType.warning
     });
-  };
-
-  private _onSendMockEmail = async (): Promise<void> => {
-    const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
-    if (!lastMockEmail) return;
-
-    this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
-
-    try {
-      const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
-      await EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
-      this.setState({
-        isSendingMockEmail: false,
-        mockEmailSendSuccess: true
-      });
-      setTimeout(() => {
-        this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
-      }, 2000);
-    } catch (e: any) {
-      console.error("Failed to send email from panel:", e);
-      this.setState({
-        isSendingMockEmail: false,
-        mockEmailSendError: e.message || JSON.stringify(e)
-      });
-    }
   };
 
   private _resolveUserRole = async (): Promise<void> => {
@@ -679,9 +732,9 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           title: 'New Inventory Asset Created',
           stage: 'Catalog Management',
           type: 'success',
-          message: `Asset "${newAssetData.title || newAssetData.assetName}" was successfully added to stock inventory.`,
+          message: `Asset "${newAssetData.assetName || newAssetData.title}" was successfully added to stock inventory.`,
           details: {
-            assetTitle: newAssetData.title || newAssetData.assetName,
+            assetTitle: newAssetData.assetName || newAssetData.title,
             status: 'In Stock',
             date: newAssetData.purchaseDate || new Date().toISOString().split('T')[0]
           }
@@ -1173,6 +1226,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     const visibleAdminRequests = filterRequests(adminQueueRequests);
     const visibleManagerRequests = filterRequests(managerQueueRequests);
     const notifications = this._getNotifications();
+    const unreadNotificationCount = notifications.filter(n => !n.isRead).length;
 
     const navItems: Array<{ key: string; text: string; icon: string; badge?: number; badgeColor?: string; group?: string }> = [
       { key: 'Dashboard', text: strings.Nav.Dashboard, icon: 'BarChart4', group: strings.Nav.GroupMain },
@@ -1181,7 +1235,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         key: 'Notifications',
         text: strings.Nav.Notifications,
         icon: 'Ringer',
-        badge: notifications.filter(n => !n.isRead).length || undefined,
+        badge: unreadNotificationCount || undefined,
         badgeColor: '#0078d4'
       },
       { key: 'IncidentHistory', text: strings.Nav.IncidentHistory, icon: 'History' },
@@ -1225,6 +1279,49 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             <div className={styles.heroText}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' }}>
                 <h2 style={{ margin: 0 }}>{strings.Hero.Title}</h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <DefaultButton
+                  text={strings.Nav.Notifications}
+                  iconProps={{ iconName: 'Ringer' }}
+                  onClick={() => this.setState({ selectedTabKey: 'Notifications' })}
+                  ariaLabel={unreadNotificationCount > 0
+                    ? formatString(strings.Notifications.OpenButtonUnreadAria, unreadNotificationCount)
+                    : strings.Nav.Notifications}
+                  title={strings.Nav.Notifications}
+                  onRenderText={(p, defaultRender) => (
+                    <>
+                      {defaultRender ? defaultRender(p) : null}
+                      {unreadNotificationCount > 0 && (
+                        <span aria-hidden="true" style={{ ...HERO_BADGE_STYLE, backgroundColor: '#0f6cbd' }}>
+                          {formatBadgeCount(unreadNotificationCount)}
+                        </span>
+                      )}
+                    </>
+                  )}
+                  styles={HERO_BUTTON_STYLES}
+                />
+                {isAdmin && (
+                  <DefaultButton
+                    text={strings.EmailCenter.OpenButton}
+                    iconProps={{ iconName: 'Mail' }}
+                    onClick={this._openEmailCenter}
+                    ariaLabel={this.state.emailFailedCount > 0
+                      ? formatString(strings.EmailCenter.OpenButtonFailedAria, this.state.emailFailedCount)
+                      : strings.EmailCenter.OpenButtonAria}
+                    title={strings.EmailCenter.OpenButtonAria}
+                    onRenderText={(p, defaultRender) => (
+                      <>
+                        {defaultRender ? defaultRender(p) : null}
+                        {this.state.emailFailedCount > 0 && (
+                          <span aria-hidden="true" style={{ ...HERO_BADGE_STYLE, backgroundColor: '#c50f1f' }}>
+                            {formatBadgeCount(this.state.emailFailedCount)}
+                          </span>
+                        )}
+                      </>
+                    )}
+                    styles={HERO_BUTTON_STYLES}
+                  />
+                )}
                 <Dropdown
                   aria-label={strings.Common.LanguageLabel}
                   title={strings.Common.LanguageLabel}
@@ -1237,6 +1334,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                     caretDown: { color: '#ffffff' }
                   }}
                 />
+                </div>
               </div>
               <p>{formatString(strings.Hero.WelcomeBack, escape(activeUserDisplayName))}</p>
               <p className={styles.smallText}>
@@ -1322,7 +1420,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                           className={styles.navBadge}
                           style={{ backgroundColor: nav.badgeColor || '#e74c3c' }}
                         >
-                          {nav.badge}
+                          {formatBadgeCount(nav.badge)}
                         </span>
                       )}
                     </div>
@@ -1406,7 +1504,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   items,
                   loading,
                   isAdmin,
-                  isInventoryManager: isManager
+                  isInventoryManager: isManager,
+                  auditLogs,
+                  returnRequests: this.state.returnRequests,
+                  spContext: this.props.spContext
                 };
 
                 const inventoryActions = {
@@ -1444,14 +1545,19 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                       <NotificationsPage
                         state={{
                           notifications,
-                          isAllNotificationsCleared: this.state.isAllNotificationsCleared
+                          isAllNotificationsCleared: this.state.isAllNotificationsCleared,
+                          availablePages: navItems.map(nav => ({ key: nav.key, text: nav.text }))
                         }}
                         actions={{
                           onMarkAsRead: this._markNotificationAsRead,
                           onMarkAllAsRead: this._markAllNotificationsAsRead,
                           onClearNotification: this._clearNotification,
                           onClearAllNotifications: this._clearAllNotifications,
-                          onNotificationAction: this._handleNotificationAction
+                          onNotificationAction: this._handleNotificationAction,
+                          onMarkAsUnread: this._markNotificationAsUnread,
+                          onClearNotifications: this._clearNotifications,
+                          onRestoreNotifications: this._restoreNotifications,
+                          onOpenPage: this._openPage
                         }}
                       />
                     );
@@ -1507,6 +1613,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         state={{
                           requestSearchId,
                           visibleAdminRequests,
+                          allAdminRequests: adminQueueRequests,
                           items: this.state.items,
                           requestActionInProgressId
                         }}
@@ -1674,10 +1781,14 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             selectedNotification: this.state.selectedNotification,
             isNotificationDetailsOpen: this.state.isNotificationDetailsOpen,
             items: this.state.items,
-            requests: this.state.requests
+            requests: this.state.requests,
+            availablePages: navItems.map(nav => ({ key: nav.key, text: nav.text }))
           }}
           actions={{
-            onDismiss: () => this.setState({ isNotificationDetailsOpen: false })
+            onDismiss: () => this.setState({ isNotificationDetailsOpen: false }),
+            onOpenPage: this._openPage,
+            onMarkAsUnread: this._markNotificationAsUnread,
+            onDismissNotification: this._clearNotification
           }}
         />
         <AdminAssignmentPanel
@@ -1714,78 +1825,12 @@ export default class InventoryManagement extends React.Component<IInventoryManag
           onDismiss={() => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } })}
         />
 
-        <Panel
-          isOpen={this.state.lastMockEmail !== undefined}
-          onDismiss={() => this.setState({ lastMockEmail: undefined })}
-          type={PanelType.medium}
-          headerText={strings.MockEmailPanel.HeaderText}
-          closeButtonAriaLabel={strings.Common.Close}
-          onRenderFooterContent={() => (
-            <Stack horizontal tokens={{ childrenGap: 10 }} style={{ padding: '10px 0' }}>
-              <PrimaryButton
-                text={this.state.isSendingMockEmail ? strings.MockEmailPanel.ButtonSending : strings.MockEmailPanel.ButtonSendEmail}
-                onClick={this._onSendMockEmail}
-                disabled={this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo}
-                iconProps={{ iconName: 'Send' }}
-              />
-              <DefaultButton
-                text={strings.MockEmailPanel.ButtonClose}
-                onClick={() => this.setState({ lastMockEmail: undefined })}
-                disabled={this.state.isSendingMockEmail}
-              />
-            </Stack>
-          )}
-          isFooterAtBottom={true}
-        >
-          {this.state.lastMockEmail && (
-            <Stack tokens={{ childrenGap: 15 }} style={{ padding: '10px 0' }}>
-              <MessageBar messageBarType={MessageBarType.info}>
-                {strings.MockEmailPanel.InfoText}
-              </MessageBar>
-
-              <TextField
-                label={strings.MockEmailPanel.LabelRecipients}
-                value={this.state.editMockEmailTo}
-                onChange={(_, val) => this.setState({ editMockEmailTo: val || '' })}
-                required
-                disabled={this.state.isSendingMockEmail}
-                iconProps={{ iconName: 'Mail' }}
-              />
-
-              <TextField
-                label={strings.MockEmailPanel.LabelSubject}
-                value={this.state.editMockEmailSubject}
-                onChange={(_, val) => this.setState({ editMockEmailSubject: val || '' })}
-                required
-                disabled={this.state.isSendingMockEmail}
-              />
-
-              {this.state.mockEmailSendSuccess && (
-                <MessageBar messageBarType={MessageBarType.success}>
-                  {strings.MockEmailPanel.SuccessText}
-                </MessageBar>
-              )}
-
-              {this.state.mockEmailSendError && (
-                <MessageBar messageBarType={MessageBarType.error}>
-                  {strings.MockEmailPanel.ErrorPrefix} {this.state.mockEmailSendError}
-                </MessageBar>
-              )}
-
-              {this.state.isSendingMockEmail && (
-                <ProgressIndicator label={strings.MockEmailPanel.ProgressLabel} />
-              )}
-
-              <div style={{ marginTop: '10px' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' }}>{strings.MockEmailPanel.PreviewLabel}</span>
-                <div
-                  style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }}
-                  dangerouslySetInnerHTML={{ __html: this.state.lastMockEmail.body }}
-                />
-              </div>
-            </Stack>
-          )}
-        </Panel>
+        <EmailCenterPanel
+          isOpen={this.state.emailCenterOpen}
+          isAdmin={isAdmin}
+          entryId={this.state.emailCenterEntryId}
+          onDismiss={() => this.setState({ emailCenterOpen: false, emailCenterEntryId: undefined })}
+        />
       </section>
     );
   }

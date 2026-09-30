@@ -5,6 +5,22 @@ export interface IExportStyles {
 
   'actionTable': string;
 
+  'attentionArrow': string;
+
+  'attentionBad': string;
+
+  'attentionBar': string;
+
+  'attentionChip': string;
+
+  'attentionGood': string;
+
+  'attentionInfo': string;
+
+  'attentionTitle': string;
+
+  'attentionWarn': string;
+
   'badgeApproved': string;
 
   'badgeAssigned': string;
@@ -17,6 +33,8 @@ export interface IExportStyles {
 
   'badgeReturned': string;
 
+  'cardArrow': string;
+
   'cardBlue': string;
 
   'cardGold': string;
@@ -26,6 +44,8 @@ export interface IExportStyles {
   'cardInfo': string;
 
   'cardPurple': string;
+
+  'cardTop': string;
 
   'chartCard': string;
 
@@ -39,17 +59,19 @@ export interface IExportStyles {
 
   'chartTitleBlock': string;
 
+  'chartWide': string;
+
   'chartsGrid': string;
+
+  'clickableRow': string;
+
+  'dashFadeIn': string;
 
   'dashboard': string;
 
   'dashboardHeader': string;
 
-  'dashboardIntro': string;
-
   'emptyStateHint': string;
-
-  'fadeInUp': string;
 
   'filterDropdown': string;
 
@@ -59,9 +81,9 @@ export interface IExportStyles {
 
   'headerDate': string;
 
-  'headerLeft': string;
+  'headerEyebrow': string;
 
-  'headerRight': string;
+  'headerLeft': string;
 
   'headerSubtitle': string;
 
@@ -82,6 +104,10 @@ export interface IExportStyles {
   'mb-4': string;
 
   'mb-5': string;
+
+  'meter': string;
+
+  'meterFill': string;
 
   'metricDivider': string;
 
@@ -113,11 +139,17 @@ export interface IExportStyles {
 
   'p-5': string;
 
-  'pulse': string;
+  'person': string;
 
-  'quickActionBtn': string;
+  'personCoin': string;
 
-  'quickActions': string;
+  'roleAdmin': string;
+
+  'roleChip': string;
+
+  'roleEmployee': string;
+
+  'roleManager': string;
 
   'searchField': string;
 
@@ -125,17 +157,7 @@ export interface IExportStyles {
 
   'sectionSubtitle': string;
 
-  'shimmer': string;
-
   'show-only-on-mobile': string;
-
-  'skeleton': string;
-
-  'skeletonCard': string;
-
-  'skeletonChart': string;
-
-  'skeletonLine': string;
 
   'slaStat': string;
 
@@ -166,10 +188,6 @@ export interface IExportStyles {
   'tableCellJustification': string;
 
   'tableWrapper': string;
-
-  'trendDown': string;
-
-  'trendUp': string;
 
 }
 

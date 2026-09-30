@@ -4,6 +4,8 @@ import { IInventoryItem } from '../models/IInventoryItem';
 export interface IAssetAssignmentQueueState {
   requestSearchId: string;
   visibleAdminRequests: IRequest[];
+  /** Every manager-approved request, unfiltered (the queue has its own search and filters). */
+  allAdminRequests?: IRequest[];
   items: IInventoryItem[];
   requestActionInProgressId?: string;
 }

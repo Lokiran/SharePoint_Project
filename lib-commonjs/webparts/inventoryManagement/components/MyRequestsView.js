@@ -10,6 +10,8 @@ const DropdownConstants_1 = require("../constants/DropdownConstants");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const RequestStatusUtils_1 = require("../utils/RequestStatusUtils");
+const RejectionReasonCard_1 = require("./RejectionReasonCard");
+const isDeclinedStatus = (status) => status === 'Declined' || status === 'Rejected';
 const MyRequestsView = (props) => {
     const { requests, returnRequests = [] } = props;
     // Search and Filter States (Asset Requests)
@@ -285,7 +287,8 @@ const MyRequestsView = (props) => {
                                     " ",
                                     React.createElement("strong", { style: { color: 'var(--text-main)' } }, item.managerName))),
                                 item.reason && (React.createElement("p", { style: { margin: '0 0 2px 0', fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', height: '32px' } }, (0, LocalizationUtils_1.formatString)(strings.MyRequests.ReasonPrefix, item.reason))),
-                                item.managerResponse && (React.createElement("div", { style: {
+                                item.managerResponse && isDeclinedStatus(status) && (React.createElement(RejectionReasonCard_1.RejectionReasonCard, { reason: item.managerResponse, compact: true })),
+                                item.managerResponse && !isDeclinedStatus(status) && (React.createElement("div", { style: {
                                         backgroundColor: status === 'Declined' ? '#fef2f2' : '#f8fafc',
                                         borderRadius: '4px',
                                         padding: '4px 8px',
@@ -455,10 +458,12 @@ const MyRequestsView = (props) => {
                                 color: selectedRequest.status === 'Approved' ? '#137333' : selectedRequest.status === 'Declined' ? '#c5221f' : '#b06000',
                                 padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600
                             } }, (0, RequestStatusUtils_1.getAssetRequestStatusDisplayText)(selectedRequest.status)),
-                        selectedRequest.managerResponse && (React.createElement("span", { style: { fontSize: '0.85rem', color: '#475569' } },
+                        selectedRequest.managerResponse && !isDeclinedStatus(selectedRequest.status) && (React.createElement("span", { style: { fontSize: '0.85rem', color: '#475569' } },
                             "- \u201C",
                             selectedRequest.managerResponse,
-                            "\u201D")))),
+                            "\u201D"))),
+                    isDeclinedStatus(selectedRequest.status) && selectedRequest.managerResponse && (React.createElement("div", { style: { marginTop: 12 } },
+                        React.createElement(RejectionReasonCard_1.RejectionReasonCard, { reason: selectedRequest.managerResponse, managerName: selectedRequest.managerName, decidedAt: selectedRequest.managerDecisionAt })))),
                 React.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '12px 15px', borderRadius: '8px', border: '1px solid #e2e8f0' } },
                     React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 } }, strings.MyRequests.AdminAllocationStatusTitle),
                     React.createElement("span", { style: { fontSize: '0.9rem', color: '#334155' } }, selectedRequest.status === 'Approved' ? ((selectedRequest.assetStatus || '').toLowerCase().includes('approv') ? (React.createElement("span", { style: { color: '#137333', fontWeight: 600 } }, strings.RequestList.AllocationAllocated)) : (React.createElement("span", { style: { color: '#b06000', fontWeight: 600 } }, strings.RequestList.AllocationPendingAdmin))) : selectedRequest.status === 'Declined' ? (React.createElement("span", { style: { color: '#c5221f' } }, strings.RequestList.AllocationNotApplicable)) : (React.createElement("span", { style: { color: '#64748b', fontStyle: 'italic' } }, strings.RequestList.AllocationPendingManager)))),

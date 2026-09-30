@@ -45,9 +45,6 @@ export interface IEmailSendResult {
  */
 export declare class EmailService {
     private context;
-    private static readonly USE_MOCK_TEST_EMAILS;
-    private static readonly MOCK_ADMIN_EMAILS;
-    private static readonly MOCK_MANAGER_EMAIL;
     constructor(context: WebPartContext);
     sendEmail(props: IEmailProps): Promise<IEmailSendResult>;
     /**
@@ -90,8 +87,13 @@ export declare class EmailService {
      */
     static resolveLiveManagerEmail(employeeName: string): Promise<string | undefined>;
     /**
-     * Internal sender method using SharePoint sp.utility.sendEmail or developer console fallback.
+     * Single sending funnel for every app email. Records each attempt in the Email Center
+     * outbox, honours the "Send email notifications" switch, and raises the window events
+     * the UI listens to ('spfx_email_send_failed', 'spfx_mock_email_sent').
+     * Throws when sending fails; resolves without sending when email is switched off.
      */
     static sendMail(to: string[], subject: string, htmlBody: string): Promise<void>;
+    /** Lets the UI decide whether to open the Email Center for this email. */
+    private static _dispatchOutboxEvent;
 }
 //# sourceMappingURL=EmailService.d.ts.map

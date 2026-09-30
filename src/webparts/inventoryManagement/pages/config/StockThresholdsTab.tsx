@@ -80,6 +80,8 @@ export const StockThresholdsTab: React.FC = () => {
     setBusy(false);
     if (!result) {
       setMessage({ type: MessageBarType.error, text: f.StockCheckFailed });
+    } else if (result.held && result.held.length > 0) {
+      setMessage({ type: MessageBarType.warning, text: formatString(strings.EmailCenter.StockAlertsHeld, result.held.join(', ')) });
     } else if (result.alerted.length > 0) {
       setMessage({ type: MessageBarType.warning, text: formatString(f.StockAlertSent, result.alerted.join(', ')) });
     } else {

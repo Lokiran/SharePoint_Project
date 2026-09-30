@@ -13,6 +13,8 @@ import styles from './InventoryManagement.module.scss';
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
 import { getAssetRequestStatusDisplayText } from '../utils/RequestStatusUtils';
+import { RejectRequestDialog } from './RejectRequestDialog';
+import { RejectionReasonCard } from './RejectionReasonCard';
 
 export interface IRequestListProps {
   items: IRequest[];
@@ -33,6 +35,20 @@ export interface IRequestListProps {
 export const RequestList: React.FC<IRequestListProps> = (props) => {
   const [selectedRequestForDetails, setSelectedRequestForDetails] = useState<IRequest | null>(null);
   const [isDetailsPanelOpen, setIsDetailsPanelOpen] = useState<boolean>(false);
+  const [rejectTarget, setRejectTarget] = useState<IRequest | undefined>(undefined);
+
+  const isDeclined = (r: IRequest): boolean => r.status === 'Declined' || r.status === 'Rejected';
+
+  // Saves the rejection, then closes the form and, if it was opened from there, the details panel.
+  const confirmReject = async (request: IRequest, reason: string): Promise<void> => {
+    if (!props.onRejectRequest) return;
+    await props.onRejectRequest(request, reason).catch(err => console.error(err));
+    setRejectTarget(undefined);
+    if (selectedRequestForDetails && selectedRequestForDetails.id === request.id) {
+      setIsDetailsPanelOpen(false);
+      setSelectedRequestForDetails(null);
+    }
+  };
 
   const sortedItems = React.useMemo(() => {
     return [...props.items].sort((a, b) => {
@@ -273,18 +289,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
             />
             <PrimaryButton
               text={strings.Common.Reject}
-              onClick={() => {
-                if (!props.onRejectRequest) {
-                  return;
-                }
-
-                const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
-                if (!rejectionReason || !rejectionReason.trim()) {
-                  return;
-                }
-
-                props.onRejectRequest(item, rejectionReason.trim()).catch(err => console.error(err));
-              }}
+              onClick={() => props.onRejectRequest && setRejectTarget(item)}
               disabled={isBusy}
               styles={{
                 root: { backgroundColor: '#991b1b', borderColor: '#991b1b' },
@@ -436,12 +441,21 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                 }}>
                   {getStatusDisplayText(selectedRequestForDetails.status)}
                 </span>
-                {selectedRequestForDetails.managerResponse && (
+                {selectedRequestForDetails.managerResponse && !isDeclined(selectedRequestForDetails) && (
                   <span style={{ fontSize: '0.85rem', color: 'var(--text-muted, #666666)' }}>
                     - &ldquo;{selectedRequestForDetails.managerResponse}&rdquo;
                   </span>
                 )}
               </div>
+              {isDeclined(selectedRequestForDetails) && selectedRequestForDetails.managerResponse && (
+                <div style={{ marginTop: 12 }}>
+                  <RejectionReasonCard
+                    reason={selectedRequestForDetails.managerResponse}
+                    managerName={selectedRequestForDetails.managerName}
+                    decidedAt={selectedRequestForDetails.managerDecisionAt}
+                  />
+                </div>
+              )}
             </div>
 
             {/* Admin Allocation Status Card */}
@@ -494,18 +508,7 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
                 />
                 <DefaultButton
                   text={strings.Common.Reject}
-                  onClick={() => {
-                    if (!props.onRejectRequest) return;
-                    const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
-                    if (!rejectionReason || !rejectionReason.trim()) return;
-                    
-                    props.onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
-                      .then(() => {
-                        setIsDetailsPanelOpen(false);
-                        setSelectedRequestForDetails(null);
-                      })
-                      .catch(err => console.error(err));
-                  }}
+                  onClick={() => props.onRejectRequest && setRejectTarget(selectedRequestForDetails)}
                   disabled={props.actionInProgressId === selectedRequestForDetails.id}
                   styles={{
                     root: { color: '#dc2626', borderColor: '#dc2626' },
@@ -551,6 +554,12 @@ export const RequestList: React.FC<IRequestListProps> = (props) => {
           </div>
         </Panel>
       )}
+
+      <RejectRequestDialog
+        request={rejectTarget}
+        onConfirm={confirmReject}
+        onDismiss={() => setRejectTarget(undefined)}
+      />
     </div>
   );
 };

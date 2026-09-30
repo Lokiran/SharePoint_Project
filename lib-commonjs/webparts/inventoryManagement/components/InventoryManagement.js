@@ -18,16 +18,34 @@ require("@pnp/sp/site-users/web");
 require("@pnp/sp/site-groups/web");
 const mockData_1 = require("../data/mockData");
 const InventoryService_1 = require("../services/InventoryService");
-const EmailService_1 = require("../services/EmailService");
 const pages_1 = require("../pages");
 const IncidentRequestModule_1 = require("./IncidentRequest/IncidentRequestModule");
 const AssetLifecycleDiagram_1 = require("./AssetLifecycleDiagram");
 const WorkflowPopup_1 = require("./WorkflowPopup");
+const EmailCenterPanel_1 = require("./EmailCenterPanel");
+const EmailOutbox_1 = require("../services/EmailOutbox");
+const EmailSettingsService_1 = require("../services/EmailSettingsService");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const LanguageSwitcherService_1 = require("../services/LanguageSwitcherService");
 const getNotifications_1 = require("../utils/getNotifications");
 const ReportExportUtils_1 = require("../utils/ReportExportUtils");
+// Translucent buttons in the blue header (Notifications, Email), matching the language picker.
+const HERO_BUTTON_STYLES = {
+    root: { minWidth: 0, height: 32, padding: '0 12px', backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
+    rootHovered: { backgroundColor: 'rgba(255,255,255,0.25)', color: '#ffffff' },
+    rootPressed: { backgroundColor: 'rgba(255,255,255,0.3)', color: '#ffffff' },
+    icon: { color: '#ffffff' },
+    iconHovered: { color: '#ffffff' },
+    iconPressed: { color: '#ffffff' },
+    label: { fontWeight: 600 }
+};
+const HERO_BADGE_STYLE = {
+    marginLeft: 8, minWidth: 18, height: 18, padding: '0 5px', borderRadius: 9, color: '#ffffff',
+    fontSize: 11, fontWeight: 700, lineHeight: '18px', textAlign: 'center', boxSizing: 'border-box',
+    boxShadow: '0 0 0 1px rgba(255,255,255,0.6)'
+};
+const formatBadgeCount = (count) => (count > 99 ? '99+' : String(count));
 class InventoryManagement extends React.Component {
     constructor(props) {
         super(props);
@@ -104,10 +122,56 @@ class InventoryManagement extends React.Component {
                 clearedNotificationIds: this.state.clearedNotificationIds
             });
         };
+        this._saveNotificationIds = (key, ids) => {
+            try {
+                localStorage.setItem(key, JSON.stringify(ids));
+            }
+            catch {
+                // Storage unavailable (private window, blocked site data): the change lasts until reload.
+            }
+        };
         this._markNotificationAsRead = (id) => {
+            if (this.state.readNotificationIds.indexOf(id) >= 0)
+                return;
             const readNotificationIds = [...this.state.readNotificationIds, id];
             this.setState({ readNotificationIds });
-            localStorage.setItem('inventory_read_notifications', JSON.stringify(readNotificationIds));
+            this._saveNotificationIds('inventory_read_notifications', readNotificationIds);
+        };
+        this._markNotificationAsUnread = (id) => {
+            const readNotificationIds = this.state.readNotificationIds.filter(x => x !== id);
+            this.setState({ readNotificationIds });
+            this._saveNotificationIds('inventory_read_notifications', readNotificationIds);
+        };
+        this._clearNotifications = (ids) => {
+            const clearedNotificationIds = Array.from(new Set([...this.state.clearedNotificationIds, ...ids]));
+            this.setState({ clearedNotificationIds });
+            this._saveNotificationIds('inventory_cleared_notifications', clearedNotificationIds);
+        };
+        this._restoreNotifications = (ids) => {
+            const restore = new Set(ids);
+            const clearedNotificationIds = this.state.clearedNotificationIds.filter(x => !restore.has(x));
+            this.setState({ clearedNotificationIds });
+            this._saveNotificationIds('inventory_cleared_notifications', clearedNotificationIds);
+        };
+        this._openPage = (pageKey) => {
+            this.setState({ selectedTabKey: pageKey });
+        };
+        /**
+         * "Clear" on the All tab used to set a permanent flag that hid every notification,
+         * including ones that arrived later. Convert it once into dismissing the notifications
+         * that exist now, so new ones show up again.
+         */
+        this._migrateClearedAllFlag = () => {
+            if (!this.state.isAllNotificationsCleared)
+                return;
+            this._clearNotifications(this._getNotifications().map(x => x.id));
+            this.setState({ isAllNotificationsCleared: false });
+            try {
+                localStorage.removeItem('inventory_cleared_all_tab');
+            }
+            catch {
+                // ignore
+            }
         };
         this._markAllNotificationsAsRead = () => {
             const notifications = this._getNotifications();
@@ -151,45 +215,25 @@ class InventoryManagement extends React.Component {
         this._onLanguageSelect = (languageCode) => {
             (0, LanguageSwitcherService_1.setLanguage)(languageCode);
         };
+        // Every email attempt lands here. Whether the Email Center opens by itself is the
+        // viewer's choice (Email Center > Settings > On this browser).
         this._handleMockEmailSent = (ev) => {
-            this.setState({
-                lastMockEmail: ev.detail,
-                editMockEmailTo: ev.detail.to.join(', '),
-                editMockEmailSubject: ev.detail.subject,
-                isSendingMockEmail: false,
-                mockEmailSendError: undefined,
-                mockEmailSendSuccess: false
-            });
+            if (this.state.emailCenterOpen)
+                return; // Already open: don't pull the user away from what they're viewing.
+            const mode = EmailSettingsService_1.EmailSettingsService.getPreviewMode();
+            const status = ev.detail && ev.detail.status;
+            if (mode === 'always' || (mode === 'failure' && status === 'failed')) {
+                this.setState({ emailCenterOpen: true, emailCenterEntryId: ev.detail.outboxId });
+            }
+        };
+        this._openEmailCenter = () => {
+            this.setState({ emailCenterOpen: true, emailCenterEntryId: undefined });
         };
         this._handleEmailSendFailed = (ev) => {
             this.setState({
                 syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
                 syncMessageType: react_1.MessageBarType.warning
             });
-        };
-        this._onSendMockEmail = async () => {
-            const { lastMockEmail, editMockEmailTo, editMockEmailSubject } = this.state;
-            if (!lastMockEmail)
-                return;
-            this.setState({ isSendingMockEmail: true, mockEmailSendError: undefined, mockEmailSendSuccess: false });
-            try {
-                const recipients = editMockEmailTo.split(',').map(email => email.trim()).filter(Boolean);
-                await EmailService_1.EmailService.sendMail(recipients, editMockEmailSubject, lastMockEmail.body);
-                this.setState({
-                    isSendingMockEmail: false,
-                    mockEmailSendSuccess: true
-                });
-                setTimeout(() => {
-                    this.setState({ lastMockEmail: undefined, mockEmailSendSuccess: false });
-                }, 2000);
-            }
-            catch (e) {
-                console.error("Failed to send email from panel:", e);
-                this.setState({
-                    isSendingMockEmail: false,
-                    mockEmailSendError: e.message || JSON.stringify(e)
-                });
-            }
         };
         this._resolveUserRole = async () => {
             try {
@@ -423,9 +467,9 @@ class InventoryManagement extends React.Component {
                         title: 'New Inventory Asset Created',
                         stage: 'Catalog Management',
                         type: 'success',
-                        message: `Asset "${newAssetData.title || newAssetData.assetName}" was successfully added to stock inventory.`,
+                        message: `Asset "${newAssetData.assetName || newAssetData.title}" was successfully added to stock inventory.`,
                         details: {
-                            assetTitle: newAssetData.title || newAssetData.assetName,
+                            assetTitle: newAssetData.assetName || newAssetData.title,
                             status: 'In Stock',
                             date: newAssetData.purchaseDate || new Date().toISOString().split('T')[0]
                         }
@@ -866,16 +910,19 @@ class InventoryManagement extends React.Component {
                 type: 'info',
                 message: ''
             },
-            lastMockEmail: undefined,
-            editMockEmailTo: '',
-            editMockEmailSubject: '',
-            isSendingMockEmail: false,
-            mockEmailSendError: undefined,
-            mockEmailSendSuccess: false
+            emailCenterOpen: false,
+            emailCenterEntryId: undefined,
+            emailFailedCount: EmailOutbox_1.EmailOutbox.getFailedCount()
         };
     }
     async componentDidMount() {
         this._unsubscribeLanguageChange = (0, LanguageSwitcherService_1.onLanguageChange)(this._onLanguageChanged);
+        // Keeps the failed-email badge on the Email button current.
+        this._unsubscribeEmailOutbox = EmailOutbox_1.EmailOutbox.subscribe(() => {
+            const failed = EmailOutbox_1.EmailOutbox.getFailedCount();
+            if (failed !== this.state.emailFailedCount)
+                this.setState({ emailFailedCount: failed });
+        });
         await this._resolveUserRole();
         await this._loadReturnRequests();
         // Run self-healing cleanup for Return Approved/Completed assets BEFORE loading inventory
@@ -888,6 +935,7 @@ class InventoryManagement extends React.Component {
         await this._loadInventory();
         await this._loadRequests();
         await this._loadAuditLogs();
+        this._migrateClearedAllFlag();
         // Dynamically auto-sync existing assigned assets of our 5 active users to the Mapping List
         try {
             await InventoryService_1.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
@@ -908,6 +956,9 @@ class InventoryManagement extends React.Component {
         }
         if (this._unsubscribeLanguageChange) {
             this._unsubscribeLanguageChange();
+        }
+        if (this._unsubscribeEmailOutbox) {
+            this._unsubscribeEmailOutbox();
         }
     }
     render() {
@@ -930,6 +981,7 @@ class InventoryManagement extends React.Component {
         const visibleAdminRequests = filterRequests(adminQueueRequests);
         const visibleManagerRequests = filterRequests(managerQueueRequests);
         const notifications = this._getNotifications();
+        const unreadNotificationCount = notifications.filter(n => !n.isRead).length;
         const navItems = [
             { key: 'Dashboard', text: strings.Nav.Dashboard, icon: 'BarChart4', group: strings.Nav.GroupMain },
             { key: 'MyWorkspace', text: strings.Nav.MyWorkspace, icon: 'Briefcase' },
@@ -937,7 +989,7 @@ class InventoryManagement extends React.Component {
                 key: 'Notifications',
                 text: strings.Nav.Notifications,
                 icon: 'Ringer',
-                badge: notifications.filter(n => !n.isRead).length || undefined,
+                badge: unreadNotificationCount || undefined,
                 badgeColor: '#0078d4'
             },
             { key: 'IncidentHistory', text: strings.Nav.IncidentHistory, icon: 'History' },
@@ -980,11 +1032,22 @@ class InventoryManagement extends React.Component {
                     React.createElement("div", { className: InventoryManagement_module_scss_1.default.heroText },
                         React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' } },
                             React.createElement("h2", { style: { margin: 0 } }, strings.Hero.Title),
-                            React.createElement(react_1.Dropdown, { "aria-label": strings.Common.LanguageLabel, title: strings.Common.LanguageLabel, selectedKey: (0, LanguageSwitcherService_1.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: LanguageSwitcherService_1.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
-                                    root: { minWidth: 130 },
-                                    title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
-                                    caretDown: { color: '#ffffff' }
-                                } })),
+                            React.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
+                                React.createElement(react_1.DefaultButton, { text: strings.Nav.Notifications, iconProps: { iconName: 'Ringer' }, onClick: () => this.setState({ selectedTabKey: 'Notifications' }), ariaLabel: unreadNotificationCount > 0
+                                        ? (0, LocalizationUtils_1.formatString)(strings.Notifications.OpenButtonUnreadAria, unreadNotificationCount)
+                                        : strings.Nav.Notifications, title: strings.Nav.Notifications, onRenderText: (p, defaultRender) => (React.createElement(React.Fragment, null,
+                                        defaultRender ? defaultRender(p) : null,
+                                        unreadNotificationCount > 0 && (React.createElement("span", { "aria-hidden": "true", style: { ...HERO_BADGE_STYLE, backgroundColor: '#0f6cbd' } }, formatBadgeCount(unreadNotificationCount))))), styles: HERO_BUTTON_STYLES }),
+                                isAdmin && (React.createElement(react_1.DefaultButton, { text: strings.EmailCenter.OpenButton, iconProps: { iconName: 'Mail' }, onClick: this._openEmailCenter, ariaLabel: this.state.emailFailedCount > 0
+                                        ? (0, LocalizationUtils_1.formatString)(strings.EmailCenter.OpenButtonFailedAria, this.state.emailFailedCount)
+                                        : strings.EmailCenter.OpenButtonAria, title: strings.EmailCenter.OpenButtonAria, onRenderText: (p, defaultRender) => (React.createElement(React.Fragment, null,
+                                        defaultRender ? defaultRender(p) : null,
+                                        this.state.emailFailedCount > 0 && (React.createElement("span", { "aria-hidden": "true", style: { ...HERO_BADGE_STYLE, backgroundColor: '#c50f1f' } }, formatBadgeCount(this.state.emailFailedCount))))), styles: HERO_BUTTON_STYLES })),
+                                React.createElement(react_1.Dropdown, { "aria-label": strings.Common.LanguageLabel, title: strings.Common.LanguageLabel, selectedKey: (0, LanguageSwitcherService_1.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: LanguageSwitcherService_1.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
+                                        root: { minWidth: 130 },
+                                        title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
+                                        caretDown: { color: '#ffffff' }
+                                    } }))),
                         React.createElement("p", null, (0, LocalizationUtils_1.formatString)(strings.Hero.WelcomeBack, (0, sp_lodash_subset_1.escape)(activeUserDisplayName))),
                         React.createElement("p", { className: InventoryManagement_module_scss_1.default.smallText },
                             strings.Hero.RoleLabel.split('{0}')[0],
@@ -1020,7 +1083,7 @@ class InventoryManagement extends React.Component {
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${InventoryManagement_module_scss_1.default.sidebarNavItem} ${isActive ? InventoryManagement_module_scss_1.default.navItemActive : ''}` },
                                     React.createElement(react_1.Icon, { iconName: nav.icon }),
                                     React.createElement("span", { className: InventoryManagement_module_scss_1.default.navItemText }, nav.text),
-                                    nav.badge !== undefined && nav.badge > 0 && (React.createElement("span", { className: InventoryManagement_module_scss_1.default.navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, nav.badge)))));
+                                    nav.badge !== undefined && nav.badge > 0 && (React.createElement("span", { className: InventoryManagement_module_scss_1.default.navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, formatBadgeCount(nav.badge))))));
                         }),
                         React.createElement("div", { className: InventoryManagement_module_scss_1.default.collapseToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), role: "button", tabIndex: 0, "aria-label": this.state.sidebarCollapsed ? strings.Nav.Expand : strings.Nav.Collapse, onKeyDown: (e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
@@ -1073,7 +1136,10 @@ class InventoryManagement extends React.Component {
                                 items,
                                 loading,
                                 isAdmin,
-                                isInventoryManager: isManager
+                                isInventoryManager: isManager,
+                                auditLogs,
+                                returnRequests: this.state.returnRequests,
+                                spContext: this.props.spContext
                             };
                             const inventoryActions = {
                                 onOpenAssetForm: () => this.setState({ isAssetFormOpen: true })
@@ -1095,13 +1161,18 @@ class InventoryManagement extends React.Component {
                                 case 'Notifications':
                                     return (React.createElement(pages_1.NotificationsPage, { state: {
                                             notifications,
-                                            isAllNotificationsCleared: this.state.isAllNotificationsCleared
+                                            isAllNotificationsCleared: this.state.isAllNotificationsCleared,
+                                            availablePages: navItems.map(nav => ({ key: nav.key, text: nav.text }))
                                         }, actions: {
                                             onMarkAsRead: this._markNotificationAsRead,
                                             onMarkAllAsRead: this._markAllNotificationsAsRead,
                                             onClearNotification: this._clearNotification,
                                             onClearAllNotifications: this._clearAllNotifications,
-                                            onNotificationAction: this._handleNotificationAction
+                                            onNotificationAction: this._handleNotificationAction,
+                                            onMarkAsUnread: this._markNotificationAsUnread,
+                                            onClearNotifications: this._clearNotifications,
+                                            onRestoreNotifications: this._restoreNotifications,
+                                            onOpenPage: this._openPage
                                         } }));
                                 case 'IncidentHistory':
                                     return (React.createElement(pages_1.IncidentHistoryPage, { ...this.props, state: incidentHistoryState, actions: incidentHistoryActions }));
@@ -1131,6 +1202,7 @@ class InventoryManagement extends React.Component {
                                     return isAdmin ? (React.createElement(pages_1.AssetAssignmentQueuePage, { state: {
                                             requestSearchId,
                                             visibleAdminRequests,
+                                            allAdminRequests: adminQueueRequests,
                                             items: this.state.items,
                                             requestActionInProgressId
                                         }, actions: {
@@ -1225,9 +1297,13 @@ class InventoryManagement extends React.Component {
                     selectedNotification: this.state.selectedNotification,
                     isNotificationDetailsOpen: this.state.isNotificationDetailsOpen,
                     items: this.state.items,
-                    requests: this.state.requests
+                    requests: this.state.requests,
+                    availablePages: navItems.map(nav => ({ key: nav.key, text: nav.text }))
                 }, actions: {
-                    onDismiss: () => this.setState({ isNotificationDetailsOpen: false })
+                    onDismiss: () => this.setState({ isNotificationDetailsOpen: false }),
+                    onOpenPage: this._openPage,
+                    onMarkAsUnread: this._markNotificationAsUnread,
+                    onDismissNotification: this._clearNotification
                 } }),
             React.createElement(pages_1.AdminAssignmentPanel, { state: {
                     selectedAdminRequest: this.state.selectedAdminRequest,
@@ -1246,21 +1322,7 @@ class InventoryManagement extends React.Component {
                 } }),
             React.createElement(ReturnAssetForm_1.ReturnAssetForm, { isOpen: this.state.isReturnFormOpen, onDismiss: () => this.setState({ isReturnFormOpen: false, selectedAssetForReturn: undefined }), asset: this.state.selectedAssetForReturn, onSubmit: this._onSubmitReturnRequest }),
             React.createElement(WorkflowPopup_1.WorkflowPopup, { isOpen: this.state.workflowPopup?.isOpen, title: this.state.workflowPopup?.title || '', stage: this.state.workflowPopup?.stage || '', type: this.state.workflowPopup?.type || 'info', message: this.state.workflowPopup?.message || '', details: this.state.workflowPopup?.details, onDismiss: () => this.setState({ workflowPopup: { ...this.state.workflowPopup, isOpen: false } }) }),
-            React.createElement(react_1.Panel, { isOpen: this.state.lastMockEmail !== undefined, onDismiss: () => this.setState({ lastMockEmail: undefined }), type: react_1.PanelType.medium, headerText: strings.MockEmailPanel.HeaderText, closeButtonAriaLabel: strings.Common.Close, onRenderFooterContent: () => (React.createElement(react_1.Stack, { horizontal: true, tokens: { childrenGap: 10 }, style: { padding: '10px 0' } },
-                    React.createElement(react_1.PrimaryButton, { text: this.state.isSendingMockEmail ? strings.MockEmailPanel.ButtonSending : strings.MockEmailPanel.ButtonSendEmail, onClick: this._onSendMockEmail, disabled: this.state.isSendingMockEmail || this.state.mockEmailSendSuccess || !this.state.editMockEmailTo, iconProps: { iconName: 'Send' } }),
-                    React.createElement(react_1.DefaultButton, { text: strings.MockEmailPanel.ButtonClose, onClick: () => this.setState({ lastMockEmail: undefined }), disabled: this.state.isSendingMockEmail }))), isFooterAtBottom: true }, this.state.lastMockEmail && (React.createElement(react_1.Stack, { tokens: { childrenGap: 15 }, style: { padding: '10px 0' } },
-                React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.info }, strings.MockEmailPanel.InfoText),
-                React.createElement(react_1.TextField, { label: strings.MockEmailPanel.LabelRecipients, value: this.state.editMockEmailTo, onChange: (_, val) => this.setState({ editMockEmailTo: val || '' }), required: true, disabled: this.state.isSendingMockEmail, iconProps: { iconName: 'Mail' } }),
-                React.createElement(react_1.TextField, { label: strings.MockEmailPanel.LabelSubject, value: this.state.editMockEmailSubject, onChange: (_, val) => this.setState({ editMockEmailSubject: val || '' }), required: true, disabled: this.state.isSendingMockEmail }),
-                this.state.mockEmailSendSuccess && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.success }, strings.MockEmailPanel.SuccessText)),
-                this.state.mockEmailSendError && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.error },
-                    strings.MockEmailPanel.ErrorPrefix,
-                    " ",
-                    this.state.mockEmailSendError)),
-                this.state.isSendingMockEmail && (React.createElement(react_1.ProgressIndicator, { label: strings.MockEmailPanel.ProgressLabel })),
-                React.createElement("div", { style: { marginTop: '10px' } },
-                    React.createElement("span", { style: { fontSize: '0.9rem', fontWeight: 600, display: 'block', marginBottom: '8px' } }, strings.MockEmailPanel.PreviewLabel),
-                    React.createElement("div", { style: { border: '1px solid #ddd', borderRadius: '8px', padding: '15px', overflow: 'auto', background: '#fff', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', maxHeight: '400px' }, dangerouslySetInnerHTML: { __html: this.state.lastMockEmail.body } })))))));
+            React.createElement(EmailCenterPanel_1.EmailCenterPanel, { isOpen: this.state.emailCenterOpen, isAdmin: isAdmin, entryId: this.state.emailCenterEntryId, onDismiss: () => this.setState({ emailCenterOpen: false, emailCenterEntryId: undefined }) })));
     }
 }
 exports.default = InventoryManagement;

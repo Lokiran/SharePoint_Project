@@ -677,23 +677,27 @@ export class RequestCreationService {
         Promise.resolve()
           .then(async () => {
             try {
-              let liveManagerEmail = "";
+              // The manager picked from the directory in the request form, when there is one.
+              let liveManagerEmail =
+                ((request as any).managerEmail || "").trim();
 
-              try {
-                const resolvedEmail =
-                  await EmailService.resolveLiveManagerEmail(
-                    request.requesterName
+              if (!liveManagerEmail) {
+                try {
+                  const resolvedEmail =
+                    await EmailService.resolveLiveManagerEmail(
+                      request.requesterName
+                    );
+
+                  if (resolvedEmail) {
+                    liveManagerEmail =
+                      resolvedEmail;
+                  }
+                } catch (resolveErr) {
+                  console.warn(
+                    "Failed to resolve live manager email:",
+                    resolveErr
                   );
-
-                if (resolvedEmail) {
-                  liveManagerEmail =
-                    resolvedEmail;
                 }
-              } catch (resolveErr) {
-                console.warn(
-                  "Failed to resolve live manager email:",
-                  resolveErr
-                );
               }
 
               await EmailService.sendApprovalRequestToManager(

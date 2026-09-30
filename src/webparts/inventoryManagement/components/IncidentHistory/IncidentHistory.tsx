@@ -16,7 +16,7 @@ import {
   Panel,
   PanelType,
 } from '@fluentui/react';
-import { jsPDF } from 'jspdf';
+import { saveNexerReport, formatReportDate, INexerReportSection } from '../../utils/NexerPdfReport';
 import { IInventoryManagementProps } from '../../models/IInventoryManagementProps';
 import { IncidentService } from '../../services/IncidentService';
 import { INCIDENT_STATUS_OPTIONS } from '../../constants/DropdownConstants';
@@ -37,6 +37,8 @@ interface IIncidentHistoryItem {
   resolvedDate?: string;
   assignedTo?: string;
   resolution?: string;
+  /** Saved only in this browser because the SharePoint write failed. */
+  isLocalOnly?: boolean;
 }
 
 export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoading: (loading: boolean) => void; userRole?: string; }> = (props) => {
@@ -47,11 +49,11 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
   const [selectedIncident, setSelectedIncident] = useState<IIncidentHistoryItem | null>(null);
   const [showDetailPanel, setShowDetailPanel] = useState(false);
   const [tempResolution, setTempResolution] = useState('');
-  const [toastNotification, setToastNotification] = useState<{ message: string; title?: string } | null>(null);
+  const [toastNotification, setToastNotification] = useState<{ message: string; title?: string; isError?: boolean } | null>(null);
 
-  const triggerToast = (message: string, title: string = strings.IncidentHistory.ToastIncidentUpdatedTitle) => {
-    setToastNotification({ message, title });
-    setTimeout(() => setToastNotification(null), 4000);
+  const triggerToast = (message: string, title: string = strings.IncidentHistory.ToastIncidentUpdatedTitle, isError: boolean = false) => {
+    setToastNotification({ message, title, isError });
+    setTimeout(() => setToastNotification(null), isError ? 8000 : 4000);
   };
 
   const getPriorityBadgeStyle = (priority?: string) => {
@@ -192,134 +194,39 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
 
   const handleDownloadReport = (incident: IIncidentHistoryItem) => {
     try {
-      const doc = new jsPDF();
+      const h = strings.IncidentHistory;
+      const fields = [
+        { label: h.PdfIncidentIdLabel, value: incident.incidentId },
+        { label: h.PdfCurrentStatusLabel, value: incident.status || 'Open' },
+        { label: h.PdfAssetNameLabel, value: (incident.assetName || '').trim() },
+        { label: h.PdfPriorityLabel, value: incident.priority || 'Medium' },
+        { label: h.PdfIssueTypeLabel, value: incident.issueType },
+        { label: h.PdfReportedDateLabel, value: formatReportDate(incident.reportedDate) }
+      ];
+      if (incident.assignedTo) fields.push({ label: h.PdfAssignedToLabel, value: incident.assignedTo });
+      if (incident.resolvedDate) fields.push({ label: h.PdfResolvedDateLabel, value: formatReportDate(incident.resolvedDate) });
 
-      // Top header banner
-      doc.setFillColor(0, 90, 158); // #005a9e (Deep blue theme color)
-      doc.rect(0, 0, 210, 25, 'F');
+      const sections: INexerReportSection[] = [
+        { title: h.PdfIssueDescriptionTitle, text: incident.issueDescription || h.PdfNoDescription }
+      ];
+      if (incident.resolution) sections.push({ title: h.PdfResolutionSummaryTitle, text: incident.resolution, tone: 'positive' });
 
-      doc.setTextColor(255, 255, 255);
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(16);
-      doc.text(strings.IncidentHistory.PdfCompanyHeader, 14, 16);
-
-      // Document Title
-      doc.setTextColor(51, 65, 85); // Slate 700
-      doc.setFontSize(14);
-      doc.text(strings.IncidentHistory.PdfIncidentReportTitle, 14, 38);
-
-      // Metadata
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(9);
-      doc.text(formatString(strings.IncidentHistory.PdfGeneratedOn, new Date().toLocaleString()), 14, 44);
-
-      // Separator line
-      doc.setDrawColor(226, 232, 240); // Slate 200
-      doc.line(14, 48, 196, 48);
-
-      // Specifications Section Title
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
-      doc.text(strings.IncidentHistory.PdfIncidentSpecs, 14, 58);
-
-      // Render Specifications Key-Value grid
-      let y = 68;
-      const printField = (label: string, value: string) => {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(9);
-        doc.setTextColor(100, 116, 139); // Slate 500
-        doc.text(label, 14, y);
-
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9.5);
-        doc.setTextColor(15, 23, 42); // Slate 900
-        doc.text(value, 55, y);
-        y += 8;
-      };
-
-      printField(strings.IncidentHistory.PdfIncidentIdLabel, incident.incidentId);
-      printField(strings.IncidentHistory.PdfAssetNameLabel, incident.assetName);
-      printField(strings.IncidentHistory.PdfIssueTypeLabel, incident.issueType);
-      printField(strings.IncidentHistory.PdfPriorityLabel, incident.priority || "Medium");
-      printField(strings.IncidentHistory.PdfCurrentStatusLabel, incident.status || "Open");
-      printField(strings.IncidentHistory.PdfReportedDateLabel, new Date(incident.reportedDate).toLocaleString());
-
-      if (incident.assignedTo) {
-        printField(strings.IncidentHistory.PdfAssignedToLabel, incident.assignedTo);
-      }
-      if (incident.resolvedDate) {
-        printField(strings.IncidentHistory.PdfResolvedDateLabel, new Date(incident.resolvedDate).toLocaleString());
-      }
-
-      // Issue Description Title
-      y += 4;
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
-      doc.setTextColor(51, 65, 85);
-      doc.text(strings.IncidentHistory.PdfIssueDescriptionTitle, 14, y);
-      y += 6;
-
-      // Issue Description Box
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(9.5);
-      doc.setTextColor(51, 65, 85);
-
-      const splitDesc = doc.splitTextToSize(incident.issueDescription || strings.IncidentHistory.PdfNoDescription, 170);
-      const descHeight = splitDesc.length * 6 + 10;
-
-      // Draw background box
-      doc.setFillColor(248, 250, 252); // slate 50
-      doc.setDrawColor(226, 232, 240); // slate 200
-      doc.rect(14, y, 182, descHeight, 'FD');
-
-      // Draw left accent bar
-      doc.setFillColor(100, 116, 139); // slate 500
-      doc.rect(14, y, 3, descHeight, 'F');
-
-      // Draw text
-      let textY = y + 8;
-      splitDesc.forEach((line: string) => {
-        doc.text(line, 22, textY);
-        textY += 6;
+      saveNexerReport({
+        documentType: h.PdfIncidentReportTitle,
+        reference: incident.incidentId || incident.id,
+        heading: (incident.assetName || '').trim() || incident.incidentId,
+        subheading: [incident.issueType, formatReportDate(incident.reportedDate, false)].filter(Boolean).join('  ·  '),
+        status: incident.status || 'Open',
+        fieldsTitle: h.PdfIncidentSpecs,
+        fields,
+        sections,
+        productName: strings.Hero.Title,
+        generatedText: formatString(h.PdfGeneratedOn, formatReportDate(new Date().toISOString()) || ''),
+        fileName: `incident-${incident.incidentId || incident.id}.pdf`
       });
-
-      y += descHeight + 10;
-
-      // Resolution Details (if resolved/closed)
-      if (incident.resolution) {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(11);
-        doc.setTextColor(51, 65, 85);
-        doc.text(strings.IncidentHistory.PdfResolutionSummaryTitle, 14, y);
-        y += 6;
-
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9.5);
-        doc.setTextColor(22, 101, 52); // green 800
-
-        const splitRes = doc.splitTextToSize(incident.resolution, 170);
-        const resHeight = splitRes.length * 6 + 10;
-
-        // Draw green background box
-        doc.setFillColor(240, 253, 244); // green 50
-        doc.setDrawColor(220, 252, 231); // green 200
-        doc.rect(14, y, 182, resHeight, 'FD');
-
-        // Draw green left accent bar
-        doc.setFillColor(22, 101, 52); // green 800
-        doc.rect(14, y, 3, resHeight, 'F');
-
-        // Draw resolution text
-        let resTextY = y + 8;
-        splitRes.forEach((line: string) => {
-          doc.text(line, 22, resTextY);
-          resTextY += 6;
-        });
-      }
-
-      doc.save(`incident-${incident.incidentId}.pdf`);
     } catch (error) {
       console.error('Error generating PDF report:', error);
+      triggerToast(formatString(strings.IncidentHistory.PdfDownloadFailed, incident.incidentId || incident.id), strings.IncidentHistory.PdfDownloadFailedTitle, true);
     }
   };
 
@@ -331,7 +238,20 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
       minWidth: 90,
       maxWidth: 120,
       isResizable: true,
-      onRender: (item: IIncidentHistoryItem) => <Text>{item.incidentId}</Text>,
+      onRender: (item: IIncidentHistoryItem) => (
+        <div>
+          <Text>{item.incidentId}</Text>
+          {item.isLocalOnly && (
+            <span
+              title={strings.IncidentHistory.LocalOnlyTooltip}
+              aria-label={strings.IncidentHistory.LocalOnlyTooltip}
+              style={{ display: 'inline-block', marginTop: 2, padding: '0 6px', borderRadius: 999, fontSize: 11, fontWeight: 600, lineHeight: '18px', color: '#8a3707', background: '#fff4ce' }}
+            >
+              {strings.IncidentHistory.LocalOnlyTag}
+            </span>
+          )}
+        </div>
+      ),
     },
     {
       key: 'assetName',
@@ -606,7 +526,7 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
           padding: '14px 18px',
           borderRadius: '12px',
           boxShadow: '0 20px 30px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06)',
-          borderLeft: '5px solid #10b981',
+          borderLeft: `5px solid ${toastNotification.isError ? '#c50f1f' : '#10b981'}`,
           display: 'flex',
           alignItems: 'center',
           gap: '12px',
@@ -617,13 +537,16 @@ export const IncidentHistory: React.FC<IInventoryManagementProps & { setIsLoadin
             width: '32px',
             height: '32px',
             borderRadius: '50%',
-            backgroundColor: '#dcfce7',
+            backgroundColor: toastNotification.isError ? '#fde7e9' : '#dcfce7',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             flexShrink: 0
           }}>
-            <Icon iconName="Accept" style={{ color: '#166534', fontSize: '15px', fontWeight: 'bold' }} />
+            <Icon
+              iconName={toastNotification.isError ? 'ErrorBadge' : 'Accept'}
+              style={{ color: toastNotification.isError ? '#c50f1f' : '#166534', fontSize: '15px', fontWeight: 'bold' }}
+            />
           </div>
           <div style={{ flex: 1 }}>
             <strong style={{ display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' }}>

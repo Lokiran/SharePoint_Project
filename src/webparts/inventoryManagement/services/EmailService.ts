@@ -3,6 +3,8 @@ import { MSGraphClientV3 } from "@microsoft/sp-http";
 import { getSP, getContext } from "../pnpjsConfig";
 import { EMPLOYEES } from "../data/mockData";
 import { getAppConfig } from "../config/AppConfig";
+import { EmailSettingsService } from "./EmailSettingsService";
+import { EmailOutbox, IEmailOutboxEntry } from "./EmailOutbox";
 
 export interface IApprovalRequestParams {
   requestKey: string;
@@ -54,14 +56,8 @@ export interface IEmailSendResult {
  * code never triggered its own fallback).
  */
 export class EmailService {
-  // Set to true to route all emails to test accounts; set to false to use live SharePoint/AD emails.
-  private static readonly USE_MOCK_TEST_EMAILS = true;
-
-  private static readonly MOCK_ADMIN_EMAILS = [
-    "Akhila.Dodla@3bh3kf.onmicrosoft.com"
-  ];
-
-  private static readonly MOCK_MANAGER_EMAIL = "DiegoS@3bh3kf.onmicrosoft.com";
+  // Test mode (route workflow emails to test accounts) and its recipients are set in the
+  // Email Center; see EmailSettingsService for the defaults.
 
   constructor(private context: WebPartContext) {}
 
@@ -159,21 +155,25 @@ export class EmailService {
    * Helper to get target emails for Admins
    */
   private static async getAdminEmails(liveEmails: string[]): Promise<string[]> {
-    return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS : liveEmails;
+    const settings = await EmailSettingsService.get();
+    return settings.testMode ? settings.testAdminRecipients : liveEmails;
   }
 
   /**
    * Helper to get target email for Manager
    */
   private static async getManagerEmail(liveEmail: string): Promise<string> {
-    return this.USE_MOCK_TEST_EMAILS ? this.MOCK_MANAGER_EMAIL : liveEmail;
+    const settings = await EmailSettingsService.get();
+    return settings.testMode ? settings.testManagerRecipient : liveEmail;
   }
 
   /**
    * Helper to get target email for Employee
    */
   private static async getEmployeeEmail(liveEmail: string): Promise<string> {
-    return this.USE_MOCK_TEST_EMAILS ? this.MOCK_ADMIN_EMAILS[0] : (liveEmail || this.MOCK_ADMIN_EMAILS[0]);
+    const settings = await EmailSettingsService.get();
+    const testRecipient = settings.testAdminRecipients[0] || "";
+    return settings.testMode ? testRecipient : (liveEmail || testRecipient);
   }
 
   /**
@@ -503,7 +503,10 @@ export class EmailService {
   }
 
   /**
-   * Internal sender method using SharePoint sp.utility.sendEmail or developer console fallback.
+   * Single sending funnel for every app email. Records each attempt in the Email Center
+   * outbox, honours the "Send email notifications" switch, and raises the window events
+   * the UI listens to ('spfx_email_send_failed', 'spfx_mock_email_sent').
+   * Throws when sending fails; resolves without sending when email is switched off.
    */
   public static async sendMail(to: string[], subject: string, htmlBody: string): Promise<void> {
     const validEmails = to.filter(email => email && email.indexOf("@") > 0);
@@ -512,6 +515,15 @@ export class EmailService {
       return;
     }
 
+    const settings = await EmailSettingsService.get();
+    if (!settings.enabled) {
+      console.info(`[EmailService] Email sending is turned off in the Email Center. Not sent: "${subject}"`);
+      const skipped = EmailOutbox.add({ to: validEmails, subject, body: htmlBody, status: 'skipped' });
+      EmailService._dispatchOutboxEvent(skipped);
+      return;
+    }
+
+    let entry: IEmailOutboxEntry | undefined;
     try {
       const context = getContext();
       if (!context) {
@@ -526,31 +538,44 @@ export class EmailService {
       if (!result.success) {
         throw new Error(result.error);
       }
+      entry = EmailOutbox.add({ to: validEmails, subject, body: htmlBody, status: 'sent', method: result.method, error: result.error });
     } catch (error: any) {
+      const errorMessage = error?.message || String(error);
+      entry = EmailOutbox.add({ to: validEmails, subject, body: htmlBody, status: 'failed', error: errorMessage });
       // Dispatch error event with true error details
       if (typeof window !== 'undefined') {
         window.dispatchEvent(new CustomEvent('spfx_email_send_failed', {
-          detail: { 
-            to: validEmails, 
-            subject, 
-            errorMessage: error?.message || error 
+          detail: {
+            to: validEmails,
+            subject,
+            errorMessage
           }
         }));
       }
       throw error;
     } finally {
-      // Always write a beautiful colored log in the developer console to allow testing without live exchange configs.
+      // Always write a colored log in the developer console to allow testing without live exchange configs.
       console.log(
-        `%c📬 [EMAIL NOTIFICATION OUTBOX]\nTo: ${validEmails.join(", ")}\nSubject: ${subject}\n\n[HTML RENDERED EMAIL BODY]:\n${htmlBody.trim()}`,
+        `%c📬 [EMAIL NOTIFICATION OUTBOX]
+To: ${validEmails.join(", ")}
+Subject: ${subject}
+
+[HTML RENDERED EMAIL BODY]:
+${htmlBody.trim()}`,
         "background: #1e3a8a; color: #ffffff; border-left: 5px solid #3b82f6; padding: 12px; font-family: monospace; font-size: 12px; line-height: 1.5; border-radius: 4px;"
       );
-
-      // Dispatch event to allow the UI to render the email banner popup directly
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(new CustomEvent('spfx_mock_email_sent', {
-          detail: { to: validEmails, subject, body: htmlBody }
-        }));
+      if (entry) {
+        EmailService._dispatchOutboxEvent(entry);
       }
+    }
+  }
+
+  /** Lets the UI decide whether to open the Email Center for this email. */
+  private static _dispatchOutboxEvent(entry: IEmailOutboxEntry): void {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('spfx_mock_email_sent', {
+        detail: { to: entry.to, subject: entry.subject, body: entry.body, status: entry.status, outboxId: entry.id }
+      }));
     }
   }
 }

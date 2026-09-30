@@ -240,8 +240,14 @@ class IncidentService {
         }
     }
     getLocalItems(key) {
-        const data = localStorage.getItem(key);
-        return data ? JSON.parse(data) : [];
+        try {
+            const data = localStorage.getItem(key);
+            const items = data ? JSON.parse(data) : [];
+            return Array.isArray(items) ? items : [];
+        }
+        catch {
+            return [];
+        }
     }
     saveLocalItems(key, items) {
         localStorage.setItem(key, JSON.stringify(items));
@@ -377,10 +383,17 @@ class IncidentService {
             item.incidentId !== 'INC-166' &&
             item.incidentId !== 'INC-369' &&
             item.incidentId !== 'INC-859');
+        // Local fallback records only carry `incidentType`; the history views, search and PDF read
+        // `issueType`. `isLocalOnly` marks records that never reached the Incident List.
+        const normalizedLocalIncidents = filteredLocalIncidents.map(item => ({
+            ...item,
+            issueType: item.issueType || item.incidentType || 'Incident',
+            isLocalOnly: true
+        }));
         // Merge and sort chronologically (newest first)
         const combined = [
             ...incidentItems,
-            ...filteredLocalIncidents
+            ...normalizedLocalIncidents
         ];
         combined.sort((a, b) => {
             const dateA = new Date(a.reportedDate || a.raisedDate || 0).getTime();
@@ -445,7 +458,8 @@ class IncidentService {
             ...item,
             incidentType: 'Replacement Request',
             issueType: 'Replacement Request',
-            incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`
+            incidentId: item.incidentId ? item.incidentId.replace('INC-', 'REP-') : `REP-${item.Id || item.ID || Math.floor(Math.random() * 1000)}`,
+            isLocalOnly: true
         }));
         // Merge and sort chronologically (newest first)
         const combined = [
@@ -720,6 +734,7 @@ class IncidentService {
                     reportedDate: new Date().toISOString(),
                     raisedDate: new Date().toISOString(),
                     incidentType: incidentData.incidentType || (isReplacement ? 'Replacement Request' : 'Other'),
+                    issueType: incidentData.incidentType || (isReplacement ? 'Replacement Request' : 'Other'),
                     status: 'Open',
                     raisedTo: incidentData.raisedTo || 'Admin'
                 };

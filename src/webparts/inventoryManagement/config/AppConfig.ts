@@ -24,6 +24,7 @@ export interface IListNames {
   replacement: string;
   stockThresholds: string;
   assetKits: string;
+  appSettings: string;
 }
 
 export interface IAppConfig {
@@ -57,7 +58,8 @@ export const DEFAULT_APP_CONFIG: IAppConfig = {
     employee: 'EmployeeList',
     replacement: 'Asset Replacements',
     stockThresholds: 'Stock Thresholds',
-    assetKits: 'Asset Kits'
+    assetKits: 'Asset Kits',
+    appSettings: 'Inventory App Settings'
   },
   sla: {
     approvalHours: 48,
@@ -83,6 +85,7 @@ export interface IAppConfigProperties {
   replacementListTitle?: string;
   stockThresholdsListTitle?: string;
   assetKitsListTitle?: string;
+  appSettingsListTitle?: string;
   approvalSlaHours?: string | number;
   assignmentSlaHours?: string | number;
   defaultMinimumStock?: string | number;
@@ -118,7 +121,8 @@ export const buildAppConfig = (props: IAppConfigProperties = {}): IAppConfig => 
       employee: text(props.employeeListTitle, d.lists.employee),
       replacement: text(props.replacementListTitle, d.lists.replacement),
       stockThresholds: text(props.stockThresholdsListTitle, d.lists.stockThresholds),
-      assetKits: text(props.assetKitsListTitle, d.lists.assetKits)
+      assetKits: text(props.assetKitsListTitle, d.lists.assetKits),
+      appSettings: text(props.appSettingsListTitle, d.lists.appSettings)
     },
     sla: {
       approvalHours: parseNonNegativeNumber(props.approvalSlaHours, d.sla.approvalHours),

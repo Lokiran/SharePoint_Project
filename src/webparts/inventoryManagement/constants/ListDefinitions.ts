@@ -10,7 +10,7 @@ import { getAppConfig } from "../config/AppConfig";
  */
 export type ListKey =
   | 'inventory' | 'request' | 'returnRequest' | 'mapping' | 'eventLog'
-  | 'incident' | 'employee' | 'replacement' | 'stockThresholds' | 'assetKits';
+  | 'incident' | 'employee' | 'replacement' | 'stockThresholds' | 'assetKits' | 'appSettings';
 
 export interface IRequiredColumn {
   /** Name shown in the schema guide. */
@@ -27,6 +27,12 @@ export interface IListDefinition {
   optional?: boolean;
   /** The owning service creates the list on first use if it is missing. */
   autoCreated?: boolean;
+  /**
+   * Not shown on the Config page or included in its health check: settings storage the app
+   * creates itself (stock thresholds, kits, app settings) and the optional EmployeeList lookup.
+   * The services still use these lists when they exist.
+   */
+  internal?: boolean;
 }
 
 /** Configured title first, then the legacy fallbacks the services also try (case-insensitive de-dupe). */
@@ -122,13 +128,14 @@ export const getListDefinitions = (): IListDefinition[] => {
       ]
     },
     { key: 'incident', candidates: names(lists.incident), optional: true, requiredColumns: [] },
-    { key: 'employee', candidates: names(lists.employee), optional: true, requiredColumns: [] },
+    { key: 'employee', candidates: names(lists.employee), optional: true, internal: true, requiredColumns: [] },
     { key: 'replacement', candidates: names(lists.replacement), optional: true, autoCreated: true, requiredColumns: [] },
     {
       key: 'stockThresholds',
       candidates: names(lists.stockThresholds),
       optional: true,
       autoCreated: true,
+      internal: true,
       requiredColumns: [{ name: 'Title' }, { name: 'MinimumStock' }, { name: 'LastAlertSent' }]
     },
     {
@@ -136,10 +143,23 @@ export const getListDefinitions = (): IListDefinition[] => {
       candidates: names(lists.assetKits),
       optional: true,
       autoCreated: true,
+      internal: true,
       requiredColumns: [{ name: 'Title' }, { name: 'KitItems' }, { name: 'KitDescription' }]
+    },
+    {
+      key: 'appSettings',
+      candidates: names(lists.appSettings),
+      optional: true,
+      autoCreated: true,
+      internal: true,
+      requiredColumns: [{ name: 'Title' }, { name: 'SettingValue' }]
     }
   ];
 };
+
+/** The lists shown and health-checked on the Config page (excludes the app's internal settings lists). */
+export const getConfigListDefinitions = (): IListDefinition[] =>
+  getListDefinitions().filter(d => !d.internal);
 
 export const getListDefinition = (key: ListKey): IListDefinition | undefined =>
   getListDefinitions().find(d => d.key === key);

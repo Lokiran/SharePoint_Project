@@ -10,9 +10,24 @@ const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./Inv
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const RequestStatusUtils_1 = require("../utils/RequestStatusUtils");
+const RejectRequestDialog_1 = require("./RejectRequestDialog");
+const RejectionReasonCard_1 = require("./RejectionReasonCard");
 const RequestList = (props) => {
     const [selectedRequestForDetails, setSelectedRequestForDetails] = (0, react_1.useState)(null);
     const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0, react_1.useState)(false);
+    const [rejectTarget, setRejectTarget] = (0, react_1.useState)(undefined);
+    const isDeclined = (r) => r.status === 'Declined' || r.status === 'Rejected';
+    // Saves the rejection, then closes the form and, if it was opened from there, the details panel.
+    const confirmReject = async (request, reason) => {
+        if (!props.onRejectRequest)
+            return;
+        await props.onRejectRequest(request, reason).catch(err => console.error(err));
+        setRejectTarget(undefined);
+        if (selectedRequestForDetails && selectedRequestForDetails.id === request.id) {
+            setIsDetailsPanelOpen(false);
+            setSelectedRequestForDetails(null);
+        }
+    };
     const sortedItems = React.useMemo(() => {
         return [...props.items].sort((a, b) => {
             const dateA = a.requestDate || '';
@@ -214,16 +229,7 @@ const RequestList = (props) => {
                     }
                     return (React.createElement("div", { style: { display: 'flex', gap: '8px' } },
                         React.createElement(react_2.PrimaryButton, { text: strings.Common.Approve, onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
-                        React.createElement(react_2.PrimaryButton, { text: strings.Common.Reject, onClick: () => {
-                                if (!props.onRejectRequest) {
-                                    return;
-                                }
-                                const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
-                                if (!rejectionReason || !rejectionReason.trim()) {
-                                    return;
-                                }
-                                props.onRejectRequest(item, rejectionReason.trim()).catch(err => console.error(err));
-                            }, disabled: isBusy, styles: {
+                        React.createElement(react_2.PrimaryButton, { text: strings.Common.Reject, onClick: () => props.onRejectRequest && setRejectTarget(item), disabled: isBusy, styles: {
                                 root: { backgroundColor: '#991b1b', borderColor: '#991b1b' },
                                 rootHovered: { backgroundColor: '#7f1d1d', borderColor: '#7f1d1d' }
                             } })));
@@ -318,10 +324,12 @@ const RequestList = (props) => {
                                 fontSize: '0.75rem',
                                 fontWeight: 600
                             } }, getStatusDisplayText(selectedRequestForDetails.status)),
-                        selectedRequestForDetails.managerResponse && (React.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
+                        selectedRequestForDetails.managerResponse && !isDeclined(selectedRequestForDetails) && (React.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
                             "- \u201C",
                             selectedRequestForDetails.managerResponse,
-                            "\u201D")))),
+                            "\u201D"))),
+                    isDeclined(selectedRequestForDetails) && selectedRequestForDetails.managerResponse && (React.createElement("div", { style: { marginTop: 12 } },
+                        React.createElement(RejectionReasonCard_1.RejectionReasonCard, { reason: selectedRequestForDetails.managerResponse, managerName: selectedRequestForDetails.managerName, decidedAt: selectedRequestForDetails.managerDecisionAt })))),
                 React.createElement("div", { style: {
                         backgroundColor: 'var(--surface-bg, #ffffff)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -348,19 +356,7 @@ const RequestList = (props) => {
                                     .catch(err => console.error(err));
                             }
                         }, disabled: props.actionInProgressId === selectedRequestForDetails.id }),
-                    React.createElement(react_2.DefaultButton, { text: strings.Common.Reject, onClick: () => {
-                            if (!props.onRejectRequest)
-                                return;
-                            const rejectionReason = window.prompt(strings.RequestList.RejectionPrompt);
-                            if (!rejectionReason || !rejectionReason.trim())
-                                return;
-                            props.onRejectRequest(selectedRequestForDetails, rejectionReason.trim())
-                                .then(() => {
-                                setIsDetailsPanelOpen(false);
-                                setSelectedRequestForDetails(null);
-                            })
-                                .catch(err => console.error(err));
-                        }, disabled: props.actionInProgressId === selectedRequestForDetails.id, styles: {
+                    React.createElement(react_2.DefaultButton, { text: strings.Common.Reject, onClick: () => props.onRejectRequest && setRejectTarget(selectedRequestForDetails), disabled: props.actionInProgressId === selectedRequestForDetails.id, styles: {
                             root: { color: '#dc2626', borderColor: '#dc2626' },
                             rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
                         } }))),
@@ -382,7 +378,8 @@ const RequestList = (props) => {
                     React.createElement(react_2.DefaultButton, { text: strings.Common.Close, onClick: () => {
                             setIsDetailsPanelOpen(false);
                             setSelectedRequestForDetails(null);
-                        } })))))));
+                        } }))))),
+        React.createElement(RejectRequestDialog_1.RejectRequestDialog, { request: rejectTarget, onConfirm: confirmReject, onDismiss: () => setRejectTarget(undefined) })));
 };
 exports.RequestList = RequestList;
 //# sourceMappingURL=RequestList.js.map

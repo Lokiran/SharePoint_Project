@@ -34,7 +34,18 @@ const getListText = (key) => {
         case 'replacement': return { title: s.ListTitle_ReplacementList, desc: s.ListDesc_ReplacementList };
         case 'stockThresholds': return { title: s.ListTitle_StockThresholdsList, desc: s.ListDesc_StockThresholdsList };
         case 'assetKits': return { title: s.ListTitle_AssetKitsList, desc: s.ListDesc_AssetKitsList };
+        case 'appSettings': return { title: s.ListTitle_AppSettingsList, desc: s.ListDesc_AppSettingsList };
         default: return { title: key, desc: '' };
+    }
+};
+const getCheckLabel = (key) => {
+    const s = strings.ConfigPage;
+    switch (key) {
+        case 'find': return s.Check_Find;
+        case 'columns': return s.Check_Columns;
+        case 'items': return s.Check_Items;
+        case 'permissions': return s.Check_Permissions;
+        default: return s.Check_Details;
     }
 };
 const formatDate = (iso) => {
@@ -73,7 +84,7 @@ const StatusPill = ({ status, testing }) => {
 const collectIssues = (results) => {
     const s = strings.ConfigPage;
     const issues = [];
-    (0, ListHealthService_1.getListDefinitions)().forEach(def => {
+    (0, ListHealthService_1.getConfigListDefinitions)().forEach(def => {
         const r = results[def.key];
         if (!r)
             return;
@@ -94,7 +105,7 @@ const collectIssues = (results) => {
             if (r.missingColumns.length > 0) {
                 add('warn', (0, LocalizationUtils_1.formatString)(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
             }
-            if (!r.canWrite) {
+            if (r.canWrite === false) {
                 add('bad', (0, LocalizationUtils_1.formatString)(s.Issue_Write, title));
             }
         }
@@ -105,7 +116,7 @@ const ConfigPage = (props) => {
     const { state, actions } = props;
     const s = strings.ConfigPage;
     // Read per render so property-pane changes to list titles and role groups show immediately.
-    const LIST_DEFINITIONS = (0, ListHealthService_1.getListDefinitions)();
+    const LIST_DEFINITIONS = (0, ListHealthService_1.getConfigListDefinitions)();
     const CORE_LISTS = LIST_DEFINITIONS.filter(d => !d.optional);
     const OPTIONAL_LISTS = LIST_DEFINITIONS.filter(d => d.optional);
     const ROLE_GROUPS = getRoleGroups();
@@ -212,7 +223,7 @@ const ConfigPage = (props) => {
     const coreResults = CORE_LISTS.map(d => results[d.key]).filter(Boolean);
     const coreReady = coreResults.filter(r => r.status === 'healthy').length;
     const missingColumnCount = coreResults.reduce((sum, r) => sum + (r.resolvedTitle ? r.missingColumns.length : 0), 0);
-    const writeIssues = coreResults.filter(r => r.resolvedTitle && !r.canWrite).length;
+    const writeIssues = coreResults.filter(r => r.resolvedTitle && r.canWrite === false).length;
     const optionalReady = OPTIONAL_LISTS.filter(d => { const r = results[d.key]; return r && r.resolvedTitle; }).length;
     const issues = collectIssues(results);
     const criticalCount = issues.filter(i => i.severity === 'bad').length;
@@ -302,7 +313,10 @@ const ConfigPage = (props) => {
         const r = results[def.key];
         const isTesting = !!testing[def.key] || (runningAll && !r);
         const isExpanded = !!expanded[def.key];
-        const access = !r || !r.resolvedTitle ? undefined : r.canWrite ? s.AccessReadWrite : r.canRead ? s.AccessReadOnly : s.AccessNone;
+        const access = !r || !r.resolvedTitle ? undefined
+            : r.canWrite ? s.AccessReadWrite
+                : r.canWrite === undefined ? (r.canRead ? s.AccessUnknown : s.AccessNone)
+                    : r.canRead ? s.AccessReadOnly : s.AccessNone;
         return (React.createElement("div", { key: def.key, className: ConfigPage_module_scss_1.default.listCard },
             React.createElement("div", { className: ConfigPage_module_scss_1.default.listCardTop },
                 React.createElement("div", { style: { flex: '1 1 300px', minWidth: 0 } },
@@ -321,7 +335,7 @@ const ConfigPage = (props) => {
             r && r.resolvedTitle && (React.createElement("div", { className: ConfigPage_module_scss_1.default.metrics },
                 React.createElement("span", null,
                     s.Items,
-                    React.createElement("strong", null, r.itemCount)),
+                    React.createElement("strong", null, r.itemCount !== undefined ? r.itemCount : '—')),
                 React.createElement("span", null,
                     s.LastModified,
                     React.createElement("strong", null, formatDate(r.lastModified))),
@@ -339,6 +353,7 @@ const ConfigPage = (props) => {
             r && r.error && (React.createElement("div", { className: ConfigPage_module_scss_1.default.errorBox },
                 React.createElement("strong", null, s.ErrorLabel),
                 " ",
+                r.failedStep ? `${getCheckLabel(r.failedStep)} — ` : '',
                 r.error)),
             r && (React.createElement("div", { className: ConfigPage_module_scss_1.default.actions, style: { marginTop: 6 } },
                 React.createElement(react_1.ActionButton, { iconProps: { iconName: isExpanded ? 'ChevronUp' : 'ChevronDown' }, text: s.ViewDetails, onClick: () => setExpanded(prev => ({ ...prev, [def.key]: !isExpanded })) }),
@@ -362,7 +377,21 @@ const ConfigPage = (props) => {
                         s.MissingColumnsLabel,
                         ":"),
                     React.createElement("div", { className: ConfigPage_module_scss_1.default.chips }, r.missingColumns.map(c => React.createElement("span", { key: c, className: `${ConfigPage_module_scss_1.default.chip} ${ConfigPage_module_scss_1.default.chipBad}` }, c))))),
-                r.resolvedTitle && r.missingColumns.length === 0 && def.requiredColumns.length > 0 && (React.createElement("div", null, s.AllColumnsPresent))))));
+                r.resolvedTitle && r.missingColumns.length === 0 && def.requiredColumns.length > 0 && (React.createElement("div", null, s.AllColumnsPresent)),
+                r.checks && r.checks.length > 0 && (React.createElement("div", null,
+                    React.createElement("strong", null,
+                        s.ChecksLabel,
+                        ":"),
+                    React.createElement("ul", { style: { listStyle: 'none', margin: '6px 0 0', padding: 0 } }, r.checks.map(check => (React.createElement("li", { key: check.key, style: { display: 'flex', gap: 8, alignItems: 'flex-start', padding: '3px 0' } },
+                        React.createElement(react_1.Icon, { iconName: check.ok ? 'CompletedSolid' : check.required ? 'StatusErrorFull' : 'WarningSolid', style: { color: check.ok ? '#107c10' : check.required ? '#c50f1f' : '#bc4b09', marginTop: 2 } }),
+                        React.createElement("span", null,
+                            getCheckLabel(check.key),
+                            !check.required && React.createElement("span", { className: ConfigPage_module_scss_1.default.muted },
+                                " (",
+                                s.CheckOptional,
+                                ")"),
+                            check.source === 'site' && (React.createElement("div", { className: ConfigPage_module_scss_1.default.muted }, (0, LocalizationUtils_1.formatString)(s.Note_PermissionsFromSite, check.error || ''))),
+                            !check.ok && check.error && React.createElement("div", { className: ConfigPage_module_scss_1.default.muted }, check.error))))))))))));
     };
     const renderConnections = () => (React.createElement("div", { className: ConfigPage_module_scss_1.default.panel },
         React.createElement("div", { className: ConfigPage_module_scss_1.default.panelHeader },

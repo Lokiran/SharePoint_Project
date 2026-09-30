@@ -1,30 +1,99 @@
 import * as React from 'react';
-import { Panel, PanelType, Dropdown, IDropdownOption, TextField, PrimaryButton, DefaultButton } from '@fluentui/react';
+import { Panel, PanelType, TextField, PrimaryButton, DefaultButton, Icon, MessageBar, MessageBarType } from '@fluentui/react';
+import { mergeStyleSets } from '@fluentui/react/lib/Styling';
 import * as strings from 'InventoryManagementWebPartStrings';
 import styles from '../components/InventoryManagement.module.scss';
 import { IAdminAssignmentPanelProps } from '../types/AdminAssignmentPanel.types';
+import { IInventoryItem } from '../models/IInventoryItem';
+import { formatString } from '../utils/LocalizationUtils';
+import { assignableOfType, assetTypeIcon, conditionTone, warrantyInfo, ageText, formatDay, TONES } from '../components/inventory/inventoryUi';
+
+const CONDITION_RANK: { [c: string]: number } = { new: 0, excellent: 1, good: 2, fair: 3 };
+
+/** Best first: better condition, then the most warranty left, then the newest purchase. */
+const rankAssets = (assets: IInventoryItem[]): IInventoryItem[] => assets.slice().sort((a, b) => {
+  const ca = CONDITION_RANK[(a.condition || '').toLowerCase()] ?? 4;
+  const cb = CONDITION_RANK[(b.condition || '').toLowerCase()] ?? 4;
+  if (ca !== cb) return ca - cb;
+  const wa = warrantyInfo(a.warrantyExpiry).days ?? -Infinity;
+  const wb = warrantyInfo(b.warrantyExpiry).days ?? -Infinity;
+  if (wa !== wb) return wb - wa;
+  return (new Date(b.purchaseDate || 0).getTime() || 0) - (new Date(a.purchaseDate || 0).getTime() || 0);
+});
+
+const pickerCss = mergeStyleSets({
+  list: { display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 360, overflowY: 'auto', paddingRight: 2 },
+  option: {
+    display: 'flex', alignItems: 'center', gap: 12, width: '100%', textAlign: 'left', padding: '10px 12px',
+    borderRadius: 8, border: '1px solid rgba(0, 0, 0, 0.14)', background: 'var(--surface-bg, #ffffff)',
+    cursor: 'pointer', font: 'inherit', color: 'inherit',
+    selectors: { ':hover': { borderColor: 'rgba(0, 0, 0, 0.3)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: 2 }, ':disabled': { cursor: 'default', opacity: 0.6 } }
+  },
+  optionSelected: { borderColor: '#0f6cbd', boxShadow: 'inset 0 0 0 1px #0f6cbd', background: 'rgba(15, 108, 189, 0.05)' },
+  radio: { width: 18, height: 18, borderRadius: '50%', border: '2px solid #8a8886', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' },
+  radioOn: { borderColor: '#0f6cbd' },
+  radioDot: { width: 8, height: 8, borderRadius: '50%', background: '#0f6cbd' },
+  icon: { width: 32, height: 32, borderRadius: 8, background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+  body: { flex: 1, minWidth: 0 },
+  name: { fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
+  meta: { fontSize: 12, color: 'var(--text-muted, #616161)', marginTop: 2 },
+  tag: { fontSize: 11, fontWeight: 600, padding: '0 8px', borderRadius: 999, lineHeight: '18px' }
+});
 
 export const AdminAssignmentPanel: React.FC<IAdminAssignmentPanelProps> = (props) => {
   const { state, actions } = props;
   const request = state.selectedAdminRequest;
   if (!request || !state.isAdminPanelOpen) return null;
 
-  const requestedAssetTitle = request.assetTitle || "";
-  const matchingAssets = state.items.filter(item =>
-    (item.assetType || '').toLowerCase() === requestedAssetTitle.toLowerCase() &&
-    (item.status === 'In Stock' || item.status === 'Yes' || (item.status || '').toLowerCase() === 'in stock')
-  );
-
-  const matchingAssetOptions: IDropdownOption[] = matchingAssets.map(asset => ({
-    key: asset.id,
-    text: `${asset.assetName || asset.title} (SN: ${asset.serialNumber || 'N/A'})`
-  }));
-
-  const dropdownPlaceholder = matchingAssets.length > 0
-    ? strings.AdminAssignmentPanel.PlaceholderSelectAsset
-    : strings.AdminAssignmentPanel.PlaceholderNoAssetsInStock;
+  const matchingAssets = rankAssets(assignableOfType(state.items, request.assetTitle));
+  const quantity = Math.max(1, request.quantity || 1);
 
   const isBusy = state.requestActionInProgressId === request.id;
+  const q = strings.AssignmentQueue;
+
+  const renderAssetPicker = (): JSX.Element => {
+    if (matchingAssets.length === 0) {
+      return (
+        <MessageBar messageBarType={MessageBarType.warning} styles={{ root: { borderRadius: 6 } }}>
+          {formatString(q.PanelNoStock, request.assetTitle || '')}
+        </MessageBar>
+      );
+    }
+    return (
+      <div className={pickerCss.list} role="radiogroup" aria-label={strings.AdminAssignmentPanel.LabelAssignAssetOptional}>
+        {matchingAssets.map((asset, index) => {
+          const selected = state.adminSelectedAssetId === asset.id;
+          const warranty = warrantyInfo(asset.warrantyExpiry);
+          const cond = conditionTone(asset.condition);
+          return (
+            <button
+              key={asset.id}
+              type="button"
+              role="radio"
+              aria-checked={selected}
+              disabled={isBusy}
+              className={`${pickerCss.option} ${selected ? pickerCss.optionSelected : ''}`}
+              onClick={() => actions.onAssetChange({} as React.FormEvent<HTMLDivElement>, { key: asset.id, text: asset.assetName || asset.title })}
+            >
+              <span className={`${pickerCss.radio} ${selected ? pickerCss.radioOn : ''}`} aria-hidden="true">{selected && <span className={pickerCss.radioDot} />}</span>
+              <span className={pickerCss.icon} aria-hidden="true"><Icon iconName={assetTypeIcon(asset.assetType)} /></span>
+              <span className={pickerCss.body}>
+                <span className={pickerCss.name}>
+                  {asset.assetName || asset.title}
+                  {index === 0 && <span className={pickerCss.tag} style={{ background: TONES.blue.bg, color: TONES.blue.fg }}>{q.Recommended}</span>}
+                  {asset.condition && <span className={pickerCss.tag} style={{ background: cond.bg, color: cond.fg }}>{asset.condition}</span>}
+                </span>
+                <span className={pickerCss.meta} style={{ display: 'block' }}>
+                  {[asset.serialNumber, `#${asset.id}`, asset.vendor, asset.purchaseDate ? `${formatDay(asset.purchaseDate)}${ageText(asset.purchaseDate) ? ` (${ageText(asset.purchaseDate)})` : ''}` : ''].filter(Boolean).join('  ·  ')}
+                </span>
+                <span className={pickerCss.meta} style={{ display: 'block', color: warranty.state === 'active' || warranty.state === 'none' ? undefined : warranty.tone.fg }}>{warranty.text}</span>
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <Panel
@@ -161,19 +230,15 @@ export const AdminAssignmentPanel: React.FC<IAdminAssignmentPanelProps> = (props
           </h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
-            {/* Dropdown */}
+            {/* Asset picker: in-stock assets of the requested type, best first */}
             <div>
               <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-main)', display: 'block', marginBottom: '6px' }}>
                 {strings.AdminAssignmentPanel.LabelAssignAssetOptional}
               </label>
-              <Dropdown
-                placeholder={dropdownPlaceholder}
-                options={matchingAssetOptions}
-                selectedKey={state.adminSelectedAssetId}
-                onChange={actions.onAssetChange}
-                disabled={matchingAssets.length === 0 || isBusy}
-                styles={{ dropdown: { width: '100%' } }}
-              />
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginBottom: '8px' }}>
+                {formatString(q.PanelStockLine, matchingAssets.length, request.assetTitle || '', quantity)}
+              </span>
+              {renderAssetPicker()}
             </div>
 
             {/* Comment Textfield */}
