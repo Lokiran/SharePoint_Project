@@ -11,7 +11,7 @@ export class AuditLogService {
     AssetTypeLookupService.invalidate();
     const sp = getSP();
     try {
-      await sp.web.lists.getByTitle(SharePointBaseService.EVENT_LOG_LIST).items.add({
+      await sp.web.lists.getByTitle(await SharePointBaseService.getEventLogListTitle()).items.add({
         Title: log.title,
         Action: log.action,
         EntityType: log.entityType,
@@ -48,7 +48,7 @@ export class AuditLogService {
 
     // 1. Fetch from EventLogList (the audit logging list)
     try {
-      const eventLogList = sp.web.lists.getByTitle(SharePointBaseService.EVENT_LOG_LIST);
+      const eventLogList = sp.web.lists.getByTitle(await SharePointBaseService.getEventLogListTitle());
       const eventItems = await eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created")();
 
       eventItems.forEach((item: any) => {
@@ -459,7 +459,7 @@ export class AuditLogService {
 
     if (shouldFetchEventLog) {
       try {
-        const eventLogList = sp.web.lists.getByTitle(SharePointBaseService.EVENT_LOG_LIST);
+        const eventLogList = sp.web.lists.getByTitle(await SharePointBaseService.getEventLogListTitle());
         const filterParts: string[] = [];
 
         if (startIso) {

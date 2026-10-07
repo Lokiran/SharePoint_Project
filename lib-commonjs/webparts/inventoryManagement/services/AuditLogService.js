@@ -12,7 +12,7 @@ class AuditLogService {
         AssetTypeLookupService_1.AssetTypeLookupService.invalidate();
         const sp = (0, pnpjsConfig_1.getSP)();
         try {
-            await sp.web.lists.getByTitle(SharePointBaseService_1.SharePointBaseService.EVENT_LOG_LIST).items.add({
+            await sp.web.lists.getByTitle(await SharePointBaseService_1.SharePointBaseService.getEventLogListTitle()).items.add({
                 Title: log.title,
                 Action: log.action,
                 EntityType: log.entityType,
@@ -48,7 +48,7 @@ class AuditLogService {
         const sp = (0, pnpjsConfig_1.getSP)();
         // 1. Fetch from EventLogList (the audit logging list)
         try {
-            const eventLogList = sp.web.lists.getByTitle(SharePointBaseService_1.SharePointBaseService.EVENT_LOG_LIST);
+            const eventLogList = sp.web.lists.getByTitle(await SharePointBaseService_1.SharePointBaseService.getEventLogListTitle());
             const eventItems = await eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created")();
             eventItems.forEach((item) => {
                 let assetName = "";
@@ -461,7 +461,7 @@ class AuditLogService {
             ['Inventory', 'Requests', 'Returns'].indexOf(filters.module) >= 0;
         if (shouldFetchEventLog) {
             try {
-                const eventLogList = sp.web.lists.getByTitle(SharePointBaseService_1.SharePointBaseService.EVENT_LOG_LIST);
+                const eventLogList = sp.web.lists.getByTitle(await SharePointBaseService_1.SharePointBaseService.getEventLogListTitle());
                 const filterParts = [];
                 if (startIso) {
                     filterParts.push(`Created ge '${startIso}'`);

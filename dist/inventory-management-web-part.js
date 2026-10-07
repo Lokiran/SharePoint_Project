@@ -836,107 +836,6 @@ const AssetLifecycleDiagram = ({ isDarkTheme }) => {
 
 /***/ }),
 
-/***/ 20867:
-/*!**********************************************************************!*\
-  !*** ./lib/webparts/inventoryManagement/components/AssetTracking.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AssetTracking: () => (/* binding */ AssetTracking)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
-/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-
-
-
-
-
-
-const AssetTracking = (props) => {
-    const [selectedEmployeeId, setSelectedEmployeeId] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
-    const stackTokens = { childrenGap: 20 };
-    if (!_utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__.RoleUtils.canAssignAssets(props.currentUserRole)) {
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.MessageBarType.error }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.NoPermission));
-    }
-    // Patch the Admin employee with the REAL user's email and name so that SharePoint's ensureUser works correctly
-    const patchedEmployees = props.employees.map(emp => {
-        if (emp.jobTitle === 'Admin') {
-            return {
-                ...emp,
-                name: props.currentUserName || emp.name,
-                email: props.currentUserEmail || emp.email
-            };
-        }
-        return emp;
-    });
-    const employeeOptions = patchedEmployees.map(emp => ({
-        key: emp.id,
-        text: `${emp.name} (${emp.department})`
-    }));
-    const selectedEmployee = patchedEmployees.find(e => e.id === selectedEmployeeId);
-    const normalize = (val) => (val || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const employeeAssignedAssets = props.items.filter(i => {
-        if (!selectedEmployee)
-            return false;
-        const nameNorm = normalize(selectedEmployee.name);
-        const assignedNorm = normalize(i.assignedTo);
-        const isAssigned = assignedNorm && (assignedNorm === nameNorm || assignedNorm.includes(nameNorm) || nameNorm.includes(assignedNorm));
-        const isNoted = (i.note || '').toLowerCase().includes('assigned to:') && normalize(i.note).includes(nameNorm);
-        const isStatus = (i.status || '').toLowerCase().includes('assigned to:') && normalize(i.status).includes(nameNorm);
-        return isAssigned || isNoted || isStatus;
-    });
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '20px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.SelectEmployee),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Dropdown, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.PlaceholderSelectEmployee, options: employeeOptions, selectedKey: selectedEmployeeId, onChange: (_, option) => setSelectedEmployeeId(option?.key), styles: { dropdown: { width: '100%', maxWidth: 400 } } })),
-        selectedEmployee && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Stack, { tokens: stackTokens },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.CurrentlyAssignedTo, selectedEmployee.name)),
-                employeeAssignedAssets.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].tableWrapper },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: employeeAssignedAssets, columns: [
-                            { key: 'col1', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.ColAssetName, fieldName: 'assetName', minWidth: 150, maxWidth: 200, isResizable: true, onRender: item => item.assetName || item.title },
-                            { key: 'col2', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.ColType, fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                            { key: 'col3', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.ColSerialNumber, fieldName: 'serialNumber', minWidth: 120, maxWidth: 180, isResizable: true },
-                            { key: 'col4', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.ColStatus, fieldName: 'status', minWidth: 100, maxWidth: 120, isResizable: true },
-                            {
-                                key: 'col5',
-                                name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.ColAssignedDate,
-                                fieldName: 'assignedDate',
-                                minWidth: 120,
-                                maxWidth: 150,
-                                isResizable: true,
-                                onRender: item => {
-                                    if (!item.assignedDate)
-                                        return InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.NotAvailable;
-                                    try {
-                                        return new Date(item.assignedDate).toLocaleString();
-                                    }
-                                    catch {
-                                        return item.assignedDate;
-                                    }
-                                }
-                            }
-                        ], selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none, layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DetailsListLayoutMode.justified }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.AssetTracking.NoAssetsAssigned)))))));
-};
-
-
-/***/ }),
-
 /***/ 71422:
 /*!******************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/Dashboard.js ***!
@@ -1885,7 +1784,8 @@ const EmailCenterPanel = (props) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   EventActionBadge: () => (/* binding */ EventActionBadge)
+/* harmony export */   EventActionBadge: () => (/* binding */ EventActionBadge),
+/* harmony export */   eventActionStyle: () => (/* binding */ eventActionStyle)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -1922,6 +1822,35 @@ const ACTION_BADGES = {
     'deactivated': { ...RED, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionDeactivated },
     'update': { ...ORANGE, label: () => InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ActionUpdated }
 };
+// Fluent icon per action, for the Event Stream timeline.
+const ACTION_ICONS = {
+    'created': 'Add',
+    'create': 'Add',
+    'manager approved': 'Accept',
+    'manager rejected': 'Cancel',
+    'admin assigned': 'Contact',
+    'status updated to in progress': 'Clock',
+    'status updated to resolved': 'CheckMark',
+    'deleted': 'Delete',
+    'delete': 'Delete',
+    'return requested': 'Undo',
+    'return approved': 'Accept',
+    'return completed': 'CheckMark',
+    'return rejected': 'Cancel',
+    'activated': 'Play',
+    'inactivated': 'Pause',
+    'deactivated': 'Blocked',
+    'update': 'Edit',
+    'updated': 'Edit'
+};
+/** Colours, icon and display label for an action (the same colours the badge uses). */
+const eventActionStyle = (action) => {
+    const raw = action || '';
+    const key = raw.toLowerCase().trim();
+    const badge = ACTION_BADGES[key];
+    const colors = badge || NEUTRAL;
+    return { bg: colors.bg, fg: colors.fg, icon: ACTION_ICONS[key] || 'Info', label: badge ? badge.label() : raw };
+};
 const EventActionBadge = ({ action }) => {
     const raw = action || '';
     const badge = ACTION_BADGES[raw.toLowerCase().trim()];
@@ -1954,19 +1883,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 60099);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21262);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 73898);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 46412);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 44533);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 60099);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 44533);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 73898);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 46412);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 72674);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 /* harmony import */ var _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/EventLogUtils */ 46964);
 
 
@@ -1974,8 +1905,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const LINE = 'rgba(128, 128, 128, 0.3)';
+const FOCUS = { outline: '2px solid #0f6cbd', outlineOffset: 2 };
+/** Date ranges offered as one-click buttons; the rest stay in the Date Range dropdown. */
+const QUICK_RANGES = ['All', 'Today', 'Last7', 'Last30'];
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_4__.mergeStyleSets)({
+    root: { display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 16 },
+    bar: { display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' },
+    search: { flex: '1 1 260px', minWidth: 220 },
+    quick: { display: 'inline-flex', flexWrap: 'wrap', padding: 3, borderRadius: 10, background: 'rgba(128, 128, 128, 0.14)' },
+    quickButton: {
+        padding: '6px 12px', border: 'none', borderRadius: 8, background: 'transparent', cursor: 'pointer',
+        font: 'inherit', fontSize: 13, fontWeight: 600, color: 'var(--text-muted, #616161)',
+        selectors: { ':hover': { color: 'var(--text-main, #242424)' }, ':focus-visible': FOCUS }
+    },
+    quickActive: { background: 'var(--surface-bg, #ffffff)', color: 'var(--text-main, #242424)', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.16)' },
+    toggle: {
+        display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', borderRadius: 999, border: `1px solid ${LINE}`,
+        background: 'var(--surface-bg, #ffffff)', cursor: 'pointer', font: 'inherit', fontSize: 13, fontWeight: 600, color: 'inherit',
+        selectors: { ':hover': { borderColor: 'rgba(128, 128, 128, 0.6)' }, ':focus-visible': FOCUS }
+    },
+    toggleOn: { background: '#0f6cbd', borderColor: '#0f6cbd', color: '#ffffff', selectors: { ':hover': { borderColor: '#0f6cbd' } } },
+    panel: { padding: '12px 14px 14px', borderRadius: 12, background: 'rgba(128, 128, 128, 0.08)' },
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 },
+    custom: { padding: '12px 14px', borderRadius: 12, background: 'rgba(128, 128, 128, 0.08)' },
+    chips: { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' },
+    chip: {
+        display: 'inline-flex', alignItems: 'center', gap: 4, padding: '2px 4px 2px 10px', borderRadius: 999,
+        border: `1px solid ${LINE}`, background: 'rgba(128, 128, 128, 0.1)', fontSize: 12, color: 'var(--text-main, #242424)'
+    }
+});
+const chipButtonStyles = {
+    root: { width: 20, height: 20, padding: 0 },
+    icon: { fontSize: 8 }
+};
 const EventFilters = (props) => {
     const { filters, onChange, onClear, actionsList, assetTypesList, userOptions, currentUserName } = props;
+    // The full set of filters stays folded away until asked for.
+    const [open, setOpen] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
     const dateOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.AUDIT_LOG_DATE_RANGE_OPTIONS;
     const moduleOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.AUDIT_LOG_MODULE_OPTIONS;
     const statusOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.AUDIT_LOG_STATUS_OPTIONS;
@@ -2003,7 +1971,7 @@ const EventFilters = (props) => {
     const userComboOptions = [
         { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.AllUsersOption },
         ...(currentUserName ? [{ key: _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.MY_ACTIVITY_KEY, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.MyActivityOption }] : []),
-        { key: 'divider', text: '-', itemType: _fluentui_react__WEBPACK_IMPORTED_MODULE_4__.SelectableOptionMenuItemType.Divider },
+        { key: 'divider', text: '-', itemType: _fluentui_react__WEBPACK_IMPORTED_MODULE_5__.SelectableOptionMenuItemType.Divider },
         ...userOptions.map(u => ({
             key: u.name,
             text: u.name,
@@ -2012,17 +1980,21 @@ const EventFilters = (props) => {
         }))
     ];
     const getUserLabel = (user) => user === _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.MY_ACTIVITY_KEY ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.MyActivityOption : user;
-    // Helper to check if any filter is active (excluding default search/sort)
-    const hasActiveFilters = filters.dateRangeType !== 'All' ||
-        filters.action !== 'All' ||
-        filters.module !== 'All' ||
-        filters.assetType !== 'All' ||
-        filters.user !== 'All' ||
-        filters.status !== 'All';
+    // Number of active filters (search and sort are not counted).
+    const activeCount = [
+        filters.dateRangeType !== 'All',
+        filters.action !== 'All',
+        filters.module !== 'All',
+        filters.assetType !== 'All',
+        filters.user !== 'All',
+        filters.status !== 'All'
+    ].filter(Boolean).length;
+    const hasActiveFilters = activeCount > 0;
+    const dateText = (type) => dateOptions.find(o => o.key === type)?.text || type;
     // Format date range labels for chips
     const getDateLabel = () => {
         if (filters.dateRangeType !== 'Custom') {
-            return dateOptions.find(o => o.key === filters.dateRangeType)?.text || filters.dateRangeType;
+            return dateText(filters.dateRangeType);
         }
         const startStr = filters.startDate ? new Date(filters.startDate).toLocaleDateString() : '';
         const endStr = filters.endDate ? new Date(filters.endDate).toLocaleDateString() : '';
@@ -2041,66 +2013,47 @@ const EventFilters = (props) => {
         filters.startDate &&
         filters.endDate &&
         new Date(filters.startDate) > new Date(filters.endDate);
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '20px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.SearchBox, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.SearchPlaceholder, value: filters.searchQuery, onChange: (_, newValue) => onChange({ ...filters, searchQuery: newValue || '' }), onClear: () => onChange({ ...filters, searchQuery: '' }), styles: { root: { flexGrow: 1, minWidth: '300px' } } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.ClearFilters, iconProps: { iconName: 'ClearFilter' }, onClick: onClear, disabled: !hasActiveFilters && !filters.searchQuery })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                gap: '12px'
-            } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelDateRange, selectedKey: filters.dateRangeType, options: dateOptions, onChange: (_, option) => option && handleDateChange(option.key) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAction, selectedKey: filters.action, options: actionOptions, onChange: (_, option) => option && onChange({ ...filters, action: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelModule, selectedKey: filters.module, options: moduleOptions, onChange: (_, option) => option && onChange({ ...filters, module: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAssetType, selectedKey: filters.assetType, options: assetTypeOptions, onChange: (_, option) => option && onChange({ ...filters, assetType: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.ComboBox, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelUser, selectedKey: filters.user, options: userComboOptions, autoComplete: "on", allowFreeform: false, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.UserSearchPlaceholder, onRenderOption: (option) => option ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'flex', justifyContent: 'space-between', gap: '12px', width: '100%' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, option.text),
-                    option.data && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #6b7280)', fontSize: '0.75rem' } }, option.data.count))) : null, onChange: (_, option) => option && onChange({ ...filters, user: option.key }), useComboBoxAsMenuWidth: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStatus, selectedKey: filters.status, options: statusOptions, onChange: (_, option) => option && onChange({ ...filters, status: option.key }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelSortOrder, selectedKey: filters.sortOrder, options: sortOptions, onChange: (_, option) => option && onChange({ ...filters, sortOrder: option.key }) })),
-        filters.dateRangeType === 'Custom' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Stack, { horizontal: true, wrap: true, tokens: { childrenGap: 16 }, style: { alignItems: 'flex-end', backgroundColor: '#f3f2f1', padding: '12px', borderRadius: '4px' } },
+    const chip = (key, text, onRemove) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: key, className: css.chip },
+        text,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: onRemove, styles: chipButtonStyles, ariaLabel: `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reset}: ${text}` })));
+    const mine = filters.user === _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.MY_ACTIVITY_KEY;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.bar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.SearchBox, { className: css.search, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.SearchPlaceholder, value: filters.searchQuery, onChange: (_, newValue) => onChange({ ...filters, searchQuery: newValue || '' }), onClear: () => onChange({ ...filters, searchQuery: '' }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.quick, role: "group", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelDateRange }, QUICK_RANGES.map(range => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: range, type: "button", className: `${css.quickButton} ${filters.dateRangeType === range ? css.quickActive : ''}`, "aria-pressed": filters.dateRangeType === range, onClick: () => handleDateChange(range) }, dateText(range))))),
+            currentUserName && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: `${css.toggle} ${mine ? css.toggleOn : ''}`, "aria-pressed": mine, onClick: () => onChange({ ...filters, user: mine ? 'All' : _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_3__.MY_ACTIVITY_KEY }) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "Contact", "aria-hidden": "true" }),
+                InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.MyActivityOption)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: css.toggle, "aria-expanded": open, onClick: () => setOpen(!open) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: "Filter", "aria-hidden": "true" }),
+                activeCount > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFeed.FiltersToggleCount, activeCount) : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFeed.FiltersToggle,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Icon, { iconName: open ? 'ChevronUp' : 'ChevronDown', style: { fontSize: 10 }, "aria-hidden": "true" }))),
+        open && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.panel },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.grid },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelDateRange, selectedKey: filters.dateRangeType, options: dateOptions, onChange: (_, option) => option && handleDateChange(option.key) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAction, selectedKey: filters.action, options: actionOptions, onChange: (_, option) => option && onChange({ ...filters, action: option.key }) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelModule, selectedKey: filters.module, options: moduleOptions, onChange: (_, option) => option && onChange({ ...filters, module: option.key }) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelAssetType, selectedKey: filters.assetType, options: assetTypeOptions, onChange: (_, option) => option && onChange({ ...filters, assetType: option.key }) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.ComboBox, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelUser, selectedKey: filters.user, options: userComboOptions, autoComplete: "on", allowFreeform: false, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.UserSearchPlaceholder, onRenderOption: (option) => option ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'flex', justifyContent: 'space-between', gap: '12px', width: '100%' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, option.text),
+                        option.data && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #6b7280)', fontSize: '0.75rem' } }, option.data.count))) : null, onChange: (_, option) => option && onChange({ ...filters, user: option.key }), useComboBoxAsMenuWidth: true }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStatus, selectedKey: filters.status, options: statusOptions, onChange: (_, option) => option && onChange({ ...filters, status: option.key }) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelSortOrder, selectedKey: filters.sortOrder, options: sortOptions, onChange: (_, option) => option && onChange({ ...filters, sortOrder: option.key }) })))),
+        filters.dateRangeType === 'Custom' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Stack, { horizontal: true, wrap: true, tokens: { childrenGap: 16 }, className: css.custom, style: { alignItems: 'flex-end' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStartDate, value: filters.startDate, onSelectDate: (date) => date && onChange({ ...filters, startDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.StartDatePlaceholder })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelStartDate, value: filters.startDate, onSelectDate: (date) => date && onChange({ ...filters, startDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.StartDatePlaceholder })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelEndDate, value: filters.endDate, onSelectDate: (date) => date && onChange({ ...filters, endDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.EndDatePlaceholder })),
-            isDateRangeInvalid && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Text, { style: { color: '#a80000', alignSelf: 'center', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.DateRangeWarning)))),
-        hasActiveFilters && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center', marginTop: '4px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Text, { variant: "smallPlus", style: { color: 'var(--text-muted)', marginRight: '4px', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ActiveFilters),
-            filters.dateRangeType !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                getDateLabel(),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => handleDateChange('All'), styles: chipButtonStyles }))),
-            filters.action !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAction, filters.action),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, action: 'All' }), styles: chipButtonStyles }))),
-            filters.module !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipModule, filters.module),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, module: 'All' }), styles: chipButtonStyles }))),
-            filters.assetType !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAsset, getAssetTypeText(filters.assetType)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, assetType: 'All' }), styles: chipButtonStyles }))),
-            filters.user !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipUser, getUserLabel(filters.user)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, user: 'All' }), styles: chipButtonStyles }))),
-            filters.status !== 'All' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: chipStyle },
-                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipStatus, filters.status),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.IconButton, { iconProps: { iconName: 'Cancel' }, onClick: () => onChange({ ...filters, status: 'All' }), styles: chipButtonStyles }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ClearAll, onClick: onClear, styles: { root: { height: 26, minWidth: 0, padding: '0 8px', fontSize: '0.8rem' } } })))));
-};
-const chipStyle = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    backgroundColor: '#edebe9',
-    padding: '2px 8px',
-    borderRadius: '16px',
-    fontSize: '0.8rem',
-    color: '#323130',
-    border: '1px solid #d2d0ce',
-    gap: '4px'
-};
-const chipButtonStyles = {
-    root: { width: 14, height: 14, marginLeft: 2, padding: 0 },
-    icon: { fontSize: 8, color: '#605e5c' }
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.DatePicker, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.LabelEndDate, value: filters.endDate, onSelectDate: (date) => date && onChange({ ...filters, endDate: date }), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.EndDatePlaceholder })),
+            isDateRangeInvalid && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Text, { style: { color: '#a80000', alignSelf: 'center', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.DateRangeWarning)))),
+        hasActiveFilters && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.chips },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Text, { variant: "smallPlus", style: { color: 'var(--text-muted)', fontWeight: 'bold' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ActiveFilters),
+            filters.dateRangeType !== 'All' && chip('date', getDateLabel(), () => handleDateChange('All')),
+            filters.action !== 'All' && chip('action', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAction, filters.action), () => onChange({ ...filters, action: 'All' })),
+            filters.module !== 'All' && chip('module', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipModule, filters.module), () => onChange({ ...filters, module: 'All' })),
+            filters.assetType !== 'All' && chip('asset', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipAsset, getAssetTypeText(filters.assetType)), () => onChange({ ...filters, assetType: 'All' })),
+            filters.user !== 'All' && chip('user', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipUser, getUserLabel(filters.user)), () => onChange({ ...filters, user: 'All' })),
+            filters.status !== 'All' && chip('status', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ChipStatus, filters.status), () => onChange({ ...filters, status: 'All' })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.EventFilters.ClearAll, onClick: onClear, styles: { root: { height: 26 } } })))));
 };
 
 
@@ -2119,20 +2072,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Shimmer */ 25666);
 /* harmony import */ var _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/RoleUtils */ 41094);
-/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
-/* harmony import */ var _EventFilters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EventFilters */ 46615);
-/* harmony import */ var _EventActionBadge__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EventActionBadge */ 1773);
+/* harmony import */ var _EventFilters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EventFilters */ 46615);
+/* harmony import */ var _events_EventTimeline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./events/EventTimeline */ 86853);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common/Pager */ 42589);
 /* harmony import */ var _services_InventoryService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/InventoryService */ 29619);
 /* harmony import */ var _services_AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/AssetTypeLookupService */ 72145);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 /* harmony import */ var _utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/EventLogUtils */ 46964);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+
+
+
 
 
 
@@ -2158,11 +2115,23 @@ const DEFAULT_FILTERS = {
     sortOrder: 'NewestFirst'
 };
 const STANDARD_ASSET_TYPES = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_7__.DEFAULT_ASSET_TYPE_OPTIONS.map(o => String(o.key));
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_10__.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap', marginBottom: 16 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    notice: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '12px 16px', borderRadius: 10, marginBottom: 16 },
+    resultLine: { fontSize: 13, color: 'var(--text-muted, #616161)', margin: '0 0 12px' },
+    empty: { padding: '48px 16px', textAlign: 'center', color: 'var(--text-muted, #616161)', border: '1px dashed rgba(128, 128, 128, 0.3)', borderRadius: 12 },
+    loading: { display: 'flex', flexDirection: 'column', gap: 18, padding: '8px 0' },
+    pager: { marginTop: 12 }
+});
 const EventStream = (props) => {
     const [filters, setFilters] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(DEFAULT_FILTERS);
     const [logs, setLogs] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
     const [currentPage, setCurrentPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+    const [manualRefresh, setManualRefresh] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     // Filter option lists
     const [actionsList, setActionsList] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const [baseAssetTypes, setBaseAssetTypes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(STANDARD_ASSET_TYPES);
@@ -2217,7 +2186,8 @@ const EventStream = (props) => {
         filters.endDate,
         filters.action,
         filters.module,
-        props.refreshTrigger
+        props.refreshTrigger,
+        manualRefresh
     ]);
     // Reset to page 1 when client-side filters change
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -2232,27 +2202,6 @@ const EventStream = (props) => {
     // Include types seen in the currently loaded logs so a newly used type is selectable immediately.
     const assetTypesList = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.mergeAssetTypes)(baseAssetTypes, logs.map(l => l.assetType)), [baseAssetTypes, logs]);
     const canViewAuditDetails = _utils_RoleUtils__WEBPACK_IMPORTED_MODULE_1__.RoleUtils.canViewAuditLogs(props.currentUserRole);
-    const columns = [
-        {
-            key: 'column_action',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnAction,
-            fieldName: 'action',
-            minWidth: 120,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventActionBadge__WEBPACK_IMPORTED_MODULE_4__.EventActionBadge, { action: item.action })
-        },
-        { key: 'column_type', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
-        { key: 'column_title', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
-        { key: 'column_assetName', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        ...(canViewAuditDetails ? [
-            { key: 'column_user', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
-        ] : []),
-        { key: 'column_timestamp', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
-        ...(canViewAuditDetails ? [
-            { key: 'column_details', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
-        ] : [])
-    ];
     // 1. Apply role-based visibility filtering client-side
     const roleBasedFilteredLogs = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
         if (isEmployee) {
@@ -2278,27 +2227,31 @@ const EventStream = (props) => {
     const activePage = Math.min(currentPage, Math.max(1, totalPages));
     const startIndex = (activePage - 1) * PAGE_SIZE;
     const paginatedLogs = filteredLogs.slice(startIndex, startIndex + PAGE_SIZE);
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-        props.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' } },
+    // Day headings only make sense while the events are in date order.
+    const inDateOrder = filters.sortOrder === 'NewestFirst' || filters.sortOrder === 'OldestFirst';
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.title }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Nav.EventStream),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.subtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventFeed.Subtitle)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventFeed.Refresh, iconProps: { iconName: 'Refresh' }, onClick: () => setManualRefresh(n => n + 1), disabled: loading })),
+        props.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.notice },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoticeLabel),
             " ",
             props.errorMessage)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventFilters__WEBPACK_IMPORTED_MODULE_3__.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, userOptions: userOptions, currentUserName: props.currentUserName }),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.LoadingAuditLogs)) : roleBasedFilteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, isEmployee ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsForYou : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsRecorded)) : filteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsMatchFilters)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_11__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_12__.SelectionMode.none }),
-            totalPages > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationContainer },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationInfo }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + PAGE_SIZE, totalItems), totalItems)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationControls },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.FirstPage }, "\u00AB"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.PreviousPage }, "\u2039"),
-                    (0,_utils_EventLogUtils__WEBPACK_IMPORTED_MODULE_8__.getPageNumbers)(activePage, totalPages).map((page, idx) => {
-                        if (page === '...') {
-                            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: `ellipsis-${idx}`, style: { padding: '0 8px', color: 'var(--text-muted)' } }, "...");
-                        }
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: page, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton} ${activePage === page ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].active : ''}`, onClick: () => setCurrentPage(page) }, page));
-                    }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.NextPage }, "\u203A"),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.Pagination.LastPage }, "\u00BB"))))))));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_events_EventTimeline__WEBPACK_IMPORTED_MODULE_3__.ActivityPulse, { logs: filteredLogs, showPeople: canViewAuditDetails }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventFilters__WEBPACK_IMPORTED_MODULE_2__.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, userOptions: userOptions, currentUserName: props.currentUserName }),
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.loading, "aria-busy": "true", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.LoadingAuditLogs }, [0, 1, 2, 3].map(i => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: i },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_12__.Shimmer, { width: "45%", styles: { root: { marginBottom: 8 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_12__.Shimmer, { width: "80%" })))))) : filteredLogs.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.empty },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: roleBasedFilteredLogs.length === 0 ? 'ActivityFeed' : 'Search', style: { fontSize: 28, display: 'block', marginBottom: 8 } }),
+            roleBasedFilteredLogs.length === 0
+                ? (isEmployee ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsForYou : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsRecorded)
+                : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventStream.NoEventsMatchFilters)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.resultLine }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_14__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_9__.EventFeed.ResultEvents, totalItems, roleBasedFilteredLogs.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_events_EventTimeline__WEBPACK_IMPORTED_MODULE_3__.EventTimeline, { logs: paginatedLogs, groupByDay: inDateOrder, showAudit: canViewAuditDetails }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.pager },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_4__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: totalItems, onChange: setCurrentPage }))))));
 };
 
 
@@ -2317,25 +2270,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 29425);
 /* harmony import */ var _utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/NexerPdfReport */ 3279);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../InventoryManagement.module.scss */ 99623);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _service_ServiceRecordCards__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/ServiceRecordCards */ 3253);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/listUi */ 42806);
+
+
 
 
 
@@ -2347,9 +2299,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const IncidentHistory = (props) => {
     const [incidents, setIncidents] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [filteredIncidents, setFilteredIncidents] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [searchText, setSearchText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-    const [statusFilter, setStatusFilter] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [selectedIncident, setSelectedIncident] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
@@ -2410,9 +2359,6 @@ const IncidentHistory = (props) => {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         loadIncidents();
     }, [props.userEmail]);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        filterIncidents();
-    }, [searchText, statusFilter, incidents]);
     const loadIncidents = async () => {
         try {
             props.setIsLoading(true);
@@ -2427,18 +2373,6 @@ const IncidentHistory = (props) => {
         finally {
             props.setIsLoading(false);
         }
-    };
-    const filterIncidents = () => {
-        let filtered = [...incidents];
-        if (searchText) {
-            filtered = filtered.filter((incident) => (incident.assetName || '').toLowerCase().includes(searchText.toLowerCase()) ||
-                (incident.issueType || '').toLowerCase().includes(searchText.toLowerCase()) ||
-                (incident.incidentId || '').toLowerCase().includes(searchText.toLowerCase()));
-        }
-        if (statusFilter) {
-            filtered = filtered.filter((incident) => incident.status === statusFilter);
-        }
-        setFilteredIncidents(filtered);
     };
     const handleViewDetails = (item) => {
         setSelectedIncident(item);
@@ -2457,7 +2391,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
-            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastStatusMessage, incident.incidentId || '#' + incident.id, newStatus), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastStatusUpdatedTitle);
+            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastStatusMessage, incident.incidentId || '#' + incident.id, newStatus), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastStatusUpdatedTitle);
         }
         catch (error) {
             console.error('Error updating status:', error);
@@ -2477,7 +2411,7 @@ const IncidentHistory = (props) => {
             };
             setSelectedIncident(updatedIncident);
             await loadIncidents();
-            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastResolutionMessage, incident.incidentId || '#' + incident.id), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastResolutionSavedTitle);
+            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastResolutionMessage, incident.incidentId || '#' + incident.id), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ToastResolutionSavedTitle);
         }
         catch (error) {
             console.error('Error saving resolution:', error);
@@ -2516,127 +2450,22 @@ const IncidentHistory = (props) => {
                 fields,
                 sections,
                 productName: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Hero.Title,
-                generatedText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(h.PdfGeneratedOn, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || ''),
+                generatedText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(h.PdfGeneratedOn, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || ''),
                 fileName: `incident-${incident.incidentId || incident.id}.pdf`
             });
         }
         catch (error) {
             console.error('Error generating PDF report:', error);
-            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfDownloadFailed, incident.incidentId || incident.id), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfDownloadFailedTitle, true);
+            triggerToast((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfDownloadFailed, incident.incidentId || incident.id), InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.PdfDownloadFailedTitle, true);
         }
     };
-    const columns = [
-        {
-            key: 'incidentId',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColIncidentId,
-            fieldName: 'incidentId',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.incidentId),
-                item.isLocalOnly && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LocalOnlyTooltip, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LocalOnlyTooltip, style: { display: 'inline-block', marginTop: 2, padding: '0 6px', borderRadius: 999, fontSize: 11, fontWeight: 600, lineHeight: '18px', color: '#8a3707', background: '#fff4ce' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LocalOnlyTag)))),
-        },
-        {
-            key: 'assetName',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColAsset,
-            fieldName: 'assetName',
-            minWidth: 100,
-            maxWidth: 150,
-            isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.assetName),
-        },
-        {
-            key: 'issueType',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColIssueType,
-            fieldName: 'issueType',
-            minWidth: 100,
-            maxWidth: 130,
-            isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.issueType),
-        },
-        {
-            key: 'priority',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColPriority,
-            fieldName: 'priority',
-            minWidth: 80,
-            maxWidth: 100,
-            isResizable: true,
-            onRender: (item) => {
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(item.priority) }, item.priority || 'Medium'));
-            },
-        },
-        {
-            key: 'status',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColStatus,
-            fieldName: 'status',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getStatusBadgeStyle(item.status) }, item.status || 'Open'));
-            },
-        },
-        {
-            key: 'reportedDate',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColReported,
-            fieldName: 'reportedDate',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                if (!item.reportedDate)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, "-");
-                try {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, new Date(item.reportedDate).toLocaleDateString());
-                }
-                catch {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.reportedDate);
-                }
-            },
-        },
-        {
-            key: 'actions',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColActions,
-            minWidth: 160,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ButtonView, onClick: () => handleViewDetails(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ButtonDownload, onClick: () => handleDownloadReport(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }))),
-        },
-    ];
-    const statusFilterOptions = [
-        { key: '', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.AllStatusOption },
-        ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_3__.INCIDENT_STATUS_OPTIONS
-    ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Stack, { tokens: { childrenGap: 15 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SearchBox, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.SearchIncidentsPlaceholder, value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.FilterByStatusPlaceholder, options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ShowingIncidents, filteredIncidents.length, incidents.length)),
-            filteredIncidents.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_13__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '250px',
-                    border: '1px dashed #e5e7eb',
-                    borderRadius: '8px',
-                    padding: '30px'
-                } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, { variant: "medium", style: { color: '#6b7280' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.NoIncidentsFound)))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.IncidentDetailsTitle, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Common.Close }, selectedIncident && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_service_ServiceRecordCards__WEBPACK_IMPORTED_MODULE_6__.ServiceRecordCards, { kind: "incident", title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistoryPage.Title, subtitle: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.RecordLists.SubtitleIncidents, records: incidents, isAdmin: props.userRole === 'Admin', onView: handleViewDetails, onDownload: handleDownloadReport }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.IncidentDetailsTitle, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Common.Close }, selectedIncident && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ReportedLabel),
                 " ",
-                new Date(selectedIncident.reportedDate).toLocaleString()),
+                (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.formatFlexibleDateTime)(selectedIncident.reportedDate)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
@@ -2668,18 +2497,18 @@ const IncidentHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedIncident.assignedTo))))),
             props.userRole === 'Admin' && (selectedIncident.status === 'Resolved' || selectedIncident.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " ",
                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.UpdateResolutionTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Stack, { tokens: { childrenGap: 10 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Stack, { tokens: { childrenGap: 10 } },
                     selectedIncident.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LabelResolvedDate),
                         ' ',
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedIncident.resolvedDate).toLocaleString()))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryLabel, multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryPlaceholderIncident }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.SaveResolutionButton, onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryLabel, multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryPlaceholderIncident }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.SaveResolutionButton, onClick: () => handleSaveResolution(selectedIncident), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedIncident.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " ",
                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionDetailsTitle),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
@@ -2718,11 +2547,11 @@ const IncidentHistory = (props) => {
                     justifyContent: 'center',
                     flexShrink: 0
                 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: toastNotification.isError ? 'ErrorBadge' : 'Accept', style: { color: toastNotification.isError ? '#c50f1f' : '#166534', fontSize: '15px', fontWeight: 'bold' } })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: toastNotification.isError ? 'ErrorBadge' : 'Accept', style: { color: toastNotification.isError ? '#c50f1f' : '#166534', fontSize: '15px', fontWeight: 'bold' } })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: 1 } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { display: 'block', fontSize: '0.86rem', color: '#0f172a', marginBottom: '2px' } }, toastNotification.title || 'Success'),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.8rem', color: '#475569', lineHeight: 1.3, display: 'block' } }, toastNotification.message)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "Cancel", style: { cursor: 'pointer', color: '#94a3b8', fontSize: '12px', marginLeft: '6px' }, onClick: () => setToastNotification(null) })))));
 };
 
 
@@ -2978,248 +2807,6 @@ const IncidentRequestModule = (props) => {
 
 /***/ }),
 
-/***/ 4938:
-/*!**********************************************************************!*\
-  !*** ./lib/webparts/inventoryManagement/components/InventoryList.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   InventoryList: () => (/* binding */ InventoryList)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-
-
-
-
-
-
-const InventoryList = (props) => {
-    const [currentPage, setCurrentPage] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
-    const columns = [
-        { key: 'column1', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Id, fieldName: 'id', minWidth: 40, maxWidth: 40, isResizable: true },
-        { key: 'column2', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Title, fieldName: 'title', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'column3', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'column4', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Type, fieldName: 'assetType', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'column5', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.SerialNumber, fieldName: 'serialNumber', minWidth: 100, maxWidth: 120, isResizable: true },
-        { key: 'column6', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.PurchaseDate, fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-        { key: 'columnVendor', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Vendor, fieldName: 'vendor', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'columnCondition', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Condition, fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-        { key: 'columnWarranty', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.WarrantyExpiry, fieldName: 'warrantyExpiry', minWidth: 100, maxWidth: 120, isResizable: true },
-        {
-            key: 'column7',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Status,
-            fieldName: 'status',
-            minWidth: 80,
-            maxWidth: 100,
-            isResizable: true,
-            onRender: (item) => {
-                const isAvailable = item.status === 'Yes' || item.status === 'In Stock';
-                const isPendingReturn = item.status === 'Pending Return';
-                const isReturnApproved = item.status === 'Return Approved';
-                let backgroundColor = '#fee2e2';
-                let textColor = '#991b1b';
-                if (isAvailable) {
-                    backgroundColor = '#dcfce7';
-                    textColor = '#166534';
-                }
-                else if (isPendingReturn) {
-                    backgroundColor = '#ffedd5';
-                    textColor = '#9a3412';
-                }
-                else if (isReturnApproved) {
-                    backgroundColor = '#dcfce7';
-                    textColor = '#166534';
-                }
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                        backgroundColor,
-                        color: textColor,
-                        padding: '4px 12px',
-                        borderRadius: '9999px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        display: 'inline-block'
-                    } }, item.status));
-            }
-        },
-        {
-            key: 'columnActivation',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.ActivationState,
-            minWidth: 100,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                const statusVal = (item.status || '').toLowerCase();
-                let activationState = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryList.ActivationDeactivated;
-                let badgeColor = '#991b1b'; // Red
-                let bgColor = '#fee2e2';
-                if (statusVal === 'assigned') {
-                    activationState = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryList.ActivationActivated;
-                    badgeColor = '#166534'; // Green
-                    bgColor = '#dcfce7';
-                }
-                else if (statusVal === 'in stock' || statusVal === 'yes') {
-                    activationState = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryList.ActivationInactivated;
-                    badgeColor = '#92400e'; // Dark orange/amber
-                    bgColor = '#fef3c7'; // Amber 100
-                }
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                        backgroundColor: bgColor,
-                        color: badgeColor,
-                        padding: '4px 12px',
-                        borderRadius: '9999px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        display: 'inline-block'
-                    } }, activationState));
-            }
-        },
-        { key: 'column8', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssignedTo, fieldName: 'assignedTo', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'column9', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Specifications, fieldName: 'specifications', minWidth: 150, maxWidth: 300, isResizable: true },
-        ...(props.onReturnAsset ? [
-            {
-                key: 'columnActions',
-                name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Actions,
-                minWidth: 100,
-                maxWidth: 120,
-                isResizable: true,
-                onRender: (item) => {
-                    const isPendingReturn = item.status === 'Pending Return';
-                    const isReturnApproved = item.status === 'Return Approved';
-                    if (isPendingReturn) {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ea580c', fontWeight: 600, fontSize: '0.8rem' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryList.ActionPendingReturn));
-                    }
-                    if (isReturnApproved) {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#16a34a', fontWeight: 600, fontSize: '0.8rem' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryList.ActionApproved));
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_3__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryList.ActionReturn, onClick: () => props.onReturnAsset(item), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.8rem' } } }));
-                }
-            }
-        ] : [])
-    ]; // Reset page when items array changes
-    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
-        setCurrentPage(1);
-    }, [props.items]);
-    const normalizeGroupTitle = (title) => {
-        const t = (title || 'Uncategorized').trim();
-        if (/^company\s*assets?$/i.test(t))
-            return 'Company Assets';
-        if (/^leased\s*assets?$/i.test(t))
-            return 'Leased Assets';
-        return t;
-    };
-    // 1. Process items (new-to-old sorting)
-    const itemsToProcess = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
-        return [...props.items].sort((a, b) => {
-            const dateA = a.purchaseDate || a.assignedDate || '';
-            const dateB = b.purchaseDate || b.assignedDate || '';
-            if (dateA && dateB && dateA !== dateB) {
-                return new Date(dateB).getTime() - new Date(dateA).getTime();
-            }
-            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
-            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
-            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
-                return numB - numA;
-            }
-            return (b.id || '').localeCompare(a.id || '');
-        });
-    }, [props.items]);
-    // 2. Paginate if enabled
-    const pageSize = props.pageSize || 10;
-    const totalItems = itemsToProcess.length;
-    const totalPages = Math.ceil(totalItems / pageSize);
-    const activePage = Math.min(currentPage, Math.max(1, totalPages));
-    const startIndex = props.enablePagination ? (activePage - 1) * pageSize : 0;
-    const itemsToRender = props.enablePagination
-        ? itemsToProcess.slice(startIndex, startIndex + pageSize)
-        : itemsToProcess;
-    // 3. Compute groups based on the actual items to render
-    let groups = undefined;
-    if (props.isAdmin && itemsToRender.length > 0) {
-        groups = [];
-        let currentGroupName = normalizeGroupTitle(itemsToRender[0].title);
-        let currentGroupStartIndex = 0;
-        itemsToRender.forEach((item, index) => {
-            const itemGroup = normalizeGroupTitle(item.title);
-            if (itemGroup !== currentGroupName) {
-                groups.push({
-                    key: currentGroupName,
-                    name: currentGroupName,
-                    startIndex: currentGroupStartIndex,
-                    count: index - currentGroupStartIndex,
-                    isCollapsed: false,
-                });
-                currentGroupName = itemGroup;
-                currentGroupStartIndex = index;
-            }
-        });
-        if (itemsToRender.length > 0) {
-            groups.push({
-                key: currentGroupName,
-                name: currentGroupName,
-                startIndex: currentGroupStartIndex,
-                count: itemsToRender.length - currentGroupStartIndex,
-                isCollapsed: false,
-            });
-        }
-    }
-    const getPageNumbers = () => {
-        const pages = [];
-        const maxVisiblePages = 5;
-        if (totalPages <= maxVisiblePages) {
-            for (let i = 1; i <= totalPages; i++) {
-                pages.push(i);
-            }
-        }
-        else {
-            pages.push(1);
-            const start = Math.max(2, activePage - 1);
-            const end = Math.min(totalPages - 1, activePage + 1);
-            if (start > 2) {
-                pages.push('...');
-            }
-            for (let i = start; i <= end; i++) {
-                pages.push(i);
-            }
-            if (end < totalPages - 1) {
-                pages.push('...');
-            }
-            pages.push(totalPages);
-        }
-        return pages;
-    };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: itemsToRender, columns: columns, groups: groups, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none })),
-        props.enablePagination && totalPages > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationContainer },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationInfo }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_7__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + pageSize, totalItems), totalItems)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationControls },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Pagination.FirstPage }, "\u00AB"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Pagination.PreviousPage }, "\u2039"),
-                getPageNumbers().map((page, idx) => {
-                    if (page === '...') {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: `ellipsis-${idx}`, style: { padding: '0 8px', color: 'var(--text-muted)' } }, "...");
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: page, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationButton} ${activePage === page ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].active : ''}`, onClick: () => setCurrentPage(page) }, page));
-                }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Pagination.NextPage }, "\u203A"),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Pagination.LastPage }, "\u00BB"))))));
-};
-
-
-/***/ }),
-
 /***/ 50513:
 /*!****************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/InventoryManagement.js ***!
@@ -3242,11 +2829,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AssetForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AssetForm */ 5652);
 /* harmony import */ var _RequestForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RequestForm */ 28333);
 /* harmony import */ var _ReturnAssetForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ReturnAssetForm */ 21094);
-/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../utils/StockUtils */ 19256);
+/* harmony import */ var _utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../utils/RequestDuplicateUtils */ 77892);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @fluentui/react */ 52394);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! chart.js */ 55277);
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
 /* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
@@ -3261,10 +2849,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/EmailSettingsService */ 85324);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 /* harmony import */ var _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../services/LanguageSwitcherService */ 69898);
 /* harmony import */ var _utils_getNotifications__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../utils/getNotifications */ 7327);
 /* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../utils/ReportExportUtils */ 61238);
+
 
 
 
@@ -3493,11 +3082,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         this._openEmailCenter = () => {
             this.setState({ emailCenterOpen: true, emailCenterEntryId: undefined });
         };
-        this._handleEmailSendFailed = (ev) => {
-            this.setState({
-                syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
-                syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.warning
-            });
+        // A failed email is shown by the badge on the Email button and in the Email Center
+        // (not in Config → Maintenance, which only reports maintenance actions).
+        this._handleEmailSendFailed = () => {
+            const failed = _services_EmailOutbox__WEBPACK_IMPORTED_MODULE_19__.EmailOutbox.getFailedCount();
+            if (failed !== this.state.emailFailedCount)
+                this.setState({ emailFailedCount: failed });
         };
         this._resolveUserRole = async () => {
             try {
@@ -3647,8 +3237,6 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     isReturnFormOpen: false,
                     selectedAssetForReturn: undefined,
                     returnRequestsLoading: false,
-                    syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success,
                     workflowPopup: {
                         isOpen: true,
                         title: 'Asset Return Request Submitted',
@@ -3749,6 +3337,29 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             }
         };
         this._onSubmitRequest = async (requestData) => {
+            // One open request per person and asset type: refuse a second one until the first is assigned or rejected.
+            const openRequest = (0,_utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_25__.findOpenRequest)(this.state.requests, requestData.requesterName, requestData.assetTitle);
+            if (openRequest) {
+                const openKey = openRequest.requestKey || `#${openRequest.id}`;
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.RequestForm.DuplicateTitle,
+                        stage: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.RequestForm.DuplicateStage,
+                        type: 'warning',
+                        message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.RequestForm.DuplicateBlocked, requestData.assetTitle, openKey),
+                        details: {
+                            requestId: openKey,
+                            assetTitle: openRequest.assetTitle,
+                            requesterName: openRequest.requesterName,
+                            managerName: openRequest.managerName,
+                            status: openRequest.status,
+                            date: openRequest.requestDate
+                        }
+                    }
+                });
+                return;
+            }
             try {
                 const initialStatus = 'Pending';
                 const tempId = `temp-${Date.now()}`;
@@ -3807,7 +3418,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             }
         };
         this._onApproveRequest = async (request, comment = '') => {
-            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_26__.getAvailableStock)(this.state.items, request);
+            const availableStock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_27__.getAvailableStock)(this.state.items, request);
             const requestedQuantity = Number(request.quantity || 0);
             if (availableStock < requestedQuantity) {
                 this.setState({
@@ -3967,13 +3578,13 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Synchronizing assigned assets with SharePoint Mapping List...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBarType.info
                 });
                 const result = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.syncExistingAssignmentsToMappingList(this.state.activeUserDisplayName);
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Synchronization complete! Verified ${result.checkedCount} assigned assets. Successfully checked and synchronized ${result.syncedCount} missing mapping records.`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBarType.success
                 });
                 // Reload inventory to ensure consistency
                 await this._loadInventory();
@@ -3983,7 +3594,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to synchronize mapping records: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBarType.error
                 });
             }
         };
@@ -3992,29 +3603,29 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                 this.setState({
                     syncInProgress: true,
                     syncMessage: 'Running Mapping List diagnostic check...',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.info
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBarType.info
                 });
                 const diagnosticInfo = await _services_InventoryService__WEBPACK_IMPORTED_MODULE_13__.InventoryService.diagnoseMappingListFields();
                 this.setState({
                     syncInProgress: false,
                     diagnosticInfo,
                     syncMessage: 'Diagnostic check complete! Columns and item counts retrieved successfully.',
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.success
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBarType.success
                 });
             }
             catch (e) {
                 this.setState({
                     syncInProgress: false,
                     syncMessage: `Failed to retrieve diagnostics: ${e.message || JSON.stringify(e)}`,
-                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_25__.MessageBarType.error
+                    syncMessageType: _fluentui_react__WEBPACK_IMPORTED_MODULE_28__.MessageBarType.error
                 });
             }
         };
-        this._exportWarrantyReportToExcel = () => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportWarrantyReportToExcel)(this.state.items);
+        this._exportWarrantyReportToExcel = (filteredItems) => {
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportWarrantyReportToExcel)(filteredItems || this.state.items);
         };
-        this._exportWarrantyReportToPDF = () => {
-            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportWarrantyReportToPDF)(this.state.items);
+        this._exportWarrantyReportToPDF = (filteredItems) => {
+            (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportWarrantyReportToPDF)(filteredItems || this.state.items);
         };
         this._exportDetailedReportToExcel = (filteredItems) => {
             (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_23__.exportDetailedReportToExcel)(filteredItems);
@@ -4285,7 +3896,6 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
             ] : []),
             ...(isAdmin ? [
                 { key: 'EventStream', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.EventStream, icon: 'ActivityFeed', group: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.GroupSystem },
-                { key: 'Users', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Users, icon: 'People' },
                 { key: 'Reports', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Reports, icon: 'ReportDocument' },
                 { key: 'Config', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Config, icon: 'Settings' }
             ] : [])
@@ -4297,30 +3907,30 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.Title),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px' } },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, iconProps: { iconName: 'Ringer' }, onClick: () => this.setState({ selectedTabKey: 'Notifications' }), ariaLabel: unreadNotificationCount > 0
-                                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Notifications.OpenButtonUnreadAria, unreadNotificationCount)
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, iconProps: { iconName: 'Ringer' }, onClick: () => this.setState({ selectedTabKey: 'Notifications' }), ariaLabel: unreadNotificationCount > 0
+                                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Notifications.OpenButtonUnreadAria, unreadNotificationCount)
                                         : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Notifications, onRenderText: (p, defaultRender) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                                         defaultRender ? defaultRender(p) : null,
                                         unreadNotificationCount > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-hidden": "true", style: { ...HERO_BADGE_STYLE, backgroundColor: '#0f6cbd' } }, formatBadgeCount(unreadNotificationCount))))), styles: HERO_BUTTON_STYLES }),
-                                isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_27__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButton, iconProps: { iconName: 'Mail' }, onClick: this._openEmailCenter, ariaLabel: this.state.emailFailedCount > 0
-                                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonFailedAria, this.state.emailFailedCount)
+                                isAdmin && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButton, iconProps: { iconName: 'Mail' }, onClick: this._openEmailCenter, ariaLabel: this.state.emailFailedCount > 0
+                                        ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonFailedAria, this.state.emailFailedCount)
                                         : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonAria, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.EmailCenter.OpenButtonAria, onRenderText: (p, defaultRender) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                                         defaultRender ? defaultRender(p) : null,
                                         this.state.emailFailedCount > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { "aria-hidden": "true", style: { ...HERO_BADGE_STYLE, backgroundColor: '#c50f1f' } }, formatBadgeCount(this.state.emailFailedCount))))), styles: HERO_BUTTON_STYLES })),
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_29__.Dropdown, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.LanguageLabel, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.LanguageLabel, selectedKey: (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Dropdown, { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.LanguageLabel, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Common.LanguageLabel, selectedKey: (0,_services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.getCurrentLanguage)(), onChange: (_, option) => option && this._onLanguageSelect(option.key), options: _services_LanguageSwitcherService__WEBPACK_IMPORTED_MODULE_22__.SUPPORTED_LANGUAGES.map(l => ({ key: l.code, text: l.nativeName })), styles: {
                                         root: { minWidth: 130 },
                                         title: { backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', borderRadius: '4px' },
                                         caretDown: { color: '#ffffff' }
                                     } }))),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.WelcomeBack, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(activeUserDisplayName))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.WelcomeBack, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(activeUserDisplayName))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText },
                             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.RoleLabel.split('{0}')[0],
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, this._getRoleDisplayLabel(effectiveRole))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText },
                             environmentMessage,
                             " \u2022 ",
-                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.LocationLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(description))),
-                        isAdmin && roleGroups.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.SharePointGroupsLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', ')))))),
+                            (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.LocationLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(description))),
+                        isAdmin && roleGroups.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].smallText }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.SharePointGroupsLabel, (0,_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__.escape)(roleGroups.join(', ')))))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeDiagramContainer },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetLifecycleDiagram__WEBPACK_IMPORTED_MODULE_16__.AssetLifecycleDiagram, { isDarkTheme: isDarkTheme }))),
                 this.state.errorMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '20px', position: 'relative' } },
@@ -4333,7 +3943,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarContainer} ${this.state.sidebarCollapsed ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarCollapsed : ''}`, role: "navigation", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.MainNavigation },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navHeader },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Header),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.RoleLabel, this._getRoleDisplayLabel(effectiveRole)))),
                         navItems.map((nav, index) => {
                             const isActive = this.state.selectedTabKey === nav.key;
                             const showGroupLabel = nav.group && (index === 0 || navItems[index - 1]?.group !== nav.group);
@@ -4345,7 +3955,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             this.setState({ selectedTabKey: nav.key });
                                         }
                                     }, tabIndex: 0, role: "button", "aria-current": isActive ? 'page' : undefined, "aria-label": nav.text, className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sidebarNavItem} ${isActive ? _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemActive : ''}` },
-                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: nav.icon }),
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Icon, { iconName: nav.icon }),
                                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navItemText }, nav.text),
                                     nav.badge !== undefined && nav.badge > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].navBadge, style: { backgroundColor: nav.badgeColor || '#e74c3c' } }, formatBadgeCount(nav.badge))))));
                         }),
@@ -4355,12 +3965,12 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                     this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed }));
                                 }
                             } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Icon, { iconName: this.state.sidebarCollapsed ? 'DoubleChevronRight' : 'DoubleChevronLeft' }),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].collapseText }, this.state.sidebarCollapsed ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Expand : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.Collapse))),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].card} ${_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].contentContainer}` },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavHeader },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileMenuToggle, onClick: () => this.setState(prev => ({ sidebarCollapsed: !prev.sidebarCollapsed })), "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Nav.ToggleNavigation },
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_30__.Icon, { iconName: "GlobalNavButton" })),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_31__.Icon, { iconName: "GlobalNavButton" })),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].mobileNavTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.Hero.Title)),
                         (() => {
                             const dashboardState = {
@@ -4377,7 +3987,10 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
                                 reportsStatusFilter: this.state.reportsStatusFilter,
                                 items,
-                                requests: this.state.requests
+                                requests: this.state.requests,
+                                auditLogs,
+                                returnRequests: this.state.returnRequests,
+                                spContext: this.props.spContext
                             };
                             const reportsActions = {
                                 onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
@@ -4385,8 +3998,8 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                 onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
                                 onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
                                 onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
-                                onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
-                                onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                                onExportWarrantyReportToExcel: (filteredItems) => this._exportWarrantyReportToExcel(filteredItems),
+                                onExportWarrantyReportToPDF: (filteredItems) => this._exportWarrantyReportToPDF(filteredItems)
                             };
                             const incidentHistoryState = {
                                 userDisplayName: activeUserDisplayName || '',
@@ -4504,18 +4117,6 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                                             activeUserDisplayName,
                                             auditLogsRefreshTrigger: this.state.auditLogsRefreshTrigger
                                         } })) : null;
-                                case 'Users':
-                                    return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.UsersPage, { state: {
-                                            employees: this.state.employees,
-                                            items,
-                                            activeUserDisplayName,
-                                            effectiveRole,
-                                            activeUserEmail,
-                                            expandedUserEmail: this.state.expandedUserEmail
-                                        }, actions: {
-                                            onToggleExpandUser: (email) => this.setState({ expandedUserEmail: email }),
-                                            isAssetAssignedToCurrentUser: this._isAssetAssignedToCurrentUser
-                                        } })) : null;
                                 case 'Reports':
                                     return isAdmin ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_14__.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
                                 case 'Config': {
@@ -4539,7 +4140,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             }
                         })()))),
             (isAdmin || isManager) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AssetForm__WEBPACK_IMPORTED_MODULE_6__.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
-            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_7__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
+            (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RequestForm__WEBPACK_IMPORTED_MODULE_7__.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, myRequests: myRequests, onSubmitRequest: this._onSubmitRequest })),
             (isAdmin || isManager || isEmployee) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IncidentRequest_IncidentRequestModule__WEBPACK_IMPORTED_MODULE_15__.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
                     this.setState({
                         workflowPopup: {
@@ -4547,7 +4148,7 @@ class InventoryManagement extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
                             title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Title,
                             stage: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Stage,
                             type: 'warning',
-                            message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_28__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
+                            message: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_26__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_21__.IncidentSuccessPopup.Message, details.assetName, details.incidentType),
                             details: {
                                 assetTitle: details.assetName,
                                 requesterName: details.requesterName,
@@ -6291,25 +5892,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 72674);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 18681);
 /* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 29425);
 /* harmony import */ var _utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/NexerPdfReport */ 3279);
 /* harmony import */ var _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReplacementHistory.module.scss */ 45217);
 /* harmony import */ var _services_IncidentService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/IncidentService */ 76911);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _service_ServiceRecordCards__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/ServiceRecordCards */ 3253);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/listUi */ 42806);
+
+
 
 
 
@@ -6321,9 +5921,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const ReplacementHistory = (props) => {
     const [replacements, setReplacements] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [filteredReplacements, setFilteredReplacements] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [searchText, setSearchText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-    const [statusFilter, setStatusFilter] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [selectedReplacement, setSelectedReplacement] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     const [tempResolution, setTempResolution] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
@@ -6379,9 +5976,6 @@ const ReplacementHistory = (props) => {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         loadReplacements();
     }, [props.userEmail]);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        filterReplacements();
-    }, [searchText, statusFilter, replacements]);
     const loadReplacements = async () => {
         try {
             props.setIsLoading(true);
@@ -6396,17 +5990,6 @@ const ReplacementHistory = (props) => {
         finally {
             props.setIsLoading(false);
         }
-    };
-    const filterReplacements = () => {
-        let filtered = [...replacements];
-        if (searchText) {
-            filtered = filtered.filter((rep) => (rep.assetName || '').toLowerCase().includes(searchText.toLowerCase()) ||
-                (rep.incidentId || '').toLowerCase().includes(searchText.toLowerCase()));
-        }
-        if (statusFilter) {
-            filtered = filtered.filter((rep) => rep.status === statusFilter);
-        }
-        setFilteredReplacements(filtered);
     };
     const handleViewDetails = (item) => {
         setSelectedReplacement(item);
@@ -6482,7 +6065,7 @@ const ReplacementHistory = (props) => {
                 fields,
                 sections,
                 productName: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Hero.Title,
-                generatedText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(h.PdfGeneratedOn, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || ''),
+                generatedText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(h.PdfGeneratedOn, (0,_utils_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || ''),
                 fileName: `replacement-${rep.incidentId || rep.id}.pdf`
             });
         }
@@ -6490,116 +6073,13 @@ const ReplacementHistory = (props) => {
             console.error('Error generating PDF report:', error);
         }
     };
-    const columns = [
-        {
-            key: 'replacementId',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColReplacementId,
-            fieldName: 'incidentId',
-            minWidth: 100,
-            maxWidth: 130,
-            isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.incidentId),
-        },
-        {
-            key: 'assetName',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColAsset,
-            fieldName: 'assetName',
-            minWidth: 120,
-            maxWidth: 180,
-            isResizable: true,
-            onRender: (item) => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.assetName),
-        },
-        {
-            key: 'issueType',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColType,
-            fieldName: 'issueType',
-            minWidth: 120,
-            maxWidth: 150,
-            isResizable: true,
-            onRender: () => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ReplacementRequestType),
-        },
-        {
-            key: 'priority',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColPriority,
-            fieldName: 'priority',
-            minWidth: 80,
-            maxWidth: 100,
-            isResizable: true,
-            onRender: (item) => {
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getPriorityBadgeStyle(item.priority) }, item.priority || 'Medium'));
-            },
-        },
-        {
-            key: 'status',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColStatus,
-            fieldName: 'status',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: getStatusBadgeStyle(item.status) }, item.status || 'Open'));
-            },
-        },
-        {
-            key: 'reportedDate',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColReported,
-            fieldName: 'reportedDate',
-            minWidth: 100,
-            maxWidth: 130,
-            isResizable: true,
-            onRender: (item) => {
-                if (!item.reportedDate)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, "-");
-                try {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, new Date(item.reportedDate).toLocaleDateString());
-                }
-                catch {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, null, item.reportedDate);
-                }
-            },
-        },
-        {
-            key: 'actions',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ColActions,
-            minWidth: 160,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ButtonView, onClick: () => handleViewDetails(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ButtonDownload, onClick: () => handleDownloadReport(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }))),
-        },
-    ];
-    const statusFilterOptions = [
-        { key: '', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.AllStatusOption },
-        ..._constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_4__.INCIDENT_STATUS_OPTIONS
-    ];
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px' }, className: _ReplacementHistory_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].replacementHistory },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Stack, { tokens: { childrenGap: 15 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.SearchBox, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.SearchReplacementsPlaceholder, value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.FilterByStatusPlaceholder, options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_6__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ShowingReplacements, filteredReplacements.length, replacements.length)),
-            filteredReplacements.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_13__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.SelectionMode.none })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '250px',
-                    border: '1px dashed #e5e7eb',
-                    borderRadius: '8px',
-                    padding: '30px'
-                } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Text, { variant: "medium", style: { color: '#6b7280' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.NoReplacementsFound)))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ReplacementDetailsTitle, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Common.Close }, selectedReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_service_ServiceRecordCards__WEBPACK_IMPORTED_MODULE_6__.ServiceRecordCards, { kind: "replacement", title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Nav.ReplacementHistory, subtitle: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.RecordLists.SubtitleReplacements, records: replacements, isAdmin: props.userRole === 'Admin', onView: handleViewDetails, onDownload: handleDownloadReport }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PanelType.medium, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ReplacementDetailsTitle, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.Common.Close }, selectedReplacement && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ReportedLabel),
                 " ",
-                new Date(selectedReplacement.reportedDate).toLocaleString()),
+                (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.formatFlexibleDateTime)(selectedReplacement.reportedDate)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedReplacement.issueDescription)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },
@@ -6631,18 +6111,18 @@ const ReplacementHistory = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, selectedReplacement.assignedTo))))),
             props.userRole === 'Admin' && (selectedReplacement.status === 'Resolved' || selectedReplacement.status === 'Closed') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " ",
                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.UpdateResolutionTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Stack, { tokens: { childrenGap: 10 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Stack, { tokens: { childrenGap: 10 } },
                     selectedReplacement.resolvedDate && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.88rem' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#6b7280' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.LabelResolvedDate),
                         ' ',
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: '#111827' } }, new Date(selectedReplacement.resolvedDate).toLocaleString()))),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryLabel, multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryPlaceholderReplacement }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.SaveResolutionButton, onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryLabel, multiline: true, rows: 3, value: tempResolution, onChange: (ev, newValue) => setTempResolution(newValue || ''), placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionSummaryPlaceholderReplacement }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.SaveResolutionButton, onClick: () => handleSaveResolution(selectedReplacement), styles: { root: { alignSelf: 'flex-start' } } })))) : (selectedReplacement.resolution && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' } },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', color: '#1e293b', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: "CheckMark", style: { color: '#166534', fontWeight: 'bold' } }),
                     " ",
                     InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_5__.IncidentHistory.ResolutionDetailsTitle),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' } },
@@ -6672,28 +6152,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 42242);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 47909);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 23166);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 67038);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 99665);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 42242);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 47909);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 27006);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 18681);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 21314);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 23166);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 67038);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react */ 99665);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fluentui/react */ 5613);
 /* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 /* harmony import */ var _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/PeopleSearchService */ 57204);
 /* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/RequestDuplicateUtils */ 77892);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
@@ -6771,9 +6255,17 @@ const RequestForm = (props) => {
     }, [props.isOpen, employeeOptions]);
     const uniqueAssetTypes = Array.from(new Set(props.availableAssets.map(a => a.assetType).filter(Boolean)));
     const dynamicAssetTypeOptions = uniqueAssetTypes.map(type => ({ key: type, text: type }));
-    const assetTypeOptions = dynamicAssetTypeOptions.length > 0
+    // One open request per asset type: a type is blocked until its request is assigned or rejected.
+    const openRequests = (props.myRequests || []).filter(_utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_6__.isOpenRequest);
+    const openRequestFor = (type) => openRequests.filter(r => (0,_utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_6__.isSameAssetType)(r.assetTitle, type))[0];
+    const stageText = (request) => (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__.getSlaStage)(request) === 'awaitingAssignment' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Reports.OutcomeAwaitingAssignment : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Reports.OutcomeAwaitingApproval;
+    const describeOpen = (request) => (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.OpenRequestItem, request.assetTitle, request.requestKey || `#${request.id}`, stageText(request));
+    const blockingRequest = openRequestFor(selectedAssetType);
+    const assetTypeOptions = (dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
-        : _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS;
+        : _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.DEFAULT_ASSET_TYPE_OPTIONS).map(option => openRequestFor(String(option.key))
+        ? { ...option, disabled: true, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.TypeInProgress, option.text) }
+        : option);
     // Only approvers can be picked: members of the manager role group (property pane,
     // default MSFT Owners/Members/Visitors -> MSFT Members). The requester is left out,
     // since nobody approves their own request.
@@ -6815,15 +6307,17 @@ const RequestForm = (props) => {
     // Clicking into the empty field lists every manager.
     const listAllManagers = async () => (await loadManagers()).slice(0, 25).map(toPersona);
     const renderManagerSuggestion = (persona) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.suggestion },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Persona, { text: persona.text, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PersonaSize.size40, hidePersonaDetails: true }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Persona, { text: persona.text, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PersonaSize.size40, hidePersonaDetails: true }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.suggestionText },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.suggestionName }, persona.text),
             persona.secondaryText && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.suggestionMeta }, persona.secondaryText),
             persona.tertiaryText && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: pickerCss.suggestionMeta }, persona.tertiaryText))));
     // A manager counts only when picked from the list, which always carries an email.
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && quantity > 0 && !!reason.trim();
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && !blockingRequest && quantity > 0 && !!reason.trim();
     const onSave = () => {
         const employee = activeEmployee;
+        if (blockingRequest)
+            return;
         // Find a real asset ID to satisfy SharePoint backend lookups
         let matchingAsset = props.availableAssets.find(a => a.assetType === selectedAssetType &&
             (a.status === 'In Stock' || a.status === 'Yes'));
@@ -6858,466 +6352,57 @@ const RequestForm = (props) => {
             props.onClose();
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Common.Close },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Stack, { tokens: stackTokens },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.OnBehalfHint),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelRequester, selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelEmployeeId, value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Panel, { isOpen: props.isOpen, onDismiss: props.onClose, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PanelType.custom, customWidth: "100%", styles: { main: { maxWidth: '450px' } }, headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.HeaderText, closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Common.Close },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Stack, { tokens: stackTokens },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_15__.MessageBarType.info }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.OnBehalfHint),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelRequester, selectedKey: selectedRequesterId, options: employeeOptions, required: true, disabled: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelEmployeeId, value: employeeId, onChange: (_, val) => setEmployeeId(val || ''), required: true, disabled: activeEmployee.id !== 'current-user' }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Label, { required: true }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelManagerName),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.NormalPeoplePicker, { onResolveSuggestions: (filter) => resolveManagerSuggestions(filter), onEmptyResolveSuggestions: () => listAllManagers(), onRenderSuggestionsItem: (persona) => renderManagerSuggestion(persona), selectedItems: manager ? [{ key: manager.email || manager.displayName, text: manager.displayName, secondaryText: manager.email }] : [], onChange: (items) => {
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.Label, { required: true }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelManagerName),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.NormalPeoplePicker, { onResolveSuggestions: (filter) => resolveManagerSuggestions(filter), onEmptyResolveSuggestions: () => listAllManagers(), onRenderSuggestionsItem: (persona) => renderManagerSuggestion(persona), selectedItems: manager ? [{ key: manager.email || manager.displayName, text: manager.displayName, secondaryText: manager.email }] : [], onChange: (items) => {
                         const picked = items && items.length > 0 ? items[0].data : undefined;
                         setManager(picked);
                         setManagerNameTouched(true);
                     }, 
                     // Typed text that isn't a picked manager is never accepted.
-                    onValidateInput: () => _fluentui_react__WEBPACK_IMPORTED_MODULE_17__.ValidationState.invalid, onBlur: () => setManagerNameTouched(true), itemLimit: 1, resolveDelay: 300, inputProps: {
+                    onValidateInput: () => _fluentui_react__WEBPACK_IMPORTED_MODULE_20__.ValidationState.invalid, onBlur: () => setManagerNameTouched(true), itemLimit: 1, resolveDelay: 300, inputProps: {
                         placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSearchPlaceholder,
                         'aria-label': InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelManagerName
                     }, pickerSuggestionsProps: {
-                        suggestionsHeaderText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSuggestionsHeader, managerGroup),
-                        noResultsFoundText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerNoResults, managerGroup),
+                        suggestionsHeaderText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSuggestionsHeader, managerGroup),
+                        noResultsFoundText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerNoResults, managerGroup),
                         loadingText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerSearching
                     } }),
                 manager && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.card },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.Persona, { text: manager.displayName, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PersonaSize.size32, hidePersonaDetails: true }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Persona, { text: manager.displayName, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PersonaSize.size32, hidePersonaDetails: true }),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: 0 } },
                         detailsLine(manager.jobTitle, manager.department) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.cardLine },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.Icon, { iconName: "Contact" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.Icon, { iconName: "Contact" }),
                             " ",
                             detailsLine(manager.jobTitle, manager.department))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.cardLine },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.Icon, { iconName: "Mail" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.Icon, { iconName: "Mail" }),
                             " ",
                             manager.email)))),
                 managersError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.cardWarn, role: "alert", style: { marginTop: 6 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.Icon, { iconName: "Warning" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.Icon, { iconName: "Warning" }),
                     " ",
-                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_18__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerGroupUnavailable, managerGroup))),
+                    (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerGroupUnavailable, managerGroup))),
                 managerNameTouched && !managerName.trim() && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: pickerCss.error, role: "alert" }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ManagerNameRequired))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelRequestedDate, type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelAssetType, selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelRequestedDate, type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelAssetType, selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
-                }, required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelPriority, selectedKey: priority, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelQuantity, type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelReason, multiline: true, rows: 3, value: reason, onChange: (_, val) => {
+                }, required: true, errorMessage: blockingRequest ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.DuplicateBlocked, blockingRequest.assetTitle, blockingRequest.requestKey || `#${blockingRequest.id}`) : undefined }),
+            openRequests.length > 0 && !blockingRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_15__.MessageBarType.warning, isMultiline: true }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.OpenRequestsNote, openRequests.map(describeOpen).join('; ')))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelPriority, selectedKey: priority, options: _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelQuantity, type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.LabelReason, multiline: true, rows: 3, value: reason, onChange: (_, val) => {
                     setReason(val || '');
                     setReasonTouched(true);
                 }, onBlur: () => setReasonTouched(true), required: true, errorMessage: reasonTouched && !reason.trim() ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.ReasonRequired : undefined }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_20__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.SubmitRequest, onClick: onSave, disabled: !isFormValid }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Common.Cancel, onClick: props.onClose })))));
-};
-
-
-/***/ }),
-
-/***/ 82867:
-/*!********************************************************************!*\
-  !*** ./lib/webparts/inventoryManagement/components/RequestList.js ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   RequestList: () => (/* binding */ RequestList)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 27006);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 18681);
-/* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
-/* harmony import */ var _utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/RequestStatusUtils */ 88899);
-/* harmony import */ var _RejectRequestDialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RejectRequestDialog */ 19342);
-/* harmony import */ var _RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RejectionReasonCard */ 94735);
-
-
-
-
-
-
-
-
-
-
-const RequestList = (props) => {
-    const [selectedRequestForDetails, setSelectedRequestForDetails] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const [isDetailsPanelOpen, setIsDetailsPanelOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-    const [rejectTarget, setRejectTarget] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
-    const isDeclined = (r) => r.status === 'Declined' || r.status === 'Rejected';
-    // Saves the rejection, then closes the form and, if it was opened from there, the details panel.
-    const confirmReject = async (request, reason) => {
-        if (!props.onRejectRequest)
-            return;
-        await props.onRejectRequest(request, reason).catch(err => console.error(err));
-        setRejectTarget(undefined);
-        if (selectedRequestForDetails && selectedRequestForDetails.id === request.id) {
-            setIsDetailsPanelOpen(false);
-            setSelectedRequestForDetails(null);
-        }
-    };
-    const sortedItems = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
-        return [...props.items].sort((a, b) => {
-            const dateA = a.requestDate || '';
-            const dateB = b.requestDate || '';
-            if (dateA && dateB && dateA !== dateB) {
-                return new Date(dateB).getTime() - new Date(dateA).getTime();
-            }
-            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
-            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
-            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
-                return numB - numA;
-            }
-            return (b.id || '').localeCompare(a.id || '');
-        });
-    }, [props.items]);
-    const getStatusDisplayText = _utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_3__.getAssetRequestStatusDisplayText;
-    const columns = [
-        {
-            key: 'columnRequestKey',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.RequestId,
-            fieldName: 'requestKey',
-            minWidth: 90,
-            maxWidth: 125,
-            isResizable: true
-        },
-        {
-            key: 'columnEmployeeName',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.EmployeeName,
-            fieldName: 'requesterName',
-            minWidth: 100,
-            maxWidth: 150,
-            isResizable: true
-        },
-        {
-            key: 'columnManagerName',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.ManagerName,
-            fieldName: 'managerName',
-            minWidth: 110,
-            maxWidth: 140,
-            isResizable: true,
-            onRender: (item) => item.managerName || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.NotAvailable
-        },
-        {
-            key: 'columnAssetType',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssetType,
-            fieldName: 'assetTitle',
-            minWidth: 100,
-            maxWidth: 120,
-            isResizable: true
-        },
-        {
-            key: 'columnPriority',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Priority,
-            fieldName: 'priority',
-            minWidth: 80,
-            maxWidth: 100,
-            isResizable: true,
-            onRender: (item) => {
-                const priority = item.priority || 'Medium';
-                let color = '#4b5563'; // default medium (gray)
-                let backgroundColor = '#f3f4f6';
-                if (priority === 'High') {
-                    color = '#b91c1c';
-                    backgroundColor = '#fee2e2';
-                }
-                else if (priority === 'Low') {
-                    color = '#1e3a8a';
-                    backgroundColor = '#dbeafe';
-                }
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                        backgroundColor,
-                        color,
-                        padding: '4px 10px',
-                        borderRadius: '9999px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600
-                    } }, priority));
-            }
-        },
-        ...(props.hideStatusColumn ? [] : [{
-                key: 'column6',
-                name: props.statusColumnLabel || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Status,
-                fieldName: props.statusField || 'status',
-                minWidth: 80,
-                maxWidth: 100,
-                isResizable: true,
-                onRender: (item) => {
-                    const val = item[props.statusField || 'status'] || 'Pending';
-                    let backgroundColor = '#fef3c7'; // default pending (yellow)
-                    let textColor = '#92400e';
-                    let displayVal = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.StatusPendingManagerApproval;
-                    if (val === 'Approved by Manager' || val === 'Approved') {
-                        backgroundColor = '#e0f2fe';
-                        textColor = '#0369a1';
-                        displayVal = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dropdowns.AssetRequestStatus.ApprovedByManager;
-                    }
-                    else if (val === 'Asset Assigned') {
-                        backgroundColor = '#dcfce7';
-                        textColor = '#166534';
-                        displayVal = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dropdowns.AssetRequestStatus.AssetAssigned;
-                    }
-                    else if (val === 'Rejected' || val === 'Declined') {
-                        backgroundColor = '#fee2e2';
-                        textColor = '#991b1b';
-                        displayVal = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dropdowns.AssetRequestStatus.Rejected;
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                            backgroundColor,
-                            color: textColor,
-                            padding: '4px 12px',
-                            borderRadius: '9999px',
-                            fontSize: '0.75rem',
-                            fontWeight: 600,
-                            display: 'inline-block'
-                        } }, displayVal));
-                }
-            }]),
-        {
-            key: 'columnManagerComment',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.ManagerComment,
-            fieldName: 'managerResponse',
-            minWidth: 150,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => {
-                if (!item.managerResponse)
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)', fontStyle: 'italic' } }, "-");
-                const isDeclined = item.status === 'Declined';
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: isDeclined ? '#991b1b' : 'inherit', fontWeight: isDeclined ? 600 : 400 } }, item.managerResponse));
-            }
-        },
-        ...(props.canApproveAsset ? [{
-                key: 'columnAssetStatus',
-                name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssetStatus,
-                fieldName: 'assetStatus',
-                minWidth: 200,
-                maxWidth: 260,
-                isResizable: true,
-                onRender: (item) => {
-                    const value = item.assetStatus || 'Pending';
-                    const isApproved = value.toLowerCase().includes('approv');
-                    const isBusy = props.actionInProgressId === item.id;
-                    const displayValue = isApproved ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dropdowns.AuditLogStatus.Approved : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Dropdowns.AuditLogStatus.Pending;
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'nowrap' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                backgroundColor: isApproved ? '#dcfce7' : '#fef3c7',
-                                color: isApproved ? '#166534' : '#92400e',
-                                padding: '4px 10px',
-                                borderRadius: '9999px',
-                                fontSize: '0.75rem',
-                                fontWeight: 600,
-                                display: 'inline-block'
-                            } }, displayValue),
-                        !isApproved && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.ButtonReviewAssign, onClick: () => {
-                                if (props.onSelectRequestForAssignment) {
-                                    props.onSelectRequestForAssignment(item);
-                                }
-                                else if (props.onApproveAsset) {
-                                    props.onApproveAsset(item).catch(err => console.error(err));
-                                }
-                            }, disabled: isBusy, styles: {
-                                root: { height: '24px', minHeight: '24px', padding: '0 8px', fontSize: '0.75rem', borderRadius: '4px', border: 'none' }
-                            } }))));
-                }
-            }] : []),
-        ...(props.showResponseColumns ? [
-            {
-                key: 'columnAdminResponse',
-                name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AdminResponse,
-                fieldName: 'assetStatus',
-                minWidth: 140,
-                maxWidth: 200,
-                isResizable: true,
-                onRender: (item) => {
-                    const managerStatus = (item.status || '').toLowerCase();
-                    if (managerStatus.includes('pending')) {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#92400e', fontStyle: 'italic' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AdminResponseWaitingOnManager);
-                    }
-                    if (managerStatus === 'declined' || managerStatus === 'rejected') {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#991b1b', fontStyle: 'italic' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AdminResponseRejected);
-                    }
-                    const isApproved = (item.assetStatus || '').toLowerCase().includes('approv') || managerStatus === 'asset assigned';
-                    return isApproved ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AdminResponseAllocated)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AdminResponsePendingApproval));
-                }
-            }
-        ] : []),
-        ...(props.canApproveReject ? [{
-                key: 'column8',
-                name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Actions,
-                fieldName: 'actions',
-                minWidth: 220,
-                maxWidth: 260,
-                isResizable: true,
-                onRender: (item) => {
-                    const isPending = (item.status || '').toLowerCase().includes('pending');
-                    const isBusy = props.actionInProgressId === item.id;
-                    if (!isPending) {
-                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.NoAction);
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Approve, onClick: () => props.onApproveRequest && props.onApproveRequest(item), disabled: isBusy }),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reject, onClick: () => props.onRejectRequest && setRejectTarget(item), disabled: isBusy, styles: {
-                                root: { backgroundColor: '#991b1b', borderColor: '#991b1b' },
-                                rootHovered: { backgroundColor: '#7f1d1d', borderColor: '#7f1d1d' }
-                            } })));
-                }
-            }] : []),
-        {
-            key: 'columnViewDetails',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Details,
-            minWidth: 70,
-            maxWidth: 90,
-            isResizable: true,
-            onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.View, onClick: () => {
-                    setSelectedRequestForDetails(item);
-                    setIsDetailsPanelOpen(true);
-                }, styles: {
-                    root: { height: '24px', minHeight: '24px', padding: '0 8px', fontSize: '0.75rem', borderRadius: '4px' }
-                } }))
-        }
-    ];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        sortedItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.EmptyState)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_8__.DetailsList, { items: sortedItems, columns: columns, setKey: "set", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__.SelectionMode.none }))),
-        selectedRequestForDetails && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.Panel, { isOpen: isDetailsPanelOpen, onDismiss: () => {
-                setIsDetailsPanelOpen(false);
-                setSelectedRequestForDetails(null);
-            }, type: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.PanelType.medium, headerText: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.DetailsHeaderPrefix, selectedRequestForDetails.requestKey || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.DetailsHeaderFallback), closeButtonAriaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '20px', fontFamily: 'inherit' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        backgroundColor: 'var(--surface-bg, #ffffff)',
-                        border: '1px solid rgba(128, 128, 128, 0.15)',
-                        borderRadius: '8px',
-                        padding: '20px',
-                        boxShadow: 'var(--card-shadow)'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 16px 0', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '10px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.SectionRequestInformation),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGridGap16, style: { fontSize: '0.85rem' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.RequestId),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestKey || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.NotAvailable)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.LabelRequestDate),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requestDate)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.WorkflowPopup.LabelRequester),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.requesterName)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelEmployeeId),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.employeeId || '-')),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.ManagerName),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.managerName || '-')),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.LabelAssetCategory),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.assetTitle)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestForm.LabelQuantity),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.quantity)),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Priority),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, selectedRequestForDetails.priority || 'Medium')))),
-                selectedRequestForDetails.reason && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        backgroundColor: 'var(--surface-bg, #ffffff)',
-                        border: '1px solid rgba(128, 128, 128, 0.15)',
-                        borderRadius: '8px',
-                        padding: '20px',
-                        boxShadow: 'var(--card-shadow)'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.SectionJustification),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                            backgroundColor: 'rgba(128, 128, 128, 0.05)',
-                            border: '1px solid rgba(128, 128, 128, 0.1)',
-                            borderRadius: '6px',
-                            padding: '12px',
-                            fontSize: '0.85rem',
-                            color: 'var(--text-main, #333333)',
-                            lineHeight: 1.5
-                        } }, selectedRequestForDetails.reason))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        backgroundColor: 'var(--surface-bg, #ffffff)',
-                        border: '1px solid rgba(128, 128, 128, 0.15)',
-                        borderRadius: '8px',
-                        padding: '20px',
-                        boxShadow: 'var(--card-shadow)'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.SectionManagerApproval),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                backgroundColor: (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? '#dcfce7' : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? '#fee2e2' : '#fef3c7',
-                                color: (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? '#166534' : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? '#991b1b' : '#92400e',
-                                padding: '4px 10px',
-                                borderRadius: '9999px',
-                                fontSize: '0.75rem',
-                                fontWeight: 600
-                            } }, getStatusDisplayText(selectedRequestForDetails.status)),
-                        selectedRequestForDetails.managerResponse && !isDeclined(selectedRequestForDetails) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '0.85rem', color: 'var(--text-muted, #666666)' } },
-                            "- \u201C",
-                            selectedRequestForDetails.managerResponse,
-                            "\u201D"))),
-                    isDeclined(selectedRequestForDetails) && selectedRequestForDetails.managerResponse && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: 12 } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectionReasonCard__WEBPACK_IMPORTED_MODULE_5__.RejectionReasonCard, { reason: selectedRequestForDetails.managerResponse, managerName: selectedRequestForDetails.managerName, decidedAt: selectedRequestForDetails.managerDecisionAt })))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        backgroundColor: 'var(--surface-bg, #ffffff)',
-                        border: '1px solid rgba(128, 128, 128, 0.15)',
-                        borderRadius: '8px',
-                        padding: '20px',
-                        boxShadow: 'var(--card-shadow)'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', marginBottom: '8px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.SectionAdminAllocation),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontSize: '0.85rem', color: 'var(--text-main, #333333)' } }, (selectedRequestForDetails.status === 'Approved' || selectedRequestForDetails.status === 'Approved by Manager' || selectedRequestForDetails.status === 'Asset Assigned') ? (((selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') || selectedRequestForDetails.status === 'Asset Assigned') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#166534', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AllocationAllocated)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#92400e', fontWeight: 600 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AllocationPendingAdmin))) : (selectedRequestForDetails.status === 'Declined' || selectedRequestForDetails.status === 'Rejected') ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#991b1b' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AllocationNotApplicable)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', fontStyle: 'italic' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.AllocationPendingManager)))),
-                props.canApproveReject && (selectedRequestForDetails.status || '').toLowerCase().includes('pending') && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        display: 'flex',
-                        gap: '12px',
-                        marginTop: '10px',
-                        borderTop: '1px solid rgba(128, 128, 128, 0.15)',
-                        paddingTop: '15px'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: props.actionInProgressId === selectedRequestForDetails.id ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Processing : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Approve, onClick: () => {
-                            if (props.onApproveRequest) {
-                                props.onApproveRequest(selectedRequestForDetails)
-                                    .then(() => {
-                                    setIsDetailsPanelOpen(false);
-                                    setSelectedRequestForDetails(null);
-                                })
-                                    .catch(err => console.error(err));
-                            }
-                        }, disabled: props.actionInProgressId === selectedRequestForDetails.id }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Reject, onClick: () => props.onRejectRequest && setRejectTarget(selectedRequestForDetails), disabled: props.actionInProgressId === selectedRequestForDetails.id, styles: {
-                            root: { color: '#dc2626', borderColor: '#dc2626' },
-                            rootHovered: { color: '#ffffff', backgroundColor: '#dc2626', borderColor: '#dc2626' }
-                        } }))),
-                props.canApproveAsset && !(selectedRequestForDetails.assetStatus || '').toLowerCase().includes('approv') && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
-                        display: 'flex',
-                        gap: '12px',
-                        marginTop: '10px',
-                        borderTop: '1px solid rgba(128, 128, 128, 0.15)',
-                        paddingTop: '15px'
-                    } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.RequestList.ButtonReviewAssign, onClick: () => {
-                            setIsDetailsPanelOpen(false);
-                            setSelectedRequestForDetails(null);
-                            if (props.onSelectRequestForAssignment) {
-                                props.onSelectRequestForAssignment(selectedRequestForDetails);
-                            }
-                        }, iconProps: { iconName: 'CompletedSolid' } }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', marginTop: '10px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close, onClick: () => {
-                            setIsDetailsPanelOpen(false);
-                            setSelectedRequestForDetails(null);
-                        } }))))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectRequestDialog__WEBPACK_IMPORTED_MODULE_4__.RejectRequestDialog, { request: rejectTarget, onConfirm: confirmReject, onDismiss: () => setRejectTarget(undefined) })));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.Stack, { horizontal: true, tokens: stackTokens, style: { marginTop: 20 } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_22__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.RequestForm.SubmitRequest, onClick: onSave, disabled: !isFormValid }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_23__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Common.Cancel, onClick: props.onClose })))));
 };
 
 
@@ -7444,24 +6529,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
-/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
-/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
-/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 44533);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 80539);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 4312);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 10548);
+/* harmony import */ var _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fluentui/react/lib/Dialog */ 87295);
 /* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
-/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
-/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
-/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react/lib/Stack */ 21314);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
+/* harmony import */ var _fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react/lib/Shimmer */ 25666);
 /* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/DropdownConstants */ 82889);
 /* harmony import */ var _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InventoryManagement.module.scss */ 99623);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 /* harmony import */ var _utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/RequestStatusUtils */ 88899);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./common/Pager */ 42589);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/listUi */ 42806);
+
+
+
+
+
 
 
 
@@ -7477,64 +6573,105 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const conditionOptions = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_1__.RETURN_CONDITION_OPTIONS;
+const PAGE_SIZE = 10;
+const STAGES = ['manager', 'admin', 'completed', 'rejected'];
+const STAGE_COLOR = { manager: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.ACCENTS.orange, admin: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.ACCENTS.blue, completed: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.ACCENTS.green, rejected: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.ACCENTS.red };
+const stageOf = (status) => {
+    switch (status) {
+        case 'Approved':
+        case 'Pending Admin Verification': return 'admin';
+        case 'Rejected': return 'rejected';
+        case 'Completed':
+        case 'Returned': return 'completed';
+        default: return 'manager'; // Pending, Pending Manager Approval
+    }
+};
+const stageTone = (stage) => stage === 'manager' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__.TONES.orange : stage === 'admin' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__.TONES.blue : stage === 'rejected' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__.TONES.red : _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__.TONES.green;
 const ReturnRequestList = (props) => {
     const { items, isAdmin, isManager, onUpdateStatus, loading } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.RecordLists;
+    const [layout, setLayout] = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.useRecordLayout)('returns');
     const [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    // Cards start on the requests waiting for this role, as the page always has; the board shows the whole pipeline.
+    const [quick, setQuick] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((isAdmin || isManager) && layout === 'cards' ? 'mine' : 'all');
+    const [condition, setCondition] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all');
+    const [range, setRange] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('all');
+    const [sort, setSort] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('newest');
+    const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
     // Dialog / State for Actions
     const [activeRequest, setActiveRequest] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [actionType, setActionType] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [comment, setComment] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     const [finalCondition, setFinalCondition] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Good');
     const [submitting, setSubmitting] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-    // Search filter and role filter
+    const [actionError, setActionError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setPage(1), [searchQuery, quick, condition, range, sort]);
+    /** What this role can act on: managers approve, admins verify the check-in. */
+    const needsMe = (item) => (isManager && stageOf(item.status) === 'manager') || (isAdmin && item.status === 'Pending Admin Verification');
+    const stageLabel = (stage) => stage === 'manager' ? s.ReturnAwaitingManager : stage === 'admin' ? s.ReturnAwaitingAdmin : stage === 'completed' ? s.ReturnCompleted : s.ReturnRejected;
+    const stageParts = STAGES.map(stage => ({
+        key: stage,
+        label: stageLabel(stage),
+        count: items.filter(i => stageOf(i.status) === stage).length,
+        color: STAGE_COLOR[stage]
+    }));
+    const chips = [
+        ...(isAdmin || isManager ? [{ key: 'mine', label: s.ReturnNeedsMe, count: items.filter(needsMe).length, color: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.ACCENTS.blue }] : []),
+        ...stageParts,
+        { key: 'all', label: s.TileAll, count: items.length }
+    ];
+    const conditions = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => Array.from(new Set(items.map(i => (i.proposedCondition || '').trim()).filter(Boolean))).sort(), [items]);
     const filteredItems = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-        let roleFiltered = items;
-        if (isAdmin) {
-            roleFiltered = items.filter(item => item.status === 'Pending Admin Verification');
-        }
-        else if (isManager) {
-            roleFiltered = items.filter(item => item.status === 'Pending Manager Approval' || item.status === 'Pending');
-        }
-        const filtered = !searchQuery ? roleFiltered : roleFiltered.filter(item => (item.assetName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (item.serialNumber || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (item.requesterName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (item.status || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (item.returnReason || '').toLowerCase().includes(searchQuery.toLowerCase()));
-        return filtered.sort((a, b) => {
-            const dateA = a.requestDate || '';
-            const dateB = b.requestDate || '';
-            if (dateA && dateB && dateA !== dateB) {
-                return new Date(dateB).getTime() - new Date(dateA).getTime();
-            }
-            const numA = parseInt((a.id || '0').replace(/\D/g, ''), 10);
-            const numB = parseInt((b.id || '0').replace(/\D/g, ''), 10);
-            if (!isNaN(numA) && !isNaN(numB) && numA !== numB) {
-                return numB - numA;
-            }
-            return (b.id || '').localeCompare(a.id || '');
+        const query = searchQuery.trim().toLowerCase();
+        const filtered = items.filter(item => {
+            if (quick === 'mine' && !needsMe(item))
+                return false;
+            if (quick !== 'mine' && quick !== 'all' && stageOf(item.status) !== quick)
+                return false;
+            if (condition !== 'all' && (item.proposedCondition || '').trim() !== condition)
+                return false;
+            if (!(0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.inDateRange)(item.requestDate, range))
+                return false;
+            if (!query)
+                return true;
+            return [item.id, item.assetName, item.serialNumber, item.requesterName, item.status, item.returnReason, item.managerComment]
+                .some(v => (v || '').toLowerCase().includes(query));
         });
-    }, [items, searchQuery, isAdmin, isManager]);
+        const idOf = (i) => parseInt((i.id || '0').replace(/\D/g, ''), 10) || 0;
+        const newestFirst = (a, b) => (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.timeOf)(b.requestDate) - (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.timeOf)(a.requestDate) || idOf(b) - idOf(a);
+        return filtered.sort((a, b) => {
+            switch (sort) {
+                case 'oldest': return -newestFirst(a, b);
+                case 'employee': return (a.requesterName || '').localeCompare(b.requesterName || '') || newestFirst(a, b);
+                case 'asset': return (a.assetName || '').localeCompare(b.assetName || '') || newestFirst(a, b);
+                default: return newestFirst(a, b);
+            }
+        });
+    }, [items, searchQuery, quick, condition, range, sort, isAdmin, isManager]);
     const openDialog = (request, type) => {
         setActiveRequest(request);
         setActionType(type);
         setComment('');
+        setActionError(undefined);
         setFinalCondition(request.proposedCondition || 'Good');
     };
     const closeDialog = () => {
         setActiveRequest(null);
         setActionType(null);
         setComment('');
+        setActionError(undefined);
         setSubmitting(false);
     };
     const handleAction = async () => {
         if (!activeRequest || !actionType)
             return;
         if ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) {
-            alert(actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.AlertRejectionRequired : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.AlertVerificationRequired);
+            setActionError(actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.AlertRejectionRequired : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.AlertVerificationRequired);
             return;
         }
         try {
             setSubmitting(true);
+            setActionError(undefined);
             if (actionType === 'Approve') {
                 await onUpdateStatus(activeRequest.id, 'Pending Admin Verification', comment || 'Approved by Manager', undefined, undefined, 'Approved', 'Not Started');
             }
@@ -7547,105 +6684,100 @@ const ReturnRequestList = (props) => {
             closeDialog();
         }
         catch (e) {
-            alert(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.AlertActionFailedPrefix + ' ' + (e.message || JSON.stringify(e)));
+            setActionError(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.AlertActionFailedPrefix + ' ' + (e.message || JSON.stringify(e)));
         }
         finally {
             setSubmitting(false);
         }
     };
     const getStatusDisplayText = _utils_RequestStatusUtils__WEBPACK_IMPORTED_MODULE_4__.getReturnRequestStatusDisplayText;
-    const getStatusStyles = (status) => {
-        switch (status) {
-            case 'Pending':
-            case 'Pending Manager Approval':
-                return { bg: '#ffedd5', fg: '#9a3412' }; // Light orange
-            case 'Approved':
-            case 'Pending Admin Verification':
-                return { bg: '#dbeafe', fg: '#1e40af' }; // Light blue
-            case 'Rejected':
-                return { bg: '#fee2e2', fg: '#991b1b' }; // Light red
-            case 'Completed':
-                return { bg: '#dcfce7', fg: '#166534' }; // Light green
-            default:
-                return { bg: '#f3f4f6', fg: '#374151' };
-        }
+    const changeLayout = (next) => {
+        setLayout(next);
+        // The board is the whole pipeline, so it starts unfiltered.
+        if (next === 'board' && quick === 'mine')
+            setQuick('all');
     };
-    const columns = [
-        { key: 'id', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ColId, fieldName: 'id', minWidth: 50, maxWidth: 80, isResizable: true, onRender: (item) => item.id.replace('RR-', '#') },
-        { key: 'assetName', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        { key: 'serialNumber', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.SerialNumber, fieldName: 'serialNumber', minWidth: 90, maxWidth: 120, isResizable: true },
-        { key: 'requesterName', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ColEmployee, fieldName: 'requesterName', minWidth: 100, maxWidth: 130, isResizable: true },
-        { key: 'returnReason', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ColReason, fieldName: 'returnReason', minWidth: 150, maxWidth: 220, isResizable: true, isMultiline: true },
-        { key: 'proposedCondition', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.Condition, fieldName: 'proposedCondition', minWidth: 80, maxWidth: 110, isResizable: true },
-        {
-            key: 'status',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.Status,
-            fieldName: 'status',
-            minWidth: 90,
-            maxWidth: 110,
-            isResizable: true,
-            onRender: (item) => {
-                const { bg, fg } = getStatusStyles(item.status);
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                        backgroundColor: bg,
-                        color: fg,
-                        padding: '4px 10px',
-                        borderRadius: '9999px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        display: 'inline-block'
-                    } }, getStatusDisplayText(item.status)));
-            }
-        },
-        { key: 'requestDate', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.RequestedDate, fieldName: 'requestDate', minWidth: 90, maxWidth: 120, isResizable: true },
-        {
-            key: 'managerComment',
-            name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.ManagerNotes,
-            fieldName: 'managerComment',
-            minWidth: 120,
-            maxWidth: 200,
-            isResizable: true,
-            onRender: (item) => item.managerComment || react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9ca3af', fontStyle: 'italic' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.None)
-        },
-        // Actions Column (Visible to managers/admins)
-        ...((isManager || isAdmin) ? [
-            {
-                key: 'actions',
-                name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.Actions,
-                minWidth: 200,
-                maxWidth: 260,
-                isResizable: true,
-                onRender: (item) => {
-                    const viewButton = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.View, onClick: () => openDialog(item, 'View'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }));
-                    if (isManager && (item.status === 'Pending Manager Approval' || item.status === 'Pending')) {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
-                            viewButton,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonApprove, onClick: () => openDialog(item, 'Approve'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem' } } }),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonReject, onClick: () => openDialog(item, 'Reject'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', color: '#b91c1c', borderColor: '#fee2e2' } } })));
-                    }
-                    if (isAdmin && item.status === 'Pending Admin Verification') {
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 6 } },
-                            viewButton,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonVerifyComplete, onClick: () => openDialog(item, 'Complete'), styles: { root: { height: 26, padding: '4px 8px', fontSize: '0.75rem', backgroundColor: '#107c41', borderColor: '#107c41' } } })));
-                    }
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_6__.Stack, { horizontal: true, tokens: { childrenGap: 6 }, verticalAlign: "center" }, viewButton));
-                }
-            }
-        ] : [])
+    const totalPages = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
+    const activePage = Math.min(page, totalPages);
+    const visible = filteredItems.slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE);
+    // Only what this role may do for the request's current step.
+    const renderActions = (item, compact) => {
+        const ref = item.id.replace('RR-', '#');
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            compact ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_8__.IconButton, { iconProps: { iconName: 'RedEye' }, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.View, ariaLabel: `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.View} ${ref}`, onClick: () => openDialog(item, 'View') })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.View, iconProps: { iconName: 'RedEye' }, ariaLabel: `${InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.View} ${ref}`, onClick: () => openDialog(item, 'View'), styles: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.cardButtonStyles })),
+            isManager && stageOf(item.status) === 'manager' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonReject, onClick: () => openDialog(item, 'Reject'), styles: { ..._common_listUi__WEBPACK_IMPORTED_MODULE_7__.cardButtonStyles, root: { ..._common_listUi__WEBPACK_IMPORTED_MODULE_7__.cardButtonStyles.root, color: '#a4262c', borderColor: '#f1bbbc' } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonApprove, iconProps: { iconName: 'CheckMark' }, onClick: () => openDialog(item, 'Approve'), styles: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.cardButtonStyles }))),
+            isAdmin && item.status === 'Pending Admin Verification' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonVerifyComplete, iconProps: { iconName: 'CheckMark' }, onClick: () => openDialog(item, 'Complete'), styles: {
+                    ..._common_listUi__WEBPACK_IMPORTED_MODULE_7__.cardButtonStyles,
+                    root: { ..._common_listUi__WEBPACK_IMPORTED_MODULE_7__.cardButtonStyles.root, backgroundColor: '#107c10', borderColor: '#107c10' },
+                    rootHovered: { backgroundColor: '#0e5c0e', borderColor: '#0e5c0e' }
+                } }))));
+    };
+    const renderCard = (item, compact) => {
+        const stage = stageOf(item.status);
+        const ago = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.relativeDay)(item.requestDate);
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.RecordCard, { key: item.id, compact: compact, idText: item.id.replace('RR-', '#'), badges: react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                !compact && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.Pill, { tone: stageTone(stage), text: getStatusDisplayText(item.status), title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.Status }),
+                item.proposedCondition && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.Pill, { tone: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__.conditionTone)(item.proposedCondition), text: item.proposedCondition, title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.Condition })), title: item.assetName || s.Unspecified, text: item.returnReason, meta: react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                item.serialNumber && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.MetaItem, { icon: "Tag", title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.SerialNumber }, item.serialNumber),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.MetaItem, { icon: "Contact", title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ColEmployee }, item.requesterName || '—'),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.MetaItem, { icon: "Calendar", title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.RequestedDate },
+                    (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.formatFlexibleDay)(item.requestDate),
+                    ago ? ` · ${ago}` : '')), actions: renderActions(item, compact), onOpen: () => openDialog(item, 'View') }));
+    };
+    const conditionFilterOptions = [{ key: 'all', text: s.AllConditions }].concat(conditions.map(c => ({ key: c, text: c })));
+    const sortOptions = [
+        { key: 'newest', text: s.SortNewest },
+        { key: 'oldest', text: s.SortOldest },
+        { key: 'employee', text: s.SortEmployee },
+        { key: 'asset', text: s.SortAsset }
     ];
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '10px' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_8__.SearchBox, { placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.SearchPlaceholder, value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), styles: { root: { maxWidth: 350 } } })),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LoadingReturnRequests)) : filteredItems.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { fontStyle: 'italic', color: '#6b7280' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.EmptyState)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].tableWrapper },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filteredItems, columns: columns, setKey: "returnSet", layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none }))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_12__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, dialogContentProps: {
-                type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_13__.DialogType.normal,
+    const hasFilters = condition !== 'all' || range !== 'all' || !!searchQuery.trim();
+    // A stage chip narrows the board to that one lane; every other filter keeps all four.
+    const laneStages = STAGES.filter(stage => quick === 'all' || quick === 'mine' || quick === stage);
+    const renderEmpty = () => {
+        // Nothing waiting for this role, but other returns exist: say so and offer the full list.
+        if (quick === 'mine' && !hasFilters && items.length > 0) {
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.empty },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: "CompletedSolid", style: { fontSize: 28, display: 'block', marginBottom: 8, color: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.ACCENTS.green } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { fontWeight: 600, color: 'var(--text-main, #242424)', marginBottom: 4 } }, s.ReturnNothingForMe),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: 'List' }, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(s.ReturnShowAll, items.length), onClick: () => setQuick('all') })));
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.empty },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: items.length === 0 ? 'ReturnToSession' : 'Search', style: { fontSize: 28, display: 'block', marginBottom: 8 } }),
+            items.length === 0 ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.EmptyState : s.EmptyFiltered));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                props.title && react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.title }, props.title),
+                props.subtitle && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.subtitle }, props.subtitle)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.LayoutSwitch, { layout: layout, onChange: changeLayout })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.StatusChips, { chips: chips, selected: quick, ariaLabel: s.TilesAria, onSelect: (key) => setQuick(key) }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.filters },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_14__.SearchBox, { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.search, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.SearchPlaceholder, value: searchQuery, onChange: (_, val) => setSearchQuery(val || ''), onClear: () => setSearchQuery('') }),
+            conditions.length > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_15__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.Condition, options: conditionFilterOptions, selectedKey: condition, onChange: (_, o) => o && setCondition(String(o.key)), styles: { root: { width: 150 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_15__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.RequestedDate, options: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.dateRangeOptions)(), selectedKey: range, onChange: (_, o) => o && setRange(o.key), styles: { root: { width: 150 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_15__.Dropdown, { label: s.SortLabel, options: sortOptions, selectedKey: sort, onChange: (_, o) => o && setSort(o.key), styles: { root: { width: 180 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(s.ReturnResultCount, filteredItems.length, items.length)),
+            hasFilters && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_12__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: s.ClearFilters, onClick: () => { setCondition('all'); setRange('all'); setSearchQuery(''); } }))),
+        loading && items.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.grid, "aria-busy": "true", "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LoadingReturnRequests }, Array.from({ length: 3 }).map((_, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: i, className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.card, style: { cursor: 'default' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_16__.Shimmer, { width: "35%" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_16__.Shimmer, { width: "70%" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Shimmer__WEBPACK_IMPORTED_MODULE_16__.Shimmer, null)))))) : filteredItems.length === 0 ? renderEmpty() : layout === 'board' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.BoardLanes, { lanes: laneStages.map(stage => ({ key: stage, label: stageLabel(stage), color: STAGE_COLOR[stage], items: filteredItems.filter(i => stageOf(i.status) === stage) })), keyOf: (item) => item.id, renderCard: (item) => renderCard(item, true) })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.grid }, visible.map(item => renderCard(item, false))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_7__.recordCss.pager },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_6__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: filteredItems.length, onChange: setPage })))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_17__.Dialog, { hidden: !activeRequest, onDismiss: closeDialog, minWidth: 560, maxWidth: 640, dialogContentProps: {
+                type: _fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_18__.DialogType.normal,
                 title: actionType === 'Approve' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.DialogTitleApprove :
                     actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.DialogTitleReject :
                         actionType === 'Complete' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.DialogTitleComplete : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.DialogTitleView,
-                subText: activeRequest ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_14__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.DialogSubtext, activeRequest.requesterName, activeRequest.assetName) : ''
-            }, modalProps: { isBlocking: true } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_6__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
+                subText: activeRequest ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.DialogSubtext, activeRequest.requesterName, activeRequest.assetName) : ''
+            }, modalProps: { isBlocking: actionType !== 'View' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Stack__WEBPACK_IMPORTED_MODULE_19__.Stack, { tokens: { childrenGap: 15 }, style: { marginTop: '15px' } },
                 activeRequest && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
                         backgroundColor: 'rgba(128, 128, 128, 0.05)',
                         border: '1px solid rgba(128, 128, 128, 0.15)',
@@ -7654,14 +6786,16 @@ const ReturnRequestList = (props) => {
                         fontSize: '0.85rem',
                         fontFamily: 'inherit'
                     } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 12px 0', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.CardTitle),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, margin: '0 0 12px 0', borderBottom: '1px solid rgba(128, 128, 128, 0.1)', paddingBottom: '6px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #333333)' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.CardTitle),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_7__.Pill, { tone: stageTone(stageOf(activeRequest.status)), text: getStatusDisplayText(activeRequest.status) })),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].responsiveGrid, style: { gap: '12px 16px' } },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.RequestId),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.id.replace('RR-', '#'))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.RequestedDate),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.requestDate)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.formatFlexibleDay)(activeRequest.requestDate))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Columns.AssetName),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.assetName)),
@@ -7674,6 +6808,9 @@ const ReturnRequestList = (props) => {
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelProposedCondition),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, activeRequest.proposedCondition)),
+                        (activeRequest.completedDate || activeRequest.verifiedDate) && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, s.ReturnCompletedOn),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", { style: { color: 'var(--text-main, #333333)' } }, (0,_common_listUi__WEBPACK_IMPORTED_MODULE_7__.formatFlexibleDay)(activeRequest.completedDate || activeRequest.verifiedDate)))),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: 'span 2' } },
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelReturnReason),
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
@@ -7695,17 +6832,34 @@ const ReturnRequestList = (props) => {
                                     border: '1px solid rgba(128, 128, 128, 0.1)',
                                     fontWeight: 500,
                                     color: 'var(--text-main, #333333)'
-                                } }, activeRequest.managerComment)))))),
+                                } }, activeRequest.managerComment))),
+                        activeRequest.adminComments && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { gridColumn: 'span 2' } },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: 'var(--text-muted, #666666)', display: 'block', marginBottom: '2px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelVerificationComments),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                                    backgroundColor: 'rgba(128, 128, 128, 0.05)',
+                                    padding: '8px 12px',
+                                    borderRadius: '4px',
+                                    marginTop: '4px',
+                                    border: '1px solid rgba(128, 128, 128, 0.1)',
+                                    fontWeight: 500,
+                                    color: 'var(--text-main, #333333)'
+                                } }, activeRequest.adminComments)))))),
                 actionType === 'Complete' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_15__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelFinalCondition, selectedKey: finalCondition, options: conditionOptions, onChange: (_, opt) => setFinalCondition(opt ? opt.key : 'Good') })),
-                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_16__.TextField, { label: actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelRejectionReason :
+                actionType !== 'View' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_20__.TextField, { label: actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelRejectionReason :
                         actionType === 'Complete' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelVerificationComments :
                             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.LabelManagerComments, placeholder: actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.PlaceholderRejectionReason :
                         actionType === 'Complete' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.PlaceholderVerificationComments :
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.PlaceholderManagerComments, multiline: true, rows: 3, value: comment, onChange: (_, val) => setComment(val || ''), required: actionType === 'Reject' || actionType === 'Complete' }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_17__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: actionType === 'Approve' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonApprove :
+                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.PlaceholderManagerComments, multiline: true, rows: 3, value: comment, onChange: (_, val) => { setComment(val || ''); setActionError(undefined); }, required: actionType === 'Reject' || actionType === 'Complete' })),
+                actionError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_21__.MessageBar, { messageBarType: _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_22__.MessageBarType.error, isMultiline: true, onDismiss: () => setActionError(undefined) }, actionError))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dialog__WEBPACK_IMPORTED_MODULE_23__.DialogFooter, null, actionType !== 'View' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: actionType === 'Approve' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonApprove :
                         actionType === 'Reject' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonReject : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonVerifyComplete, onClick: handleAction, disabled: submitting || ((actionType === 'Reject' || actionType === 'Complete') && !comment.trim()) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_5__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Cancel, onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close, onClick: closeDialog }))))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Cancel, onClick: closeDialog, disabled: submitting }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                activeRequest && isManager && stageOf(activeRequest.status) === 'manager' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonApprove, onClick: () => setActionType('Approve') }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonReject, onClick: () => setActionType('Reject') }))),
+                activeRequest && isAdmin && activeRequest.status === 'Pending Admin Verification' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.ReturnRequestList.ButtonVerifyComplete, onClick: () => setActionType('Complete') })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.Common.Close, onClick: closeDialog })))))));
 };
 
 
@@ -7923,6 +7077,337 @@ const WorkflowPopup = (props) => {
 
 /***/ }),
 
+/***/ 95524:
+/*!********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/approvals/ApprovalInbox.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ApprovalInbox: () => (/* binding */ ApprovalInbox)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react/lib/TextField */ 67102);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 29425);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 63208);
+/* harmony import */ var _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react/lib/MessageBar */ 46643);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../utils/StockUtils */ 19256);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assignment/AssignmentQueue */ 89202);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/listUi */ 42806);
+/* harmony import */ var _reports_reportData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../reports/reportData */ 53794);
+/* harmony import */ var _reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reports/reportLabels */ 18153);
+/* harmony import */ var _RejectRequestDialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../RejectRequestDialog */ 19342);
+/* harmony import */ var _RejectionReasonCard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../RejectionReasonCard */ 94735);
+// The manager's Approvals page: a list of requests next to a decision pane that puts everything
+// needed to decide (request, stock, what the employee already has) beside the Approve / Reject buttons.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const LINE = 'rgba(128, 128, 128, 0.22)';
+const MUTED = 'var(--text-muted, #616161)';
+const PRIORITY_RANK = { critical: 0, high: 0, medium: 1, low: 2 };
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_10__.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { marginBottom: 14 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: MUTED },
+    // Side by side when there is room; the decision pane drops below the list on narrow pages.
+    layout: { display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'flex-start' },
+    listPane: { flex: '1 1 250px', minWidth: 0, border: `1px solid ${LINE}`, borderRadius: 12, background: 'var(--surface-bg, #ffffff)', overflow: 'hidden' },
+    tools: { display: 'flex', flexDirection: 'column', gap: 8, padding: 12, borderBottom: `1px solid ${LINE}` },
+    count: { fontSize: 12, color: MUTED },
+    list: { listStyle: 'none', margin: 0, padding: 6, maxHeight: 'min(640px, 70vh)', overflowY: 'auto' },
+    item: {
+        display: 'grid', gridTemplateColumns: '34px minmax(0, 1fr)', columnGap: 10, alignItems: 'start', width: '100%',
+        padding: '10px', border: 'none', borderRadius: 10, background: 'transparent', cursor: 'pointer',
+        font: 'inherit', color: 'inherit', textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(128, 128, 128, 0.08)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 } }
+    },
+    itemSelected: { background: 'rgba(15, 108, 189, 0.1)', selectors: { ':hover': { background: 'rgba(15, 108, 189, 0.1)' } } },
+    coin: { width: 34, height: 34, borderRadius: '50%', background: '#0f6cbd', color: '#ffffff', fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    itemTop: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 },
+    itemName: { fontSize: 14, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    itemTime: { fontSize: 12, color: MUTED, whiteSpace: 'nowrap', flexShrink: 0 },
+    itemAsset: { display: 'block', fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    itemTags: { display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 6 },
+    emptyList: { padding: '32px 16px', textAlign: 'center', fontSize: 13, color: MUTED },
+    pane: { flex: '2 1 340px', minWidth: 0, border: `1px solid ${LINE}`, borderRadius: 12, background: 'var(--surface-bg, #ffffff)', padding: '18px 20px' },
+    paneEmpty: { padding: '64px 16px', textAlign: 'center', color: MUTED },
+    paneHead: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, flexWrap: 'wrap' },
+    paneKey: { fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: MUTED },
+    paneTitle: { margin: '2px 0 0', fontSize: 20, fontWeight: 600, lineHeight: '26px' },
+    panePills: { display: 'flex', gap: 6, flexWrap: 'wrap' },
+    person: { display: 'flex', alignItems: 'center', gap: 12, marginTop: 14 },
+    personName: { fontSize: 14, fontWeight: 600 },
+    personMeta: { fontSize: 12, color: MUTED },
+    steps: { display: 'flex', alignItems: 'flex-start', margin: '18px 0 4px', padding: 0, listStyle: 'none' },
+    step: { flex: '1 1 0', minWidth: 0, position: 'relative', textAlign: 'center', fontSize: 12, color: MUTED },
+    // Connector to the previous step, behind the markers.
+    stepLine: { position: 'absolute', top: 11, right: '50%', width: '100%', height: 2, background: LINE },
+    stepDot: {
+        position: 'relative', zIndex: 1, width: 24, height: 24, margin: '0 auto 6px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontSize: 11, background: 'var(--surface-bg, #ffffff)', border: `2px solid ${LINE}`, color: MUTED
+    },
+    stepLabel: { display: 'block', fontWeight: 600, color: 'var(--text-main, #242424)' },
+    section: { marginTop: 18 },
+    sectionTitle: { margin: '0 0 8px', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: MUTED },
+    facts: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px 16px', margin: 0 },
+    factLabel: { margin: 0, fontSize: 12, color: MUTED },
+    factValue: { margin: '1px 0 0', fontSize: 14, fontWeight: 600, wordBreak: 'break-word' },
+    quote: { margin: 0, padding: '10px 14px', borderRadius: 10, background: 'rgba(128, 128, 128, 0.08)', fontSize: 14, lineHeight: '20px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' },
+    bullets: { margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 6, fontSize: 13 },
+    bullet: { display: 'flex', gap: 8, alignItems: 'flex-start' },
+    bulletIcon: { marginTop: 3, fontSize: 12, flexShrink: 0 },
+    decision: { marginTop: 20, paddingTop: 16, borderTop: `1px solid ${LINE}` },
+    buttons: { display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }
+});
+const same = (a, b) => !!a && !!b && a.trim().toLowerCase() === b.trim().toLowerCase();
+const refOf = (request) => request.requestKey || `#${request.id}`;
+const assetLine = (request) => request.quantity > 1 ? `${request.assetTitle} × ${request.quantity}` : request.assetTitle;
+const requestedAt = (request) => (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.parseFlexibleDate)(request.createdAt) || (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.parseFlexibleDate)(request.requestDate);
+const Fact = ({ label, children }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: css.factLabel }, label),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: css.factValue }, children)));
+const ApprovalInbox = (props) => {
+    const { requests, items, search, actionInProgressId } = props;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Approvals;
+    const targets = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().sla;
+    const rows = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        const now = Date.now();
+        return requests.map(request => {
+            const date = requestedAt(request);
+            return { request, stage: (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_11__.getSlaStage)(request), sla: (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_11__.evaluateRequestSla)(request, targets, now), time: date ? date.getTime() : 0 };
+        });
+    }, [requests, targets.approvalHours, targets.assignmentHours]);
+    const toDecide = rows.filter(r => r.stage === 'awaitingApproval').length;
+    // Until a chip is chosen: what needs a decision (also once the last one is decided), or the
+    // full history when nothing was waiting. Requests may still be loading when the page opens.
+    const [stageChoice, setStage] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const sawPending = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
+    if (toDecide > 0)
+        sawPending.current = true;
+    const stage = stageChoice || (sawPending.current ? 'awaitingApproval' : 'all');
+    const [sort, setSort] = react__WEBPACK_IMPORTED_MODULE_0__.useState('waiting');
+    const [selectedId, setSelectedId] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [comment, setComment] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [rejectTarget, setRejectTarget] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const query = search.trim().toLowerCase();
+    const searched = !query ? rows : rows.filter(r => [r.request.requestKey, r.request.id, r.request.requesterName, r.request.requesterEmail, r.request.assetTitle]
+        .some(v => (v || '').toLowerCase().indexOf(query) >= 0));
+    const visible = searched.filter(r => stage === 'all' || r.stage === stage).sort((a, b) => {
+        if (sort === 'newest')
+            return b.time - a.time;
+        if (sort === 'priority') {
+            const rank = (r) => PRIORITY_RANK[(r.request.priority || 'medium').toLowerCase()] ?? 1;
+            return rank(a) - rank(b) || a.time - b.time;
+        }
+        // Longest waiting first: open requests before decided ones, oldest at the top.
+        const open = (r) => (r.stage === 'awaitingApproval' ? 0 : 1);
+        return open(a) - open(b) || (open(a) === 0 ? a.time - b.time : b.time - a.time);
+    });
+    // The selected request, or the first in the list: after a decision the next one is shown straight away.
+    const current = visible.filter(r => r.request.id === selectedId)[0] || visible[0];
+    const currentId = current ? current.request.id : undefined;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setComment(''), [currentId]);
+    const chips = [
+        ..._reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.STAGES.map(s => ({
+            key: s,
+            label: s === 'awaitingApproval' ? t.ChipToDecide : (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageLabel)(s),
+            count: searched.filter(r => r.stage === s).length,
+            color: _reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.STAGE_COLOR[s]
+        })),
+        { key: 'all', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.TileAll, count: searched.length }
+    ];
+    const sortOptions = [
+        { key: 'waiting', text: t.SortWaiting },
+        { key: 'newest', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.SortNewest },
+        { key: 'priority', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.SortPriority }
+    ];
+    const confirmReject = async (request, reason) => {
+        await props.onRejectRequest(request, reason).catch(err => console.error(err));
+        setRejectTarget(undefined);
+    };
+    const renderItem = (row) => {
+        const r = row.request;
+        const selected = !!current && current.request.id === r.id;
+        const waiting = row.stage === 'awaitingApproval';
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: r.id },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: `${css.item} ${selected ? css.itemSelected : ''}`, "aria-current": selected ? 'true' : undefined, onClick: () => setSelectedId(r.id) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.coin, "aria-hidden": "true" }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.initials)(r.requesterName)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { minWidth: 0 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.itemTop },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.itemName }, r.requesterName || '—'),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.itemTime, title: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.formatFlexibleDay)(r.createdAt || r.requestDate) }, waiting ? (0,_assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_4__.formatHours)(row.sla.openHours) : (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.formatFlexibleDay)(r.createdAt || r.requestDate))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.itemAsset },
+                        assetLine(r),
+                        " \u00B7 ",
+                        refOf(r)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.itemTags },
+                        (stage === 'all' || !waiting) && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageTone)(row.stage), text: waiting ? t.ChipToDecide : (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageLabel)(row.stage) }),
+                        (r.priority || 'Medium') !== 'Medium' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.priorityTone)(r.priority), text: r.priority || '', title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Priority }),
+                        row.sla.overdue && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue.OverdueBy, (0,_assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_4__.formatHours)(row.sla.overdueByHours)) }))))));
+    };
+    const renderSteps = (row) => {
+        const r = row.request;
+        const rejected = row.stage === 'rejected';
+        const decided = row.stage !== 'awaitingApproval';
+        const steps = [
+            { key: 'requested', label: t.StepRequested, note: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.formatFlexibleDay)(r.createdAt || r.requestDate), icon: 'CheckMark', tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green },
+            {
+                key: 'decision', label: t.StepDecision,
+                note: rejected ? (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageLabel)('rejected') : decided ? (r.managerDecisionAt ? (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.formatFlexibleDay)(r.managerDecisionAt) : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Dropdowns.AuditLogStatus.Approved) : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Dropdowns.AuditLogStatus.Pending,
+                icon: rejected ? 'Cancel' : decided ? 'CheckMark' : undefined,
+                tone: rejected ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red : decided ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green : undefined
+            },
+            {
+                key: 'assigned', label: t.StepAssigned,
+                note: rejected ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.NotAvailable : row.stage === 'assigned' ? (r.assignedAt ? (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.formatFlexibleDay)(r.assignedAt) : (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageLabel)('assigned')) : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Dropdowns.AuditLogStatus.Pending,
+                icon: row.stage === 'assigned' ? 'CheckMark' : undefined,
+                tone: row.stage === 'assigned' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.green : undefined
+            }
+        ];
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ol", { className: css.steps }, steps.map((step, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: step.key, className: css.step },
+            i > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.stepLine, "aria-hidden": "true" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.stepDot, style: step.tone ? { background: step.tone.bg, borderColor: step.tone.bg, color: step.tone.fg } : undefined, "aria-hidden": "true" }, step.icon ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: step.icon }) : i + 1),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.stepLabel }, step.label),
+            step.note)))));
+    };
+    const renderPane = (row) => {
+        const r = row.request;
+        const waiting = row.stage === 'awaitingApproval';
+        const busy = actionInProgressId === r.id;
+        // Stock for the requested type; approval is refused while there is not enough.
+        const stock = (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_14__.getAvailableStock)(items, r);
+        const needed = Number(r.quantity || 0);
+        const enough = stock >= needed;
+        // What the employee already holds and has asked for.
+        const holds = items.filter(i => (0,_reports_reportData__WEBPACK_IMPORTED_MODULE_6__.isHeld)(i) && (same(i.assignedToEmail, r.requesterEmail) || same(i.assignedTo, r.requesterName)));
+        const sameType = holds.filter(i => same(i.assetType, r.assetTitle) || same(i.title, r.assetTitle));
+        const others = rows.filter(o => o.request.id !== r.id && (same(o.request.requesterEmail, r.requesterEmail) || same(o.request.requesterName, r.requesterName)));
+        const othersOpen = others.filter(o => o.stage === 'awaitingApproval' || o.stage === 'awaitingAssignment');
+        const duplicates = othersOpen.filter(o => same(o.request.assetTitle, r.assetTitle));
+        const approve = () => {
+            props.onApproveRequest(r, comment.trim()).catch(err => console.error(err));
+        };
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.paneHead },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.paneKey }, refOf(r)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: css.paneTitle }, assetLine(r))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.panePills },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageTone)(row.stage), text: waiting ? t.ChipToDecide : (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageLabel)(row.stage) }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.priorityTone)(r.priority), text: r.priority || 'Medium', title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Priority }),
+                    row.sla.overdue && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.red, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue.OverdueBy, (0,_assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_4__.formatHours)(row.sla.overdueByHours)) }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.person },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.coin, "aria-hidden": "true" }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.initials)(r.requesterName)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { minWidth: 0 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.personName }, r.requesterName || '—'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.personMeta, style: { display: 'block' } }, [r.employeeId ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue.EmployeeId, r.employeeId) : '', r.requesterEmail || ''].filter(Boolean).join(' · ')))),
+            renderSteps(row),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: css.sectionTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.SectionRequestInformation),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("dl", { className: css.facts },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.LabelAssetCategory }, r.assetTitle || '—'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestForm.LabelQuantity }, r.quantity),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.LabelRequestDate }, (0,_common_listUi__WEBPACK_IMPORTED_MODULE_5__.formatFlexibleDay)(r.createdAt || r.requestDate)),
+                    waiting && react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue.ColWaiting }, (0,_assignment_AssignmentQueue__WEBPACK_IMPORTED_MODULE_4__.formatHours)(row.sla.openHours)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.ManagerName }, r.managerName || '—'))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: css.sectionTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.SectionJustification),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.quote, style: r.reason ? undefined : { color: MUTED } }, r.reason || t.NoJustification)),
+            waiting && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: css.sectionTitle }, t.SectionStock),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_15__.MessageBar, { messageBarType: enough ? _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_16__.MessageBarType.success : _fluentui_react_lib_MessageBar__WEBPACK_IMPORTED_MODULE_16__.MessageBarType.severeWarning, isMultiline: true }, enough
+                    ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.StockEnough, stock, r.assetTitle, needed)
+                    : stock > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.StockShort, stock, r.assetTitle, needed) : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.StockNone, r.assetTitle)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.section },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: css.sectionTitle }, t.SectionEmployee),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.bullets },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { className: css.bullet },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "Devices3", className: css.bulletIcon, "aria-hidden": "true" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
+                            holds.length === 0 ? t.HoldsNone : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.HoldsCount, holds.length),
+                            holds.length > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: MUTED } },
+                                " \u2014 ",
+                                holds.map(i => (0,_reports_reportData__WEBPACK_IMPORTED_MODULE_6__.nameOf)(i) || i.assetType).join(', ')))),
+                    sameType.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { className: css.bullet, style: { color: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.amber.fg } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "Warning", className: css.bulletIcon, "aria-hidden": "true" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.HoldsSameType, sameType.length, r.assetTitle)))),
+                    duplicates.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { className: css.bullet, style: { color: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.amber.fg } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "Warning", className: css.bulletIcon, "aria-hidden": "true" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.DuplicateOpen, r.assetTitle, duplicates.map(o => refOf(o.request)).join(', '))))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { className: css.bullet },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "Send", className: css.bulletIcon, "aria-hidden": "true" }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, others.length === 0
+                            ? t.OtherNone
+                            : (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.OtherRequests, others.length, othersOpen.length, others.filter(o => o.stage === 'rejected').length))))),
+            waiting ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.decision },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: css.sectionTitle }, t.SectionDecision),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_TextField__WEBPACK_IMPORTED_MODULE_17__.TextField, { label: t.CommentLabel, placeholder: t.CommentPlaceholder, multiline: true, rows: 2, maxLength: 500, value: comment, onChange: (_, v) => setComment(v || ''), disabled: busy }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.buttons },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_18__.PrimaryButton, { text: busy ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Processing : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Approve, iconProps: { iconName: 'Accept' }, onClick: approve, disabled: busy || !enough, title: enough ? undefined : t.ApproveBlocked }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_19__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Reject, iconProps: { iconName: 'Cancel' }, onClick: () => setRejectTarget(r), disabled: busy, styles: { root: { color: '#a4262c', borderColor: '#f1bbbc' }, icon: { color: '#a4262c' }, rootHovered: { color: '#a4262c', borderColor: '#a4262c' } } })))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.decision },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: css.sectionTitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.SectionManagerApproval),
+                row.stage === 'rejected' ? (r.managerResponse
+                    ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectionReasonCard__WEBPACK_IMPORTED_MODULE_9__.RejectionReasonCard, { reason: r.managerResponse, managerName: r.managerName, decidedAt: r.managerDecisionAt })
+                    : react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.quote }, (0,_reports_reportLabels__WEBPACK_IMPORTED_MODULE_7__.stageLabel)('rejected'))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                    r.managerResponse && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.quote }, r.managerResponse),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: '10px 0 0', fontSize: 13, color: MUTED } }, row.stage === 'assigned' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.AllocationAllocated : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RequestList.AllocationPendingAdmin)))))));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: css.title }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.Title),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.subtitle }, t.Subtitle)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.StatusChips, { chips: chips, selected: stage, ariaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Status, onSelect: (key) => setStage(key) }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.layout },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.listPane },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.tools },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_20__.SearchBox, { placeholder: t.SearchPlaceholder, value: search, onChange: (_, v) => props.onSearchChange(v || ''), onClear: () => props.onSearchChange('') }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_21__.Dropdown, { ariaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.SortLabel, options: sortOptions, selectedKey: sort, onChange: (_, o) => o && setSort(o.key) }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.count }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_12__.formatString)(t.ListCount, visible.length))),
+                visible.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.emptyList },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: stage === 'awaitingApproval' && !query ? 'CompletedSolid' : 'Search', style: { fontSize: 24, display: 'block', marginBottom: 8 } }),
+                    stage === 'awaitingApproval' && !query ? t.AllCaughtUp : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.EmptyFiltered)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.list, "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.Title }, visible.map(renderItem)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.pane }, current ? renderPane(current) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.paneEmpty },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_13__.Icon, { iconName: "DoubleChevronRight12", style: { fontSize: 24, display: 'block', marginBottom: 8 } }),
+                t.SelectPrompt)))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RejectRequestDialog__WEBPACK_IMPORTED_MODULE_8__.RejectRequestDialog, { request: rejectTarget, onConfirm: confirmReject, onDismiss: () => setRejectTarget(undefined) })));
+};
+
+
+/***/ }),
+
 /***/ 89202:
 /*!***********************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/assignment/AssignmentQueue.js ***!
@@ -7932,7 +7417,8 @@ const WorkflowPopup = (props) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AssignmentQueue: () => (/* binding */ AssignmentQueue)
+/* harmony export */   AssignmentQueue: () => (/* binding */ AssignmentQueue),
+/* harmony export */   formatHours: () => (/* binding */ formatHours)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -8402,6 +7888,261 @@ const buildPageGroups = (pageRows, keyOf, membersByKey, collapsed) => {
 
 /***/ }),
 
+/***/ 42806:
+/*!**********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/common/listUi.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ACCENTS: () => (/* binding */ ACCENTS),
+/* harmony export */   BoardLanes: () => (/* binding */ BoardLanes),
+/* harmony export */   LayoutSwitch: () => (/* binding */ LayoutSwitch),
+/* harmony export */   MetaItem: () => (/* binding */ MetaItem),
+/* harmony export */   Pill: () => (/* binding */ Pill),
+/* harmony export */   RecordCard: () => (/* binding */ RecordCard),
+/* harmony export */   StatusChips: () => (/* binding */ StatusChips),
+/* harmony export */   cardButtonStyles: () => (/* binding */ cardButtonStyles),
+/* harmony export */   dateRangeOptions: () => (/* binding */ dateRangeOptions),
+/* harmony export */   formatFlexibleDateTime: () => (/* binding */ formatFlexibleDateTime),
+/* harmony export */   formatFlexibleDay: () => (/* binding */ formatFlexibleDay),
+/* harmony export */   inDateRange: () => (/* binding */ inDateRange),
+/* harmony export */   parseFlexibleDate: () => (/* binding */ parseFlexibleDate),
+/* harmony export */   priorityTone: () => (/* binding */ priorityTone),
+/* harmony export */   recordCss: () => (/* binding */ recordCss),
+/* harmony export */   relativeDay: () => (/* binding */ relativeDay),
+/* harmony export */   serviceStatusTone: () => (/* binding */ serviceStatusTone),
+/* harmony export */   timeOf: () => (/* binding */ timeOf),
+/* harmony export */   useRecordLayout: () => (/* binding */ useRecordLayout)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+// Shared building blocks for the record pages (incidents, replacements, returns):
+// status chips, filter strip, record cards and the board layout.
+
+
+
+
+
+
+/** Solid colours for the status dots on chips and board lanes. */
+const ACCENTS = { red: '#d13438', amber: '#eaa300', orange: '#f7630c', blue: '#0f6cbd', green: '#107c10', grey: '#8a8886' };
+const LINE = 'rgba(128, 128, 128, 0.22)';
+const FOCUS = { outline: '2px solid #0f6cbd', outlineOffset: 2 };
+const recordCss = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_3__.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap', marginBottom: 14 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    switch: { display: 'inline-flex', padding: 3, borderRadius: 10, background: 'rgba(128, 128, 128, 0.14)' },
+    switchButton: {
+        display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', border: 'none', borderRadius: 8,
+        background: 'transparent', cursor: 'pointer', font: 'inherit', fontSize: 13, fontWeight: 600, color: 'var(--text-muted, #616161)',
+        selectors: { ':hover': { color: 'var(--text-main, #242424)' }, ':focus-visible': FOCUS }
+    },
+    switchActive: { background: 'var(--surface-bg, #ffffff)', color: 'var(--text-main, #242424)', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.16)' },
+    chips: { display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 },
+    chip: {
+        display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 8px 6px 12px', borderRadius: 999,
+        border: `1px solid ${LINE}`, background: 'var(--surface-bg, #ffffff)', cursor: 'pointer',
+        font: 'inherit', fontSize: 13, fontWeight: 600, color: 'inherit',
+        selectors: { ':hover': { borderColor: 'rgba(128, 128, 128, 0.6)' }, ':focus-visible': FOCUS }
+    },
+    chipActive: { background: '#0f6cbd', borderColor: '#0f6cbd', color: '#ffffff', selectors: { ':hover': { borderColor: '#0f6cbd' } } },
+    chipCount: { fontSize: 12, fontWeight: 600, minWidth: 22, textAlign: 'center', padding: '0 7px', borderRadius: 999, background: 'rgba(128, 128, 128, 0.18)', lineHeight: '20px', boxSizing: 'border-box' },
+    chipCountActive: { background: 'rgba(255, 255, 255, 0.25)' },
+    dot: { width: 8, height: 8, borderRadius: '50%', flexShrink: 0 },
+    filters: { display: 'flex', alignItems: 'flex-end', gap: 12, flexWrap: 'wrap', padding: '12px 14px', borderRadius: 12, background: 'rgba(128, 128, 128, 0.08)', marginBottom: 12 },
+    search: { flex: '1 1 240px', minWidth: 200 },
+    resultLine: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, minHeight: 32, fontSize: 13, color: 'var(--text-muted, #616161)', margin: '0 0 8px' },
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))', gap: 14 },
+    pager: { marginTop: 14 },
+    card: {
+        display: 'flex', flexDirection: 'column', flexShrink: 0, gap: 8, minWidth: 0, padding: '14px 16px 12px',
+        borderRadius: 12, border: `1px solid ${LINE}`, background: 'var(--surface-bg, #ffffff)', cursor: 'pointer',
+        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)', transition: 'box-shadow 0.15s ease, transform 0.15s ease', overflow: 'hidden',
+        selectors: { ':hover': { boxShadow: '0 6px 18px rgba(0, 0, 0, 0.12)', transform: 'translateY(-1px)' } }
+    },
+    cardCompact: { padding: '10px 12px 8px', gap: 6, boxShadow: 'none' },
+    cardTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap' },
+    cardId: { fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: 'var(--text-muted, #616161)' },
+    cardPills: { display: 'inline-flex', gap: 6, flexWrap: 'wrap', justifyContent: 'flex-end' },
+    cardTitle: { margin: 0, fontSize: 15, fontWeight: 600, lineHeight: '20px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    cardText: { margin: 0, fontSize: 13, lineHeight: '18px', minHeight: 36, color: 'var(--text-muted, #616161)', overflow: 'hidden' },
+    cardMeta: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 14px', fontSize: 12, color: 'var(--text-muted, #616161)' },
+    metaItem: { display: 'inline-flex', alignItems: 'center', gap: 5, minWidth: 0 },
+    cardActions: { display: 'flex', gap: 8, justifyContent: 'flex-end', alignItems: 'center', flexWrap: 'wrap', paddingTop: 10, marginTop: 'auto', borderTop: `1px solid ${LINE}`, cursor: 'default' },
+    cardActionsCompact: { paddingTop: 4, gap: 4 },
+    board: { display: 'grid', gridAutoFlow: 'column', gridAutoColumns: 'minmax(270px, 1fr)', gap: 12, overflowX: 'auto', paddingBottom: 4, alignItems: 'start' },
+    lane: { display: 'flex', flexDirection: 'column', minWidth: 0, borderRadius: 12, background: 'rgba(128, 128, 128, 0.08)' },
+    laneHead: { display: 'flex', alignItems: 'center', gap: 8, padding: '10px 12px', fontSize: 13, fontWeight: 600 },
+    laneBody: { display: 'flex', flexDirection: 'column', gap: 8, padding: '0 8px 8px', maxHeight: 620, overflowY: 'auto' },
+    laneEmpty: { padding: '20px 8px', textAlign: 'center', fontSize: 12, color: 'var(--text-muted, #616161)' },
+    pill: { fontSize: 12, fontWeight: 600, padding: '2px 10px', borderRadius: 999, lineHeight: '18px', whiteSpace: 'nowrap', display: 'inline-block' },
+    empty: { padding: '48px 16px', textAlign: 'center', color: 'var(--text-muted, #616161)', border: `1px dashed ${LINE}`, borderRadius: 12 }
+});
+/** Compact buttons for card footers. */
+const cardButtonStyles = { root: { height: 30, minWidth: 0, padding: '0 10px', borderRadius: 6 }, label: { fontSize: 12 } };
+const TWO_LINES = { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' };
+const Pill = ({ tone, text, title }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.pill, style: { background: tone.bg, color: tone.fg }, title: title }, text));
+/** Rounded filter chips with counts; exactly one is selected. */
+const StatusChips = ({ chips, selected, onSelect, ariaLabel }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.chips, role: "group", "aria-label": ariaLabel }, chips.map(chip => {
+    const active = selected === chip.key;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: chip.key, type: "button", className: `${recordCss.chip} ${active ? recordCss.chipActive : ''}`, "aria-pressed": active, onClick: () => onSelect(chip.key) },
+        chip.color && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.dot, style: { background: active ? '#ffffff' : chip.color } }),
+        chip.label,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${recordCss.chipCount} ${active ? recordCss.chipCountActive : ''}` }, chip.count)));
+})));
+const LayoutSwitch = ({ layout, onChange }) => {
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists;
+    const options = [
+        { key: 'cards', icon: 'GridViewMedium', label: s.ViewCards },
+        { key: 'board', icon: 'TripleColumn', label: s.ViewBoard }
+    ];
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.switch, role: "group", "aria-label": s.ViewAria }, options.map(o => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: o.key, type: "button", className: `${recordCss.switchButton} ${layout === o.key ? recordCss.switchActive : ''}`, "aria-pressed": layout === o.key, onClick: () => onChange(o.key) },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: o.icon, "aria-hidden": "true" }),
+        o.label)))));
+};
+/** The chosen layout, remembered per page in this browser. */
+const useRecordLayout = (pageKey) => {
+    const storageKey = `inventory.recordLayout.${pageKey}`;
+    const [layout, setLayout] = react__WEBPACK_IMPORTED_MODULE_0__.useState(() => {
+        try {
+            return window.localStorage.getItem(storageKey) === 'board' ? 'board' : 'cards';
+        }
+        catch {
+            return 'cards';
+        }
+    });
+    const change = (next) => {
+        setLayout(next);
+        try {
+            window.localStorage.setItem(storageKey, next);
+        }
+        catch {
+            // Storage unavailable: the choice just isn't remembered.
+        }
+    };
+    return [layout, change];
+};
+const MetaItem = ({ icon, title, children }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.metaItem, title: title },
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_4__.Icon, { iconName: icon, "aria-hidden": "true", style: { fontSize: 12 } }),
+    children));
+/** One record. Clicking anywhere outside the footer buttons opens it. */
+const RecordCard = (props) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${recordCss.card} ${props.compact ? recordCss.cardCompact : ''}`, onClick: props.onOpen },
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.cardTop },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.cardId }, props.idText),
+        props.badges && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.cardPills }, props.badges)),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: recordCss.cardTitle, title: props.title }, props.title),
+    !props.compact && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: recordCss.cardText, style: TWO_LINES, title: props.text }, props.text || '—'),
+    props.meta && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.cardMeta }, props.meta),
+    props.actions && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${recordCss.cardActions} ${props.compact ? recordCss.cardActionsCompact : ''}`, onClick: (e) => e.stopPropagation() }, props.actions))));
+/** Side-by-side lanes, one per status, each scrolling on its own. */
+function BoardLanes(props) {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.board }, props.lanes.map(lane => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { key: lane.key, className: recordCss.lane, "aria-label": `${lane.label} (${lane.items.length})` },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.laneHead },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.dot, style: { background: lane.color } }),
+            lane.label,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: recordCss.chipCount }, lane.items.length)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.laneBody }, lane.items.length === 0
+            ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: recordCss.laneEmpty }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.LaneEmpty)
+            : lane.items.map(item => react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, { key: props.keyOf(item) }, props.renderCard(item)))))))));
+}
+const priorityTone = (priority) => {
+    const p = (priority || 'Medium').toLowerCase();
+    return p === 'high' || p === 'critical' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.red : p === 'low' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.blue : _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.grey;
+};
+/** Open / Pending = red, In Progress = amber, Resolved = green, Closed = grey. */
+const serviceStatusTone = (status) => {
+    const s = (status || 'Open').toLowerCase();
+    if (s.indexOf('progress') >= 0)
+        return _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.amber;
+    if (s.indexOf('resolv') >= 0 || s.indexOf('complet') >= 0)
+        return _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.green;
+    if (s.indexOf('closed') >= 0)
+        return _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.grey;
+    return _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.red;
+};
+/**
+ * Reads a stored date. ISO and other machine formats go through Date; a day-first
+ * "13/6/2026" or "13-06-2026" (what older rows hold) is read as day/month/year.
+ */
+const parseFlexibleDate = (raw) => {
+    const text = (raw || '').trim();
+    if (!text)
+        return undefined;
+    const dmy = /^(\d{1,2})[/.-](\d{1,2})[/.-](\d{4})(?:[,\sT]+(\d{1,2}):(\d{2}))?/.exec(text);
+    if (dmy && Number(dmy[1]) > 12) {
+        const d = new Date(Number(dmy[3]), Number(dmy[2]) - 1, Number(dmy[1]), Number(dmy[4] || 0), Number(dmy[5] || 0));
+        return isNaN(d.getTime()) ? undefined : d;
+    }
+    const parsed = new Date(text);
+    return isNaN(parsed.getTime()) ? undefined : parsed;
+};
+/** "6 Aug 2026", the raw text when it isn't a date, or "—". */
+const formatFlexibleDay = (raw) => {
+    const d = parseFlexibleDate(raw);
+    return d ? d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }) : ((raw || '').trim() || '—');
+};
+const formatFlexibleDateTime = (raw) => {
+    const d = parseFlexibleDate(raw);
+    return d ? d.toLocaleString(undefined, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : ((raw || '').trim() || '—');
+};
+/** "Today", "3 days ago", "2 months ago". */
+const relativeDay = (raw, now = new Date()) => {
+    const d = parseFlexibleDate(raw);
+    if (!d)
+        return undefined;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists;
+    const days = Math.floor((new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() - new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime()) / 86400000);
+    if (days < 0)
+        return undefined;
+    if (days === 0)
+        return s.Today;
+    if (days === 1)
+        return s.Yesterday;
+    if (days < 60)
+        return (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(s.DaysAgo, days);
+    return (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(s.MonthsAgo, Math.floor(days / 30));
+};
+/** Milliseconds for sorting; undated records sort as the oldest. */
+const timeOf = (raw) => {
+    const d = parseFlexibleDate(raw);
+    return d ? d.getTime() : 0;
+};
+const dateRangeOptions = () => {
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists;
+    return [
+        { key: 'all', text: s.RangeAll },
+        { key: '7', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(s.RangeLastDays, 7) },
+        { key: '30', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(s.RangeLastDays, 30) },
+        { key: '90', text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(s.RangeLastDays, 90) },
+        { key: 'year', text: s.RangeThisYear }
+    ];
+};
+/** Undated rows only match "All time". */
+const inDateRange = (raw, range, now = new Date()) => {
+    if (range === 'all')
+        return true;
+    const d = parseFlexibleDate(raw);
+    if (!d)
+        return false;
+    if (range === 'year')
+        return d.getFullYear() === now.getFullYear();
+    return now.getTime() - d.getTime() <= Number(range) * 86400000;
+};
+
+
+/***/ }),
+
 /***/ 27655:
 /*!********************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/components/dashboard/LowStockPanel.js ***!
@@ -8574,6 +8315,213 @@ const RequestSlaPanel = ({ requests, queueKey, onNavigate }) => {
                             " ",
                             formatHours(item.overdueByHours)))))))),
             summary.overdueItems.length > MAX_ROWS && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _Dashboard_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].sectionSubtitle }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_5__.formatString)(f.SlaMoreOverdue, summary.overdueItems.length - MAX_ROWS)))))));
+};
+
+
+/***/ }),
+
+/***/ 86853:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/events/EventTimeline.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ActivityPulse: () => (/* binding */ ActivityPulse),
+/* harmony export */   EventTimeline: () => (/* binding */ EventTimeline),
+/* harmony export */   eventDate: () => (/* binding */ eventDate)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _EventActionBadge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../EventActionBadge */ 1773);
+// The Event Stream's activity feed: a day-by-day timeline of events, plus the summary strip above it.
+
+
+
+
+
+
+const LINE = 'rgba(128, 128, 128, 0.22)';
+const MUTED = 'var(--text-muted, #616161)';
+const MONO = 'Consolas, "Cascadia Mono", "Courier New", monospace';
+const TIME_W = 60;
+const NODE = 28;
+const PULSE_DAYS = 14;
+const css = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_3__.mergeStyleSets)({
+    pulse: {
+        display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '16px 32px',
+        padding: '14px 18px', borderRadius: 12, background: 'rgba(128, 128, 128, 0.08)', marginBottom: 16
+    },
+    stats: { display: 'flex', flexWrap: 'wrap', gap: '12px 32px' },
+    statValue: { display: 'block', fontSize: 24, fontWeight: 600, lineHeight: '30px' },
+    statLabel: { display: 'block', fontSize: 12, color: MUTED },
+    chart: { display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 },
+    bars: { display: 'flex', alignItems: 'flex-end', gap: 4, height: 44 },
+    bar: { width: 10, borderRadius: 3, background: '#0f6cbd' },
+    barEmpty: { background: 'rgba(128, 128, 128, 0.3)' },
+    chartLabel: { fontSize: 11, color: MUTED },
+    day: {
+        display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12,
+        padding: '0 0 6px', margin: '20px 0 4px', borderBottom: `1px solid ${LINE}`
+    },
+    dayFirst: { marginTop: 0 },
+    dayRelative: { fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginRight: 8 },
+    dayName: { fontSize: 13, fontWeight: 600, color: MUTED },
+    dayCount: { fontSize: 12, color: MUTED, whiteSpace: 'nowrap' },
+    track: { position: 'relative' },
+    list: { listStyle: 'none', margin: 0, padding: 0 },
+    // The vertical line the event markers sit on.
+    rail: { position: 'absolute', left: TIME_W + 12 + NODE / 2 - 1, top: 14, bottom: 14, width: 2, background: LINE },
+    row: {
+        position: 'relative', display: 'grid', gridTemplateColumns: `${TIME_W}px ${NODE}px minmax(0, 1fr) 16px`, columnGap: 12, alignItems: 'start',
+        width: '100%', padding: '10px 10px 10px 0', border: 'none', borderRadius: 10, background: 'transparent',
+        cursor: 'pointer', font: 'inherit', color: 'inherit', textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(128, 128, 128, 0.07)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 } }
+    },
+    time: { fontFamily: MONO, fontSize: 12, lineHeight: '16px', color: MUTED, textAlign: 'right', paddingTop: 6, whiteSpace: 'nowrap' },
+    timeDate: { display: 'block', fontSize: 11 },
+    // The ring in the card colour hides the rail behind the marker.
+    node: {
+        position: 'relative', zIndex: 1, width: NODE, height: NODE, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontSize: 12, boxShadow: '0 0 0 4px var(--surface-bg, #ffffff)'
+    },
+    body: { minWidth: 0 },
+    title: { display: 'block', fontSize: 14, fontWeight: 600, lineHeight: '20px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    meta: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 10px', marginTop: 4, fontSize: 12, color: MUTED },
+    metaItem: { display: 'inline-flex', alignItems: 'center', gap: 5, minWidth: 0 },
+    details: { display: 'block', marginTop: 4, fontSize: 13, color: MUTED, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    chevron: { fontSize: 11, color: MUTED, paddingTop: 8 },
+    expanded: {
+        margin: `0 10px 10px ${TIME_W + NODE + 24}px`, padding: '12px 14px', borderRadius: 10,
+        background: 'rgba(128, 128, 128, 0.08)', fontSize: 13
+    },
+    fullDetails: { margin: '0 0 10px', lineHeight: '20px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' },
+    facts: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '8px 16px', margin: 0 },
+    factLabel: { fontSize: 11, color: MUTED, margin: 0 },
+    factValue: { margin: '1px 0 0', fontWeight: 600, wordBreak: 'break-word' },
+    mono: { fontFamily: MONO, fontSize: 12 }
+});
+/** Event timestamps are stored as local "YYYY-MM-DD HH:mm:ss". */
+const eventDate = (timestamp) => {
+    const text = (timestamp || '').trim();
+    if (!text)
+        return undefined;
+    const d = new Date(text.replace(' ', 'T'));
+    if (!isNaN(d.getTime()))
+        return d;
+    const fallback = new Date(text);
+    return isNaN(fallback.getTime()) ? undefined : fallback;
+};
+const dayKey = (d) => d ? `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}` : 'unknown';
+const daysAgo = (d, now) => Math.round((new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() - new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime()) / 86400000);
+/** Headline counts and a bar per day for the last two weeks. */
+const ActivityPulse = ({ logs, showPeople }) => {
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventFeed;
+    const now = new Date();
+    const perDay = [];
+    for (let i = 0; i < PULSE_DAYS; i++)
+        perDay.push(0);
+    let today = 0;
+    logs.forEach(log => {
+        const d = eventDate(log.timestamp);
+        if (!d)
+            return;
+        const ago = daysAgo(d, now);
+        if (ago === 0)
+            today++;
+        if (ago >= 0 && ago < PULSE_DAYS)
+            perDay[PULSE_DAYS - 1 - ago]++;
+    });
+    const people = new Set(logs.map(l => (l.user || '').trim().toLowerCase()).filter(Boolean)).size;
+    const peak = Math.max(...perDay, 1);
+    const dayLabel = (index) => new Date(now.getFullYear(), now.getMonth(), now.getDate() - (PULSE_DAYS - 1 - index)).toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
+    const stats = [
+        { key: 'events', label: t.StatEvents, value: logs.length },
+        { key: 'today', label: t.StatToday, value: today },
+        ...(showPeople ? [{ key: 'people', label: t.StatPeople, value: people }] : [])
+    ];
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.pulse },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.stats }, stats.map(stat => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: stat.key },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.statValue }, stat.value),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.statLabel }, stat.label))))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.chart },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.bars, role: "img", "aria-label": `${t.ChartLast14}: ${perDay.join(', ')}` }, perDay.map((count, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: i, className: `${css.bar} ${count === 0 ? css.barEmpty : ''}`, style: { height: count === 0 ? 3 : Math.max(6, Math.round((count / peak) * 44)) }, title: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(t.BarTooltip, dayLabel(i), count) })))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.chartLabel }, t.ChartLast14))));
+};
+const Fact = ({ label, mono, children }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dt", { className: css.factLabel }, label),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("dd", { className: `${css.factValue} ${mono ? css.mono : ''}` }, children)));
+const EventTimeline = ({ logs, groupByDay, showAudit }) => {
+    const [open, setOpen] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const now = new Date();
+    // Consecutive events of the same day share a heading; without grouping there is a single, unnamed section.
+    const sections = [];
+    logs.forEach(log => {
+        const date = eventDate(log.timestamp);
+        const key = groupByDay ? dayKey(date) : 'all';
+        const last = sections[sections.length - 1];
+        if (last && last.key === key)
+            last.events.push(log);
+        else
+            sections.push({ key, date, events: [log] });
+    });
+    const renderEvent = (log, index) => {
+        // Identifies the event across pages, so an opened event stays open when paging back to it.
+        const id = `${log.id}|${log.timestamp}|${log.action}`;
+        const expanded = !!open[id];
+        const style = (0,_EventActionBadge__WEBPACK_IMPORTED_MODULE_2__.eventActionStyle)(log.action);
+        const date = eventDate(log.timestamp);
+        const showType = !!log.assetType && (log.assetType || '').toLowerCase() !== (log.assetName || '').toLowerCase();
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: `${id}-${index}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: css.row, "aria-expanded": expanded, onClick: () => setOpen(prev => ({ ...prev, [id]: !prev[id] })) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.time },
+                    !groupByDay && date && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.timeDate }, date.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })),
+                    date ? date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' }) : '—'),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.node, style: { background: style.bg, color: style.fg }, "aria-hidden": "true" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: style.icon })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.body },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.title, title: log.title }, log.title || log.assetName || '—'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.meta },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventActionBadge__WEBPACK_IMPORTED_MODULE_2__.EventActionBadge, { action: log.action }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.metaItem },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: log.entityType === 'Request' ? 'Send' : 'Devices3', "aria-hidden": "true" }),
+                            log.entityType,
+                            log.assetName ? ` · ${log.assetName}` : ''),
+                        showAudit && log.user && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.metaItem },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: "Contact", "aria-hidden": "true" }),
+                            log.user)),
+                    showAudit && log.details && !expanded && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.details }, log.details)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_5__.Icon, { iconName: expanded ? 'ChevronUp' : 'ChevronDown', className: css.chevron, "aria-hidden": "true" })),
+            expanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.expanded },
+                showAudit && log.details && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: css.fullDetails }, log.details),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("dl", { className: css.facts },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ColumnTimestamp, mono: true }, date ? date.toLocaleString() : (log.timestamp || '—')),
+                    showAudit && react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventStream.ColumnUser }, log.user || '—'),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Type }, log.entityType),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.AssetName }, log.assetName || '—'),
+                    showType && react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventFilters.LabelAssetType }, log.assetType),
+                    log.entityId && react__WEBPACK_IMPORTED_MODULE_0__.createElement(Fact, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventFeed.LabelReference, mono: true }, log.entityId))))));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, sections.map((section, sectionIndex) => {
+        const ago = section.date ? daysAgo(section.date, now) : -1;
+        const relative = ago === 0 ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Today : ago === 1 ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Yesterday : '';
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { key: `${section.key}-${sectionIndex}` },
+            groupByDay && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${css.day} ${sectionIndex === 0 ? css.dayFirst : ''}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0, fontWeight: 'inherit' } },
+                    relative && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dayRelative }, relative),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dayName }, section.date ? section.date.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.Unknown)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.dayCount }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.EventFeed.DayEvents, section.events.length)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: css.track },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: css.rail, "aria-hidden": "true" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: css.list }, section.events.map(renderEvent)))));
+    })));
 };
 
 
@@ -9386,6 +9334,1348 @@ const categoryOf = (item) => {
 
 /***/ }),
 
+/***/ 97115:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/AssetsReport.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetsReport: () => (/* binding */ AssetsReport),
+/* harmony export */   NO_ASSET_FILTERS: () => (/* binding */ NO_ASSET_FILTERS)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 80539);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _reportData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reportData */ 53794);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reportsUi */ 78135);
+/* harmony import */ var _reportParts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reportParts */ 66050);
+
+
+
+
+
+
+
+
+
+
+const NO_ASSET_FILTERS = { search: '', condition: 'all', assignment: 'all' };
+/** Filterable, sortable list of every asset; exports follow the filters. */
+const AssetsReport = (props) => {
+    const { items, typeFilter, statusFilter, filters } = props;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports;
+    const r = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage;
+    const query = filters.search.trim().toLowerCase();
+    const rows = items.filter(i => {
+        if (typeFilter !== 'All' && (i.assetType || '').trim() !== typeFilter)
+            return false;
+        if (statusFilter !== 'All' && (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucket)(i.status) !== statusFilter)
+            return false;
+        const condition = (i.condition || '').trim();
+        if (filters.condition === 'attention' ? !(0,_reportData__WEBPACK_IMPORTED_MODULE_3__.needsAttention)(i)
+            : filters.condition === _reportData__WEBPACK_IMPORTED_MODULE_3__.CONDITION_NONE ? !!condition
+                : filters.condition !== 'all' && condition !== filters.condition)
+            return false;
+        if (filters.assignment !== 'all' && (0,_reportData__WEBPACK_IMPORTED_MODULE_3__.isHeld)(i) !== (filters.assignment === 'assigned'))
+            return false;
+        if (!query)
+            return true;
+        return [(0,_reportData__WEBPACK_IMPORTED_MODULE_3__.nameOf)(i), i.serialNumber, i.assetType, i.assignedTo, i.assignedToEmail, i.vendor, i.status]
+            .some(v => (v || '').toLowerCase().indexOf(query) >= 0);
+    }).sort((a, b) => (0,_reportData__WEBPACK_IMPORTED_MODULE_3__.nameOf)(a).localeCompare((0,_reportData__WEBPACK_IMPORTED_MODULE_3__.nameOf)(b)));
+    const distinct = (values) => Array.from(new Set(values.map(v => (v || '').trim()).filter(Boolean))).sort();
+    const option = (key, text) => ({ key, text });
+    const typeOptions = [option('All', r.FilterAllTypes)].concat(distinct(items.map(i => i.assetType)).map(v => option(v, v)));
+    const statusOptions = [option('All', r.FilterAllStatuses)]
+        .concat(_reportData__WEBPACK_IMPORTED_MODULE_3__.STATUS_ORDER.filter(b => items.some(i => (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucket)(i.status) === b)).map(b => option(b, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucketLabel)(b))));
+    const conditionOptions = [option('all', InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.AllConditions), option('attention', t.KpiCondition)]
+        .concat(distinct(items.map(i => i.condition)).map(v => option(v, v)))
+        .concat(items.some(i => !(i.condition || '').trim()) ? [option(_reportData__WEBPACK_IMPORTED_MODULE_3__.CONDITION_NONE, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Unspecified)] : []);
+    const assignmentOptions = [option('all', t.AssignmentAll), option('assigned', (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucketLabel)('assigned')), option('unassigned', r.ColUnassigned)];
+    const hasFilters = typeFilter !== 'All' || statusFilter !== 'All' || filters.condition !== 'all' || filters.assignment !== 'all' || !!query;
+    const clear = () => {
+        props.onTypeChange('All');
+        props.onStatusChange('All');
+        props.onFiltersChange(NO_ASSET_FILTERS);
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_4__.reportCss.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_6__.SearchBox, { className: _reportsUi__WEBPACK_IMPORTED_MODULE_4__.reportCss.search, placeholder: t.SearchAssets, value: filters.search, onChange: (_, v) => props.onFiltersChange({ ...filters, search: v || '' }), onClear: () => props.onFiltersChange({ ...filters, search: '' }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: r.LabelAssetType, options: typeOptions, selectedKey: typeFilter, onChange: (_, o) => o && props.onTypeChange(String(o.key)), styles: { root: { width: 150 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: r.LabelAssetStatus, options: statusOptions, selectedKey: statusFilter, onChange: (_, o) => o && props.onStatusChange(String(o.key)), styles: { root: { width: 160 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Condition, options: conditionOptions, selectedKey: filters.condition, onChange: (_, o) => o && props.onFiltersChange({ ...filters, condition: String(o.key) }), styles: { root: { width: 160 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_7__.Dropdown, { label: t.LabelAssignment, options: assignmentOptions, selectedKey: filters.assignment, onChange: (_, o) => o && props.onFiltersChange({ ...filters, assignment: o.key }), styles: { root: { width: 190 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_4__.reportCss.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_4__.reportCss.actions },
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.ResultAssets, rows.length, items.length),
+                hasFilters && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_9__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.ClearFilters, onClick: clear })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportParts__WEBPACK_IMPORTED_MODULE_5__.ExportButtons, { onExcel: () => props.onExportExcel(rows), onPdf: () => props.onExportPdf(rows), disabled: rows.length === 0 })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_4__.ReportTable, { rows: rows, columns: [_reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.asset(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.type(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.status(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.condition(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.assignedTo(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.purchased(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.age(), _reportParts__WEBPACK_IMPORTED_MODULE_5__.assetColumn.warranty()], keyOf: i => i.id, onOpen: props.onOpenAsset, resetKey: [typeFilter, statusFilter, filters.condition, filters.assignment, query].join('|'), emptyText: items.length === 0 ? t.NoData : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.EmptyFiltered, ariaLabel: r.DetailedTitle })));
+};
+
+
+/***/ }),
+
+/***/ 50781:
+/*!*******************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/OverviewReport.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   OverviewReport: () => (/* binding */ OverviewReport)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ChartPlugins */ 34927);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _reportData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reportData */ 53794);
+/* harmony import */ var _reportLabels__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reportLabels */ 18153);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reportsUi */ 78135);
+
+
+
+
+
+
+
+
+
+
+const OverviewReport = (props) => {
+    const { items, requests, onDrillAssets, onDrillWarranty, onDrillRequests } = props;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports;
+    const r = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage;
+    const details = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.ViewDetails;
+    // ---- Inventory numbers ----
+    const total = items.length;
+    const byStatus = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items, i => (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.statusBucket)(i.status));
+    const inStock = byStatus.inStock || 0;
+    const assigned = byStatus.assigned || 0;
+    const inUse = total - inStock;
+    const holders = Object.keys((0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items.filter(_reportData__WEBPACK_IMPORTED_MODULE_4__.isHeld), i => (i.assignedTo || '').trim().toLowerCase())).length;
+    const percent = (part, whole) => (whole > 0 ? Math.round((part / whole) * 100) : 0);
+    const warranty = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items, i => (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.warrantyBucket)(i));
+    const warrantyExpired = warranty.expired || 0;
+    const warrantySoon = (warranty.within30 || 0) + (warranty.within90 || 0);
+    const pastLifecycle = items.filter(i => (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.isPastLifecycle)(i)).length;
+    const attention = items.filter(_reportData__WEBPACK_IMPORTED_MODULE_4__.needsAttention).length;
+    // ---- Request numbers ----
+    const byStage = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(requests, req => (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__.getSlaStage)(req));
+    const awaitingApproval = byStage.awaitingApproval || 0;
+    const awaitingAssignment = byStage.awaitingAssignment || 0;
+    const kpis = [
+        { key: 'total', icon: 'Package', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.blue, label: t.KpiTotalAssets, value: total, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiTotalAssetsHint, Object.keys((0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items, i => i.assetType || '')).length), onClick: () => onDrillAssets({}) },
+        { key: 'stock', icon: 'Accept', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.green, label: t.KpiInStock, value: inStock, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiShareHint, percent(inStock, total)), onClick: () => onDrillAssets({ status: 'inStock' }) },
+        { key: 'assigned', icon: 'Contact', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.blue, label: t.KpiAssigned, value: assigned, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiAssignedHint, holders), onClick: () => onDrillAssets({ status: 'assigned' }) },
+        { key: 'use', icon: 'SpeedHigh', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.teal, label: t.KpiUtilisation, value: `${percent(inUse, total)}%`, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiUtilisationHint, inUse, total), percent: percent(inUse, total) },
+        { key: 'requests', icon: 'Send', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.purple, label: t.KpiOpenRequests, value: awaitingApproval + awaitingAssignment, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiOpenRequestsHint, awaitingApproval, awaitingAssignment), onClick: () => onDrillRequests() },
+        { key: 'warranty', icon: 'Shield', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.orange, label: t.KpiWarranty, value: warrantyExpired + warrantySoon, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiWarrantyHint, warrantyExpired, warrantySoon), onClick: () => onDrillWarranty('attention') },
+        { key: 'lifecycle', icon: 'History', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.amber, label: t.KpiLifecycle, value: pastLifecycle, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(t.KpiLifecycleHint, _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.LIFECYCLE_YEARS), onClick: () => onDrillWarranty('lifecycle') },
+        { key: 'condition', icon: 'Repair', color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.red, label: t.KpiCondition, value: attention, hint: t.KpiConditionHint, onClick: () => onDrillAssets({ condition: 'attention' }) }
+    ];
+    // ---- Assets by status ----
+    const statusShown = _reportData__WEBPACK_IMPORTED_MODULE_4__.STATUS_ORDER.filter(b => (byStatus[b] || 0) > 0);
+    const statusData = {
+        labels: statusShown.map(b => `${(0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.statusBucketLabel)(b)} (${byStatus[b]})`),
+        datasets: [{ data: statusShown.map(b => byStatus[b]), backgroundColor: statusShown.map(b => _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STATUS_COLOR[b]), ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.ARC_STYLE }]
+    };
+    // ---- Assets by type, split into in stock / assigned / everything else ----
+    const typeOf = (i) => (i.assetType || '').trim() || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Unspecified;
+    const types = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.rankedKeys)((0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items, typeOf));
+    const typeCount = (type, match) => items.filter(i => typeOf(i) === type && match((0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.statusBucket)(i.status))).length;
+    const typeSeries = [
+        { label: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.statusBucketLabel)('inStock'), color: _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STATUS_COLOR.inStock, status: 'inStock', match: b => b === 'inStock' },
+        { label: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.statusBucketLabel)('assigned'), color: _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STATUS_COLOR.assigned, status: 'assigned', match: b => b === 'assigned' },
+        { label: t.SeriesOther, color: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.grey, match: b => b !== 'inStock' && b !== 'assigned' }
+    ];
+    const typeData = {
+        labels: types,
+        datasets: typeSeries.map(series => ({ label: series.label, data: types.map(type => typeCount(type, series.match)), backgroundColor: series.color, ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.BAR_STYLE }))
+    };
+    // ---- Asset age ----
+    const byAge = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items, i => (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.ageBand)(i));
+    const ageShown = _reportData__WEBPACK_IMPORTED_MODULE_4__.AGE_BANDS.filter(b => (byAge[b] || 0) > 0);
+    const ageData = {
+        labels: ageShown.map(b => `${(0,_reportLabels__WEBPACK_IMPORTED_MODULE_5__.ageBandLabel)(b)} (${byAge[b]})`),
+        datasets: [{ data: ageShown.map(b => byAge[b]), backgroundColor: ageShown.map(b => _reportLabels__WEBPACK_IMPORTED_MODULE_5__.AGE_COLOR[b]), ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.ARC_STYLE }]
+    };
+    // ---- Condition ----
+    const byCondition = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.countBy)(items, i => (i.condition || '').trim() || _reportData__WEBPACK_IMPORTED_MODULE_4__.CONDITION_NONE);
+    const conditionRows = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.rankedKeys)(byCondition).map(key => ({
+        key,
+        label: key === _reportData__WEBPACK_IMPORTED_MODULE_4__.CONDITION_NONE ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Unspecified : key,
+        value: byCondition[key],
+        onClick: () => onDrillAssets({ condition: key })
+    }));
+    // ---- Requests per month (last 6 months) ----
+    const months = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.monthSeries)(-5, 6);
+    const monthly = (match) => months.map(m => requests.filter(req => { const d = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.requestedOn)(req); return !!d && (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.monthKey)(d) === m.key && match((0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_7__.getSlaStage)(req)); }).length);
+    const monthlyData = {
+        labels: months.map(m => m.label),
+        datasets: [
+            { label: t.OutcomeFulfilled, data: monthly(s => s === 'assigned'), backgroundColor: _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STAGE_COLOR.assigned, ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.BAR_STYLE },
+            { label: t.SeriesInProgress, data: monthly(s => s === 'awaitingApproval' || s === 'awaitingAssignment'), backgroundColor: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.PALETTE.amber, ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.BAR_STYLE },
+            { label: t.OutcomeRejected, data: monthly(s => s === 'rejected'), backgroundColor: _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STAGE_COLOR.rejected, ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.BAR_STYLE }
+        ]
+    };
+    // ---- Request outcomes ----
+    const stagesShown = _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STAGES.filter(s => (byStage[s] || 0) > 0);
+    const outcomeData = {
+        labels: stagesShown.map(s => `${(0,_reportLabels__WEBPACK_IMPORTED_MODULE_5__.stageLabel)(s)} (${byStage[s]})`),
+        datasets: [{ data: stagesShown.map(s => byStage[s]), backgroundColor: stagesShown.map(s => _reportLabels__WEBPACK_IMPORTED_MODULE_5__.STAGE_COLOR[s]), ..._reportsUi__WEBPACK_IMPORTED_MODULE_6__.ARC_STYLE }]
+    };
+    const noData = react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.empty }, t.NoData);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.KpiRow, { kpis: kpis }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.grid },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.ReportCard, { title: r.ChartStatusDistribution, subtitle: t.ChartClickHint, action: { text: details, onClick: () => onDrillAssets({}) } }, total === 0 ? noData : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.chartBox },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Doughnut, { data: statusData, options: (0,_reportsUi__WEBPACK_IMPORTED_MODULE_6__.doughnutOptions)(total, (index) => onDrillAssets({ status: statusShown[index] })), plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_2__.centerTotalPlugin] })))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.ReportCard, { title: r.ChartTypeDistribution, subtitle: t.ChartTypeSub, action: { text: details, onClick: () => onDrillAssets({}) } }, total === 0 ? noData : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.chartBox },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Bar, { data: typeData, options: (0,_reportsUi__WEBPACK_IMPORTED_MODULE_6__.barOptions)({ stacked: true, showLegend: true, onPick: (index, datasetIndex) => onDrillAssets({ type: items.some(i => (i.assetType || '').trim() === types[index]) ? types[index] : undefined, status: typeSeries[datasetIndex].status }) }) })))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.ReportCard, { title: r.ChartAgingAnalysis, subtitle: t.ChartAgeSub, action: { text: details, onClick: () => onDrillWarranty('lifecycle') } }, total === 0 ? noData : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.chartBox },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Doughnut, { data: ageData, options: (0,_reportsUi__WEBPACK_IMPORTED_MODULE_6__.doughnutOptions)(total), plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_2__.centerTotalPlugin] })))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.ReportCard, { title: t.ChartCondition, subtitle: t.ChartClickHint },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.RankList, { rows: conditionRows, emptyText: t.NoData })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.ReportCard, { title: t.ChartRequestsMonthly, subtitle: t.ChartRequestsMonthlySub, action: { text: details, onClick: () => onDrillRequests() } }, requests.length === 0 ? noData : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.chartBox },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Bar, { data: monthlyData, options: (0,_reportsUi__WEBPACK_IMPORTED_MODULE_6__.barOptions)({ stacked: true, showLegend: true }) })))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_6__.ReportCard, { title: t.ChartOutcomes, subtitle: t.ChartClickHint, action: { text: details, onClick: () => onDrillRequests() } }, requests.length === 0 ? noData : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_6__.reportCss.chartBox },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_9__.Doughnut, { data: outcomeData, options: (0,_reportsUi__WEBPACK_IMPORTED_MODULE_6__.doughnutOptions)(requests.length, (index) => onDrillRequests(stagesShown[index])), plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_2__.centerTotalPlugin] })))))));
+};
+
+
+/***/ }),
+
+/***/ 35497:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/PeopleReport.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PeopleReport: () => (/* binding */ PeopleReport)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ReportExportUtils */ 61238);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/Pager */ 42589);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/listUi */ 42806);
+/* harmony import */ var _reportData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reportData */ 53794);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reportsUi */ 78135);
+/* harmony import */ var _reportParts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reportParts */ 66050);
+
+
+
+
+
+
+
+
+
+
+
+
+const PAGE_SIZE = 10;
+/** Who holds what: every person with assets, largest holding first, with the assets behind each count. */
+const PeopleReport = ({ items, onOpenAsset }) => {
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports;
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [expanded, setExpanded] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const [page, setPage] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setPage(1), [search]);
+    const holders = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
+        const byKey = {};
+        items.filter(_reportData__WEBPACK_IMPORTED_MODULE_6__.isHeld).forEach(item => {
+            const name = (item.assignedTo || '').trim();
+            const key = (item.assignedToEmail || name).trim().toLowerCase();
+            const holder = byKey[key] || (byKey[key] = { key, name, email: item.assignedToEmail, assets: [] });
+            holder.assets.push(item);
+        });
+        return Object.keys(byKey).map(key => byKey[key])
+            .sort((a, b) => b.assets.length - a.assets.length || a.name.localeCompare(b.name));
+    }, [items]);
+    const query = search.trim().toLowerCase();
+    const shown = !query ? holders : holders.filter(h => [h.name, h.email].some(v => (v || '').toLowerCase().indexOf(query) >= 0) ||
+        h.assets.some(a => [(0,_reportData__WEBPACK_IMPORTED_MODULE_6__.nameOf)(a), a.serialNumber, a.assetType].some(v => (v || '').toLowerCase().indexOf(query) >= 0)));
+    const totalPages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
+    const activePage = Math.min(page, totalPages);
+    const visible = shown.slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE);
+    const held = holders.reduce((sum, h) => sum + h.assets.length, 0);
+    const largest = holders[0];
+    const kpis = [
+        { key: 'people', icon: 'People', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.blue, label: t.KpiPeople, value: holders.length, hint: t.KpiPeopleHint },
+        { key: 'held', icon: 'Devices3', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.teal, label: t.KpiAssetsHeld, value: held, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(t.KpiAssetsHeldHint, items.length) },
+        { key: 'average', icon: 'Calculator', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.purple, label: t.KpiAveragePerPerson, value: holders.length ? (Math.round((held / holders.length) * 10) / 10).toString() : '—', hint: t.KpiAveragePerPersonHint },
+        { key: 'largest', icon: 'Trophy2', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.amber, label: t.KpiLargestHolding, value: largest ? largest.assets.length : '—', hint: largest ? largest.name : undefined }
+    ];
+    const exportCsv = () => (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_2__.exportRowsToCsv)('Assets_By_Person_Report', [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.EmployeeName, t.ColEmail, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.AssetName, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.LabelAssetType, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.SerialNumber, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Status, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Condition, t.ColAssignedOn], shown.reduce((all, h) => all.concat(h.assets.map(a => [h.name, h.email, (0,_reportData__WEBPACK_IMPORTED_MODULE_6__.nameOf)(a), a.assetType, a.serialNumber, a.status, a.condition, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.formatDay)(a.assignedDate)])), []));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.KpiRow, { kpis: kpis }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_10__.SearchBox, { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.search, placeholder: t.SearchPeople, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(t.ResultPeople, shown.length, holders.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportParts__WEBPACK_IMPORTED_MODULE_8__.ExportButtons, { onExcel: exportCsv, disabled: shown.length === 0 })),
+        shown.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.empty }, holders.length === 0 ? t.EmptyPeople : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.EmptyFiltered)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.tableCard },
+            visible.map(holder => {
+                const open = !!expanded[holder.key];
+                const types = (0,_reportData__WEBPACK_IMPORTED_MODULE_6__.countBy)(holder.assets, a => (a.assetType || '').trim() || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Unspecified);
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: holder.key, className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.personItem },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.person, "aria-expanded": open, onClick: () => setExpanded(prev => ({ ...prev, [holder.key]: !prev[holder.key] })) },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.coin, "aria-hidden": "true" }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.initials)(holder.name)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.personText },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.strong }, holder.name),
+                            holder.email && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.meta }, holder.email)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.personPills }, (0,_reportData__WEBPACK_IMPORTED_MODULE_6__.rankedKeys)(types).map(type => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { key: type, tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.grey, text: `${types[type]} × ${type}` }))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.TONES.blue, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(t.PeopleAssetCount, holder.assets.length) }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_11__.Icon, { iconName: open ? 'ChevronUp' : 'ChevronDown', style: { fontSize: 12 }, "aria-hidden": "true" })),
+                    open && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.personAssets }, holder.assets.map(asset => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: asset.id, type: "button", className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.assetLine, onClick: () => onOpenAsset(asset) },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.two },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.strong }, (0,_reportData__WEBPACK_IMPORTED_MODULE_6__.nameOf)(asset) || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer.Unnamed),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.meta }, asset.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.NotAvailable)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText }, asset.assetType || '—'),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText, title: t.ColAssignedOn }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.formatDay)(asset.assignedDate)),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_5__.Pill, { tone: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.statusTone)(asset.status), text: asset.status || '—' }))))))));
+            }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_4__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: shown.length, onChange: setPage })))));
+};
+
+
+/***/ }),
+
+/***/ 67148:
+/*!*******************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/RequestsReport.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   RequestsReport: () => (/* binding */ RequestsReport)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 80539);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/ReportExportUtils */ 61238);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/listUi */ 42806);
+/* harmony import */ var _reportData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reportData */ 53794);
+/* harmony import */ var _reportLabels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reportLabels */ 18153);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reportsUi */ 78135);
+/* harmony import */ var _reportParts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reportParts */ 66050);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const TOP_COUNT = 5;
+const refOf = (request) => request.requestKey || request.id;
+const dateTextOf = (request) => request.createdAt || request.requestDate;
+const timeOfRequest = (request) => { const d = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.requestedOn)(request); return d ? d.getTime() : 0; };
+/** Asset requests: volumes, approval rate, turnaround times and the full filterable list. */
+const RequestsReport = (props) => {
+    const { requests, stage } = props;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports;
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [range, setRange] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [priority, setPriority] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const query = search.trim().toLowerCase();
+    // Everything except the outcome chip: the chips, KPIs and rankings describe this set.
+    const scoped = requests.filter(req => {
+        if (!(0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.inDateRange)(dateTextOf(req), range))
+            return false;
+        if (priority !== 'all' && (req.priority || 'Medium').toLowerCase() !== priority)
+            return false;
+        if (!query)
+            return true;
+        return [refOf(req), req.requesterName, req.requesterEmail, req.assetTitle, req.assetName, req.managerName, req.status]
+            .some(v => (v || '').toLowerCase().indexOf(query) >= 0);
+    });
+    const rows = scoped.filter(req => stage === 'all' || (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.getSlaStage)(req) === stage).sort((a, b) => timeOfRequest(b) - timeOfRequest(a));
+    const byStage = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.countBy)(scoped, req => (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.getSlaStage)(req));
+    const chips = [
+        { key: 'all', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.TileAll, count: scoped.length },
+        ..._reportLabels__WEBPACK_IMPORTED_MODULE_6__.STAGES.map(s => ({ key: s, label: (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.stageLabel)(s), count: byStage[s] || 0, color: _reportLabels__WEBPACK_IMPORTED_MODULE_6__.STAGE_COLOR[s] }))
+    ];
+    // ---- KPIs ----
+    const sla = (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.summarizeSla)(scoped, (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().sla);
+    const slaOf = {};
+    sla.items.forEach(item => { slaOf[item.request.id] = item; });
+    const approved = (byStage.assigned || 0) + (byStage.awaitingAssignment || 0);
+    const rejected = byStage.rejected || 0;
+    const approvalRate = approved + rejected > 0 ? Math.round((approved / (approved + rejected)) * 100) : undefined;
+    const kpis = [
+        { key: 'count', icon: 'Send', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.purple, label: t.KpiRequests, value: scoped.length, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(t.KpiRequestsHint, (byStage.awaitingApproval || 0) + (byStage.awaitingAssignment || 0)) },
+        { key: 'rate', icon: 'Accept', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.green, label: t.KpiApprovalRate, value: approvalRate === undefined ? '—' : `${approvalRate}%`, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(t.KpiApprovalRateHint, approved, rejected), percent: approvalRate },
+        { key: 'decision', icon: 'Clock', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.amber, label: t.KpiAvgDecision, value: (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.durationText)(sla.averageApprovalHours), hint: t.KpiAvgDecisionHint },
+        { key: 'assignment', icon: 'DeliveryTruck', color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.blue, label: t.KpiAvgAssignment, value: (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.durationText)(sla.averageAssignmentHours), hint: t.KpiAvgAssignmentHint }
+    ];
+    // ---- Rankings ----
+    const byAsset = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.countBy)(scoped, req => (req.assetTitle || req.assetName || '').trim() || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Unspecified);
+    const byRequester = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.countBy)(scoped, req => (req.requesterName || '').trim() || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.Unspecified);
+    const top = (counts) => (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.rankedKeys)(counts).slice(0, TOP_COUNT).map(key => ({ key, label: key, value: counts[key], onClick: () => setSearch(key) }));
+    const columns = [
+        {
+            key: 'id', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.RequestId, minWidth: 90, maxWidth: 120,
+            sortValue: req => parseInt(refOf(req).replace(/\D/g, ''), 10) || 0,
+            render: req => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.strong }, refOf(req))
+        },
+        {
+            key: 'employee', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.EmployeeName, minWidth: 140, maxWidth: 200,
+            sortValue: req => (req.requesterName || '').toLowerCase(),
+            render: req => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.two },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText }, req.requesterName || '—'),
+                req.requesterEmail && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.meta }, req.requesterEmail)))
+        },
+        {
+            key: 'asset', name: t.ColAssetRequested, minWidth: 130, maxWidth: 200,
+            sortValue: req => (req.assetTitle || '').toLowerCase(),
+            render: req => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText },
+                req.assetTitle || req.assetName || '—',
+                req.quantity > 1 ? ` × ${req.quantity}` : '')
+        },
+        {
+            key: 'priority', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Priority, minWidth: 80, maxWidth: 100,
+            render: req => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.Pill, { tone: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.priorityTone)(req.priority), text: req.priority || 'Medium' })
+        },
+        {
+            key: 'requested', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.RequestedDate, minWidth: 110, maxWidth: 140,
+            sortValue: timeOfRequest,
+            render: req => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.two },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText }, (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.formatFlexibleDay)(dateTextOf(req))),
+                (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.relativeDay)(dateTextOf(req)) && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.meta }, (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.relativeDay)(dateTextOf(req)))))
+        },
+        {
+            key: 'manager', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.ManagerName, minWidth: 120, maxWidth: 170,
+            sortValue: req => (req.managerName || '').toLowerCase(),
+            render: req => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText }, req.managerName || '—')
+        },
+        {
+            key: 'outcome', name: t.ColOutcome, minWidth: 140, maxWidth: 170,
+            sortValue: req => _reportLabels__WEBPACK_IMPORTED_MODULE_6__.STAGES.indexOf((0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.getSlaStage)(req)),
+            render: req => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.Pill, { tone: (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.stageTone)((0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.getSlaStage)(req)), text: (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.stageLabel)((0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.getSlaStage)(req)), title: req.status })
+        },
+        {
+            key: 'decision', name: t.ColDecisionTime, minWidth: 110, maxWidth: 130,
+            sortValue: req => { const item = slaOf[req.id]; return item && item.approvalHours !== undefined ? item.approvalHours : Number.MAX_SAFE_INTEGER; },
+            render: req => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.cellText }, (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.durationText)(slaOf[req.id] ? slaOf[req.id].approvalHours : undefined))
+        }
+    ];
+    const exportCsv = () => (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_3__.exportRowsToCsv)('Asset_Requests_Report', [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.RequestId, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.EmployeeName, t.ColEmail, t.ColAssetRequested, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssignmentQueue.ColQuantity, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Priority, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.RequestedDate, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.ManagerName, t.ColOutcome, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Status, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Reason, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.ManagerComment], rows.map(req => [refOf(req), req.requesterName, req.requesterEmail, req.assetTitle || req.assetName, req.quantity, req.priority || 'Medium', (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.formatFlexibleDay)(dateTextOf(req)), req.managerName, (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.stageLabel)((0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_9__.getSlaStage)(req)), req.status, req.reason, req.managerResponse]));
+    const priorityOptions = [
+        { key: 'all', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.AllPriorities },
+        { key: 'high', text: 'High' },
+        { key: 'medium', text: 'Medium' },
+        { key: 'low', text: 'Low' }
+    ];
+    const hasFilters = stage !== 'all' || range !== 'all' || priority !== 'all' || !!query;
+    const clear = () => { props.onStageChange('all'); setRange('all'); setPriority('all'); setSearch(''); };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.KpiRow, { kpis: kpis }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.StatusChips, { chips: chips, selected: stage, ariaLabel: t.ColOutcome, onSelect: (key) => props.onStageChange(stage === key ? 'all' : key) }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_11__.SearchBox, { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.search, placeholder: t.SearchRequests, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_12__.Dropdown, { label: t.LabelPeriod, options: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.dateRangeOptions)(), selectedKey: range, onChange: (_, o) => o && setRange(o.key), styles: { root: { width: 160 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_12__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Priority, options: priorityOptions, selectedKey: priority, onChange: (_, o) => o && setPriority(String(o.key)), styles: { root: { width: 150 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.actions },
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(t.ResultRequests, rows.length, requests.length),
+                hasFilters && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_13__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.ClearFilters, onClick: clear })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportParts__WEBPACK_IMPORTED_MODULE_8__.ExportButtons, { onExcel: exportCsv, disabled: rows.length === 0 })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.ReportTable, { rows: rows, columns: columns, keyOf: req => req.id, resetKey: [stage, range, priority, query].join('|'), emptyText: requests.length === 0 ? t.NoData : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.EmptyFiltered, ariaLabel: t.TabRequests }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.grid} ${_reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.section}` },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.ReportCard, { title: t.TopRequested, subtitle: t.TopSub },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.RankList, { rows: top(byAsset), color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.purple, emptyText: t.NoData })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.ReportCard, { title: t.TopRequesters, subtitle: t.TopSub },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.RankList, { rows: top(byRequester), emptyText: t.NoData })))));
+};
+
+
+/***/ }),
+
+/***/ 61610:
+/*!*******************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/WarrantyReport.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   WarrantyReport: () => (/* binding */ WarrantyReport)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
+/* harmony import */ var _fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/SearchBox */ 21262);
+/* harmony import */ var _fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react/lib/Dropdown */ 12042);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/ChartPlugins */ 34927);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/listUi */ 42806);
+/* harmony import */ var _reportData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reportData */ 53794);
+/* harmony import */ var _reportLabels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reportLabels */ 18153);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reportsUi */ 78135);
+/* harmony import */ var _reportParts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reportParts */ 66050);
+
+
+
+
+
+
+
+
+
+
+
+
+
+const needsAttention = (bucket) => bucket === 'expired' || bucket === 'within30' || bucket === 'within90';
+/** Warranty end dates and replacement planning: what has lapsed, what is about to, and what is due for refresh. */
+const WarrantyReport = (props) => {
+    const { items, chip } = props;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports;
+    const r = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage;
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [type, setType] = react__WEBPACK_IMPORTED_MODULE_0__.useState('All');
+    const query = search.trim().toLowerCase();
+    // The chips count within the search and type filter, so the numbers match the list.
+    const scoped = items.filter(i => {
+        if (type !== 'All' && (i.assetType || '').trim() !== type)
+            return false;
+        if (!query)
+            return true;
+        return [(0,_reportData__WEBPACK_IMPORTED_MODULE_5__.nameOf)(i), i.serialNumber, i.assetType, i.assignedTo, i.vendor].some(v => (v || '').toLowerCase().indexOf(query) >= 0);
+    });
+    const matches = (i, which) => which === 'all' ? true
+        : which === 'lifecycle' ? (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.isPastLifecycle)(i)
+            : which === 'attention' ? needsAttention((0,_reportData__WEBPACK_IMPORTED_MODULE_5__.warrantyBucket)(i))
+                : (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.warrantyBucket)(i) === which;
+    const count = (which) => scoped.filter(i => matches(i, which)).length;
+    const chips = [
+        { key: 'all', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.TileAll, count: scoped.length },
+        { key: 'attention', label: t.WarrantyAttention, count: count('attention'), color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.orange },
+        ..._reportData__WEBPACK_IMPORTED_MODULE_5__.WARRANTY_BUCKETS.map(b => ({ key: b, label: (0,_reportLabels__WEBPACK_IMPORTED_MODULE_6__.warrantyBucketLabel)(b), count: count(b), color: _reportLabels__WEBPACK_IMPORTED_MODULE_6__.WARRANTY_COLOR[b] })),
+        { key: 'lifecycle', label: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(t.KpiLifecycleHint, _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_3__.LIFECYCLE_YEARS), count: count('lifecycle'), color: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.purple }
+    ];
+    // Soonest warranty end first (no date last); the lifecycle view lists the oldest purchase first.
+    const rows = scoped.filter(i => matches(i, chip)).sort((a, b) => {
+        if (chip === 'lifecycle')
+            return (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.timeOf)(a.purchaseDate) - (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.timeOf)(b.purchaseDate);
+        const da = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.warrantyDays)(a), db = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.warrantyDays)(b);
+        return (da === undefined ? Number.MAX_SAFE_INTEGER : da) - (db === undefined ? Number.MAX_SAFE_INTEGER : db);
+    });
+    // Warranties ending in each of the next 12 months.
+    const months = (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.monthSeries)(0, 12);
+    const endingIn = months.map(m => scoped.filter(i => { const d = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.parseFlexibleDate)(i.warrantyExpiry); return !!d && (0,_reportData__WEBPACK_IMPORTED_MODULE_5__.monthKey)(d) === m.key; }).length);
+    const monthlyData = {
+        labels: months.map(m => m.label),
+        datasets: [{ label: t.ChartWarrantyMonthly, data: endingIn, backgroundColor: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.PALETTE.blue, ..._reportsUi__WEBPACK_IMPORTED_MODULE_7__.BAR_STYLE }]
+    };
+    const typeOptions = [{ key: 'All', text: r.FilterAllTypes }]
+        .concat(Array.from(new Set(items.map(i => (i.assetType || '').trim()).filter(Boolean))).sort().map(v => ({ key: v, text: v })));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.StatusChips, { chips: chips, selected: chip, ariaLabel: r.WarrantyTitle, onSelect: (key) => props.onChipChange(chip === key ? 'all' : key) }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.toolbar },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_SearchBox__WEBPACK_IMPORTED_MODULE_10__.SearchBox, { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.search, placeholder: t.SearchAssets, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Dropdown__WEBPACK_IMPORTED_MODULE_11__.Dropdown, { label: r.LabelAssetType, options: typeOptions, selectedKey: type, onChange: (_, o) => o && setType(String(o.key)), styles: { root: { width: 170 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(t.ResultAssets, rows.length, items.length)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportParts__WEBPACK_IMPORTED_MODULE_8__.ExportButtons, { onExcel: () => props.onExportExcel(rows), onPdf: () => props.onExportPdf(rows), disabled: rows.length === 0 })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.ReportTable, { rows: rows, columns: [_reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.asset(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.type(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.status(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.assignedTo(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.purchased(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.age(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.replaceBy(), _reportParts__WEBPACK_IMPORTED_MODULE_8__.assetColumn.warranty()], keyOf: i => i.id, onOpen: props.onOpenAsset, resetKey: [chip, type, query].join('|'), emptyText: items.length === 0 ? t.NoData : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists.EmptyFiltered, ariaLabel: r.WarrantyTitle }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.section },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reportsUi__WEBPACK_IMPORTED_MODULE_7__.ReportCard, { title: t.ChartWarrantyMonthly, subtitle: t.ChartWarrantyMonthlySub },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_7__.reportCss.chartBox, style: { height: 220 } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_12__.Bar, { data: monthlyData, options: (0,_reportsUi__WEBPACK_IMPORTED_MODULE_7__.barOptions)({ valueLabels: true }), plugins: [_utils_ChartPlugins__WEBPACK_IMPORTED_MODULE_2__.barValueLabelsPlugin] }))))));
+};
+
+
+/***/ }),
+
+/***/ 53794:
+/*!***************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/reportData.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AGE_BANDS: () => (/* binding */ AGE_BANDS),
+/* harmony export */   CONDITION_NONE: () => (/* binding */ CONDITION_NONE),
+/* harmony export */   STATUS_ORDER: () => (/* binding */ STATUS_ORDER),
+/* harmony export */   WARRANTY_BUCKETS: () => (/* binding */ WARRANTY_BUCKETS),
+/* harmony export */   ageBand: () => (/* binding */ ageBand),
+/* harmony export */   ageYears: () => (/* binding */ ageYears),
+/* harmony export */   countBy: () => (/* binding */ countBy),
+/* harmony export */   isHeld: () => (/* binding */ isHeld),
+/* harmony export */   isPastLifecycle: () => (/* binding */ isPastLifecycle),
+/* harmony export */   monthKey: () => (/* binding */ monthKey),
+/* harmony export */   monthSeries: () => (/* binding */ monthSeries),
+/* harmony export */   nameOf: () => (/* binding */ nameOf),
+/* harmony export */   needsAttention: () => (/* binding */ needsAttention),
+/* harmony export */   rankedKeys: () => (/* binding */ rankedKeys),
+/* harmony export */   replaceBy: () => (/* binding */ replaceBy),
+/* harmony export */   requestedOn: () => (/* binding */ requestedOn),
+/* harmony export */   warrantyBucket: () => (/* binding */ warrantyBucket),
+/* harmony export */   warrantyDays: () => (/* binding */ warrantyDays)
+/* harmony export */ });
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/listUi */ 42806);
+
+
+const DAY_MS = 86400000;
+const STATUS_ORDER = ['inStock', 'assigned', 'pendingReturn', 'maintenance', 'retired', 'other'];
+/** Condition filter value for "no condition recorded". */
+const CONDITION_NONE = 'none';
+const nameOf = (item) => (item.assetName || item.title || '').trim();
+const countBy = (list, keyOf) => {
+    const counts = {};
+    list.forEach(entry => { const key = keyOf(entry); counts[key] = (counts[key] || 0) + 1; });
+    return counts;
+};
+/** Keys of a count map, largest first (ties alphabetical). */
+const rankedKeys = (counts) => Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+const ageYears = (purchaseDate, now = new Date()) => {
+    const d = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_1__.parseFlexibleDate)(purchaseDate);
+    return d ? (now.getTime() - d.getTime()) / (DAY_MS * 365) : undefined;
+};
+const AGE_BANDS = ['under1', 'oneToThree', 'overThree', 'unknown'];
+const ageBand = (item, now = new Date()) => {
+    const years = ageYears(item.purchaseDate, now);
+    if (years === undefined)
+        return 'unknown';
+    return years < 1 ? 'under1' : years <= 3 ? 'oneToThree' : 'overThree';
+};
+/** Older than the planned lifecycle (the 4-year rule the asset details panel uses). */
+const isPastLifecycle = (item, now = new Date()) => {
+    const years = ageYears(item.purchaseDate, now);
+    return years !== undefined && years >= _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_0__.LIFECYCLE_YEARS;
+};
+/** The date the asset reaches its planned lifecycle. */
+const replaceBy = (item) => {
+    const d = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_1__.parseFlexibleDate)(item.purchaseDate);
+    if (!d)
+        return undefined;
+    const end = new Date(d);
+    end.setFullYear(end.getFullYear() + _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_0__.LIFECYCLE_YEARS);
+    return end;
+};
+const WARRANTY_BUCKETS = ['expired', 'within30', 'within90', 'later', 'none'];
+/** Days until the warranty ends (negative once expired); undefined without a usable date. */
+const warrantyDays = (item, now = new Date()) => {
+    const d = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_1__.parseFlexibleDate)(item.warrantyExpiry);
+    return d ? Math.ceil((d.getTime() - now.getTime()) / DAY_MS) : undefined;
+};
+const warrantyBucket = (item, now = new Date()) => {
+    const days = warrantyDays(item, now);
+    if (days === undefined)
+        return 'none';
+    if (days < 0)
+        return 'expired';
+    if (days <= 30)
+        return 'within30';
+    return days <= 90 ? 'within90' : 'later';
+};
+const needsAttention = (item) => /^(poor|damaged)$/i.test((item.condition || '').trim());
+/** Someone currently holds the asset (a name is recorded and it is not back in stock or retired). */
+const isHeld = (item) => {
+    const bucket = (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_0__.statusBucket)(item.status);
+    return !!(item.assignedTo || '').trim() && bucket !== 'inStock' && bucket !== 'retired';
+};
+/** When a request was raised: the item's Created time, else its request date text. */
+const requestedOn = (request) => (0,_common_listUi__WEBPACK_IMPORTED_MODULE_1__.parseFlexibleDate)(request.createdAt) || (0,_common_listUi__WEBPACK_IMPORTED_MODULE_1__.parseFlexibleDate)(request.requestDate);
+const monthKey = (d) => `${d.getFullYear()}-${('0' + (d.getMonth() + 1)).slice(-2)}`;
+/** `count` consecutive months starting at `offset` months from the current one (negative = past). */
+const monthSeries = (offset, count, now = new Date()) => {
+    const months = [];
+    for (let i = 0; i < count; i++) {
+        const d = new Date(now.getFullYear(), now.getMonth() + offset + i, 1);
+        months.push({ key: monthKey(d), label: d.toLocaleDateString(undefined, { month: 'short', year: '2-digit' }) });
+    }
+    return months;
+};
+
+
+/***/ }),
+
+/***/ 18153:
+/*!*****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/reportLabels.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AGE_COLOR: () => (/* binding */ AGE_COLOR),
+/* harmony export */   STAGES: () => (/* binding */ STAGES),
+/* harmony export */   STAGE_COLOR: () => (/* binding */ STAGE_COLOR),
+/* harmony export */   STATUS_COLOR: () => (/* binding */ STATUS_COLOR),
+/* harmony export */   WARRANTY_COLOR: () => (/* binding */ WARRANTY_COLOR),
+/* harmony export */   ageBandLabel: () => (/* binding */ ageBandLabel),
+/* harmony export */   durationText: () => (/* binding */ durationText),
+/* harmony export */   stageLabel: () => (/* binding */ stageLabel),
+/* harmony export */   stageTone: () => (/* binding */ stageTone),
+/* harmony export */   warrantyBucketLabel: () => (/* binding */ warrantyBucketLabel)
+/* harmony export */ });
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reportsUi */ 78135);
+// Localised labels, colours and tones for the categories the Reports page groups by.
+
+
+
+
+
+const STATUS_COLOR = {
+    inStock: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.green,
+    assigned: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.blue,
+    pendingReturn: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.orange,
+    maintenance: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.amber,
+    retired: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.red,
+    other: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.grey
+};
+/** Where a request stands: waiting for the manager, waiting for the admin, fulfilled or rejected. */
+const STAGES = ['awaitingApproval', 'awaitingAssignment', 'assigned', 'rejected'];
+const STAGE_COLOR = {
+    awaitingApproval: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.amber,
+    awaitingAssignment: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.blue,
+    assigned: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.green,
+    rejected: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.red
+};
+const stageLabel = (stage) => {
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Reports;
+    return stage === 'awaitingApproval' ? t.OutcomeAwaitingApproval
+        : stage === 'awaitingAssignment' ? t.OutcomeAwaitingAssignment
+            : stage === 'assigned' ? t.OutcomeFulfilled : t.OutcomeRejected;
+};
+const stageTone = (stage) => stage === 'awaitingApproval' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_1__.TONES.amber : stage === 'awaitingAssignment' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_1__.TONES.blue : stage === 'assigned' ? _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_1__.TONES.green : _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_1__.TONES.red;
+const AGE_COLOR = {
+    under1: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.green,
+    oneToThree: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.blue,
+    overThree: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.orange,
+    unknown: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.grey
+};
+const ageBandLabel = (band) => {
+    const r = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.ReportsPage;
+    return band === 'under1' ? r.LegendAgingUnder1 : band === 'oneToThree' ? r.LegendAging1to3 : band === 'overThree' ? r.LegendAgingOver3 : r.LegendAgingUnknown;
+};
+const WARRANTY_COLOR = {
+    expired: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.red,
+    within30: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.orange,
+    within90: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.amber,
+    later: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.green,
+    none: _reportsUi__WEBPACK_IMPORTED_MODULE_2__.PALETTE.grey
+};
+const warrantyBucketLabel = (bucket) => {
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Reports;
+    return bucket === 'expired' ? t.WarrantyExpired
+        : bucket === 'within30' ? t.WarrantyWithin30
+            : bucket === 'within90' ? t.WarrantyWithin90
+                : bucket === 'later' ? t.WarrantyLater : t.WarrantyNoDate;
+};
+/** "5 h" under two days, otherwise "3.5 d"; "—" when nothing was measured. */
+const durationText = (hours) => {
+    if (hours === undefined)
+        return '—';
+    const d = (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_3__.splitDuration)(hours);
+    return (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_4__.formatString)(d.unit === 'h' ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Features.DurationHours : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Features.DurationDays, d.value);
+};
+
+
+/***/ }),
+
+/***/ 66050:
+/*!****************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/reportParts.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ExportButtons: () => (/* binding */ ExportButtons),
+/* harmony export */   assetColumn: () => (/* binding */ assetColumn)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Button */ 5613);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/listUi */ 42806);
+/* harmony import */ var _reportData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reportData */ 53794);
+/* harmony import */ var _reportsUi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reportsUi */ 78135);
+// Pieces several report tabs share: export buttons and the asset table columns.
+
+
+
+
+
+
+
+const ExportButtons = ({ onExcel, onPdf, disabled }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.actions },
+    onExcel && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.ExportExcel, iconProps: { iconName: 'ExcelDocument', styles: { root: { color: '#107c41' } } }, onClick: onExcel, disabled: disabled }),
+    onPdf && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Button__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.ExportPDF, iconProps: { iconName: 'PDF', styles: { root: { color: '#d13438' } } }, onClick: onPdf, disabled: disabled })));
+const dash = react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.muted }, "\u2014");
+/** Column builders for tables of inventory items; each tab picks the ones it needs. */
+const assetColumn = {
+    asset: () => ({
+        key: 'asset', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.AssetName, minWidth: 170, maxWidth: 260,
+        sortValue: i => (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.nameOf)(i).toLowerCase(),
+        render: i => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.two },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.strong }, (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.nameOf)(i) || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.InventoryExplorer.Unnamed),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.meta }, i.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Common.NotAvailable)))
+    }),
+    type: () => ({
+        key: 'type', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.LabelAssetType, minWidth: 90, maxWidth: 130,
+        sortValue: i => (i.assetType || '').toLowerCase(),
+        render: i => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.cellText }, i.assetType || '—')
+    }),
+    status: () => ({
+        key: 'status', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Status, minWidth: 110, maxWidth: 140,
+        sortValue: i => _reportData__WEBPACK_IMPORTED_MODULE_4__.STATUS_ORDER.indexOf((0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucket)(i.status)),
+        render: i => react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_3__.Pill, { tone: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusTone)(i.status), text: i.status || (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucketLabel)('other') })
+    }),
+    condition: () => ({
+        key: 'condition', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.Condition, minWidth: 80, maxWidth: 110,
+        sortValue: i => (i.condition || '').toLowerCase(),
+        render: i => i.condition ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_3__.Pill, { tone: (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.conditionTone)(i.condition), text: i.condition }) : dash
+    }),
+    assignedTo: () => ({
+        key: 'assignedTo', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.AssignedTo, minWidth: 120, maxWidth: 180,
+        sortValue: i => (i.assignedTo || '').toLowerCase(),
+        render: i => i.assignedTo
+            ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.cellText, title: i.assignedToEmail }, i.assignedTo)
+            : react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.muted }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.ColUnassigned)
+    }),
+    purchased: () => ({
+        key: 'purchased', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.PurchaseDate, minWidth: 100, maxWidth: 120,
+        sortValue: i => (0,_common_listUi__WEBPACK_IMPORTED_MODULE_3__.timeOf)(i.purchaseDate),
+        render: i => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.cellText }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.formatDay)(i.purchaseDate))
+    }),
+    age: () => ({
+        key: 'age', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports.ColAge, minWidth: 80, maxWidth: 110,
+        // Older assets have the earlier purchase date, so they sort as "larger".
+        sortValue: i => -(0,_common_listUi__WEBPACK_IMPORTED_MODULE_3__.timeOf)(i.purchaseDate),
+        render: i => react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.cellText }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.ageText)(i.purchaseDate) || '—')
+    }),
+    replaceBy: () => ({
+        key: 'replaceBy', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports.ColReplaceBy, minWidth: 100, maxWidth: 120,
+        sortValue: i => { const d = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.replaceBy)(i); return d ? d.getTime() : Number.MAX_SAFE_INTEGER; },
+        render: i => { const d = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.replaceBy)(i); return d ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _reportsUi__WEBPACK_IMPORTED_MODULE_5__.reportCss.cellText }, (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.formatDay)(d.toISOString())) : dash; }
+    }),
+    warranty: () => ({
+        key: 'warranty', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Columns.WarrantyExpiry, minWidth: 150, maxWidth: 200,
+        sortValue: i => { const days = (0,_reportData__WEBPACK_IMPORTED_MODULE_4__.warrantyDays)(i); return days === undefined ? Number.MAX_SAFE_INTEGER : days; },
+        render: i => { const w = (0,_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.warrantyInfo)(i.warrantyExpiry); return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_3__.Pill, { tone: w.tone, text: w.text }); }
+    })
+};
+
+
+/***/ }),
+
+/***/ 78135:
+/*!**************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/reports/reportsUi.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ARC_STYLE: () => (/* binding */ ARC_STYLE),
+/* harmony export */   BAR_STYLE: () => (/* binding */ BAR_STYLE),
+/* harmony export */   KpiCard: () => (/* binding */ KpiCard),
+/* harmony export */   KpiRow: () => (/* binding */ KpiRow),
+/* harmony export */   PALETTE: () => (/* binding */ PALETTE),
+/* harmony export */   RankList: () => (/* binding */ RankList),
+/* harmony export */   ReportCard: () => (/* binding */ ReportCard),
+/* harmony export */   ReportTable: () => (/* binding */ ReportTable),
+/* harmony export */   ReportTabs: () => (/* binding */ ReportTabs),
+/* harmony export */   barOptions: () => (/* binding */ barOptions),
+/* harmony export */   doughnutOptions: () => (/* binding */ doughnutOptions),
+/* harmony export */   reportCss: () => (/* binding */ reportCss)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react/lib/Icon */ 52394);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 79370);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 37805);
+/* harmony import */ var _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/DetailsList */ 74423);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/Pager */ 42589);
+// Shared look for the Reports page: tab bar, KPI cards, chart cards, ranked bars,
+// a sortable paged table and the Chart.js theme.
+
+
+
+
+
+const LINE = 'rgba(128, 128, 128, 0.22)';
+const FOCUS = { outline: '2px solid #0f6cbd', outlineOffset: 2 };
+const FONT_FAMILY = "'Segoe UI', -apple-system, sans-serif";
+const PALETTE = {
+    blue: '#0f6cbd',
+    green: '#107c10',
+    amber: '#eaa300',
+    orange: '#f7630c',
+    red: '#d13438',
+    purple: '#8764b8',
+    teal: '#038387',
+    grey: '#8a8886'
+};
+const reportCss = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_2__.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap', marginBottom: 16 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    tabs: { display: 'flex', flexWrap: 'wrap', gap: 4, padding: 4, borderRadius: 12, background: 'rgba(128, 128, 128, 0.12)', marginBottom: 20 },
+    tab: {
+        display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 14px', border: 'none', borderRadius: 9,
+        background: 'transparent', cursor: 'pointer', font: 'inherit', fontSize: 13, fontWeight: 600, color: 'var(--text-muted, #616161)',
+        selectors: { ':hover': { color: 'var(--text-main, #242424)' }, ':focus-visible': FOCUS }
+    },
+    tabActive: { background: 'var(--surface-bg, #ffffff)', color: 'var(--text-main, #242424)', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.16)' },
+    kpis: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 12, marginBottom: 20 },
+    kpi: {
+        display: 'flex', flexDirection: 'column', gap: 4, minWidth: 0, textAlign: 'left', padding: '14px 16px', borderRadius: 12,
+        border: `1px solid ${LINE}`, background: 'var(--surface-bg, #ffffff)', font: 'inherit', color: 'inherit'
+    },
+    kpiClickable: {
+        cursor: 'pointer', transition: 'box-shadow 0.15s ease, transform 0.15s ease',
+        selectors: { ':hover': { boxShadow: '0 6px 18px rgba(0, 0, 0, 0.1)', transform: 'translateY(-1px)' }, ':focus-visible': FOCUS }
+    },
+    kpiTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, fontSize: 12, fontWeight: 600, color: 'var(--text-muted, #616161)' },
+    kpiIcon: { width: 28, height: 28, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, flexShrink: 0 },
+    kpiValue: { fontSize: 28, fontWeight: 600, lineHeight: '34px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    kpiHint: { fontSize: 12, color: 'var(--text-muted, #616161)' },
+    meter: { display: 'block', height: 6, borderRadius: 999, background: 'rgba(128, 128, 128, 0.18)', overflow: 'hidden', margin: '4px 0 2px' },
+    meterFill: { display: 'block', height: '100%', borderRadius: 999, background: PALETTE.blue },
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: 16 },
+    card: { display: 'flex', flexDirection: 'column', minWidth: 0, padding: '16px 18px', borderRadius: 12, border: `1px solid ${LINE}`, background: 'var(--surface-bg, #ffffff)' },
+    cardHead: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 },
+    cardTitle: { margin: 0, fontSize: 15, fontWeight: 600 },
+    cardSub: { margin: '2px 0 0', fontSize: 12, color: 'var(--text-muted, #616161)' },
+    link: {
+        display: 'inline-flex', alignItems: 'center', gap: 4, border: 'none', background: 'transparent', padding: 0, cursor: 'pointer',
+        font: 'inherit', fontSize: 12, fontWeight: 600, color: PALETTE.blue, whiteSpace: 'nowrap',
+        selectors: { ':hover': { textDecoration: 'underline' }, ':focus-visible': FOCUS }
+    },
+    // The colour is read by the chart plugins that draw text (centre total, bar values).
+    chartBox: { position: 'relative', height: 260, color: 'var(--text-main, #242424)' },
+    rank: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 },
+    rankRow: {
+        display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', gap: '5px 12px', alignItems: 'center', width: '100%',
+        padding: 0, border: 'none', background: 'transparent', font: 'inherit', color: 'inherit', textAlign: 'left'
+    },
+    rankClickable: { cursor: 'pointer', selectors: { ':hover': { color: PALETTE.blue }, ':focus-visible': FOCUS } },
+    rankLabel: { fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    rankValue: { fontSize: 13, fontWeight: 600 },
+    rankTrack: { gridColumn: '1 / -1', display: 'block', height: 6, borderRadius: 999, background: 'rgba(128, 128, 128, 0.18)', overflow: 'hidden' },
+    rankFill: { display: 'block', height: '100%', borderRadius: 999 },
+    toolbar: { display: 'flex', alignItems: 'flex-end', gap: 12, flexWrap: 'wrap', padding: '12px 14px', borderRadius: 12, background: 'rgba(128, 128, 128, 0.08)', marginBottom: 12 },
+    search: { flex: '1 1 240px', minWidth: 200 },
+    resultLine: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap', minHeight: 32, fontSize: 13, color: 'var(--text-muted, #616161)', margin: '0 0 8px' },
+    actions: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
+    section: { marginTop: 20 },
+    tableCard: { border: `1px solid ${LINE}`, borderRadius: 12, background: 'var(--surface-bg, #ffffff)', overflowX: 'auto' },
+    row: { cursor: 'pointer' },
+    two: { minWidth: 0, display: 'block' },
+    strong: { fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block', color: 'var(--text-main, #242424)' },
+    meta: { fontSize: 12, color: 'var(--text-muted, #616161)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' },
+    cellText: { fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' },
+    muted: { color: 'var(--text-muted, #616161)' },
+    empty: { padding: '40px 16px', textAlign: 'center', fontSize: 13, color: 'var(--text-muted, #616161)', border: `1px dashed ${LINE}`, borderRadius: 12 },
+    person: {
+        display: 'flex', alignItems: 'center', gap: 12, width: '100%', padding: '12px 16px', border: 'none', background: 'transparent',
+        cursor: 'pointer', font: 'inherit', color: 'inherit', textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(128, 128, 128, 0.08)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 } }
+    },
+    personItem: { borderTop: `1px solid ${LINE}`, selectors: { ':first-child': { borderTop: 'none' } } },
+    coin: { width: 34, height: 34, borderRadius: '50%', background: PALETTE.blue, color: '#ffffff', fontSize: 12, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    personText: { flex: '1 1 auto', minWidth: 0 },
+    personPills: { display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'flex-end' },
+    personAssets: { padding: '0 16px 14px 62px' },
+    assetLine: {
+        display: 'grid', gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto', gap: 12, alignItems: 'center', width: '100%',
+        padding: '8px 10px', border: 'none', borderRadius: 8, background: 'transparent', cursor: 'pointer', font: 'inherit', fontSize: 13, color: 'inherit', textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(128, 128, 128, 0.1)' }, ':focus-visible': FOCUS }
+    }
+});
+const ReportTabs = ({ tabs, selected, onSelect, ariaLabel }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.tabs, role: "tablist", "aria-label": ariaLabel }, tabs.map(tab => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { key: tab.key, type: "button", role: "tab", "aria-selected": selected === tab.key, className: `${reportCss.tab} ${selected === tab.key ? reportCss.tabActive : ''}`, onClick: () => onSelect(tab.key) },
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: tab.icon, "aria-hidden": "true" }),
+    tab.label)))));
+const KpiCard = ({ kpi }) => {
+    const body = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.kpiTop },
+            kpi.label,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.kpiIcon, style: { background: `${kpi.color}1f`, color: kpi.color }, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: kpi.icon }))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.kpiValue }, kpi.value),
+        kpi.percent !== undefined && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.meter, "aria-hidden": "true" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.meterFill, style: { width: `${Math.max(0, Math.min(100, kpi.percent))}%` } }))),
+        kpi.hint && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.kpiHint }, kpi.hint)));
+    return kpi.onClick ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: `${reportCss.kpi} ${reportCss.kpiClickable}`, onClick: kpi.onClick, "aria-label": `${kpi.label}: ${kpi.value}. ${kpi.hint || ''}` }, body)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.kpi }, body));
+};
+const KpiRow = ({ kpis }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.kpis }, kpis.map(kpi => react__WEBPACK_IMPORTED_MODULE_0__.createElement(KpiCard, { key: kpi.key, kpi: kpi }))));
+const ReportCard = ({ title, subtitle, action, children }) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { className: reportCss.card },
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.cardHead },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { className: reportCss.cardTitle }, title),
+            subtitle && react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: reportCss.cardSub }, subtitle)),
+        action && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: reportCss.link, onClick: action.onClick },
+            action.text,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_Icon__WEBPACK_IMPORTED_MODULE_3__.Icon, { iconName: "ChevronRight", style: { fontSize: 10 }, "aria-hidden": "true" })))),
+    children));
+/** Ranked horizontal bars: label, count and a bar relative to the largest row. */
+const RankList = ({ rows, color, emptyText }) => {
+    if (rows.length === 0)
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.empty }, emptyText);
+    const max = Math.max(...rows.map(r => r.value), 1);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: reportCss.rank }, rows.map(row => {
+        const content = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.rankLabel, title: row.label }, row.label),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.rankValue }, row.value),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.rankTrack, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: reportCss.rankFill, style: { width: `${(row.value / max) * 100}%`, background: color || PALETTE.blue } }))));
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: row.key }, row.onClick
+            ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: `${reportCss.rankRow} ${reportCss.rankClickable}`, onClick: row.onClick }, content)
+            : react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.rankRow }, content)));
+    })));
+};
+const PAGE_SIZE = 10;
+/** Sortable table, 10 rows per page. Rows arrive already filtered and in their default order. */
+function ReportTable(props) {
+    const { rows, onOpen } = props;
+    const [sort, setSort] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [page, setPage] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
+    const sortKey = sort ? sort.key : '';
+    const sortDesc = sort ? sort.desc : false;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setPage(1), [props.resetKey, sortKey, sortDesc]);
+    if (rows.length === 0)
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.empty }, props.emptyText);
+    const sortColumn = props.columns.filter(c => c.key === sortKey)[0];
+    const valueOf = sortColumn ? sortColumn.sortValue : undefined;
+    const sorted = valueOf ? rows.slice().sort((a, b) => {
+        const va = valueOf(a), vb = valueOf(b);
+        const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+        return sortDesc ? -cmp : cmp;
+    }) : rows;
+    const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+    const activePage = Math.min(page, totalPages);
+    const visible = sorted.slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE);
+    const columns = props.columns.map(c => ({
+        key: c.key,
+        name: c.name,
+        minWidth: c.minWidth,
+        maxWidth: c.maxWidth,
+        isResizable: true,
+        isSorted: sortKey === c.key,
+        isSortedDescending: sortKey === c.key && sortDesc,
+        onColumnClick: c.sortValue ? () => setSort(prev => ({ key: c.key, desc: !!prev && prev.key === c.key ? !prev.desc : false })) : undefined,
+        onRender: (row) => c.render(row)
+    }));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.tableCard },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_4__.DetailsList, { items: visible, columns: columns, getKey: (row) => props.keyOf(row), setKey: props.ariaLabel, layoutMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_5__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react_lib_DetailsList__WEBPACK_IMPORTED_MODULE_6__.SelectionMode.none, ariaLabelForGrid: props.ariaLabel, onItemInvoked: onOpen ? (row) => onOpen(row) : undefined, onRenderRow: (rowProps, defaultRender) => rowProps && defaultRender
+                ? (onOpen ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: reportCss.row, onClick: () => onOpen(rowProps.item) }, defaultRender(rowProps)) : defaultRender(rowProps))
+                : null }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_1__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: sorted.length, onChange: setPage })));
+}
+// ---------- Chart.js theme (same look as the dashboard charts) ----------
+/** Gaps between slices in the card's background colour, so they follow dark mode. */
+const cardBackground = (ctx) => {
+    try {
+        return window.getComputedStyle(ctx.chart.canvas).getPropertyValue('--surface-bg').trim() || '#ffffff';
+    }
+    catch {
+        return '#ffffff';
+    }
+};
+const ARC_STYLE = { borderColor: cardBackground, borderWidth: 2, hoverOffset: 6 };
+const legend = {
+    position: 'bottom',
+    labels: { boxWidth: 10, boxHeight: 10, padding: 14, usePointStyle: true, font: { family: FONT_FAMILY, size: 11 }, color: '#616161' }
+};
+const tooltip = {
+    backgroundColor: '#ffffff',
+    titleColor: '#242424',
+    bodyColor: '#242424',
+    borderColor: 'rgba(0,0,0,0.1)',
+    borderWidth: 1,
+    padding: 10,
+    boxPadding: 6,
+    cornerRadius: 8,
+    usePointStyle: true,
+    titleFont: { family: FONT_FAMILY, size: 12, weight: 'bold' },
+    bodyFont: { family: FONT_FAMILY, size: 12 }
+};
+const ticks = { font: { family: FONT_FAMILY, size: 11 }, color: '#8a8886' };
+/** Chart.js click / hover handlers for a drill-down: (dataIndex, datasetIndex). */
+const pickHandlers = (onPick) => onPick ? {
+    onClick: (_event, elements) => {
+        if (elements && elements.length)
+            onPick(elements[0].index, elements[0].datasetIndex);
+    },
+    onHover: (event, elements) => {
+        const target = event.native && event.native.target;
+        if (target && target.style)
+            target.style.cursor = elements && elements.length ? 'pointer' : 'default';
+    }
+} : {};
+/** Doughnut with the total in the middle and "count · share" tooltips. */
+const doughnutOptions = (total, onPick) => ({
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: {
+        legend,
+        centerTotal: { value: total },
+        tooltip: {
+            ...tooltip,
+            callbacks: {
+                label: (ctx) => {
+                    const sum = (ctx.dataset.data || []).reduce((acc, v) => acc + (Number(v) || 0), 0);
+                    return ` ${ctx.raw} · ${sum > 0 ? Math.round((Number(ctx.raw) / sum) * 100) : 0}%`;
+                }
+            }
+        }
+    },
+    ...pickHandlers(onPick)
+});
+const barOptions = (o) => ({
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: { padding: { top: o.valueLabels ? 18 : 0 } },
+    plugins: {
+        legend: o.showLegend ? legend : { display: false },
+        tooltip,
+        barValueLabels: { enabled: !!o.valueLabels }
+    },
+    scales: {
+        x: { stacked: !!o.stacked, grid: { display: false }, ticks },
+        y: { stacked: !!o.stacked, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.12)' }, ticks: { ...ticks, precision: 0 } }
+    },
+    ...pickHandlers(o.onPick)
+});
+const BAR_STYLE = { borderRadius: 5, maxBarThickness: 48 };
+
+
+/***/ }),
+
+/***/ 3253:
+/*!***********************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/components/service/ServiceRecordCards.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ServiceRecordCards: () => (/* binding */ ServiceRecordCards)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 44533);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../inventory/inventoryUi */ 69024);
+/* harmony import */ var _common_Pager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/Pager */ 42589);
+/* harmony import */ var _common_listUi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/listUi */ 42806);
+
+
+
+
+
+
+
+const PAGE_SIZE = 10;
+const BUCKETS = ['open', 'progress', 'resolved', 'closed'];
+const BUCKET_COLOR = { open: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.ACCENTS.red, progress: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.ACCENTS.amber, resolved: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.ACCENTS.green, closed: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.ACCENTS.grey };
+const PRIORITY_RANK = { critical: 0, high: 0, medium: 1, low: 2 };
+const bucketOf = (status) => {
+    const s = (status || 'Open').toLowerCase();
+    if (s.indexOf('progress') >= 0)
+        return 'progress';
+    if (s.indexOf('resolv') >= 0 || s.indexOf('complet') >= 0)
+        return 'resolved';
+    if (s.indexOf('closed') >= 0)
+        return 'closed';
+    return 'open';
+};
+const isActive = (status) => bucketOf(status) === 'open' || bucketOf(status) === 'progress';
+const isHigh = (priority) => /^(high|critical)$/i.test((priority || '').trim());
+const rankOf = (priority) => PRIORITY_RANK[(priority || 'medium').toLowerCase()] ?? 1;
+/** Incident / replacement records as cards or as a status board, with filters and downloads. */
+function ServiceRecordCards(props) {
+    const { kind, title, subtitle, records, isAdmin, onView, onDownload } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.RecordLists;
+    const h = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.IncidentHistory;
+    const [layout, setLayout] = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.useRecordLayout)(kind);
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [quick, setQuick] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [priority, setPriority] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [type, setType] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [person, setPerson] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [range, setRange] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [sort, setSort] = react__WEBPACK_IMPORTED_MODULE_0__.useState('newest');
+    const [page, setPage] = react__WEBPACK_IMPORTED_MODULE_0__.useState(1);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => setPage(1), [search, quick, priority, type, person, range, sort]);
+    const bucketLabel = (b) => b === 'open' ? s.StatusOpen : b === 'progress' ? s.StatusInProgress : b === 'resolved' ? s.StatusResolved : s.StatusClosed;
+    const statusParts = BUCKETS.map(b => ({
+        key: b,
+        label: bucketLabel(b),
+        count: records.filter(r => bucketOf(r.status) === b).length,
+        color: BUCKET_COLOR[b]
+    }));
+    const chips = [
+        { key: 'all', label: s.TileAll, count: records.length },
+        ...statusParts,
+        { key: 'high', label: s.TileHighPriority, count: records.filter(r => isHigh(r.priority) && isActive(r.status)).length, color: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.ACCENTS.red }
+    ];
+    const types = Array.from(new Set(records.map(r => (r.issueType || '').trim()).filter(Boolean))).sort();
+    const people = Array.from(new Set(records.map(r => (r.employeeName || '').trim()).filter(Boolean))).sort();
+    const showType = kind === 'incident';
+    const showPeople = isAdmin && people.length > 1;
+    const query = search.trim().toLowerCase();
+    const filtered = records.filter(r => {
+        if (quick === 'high' && !(isHigh(r.priority) && isActive(r.status)))
+            return false;
+        if (quick !== 'all' && quick !== 'high' && bucketOf(r.status) !== quick)
+            return false;
+        if (priority !== 'all' && (r.priority || 'Medium').toLowerCase() !== priority)
+            return false;
+        if (type !== 'all' && (r.issueType || '').trim() !== type)
+            return false;
+        if (person !== 'all' && (r.employeeName || '').trim() !== person)
+            return false;
+        if (!(0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.inDateRange)(r.reportedDate, range))
+            return false;
+        if (!query)
+            return true;
+        return [r.incidentId, r.assetName, r.issueType, r.issueDescription, r.employeeName, r.status, r.priority]
+            .some(v => (v || '').toLowerCase().indexOf(query) >= 0);
+    });
+    const newestFirst = (a, b) => (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.timeOf)(b.reportedDate) - (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.timeOf)(a.reportedDate);
+    const sorted = filtered.slice().sort((a, b) => {
+        switch (sort) {
+            case 'oldest': return -newestFirst(a, b);
+            case 'priority': return rankOf(a.priority) - rankOf(b.priority) || newestFirst(a, b);
+            case 'asset': return (a.assetName || '').trim().localeCompare((b.assetName || '').trim()) || newestFirst(a, b);
+            default: return newestFirst(a, b);
+        }
+    });
+    const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+    const activePage = Math.min(page, totalPages);
+    const visible = sorted.slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE);
+    const keyOf = (r) => `${r.id}-${r.incidentId}`;
+    const renderCard = (r, compact) => {
+        const ref = r.incidentId || `#${r.id}`;
+        const ago = (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.relativeDay)(r.reportedDate);
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.RecordCard, { key: keyOf(r), compact: compact, idText: ref, badges: react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                r.isLocalOnly && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.Pill, { tone: _inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.TONES.amber, text: h.LocalOnlyTag, title: h.LocalOnlyTooltip }),
+                !compact && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.Pill, { tone: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.serviceStatusTone)(r.status), text: r.status || 'Open', title: h.ColStatus }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.Pill, { tone: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.priorityTone)(r.priority), text: r.priority || 'Medium', title: h.ColPriority })), title: (r.assetName || '').trim() || s.Unspecified, text: r.issueDescription, meta: react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                showType && r.issueType && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.MetaItem, { icon: "Tag", title: h.ColIssueType }, r.issueType),
+                isAdmin && r.employeeName && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.MetaItem, { icon: "Contact", title: s.ColReportedBy }, r.employeeName),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.MetaItem, { icon: "Calendar", title: h.ColReported },
+                    (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.formatFlexibleDay)(r.reportedDate),
+                    ago ? ` · ${ago}` : '')), actions: compact ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.IconButton, { iconProps: { iconName: 'RedEye' }, title: h.ButtonView, ariaLabel: `${h.ButtonView} ${ref}`, onClick: () => onView(r) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.IconButton, { iconProps: { iconName: 'Download' }, title: h.ButtonDownload, ariaLabel: `${h.ButtonDownload} ${ref}`, onClick: () => onDownload(r) }))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DefaultButton, { text: h.ButtonView, iconProps: { iconName: 'RedEye' }, ariaLabel: `${h.ButtonView} ${ref}`, onClick: () => onView(r), styles: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.cardButtonStyles }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: h.ButtonDownload, iconProps: { iconName: 'Download' }, ariaLabel: `${h.ButtonDownload} ${ref}`, onClick: () => onDownload(r), styles: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.cardButtonStyles }))), onOpen: () => onView(r) }));
+    };
+    const option = (key, text) => ({ key, text });
+    const priorityOptions = [option('all', s.AllPriorities), option('high', 'High'), option('medium', 'Medium'), option('low', 'Low')];
+    const typeOptions = [option('all', s.AllTypes)].concat(types.map(t => option(t, t)));
+    const peopleOptions = [option('all', s.AllPeople)].concat(people.map(p => option(p, p)));
+    const sortOptions = [option('newest', s.SortNewest), option('oldest', s.SortOldest), option('priority', s.SortPriority), option('asset', s.SortAsset)];
+    const hasFilters = quick !== 'all' || priority !== 'all' || type !== 'all' || person !== 'all' || range !== 'all' || !!query;
+    const clearFilters = () => { setQuick('all'); setPriority('all'); setType('all'); setPerson('all'); setRange('all'); setSearch(''); };
+    // A status chip narrows the board to that one lane; every other filter keeps all four.
+    const laneBuckets = BUCKETS.filter(b => quick === 'all' || quick === 'high' || quick === b);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.header },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.title }, title),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.subtitle }, subtitle)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.LayoutSwitch, { layout: layout, onChange: setLayout })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.StatusChips, { chips: chips, selected: quick, ariaLabel: s.TilesAria, onSelect: (key) => setQuick(quick === key ? 'all' : key) }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.filters },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.SearchBox, { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.search, placeholder: kind === 'incident' ? h.SearchIncidentsPlaceholder : h.SearchReplacementsPlaceholder, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: h.ColPriority, options: priorityOptions, selectedKey: priority, onChange: (_, o) => o && setPriority(String(o.key)), styles: { root: { width: 140 } } }),
+            showType && types.length > 1 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: h.ColIssueType, options: typeOptions, selectedKey: type, onChange: (_, o) => o && setType(String(o.key)), styles: { root: { width: 170 } } })),
+            showPeople && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: s.ColReportedBy, options: peopleOptions, selectedKey: person, onChange: (_, o) => o && setPerson(String(o.key)), styles: { root: { width: 170 } } })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: h.ColReported, options: (0,_common_listUi__WEBPACK_IMPORTED_MODULE_4__.dateRangeOptions)(), selectedKey: range, onChange: (_, o) => o && setRange(o.key), styles: { root: { width: 150 } } }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Dropdown, { label: s.SortLabel, options: sortOptions, selectedKey: sort, onChange: (_, o) => o && setSort(o.key), styles: { root: { width: 180 } } })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.resultLine },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(kind === 'incident' ? h.ShowingIncidents : h.ShowingReplacements, filtered.length, records.length)),
+            hasFilters && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.ActionButton, { iconProps: { iconName: 'ClearFilter' }, text: s.ClearFilters, onClick: clearFilters })),
+        filtered.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.empty },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.Icon, { iconName: records.length === 0 ? 'CompletedSolid' : 'Search', style: { fontSize: 28, display: 'block', marginBottom: 8 } }),
+            records.length === 0 ? (kind === 'incident' ? s.EmptyIncidents : s.EmptyReplacements) : s.EmptyFiltered)) : layout === 'board' ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_listUi__WEBPACK_IMPORTED_MODULE_4__.BoardLanes, { lanes: laneBuckets.map(b => ({ key: b, label: bucketLabel(b), color: BUCKET_COLOR[b], items: sorted.filter(r => bucketOf(r.status) === b) })), keyOf: keyOf, renderCard: (r) => renderCard(r, true) })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.grid }, visible.map(r => renderCard(r, false))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _common_listUi__WEBPACK_IMPORTED_MODULE_4__.recordCss.pager },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_Pager__WEBPACK_IMPORTED_MODULE_3__.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: sorted.length, onChange: setPage }))))));
+}
+
+
+/***/ }),
+
 /***/ 60393:
 /*!**************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/config/AppConfig.js ***!
@@ -9764,7 +11054,8 @@ const getListDefinitions = () => {
         },
         {
             key: 'eventLog',
-            candidates: names(lists.eventLog),
+            // The audit service tries the same names (SharePointBaseService.getEventLogListTitle).
+            candidates: names(lists.eventLog, ..._services_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_0__.SharePointBaseService.EVENT_LOG_FALLBACK_TITLES),
             requiredColumns: [
                 { name: 'Title' },
                 { name: 'Action' },
@@ -9774,9 +11065,9 @@ const getListDefinitions = () => {
                 { name: 'User' }
             ]
         },
-        { key: 'incident', candidates: names(lists.incident), optional: true, requiredColumns: [] },
+        { key: 'incident', candidates: names(lists.incident), requiredColumns: [] },
         { key: 'employee', candidates: names(lists.employee), optional: true, internal: true, requiredColumns: [] },
-        { key: 'replacement', candidates: names(lists.replacement), optional: true, autoCreated: true, requiredColumns: [] },
+        { key: 'replacement', candidates: names(lists.replacement), autoCreated: true, requiredColumns: [] },
         {
             key: 'stockThresholds',
             candidates: names(lists.stockThresholds),
@@ -9788,9 +11079,7 @@ const getListDefinitions = () => {
         {
             key: 'assetKits',
             candidates: names(lists.assetKits),
-            optional: true,
             autoCreated: true,
-            internal: true,
             requiredColumns: [{ name: 'Title' }, { name: 'KitItems' }, { name: 'KitDescription' }]
         },
         {
@@ -9803,7 +11092,10 @@ const getListDefinitions = () => {
         }
     ];
 };
-/** The lists shown and health-checked on the Config page (excludes the app's internal settings lists). */
+/**
+ * The lists shown and health-checked on the Config page, all as required: Inventory, Request,
+ * Asset Return Request, Mapping, Audit/Event Log, Incident, Asset Replacements and Asset Kits.
+ */
 const getConfigListDefinitions = () => getListDefinitions().filter(d => !d.internal);
 const getListDefinition = (key) => getListDefinitions().find(d => d.key === key);
 
@@ -9912,7 +11204,6 @@ const en_us = {
         "AssetAssignmentQueue": "Asset Assignment Queue",
         "AssetReturns": "Asset Returns",
         "EventStream": "Event Stream",
-        "Users": "Users",
         "Reports": "Reports",
         "Config": "Config",
         "GroupMain": "MAIN",
@@ -10261,7 +11552,13 @@ const en_us = {
         "LabelQuantity": "Quantity",
         "LabelReason": "Reason for Request",
         "ReasonRequired": "Reason for request is required",
-        "SubmitRequest": "Submit Request"
+        "SubmitRequest": "Submit Request",
+        "TypeInProgress": "{0} (request in progress)",
+        "OpenRequestItem": "{0} ({1}, {2})",
+        "OpenRequestsNote": "You already have a request in progress for: {0}. You can request the same asset type again once the asset has been assigned or the request has been rejected.",
+        "DuplicateBlocked": "You already have an open request for {0} ({1}). It must be assigned or rejected before you can request this asset type again.",
+        "DuplicateTitle": "Request not submitted",
+        "DuplicateStage": "Duplicate request"
     },
     "ReturnAssetForm": {
         "HeaderText": "Request Asset Return",
@@ -10457,7 +11754,7 @@ const en_us = {
     },
     "ReportsPage": {
         "HeaderTitle": "Reporting & Insights",
-        "HeaderSubtitle": "Interactive dashboards, live graphs, status analysis, and exporter module.",
+        "HeaderSubtitle": "Live figures for assets, warranties, requests and people. Select a number or a chart to see what is behind it.",
         "TabVisualInsights": "Visual Insights",
         "TabDetailedReports": "Detailed Reports",
         "TabWarrantyExpiry": "Warranty Expiry",
@@ -10648,25 +11945,6 @@ const en_us = {
     "AssetReturnsPage": {
         "Title": "Asset Returns Registry",
         "Description": "Review and complete employee asset return requests, and verify physical hardware check-ins."
-    },
-    "UsersPage": {
-        "Title": "User Administration",
-        "Description": "Admin-only area. Manage SharePoint groups and user onboarding from your site permissions.",
-        "GroupManagementTitle": "SharePoint Group Management",
-        "GroupManagementDesc": "To onboard new employees, grant them Admin access, or assign them as Inventory Managers, you must add them to the respective SharePoint Site Groups.",
-        "ManageSitePermissionsButton": "Manage Site Permissions",
-        "DirectoryTitle": "Employee Directory & Asset Ownership",
-        "ColName": "Name",
-        "ColEmail": "Email",
-        "ColDepartment": "Department",
-        "ColJobTitle": "Job Title",
-        "ColAssignedAssets": "Assigned Assets",
-        "ColAssetTypes": "Asset Types",
-        "AssetTypesNone": "None",
-        "AssetsAssignedToPrefix": "Assets assigned to",
-        "NoAssetsAssignedToUser": "This user currently has no assets assigned to them.",
-        "EmployeeTrackingTitle": "Employee Asset Tracking",
-        "EmployeeTrackingDesc": "Admin and Manager area. Select an employee to view all assets currently assigned to them."
     },
     "MockEmailPanel": {
         "HeaderText": "📬 Outgoing Email Notification (Developer Preview)",
@@ -11407,6 +12685,287 @@ const en_us = {
         "PanelStockLine": "{0} {1} in stock for a request of {2}. Best match first.",
         "PanelNoStock": "No {0} is in stock. You can still approve without choosing an asset, or reject the request.",
         "Recommended": "Recommended"
+    },
+    "RecordLists": {
+        "Today": "Today",
+        "Yesterday": "Yesterday",
+        "DaysAgo": "{0} days ago",
+        "MonthsAgo": "{0} months ago",
+        "RangeAll": "All time",
+        "RangeLastDays": "Last {0} days",
+        "RangeThisYear": "This year",
+        "StatusOpen": "Open",
+        "StatusInProgress": "In progress",
+        "StatusResolved": "Resolved",
+        "StatusClosed": "Closed",
+        "TileAll": "All",
+        "TileHighPriority": "High priority (active)",
+        "Unspecified": "Not specified",
+        "ColReportedBy": "Reported by",
+        "AllPriorities": "All priorities",
+        "AllTypes": "All types",
+        "AllPeople": "Everyone",
+        "AllConditions": "All conditions",
+        "ClearFilters": "Clear filters",
+        "TilesAria": "Filter by status",
+        "EmptyIncidents": "No incidents have been reported yet.",
+        "EmptyReplacements": "No replacement requests have been raised yet.",
+        "EmptyFiltered": "Nothing matches these filters.",
+        "SubtitleIncidents": "Follow reported asset problems from report to resolution. Select a card to see the full details.",
+        "SubtitleReplacements": "Follow replacement requests from request to resolution. Select a card to see the full details.",
+        "ReturnNeedsMe": "Needs my action",
+        "ReturnAwaitingManager": "Awaiting manager",
+        "ReturnAwaitingAdmin": "Awaiting admin check",
+        "ReturnCompleted": "Completed",
+        "ReturnRejected": "Rejected",
+        "ReturnNothingForMe": "Nothing is waiting for you right now.",
+        "ReturnShowAll": "Show all {0} return requests",
+        "ReturnResultCount": "Showing {0} of {1} return requests",
+        "ReturnCompletedOn": "Completed on",
+        "ViewCards": "Cards",
+        "ViewBoard": "Board",
+        "ViewAria": "Layout",
+        "SortLabel": "Sort by",
+        "SortNewest": "Newest first",
+        "SortOldest": "Oldest first",
+        "SortPriority": "Highest priority first",
+        "SortAsset": "Asset name (A–Z)",
+        "SortEmployee": "Employee (A–Z)",
+        "LaneEmpty": "Nothing here"
+    },
+    "Reports": {
+        "TabRequests": "Requests",
+        "TabPeople": "People",
+        "NoData": "No data yet.",
+        "KpiTotalAssets": "Total assets",
+        "KpiTotalAssetsHint": "Across {0} asset types",
+        "KpiInStock": "In stock",
+        "KpiShareHint": "{0}% of the inventory",
+        "KpiAssigned": "Assigned",
+        "KpiAssignedHint": "Held by {0} people",
+        "KpiUtilisation": "Utilisation rate",
+        "KpiUtilisationHint": "{0} of {1} assets are not in stock",
+        "KpiOpenRequests": "Open requests",
+        "KpiOpenRequestsHint": "{0} awaiting approval · {1} awaiting assignment",
+        "KpiWarranty": "Warranty attention",
+        "KpiWarrantyHint": "{0} expired · {1} ending within 90 days",
+        "KpiLifecycle": "Past lifecycle",
+        "KpiLifecycleHint": "Older than {0} years",
+        "KpiCondition": "Poor or damaged",
+        "KpiConditionHint": "Need repair or replacement",
+        "SeriesOther": "Other",
+        "SeriesInProgress": "In progress",
+        "ChartClickHint": "Select a segment to list what is behind it",
+        "ChartTypeSub": "In stock and assigned, per asset type",
+        "ChartAgeSub": "Time since purchase",
+        "ChartCondition": "Asset condition",
+        "ChartRequestsMonthly": "Requests per month",
+        "ChartRequestsMonthlySub": "Last 6 months, by outcome",
+        "ChartOutcomes": "Request outcomes",
+        "OutcomeAwaitingApproval": "Awaiting approval",
+        "OutcomeAwaitingAssignment": "Awaiting assignment",
+        "OutcomeFulfilled": "Fulfilled",
+        "OutcomeRejected": "Rejected",
+        "WarrantyAttention": "Needs attention",
+        "WarrantyExpired": "Expired",
+        "WarrantyWithin30": "Ends within 30 days",
+        "WarrantyWithin90": "Ends in 31–90 days",
+        "WarrantyLater": "More than 90 days left",
+        "WarrantyNoDate": "No warranty date",
+        "ChartWarrantyMonthly": "Warranties ending per month",
+        "ChartWarrantyMonthlySub": "Next 12 months",
+        "ColAge": "Age",
+        "ColReplaceBy": "Replace by",
+        "SearchAssets": "Search by name, serial number, type or person…",
+        "LabelAssignment": "Assignment",
+        "AssignmentAll": "Assigned and unassigned",
+        "ResultAssets": "Showing {0} of {1} assets",
+        "KpiRequests": "Requests",
+        "KpiRequestsHint": "{0} still open",
+        "KpiApprovalRate": "Approval rate",
+        "KpiApprovalRateHint": "{0} approved · {1} rejected",
+        "KpiAvgDecision": "Average time to decision",
+        "KpiAvgDecisionHint": "From request to manager decision",
+        "KpiAvgAssignment": "Average time to assignment",
+        "KpiAvgAssignmentHint": "From approval to hand-over",
+        "ColAssetRequested": "Asset requested",
+        "ColOutcome": "Outcome",
+        "ColDecisionTime": "Time to decision",
+        "ColEmail": "Email",
+        "SearchRequests": "Search by employee, asset or request ID…",
+        "LabelPeriod": "Period",
+        "ResultRequests": "Showing {0} of {1} requests",
+        "TopRequested": "Most requested assets",
+        "TopRequesters": "Most active requesters",
+        "TopSub": "Within the filters above. Select a row to search for it.",
+        "KpiPeople": "People with assets",
+        "KpiPeopleHint": "Currently holding at least one asset",
+        "KpiAssetsHeld": "Assets held",
+        "KpiAssetsHeldHint": "Of {0} assets in total",
+        "KpiAveragePerPerson": "Average per person",
+        "KpiAveragePerPersonHint": "Assets per person holding any",
+        "KpiLargestHolding": "Largest holding",
+        "ColAssignedOn": "Assigned on",
+        "SearchPeople": "Search by person, asset or serial number…",
+        "ResultPeople": "Showing {0} of {1} people",
+        "EmptyPeople": "No assets are assigned to anyone yet.",
+        "PeopleAssetCount": "Assets: {0}",
+        "PdfAssetReportType": "Asset report",
+        "PdfWarrantyReportType": "Warranty report",
+        "PdfAssetHeading": "Asset inventory",
+        "PdfAssetSubheading": "{0} assets across {1} asset types",
+        "PdfSummary": "Summary",
+        "PdfAssetList": "Asset list",
+        "PdfEndingSoon": "Ending within 90 days"
+    },
+    "EventFeed": {
+        "Subtitle": "A timeline of every change to assets and requests. Select an event to see its full details.",
+        "Refresh": "Refresh",
+        "StatEvents": "Events in view",
+        "StatToday": "Today",
+        "StatPeople": "People involved",
+        "ChartLast14": "Activity over the last 14 days",
+        "BarTooltip": "{0}: {1} events",
+        "FiltersToggle": "More filters",
+        "FiltersToggleCount": "More filters ({0})",
+        "DayEvents": "Events: {0}",
+        "LabelReference": "Record ID",
+        "ResultEvents": "Showing {0} of {1} events"
+    },
+    "Approvals": {
+        "Subtitle": "Review each request with its stock and what the employee already has, then approve or reject.",
+        "ChipToDecide": "To decide",
+        "SearchPlaceholder": "Search by request ID, employee or asset…",
+        "SortWaiting": "Longest waiting first",
+        "ListCount": "Requests: {0}",
+        "AllCaughtUp": "You are all caught up. No requests are waiting for your decision.",
+        "SelectPrompt": "Select a request to review it.",
+        "StepRequested": "Requested",
+        "StepDecision": "Manager decision",
+        "StepAssigned": "Asset assigned",
+        "NoJustification": "No reason was given.",
+        "SectionStock": "Stock check",
+        "StockEnough": "{0} {1} in stock, enough for this request of {2}.",
+        "StockShort": "Only {0} {1} in stock for a request of {2}. Approval is blocked until more stock is available.",
+        "StockNone": "No {0} in stock. Approval is blocked until stock is available.",
+        "ApproveBlocked": "Not enough stock to approve this request.",
+        "SectionEmployee": "About the employee",
+        "HoldsNone": "Holds no assets at the moment.",
+        "HoldsCount": "Assets currently held: {0}",
+        "HoldsSameType": "Already holds {0} of the requested type ({1}).",
+        "DuplicateOpen": "Has another open request for {0}: {1}.",
+        "OtherNone": "No other requests from this employee.",
+        "OtherRequests": "Other requests: {0} ({1} still open, {2} rejected).",
+        "SectionDecision": "Your decision",
+        "CommentLabel": "Comment for the employee (optional)",
+        "CommentPlaceholder": "Add a note to go with the approval…"
+    },
+    "AccessGroups": {
+        "AddMembers": "Add members",
+        "AddMember": "Add member",
+        "AddTitle": "Add people to a group",
+        "LabelGroup": "Group",
+        "LabelPeople": "People",
+        "PeoplePlaceholder": "Search people by name or email",
+        "SuggestionsHeader": "People in your organisation",
+        "NoResults": "No one matches, or everyone found is already in this group.",
+        "Searching": "Searching…",
+        "RoleHint": "People get the highest role of the groups they belong to, so adding someone to {0} gives them at least the {1} role.",
+        "AddButton": "Add to group",
+        "Adding": "Adding…",
+        "AddedResult": "Added to {0}: {1}.",
+        "AddFailed": "Could not add {0}: {1}",
+        "HideMembers": "Hide members",
+        "FilterMatches": "Matches: {0}",
+        "NoMatches": "No members match the filter.",
+        "MembersOf": "Members of {0}"
+    },
+    "StockAlerts": {
+        "TileMonitored": "Types monitored",
+        "TileMonitoredHint": "Of {0} asset types",
+        "TileBelow": "Below minimum",
+        "TileBelowNone": "Every monitored type has enough stock",
+        "TileOut": "Out of stock",
+        "TileOutHint": "Monitored types with none available",
+        "TileWaiting": "Units awaiting assignment",
+        "TileWaitingHint": "Approved requests the admin still has to fulfil",
+        "ChipAttention": "Needs attention",
+        "StatusOut": "Out of stock",
+        "StatusRisk": "At risk",
+        "RiskNote": "Approved requests would take it below the minimum.",
+        "Shortfall": "{0} short of the minimum",
+        "ColAssigned": "Assigned",
+        "ColWaiting": "Requests waiting",
+        "ColAwaitingApproval": "Awaiting approval (units)",
+        "ColAwaitingAssignment": "Awaiting assignment (units)",
+        "ColAfter": "After approved requests",
+        "AvailableOfTotal": "{0} of {1}",
+        "WaitingAssignment": "{0} to assign",
+        "WaitingApproval": "{0} awaiting approval",
+        "SearchPlaceholder": "Search asset types…",
+        "BulkLabel": "Minimum for all listed types",
+        "BulkApply": "Apply",
+        "ResetAlert": "Reset alert",
+        "ResetAlertHint": "Send the alert again on the next check if the type is still low",
+        "ResetDone": "Alert reset for {0}. It is sent again on the next check if the type is still low.",
+        "Recipients": "Low-stock alerts are emailed to {0}: {1}.",
+        "NoRecipients": "No one in {0} has an email address, so low-stock alerts cannot be sent.",
+        "EmailOff": "Email is switched off in the Email Center, so low-stock alerts are held until it is switched on.",
+        "CheckEmailFailed": "Low stock: {0}. The alert email could not be sent: {1} It will be tried again on the next check.",
+        "CheckNoRecipients": "Low stock: {0}, but no one in {1} has an email address to alert."
+    },
+    "Maintenance": {
+        "Title": "Maintenance",
+        "Subtitle": "Check the data for problems, keep the Mapping List in step with assignments, and download backups.",
+        "InventoryTitle": "Inventory data check",
+        "InventoryDesc": "Finds duplicate or missing serial numbers, assignments without a person, unknown statuses and missing or impossible dates.",
+        "RequestsTitle": "Request queue check",
+        "RequestsDesc": "Finds requests past their SLA, duplicate open requests, requests without a manager and requests for types that are not in the inventory.",
+        "BackupTitle": "Backups",
+        "BackupDesc": "Download every row of a list as a CSV file (opens in Excel), for example before a clean-up.",
+        "BackupInventory": "Inventory",
+        "BackupRequests": "Requests",
+        "BackupAudit": "Audit log",
+        "BackupDone": "Downloaded {0} rows.",
+        "Preparing": "Preparing the file…",
+        "RunCheck": "Run check",
+        "RunAgain": "Run again",
+        "Checking": "Checking…",
+        "CheckFailed": "The check could not run: {0}",
+        "CheckedAt": "checked at {0}",
+        "AssetsChecked": "Assets checked: {0}",
+        "RequestsChecked": "Requests checked: {0}",
+        "AllGood": "No problems found.",
+        "ExportFindings": "Export findings",
+        "MoreRecords": "and {0} more (in the export)",
+        "ColCheck": "Check",
+        "ColRecord": "Record",
+        "InvDuplicateSerial": "Duplicate serial numbers",
+        "InvDuplicateSerialHint": "More than one asset has the same serial number.",
+        "InvMissingSerial": "No serial number",
+        "InvMissingSerialHint": "Returns, mapping and incident reports rely on it.",
+        "InvAssignedNoPerson": "Assigned without a person",
+        "InvAssignedNoPersonHint": "Status says assigned, but no one is recorded.",
+        "InvPersonInStock": "In stock but a person is recorded",
+        "InvPersonInStockHint": "Usually left over from a return; clear the person or fix the status.",
+        "InvUnknownStatus": "Unrecognised status",
+        "InvUnknownStatusHint": "Not counted as in stock or assigned in stock figures and reports.",
+        "InvMissingPurchase": "No purchase date",
+        "InvMissingPurchaseHint": "Age and lifecycle planning cannot be worked out.",
+        "InvMissingWarranty": "No warranty date",
+        "InvMissingWarrantyHint": "Left out of warranty reports and alerts.",
+        "InvWarrantyBeforePurchase": "Warranty ends before purchase",
+        "InvWarrantyBeforePurchaseHint": "One of the two dates is probably wrong.",
+        "ReqOverdueApproval": "Waiting too long for the manager",
+        "ReqOverdueApprovalHint": "Past the {0} h approval target.",
+        "ReqOverdueAssignment": "Approved but not assigned in time",
+        "ReqOverdueAssignmentHint": "Past the {0} h assignment target.",
+        "ReqDuplicates": "Duplicate open requests",
+        "ReqDuplicatesHint": "The same person has more than one open request for the same type (raised before the duplicate rule).",
+        "ReqNoManager": "No manager recorded",
+        "ReqNoManagerHint": "Waiting for approval, but no manager is named on the request.",
+        "ReqUnknownType": "Type not in the inventory",
+        "ReqUnknownTypeHint": "No asset of the requested type exists, so it cannot be assigned until one is added."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (en_us);
@@ -11486,7 +13045,6 @@ const pl_pl = {
         "AssetAssignmentQueue": "Kolejka przydziału zasobów",
         "AssetReturns": "Zwroty zasobów",
         "EventStream": "Dziennik zdarzeń",
-        "Users": "Użytkownicy",
         "Reports": "Raporty",
         "Config": "Konfiguracja",
         "GroupMain": "GŁÓWNE",
@@ -11835,7 +13393,13 @@ const pl_pl = {
         "LabelQuantity": "Ilość",
         "LabelReason": "Powód wniosku",
         "ReasonRequired": "Powód wniosku jest wymagany",
-        "SubmitRequest": "Wyślij wniosek"
+        "SubmitRequest": "Wyślij wniosek",
+        "TypeInProgress": "{0} (wniosek w toku)",
+        "OpenRequestItem": "{0} ({1}, {2})",
+        "OpenRequestsNote": "Masz już wniosek w toku dla: {0}. O ten sam typ zasobu można wnioskować ponownie po przypisaniu zasobu lub odrzuceniu wniosku.",
+        "DuplicateBlocked": "Masz już otwarty wniosek o {0} ({1}). Musi zostać zrealizowany lub odrzucony, zanim ponownie zawnioskujesz o ten typ zasobu.",
+        "DuplicateTitle": "Wniosek nie został wysłany",
+        "DuplicateStage": "Zduplikowany wniosek"
     },
     "ReturnAssetForm": {
         "HeaderText": "Wniosek o zwrot zasobu",
@@ -12031,7 +13595,7 @@ const pl_pl = {
     },
     "ReportsPage": {
         "HeaderTitle": "Raportowanie i statystyki",
-        "HeaderSubtitle": "Interaktywne pulpity nawigacyjne, wykresy na żywo, analiza statusu i moduł eksportu.",
+        "HeaderSubtitle": "Aktualne dane o zasobach, gwarancjach, wnioskach i osobach. Wybierz liczbę lub wykres, aby zobaczyć szczegóły.",
         "TabVisualInsights": "Statystyki wizualne",
         "TabDetailedReports": "Szczegółowe raporty",
         "TabWarrantyExpiry": "Wygaśnięcie gwarancji",
@@ -12222,25 +13786,6 @@ const pl_pl = {
     "AssetReturnsPage": {
         "Title": "Rejestr zwrotów zasobów",
         "Description": "Przeglądaj i finalizuj wnioski pracowników o zwrot zasobów oraz weryfikuj fizyczne zwroty sprzętu."
-    },
-    "UsersPage": {
-        "Title": "Administracja użytkownikami",
-        "Description": "Obszar wyłącznie dla administratorów. Zarządzaj grupami SharePoint i wdrażaniem użytkowników na podstawie uprawnień witryny.",
-        "GroupManagementTitle": "Zarządzanie grupami SharePoint",
-        "GroupManagementDesc": "Aby wdrożyć nowych pracowników, przyznać im dostęp administratora lub przypisać ich jako menedżerów inwentarza, musisz dodać ich do odpowiednich grup witryny SharePoint.",
-        "ManageSitePermissionsButton": "Zarządzaj uprawnieniami witryny",
-        "DirectoryTitle": "Katalog pracowników i własność zasobów",
-        "ColName": "Imię i nazwisko",
-        "ColEmail": "E-mail",
-        "ColDepartment": "Dział",
-        "ColJobTitle": "Stanowisko",
-        "ColAssignedAssets": "Przypisane zasoby",
-        "ColAssetTypes": "Typy zasobów",
-        "AssetTypesNone": "Brak",
-        "AssetsAssignedToPrefix": "Zasoby przypisane do",
-        "NoAssetsAssignedToUser": "Ten użytkownik nie ma obecnie przypisanych zasobów.",
-        "EmployeeTrackingTitle": "Śledzenie zasobów pracowników",
-        "EmployeeTrackingDesc": "Obszar administratora i menedżera. Wybierz pracownika, aby zobaczyć wszystkie zasoby obecnie mu przypisane."
     },
     "MockEmailPanel": {
         "HeaderText": "📬 Powiadomienie o wychodzącej wiadomości e-mail (podgląd deweloperski)",
@@ -12981,6 +14526,287 @@ const pl_pl = {
         "PanelStockLine": "{0} × {1} na stanie dla wniosku o {2}. Najlepsze dopasowanie jako pierwsze.",
         "PanelNoStock": "Brak zasobu {0} na stanie. Nadal możesz zatwierdzić bez wyboru zasobu lub odrzucić wniosek.",
         "Recommended": "Zalecany"
+    },
+    "RecordLists": {
+        "Today": "Dzisiaj",
+        "Yesterday": "Wczoraj",
+        "DaysAgo": "{0} dni temu",
+        "MonthsAgo": "{0} mies. temu",
+        "RangeAll": "Cały okres",
+        "RangeLastDays": "Ostatnie {0} dni",
+        "RangeThisYear": "Ten rok",
+        "StatusOpen": "Otwarte",
+        "StatusInProgress": "W toku",
+        "StatusResolved": "Rozwiązane",
+        "StatusClosed": "Zamknięte",
+        "TileAll": "Wszystkie",
+        "TileHighPriority": "Wysoki priorytet (aktywne)",
+        "Unspecified": "Nie określono",
+        "ColReportedBy": "Zgłaszający",
+        "AllPriorities": "Wszystkie priorytety",
+        "AllTypes": "Wszystkie typy",
+        "AllPeople": "Wszyscy",
+        "AllConditions": "Wszystkie stany",
+        "ClearFilters": "Wyczyść filtry",
+        "TilesAria": "Filtruj według statusu",
+        "EmptyIncidents": "Nie zgłoszono jeszcze żadnych incydentów.",
+        "EmptyReplacements": "Nie złożono jeszcze żadnych wniosków o wymianę.",
+        "EmptyFiltered": "Nic nie pasuje do tych filtrów.",
+        "SubtitleIncidents": "Śledź zgłoszone problemy z zasobami od zgłoszenia do rozwiązania. Wybierz kartę, aby zobaczyć szczegóły.",
+        "SubtitleReplacements": "Śledź wnioski o wymianę od złożenia do rozwiązania. Wybierz kartę, aby zobaczyć szczegóły.",
+        "ReturnNeedsMe": "Wymaga mojej akcji",
+        "ReturnAwaitingManager": "Oczekuje na menedżera",
+        "ReturnAwaitingAdmin": "Oczekuje na administratora",
+        "ReturnCompleted": "Zakończone",
+        "ReturnRejected": "Odrzucone",
+        "ReturnNothingForMe": "Nic teraz nie czeka na Twoją akcję.",
+        "ReturnShowAll": "Pokaż wszystkie wnioski o zwrot ({0})",
+        "ReturnResultCount": "Wyświetlono {0} z {1} wniosków o zwrot",
+        "ReturnCompletedOn": "Zakończono dnia",
+        "ViewCards": "Karty",
+        "ViewBoard": "Tablica",
+        "ViewAria": "Układ",
+        "SortLabel": "Sortuj według",
+        "SortNewest": "Od najnowszych",
+        "SortOldest": "Od najstarszych",
+        "SortPriority": "Od najwyższego priorytetu",
+        "SortAsset": "Nazwa zasobu (A–Z)",
+        "SortEmployee": "Pracownik (A–Z)",
+        "LaneEmpty": "Brak pozycji"
+    },
+    "Reports": {
+        "TabRequests": "Wnioski",
+        "TabPeople": "Osoby",
+        "NoData": "Brak danych.",
+        "KpiTotalAssets": "Wszystkie zasoby",
+        "KpiTotalAssetsHint": "W {0} typach zasobów",
+        "KpiInStock": "Na stanie",
+        "KpiShareHint": "{0}% inwentarza",
+        "KpiAssigned": "Przypisane",
+        "KpiAssignedHint": "W posiadaniu {0} osób",
+        "KpiUtilisation": "Wskaźnik wykorzystania",
+        "KpiUtilisationHint": "{0} z {1} zasobów nie jest na stanie",
+        "KpiOpenRequests": "Otwarte wnioski",
+        "KpiOpenRequestsHint": "{0} czeka na zatwierdzenie · {1} czeka na przypisanie",
+        "KpiWarranty": "Gwarancje do sprawdzenia",
+        "KpiWarrantyHint": "{0} wygasło · {1} kończy się w ciągu 90 dni",
+        "KpiLifecycle": "Po cyklu życia",
+        "KpiLifecycleHint": "Starsze niż {0} lata",
+        "KpiCondition": "Zły stan lub uszkodzone",
+        "KpiConditionHint": "Wymagają naprawy lub wymiany",
+        "SeriesOther": "Inne",
+        "SeriesInProgress": "W toku",
+        "ChartClickHint": "Wybierz segment, aby zobaczyć szczegóły",
+        "ChartTypeSub": "Na stanie i przypisane, według typu",
+        "ChartAgeSub": "Czas od zakupu",
+        "ChartCondition": "Stan zasobów",
+        "ChartRequestsMonthly": "Wnioski na miesiąc",
+        "ChartRequestsMonthlySub": "Ostatnie 6 miesięcy, według wyniku",
+        "ChartOutcomes": "Wyniki wniosków",
+        "OutcomeAwaitingApproval": "Oczekuje na zatwierdzenie",
+        "OutcomeAwaitingAssignment": "Oczekuje na przypisanie",
+        "OutcomeFulfilled": "Zrealizowany",
+        "OutcomeRejected": "Odrzucony",
+        "WarrantyAttention": "Wymaga uwagi",
+        "WarrantyExpired": "Wygasła",
+        "WarrantyWithin30": "Kończy się w ciągu 30 dni",
+        "WarrantyWithin90": "Kończy się za 31–90 dni",
+        "WarrantyLater": "Ponad 90 dni",
+        "WarrantyNoDate": "Brak daty gwarancji",
+        "ChartWarrantyMonthly": "Gwarancje kończące się w miesiącu",
+        "ChartWarrantyMonthlySub": "Następne 12 miesięcy",
+        "ColAge": "Wiek",
+        "ColReplaceBy": "Wymienić do",
+        "SearchAssets": "Szukaj po nazwie, numerze seryjnym, typie lub osobie…",
+        "LabelAssignment": "Przypisanie",
+        "AssignmentAll": "Przypisane i nieprzypisane",
+        "ResultAssets": "Wyświetlono {0} z {1} zasobów",
+        "KpiRequests": "Wnioski",
+        "KpiRequestsHint": "{0} nadal otwartych",
+        "KpiApprovalRate": "Wskaźnik zatwierdzeń",
+        "KpiApprovalRateHint": "{0} zatwierdzonych · {1} odrzuconych",
+        "KpiAvgDecision": "Średni czas do decyzji",
+        "KpiAvgDecisionHint": "Od wniosku do decyzji menedżera",
+        "KpiAvgAssignment": "Średni czas do przypisania",
+        "KpiAvgAssignmentHint": "Od zatwierdzenia do wydania",
+        "ColAssetRequested": "Wnioskowany zasób",
+        "ColOutcome": "Wynik",
+        "ColDecisionTime": "Czas do decyzji",
+        "ColEmail": "E-mail",
+        "SearchRequests": "Szukaj po pracowniku, zasobie lub ID wniosku…",
+        "LabelPeriod": "Okres",
+        "ResultRequests": "Wyświetlono {0} z {1} wniosków",
+        "TopRequested": "Najczęściej wnioskowane zasoby",
+        "TopRequesters": "Najaktywniejsi wnioskodawcy",
+        "TopSub": "W ramach powyższych filtrów. Wybierz wiersz, aby go wyszukać.",
+        "KpiPeople": "Osoby z zasobami",
+        "KpiPeopleHint": "Posiadają obecnie co najmniej jeden zasób",
+        "KpiAssetsHeld": "Zasoby w posiadaniu",
+        "KpiAssetsHeldHint": "Z łącznie {0} zasobów",
+        "KpiAveragePerPerson": "Średnio na osobę",
+        "KpiAveragePerPersonHint": "Zasoby na osobę posiadającą zasoby",
+        "KpiLargestHolding": "Najwięcej zasobów",
+        "ColAssignedOn": "Przypisano dnia",
+        "SearchPeople": "Szukaj po osobie, zasobie lub numerze seryjnym…",
+        "ResultPeople": "Wyświetlono {0} z {1} osób",
+        "EmptyPeople": "Żadne zasoby nie są jeszcze przypisane.",
+        "PeopleAssetCount": "Zasoby: {0}",
+        "PdfAssetReportType": "Raport zasobów",
+        "PdfWarrantyReportType": "Raport gwarancji",
+        "PdfAssetHeading": "Inwentarz zasobów",
+        "PdfAssetSubheading": "{0} zasobów w {1} typach",
+        "PdfSummary": "Podsumowanie",
+        "PdfAssetList": "Lista zasobów",
+        "PdfEndingSoon": "Kończy się w ciągu 90 dni"
+    },
+    "EventFeed": {
+        "Subtitle": "Oś czasu wszystkich zmian zasobów i wniosków. Wybierz zdarzenie, aby zobaczyć szczegóły.",
+        "Refresh": "Odśwież",
+        "StatEvents": "Zdarzenia w widoku",
+        "StatToday": "Dzisiaj",
+        "StatPeople": "Zaangażowane osoby",
+        "ChartLast14": "Aktywność z ostatnich 14 dni",
+        "BarTooltip": "{0}: {1} zdarzeń",
+        "FiltersToggle": "Więcej filtrów",
+        "FiltersToggleCount": "Więcej filtrów ({0})",
+        "DayEvents": "Zdarzenia: {0}",
+        "LabelReference": "ID rekordu",
+        "ResultEvents": "Wyświetlono {0} z {1} zdarzeń"
+    },
+    "Approvals": {
+        "Subtitle": "Przejrzyj każdy wniosek wraz ze stanem magazynu i zasobami pracownika, a następnie zatwierdź lub odrzuć.",
+        "ChipToDecide": "Do decyzji",
+        "SearchPlaceholder": "Szukaj po ID wniosku, pracowniku lub zasobie…",
+        "SortWaiting": "Najdłużej oczekujące",
+        "ListCount": "Wnioski: {0}",
+        "AllCaughtUp": "Wszystko załatwione. Żaden wniosek nie czeka na Twoją decyzję.",
+        "SelectPrompt": "Wybierz wniosek, aby go przejrzeć.",
+        "StepRequested": "Złożono",
+        "StepDecision": "Decyzja menedżera",
+        "StepAssigned": "Zasób przypisany",
+        "NoJustification": "Nie podano uzasadnienia.",
+        "SectionStock": "Stan magazynu",
+        "StockEnough": "{0} × {1} na stanie, wystarczy na ten wniosek o {2}.",
+        "StockShort": "Tylko {0} × {1} na stanie dla wniosku o {2}. Zatwierdzenie jest zablokowane do czasu uzupełnienia magazynu.",
+        "StockNone": "Brak {0} na stanie. Zatwierdzenie jest zablokowane do czasu uzupełnienia magazynu.",
+        "ApproveBlocked": "Za mało na stanie, aby zatwierdzić ten wniosek.",
+        "SectionEmployee": "O pracowniku",
+        "HoldsNone": "Obecnie nie posiada żadnych zasobów.",
+        "HoldsCount": "Obecnie posiadane zasoby: {0}",
+        "HoldsSameType": "Posiada już {0} żądanego typu ({1}).",
+        "DuplicateOpen": "Ma inny otwarty wniosek o {0}: {1}.",
+        "OtherNone": "Brak innych wniosków tego pracownika.",
+        "OtherRequests": "Inne wnioski: {0} ({1} nadal otwartych, {2} odrzuconych).",
+        "SectionDecision": "Twoja decyzja",
+        "CommentLabel": "Komentarz dla pracownika (opcjonalnie)",
+        "CommentPlaceholder": "Dodaj notatkę do zatwierdzenia…"
+    },
+    "AccessGroups": {
+        "AddMembers": "Dodaj członków",
+        "AddMember": "Dodaj członka",
+        "AddTitle": "Dodaj osoby do grupy",
+        "LabelGroup": "Grupa",
+        "LabelPeople": "Osoby",
+        "PeoplePlaceholder": "Szukaj osób po nazwie lub e-mailu",
+        "SuggestionsHeader": "Osoby w Twojej organizacji",
+        "NoResults": "Nikt nie pasuje lub wszyscy znalezieni są już w tej grupie.",
+        "Searching": "Wyszukiwanie…",
+        "RoleHint": "Osoby otrzymują najwyższą rolę ze swoich grup, więc dodanie kogoś do {0} daje mu co najmniej rolę {1}.",
+        "AddButton": "Dodaj do grupy",
+        "Adding": "Dodawanie…",
+        "AddedResult": "Dodano do {0}: {1}.",
+        "AddFailed": "Nie udało się dodać {0}: {1}",
+        "HideMembers": "Ukryj członków",
+        "FilterMatches": "Dopasowania: {0}",
+        "NoMatches": "Żaden członek nie pasuje do filtra.",
+        "MembersOf": "Członkowie {0}"
+    },
+    "StockAlerts": {
+        "TileMonitored": "Monitorowane typy",
+        "TileMonitoredHint": "Z {0} typów zasobów",
+        "TileBelow": "Poniżej minimum",
+        "TileBelowNone": "Każdy monitorowany typ ma wystarczający zapas",
+        "TileOut": "Brak na stanie",
+        "TileOutHint": "Monitorowane typy bez dostępnych sztuk",
+        "TileWaiting": "Sztuki oczekujące na przypisanie",
+        "TileWaitingHint": "Zatwierdzone wnioski, które administrator musi jeszcze zrealizować",
+        "ChipAttention": "Wymaga uwagi",
+        "StatusOut": "Brak na stanie",
+        "StatusRisk": "Zagrożony",
+        "RiskNote": "Zatwierdzone wnioski obniżą stan poniżej minimum.",
+        "Shortfall": "Brakuje {0} do minimum",
+        "ColAssigned": "Przypisane",
+        "ColWaiting": "Oczekujące wnioski",
+        "ColAwaitingApproval": "Oczekuje na zatwierdzenie (szt.)",
+        "ColAwaitingAssignment": "Oczekuje na przypisanie (szt.)",
+        "ColAfter": "Po zatwierdzonych wnioskach",
+        "AvailableOfTotal": "{0} z {1}",
+        "WaitingAssignment": "{0} do przypisania",
+        "WaitingApproval": "{0} oczekuje na zatwierdzenie",
+        "SearchPlaceholder": "Szukaj typów zasobów…",
+        "BulkLabel": "Minimum dla wszystkich typów na liście",
+        "BulkApply": "Zastosuj",
+        "ResetAlert": "Resetuj alert",
+        "ResetAlertHint": "Wyślij alert ponownie przy następnym sprawdzeniu, jeśli stan nadal jest niski",
+        "ResetDone": "Zresetowano alert dla {0}. Zostanie wysłany ponownie przy następnym sprawdzeniu, jeśli stan nadal będzie niski.",
+        "Recipients": "Alerty o niskim stanie są wysyłane do {0}: {1}.",
+        "NoRecipients": "Nikt w {0} nie ma adresu e-mail, więc alertów o niskim stanie nie można wysłać.",
+        "EmailOff": "Poczta e-mail jest wyłączona w Centrum e-mail, więc alerty o niskim stanie są wstrzymane do czasu jej włączenia.",
+        "CheckEmailFailed": "Niski stan: {0}. Nie udało się wysłać alertu e-mail: {1} Ponowna próba nastąpi przy następnym sprawdzeniu.",
+        "CheckNoRecipients": "Niski stan: {0}, ale nikt w {1} nie ma adresu e-mail do powiadomienia."
+    },
+    "Maintenance": {
+        "Title": "Konserwacja",
+        "Subtitle": "Sprawdzaj dane pod kątem problemów, utrzymuj listę mapowań zgodną z przypisaniami i pobieraj kopie zapasowe.",
+        "InventoryTitle": "Kontrola danych inwentarza",
+        "InventoryDesc": "Wyszukuje zduplikowane lub brakujące numery seryjne, przypisania bez osoby, nieznane statusy oraz brakujące lub niemożliwe daty.",
+        "RequestsTitle": "Kontrola kolejki wniosków",
+        "RequestsDesc": "Wyszukuje wnioski po terminie SLA, zduplikowane otwarte wnioski, wnioski bez menedżera i wnioski o typy, których nie ma w inwentarzu.",
+        "BackupTitle": "Kopie zapasowe",
+        "BackupDesc": "Pobierz wszystkie wiersze listy jako plik CSV (otwiera się w Excelu), np. przed porządkowaniem.",
+        "BackupInventory": "Inwentarz",
+        "BackupRequests": "Wnioski",
+        "BackupAudit": "Dziennik audytu",
+        "BackupDone": "Pobrano wierszy: {0}.",
+        "Preparing": "Przygotowywanie pliku…",
+        "RunCheck": "Uruchom kontrolę",
+        "RunAgain": "Uruchom ponownie",
+        "Checking": "Sprawdzanie…",
+        "CheckFailed": "Nie udało się przeprowadzić kontroli: {0}",
+        "CheckedAt": "sprawdzono o {0}",
+        "AssetsChecked": "Sprawdzone zasoby: {0}",
+        "RequestsChecked": "Sprawdzone wnioski: {0}",
+        "AllGood": "Nie znaleziono problemów.",
+        "ExportFindings": "Eksportuj wyniki",
+        "MoreRecords": "i {0} więcej (w eksporcie)",
+        "ColCheck": "Kontrola",
+        "ColRecord": "Rekord",
+        "InvDuplicateSerial": "Zduplikowane numery seryjne",
+        "InvDuplicateSerialHint": "Więcej niż jeden zasób ma ten sam numer seryjny.",
+        "InvMissingSerial": "Brak numeru seryjnego",
+        "InvMissingSerialHint": "Zwroty, mapowanie i zgłoszenia incydentów z niego korzystają.",
+        "InvAssignedNoPerson": "Przypisany bez osoby",
+        "InvAssignedNoPersonHint": "Status wskazuje przypisanie, ale nie zapisano osoby.",
+        "InvPersonInStock": "Na stanie, ale zapisano osobę",
+        "InvPersonInStockHint": "Zwykle pozostałość po zwrocie; usuń osobę lub popraw status.",
+        "InvUnknownStatus": "Nierozpoznany status",
+        "InvUnknownStatusHint": "Nie jest liczony jako na stanie ani przypisany w danych i raportach.",
+        "InvMissingPurchase": "Brak daty zakupu",
+        "InvMissingPurchaseHint": "Nie można ustalić wieku ani planu cyklu życia.",
+        "InvMissingWarranty": "Brak daty gwarancji",
+        "InvMissingWarrantyHint": "Pomijany w raportach i alertach gwarancyjnych.",
+        "InvWarrantyBeforePurchase": "Gwarancja kończy się przed zakupem",
+        "InvWarrantyBeforePurchaseHint": "Jedna z dwóch dat jest prawdopodobnie błędna.",
+        "ReqOverdueApproval": "Zbyt długo czeka na menedżera",
+        "ReqOverdueApprovalHint": "Przekroczono cel zatwierdzenia {0} h.",
+        "ReqOverdueAssignment": "Zatwierdzony, ale nieprzypisany na czas",
+        "ReqOverdueAssignmentHint": "Przekroczono cel przypisania {0} h.",
+        "ReqDuplicates": "Zduplikowane otwarte wnioski",
+        "ReqDuplicatesHint": "Ta sama osoba ma kilka otwartych wniosków o ten sam typ (złożonych przed regułą duplikatów).",
+        "ReqNoManager": "Nie zapisano menedżera",
+        "ReqNoManagerHint": "Oczekuje na zatwierdzenie, ale we wniosku nie wskazano menedżera.",
+        "ReqUnknownType": "Typu nie ma w inwentarzu",
+        "ReqUnknownTypeHint": "Nie ma zasobu żądanego typu, więc nie można go przypisać, dopóki nie zostanie dodany."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pl_pl);
@@ -13060,7 +14886,6 @@ const pt_pt = {
         "AssetAssignmentQueue": "Fila de atribuição de ativos",
         "AssetReturns": "Devoluções de ativos",
         "EventStream": "Registo de eventos",
-        "Users": "Utilizadores",
         "Reports": "Relatórios",
         "Config": "Configuração",
         "GroupMain": "PRINCIPAL",
@@ -13409,7 +15234,13 @@ const pt_pt = {
         "LabelQuantity": "Quantidade",
         "LabelReason": "Motivo do pedido",
         "ReasonRequired": "O motivo do pedido é obrigatório",
-        "SubmitRequest": "Submeter pedido"
+        "SubmitRequest": "Submeter pedido",
+        "TypeInProgress": "{0} (pedido em curso)",
+        "OpenRequestItem": "{0} ({1}, {2})",
+        "OpenRequestsNote": "Já tem um pedido em curso para: {0}. Pode pedir o mesmo tipo de ativo novamente depois de o ativo ser atribuído ou de o pedido ser rejeitado.",
+        "DuplicateBlocked": "Já tem um pedido em aberto de {0} ({1}). Tem de ser atribuído ou rejeitado antes de poder pedir novamente este tipo de ativo.",
+        "DuplicateTitle": "Pedido não submetido",
+        "DuplicateStage": "Pedido duplicado"
     },
     "ReturnAssetForm": {
         "HeaderText": "Solicitar devolução de ativo",
@@ -13605,7 +15436,7 @@ const pt_pt = {
     },
     "ReportsPage": {
         "HeaderTitle": "Relatórios e Análises",
-        "HeaderSubtitle": "Painéis interativos, gráficos em tempo real, análise de estado e módulo de exportação.",
+        "HeaderSubtitle": "Números atuais de ativos, garantias, pedidos e pessoas. Selecione um número ou um gráfico para ver o detalhe.",
         "TabVisualInsights": "Análises Visuais",
         "TabDetailedReports": "Relatórios Detalhados",
         "TabWarrantyExpiry": "Expiração de Garantia",
@@ -13796,25 +15627,6 @@ const pt_pt = {
     "AssetReturnsPage": {
         "Title": "Registo de Devoluções de Ativos",
         "Description": "Reveja e conclua os pedidos de devolução de ativos dos colaboradores e verifique os check-ins físicos de hardware."
-    },
-    "UsersPage": {
-        "Title": "Administração de Utilizadores",
-        "Description": "Área exclusiva de administrador. Gira grupos do SharePoint e integração de utilizadores a partir das permissões do seu site.",
-        "GroupManagementTitle": "Gestão de Grupos do SharePoint",
-        "GroupManagementDesc": "Para integrar novos colaboradores, conceder-lhes acesso de Administrador ou atribuí-los como Gestores de Inventário, deve adicioná-los aos respetivos Grupos do Site do SharePoint.",
-        "ManageSitePermissionsButton": "Gerir Permissões do Site",
-        "DirectoryTitle": "Diretório de Colaboradores e Propriedade de Ativos",
-        "ColName": "Nome",
-        "ColEmail": "Email",
-        "ColDepartment": "Departamento",
-        "ColJobTitle": "Cargo",
-        "ColAssignedAssets": "Ativos Atribuídos",
-        "ColAssetTypes": "Tipos de Ativos",
-        "AssetTypesNone": "Nenhum",
-        "AssetsAssignedToPrefix": "Ativos atribuídos a",
-        "NoAssetsAssignedToUser": "Este utilizador não tem atualmente ativos atribuídos.",
-        "EmployeeTrackingTitle": "Rastreio de Ativos dos Colaboradores",
-        "EmployeeTrackingDesc": "Área de Administrador e Gestor. Selecione um colaborador para ver todos os ativos atualmente atribuídos a ele."
     },
     "MockEmailPanel": {
         "HeaderText": "📬 Notificação de Email de Saída (Pré-visualização do Programador)",
@@ -14555,6 +16367,287 @@ const pt_pt = {
         "PanelStockLine": "{0} {1} em stock para um pedido de {2}. Melhor opção primeiro.",
         "PanelNoStock": "Não há {0} em stock. Pode aprovar sem escolher um ativo ou rejeitar o pedido.",
         "Recommended": "Recomendado"
+    },
+    "RecordLists": {
+        "Today": "Hoje",
+        "Yesterday": "Ontem",
+        "DaysAgo": "há {0} dias",
+        "MonthsAgo": "há {0} meses",
+        "RangeAll": "Todo o período",
+        "RangeLastDays": "Últimos {0} dias",
+        "RangeThisYear": "Este ano",
+        "StatusOpen": "Abertos",
+        "StatusInProgress": "Em curso",
+        "StatusResolved": "Resolvidos",
+        "StatusClosed": "Fechados",
+        "TileAll": "Todos",
+        "TileHighPriority": "Prioridade alta (ativos)",
+        "Unspecified": "Não especificado",
+        "ColReportedBy": "Reportado por",
+        "AllPriorities": "Todas as prioridades",
+        "AllTypes": "Todos os tipos",
+        "AllPeople": "Todos",
+        "AllConditions": "Todas as condições",
+        "ClearFilters": "Limpar filtros",
+        "TilesAria": "Filtrar por estado",
+        "EmptyIncidents": "Ainda não foram reportados incidentes.",
+        "EmptyReplacements": "Ainda não foram criados pedidos de substituição.",
+        "EmptyFiltered": "Nada corresponde a estes filtros.",
+        "SubtitleIncidents": "Acompanhe os problemas reportados desde o registo até à resolução. Selecione um cartão para ver todos os detalhes.",
+        "SubtitleReplacements": "Acompanhe os pedidos de substituição desde o pedido até à resolução. Selecione um cartão para ver todos os detalhes.",
+        "ReturnNeedsMe": "Requer a minha ação",
+        "ReturnAwaitingManager": "A aguardar gestor",
+        "ReturnAwaitingAdmin": "A aguardar verificação",
+        "ReturnCompleted": "Concluídas",
+        "ReturnRejected": "Rejeitadas",
+        "ReturnNothingForMe": "Não há nada à sua espera neste momento.",
+        "ReturnShowAll": "Mostrar todos os {0} pedidos de devolução",
+        "ReturnResultCount": "A mostrar {0} de {1} pedidos de devolução",
+        "ReturnCompletedOn": "Concluído em",
+        "ViewCards": "Cartões",
+        "ViewBoard": "Quadro",
+        "ViewAria": "Disposição",
+        "SortLabel": "Ordenar por",
+        "SortNewest": "Mais recentes primeiro",
+        "SortOldest": "Mais antigos primeiro",
+        "SortPriority": "Prioridade mais alta primeiro",
+        "SortAsset": "Nome do ativo (A–Z)",
+        "SortEmployee": "Colaborador (A–Z)",
+        "LaneEmpty": "Nada aqui"
+    },
+    "Reports": {
+        "TabRequests": "Pedidos",
+        "TabPeople": "Pessoas",
+        "NoData": "Ainda sem dados.",
+        "KpiTotalAssets": "Total de ativos",
+        "KpiTotalAssetsHint": "Em {0} tipos de ativos",
+        "KpiInStock": "Em stock",
+        "KpiShareHint": "{0}% do inventário",
+        "KpiAssigned": "Atribuídos",
+        "KpiAssignedHint": "Na posse de {0} pessoas",
+        "KpiUtilisation": "Taxa de utilização",
+        "KpiUtilisationHint": "{0} de {1} ativos não estão em stock",
+        "KpiOpenRequests": "Pedidos em aberto",
+        "KpiOpenRequestsHint": "{0} a aguardar aprovação · {1} a aguardar atribuição",
+        "KpiWarranty": "Garantias a rever",
+        "KpiWarrantyHint": "{0} expiradas · {1} terminam em 90 dias",
+        "KpiLifecycle": "Fim do ciclo de vida",
+        "KpiLifecycleHint": "Com mais de {0} anos",
+        "KpiCondition": "Mau estado ou danificado",
+        "KpiConditionHint": "Precisam de reparação ou substituição",
+        "SeriesOther": "Outros",
+        "SeriesInProgress": "Em curso",
+        "ChartClickHint": "Selecione um segmento para ver o detalhe",
+        "ChartTypeSub": "Em stock e atribuídos, por tipo de ativo",
+        "ChartAgeSub": "Tempo desde a compra",
+        "ChartCondition": "Condição dos ativos",
+        "ChartRequestsMonthly": "Pedidos por mês",
+        "ChartRequestsMonthlySub": "Últimos 6 meses, por resultado",
+        "ChartOutcomes": "Resultados dos pedidos",
+        "OutcomeAwaitingApproval": "A aguardar aprovação",
+        "OutcomeAwaitingAssignment": "A aguardar atribuição",
+        "OutcomeFulfilled": "Concluído",
+        "OutcomeRejected": "Rejeitado",
+        "WarrantyAttention": "Requer atenção",
+        "WarrantyExpired": "Expirada",
+        "WarrantyWithin30": "Termina em 30 dias",
+        "WarrantyWithin90": "Termina em 31–90 dias",
+        "WarrantyLater": "Mais de 90 dias",
+        "WarrantyNoDate": "Sem data de garantia",
+        "ChartWarrantyMonthly": "Garantias a terminar por mês",
+        "ChartWarrantyMonthlySub": "Próximos 12 meses",
+        "ColAge": "Idade",
+        "ColReplaceBy": "Substituir até",
+        "SearchAssets": "Pesquisar por nome, número de série, tipo ou pessoa…",
+        "LabelAssignment": "Atribuição",
+        "AssignmentAll": "Atribuídos e não atribuídos",
+        "ResultAssets": "A mostrar {0} de {1} ativos",
+        "KpiRequests": "Pedidos",
+        "KpiRequestsHint": "{0} ainda em aberto",
+        "KpiApprovalRate": "Taxa de aprovação",
+        "KpiApprovalRateHint": "{0} aprovados · {1} rejeitados",
+        "KpiAvgDecision": "Tempo médio até à decisão",
+        "KpiAvgDecisionHint": "Do pedido à decisão do gestor",
+        "KpiAvgAssignment": "Tempo médio até à atribuição",
+        "KpiAvgAssignmentHint": "Da aprovação à entrega",
+        "ColAssetRequested": "Ativo pedido",
+        "ColOutcome": "Resultado",
+        "ColDecisionTime": "Tempo até à decisão",
+        "ColEmail": "E-mail",
+        "SearchRequests": "Pesquisar por colaborador, ativo ou ID do pedido…",
+        "LabelPeriod": "Período",
+        "ResultRequests": "A mostrar {0} de {1} pedidos",
+        "TopRequested": "Ativos mais pedidos",
+        "TopRequesters": "Requerentes mais ativos",
+        "TopSub": "Dentro dos filtros acima. Selecione uma linha para a pesquisar.",
+        "KpiPeople": "Pessoas com ativos",
+        "KpiPeopleHint": "Têm atualmente pelo menos um ativo",
+        "KpiAssetsHeld": "Ativos na posse",
+        "KpiAssetsHeldHint": "De {0} ativos no total",
+        "KpiAveragePerPerson": "Média por pessoa",
+        "KpiAveragePerPersonHint": "Ativos por pessoa com ativos",
+        "KpiLargestHolding": "Maior número de ativos",
+        "ColAssignedOn": "Atribuído em",
+        "SearchPeople": "Pesquisar por pessoa, ativo ou número de série…",
+        "ResultPeople": "A mostrar {0} de {1} pessoas",
+        "EmptyPeople": "Ainda não há ativos atribuídos.",
+        "PeopleAssetCount": "Ativos: {0}",
+        "PdfAssetReportType": "Relatório de ativos",
+        "PdfWarrantyReportType": "Relatório de garantias",
+        "PdfAssetHeading": "Inventário de ativos",
+        "PdfAssetSubheading": "{0} ativos em {1} tipos de ativos",
+        "PdfSummary": "Resumo",
+        "PdfAssetList": "Lista de ativos",
+        "PdfEndingSoon": "Termina em 90 dias"
+    },
+    "EventFeed": {
+        "Subtitle": "Uma cronologia de todas as alterações a ativos e pedidos. Selecione um evento para ver todos os detalhes.",
+        "Refresh": "Atualizar",
+        "StatEvents": "Eventos na vista",
+        "StatToday": "Hoje",
+        "StatPeople": "Pessoas envolvidas",
+        "ChartLast14": "Atividade nos últimos 14 dias",
+        "BarTooltip": "{0}: {1} eventos",
+        "FiltersToggle": "Mais filtros",
+        "FiltersToggleCount": "Mais filtros ({0})",
+        "DayEvents": "Eventos: {0}",
+        "LabelReference": "ID do registo",
+        "ResultEvents": "A mostrar {0} de {1} eventos"
+    },
+    "Approvals": {
+        "Subtitle": "Analise cada pedido com o stock e o que o colaborador já tem, e depois aprove ou rejeite.",
+        "ChipToDecide": "Por decidir",
+        "SearchPlaceholder": "Pesquisar por ID do pedido, colaborador ou ativo…",
+        "SortWaiting": "Há mais tempo à espera",
+        "ListCount": "Pedidos: {0}",
+        "AllCaughtUp": "Está tudo em dia. Não há pedidos à espera da sua decisão.",
+        "SelectPrompt": "Selecione um pedido para o analisar.",
+        "StepRequested": "Pedido",
+        "StepDecision": "Decisão do gestor",
+        "StepAssigned": "Ativo atribuído",
+        "NoJustification": "Não foi indicado nenhum motivo.",
+        "SectionStock": "Verificação de stock",
+        "StockEnough": "{0} {1} em stock, suficiente para este pedido de {2}.",
+        "StockShort": "Apenas {0} {1} em stock para um pedido de {2}. A aprovação fica bloqueada até haver mais stock.",
+        "StockNone": "Não há {0} em stock. A aprovação fica bloqueada até haver stock.",
+        "ApproveBlocked": "Não há stock suficiente para aprovar este pedido.",
+        "SectionEmployee": "Sobre o colaborador",
+        "HoldsNone": "Não tem ativos neste momento.",
+        "HoldsCount": "Ativos atualmente na posse: {0}",
+        "HoldsSameType": "Já tem {0} do tipo pedido ({1}).",
+        "DuplicateOpen": "Tem outro pedido em aberto de {0}: {1}.",
+        "OtherNone": "Sem outros pedidos deste colaborador.",
+        "OtherRequests": "Outros pedidos: {0} ({1} ainda em aberto, {2} rejeitados).",
+        "SectionDecision": "A sua decisão",
+        "CommentLabel": "Comentário para o colaborador (opcional)",
+        "CommentPlaceholder": "Adicione uma nota à aprovação…"
+    },
+    "AccessGroups": {
+        "AddMembers": "Adicionar membros",
+        "AddMember": "Adicionar membro",
+        "AddTitle": "Adicionar pessoas a um grupo",
+        "LabelGroup": "Grupo",
+        "LabelPeople": "Pessoas",
+        "PeoplePlaceholder": "Pesquisar pessoas por nome ou e-mail",
+        "SuggestionsHeader": "Pessoas na sua organização",
+        "NoResults": "Ninguém corresponde, ou todos os encontrados já estão neste grupo.",
+        "Searching": "A pesquisar…",
+        "RoleHint": "As pessoas recebem a função mais alta dos grupos a que pertencem, por isso adicionar alguém a {0} dá-lhe pelo menos a função {1}.",
+        "AddButton": "Adicionar ao grupo",
+        "Adding": "A adicionar…",
+        "AddedResult": "Adicionados a {0}: {1}.",
+        "AddFailed": "Não foi possível adicionar {0}: {1}",
+        "HideMembers": "Ocultar membros",
+        "FilterMatches": "Correspondências: {0}",
+        "NoMatches": "Nenhum membro corresponde ao filtro.",
+        "MembersOf": "Membros de {0}"
+    },
+    "StockAlerts": {
+        "TileMonitored": "Tipos monitorizados",
+        "TileMonitoredHint": "De {0} tipos de ativos",
+        "TileBelow": "Abaixo do mínimo",
+        "TileBelowNone": "Todos os tipos monitorizados têm stock suficiente",
+        "TileOut": "Sem stock",
+        "TileOutHint": "Tipos monitorizados sem unidades disponíveis",
+        "TileWaiting": "Unidades a aguardar atribuição",
+        "TileWaitingHint": "Pedidos aprovados que o administrador ainda tem de concluir",
+        "ChipAttention": "Requer atenção",
+        "StatusOut": "Sem stock",
+        "StatusRisk": "Em risco",
+        "RiskNote": "Os pedidos aprovados deixá-lo-iam abaixo do mínimo.",
+        "Shortfall": "Faltam {0} para o mínimo",
+        "ColAssigned": "Atribuídos",
+        "ColWaiting": "Pedidos em espera",
+        "ColAwaitingApproval": "A aguardar aprovação (unidades)",
+        "ColAwaitingAssignment": "A aguardar atribuição (unidades)",
+        "ColAfter": "Após pedidos aprovados",
+        "AvailableOfTotal": "{0} de {1}",
+        "WaitingAssignment": "{0} por atribuir",
+        "WaitingApproval": "{0} a aguardar aprovação",
+        "SearchPlaceholder": "Pesquisar tipos de ativos…",
+        "BulkLabel": "Mínimo para todos os tipos listados",
+        "BulkApply": "Aplicar",
+        "ResetAlert": "Repor alerta",
+        "ResetAlertHint": "Enviar o alerta novamente na próxima verificação se o tipo continuar baixo",
+        "ResetDone": "Alerta reposto para {0}. Será enviado novamente na próxima verificação se o tipo continuar baixo.",
+        "Recipients": "Os alertas de stock baixo são enviados para {0}: {1}.",
+        "NoRecipients": "Ninguém em {0} tem endereço de e-mail, por isso não é possível enviar alertas de stock baixo.",
+        "EmailOff": "O e-mail está desligado no Centro de e-mail, por isso os alertas de stock baixo ficam retidos até ser ligado.",
+        "CheckEmailFailed": "Stock baixo: {0}. Não foi possível enviar o e-mail de alerta: {1} Será tentado novamente na próxima verificação.",
+        "CheckNoRecipients": "Stock baixo: {0}, mas ninguém em {1} tem endereço de e-mail para alertar."
+    },
+    "Maintenance": {
+        "Title": "Manutenção",
+        "Subtitle": "Verifique os dados quanto a problemas, mantenha a Mapping List alinhada com as atribuições e transfira cópias de segurança.",
+        "InventoryTitle": "Verificação dos dados do inventário",
+        "InventoryDesc": "Encontra números de série duplicados ou em falta, atribuições sem pessoa, estados desconhecidos e datas em falta ou impossíveis.",
+        "RequestsTitle": "Verificação da fila de pedidos",
+        "RequestsDesc": "Encontra pedidos fora do SLA, pedidos em aberto duplicados, pedidos sem gestor e pedidos de tipos que não existem no inventário.",
+        "BackupTitle": "Cópias de segurança",
+        "BackupDesc": "Transfira todas as linhas de uma lista como ficheiro CSV (abre no Excel), por exemplo antes de uma limpeza.",
+        "BackupInventory": "Inventário",
+        "BackupRequests": "Pedidos",
+        "BackupAudit": "Registo de auditoria",
+        "BackupDone": "Transferidas {0} linhas.",
+        "Preparing": "A preparar o ficheiro…",
+        "RunCheck": "Executar verificação",
+        "RunAgain": "Executar novamente",
+        "Checking": "A verificar…",
+        "CheckFailed": "Não foi possível executar a verificação: {0}",
+        "CheckedAt": "verificado às {0}",
+        "AssetsChecked": "Ativos verificados: {0}",
+        "RequestsChecked": "Pedidos verificados: {0}",
+        "AllGood": "Não foram encontrados problemas.",
+        "ExportFindings": "Exportar resultados",
+        "MoreRecords": "e mais {0} (na exportação)",
+        "ColCheck": "Verificação",
+        "ColRecord": "Registo",
+        "InvDuplicateSerial": "Números de série duplicados",
+        "InvDuplicateSerialHint": "Mais do que um ativo tem o mesmo número de série.",
+        "InvMissingSerial": "Sem número de série",
+        "InvMissingSerialHint": "Devoluções, mapeamento e relatórios de incidentes dependem dele.",
+        "InvAssignedNoPerson": "Atribuído sem pessoa",
+        "InvAssignedNoPersonHint": "O estado indica atribuído, mas não há ninguém registado.",
+        "InvPersonInStock": "Em stock mas com uma pessoa registada",
+        "InvPersonInStockHint": "Normalmente resto de uma devolução; limpe a pessoa ou corrija o estado.",
+        "InvUnknownStatus": "Estado não reconhecido",
+        "InvUnknownStatusHint": "Não é contado como em stock nem atribuído nos números e relatórios.",
+        "InvMissingPurchase": "Sem data de compra",
+        "InvMissingPurchaseHint": "Não é possível calcular a idade nem planear o ciclo de vida.",
+        "InvMissingWarranty": "Sem data de garantia",
+        "InvMissingWarrantyHint": "Fica de fora dos relatórios e alertas de garantia.",
+        "InvWarrantyBeforePurchase": "A garantia termina antes da compra",
+        "InvWarrantyBeforePurchaseHint": "Uma das duas datas está provavelmente errada.",
+        "ReqOverdueApproval": "À espera do gestor há demasiado tempo",
+        "ReqOverdueApprovalHint": "Acima do objetivo de aprovação de {0} h.",
+        "ReqOverdueAssignment": "Aprovado mas não atribuído a tempo",
+        "ReqOverdueAssignmentHint": "Acima do objetivo de atribuição de {0} h.",
+        "ReqDuplicates": "Pedidos em aberto duplicados",
+        "ReqDuplicatesHint": "A mesma pessoa tem mais do que um pedido em aberto do mesmo tipo (criados antes da regra de duplicados).",
+        "ReqNoManager": "Sem gestor registado",
+        "ReqNoManagerHint": "À espera de aprovação, mas o pedido não indica nenhum gestor.",
+        "ReqUnknownType": "Tipo inexistente no inventário",
+        "ReqUnknownTypeHint": "Não existe nenhum ativo do tipo pedido, por isso não pode ser atribuído até ser adicionado um."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pt_pt);
@@ -14634,7 +16727,6 @@ const sv_se = {
         "AssetAssignmentQueue": "Tilldelningskö för tillgångar",
         "AssetReturns": "Återlämnade tillgångar",
         "EventStream": "Händelselogg",
-        "Users": "Användare",
         "Reports": "Rapporter",
         "Config": "Konfiguration",
         "GroupMain": "HUVUD",
@@ -14983,7 +17075,13 @@ const sv_se = {
         "LabelQuantity": "Antal",
         "LabelReason": "Anledning till begäran",
         "ReasonRequired": "Anledning till begäran krävs",
-        "SubmitRequest": "Skicka begäran"
+        "SubmitRequest": "Skicka begäran",
+        "TypeInProgress": "{0} (förfrågan pågår)",
+        "OpenRequestItem": "{0} ({1}, {2})",
+        "OpenRequestsNote": "Du har redan en pågående förfrågan för: {0}. Du kan begära samma tillgångstyp igen när tillgången har tilldelats eller förfrågan har avslagits.",
+        "DuplicateBlocked": "Du har redan en öppen förfrågan om {0} ({1}). Den måste tilldelas eller avslås innan du kan begära denna tillgångstyp igen.",
+        "DuplicateTitle": "Förfrågan skickades inte",
+        "DuplicateStage": "Dubblettförfrågan"
     },
     "ReturnAssetForm": {
         "HeaderText": "Begär återlämning av tillgång",
@@ -15179,7 +17277,7 @@ const sv_se = {
     },
     "ReportsPage": {
         "HeaderTitle": "Rapportering och insikter",
-        "HeaderSubtitle": "Interaktiva instrumentpaneler, live-grafer, statusanalys och exportmodul.",
+        "HeaderSubtitle": "Aktuella siffror för tillgångar, garantier, förfrågningar och personer. Välj en siffra eller ett diagram för att se vad som ligger bakom.",
         "TabVisualInsights": "Visuella insikter",
         "TabDetailedReports": "Detaljerade rapporter",
         "TabWarrantyExpiry": "Garantiutgång",
@@ -15370,25 +17468,6 @@ const sv_se = {
     "AssetReturnsPage": {
         "Title": "Register för tillgångsreturer",
         "Description": "Granska och slutför anställdas returförfrågningar för tillgångar och verifiera fysiska hårdvaruincheckningar."
-    },
-    "UsersPage": {
-        "Title": "Användaradministration",
-        "Description": "Endast administratörsområde. Hantera SharePoint-grupper och introduktion av användare från dina webbplatsbehörigheter.",
-        "GroupManagementTitle": "Hantering av SharePoint-grupper",
-        "GroupManagementDesc": "För att introducera nya anställda, ge dem administratörsåtkomst eller tilldela dem som inventariechefer måste du lägga till dem i respektive SharePoint-webbplatsgrupper.",
-        "ManageSitePermissionsButton": "Hantera webbplatsbehörigheter",
-        "DirectoryTitle": "Anställdakatalog och tillgångsägande",
-        "ColName": "Namn",
-        "ColEmail": "E-post",
-        "ColDepartment": "Avdelning",
-        "ColJobTitle": "Befattning",
-        "ColAssignedAssets": "Tilldelade tillgångar",
-        "ColAssetTypes": "Tillgångstyper",
-        "AssetTypesNone": "Inga",
-        "AssetsAssignedToPrefix": "Tillgångar tilldelade till",
-        "NoAssetsAssignedToUser": "Den här användaren har för närvarande inga tilldelade tillgångar.",
-        "EmployeeTrackingTitle": "Spårning av anställdas tillgångar",
-        "EmployeeTrackingDesc": "Område för administratörer och chefer. Välj en anställd för att se alla tillgångar som för närvarande är tilldelade till dem."
     },
     "MockEmailPanel": {
         "HeaderText": "📬 Utgående e-postmeddelande (utvecklarförhandsgranskning)",
@@ -16129,6 +18208,287 @@ const sv_se = {
         "PanelStockLine": "{0} {1} i lager för en förfrågan om {2}. Bästa matchning först.",
         "PanelNoStock": "Ingen {0} finns i lager. Du kan ändå godkänna utan att välja tillgång, eller avslå förfrågan.",
         "Recommended": "Rekommenderad"
+    },
+    "RecordLists": {
+        "Today": "I dag",
+        "Yesterday": "I går",
+        "DaysAgo": "{0} dagar sedan",
+        "MonthsAgo": "{0} månader sedan",
+        "RangeAll": "Hela perioden",
+        "RangeLastDays": "Senaste {0} dagarna",
+        "RangeThisYear": "I år",
+        "StatusOpen": "Öppna",
+        "StatusInProgress": "Pågår",
+        "StatusResolved": "Lösta",
+        "StatusClosed": "Stängda",
+        "TileAll": "Alla",
+        "TileHighPriority": "Hög prioritet (aktiva)",
+        "Unspecified": "Ej angivet",
+        "ColReportedBy": "Rapporterad av",
+        "AllPriorities": "Alla prioriteter",
+        "AllTypes": "Alla typer",
+        "AllPeople": "Alla",
+        "AllConditions": "Alla skick",
+        "ClearFilters": "Rensa filter",
+        "TilesAria": "Filtrera efter status",
+        "EmptyIncidents": "Inga incidenter har rapporterats ännu.",
+        "EmptyReplacements": "Inga ersättningsförfrågningar har skapats ännu.",
+        "EmptyFiltered": "Inget matchar dessa filter.",
+        "SubtitleIncidents": "Följ rapporterade problem med tillgångar från rapport till lösning. Välj ett kort för att se alla detaljer.",
+        "SubtitleReplacements": "Följ ersättningsförfrågningar från förfrågan till lösning. Välj ett kort för att se alla detaljer.",
+        "ReturnNeedsMe": "Kräver min åtgärd",
+        "ReturnAwaitingManager": "Väntar på chef",
+        "ReturnAwaitingAdmin": "Väntar på adminkontroll",
+        "ReturnCompleted": "Slutförda",
+        "ReturnRejected": "Avslagna",
+        "ReturnNothingForMe": "Inget väntar på dig just nu.",
+        "ReturnShowAll": "Visa alla {0} returförfrågningar",
+        "ReturnResultCount": "Visar {0} av {1} returförfrågningar",
+        "ReturnCompletedOn": "Slutförd den",
+        "ViewCards": "Kort",
+        "ViewBoard": "Tavla",
+        "ViewAria": "Layout",
+        "SortLabel": "Sortera efter",
+        "SortNewest": "Nyast först",
+        "SortOldest": "Äldst först",
+        "SortPriority": "Högst prioritet först",
+        "SortAsset": "Tillgångsnamn (A–Ö)",
+        "SortEmployee": "Anställd (A–Ö)",
+        "LaneEmpty": "Inget här"
+    },
+    "Reports": {
+        "TabRequests": "Förfrågningar",
+        "TabPeople": "Personer",
+        "NoData": "Inga data ännu.",
+        "KpiTotalAssets": "Tillgångar totalt",
+        "KpiTotalAssetsHint": "Fördelat på {0} tillgångstyper",
+        "KpiInStock": "I lager",
+        "KpiShareHint": "{0} % av inventariet",
+        "KpiAssigned": "Tilldelade",
+        "KpiAssignedHint": "Innehas av {0} personer",
+        "KpiUtilisation": "Nyttjandegrad",
+        "KpiUtilisationHint": "{0} av {1} tillgångar finns inte i lager",
+        "KpiOpenRequests": "Öppna förfrågningar",
+        "KpiOpenRequestsHint": "{0} väntar på godkännande · {1} väntar på tilldelning",
+        "KpiWarranty": "Garantier att bevaka",
+        "KpiWarrantyHint": "{0} utgångna · {1} upphör inom 90 dagar",
+        "KpiLifecycle": "Passerat livscykeln",
+        "KpiLifecycleHint": "Äldre än {0} år",
+        "KpiCondition": "Dåligt eller skadat",
+        "KpiConditionHint": "Behöver repareras eller bytas ut",
+        "SeriesOther": "Övrigt",
+        "SeriesInProgress": "Pågår",
+        "ChartClickHint": "Välj ett segment för att lista vad som ligger bakom",
+        "ChartTypeSub": "I lager och tilldelade, per tillgångstyp",
+        "ChartAgeSub": "Tid sedan inköp",
+        "ChartCondition": "Tillgångarnas skick",
+        "ChartRequestsMonthly": "Förfrågningar per månad",
+        "ChartRequestsMonthlySub": "Senaste 6 månaderna, per utfall",
+        "ChartOutcomes": "Utfall för förfrågningar",
+        "OutcomeAwaitingApproval": "Väntar på godkännande",
+        "OutcomeAwaitingAssignment": "Väntar på tilldelning",
+        "OutcomeFulfilled": "Levererad",
+        "OutcomeRejected": "Avslagen",
+        "WarrantyAttention": "Kräver åtgärd",
+        "WarrantyExpired": "Utgången",
+        "WarrantyWithin30": "Upphör inom 30 dagar",
+        "WarrantyWithin90": "Upphör om 31–90 dagar",
+        "WarrantyLater": "Mer än 90 dagar kvar",
+        "WarrantyNoDate": "Inget garantidatum",
+        "ChartWarrantyMonthly": "Garantier som upphör per månad",
+        "ChartWarrantyMonthlySub": "Kommande 12 månader",
+        "ColAge": "Ålder",
+        "ColReplaceBy": "Byt ut senast",
+        "SearchAssets": "Sök på namn, serienummer, typ eller person…",
+        "LabelAssignment": "Tilldelning",
+        "AssignmentAll": "Tilldelade och ej tilldelade",
+        "ResultAssets": "Visar {0} av {1} tillgångar",
+        "KpiRequests": "Förfrågningar",
+        "KpiRequestsHint": "{0} fortfarande öppna",
+        "KpiApprovalRate": "Godkännandegrad",
+        "KpiApprovalRateHint": "{0} godkända · {1} avslagna",
+        "KpiAvgDecision": "Genomsnittlig tid till beslut",
+        "KpiAvgDecisionHint": "Från förfrågan till chefens beslut",
+        "KpiAvgAssignment": "Genomsnittlig tid till tilldelning",
+        "KpiAvgAssignmentHint": "Från godkännande till överlämning",
+        "ColAssetRequested": "Begärd tillgång",
+        "ColOutcome": "Utfall",
+        "ColDecisionTime": "Tid till beslut",
+        "ColEmail": "E-post",
+        "SearchRequests": "Sök på anställd, tillgång eller förfrågnings-ID…",
+        "LabelPeriod": "Period",
+        "ResultRequests": "Visar {0} av {1} förfrågningar",
+        "TopRequested": "Mest efterfrågade tillgångar",
+        "TopRequesters": "Mest aktiva beställare",
+        "TopSub": "Inom filtren ovan. Välj en rad för att söka på den.",
+        "KpiPeople": "Personer med tillgångar",
+        "KpiPeopleHint": "Har för närvarande minst en tillgång",
+        "KpiAssetsHeld": "Tillgångar hos personer",
+        "KpiAssetsHeldHint": "Av totalt {0} tillgångar",
+        "KpiAveragePerPerson": "Genomsnitt per person",
+        "KpiAveragePerPersonHint": "Tillgångar per person som har någon",
+        "KpiLargestHolding": "Största innehav",
+        "ColAssignedOn": "Tilldelad den",
+        "SearchPeople": "Sök på person, tillgång eller serienummer…",
+        "ResultPeople": "Visar {0} av {1} personer",
+        "EmptyPeople": "Inga tillgångar är tilldelade ännu.",
+        "PeopleAssetCount": "Tillgångar: {0}",
+        "PdfAssetReportType": "Tillgångsrapport",
+        "PdfWarrantyReportType": "Garantirapport",
+        "PdfAssetHeading": "Tillgångsinventarium",
+        "PdfAssetSubheading": "{0} tillgångar fördelade på {1} tillgångstyper",
+        "PdfSummary": "Sammanfattning",
+        "PdfAssetList": "Tillgångslista",
+        "PdfEndingSoon": "Upphör inom 90 dagar"
+    },
+    "EventFeed": {
+        "Subtitle": "En tidslinje över alla ändringar av tillgångar och förfrågningar. Välj en händelse för att se alla detaljer.",
+        "Refresh": "Uppdatera",
+        "StatEvents": "Händelser i vyn",
+        "StatToday": "I dag",
+        "StatPeople": "Inblandade personer",
+        "ChartLast14": "Aktivitet de senaste 14 dagarna",
+        "BarTooltip": "{0}: {1} händelser",
+        "FiltersToggle": "Fler filter",
+        "FiltersToggleCount": "Fler filter ({0})",
+        "DayEvents": "Händelser: {0}",
+        "LabelReference": "Post-ID",
+        "ResultEvents": "Visar {0} av {1} händelser"
+    },
+    "Approvals": {
+        "Subtitle": "Granska varje förfrågan med lagerstatus och vad den anställde redan har, och godkänn eller avslå sedan.",
+        "ChipToDecide": "Att besluta",
+        "SearchPlaceholder": "Sök på förfrågnings-ID, anställd eller tillgång…",
+        "SortWaiting": "Längst väntetid först",
+        "ListCount": "Förfrågningar: {0}",
+        "AllCaughtUp": "Allt är klart. Inga förfrågningar väntar på ditt beslut.",
+        "SelectPrompt": "Välj en förfrågan för att granska den.",
+        "StepRequested": "Begärd",
+        "StepDecision": "Chefens beslut",
+        "StepAssigned": "Tillgång tilldelad",
+        "NoJustification": "Ingen motivering angavs.",
+        "SectionStock": "Lagerkontroll",
+        "StockEnough": "{0} {1} i lager, tillräckligt för denna förfrågan om {2}.",
+        "StockShort": "Endast {0} {1} i lager för en förfrågan om {2}. Godkännande är spärrat tills mer finns i lager.",
+        "StockNone": "Ingen {0} i lager. Godkännande är spärrat tills det finns i lager.",
+        "ApproveBlocked": "Inte tillräckligt i lager för att godkänna denna förfrågan.",
+        "SectionEmployee": "Om den anställde",
+        "HoldsNone": "Har inga tillgångar just nu.",
+        "HoldsCount": "Tillgångar som innehas nu: {0}",
+        "HoldsSameType": "Har redan {0} av den begärda typen ({1}).",
+        "DuplicateOpen": "Har en annan öppen förfrågan om {0}: {1}.",
+        "OtherNone": "Inga andra förfrågningar från den anställde.",
+        "OtherRequests": "Andra förfrågningar: {0} ({1} fortfarande öppna, {2} avslagna).",
+        "SectionDecision": "Ditt beslut",
+        "CommentLabel": "Kommentar till den anställde (valfritt)",
+        "CommentPlaceholder": "Lägg till en anteckning till godkännandet…"
+    },
+    "AccessGroups": {
+        "AddMembers": "Lägg till medlemmar",
+        "AddMember": "Lägg till medlem",
+        "AddTitle": "Lägg till personer i en grupp",
+        "LabelGroup": "Grupp",
+        "LabelPeople": "Personer",
+        "PeoplePlaceholder": "Sök personer på namn eller e-post",
+        "SuggestionsHeader": "Personer i din organisation",
+        "NoResults": "Ingen matchar, eller alla som hittades finns redan i gruppen.",
+        "Searching": "Söker…",
+        "RoleHint": "Personer får den högsta rollen bland sina grupper, så den som läggs till i {0} får minst rollen {1}.",
+        "AddButton": "Lägg till i gruppen",
+        "Adding": "Lägger till…",
+        "AddedResult": "Tillagda i {0}: {1}.",
+        "AddFailed": "Kunde inte lägga till {0}: {1}",
+        "HideMembers": "Dölj medlemmar",
+        "FilterMatches": "Träffar: {0}",
+        "NoMatches": "Inga medlemmar matchar filtret.",
+        "MembersOf": "Medlemmar i {0}"
+    },
+    "StockAlerts": {
+        "TileMonitored": "Bevakade typer",
+        "TileMonitoredHint": "Av {0} tillgångstyper",
+        "TileBelow": "Under minimum",
+        "TileBelowNone": "Alla bevakade typer har tillräckligt i lager",
+        "TileOut": "Slut i lager",
+        "TileOutHint": "Bevakade typer utan något tillgängligt",
+        "TileWaiting": "Enheter som väntar på tilldelning",
+        "TileWaitingHint": "Godkända förfrågningar som admin ännu inte har levererat",
+        "ChipAttention": "Kräver åtgärd",
+        "StatusOut": "Slut i lager",
+        "StatusRisk": "Risk",
+        "RiskNote": "Godkända förfrågningar skulle ta den under minimum.",
+        "Shortfall": "{0} under minimum",
+        "ColAssigned": "Tilldelade",
+        "ColWaiting": "Väntande förfrågningar",
+        "ColAwaitingApproval": "Väntar på godkännande (enheter)",
+        "ColAwaitingAssignment": "Väntar på tilldelning (enheter)",
+        "ColAfter": "Efter godkända förfrågningar",
+        "AvailableOfTotal": "{0} av {1}",
+        "WaitingAssignment": "{0} att tilldela",
+        "WaitingApproval": "{0} väntar på godkännande",
+        "SearchPlaceholder": "Sök tillgångstyper…",
+        "BulkLabel": "Minimum för alla listade typer",
+        "BulkApply": "Använd",
+        "ResetAlert": "Återställ avisering",
+        "ResetAlertHint": "Skicka aviseringen igen vid nästa kontroll om typen fortfarande är låg",
+        "ResetDone": "Aviseringen för {0} har återställts. Den skickas igen vid nästa kontroll om typen fortfarande är låg.",
+        "Recipients": "Aviseringar om lågt lager skickas till {0}: {1}.",
+        "NoRecipients": "Ingen i {0} har en e-postadress, så aviseringar om lågt lager kan inte skickas.",
+        "EmailOff": "E-post är avstängd i e-postcentret, så aviseringar om lågt lager hålls kvar tills den slås på.",
+        "CheckEmailFailed": "Lågt lager: {0}. Aviseringsmejlet kunde inte skickas: {1} Ett nytt försök görs vid nästa kontroll.",
+        "CheckNoRecipients": "Lågt lager: {0}, men ingen i {1} har en e-postadress att avisera."
+    },
+    "Maintenance": {
+        "Title": "Underhåll",
+        "Subtitle": "Kontrollera data efter problem, håll mappningslistan i takt med tilldelningarna och ladda ned säkerhetskopior.",
+        "InventoryTitle": "Kontroll av inventariedata",
+        "InventoryDesc": "Hittar dubbla eller saknade serienummer, tilldelningar utan person, okända statusar och saknade eller omöjliga datum.",
+        "RequestsTitle": "Kontroll av förfrågningskön",
+        "RequestsDesc": "Hittar förfrågningar efter SLA, dubbla öppna förfrågningar, förfrågningar utan chef och förfrågningar om typer som inte finns i inventariet.",
+        "BackupTitle": "Säkerhetskopior",
+        "BackupDesc": "Ladda ned alla rader i en lista som CSV-fil (öppnas i Excel), till exempel före en rensning.",
+        "BackupInventory": "Inventarie",
+        "BackupRequests": "Förfrågningar",
+        "BackupAudit": "Granskningslogg",
+        "BackupDone": "Hämtade {0} rader.",
+        "Preparing": "Förbereder filen…",
+        "RunCheck": "Kör kontroll",
+        "RunAgain": "Kör igen",
+        "Checking": "Kontrollerar…",
+        "CheckFailed": "Kontrollen kunde inte köras: {0}",
+        "CheckedAt": "kontrollerat {0}",
+        "AssetsChecked": "Kontrollerade tillgångar: {0}",
+        "RequestsChecked": "Kontrollerade förfrågningar: {0}",
+        "AllGood": "Inga problem hittades.",
+        "ExportFindings": "Exportera resultat",
+        "MoreRecords": "och {0} till (i exporten)",
+        "ColCheck": "Kontroll",
+        "ColRecord": "Post",
+        "InvDuplicateSerial": "Dubbla serienummer",
+        "InvDuplicateSerialHint": "Fler än en tillgång har samma serienummer.",
+        "InvMissingSerial": "Inget serienummer",
+        "InvMissingSerialHint": "Returer, mappning och incidentrapporter förlitar sig på det.",
+        "InvAssignedNoPerson": "Tilldelad utan person",
+        "InvAssignedNoPersonHint": "Statusen säger tilldelad, men ingen person är angiven.",
+        "InvPersonInStock": "I lager men en person är angiven",
+        "InvPersonInStockHint": "Oftast kvar från en retur; rensa personen eller rätta statusen.",
+        "InvUnknownStatus": "Okänd status",
+        "InvUnknownStatusHint": "Räknas varken som i lager eller tilldelad i lagersiffror och rapporter.",
+        "InvMissingPurchase": "Inget inköpsdatum",
+        "InvMissingPurchaseHint": "Ålder och livscykelplanering kan inte beräknas.",
+        "InvMissingWarranty": "Inget garantidatum",
+        "InvMissingWarrantyHint": "Utelämnas från garantirapporter och aviseringar.",
+        "InvWarrantyBeforePurchase": "Garantin slutar före inköpet",
+        "InvWarrantyBeforePurchaseHint": "Ett av de två datumen är troligen fel.",
+        "ReqOverdueApproval": "Väntar för länge på chefen",
+        "ReqOverdueApprovalHint": "Över målet på {0} h för godkännande.",
+        "ReqOverdueAssignment": "Godkänd men inte tilldelad i tid",
+        "ReqOverdueAssignmentHint": "Över målet på {0} h för tilldelning.",
+        "ReqDuplicates": "Dubbla öppna förfrågningar",
+        "ReqDuplicatesHint": "Samma person har flera öppna förfrågningar om samma typ (skapade före dubblettregeln).",
+        "ReqNoManager": "Ingen chef angiven",
+        "ReqNoManagerHint": "Väntar på godkännande, men ingen chef anges i förfrågan.",
+        "ReqUnknownType": "Typen finns inte i inventariet",
+        "ReqUnknownTypeHint": "Det finns ingen tillgång av den begärda typen, så den kan inte tilldelas förrän en läggs till."
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sv_se);
@@ -16347,59 +18707,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_RequestList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/RequestList */ 82867);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-
-
-
-
+/* harmony import */ var _components_approvals_ApprovalInbox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/approvals/ApprovalInbox */ 95524);
 
 
 const ApprovalsPage = (props) => {
     const { state, actions } = props;
-    const statusCounts = state.managerQueueRequests.reduce((acc, req) => {
-        const status = req.status || 'Pending';
-        acc[status] = (acc[status] || 0) + 1;
-        return acc;
-    }, {});
-    const statusKeys = Object.keys(statusCounts);
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.Title)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.Description),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.TextField, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.SearchLabel, placeholder: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.SearchPlaceholder, value: state.requestSearchId, onChange: (_, value) => actions.onSearchChange(value || ''), styles: { root: { marginBottom: '12px', maxWidth: 320 } } }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '10px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.ChartTitle),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '250px', position: 'relative' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_5__.Pie, { data: {
-                        labels: statusKeys.length ? statusKeys : [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.NoDataLabel],
-                        datasets: [
-                            {
-                                label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ApprovalsPage.ChartDatasetLabel,
-                                data: statusKeys.length ? statusKeys.map(k => statusCounts[k]) : [1],
-                                backgroundColor: [
-                                    'rgba(255, 206, 86, 0.6)',
-                                    'rgba(75, 192, 192, 0.6)',
-                                    'rgba(255, 99, 132, 0.6)',
-                                    'rgba(153, 102, 255, 0.6)',
-                                    'rgba(54, 162, 235, 0.6)',
-                                ],
-                                borderColor: [
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(255, 99, 132, 1)',
-                                    'rgba(153, 102, 255, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                ],
-                                borderWidth: 1,
-                            },
-                        ],
-                    }, options: { maintainAspectRatio: false } }))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RequestList__WEBPACK_IMPORTED_MODULE_2__.RequestList, { items: state.visibleManagerRequests, inventoryItems: state.items, canApproveReject: true, canApproveAsset: false, hideStatusColumn: false, showResponseColumns: false, onApproveRequest: actions.onApproveRequest, onRejectRequest: actions.onRejectRequest, actionInProgressId: state.requestActionInProgressId })));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_approvals_ApprovalInbox__WEBPACK_IMPORTED_MODULE_1__.ApprovalInbox, { requests: state.managerQueueRequests, items: state.items, search: state.requestSearchId, onSearchChange: actions.onSearchChange, onApproveRequest: actions.onApproveRequest, onRejectRequest: actions.onRejectRequest, actionInProgressId: state.requestActionInProgressId }));
 };
 
 
@@ -16600,18 +18913,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_ReturnRequestList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ReturnRequestList */ 18397);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-
 
 
 
 const AssetReturnsPage = (props) => {
     const { state, actions } = props;
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetReturnsPage.Title)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetReturnsPage.Description),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ReturnRequestList__WEBPACK_IMPORTED_MODULE_2__.ReturnRequestList, { items: state.returnRequests, isAdmin: state.isAdmin, isManager: state.isManager, onUpdateStatus: actions.onUpdateStatus, loading: state.returnRequestsLoading })));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ReturnRequestList__WEBPACK_IMPORTED_MODULE_2__.ReturnRequestList, { title: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetReturnsPage.Title, subtitle: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.AssetReturnsPage.Description, items: state.returnRequests, isAdmin: state.isAdmin, isManager: state.isManager, onUpdateStatus: actions.onUpdateStatus, loading: state.returnRequestsLoading })));
 };
 
 
@@ -16630,24 +18938,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 52394);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 53918);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 80539);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 15369);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 53918);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 92070);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 15369);
 /* harmony import */ var _services_ListHealthService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/ListHealthService */ 20563);
 /* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
 /* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ConfigPage.module.scss */ 35947);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
 /* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/LocalizationUtils */ 25997);
 /* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config/AppConfig */ 60393);
 /* harmony import */ var _config_StockThresholdsTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./config/StockThresholdsTab */ 63440);
+/* harmony import */ var _config_AccessGroupsTab__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./config/AccessGroupsTab */ 696);
+/* harmony import */ var _config_MaintenanceTab__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./config/MaintenanceTab */ 859);
+
+
 
 
 
@@ -16703,25 +19014,25 @@ const formatDate = (iso) => {
 const StatusPill = ({ status, testing }) => {
     if (testing) {
         return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillInfo}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ProgressLoopOuter", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].spin }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "ProgressLoopOuter", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].spin }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusVerifying);
     }
     switch (status) {
         case 'healthy': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillGood}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Completed" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "Completed" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusConnected);
         case 'warning': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillWarn}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Warning" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "Warning" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusWarning);
         case 'missing': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillBad}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Blocked2" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "Blocked2" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusMissing);
         case 'error': return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillBad}` },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ErrorBadge" }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "ErrorBadge" }),
             " ",
             InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusFailed);
         default: return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillNeutral}` }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.ConfigPage.StatusNotVerified);
@@ -16737,22 +19048,22 @@ const collectIssues = (results) => {
         const title = getListText(def.key).title;
         const add = (severity, text) => issues.push({ severity, text, listKey: def.key });
         if (r.status === 'error') {
-            add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Error, title, r.error || ''));
+            add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.Issue_Error, title, r.error || ''));
         }
         else if (!r.resolvedTitle) {
             if (def.autoCreated) {
-                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_AutoCreated, title));
+                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.Issue_AutoCreated, title));
             }
             else {
-                add(def.optional ? 'warn' : 'bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Missing, title, def.candidates[0]));
+                add(def.optional ? 'warn' : 'bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.Issue_Missing, title, def.candidates[0]));
             }
         }
         else {
             if (r.missingColumns.length > 0) {
-                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
+                add('warn', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.Issue_Columns, title, r.missingColumns.length, r.missingColumns.join(', ')));
             }
             if (r.canWrite === false) {
-                add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Issue_Write, title));
+                add('bad', (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.Issue_Write, title));
             }
         }
     });
@@ -16781,7 +19092,6 @@ const ConfigPage = (props) => {
     const [expanded, setExpanded] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
     const [groups, setGroups] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
     const [loadingGroups, setLoadingGroups] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
-    const [memberFilter, setMemberFilter] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
     const mounted = react__WEBPACK_IMPORTED_MODULE_0__.useRef(true);
     react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => () => { mounted.current = false; }, []);
     const runHealthCheck = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async () => {
@@ -16880,35 +19190,35 @@ const ConfigPage = (props) => {
     };
     const toneFor = (ok, bad) => !hasResults ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneNeutral : ok ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneGood : bad ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].toneWarn;
     const checkButtons = (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: runningAll ? s.RunningHealthCheck : s.RunHealthCheckButton, iconProps: { iconName: 'Health' }, onClick: () => { runHealthCheck().catch(() => undefined); }, disabled: runningAll }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: s.ExportReportButton, iconProps: { iconName: 'Download' }, onClick: exportReport, disabled: !hasResults || runningAll })));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.PrimaryButton, { text: runningAll ? s.RunningHealthCheck : s.RunHealthCheckButton, iconProps: { iconName: 'Health' }, onClick: () => { runHealthCheck().catch(() => undefined); }, disabled: runningAll }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: s.ExportReportButton, iconProps: { iconName: 'Download' }, onClick: exportReport, disabled: !hasResults || runningAll })));
     const renderOverview = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.OverviewTitle),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, checkedAt ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.LastChecked, formatDate(checkedAt)) : s.NeverChecked)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, checkedAt ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.LastChecked, formatDate(checkedAt)) : s.NeverChecked)),
                 checkButtons),
-            runError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBarType.error, onDismiss: () => setRunError(undefined), styles: { root: { marginBottom: 12 } } }, runError)),
-            runningAll ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.ProgressIndicator, { label: s.RunningHealthCheck, styles: { root: { marginBottom: 16 } } })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].banner} ${!hasResults ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerNeutral : criticalCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerBad : warningCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerWarn : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerGood}` },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerIcon, iconName: !hasResults ? 'Info' : criticalCount > 0 ? 'StatusErrorFull' : warningCount > 0 ? 'WarningSolid' : 'CompletedSolid' }),
+            runError && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.error, onDismiss: () => setRunError(undefined), styles: { root: { marginBottom: 12 } } }, runError)),
+            runningAll ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.ProgressIndicator, { label: s.RunningHealthCheck, styles: { root: { marginBottom: 16 } } })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].banner} ${!hasResults ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerNeutral : criticalCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerBad : warningCount > 0 ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerWarn : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerGood}` },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerIcon, iconName: !hasResults ? 'Info' : criticalCount > 0 ? 'StatusErrorFull' : warningCount > 0 ? 'WarningSolid' : 'CompletedSolid' }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].bannerText },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, !hasResults
                         ? s.NeverChecked
                         : criticalCount > 0
-                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.OverallCritical, criticalCount)
+                            ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.OverallCritical, criticalCount)
                             : warningCount > 0
-                                ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.OverallWarning, warningCount)
+                                ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.OverallWarning, warningCount)
                                 : s.OverallHealthy),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, hasResults && issues.length > 0 ? s.OverallHint : s.OverviewSubtitle)))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tiles }, [
                 { icon: 'Database', label: s.Tile_CoreLists, value: `${coreReady}/${CORE_LISTS.length}`, tone: toneFor(coreReady === CORE_LISTS.length, coreResults.some(r => r.status === 'missing' || r.status === 'error')) },
                 { icon: 'TableGroup', label: s.Tile_SchemaIssues, value: String(missingColumnCount), tone: toneFor(missingColumnCount === 0, false) },
                 { icon: 'Lock', label: s.Tile_PermissionIssues, value: String(writeIssues), tone: toneFor(writeIssues === 0, writeIssues > 0) },
-                { icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }
+                ...(OPTIONAL_LISTS.length > 0 ? [{ icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }] : [])
             ].map(tile => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: tile.icon, className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tile} ${tile.tone}` },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tileHead },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: tile.icon }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: tile.icon }),
                     " ",
                     tile.label),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].tileValue }, hasResults ? tile.value : '—')))))),
@@ -16917,16 +19227,16 @@ const ConfigPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.IssuesTitle)),
-                    issues.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: 'Database' }, text: s.ViewDetails, onClick: () => actions.onTabChange('connections') }))),
+                    issues.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.ActionButton, { iconProps: { iconName: 'Database' }, text: s.ViewDetails, onClick: () => actions.onTabChange('connections') }))),
                 !hasResults ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, runningAll ? s.RunningHealthCheck : s.NeverChecked)) : issues.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueList },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CompletedSolid", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconGood }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "CompletedSolid", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconGood }),
                         " ",
                         s.NoIssues))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueList }, issues.map((issue, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: i },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueButton, onClick: () => openIssue(issue.listKey) },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: issue.severity === 'bad' ? 'StatusErrorFull' : 'WarningSolid', className: issue.severity === 'bad' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconWarn }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: issue.severity === 'bad' ? 'StatusErrorFull' : 'WarningSolid', className: issue.severity === 'bad' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueIconWarn }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueText }, issue.text),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "ChevronRight", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueChevron })))))))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "ChevronRight", className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].issueChevron })))))))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
@@ -16977,7 +19287,7 @@ const ConfigPage = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, text.desc)),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(StatusPill, { status: r ? r.status : undefined, testing: isTesting }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: s.TestLiveButton, iconProps: { iconName: 'PlugConnected' }, onClick: () => { testList(def).catch(() => undefined); }, disabled: isTesting || runningAll }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: s.TestLiveButton, iconProps: { iconName: 'PlugConnected' }, onClick: () => { testList(def).catch(() => undefined); }, disabled: isTesting || runningAll }))),
             r && r.resolvedTitle && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].metrics },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.Items,
@@ -16990,7 +19300,7 @@ const ConfigPage = (props) => {
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, access)),
                 def.requiredColumns.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.Columns,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.ColumnsSummary, r.presentColumns.length, def.requiredColumns.length)))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.ColumnsSummary, r.presentColumns.length, def.requiredColumns.length)))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                     s.ResponseTime,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
@@ -17002,8 +19312,8 @@ const ConfigPage = (props) => {
                 r.failedStep ? `${getCheckLabel(r.failedStep)} — ` : '',
                 r.error)),
             r && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions, style: { marginTop: 6 } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: isExpanded ? 'ChevronUp' : 'ChevronDown' }, text: s.ViewDetails, onClick: () => setExpanded(prev => ({ ...prev, [def.key]: !isExpanded })) }),
-                r.url && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.ActionButton, { iconProps: { iconName: 'OpenInNewWindow' }, text: s.OpenList, href: r.url, target: "_blank" })))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.ActionButton, { iconProps: { iconName: isExpanded ? 'ChevronUp' : 'ChevronDown' }, text: s.ViewDetails, onClick: () => setExpanded(prev => ({ ...prev, [def.key]: !isExpanded })) }),
+                r.url && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.ActionButton, { iconProps: { iconName: 'OpenInNewWindow' }, text: s.OpenList, href: r.url, target: "_blank" })))),
             r && isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].details },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
@@ -17017,7 +19327,7 @@ const ConfigPage = (props) => {
                         ":"),
                     ' ',
                     r.suggestions.length > 0 ? r.suggestions.map(x => `"${x}"`).join(', ') : '—',
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.RenameHint, def.candidates[0])))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.RenameHint, def.candidates[0])))),
                 r.resolvedTitle && r.missingColumns.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
                         s.MissingColumnsLabel,
@@ -17029,14 +19339,14 @@ const ConfigPage = (props) => {
                         s.ChecksLabel,
                         ":"),
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { style: { listStyle: 'none', margin: '6px 0 0', padding: 0 } }, r.checks.map(check => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: check.key, style: { display: 'flex', gap: 8, alignItems: 'flex-start', padding: '3px 0' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: check.ok ? 'CompletedSolid' : check.required ? 'StatusErrorFull' : 'WarningSolid', style: { color: check.ok ? '#107c10' : check.required ? '#c50f1f' : '#bc4b09', marginTop: 2 } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: check.ok ? 'CompletedSolid' : check.required ? 'StatusErrorFull' : 'WarningSolid', style: { color: check.ok ? '#107c10' : check.required ? '#c50f1f' : '#bc4b09', marginTop: 2 } }),
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
                             getCheckLabel(check.key),
                             !check.required && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted },
                                 " (",
                                 s.CheckOptional,
                                 ")"),
-                            check.source === 'site' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.Note_PermissionsFromSite, check.error || ''))),
+                            check.source === 'site' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.Note_PermissionsFromSite, check.error || ''))),
                             !check.ok && check.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, check.error))))))))))));
     };
     const renderConnections = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
@@ -17047,7 +19357,7 @@ const ConfigPage = (props) => {
             checkButtons),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].groupHeading }, s.CoreListsGroup),
         CORE_LISTS.map(renderListCard),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].groupHeading }, s.OptionalListsGroup),
+        OPTIONAL_LISTS.length > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].groupHeading }, s.OptionalListsGroup),
         OPTIONAL_LISTS.map(renderListCard)));
     const renderSchema = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
@@ -17055,7 +19365,7 @@ const ConfigPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.SchemaTitle),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, s.SchemaDesc)),
             checkButtons),
-        !hasResults && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBarType.info, styles: { root: { marginBottom: 12 } } }, s.SchemaUnchecked)),
+        !hasResults && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.info, styles: { root: { marginBottom: 12 } } }, s.SchemaUnchecked)),
         CORE_LISTS.map(def => {
             const r = results[def.key];
             const text = getListText(def.key);
@@ -17068,84 +19378,32 @@ const ConfigPage = (props) => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chips }, def.requiredColumns.map(col => {
                     const present = !!r && validated && r.presentColumns.indexOf(col.name) >= 0;
                     const missing = !!r && validated && r.missingColumns.indexOf(col.name) >= 0;
-                    const hint = col.aliases && col.aliases.length > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.SchemaAliasesHint, col.aliases.join(', ')) : undefined;
+                    const hint = col.aliases && col.aliases.length > 0 ? (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_10__.formatString)(s.SchemaAliasesHint, col.aliases.join(', ')) : undefined;
                     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: col.name, title: hint, className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chip} ${present ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chipGood : ''} ${missing ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chipBad : ''}` },
-                        present && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "CheckMark" }),
-                        missing && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Cancel" }),
+                        present && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "CheckMark" }),
+                        missing && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.Icon, { iconName: "Cancel" }),
                         col.name));
                 }))));
         })));
-    const renderRbac = () => {
-        const filter = memberFilter.trim().toLowerCase();
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.RbacTitle),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null,
-                        s.RbacDesc,
-                        " ",
-                        s.RbacRoleRule)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.TextField, { placeholder: s.FilterMembersPlaceholder, value: memberFilter, onChange: (_, v) => setMemberFilter(v || ''), iconProps: { iconName: 'Filter' }, styles: { root: { width: 220 } } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: s.LoadAllGroupsButton, iconProps: { iconName: 'Refresh' }, onClick: loadAllGroups }))),
-            ROLE_GROUPS.map(item => {
-                const isLoading = !!loadingGroups[item.group];
-                const info = groups[item.group];
-                const members = info ? info.members.filter(m => !filter || m.name.toLowerCase().indexOf(filter) >= 0 || m.email.toLowerCase().indexOf(filter) >= 0) : [];
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.group, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].listCard },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].listCardTop },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 300px' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].listTitle },
-                                item.group,
-                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].roleTag }, item.role()),
-                                info && info.exists && !info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillNeutral}` }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.MemberCount, info.members.length)),
-                                info && info.currentUserIsMember && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].pillInfo}` }, s.YouAreMember)),
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted }, item.desc())),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: isLoading ? s.LoadingButton : s.ViewMembersButton, iconProps: { iconName: 'People' }, onClick: () => { loadGroup(item.group).catch(() => undefined); }, disabled: isLoading })),
-                    info && !info.exists && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].errorBox }, s.GroupNotFound),
-                    info && info.exists && info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].errorBox }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_8__.formatString)(s.GroupLoadError, info.error)),
-                    info && info.exists && !info.error && (info.members.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].muted, style: { marginTop: 10, fontStyle: 'italic' } }, s.NoMembersFound)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chips, style: { marginTop: 10 } }, members.map((m, idx) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { key: idx, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].chip, title: m.email },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Icon, { iconName: "Contact" }),
-                        " ",
-                        m.name))))))));
-            })));
-    };
-    const renderOperations = () => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panel },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].panelHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.OperationsTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null,
-                    s.OperationsDescBefore,
-                    " ",
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, s.ListTitle_MappingList),
-                    ". ",
-                    s.OperationsDescAfter))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].actions, style: { marginBottom: 15 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.PrimaryButton, { text: state.syncInProgress ? s.SyncButtonProcessing : s.SyncButtonDefault, iconProps: { iconName: 'Sync' }, onClick: actions.onSyncAssignedAssets, disabled: state.syncInProgress }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DefaultButton, { text: state.syncInProgress ? s.DiagnosticsButtonChecking : s.DiagnosticsButtonDefault, iconProps: { iconName: 'Database' }, onClick: actions.onRunDiagnostics, disabled: state.syncInProgress })),
-        state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.MessageBar, { messageBarType: state.syncMessageType, onDismiss: actions.onDismissSyncMessage, styles: { root: { marginBottom: 15, borderRadius: 6 } } }, state.syncMessage)),
-        state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: 15 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: 6 } }, s.DiagnosticLogLabel),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: state.diagnosticInfo, rows: 10, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].diagnosticLog })))));
     const tab = state.configSelectedTab || 'overview';
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].cardHeader },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, s.HeaderTitle),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, s.HeaderSubtitle)),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].configTabs },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.Pivot, { selectedKey: tab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'overview' : 'overview'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabOverview, itemKey: "overview", itemIcon: "Health" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabListConnections, itemKey: "connections", itemIcon: "Database", itemCount: issues.length > 0 ? issues.length : undefined }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabSchemaGuides, itemKey: "schema", itemIcon: "TableGroup" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabRbacGroups, itemKey: "rbac", itemIcon: "Permissions" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Features.StockTabName, itemKey: "stock", itemIcon: "ProductWarning" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.PivotItem, { headerText: s.TabSyncOperations, itemKey: "operations", itemIcon: "Sync" }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_17__.Pivot, { selectedKey: tab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'overview' : 'overview'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PivotItem, { headerText: s.TabOverview, itemKey: "overview", itemIcon: "Health" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PivotItem, { headerText: s.TabListConnections, itemKey: "connections", itemIcon: "Database", itemCount: issues.length > 0 ? issues.length : undefined }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PivotItem, { headerText: s.TabSchemaGuides, itemKey: "schema", itemIcon: "TableGroup" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PivotItem, { headerText: s.TabRbacGroups, itemKey: "rbac", itemIcon: "Permissions" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_4__.Features.StockTabName, itemKey: "stock", itemIcon: "ProductWarning" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PivotItem, { headerText: s.TabSyncOperations, itemKey: "operations", itemIcon: "Sync" }))),
         tab === 'overview' && renderOverview(),
         tab === 'connections' && renderConnections(),
         tab === 'schema' && renderSchema(),
-        tab === 'rbac' && renderRbac(),
+        tab === 'rbac' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_config_AccessGroupsTab__WEBPACK_IMPORTED_MODULE_7__.AccessGroupsTab, { roleGroups: ROLE_GROUPS, groups: groups, loadingGroups: loadingGroups, onLoadGroup: loadGroup, onLoadAll: loadAllGroups })),
         tab === 'stock' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_config_StockThresholdsTab__WEBPACK_IMPORTED_MODULE_6__.StockThresholdsTab, null),
-        tab === 'operations' && renderOperations()));
+        tab === 'operations' && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_config_MaintenanceTab__WEBPACK_IMPORTED_MODULE_8__.MaintenanceTab, { state: state, actions: actions })));
 };
 
 
@@ -17213,18 +19471,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/IncidentHistory/IncidentHistory */ 27885);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__);
-
-
 
 
 const IncidentHistoryPage = (props) => {
     const { state, actions, ...rest } = props;
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_3__.IncidentHistoryPage.Title)),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_IncidentHistory_IncidentHistory__WEBPACK_IMPORTED_MODULE_1__.IncidentHistory, { ...rest, userDisplayName: state.userDisplayName, userEmail: state.userEmail, userRole: state.userRole, setIsLoading: actions.setIsLoading })));
 };
 
@@ -17781,18 +20032,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fluentui/react */ 92070);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fluentui/react */ 15369);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 21314);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 12042);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-chartjs-2 */ 86766);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_inventory_AssetDetailsPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/inventory/AssetDetailsPanel */ 19505);
+/* harmony import */ var _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/reports/reportsUi */ 78135);
+/* harmony import */ var _components_reports_OverviewReport__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/reports/OverviewReport */ 50781);
+/* harmony import */ var _components_reports_AssetsReport__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/reports/AssetsReport */ 97115);
+/* harmony import */ var _components_reports_WarrantyReport__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/reports/WarrantyReport */ 61610);
+/* harmony import */ var _components_reports_RequestsReport__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/reports/RequestsReport */ 67148);
+/* harmony import */ var _components_reports_PeopleReport__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/reports/PeopleReport */ 35497);
+
+
+
+
 
 
 
@@ -17801,243 +20053,37 @@ __webpack_require__.r(__webpack_exports__);
 const ReportsPage = (props) => {
     const { state, actions } = props;
     const { items, requests } = state;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cardHeader, style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+    // Filters live here so a click on an Overview KPI or chart can set them and open the matching tab.
+    const [assetFilters, setAssetFilters] = react__WEBPACK_IMPORTED_MODULE_0__.useState(_components_reports_AssetsReport__WEBPACK_IMPORTED_MODULE_5__.NO_ASSET_FILTERS);
+    const [warrantyChip, setWarrantyChip] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [requestStage, setRequestStage] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [openAsset, setOpenAsset] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const tabs = [
+        { key: 'insights', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.TabVisualInsights, icon: 'BarChart4' },
+        { key: 'detailed', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.TabDetailedReports, icon: 'Table' },
+        { key: 'expiry', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.TabWarrantyExpiry, icon: 'Shield' },
+        { key: 'requests', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports.TabRequests, icon: 'Send' },
+        { key: 'people', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.Reports.TabPeople, icon: 'People' }
+    ];
+    const tab = tabs.some(t => t.key === state.reportsSelectedTab) ? state.reportsSelectedTab : 'insights';
+    const drillAssets = (drill) => {
+        actions.onAssetTypeFilterChange(drill.type || 'All');
+        actions.onStatusFilterChange(drill.status || 'All');
+        setAssetFilters({ ..._components_reports_AssetsReport__WEBPACK_IMPORTED_MODULE_5__.NO_ASSET_FILTERS, condition: drill.condition || 'all' });
+        actions.onTabChange('detailed');
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_3__.reportCss.root },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_3__.reportCss.header },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.HeaderTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', margin: '4px 0 0 0', fontSize: '0.85rem' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.HeaderSubtitle))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_3__.Pivot, { selectedKey: state.reportsSelectedTab, onLinkClick: (item) => actions.onTabChange(item ? item.props.itemKey || 'insights' : 'insights'), styles: { root: { marginBottom: '20px', borderBottom: '1px solid rgba(128,128,128,0.1)' } } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.TabVisualInsights, itemKey: "insights" }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.TabDetailedReports, itemKey: "detailed" }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_4__.PivotItem, { headerText: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.TabWarrantyExpiry, itemKey: "expiry" })),
-        state.reportsSelectedTab === 'insights' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { tokens: { childrenGap: 24 } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#6b7280', fontWeight: 600, marginBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.StatTotalAssets),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--text-main, #111827)' } }, items.length)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#1e40af', fontWeight: 600, marginBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.StatAssetsAssigned),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#1e3a8a' } }, items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#166534', fontWeight: 600, marginBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.StatUtilizationRate),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#14532d' } },
-                        items.length > 0 ? Math.round(((items.length - items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length) / items.length) * 100) : 0,
-                        "%")),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '16px', backgroundColor: 'var(--surface-color, #ffffff)', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.82rem', color: '#92400e', fontWeight: 600, marginBottom: '6px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.StatTotalRequests),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.75rem', fontWeight: 'bold', color: '#78350f' } }, requests.length))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].responsiveGridGap20 },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ChartStatusDistribution),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Pie, { data: {
-                                labels: [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelInStock, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelAssigned, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelPendingReturn, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelUnderMaintenance],
-                                datasets: [{
-                                        data: [
-                                            items.filter(i => i.status === 'In Stock' || i.status === 'Yes').length,
-                                            items.filter(i => i.status === 'Assigned' || i.status === 'Yes (Assigned)').length,
-                                            items.filter(i => i.status === 'Pending Return').length,
-                                            items.filter(i => i.status === 'Under Maintenance' || i.status === 'Damaged' || i.status === 'Poor').length,
-                                        ],
-                                        backgroundColor: ['#107c41', '#1f77b4', '#ea580c', '#b91c1c']
-                                    }]
-                            }, options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: { legend: { display: false } }
-                            } })),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#107c41', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendInStock),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#1f77b4', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendAssigned),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ea580c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendPendingReturn),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#b91c1c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendMaintenance))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ChartTypeDistribution),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } }, (() => {
-                        const typeCounts = {};
-                        items.forEach(i => {
-                            const type = i.assetType || "Other";
-                            typeCounts[type] = (typeCounts[type] || 0) + 1;
-                        });
-                        const labels = Object.keys(typeCounts);
-                        const data = Object.keys(typeCounts).map(key => typeCounts[key]);
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Bar, { data: {
-                                labels,
-                                datasets: [{
-                                        label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ChartDatasetAssetsCount,
-                                        data,
-                                        backgroundColor: '#1f77b4',
-                                        borderRadius: 4
-                                    }]
-                            }, options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: { legend: { display: false } },
-                                scales: {
-                                    y: { beginAtZero: true, ticks: { precision: 0 } }
-                                }
-                            } }));
-                    })())),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', alignSelf: 'flex-start', color: '#374151' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ChartAgingAnalysis),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '220px', width: '220px', position: 'relative' } }, (() => {
-                        const now = new Date();
-                        const aging = items.reduce((acc, item) => {
-                            if (!item.purchaseDate) {
-                                acc.unknown++;
-                                return acc;
-                            }
-                            const pd = new Date(item.purchaseDate);
-                            const diffYears = Math.abs(now.getTime() - pd.getTime()) / (1000 * 60 * 60 * 24 * 365);
-                            if (diffYears < 1)
-                                acc.under1++;
-                            else if (diffYears <= 3)
-                                acc.between1and3++;
-                            else
-                                acc.over3++;
-                            return acc;
-                        }, { under1: 0, between1and3: 0, over3: 0, unknown: 0 });
-                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Doughnut, { data: {
-                                labels: [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelAgingUnder1, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelAging1to3, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelAgingOver3, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelAgingUnknown],
-                                datasets: [{
-                                        data: [aging.under1, aging.between1and3, aging.over3, aging.unknown],
-                                        backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728', '#9467bd']
-                                    }]
-                            }, options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: { legend: { display: false } }
-                            } }));
-                    })()),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '15px', fontSize: '0.78rem', color: '#4b5563' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#2ca02c', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendAgingUnder1),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#ff7f0e', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendAging1to3),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#d62728', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendAgingOver3),
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null,
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9467bd', fontSize: '1.25rem', verticalAlign: 'middle', marginRight: '4px' } }, "\u25CF"),
-                            InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LegendAgingUnknown))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: '0 0 15px 0', color: '#374151' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ChartRequestTrends),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { height: '240px' } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__.Bar, { data: {
-                                labels: [InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelApproved, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelDeclinedRejected, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DataLabelPending],
-                                datasets: [{
-                                        data: [
-                                            requests.filter(r => (r.status || '').toLowerCase().includes('approv')).length,
-                                            requests.filter(r => (r.status || '').toLowerCase().includes('declin') || (r.status || '').toLowerCase().includes('reject')).length,
-                                            requests.filter(r => (r.status || '').toLowerCase() === 'pending').length
-                                        ],
-                                        backgroundColor: ['#2ca02c', '#d62728', '#ff7f0e']
-                                    }]
-                            }, options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: { legend: { display: false } },
-                                scales: {
-                                    y: { beginAtZero: true, ticks: { precision: 0 } }
-                                }
-                            } })))))),
-        state.reportsSelectedTab === 'detailed' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', alignItems: 'center', marginBottom: '20px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.DetailedTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ExportExcel, iconProps: { iconName: 'ExcelDocument' }, onClick: () => {
-                            const filtered = items.filter(i => {
-                                const typeMatch = state.reportsAssetTypeFilter === 'All' || i.assetType === state.reportsAssetTypeFilter;
-                                const statusMatch = state.reportsStatusFilter === 'All' || i.status === state.reportsStatusFilter;
-                                return typeMatch && statusMatch;
-                            });
-                            actions.onExportDetailedReportToExcel(filtered);
-                        }, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ExportPDF, iconProps: { iconName: 'PDF' }, onClick: () => {
-                            const filtered = items.filter(i => {
-                                const typeMatch = state.reportsAssetTypeFilter === 'All' || i.assetType === state.reportsAssetTypeFilter;
-                                const statusMatch = state.reportsStatusFilter === 'All' || i.status === state.reportsStatusFilter;
-                                return typeMatch && statusMatch;
-                            });
-                            actions.onExportDetailedReportToPDF(filtered);
-                        }, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px', padding: '12px', backgroundColor: '#f9fafb', borderRadius: '6px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LabelAssetType, selectedKey: state.reportsAssetTypeFilter, options: [
-                            { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.FilterAllTypes },
-                            ...Array.from(new Set(items.map(i => i.assetType).filter(Boolean))).map(type => ({ key: type, text: type }))
-                        ], onChange: (_, opt) => actions.onAssetTypeFilterChange(opt ? opt.key : 'All') })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { minWidth: '150px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_8__.Dropdown, { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LabelAssetStatus, selectedKey: state.reportsStatusFilter, options: [
-                            { key: 'All', text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.FilterAllStatuses },
-                            ...Array.from(new Set(items.map(i => i.status).filter(Boolean))).map(status => ({ key: status, text: status }))
-                        ], onChange: (_, opt) => actions.onStatusFilterChange(opt ? opt.key : 'All') }))),
-            (() => {
-                const filtered = items.filter(i => {
-                    const typeMatch = state.reportsAssetTypeFilter === 'All' || i.assetType === state.reportsAssetTypeFilter;
-                    const statusMatch = state.reportsStatusFilter === 'All' || i.status === state.reportsStatusFilter;
-                    return typeMatch && statusMatch;
-                });
-                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: filtered, columns: [
-                        { key: 'col1', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssetName, fieldName: 'assetName', minWidth: 120, maxWidth: 180, isResizable: true, onRender: (item) => item.assetName || item.title },
-                        { key: 'col2', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LabelAssetType, fieldName: 'assetType', minWidth: 90, maxWidth: 120, isResizable: true },
-                        { key: 'col3', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Status, fieldName: 'status', minWidth: 90, maxWidth: 120, isResizable: true },
-                        { key: 'col4', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Condition, fieldName: 'condition', minWidth: 80, maxWidth: 100, isResizable: true },
-                        { key: 'col5', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssignedTo, fieldName: 'assignedTo', minWidth: 100, maxWidth: 140, isResizable: true, onRender: (item) => item.assignedTo || react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { color: '#9ca3af', fontStyle: 'italic' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ColUnassigned) }
-                    ], setKey: "detailedReportList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none }));
-            })())),
-        state.reportsSelectedTab === 'expiry' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(128, 128, 128, 0.12)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.WarrantyTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ExportExcel, iconProps: { iconName: 'ExcelDocument' }, onClick: actions.onExportWarrantyReportToExcel, styles: { root: { backgroundColor: '#107c41', borderColor: '#107c41', color: '#ffffff' } } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ExportPDF, iconProps: { iconName: 'PDF' }, onClick: actions.onExportWarrantyReportToPDF, styles: { root: { backgroundColor: '#d13438', borderColor: '#d13438', color: '#ffffff' } } }))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '15px', display: 'flex', gap: '20px' } },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.TotalAssetsCountLabel),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.length)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '10px 15px', backgroundColor: '#f3f4f6', borderRadius: '6px' } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', color: '#4b5563', marginBottom: '4px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.AssetsWithWarrantyLabel),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { fontSize: '1.25rem', fontWeight: 'bold', color: '#111827' } }, items.filter(i => i.warrantyExpiry).length))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsList, { items: items, columns: [
-                    { key: 'col1', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.AssetName, fieldName: 'assetName', minWidth: 120, maxWidth: 200, isResizable: true, onRender: (item) => item.assetName || item.title },
-                    { key: 'col2', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.LabelAssetType, fieldName: 'assetType', minWidth: 100, maxWidth: 150, isResizable: true },
-                    { key: 'col3', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.Status, fieldName: 'status', minWidth: 80, maxWidth: 100, isResizable: true },
-                    { key: 'col4', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Columns.PurchaseDate, fieldName: 'purchaseDate', minWidth: 100, maxWidth: 120, isResizable: true },
-                    {
-                        key: 'col5',
-                        name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.ColWarrantyExpiryDate,
-                        fieldName: 'warrantyExpiry',
-                        minWidth: 140,
-                        maxWidth: 200,
-                        isResizable: true,
-                        onRender: (item) => {
-                            const isExpired = item.warrantyExpiry && new Date(item.warrantyExpiry) < new Date();
-                            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                    color: isExpired ? '#ef4444' : '#166534',
-                                    fontWeight: 600,
-                                    backgroundColor: isExpired ? '#fee2e2' : '#dcfce7',
-                                    padding: '2px 8px',
-                                    borderRadius: '9999px',
-                                    fontSize: '0.75rem',
-                                    display: 'inline-block'
-                                } },
-                                item.warrantyExpiry || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.WarrantyNotAvailable,
-                                " ",
-                                isExpired ? InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.WarrantyExpiredTag : InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ReportsPage.WarrantyActiveTag));
-                        }
-                    }
-                ], setKey: "warrantyReport", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_11__.SelectionMode.none })))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", { className: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_3__.reportCss.title }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.HeaderTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_3__.reportCss.subtitle }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.HeaderSubtitle))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_3__.ReportTabs, { tabs: tabs, selected: tab, onSelect: actions.onTabChange, ariaLabel: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.ReportsPage.HeaderTitle }),
+        tab === 'insights' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_OverviewReport__WEBPACK_IMPORTED_MODULE_4__.OverviewReport, { items: items, requests: requests, onDrillAssets: drillAssets, onDrillWarranty: (chip) => { setWarrantyChip(chip); actions.onTabChange('expiry'); }, onDrillRequests: (stage) => { setRequestStage(stage || 'all'); actions.onTabChange('requests'); } })),
+        tab === 'detailed' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_AssetsReport__WEBPACK_IMPORTED_MODULE_5__.AssetsReport, { items: items, typeFilter: state.reportsAssetTypeFilter, statusFilter: state.reportsStatusFilter, onTypeChange: actions.onAssetTypeFilterChange, onStatusChange: actions.onStatusFilterChange, filters: assetFilters, onFiltersChange: setAssetFilters, onExportExcel: actions.onExportDetailedReportToExcel, onExportPdf: actions.onExportDetailedReportToPDF, onOpenAsset: setOpenAsset })),
+        tab === 'expiry' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_WarrantyReport__WEBPACK_IMPORTED_MODULE_6__.WarrantyReport, { items: items, chip: warrantyChip, onChipChange: setWarrantyChip, onExportExcel: actions.onExportWarrantyReportToExcel, onExportPdf: actions.onExportWarrantyReportToPDF, onOpenAsset: setOpenAsset })),
+        tab === 'requests' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_RequestsReport__WEBPACK_IMPORTED_MODULE_7__.RequestsReport, { requests: requests, stage: requestStage, onStageChange: setRequestStage })),
+        tab === 'people' && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_PeopleReport__WEBPACK_IMPORTED_MODULE_8__.PeopleReport, { items: items, onOpenAsset: setOpenAsset })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_inventory_AssetDetailsPanel__WEBPACK_IMPORTED_MODULE_2__.AssetDetailsPanel, { asset: openAsset, onDismiss: () => setOpenAsset(undefined), auditLogs: state.auditLogs, returnRequests: state.returnRequests, spContext: state.spContext })));
 };
 
 
@@ -18199,101 +20245,447 @@ const RequestAnalysisPanel = ({ request, items }) => {
 
 /***/ }),
 
-/***/ 50909:
-/*!*************************************************************!*\
-  !*** ./lib/webparts/inventoryManagement/pages/UsersPage.js ***!
-  \*************************************************************/
+/***/ 696:
+/*!**************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/config/AccessGroupsTab.js ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   UsersPage: () => (/* binding */ UsersPage)
+/* harmony export */   AccessGroupsTab: () => (/* binding */ AccessGroupsTab)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react */ 79370);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 37805);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 74423);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fluentui/react */ 20472);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_InventoryList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/InventoryList */ 4938);
-/* harmony import */ var _components_AssetTracking__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AssetTracking */ 20867);
-/* harmony import */ var _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/InventoryManagement.module.scss */ 99623);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 42242);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fluentui/react */ 47909);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 12042);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 23166);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 67038);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 99665);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ConfigPage.module.scss */ 35947);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/PeopleSearchService */ 57204);
+/* harmony import */ var _services_SiteGroupService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/SiteGroupService */ 801);
+/* harmony import */ var _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/inventory/inventoryUi */ 69024);
 
 
 
 
 
 
-const UsersPage = (props) => {
-    const { state, actions } = props;
-    const { employees, items, activeUserDisplayName, effectiveRole, activeUserEmail, expandedUserEmail } = state;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].cardHeader },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.Title)),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.Description),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginBottom: '20px', padding: '15px', backgroundColor: '#f0f6ff', borderRadius: '8px', borderLeft: '4px solid #0078d4' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '10px', color: '#0078d4' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.GroupManagementTitle),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { margin: 0, fontSize: '0.9rem', color: '#323130', marginBottom: '15px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.GroupManagementDesc),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_5__.PrimaryButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ManageSitePermissionsButton, iconProps: { iconName: 'Permissions' }, onClick: () => {
-                    const siteUrl = window.location.pathname.substring(0, window.location.pathname.toLowerCase().indexOf('/sitepages'));
-                    window.open(`${window.location.origin}${siteUrl}/_layouts/15/user.aspx`, '_blank');
-                } })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginBottom: '15px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.DirectoryTitle),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: 'var(--surface-color, #ffffff)', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_6__.DetailsList, { items: employees.map(emp => {
-                    const realName = emp.jobTitle === 'Admin' ? (activeUserDisplayName || emp.name) : emp.name;
-                    const assignedItems = items.filter(i => actions.isAssetAssignedToCurrentUser(i, realName));
-                    const assetTypes = Array.from(new Set(assignedItems.map(a => a.assetType))).filter(t => t).join(', ');
-                    return {
-                        ...emp,
-                        assignedAssets: assignedItems.length,
-                        assignedItems: assignedItems,
-                        assetTypes: assetTypes || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.AssetTypesNone
-                    };
-                }), columns: [
-                    { key: 'col1', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ColName, fieldName: 'name', minWidth: 100, maxWidth: 150, isResizable: true },
-                    { key: 'col2', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ColEmail, fieldName: 'email', minWidth: 150, maxWidth: 200, isResizable: true },
-                    { key: 'col3', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ColDepartment, fieldName: 'department', minWidth: 100, maxWidth: 120, isResizable: true },
-                    { key: 'col4', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ColJobTitle, fieldName: 'jobTitle', minWidth: 120, maxWidth: 150, isResizable: true },
-                    {
-                        key: 'col5',
-                        name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ColAssignedAssets,
-                        fieldName: 'assignedAssets',
-                        minWidth: 100,
-                        maxWidth: 120,
-                        isResizable: true,
-                        onRender: (item) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: {
-                                backgroundColor: item.assignedAssets > 0 ? '#dbeafe' : '#f3f4f6',
-                                color: item.assignedAssets > 0 ? '#1e40af' : '#4b5563',
-                                padding: '4px 10px',
-                                borderRadius: '9999px',
-                                fontWeight: 'bold'
-                            } }, item.assignedAssets))
-                    },
-                    { key: 'col6', name: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.ColAssetTypes, fieldName: 'assetTypes', minWidth: 120, maxWidth: 250, isResizable: true }
-                ], setKey: "usersList", layoutMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.DetailsListLayoutMode.justified, selectionMode: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.SelectionMode.none, onRenderRow: (rowProps) => {
-                    if (!rowProps)
-                        return null;
-                    const isExpanded = expandedUserEmail === rowProps.item.email;
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { onClick: () => actions.onToggleExpandUser(isExpanded ? undefined : rowProps.item.email), style: { cursor: 'pointer', '&:hover': { backgroundColor: '#f3f2f1' } } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_9__.DetailsRow, { ...rowProps })),
-                        isExpanded && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { padding: '20px 40px', backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' } },
-                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", { style: { marginTop: 0, marginBottom: '15px', color: '#111827' } },
-                                InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.AssetsAssignedToPrefix,
-                                " ",
-                                rowProps.item.name),
-                            rowProps.item.assignedItems.length > 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InventoryList__WEBPACK_IMPORTED_MODULE_2__.InventoryList, { items: rowProps.item.assignedItems, isAdmin: false })) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: '#6b7280', fontSize: '0.9rem', margin: 0 } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.NoAssetsAssignedToUser))))));
-                } })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { marginTop: '30px', borderTop: '1px solid rgba(128, 128, 128, 0.15)', paddingTop: '24px' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _components_InventoryManagement_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].cardHeader },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.EmployeeTrackingTitle)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { style: { color: 'var(--text-muted)', marginBottom: '20px' } }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_1__.UsersPage.EmployeeTrackingDesc),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_AssetTracking__WEBPACK_IMPORTED_MODULE_3__.AssetTracking, { items: items, employees: employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: activeUserEmail }))));
+
+
+
+const local = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_6__.mergeStyleSets)({
+    form: { margin: '0 0 16px', padding: '14px 16px', borderRadius: 10, border: '1px solid rgba(128, 128, 128, 0.22)', background: 'rgba(128, 128, 128, 0.06)' },
+    formGrid: { display: 'grid', gridTemplateColumns: 'minmax(180px, 240px) minmax(0, 1fr)', gap: 12, alignItems: 'start', selectors: { '@media (max-width: 640px)': { gridTemplateColumns: '1fr' } } },
+    formActions: { display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 },
+    hint: { display: 'flex', gap: 6, alignItems: 'flex-start', marginTop: 10, fontSize: 12, color: 'var(--text-muted, #616161)' },
+    suggestion: { display: 'flex', alignItems: 'center', gap: 10, padding: '6px 10px', textAlign: 'left', minWidth: 0 },
+    suggestionText: { display: 'flex', flexDirection: 'column', minWidth: 0, lineHeight: '18px' },
+    suggestionName: { fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    suggestionMeta: { fontSize: 12, color: '#616161', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    buttons: { display: 'flex', gap: 8, flexWrap: 'wrap' },
+    members: { listStyle: 'none', margin: '12px 0 0', padding: 0, borderTop: '1px solid rgba(128, 128, 128, 0.18)' },
+    member: { display: 'flex', alignItems: 'center', gap: 10, padding: '8px 2px', borderBottom: '1px solid rgba(128, 128, 128, 0.12)', minWidth: 0 },
+    coin: { width: 28, height: 28, borderRadius: '50%', background: '#0f6cbd', color: '#ffffff', fontSize: 11, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    memberName: { fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+    memberEmail: { fontSize: 12, color: 'var(--text-muted, #616161)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }
+});
+const sameEmail = (a, b) => !!a && !!b && a.trim().toLowerCase() === b.trim().toLowerCase();
+/** Config → Access Groups: the role groups, their members on request, and adding people to a group. */
+const AccessGroupsTab = (props) => {
+    const { roleGroups, groups, loadingGroups } = props;
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ConfigPage;
+    const a = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.AccessGroups;
+    const [open, setOpen] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const [filter, setFilter] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [formOpen, setFormOpen] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [targetGroup, setTargetGroup] = react__WEBPACK_IMPORTED_MODULE_0__.useState(roleGroups.length ? roleGroups[0].group : '');
+    const [picked, setPicked] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
+    const [adding, setAdding] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [result, setResult] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const roleOf = (groupName) => {
+        const match = roleGroups.filter(g => g.group === groupName)[0];
+        return match ? match.role() : '';
+    };
+    const toggleMembers = (groupName) => {
+        const next = !open[groupName];
+        setOpen(prev => ({ ...prev, [groupName]: next }));
+        if (next && !groups[groupName])
+            props.onLoadGroup(groupName).catch(() => undefined);
+    };
+    const openForm = (groupName) => {
+        if (groupName)
+            setTargetGroup(groupName);
+        setPicked([]);
+        setResult(undefined);
+        setFormOpen(true);
+    };
+    const membersOf = (groupName) => {
+        const info = groups[groupName];
+        return info && info.exists && !info.error ? info.members : [];
+    };
+    // Directory search; people already in the chosen group are left out.
+    const resolveSuggestions = async (text, current) => {
+        const found = await _services_PeopleSearchService__WEBPACK_IMPORTED_MODULE_3__.PeopleSearchService.search(text, 10);
+        const existing = membersOf(targetGroup);
+        const chosen = (current || []);
+        return found
+            .filter(p => !existing.some(m => sameEmail(m.email, p.email)))
+            .filter(p => !chosen.some(c => c.data && sameEmail(c.data.email, p.email)))
+            .map(p => ({ key: p.loginName || p.email, text: p.displayName, secondaryText: p.email, data: p }));
+    };
+    const renderSuggestion = (persona) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.suggestion },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_7__.Persona, { text: persona.text, size: _fluentui_react__WEBPACK_IMPORTED_MODULE_8__.PersonaSize.size32, hidePersonaDetails: true }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.suggestionText },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.suggestionName }, persona.text),
+            persona.secondaryText && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.suggestionMeta }, persona.secondaryText))));
+    const addPeople = async () => {
+        const people = picked.map(p => p.data).filter((p) => !!p);
+        if (!targetGroup || people.length === 0)
+            return;
+        setAdding(true);
+        setResult(undefined);
+        const added = [];
+        const failed = [];
+        for (const person of people) {
+            try {
+                await _services_SiteGroupService__WEBPACK_IMPORTED_MODULE_4__.SiteGroupService.addMember(targetGroup, person);
+                added.push(person.displayName);
+            }
+            catch (e) {
+                failed.push((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(a.AddFailed, person.displayName, e && e.message ? e.message : String(e)));
+            }
+        }
+        await props.onLoadGroup(targetGroup).catch(() => undefined);
+        setOpen(prev => ({ ...prev, [targetGroup]: true }));
+        setAdding(false);
+        setPicked([]);
+        const lines = (added.length ? [(0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(a.AddedResult, targetGroup, added.join(', '))] : []).concat(failed);
+        setResult({ type: failed.length === 0 ? _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.MessageBarType.success : added.length ? _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.MessageBarType.warning : _fluentui_react__WEBPACK_IMPORTED_MODULE_10__.MessageBarType.error, lines });
+    };
+    const groupOptions = roleGroups.map(g => ({ key: g.group, text: `${g.group} (${g.role()})` }));
+    const query = filter.trim().toLowerCase();
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panel },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panelHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, s.RbacTitle),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null,
+                    s.RbacDesc,
+                    " ",
+                    s.RbacRoleRule)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actions },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.TextField, { placeholder: s.FilterMembersPlaceholder, value: filter, onChange: (_, v) => setFilter(v || ''), iconProps: { iconName: 'Filter' }, styles: { root: { width: 220 } } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: s.LoadAllGroupsButton, iconProps: { iconName: 'Refresh' }, onClick: props.onLoadAll }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.PrimaryButton, { text: a.AddMembers, iconProps: { iconName: 'AddFriend' }, onClick: () => openForm(), disabled: formOpen }))),
+        formOpen && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.form },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].listTitle, style: { marginTop: 0 } }, a.AddTitle),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.formGrid },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Dropdown, { label: a.LabelGroup, options: groupOptions, selectedKey: targetGroup, onChange: (_, o) => { if (o) {
+                        setTargetGroup(String(o.key));
+                        setPicked([]);
+                    } }, disabled: adding }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.Label, null, a.LabelPeople),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.NormalPeoplePicker, { onResolveSuggestions: (text, current) => resolveSuggestions(text, current), onRenderSuggestionsItem: (persona) => renderSuggestion(persona), selectedItems: picked, onChange: (items) => setPicked((items || [])), onValidateInput: () => _fluentui_react__WEBPACK_IMPORTED_MODULE_17__.ValidationState.invalid, itemLimit: 10, resolveDelay: 300, disabled: adding, inputProps: { placeholder: a.PeoplePlaceholder, 'aria-label': a.LabelPeople }, pickerSuggestionsProps: { suggestionsHeaderText: a.SuggestionsHeader, noResultsFoundText: a.NoResults, loadingText: a.Searching } }))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.hint },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.Icon, { iconName: "Info", style: { marginTop: 2 } }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(a.RoleHint, targetGroup, roleOf(targetGroup)))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.formActions },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.PrimaryButton, { text: adding ? a.Adding : a.AddButton, iconProps: { iconName: 'AddFriend' }, onClick: () => { addPeople().catch(() => undefined); }, disabled: adding || picked.length === 0 || !targetGroup }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.Close, onClick: () => { setFormOpen(false); setPicked([]); }, disabled: adding })),
+            result && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.MessageBar, { messageBarType: result.type, isMultiline: true, onDismiss: () => setResult(undefined), styles: { root: { marginTop: 12 } } }, result.lines.map((line, i) => react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: i }, line)))))),
+        roleGroups.map(item => {
+            const isLoading = !!loadingGroups[item.group];
+            const info = groups[item.group];
+            const isOpen = !!open[item.group];
+            const all = membersOf(item.group);
+            const shown = !query ? all : all.filter(m => m.name.toLowerCase().indexOf(query) >= 0 || m.email.toLowerCase().indexOf(query) >= 0);
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: item.group, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].listCard },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].listCardTop },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { flex: '1 1 300px' } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].listTitle },
+                            item.group,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].roleTag }, item.role()),
+                            info && info.exists && !info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillNeutral}` }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(s.MemberCount, info.members.length)),
+                            info && info.currentUserIsMember && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillInfo}` }, s.YouAreMember),
+                            query && info && info.exists && !info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillNeutral}` }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(a.FilterMatches, shown.length))),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted }, item.desc())),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.buttons },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: isLoading ? s.LoadingButton : isOpen ? a.HideMembers : s.ViewMembersButton, iconProps: { iconName: isOpen ? 'ChevronUp' : 'People' }, onClick: () => toggleMembers(item.group), disabled: isLoading, "aria-expanded": isOpen }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.DefaultButton, { text: a.AddMember, iconProps: { iconName: 'AddFriend' }, onClick: () => openForm(item.group) }))),
+                info && !info.exists && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].errorBox }, s.GroupNotFound),
+                info && info.exists && info.error && react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].errorBox }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(s.GroupLoadError, info.error)),
+                isOpen && info && info.exists && !info.error && (all.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted, style: { marginTop: 10, fontStyle: 'italic' } }, s.NoMembersFound)) : shown.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted, style: { marginTop: 10, fontStyle: 'italic' } }, a.NoMatches)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: local.members, "aria-label": (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(a.MembersOf, item.group) }, shown.map((m, i) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: `${m.email}-${i}`, className: local.member },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.coin, "aria-hidden": "true" }, (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_5__.initials)(m.name)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { minWidth: 0 } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.memberName, style: { display: 'block' } }, m.name),
+                        m.email && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.memberEmail, style: { display: 'block' } }, m.email))))))))));
+        })));
+};
+
+
+/***/ }),
+
+/***/ 859:
+/*!*************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/pages/config/MaintenanceTab.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MaintenanceTab: () => (/* binding */ MaintenanceTab)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
+/* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ConfigPage.module.scss */ 35947);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/InventoryItemService */ 32974);
+/* harmony import */ var _services_RequestService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/RequestService */ 50764);
+/* harmony import */ var _services_AuditLogService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/AuditLogService */ 43584);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../utils/RequestDuplicateUtils */ 77892);
+/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/ReportExportUtils */ 61238);
+/* harmony import */ var _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/inventory/inventoryUi */ 69024);
+/* harmony import */ var _components_common_listUi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/common/listUi */ 42806);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const MAX_SHOWN = 50;
+const local = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_10__.mergeStyleSets)({
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(380px, 100%), 1fr))', gap: 16 },
+    tool: { display: 'flex', flexDirection: 'column', gap: 10, minWidth: 0, padding: '16px 18px', borderRadius: 12, border: '1px solid rgba(128, 128, 128, 0.22)', background: 'var(--surface-bg, #ffffff)' },
+    toolHead: { display: 'flex', gap: 12, alignItems: 'flex-start' },
+    toolIcon: { width: 36, height: 36, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, flexShrink: 0, background: 'rgba(15, 108, 189, 0.12)', color: '#0f6cbd' },
+    toolTitle: { margin: 0, fontSize: 15, fontWeight: 600 },
+    toolDesc: { margin: '2px 0 0', fontSize: 13, color: 'var(--text-muted, #616161)', lineHeight: '18px' },
+    buttons: { display: 'flex', gap: 8, flexWrap: 'wrap' },
+    summary: { fontSize: 13, color: 'var(--text-muted, #616161)' },
+    findings: { listStyle: 'none', margin: 0, padding: 0, borderTop: '1px solid rgba(128, 128, 128, 0.18)' },
+    finding: { borderBottom: '1px solid rgba(128, 128, 128, 0.12)' },
+    findingRow: {
+        display: 'grid', gridTemplateColumns: '16px minmax(0, 1fr) auto 14px', gap: 10, alignItems: 'center', width: '100%',
+        padding: '9px 2px', border: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit', color: 'inherit', textAlign: 'left',
+        selectors: { ':hover': { background: 'rgba(128, 128, 128, 0.07)' }, ':focus-visible': { outline: '2px solid #0f6cbd', outlineOffset: -2 } }
+    },
+    findingLabel: { fontSize: 13, fontWeight: 600 },
+    findingHint: { display: 'block', fontSize: 12, fontWeight: 400, color: 'var(--text-muted, #616161)' },
+    records: { margin: '0 0 10px 26px', padding: 0, listStyle: 'disc inside', fontSize: 12, lineHeight: '20px', color: 'var(--text-main, #242424)' },
+    allGood: { display: 'flex', gap: 8, alignItems: 'center', fontSize: 13, color: '#0e5c0e' }
+});
+const name = (i) => (i.assetName || i.title || '').trim() || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.InventoryExplorer.Unnamed;
+const itemText = (i) => `${name(i)} · ${i.serialNumber || InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Common.NotAvailable}${i.assignedTo ? ` · ${i.assignedTo}` : ''}`;
+const requestText = (r) => `${r.requestKey || `#${r.id}`} · ${r.requesterName || '—'} · ${r.assetTitle || '—'}${r.quantity > 1 ? ` × ${r.quantity}` : ''}`;
+/** Inventory data problems that make reports, stock counts and assignments unreliable. */
+const checkInventory = (items) => {
+    const m = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Maintenance;
+    const bySerial = {};
+    items.forEach(i => {
+        const serial = (i.serialNumber || '').trim().toLowerCase();
+        if (serial)
+            (bySerial[serial] = bySerial[serial] || []).push(i);
+    });
+    const duplicates = Object.keys(bySerial).filter(k => bySerial[k].length > 1).reduce((all, k) => all.concat(bySerial[k]), []);
+    const toRecords = (list) => list.map(i => ({ id: i.id, text: itemText(i) }));
+    const warrantyBeforePurchase = items.filter(i => {
+        const bought = (0,_components_common_listUi__WEBPACK_IMPORTED_MODULE_9__.parseFlexibleDate)(i.purchaseDate);
+        const ends = (0,_components_common_listUi__WEBPACK_IMPORTED_MODULE_9__.parseFlexibleDate)(i.warrantyExpiry);
+        return !!bought && !!ends && ends.getTime() < bought.getTime();
+    });
+    return [
+        { key: 'dupSerial', label: m.InvDuplicateSerial, hint: m.InvDuplicateSerialHint, severity: 'bad', records: toRecords(duplicates) },
+        { key: 'noSerial', label: m.InvMissingSerial, hint: m.InvMissingSerialHint, severity: 'warn', records: toRecords(items.filter(i => !(i.serialNumber || '').trim())) },
+        { key: 'assignedNoPerson', label: m.InvAssignedNoPerson, hint: m.InvAssignedNoPersonHint, severity: 'bad', records: toRecords(items.filter(i => (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_8__.statusBucket)(i.status) === 'assigned' && !(i.assignedTo || '').trim())) },
+        { key: 'personInStock', label: m.InvPersonInStock, hint: m.InvPersonInStockHint, severity: 'warn', records: toRecords(items.filter(i => (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_8__.statusBucket)(i.status) === 'inStock' && !!(i.assignedTo || '').trim())) },
+        { key: 'unknownStatus', label: m.InvUnknownStatus, hint: m.InvUnknownStatusHint, severity: 'warn', records: toRecords(items.filter(i => (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_8__.statusBucket)(i.status) === 'other')) },
+        { key: 'noPurchase', label: m.InvMissingPurchase, hint: m.InvMissingPurchaseHint, severity: 'warn', records: toRecords(items.filter(i => !(0,_components_common_listUi__WEBPACK_IMPORTED_MODULE_9__.parseFlexibleDate)(i.purchaseDate))) },
+        { key: 'noWarranty', label: m.InvMissingWarranty, hint: m.InvMissingWarrantyHint, severity: 'warn', records: toRecords(items.filter(i => !(0,_components_common_listUi__WEBPACK_IMPORTED_MODULE_9__.parseFlexibleDate)(i.warrantyExpiry))) },
+        { key: 'warrantyOrder', label: m.InvWarrantyBeforePurchase, hint: m.InvWarrantyBeforePurchaseHint, severity: 'bad', records: toRecords(warrantyBeforePurchase) }
+    ];
+};
+/** Requests that are stuck, duplicated or cannot be fulfilled as raised. */
+const checkRequests = (requests, items) => {
+    const m = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Maintenance;
+    const targets = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_6__.getAppConfig)().sla;
+    const now = Date.now();
+    const sla = requests.map(r => ({ r, s: (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_11__.evaluateRequestSla)(r, targets, now) }));
+    const toRecords = (list) => list.map(r => ({ id: r.id, text: requestText(r) }));
+    const open = requests.filter(_utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_12__.isOpenRequest);
+    const duplicates = open.filter(r => open.some(o => o.id !== r.id && (o.assetTitle || '').trim().toLowerCase() === (r.assetTitle || '').trim().toLowerCase() && (0,_utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_12__.isSameRequester)(o.requesterName, r.requesterName)));
+    const knownTypes = items.map(i => (i.assetType || '').trim().toLowerCase()).filter(Boolean);
+    const unknownType = open.filter(r => knownTypes.indexOf((r.assetTitle || '').trim().toLowerCase()) < 0);
+    return [
+        { key: 'overdueApproval', label: m.ReqOverdueApproval, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.ReqOverdueApprovalHint, targets.approvalHours), severity: 'warn', records: toRecords(sla.filter(x => x.s.stage === 'awaitingApproval' && x.s.overdue).map(x => x.r)) },
+        { key: 'overdueAssignment', label: m.ReqOverdueAssignment, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.ReqOverdueAssignmentHint, targets.assignmentHours), severity: 'bad', records: toRecords(sla.filter(x => x.s.stage === 'awaitingAssignment' && x.s.overdue).map(x => x.r)) },
+        { key: 'duplicates', label: m.ReqDuplicates, hint: m.ReqDuplicatesHint, severity: 'warn', records: toRecords(duplicates) },
+        { key: 'noManager', label: m.ReqNoManager, hint: m.ReqNoManagerHint, severity: 'warn', records: toRecords(open.filter(r => (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_11__.getSlaStage)(r) === 'awaitingApproval' && !(r.managerName || '').trim())) },
+        { key: 'unknownType', label: m.ReqUnknownType, hint: m.ReqUnknownTypeHint, severity: 'warn', records: toRecords(unknownType) }
+    ];
+};
+/** Config → Maintenance: data checks, the Mapping List sync and data backups. */
+const MaintenanceTab = ({ state, actions }) => {
+    const s = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.ConfigPage;
+    const m = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_2__.Maintenance;
+    const [inventoryResult, setInventoryResult] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [requestResult, setRequestResult] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [running, setRunning] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [expanded, setExpanded] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
+    const [error, setError] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [backupNote, setBackupNote] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const run = async (which) => {
+        setRunning(which);
+        setError(undefined);
+        try {
+            const items = await _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getItems();
+            if (which === 'inventory') {
+                setInventoryResult({ checkedAt: new Date(), total: items.length, findings: checkInventory(items) });
+            }
+            else {
+                const requests = await _services_RequestService__WEBPACK_IMPORTED_MODULE_4__.RequestService.getRequests();
+                setRequestResult({ checkedAt: new Date(), total: requests.length, findings: checkRequests(requests, items) });
+            }
+        }
+        catch (e) {
+            setError((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.CheckFailed, e && e.message ? e.message : String(e)));
+        }
+        finally {
+            setRunning(undefined);
+        }
+    };
+    const exportFindings = (result, fileBase) => (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__.exportRowsToCsv)(fileBase, [m.ColCheck, m.ColRecord], result.findings.reduce((rows, f) => rows.concat(f.records.map(r => [f.label, r.text])), []));
+    const backup = async (what) => {
+        setRunning('backup');
+        setError(undefined);
+        setBackupNote(undefined);
+        try {
+            if (what === 'inventory') {
+                const items = await _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_3__.InventoryItemService.getItems();
+                (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__.exportRowsToCsv)('Inventory_Backup', ['ID', 'Title', 'Asset Name', 'Asset Type', 'Serial Number', 'Status', 'Condition', 'Assigned To', 'Assigned To Email', 'Assigned Date', 'Purchase Date', 'Warranty Expiry', 'Vendor', 'Specifications', 'Note'], items.map(i => [i.id, i.title, i.assetName, i.assetType, i.serialNumber, i.status, i.condition, i.assignedTo, i.assignedToEmail, i.assignedDate, i.purchaseDate, i.warrantyExpiry, i.vendor, i.specifications, i.note]));
+                setBackupNote((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.BackupDone, items.length));
+            }
+            else if (what === 'requests') {
+                const requests = await _services_RequestService__WEBPACK_IMPORTED_MODULE_4__.RequestService.getRequests();
+                (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__.exportRowsToCsv)('Requests_Backup', ['ID', 'Request ID', 'Requester', 'Employee ID', 'Manager', 'Asset Type', 'Quantity', 'Priority', 'Status', 'Asset Status', 'Request Date', 'Created', 'Manager Decision', 'Assigned', 'Reason', 'Manager Comment'], requests.map(r => [r.id, r.requestKey, r.requesterName, r.employeeId, r.managerName, r.assetTitle, r.quantity, r.priority, r.status, r.assetStatus, r.requestDate, r.createdAt, r.managerDecisionAt, r.assignedAt, r.reason, r.managerResponse]));
+                setBackupNote((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.BackupDone, requests.length));
+            }
+            else {
+                const logs = await _services_AuditLogService__WEBPACK_IMPORTED_MODULE_5__.AuditLogService.getAuditLogs();
+                (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__.exportRowsToCsv)('Audit_Log_Backup', ['ID', 'Timestamp', 'Action', 'Type', 'Record ID', 'Title', 'Asset', 'User', 'Details'], logs.map(l => [l.id, l.timestamp, l.action, l.entityType, l.entityId, l.title, l.assetName, l.user, l.details]));
+                setBackupNote((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.BackupDone, logs.length));
+            }
+        }
+        catch (e) {
+            setError((0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.CheckFailed, e && e.message ? e.message : String(e)));
+        }
+        finally {
+            setRunning(undefined);
+        }
+    };
+    const renderResult = (result, scope, fileBase, countText) => {
+        if (!result)
+            return null;
+        const found = result.findings.filter(f => f.records.length > 0);
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.summary },
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(countText, result.total),
+                " \u00B7 ",
+                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.CheckedAt, result.checkedAt.toLocaleTimeString())),
+            found.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.allGood },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "CompletedSolid" }),
+                " ",
+                m.AllGood)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: local.findings }, found.map(f => {
+                    const id = `${scope}-${f.key}`;
+                    const isOpen = !!expanded[id];
+                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: f.key, className: local.finding },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { type: "button", className: local.findingRow, "aria-expanded": isOpen, onClick: () => setExpanded(prev => ({ ...prev, [id]: !prev[id] })) },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: f.severity === 'bad' ? 'ErrorBadge' : 'Warning', style: { color: f.severity === 'bad' ? '#c50f1f' : '#bc4b09' } }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.findingLabel },
+                                f.label,
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.findingHint }, f.hint)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${f.severity === 'bad' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillBad : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillWarn}` }, f.records.length),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: isOpen ? 'ChevronUp' : 'ChevronDown', style: { fontSize: 10 } })),
+                        isOpen && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: local.records },
+                            f.records.slice(0, MAX_SHOWN).map(r => react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: r.id }, r.text)),
+                            f.records.length > MAX_SHOWN && react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_13__.formatString)(m.MoreRecords, f.records.length - MAX_SHOWN))))));
+                })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_15__.ActionButton, { iconProps: { iconName: 'ExcelDocument' }, text: m.ExportFindings, onClick: () => exportFindings(result, fileBase) }))))));
+    };
+    const tool = (icon, title, desc, body) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", { className: local.tool },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.toolHead },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.toolIcon, "aria-hidden": "true" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: icon })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", { className: local.toolTitle }, title),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", { className: local.toolDesc }, desc))),
+        body));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panel },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panelHeader },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, m.Title),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, m.Subtitle))),
+        error && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_17__.MessageBarType.error, isMultiline: true, onDismiss: () => setError(undefined), styles: { root: { marginBottom: 12 } } }, error)),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.grid },
+            tool('ProductList', m.InventoryTitle, m.InventoryDesc, (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.buttons },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PrimaryButton, { text: running === 'inventory' ? m.Checking : inventoryResult ? m.RunAgain : m.RunCheck, iconProps: { iconName: 'CheckList' }, onClick: () => { run('inventory').catch(() => undefined); }, disabled: !!running })),
+                renderResult(inventoryResult, 'inventory', 'Inventory_Data_Check', m.AssetsChecked)))),
+            tool('Send', m.RequestsTitle, m.RequestsDesc, (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.buttons },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PrimaryButton, { text: running === 'requests' ? m.Checking : requestResult ? m.RunAgain : m.RunCheck, iconProps: { iconName: 'CheckList' }, onClick: () => { run('requests').catch(() => undefined); }, disabled: !!running })),
+                renderResult(requestResult, 'requests', 'Request_Queue_Check', m.RequestsChecked)))),
+            tool('Sync', s.OperationsTitle, `${s.OperationsDescBefore} ${s.ListTitle_MappingList}. ${s.OperationsDescAfter}`, (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.buttons },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.PrimaryButton, { text: state.syncInProgress ? s.SyncButtonProcessing : s.SyncButtonDefault, iconProps: { iconName: 'Sync' }, onClick: actions.onSyncAssignedAssets, disabled: state.syncInProgress }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.DefaultButton, { text: state.syncInProgress ? s.DiagnosticsButtonChecking : s.DiagnosticsButtonDefault, iconProps: { iconName: 'Database' }, onClick: actions.onRunDiagnostics, disabled: state.syncInProgress })),
+                state.syncMessage && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_16__.MessageBar, { messageBarType: state.syncMessageType, isMultiline: true, onDismiss: actions.onDismissSyncMessage, styles: { root: { borderRadius: 6 } } }, state.syncMessage)),
+                state.diagnosticInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: 6 } }, s.DiagnosticLogLabel),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { readOnly: true, value: state.diagnosticInfo, rows: 8, className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].diagnosticLog })))))),
+            tool('CloudDownload', m.BackupTitle, m.BackupDesc, (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.buttons },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.DefaultButton, { text: m.BackupInventory, iconProps: { iconName: 'ExcelDocument' }, onClick: () => { backup('inventory').catch(() => undefined); }, disabled: !!running }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.DefaultButton, { text: m.BackupRequests, iconProps: { iconName: 'ExcelDocument' }, onClick: () => { backup('requests').catch(() => undefined); }, disabled: !!running }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.DefaultButton, { text: m.BackupAudit, iconProps: { iconName: 'ExcelDocument' }, onClick: () => { backup('audit').catch(() => undefined); }, disabled: !!running })),
+                running === 'backup' && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.summary }, m.Preparing),
+                backupNote && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.summary }, backupNote)))))));
 };
 
 
@@ -18312,21 +20704,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 85959);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fluentui/react */ 46643);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fluentui/react */ 29425);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fluentui/react */ 5613);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fluentui/react */ 63208);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react */ 67102);
-/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fluentui/react */ 46643);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @fluentui/react */ 52394);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @fluentui/react */ 29425);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @fluentui/react */ 5613);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @fluentui/react */ 63208);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @fluentui/react */ 21262);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fluentui/react */ 67102);
+/* harmony import */ var _fluentui_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fluentui/react */ 80539);
+/* harmony import */ var _fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fluentui/react/lib/Styling */ 38455);
 /* harmony import */ var _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ConfigPage.module.scss */ 35947);
 /* harmony import */ var _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/InventoryItemService */ 32974);
-/* harmony import */ var _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/StockThresholdService */ 34378);
-/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
-/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/StockUtils */ 19256);
-/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
-/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
+/* harmony import */ var _services_RequestService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/RequestService */ 50764);
+/* harmony import */ var _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/StockThresholdService */ 34378);
+/* harmony import */ var _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/EmailSettingsService */ 85324);
+/* harmony import */ var _config_AppConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../config/AppConfig */ 60393);
+/* harmony import */ var _utils_StockUtils__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../utils/StockUtils */ 19256);
+/* harmony import */ var _utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../utils/RequestSlaUtils */ 61065);
+/* harmony import */ var _utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/ReportExportUtils */ 61238);
+/* harmony import */ var _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../constants/DropdownConstants */ 82889);
+/* harmony import */ var _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/inventory/inventoryUi */ 69024);
+/* harmony import */ var _components_common_listUi__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/common/listUi */ 42806);
+/* harmony import */ var _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/reports/reportsUi */ 78135);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../utils/LocalizationUtils */ 25997);
 
 
 
@@ -18337,116 +20739,242 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/** Config → Stock Alerts: per-asset-type minimum stock, saved to the Stock Thresholds list. */
+
+
+
+
+
+
+
+
+const local = (0,_fluentui_react_lib_Styling__WEBPACK_IMPORTED_MODULE_13__.mergeStyleSets)({
+    toolbar: { display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'flex-end', margin: '4px 0 12px' },
+    search: { flex: '1 1 220px', minWidth: 180 },
+    bulk: { display: 'flex', gap: 8, alignItems: 'flex-end' },
+    meter: { display: 'block', width: 90, height: 6, marginTop: 4, borderRadius: 999, background: 'rgba(128, 128, 128, 0.2)', overflow: 'hidden' },
+    meterFill: { display: 'block', height: '100%', borderRadius: 999 },
+    note: { display: 'block', marginTop: 4, fontSize: 12, color: 'var(--text-muted, #616161)' },
+    tableWrap: { overflowX: 'auto' }
+});
+const sameType = (a, b) => (a || '').trim().toLowerCase() === (b || '').trim().toLowerCase();
+/** Config → Stock Alerts: stock against per-type minimums, pending demand, alert state and settings. */
 const StockThresholdsTab = () => {
-    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.Features;
-    const defaultMinimum = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_4__.getAppConfig)().stock.defaultMinimum;
+    const f = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.Features;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.StockAlerts;
+    const config = (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_6__.getAppConfig)();
+    const defaultMinimum = config.stock.defaultMinimum;
     const [items, setItems] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
+    const [requests, setRequests] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
     const [thresholds, setThresholds] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
+    const [recipients, setRecipients] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [emailOn, setEmailOn] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
     const [edits, setEdits] = react__WEBPACK_IMPORTED_MODULE_0__.useState({});
     const [loading, setLoading] = react__WEBPACK_IMPORTED_MODULE_0__.useState(true);
     const [busy, setBusy] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
     const [message, setMessage] = react__WEBPACK_IMPORTED_MODULE_0__.useState();
+    const [filter, setFilter] = react__WEBPACK_IMPORTED_MODULE_0__.useState('all');
+    const [search, setSearch] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
+    const [bulk, setBulk] = react__WEBPACK_IMPORTED_MODULE_0__.useState('');
     const load = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(async () => {
         setLoading(true);
         try {
             const [loadedItems, loadedThresholds] = await Promise.all([
                 _services_InventoryItemService__WEBPACK_IMPORTED_MODULE_2__.InventoryItemService.getItems(),
-                _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.getThresholds()
+                _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_4__.StockThresholdService.getThresholds()
             ]);
             setItems(loadedItems);
             setThresholds(loadedThresholds);
             setEdits({});
         }
         catch (e) {
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: e && e.message ? e.message : String(e) });
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.error, text: e && e.message ? e.message : String(e) });
         }
         finally {
             setLoading(false);
         }
+        // Demand and alert settings are extras: the table works without them.
+        _services_RequestService__WEBPACK_IMPORTED_MODULE_3__.RequestService.getRequests().then(setRequests).catch(() => setRequests([]));
+        _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_4__.StockThresholdService.getAlertRecipients().then(setRecipients).catch(() => setRecipients([]));
+        _services_EmailSettingsService__WEBPACK_IMPORTED_MODULE_5__.EmailSettingsService.get().then(st => setEmailOn(st.enabled)).catch(() => setEmailOn(undefined));
     }, []);
     react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => { load().catch(() => undefined); }, [load]);
     // Standard types are listed even when there are no items of that type yet.
     const levels = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(() => {
-        const placeholderRows = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_5__.DEFAULT_ASSET_TYPE_OPTIONS
+        const placeholderRows = _constants_DropdownConstants__WEBPACK_IMPORTED_MODULE_8__.DEFAULT_ASSET_TYPE_OPTIONS
             .map(o => String(o.key))
-            .filter(type => type !== 'Other' && !thresholds.some(t => t.assetType.toLowerCase() === type.toLowerCase()))
+            .filter(type => type !== 'Other' && !thresholds.some(th => th.assetType.toLowerCase() === type.toLowerCase()))
             .map(type => ({ assetType: type }));
-        return (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_8__.evaluateStockLevels)(items, thresholds.concat(placeholderRows), defaultMinimum);
+        return (0,_utils_StockUtils__WEBPACK_IMPORTED_MODULE_15__.evaluateStockLevels)(items, thresholds.concat(placeholderRows), defaultMinimum);
     }, [items, thresholds, defaultMinimum]);
+    const rows = levels.map(level => {
+        const ofType = requests.filter(r => sameType(r.assetTitle, level.assetType));
+        const units = (stage) => ofType.filter(r => (0,_utils_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_16__.getSlaStage)(r) === stage).reduce((sum, r) => sum + (Number(r.quantity) || 1), 0);
+        const awaitingAssignment = units('awaitingAssignment');
+        const afterPending = level.available - awaitingAssignment;
+        const state = level.minimum === 0 ? 'off'
+            : level.available === 0 ? 'out'
+                : level.isLow ? 'low'
+                    : afterPending < level.minimum ? 'risk' : 'ok';
+        return {
+            level,
+            assigned: items.filter(i => sameType(i.assetType, level.assetType) && (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_9__.statusBucket)(i.status) === 'assigned').length,
+            awaitingApproval: units('awaitingApproval'),
+            awaitingAssignment,
+            afterPending,
+            state
+        };
+    });
+    const needsAttention = (r) => r.state === 'out' || r.state === 'low' || r.state === 'risk';
+    const query = search.trim().toLowerCase();
+    const visible = rows.filter(r => (filter === 'all' || (filter === 'attention' ? needsAttention(r) : filter === 'ok' ? r.state === 'ok' : r.state === 'off')) &&
+        (!query || r.level.assetType.toLowerCase().indexOf(query) >= 0));
     const valueFor = (level) => edits[level.assetType] !== undefined ? edits[level.assetType] : level.hasCustomMinimum ? String(level.minimum) : '';
     const invalid = Object.keys(edits).some(k => edits[k].trim() !== '' && !(Number(edits[k]) >= 0));
     const dirty = Object.keys(edits).length > 0;
+    const bulkValid = bulk.trim() !== '' && Number(bulk) >= 0;
     const save = async () => {
         setBusy(true);
         setMessage(undefined);
         try {
-            await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.saveThresholds(Object.keys(edits).map(type => ({
+            await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_4__.StockThresholdService.saveThresholds(Object.keys(edits).map(type => ({
                 assetType: type,
                 minimumStock: edits[type].trim() === '' ? undefined : Number(edits[type])
             })));
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.success, text: f.StockSaved });
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.success, text: f.StockSaved });
             await load();
         }
         catch (e) {
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockSaveFailed, e && e.message ? e.message : String(e)) });
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.error, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(f.StockSaveFailed, e && e.message ? e.message : String(e)) });
         }
         finally {
             setBusy(false);
         }
     };
+    const describeCheck = (result) => {
+        if (result.held && result.held.length > 0)
+            return { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.EmailCenter.StockAlertsHeld, result.held.join(', ')) };
+        if (result.failed && result.failed.length > 0)
+            return { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.error, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.CheckEmailFailed, result.failed.join(', '), result.emailError || '') };
+        if (result.noRecipients && result.noRecipients.length > 0)
+            return { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.CheckNoRecipients, result.noRecipients.join(', '), config.roleGroups.admin) };
+        if (result.alerted.length > 0)
+            return { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(f.StockAlertSent, result.alerted.join(', ')) };
+        return { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.info, text: f.StockNoNewAlerts };
+    };
     const checkNow = async () => {
         setBusy(true);
         setMessage(undefined);
-        const result = await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_3__.StockThresholdService.checkAndNotify(items);
+        const result = await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_4__.StockThresholdService.checkAndNotify(items);
         setBusy(false);
-        if (!result) {
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.error, text: f.StockCheckFailed });
-        }
-        else if (result.held && result.held.length > 0) {
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.EmailCenter.StockAlertsHeld, result.held.join(', ')) });
-        }
-        else if (result.alerted.length > 0) {
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.warning, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockAlertSent, result.alerted.join(', ')) });
-        }
-        else {
-            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_7__.MessageBarType.info, text: f.StockNoNewAlerts });
-        }
+        setMessage(result ? describeCheck(result) : { type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.error, text: f.StockCheckFailed });
         await load();
+    };
+    const resetAlert = async (level) => {
+        if (!level.threshold || !level.threshold.id)
+            return;
+        setBusy(true);
+        try {
+            await _services_StockThresholdService__WEBPACK_IMPORTED_MODULE_4__.StockThresholdService.resetAlert(level.threshold.id);
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.success, text: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.ResetDone, level.assetType) });
+            await load();
+        }
+        catch (e) {
+            setMessage({ type: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.error, text: e && e.message ? e.message : String(e) });
+        }
+        finally {
+            setBusy(false);
+        }
+    };
+    const applyBulk = () => {
+        if (!bulkValid)
+            return;
+        setEdits(prev => {
+            const next = { ...prev };
+            visible.forEach(r => { next[r.level.assetType] = String(Math.floor(Number(bulk))); });
+            return next;
+        });
+        setBulk('');
+    };
+    const stateText = (state) => state === 'out' ? t.StatusOut : state === 'low' ? f.StockLow : state === 'risk' ? t.StatusRisk : state === 'ok' ? f.StockOk : f.StockNotMonitored;
+    const exportCsv = () => (0,_utils_ReportExportUtils__WEBPACK_IMPORTED_MODULE_7__.exportRowsToCsv)('Stock_Levels', [f.StockColType, f.StockColAvailable, f.StockColTotal, t.ColAssigned, t.ColAwaitingApproval, t.ColAwaitingAssignment, t.ColAfter, f.StockColMinimum, f.StockColStatus], rows.map(r => [r.level.assetType, r.level.available, r.level.total, r.assigned, r.awaitingApproval, r.awaitingAssignment, r.afterPending, r.level.minimum, stateText(r.state)]));
+    const monitored = rows.filter(r => r.state !== 'off');
+    const below = rows.filter(r => r.state === 'out' || r.state === 'low');
+    const kpis = [
+        { key: 'monitored', icon: 'BarChartVertical', color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.blue, label: t.TileMonitored, value: monitored.length, hint: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.TileMonitoredHint, rows.length) },
+        { key: 'below', icon: 'Warning', color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.orange, label: t.TileBelow, value: below.length, hint: below.length ? below.map(r => r.level.assetType).join(', ') : t.TileBelowNone, onClick: () => setFilter('attention') },
+        { key: 'out', icon: 'Blocked2', color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.red, label: t.TileOut, value: rows.filter(r => r.state === 'out').length, hint: t.TileOutHint, onClick: () => setFilter('attention') },
+        { key: 'waiting', icon: 'Clock', color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.purple, label: t.TileWaiting, value: rows.reduce((sum, r) => sum + r.awaitingAssignment, 0), hint: t.TileWaitingHint }
+    ];
+    const chips = [
+        { key: 'all', label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.RecordLists.TileAll, count: rows.length },
+        { key: 'attention', label: t.ChipAttention, count: rows.filter(needsAttention).length, color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.orange },
+        { key: 'ok', label: f.StockOk, count: rows.filter(r => r.state === 'ok').length, color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.green },
+        { key: 'off', label: f.StockNotMonitored, count: rows.filter(r => r.state === 'off').length, color: _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.grey }
+    ];
+    const pillFor = (state) => {
+        const cls = state === 'out' || state === 'low' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillBad : state === 'risk' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillWarn : state === 'ok' ? _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillGood : _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillNeutral;
+        const icon = state === 'out' ? 'Blocked2' : state === 'low' || state === 'risk' ? 'Warning' : state === 'ok' ? 'Completed' : undefined;
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${cls}` },
+            icon && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_18__.Icon, { iconName: icon }),
+            " ",
+            stateText(state));
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panel },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].panelHeader },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, f.StockTabTitle),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockTabDesc, defaultMinimum))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(f.StockTabDesc, defaultMinimum))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].actions },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_10__.PrimaryButton, { text: f.StockSave, iconProps: { iconName: 'Save' }, onClick: () => { save().catch(() => undefined); }, disabled: !dirty || invalid || busy }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_11__.DefaultButton, { text: f.StockCheckNow, iconProps: { iconName: 'Mail' }, onClick: () => { checkNow().catch(() => undefined); }, disabled: busy || loading }))),
-        message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_12__.MessageBar, { messageBarType: message.type, onDismiss: () => setMessage(undefined), styles: { root: { marginBottom: 12 } } }, message.text)),
-        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_6__.ConfigPage.LoadingButton)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dataTable },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColType),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColAvailable),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColTotal),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColMinimum),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColStatus))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, levels.map(level => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: level.assetType },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, level.assetType)),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, level.available),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, level.total),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { width: 170 } },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_13__.TextField, { value: valueFor(level), placeholder: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockDefaultPlaceholder, defaultMinimum), onChange: (_, v) => setEdits(prev => ({ ...prev, [level.assetType]: v || '' })), errorMessage: valueFor(level).trim() !== '' && !(Number(valueFor(level)) >= 0) ? f.StockInvalid : undefined, ariaLabel: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockMinimumAria, level.assetType), type: "number", min: 0 })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                    level.minimum === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillNeutral}` }, f.StockNotMonitored)) : level.isLow ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillBad}` },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Warning" }),
-                        " ",
-                        f.StockLow)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: `${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pill} ${_ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].pillGood}` },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_14__.Icon, { iconName: "Completed" }),
-                        " ",
-                        f.StockOk)),
-                    level.threshold && level.threshold.lastAlertSent && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted, style: { marginTop: 4 } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_9__.formatString)(f.StockAlertedAt, new Date(level.threshold.lastAlertSent).toLocaleString()))))))))))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_19__.PrimaryButton, { text: f.StockSave, iconProps: { iconName: 'Save' }, onClick: () => { save().catch(() => undefined); }, disabled: !dirty || invalid || busy }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_20__.DefaultButton, { text: f.StockCheckNow, iconProps: { iconName: 'Mail' }, onClick: () => { checkNow().catch(() => undefined); }, disabled: busy || loading }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_20__.DefaultButton, { text: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.ReportsPage.ExportExcel, iconProps: { iconName: 'ExcelDocument' }, onClick: exportCsv, disabled: loading || rows.length === 0 }))),
+        message && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBar, { messageBarType: message.type, isMultiline: true, onDismiss: () => setMessage(undefined), styles: { root: { marginBottom: 12 } } }, message.text)),
+        emailOn === false ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.warning, isMultiline: true, styles: { root: { marginBottom: 12 } } }, t.EmailOff)) : recipients && recipients.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.warning, isMultiline: true, styles: { root: { marginBottom: 12 } } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.NoRecipients, config.roleGroups.admin))) : recipients ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_21__.MessageBar, { messageBarType: _fluentui_react__WEBPACK_IMPORTED_MODULE_14__.MessageBarType.info, isMultiline: true, styles: { root: { marginBottom: 12 } } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.Recipients, config.roleGroups.admin, recipients.join(', ')))) : null,
+        loading ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.ConfigPage.LoadingButton)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.KpiRow, { kpis: kpis }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_common_listUi__WEBPACK_IMPORTED_MODULE_10__.StatusChips, { chips: chips, selected: filter, ariaLabel: f.StockColStatus, onSelect: (key) => setFilter(key) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.toolbar },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_22__.SearchBox, { className: local.search, placeholder: t.SearchPlaceholder, value: search, onChange: (_, v) => setSearch(v || ''), onClear: () => setSearch('') }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.bulk },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_23__.TextField, { label: t.BulkLabel, type: "number", min: 0, value: bulk, onChange: (_, v) => setBulk(v || ''), styles: { root: { width: 190 } } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_20__.DefaultButton, { text: t.BulkApply, onClick: applyBulk, disabled: !bulkValid || visible.length === 0 }))),
+            visible.length === 0 ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted }, InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.RecordLists.EmptyFiltered)) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: local.tableWrap },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].dataTable },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("thead", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColType),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColAvailable),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, t.ColAssigned),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, t.ColWaiting),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, t.ColAfter),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColMinimum),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, f.StockColStatus),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", { "aria-label": InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_12__.Common.Actions }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, visible.map(r => {
+                        const level = r.level;
+                        const share = level.total > 0 ? Math.round((level.available / level.total) * 100) : 0;
+                        const shortfall = level.minimum - level.available;
+                        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: level.assetType },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, level.assetType)),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                                (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.AvailableOfTotal, level.available, level.total),
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.meter, "aria-hidden": "true" },
+                                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.meterFill, style: { width: `${share}%`, background: r.state === 'out' || r.state === 'low' ? _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.red : r.state === 'risk' ? _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.amber : _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.green } }))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, r.assigned),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, r.awaitingApproval === 0 && r.awaitingAssignment === 0 ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: _ConfigPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].muted }, "\u2014") : (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                                r.awaitingAssignment > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { style: { display: 'block' } }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.WaitingAssignment, r.awaitingAssignment)),
+                                r.awaitingApproval > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.note }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.WaitingApproval, r.awaitingApproval))))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { color: r.afterPending < 0 ? _components_reports_reportsUi__WEBPACK_IMPORTED_MODULE_11__.PALETTE.red : undefined, fontWeight: r.afterPending < level.minimum && level.minimum > 0 ? 600 : undefined } }, r.afterPending),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { style: { width: 150 } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_23__.TextField, { value: valueFor(level), placeholder: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(f.StockDefaultPlaceholder, defaultMinimum), onChange: (_, v) => setEdits(prev => ({ ...prev, [level.assetType]: v || '' })), errorMessage: valueFor(level).trim() !== '' && !(Number(valueFor(level)) >= 0) ? f.StockInvalid : undefined, ariaLabel: (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(f.StockMinimumAria, level.assetType), type: "number", min: 0 })),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                                pillFor(r.state),
+                                (r.state === 'out' || r.state === 'low') && shortfall > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.note }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(t.Shortfall, shortfall)),
+                                r.state === 'risk' && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.note }, t.RiskNote),
+                                level.threshold && level.threshold.lastAlertSent && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: local.note }, (0,_utils_LocalizationUtils__WEBPACK_IMPORTED_MODULE_17__.formatString)(f.StockAlertedAt, new Date(level.threshold.lastAlertSent).toLocaleString())))),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, level.threshold && level.threshold.id && level.threshold.lastAlertSent && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fluentui_react__WEBPACK_IMPORTED_MODULE_24__.ActionButton, { iconProps: { iconName: 'Undo' }, text: t.ResetAlert, title: t.ResetAlertHint, onClick: () => { resetAlert(level).catch(() => undefined); }, disabled: busy })))));
+                    })))))))));
 };
 
 
@@ -18474,11 +21002,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   MyWorkspacePage: () => (/* reexport safe */ _MyWorkspacePage__WEBPACK_IMPORTED_MODULE_13__.MyWorkspacePage),
 /* harmony export */   NotificationDetailsPanel: () => (/* reexport safe */ _NotificationDetailsPanel__WEBPACK_IMPORTED_MODULE_9__.NotificationDetailsPanel),
 /* harmony export */   NotificationsPage: () => (/* reexport safe */ _NotificationsPage__WEBPACK_IMPORTED_MODULE_6__.NotificationsPage),
-/* harmony export */   OnboardingPage: () => (/* reexport safe */ _OnboardingPage__WEBPACK_IMPORTED_MODULE_17__.OnboardingPage),
+/* harmony export */   OnboardingPage: () => (/* reexport safe */ _OnboardingPage__WEBPACK_IMPORTED_MODULE_16__.OnboardingPage),
 /* harmony export */   ReplacementHistoryPage: () => (/* reexport safe */ _ReplacementHistoryPage__WEBPACK_IMPORTED_MODULE_5__.ReplacementHistoryPage),
 /* harmony export */   ReportsPage: () => (/* reexport safe */ _ReportsPage__WEBPACK_IMPORTED_MODULE_2__.ReportsPage),
-/* harmony export */   RequestAnalysisPanel: () => (/* reexport safe */ _RequestAnalysisPanel__WEBPACK_IMPORTED_MODULE_7__.RequestAnalysisPanel),
-/* harmony export */   UsersPage: () => (/* reexport safe */ _UsersPage__WEBPACK_IMPORTED_MODULE_16__.UsersPage)
+/* harmony export */   RequestAnalysisPanel: () => (/* reexport safe */ _RequestAnalysisPanel__WEBPACK_IMPORTED_MODULE_7__.RequestAnalysisPanel)
 /* harmony export */ });
 /* harmony import */ var _ConfigPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfigPage */ 43325);
 /* harmony import */ var _DashboardPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardPage */ 76577);
@@ -18496,9 +21023,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MyWorkspacePage__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./MyWorkspacePage */ 40890);
 /* harmony import */ var _AdminAssignmentPanel__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./AdminAssignmentPanel */ 26908);
 /* harmony import */ var _ApprovalsPage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./ApprovalsPage */ 31245);
-/* harmony import */ var _UsersPage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./UsersPage */ 50909);
-/* harmony import */ var _OnboardingPage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./OnboardingPage */ 98146);
-
+/* harmony import */ var _OnboardingPage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./OnboardingPage */ 98146);
 
 
 
@@ -19448,6 +21973,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RequestService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RequestService */ 50764);
 /* harmony import */ var _ReturnRequestService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ReturnRequestService */ 86382);
 /* harmony import */ var _AuditLogService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AuditLogService */ 43584);
+/* harmony import */ var _utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/RequestDuplicateUtils */ 77892);
+
 
 
 
@@ -19505,7 +22032,15 @@ class AssetKitService {
         const startText = options.startDate ? `, starting ${new Date(options.startDate).toLocaleDateString()}` : "";
         const reason = `Onboarding kit "${kit.name}" for new starter ${recipient.displayName}${startText}.` +
             (options.notes ? ` ${options.notes.trim()}` : "");
+        // One open request per person and asset type: a kit line is skipped while the new starter
+        // already has a request for that type in progress. If the check cannot run, the kit goes ahead.
+        const existing = await _RequestService__WEBPACK_IMPORTED_MODULE_3__.RequestService.getRequests().catch(() => []);
         for (const line of kit.lines) {
+            const open = (0,_utils_RequestDuplicateUtils__WEBPACK_IMPORTED_MODULE_6__.findOpenRequest)(existing, recipient.displayName, line.assetType);
+            if (open) {
+                result.failed.push({ label: line.assetType, error: `Skipped: ${recipient.displayName} already has an open request for this type (${open.requestKey || `#${open.id}`}).` });
+                continue;
+            }
             try {
                 await _RequestService__WEBPACK_IMPORTED_MODULE_3__.RequestService.addRequest({
                     requesterName: recipient.displayName,
@@ -19520,6 +22055,8 @@ class AssetKitService {
                     requestDate: new Date().toISOString()
                 }, currentUserName, currentUserRole, false);
                 result.succeeded.push(line.assetType);
+                // A second line of the same type in this kit counts as a duplicate too.
+                existing.push({ id: `kit-${existing.length}`, requestKey: "", requesterName: recipient.displayName, assetId: "", assetTitle: line.assetType, quantity: line.quantity, status: "Pending", requestDate: "" });
             }
             catch (e) {
                 result.failed.push({ label: line.assetType, error: e && e.message ? e.message : String(e) });
@@ -19755,7 +22292,7 @@ class AuditLogService {
         _AssetTypeLookupService__WEBPACK_IMPORTED_MODULE_2__.AssetTypeLookupService.invalidate();
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         try {
-            await sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST).items.add({
+            await sp.web.lists.getByTitle(await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getEventLogListTitle()).items.add({
                 Title: log.title,
                 Action: log.action,
                 EntityType: log.entityType,
@@ -19791,7 +22328,7 @@ class AuditLogService {
         const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
         // 1. Fetch from EventLogList (the audit logging list)
         try {
-            const eventLogList = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST);
+            const eventLogList = sp.web.lists.getByTitle(await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getEventLogListTitle());
             const eventItems = await eventLogList.items.select("ID", "Title", "Action", "EntityType", "EntityId", "Details", "User", "Created")();
             eventItems.forEach((item) => {
                 let assetName = "";
@@ -20204,7 +22741,7 @@ class AuditLogService {
             ['Inventory', 'Requests', 'Returns'].indexOf(filters.module) >= 0;
         if (shouldFetchEventLog) {
             try {
-                const eventLogList = sp.web.lists.getByTitle(_base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.EVENT_LOG_LIST);
+                const eventLogList = sp.web.lists.getByTitle(await _base_SharePointBaseService__WEBPACK_IMPORTED_MODULE_1__.SharePointBaseService.getEventLogListTitle());
                 const filterParts = [];
                 if (startIso) {
                     filterParts.push(`Created ge '${startIso}'`);
@@ -21592,7 +24129,9 @@ class IncidentService {
                 payload[priorityField] = data.priority || 'Medium';
             const dateField = getInternalName(['Raised Date', 'RaisedDate', 'Requested Date', 'RequestedDate', 'Reported Date', 'ReportedDate']);
             if (dateField) {
-                payload[dateField] = data.raisedDate || data.requiredDate || data.reportedDate || new Date().toISOString();
+                // The form's raisedDate is display text in the user's locale ("30/9/2026, 11:20:05"),
+                // which cannot be read back reliably, so the machine-readable timestamp is stored.
+                payload[dateField] = data.requiredDate || data.reportedDate || new Date().toISOString();
             }
             const reasonField = getInternalName(['Description', 'Reason for Request', 'ReasonforRequest', 'Reason', 'Issue Description', 'IssueDescription']);
             if (reasonField)
@@ -21665,6 +24204,11 @@ class IncidentService {
         const incidentTypeField = getInternalName(['Incident Type', 'IncidentType', 'Issue Type', 'IssueType']);
         const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
         const empNameField = getInternalName(['Employe Name', 'Employee Name', 'EmployeeName', 'EmployeName']);
+        // Older rows hold the raised date as locale display text; for those the item's Created time is used.
+        const reportedOf = (item) => {
+            const text = dateField && item[dateField] ? String(item[dateField]) : '';
+            return /^\d{4}-\d{2}-\d{2}/.test(text.trim()) ? text : (item.Created || text);
+        };
         return items.map(item => ({
             id: item.Id ? item.Id.toString() : item.ID ? item.ID.toString() : Math.random().toString(),
             employeeName: empNameField && item[empNameField] ? item[empNameField] : (item.Title || 'Unknown'),
@@ -21675,9 +24219,9 @@ class IncidentService {
             priority: priorityField && item[priorityField] ? item[priorityField] : 'Medium',
             reason: reasonField && item[reasonField] ? item[reasonField] : '',
             description: reasonField && item[reasonField] ? item[reasonField] : '',
-            requestDate: dateField && item[dateField] ? item[dateField] : '',
-            reportedDate: dateField && item[dateField] ? item[dateField] : '',
-            raisedDate: dateField && item[dateField] ? item[dateField] : '',
+            requestDate: reportedOf(item),
+            reportedDate: reportedOf(item),
+            raisedDate: reportedOf(item),
             issueType: incidentTypeField && item[incidentTypeField] ? item[incidentTypeField] : 'Incident',
             incidentType: incidentTypeField && item[incidentTypeField] ? item[incidentTypeField] : '',
             issueDescription: reasonField && item[reasonField] ? item[reasonField] : '',
@@ -23208,6 +25752,13 @@ class PeopleSearchService {
      * People (not groups or system accounts) in a SharePoint site group, cached for the page
      * session. Throws when the group can't be read, so callers can tell "empty" from "failed".
      */
+    /** Forgets cached group members (after membership changes), for one group or all. */
+    static clearGroupCache(groupName) {
+        if (groupName)
+            delete PeopleSearchService._groupCache[(groupName || '').trim().toLowerCase()];
+        else
+            PeopleSearchService._groupCache = {};
+    }
     static getGroupMembers(groupName) {
         const key = (groupName || '').trim().toLowerCase();
         if (!PeopleSearchService._groupCache[key]) {
@@ -25278,6 +27829,50 @@ ReturnRequestService._resolvedReturnListName = null;
 
 /***/ }),
 
+/***/ 801:
+/*!***********************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/services/SiteGroupService.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SiteGroupService: () => (/* binding */ SiteGroupService)
+/* harmony export */ });
+/* harmony import */ var _pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pnpjsConfig */ 17694);
+/* harmony import */ var _pnp_sp_site_groups_web__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pnp/sp/site-groups/web */ 49036);
+/* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pnp/sp/site-users/web */ 43500);
+/* harmony import */ var _PeopleSearchService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PeopleSearchService */ 57204);
+
+
+
+
+/** Membership changes for the SharePoint site groups that decide the app's roles. */
+class SiteGroupService {
+    /**
+     * Adds a person to a site group. The signed-in user needs permission to manage the group
+     * (site owners have it); SharePoint's error is passed on otherwise.
+     */
+    static async addMember(groupName, person) {
+        const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+        let loginName = (person.loginName || "").trim();
+        if (!loginName) {
+            const ensured = await sp.web.ensureUser(person.email);
+            const info = ensured && ensured.data ? ensured.data : ensured;
+            loginName = info && info.LoginName ? info.LoginName : "";
+        }
+        if (!loginName)
+            throw new Error(`Could not resolve ${person.displayName || person.email} in SharePoint.`);
+        await sp.web.siteGroups.getByName(groupName).users.add(loginName);
+        // The request form's manager picker caches group members.
+        _PeopleSearchService__WEBPACK_IMPORTED_MODULE_3__.PeopleSearchService.clearGroupCache(groupName);
+    }
+}
+
+
+/***/ }),
+
 /***/ 34378:
 /*!****************************************************************************!*\
   !*** ./lib/webparts/inventoryManagement/services/StockThresholdService.js ***!
@@ -25405,9 +28000,19 @@ class StockThresholdService {
         const recipients = await StockThresholdService._getAdminEmails();
         if (recipients.length === 0) {
             console.warn("[StockThresholdService] Low stock detected but the admin group has no members with an email address.");
+            result.noRecipients = toAlert.map(level => level.assetType);
             return result;
         }
-        await _EmailService__WEBPACK_IMPORTED_MODULE_4__.EmailService.sendMail(recipients, StockThresholdService._subject(toAlert), StockThresholdService._body(toAlert));
+        // A failed email is reported, not thrown: the stock check itself still succeeded, and the
+        // alert is not recorded, so it is sent on a later check once email works.
+        try {
+            await _EmailService__WEBPACK_IMPORTED_MODULE_4__.EmailService.sendMail(recipients, StockThresholdService._subject(toAlert), StockThresholdService._body(toAlert));
+        }
+        catch (err) {
+            result.failed = toAlert.map(level => level.assetType);
+            result.emailError = err && err.message ? err.message : String(err);
+            return result;
+        }
         // Record the alert so the same drop is not reported again.
         const list = await StockThresholdService._ensureList();
         const now = new Date().toISOString();
@@ -25422,6 +28027,16 @@ class StockThresholdService {
             result.alerted.push(level.assetType);
         }
         return result;
+    }
+    /** Who receives low-stock alerts: the email addresses in the admin group. */
+    static getAlertRecipients() {
+        return StockThresholdService._getAdminEmails();
+    }
+    /** Clears a type's "alert sent" flag, so the next check alerts again if it is still low. */
+    static async resetAlert(thresholdId) {
+        const list = await _base_ListProvisioningService__WEBPACK_IMPORTED_MODULE_3__.ListProvisioningService.tryGetList(StockThresholdService.listTitle);
+        if (list)
+            await list.items.getById(thresholdId).update({ LastAlertSent: null });
     }
     static async _getAdminEmails() {
         try {
@@ -25561,6 +28176,33 @@ class SharePointBaseService {
     // the defaults are the titles the app always used.
     static get LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.inventory; }
     static get EVENT_LOG_LIST() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.eventLog; }
+    /**
+     * Title of the audit list that exists on the site: the configured one, else the first
+     * fallback found. Falls back to the configured title when none exists. Looked up once per page load.
+     */
+    static getEventLogListTitle() {
+        const configured = SharePointBaseService.EVENT_LOG_LIST;
+        const cached = SharePointBaseService.resolvedEventLog;
+        if (cached && cached.configured === configured)
+            return cached.title;
+        const candidates = [configured].concat(SharePointBaseService.EVENT_LOG_FALLBACK_TITLES)
+            .filter((title, i, all) => !!title && all.findIndex(t => t.toLowerCase() === title.toLowerCase()) === i);
+        const title = (async () => {
+            const sp = (0,_pnpjsConfig__WEBPACK_IMPORTED_MODULE_0__.getSP)();
+            for (const candidate of candidates) {
+                try {
+                    await sp.web.lists.getByTitle(candidate).select("Id")();
+                    return candidate;
+                }
+                catch {
+                    // Not on this site: try the next name.
+                }
+            }
+            return configured;
+        })();
+        SharePointBaseService.resolvedEventLog = { configured, title };
+        return title;
+    }
     static get REQUEST_LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.request; }
     static get RETURN_REQUEST_LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.returnRequest; }
     static get MAPPING_LIST_NAME() { return (0,_config_AppConfig__WEBPACK_IMPORTED_MODULE_2__.getAppConfig)().lists.mapping; }
@@ -25944,6 +28586,8 @@ class SharePointBaseService {
         return !isSystemKey && !isModeration && looksLikeStatus;
     }
 }
+/** Other titles the audit list may have, tried after the configured one. */
+SharePointBaseService.EVENT_LOG_FALLBACK_TITLES = ["Audit Log List", "EventLogList", "Event Log List"];
 SharePointBaseService.REQUEST_STATUS_INTERNAL_NAME = "RequestStatus";
 SharePointBaseService.REQUEST_COMMENT_INTERNAL_NAME = "ManagerComment";
 SharePointBaseService.REQUEST_KEY_INTERNAL_NAME = "RequestKey";
@@ -26371,7 +29015,8 @@ function formatString(template, ...values) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   formatReportDate: () => (/* binding */ formatReportDate),
-/* harmony export */   saveNexerReport: () => (/* binding */ saveNexerReport)
+/* harmony export */   saveNexerReport: () => (/* binding */ saveNexerReport),
+/* harmony export */   saveNexerTableReport: () => (/* binding */ saveNexerTableReport)
 /* harmony export */ });
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ 28339);
 /* harmony import */ var _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/NexerLogo */ 7344);
@@ -26546,6 +29191,170 @@ const saveNexerReport = (o) => {
     }
     doc.save(o.fileName);
 };
+const TAG_COLOURS = {
+    green: { fill: [223, 246, 221], text: [14, 92, 14] },
+    blue: { fill: [235, 243, 252], text: [15, 84, 140] },
+    amber: { fill: [255, 244, 206], text: [138, 55, 7] },
+    red: { fill: [253, 231, 233], text: [164, 38, 44] },
+    grey: { fill: [237, 237, 237], text: [66, 66, 66] }
+};
+const saveNexerTableReport = (o) => {
+    const doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__.jsPDF({ unit: 'mm', format: 'a4' });
+    const color = (c, kind) => {
+        if (kind === 'text')
+            doc.setTextColor(c[0], c[1], c[2]);
+        else if (kind === 'fill')
+            doc.setFillColor(c[0], c[1], c[2]);
+        else
+            doc.setDrawColor(c[0], c[1], c[2]);
+    };
+    const font = (style, size, c) => {
+        doc.setFont('helvetica', style);
+        doc.setFontSize(size);
+        color(c, 'text');
+    };
+    /** Shortens text with an ellipsis until it fits the width (at the current font). */
+    const fit = (raw, width) => {
+        let text = asText(raw);
+        if (doc.getTextWidth(text) <= width)
+            return text;
+        while (text.length > 1 && doc.getTextWidth(text + '…') > width)
+            text = text.slice(0, -1);
+        return text.replace(/\s+$/, '') + '…';
+    };
+    // ---------- Header: black band with the white wordmark (same as the single-record report) ----------
+    const drawHeader = (compact) => {
+        const bandH = compact ? 16 : 40;
+        color([0, 0, 0], 'fill');
+        doc.rect(0, 0, PAGE_W, bandH, 'F');
+        const logoH = compact ? 5 : 8.5;
+        doc.addImage(_assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_WHITE_PNG, 'PNG', MARGIN, compact ? 5.5 : 12, logoH * _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_ASPECT, logoH, 'nexer-logo-white', 'FAST');
+        if (compact) {
+            font('bold', 9, [255, 255, 255]);
+            doc.text(`${o.documentType}  ·  ${o.reference}`, PAGE_W - MARGIN, 10, { align: 'right' });
+            return bandH + 10;
+        }
+        font('normal', 8, HEADER_MUTED);
+        doc.text(o.productName, MARGIN, 29);
+        doc.setCharSpace(0.6);
+        font('bold', 7.5, HEADER_MUTED);
+        doc.text(o.documentType.toUpperCase(), PAGE_W - MARGIN, 15.5, { align: 'right' });
+        doc.setCharSpace(0);
+        font('bold', 20, [255, 255, 255]);
+        doc.text(o.reference, PAGE_W - MARGIN, 27, { align: 'right' });
+        return bandH + 14;
+    };
+    let y = drawHeader(false);
+    // ---------- Title block ----------
+    font('bold', 17, INK);
+    doc.text(fit(o.heading, CONTENT_W), MARGIN, y);
+    if (o.subheading) {
+        font('normal', 9.5, MUTED);
+        doc.text(fit(o.subheading, CONTENT_W), MARGIN, y + 6.5);
+        y += 6.5;
+    }
+    y += 8;
+    color(RULE, 'draw');
+    doc.setLineWidth(0.3);
+    doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+    y += 10;
+    const sectionLabel = (title) => {
+        doc.setCharSpace(0.6);
+        font('bold', 8, MUTED);
+        doc.text(title.toUpperCase(), MARGIN, y);
+        doc.setCharSpace(0);
+        color(INK, 'fill');
+        doc.rect(MARGIN, y + 2, 10, 0.8, 'F');
+        y += 8;
+    };
+    // ---------- Summary: a row of boxes, label over number ----------
+    if (o.summary.length) {
+        sectionLabel(o.summaryTitle);
+        const perRow = Math.min(4, o.summary.length);
+        const gap = 4;
+        const boxW = (CONTENT_W - gap * (perRow - 1)) / perRow;
+        const boxH = 18;
+        o.summary.forEach((field, i) => {
+            const col = i % perRow;
+            if (i > 0 && col === 0)
+                y += boxH + gap;
+            const x = MARGIN + col * (boxW + gap);
+            color(PANEL, 'fill');
+            doc.rect(x, y, boxW, boxH, 'F');
+            font('normal', 7.5, MUTED);
+            doc.text(fit(cleanLabel(field.label), boxW - 8), x + 4, y + 6);
+            font('bold', 14, INK);
+            doc.text(fit(asText(field.value), boxW - 8), x + 4, y + 14);
+        });
+        y += boxH + 12;
+    }
+    // ---------- Table ----------
+    sectionLabel(o.tableTitle);
+    const totalWeight = o.columns.reduce((sum, c) => sum + c.width, 0) || 1;
+    const widths = o.columns.map(c => (CONTENT_W * c.width) / totalWeight);
+    const lefts = widths.map((_, i) => MARGIN + widths.slice(0, i).reduce((sum, w) => sum + w, 0));
+    const PAD = 2.5;
+    const HEAD_H = 8;
+    const ROW_H = 8.5;
+    const drawTableHead = () => {
+        color(INK, 'fill');
+        doc.rect(MARGIN, y, CONTENT_W, HEAD_H, 'F');
+        doc.setCharSpace(0.3);
+        font('bold', 7, [255, 255, 255]);
+        o.columns.forEach((c, i) => doc.text(fit(c.header.toUpperCase(), widths[i] - PAD * 2), lefts[i] + PAD, y + 5.3));
+        doc.setCharSpace(0);
+        y += HEAD_H;
+    };
+    if (o.rows.length === 0) {
+        font('normal', 10, MUTED);
+        doc.text(o.emptyText, MARGIN, y + 4);
+    }
+    else {
+        drawTableHead();
+        o.rows.forEach((row, rowIndex) => {
+            if (y + ROW_H > FOOTER_TOP - 6) {
+                doc.addPage();
+                y = drawHeader(true);
+                drawTableHead();
+            }
+            o.columns.forEach((c, i) => {
+                const value = asText(row[i]);
+                if (c.tag && value !== '—') {
+                    const tone = TAG_COLOURS[c.tag(value, rowIndex)];
+                    font('bold', 7.5, tone.text);
+                    const text = fit(value, widths[i] - PAD * 2 - 5);
+                    const tagW = doc.getTextWidth(text) + 5;
+                    color(tone.fill, 'fill');
+                    doc.roundedRect(lefts[i] + PAD, y + 1.7, tagW, 5.2, 2.6, 2.6, 'F');
+                    doc.text(text, lefts[i] + PAD + 2.5, y + 5.4);
+                }
+                else {
+                    // The first column names the record, so it is set in bold.
+                    font(i === 0 ? 'bold' : 'normal', 8.5, i === 0 ? INK : BODY);
+                    doc.text(fit(value, widths[i] - PAD * 2), lefts[i] + PAD, y + 5.6);
+                }
+            });
+            y += ROW_H;
+            color(RULE, 'draw');
+            doc.setLineWidth(0.2);
+            doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+        });
+    }
+    // ---------- Footer on every page ----------
+    const pages = doc.getNumberOfPages();
+    for (let p = 1; p <= pages; p++) {
+        doc.setPage(p);
+        color(RULE, 'draw');
+        doc.setLineWidth(0.3);
+        doc.line(MARGIN, FOOTER_TOP, PAGE_W - MARGIN, FOOTER_TOP);
+        const logoH = 3.2;
+        doc.addImage(_assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_BLACK_PNG, 'PNG', MARGIN, FOOTER_TOP + 5, logoH * _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_ASPECT, logoH, 'nexer-logo-black', 'FAST');
+        font('normal', 7.5, MUTED);
+        doc.text(o.productName, MARGIN + logoH * _assets_NexerLogo__WEBPACK_IMPORTED_MODULE_1__.NEXER_LOGO_ASPECT + 4, FOOTER_TOP + 7.7);
+        doc.text(`${o.generatedText}   ·   ${p} / ${pages}`, PAGE_W - MARGIN, FOOTER_TOP + 7.7, { align: 'right' });
+    }
+    doc.save(o.fileName);
+};
 /** "6 Aug 2026, 16:13" for a stored date, or the raw value when it isn't a date. */
 const formatReportDate = (raw, withTime = true) => {
     if (!raw)
@@ -26688,14 +29497,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   exportDetailedReportToExcel: () => (/* binding */ exportDetailedReportToExcel),
 /* harmony export */   exportDetailedReportToPDF: () => (/* binding */ exportDetailedReportToPDF),
+/* harmony export */   exportRowsToCsv: () => (/* binding */ exportRowsToCsv),
 /* harmony export */   exportWarrantyReportToExcel: () => (/* binding */ exportWarrantyReportToExcel),
 /* harmony export */   exportWarrantyReportToPDF: () => (/* binding */ exportWarrantyReportToPDF)
 /* harmony export */ });
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ 28339);
-// AUTO-EXTRACTED from InventoryManagement.tsx (structural refactor split).
-// Pure CSV/jsPDF export functions for the Reports tab. No React, no
-// component state — operate only on the item arrays passed in.
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! InventoryManagementWebPartStrings */ 67276);
+/* harmony import */ var InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LocalizationUtils */ 25997);
+/* harmony import */ var _NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NexerPdfReport */ 3279);
+/* harmony import */ var _components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/inventory/inventoryUi */ 69024);
 
+
+
+
+/** Downloads a table as CSV (opens in Excel). The file name gets today's date appended. */
+function exportRowsToCsv(fileBase, headers, rows) {
+    const cell = (value) => `"${String(value === undefined || value === null ? '' : value).replace(/"/g, '""')}"`;
+    const csvRows = [headers.map(cell).join(",")].concat(rows.map(row => row.map(cell).join(",")));
+    const csvContent = "﻿" + csvRows.join("\n");
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", `${fileBase}_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 function exportWarrantyReportToExcel(items) {
     const headers = ["Asset Name", "Asset Type", "Status", "Purchase Date", "Warranty Expiry Date"];
     const csvRows = [headers.join(",")];
@@ -26714,7 +29543,7 @@ function exportWarrantyReportToExcel(items) {
         ];
         csvRows.push(row.join(","));
     });
-    const csvContent = "\uFEFF" + csvRows.join("\n");
+    const csvContent = "﻿" + csvRows.join("\n");
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
@@ -26725,60 +29554,65 @@ function exportWarrantyReportToExcel(items) {
     link.click();
     document.body.removeChild(link);
 }
+// ---------- Nexer-branded PDF reports ----------
+const nameOf = (item) => (item.assetName || item.title || '').trim();
+const reportDay = () => (0,_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString(), false) || '';
+const generatedText = () => (0,_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.IncidentHistory.PdfGeneratedOn, (0,_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(new Date().toISOString()) || '');
+const fileStamp = () => new Date().toISOString().split('T')[0];
+const typeCount = (items) => new Set(items.map(i => (i.assetType || '').trim()).filter(Boolean)).size;
+/** Status tag colours, the same meanings as the Inventory page. */
+const statusTag = (item) => {
+    switch ((0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucket)(item.status)) {
+        case 'inStock': return 'green';
+        case 'assigned': return 'blue';
+        case 'pendingReturn':
+        case 'maintenance': return 'amber';
+        case 'retired': return 'red';
+        default: return 'grey';
+    }
+};
+const warrantyTag = (item) => {
+    const state = (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.warrantyInfo)(item.warrantyExpiry).state;
+    return state === 'expired' ? 'red' : state === 'soon' ? 'amber' : state === 'active' ? 'green' : 'grey';
+};
 function exportWarrantyReportToPDF(items) {
-    const doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__.jsPDF();
-    // Header
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(18);
-    doc.text("Asset Warranty Expiry Report", 14, 20);
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
-    doc.text(`Total Assets: ${items.length} | Assets with Warranty: ${items.filter(i => i.warrantyExpiry).length}`, 14, 34);
-    // Table Headers
-    doc.setFont("helvetica", "bold");
-    doc.setFillColor(240, 240, 240);
-    doc.rect(14, 42, 182, 8, "F");
-    doc.text("Asset Name", 16, 47);
-    doc.text("Asset Type", 70, 47);
-    doc.text("Status", 110, 47);
-    doc.text("Purchase Date", 140, 47);
-    doc.text("Warranty Expiry", 170, 47);
-    doc.setDrawColor(200, 200, 200);
-    doc.line(14, 50, 196, 50);
-    // Rows
-    doc.setFont("helvetica", "normal");
-    let y = 56;
-    items.forEach((item) => {
-        if (y > 275) {
-            doc.addPage();
-            y = 20;
-            doc.setFont("helvetica", "bold");
-            doc.setFillColor(240, 240, 240);
-            doc.rect(14, y - 6, 182, 8, "F");
-            doc.text("Asset Name", 16, y - 1);
-            doc.text("Asset Type", 70, y - 1);
-            doc.text("Status", 110, y - 1);
-            doc.text("Purchase Date", 140, y - 1);
-            doc.text("Warranty Expiry", 170, y - 1);
-            doc.line(14, y + 2, 196, y + 2);
-            doc.setFont("helvetica", "normal");
-            y += 8;
-        }
-        const name = (item.assetName || item.title || "").substring(0, 25);
-        const type = (item.assetType || "").substring(0, 18);
-        const status = (item.status || "").substring(0, 15);
-        const purchaseDate = item.purchaseDate || "N/A";
-        const warrantyExpiry = item.warrantyExpiry || "N/A";
-        doc.text(name, 16, y);
-        doc.text(type, 70, y);
-        doc.text(status, 110, y);
-        doc.text(purchaseDate, 140, y);
-        doc.text(warrantyExpiry, 170, y);
-        doc.line(14, y + 2, 196, y + 2);
-        y += 8;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Reports;
+    const states = items.map(i => (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.warrantyInfo)(i.warrantyExpiry).state);
+    const count = (state) => states.filter(s => s === state).length;
+    (0,_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.saveNexerTableReport)({
+        documentType: t.PdfWarrantyReportType,
+        reference: reportDay(),
+        heading: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.ReportsPage.WarrantyTitle,
+        subheading: (0,_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(t.PdfAssetSubheading, items.length, typeCount(items)),
+        summaryTitle: t.PdfSummary,
+        summary: [
+            { label: t.KpiTotalAssets, value: items.length },
+            { label: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.ReportsPage.AssetsWithWarrantyLabel, value: items.length - count('none') },
+            { label: t.WarrantyExpired, value: count('expired') },
+            { label: t.PdfEndingSoon, value: count('soon') }
+        ],
+        tableTitle: t.PdfAssetList,
+        columns: [
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.AssetName, width: 40 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.SerialNumber, width: 22 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.ReportsPage.LabelAssetType, width: 22 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.Status, width: 27, tag: (_value, row) => statusTag(items[row]) },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.PurchaseDate, width: 25 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.WarrantyExpiry, width: 42, tag: (_value, row) => warrantyTag(items[row]) }
+        ],
+        rows: items.map(item => [
+            nameOf(item),
+            item.serialNumber,
+            item.assetType,
+            item.status,
+            (0,_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.formatReportDate)(item.purchaseDate, false) || '',
+            (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.warrantyInfo)(item.warrantyExpiry).text
+        ]),
+        emptyText: t.NoData,
+        productName: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Hero.Title,
+        generatedText: generatedText(),
+        fileName: `Warranty_Expiry_Report_${fileStamp()}.pdf`
     });
-    doc.save(`Warranty_Expiry_Report_${new Date().toISOString().split('T')[0]}.pdf`);
 }
 function exportDetailedReportToExcel(filteredItems) {
     const headers = ["Asset Name", "Asset Type", "Status", "Condition", "Purchase Date", "Assigned To", "Specifications"];
@@ -26802,7 +29636,7 @@ function exportDetailedReportToExcel(filteredItems) {
         ];
         csvRows.push(row.join(","));
     });
-    const csvContent = "\uFEFF" + csvRows.join("\n");
+    const csvContent = "﻿" + csvRows.join("\n");
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
@@ -26814,60 +29648,88 @@ function exportDetailedReportToExcel(filteredItems) {
     document.body.removeChild(link);
 }
 function exportDetailedReportToPDF(filteredItems) {
-    const doc = new jspdf__WEBPACK_IMPORTED_MODULE_0__.jsPDF();
-    // Header
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(18);
-    doc.text("Detailed Inventory Asset Report", 14, 20);
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 14, 28);
-    doc.text(`Total Assets Displayed: ${filteredItems.length}`, 14, 34);
-    // Table Headers
-    doc.setFont("helvetica", "bold");
-    doc.setFillColor(240, 240, 240);
-    doc.rect(14, 42, 182, 8, "F");
-    doc.text("Asset Name", 16, 47);
-    doc.text("Asset Type", 65, 47);
-    doc.text("Status", 100, 47);
-    doc.text("Condition", 130, 47);
-    doc.text("Assigned To", 160, 47);
-    doc.setDrawColor(200, 200, 200);
-    doc.line(14, 50, 196, 50);
-    // Rows
-    doc.setFont("helvetica", "normal");
-    let y = 56;
-    filteredItems.forEach((item) => {
-        if (y > 275) {
-            doc.addPage();
-            y = 20;
-            doc.setFont("helvetica", "bold");
-            doc.setFillColor(240, 240, 240);
-            doc.rect(14, y - 6, 182, 8, "F");
-            doc.text("Asset Name", 16, y - 1);
-            doc.text("Asset Type", 65, y - 1);
-            doc.text("Status", 100, y - 1);
-            doc.text("Condition", 130, y - 1);
-            doc.text("Assigned To", 160, y - 1);
-            doc.line(14, y + 2, 196, y + 2);
-            doc.setFont("helvetica", "normal");
-            y += 8;
-        }
-        const name = (item.assetName || item.title || "").substring(0, 23);
-        const type = (item.assetType || "").substring(0, 15);
-        const status = (item.status || "").substring(0, 14);
-        const condition = (item.condition || "N/A").substring(0, 14);
-        const assignedTo = (item.assignedTo || "N/A").substring(0, 18);
-        doc.text(name, 16, y);
-        doc.text(type, 65, y);
-        doc.text(status, 100, y);
-        doc.text(condition, 130, y);
-        doc.text(assignedTo, 160, y);
-        doc.line(14, y + 2, 196, y + 2);
-        y += 8;
+    const t = InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Reports;
+    const buckets = filteredItems.map(i => (0,_components_inventory_inventoryUi__WEBPACK_IMPORTED_MODULE_2__.statusBucket)(i.status));
+    const inStock = buckets.filter(b => b === 'inStock').length;
+    const assigned = buckets.filter(b => b === 'assigned').length;
+    (0,_NexerPdfReport__WEBPACK_IMPORTED_MODULE_1__.saveNexerTableReport)({
+        documentType: t.PdfAssetReportType,
+        reference: reportDay(),
+        heading: t.PdfAssetHeading,
+        subheading: (0,_LocalizationUtils__WEBPACK_IMPORTED_MODULE_3__.formatString)(t.PdfAssetSubheading, filteredItems.length, typeCount(filteredItems)),
+        summaryTitle: t.PdfSummary,
+        summary: [
+            { label: t.KpiTotalAssets, value: filteredItems.length },
+            { label: t.KpiInStock, value: inStock },
+            { label: t.KpiAssigned, value: assigned },
+            { label: t.SeriesOther, value: filteredItems.length - inStock - assigned }
+        ],
+        tableTitle: t.PdfAssetList,
+        columns: [
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.AssetName, width: 42 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.SerialNumber, width: 23 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.ReportsPage.LabelAssetType, width: 23 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.Status, width: 29, tag: (_value, row) => statusTag(filteredItems[row]) },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.Condition, width: 21 },
+            { header: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Columns.AssignedTo, width: 40 }
+        ],
+        rows: filteredItems.map(item => [
+            nameOf(item),
+            item.serialNumber,
+            item.assetType,
+            item.status,
+            item.condition || '',
+            item.assignedTo || ''
+        ]),
+        emptyText: t.NoData,
+        productName: InventoryManagementWebPartStrings__WEBPACK_IMPORTED_MODULE_0__.Hero.Title,
+        generatedText: generatedText(),
+        fileName: `Detailed_Asset_Report_${fileStamp()}.pdf`
     });
-    doc.save(`Detailed_Asset_Report_${new Date().toISOString().split('T')[0]}.pdf`);
 }
+
+
+/***/ }),
+
+/***/ 77892:
+/*!*************************************************************************!*\
+  !*** ./lib/webparts/inventoryManagement/utils/RequestDuplicateUtils.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   findOpenRequest: () => (/* binding */ findOpenRequest),
+/* harmony export */   isOpenRequest: () => (/* binding */ isOpenRequest),
+/* harmony export */   isSameAssetType: () => (/* binding */ isSameAssetType),
+/* harmony export */   isSameRequester: () => (/* binding */ isSameRequester)
+/* harmony export */ });
+/* harmony import */ var _RequestSlaUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RequestSlaUtils */ 61065);
+
+const normalizeName = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+/**
+ * True when a request's requester is the given person. Same rule the app uses for
+ * "my requests": names are compared without spaces or punctuation, and one containing the other counts.
+ */
+const isSameRequester = (requesterName, personName) => {
+    const owner = normalizeName(requesterName);
+    const person = normalizeName(personName);
+    if (!owner || !person)
+        return false;
+    return owner === person || owner.indexOf(person) >= 0 || person.indexOf(owner) >= 0;
+};
+const isSameAssetType = (a, b) => {
+    const left = (a || '').trim().toLowerCase();
+    return !!left && left === (b || '').trim().toLowerCase();
+};
+/** Still in the flow: waiting for the manager's decision, or approved and waiting for the admin to assign. */
+const isOpenRequest = (request) => {
+    const stage = (0,_RequestSlaUtils__WEBPACK_IMPORTED_MODULE_0__.getSlaStage)(request);
+    return stage === 'awaitingApproval' || stage === 'awaitingAssignment';
+};
+/** The person's open request for this asset type, if any (the one that blocks a new request). */
+const findOpenRequest = (requests, requesterName, assetType) => (requests || []).filter(r => isOpenRequest(r) && isSameAssetType(r.assetTitle, assetType) && isSameRequester(r.requesterName, requesterName))[0];
 
 
 /***/ }),
@@ -120015,7 +122877,7 @@ const Scatter = /* #__PURE__ */ createTypedChart('scatter', chart_js__WEBPACK_IM
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b9edfa7f2b2f6d2b374b")
+/******/ 		__webpack_require__.h = () => ("26766a79900f85bf6bf7")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

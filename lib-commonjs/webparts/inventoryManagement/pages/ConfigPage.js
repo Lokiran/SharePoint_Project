@@ -11,6 +11,8 @@ const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
 const AppConfig_1 = require("../config/AppConfig");
 const StockThresholdsTab_1 = require("./config/StockThresholdsTab");
+const AccessGroupsTab_1 = require("./config/AccessGroupsTab");
+const MaintenanceTab_1 = require("./config/MaintenanceTab");
 // Group names come from the web part's property pane (defaults: MSFT Owners / Members / Visitors).
 const getRoleGroups = () => {
     const g = (0, AppConfig_1.getAppConfig)().roleGroups;
@@ -135,7 +137,6 @@ const ConfigPage = (props) => {
     const [expanded, setExpanded] = React.useState({});
     const [groups, setGroups] = React.useState({});
     const [loadingGroups, setLoadingGroups] = React.useState({});
-    const [memberFilter, setMemberFilter] = React.useState('');
     const mounted = React.useRef(true);
     React.useEffect(() => () => { mounted.current = false; }, []);
     const runHealthCheck = React.useCallback(async () => {
@@ -259,7 +260,7 @@ const ConfigPage = (props) => {
                 { icon: 'Database', label: s.Tile_CoreLists, value: `${coreReady}/${CORE_LISTS.length}`, tone: toneFor(coreReady === CORE_LISTS.length, coreResults.some(r => r.status === 'missing' || r.status === 'error')) },
                 { icon: 'TableGroup', label: s.Tile_SchemaIssues, value: String(missingColumnCount), tone: toneFor(missingColumnCount === 0, false) },
                 { icon: 'Lock', label: s.Tile_PermissionIssues, value: String(writeIssues), tone: toneFor(writeIssues === 0, writeIssues > 0) },
-                { icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }
+                ...(OPTIONAL_LISTS.length > 0 ? [{ icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }] : [])
             ].map(tile => (React.createElement("div", { key: tile.icon, className: `${ConfigPage_module_scss_1.default.tile} ${tile.tone}` },
                 React.createElement("div", { className: ConfigPage_module_scss_1.default.tileHead },
                     React.createElement(react_1.Icon, { iconName: tile.icon }),
@@ -401,7 +402,7 @@ const ConfigPage = (props) => {
             checkButtons),
         React.createElement("div", { className: ConfigPage_module_scss_1.default.groupHeading }, s.CoreListsGroup),
         CORE_LISTS.map(renderListCard),
-        React.createElement("div", { className: ConfigPage_module_scss_1.default.groupHeading }, s.OptionalListsGroup),
+        OPTIONAL_LISTS.length > 0 && React.createElement("div", { className: ConfigPage_module_scss_1.default.groupHeading }, s.OptionalListsGroup),
         OPTIONAL_LISTS.map(renderListCard)));
     const renderSchema = () => (React.createElement("div", { className: ConfigPage_module_scss_1.default.panel },
         React.createElement("div", { className: ConfigPage_module_scss_1.default.panelHeader },
@@ -429,58 +430,6 @@ const ConfigPage = (props) => {
                         col.name));
                 }))));
         })));
-    const renderRbac = () => {
-        const filter = memberFilter.trim().toLowerCase();
-        return (React.createElement("div", { className: ConfigPage_module_scss_1.default.panel },
-            React.createElement("div", { className: ConfigPage_module_scss_1.default.panelHeader },
-                React.createElement("div", null,
-                    React.createElement("h4", null, s.RbacTitle),
-                    React.createElement("p", null,
-                        s.RbacDesc,
-                        " ",
-                        s.RbacRoleRule)),
-                React.createElement("div", { className: ConfigPage_module_scss_1.default.actions },
-                    React.createElement(react_1.TextField, { placeholder: s.FilterMembersPlaceholder, value: memberFilter, onChange: (_, v) => setMemberFilter(v || ''), iconProps: { iconName: 'Filter' }, styles: { root: { width: 220 } } }),
-                    React.createElement(react_1.DefaultButton, { text: s.LoadAllGroupsButton, iconProps: { iconName: 'Refresh' }, onClick: loadAllGroups }))),
-            ROLE_GROUPS.map(item => {
-                const isLoading = !!loadingGroups[item.group];
-                const info = groups[item.group];
-                const members = info ? info.members.filter(m => !filter || m.name.toLowerCase().indexOf(filter) >= 0 || m.email.toLowerCase().indexOf(filter) >= 0) : [];
-                return (React.createElement("div", { key: item.group, className: ConfigPage_module_scss_1.default.listCard },
-                    React.createElement("div", { className: ConfigPage_module_scss_1.default.listCardTop },
-                        React.createElement("div", { style: { flex: '1 1 300px' } },
-                            React.createElement("h5", { className: ConfigPage_module_scss_1.default.listTitle },
-                                item.group,
-                                React.createElement("span", { className: ConfigPage_module_scss_1.default.roleTag }, item.role()),
-                                info && info.exists && !info.error && React.createElement("span", { className: `${ConfigPage_module_scss_1.default.pill} ${ConfigPage_module_scss_1.default.pillNeutral}` }, (0, LocalizationUtils_1.formatString)(s.MemberCount, info.members.length)),
-                                info && info.currentUserIsMember && React.createElement("span", { className: `${ConfigPage_module_scss_1.default.pill} ${ConfigPage_module_scss_1.default.pillInfo}` }, s.YouAreMember)),
-                            React.createElement("span", { className: ConfigPage_module_scss_1.default.muted }, item.desc())),
-                        React.createElement(react_1.DefaultButton, { text: isLoading ? s.LoadingButton : s.ViewMembersButton, iconProps: { iconName: 'People' }, onClick: () => { loadGroup(item.group).catch(() => undefined); }, disabled: isLoading })),
-                    info && !info.exists && React.createElement("div", { className: ConfigPage_module_scss_1.default.errorBox }, s.GroupNotFound),
-                    info && info.exists && info.error && React.createElement("div", { className: ConfigPage_module_scss_1.default.errorBox }, (0, LocalizationUtils_1.formatString)(s.GroupLoadError, info.error)),
-                    info && info.exists && !info.error && (info.members.length === 0 ? (React.createElement("div", { className: ConfigPage_module_scss_1.default.muted, style: { marginTop: 10, fontStyle: 'italic' } }, s.NoMembersFound)) : (React.createElement("div", { className: ConfigPage_module_scss_1.default.chips, style: { marginTop: 10 } }, members.map((m, idx) => (React.createElement("span", { key: idx, className: ConfigPage_module_scss_1.default.chip, title: m.email },
-                        React.createElement(react_1.Icon, { iconName: "Contact" }),
-                        " ",
-                        m.name))))))));
-            })));
-    };
-    const renderOperations = () => (React.createElement("div", { className: ConfigPage_module_scss_1.default.panel },
-        React.createElement("div", { className: ConfigPage_module_scss_1.default.panelHeader },
-            React.createElement("div", null,
-                React.createElement("h4", null, s.OperationsTitle),
-                React.createElement("p", null,
-                    s.OperationsDescBefore,
-                    " ",
-                    React.createElement("strong", null, s.ListTitle_MappingList),
-                    ". ",
-                    s.OperationsDescAfter))),
-        React.createElement("div", { className: ConfigPage_module_scss_1.default.actions, style: { marginBottom: 15 } },
-            React.createElement(react_1.PrimaryButton, { text: state.syncInProgress ? s.SyncButtonProcessing : s.SyncButtonDefault, iconProps: { iconName: 'Sync' }, onClick: actions.onSyncAssignedAssets, disabled: state.syncInProgress }),
-            React.createElement(react_1.DefaultButton, { text: state.syncInProgress ? s.DiagnosticsButtonChecking : s.DiagnosticsButtonDefault, iconProps: { iconName: 'Database' }, onClick: actions.onRunDiagnostics, disabled: state.syncInProgress })),
-        state.syncMessage && (React.createElement(react_1.MessageBar, { messageBarType: state.syncMessageType, onDismiss: actions.onDismissSyncMessage, styles: { root: { marginBottom: 15, borderRadius: 6 } } }, state.syncMessage)),
-        state.diagnosticInfo && (React.createElement("div", { style: { marginTop: 15 } },
-            React.createElement("span", { style: { display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: 6 } }, s.DiagnosticLogLabel),
-            React.createElement("textarea", { readOnly: true, value: state.diagnosticInfo, rows: 10, className: ConfigPage_module_scss_1.default.diagnosticLog })))));
     const tab = state.configSelectedTab || 'overview';
     return (React.createElement("div", null,
         React.createElement("div", { className: InventoryManagement_module_scss_1.default.cardHeader },
@@ -497,9 +446,9 @@ const ConfigPage = (props) => {
         tab === 'overview' && renderOverview(),
         tab === 'connections' && renderConnections(),
         tab === 'schema' && renderSchema(),
-        tab === 'rbac' && renderRbac(),
+        tab === 'rbac' && (React.createElement(AccessGroupsTab_1.AccessGroupsTab, { roleGroups: ROLE_GROUPS, groups: groups, loadingGroups: loadingGroups, onLoadGroup: loadGroup, onLoadAll: loadAllGroups })),
         tab === 'stock' && React.createElement(StockThresholdsTab_1.StockThresholdsTab, null),
-        tab === 'operations' && renderOperations()));
+        tab === 'operations' && React.createElement(MaintenanceTab_1.MaintenanceTab, { state: state, actions: actions })));
 };
 exports.ConfigPage = ConfigPage;
 //# sourceMappingURL=ConfigPage.js.map

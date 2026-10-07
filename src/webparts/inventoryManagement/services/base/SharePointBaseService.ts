@@ -15,6 +15,36 @@ export class SharePointBaseService {
   // the defaults are the titles the app always used.
   public static get LIST_NAME(): string { return getAppConfig().lists.inventory; }
   public static get EVENT_LOG_LIST(): string { return getAppConfig().lists.eventLog; }
+  /** Other titles the audit list may have, tried after the configured one. */
+  public static readonly EVENT_LOG_FALLBACK_TITLES: string[] = ["Audit Log List", "EventLogList", "Event Log List"];
+  private static resolvedEventLog: { configured: string; title: Promise<string> } | undefined;
+
+  /**
+   * Title of the audit list that exists on the site: the configured one, else the first
+   * fallback found. Falls back to the configured title when none exists. Looked up once per page load.
+   */
+  public static getEventLogListTitle(): Promise<string> {
+    const configured = SharePointBaseService.EVENT_LOG_LIST;
+    const cached = SharePointBaseService.resolvedEventLog;
+    if (cached && cached.configured === configured) return cached.title;
+
+    const candidates = [configured].concat(SharePointBaseService.EVENT_LOG_FALLBACK_TITLES)
+      .filter((title, i, all) => !!title && all.findIndex(t => t.toLowerCase() === title.toLowerCase()) === i);
+    const title = (async (): Promise<string> => {
+      const sp = getSP();
+      for (const candidate of candidates) {
+        try {
+          await sp.web.lists.getByTitle(candidate).select("Id")();
+          return candidate;
+        } catch {
+          // Not on this site: try the next name.
+        }
+      }
+      return configured;
+    })();
+    SharePointBaseService.resolvedEventLog = { configured, title };
+    return title;
+  }
   public static get REQUEST_LIST_NAME(): string { return getAppConfig().lists.request; }
   public static get RETURN_REQUEST_LIST_NAME(): string { return getAppConfig().lists.returnRequest; }
   public static get MAPPING_LIST_NAME(): string { return getAppConfig().lists.mapping; }

@@ -21,6 +21,12 @@ export class PeopleSearchService {
    * People (not groups or system accounts) in a SharePoint site group, cached for the page
    * session. Throws when the group can't be read, so callers can tell "empty" from "failed".
    */
+  /** Forgets cached group members (after membership changes), for one group or all. */
+  public static clearGroupCache(groupName?: string): void {
+    if (groupName) delete PeopleSearchService._groupCache[(groupName || '').trim().toLowerCase()];
+    else PeopleSearchService._groupCache = {};
+  }
+
   public static getGroupMembers(groupName: string): Promise<IPersonResult[]> {
     const key = (groupName || '').trim().toLowerCase();
     if (!PeopleSearchService._groupCache[key]) {

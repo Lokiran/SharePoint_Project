@@ -11,11 +11,10 @@ const DropdownConstants_1 = require("../../constants/DropdownConstants");
 const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("../InventoryManagement.module.scss"));
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../../utils/LocalizationUtils");
+const ServiceRecordCards_1 = require("../service/ServiceRecordCards");
+const listUi_1 = require("../common/listUi");
 const IncidentHistory = (props) => {
     const [incidents, setIncidents] = (0, react_1.useState)([]);
-    const [filteredIncidents, setFilteredIncidents] = (0, react_1.useState)([]);
-    const [searchText, setSearchText] = (0, react_1.useState)('');
-    const [statusFilter, setStatusFilter] = (0, react_1.useState)(null);
     const [selectedIncident, setSelectedIncident] = (0, react_1.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0, react_1.useState)(false);
     const [tempResolution, setTempResolution] = (0, react_1.useState)('');
@@ -76,9 +75,6 @@ const IncidentHistory = (props) => {
     (0, react_1.useEffect)(() => {
         loadIncidents();
     }, [props.userEmail]);
-    (0, react_1.useEffect)(() => {
-        filterIncidents();
-    }, [searchText, statusFilter, incidents]);
     const loadIncidents = async () => {
         try {
             props.setIsLoading(true);
@@ -93,18 +89,6 @@ const IncidentHistory = (props) => {
         finally {
             props.setIsLoading(false);
         }
-    };
-    const filterIncidents = () => {
-        let filtered = [...incidents];
-        if (searchText) {
-            filtered = filtered.filter((incident) => (incident.assetName || '').toLowerCase().includes(searchText.toLowerCase()) ||
-                (incident.issueType || '').toLowerCase().includes(searchText.toLowerCase()) ||
-                (incident.incidentId || '').toLowerCase().includes(searchText.toLowerCase()));
-        }
-        if (statusFilter) {
-            filtered = filtered.filter((incident) => incident.status === statusFilter);
-        }
-        setFilteredIncidents(filtered);
     };
     const handleViewDetails = (item) => {
         setSelectedIncident(item);
@@ -191,118 +175,13 @@ const IncidentHistory = (props) => {
             triggerToast((0, LocalizationUtils_1.formatString)(strings.IncidentHistory.PdfDownloadFailed, incident.incidentId || incident.id), strings.IncidentHistory.PdfDownloadFailedTitle, true);
         }
     };
-    const columns = [
-        {
-            key: 'incidentId',
-            name: strings.IncidentHistory.ColIncidentId,
-            fieldName: 'incidentId',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => (React.createElement("div", null,
-                React.createElement(react_2.Text, null, item.incidentId),
-                item.isLocalOnly && (React.createElement("span", { title: strings.IncidentHistory.LocalOnlyTooltip, "aria-label": strings.IncidentHistory.LocalOnlyTooltip, style: { display: 'inline-block', marginTop: 2, padding: '0 6px', borderRadius: 999, fontSize: 11, fontWeight: 600, lineHeight: '18px', color: '#8a3707', background: '#fff4ce' } }, strings.IncidentHistory.LocalOnlyTag)))),
-        },
-        {
-            key: 'assetName',
-            name: strings.IncidentHistory.ColAsset,
-            fieldName: 'assetName',
-            minWidth: 100,
-            maxWidth: 150,
-            isResizable: true,
-            onRender: (item) => React.createElement(react_2.Text, null, item.assetName),
-        },
-        {
-            key: 'issueType',
-            name: strings.IncidentHistory.ColIssueType,
-            fieldName: 'issueType',
-            minWidth: 100,
-            maxWidth: 130,
-            isResizable: true,
-            onRender: (item) => React.createElement(react_2.Text, null, item.issueType),
-        },
-        {
-            key: 'priority',
-            name: strings.IncidentHistory.ColPriority,
-            fieldName: 'priority',
-            minWidth: 80,
-            maxWidth: 100,
-            isResizable: true,
-            onRender: (item) => {
-                return (React.createElement("span", { style: getPriorityBadgeStyle(item.priority) }, item.priority || 'Medium'));
-            },
-        },
-        {
-            key: 'status',
-            name: strings.IncidentHistory.ColStatus,
-            fieldName: 'status',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                return (React.createElement("span", { style: getStatusBadgeStyle(item.status) }, item.status || 'Open'));
-            },
-        },
-        {
-            key: 'reportedDate',
-            name: strings.IncidentHistory.ColReported,
-            fieldName: 'reportedDate',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                if (!item.reportedDate)
-                    return React.createElement(react_2.Text, null, "-");
-                try {
-                    return React.createElement(react_2.Text, null, new Date(item.reportedDate).toLocaleDateString());
-                }
-                catch {
-                    return React.createElement(react_2.Text, null, item.reportedDate);
-                }
-            },
-        },
-        {
-            key: 'actions',
-            name: strings.IncidentHistory.ColActions,
-            minWidth: 160,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => (React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonView, onClick: () => handleViewDetails(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }),
-                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonDownload, onClick: () => handleDownloadReport(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }))),
-        },
-    ];
-    const statusFilterOptions = [
-        { key: '', text: strings.IncidentHistory.AllStatusOption },
-        ...DropdownConstants_1.INCIDENT_STATUS_OPTIONS
-    ];
     return (React.createElement("div", { style: { marginTop: '20px' } },
-        React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
-            React.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                React.createElement(react_2.SearchBox, { placeholder: strings.IncidentHistory.SearchIncidentsPlaceholder, value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                React.createElement(react_2.Dropdown, { placeholder: strings.IncidentHistory.FilterByStatusPlaceholder, options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } }, (0, LocalizationUtils_1.formatString)(strings.IncidentHistory.ShowingIncidents, filteredIncidents.length, incidents.length)),
-            filteredIncidents.length > 0 ? (React.createElement(react_2.DetailsList, { items: filteredIncidents, columns: columns, setKey: "incident-list", layoutMode: react_2.DetailsListLayoutMode.justified, selectionMode: react_2.SelectionMode.none })) : (React.createElement("div", { style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '250px',
-                    border: '1px dashed #e5e7eb',
-                    borderRadius: '8px',
-                    padding: '30px'
-                } },
-                React.createElement(react_2.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, strings.IncidentHistory.NoIncidentsFound)))),
+        React.createElement(ServiceRecordCards_1.ServiceRecordCards, { kind: "incident", title: strings.IncidentHistoryPage.Title, subtitle: strings.RecordLists.SubtitleIncidents, records: incidents, isAdmin: props.userRole === 'Admin', onView: handleViewDetails, onDownload: handleDownloadReport }),
         React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: strings.IncidentHistory.IncidentDetailsTitle, closeButtonAriaLabel: strings.Common.Close }, selectedIncident && (React.createElement("div", { style: { marginTop: '10px' } },
             React.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                 React.createElement("strong", null, strings.IncidentHistory.ReportedLabel),
                 " ",
-                new Date(selectedIncident.reportedDate).toLocaleString()),
+                (0, listUi_1.formatFlexibleDateTime)(selectedIncident.reportedDate)),
             React.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedIncident.issueDescription)),
             React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },

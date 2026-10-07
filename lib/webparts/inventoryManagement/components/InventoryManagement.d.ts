@@ -36,7 +36,6 @@ export interface IInventoryManagementState {
     auditLogsLoading: boolean;
     errorMessage?: string;
     isTrackingActionInProgress?: boolean;
-    expandedUserEmail?: string;
     selectedTabKey?: string;
     readNotificationIds: string[];
     clearedNotificationIds: string[];

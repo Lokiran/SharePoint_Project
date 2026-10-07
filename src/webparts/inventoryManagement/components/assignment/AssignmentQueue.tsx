@@ -105,7 +105,7 @@ const priorityTone = (p?: string): ITone => {
 };
 
 /** 5 h, 2 d 4 h, 12 d. */
-const formatHours = (hours?: number): string => {
+export const formatHours = (hours?: number): string => {
   if (hours === undefined) return '—';
   const s = strings.AssignmentQueue;
   if (hours < 1) return s.DurationUnderHour;

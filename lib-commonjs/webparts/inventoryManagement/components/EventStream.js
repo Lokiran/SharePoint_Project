@@ -4,11 +4,14 @@ exports.EventStream = void 0;
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 const react_1 = require("react");
-const DetailsList_1 = require("@fluentui/react/lib/DetailsList");
+const Styling_1 = require("@fluentui/react/lib/Styling");
+const Button_1 = require("@fluentui/react/lib/Button");
+const Icon_1 = require("@fluentui/react/lib/Icon");
+const Shimmer_1 = require("@fluentui/react/lib/Shimmer");
 const RoleUtils_1 = require("../utils/RoleUtils");
-const InventoryManagement_module_scss_1 = tslib_1.__importDefault(require("./InventoryManagement.module.scss"));
 const EventFilters_1 = require("./EventFilters");
-const EventActionBadge_1 = require("./EventActionBadge");
+const EventTimeline_1 = require("./events/EventTimeline");
+const Pager_1 = require("./common/Pager");
 const InventoryService_1 = require("../services/InventoryService");
 const AssetTypeLookupService_1 = require("../services/AssetTypeLookupService");
 const DropdownConstants_1 = require("../constants/DropdownConstants");
@@ -27,11 +30,23 @@ const DEFAULT_FILTERS = {
     sortOrder: 'NewestFirst'
 };
 const STANDARD_ASSET_TYPES = DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS.map(o => String(o.key));
+const css = (0, Styling_1.mergeStyleSets)({
+    root: { color: 'var(--text-main, #242424)' },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap', marginBottom: 16 },
+    title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+    subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+    notice: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '12px 16px', borderRadius: 10, marginBottom: 16 },
+    resultLine: { fontSize: 13, color: 'var(--text-muted, #616161)', margin: '0 0 12px' },
+    empty: { padding: '48px 16px', textAlign: 'center', color: 'var(--text-muted, #616161)', border: '1px dashed rgba(128, 128, 128, 0.3)', borderRadius: 12 },
+    loading: { display: 'flex', flexDirection: 'column', gap: 18, padding: '8px 0' },
+    pager: { marginTop: 12 }
+});
 const EventStream = (props) => {
     const [filters, setFilters] = (0, react_1.useState)(DEFAULT_FILTERS);
     const [logs, setLogs] = (0, react_1.useState)([]);
     const [loading, setLoading] = (0, react_1.useState)(true);
     const [currentPage, setCurrentPage] = (0, react_1.useState)(1);
+    const [manualRefresh, setManualRefresh] = (0, react_1.useState)(0);
     // Filter option lists
     const [actionsList, setActionsList] = (0, react_1.useState)([]);
     const [baseAssetTypes, setBaseAssetTypes] = (0, react_1.useState)(STANDARD_ASSET_TYPES);
@@ -86,7 +101,8 @@ const EventStream = (props) => {
         filters.endDate,
         filters.action,
         filters.module,
-        props.refreshTrigger
+        props.refreshTrigger,
+        manualRefresh
     ]);
     // Reset to page 1 when client-side filters change
     (0, react_1.useEffect)(() => {
@@ -101,27 +117,6 @@ const EventStream = (props) => {
     // Include types seen in the currently loaded logs so a newly used type is selectable immediately.
     const assetTypesList = (0, react_1.useMemo)(() => (0, EventLogUtils_1.mergeAssetTypes)(baseAssetTypes, logs.map(l => l.assetType)), [baseAssetTypes, logs]);
     const canViewAuditDetails = RoleUtils_1.RoleUtils.canViewAuditLogs(props.currentUserRole);
-    const columns = [
-        {
-            key: 'column_action',
-            name: strings.EventStream.ColumnAction,
-            fieldName: 'action',
-            minWidth: 120,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => React.createElement(EventActionBadge_1.EventActionBadge, { action: item.action })
-        },
-        { key: 'column_type', name: strings.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
-        { key: 'column_title', name: strings.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
-        { key: 'column_assetName', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-        ...(canViewAuditDetails ? [
-            { key: 'column_user', name: strings.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
-        ] : []),
-        { key: 'column_timestamp', name: strings.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
-        ...(canViewAuditDetails ? [
-            { key: 'column_details', name: strings.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
-        ] : [])
-    ];
     // 1. Apply role-based visibility filtering client-side
     const roleBasedFilteredLogs = (0, react_1.useMemo)(() => {
         if (isEmployee) {
@@ -147,27 +142,31 @@ const EventStream = (props) => {
     const activePage = Math.min(currentPage, Math.max(1, totalPages));
     const startIndex = (activePage - 1) * PAGE_SIZE;
     const paginatedLogs = filteredLogs.slice(startIndex, startIndex + PAGE_SIZE);
-    return (React.createElement("div", { style: { marginTop: '20px' } },
-        props.errorMessage && (React.createElement("div", { style: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' } },
+    // Day headings only make sense while the events are in date order.
+    const inDateOrder = filters.sortOrder === 'NewestFirst' || filters.sortOrder === 'OldestFirst';
+    return (React.createElement("div", { className: css.root },
+        React.createElement("div", { className: css.header },
+            React.createElement("div", null,
+                React.createElement("h3", { className: css.title }, strings.Nav.EventStream),
+                React.createElement("p", { className: css.subtitle }, strings.EventFeed.Subtitle)),
+            React.createElement(Button_1.DefaultButton, { text: strings.EventFeed.Refresh, iconProps: { iconName: 'Refresh' }, onClick: () => setManualRefresh(n => n + 1), disabled: loading })),
+        props.errorMessage && (React.createElement("div", { className: css.notice },
             React.createElement("strong", null, strings.EventStream.NoticeLabel),
             " ",
             props.errorMessage)),
+        React.createElement(EventTimeline_1.ActivityPulse, { logs: filteredLogs, showPeople: canViewAuditDetails }),
         React.createElement(EventFilters_1.EventFilters, { filters: filters, onChange: setFilters, onClear: handleClearFilters, actionsList: actionsList, assetTypesList: assetTypesList, userOptions: userOptions, currentUserName: props.currentUserName }),
-        loading ? (React.createElement("p", null, strings.EventStream.LoadingAuditLogs)) : roleBasedFilteredLogs.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, isEmployee ? strings.EventStream.NoEventsForYou : strings.EventStream.NoEventsRecorded)) : filteredLogs.length === 0 ? (React.createElement("p", { style: { fontStyle: 'italic', color: 'var(--text-muted)' } }, strings.EventStream.NoEventsMatchFilters)) : (React.createElement(React.Fragment, null,
-            React.createElement(DetailsList_1.DetailsList, { items: paginatedLogs, columns: columns, setKey: "set", layoutMode: DetailsList_1.DetailsListLayoutMode.justified, selectionMode: DetailsList_1.SelectionMode.none }),
-            totalPages > 1 && (React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationContainer },
-                React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationInfo }, (0, LocalizationUtils_1.formatString)(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + PAGE_SIZE, totalItems), totalItems)),
-                React.createElement("div", { className: InventoryManagement_module_scss_1.default.paginationControls },
-                    React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(1), title: strings.Pagination.FirstPage }, "\u00AB"),
-                    React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === 1, onClick: () => setCurrentPage(prev => prev - 1), title: strings.Pagination.PreviousPage }, "\u2039"),
-                    (0, EventLogUtils_1.getPageNumbers)(activePage, totalPages).map((page, idx) => {
-                        if (page === '...') {
-                            return React.createElement("span", { key: `ellipsis-${idx}`, style: { padding: '0 8px', color: 'var(--text-muted)' } }, "...");
-                        }
-                        return (React.createElement("button", { key: page, className: `${InventoryManagement_module_scss_1.default.paginationButton} ${activePage === page ? InventoryManagement_module_scss_1.default.active : ''}`, onClick: () => setCurrentPage(page) }, page));
-                    }),
-                    React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(prev => prev + 1), title: strings.Pagination.NextPage }, "\u203A"),
-                    React.createElement("button", { className: InventoryManagement_module_scss_1.default.paginationButton, disabled: activePage === totalPages, onClick: () => setCurrentPage(totalPages), title: strings.Pagination.LastPage }, "\u00BB"))))))));
+        loading ? (React.createElement("div", { className: css.loading, "aria-busy": "true", "aria-label": strings.EventStream.LoadingAuditLogs }, [0, 1, 2, 3].map(i => (React.createElement("div", { key: i },
+            React.createElement(Shimmer_1.Shimmer, { width: "45%", styles: { root: { marginBottom: 8 } } }),
+            React.createElement(Shimmer_1.Shimmer, { width: "80%" })))))) : filteredLogs.length === 0 ? (React.createElement("div", { className: css.empty },
+            React.createElement(Icon_1.Icon, { iconName: roleBasedFilteredLogs.length === 0 ? 'ActivityFeed' : 'Search', style: { fontSize: 28, display: 'block', marginBottom: 8 } }),
+            roleBasedFilteredLogs.length === 0
+                ? (isEmployee ? strings.EventStream.NoEventsForYou : strings.EventStream.NoEventsRecorded)
+                : strings.EventStream.NoEventsMatchFilters)) : (React.createElement(React.Fragment, null,
+            React.createElement("p", { className: css.resultLine }, (0, LocalizationUtils_1.formatString)(strings.EventFeed.ResultEvents, totalItems, roleBasedFilteredLogs.length)),
+            React.createElement(EventTimeline_1.EventTimeline, { logs: paginatedLogs, groupByDay: inDateOrder, showAudit: canViewAuditDetails }),
+            React.createElement("div", { className: css.pager },
+                React.createElement(Pager_1.Pager, { page: activePage, pageSize: PAGE_SIZE, totalItems: totalItems, onChange: setCurrentPage }))))));
 };
 exports.EventStream = EventStream;
 //# sourceMappingURL=EventStream.js.map

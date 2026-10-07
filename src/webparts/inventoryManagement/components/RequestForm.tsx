@@ -28,6 +28,8 @@ import { DEFAULT_ASSET_TYPE_OPTIONS, ASSET_REQUEST_PRIORITY_OPTIONS } from '../c
 import { PeopleSearchService, IPersonResult } from '../services/PeopleSearchService';
 import { getAppConfig } from '../config/AppConfig';
 import { formatString } from '../utils/LocalizationUtils';
+import { getSlaStage } from '../utils/RequestSlaUtils';
+import { isOpenRequest, isSameAssetType } from '../utils/RequestDuplicateUtils';
 import * as strings from 'InventoryManagementWebPartStrings';
 
 /** The manager picked in the form. `email` is empty when the name was typed rather than found. */
@@ -72,6 +74,8 @@ export interface IRequestFormProps {
   currentUserRole: UserRole;
   currentUserName: string;
   currentUserEmail?: string;
+  /** The current user's own requests; a type with one still in progress cannot be requested again. */
+  myRequests?: IRequest[];
   onSubmitRequest: (request: Omit<IRequest, 'id' | 'requestKey' | 'status'>) => void;
 }
 
@@ -136,9 +140,21 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
   const uniqueAssetTypes = Array.from(new Set(props.availableAssets.map(a => a.assetType).filter(Boolean)));
   const dynamicAssetTypeOptions: IDropdownOption[] = uniqueAssetTypes.map(type => ({ key: type, text: type }));
 
-  const assetTypeOptions: IDropdownOption[] = dynamicAssetTypeOptions.length > 0
+  // One open request per asset type: a type is blocked until its request is assigned or rejected.
+  const openRequests = (props.myRequests || []).filter(isOpenRequest);
+  const openRequestFor = (type?: string): IRequest | undefined => openRequests.filter(r => isSameAssetType(r.assetTitle, type))[0];
+  const stageText = (request: IRequest): string =>
+    getSlaStage(request) === 'awaitingAssignment' ? strings.Reports.OutcomeAwaitingAssignment : strings.Reports.OutcomeAwaitingApproval;
+  const describeOpen = (request: IRequest): string =>
+    formatString(strings.RequestForm.OpenRequestItem, request.assetTitle, request.requestKey || `#${request.id}`, stageText(request));
+  const blockingRequest = openRequestFor(selectedAssetType);
+
+  const assetTypeOptions: IDropdownOption[] = (dynamicAssetTypeOptions.length > 0
     ? dynamicAssetTypeOptions
-    : DEFAULT_ASSET_TYPE_OPTIONS;
+    : DEFAULT_ASSET_TYPE_OPTIONS
+  ).map(option => openRequestFor(String(option.key))
+    ? { ...option, disabled: true, text: formatString(strings.RequestForm.TypeInProgress, option.text) }
+    : option);
 
   // Only approvers can be picked: members of the manager role group (property pane,
   // default MSFT Owners/Members/Visitors -> MSFT Members). The requester is left out,
@@ -195,10 +211,11 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
   );
 
   // A manager counts only when picked from the list, which always carries an email.
-  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && quantity > 0 && !!reason.trim();
+  const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && !blockingRequest && quantity > 0 && !!reason.trim();
 
   const onSave = () => {
     const employee = activeEmployee;
+    if (blockingRequest) return;
 
     // Find a real asset ID to satisfy SharePoint backend lookups
     let matchingAsset = props.availableAssets.find(
@@ -329,7 +346,13 @@ export const RequestForm: React.FC<IRequestFormProps> = (props) => {
             setSelectedAssetType(opt?.key as string);
           }}
           required
+          errorMessage={blockingRequest ? formatString(strings.RequestForm.DuplicateBlocked, blockingRequest.assetTitle, blockingRequest.requestKey || `#${blockingRequest.id}`) : undefined}
         />
+        {openRequests.length > 0 && !blockingRequest && (
+          <MessageBar messageBarType={MessageBarType.warning} isMultiline>
+            {formatString(strings.RequestForm.OpenRequestsNote, openRequests.map(describeOpen).join('; '))}
+          </MessageBar>
+        )}
         <Dropdown
           label={strings.RequestForm.LabelPriority}
           selectedKey={priority}

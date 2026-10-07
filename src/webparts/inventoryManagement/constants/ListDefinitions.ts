@@ -23,13 +23,13 @@ export interface IListDefinition {
   key: ListKey;
   candidates: string[];
   requiredColumns: IRequiredColumn[];
-  /** Core lists block the app; optional lists only disable a feature. */
+  /** Core lists block the app; optional lists only disable a feature. (Every list on the Config page is core.) */
   optional?: boolean;
   /** The owning service creates the list on first use if it is missing. */
   autoCreated?: boolean;
   /**
    * Not shown on the Config page or included in its health check: settings storage the app
-   * creates itself (stock thresholds, kits, app settings) and the optional EmployeeList lookup.
+   * creates itself (stock thresholds, app settings) and the optional EmployeeList lookup.
    * The services still use these lists when they exist.
    */
   internal?: boolean;
@@ -117,7 +117,8 @@ export const getListDefinitions = (): IListDefinition[] => {
     },
     {
       key: 'eventLog',
-      candidates: names(lists.eventLog),
+      // The audit service tries the same names (SharePointBaseService.getEventLogListTitle).
+      candidates: names(lists.eventLog, ...SharePointBaseService.EVENT_LOG_FALLBACK_TITLES),
       requiredColumns: [
         { name: 'Title' },
         { name: 'Action' },
@@ -127,9 +128,9 @@ export const getListDefinitions = (): IListDefinition[] => {
         { name: 'User' }
       ]
     },
-    { key: 'incident', candidates: names(lists.incident), optional: true, requiredColumns: [] },
+    { key: 'incident', candidates: names(lists.incident), requiredColumns: [] },
     { key: 'employee', candidates: names(lists.employee), optional: true, internal: true, requiredColumns: [] },
-    { key: 'replacement', candidates: names(lists.replacement), optional: true, autoCreated: true, requiredColumns: [] },
+    { key: 'replacement', candidates: names(lists.replacement), autoCreated: true, requiredColumns: [] },
     {
       key: 'stockThresholds',
       candidates: names(lists.stockThresholds),
@@ -141,9 +142,7 @@ export const getListDefinitions = (): IListDefinition[] => {
     {
       key: 'assetKits',
       candidates: names(lists.assetKits),
-      optional: true,
       autoCreated: true,
-      internal: true,
       requiredColumns: [{ name: 'Title' }, { name: 'KitItems' }, { name: 'KitDescription' }]
     },
     {
@@ -157,7 +156,10 @@ export const getListDefinitions = (): IListDefinition[] => {
   ];
 };
 
-/** The lists shown and health-checked on the Config page (excludes the app's internal settings lists). */
+/**
+ * The lists shown and health-checked on the Config page, all as required: Inventory, Request,
+ * Asset Return Request, Mapping, Audit/Event Log, Incident, Asset Replacements and Asset Kits.
+ */
 export const getConfigListDefinitions = (): IListDefinition[] =>
   getListDefinitions().filter(d => !d.internal);
 

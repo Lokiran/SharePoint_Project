@@ -18,6 +18,12 @@ export interface IStockAlertResult {
   reset: string[];
   /** Types that are low but were not alerted because email is switched off in the Email Center. */
   held?: string[];
+  /** Types that are low but whose alert email could not be sent; they are retried on the next check. */
+  failed?: string[];
+  /** Why the alert email could not be sent (e.g. the Graph Mail.Send permission is not approved). */
+  emailError?: string;
+  /** Low types not alerted because the admin group has no members with an email address. */
+  noRecipients?: string[];
 }
 
 const escapeHtml = (s: string): string =>
@@ -131,10 +137,19 @@ export class StockThresholdService {
     const recipients = await StockThresholdService._getAdminEmails();
     if (recipients.length === 0) {
       console.warn("[StockThresholdService] Low stock detected but the admin group has no members with an email address.");
+      result.noRecipients = toAlert.map(level => level.assetType);
       return result;
     }
 
-    await EmailService.sendMail(recipients, StockThresholdService._subject(toAlert), StockThresholdService._body(toAlert));
+    // A failed email is reported, not thrown: the stock check itself still succeeded, and the
+    // alert is not recorded, so it is sent on a later check once email works.
+    try {
+      await EmailService.sendMail(recipients, StockThresholdService._subject(toAlert), StockThresholdService._body(toAlert));
+    } catch (err: any) {
+      result.failed = toAlert.map(level => level.assetType);
+      result.emailError = err && err.message ? err.message : String(err);
+      return result;
+    }
 
     // Record the alert so the same drop is not reported again.
     const list = await StockThresholdService._ensureList();
@@ -149,6 +164,17 @@ export class StockThresholdService {
       result.alerted.push(level.assetType);
     }
     return result;
+  }
+
+  /** Who receives low-stock alerts: the email addresses in the admin group. */
+  public static getAlertRecipients(): Promise<string[]> {
+    return StockThresholdService._getAdminEmails();
+  }
+
+  /** Clears a type's "alert sent" flag, so the next check alerts again if it is still low. */
+  public static async resetAlert(thresholdId: number): Promise<void> {
+    const list = await ListProvisioningService.tryGetList(StockThresholdService.listTitle);
+    if (list) await list.items.getById(thresholdId).update({ LastAlertSent: null });
   }
 
   private static async _getAdminEmails(): Promise<string[]> {

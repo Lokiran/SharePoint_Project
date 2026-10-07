@@ -11,11 +11,10 @@ const IncidentService_1 = require("../../services/IncidentService");
 const DropdownConstants_1 = require("../../constants/DropdownConstants");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const LocalizationUtils_1 = require("../../utils/LocalizationUtils");
+const ServiceRecordCards_1 = require("../service/ServiceRecordCards");
+const listUi_1 = require("../common/listUi");
 const ReplacementHistory = (props) => {
     const [replacements, setReplacements] = (0, react_1.useState)([]);
-    const [filteredReplacements, setFilteredReplacements] = (0, react_1.useState)([]);
-    const [searchText, setSearchText] = (0, react_1.useState)('');
-    const [statusFilter, setStatusFilter] = (0, react_1.useState)(null);
     const [selectedReplacement, setSelectedReplacement] = (0, react_1.useState)(null);
     const [showDetailPanel, setShowDetailPanel] = (0, react_1.useState)(false);
     const [tempResolution, setTempResolution] = (0, react_1.useState)('');
@@ -71,9 +70,6 @@ const ReplacementHistory = (props) => {
     (0, react_1.useEffect)(() => {
         loadReplacements();
     }, [props.userEmail]);
-    (0, react_1.useEffect)(() => {
-        filterReplacements();
-    }, [searchText, statusFilter, replacements]);
     const loadReplacements = async () => {
         try {
             props.setIsLoading(true);
@@ -88,17 +84,6 @@ const ReplacementHistory = (props) => {
         finally {
             props.setIsLoading(false);
         }
-    };
-    const filterReplacements = () => {
-        let filtered = [...replacements];
-        if (searchText) {
-            filtered = filtered.filter((rep) => (rep.assetName || '').toLowerCase().includes(searchText.toLowerCase()) ||
-                (rep.incidentId || '').toLowerCase().includes(searchText.toLowerCase()));
-        }
-        if (statusFilter) {
-            filtered = filtered.filter((rep) => rep.status === statusFilter);
-        }
-        setFilteredReplacements(filtered);
     };
     const handleViewDetails = (item) => {
         setSelectedReplacement(item);
@@ -182,116 +167,13 @@ const ReplacementHistory = (props) => {
             console.error('Error generating PDF report:', error);
         }
     };
-    const columns = [
-        {
-            key: 'replacementId',
-            name: strings.IncidentHistory.ColReplacementId,
-            fieldName: 'incidentId',
-            minWidth: 100,
-            maxWidth: 130,
-            isResizable: true,
-            onRender: (item) => React.createElement(react_2.Text, null, item.incidentId),
-        },
-        {
-            key: 'assetName',
-            name: strings.IncidentHistory.ColAsset,
-            fieldName: 'assetName',
-            minWidth: 120,
-            maxWidth: 180,
-            isResizable: true,
-            onRender: (item) => React.createElement(react_2.Text, null, item.assetName),
-        },
-        {
-            key: 'issueType',
-            name: strings.IncidentHistory.ColType,
-            fieldName: 'issueType',
-            minWidth: 120,
-            maxWidth: 150,
-            isResizable: true,
-            onRender: () => React.createElement(react_2.Text, null, strings.IncidentHistory.ReplacementRequestType),
-        },
-        {
-            key: 'priority',
-            name: strings.IncidentHistory.ColPriority,
-            fieldName: 'priority',
-            minWidth: 80,
-            maxWidth: 100,
-            isResizable: true,
-            onRender: (item) => {
-                return (React.createElement("span", { style: getPriorityBadgeStyle(item.priority) }, item.priority || 'Medium'));
-            },
-        },
-        {
-            key: 'status',
-            name: strings.IncidentHistory.ColStatus,
-            fieldName: 'status',
-            minWidth: 90,
-            maxWidth: 120,
-            isResizable: true,
-            onRender: (item) => {
-                return (React.createElement("span", { style: getStatusBadgeStyle(item.status) }, item.status || 'Open'));
-            },
-        },
-        {
-            key: 'reportedDate',
-            name: strings.IncidentHistory.ColReported,
-            fieldName: 'reportedDate',
-            minWidth: 100,
-            maxWidth: 130,
-            isResizable: true,
-            onRender: (item) => {
-                if (!item.reportedDate)
-                    return React.createElement(react_2.Text, null, "-");
-                try {
-                    return React.createElement(react_2.Text, null, new Date(item.reportedDate).toLocaleDateString());
-                }
-                catch {
-                    return React.createElement(react_2.Text, null, item.reportedDate);
-                }
-            },
-        },
-        {
-            key: 'actions',
-            name: strings.IncidentHistory.ColActions,
-            minWidth: 160,
-            maxWidth: 220,
-            isResizable: true,
-            onRender: (item) => (React.createElement(react_2.Stack, { horizontal: true, tokens: { childrenGap: 8 } },
-                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonView, onClick: () => handleViewDetails(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }),
-                React.createElement(react_2.PrimaryButton, { text: strings.IncidentHistory.ButtonDownload, onClick: () => handleDownloadReport(item), styles: {
-                        root: { padding: '2px 10px', fontSize: '11px', height: '24px' },
-                    } }))),
-        },
-    ];
-    const statusFilterOptions = [
-        { key: '', text: strings.IncidentHistory.AllStatusOption },
-        ...DropdownConstants_1.INCIDENT_STATUS_OPTIONS
-    ];
     return (React.createElement("div", { style: { marginTop: '20px' }, className: ReplacementHistory_module_scss_1.default.replacementHistory },
-        React.createElement(react_2.Stack, { tokens: { childrenGap: 15 } },
-            React.createElement("div", { style: { display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '5px' } },
-                React.createElement(react_2.SearchBox, { placeholder: strings.IncidentHistory.SearchReplacementsPlaceholder, value: searchText, onChange: (ev, newValue) => setSearchText(newValue || ''), onClear: () => setSearchText(''), styles: { root: { width: '100%', maxWidth: 400 } } }),
-                React.createElement(react_2.Dropdown, { placeholder: strings.IncidentHistory.FilterByStatusPlaceholder, options: statusFilterOptions, onChange: (ev, option) => setStatusFilter(option?.key || null), styles: { root: { width: 200 } } })),
-            React.createElement(react_2.Text, { variant: "small", style: { color: 'var(--text-muted, #6b7280)', display: 'block' } }, (0, LocalizationUtils_1.formatString)(strings.IncidentHistory.ShowingReplacements, filteredReplacements.length, replacements.length)),
-            filteredReplacements.length > 0 ? (React.createElement(react_2.DetailsList, { items: filteredReplacements, columns: columns, setKey: "replacement-list", layoutMode: react_2.DetailsListLayoutMode.justified, selectionMode: react_2.SelectionMode.none })) : (React.createElement("div", { style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '250px',
-                    border: '1px dashed #e5e7eb',
-                    borderRadius: '8px',
-                    padding: '30px'
-                } },
-                React.createElement(react_2.Icon, { iconName: "ClearFilter", style: { fontSize: '36px', color: '#9ca3af', marginBottom: '10px' } }),
-                React.createElement(react_2.Text, { variant: "medium", style: { color: '#6b7280' } }, strings.IncidentHistory.NoReplacementsFound)))),
+        React.createElement(ServiceRecordCards_1.ServiceRecordCards, { kind: "replacement", title: strings.Nav.ReplacementHistory, subtitle: strings.RecordLists.SubtitleReplacements, records: replacements, isAdmin: props.userRole === 'Admin', onView: handleViewDetails, onDownload: handleDownloadReport }),
         React.createElement(react_2.Panel, { isOpen: showDetailPanel, onDismiss: () => setShowDetailPanel(false), type: react_2.PanelType.medium, headerText: strings.IncidentHistory.ReplacementDetailsTitle, closeButtonAriaLabel: strings.Common.Close }, selectedReplacement && (React.createElement("div", { style: { marginTop: '10px' } },
             React.createElement("p", { style: { color: '#6b7280', fontSize: '0.88rem', margin: '0 0 20px 0' } },
                 React.createElement("strong", null, strings.IncidentHistory.ReportedLabel),
                 " ",
-                new Date(selectedReplacement.reportedDate).toLocaleString()),
+                (0, listUi_1.formatFlexibleDateTime)(selectedReplacement.reportedDate)),
             React.createElement("div", { style: { padding: '12px 15px', backgroundColor: '#f1f5f9', borderRadius: '6px', marginBottom: '20px', borderLeft: '4px solid #64748b' } },
                 React.createElement("p", { style: { margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' } }, selectedReplacement.issueDescription)),
             React.createElement("div", { style: { backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', border: '1px solid #e5e7eb', marginBottom: '20px' } },

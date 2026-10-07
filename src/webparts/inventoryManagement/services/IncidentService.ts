@@ -237,7 +237,9 @@ export class IncidentService {
 
       const dateField = getInternalName(['Raised Date', 'RaisedDate', 'Requested Date', 'RequestedDate', 'Reported Date', 'ReportedDate']);
       if (dateField) {
-        payload[dateField] = data.raisedDate || data.requiredDate || data.reportedDate || new Date().toISOString();
+        // The form's raisedDate is display text in the user's locale ("30/9/2026, 11:20:05"),
+        // which cannot be read back reliably, so the machine-readable timestamp is stored.
+        payload[dateField] = data.requiredDate || data.reportedDate || new Date().toISOString();
       }
 
       const reasonField = getInternalName(['Description', 'Reason for Request', 'ReasonforRequest', 'Reason', 'Issue Description', 'IssueDescription']);
@@ -317,6 +319,12 @@ export class IncidentService {
     const raisedToField = getInternalName(['Raised To', 'RaisedTo']);
     const empNameField = getInternalName(['Employe Name', 'Employee Name', 'EmployeeName', 'EmployeName']);
 
+    // Older rows hold the raised date as locale display text; for those the item's Created time is used.
+    const reportedOf = (item: any): string => {
+      const text = dateField && item[dateField] ? String(item[dateField]) : '';
+      return /^\d{4}-\d{2}-\d{2}/.test(text.trim()) ? text : (item.Created || text);
+    };
+
     return items.map(item => ({
       id: item.Id ? item.Id.toString() : item.ID ? item.ID.toString() : Math.random().toString(),
       employeeName: empNameField && item[empNameField] ? item[empNameField] : (item.Title || 'Unknown'),
@@ -327,9 +335,9 @@ export class IncidentService {
       priority: priorityField && item[priorityField] ? item[priorityField] : 'Medium',
       reason: reasonField && item[reasonField] ? item[reasonField] : '',
       description: reasonField && item[reasonField] ? item[reasonField] : '',
-      requestDate: dateField && item[dateField] ? item[dateField] : '',
-      reportedDate: dateField && item[dateField] ? item[dateField] : '',
-      raisedDate: dateField && item[dateField] ? item[dateField] : '',
+      requestDate: reportedOf(item),
+      reportedDate: reportedOf(item),
+      raisedDate: reportedOf(item),
       issueType: incidentTypeField && item[incidentTypeField] ? item[incidentTypeField] : 'Incident',
       incidentType: incidentTypeField && item[incidentTypeField] ? item[incidentTypeField] : '',
       issueDescription: reasonField && item[reasonField] ? item[reasonField] : '',

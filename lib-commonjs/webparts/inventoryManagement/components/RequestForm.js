@@ -9,6 +9,8 @@ const DropdownConstants_1 = require("../constants/DropdownConstants");
 const PeopleSearchService_1 = require("../services/PeopleSearchService");
 const AppConfig_1 = require("../config/AppConfig");
 const LocalizationUtils_1 = require("../utils/LocalizationUtils");
+const RequestSlaUtils_1 = require("../utils/RequestSlaUtils");
+const RequestDuplicateUtils_1 = require("../utils/RequestDuplicateUtils");
 const strings = tslib_1.__importStar(require("InventoryManagementWebPartStrings"));
 const pickerCss = (0, Styling_1.mergeStyleSets)({
     suggestion: { display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', textAlign: 'left', minWidth: 0 },
@@ -79,9 +81,17 @@ const RequestForm = (props) => {
     }, [props.isOpen, employeeOptions]);
     const uniqueAssetTypes = Array.from(new Set(props.availableAssets.map(a => a.assetType).filter(Boolean)));
     const dynamicAssetTypeOptions = uniqueAssetTypes.map(type => ({ key: type, text: type }));
-    const assetTypeOptions = dynamicAssetTypeOptions.length > 0
+    // One open request per asset type: a type is blocked until its request is assigned or rejected.
+    const openRequests = (props.myRequests || []).filter(RequestDuplicateUtils_1.isOpenRequest);
+    const openRequestFor = (type) => openRequests.filter(r => (0, RequestDuplicateUtils_1.isSameAssetType)(r.assetTitle, type))[0];
+    const stageText = (request) => (0, RequestSlaUtils_1.getSlaStage)(request) === 'awaitingAssignment' ? strings.Reports.OutcomeAwaitingAssignment : strings.Reports.OutcomeAwaitingApproval;
+    const describeOpen = (request) => (0, LocalizationUtils_1.formatString)(strings.RequestForm.OpenRequestItem, request.assetTitle, request.requestKey || `#${request.id}`, stageText(request));
+    const blockingRequest = openRequestFor(selectedAssetType);
+    const assetTypeOptions = (dynamicAssetTypeOptions.length > 0
         ? dynamicAssetTypeOptions
-        : DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS;
+        : DropdownConstants_1.DEFAULT_ASSET_TYPE_OPTIONS).map(option => openRequestFor(String(option.key))
+        ? { ...option, disabled: true, text: (0, LocalizationUtils_1.formatString)(strings.RequestForm.TypeInProgress, option.text) }
+        : option);
     // Only approvers can be picked: members of the manager role group (property pane,
     // default MSFT Owners/Members/Visitors -> MSFT Members). The requester is left out,
     // since nobody approves their own request.
@@ -129,9 +139,11 @@ const RequestForm = (props) => {
             persona.secondaryText && React.createElement("span", { className: pickerCss.suggestionMeta }, persona.secondaryText),
             persona.tertiaryText && React.createElement("span", { className: pickerCss.suggestionMeta }, persona.tertiaryText))));
     // A manager counts only when picked from the list, which always carries an email.
-    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && quantity > 0 && !!reason.trim();
+    const isFormValid = !!selectedRequesterId && !!employeeId.trim() && !!manager && !!manager.email && !!selectedAssetType && !blockingRequest && quantity > 0 && !!reason.trim();
     const onSave = () => {
         const employee = activeEmployee;
+        if (blockingRequest)
+            return;
         // Find a real asset ID to satisfy SharePoint backend lookups
         let matchingAsset = props.availableAssets.find(a => a.assetType === selectedAssetType &&
             (a.status === 'In Stock' || a.status === 'Yes'));
@@ -206,7 +218,8 @@ const RequestForm = (props) => {
             React.createElement(react_1.TextField, { label: strings.RequestForm.LabelRequestedDate, type: "date", value: requestDate, onChange: (_, val) => setRequestDate(val || ''), required: true }),
             React.createElement(react_1.Dropdown, { label: strings.RequestForm.LabelAssetType, selectedKey: selectedAssetType, options: assetTypeOptions, onChange: (_, opt) => {
                     setSelectedAssetType(opt?.key);
-                }, required: true }),
+                }, required: true, errorMessage: blockingRequest ? (0, LocalizationUtils_1.formatString)(strings.RequestForm.DuplicateBlocked, blockingRequest.assetTitle, blockingRequest.requestKey || `#${blockingRequest.id}`) : undefined }),
+            openRequests.length > 0 && !blockingRequest && (React.createElement(react_1.MessageBar, { messageBarType: react_1.MessageBarType.warning, isMultiline: true }, (0, LocalizationUtils_1.formatString)(strings.RequestForm.OpenRequestsNote, openRequests.map(describeOpen).join('; ')))),
             React.createElement(react_1.Dropdown, { label: strings.RequestForm.LabelPriority, selectedKey: priority, options: DropdownConstants_1.ASSET_REQUEST_PRIORITY_OPTIONS, onChange: (_, opt) => setPriority(opt?.key), required: true }),
             React.createElement(react_1.TextField, { label: strings.RequestForm.LabelQuantity, type: "number", value: quantity.toString(), onChange: (_, val) => setQuantity(parseInt(val || '0')), required: true }),
             React.createElement(react_1.TextField, { label: strings.RequestForm.LabelReason, multiline: true, rows: 3, value: reason, onChange: (_, val) => {

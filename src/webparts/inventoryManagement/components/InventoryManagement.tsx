@@ -13,6 +13,7 @@ import { RequestForm } from './RequestForm';
 import { IReturnRequest } from '../models/IReturnRequest';
 import { ReturnAssetForm } from './ReturnAssetForm';
 import { getAvailableStock } from '../utils/StockUtils';
+import { findOpenRequest } from '../utils/RequestDuplicateUtils';
 import { DefaultButton, Dropdown, IDropdownOption, MessageBarType, Icon, IButtonStyles } from '@fluentui/react';
 import {
   Chart as ChartJS,
@@ -40,7 +41,7 @@ import "@pnp/sp/site-groups/web";
 import { EMPLOYEES } from '../data/mockData';
 import { IEmployee } from '../models/IEmployee';
 import { InventoryService } from '../services/InventoryService';
-import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage, InventoryPage, ReplacementHistoryPage, NotificationsPage, NotificationDetailsPanel, AssetReturnsPage, EventStreamPage, AssetAssignmentQueuePage, MyWorkspacePage, AdminAssignmentPanel, ApprovalsPage, UsersPage, OnboardingPage } from '../pages';
+import { ConfigPage, DashboardPage, ReportsPage, IncidentHistoryPage, InventoryPage, ReplacementHistoryPage, NotificationsPage, NotificationDetailsPanel, AssetReturnsPage, EventStreamPage, AssetAssignmentQueuePage, MyWorkspacePage, AdminAssignmentPanel, ApprovalsPage, OnboardingPage } from '../pages';
 import { INotification } from '../models/INotification';
 import { IncidentRequestModule } from './IncidentRequest/IncidentRequestModule';
 import { IncidentHistory } from './IncidentHistory/IncidentHistory';
@@ -82,7 +83,6 @@ export interface IInventoryManagementState {
   auditLogsLoading: boolean;
   errorMessage?: string;
   isTrackingActionInProgress?: boolean;
-  expandedUserEmail?: string;
   selectedTabKey?: string;
   readNotificationIds: string[];
   clearedNotificationIds: string[];
@@ -462,11 +462,11 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     this.setState({ emailCenterOpen: true, emailCenterEntryId: undefined });
   };
 
-  private _handleEmailSendFailed = (ev: CustomEvent<{ to: string[]; subject: string; errorMessage: string }>): void => {
-    this.setState({
-      syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
-      syncMessageType: MessageBarType.warning
-    });
+  // A failed email is shown by the badge on the Email button and in the Email Center
+  // (not in Config → Maintenance, which only reports maintenance actions).
+  private _handleEmailSendFailed = (): void => {
+    const failed = EmailOutbox.getFailedCount();
+    if (failed !== this.state.emailFailedCount) this.setState({ emailFailedCount: failed });
   };
 
   private _resolveUserRole = async (): Promise<void> => {
@@ -626,8 +626,6 @@ export default class InventoryManagement extends React.Component<IInventoryManag
         isReturnFormOpen: false,
         selectedAssetForReturn: undefined,
         returnRequestsLoading: false,
-        syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-        syncMessageType: MessageBarType.success,
         workflowPopup: {
           isOpen: true,
           title: 'Asset Return Request Submitted',
@@ -750,6 +748,30 @@ export default class InventoryManagement extends React.Component<IInventoryManag
   };
 
   private _onSubmitRequest = async (requestData: Omit<IRequest, 'id' | 'requestKey' | 'status'>): Promise<void> => {
+    // One open request per person and asset type: refuse a second one until the first is assigned or rejected.
+    const openRequest = findOpenRequest(this.state.requests, requestData.requesterName, requestData.assetTitle);
+    if (openRequest) {
+      const openKey = openRequest.requestKey || `#${openRequest.id}`;
+      this.setState({
+        workflowPopup: {
+          isOpen: true,
+          title: strings.RequestForm.DuplicateTitle,
+          stage: strings.RequestForm.DuplicateStage,
+          type: 'warning',
+          message: formatString(strings.RequestForm.DuplicateBlocked, requestData.assetTitle, openKey),
+          details: {
+            requestId: openKey,
+            assetTitle: openRequest.assetTitle,
+            requesterName: openRequest.requesterName,
+            managerName: openRequest.managerName,
+            status: openRequest.status,
+            date: openRequest.requestDate
+          }
+        }
+      });
+      return;
+    }
+
     try {
       const initialStatus = 'Pending';
 
@@ -1044,12 +1066,12 @@ export default class InventoryManagement extends React.Component<IInventoryManag
     }
   };
 
-  private _exportWarrantyReportToExcel = (): void => {
-    exportWarrantyReportToExcel(this.state.items);
+  private _exportWarrantyReportToExcel = (filteredItems?: IInventoryItem[]): void => {
+    exportWarrantyReportToExcel(filteredItems || this.state.items);
   };
 
-  private _exportWarrantyReportToPDF = (): void => {
-    exportWarrantyReportToPDF(this.state.items);
+  private _exportWarrantyReportToPDF = (filteredItems?: IInventoryItem[]): void => {
+    exportWarrantyReportToPDF(filteredItems || this.state.items);
   };
 
   private _exportDetailedReportToExcel = (filteredItems: IInventoryItem[]): void => {
@@ -1265,7 +1287,6 @@ export default class InventoryManagement extends React.Component<IInventoryManag
       ] : []),
       ...(isAdmin ? [
         { key: 'EventStream', text: strings.Nav.EventStream, icon: 'ActivityFeed', group: strings.Nav.GroupSystem },
-        { key: 'Users', text: strings.Nav.Users, icon: 'People' },
         { key: 'Reports', text: strings.Nav.Reports, icon: 'ReportDocument' },
         { key: 'Config', text: strings.Nav.Config, icon: 'Settings' }
       ] : [])
@@ -1477,7 +1498,10 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
                   reportsStatusFilter: this.state.reportsStatusFilter,
                   items,
-                  requests: this.state.requests
+                  requests: this.state.requests,
+                  auditLogs,
+                  returnRequests: this.state.returnRequests,
+                  spContext: this.props.spContext
                 };
 
                 const reportsActions = {
@@ -1486,8 +1510,8 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                   onStatusFilterChange: (status: string) => this.setState({ reportsStatusFilter: status }),
                   onExportDetailedReportToExcel: (filteredItems: any[]) => this._exportDetailedReportToExcel(filteredItems),
                   onExportDetailedReportToPDF: (filteredItems: any[]) => this._exportDetailedReportToPDF(filteredItems),
-                  onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
-                  onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                  onExportWarrantyReportToExcel: (filteredItems?: IInventoryItem[]) => this._exportWarrantyReportToExcel(filteredItems),
+                  onExportWarrantyReportToPDF: (filteredItems?: IInventoryItem[]) => this._exportWarrantyReportToPDF(filteredItems)
                 };
 
                 const incidentHistoryState = {
@@ -1668,23 +1692,6 @@ export default class InventoryManagement extends React.Component<IInventoryManag
                         }}
                       />
                     ) : null;
-                  case 'Users':
-                    return isAdmin ? (
-                      <UsersPage
-                        state={{
-                          employees: this.state.employees,
-                          items,
-                          activeUserDisplayName,
-                          effectiveRole,
-                          activeUserEmail,
-                          expandedUserEmail: this.state.expandedUserEmail
-                        }}
-                        actions={{
-                          onToggleExpandUser: (email) => this.setState({ expandedUserEmail: email }),
-                          isAssetAssignedToCurrentUser: this._isAssetAssignedToCurrentUser
-                        }}
-                      />
-                    ) : null;
                   case 'Reports':
                     return isAdmin ? (
                       <ReportsPage
@@ -1742,6 +1749,7 @@ export default class InventoryManagement extends React.Component<IInventoryManag
             currentUserRole={effectiveRole}
             currentUserName={activeUserDisplayName}
             currentUserEmail={this.state.activeUserEmail}
+            myRequests={myRequests}
             onSubmitRequest={this._onSubmitRequest}
           />
         )}

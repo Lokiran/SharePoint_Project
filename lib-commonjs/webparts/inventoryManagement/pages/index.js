@@ -17,6 +17,5 @@ tslib_1.__exportStar(require("./AssetAssignmentQueuePage"), exports);
 tslib_1.__exportStar(require("./MyWorkspacePage"), exports);
 tslib_1.__exportStar(require("./AdminAssignmentPanel"), exports);
 tslib_1.__exportStar(require("./ApprovalsPage"), exports);
-tslib_1.__exportStar(require("./UsersPage"), exports);
 tslib_1.__exportStar(require("./OnboardingPage"), exports);
 //# sourceMappingURL=index.js.map

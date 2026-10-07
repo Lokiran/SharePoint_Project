@@ -7,7 +7,6 @@ import {
   ActionButton,
   MessageBar,
   MessageBarType,
-  TextField,
   ProgressIndicator,
   Icon
 } from '@fluentui/react';
@@ -29,6 +28,8 @@ import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
 import { getAppConfig } from '../config/AppConfig';
 import { StockThresholdsTab } from './config/StockThresholdsTab';
+import { AccessGroupsTab } from './config/AccessGroupsTab';
+import { MaintenanceTab } from './config/MaintenanceTab';
 
 // Group names come from the web part's property pane (defaults: MSFT Owners / Members / Visitors).
 const getRoleGroups = (): { group: string; role: () => string; desc: () => string }[] => {
@@ -145,7 +146,6 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
   const [expanded, setExpanded] = React.useState<Partial<Record<ListKey, boolean>>>({});
   const [groups, setGroups] = React.useState<Record<string, IGroupInfo>>({});
   const [loadingGroups, setLoadingGroups] = React.useState<Record<string, boolean>>({});
-  const [memberFilter, setMemberFilter] = React.useState('');
 
   const mounted = React.useRef(true);
   React.useEffect(() => () => { mounted.current = false; }, []);
@@ -310,7 +310,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
             { icon: 'Database', label: s.Tile_CoreLists, value: `${coreReady}/${CORE_LISTS.length}`, tone: toneFor(coreReady === CORE_LISTS.length, coreResults.some(r => r.status === 'missing' || r.status === 'error')) },
             { icon: 'TableGroup', label: s.Tile_SchemaIssues, value: String(missingColumnCount), tone: toneFor(missingColumnCount === 0, false) },
             { icon: 'Lock', label: s.Tile_PermissionIssues, value: String(writeIssues), tone: toneFor(writeIssues === 0, writeIssues > 0) },
-            { icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }
+            ...(OPTIONAL_LISTS.length > 0 ? [{ icon: 'Puzzle', label: s.Tile_OptionalLists, value: `${optionalReady}/${OPTIONAL_LISTS.length}`, tone: toneFor(optionalReady === OPTIONAL_LISTS.length, false) }] : [])
           ].map(tile => (
             <div key={tile.icon} className={`${css.tile} ${tile.tone}`}>
               <div className={css.tileHead}><Icon iconName={tile.icon} /> {tile.label}</div>
@@ -496,7 +496,7 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
       </div>
       <div className={css.groupHeading}>{s.CoreListsGroup}</div>
       {CORE_LISTS.map(renderListCard)}
-      <div className={css.groupHeading}>{s.OptionalListsGroup}</div>
+      {OPTIONAL_LISTS.length > 0 && <div className={css.groupHeading}>{s.OptionalListsGroup}</div>}
       {OPTIONAL_LISTS.map(renderListCard)}
     </div>
   );
@@ -544,119 +544,6 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
     </div>
   );
 
-  const renderRbac = (): JSX.Element => {
-    const filter = memberFilter.trim().toLowerCase();
-    return (
-      <div className={css.panel}>
-        <div className={css.panelHeader}>
-          <div>
-            <h4>{s.RbacTitle}</h4>
-            <p>{s.RbacDesc} {s.RbacRoleRule}</p>
-          </div>
-          <div className={css.actions}>
-            <TextField
-              placeholder={s.FilterMembersPlaceholder}
-              value={memberFilter}
-              onChange={(_, v) => setMemberFilter(v || '')}
-              iconProps={{ iconName: 'Filter' }}
-              styles={{ root: { width: 220 } }}
-            />
-            <DefaultButton text={s.LoadAllGroupsButton} iconProps={{ iconName: 'Refresh' }} onClick={loadAllGroups} />
-          </div>
-        </div>
-
-        {ROLE_GROUPS.map(item => {
-          const isLoading = !!loadingGroups[item.group];
-          const info = groups[item.group];
-          const members = info ? info.members.filter(m => !filter || m.name.toLowerCase().indexOf(filter) >= 0 || m.email.toLowerCase().indexOf(filter) >= 0) : [];
-
-          return (
-            <div key={item.group} className={css.listCard}>
-              <div className={css.listCardTop}>
-                <div style={{ flex: '1 1 300px' }}>
-                  <h5 className={css.listTitle}>
-                    {item.group}
-                    <span className={css.roleTag}>{item.role()}</span>
-                    {info && info.exists && !info.error && <span className={`${css.pill} ${css.pillNeutral}`}>{formatString(s.MemberCount, info.members.length)}</span>}
-                    {info && info.currentUserIsMember && <span className={`${css.pill} ${css.pillInfo}`}>{s.YouAreMember}</span>}
-                  </h5>
-                  <span className={css.muted}>{item.desc()}</span>
-                </div>
-                <DefaultButton
-                  text={isLoading ? s.LoadingButton : s.ViewMembersButton}
-                  iconProps={{ iconName: 'People' }}
-                  onClick={() => { loadGroup(item.group).catch(() => undefined); }}
-                  disabled={isLoading}
-                />
-              </div>
-
-              {info && !info.exists && <div className={css.errorBox}>{s.GroupNotFound}</div>}
-              {info && info.exists && info.error && <div className={css.errorBox}>{formatString(s.GroupLoadError, info.error)}</div>}
-              {info && info.exists && !info.error && (
-                info.members.length === 0 ? (
-                  <div className={css.muted} style={{ marginTop: 10, fontStyle: 'italic' }}>{s.NoMembersFound}</div>
-                ) : (
-                  <div className={css.chips} style={{ marginTop: 10 }}>
-                    {members.map((m, idx) => (
-                      <span key={idx} className={css.chip} title={m.email}>
-                        <Icon iconName="Contact" /> {m.name}
-                      </span>
-                    ))}
-                  </div>
-                )
-              )}
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  const renderOperations = (): JSX.Element => (
-    <div className={css.panel}>
-      <div className={css.panelHeader}>
-        <div>
-          <h4>{s.OperationsTitle}</h4>
-          <p>
-            {s.OperationsDescBefore} <strong>{s.ListTitle_MappingList}</strong>. {s.OperationsDescAfter}
-          </p>
-        </div>
-      </div>
-
-      <div className={css.actions} style={{ marginBottom: 15 }}>
-        <PrimaryButton
-          text={state.syncInProgress ? s.SyncButtonProcessing : s.SyncButtonDefault}
-          iconProps={{ iconName: 'Sync' }}
-          onClick={actions.onSyncAssignedAssets}
-          disabled={state.syncInProgress}
-        />
-        <DefaultButton
-          text={state.syncInProgress ? s.DiagnosticsButtonChecking : s.DiagnosticsButtonDefault}
-          iconProps={{ iconName: 'Database' }}
-          onClick={actions.onRunDiagnostics}
-          disabled={state.syncInProgress}
-        />
-      </div>
-
-      {state.syncMessage && (
-        <MessageBar
-          messageBarType={state.syncMessageType}
-          onDismiss={actions.onDismissSyncMessage}
-          styles={{ root: { marginBottom: 15, borderRadius: 6 } }}
-        >
-          {state.syncMessage}
-        </MessageBar>
-      )}
-
-      {state.diagnosticInfo && (
-        <div style={{ marginTop: 15 }}>
-          <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: 6 }}>{s.DiagnosticLogLabel}</span>
-          <textarea readOnly value={state.diagnosticInfo} rows={10} className={css.diagnosticLog} />
-        </div>
-      )}
-    </div>
-  );
-
   const tab = state.configSelectedTab || 'overview';
 
   return (
@@ -691,9 +578,11 @@ export const ConfigPage: React.FC<IConfigPageProps> = (props) => {
       {tab === 'overview' && renderOverview()}
       {tab === 'connections' && renderConnections()}
       {tab === 'schema' && renderSchema()}
-      {tab === 'rbac' && renderRbac()}
+      {tab === 'rbac' && (
+        <AccessGroupsTab roleGroups={ROLE_GROUPS} groups={groups} loadingGroups={loadingGroups} onLoadGroup={loadGroup} onLoadAll={loadAllGroups} />
+      )}
       {tab === 'stock' && <StockThresholdsTab />}
-      {tab === 'operations' && renderOperations()}
+      {tab === 'operations' && <MaintenanceTab state={state} actions={actions} />}
     </div>
   );
 };

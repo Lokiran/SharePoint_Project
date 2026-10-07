@@ -1,20 +1,18 @@
 import * as React from 'react';
 import { useState, useMemo, useEffect } from 'react';
 import { IEventLog, IAuditLogFilters } from '../models/IEventLog';
-import {
-  DetailsList,
-  DetailsListLayoutMode,
-  SelectionMode,
-  IColumn
-} from '@fluentui/react/lib/DetailsList';
+import { mergeStyleSets } from '@fluentui/react/lib/Styling';
+import { DefaultButton } from '@fluentui/react/lib/Button';
+import { Icon } from '@fluentui/react/lib/Icon';
+import { Shimmer } from '@fluentui/react/lib/Shimmer';
 import { RoleUtils, UserRole } from '../utils/RoleUtils';
-import styles from './InventoryManagement.module.scss';
 import { EventFilters } from './EventFilters';
-import { EventActionBadge } from './EventActionBadge';
+import { EventTimeline, ActivityPulse } from './events/EventTimeline';
+import { Pager } from './common/Pager';
 import { InventoryService } from '../services/InventoryService';
 import { AssetTypeLookupService } from '../services/AssetTypeLookupService';
 import { DEFAULT_ASSET_TYPE_OPTIONS } from '../constants/DropdownConstants';
-import { applyClientFilters, getPageNumbers, mergeAssetTypes, buildUserOptions, MY_ACTIVITY_KEY } from '../utils/EventLogUtils';
+import { applyClientFilters, mergeAssetTypes, buildUserOptions, MY_ACTIVITY_KEY } from '../utils/EventLogUtils';
 import * as strings from 'InventoryManagementWebPartStrings';
 import { formatString } from '../utils/LocalizationUtils';
 
@@ -42,12 +40,25 @@ const DEFAULT_FILTERS: IAuditLogFilters = {
 
 const STANDARD_ASSET_TYPES: string[] = DEFAULT_ASSET_TYPE_OPTIONS.map(o => String(o.key));
 
+const css = mergeStyleSets({
+  root: { color: 'var(--text-main, #242424)' },
+  header: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, flexWrap: 'wrap', marginBottom: 16 },
+  title: { margin: 0, fontSize: 22, fontWeight: 600, lineHeight: '28px' },
+  subtitle: { margin: '4px 0 0', fontSize: 14, color: 'var(--text-muted, #616161)' },
+  notice: { color: '#991b1b', backgroundColor: '#fee2e2', padding: '12px 16px', borderRadius: 10, marginBottom: 16 },
+  resultLine: { fontSize: 13, color: 'var(--text-muted, #616161)', margin: '0 0 12px' },
+  empty: { padding: '48px 16px', textAlign: 'center', color: 'var(--text-muted, #616161)', border: '1px dashed rgba(128, 128, 128, 0.3)', borderRadius: 12 },
+  loading: { display: 'flex', flexDirection: 'column', gap: 18, padding: '8px 0' },
+  pager: { marginTop: 12 }
+});
+
 export const EventStream: React.FC<IEventStreamProps> = (props) => {
   const [filters, setFilters] = useState<IAuditLogFilters>(DEFAULT_FILTERS);
 
   const [logs, setLogs] = useState<IEventLog[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [manualRefresh, setManualRefresh] = useState<number>(0);
 
   // Filter option lists
   const [actionsList, setActionsList] = useState<string[]>([]);
@@ -105,7 +116,8 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
     filters.endDate,
     filters.action,
     filters.module,
-    props.refreshTrigger
+    props.refreshTrigger,
+    manualRefresh
   ]);
 
   // Reset to page 1 when client-side filters change
@@ -127,28 +139,6 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
   );
 
   const canViewAuditDetails = RoleUtils.canViewAuditLogs(props.currentUserRole);
-
-  const columns: IColumn[] = [
-    {
-      key: 'column_action',
-      name: strings.EventStream.ColumnAction,
-      fieldName: 'action',
-      minWidth: 120,
-      maxWidth: 220,
-      isResizable: true,
-      onRender: (item: IEventLog) => <EventActionBadge action={item.action} />
-    },
-    { key: 'column_type', name: strings.Columns.Type, fieldName: 'entityType', minWidth: 60, maxWidth: 80, isResizable: true },
-    { key: 'column_title', name: strings.Columns.Title, fieldName: 'title', minWidth: 150, maxWidth: 200, isResizable: true },
-    { key: 'column_assetName', name: strings.Columns.AssetName, fieldName: 'assetName', minWidth: 100, maxWidth: 150, isResizable: true },
-    ...(canViewAuditDetails ? [
-      { key: 'column_user', name: strings.EventStream.ColumnUser, fieldName: 'user', minWidth: 100, maxWidth: 150, isResizable: true }
-    ] : []),
-    { key: 'column_timestamp', name: strings.EventStream.ColumnTimestamp, fieldName: 'timestamp', minWidth: 120, maxWidth: 160, isResizable: true },
-    ...(canViewAuditDetails ? [
-      { key: 'column_details', name: strings.EventStream.ColumnDetails, fieldName: 'details', minWidth: 200, maxWidth: 400, isResizable: true, isMultiline: true }
-    ] : [])
-  ];
 
   // 1. Apply role-based visibility filtering client-side
   const roleBasedFilteredLogs = useMemo(() => {
@@ -181,13 +171,26 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
   const startIndex = (activePage - 1) * PAGE_SIZE;
   const paginatedLogs = filteredLogs.slice(startIndex, startIndex + PAGE_SIZE);
 
+  // Day headings only make sense while the events are in date order.
+  const inDateOrder = filters.sortOrder === 'NewestFirst' || filters.sortOrder === 'OldestFirst';
+
   return (
-    <div style={{ marginTop: '20px' }}>
+    <div className={css.root}>
+      <div className={css.header}>
+        <div>
+          <h3 className={css.title}>{strings.Nav.EventStream}</h3>
+          <p className={css.subtitle}>{strings.EventFeed.Subtitle}</p>
+        </div>
+        <DefaultButton text={strings.EventFeed.Refresh} iconProps={{ iconName: 'Refresh' }} onClick={() => setManualRefresh(n => n + 1)} disabled={loading} />
+      </div>
+
       {props.errorMessage && (
-        <div style={{ color: '#991b1b', backgroundColor: '#fee2e2', padding: '15px', borderRadius: '8px', marginBottom: '15px' }}>
+        <div className={css.notice}>
           <strong>{strings.EventStream.NoticeLabel}</strong> {props.errorMessage}
         </div>
       )}
+
+      <ActivityPulse logs={filteredLogs} showPeople={canViewAuditDetails} />
 
       {/* Advanced Filters Panel */}
       <EventFilters
@@ -201,78 +204,28 @@ export const EventStream: React.FC<IEventStreamProps> = (props) => {
       />
 
       {loading ? (
-        <p>{strings.EventStream.LoadingAuditLogs}</p>
-      ) : roleBasedFilteredLogs.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>{isEmployee ? strings.EventStream.NoEventsForYou : strings.EventStream.NoEventsRecorded}</p>
+        <div className={css.loading} aria-busy="true" aria-label={strings.EventStream.LoadingAuditLogs}>
+          {[0, 1, 2, 3].map(i => (
+            <div key={i}>
+              <Shimmer width="45%" styles={{ root: { marginBottom: 8 } }} />
+              <Shimmer width="80%" />
+            </div>
+          ))}
+        </div>
       ) : filteredLogs.length === 0 ? (
-        <p style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>{strings.EventStream.NoEventsMatchFilters}</p>
+        <div className={css.empty}>
+          <Icon iconName={roleBasedFilteredLogs.length === 0 ? 'ActivityFeed' : 'Search'} style={{ fontSize: 28, display: 'block', marginBottom: 8 }} />
+          {roleBasedFilteredLogs.length === 0
+            ? (isEmployee ? strings.EventStream.NoEventsForYou : strings.EventStream.NoEventsRecorded)
+            : strings.EventStream.NoEventsMatchFilters}
+        </div>
       ) : (
         <>
-          <DetailsList
-            items={paginatedLogs}
-            columns={columns}
-            setKey="set"
-            layoutMode={DetailsListLayoutMode.justified}
-            selectionMode={SelectionMode.none}
-          />
-
-          {totalPages > 1 && (
-            <div className={styles.paginationContainer}>
-              <div className={styles.paginationInfo}>
-                {formatString(strings.Pagination.ShowingEntries, startIndex + 1, Math.min(startIndex + PAGE_SIZE, totalItems), totalItems)}
-              </div>
-              <div className={styles.paginationControls}>
-                <button
-                  className={styles.paginationButton}
-                  disabled={activePage === 1}
-                  onClick={() => setCurrentPage(1)}
-                  title={strings.Pagination.FirstPage}
-                >
-                  &laquo;
-                </button>
-                <button
-                  className={styles.paginationButton}
-                  disabled={activePage === 1}
-                  onClick={() => setCurrentPage(prev => prev - 1)}
-                  title={strings.Pagination.PreviousPage}
-                >
-                  &lsaquo;
-                </button>
-
-                {getPageNumbers(activePage, totalPages).map((page, idx) => {
-                  if (page === '...') {
-                    return <span key={`ellipsis-${idx}`} style={{ padding: '0 8px', color: 'var(--text-muted)' }}>...</span>;
-                  }
-                  return (
-                    <button
-                      key={page}
-                      className={`${styles.paginationButton} ${activePage === page ? styles.active : ''}`}
-                      onClick={() => setCurrentPage(page)}
-                    >
-                      {page}
-                    </button>
-                  );
-                })}
-
-                <button
-                  className={styles.paginationButton}
-                  disabled={activePage === totalPages}
-                  onClick={() => setCurrentPage(prev => prev + 1)}
-                  title={strings.Pagination.NextPage}
-                >
-                  &rsaquo;
-                </button>
-                <button
-                  className={styles.paginationButton}
-                  disabled={activePage === totalPages}
-                  onClick={() => setCurrentPage(totalPages)}
-                  title={strings.Pagination.LastPage}
-                >
-                  &raquo;
-                </button>
-              </div>
-            </div>
-          )}
+          <p className={css.resultLine}>{formatString(strings.EventFeed.ResultEvents, totalItems, roleBasedFilteredLogs.length)}</p>
+          <EventTimeline logs={paginatedLogs} groupByDay={inDateOrder} showAudit={canViewAuditDetails} />
+          <div className={css.pager}>
+            <Pager page={activePage} pageSize={PAGE_SIZE} totalItems={totalItems} onChange={setCurrentPage} />
+          </div>
         </>
       )}
     </div>

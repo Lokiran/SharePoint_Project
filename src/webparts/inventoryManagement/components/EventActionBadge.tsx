@@ -34,6 +34,37 @@ const ACTION_BADGES: Record<string, IBadgeStyle> = {
   'update': { ...ORANGE, label: () => strings.EventStream.ActionUpdated }
 };
 
+// Fluent icon per action, for the Event Stream timeline.
+const ACTION_ICONS: Record<string, string> = {
+  'created': 'Add',
+  'create': 'Add',
+  'manager approved': 'Accept',
+  'manager rejected': 'Cancel',
+  'admin assigned': 'Contact',
+  'status updated to in progress': 'Clock',
+  'status updated to resolved': 'CheckMark',
+  'deleted': 'Delete',
+  'delete': 'Delete',
+  'return requested': 'Undo',
+  'return approved': 'Accept',
+  'return completed': 'CheckMark',
+  'return rejected': 'Cancel',
+  'activated': 'Play',
+  'inactivated': 'Pause',
+  'deactivated': 'Blocked',
+  'update': 'Edit',
+  'updated': 'Edit'
+};
+
+/** Colours, icon and display label for an action (the same colours the badge uses). */
+export const eventActionStyle = (action?: string): { bg: string; fg: string; icon: string; label: string } => {
+  const raw = action || '';
+  const key = raw.toLowerCase().trim();
+  const badge = ACTION_BADGES[key];
+  const colors = badge || NEUTRAL;
+  return { bg: colors.bg, fg: colors.fg, icon: ACTION_ICONS[key] || 'Info', label: badge ? badge.label() : raw };
+};
+
 export const EventActionBadge: React.FC<{ action?: string }> = ({ action }) => {
   const raw = action || '';
   const badge = ACTION_BADGES[raw.toLowerCase().trim()];

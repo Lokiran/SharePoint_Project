@@ -11,6 +11,7 @@ const AssetForm_1 = require("./AssetForm");
 const RequestForm_1 = require("./RequestForm");
 const ReturnAssetForm_1 = require("./ReturnAssetForm");
 const StockUtils_1 = require("../utils/StockUtils");
+const RequestDuplicateUtils_1 = require("../utils/RequestDuplicateUtils");
 const react_1 = require("@fluentui/react");
 const chart_js_1 = require("chart.js");
 chart_js_1.Chart.register(chart_js_1.CategoryScale, chart_js_1.LinearScale, chart_js_1.ArcElement, chart_js_1.BarElement, chart_js_1.Title, chart_js_1.Tooltip, chart_js_1.Legend);
@@ -229,11 +230,12 @@ class InventoryManagement extends React.Component {
         this._openEmailCenter = () => {
             this.setState({ emailCenterOpen: true, emailCenterEntryId: undefined });
         };
-        this._handleEmailSendFailed = (ev) => {
-            this.setState({
-                syncMessage: `⚠️ Email Notification failed to send to ${ev.detail.to.join(', ')}. Details: ${ev.detail.errorMessage}`,
-                syncMessageType: react_1.MessageBarType.warning
-            });
+        // A failed email is shown by the badge on the Email button and in the Email Center
+        // (not in Config → Maintenance, which only reports maintenance actions).
+        this._handleEmailSendFailed = () => {
+            const failed = EmailOutbox_1.EmailOutbox.getFailedCount();
+            if (failed !== this.state.emailFailedCount)
+                this.setState({ emailFailedCount: failed });
         };
         this._resolveUserRole = async () => {
             try {
@@ -383,8 +385,6 @@ class InventoryManagement extends React.Component {
                     isReturnFormOpen: false,
                     selectedAssetForReturn: undefined,
                     returnRequestsLoading: false,
-                    syncMessage: `Return request for "${selectedAssetForReturn.assetName || selectedAssetForReturn.title}" submitted successfully!`,
-                    syncMessageType: react_1.MessageBarType.success,
                     workflowPopup: {
                         isOpen: true,
                         title: 'Asset Return Request Submitted',
@@ -485,6 +485,29 @@ class InventoryManagement extends React.Component {
             }
         };
         this._onSubmitRequest = async (requestData) => {
+            // One open request per person and asset type: refuse a second one until the first is assigned or rejected.
+            const openRequest = (0, RequestDuplicateUtils_1.findOpenRequest)(this.state.requests, requestData.requesterName, requestData.assetTitle);
+            if (openRequest) {
+                const openKey = openRequest.requestKey || `#${openRequest.id}`;
+                this.setState({
+                    workflowPopup: {
+                        isOpen: true,
+                        title: strings.RequestForm.DuplicateTitle,
+                        stage: strings.RequestForm.DuplicateStage,
+                        type: 'warning',
+                        message: (0, LocalizationUtils_1.formatString)(strings.RequestForm.DuplicateBlocked, requestData.assetTitle, openKey),
+                        details: {
+                            requestId: openKey,
+                            assetTitle: openRequest.assetTitle,
+                            requesterName: openRequest.requesterName,
+                            managerName: openRequest.managerName,
+                            status: openRequest.status,
+                            date: openRequest.requestDate
+                        }
+                    }
+                });
+                return;
+            }
             try {
                 const initialStatus = 'Pending';
                 const tempId = `temp-${Date.now()}`;
@@ -746,11 +769,11 @@ class InventoryManagement extends React.Component {
                 });
             }
         };
-        this._exportWarrantyReportToExcel = () => {
-            (0, ReportExportUtils_1.exportWarrantyReportToExcel)(this.state.items);
+        this._exportWarrantyReportToExcel = (filteredItems) => {
+            (0, ReportExportUtils_1.exportWarrantyReportToExcel)(filteredItems || this.state.items);
         };
-        this._exportWarrantyReportToPDF = () => {
-            (0, ReportExportUtils_1.exportWarrantyReportToPDF)(this.state.items);
+        this._exportWarrantyReportToPDF = (filteredItems) => {
+            (0, ReportExportUtils_1.exportWarrantyReportToPDF)(filteredItems || this.state.items);
         };
         this._exportDetailedReportToExcel = (filteredItems) => {
             (0, ReportExportUtils_1.exportDetailedReportToExcel)(filteredItems);
@@ -1021,7 +1044,6 @@ class InventoryManagement extends React.Component {
             ] : []),
             ...(isAdmin ? [
                 { key: 'EventStream', text: strings.Nav.EventStream, icon: 'ActivityFeed', group: strings.Nav.GroupSystem },
-                { key: 'Users', text: strings.Nav.Users, icon: 'People' },
                 { key: 'Reports', text: strings.Nav.Reports, icon: 'ReportDocument' },
                 { key: 'Config', text: strings.Nav.Config, icon: 'Settings' }
             ] : [])
@@ -1113,7 +1135,10 @@ class InventoryManagement extends React.Component {
                                 reportsAssetTypeFilter: this.state.reportsAssetTypeFilter,
                                 reportsStatusFilter: this.state.reportsStatusFilter,
                                 items,
-                                requests: this.state.requests
+                                requests: this.state.requests,
+                                auditLogs,
+                                returnRequests: this.state.returnRequests,
+                                spContext: this.props.spContext
                             };
                             const reportsActions = {
                                 onTabChange: (tabKey) => this.setState({ reportsSelectedTab: tabKey }),
@@ -1121,8 +1146,8 @@ class InventoryManagement extends React.Component {
                                 onStatusFilterChange: (status) => this.setState({ reportsStatusFilter: status }),
                                 onExportDetailedReportToExcel: (filteredItems) => this._exportDetailedReportToExcel(filteredItems),
                                 onExportDetailedReportToPDF: (filteredItems) => this._exportDetailedReportToPDF(filteredItems),
-                                onExportWarrantyReportToExcel: () => this._exportWarrantyReportToExcel(),
-                                onExportWarrantyReportToPDF: () => this._exportWarrantyReportToPDF()
+                                onExportWarrantyReportToExcel: (filteredItems) => this._exportWarrantyReportToExcel(filteredItems),
+                                onExportWarrantyReportToPDF: (filteredItems) => this._exportWarrantyReportToPDF(filteredItems)
                             };
                             const incidentHistoryState = {
                                 userDisplayName: activeUserDisplayName || '',
@@ -1240,18 +1265,6 @@ class InventoryManagement extends React.Component {
                                             activeUserDisplayName,
                                             auditLogsRefreshTrigger: this.state.auditLogsRefreshTrigger
                                         } })) : null;
-                                case 'Users':
-                                    return isAdmin ? (React.createElement(pages_1.UsersPage, { state: {
-                                            employees: this.state.employees,
-                                            items,
-                                            activeUserDisplayName,
-                                            effectiveRole,
-                                            activeUserEmail,
-                                            expandedUserEmail: this.state.expandedUserEmail
-                                        }, actions: {
-                                            onToggleExpandUser: (email) => this.setState({ expandedUserEmail: email }),
-                                            isAssetAssignedToCurrentUser: this._isAssetAssignedToCurrentUser
-                                        } })) : null;
                                 case 'Reports':
                                     return isAdmin ? (React.createElement(pages_1.ReportsPage, { state: reportsState, actions: reportsActions })) : null;
                                 case 'Config': {
@@ -1275,7 +1288,7 @@ class InventoryManagement extends React.Component {
                             }
                         })()))),
             (isAdmin || isManager) && (React.createElement(AssetForm_1.AssetForm, { isOpen: isAssetFormOpen, onClose: () => this.setState({ isAssetFormOpen: false }), currentUserRole: effectiveRole, onAddAsset: this._onAddAsset })),
-            (isAdmin || isManager || isEmployee) && (React.createElement(RequestForm_1.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, onSubmitRequest: this._onSubmitRequest })),
+            (isAdmin || isManager || isEmployee) && (React.createElement(RequestForm_1.RequestForm, { isOpen: isRequestFormOpen, onClose: () => this.setState({ isRequestFormOpen: false }), availableAssets: items, employees: this.state.employees, currentUserRole: effectiveRole, currentUserName: activeUserDisplayName, currentUserEmail: this.state.activeUserEmail, myRequests: myRequests, onSubmitRequest: this._onSubmitRequest })),
             (isAdmin || isManager || isEmployee) && (React.createElement(IncidentRequestModule_1.IncidentRequestModule, { ...this.props, isOpen: this.state.isIncidentFormOpen, onClose: () => this.setState({ isIncidentFormOpen: false, selectedAssetForIncident: undefined, preselectedIncidentType: undefined }), userDisplayName: activeUserDisplayName, userEmail: activeUserEmail, setIsLoading: (loading) => this.setState({ loading }), preselectedAsset: this.state.selectedAssetForIncident, preselectedIncidentType: this.state.preselectedIncidentType, onSuccessPopup: (details) => {
                     this.setState({
                         workflowPopup: {

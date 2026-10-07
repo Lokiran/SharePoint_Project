@@ -8,6 +8,14 @@ export interface IFieldMetadata {
 export declare class SharePointBaseService {
     static get LIST_NAME(): string;
     static get EVENT_LOG_LIST(): string;
+    /** Other titles the audit list may have, tried after the configured one. */
+    static readonly EVENT_LOG_FALLBACK_TITLES: string[];
+    private static resolvedEventLog;
+    /**
+     * Title of the audit list that exists on the site: the configured one, else the first
+     * fallback found. Falls back to the configured title when none exists. Looked up once per page load.
+     */
+    static getEventLogListTitle(): Promise<string>;
     static get REQUEST_LIST_NAME(): string;
     static get RETURN_REQUEST_LIST_NAME(): string;
     static get MAPPING_LIST_NAME(): string;

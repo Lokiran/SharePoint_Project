@@ -4,6 +4,8 @@ import { ListProvisioningService, IProvisionedField } from "./base/ListProvision
 import { RequestService } from "./RequestService";
 import { ReturnRequestService } from "./ReturnRequestService";
 import { AuditLogService } from "./AuditLogService";
+import { IRequest } from "../models/IRequest";
+import { findOpenRequest } from "../utils/RequestDuplicateUtils";
 
 const KIT_FIELDS: IProvisionedField[] = [
   { name: "KitItems", type: "Note" },
@@ -86,7 +88,16 @@ export class AssetKitService {
     const reason = `Onboarding kit "${kit.name}" for new starter ${recipient.displayName}${startText}.` +
       (options.notes ? ` ${options.notes.trim()}` : "");
 
+    // One open request per person and asset type: a kit line is skipped while the new starter
+    // already has a request for that type in progress. If the check cannot run, the kit goes ahead.
+    const existing: IRequest[] = await RequestService.getRequests().catch(() => []);
+
     for (const line of kit.lines) {
+      const open = findOpenRequest(existing, recipient.displayName, line.assetType);
+      if (open) {
+        result.failed.push({ label: line.assetType, error: `Skipped: ${recipient.displayName} already has an open request for this type (${open.requestKey || `#${open.id}`}).` });
+        continue;
+      }
       try {
         await RequestService.addRequest({
           requesterName: recipient.displayName,
@@ -101,6 +112,8 @@ export class AssetKitService {
           requestDate: new Date().toISOString()
         }, currentUserName, currentUserRole, false);
         result.succeeded.push(line.assetType);
+        // A second line of the same type in this kit counts as a duplicate too.
+        existing.push({ id: `kit-${existing.length}`, requestKey: "", requesterName: recipient.displayName, assetId: "", assetTitle: line.assetType, quantity: line.quantity, status: "Pending", requestDate: "" });
       } catch (e: any) {
         result.failed.push({ label: line.assetType, error: e && e.message ? e.message : String(e) });
       }

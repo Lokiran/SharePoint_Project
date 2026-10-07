@@ -214,6 +214,209 @@ export const saveNexerReport = (o: INexerReportOptions): void => {
   doc.save(o.fileName);
 };
 
+// =====================================================================================
+// List report: the same Nexer header and footer around a summary row and a table.
+// =====================================================================================
+
+export type NexerTagTone = 'green' | 'blue' | 'amber' | 'red' | 'grey';
+
+export interface INexerTableColumn {
+  header: string;
+  /** Relative width; the columns share the page width in these proportions. */
+  width: number;
+  /** Draws the cell as a coloured tag; returns the tone for the cell in the given row. */
+  tag?: (value: string, rowIndex: number) => NexerTagTone;
+}
+
+export interface INexerTableReportOptions {
+  /** Small caps label in the header, e.g. "Asset report". */
+  documentType: string;
+  /** Shown large in the header, e.g. the report date. */
+  reference: string;
+  heading: string;
+  subheading?: string;
+  summaryTitle: string;
+  /** Headline numbers in a row of boxes (up to four per row). */
+  summary: INexerReportField[];
+  tableTitle: string;
+  columns: INexerTableColumn[];
+  /** One array of cell texts per row, in column order. */
+  rows: string[][];
+  /** Printed instead of the table when there are no rows. */
+  emptyText: string;
+  productName: string;
+  generatedText: string;
+  fileName: string;
+}
+
+const TAG_COLOURS: { [tone in NexerTagTone]: { fill: RGB; text: RGB } } = {
+  green: { fill: [223, 246, 221], text: [14, 92, 14] },
+  blue: { fill: [235, 243, 252], text: [15, 84, 140] },
+  amber: { fill: [255, 244, 206], text: [138, 55, 7] },
+  red: { fill: [253, 231, 233], text: [164, 38, 44] },
+  grey: { fill: [237, 237, 237], text: [66, 66, 66] }
+};
+
+export const saveNexerTableReport = (o: INexerTableReportOptions): void => {
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const color = (c: RGB, kind: 'text' | 'fill' | 'draw'): void => {
+    if (kind === 'text') doc.setTextColor(c[0], c[1], c[2]);
+    else if (kind === 'fill') doc.setFillColor(c[0], c[1], c[2]);
+    else doc.setDrawColor(c[0], c[1], c[2]);
+  };
+  const font = (style: 'normal' | 'bold', size: number, c: RGB): void => {
+    doc.setFont('helvetica', style);
+    doc.setFontSize(size);
+    color(c, 'text');
+  };
+  /** Shortens text with an ellipsis until it fits the width (at the current font). */
+  const fit = (raw: string, width: number): string => {
+    let text = asText(raw);
+    if (doc.getTextWidth(text) <= width) return text;
+    while (text.length > 1 && doc.getTextWidth(text + '…') > width) text = text.slice(0, -1);
+    return text.replace(/\s+$/, '') + '…';
+  };
+
+  // ---------- Header: black band with the white wordmark (same as the single-record report) ----------
+  const drawHeader = (compact: boolean): number => {
+    const bandH = compact ? 16 : 40;
+    color([0, 0, 0], 'fill');
+    doc.rect(0, 0, PAGE_W, bandH, 'F');
+    const logoH = compact ? 5 : 8.5;
+    doc.addImage(NEXER_LOGO_WHITE_PNG, 'PNG', MARGIN, compact ? 5.5 : 12, logoH * NEXER_LOGO_ASPECT, logoH, 'nexer-logo-white', 'FAST');
+    if (compact) {
+      font('bold', 9, [255, 255, 255]);
+      doc.text(`${o.documentType}  ·  ${o.reference}`, PAGE_W - MARGIN, 10, { align: 'right' });
+      return bandH + 10;
+    }
+    font('normal', 8, HEADER_MUTED);
+    doc.text(o.productName, MARGIN, 29);
+    doc.setCharSpace(0.6);
+    font('bold', 7.5, HEADER_MUTED);
+    doc.text(o.documentType.toUpperCase(), PAGE_W - MARGIN, 15.5, { align: 'right' });
+    doc.setCharSpace(0);
+    font('bold', 20, [255, 255, 255]);
+    doc.text(o.reference, PAGE_W - MARGIN, 27, { align: 'right' });
+    return bandH + 14;
+  };
+
+  let y = drawHeader(false);
+
+  // ---------- Title block ----------
+  font('bold', 17, INK);
+  doc.text(fit(o.heading, CONTENT_W), MARGIN, y);
+  if (o.subheading) {
+    font('normal', 9.5, MUTED);
+    doc.text(fit(o.subheading, CONTENT_W), MARGIN, y + 6.5);
+    y += 6.5;
+  }
+  y += 8;
+  color(RULE, 'draw');
+  doc.setLineWidth(0.3);
+  doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+  y += 10;
+
+  const sectionLabel = (title: string): void => {
+    doc.setCharSpace(0.6);
+    font('bold', 8, MUTED);
+    doc.text(title.toUpperCase(), MARGIN, y);
+    doc.setCharSpace(0);
+    color(INK, 'fill');
+    doc.rect(MARGIN, y + 2, 10, 0.8, 'F');
+    y += 8;
+  };
+
+  // ---------- Summary: a row of boxes, label over number ----------
+  if (o.summary.length) {
+    sectionLabel(o.summaryTitle);
+    const perRow = Math.min(4, o.summary.length);
+    const gap = 4;
+    const boxW = (CONTENT_W - gap * (perRow - 1)) / perRow;
+    const boxH = 18;
+    o.summary.forEach((field, i) => {
+      const col = i % perRow;
+      if (i > 0 && col === 0) y += boxH + gap;
+      const x = MARGIN + col * (boxW + gap);
+      color(PANEL, 'fill');
+      doc.rect(x, y, boxW, boxH, 'F');
+      font('normal', 7.5, MUTED);
+      doc.text(fit(cleanLabel(field.label), boxW - 8), x + 4, y + 6);
+      font('bold', 14, INK);
+      doc.text(fit(asText(field.value), boxW - 8), x + 4, y + 14);
+    });
+    y += boxH + 12;
+  }
+
+  // ---------- Table ----------
+  sectionLabel(o.tableTitle);
+  const totalWeight = o.columns.reduce((sum, c) => sum + c.width, 0) || 1;
+  const widths = o.columns.map(c => (CONTENT_W * c.width) / totalWeight);
+  const lefts = widths.map((_, i) => MARGIN + widths.slice(0, i).reduce((sum, w) => sum + w, 0));
+  const PAD = 2.5;
+  const HEAD_H = 8;
+  const ROW_H = 8.5;
+
+  const drawTableHead = (): void => {
+    color(INK, 'fill');
+    doc.rect(MARGIN, y, CONTENT_W, HEAD_H, 'F');
+    doc.setCharSpace(0.3);
+    font('bold', 7, [255, 255, 255]);
+    o.columns.forEach((c, i) => doc.text(fit(c.header.toUpperCase(), widths[i] - PAD * 2), lefts[i] + PAD, y + 5.3));
+    doc.setCharSpace(0);
+    y += HEAD_H;
+  };
+
+  if (o.rows.length === 0) {
+    font('normal', 10, MUTED);
+    doc.text(o.emptyText, MARGIN, y + 4);
+  } else {
+    drawTableHead();
+    o.rows.forEach((row, rowIndex) => {
+      if (y + ROW_H > FOOTER_TOP - 6) {
+        doc.addPage();
+        y = drawHeader(true);
+        drawTableHead();
+      }
+      o.columns.forEach((c, i) => {
+        const value = asText(row[i]);
+        if (c.tag && value !== '—') {
+          const tone = TAG_COLOURS[c.tag(value, rowIndex)];
+          font('bold', 7.5, tone.text);
+          const text = fit(value, widths[i] - PAD * 2 - 5);
+          const tagW = doc.getTextWidth(text) + 5;
+          color(tone.fill, 'fill');
+          doc.roundedRect(lefts[i] + PAD, y + 1.7, tagW, 5.2, 2.6, 2.6, 'F');
+          doc.text(text, lefts[i] + PAD + 2.5, y + 5.4);
+        } else {
+          // The first column names the record, so it is set in bold.
+          font(i === 0 ? 'bold' : 'normal', 8.5, i === 0 ? INK : BODY);
+          doc.text(fit(value, widths[i] - PAD * 2), lefts[i] + PAD, y + 5.6);
+        }
+      });
+      y += ROW_H;
+      color(RULE, 'draw');
+      doc.setLineWidth(0.2);
+      doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+    });
+  }
+
+  // ---------- Footer on every page ----------
+  const pages = doc.getNumberOfPages();
+  for (let p = 1; p <= pages; p++) {
+    doc.setPage(p);
+    color(RULE, 'draw');
+    doc.setLineWidth(0.3);
+    doc.line(MARGIN, FOOTER_TOP, PAGE_W - MARGIN, FOOTER_TOP);
+    const logoH = 3.2;
+    doc.addImage(NEXER_LOGO_BLACK_PNG, 'PNG', MARGIN, FOOTER_TOP + 5, logoH * NEXER_LOGO_ASPECT, logoH, 'nexer-logo-black', 'FAST');
+    font('normal', 7.5, MUTED);
+    doc.text(o.productName, MARGIN + logoH * NEXER_LOGO_ASPECT + 4, FOOTER_TOP + 7.7);
+    doc.text(`${o.generatedText}   ·   ${p} / ${pages}`, PAGE_W - MARGIN, FOOTER_TOP + 7.7, { align: 'right' });
+  }
+
+  doc.save(o.fileName);
+};
+
 /** "6 Aug 2026, 16:13" for a stored date, or the raw value when it isn't a date. */
 export const formatReportDate = (raw?: string, withTime: boolean = true): string | undefined => {
   if (!raw) return undefined;

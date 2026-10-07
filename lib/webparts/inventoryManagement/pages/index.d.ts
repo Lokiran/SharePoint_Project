@@ -14,6 +14,5 @@ export * from './AssetAssignmentQueuePage';
 export * from './MyWorkspacePage';
 export * from './AdminAssignmentPanel';
 export * from './ApprovalsPage';
-export * from './UsersPage';
 export * from './OnboardingPage';
 //# sourceMappingURL=index.d.ts.map

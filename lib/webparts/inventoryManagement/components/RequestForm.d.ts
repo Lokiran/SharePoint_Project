@@ -11,6 +11,8 @@ export interface IRequestFormProps {
     currentUserRole: UserRole;
     currentUserName: string;
     currentUserEmail?: string;
+    /** The current user's own requests; a type with one still in progress cannot be requested again. */
+    myRequests?: IRequest[];
     onSubmitRequest: (request: Omit<IRequest, 'id' | 'requestKey' | 'status'>) => void;
 }
 export declare const RequestForm: React.FC<IRequestFormProps>;
